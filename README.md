@@ -60,8 +60,10 @@ holds the narration, spelling fixes and chapter list. From the project folder:
 4. `python3 tools/captions.py episodes/<episode>` writes the captions.
 5. Make a thumbnail, fill in `youtube/title.txt` and `youtube/description.txt`,
    and upload.
-6. Copy `docs/episodes/001-milne-rationality/` for the episode page, update it,
-   and add the episode to `docs/index.html`.
+6. Copy `docs/episodes/001-milne-rationality/` for the episode page (into the
+   result's existing folder, replacing its "Episode coming" page), update it,
+   add the episode to `tools/site/episodes.json`, and run
+   `python3 tools/site/build.py`. See `tools/site/README.md`.
 7. Before publishing, re-check the record against the source: preprint date,
    peer review, Lean formalization and withdrawals.
 
