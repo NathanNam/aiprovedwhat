@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hidden in the counts: the Birch and Swinnerton-Dyer formula | AI Proved What?</title>
+<meta name="description" content="An AI system says it proved the full Birch and Swinnerton-Dyer formula for every elliptic curve with Selmer corank zero or one. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/002-bsd-formula/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Hidden in the counts">
+<meta property="og:description" content="An AI system says it proved the full Birch and Swinnerton-Dyer formula for every elliptic curve with Selmer corank zero or one. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/002-bsd-formula/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/002-bsd-formula/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../#episodes">Episodes</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 002, October 2026</p>
+<h1>Hidden in the counts</h1>
+<p class="subtitle">The full Birch and Swinnerton-Dyer formula from low Selmer corank</p>
+
+<div class="player" data-youtube="y-MSZWFdjg0" data-title="Episode 002: Hidden in the counts">
+  <a href="https://youtu.be/y-MSZWFdjg0">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play episode 002: Count mod p. Predict everything?">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:10. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/y-MSZWFdjg0?t=0" data-t="0"><span class="t">0:00</span><span>The question: sums of two cubes</span></a></li>
+  <li><a href="https://youtu.be/y-MSZWFdjg0?t=44" data-t="44"><span class="t">0:44</span><span>Rational points and rank</span></a></li>
+  <li><a href="https://youtu.be/y-MSZWFdjg0?t=104" data-t="104"><span class="t">1:44</span><span>Counting solutions mod p</span></a></li>
+  <li><a href="https://youtu.be/y-MSZWFdjg0?t=152" data-t="152"><span class="t">2:32</span><span>The L-function</span></a></li>
+  <li><a href="https://youtu.be/y-MSZWFdjg0?t=185" data-t="185"><span class="t">3:05</span><span>The full formula: five ingredients</span></a></li>
+  <li><a href="https://youtu.be/y-MSZWFdjg0?t=284" data-t="284"><span class="t">4:44</span><span>Sha and the Selmer group</span></a></li>
+  <li><a href="https://youtu.be/y-MSZWFdjg0?t=313" data-t="313"><span class="t">5:13</span><span>The theorem</span></a></li>
+  <li><a href="https://youtu.be/y-MSZWFdjg0?t=382" data-t="382"><span class="t">6:22</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/y-MSZWFdjg0?t=449" data-t="449"><span class="t">7:29</span><span>Why it matters, and the caveats</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>An elliptic curve is the set of solutions of an equation like <i>y</i>² + <i>y</i> = <i>x</i>³ − <i>x</i>. Its rational points, the solutions in fractions, form a group, and the <em>rank</em> counts how many independent points generate all of them.</p>
+<p>In the 1960s Bryan Birch and Peter Swinnerton-Dyer predicted that counting solutions modulo primes, packaged into the curve’s <i>L</i>-function, reveals the rank. They also predicted the exact size of the first nonzero term of <i>L</i>(<i>E</i>, <i>s</i>) at <i>s</i> = 1: the real period, times the regulator, times the order of the Tate–Shafarevich group Sha, times the Tamagawa numbers, divided by the number of torsion points squared.</p>
+<p>Result 002 claims that whenever, for some single prime <i>q</i>, the <i>q</i>-power Selmer group has corank zero or one, everything holds: the rank equals the order of vanishing equals that corank, Sha is finite, and the leading-term formula is exactly right, every prime factor included, with no extra conditions on the curve.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>It says nothing about curves of rank two or more, where the formula remains open. It doesn’t prove that Sha is finite in general; that follows only under the low-corank hypothesis. And it doesn’t settle the Millennium Prize problem, which asks for the rank prediction for every elliptic curve.</p>
+<p>The broader consequences in the video come from companion papers: covering almost every quadratic twist of every curve needs result 006 (Goldfeld’s conjecture), and the statement about sums of two rational cubes is proved in the companion paper on the Selmer converse.</p>
+</section>
+
+<section aria-labelledby="relies">
+<h2 id="relies">What it relies on</h2>
+<p>Three other papers in the same release, all unreviewed preprints:</p>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf">The Selmer converse for elliptic curves at every prime</a> (October 7, 2026): the rank and finiteness statements.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf">The two-primary Birch–Swinnerton-Dyer formula in Selmer corank at most one</a> (October 6, 2026): the factors of 2.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf">Goldfeld’s analytic density conjecture and the 2-converse</a> (October 7, 2026): choosing the auxiliary fields.</li>
+</ul>
+<p>It also builds on published work, including modularity (Wiles; Taylor–Wiles; Breuil, Conrad, Diamond and Taylor), Gross–Zagier, Kolyvagin, Kato’s Euler system, and Burungale–Flach for curves with complex multiplication.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, October 7, 2026 edition</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Not yet</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 10, 2026. The claim has not been withdrawn. This edition replaces an October 3, 2026 version; the change removed an obsolete citation and updated citations to revised companion papers. The result is not in the collection’s catalog of Lean-formalized results.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<p>For each odd prime <i>p</i>, let <i>X<sub>p</sub></i>(<i>E</i>) be the number of factors of <i>p</i> on the <i>L</i>-function side of the formula, minus the number of factors of <i>p</i> in the order of Sha. The formula holds exactly when every <i>X<sub>p</sub></i> is zero.</p>
+<ol class="steps">
+  <li><strong>Never negative.</strong> Using Kato’s Euler system, rebuilt inside large families of Galois cohomology with extra “tame” variables, show <i>X<sub>p</sub></i>(<i>E</i>) ≥ 0 for curves without complex multiplication and analytic rank at most one.</li>
+  <li><strong>A pair that cancels.</strong> Pair <i>E</i> with a quadratic twist <i>E<sup>D</sup></i> so that one has order of vanishing zero and the other one, and show <i>X<sub>p</sub></i>(<i>E</i>) + <i>X<sub>p</sub></i>(<i>E<sup>D</sup></i>) = 0, using theta series and CM measures over the imaginary quadratic field ℚ(√<i>D</i>).</li>
+  <li><strong>Squeeze.</strong> Two numbers that are never negative and add up to zero are both zero. The factor 2 comes from a companion paper, and curves with complex multiplication use the rank-zero theorem of Burungale and Flach.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<p>Every value shown was recomputed with PARI/GP 2.15. Each curve is named by its label in Cremona’s tables.</p>
+<ul class="sources">
+  <li><strong>11a1</strong>, <i>y</i>² + <i>y</i> = <i>x</i>³ − <i>x</i>² − 10<i>x</i> − 20, rank 0: <i>L</i>(<i>E</i>, 1) = 0.25384…, real period 1.26921…, <i>c</i><sub>11</sub> = 5, five torsion points, so Sha has order 1.</li>
+  <li><strong>37a1</strong>, <i>y</i>² + <i>y</i> = <i>x</i>³ − <i>x</i>, rank 1: <i>L</i>′(<i>E</i>, 1) = 0.30600…, real period 5.98692…, regulator 0.05111…, everything else 1, so Sha has order 1.</li>
+  <li><strong>389a1</strong>, <i>y</i>² + <i>y</i> = <i>x</i>³ + <i>x</i>² − 2<i>x</i>, rank 2: outside the theorem.</li>
+  <li>In the slope chart, the fitted slopes over primes up to 2,000,000 are 0.01, 1.02 and 2.07.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf">The paper (PDF)</a>, “Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank,” OpenAI Math Release preprint, October 7, 2026.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 002.</li>
+  <li><a href="https://github.com/openai/math/blob/main/history.md">The collection’s history</a> of withdrawals and fixes.</li>
+  <li>B. J. Birch and H. P. F. Swinnerton-Dyer, <a href="https://doi.org/10.1515/crll.1965.218.79">“Notes on elliptic curves. II”</a>, J. Reine Angew. Math. 218 (1965), where the conjecture was set out.</li>
+</ul>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question: sums of two cubes</h3>
+<p>Result 002 in OpenAI’s math repository claims something mathematicians have chased for sixty years: the full Birch and Swinnerton-Dyer formula, proved exactly, for a huge family of elliptic curves. Here’s a taste of why that matters. Which whole numbers are a sum of two cubes of fractions? Seven is: two cubed, plus negative one cubed. Thirteen is: seven thirds cubed, plus two thirds cubed. Seventeen takes more searching. But five never works, no matter how long you look. Questions like this are questions about elliptic curves. And the deepest tool we have for them is a single formula, predicted by Birch and Swinnerton-Dyer in the 1960s.</p>
+<h3><span class="t num">0:44</span>Rational points and rank</h3>
+<p>An elliptic curve is the set of solutions to an equation like this one: y squared, plus y, equals x cubed, minus x. Over the real numbers, it’s a smooth curve, here in two pieces. We care about rational points: solutions where both coordinates are fractions. Here’s one: zero, zero. Draw the tangent line there. It meets the curve at exactly one more point, and reflecting that point gives a new rational solution: one, zero. A line through two rational points meets the curve at a third. Keep going, and one starting point produces infinitely many, with numerators and denominators that grow very fast. This curve needs just one starting point, so we say it has rank one. Some curves have rank zero, and only finitely many rational points. Others need two starting points, or more. Mordell proved in 1922 that the rank is always finite. But to this day, there’s no method guaranteed to compute it.</p>
+<h3><span class="t num">1:44</span>Counting solutions mod p</h3>
+<p>So in the early 1960s, Bryan Birch and Peter Swinnerton-Dyer tried something different, on one of Cambridge’s early computers. Instead of hunting for rational points, they counted solutions modulo primes. For each prime p, count the solutions mod p, and call that Nₚ. A curve with many rational points tends to have slightly more solutions mod p, on average across primes. So multiply the ratios, Nₚ over p, for all the primes up to some bound X. Here is that experiment, redone with every prime up to two million. Plotted the right way, a rank zero curve levels off. A rank one curve grows with slope one. And a rank two curve grows with slope two. The rank was hiding in the counts.</p>
+<h3><span class="t num">2:32</span>The L-function</h3>
+<p>To make this precise, the counts are packaged into one function, the L-function of the curve. At the point s equals one, it’s roughly the reciprocal of that same product. The prediction: the L-function vanishes at s equals one to an order exactly equal to the rank. For the rank zero curve, the graph passes through a nonzero value. For rank one, it crosses zero. For rank two, it just touches zero, and turns back. Proving this in general is one of the Clay Millennium Prize problems.</p>
+<h3><span class="t num">3:05</span>The full formula: five ingredients</h3>
+<p>But Birch and Swinnerton-Dyer predicted more than the rank. They predicted the exact size of the first term that isn’t zero: the value, or the slope, or the curvature at s equals one. It should equal a product of five ingredients. First, the real period: the total length of the real curve, measured with a ruler built into the equation. Second, the regulator. Every rational point has a height, measuring how big its numerators and denominators get. The regulator is the volume of the lattice the points form, measured with that height. Third, the Tamagawa numbers: small local corrections at the primes where the curve misbehaves. Fourth, the torsion points, the finitely many that cycle back to where they started. They appear squared, in the denominator. And fifth, the strangest: the Tate–Shafarevich group, called Sha. It counts hidden curves that have solutions modulo every prime power, and over the real numbers, but no rational solution at all. Its size is one when there are none. Nobody knows how to compute it directly. It isn’t even known to be finite in general. Check it on our rank one curve. The slope at s equals one is 0.3060. The real period times the regulator is 0.3060 as well, and everything else is one. For a rank zero curve: 1.269 times 5, divided by 5 squared, gives 0.2538, exactly the value. The numbers match when Sha has size one. Proving matches like that, for every prime factor at once, is the hard part.</p>
+<h3><span class="t num">4:44</span>Sha and the Selmer group</h3>
+<p>To get a grip on Sha, mathematicians use the Selmer group, named after Ernst Selmer, who found one of the first famous hidden curves. For each prime q, there’s a q-power Selmer group, assembled from pieces that can actually be computed. It contains the rational points, and the q-part of Sha, mixed together. Its size is measured by a number called the corank. It’s always at least the rank, and the two are equal exactly when that part of Sha is finite.</p>
+<h3><span class="t num">5:13</span>The theorem</h3>
+<p>Here’s what result 002 claims. Take any elliptic curve over the rational numbers. Suppose that for some single prime q, the Selmer corank is zero or one. Then the rank, the order of vanishing, and the Selmer corank all agree. Sha is finite. And the full formula holds exactly, prime factor by prime factor, with no extra conditions on the curve. Parts of this were known. Since the 1980s, work of Gross and Zagier, and of Kolyvagin, gives the rank and the finiteness of Sha when the order of vanishing is zero or one. The new link, from a small Selmer group to a small order of vanishing, comes from a companion paper in the same release. Earlier exact formulas each needed extra hypotheses about the curve or the prime. Combined with result 006 from the same collection, the claim covers almost every quadratic twist of every elliptic curve. And a companion paper uses the same ideas to show that every prime leaving remainder four, seven, or eight when divided by nine, like seven, thirteen and seventeen, is a sum of two rational cubes.</p>
+<h3><span class="t num">6:22</span>How the proof goes</h3>
+<p>How does the proof go? The core idea fits on one line. For each odd prime p, measure the discrepancy: how many factors of p the L-value has, after dividing out the other ingredients, minus how many Sha has. Call it X. Step one: for curves without complex multiplication, show X is never negative. This uses Kato’s Euler system, a tool linking L-values to Galois cohomology, rebuilt inside large families with extra variables. Step two: pair the curve with a carefully chosen twist, so that one has order of vanishing zero and the other has order one. Then show their two discrepancies add up to zero, using theta series and measures from an imaginary quadratic field. Two numbers that are never negative, and add up to zero, must both be zero. So every odd prime factor matches. The factor of two comes from a companion paper, and curves with extra symmetry, called complex multiplication, start from a published rank-zero theorem of Burungale and Flach, then use the same pairing.</p>
+<h3><span class="t num">7:29</span>Why it matters, and the caveats</h3>
+<p>Why care? This formula is one of the central predictions in number theory. It ties counting, geometry, and hidden arithmetic into one equation. Until now, it was proved exactly only in restricted cases. The caveats. This is a machine-generated preprint. It hasn’t been peer reviewed, and it hasn’t been checked in Lean. It also relies on three companion papers from the same release, which are unreviewed too. And curves of rank two or more, like our third example, are untouched. Count solutions modulo primes, and recover the hidden arithmetic of the curve. Exactly. If the proof holds.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20002%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
