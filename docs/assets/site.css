@@ -1,0 +1,396 @@
+/* AI Proved What? — one stylesheet for the whole site.
+   Colors match the videos: the same ink background, with blue for links
+   and gold reserved for the proof box (∎). */
+
+:root {
+  --ink: #0e1117;
+  --raised: #151a23;
+  --rule: #262c37;
+  --paper: #ece9e1;
+  --soft: #cdcac2;
+  --dim: #9aa0aa;
+  --blue: #58c4dd;
+  --gold: #ffd84d;
+  --red: #fc6255;
+  --serif: "STIX Two Text", "STIX Two", "Times New Roman", Times, serif;
+  --measure: 36rem;
+  --wide: 58rem;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--serif);
+  font-size: 112.5%;
+  line-height: 1.62;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  font-variant-numeric: lining-nums;
+}
+
+img { max-width: 100%; height: auto; }
+
+a {
+  color: var(--blue);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 0.5rem 0.9rem;
+  z-index: 10;
+}
+.skip:focus { left: 1rem; top: 1rem; }
+
+.wrap {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+@media (min-width: 40rem) {
+  .wrap { padding: 0 2rem; }
+}
+
+.measure { max-width: var(--measure); }
+
+/* ---------- header ---------- */
+
+.site-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--paper);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.08rem;
+  letter-spacing: 0.005em;
+}
+.wordmark .mark {
+  width: 0.95em;
+  height: 1.45em;
+  color: var(--paper);
+  flex: none;
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.site-nav a {
+  color: var(--soft);
+  text-decoration: none;
+}
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: var(--paper);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+/* ---------- type ---------- */
+
+main { padding: 2.75rem 0 1rem; }
+
+h1, h2, h3 {
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 5.4vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.012em;
+  margin: 0 0 1.1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  margin: 3rem 0 0.9rem;
+}
+
+h3 {
+  font-size: 1.12rem;
+  margin: 1.6rem 0 0.4rem;
+}
+
+p { margin: 0 0 1rem; }
+
+.lede {
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--soft);
+  max-width: 34rem;
+}
+
+.meta {
+  font-style: italic;
+  color: var(--dim);
+  margin: 0 0 0.6rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--soft);
+  margin: -0.4rem 0 1.8rem;
+  font-style: italic;
+}
+
+.num { font-variant-numeric: lining-nums tabular-nums; }
+
+/* ---------- the player ---------- */
+
+.player {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin: 2rem 0 0.6rem;
+  background: #000;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.player > a,
+.player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.player img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.play {
+  position: absolute;
+  right: 3.5%;
+  top: 6%;
+  width: clamp(2.9rem, 8vw, 4.4rem);
+  height: clamp(2.9rem, 8vw, 4.4rem);
+  border-radius: 50%;
+  background: rgba(14, 17, 23, 0.82);
+  border: 2px solid var(--paper);
+}
+.play::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 36%;
+  height: 40%;
+  transform: translateX(10%);
+  background: var(--paper);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+.player > a:hover .play,
+.player > a:focus-visible .play { border-color: var(--gold); }
+.player > a:hover .play::after,
+.player > a:focus-visible .play::after { background: var(--gold); }
+
+.player-caption {
+  color: var(--dim);
+  font-size: 0.95rem;
+  margin: 0 0 2rem;
+}
+
+/* ---------- the ledger: ∎ means checked, □ means not yet ---------- */
+
+.ledger {
+  margin: 1rem 0 0.7rem;
+  border-top: 1px solid var(--rule);
+}
+.ledger-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.2rem 1.5rem;
+  align-items: baseline;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.ledger dt {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+.ledger dd {
+  margin: 0;
+  color: var(--dim);
+  text-align: right;
+}
+.ledger-row.is-done dd { color: var(--soft); }
+.ledger-row.is-withdrawn dt,
+.ledger-row.is-withdrawn dd { color: var(--red); }
+
+.box {
+  display: inline-block;
+  flex: none;
+  width: 0.7em;
+  height: 0.7em;
+  border: 2px solid var(--dim);
+  transform: translateY(0.04em);
+}
+.is-done .box {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.is-withdrawn .box {
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.ledger-note {
+  color: var(--dim);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 30rem) {
+  .ledger-row { grid-template-columns: 1fr; }
+  .ledger dd { text-align: left; padding-left: 1.45em; }
+}
+
+/* ---------- episode list ---------- */
+
+.episodes {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+}
+.episodes li { border-bottom: 1px solid var(--rule); }
+.episodes a {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  gap: 0 1rem;
+  padding: 1.1rem 0;
+  color: var(--paper);
+  text-decoration: none;
+}
+.episodes a:hover .ep-title { text-decoration: underline; text-decoration-thickness: 1px; }
+.ep-num { color: var(--dim); }
+.ep-title { font-size: 1.22rem; font-weight: 600; display: block; }
+.ep-sub { color: var(--soft); font-style: italic; display: block; }
+.ep-facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1rem;
+  margin-top: 0.35rem;
+  color: var(--dim);
+  font-size: 0.95rem;
+}
+.mini {
+  display: inline-flex;
+  gap: 0.28rem;
+}
+.mini .box { width: 0.62em; height: 0.62em; }
+
+/* ---------- chapters ---------- */
+
+.chapters {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  columns: 1;
+}
+@media (min-width: 44rem) {
+  .chapters { columns: 2; column-gap: 2.5rem; }
+}
+.chapters li { break-inside: avoid; }
+.chapters a {
+  display: grid;
+  grid-template-columns: 3.1rem 1fr;
+  gap: 0.75rem;
+  padding: 0.3rem 0;
+  color: var(--paper);
+  text-decoration: none;
+}
+.chapters a:hover span:last-child { text-decoration: underline; text-decoration-thickness: 1px; }
+.chapters .t { color: var(--blue); font-variant-numeric: tabular-nums lining-nums; }
+
+/* ---------- steps and prose ---------- */
+
+.steps {
+  margin: 0;
+  padding-left: 1.4rem;
+}
+.steps li { margin-bottom: 0.8rem; padding-left: 0.3rem; }
+.steps li::marker { color: var(--dim); }
+
+.sources { padding-left: 1.2rem; }
+.sources li { margin-bottom: 0.45rem; }
+
+/* ---------- transcript ---------- */
+
+details.transcript {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 0.9rem 0;
+}
+details.transcript summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.12rem;
+}
+details.transcript summary::marker { color: var(--dim); }
+.transcript h3 { color: var(--soft); }
+.transcript h3 .t { color: var(--blue); font-weight: 400; margin-right: 0.6rem; }
+
+/* ---------- footer ---------- */
+
+.site-foot {
+  margin-top: 4rem;
+  padding: 1.6rem 0 3rem;
+  border-top: 1px solid var(--rule);
+  color: var(--dim);
+  font-size: 0.95rem;
+}
+.site-foot p { max-width: 40rem; }
+.site-foot a { color: var(--soft); }
+.foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  margin: 0 0 0.8rem;
+  padding: 0;
+  list-style: none;
+}
+.box.on {
+  background: var(--gold);
+  border-color: var(--gold);
+}

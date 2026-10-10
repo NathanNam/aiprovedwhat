@@ -1,0 +1,41 @@
+# Only the website and this repo's own files are committed.
+# Everything else in this folder stays on this computer: videos, audio,
+# captions, YouTube upload kits, scripts, animation code and artwork.
+#
+# The rules ignore everything at the top level, then let back in only the
+# lines starting with "!". To start committing another top-level folder,
+# add a line like:  !/tools/
+
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/LICENSE-CONTENT.md
+!/NOTICE.md
+!/docs/
+
+# Never commit these, even inside docs/.
+*.mp4
+*.mov
+*.m4v
+*.webm
+*.mkv
+*.wav
+*.mp3
+*.m4a
+*.aac
+*.flac
+*.srt
+*.vtt
+*.zip
+*.psd
+*.blend
+
+# Operating system and editor clutter.
+.DS_Store
+._*
+Thumbs.db
+__pycache__/
+*.pyc
+.vscode/
+.idea/

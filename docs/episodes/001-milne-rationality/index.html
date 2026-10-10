@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Many rulers, one fraction: Milne’s rationality conjecture | AI Proved What?</title>
+<meta name="description" content="An AI system says it proved Milne’s rationality conjecture for abelian varieties. A six-minute animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/001-milne-rationality/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Many rulers, one fraction">
+<meta property="og:description" content="An AI system says it proved Milne’s rationality conjecture for abelian varieties. A six-minute animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/001-milne-rationality/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/001-milne-rationality/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../#episodes">Episodes</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+
+<p class="meta">Episode 001, October 2026</p>
+<h1>Many rulers, one fraction</h1>
+<p class="subtitle">Milne’s rationality conjecture for abelian varieties</p>
+
+<div class="player" data-youtube="fp2pUIBd6Ig" data-title="Episode 001: Many rulers, one fraction">
+  <a href="https://youtu.be/fp2pUIBd6Ig">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play episode 001: Many rulers. One fraction?">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:09. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/fp2pUIBd6Ig?t=0" data-t="0"><span class="t">0:00</span><span>The question: many rulers, one fraction?</span></a></li>
+  <li><a href="https://youtu.be/fp2pUIBd6Ig?t=30" data-t="30"><span class="t">0:30</span><span>Donuts: from a lattice to a torus</span></a></li>
+  <li><a href="https://youtu.be/fp2pUIBd6Ig?t=75" data-t="75"><span class="t">1:15</span><span>Cycles and intersection numbers</span></a></li>
+  <li><a href="https://youtu.be/fp2pUIBd6Ig?t=106" data-t="106"><span class="t">1:46</span><span>Shadows: cohomology and Hodge classes</span></a></li>
+  <li><a href="https://youtu.be/fp2pUIBd6Ig?t=147" data-t="147"><span class="t">2:27</span><span>Primes: reduction mod p</span></a></li>
+  <li><a href="https://youtu.be/fp2pUIBd6Ig?t=189" data-t="189"><span class="t">3:09</span><span>Rulers: many cohomologies</span></a></li>
+  <li><a href="https://youtu.be/fp2pUIBd6Ig?t=244" data-t="244"><span class="t">4:04</span><span>The theorem</span></a></li>
+  <li><a href="https://youtu.be/fp2pUIBd6Ig?t=272" data-t="272"><span class="t">4:32</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/fp2pUIBd6Ig?t=329" data-t="329"><span class="t">5:29</span><span>Why it matters</span></a></li>
+  <li><a href="https://youtu.be/fp2pUIBd6Ig?t=349" data-t="349"><span class="t">5:49</span><span>One caveat</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Start with an abelian variety: a higher-dimensional cousin of the donut-shaped elliptic curves, defined by polynomial equations with algebraic-number coefficients. Reduce those equations modulo a prime <i>p</i> where the variety stays smooth, which is called good reduction.</p>
+<p>A Hodge class on the original variety survives the reduction, and it can be measured in many cohomology theories at once: ℓ-adic cohomology for every prime ℓ other than <i>p</i>, plus crystalline cohomology for <i>p</i> itself. Pair it with divisors on the reduced variety, including brand-new ones that only exist after reducing. Each theory returns a number in its own number system.</p>
+<p>Result 001 claims those numbers are always one and the same ordinary fraction <i>q</i>, for every such variety and every prime <i>p</i>, including <i>p</i>&nbsp;=&nbsp;2. That is what James Milne conjectured.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>It doesn’t prove the Hodge class on the original variety is algebraic. That would be a case of the Hodge conjecture, a Millennium Prize problem that is open in general. The theorem shows the class pairs with divisors the way an algebraic cycle would, wherever it can be measured.</p>
+<p>The paper adds one more step that does reach algebraic cycles, but only on the reduced variety, and only by using result 032 from the same collection, a separate and also unreviewed claimed proof of the Hodge conjecture for abelian varieties with complex multiplication. The main theorem doesn’t depend on result 032.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, October 7, 2026 edition</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Not yet</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 10, 2026. The claim has not been withdrawn. This edition replaces a September 23, 2026 version, changed only to update a citation. The paper is not in the collection’s catalog of Lean-formalized results.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Transport.</strong> Find a highly symmetric abelian variety, one with complex multiplication, and an algebraic map between the reductions, so the Hodge class is pulled back from one on the symmetric variety, in every cohomology theory at once.</li>
+  <li><strong>Break it down.</strong> Hodge classes on these symmetric varieties are built from simpler pieces called balanced Weil classes.</li>
+  <li><strong>A dichotomy.</strong> For each piece, either every pairing with divisors is zero, which is certainly rational, or the piece itself is a polynomial in divisors with rational coefficients.</li>
+  <li><strong>Lift.</strong> In the second case, use <i>p</i>-adic Hodge theory to build an auxiliary variety where the troublesome new divisor exists before reduction. There the identity is rational, and carrying it back down makes every theory agree.</li>
+</ol>
+</section>
+
+<section aria-labelledby="why">
+<h2 id="why">Why it matters</h2>
+<p>Milne showed that this rationality statement, for all abelian varieties with complex multiplication, is equivalent to having a good theory of rational Tate classes for abelian varieties over finite fields: one rational structure that sits inside all the different cohomology theories at once. That is a step toward Grothendieck’s idea of motives, a single source behind every cohomology theory.</p>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf">The paper (PDF)</a>, “Milne’s rationality conjecture for abelian varieties,” OpenAI Math Release preprint, October 7, 2026.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 001.</li>
+  <li><a href="https://github.com/openai/math/blob/main/history.md">The collection’s history</a> of withdrawals and fixes.</li>
+  <li>J. S. Milne, <a href="https://www.jmilne.org/math/articles/2009b.pdf">“Rational Tate classes”</a>, Moscow Mathematical Journal 9 (2009), where the conjecture is stated.</li>
+</ul>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question: many rulers, one fraction?</h3>
+<p>OpenAI’s math repository opens with result 001: a proof of Milne’s rationality conjecture for abelian varieties. That’s a mouthful. But underneath it is a surprisingly simple question. If you measure the same thing with many different rulers, each speaking its own language of numbers, will they all report the same ordinary fraction? To see why that’s hard, and why it matters, we need four ideas: donuts, shadows, primes, and rulers.</p>
+<h3><span class="t num">0:30</span>Donuts: from a lattice to a torus</h3>
+<p>Start with the complex numbers, drawn as a plane, and scatter a lattice of points across it. Treat points that differ by a lattice step as the same point. Then everything lives inside one cell, with opposite edges glued together. Glue one pair of edges and you get a tube. Glue the ends of the tube, and you get a donut: a torus. When a torus like this can also be described by polynomial equations, it’s called an elliptic curve. Higher dimensional versions, built the same way from bigger lattices, are called abelian varieties. They’re the main characters of our story. One honest warning: real abelian varieties have many more dimensions, so this donut is a cartoon. But it carries the key ideas.</p>
+<h3><span class="t num">1:15</span>Cycles and intersection numbers</h3>
+<p>Inside these spaces live smaller shapes, called cycles. On our donut, picture two loops: one around the tube, and one around the hole. When two cycles of complementary dimension meet, they cross at finitely many points. Count those crossings, with signs, and you get an intersection number. These two loops meet once. This green curve winds twice around the tube, so it crosses the blue loop twice. For honest geometric cycles, this count is always a whole number, or a fraction, if we allow fractional combinations.</p>
+<h3><span class="t num">1:46</span>Shadows: cohomology and Hodge classes</h3>
+<p>Cohomology turns geometry into linear algebra. Each cycle casts a kind of shadow, a vector called its class, and intersection numbers become a pairing between these vectors. Here’s a cartoon of that space. The rational vectors form a grid, and a special subspace slices through it. The grid points that land exactly on that slice are called Hodge classes. Every cycle cut out by polynomial equations, an algebraic cycle, casts its shadow onto one of them. The Hodge conjecture, one of the Clay Millennium Prize problems, asks for the reverse: is every Hodge class the shadow of some algebraic cycle? In general, nobody knows.</p>
+<h3><span class="t num">2:27</span>Primes: reduction mod p</h3>
+<p>Now a twist from number theory. Suppose our equations have whole number coefficients. Then we can read them modulo a prime, p, in a world where p equals zero. The smooth curve becomes a finite scatter of points. If the reduced equations are still well behaved, with no new singular points, we say the variety has good reduction. And reduction can create brand new structure. Raising coordinates to the p-th power, the Frobenius map, becomes a symmetry of the reduced variety. Its graph, inside the variety times itself, is a new divisor: a cycle of codimension one that never existed upstairs, and doesn’t lift back.</p>
+<h3><span class="t num">3:09</span>Rulers: many cohomologies</h3>
+<p>Over a finite field, there’s no single best cohomology. Instead, there’s a whole family: one for every prime ℓ different from p, called ℓ-adic cohomology, plus one more for p itself, called crystalline cohomology. Each one is a different ruler, reporting numbers in a different world: two-adic numbers, three-adic numbers, five-adic numbers, and so on. A Hodge class from the original variety survives the reduction. Thanks to deep work of Deligne and others, it can be carried into every one of these rulers at once. So here’s the puzzle. Pair the reduced Hodge class with those new divisors. Each ruler hands back a number in its own world. If the Hodge class were truly algebraic, they would all be the same honest fraction: an intersection count. But nobody knows that it’s algebraic. So why should a two-adic answer and a seven-adic answer even agree?</p>
+<h3><span class="t num">4:04</span>The theorem</h3>
+<p>James Milne conjectured that they do. Result 001 proves it. For every abelian variety with good reduction, at every prime p, including p equals two, and for any list of divisors on the reduction, there is one rational number, q, that every ruler reports. Notice what this avoids. It does not prove the Hodge class is algebraic. It proves the class behaves as if it were, wherever we can measure it.</p>
+<h3><span class="t num">4:32</span>How the proof goes</h3>
+<p>So how does the proof go? In four steps. First, transport. Find a highly symmetric abelian variety, one with complex multiplication, and an honest algebraic map between the reductions, so that our Hodge class is pulled back from one on the symmetric variety, in every ruler at once. Second, break it down. Hodge classes on these symmetric varieties are built from simpler pieces, called balanced Weil classes. Third, a dichotomy. For each piece, either every pairing with divisors is zero, which is certainly rational, or the piece itself can be written as a polynomial in divisors, with rational coefficients. Fourth, in that second case, lift. Using p-adic Hodge theory, build an auxiliary variety where the troublesome new divisor does exist upstairs. There, the identity is rational. Carry it back down, and every ruler agrees.</p>
+<h3><span class="t num">5:29</span>Why it matters</h3>
+<p>Why care? Milne showed that statements like this are exactly what’s needed for a consistent theory of rational Tate classes in characteristic p: one rational structure that sits inside all of these different rulers at once. It’s a step toward Grothendieck’s dream of motives, the hidden common source behind every cohomology theory.</p>
+<h3><span class="t num">5:49</span>One caveat</h3>
+<p>One caveat. Like everything in this collection, this is a machine generated preprint. It hasn’t been pr reviewed, and this result hasn’t yet been checked in Lean. But the question it answers is real, and now you know what it’s asking. Many rulers. One fraction.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20001%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
