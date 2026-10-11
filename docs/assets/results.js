@@ -1,7 +1,7 @@
 // Search, filter and sort the list of all results on /episodes/.
 // The full list is in the HTML, so the page works without JavaScript;
 // this script only shows the filter bar and hides or reorders rows.
-// Filters are mirrored in the address (?q=…&subject=…&episode=1&lean=1&sort=newest)
+// Filters are mirrored in the address (?q=…&subject=…&episode=1&lean=1&sort=newest|papers)
 // so a filtered view can be bookmarked or shared.
 (function () {
   var form = document.getElementById("filters");
@@ -35,12 +35,23 @@
     return byNumber(a, b);
   }
 
+  function byPapers(a, b) {
+    var pa = parseInt(a.getAttribute("data-papers") || "1", 10);
+    var pb = parseInt(b.getAttribute("data-papers") || "1", 10);
+    if (pa !== pb) return pb - pa;
+    return byNumber(a, b);
+  }
+
+  var SORTS = { num: byNumber, newest: byNewestEpisode, papers: byPapers };
+  var SORT_LABEL = { num: ", by number.", newest: ", newest episode first.", papers: ", most papers first." };
+
   function readUrl() {
     var p = new URLSearchParams(window.location.search);
     q.value = p.get("q") || "";
     var s = p.get("subject") || "";
     subject.value = subject.querySelector('option[value="' + s.replace(/"/g, "") + '"]') ? s : "";
-    sort.value = p.get("sort") === "newest" ? "newest" : "num";
+    var s2 = p.get("sort");
+    sort.value = SORTS.hasOwnProperty(s2) ? s2 : "num";
     hasEpisode.checked = p.get("episode") === "1";
     hasLean.checked = p.get("lean") === "1";
   }
@@ -51,7 +62,7 @@
     if (subject.value) p.set("subject", subject.value);
     if (hasEpisode.checked) p.set("episode", "1");
     if (hasLean.checked) p.set("lean", "1");
-    if (sort.value === "newest") p.set("sort", "newest");
+    if (sort.value !== "num") p.set("sort", sort.value);
     var search = p.toString();
     var url = window.location.pathname + (search ? "?" + search : "") + window.location.hash;
     try { window.history.replaceState(null, "", url); } catch (e) { /* file:// or sandboxed */ }
@@ -71,13 +82,12 @@
       if (ok) shown += 1;
     });
 
-    var ordered = rows.slice().sort(sort.value === "newest" ? byNewestEpisode : byNumber);
+    var ordered = rows.slice().sort(SORTS[sort.value] || byNumber);
     var frag = document.createDocumentFragment();
     ordered.forEach(function (li) { frag.appendChild(li); });
     list.appendChild(frag);
 
-    count.textContent = "Showing " + shown + " of " + total +
-      (sort.value === "newest" ? ", newest episode first." : ", by number.");
+    count.textContent = "Showing " + shown + " of " + total + (SORT_LABEL[sort.value] || SORT_LABEL.num);
     empty.hidden = shown !== 0;
     writeUrl();
   }

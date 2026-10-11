@@ -839,3 +839,44 @@ pre.code code, p code, li code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "DejaVu Sans Mono", monospace;
 }
 p code, li code { font-size: 0.9em; }
+
+/* ---------- results and their papers ---------- */
+
+/* "3 papers" in result lists: quiet, never wraps. */
+.r-papers { white-space: nowrap; }
+details.legend .r-papers { color: var(--dim); }
+
+/* main paper / companion tags in a result's paper list */
+.ptag {
+  display: inline-block;
+  margin-left: 0.3rem;
+  padding: 0 0.45em;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  color: var(--dim);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  vertical-align: 0.1em;
+  white-space: nowrap;
+}
+.ptag-main {
+  color: var(--soft);
+  border-color: var(--dim);
+}
+.papers-intro { color: var(--soft); }
+
+/* One-line note under an episode's subtitle (builder-maintained). */
+.papers-note {
+  margin: -1.2rem 0 0;
+  color: var(--dim);
+  font-size: 0.95rem;
+}
+
+.stat-note {
+  color: var(--dim);
+  white-space: nowrap;
+}
+.progress-note {
+  max-width: var(--measure);
+  color: var(--soft);
+}
