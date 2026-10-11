@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 017: The irrationality exponent of π is 2 | AI Proved What?</title>
-<meta name="description" content="The irrationality exponent of π is 2. Result 017 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Only so lucky: the irrationality exponent of π is 2 | AI Proved What?</title>
+<meta name="description" content="An AI system says it has proved that the irrationality exponent of π is 2: fractions can’t get unusually close to π, infinitely often. The Flint–Hills series converges as a consequence. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/017-irrationality-exponent-pi-2/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 017: The irrationality exponent of π is 2 | AI Proved What?">
-<meta property="og:description" content="The irrationality exponent of π is 2. Result 017 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Only so lucky">
+<meta property="og:description" content="An AI system says it has proved that the irrationality exponent of π is 2: fractions can’t get unusually close to π, infinitely often. The Flint–Hills series converges as a consequence. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/017-irrationality-exponent-pi-2/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/017-irrationality-exponent-pi-2/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,51 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 017 · <a href="../../subjects/number-theory/">Number theory</a></p>
-<h1 class="result-title">The irrationality exponent of <i>π</i> is 2</h1>
+<p class="meta">Episode 017, October 2026</p>
+<h1>Only so lucky</h1>
+<p class="subtitle">The irrationality exponent of π is 2, and the Flint–Hills series converges</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 017 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="uvSBcyXpaFQ" data-title="Episode 017: Only so lucky">
+  <a href="https://youtu.be/uvSBcyXpaFQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 017: π only gets so lucky? Irrationality exponent of π: exactly 2. The continued fraction of π, 3; 7, 15, 1, 292, with the 292 circled, above π ≈ 355/113.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:37. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/uvSBcyXpaFQ?t=0" data-t="0"><span class="t">0:00</span><span>How close can fractions get?</span></a></li>
+  <li><a href="https://youtu.be/uvSBcyXpaFQ?t=43" data-t="43"><span class="t">0:43</span><span>The exponent</span></a></li>
+  <li><a href="https://youtu.be/uvSBcyXpaFQ?t=97" data-t="97"><span class="t">1:37</span><span>What was known</span></a></li>
+  <li><a href="https://youtu.be/uvSBcyXpaFQ?t=132" data-t="132"><span class="t">2:12</span><span>The Flint–Hills series</span></a></li>
+  <li><a href="https://youtu.be/uvSBcyXpaFQ?t=173" data-t="173"><span class="t">2:53</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/uvSBcyXpaFQ?t=226" data-t="226"><span class="t">3:46</span><span>Lean, and the caveats</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves that the irrationality exponent of <i>π</i> is exactly 2: for every <i>ε</i> &gt; 0 and all sufficiently large denominators <i>q</i>, every rational <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mi mathvariant="normal">/</mi><mi>q</mi></mrow><annotation encoding="application/x-tex">p/q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">p</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span> satisfies <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>π</mi><mo>−</mo><mi>p</mi><mi mathvariant="normal">/</mi><mi>q</mi><mi mathvariant="normal">∣</mi><mo>≥</mo><msup><mi>q</mi><mrow><mo>−</mo><mn>2</mn><mo>−</mo><mi>ε</mi></mrow></msup></mrow><annotation encoding="application/x-tex">|\pi-p/q|\ge q^{-2-\varepsilon}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">p</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">2</span><span class="mbin mtight">−</span><span class="mord mathnormal mtight">ε</span></span></span></span></span></span></span></span></span></span></span></span>. This also proves convergence of the Flint–Hills series <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow></msub><mn>1</mn><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>3</mn></msup><msup><mrow><mi>sin</mi><mo>⁡</mo></mrow><mn>2</mn></msup><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\sum_{n\ge1}1/(n^3\sin^2 n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2668em;vertical-align:-0.3949em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mrel mtight">≥</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3949em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1/</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mop">sin</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8719em;"><span style="top:-3.1208em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>, with angles in radians.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>For any irrational number, infinitely many fractions <i>p</i>/<i>q</i> come within 1/<i>q</i><sup>2</sup> of it. The <em>irrationality exponent</em> μ(<i>x</i>) is the supremum of the powers ν for which infinitely many fractions come within 1/<i>q</i><sup>ν</sup> of <i>x</i>. Every irrational number has μ ≥ 2, and almost every real number has μ = 2 exactly.</p>
+<p>Result 017 (<a href="https://github.com/openai/math/blob/main/preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/paper.pdf">23 pages</a>) claims that μ(π) = 2: for every ν above 2 there is a threshold <i>Q</i> such that |π − <i>p</i>/<i>q</i>| ≥ <i>q</i><sup>−ν</sup> for every integer <i>p</i> and every <i>q</i> ≥ <i>Q</i>. As a consequence, the Flint–Hills series Σ 1/(<i>n</i><sup>3</sup> sin<sup>2</sup> <i>n</i>) converges. Alekseyev (2011) showed that convergence would force μ(π) ≤ 5/2, and Meiburg (2022) showed that μ(π) &lt; 5/2 is enough; the paper also gives a direct proof.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The threshold <i>Q</i> is not computed, and the method can’t compute it, so there is no explicit bound. Exponent 2 still allows large terms in π’s continued fraction, as long as they grow more slowly than any power of the denominators. Whether those terms are bounded (equivalently, whether |π − <i>p</i>/<i>q</i>| ≥ <i>c</i>/<i>q</i><sup>2</sup> for some fixed <i>c</i>) is not claimed and remains open.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 24, 2026, released October 6; 23 pages</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +89,49 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/017.md">scope notes</a>)</dd>
+    <dd>Main theorem, by OpenAI (<a href="https://github.com/openai/math/blob/main/lean/docs/017.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 11, 2026.</p>
+<p class="ledger-note">Last checked October 11, 2026. The claim has not been withdrawn, and we found no public critique. OpenAI’s Lean proof (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PiExponent.lean">challenge statement</a>) asserts both the threshold form and that the supremum equals 2; with its supporting library it runs to 869 files and about 95,000 lines, not counting Mathlib. It is not yet in OpenAI’s formalization catalog. The Flint–Hills convergence is proved in the same Lean files, but it is outside the official statement.</p>
 </section>
 
+<section aria-labelledby="known">
+<h2 id="known">What was known</h2>
+<ul class="sources">
+  <li>Dirichlet: μ ≥ 2 for every irrational number. Khintchine: μ = 2 for almost every real number.</li>
+  <li>Roth (1955): μ = 2 for every irrational algebraic number, such as the cube root of 2. π is not algebraic, so this says nothing about π.</li>
+  <li>Upper bounds for μ(π): Mahler 42 (1953), Mignotte 20 (1974), Hata 8.016 (1993), Salikhov 7.606 (2008), Zeilberger and Zudilin 7.103 (2020).</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Suppose not.</strong> If some ν above 2 allowed infinitely many fractions within 1/<i>q</i><sup>ν</sup> of π, pick several of them, one after another, with denominators far apart, an idea from Roth.</li>
+  <li><strong>Interpolation.</strong> Each fraction <i>p</i>/<i>q</i> gives an approximation 2<i>ij</i><i>p</i>/<i>q</i> to the periods 2π<i>ij</i> of the logarithm. The paper proves that polynomials in the exponential and logarithm can match any prescribed Taylor coefficients at several centers at once. So a square matrix of those coefficients has a nonzero determinant.</li>
+  <li><strong>Two bounds collide.</strong> Being a nonzero number with controlled denominators, the determinant can’t be too small. But because the fractions are so close to the true periods, an analytic estimate forces it to be smaller still. The contradiction leaves only finitely many such fractions.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>π = [3; 7, 15, 1, 292, 1, 1, 1, 2, …]. The convergent 355/113 misses π by 2.667 × 10<sup>−7</sup>, which is 0.0034/<i>q</i><sup>2</sup>, about 1/(294 <i>q</i><sup>2</sup>), because the next term is 292. Its exponent, −log|π − <i>p</i>/<i>q</i>| / log <i>q</i>, is about 3.2.</li>
+  <li>The Flint–Hills partial sum up to <i>n</i> = 10<sup>6</sup> is about 30.31. The single term at <i>n</i> = 355 is about 24.6.</li>
+  <li>A short Python script reproduces these numbers.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/paper.pdf">The irrationality exponent of π is 2 (PDF)</a>, dated September 24, 2026 (23 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PiExponent.lean">The Lean challenge statement</a> and <a href="https://github.com/openai/math/blob/main/lean/docs/017.md">OpenAI’s scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 017.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +139,32 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/paper.pdf">The irrationality exponent of pi is 2</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>How close can fractions get?</h3>
+<p>22/7 is a famous fraction for pi. 355/113 is far better: it misses by less than 3 ten-millionths. How close can fractions get to pi? There’s a natural yardstick. For any irrational number, infinitely many fractions p/q come within 1/q² of it. So the real question is whether pi allows much better than that, infinitely often. The irrationality exponent of pi measures exactly this, and mathematicians expected it to be 2. Result 017 in OpenAI’s math repository claims to prove it, and, as a consequence, that a notorious series converges.</p>
+<h3><span class="t num">0:43</span>The exponent</h3>
+<p>Here is the definition. Pi’s irrationality exponent is the largest power ν, strictly the supremum, such that infinitely many fractions come within 1/q^ν. Every irrational number has exponent at least 2, and almost every real number has exactly 2. Exponent 2 allows occasional lucky fractions, but they can’t get too lucky. The continued fraction of pi shows where luck comes from: 3; 7, 15, 1, 292. That 292 is why 355/113 is so good. It beats the 1/q² yardstick about three hundred times over. The claim, exponent 2, says that for any power bigger than 2, past some point, no fraction comes that close. It still allows large terms in the continued fraction, as long as they grow more slowly than any power of the denominators.</p>
+<h3><span class="t num">1:37</span>What was known</h3>
+<p>For irrational algebraic numbers, like the cube root of two, Klaus Roth proved exponent 2 in 1955, work recognized with a Fields Medal. But pi is not algebraic, so Roth’s theorem says nothing about it. For pi, the best results were upper bounds. Kurt Mahler proved 42 in 1953. Then 20, 8, 7.6, and in 2020 Doron Zeilberger and Wadim Zudilin reached 7.103. The claim jumps straight to 2, the lowest possible value.</p>
+<h3><span class="t num">2:12</span>The Flint–Hills series</h3>
+<p>Now the series. Add up 1/(n³ sin² n), for n = 1, 2, 3, and so on. Whenever n is close to a multiple of pi, sin n is tiny, and the term spikes. At n = 355, a single term is about 24.6. Up to a million, the sum is about 30.3. But does it converge? A future spike could be huge, if pi had fractions that were too good. Max Alekseyev showed in 2011 that convergence would force pi’s exponent to be at most 5/2, and later work showed that below 5/2 is enough. The claim gives 2, so the series converges.</p>
+<h3><span class="t num">2:53</span>How the proof goes</h3>
+<p>The proof is an interpolation determinant argument, with one idea from Roth. Suppose pi had infinitely many fractions better than 1/q^ν, for some ν above 2. Pick several of them, with denominators spread far apart, as Roth did. Each fraction gives an approximation to 2πi, the period of the logarithm. The paper proves that polynomials in the exponential and logarithm can match any prescribed values for many Taylor coefficients at once. So a square matrix of those coefficients has a nonzero determinant. Being nonzero, with controlled denominators, it can’t be too small. But because the fractions are so close to the true periods, an analytic estimate forces the same determinant to be smaller still. The two estimates collide, so only finitely many such fractions exist.</p>
+<h3><span class="t num">3:46</span>Lean, and the caveats</h3>
+<p>OpenAI also published a Lean proof of the main theorem: for every ν above 2, some threshold Q exists past which every fraction misses pi by at least 1/q^ν, and the exponent equals 2. It runs to about 95,000 lines. It isn’t in OpenAI’s formalization catalog yet, and we haven’t run the check. The Flint–Hills consequence is proved in the same Lean files, but it isn’t part of the official statement. This is a preprint, not peer reviewed. The threshold Q is not computed, and the method can’t compute it, so the result gives no explicit bound. And it doesn’t say whether pi’s continued fraction has bounded terms. That remains open. 355/113 is lucky. Pi only gets so lucky. If the proof holds.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20017%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../016-zilber-pink-abelian-varieties-siegel/"><span class="dir">Previous · 016</span><span class="pt">Zilber–Pink in abelian varieties and the Siegel threefold</span></a>
-  <a class="next" href="../018-margulis-platonov-conjecture-global-fields/"><span class="dir">Next · 018</span><span class="pt">The Margulis–Platonov conjecture over global fields</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/number-theory/">More in number theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
