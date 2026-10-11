@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 004: Hilbert’s tenth problem over ℚ | AI Proved What?</title>
-<meta name="description" content="Hilbert’s tenth problem over ℚ. Result 004 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>No algorithm for fractions: Hilbert&#x27;s tenth problem over the rationals | AI Proved What?</title>
+<meta name="description" content="An AI system says it proved that no algorithm can decide whether a polynomial equation with integer coefficients has a solution in fractions. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/004-hilberts-tenth-problem-q/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 004: Hilbert’s tenth problem over ℚ | AI Proved What?">
-<meta property="og:description" content="Hilbert’s tenth problem over ℚ. Result 004 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="No algorithm for fractions">
+<meta property="og:description" content="An AI system says it proved that no algorithm can decide whether a polynomial equation with integer coefficients has a solution in fractions. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/004-hilberts-tenth-problem-q/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/004-hilberts-tenth-problem-q/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,65 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 004 · <a href="../../subjects/number-theory/">Number theory</a></p>
-<h1 class="result-title">Hilbert’s tenth problem over ℚ</h1>
+<p class="meta">Episode 004, October 2026</p>
+<h1>No algorithm for fractions</h1>
+<p class="subtitle">Hilbert’s tenth problem over the rational numbers</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 004 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="ot2ctgXB_xA" data-title="Episode 004: No algorithm for fractions">
+  <a href="https://youtu.be/ot2ctgXB_xA">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 004: No algorithm for fractions? The circle x² + y² = 2 dotted with fraction points, inside the circle x² + y² = 3, which has none.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:50. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/ot2ctgXB_xA?t=0" data-t="0"><span class="t">0:00</span><span>The question: fractions and algorithms</span></a></li>
+  <li><a href="https://youtu.be/ot2ctgXB_xA?t=32" data-t="32"><span class="t">0:32</span><span>Hilbert’s tenth problem</span></a></li>
+  <li><a href="https://youtu.be/ot2ctgXB_xA?t=86" data-t="86"><span class="t">1:26</span><span>Whole numbers versus fractions</span></a></li>
+  <li><a href="https://youtu.be/ot2ctgXB_xA?t=135" data-t="135"><span class="t">2:15</span><span>The obvious route, and the wall</span></a></li>
+  <li><a href="https://youtu.be/ot2ctgXB_xA?t=182" data-t="182"><span class="t">3:02</span><span>The theorem</span></a></li>
+  <li><a href="https://youtu.be/ot2ctgXB_xA?t=214" data-t="214"><span class="t">3:34</span><span>The detour: endless checklists</span></a></li>
+  <li><a href="https://youtu.be/ot2ctgXB_xA?t=256" data-t="256"><span class="t">4:16</span><span>Counting on an elliptic curve</span></a></li>
+  <li><a href="https://youtu.be/ot2ctgXB_xA?t=318" data-t="318"><span class="t">5:18</span><span>Where the curves come in</span></a></li>
+  <li><a href="https://youtu.be/ot2ctgXB_xA?t=370" data-t="370"><span class="t">6:10</span><span>Why it matters, and the caveats</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves that no algorithm decides whether an integer-coefficient polynomial in an arbitrary number of variables has a rational zero, resolving Hilbert's tenth problem over ℚ negatively.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>In 1900 David Hilbert asked for a procedure that decides whether a polynomial equation with integer coefficients has a solution in whole numbers. In 1970, building on work of Martin Davis, Hilary Putnam and Julia Robinson, Yuri Matiyasevich showed that no such procedure exists: equations can imitate computer programs, and no algorithm decides which programs halt.</p>
+<p>Allowing fractions changes the question. Some equations gain solutions (<i>x</i>² + <i>y</i>² = 2 has (1/5, 7/5)), some still have none (<i>x</i>² + <i>y</i>² = 3), and <i>x</i>³ + <i>y</i>³ = 6 has a fraction solution, (17/21, 37/21), but no whole-number one. Whether an algorithm can decide fraction solutions had remained open.</p>
+<p>Result 004 claims the answer is no: there is no algorithm which, given a polynomial with integer coefficients in any number of variables, decides whether it has a rational zero. It also claims the problem is exactly as hard as the halting problem, even for equations of degree at most four.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The obvious route to this answer would be a single equation that has a fraction solution exactly when its first unknown is a whole number. A conjecture of Barry Mazur predicts that no such equation exists. The paper does not build one and says so: it gives “no single existential definition of Z in Q” (p. 57), so Mazur’s conjecture is neither proved nor contradicted. The paper gives no bound on the number of variables, and it says nothing about whether equations in a few variables, such as curves, are decidable.</p>
+</section>
+
+<section aria-labelledby="relies">
+<h2 id="relies">What it relies on</h2>
+<p>Two other papers from the same release, both unreviewed preprints:</p>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf">A pointwise 2-converse for elliptic curves with rational two-torsion</a> (October 7, 2026; 91 pages), the companion in the same result family. It turns a 2-descent “promise” (a Selmer class) into an actual rational point. The paper says the 2-converse in result 006 can be used instead (Remark 3.5).</li>
+  <li>Fontaine–Mazur modularity at the prime 2, filed under result 010, used for the height bound built from a Shimura curve (§4.7).</li>
+</ul>
+<p>It also uses published work, including the Davis–Putnam–Robinson–Matiyasevich theorem, Green–Tao–Ziegler, Faltings’ theorem and isogeny estimates.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, October 6, 2026 edition</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -64,9 +106,40 @@
     <dd>Not yet</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 10, 2026.</p>
+<p class="ledger-note">Last checked October 10, 2026. The claim has not been withdrawn. No Lean formalization is listed for this result or for the two papers it relies on. An <a href="https://github.com/openai/math/blob/main/preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/main.pdf">earlier edition dated September 24, 2026</a> differs only in its date and updated citations.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A detour instead of a definition.</strong> The paper builds an effectively listed, endless sequence of tests. Each test is one finite system of conditions that must be solvable in fractions all at once. A whole-number equation has a whole-number solution exactly when every test passes. If an algorithm decided fraction equations, running a search for whole-number solutions alongside a search for a failing test would decide whole-number equations, which is impossible. This is a Turing reduction, not a translation of each equation into one fraction equation.</li>
+  <li><strong>Whole numbers as points on a curve.</strong> The tests track each whole number <i>n</i> as the point <i>nP</i> on the elliptic curve <i>y</i>² = <i>x</i>³ − <i>d</i>²<i>x</i> with <i>d</i> = 75 − 53√2, whose coordinates are numbers <i>a</i> + <i>b</i>√2 written as pairs of fractions. Adding numbers matches adding points; multiplication has no matching move, which is the central difficulty.</li>
+  <li><strong>The squeeze.</strong> If every test passed with no whole-number solution, compactness from logic gives a nonstandard “world” where everything holds. There the tests, checked prime by prime and combined with a height bound, cap every quantity at about the solution’s size <i>B</i>, while heights on the curve grow like <i>B</i>². So <i>B</i> is bounded and the solution was an ordinary whole-number solution after all.</li>
+  <li><strong>Where the outside papers come in.</strong> One condition in every test asks for rational points on curves <i>y</i>² = <i>x</i>(<i>x</i> − <i>l</i>)(<i>x</i> + 3<i>l</i>). A 2-descent shows a point should exist, and the companion’s 2-converse proves that it does. The height bound uses a Shimura curve and the modularity theorem at the prime 2.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The examples in the video</h2>
+<ul class="sources">
+  <li>(1/5)² + (7/5)² = 2 and (17/13)² + (7/13)² = 2; <i>x</i>² + <i>y</i>² = 3 has no rational solution, because squares mod 3 are 0 or 1.</li>
+  <li>17³ + 37³ = 6 · 21³, so <i>x</i>³ + <i>y</i>³ = 6 has a fraction solution. Sums of two cubes mod 9 are 0, 1, 2, 7 or 8, so it has no whole-number solution.</li>
+  <li>For <i>y</i>² = <i>x</i>³ − 2 with <i>P</i> = (3, 5), the denominator of the <i>x</i>-coordinate of <i>nP</i> has 1, 3, 5, 8, 15, 21, 28 and 37 digits for <i>n</i> = 1 to 8. This simpler curve stands in for the paper’s.</li>
+  <li>On <i>y</i>² = <i>x</i>(<i>x</i> − 11)(<i>x</i> + 33), the point (75, 720) checks out: 75 · 64 · 108 = 720². Its 2-Selmer group has 2³ elements. This small example is found by computer search; the paper’s values of <i>l</i> are far too large for that.</li>
+  <li>All of these were recomputed with PARI/GP 2.15.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf">The paper (PDF)</a>, “Hilbert’s tenth problem over the rational numbers,” OpenAI Math Release preprint, October 6, 2026 (62 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf">The companion (PDF)</a>, “A pointwise 2-converse for elliptic curves with rational two-torsion,” October 7, 2026.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 004, and <a href="https://github.com/openai/math/blob/main/history.md">its history</a> of withdrawals and fixes.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -75,18 +148,38 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf">A pointwise 2-converse for elliptic curves with rational two-torsion</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question: fractions and algorithms</h3>
+<p>Result 004 in OpenAI’s math repository claims to settle a question that has been open for more than fifty years. Take any polynomial equation with whole-number coefficients. Is there an algorithm that can always tell you whether it has a solution in fractions? The claim is no. No computer program, however clever, can decide that for every equation. Most experts expected that answer. What nobody had was a way to prove it. To see why it’s hard, start with the version Hilbert actually asked.</p>
+<h3><span class="t num">0:32</span>Hilbert’s tenth problem</h3>
+<p>In 1900, David Hilbert listed 23 problems for the new century. The tenth asks for a process that decides, in finitely many steps, whether a Diophantine equation has a solution in whole numbers. The answer took seventy years, and it was no. Martin Davis, Hilary Putnam and Julia Robinson, and finally Yuri Matiyasevich in 1970, showed that equations can imitate computer programs. Here’s a tiny example. A number n is composite exactly when (x + 2)(y + 2) = n for some whole numbers x and y that are zero or more. Their theorem says every listable set, even the set of programs that eventually halt, can be described by an equation like this. No algorithm decides which programs halt, so none decides which equations have whole-number solutions.</p>
+<h3><span class="t num">1:26</span>Whole numbers versus fractions</h3>
+<p>Now allow fractions. Some equations gain solutions. x² + y² = 2 has the obvious point (1, 1), but also (1/5, 7/5), and infinitely many more. Others have none at all. x² + y² = 3 has no fraction solution: clear the denominators, and a short argument modulo three rules it out. And x³ + y³ = 6 has no whole-number solution, but it does have a fraction solution: x = 17/21 and y = 37/21. Searching through fractions finds a solution if there is one, but it can never certify that there is none. For fractions, whether some cleverer algorithm exists stayed open, and it became one of the best known open problems in the field.</p>
+<h3><span class="t num">2:15</span>The obvious route, and the wall</h3>
+<p>The natural plan is to reuse the whole-number answer. Find one equation that has a fraction solution exactly when its first unknown is a whole number. Then every question about whole numbers becomes a question about fractions. Logicians came close. In 1949, Julia Robinson pinned down the integers inside the rationals with a formula that uses ’for all’ as well as ’there exists’. Later, Poonen and Koenigsmann found new formulas that switch less often between ’for all’ and ’there exists’. But an equation can only say ’there exists’. And a conjecture of Barry Mazur, about the shape of rational points, predicts that no equation can single out the integers. If he’s right, the natural plan is a dead end.</p>
+<h3><span class="t num">3:02</span>The theorem</h3>
+<p>Here’s what result 004 claims. There is no algorithm which, given a polynomial with integer coefficients in any number of variables, decides whether it has a rational zero. It claims more: even for equations of degree at most four, deciding whether a fraction solution exists is exactly as hard as the halting problem. And it gets there without the forbidden equation. The paper says plainly that it gives no equation for the integers. Mazur’s conjecture is untouched.</p>
+<h3><span class="t num">3:34</span>The detour: endless checklists</h3>
+<p>So how does it work? Instead of one equation, the paper builds an endless list of checklists. Each checklist is one finite list of conditions, and it passes if fractions can meet all of them at once. The key fact it proves: a whole-number equation has a whole-number solution exactly when every checklist passes. Now imagine a machine that decides fraction equations. Run two searches side by side. One tries whole-number inputs. The other uses the machine to hunt for a checklist that fails. Exactly one of the two must stop. So the machine would decide whole number equations, which the 1970 theorem showed is impossible. No such machine can exist.</p>
+<h3><span class="t num">4:16</span>Counting on an elliptic curve</h3>
+<p>What do the checklists test? Whole numbers become steps along an elliptic curve. The number n becomes the point nP, and adding numbers means adding points. But multiplying numbers has no matching move on the curve, and that’s the hard part. The paper’s curve uses numbers of the form a + b√2, written as pairs of fractions. Points like these grow fast. On the simpler curve shown here, the denominator of the x-coordinate of nP grows roughly like n²: 1 digit, 3, 5, 8, 15, 21. The hard direction is the converse: with no whole-number solution, some checklist must fail. So the paper imagines a world where every checklist passes anyway. There, the tests, checked prime by prime and fed into a size bound, cap every quantity at about the solution’s size, B, while the curve forces the points to grow like B². Both can hold only if B stays small, so the solution was a genuine whole-number solution all along.</p>
+<h3><span class="t num">5:18</span>Where the curves come in</h3>
+<p>One ingredient of every test controls denominators. It asks for rational points on curves like y² = x(x − l)(x + 3l). A classic method called 2-descent gives a promise, a Selmer class, that a point might exist. But a promise isn’t a point. To turn the promise into a point, the paper relies on its companion, a 91-page paper on elliptic curves, or alternatively on result 006. For l equal to eleven, a computer finds the point (75, 720). For the paper’s enormous values of l, only the theorem can. Another step, a size bound built from Shimura curves, relies on a third new paper from the same release: Fontaine–Mazur modularity at the prime two, part of result 010.</p>
+<h3><span class="t num">6:10</span>Why it matters, and the caveats</h3>
+<p>If it all holds, this settles the most famous open version of Hilbert’s tenth problem, with the answer most people expected, by a route that goes around the obstacle everyone knew about. The caveats. This is a preprint, not peer reviewed, and there is no computer-checked Lean proof. It leans on two other new, unreviewed papers from the same release. A serious gap in any of them could sink the claim, unless another paper can fill it. And questions remain: can an equation single out the integers? Are equations with a few variables decidable? No algorithm for fractions, if the proof holds.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20004%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../003-quasi-riemann-hypothesis/"><span class="dir">Previous · 003</span><span class="pt">The quasi-Riemann hypothesis</span></a>
-  <a class="next" href="../005-irrationality-catalans-constant/"><span class="dir">Next · 005</span><span class="pt">Irrationality of Catalan’s constant</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/number-theory/">More in number theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
