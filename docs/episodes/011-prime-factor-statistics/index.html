@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 011: Prime-factor statistics of p-1 | AI Proved What?</title>
-<meta name="description" content="Prime-factor statistics of p-1. Result 011 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>How does p − 1 break? The broken-stick law for primes | AI Proved What?</title>
+<meta name="description" content="An AI system says the prime factors of p − 1 follow the same broken-stick law as those of a random number, and that Erdős’s totient conjecture is true. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/011-prime-factor-statistics/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 011: Prime-factor statistics of p-1 | AI Proved What?">
-<meta property="og:description" content="Prime-factor statistics of p-1. Result 011 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="How does p − 1 break?">
+<meta property="og:description" content="An AI system says the prime factors of p − 1 follow the same broken-stick law as those of a random number, and that Erdős’s totient conjecture is true. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/011-prime-factor-statistics/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/011-prime-factor-statistics/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,57 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 011 · <a href="../../subjects/number-theory/">Number theory</a></p>
-<h1 class="result-title">Prime-factor statistics of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></h1>
+<p class="meta">Episode 011, October 2026</p>
+<h1>How does <i>p</i> − 1 break?</h1>
+<p class="subtitle">Prime-factor statistics of <i>p</i> − 1: the Poisson–Dirichlet law, and Erdős’s totient conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 011 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="QWLPy4tbJfo" data-title="Episode 011: How does p − 1 break?">
+  <a href="https://youtu.be/QWLPy4tbJfo">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 011: How does p − 1 break? The broken-stick law for primes, and Erdős’s totient conjecture. Six bars, each p − 1 for a prime p near a million, split into colored pieces by the logarithms of its prime factors.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:11. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/QWLPy4tbJfo?t=0" data-t="0"><span class="t">0:00</span><span>Breaking a number</span></a></li>
+  <li><a href="https://youtu.be/QWLPy4tbJfo?t=57" data-t="57"><span class="t">0:57</span><span>A broken stick</span></a></li>
+  <li><a href="https://youtu.be/QWLPy4tbJfo?t=97" data-t="97"><span class="t">1:37</span><span>Primes minus one</span></a></li>
+  <li><a href="https://youtu.be/QWLPy4tbJfo?t=176" data-t="176"><span class="t">2:56</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/QWLPy4tbJfo?t=220" data-t="220"><span class="t">3:40</span><span>Totient collisions</span></a></li>
+  <li><a href="https://youtu.be/QWLPy4tbJfo?t=285" data-t="285"><span class="t">4:45</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/QWLPy4tbJfo?t=333" data-t="333"><span class="t">5:33</span><span>The caveats</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves that the normalized ordered logarithms of the prime factors of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>, counted with multiplicity, converge jointly to the Poisson–Dirichlet law <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi mathvariant="normal">P</mi><mi mathvariant="normal">D</mi></mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathrm{PD}(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathrm">PD</span></span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> as <i>p</i> ranges uniformly over primes up to <i>x</i> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">x\to\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord">∞</span></span></span></span>. This resolves the Ford–Konyagin–Luca conjecture. It also proves that infinitely many integers <i>n</i> have more than <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mrow><mn>1</mn><mo>−</mo><mi>ε</mi></mrow></msup></mrow><annotation encoding="application/x-tex">n^{1-\varepsilon}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mbin mtight">−</span><span class="mord mathnormal mtight">ε</span></span></span></span></span></span></span></span></span></span></span></span> totient preimages, for every <i>ε</i> &gt; 0.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Factor a number and measure each prime factor by its logarithm. The logarithms add up to the logarithm of the number, so each prime gets a share of one whole: 1,000,002 = 2 × 3 × 166,667 splits as about 5%, 8% and 87%. For a large random number, sorted from largest to smallest, these shares follow a precise limiting law, the Poisson–Dirichlet law PD(1) (Billingsley, 1972). It is the law of a stick broken at random again and again: break off a uniformly random fraction, set it aside, break a uniformly random fraction off what is left, and so on, then sort the pieces. It also describes the relative cycle lengths of a large random permutation. Under it, the largest piece is more than half with probability log 2 ≈ 69%, and no piece reaches a third with probability ρ(3) ≈ 4.9%, where ρ is Dickman’s function.</p>
+<p>Result 011 claims the same law for <i>p</i> − 1, where <i>p</i> is a random prime, in three papers:</p>
+<ul class="sources">
+  <li><strong>The Poisson–Dirichlet law for prime predecessors</strong> (74 pages). For a prime <i>p</i> ≤ <i>x</i> chosen at random, list the prime factors of <i>p</i> − 1 with multiplicity, largest first, and divide their logarithms by log(<i>p</i> − 1). As <i>x</i> → ∞, every fixed number of these shares jointly converges to PD(1). This is the conjecture of Ford, Konyagin and Luca, and it includes Granville’s prediction for the largest factor.</li>
+  <li><strong>Smooth shifted primes and totient fibers</strong> (68 pages; listed first in OpenAI’s catalog). For every fixed δ &gt; 0 there are <i>x</i><sup>1−<i>o</i>(1)</sup> primes <i>p</i> in (2<i>x</i>, 5<i>x</i>] with every prime factor of <i>p</i> − 1 at most <i>x</i><sup>δ</sup>. By an argument going back to Erdős, this proves Erdős’s conjecture on Euler’s totient function: for every ε &gt; 0, infinitely many <i>n</i> are values φ(<i>m</i>) = <i>n</i> for more than <i>n</i><sup>1−ε</sup> different <i>m</i>.</li>
+  <li><strong>Prime predecessors with an even number of prime factors</strong> (45 pages). Infinitely many primes <i>p</i> have <i>p</i> − 1 squarefree with an even number of prime factors, that is, μ(<i>p</i> − 1) = 1.</li>
+</ul>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The law is a limit: it comes with no rate, and the data approach it slowly (below). The smoothness count <i>x</i><sup>1−<i>o</i>(1)</sup> on its own is not a positive proportion of primes; the Poisson–Dirichlet paper gives that, a proportion ρ(1/δ), using the second paper’s graph theorems. Ford, Konyagin and Luca’s probabilistic model of prime chains needs further independence across generations, which is not claimed.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, dated September 17 and 24, 2026; released October 6, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +95,53 @@
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>Not yet</dd>
+    <dd>No: OpenAI published no Lean proof for this result</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 10, 2026.</p>
+<p class="ledger-note">Last checked October 11, 2026. The claim has not been withdrawn, and we found no public critique. <a href="https://www.erdosproblems.com/821">Erdős problem #821</a>, the totient question, is still listed as open on erdosproblems.com.</p>
 </section>
 
+<section aria-labelledby="known">
+<h2 id="known">What was known</h2>
+<ul class="sources">
+  <li>For ordinary integers: Dickman (1930) found the law of the largest prime factor, Billingsley (1972) the joint law of the large ones, and Donnelly and Grimmett gave the size-biased, broken-stick description.</li>
+  <li>For <i>p</i> − 1: requiring a large prime <i>q</i> to divide <i>p</i> − 1 puts <i>p</i> in an arithmetic progression with modulus <i>q</i>. The Bombieri–Vinogradov theorem controls such progressions on average only up to about √<i>x</i>, and special methods go only slightly beyond. Under the Elliott–Halberstam conjecture, Bharadwaj and Rodgers (<a href="https://arxiv.org/abs/2402.11884">2024</a>) obtain the full law; Ford, Konyagin and Luca (<a href="https://arxiv.org/abs/0904.0473">2010</a>) had recorded it as widely expected.</li>
+  <li>Smooth shifted primes: Baker and Harman (1998) found many primes with every prime factor of <i>p</i> − 1 below <i>p</i><sup>0.2961</sup>, and Lichtman (<a href="https://arxiv.org/abs/2211.09641">2022</a>) below <i>p</i><sup>0.2844</sup>. For totients, Erdős (1935) proved that some exponent <i>c</i> &gt; 0 works; the best exponents became 0.7039 (Baker–Harman) and 0.7156 (Lichtman). Exponent 1 is the best possible.</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Sieve plus a bilinear estimate.</strong> To count primes <i>p</i> = 2<i>u</i> + 1 with <i>u</i> of a prescribed shape, a sieve handles the divisibility conditions, but on its own it cannot separate primes from products of two large primes (the parity problem). A bilinear, or Type II, estimate supplies the missing information.</li>
+  <li><strong>Marks.</strong> The new Type II estimates let the numbers carry marks, weights recording which of certain small primes divide them. In the Poisson–Dirichlet paper the marks sit on one side only, and a determinant relation between lattice vectors, averaged with a signed “memory” expansion, makes each prime’s divisibility probability count only once.</li>
+  <li><strong>Dilation graphs.</strong> The totient paper joins integers by edges built from shared marked primes and compares this graph with an ideal model in which prime labels are independent, with probabilities proportional to 1/<i>p</i>; a small ideal norm gives cancellation. The Poisson–Dirichlet paper uses these graph theorems for its two-sided estimate.</li>
+  <li><strong>From interior statistics to the law.</strong> The estimates give the statistics of the pieces away from the extremes; a size-biased probability argument turns them into the full sorted law.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>1,000,003 is prime and 1,000,002 = 2 · 3 · 166,667, with log shares 5.0%, 8.0% and 87.0%.</li>
+  <li>ρ(2) = 1 − log 2 ≈ 0.3069 and ρ(3) ≈ 0.0486. A simulated broken stick, 400,000 times, puts the largest piece above one half 69.3% of the time.</li>
+  <li>How often the largest prime factor of <i>p</i> − 1 exceeds √(<i>p</i> − 1): 57.8% of primes up to 10<sup>4</sup>, 61.4% up to 10<sup>5</sup>, 63.2% up to 10<sup>6</sup>, 64.4% up to 10<sup>7</sup>, against log 2 ≈ 69.3%. For ordinary integers up to 10<sup>7</sup> it is 72.8%, approaching from above.</li>
+  <li>φ(<i>m</i>) = 72 has exactly 17 solutions: 73, 91, 95, 111, 117, 135, 146, 148, 152, 182, 190, 216, 222, 228, 234, 252, 270.</li>
+  <li>All checked with a short Python script.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf">The Poisson–Dirichlet law for prime predecessors (PDF)</a>, dated September 24, 2026 (74 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf">Weighted dilation graphs, smooth shifted primes and totient fibers (PDF)</a>, dated September 24, 2026 (68 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf">Prime predecessors with an even number of prime factors (PDF)</a>, dated September 17, 2026 (45 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 011.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 3 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -77,18 +151,34 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf">Prime Predecessors with an Even Number of Prime Factors</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Breaking a number</h3>
+<p>Take the number 1,000,002, and break it into primes: 2 × 3 × 166,667. Now measure each prime by its logarithm, roughly its number of digits. The pieces add up to the whole number’s logarithm, so each prime gets a share of one whole: 5%, 8%, and 87%. Do this for a random number, and the shares look random too. In 1972, Patrick Billingsley proved that, for large numbers, they follow a precise limiting law, the same law that governs the relative cycle lengths of a large, randomly shuffled deck. Now pick a random prime p, and break up p − 1. The same law was expected there too. Result 011 in OpenAI’s math repository claims to prove it, and, along the way, a conjecture of Paul Erdős about Euler’s totient function.</p>
+<h3><span class="t num">0:57</span>A broken stick</h3>
+<p>Here is the law. Take a stick of length one. Break off a piece of uniformly random length, and set it aside. Break a uniformly random fraction off what’s left, set that aside, and keep going. Sort the pieces from largest to smallest. Their distribution is called Poisson–Dirichlet, with parameter one. It makes sharp predictions. The largest piece is more than half the stick with probability log 2, about 69%. For a large random whole number, that is, in the limit, the chance its largest prime factor is bigger than its square root. And the chance that no piece reaches a third is under 5%: Dickman’s function at 3.</p>
+<h3><span class="t num">1:37</span>Primes minus one</h3>
+<p>Now the primes. For a prime p above 2, p − 1 is even, so a factor of 2 always shows up, but on this scale a single 2 barely matters. In 2010, Kevin Ford, Sergei Konyagin and Florian Luca wrote down the widely expected conjecture: the shares of p − 1 follow the same broken-stick law. The data agree, slowly. Among primes up to 10,000, the largest piece of p − 1 is more than half about 58% of the time. Up to 10 million, it is 64%, creeping toward 69. Why is this hard? To say a large prime q divides p − 1 is to say that p is 1 more than a multiple of q. That puts p in an arithmetic progression with a huge modulus. The general unconditional tools handle such progressions, on average, only for moduli up to about the square root, and special methods go only slightly beyond. A deep conjecture, Elliott–Halberstam, would go all the way, and would give the full law. Without it, results were partial. One landmark is smooth shifted primes: in 2022, Jared Lichtman showed that many primes have p − 1 with no prime factor above about p^0.284.</p>
+<h3><span class="t num">2:56</span>The claims</h3>
+<p>Result 011 has three papers. The headline one claims the full law: for a random prime up to x, the shares of the prime factors of p − 1, sorted by size, converge to the broken-stick law as x grows, for any number of the largest pieces at once. A second paper claims that p − 1 is often as smooth as you like: for any fixed power of x, however small, the number of primes near x whose p − 1 has no prime factor above that power is x^(1 − o(1)). The main law makes it a positive proportion. The third paper claims that infinitely many primes have p − 1 squarefree, with an even number of prime factors.</p>
+<h3><span class="t num">3:40</span>Totient collisions</h3>
+<p>Why care whether p − 1 is smooth? Euler’s totient function, φ(m), counts the numbers up to m that share no prime factor with m. Different numbers can share a value: φ(m) = 72 for 17 different m. Erdős saw where such collisions come from. For a prime p, φ(p) is p − 1, and for a product of distinct primes, φ multiplies their values of p − 1. 73 gives 72. So does 7 × 13, because 6 × 12 = 72, and so do 5 × 19 and 3 × 37. If many primes have p − 1 built only from small primes, there are far more products than possible values, so many products must collide. He conjectured that, for any ε, infinitely many values n are hit more than n^(1 − ε) times. The best exponent known was about 0.72, from Lichtman’s work. The second paper claims the full conjecture, exponent one, the best possible.</p>
+<h3><span class="t num">4:45</span>How the proof goes</h3>
+<p>How do you count primes whose predecessors have a prescribed shape? A sieve counts numbers with the right divisibility, but on its own it can’t tell primes from products of two primes. The extra ingredient is a bilinear estimate. The new ones here let the numbers carry marks: labels recording which of certain small primes divide them. That turns the problem into a graph: integers joined when they are related through shared marked primes. The papers compare it to an idealized random graph, where each prime divides independently with probability 1/p. A memory device makes sure each prime’s divisibility is paid for only once, even when it comes back again and again. Finally, a probability argument turns statistics for pieces away from the extremes into the full sorted law.</p>
+<h3><span class="t num">5:33</span>The caveats</h3>
+<p>The caveats. These are three preprints, about a hundred and ninety pages, not peer reviewed, and with no Lean proof. The law is a limit with no rate, and the data show the approach is slow. The smoothness count alone isn’t a positive proportion; that comes from the headline paper, which uses the second paper’s graph theorems. And Erdős problem #821, the totient question, is still listed as open on the Erdős problems website. Break p − 1 into its primes, and the pieces fall like a randomly broken stick. If the proof holds.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20011%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../010-unrestricted-pro-modularity-prime-two/"><span class="dir">Previous · 010</span><span class="pt">Unrestricted pro-modularity at the prime two</span></a>
-  <a class="next" href="../012-independent-largest-prime-factors-consecutive/"><span class="dir">Next · 012</span><span class="pt">Independent largest prime factors of consecutive integers</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/number-theory/">More in number theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
