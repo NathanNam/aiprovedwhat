@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 009: Function-field reconstruction from Milnor K-theory and Galois data | AI Proved What?</title>
-<meta name="description" content="Function-field reconstruction from Milnor K-theory and Galois data. Result 009 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>The whole field from a shadow: Bogomolov’s program | AI Proved What?</title>
+<meta name="description" content="An AI system says a field of functions in two or more variables can be rebuilt from its functions taken only up to squares, plus one pairing rule. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/009-function-field-reconstruction-milnor-k/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 009: Function-field reconstruction from Milnor K-theory and Galois data | AI Proved What?">
-<meta property="og:description" content="Function-field reconstruction from Milnor K-theory and Galois data. Result 009 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="The whole field from a shadow">
+<meta property="og:description" content="An AI system says a field of functions in two or more variables can be rebuilt from its functions taken only up to squares, plus one pairing rule. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/009-function-field-reconstruction-milnor-k/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/009-function-field-reconstruction-milnor-k/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,35 +37,114 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 009 · <a href="../../subjects/number-theory/">Number theory</a></p>
-<h1 class="result-title">Function-field reconstruction from Milnor K-theory and Galois data</h1>
+<p class="meta">Episode 009, October 2026</p>
+<h1>The whole field from a shadow</h1>
+<p class="subtitle">Function-field reconstruction from Milnor <i>K</i>-theory and Galois data</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 009 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="tS-eTzTrcXI" data-title="Episode 009: The whole field from a shadow">
+  <a href="https://youtu.be/tS-eTzTrcXI">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 009: The whole field from a shadow? Bogomolov’s program, functions modulo squares. A grid of orange and grey switches with an arrow pointing down to C(x, y).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:03. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/tS-eTzTrcXI?t=0" data-t="0"><span class="t">0:00</span><span>A shadow of a field</span></a></li>
+  <li><a href="https://youtu.be/tS-eTzTrcXI?t=60" data-t="60"><span class="t">1:00</span><span>Functions modulo squares</span></a></li>
+  <li><a href="https://youtu.be/tS-eTzTrcXI?t=118" data-t="118"><span class="t">1:58</span><span>Why two variables</span></a></li>
+  <li><a href="https://youtu.be/tS-eTzTrcXI?t=156" data-t="156"><span class="t">2:36</span><span>What was known</span></a></li>
+  <li><a href="https://youtu.be/tS-eTzTrcXI?t=193" data-t="193"><span class="t">3:13</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/tS-eTzTrcXI?t=247" data-t="247"><span class="t">4:07</span><span>How the rebuild works</span></a></li>
+  <li><a href="https://youtu.be/tS-eTzTrcXI?t=310" data-t="310"><span class="t">5:10</span><span>Lean, and the caveats</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Reconstructs function fields of transcendence degree at least two over algebraically closed constants from <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>K</mi><mn>1</mn><mi mathvariant="normal">M</mi></msubsup><mi mathvariant="normal">/</mi><mi mathvariant="normal">ℓ</mi></mrow><annotation encoding="application/x-tex">K^{\mathrm M}_1/\ell</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0913em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8413em;"><span style="top:-2.4519em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">M</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2481em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mord">ℓ</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>K</mi><mn>2</mn><mi mathvariant="normal">M</mi></msubsup><mi mathvariant="normal">/</mi><mi mathvariant="normal">ℓ</mi></mrow><annotation encoding="application/x-tex">K^{\mathrm M}_2/\ell</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0913em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8413em;"><span style="top:-2.4519em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">M</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2481em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mord">ℓ</span></span></span></span>, and their product. These data recover the perfect closure and constants when <i>ℓ</i> differs from the characteristic, and the original field and its named base in equal characteristic. Also proves Bogomolov–Pop reconstruction from abelian-by-central pro-<i>ℓ</i> Galois data away from the characteristic.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take a field of functions in two or more variables over an algebraically closed field, such as ℂ(<i>x</i>, <i>y</i>), the rational functions in <i>x</i> and <i>y</i> with complex coefficients. Keep each nonzero function only up to ℓ-th powers for a fixed prime ℓ different from the characteristic (for ℓ = 2, up to squares), and pair the resulting classes formally with one rule: <i>f</i> paired with 1 − <i>f</i> gives zero (the Steinberg relation). In the language of Milnor <i>K</i>-theory, this is <i>K</i><sub>1</sub><sup>M</sup>/ℓ and <i>K</i><sub>2</sub><sup>M</sup>/ℓ with their product.</p>
+<p>Result 009 claims that this data determines the field. For two such function fields, every isomorphism of the degree-one groups that respects the pairing comes from an isomorphism of the fields’ perfect closures, and the correspondence is a bijection up to two unavoidable ambiguities: one global scalar in 𝔽<sub>ℓ</sub><sup>×</sup> (none when ℓ = 2), and, in characteristic <i>p</i>, powers of Frobenius. A companion paper claims the Galois version, the Bogomolov–Pop conjecture: the pro-ℓ quotient of the Galois group in which commutators are central determines the field, over any algebraically closed constants. A third paper treats classes modulo <i>p</i> in characteristic <i>p</i>.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Nothing is claimed for one variable: there, over ℂ, every curve’s function field has the same free profinite Galois group, so Galois data cannot tell curves apart. The constants must be algebraically closed. The data are infinite, so the result says what the data determine, not that there is an algorithm to rebuild the field.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, September 23 and October 5, 2026; released October 6, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
+  <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/009.md">scope notes</a>)</dd>
+    <dd>Partly: OpenAI formalized only the uniqueness half of the Galois version (<a href="https://github.com/openai/math/blob/main/lean/docs/009.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 10, 2026.</p>
+<p class="ledger-note">Last checked October 11, 2026. The claim has not been withdrawn, and the papers are unchanged since the repository’s first public version. We found no public critique specific to this result.</p>
 </section>
 
+<section aria-labelledby="known">
+<h2 id="known">What was known</h2>
+<ul class="sources">
+  <li>Bogomolov (1991) proposed reconstructing such function fields from the pro-ℓ abelian-by-central quotient of their Galois groups.</li>
+  <li>Bogomolov and Tschinkel proved reconstruction for surfaces (2008) and then in every dimension (2011), over algebraic closures of finite fields; Pop proved the same independently (2012).</li>
+  <li>Over general algebraically closed constants, Pop (<a href="https://arxiv.org/abs/1810.04768">2018</a>) reconstructed in dimension at least three from pro-ℓ data with divisorial inertia supplied.</li>
+  <li>For mod-ℓ Milnor <i>K</i>-theory, Topaz (<a href="https://arxiv.org/abs/1408.5194">2016</a>) needed dimension at least five, with the rational subgroups supplied.</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Valuations.</strong> Pairs of characters <i>f</i>, <i>g</i> with <i>f</i>(<i>x</i>)<i>g</i>(1 − <i>x</i>) = <i>f</i>(1 − <i>x</i>)<i>g</i>(<i>x</i>) are visible in the pairing; known local theory turns them into quasi-divisorial valuations, which mostly correspond to curves along which functions vanish. Pop’s density theorem recognizes residual curves over algebraic closures of finite fields.</li>
+  <li><strong>Curve subfields.</strong> For a function <i>t</i>, the transported classes of <i>t</i> − <i>a</i>, for all constants <i>a</i>, are supported on divisors of bounded degree (a Riemann–Hurwitz argument); an incidence variety shows they all come from one curve’s function field.</li>
+  <li><strong>Rational lines.</strong> Ratios of local parameters at smooth points give rational one-variable subfields, and matching their points gives bijections between projective lines.</li>
+  <li><strong>Field operations.</strong> A blowup detects many coordinates at once; additive triples recover addition, giving an isomorphism of perfect fields that induces the original map up to one scalar.</li>
+</ol>
+</section>
+
+<section aria-labelledby="lean">
+<h2 id="lean">The Lean statement</h2>
+<pre class="code"><code>theorem main_graph_injective (ell : ℕ) [Fact ell.Prime]
+    (k K l L : Type*) [Field k] [Field K] [Field l] [Field L]
+    [IsAlgClosed k] [IsAlgClosed l] ...
+    (hK : 2 ≤ Algebra.trdeg k K) (hL : 2 ≤ Algebra.trdeg l L) :
+    ∀ (a a' : IsomF k K l L) (b : IsomCUnits ell K L),
+      PhiGraph a b → PhiGraph a' b → a = a'</code></pre>
+<p>This abridged statement is from the <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/BogomolovPopInjectivity.lean">challenge file</a>. It says that if two field isomorphisms (modulo Frobenius) induce the same map on the Galois data (modulo ℓ-adic unit scaling), they are equal: the uniqueness half of the Bogomolov–Pop theorem. The other half, that every admissible map on Galois data comes from a field isomorphism, is not formalized, and neither is the Milnor <i>K</i>-theory theorem. The proof is 5 files and 3,339 lines; it is not listed in OpenAI’s formalization catalog, and we have not run the check.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The example in the video</h2>
+<ul class="sources">
+  <li><i>f</i>(<i>t</i>) = <i>t</i><sup>3</sup>(<i>t</i> − 1)<sup>2</sup>/(<i>t</i> + 1) has orders 3, 2, −1 and −4 at 0, 1, −1 and ∞. Modulo squares only the parity survives: odd at 0 and −1, so [<i>f</i>] = [<i>t</i>(<i>t</i> + 1)]. The set of odd-order points always has an even number of elements, since the orders add up to zero. Checked with SymPy.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Reconstruction-of-Function-Fields-from-Mod-ell-Milnor-K-Theory-October-5-2026/mod-ell-bogomolov-pop.pdf">The main paper (PDF)</a>, “Reconstruction of Function Fields from Mod-ℓ Milnor <i>K</i>-Theory,” October 5, 2026 (36 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Bogomolov-Pop-reconstruction-theorem-September-23-2026/paper.pdf">The Bogomolov–Pop reconstruction theorem (PDF)</a>, September 23, 2026 (26 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Reconstruction-from-Milnor-K-theory-modulo-the-characteristic-October-5-2026/paper.pdf">Reconstruction from Milnor <i>K</i>-theory modulo the characteristic (PDF)</a>, October 5, 2026 (11 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/009.md">The Lean scope note</a>, and <a href="https://github.com/openai/math/blob/main/CONTENTS.md">the collection’s catalog</a>, where this is result 009.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 3 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -77,18 +154,34 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/The-Bogomolov-Pop-reconstruction-theorem-September-23-2026/paper.pdf">The Bogomolov-Pop reconstruction theorem</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>A shadow of a field</h3>
+<p>Here’s a strange kind of puzzle. Take every rational function in two variables, x and y, with complex coefficients: x + y, x² − y³, 1/(x − y), and so on. Together they form a field: you can add, subtract, multiply and divide them. Now throw away almost everything. Keep each function only up to squares, so f and f times any square count as the same. Then pair classes formally, with just one rule: pairing any function f with 1 − f gives zero. What’s left is a vast collection of on and off switches, plus a pairing table. Result 009 in OpenAI’s math repository claims that this shadow is enough to rebuild the entire field, up to two unavoidable ambiguities in general, and here, none at all. A companion paper claims the same from a small piece of the field’s Galois group, as Fedor Bogomolov proposed in 1991.</p>
+<h3><span class="t num">1:00</span>Functions modulo squares</h3>
+<p>Start with one variable, t. Over the complex numbers every constant is a square, so only zeros and poles matter. Take t³(t − 1)²/(t + 1). Its orders are three at zero, two at one, −1 at −1, and −4 at infinity. Up to squares, only the parity survives: odd at zero and at −1, even everywhere else. So this function has the same class as t(t + 1). Each class is just a set of points where the order is odd, and that set always has an even number of points. In two variables, classes are about curves instead of points: the curves along which a function vanishes, or blows up, an odd number of times. The theorem works the same way with cubes, fifth powers, or powers by any prime. These are the first two Milnor K-groups modulo a prime, and the rule about f and 1 − f is the Steinberg relation.</p>
+<h3><span class="t num">1:58</span>Why two variables</h3>
+<p>Why two variables? Because one isn’t enough. Over the complex numbers, the full Galois group of every curve’s function field is the same free group, so Galois data can’t tell two curves apart. Grothendieck’s anabelian philosophy says that in the right settings, Galois groups determine geometry. Bogomolov’s proposal was bolder: with two or more variables over an algebraically closed field, a tiny piece of the Galois group should suffice, the quotient in which every commutator commutes with everything. Our two collections of switches are a mirror image of that piece, taken modulo a prime and seen from the dual side.</p>
+<h3><span class="t num">2:36</span>What was known</h3>
+<p>Bogomolov and Yuri Tschinkel proved it for surfaces in 2008, and then in every dimension, but only when the constants are the algebraic closure of a finite field. Florian Pop proved the same independently in 2012. Over the complex numbers, or any other algebraically closed field, it stayed open. Pop handled dimension three and up in 2018, but only with extra information supplied. For the finite version, Adam Topaz needed dimension at least five, plus the one-variable rational subfields handed over in advance.</p>
+<h3><span class="t num">3:13</span>The claim</h3>
+<p>Result 009 claims the full answer. Take two function fields of dimension at least two, over any algebraically closed fields of characteristic different from the prime. Every isomorphism of the two collections that respects the pairing table comes from an isomorphism of the fields themselves. Two ambiguities remain, and they can’t be avoided. Multiplying every class by the same nonzero number, modulo the prime, preserves the whole puzzle. And in characteristic p, the Frobenius map, which raises everything to the pth power, just multiplies every class by p. So the field comes back up to these, and up to pth roots. A companion claims to prove the Galois version, the Bogomolov–Pop conjecture, in the same generality, and a short third paper handles classes modulo p in characteristic p.</p>
+<h3><span class="t num">4:07</span>How the rebuild works</h3>
+<p>The rebuild climbs a ladder. First, pairs of characters that obey a special alternating rule reveal valuations, using known local theory: mostly the curves along which functions vanish, plus some that also measure the constants, which get sorted out later. Next come one-variable subfields. For each function t, the matching classes of the family t − a, for every constant a, sit on curves of bounded degree, and an incidence variety shows that the matching classes all come from a single curve’s function field. Then come rational lines. Ratios of local coordinates at smooth points give subfields that look like functions of one variable, and matching their points gives bijections between projective lines. Finally, the field operations. Reading many functions’ values at once, near a single point, recovers addition, and with it the whole field. The paper then checks that this field isomorphism induces the original map, up to one scalar.</p>
+<h3><span class="t num">5:10</span>Lean, and the caveats</h3>
+<p>There is a Lean formalization, but it covers only half of the Galois version: uniqueness. If two field isomorphisms induce the same map on the Galois data, up to scaling, they agree up to Frobenius. It’s about 3,300 lines in five files. The hard half, rebuilding the field, isn’t formalized, and neither is the Milnor K-theory theorem. We haven’t run the check. The caveats. These are preprints, 73 pages across three papers, not peer reviewed. The theorem needs at least two variables and algebraically closed constants. And the data are infinite, so this is a statement about what the shadow determines, not a procedure you could run. Keep only the parity of zeros and poles, plus one rule for pairing them, and the whole field comes back. If the proof holds.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20009%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../008-deligne-drinfeld-conjecture/"><span class="dir">Previous · 008</span><span class="pt">The Deligne–Drinfeld conjecture</span></a>
-  <a class="next" href="../010-unrestricted-pro-modularity-prime-two/"><span class="dir">Next · 010</span><span class="pt">Unrestricted pro-modularity at the prime two</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/number-theory/">More in number theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
