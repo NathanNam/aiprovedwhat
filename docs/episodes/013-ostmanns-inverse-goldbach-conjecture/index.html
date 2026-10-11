@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 013: Ostmann’s inverse Goldbach conjecture | AI Proved What?</title>
-<meta name="description" content="Ostmann’s inverse Goldbach conjecture. Result 013 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Split the primes? Ostmann’s inverse Goldbach conjecture | AI Proved What?</title>
+<meta name="description" content="An AI system says the primes are not a sum of two sets with at least two elements each, even up to finitely many changes: Ostmann’s inverse Goldbach conjecture. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/013-ostmanns-inverse-goldbach-conjecture/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 013: Ostmann’s inverse Goldbach conjecture | AI Proved What?">
-<meta property="og:description" content="Ostmann’s inverse Goldbach conjecture. Result 013 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Split the primes?">
+<meta property="og:description" content="An AI system says the primes are not a sum of two sets with at least two elements each, even up to finitely many changes: Ostmann’s inverse Goldbach conjecture. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/013-ostmanns-inverse-goldbach-conjecture/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/013-ostmanns-inverse-goldbach-conjecture/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,51 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 013 · <a href="../../subjects/number-theory/">Number theory</a></p>
-<h1 class="result-title">Ostmann’s inverse Goldbach conjecture</h1>
+<p class="meta">Episode 013, October 2026</p>
+<h1>Split the primes?</h1>
+<p class="subtitle">Ostmann’s inverse Goldbach conjecture: the primes are additively indecomposable</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 013 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="c-I8Wnk8XkE" data-title="Episode 013: Split the primes?">
+  <a href="https://youtu.be/c-I8Wnk8XkE">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 013: Split the primes? Ostmann’s inverse Goldbach conjecture, Erdős problem 431. A clock of residues mod 7, with the residues of A in blue and those of minus B in orange, never meeting.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:23. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/c-I8Wnk8XkE?t=0" data-t="0"><span class="t">0:00</span><span>Splitting a set</span></a></li>
+  <li><a href="https://youtu.be/c-I8Wnk8XkE?t=44" data-t="44"><span class="t">0:44</span><span>A near miss</span></a></li>
+  <li><a href="https://youtu.be/c-I8Wnk8XkE?t=96" data-t="96"><span class="t">1:36</span><span>The residue clock</span></a></li>
+  <li><a href="https://youtu.be/c-I8Wnk8XkE?t=137" data-t="137"><span class="t">2:17</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/c-I8Wnk8XkE?t=154" data-t="154"><span class="t">2:34</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/c-I8Wnk8XkE?t=207" data-t="207"><span class="t">3:27</span><span>Lean, and the caveats</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves that no finite modification of the primes can be written as <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>+</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A+B</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span></span> with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo separator="true">,</mo><mi>B</mi><mo>⊆</mo><msub><mi mathvariant="double-struck">Z</mi><mrow><mo>≥</mo><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">A,B\subseteq\mathbb Z_{\ge0}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">A</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⊆</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9341em;vertical-align:-0.2452em;"></span><span class="mord"><span class="mord mathbb">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mrel mtight">≥</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2452em;"><span></span></span></span></span></span></span></span></span></span> each containing at least two elements. This resolves Ostmann's inverse Goldbach conjecture on additive indecomposability.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>For sets <i>A</i> and <i>B</i> of nonnegative integers, <i>A</i> + <i>B</i> is the set of all sums <i>a</i> + <i>b</i>. Many sets split this way: every number from 10 on is {0, 1} plus the even numbers from 10 on. In his 1956 book <i>Additive Zahlentheorie</i>, Hans-Heinrich Ostmann conjectured that the primes do not: no two sets, each with at least two elements, have exactly the primes as their sums, even after adding or removing finitely many numbers. This is the inverse Goldbach problem, and <a href="https://www.erdosproblems.com/431">Erdős problem #431</a>.</p>
+<p>Result 013 claims to prove it: if |<i>A</i>|, |<i>B</i>| ≥ 2, then <i>A</i> + <i>B</i> and the primes differ in infinitely many numbers. Either infinitely many primes are not sums, or infinitely many composite numbers are.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The condition that both sets have at least two elements matters: {0} plus the primes is the primes. The result is qualitative; it gives no bound on how many exceptions there must be up to <i>x</i>.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 24, 2026; released October 6, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +89,57 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/013.md">scope notes</a>)</dd>
+    <dd>OpenAI published two separate Lean proofs of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/013.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 11, 2026.</p>
+<p class="ledger-note">Last checked October 11, 2026. The claim has not been withdrawn, and we found no public critique. Erdős problem #431 is still listed as open on erdosproblems.com.</p>
 </section>
 
+<section aria-labelledby="known">
+<h2 id="known">What was known</h2>
+<ul class="sources">
+  <li>Hornfeck (1954) began the restrictions on a hypothetical decomposition, and Laffer and Mann (1964) showed that both summands would have to be infinite.</li>
+  <li>Elsholtz (2001) showed that each summand would have about √<i>x</i> elements up to <i>x</i>, up to powers of log <i>x</i>, and ruled out writing the primes as a sum of three such sets; Elsholtz and Harper (<a href="https://arxiv.org/abs/1309.0593">2015</a>) sharpened the bounds to √<i>x</i>/(log <i>x</i> log log <i>x</i>) ≪ <i>A</i>(<i>x</i>), <i>B</i>(<i>x</i>) ≪ √<i>x</i> log log <i>x</i>.</li>
+  <li>Green and Harper (<a href="https://arxiv.org/abs/1311.6176">2014</a>) showed that an inverse large sieve conjecture, classifying sets that occupy about half the residues mod many primes, would imply Ostmann’s conjecture. Hanson, Croot, Mao, Pohoata and Yip proved partial results in that direction.</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Two infinite sets.</strong> A short sieve argument reduces to the case where both summands are infinite.</li>
+  <li><strong>Residue clocks.</strong> Put <i>D</i> = −<i>B</i>. Every large sum is a prime larger than any fixed prime <i>p</i>, so, after setting aside small elements, <i>A</i> and <i>D</i> occupy disjoint residues mod <i>p</i>. A collision estimate shows that, on average over primes, the two parts are about equal in size.</li>
+  <li><strong>No structure.</strong> The summands cannot correlate with quadratic characters, even with centres that move from prime to prime; higher-order characters follow by repeated Cauchy–Schwarz transfers.</li>
+  <li><strong>Coverage.</strong> Every large prime must be a sum. A positive statistic built from this coverage is compared, through a finite-field comparison of binary trees, with what the decorrelation allows; the two cannot both hold. The proof does not use the Green–Harper conjecture.</li>
+</ol>
+</section>
+
+<section aria-labelledby="lean">
+<h2 id="lean">The Lean statement</h2>
+<pre class="code"><code>theorem main : ∀ A B : Set ℕ, A.Nontrivial → B.Nontrivial →
+    Set.Infinite ((A + B) ∆ {n : ℕ | Nat.Prime n})</code></pre>
+<p>This is the statement in the <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/OstmannPrimes.lean">challenge file</a>: <code>Nontrivial</code> means at least two elements, and ∆ is the symmetric difference. The proof behind it is about 4,400 files of OpenAI’s code, about 365,000 lines; a second, separate Lean proof of the same theorem by a different route adds about 3,200 files. A passing Comparator check would guarantee the statement from Lean’s standard axioms. Neither proof is in OpenAI’s formalization catalog yet, and we have not run the check.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The near miss in the video</h2>
+<ul class="sources">
+  <li><i>A</i> = {0, 6} and <i>B</i> = the primes <i>p</i> with <i>p</i> + 6 also prime (5, 7, 11, 13, 17, 23, 31, …). Every sum is prime.</li>
+  <li>Below 200 it misses exactly the primes 2, 3, 71, 127, 139, 149 and 181. Up to 10<sup>6</sup> it misses 62% of the primes (29,872 of 78,498 are covered). Here |<i>A</i>| = 2 while <i>B</i> has 16,386 elements below 10<sup>6</sup>: far from the balanced √<i>x</i> sizes a real decomposition would need.</li>
+  <li>Mod 7, <i>A</i> gives the residues {0, 6} and −<i>B</i> (for <i>b</i> &gt; 7) gives {1, …, 5}: they never meet.</li>
+  <li>Checked with a short Python script.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/the-additive-indecomposability-of-the-primes-September-24-2026/paper.pdf">The paper (PDF)</a>, “The additive indecomposability of the primes,” dated September 24, 2026 (80 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/013.md">The Lean scope note</a>, and <a href="https://github.com/openai/math/blob/main/CONTENTS.md">the collection’s catalog</a>, where this is result 013.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +147,32 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/the-additive-indecomposability-of-the-primes-September-24-2026/paper.pdf">The additive indecomposability of the primes</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Splitting a set</h3>
+<p>Take two sets of numbers, A and B, and form every sum: one element of A plus one element of B. Lots of sets arise this way. Every number from 10 on is 0 or 1, plus an even number from 10 on. Can the primes be built like this? In his 1956 book, Hans-Heinrich Ostmann conjectured that they can’t: no two sets with at least two elements each have exactly the primes as their sums, even if you may add or remove finitely many numbers. It is called the inverse Goldbach problem, and it is Erdős problem #431. Result 013 in OpenAI’s math repository claims to prove Ostmann’s conjecture, and a Lean proof comes with it.</p>
+<h3><span class="t num">0:44</span>A near miss</h3>
+<p>Here’s a try. Let A be {0, 6}, and let B be the primes p for which p + 6 is also prime: 5, 7, 11, 13, 17, and so on. Then every sum is prime, by design. But does it hit every prime? Below 200, it misses only seven: 2, 3, 71, 127, 139, 149, and 181. Up to a million, it misses 62%. Pairs of primes 6 apart thin out, and the misses take over. So a decomposition would have to be balanced. In 1964, Laffer and Mann showed that both sets would have to be infinite. Christian Elsholtz later showed that each would have roughly the square root of x elements up to x, give or take logarithms, and ruled out writing the primes as a sum of three such sets.</p>
+<h3><span class="t num">1:36</span>The residue clock</h3>
+<p>Here is the constraint that drives the proof. Pick a prime q. Every large sum, a + b, is a prime bigger than q, so q doesn’t divide it. So, setting aside small elements, a is never congruent to −b, modulo q. On the clock of residues mod q, A and −B live in separate hours. In a real decomposition, this would happen for every prime q at once, and on average the two sets would split each clock roughly in half. Sets like that look structured, like the perfect squares. Ben Green and Adam Harper showed that a conjecture classifying such sets would imply Ostmann’s conjecture. That classification is still unproven.</p>
+<h3><span class="t num">2:17</span>The claim</h3>
+<p>Result 013 claims Ostmann’s conjecture outright. If A and B each have at least two elements, then the sums and the primes differ in infinitely many numbers. Either infinitely many primes are missed, or infinitely many composite numbers sneak in.</p>
+<h3><span class="t num">2:34</span>How the proof goes</h3>
+<p>First, a short sieve argument reduces to two infinite sets. Then the clocks: with D = −B, and small elements set aside, A and D occupy disjoint residues mod every prime, and a counting estimate shows that, on average, they split each clock almost evenly. Next, the paper rules out structure. It shows that the two sets can’t correlate with quadratic patterns, like the squares, at shifting centers, and then with higher-order multiplicative patterns, through repeated Cauchy–Schwarz transfers. Finally, it uses the fact that every large prime must be covered. A positive statistic built from that coverage is compared with what the decorrelation allows, through a finite-field comparison of binary trees. The two can’t both hold. Notably, it never needs Green and Harper’s conjecture.</p>
+<h3><span class="t num">3:27</span>Lean, and the caveats</h3>
+<p>The Lean statement takes two lines: for any sets A and B of natural numbers, each with at least two elements, the symmetric difference between A + B and the primes is infinite. The proof behind it is huge: about 4,400 files of OpenAI’s code, more than 360,000 lines. A second, separate Lean proof adds about 3,200 more files. A passing Comparator check would guarantee the statement from Lean’s usual axioms. OpenAI’s catalog of formal proofs doesn’t list it yet, and we haven’t run the check ourselves. The caveats. This is a preprint, 80 pages, not peer reviewed. And Erdős problem #431 is still listed as open. The primes aren’t a sum of two sets with two or more elements each, not even up to finitely many changes. If the proof holds. And a computer can check it.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20013%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../012-independent-largest-prime-factors-consecutive/"><span class="dir">Previous · 012</span><span class="pt">Independent largest prime factors of consecutive integers</span></a>
-  <a class="next" href="../014-restricted-geometric-langlands-global-arthur/"><span class="dir">Next · 014</span><span class="pt">Restricted geometric Langlands, global Arthur enhancements, and generic Ramanujan</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/number-theory/">More in number theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
