@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 012: Independent largest prime factors of consecutive integers | AI Proved What?</title>
-<meta name="description" content="Independent largest prime factors of consecutive integers. Result 012 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>n or n + 1: who wins? The joint Dickman law | AI Proved What?</title>
+<meta name="description" content="An AI system says the largest prime factors of n and n + 1 are independent in the limit, so each is the bigger one exactly half the time. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/012-independent-largest-prime-factors-consecutive/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 012: Independent largest prime factors of consecutive integers | AI Proved What?">
-<meta property="og:description" content="Independent largest prime factors of consecutive integers. Result 012 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="n or n + 1: who wins?">
+<meta property="og:description" content="An AI system says the largest prime factors of n and n + 1 are independent in the limit, so each is the bigger one exactly half the time. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/012-independent-largest-prime-factors-consecutive/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/012-independent-largest-prime-factors-consecutive/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,52 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 012 · <a href="../../subjects/number-theory/">Number theory</a></p>
-<h1 class="result-title">Independent largest prime factors of consecutive integers</h1>
+<p class="meta">Episode 012, October 2026</p>
+<h1><i>n</i> or <i>n</i> + 1: who wins?</h1>
+<p class="subtitle">Independent largest prime factors of consecutive integers: the joint Dickman law</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 012 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="-DEe5B7ZCOA" data-title="Episode 012: n or n + 1, who wins?">
+  <a href="https://youtu.be/-DEe5B7ZCOA">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 012: n or n + 1, who wins? The largest prime factors of neighbors, Erdős problem 371. A scatter plot of log-sizes of the largest prime factors of n and n + 1 for random n near ten million, split by a diagonal into two halves.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:15. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/-DEe5B7ZCOA?t=0" data-t="0"><span class="t">0:00</span><span>Two neighbors</span></a></li>
+  <li><a href="https://youtu.be/-DEe5B7ZCOA?t=52" data-t="52"><span class="t">0:52</span><span>One number at a time</span></a></li>
+  <li><a href="https://youtu.be/-DEe5B7ZCOA?t=84" data-t="84"><span class="t">1:24</span><span>Two at a time</span></a></li>
+  <li><a href="https://youtu.be/-DEe5B7ZCOA?t=119" data-t="119"><span class="t">1:59</span><span>What was known</span></a></li>
+  <li><a href="https://youtu.be/-DEe5B7ZCOA?t=163" data-t="163"><span class="t">2:43</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/-DEe5B7ZCOA?t=190" data-t="190"><span class="t">3:10</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/-DEe5B7ZCOA?t=263" data-t="263"><span class="t">4:23</span><span>Lean, and the caveats</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Resolves the Erdős–Pomerance joint Dickman conjecture: the logarithmic sizes of the largest prime factors of <i>n</i> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> are asymptotically independent in ordinary natural density. In particular, the integers satisfying <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>P</mi><mo>+</mo></msup><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>&lt;</mo><msup><mi>P</mi><mo>+</mo></msup><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">P^+(n)\lt P^+(n+1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0213em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0213em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7713em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span> have density 1/2.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Write <i>P</i><sup>+</sup>(<i>n</i>) for the largest prime factor of <i>n</i>. For 1,000,000 = 2<sup>6</sup> · 5<sup>6</sup> it is 5; for 1,000,001 = 101 · 9,901 it is 9,901. For a random <i>n</i>, Dickman’s law (1930) says that <i>P</i><sup>+</sup>(<i>n</i>) ≤ <i>n</i><sup><i>a</i></sup> with probability tending to ρ(1/<i>a</i>), where ρ is Dickman’s function: about 30.7% for the square root and 4.9% for the cube root.</p>
+<p>Result 012 claims that for neighbors these events are independent in the limit. For every fixed 0 &lt; <i>a</i>, <i>b</i> &lt; 1, the proportion of <i>n</i> ≤ <i>x</i> with <i>P</i><sup>+</sup>(<i>n</i>) ≤ <i>n</i><sup><i>a</i></sup> and <i>P</i><sup>+</sup>(<i>n</i> + 1) ≤ <i>n</i><sup><i>b</i></sup> tends to ρ(1/<i>a</i>) · ρ(1/<i>b</i>), in ordinary natural density. Because the limiting law is continuous and symmetric, each ordering, <i>P</i><sup>+</sup>(<i>n</i>) &lt; <i>P</i><sup>+</sup>(<i>n</i> + 1) and the reverse, has density exactly 1/2. That is <a href="https://www.erdosproblems.com/371">Erdős problem #371</a>, and the joint law is the independence conjecture of Erdős and Pomerance.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>There is no rate: the law is a limit, and the data approach it slowly (below). The parameters <i>a</i> and <i>b</i> are fixed; no uniformity as they vary is claimed.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 24, 2026; released October 6, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +90,64 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/012.md">scope notes</a>)</dd>
+    <dd>OpenAI published a Lean proof of the joint law and both orderings (<a href="https://github.com/openai/math/blob/main/lean/docs/012.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 11, 2026.</p>
+<p class="ledger-note">Last checked October 11, 2026. The claim has not been withdrawn, and we found no public critique. Erdős problem #371 is still listed as open on erdosproblems.com.</p>
 </section>
 
+<section aria-labelledby="known">
+<h2 id="known">What was known</h2>
+<ul class="sources">
+  <li>Lower bounds for the share of <i>n</i> with <i>P</i><sup>+</sup>(<i>n</i>) &lt; <i>P</i><sup>+</sup>(<i>n</i> + 1): 0.0099 (Erdős and Pomerance, 1978), 0.05544 (de la Bretèche, Pomerance and Tenenbaum, 2005), 0.1063 and 0.1356 (Wang, 2017 and 2018), 0.2017 (Lü and Wang, 2025) and 0.280 (Yang, preprint). These are floors; the share was not known, unconditionally, to have a limit.</li>
+  <li>Teräväinen (<a href="https://arxiv.org/abs/1710.01195">2018</a>) proved the joint law and the ordering 1/2 with logarithmic weights, counting each <i>n</i> with weight 1/<i>n</i>.</li>
+  <li>Tao and Teräväinen (<a href="https://arxiv.org/abs/1809.02518">2019</a>) obtained ordinary averages at almost all scales, outside a set of scales of logarithmic density zero. Wang (2021) proved the ordinary law assuming the Elliott–Halberstam conjecture for friable integers.</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Counts instead of the largest prime.</strong> The primes between <i>x</i><sup>1/<i>J</i></sup> and <i>x</i> are cut into bands, and independence of the band counts of <i>n</i> and <i>n</i> + 1 gives the joint law. Fourier analysis reduces this to one correlation going to zero, (1/<i>x</i>) Σ <i>g</i>(<i>n</i>) <i>F</i>(<i>n</i> + 1) → 0, with <i>F</i> centered: the same kind of problem as the two-point Chowla conjecture of <a href="/episodes/007-ordinary-two-point-correlations-corrected/">episode 7</a>.</li>
+  <li><strong>Amplify.</strong> If the correlation does not vanish, a weighted count of factorizations <i>n</i> = <i>am</i>, <i>n</i> + 1 = <i>cl</i> amplifies it, and Cauchy–Schwarz turns it into a positive energy on a graph that joins integers a short shift apart.</li>
+  <li><strong>Compare with a random model.</strong> The graph is compared, in cut norm, with a model in which each auxiliary prime divides independently with probability 1/<i>p</i>, using sampling tools from computer science.</li>
+  <li><strong>Short intervals.</strong> Everything reduces to averages over short intervals, where theorems of Matomäki and Radziwiłł, and of Matomäki, Radziwiłł and Tao, force cancellation, contradicting the positive energy.</li>
+</ol>
+</section>
+
+<section aria-labelledby="lean">
+<h2 id="lean">The Lean statement</h2>
+<pre class="code"><code>theorem joint_law (a b : ℝ) (ha : 0 &lt; a) (ha1 : a &lt; 1)
+    (hb : 0 &lt; b) (hb1 : b &lt; 1) :
+    Tendsto (realDensity (fun n =&gt;
+      (n.maxPrimeFac : ℝ) ≤ (n : ℝ) ^ a ∧
+      ((n + 1).maxPrimeFac : ℝ) ≤ (n : ℝ) ^ b))
+      atTop (𝓝 (rho (1 / a) * rho (1 / b)))
+
+theorem increasing_order :
+    Tendsto (realDensity (fun n =&gt;
+      n.maxPrimeFac &lt; (n + 1).maxPrimeFac)) atTop (𝓝 (1 / 2))</code></pre>
+<p>This abridged statement is from the <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/JointDickman.lean">challenge file</a>; a third theorem gives the reverse ordering, and ρ is defined by its delay equation. The proof behind it is about 1,800 files of OpenAI’s code, some shared with episode 7’s proof, about 176,000 lines. A passing Comparator check would guarantee these statements from Lean’s standard axioms. The result is not yet in OpenAI’s formalization catalog, and we have not run the check.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>For 2 ≤ <i>n</i> ≤ 10<sup>7</sup>, <i>n</i> + 1 has the bigger largest prime factor 50.00% of the time (49.9995%); there are no ties, since neighbors are coprime.</li>
+  <li>How often both largest prime factors are at most √<i>n</i>, divided by the product of the two observed rates: 0.70 up to 10<sup>4</sup>, 0.81 up to 10<sup>5</sup>, 0.88 up to 10<sup>6</sup> and 0.91 up to 10<sup>7</sup>. Independence predicts 1, and the limit of the joint rate is ρ(2)<sup>2</sup> ≈ 9.4%.</li>
+  <li>Checked with a short Python script.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf">The paper (PDF)</a>, “The joint Dickman law for consecutive integers,” dated September 24, 2026 (84 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/012.md">The Lean scope note</a>, and <a href="https://github.com/openai/math/blob/main/CONTENTS.md">the collection’s catalog</a>, where this is result 012.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +155,34 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf">The joint Dickman law for consecutive integers</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Two neighbors</h3>
+<p>Here are two neighbors: 1,000,000, and 1,000,001. 1,000,000 is 2⁶ × 5⁶, so its largest prime factor is 5. 1,000,001 is 101 × 9,901. Its largest prime factor is 9,901. This time, the second number wins. Hold this contest for every pair of neighbors up to 10 million, and the second number wins half the time, to four decimal places. Paul Erdős asked whether it is exactly one half in the limit. The question is listed as Erdős problem #371. Result 012 in OpenAI’s math repository claims to prove it, and more: the sizes of the largest prime factors of two neighbors behave like independent random draws. And it comes with a Lean proof.</p>
+<h3><span class="t num">0:52</span>One number at a time</h3>
+<p>First, one number at a time. Measure the largest prime factor on a log scale: its logarithm, divided by the logarithm of n. Karl Dickman found the law of this measure in 1930. The largest prime factor is at most the square root of n for about 31% of numbers, in the limit, and at most the cube root for about 5%. In general, the chance that it is at most n^a tends to ρ(1/a), where ρ is Dickman’s function.</p>
+<h3><span class="t num">1:24</span>Two at a time</h3>
+<p>Now two at a time. Neighbors share no prime factor, so you might expect their factorizations to be unrelated. If the largest prime factors of n and n + 1 were independent, the chance that both are at most the square root would be ρ(2)²: about 9%. And by symmetry, each would beat the other half the time. The data lean that way, slowly. Up to 10,000, both are small only 70% as often as independence would predict from the observed rates. Up to 10 million, it is 91%, and still climbing.</p>
+<h3><span class="t num">1:59</span>What was known</h3>
+<p>In 1978, Erdős and Carl Pomerance proved that each ordering happens for a positive proportion of numbers: at least about 1%. Later work raised that floor, to 5.5%, then about 11%, 14%, 20%, and 28% in a recent preprint. But these were floors. No one had shown, unconditionally, that the proportion even settles down. Other results changed the averaging. In 2018, Joni Teräväinen proved the full independence with logarithmic weights, counting each n with weight 1/n. Terence Tao and Teräväinen then reached ordinary averages, but only at almost all scales: there could be rare ranges of x where it fails.</p>
+<h3><span class="t num">2:43</span>The claim</h3>
+<p>Result 012 claims the ordinary version, at every large scale. For any fixed a and b between zero and one, the proportion of n up to x with P⁺(n) ≤ n^a, and P⁺(n + 1) ≤ n^b, tends to ρ(1/a) × ρ(1/b). That is independence, exactly as predicted. The limiting law is continuous, so ties don’t matter, and symmetry gives one half for each ordering.</p>
+<h3><span class="t num">3:10</span>How the proof goes</h3>
+<p>First, trade the largest prime for counts. Cut the primes between x^(1/J) and x into bands, and count how many prime factors of n land in each band. Independence of these counts, for n and n + 1, gives the joint law. By Fourier analysis, that comes down to one correlation going to zero: a function of n’s band counts, times a centered function of n + 1’s, averaged up to x. It is the same kind of problem as Chowla’s conjecture, from episode 7. Suppose the correlation doesn’t vanish. The paper amplifies it by counting ways to factor n and n + 1 with chosen pieces, and Cauchy–Schwarz turns it into a positive energy on a graph that joins integers a short shift apart. It compares that graph with a random model, in which each auxiliary prime divides independently, with probability 1/p, using sampling tools from computer science. In the end, everything reduces to averages over short intervals, where theorems of Kaisa Matomäki and Maksym Radziwiłł, one with Terence Tao, force cancellation. That contradicts the positive energy, so the correlation must vanish.</p>
+<h3><span class="t num">4:23</span>Lean, and the caveats</h3>
+<p>Lean. The joint law and both orderings are stated in Lean, with Dickman’s function built from its delay equation. The proof behind them is about 1,800 files of OpenAI’s code, some shared with episode 7’s proof: about 176,000 lines. A passing Comparator check would guarantee those statements from Lean’s usual axioms. OpenAI’s catalog of formal proofs doesn’t list it yet, and we haven’t run the check ourselves. The caveats. This is a preprint, 84 pages, not peer reviewed. The law is a limit, with no rate, and the data show convergence is slow. And Erdős problem #371 is still listed as open. Two neighbors, two largest primes: a fair contest, in the limit. If the proof holds. And a computer can check it.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20012%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../011-prime-factor-statistics/"><span class="dir">Previous · 011</span><span class="pt">Prime-factor statistics of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></span></a>
-  <a class="next" href="../013-ostmanns-inverse-goldbach-conjecture/"><span class="dir">Next · 013</span><span class="pt">Ostmann’s inverse Goldbach conjecture</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/number-theory/">More in number theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
