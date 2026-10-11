@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 015: Torus-packet equidistribution in prime, quartic, and sextic degrees | AI Proved What?</title>
-<meta name="description" content="Torus-packet equidistribution in prime, quartic, and sextic degrees. Result 015 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Loops that fill space: Duke’s theorem in higher dimensions | AI Proved What?</title>
+<meta name="description" content="An AI system says packets of closed torus orbits from number fields spread out evenly in the space of lattices, in every prime degree from five up and for primitive quartic and sextic fields. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/015-torus-packet-equidistribution-prime-quartic/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 015: Torus-packet equidistribution in prime, quartic, and sextic degrees | AI Proved What?">
-<meta property="og:description" content="Torus-packet equidistribution in prime, quartic, and sextic degrees. Result 015 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Loops that fill space">
+<meta property="og:description" content="An AI system says packets of closed torus orbits from number fields spread out evenly in the space of lattices, in every prime degree from five up and for primitive quartic and sextic fields. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/015-torus-packet-equidistribution-prime-quartic/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/015-torus-packet-equidistribution-prime-quartic/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,56 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 015 · <a href="../../subjects/number-theory/">Number theory</a></p>
-<h1 class="result-title">Torus-packet equidistribution in prime, quartic, and sextic degrees</h1>
+<p class="meta">Episode 015, October 2026</p>
+<h1>Loops that fill space</h1>
+<p class="subtitle">Torus-packet equidistribution in prime, quartic and sextic degrees: Duke’s theorem in higher dimensions</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 015 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="DR_qxMwTcz4" data-title="Episode 015: Loops that fill space">
+  <a href="https://youtu.be/DR_qxMwTcz4">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 015: Loops that fill space? Duke’s theorem in higher dimensions. The modular surface, filled with gold points from the closed geodesics of discriminant 100,049.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:27. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/DR_qxMwTcz4?t=0" data-t="0"><span class="t">0:00</span><span>A loop of lattices</span></a></li>
+  <li><a href="https://youtu.be/DR_qxMwTcz4?t=66" data-t="66"><span class="t">1:06</span><span>Duke’s theorem</span></a></li>
+  <li><a href="https://youtu.be/DR_qxMwTcz4?t=119" data-t="119"><span class="t">1:59</span><span>Higher dimensions</span></a></li>
+  <li><a href="https://youtu.be/DR_qxMwTcz4?t=179" data-t="179"><span class="t">2:59</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/DR_qxMwTcz4?t=215" data-t="215"><span class="t">3:35</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/DR_qxMwTcz4?t=276" data-t="276"><span class="t">4:36</span><span>Lean, and the caveats</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves Haar equidistribution without escape of mass for complete volume-weighted torus packets from totally real fields: arbitrary lattices and prescribed local types in fixed prime degree at least five, arbitrary-order Picard packets in primitive quartic fields, and maximal-order ideal-class packets in primitive sextic fields. Here primitive means having no proper intermediate field; the relevant order or field discriminant tends to infinity.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Build a lattice in the plane from the golden ratio φ: the points (<i>a</i> + <i>b</i>φ, <i>a</i> + <i>b</i>φ̄) for whole numbers <i>a</i> and <i>b</i>. Stretch the plane horizontally and squeeze it vertically by the same factor; at the factor φ<sup>2</sup> the lattice lands exactly on itself. In the space of lattice shapes, which for the plane is the modular surface, that is a closed loop: a closed geodesic. Every real quadratic field gives a finite packet of such loops, one for each ideal class. In 1988 William Duke proved that, as the (fundamental) discriminant grows, these packets spread out evenly over the surface with respect to its natural area d<i>x</i> d<i>y</i>/<i>y</i><sup>2</sup>.</p>
+<p>A totally real field of degree <i>n</i> gives lattices in <i>n</i>-dimensional space, the diagonal group stretches in <i>n</i> − 1 independent directions, and the closed orbits are (<i>n</i> − 1)-dimensional tori. The higher-dimensional Duke problem asks whether the packets of these tori become evenly distributed in the space of lattices SL<sub><i>n</i></sub>(ℤ)\SL<sub><i>n</i></sub>(ℝ). Result 015 claims:</p>
+<ul class="sources">
+  <li><strong>Every prime degree <i>n</i> ≥ 5</strong> (<a href="https://github.com/openai/math/blob/main/preprints/Equidistribution-of-Prime-Degree-Torus-Packets-with-Arbitrary-Local-Type-September-24-2026/paper.pdf">16 pages</a>). For every sequence of full lattices in totally real fields of degree <i>n</i> whose multiplier-order discriminants tend to infinity, the volume-weighted packets converge to the uniform (Haar) probability measure, with no escape of mass. Any order and any local type is allowed.</li>
+  <li><strong>Primitive quartic fields</strong> (<a href="https://github.com/openai/math/blob/main/preprints/Equidistribution-of-Primitive-Quartic-Torus-Packets-for-Arbitrary-Orders-October-5-2026/quartic-torus-packets.pdf">70 pages</a>). The same for the packets of invertible ideal classes of any order in totally real quartic fields with no intermediate field.</li>
+  <li><strong>Primitive sextic fields</strong> (<a href="https://github.com/openai/math/blob/main/preprints/Equidistribution-of-Primitive-Sextic-Torus-Packets-October-5-2026/primitive-sextic-torus-packets.pdf">53 pages</a>). The same for the ideal-class packets of the ring of integers in totally real sextic fields with no intermediate field.</li>
+</ul>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The theorems are about whole packets in the limit: they give no rate and say nothing about a single torus. Composite degrees other than 4 and 6, and nonmaximal orders in sextic fields, remain open. For fields with a fixed intermediate field the answer is different: every lattice of the packet lies on a smaller closed orbit, so packets can stay trapped there.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, September 24 and October 5, 2026; three papers</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +94,50 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/015.md">scope notes</a>)</dd>
+    <dd>Prime-degree theorem only, by OpenAI (<a href="https://github.com/openai/math/blob/main/lean/docs/015.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 11, 2026.</p>
+<p class="ledger-note">Last checked October 11, 2026. The claims have not been withdrawn, and we found no public critique. OpenAI’s Lean proof of the prime-degree theorem (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/DukePrimeDegree.lean">challenge statement</a>) asserts weak convergence to Haar probability and tightness; with its supporting library it runs to 877 files and about 130,000 lines, not counting Mathlib. It is not yet in OpenAI’s formalization catalog. The quartic and sextic papers have no Lean proof.</p>
 </section>
 
+<section aria-labelledby="known">
+<h2 id="known">What was known</h2>
+<ul class="sources">
+  <li>Linnik’s ergodic method, with Skubenko, proved the planar case under a splitting condition at a fixed prime; Duke (1988) removed it for fundamental discriminants. Einsiedler, Lindenstrauss, Michel and Venkatesh later gave an entropy proof for all nonsquare discriminants.</li>
+  <li>Cubic fields: <a href="https://annals.math.princeton.edu/2011/173-2/p05">Einsiedler, Lindenstrauss, Michel and Venkatesh</a> (Annals, 2011), combining subconvexity, local analysis and measure classification.</li>
+  <li>Prime degree ≥ 5: conditional on subconvexity (the same authors), and for all fields outside a sparse exceptional set by <a href="https://arxiv.org/abs/2012.14422">Lemke Oliver, Thorner and Zaman</a> (Inventiones, 2024). Khayutin obtained entropy bounds under maximal-order and two-transitivity hypotheses.</li>
+  <li>Composite degrees carry an extra obstacle: smaller homogeneous pieces of the space containing the diagonal group, on which limits could concentrate.</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Count lattice vectors.</strong> Packet averages of lattice-vector counts unfold into ideal sums. Counting short vectors shows no mass escapes into the cusp; counting vectors in small boxes gives an O(<i>r</i><sup><i>n</i></sup>) bound for small balls, which forces positive entropy in almost every ergodic component of any limit. Stark’s exceptional-zero bounds and a short-interval bound of Shiu (in Pollack’s uniform form) replace the subconvexity estimates used earlier.</li>
+  <li><strong>Rigidity.</strong> By a theorem of Einsiedler, Katok and Lindenstrauss, in prime dimension every positive-entropy ergodic component is Haar measure, so the limit is.</li>
+  <li><strong>Degrees 4 and 6.</strong> The smaller homogeneous pieces must be ruled out: for quartic fields by a count of exterior-square products in a cubic resolvent field, uniform in the order; for sextic fields by conditional measures at intermediate resolutions.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The pictures in the video</h2>
+<ul class="sources">
+  <li>Closed geodesics of fundamental discriminants 5, 13, 229 (three classes, each of length 10.85), 20,009 (total length 442) and 100,049 (one loop of length 1244.8), traced exactly, arc by arc, from the cycles of reduced quadratic forms. For D = 100,049, 47.7% of the length lies above height 2; the area share of that region is 3/(2π) ≈ 47.75%.</li>
+  <li>The map diag(φ<sup>2</sup>, φ<sup>−2</sup>) carries the lattice of ℤ[φ] to itself, since φ<sup>2</sup>(<i>a</i> + <i>b</i>φ) = (<i>a</i> + <i>b</i>) + (<i>a</i> + 2<i>b</i>)φ. Checked with a short Python script.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Equidistribution-of-Prime-Degree-Torus-Packets-with-Arbitrary-Local-Type-September-24-2026/paper.pdf">Equidistribution of Prime-Degree Torus Packets with Arbitrary Local Type (PDF)</a>, September 24, 2026 (16 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Equidistribution-of-Primitive-Quartic-Torus-Packets-for-Arbitrary-Orders-October-5-2026/quartic-torus-packets.pdf">Equidistribution of primitive quartic torus packets for arbitrary orders (PDF)</a>, October 5, 2026 (70 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Equidistribution-of-Primitive-Sextic-Torus-Packets-October-5-2026/primitive-sextic-torus-packets.pdf">Equidistribution of Primitive Sextic Torus Packets (PDF)</a>, October 5, 2026 (53 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/015.md">The Lean scope note</a>, and <a href="https://github.com/openai/math/blob/main/CONTENTS.md">the collection’s catalog</a>, where this is result 015.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 3 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -76,18 +147,32 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Equidistribution-of-Primitive-Sextic-Torus-Packets-October-5-2026/primitive-sextic-torus-packets.pdf">Equidistribution of Primitive Sextic Torus Packets</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>A loop of lattices</h3>
+<p>Here is a lattice of points in the plane, built from the golden ratio φ. Each point’s coordinates are a + bφ, for whole numbers a and b, and the same number with φ replaced by its conjugate. Now stretch the plane horizontally and squeeze it vertically by the same factor. The lattice deforms, but when the factor reaches φ², every point lands back on a point of the lattice. The stretching flow has carried this lattice around a closed loop. Every lattice of area one has a shape, and the shapes form a space. For lattices in the plane, the space of shapes is this region, the modular surface. Our loop of lattices traces a closed curve on it, a closed geodesic. Lattices built the same way from other real quadratic numbers give other closed loops. In 1988, William Duke proved that these loops, taken together, spread out evenly. Result 015 in OpenAI’s math repository claims the same for higher-dimensional lattices, in prime degrees from 5 up, and in degrees 4 and 6 for fields with no intermediate field.</p>
+<h3><span class="t num">1:06</span>Duke’s theorem</h3>
+<p>Take a fundamental discriminant D, like 229. The square root of D generates real quadratic numbers, and their ideal classes give a finite packet of closed loops, all of the same length. For 229 there are three loops. As D grows, the packet grows. At 20,009, the loops have total length 442. At 100,049, over 1,200. Duke’s theorem says they fill the surface evenly, with respect to its natural area. Here is one test. The region above height 2 holds just under 48% of the surface’s area. For the largest packet, 47.7% of the loop’s length lies there. Notice two things the theorem rules out: mass escaping up the infinitely long cusp, and loops getting stuck in some smaller region.</p>
+<h3><span class="t num">1:59</span>Higher dimensions</h3>
+<p>Now go up in dimension. A totally real field of degree n, one whose n embeddings are all real, gives lattices in n-dimensional space. Stretching and squeezing now happens along n − 1 independent directions, and a closed orbit is not a loop but an (n − 1)-dimensional torus. Each ideal class gives a torus, plus copies with flipped signs, and together they form a packet. The higher-dimensional Duke problem asks whether these packets fill the space of lattices evenly as the discriminant grows. For cubic fields, Einsiedler, Lindenstrauss, Michel and Venkatesh proved it in 2011. In prime degree 5 and up, there were results conditional on unproved bounds for L-functions, and in 2024 Lemke Oliver, Thorner and Zaman proved it for all but a sparse exceptional set of fields. In composite degrees there is an extra obstacle: the space contains smaller homogeneous pieces where a packet could pile up.</p>
+<h3><span class="t num">2:59</span>The claims</h3>
+<p>Result 015 has three papers. The first claims the prime-degree case in full: for every prime n ≥ 5, every packet, from any order and any local type, becomes evenly distributed as the discriminant grows, with no mass escaping to infinity. The second claims the same for quartic fields with no intermediate field, for the invertible ideals of any order. The third does it for sextic fields with no intermediate field, for the ring of integers. And for the prime-degree theorem, OpenAI published a Lean proof.</p>
+<h3><span class="t num">3:35</span>How the proofs go</h3>
+<p>The strategy goes back to Einsiedler, Lindenstrauss, Michel and Venkatesh: count lattice vectors, then use rigidity. Counting short vectors across a packet shows that little mass can drift into the cusp, where lattices have very short vectors. Counting vectors in small boxes shows that any limit gives tiny balls tiny mass, so almost every ergodic piece of the limit has positive entropy for the diagonal flow. Here the new arithmetic input enters: bounds from Stark’s work on exceptional zeros, with a short-interval bound of Shiu, replace the unproved L-function bounds. Then a rigidity theorem of Einsiedler, Katok and Lindenstrauss takes over: in prime dimension, each such piece must be the uniform measure, so the whole limit is. In degrees 4 and 6, the papers must also rule out the smaller homogeneous pieces, with an extra count in a cubic resolvent field for quartics, and conditional measures at intermediate scales for sextics.</p>
+<h3><span class="t num">4:36</span>Lean, and the caveats</h3>
+<p>OpenAI’s Lean proof covers the prime-degree theorem. Its statement asserts weak convergence to the uniform measure and tightness, which means no escape of mass. With its supporting library, it runs to about 130,000 lines. It isn’t in OpenAI’s formalization catalog yet, and we haven’t run the check. These are preprints, not peer reviewed, and the quartic and sextic papers have no Lean proof. The theorems give no rate and say nothing about a single torus. Other composite degrees remain open, as do nonmaximal sextic orders. For fields with intermediate fields, packets can stay trapped in the smaller pieces. Loops of lattices, spreading evenly over the space of shapes, now in many more dimensions. If the proofs hold.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20015%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../014-restricted-geometric-langlands-global-arthur/"><span class="dir">Previous · 014</span><span class="pt">Restricted geometric Langlands, global Arthur enhancements, and generic Ramanujan</span></a>
-  <a class="next" href="../016-zilber-pink-abelian-varieties-siegel/"><span class="dir">Next · 016</span><span class="pt">Zilber–Pink in abelian varieties and the Siegel threefold</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/number-theory/">More in number theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
