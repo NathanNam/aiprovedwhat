@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 005: Irrationality of Catalan’s constant | AI Proved What?</title>
-<meta name="description" content="Irrationality of Catalan’s constant. Result 005 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Not a fraction: Catalan&#x27;s constant is irrational | AI Proved What?</title>
+<meta name="description" content="An AI system says it proved that Catalan&#x27;s constant, 1 - 1/9 + 1/25 - 1/49 + ..., is not a fraction, with a Lean proof of the main theorem. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/005-irrationality-catalans-constant/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 005: Irrationality of Catalan’s constant | AI Proved What?">
-<meta property="og:description" content="Irrationality of Catalan’s constant. Result 005 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Not a fraction">
+<meta property="og:description" content="An AI system says it proved that Catalan&#x27;s constant, 1 - 1/9 + 1/25 - 1/49 + ..., is not a fraction, with a Lean proof of the main theorem. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/005-irrationality-catalans-constant/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/005-irrationality-catalans-constant/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,55 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 005 · <a href="../../subjects/number-theory/">Number theory</a></p>
-<h1 class="result-title">Irrationality of Catalan’s constant</h1>
+<p class="meta">Episode 005, October 2026</p>
+<h1>Not a fraction</h1>
+<p class="subtitle">Catalan’s constant is irrational</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 005 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="9qekv7mIFOY" data-title="Episode 005: Not a fraction">
+  <a href="https://youtu.be/9qekv7mIFOY">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 005: Not a fraction. Catalan’s constant, 1 − 1/9 + 1/25 − 1/49 + …, beside a chessboard tiled with dominoes and the value G = 0.9159655941…">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:02. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/9qekv7mIFOY?t=0" data-t="0"><span class="t">0:00</span><span>Is this number a fraction?</span></a></li>
+  <li><a href="https://youtu.be/9qekv7mIFOY?t=43" data-t="43"><span class="t">0:43</span><span>Catalan’s constant</span></a></li>
+  <li><a href="https://youtu.be/9qekv7mIFOY?t=79" data-t="79"><span class="t">1:19</span><span>Its famous relatives</span></a></li>
+  <li><a href="https://youtu.be/9qekv7mIFOY?t=140" data-t="140"><span class="t">2:20</span><span>How to prove a number is irrational</span></a></li>
+  <li><a href="https://youtu.be/9qekv7mIFOY?t=187" data-t="187"><span class="t">3:07</span><span>A determinant instead</span></a></li>
+  <li><a href="https://youtu.be/9qekv7mIFOY?t=230" data-t="230"><span class="t">3:50</span><span>The squeeze</span></a></li>
+  <li><a href="https://youtu.be/9qekv7mIFOY?t=284" data-t="284"><span class="t">4:44</span><span>Ruling out zero</span></a></li>
+  <li><a href="https://youtu.be/9qekv7mIFOY?t=323" data-t="323"><span class="t">5:23</span><span>The Lean proof</span></a></li>
+  <li><a href="https://youtu.be/9qekv7mIFOY?t=373" data-t="373"><span class="t">6:13</span><span>Why it matters, and the caveats</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves that Catalan's constant <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><msub><mo>∑</mo><mrow><mi>j</mi><mo>≥</mo><mn>0</mn></mrow></msub><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>j</mi></msup><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mn>2</mn><mi>j</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">G=\sum_{j\ge0}(-1)^j/(2j+1)^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">G</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.2605em;vertical-align:-0.4358em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.162em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span><span class="mrel mtight">≥</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4358em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">1</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8247em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span></span></span></span><span class="mord">/</span><span class="mopen">(</span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> is irrational.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Catalan’s constant is the number <i>G</i> = 1 − 1/9 + 1/25 − 1/49 + ⋯ = 0.9159655941…, the alternating sum of the reciprocals of the odd squares. It turns up in many places: it is the area under arctan(<i>x</i>)/<i>x</i> from 0 to 1, a quarter of the volume of the regular ideal octahedron in hyperbolic space (and of the space around the Whitehead link), and the rate, <i>G</i>/π per square, at which the number of domino tilings of a large board grows. It is named after Eugène Catalan, who published a memoir on it in 1865.</p>
+<p>Its relatives are famous. With plain odd numbers instead of odd squares the same alternating sum is π/4 (Leibniz), and with any odd power it is a rational multiple of a power of π. The even powers are different, and no formula for <i>G</i> in terms of π is known. Whether <i>G</i> is irrational was a long-standing open question: in 2013 it was called “arguably the most basic constant whose irrationality and transcendence (though strongly suspected) remain unproven.”</p>
+<p>Result 005 claims the answer: <i>G</i> is irrational. It is not a ratio of two whole numbers.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The paper proves irrationality and nothing quantitative: it says a bound on how well fractions can approximate <i>G</i> (an irrationality measure) “would require additional control of rational approximations.” It says nothing about whether <i>G</i> is transcendental, and nothing about the next even values such as 1 − 1/3<sup>4</sup> + 1/5<sup>4</sup> − ⋯. Its only further claims are corollaries in geometry: the volume of the Whitehead link complement (4<i>G</i>) and every volume of an orientable arithmetic hyperbolic 3-orbifold defined over ℚ(<i>i</i>), which is a rational multiple of <i>G</i>, are irrational.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 24, 2026; released October 6, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +93,55 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/005.md">scope notes</a>)</dd>
+    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/005.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 10, 2026.</p>
+<p class="ledger-note">Last checked October 10, 2026. The claim has not been withdrawn, and the paper was unchanged in the release’s October 7 update. A separate claimed proof by Zhi-Wei Sun (<a href="https://arxiv.org/abs/2609.04176">arXiv:2609.04176</a>, posted September 3, 2026) has a reported gap: a note by Dane Wachs (<a href="https://arxiv.org/abs/2609.22339">arXiv:2609.22339</a>) finds that a key estimate fails in exact tests, much of the discrepancy coming from the prime 2. OpenAI’s paper cites Sun’s preprint and says no result from it is used.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Why the classic method stalled.</strong> If <i>G</i> = <i>p</i>/<i>q</i>, every combination <i>AG</i> − <i>B</i> with whole numbers <i>A</i>, <i>B</i> is zero or at least 1/<i>q</i> in size, so nonzero combinations shrinking to zero would prove irrationality. That is Apéry’s route for ζ(3). For <i>G</i>, known approximations converge quickly, but after clearing denominators the combinations do not go to zero (Zudilin, 2003).</li>
+  <li><strong>A determinant instead.</strong> The paper builds a determinant Δ<sub><i>N</i></sub> of size 48<i>N</i>. Each entry comes from integrals and equals a rational number plus a rational multiple of <i>G</i> plus a rational multiple of ζ(2). The rows are built from Chebyshev polynomials chosen so that every ζ(2) part cancels exactly. So if <i>G</i> were rational, every Δ<sub><i>N</i></sub> would be rational.</li>
+  <li><strong>The floor.</strong> A nonzero rational number is at least 1 over its denominator. Bounding the denominator one prime at a time (the prime 2 separately; the odd primes through a loss curve summed with the prime number theorem) gives, if <i>G</i> were rational, <span style="white-space:nowrap">log |Δ<sub><i>N</i></sub>|/(48<i>N</i>)²</span> − ½ log 2 ≥ −2.29081 in the long run.</li>
+  <li><strong>The ceiling.</strong> With no assumption, Andréief’s identity and Cauchy’s determinant write Δ<sub><i>N</i></sub> as a large integral. Logarithmic-potential estimates, certified by explicit rational numbers, give the same quantity ≤ −2.290939875 in the long run. The ceiling is below the floor by about 0.00013, which is a contradiction for large enough <i>N</i>.</li>
+  <li><strong>Ruling out zero.</strong> The floor needs Δ<sub><i>N</i></sub> ≠ 0. Assuming <i>G</i> is rational, the paper shows that for every large prime <i>p</i>, Δ<sub><i>p</i></sub> is not zero: modulo <i>p</i> the matrix reduces to blocks built from three fixed 48 × 48 matrices, whose determinants are certified nonzero by Gaussian elimination modulo 101 (144 nonzero pivots).</li>
+</ol>
+</section>
+
+<section aria-labelledby="lean">
+<h2 id="lean">The Lean statement</h2>
+<pre class="code"><code>theorem catalan_irrational :
+    Irrational (∑' j : ℕ,
+      (-1 : ℝ) ^ j / ((2 * j + 1 : ℕ) : ℝ) ^ 2)</code></pre>
+<p>This is the <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/Catalan.lean">challenge statement</a> that OpenAI’s setup checks with the Comparator tool. A passing check guarantees that the proof proves exactly this statement, using only Lean’s standard axioms (<code>propext</code>, <code>Quot.sound</code>, <code>Classical.choice</code>), and that Lean’s kernel accepts it. The proof itself is 981 files, 573,816 lines; about 69% of the lines write out the mod-101 elimination step by step. Its <a href="https://github.com/openai/math/blob/main/lean/OAI/NumberTheory/Catalan/Results/Conclusions.lean">last step</a> mirrors the paper: suppose the sum is a rational <i>z</i>, combine the floor and the ceiling along large primes, and let <code>linarith</code> find the contradiction. A search of those files found no <code>sorry</code> and no new axioms, but a search is not a substitute for running the check, and we have not run it. OpenAI says its papers and proof files were produced by an internal AI model; its catalog of formal proofs gives their review status as “unchecked” and does not yet list this proof.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li><i>G</i> = 0.91596559417721901505…; partial sums 1, 0.889, 0.929, 0.908, …; ∫<sub>0</sub><sup>1</sup> arctan(<i>x</i>)/<i>x</i> d<i>x</i> = <i>G</i>; 4<i>G</i> = 3.66386…; <i>G</i>/3 = 0.30532… (mpmath).</li>
+  <li>The 8 × 8 board has 12,988,816 domino tilings (Kasteleyn’s product formula). log(tilings)/area is 0.256 for 8 × 8, 0.289 for 100 × 100 and 0.291 for 400 × 400, tending to <i>G</i>/π = 0.29156…</li>
+  <li>The two starting integrals equal 4<i>G</i> and π²/4 = (3/2)ζ(2); the ζ(2) parts cancel for all 48 rows at <i>N</i> = 1 (checked exactly).</li>
+  <li>The odd-prime loss curve has area 8609/2. The floor is −8609/4608 − (1/2 + 505/4608) log 2 = −2.2908096…; the ceiling is −2.290939875.</li>
+  <li>From the paper’s recipe we rebuilt the fixed 49 × 48 rational matrix and reran the elimination modulo 101. All 144 pivots, and the two row swaps, match the paper’s table.</li>
+  <li>The loss curve, certificate digits and pivots on screen are copied from the paper.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Catalans-constant-is-irrational-September-24-2026/paper.pdf">The paper (PDF)</a>, “Catalan’s constant is irrational,” OpenAI Math Release preprint, dated September 24, 2026 (44 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/005.md">The Lean scope note</a> and the <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/Catalan.lean">Comparator challenge</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 005, and <a href="https://github.com/openai/math/blob/main/history.md">its history</a> of withdrawals and fixes.</li>
+  <li><a href="https://en.wikipedia.org/wiki/Catalan%27s_constant">Catalan’s constant on Wikipedia</a>, for the history and the 2013 quote (Bailey, Borwein, Mattingly and Wightwick, Notices of the AMS).</li>
+  <li>Domino tilings: Kasteleyn (1961) and Temperley and Fisher (1961); see <a href="https://arxiv.org/abs/math/0008220">Cohn, Kenyon and Propp</a>.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +149,38 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Catalans-constant-is-irrational-September-24-2026/paper.pdf">Catalan's constant is irrational</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Is this number a fraction?</h3>
+<p>How many ways can you cover a chessboard with dominoes? 12,988,816. On bigger boards the count grows exponentially with the area, and the growth rate is G divided by π, where G is about 0.916. G is Catalan’s constant. 1 − 1/9 + 1/25 − 1/49, and so on, over the odd squares. Is it a fraction? Nobody could prove it either way. Result 005 in OpenAI’s math repository claims the answer: no. G is irrational. And the claim comes with a proof in Lean, a language for computer-checked mathematics.</p>
+<h3><span class="t num">0:43</span>Catalan’s constant</h3>
+<p>The signs alternate, so the running totals zig-zag. One. Then about 0.89. Then 0.93, closing in on 0.915966. The number turns up all over mathematics. It’s the area under arctan(x)/x from 0 to 1. Four times G is the volume of the perfectly symmetric ideal octahedron in hyperbolic space, and of the space around a famous pair of linked loops, the Whitehead link. It’s named after Eugène Catalan, who published a memoir on it in 1865.</p>
+<h3><span class="t num">1:19</span>Its famous relatives</h3>
+<p>Its relatives are famous. Use plain odd numbers instead of odd squares, and you get Leibniz’s series, 1 − 1/3 + 1/5, which equals π/4. With odd cubes you get π³/32. Every odd power gives a fraction times a power of π. The even powers are the mystery, and G is the first of them. No formula in terms of π is known. Compare ζ(2), 1 + 1/4 + 1/9 and so on. Euler showed it equals π²/6, which is irrational. ζ(3) was proved irrational by Apéry in the late 1970s. For G, the best results were about whole families. Rivoal and Zudilin proved in 2003 that infinitely many of these even values are irrational. Later work showed that at least one of the first five is. But no one could say which one. In 2013, G was called arguably the most basic constant whose irrationality remains unproven.</p>
+<h3><span class="t num">2:20</span>How to prove a number is irrational</h3>
+<p>Here’s the classic tool. Suppose G were a fraction, p/q. Take any whole numbers A and B. Then A·G − B is a whole number divided by q. So it’s either zero, or at least 1/q in size. It can’t be tiny without being zero. So if you can find whole numbers where AG − B is never zero, but shrinks toward zero, G cannot be a fraction. That’s how Apéry’s proof works. For G, mathematicians found fractions B/A that approach it very fast. The catch is the denominators. To get whole numbers you multiply by A, and A grows faster than the error shrinks. In Zudilin’s construction, the combinations do not go to zero. For decades, that was the wall.</p>
+<h3><span class="t num">3:07</span>A determinant instead</h3>
+<p>The new proof changes the object. Instead of one combination, it builds a big square grid of numbers and takes its determinant, called Δ_N. The grid is 48N rows by 48N columns. Each entry comes from an integral, and each integral works out to a fraction, plus a fraction times G, plus a fraction times ζ(2). The rows are built from Chebyshev polynomials, chosen so that every ζ(2) part cancels exactly. We checked that cancellation for all 48 rows when N = 1. So if G were a fraction, every entry would be a fraction, and so would the determinant. The proof then squeezes that fraction from both sides.</p>
+<h3><span class="t num">3:50</span>The squeeze</h3>
+<p>From below. A nonzero fraction can’t be smaller than 1 over its denominator. So the paper limits the denominator, one prime at a time. The prime 2 gets its own estimate. The odd primes follow a loss curve, and the prime number theorem adds them all up. On a suitably normalized log scale, that gives a floor. If G were a fraction, this measure could never sink below −2.29081, in the long run. From above, with no assumption at all, the paper writes the determinant as a giant integral and bounds it. Explicit rational numbers certify the result: a ceiling at about −2.29094. The ceiling sits below the floor, by about one ten-thousandth. No fraction can do both. The gap is so thin that the squeeze only works for very large grids. In a proof, that’s fine.</p>
+<h3><span class="t num">4:44</span>Ruling out zero</h3>
+<p>Well, almost. One loophole is left. Zero is a fraction too, and a zero determinant would slip under the floor. So the paper shows that, if G were a fraction, the determinant couldn’t be zero whenever N is a large prime p. Working modulo p, the huge grid collapses into copies of three fixed 48 × 48 matrices. If those three are invertible, so is the giant one. The paper certifies them by elimination modulo 101: 144 pivots, and none of them is zero. We reran that elimination from the paper’s recipe. Every pivot matched.</p>
+<h3><span class="t num">5:23</span>The Lean proof</h3>
+<p>Now the computer proof. Here’s the statement in Lean: the sum of (−1)^j/(2j + 1)² is irrational. Behind it sit about 980 files, more than half a million lines. The last step reads like the paper. Suppose the sum equals a rational number z. Take the floor and the ceiling along large primes, and let arithmetic find the contradiction. OpenAI set it up for a checking tool called Comparator. A passing check guarantees that this exact statement is proved, using only Lean’s usual axioms. OpenAI says its papers and proof files were produced by an internal AI model. Its catalog of formal proofs marks their review status as unchecked, and doesn’t list this one yet. And we haven’t run the check ourselves.</p>
+<h3><span class="t num">6:13</span>Why it matters, and the caveats</h3>
+<p>If it holds, geometry gets answers too. The volume around the Whitehead link is 4G, so it’s irrational. So is every volume in a whole family of hyperbolic shapes built from the Gaussian integers. The caveats. This is a preprint, and it hasn’t been peer reviewed. The main theorem is formalized in Lean, but we haven’t run the check. A different claimed proof, posted on September 3, has been questioned: a note reports a gap, much of it at the prime 2. This paper doesn’t use it. And questions remain. Is G transcendental? How closely can fractions approximate it? Is the next even value irrational? For now: Catalan’s constant is not a fraction, if the proof holds. And this time, a computer can check it.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20005%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../004-hilberts-tenth-problem-q/"><span class="dir">Previous · 004</span><span class="pt">Hilbert’s tenth problem over ℚ</span></a>
-  <a class="next" href="../006-goldfelds-conjecture-densities-mean-analytic/"><span class="dir">Next · 006</span><span class="pt">Goldfeld’s conjecture: densities and mean analytic rank</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/number-theory/">More in number theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
