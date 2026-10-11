@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 007: Ordinary two-point correlations and the corrected Elliott conjecture | AI Proved What?</title>
-<meta name="description" content="Ordinary two-point correlations and the corrected Elliott conjecture. Result 007 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Even or odd: the two-point Chowla conjecture | AI Proved What?</title>
+<meta name="description" content="An AI system says it proved the two-point Chowla conjecture: whether n and n + h have an even or odd number of prime factors is uncorrelated, at every scale. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/007-ordinary-two-point-correlations-corrected/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 007: Ordinary two-point correlations and the corrected Elliott conjecture | AI Proved What?">
-<meta property="og:description" content="Ordinary two-point correlations and the corrected Elliott conjecture. Result 007 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Even or odd">
+<meta property="og:description" content="An AI system says it proved the two-point Chowla conjecture: whether n and n + h have an even or odd number of prime factors is uncorrelated, at every scale. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/007-ordinary-two-point-correlations-corrected/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/007-ordinary-two-point-correlations-corrected/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,53 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 007 · <a href="../../subjects/number-theory/">Number theory</a></p>
-<h1 class="result-title">Ordinary two-point correlations and the corrected Elliott conjecture</h1>
+<p class="meta">Episode 007, October 2026</p>
+<h1>Even or odd</h1>
+<p class="subtitle">Ordinary two-point correlations and the corrected Elliott conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 007 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="Mh_JIF2oHuU" data-title="Episode 007: Even or odd">
+  <a href="https://youtu.be/Mh_JIF2oHuU">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 007: Even or odd? Chowla’s conjecture. The integers 1 to 64 colored blue or orange by whether they have an even or odd number of prime factors.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:51. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/Mh_JIF2oHuU?t=0" data-t="0"><span class="t">0:00</span><span>Even or odd</span></a></li>
+  <li><a href="https://youtu.be/Mh_JIF2oHuU?t=55" data-t="55"><span class="t">0:55</span><span>The Liouville function</span></a></li>
+  <li><a href="https://youtu.be/Mh_JIF2oHuU?t=107" data-t="107"><span class="t">1:47</span><span>Chowla’s conjecture</span></a></li>
+  <li><a href="https://youtu.be/Mh_JIF2oHuU?t=154" data-t="154"><span class="t">2:34</span><span>What was known</span></a></li>
+  <li><a href="https://youtu.be/Mh_JIF2oHuU?t=198" data-t="198"><span class="t">3:18</span><span>Two kinds of average</span></a></li>
+  <li><a href="https://youtu.be/Mh_JIF2oHuU?t=237" data-t="237"><span class="t">3:57</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/Mh_JIF2oHuU?t=288" data-t="288"><span class="t">4:48</span><span>Inside the proof</span></a></li>
+  <li><a href="https://youtu.be/Mh_JIF2oHuU?t=410" data-t="410"><span class="t">6:50</span><span>Lean, and the caveats</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves the ordinary two-point Chowla conjecture, with a bound <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>X</mi><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>X</mi><msup><mo stretchy="false">)</mo><mi>c</mi></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(X/(\log X)^c)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mord">/</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> for Liouville correlation sums along fixed nonproportional affine forms, where <i>c</i> &gt; 0 is absolute. More generally, proves the binary corrected Elliott conjecture for complex multiplicative functions bounded by one when one factor is uniformly nonpretentious against each fixed Dirichlet character times <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mrow><mi>i</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">n^{it}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8247em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8247em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight">t</span></span></span></span></span></span></span></span></span></span></span></span> for <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∣</mi><mi>t</mi><mi mathvariant="normal">∣</mi><mo>≤</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">|t|\le X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathnormal">t</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span>.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Write Ω(<i>n</i>) for the number of prime factors of <i>n</i>, counted with repeats, and λ(<i>n</i>) = (−1)<sup>Ω(<i>n</i>)</sup>: +1 when the count is even, −1 when it is odd. This is the Liouville function. In 1965 Sarvadaman Chowla conjectured that λ at nearby integers behaves like independent coin flips. The two-point case says that for every fixed gap <i>h</i> ≥ 1, the sum of λ(<i>n</i>)λ(<i>n</i> + <i>h</i>) over <i>n</i> ≤ <i>X</i> is <i>o</i>(<i>X</i>): in the limit, <i>n</i> and <i>n</i> + <i>h</i> have the same parity exactly half the time.</p>
+<p>Result 007 claims this with a rate, at every scale. For any two fixed linear forms <i>a</i><sub>1</sub><i>n</i> + <i>b</i><sub>1</sub> and <i>a</i><sub>2</sub><i>n</i> + <i>b</i><sub>2</sub> that aren’t proportional, |Σ<sub><i>n</i>≤<i>X</i></sub> λ(<i>a</i><sub>1</sub><i>n</i> + <i>b</i><sub>1</sub>)λ(<i>a</i><sub>2</sub><i>n</i> + <i>b</i><sub>2</sub>)| ≤ <i>C</i>·<i>X</i>/(log <i>X</i>)<sup><i>c</i></sup> for all <i>X</i> ≥ 3, where <i>c</i> > 0 is the same for every pair of forms and <i>C</i> depends on the forms. It also claims the binary corrected Elliott conjecture for ordinary averages: for multiplicative <i>f</i><sub>1</sub>, <i>f</i><sub>2</sub> bounded by 1, one of which stays far from every Dirichlet character twisted by <i>n</i><sup><i>it</i></sup> uniformly in |<i>t</i>| ≤ <i>N</i>, the average of <i>f</i><sub>1</sub>(<i>n</i> + <i>h</i><sub>1</sub>)<i>f</i><sub>2</sub>(<i>n</i> + <i>h</i><sub>2</sub>) tends to 0.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>It covers pairs only: Chowla’s conjecture for three or more points, in ordinary averages, is still open. The general Elliott theorem comes with no rate. The exponent <i>c</i> is absolute but tiny: from the paper’s own parameter choices it is below 2 × 10<sup>−14</sup>, so at <i>X</i> = 10<sup>100</sup> the factor (log <i>X</i>)<sup><i>c</i></sup> is less than 1 + 10<sup>−13</sup>. The paper says its constants need not be effective. So the bound says nothing you could check numerically; it is a statement about the limit. And it is not a twin prime result: the two problems are often compared, but neither is known to imply the other.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 24, 2026; released October 6, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +91,69 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/007.md">scope notes</a>)</dd>
+    <dd>OpenAI published Lean proofs of both main theorems (<a href="https://github.com/openai/math/blob/main/lean/docs/007.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 10, 2026.</p>
+<p class="ledger-note">Last checked October 10, 2026. The claim has not been withdrawn, and the paper is unchanged since the repository’s first public version. As recently as August 26, 2026, a paper on the topic (<a href="https://arxiv.org/abs/2608.23500">arXiv:2608.23500</a>) described the two-point conjecture as open “even at <i>h</i> = 1.” We found no public critique specific to this result.</p>
 </section>
 
+<section aria-labelledby="known">
+<h2 id="known">What was known</h2>
+<ul class="sources">
+  <li>Matomäki and Radziwiłł (2015; Annals 2016): for each <i>h</i>, the normalized correlation stays below 1 − δ(<i>h</i>) in size.</li>
+  <li>Matomäki, Radziwiłł and Tao (<a href="https://arxiv.org/abs/1503.05121">2015</a>): the conjecture on average over gaps <i>h</i> ≤ <i>H</i>, for any <i>H</i> → ∞. Their short-interval estimates are an input to the new proof.</li>
+  <li>Tao (<a href="https://arxiv.org/abs/1509.05422">2015</a>; Forum of Mathematics, Pi 2016): the logarithmically averaged version, with weight 1/<i>n</i>, which he used to settle the Erdős discrepancy problem.</li>
+  <li>Helfgott and Radziwiłł (<a href="https://arxiv.org/abs/2103.06853">2021</a>) and Pilatte (<a href="https://arxiv.org/abs/2310.19357">2023</a>; JAMS 2026): quantitative rates for the logarithmic version at <i>h</i> = 1, by divisibility-graph expansion.</li>
+  <li>Tao and Teräväinen (2018; Algebra &amp; Number Theory 2019): ordinary averages vanish outside a set of scales of logarithmic density zero; later quantitative versions (<a href="https://arxiv.org/abs/2512.01739">2025</a>) still allow exceptional scales.</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Dilations.</strong> λ is completely multiplicative and λ(<i>d</i>)² = 1, so λ(<i>dn</i>)λ(<i>dn</i> + <i>dh</i>) = λ(<i>n</i>)λ(<i>n</i> + <i>h</i>). Comparing the pair (<i>n</i>, <i>n</i> + <i>h</i>) with (<i>dn</i>, <i>dn</i> + <i>dh</i>) leads to a graph on the integers with edge displacement <i>hd</i>. Each copy lives at a different scale, so the paper groups multipliers of nearly equal size.</li>
+  <li><strong>Centering.</strong> Each divisibility indicator splits as 1/<i>p</i> plus a correction 1<sub><i>p</i>|<i>n</i></sub> − 1/<i>p</i> with mean zero. Short-interval Fourier estimates of Matomäki, Radziwiłł and Tao show the averaged parts contribute little; what remains is a graph operator with centered weights, bounded through closed walks.</li>
+  <li><strong>Prime supplies.</strong> Each step uses one prime from each of <i>J</i> disjoint supplies of reciprocal mass about <i>W</i>. The mass is at least <i>W</i><sup><i>J</i></sup>, while the operator bound is (<i>C</i>√<i>W</i>)<sup><i>J</i></sup> with an absolute <i>C</i>, so the ratio decays like (<i>C</i>/√<i>W</i>)<sup><i>J</i></sup>. With <i>J</i> growing like log log <i>X</i>, that is a power-of-log saving.</li>
+  <li><strong>Finite scales.</strong> The supplies’ residues are not truly independent inside one interval. The residue tests are encoded as constant-depth Boolean circuits and compared with independent residues using Braverman’s 2010 theorem that polylogarithmic independence fools such circuits. A forest encoding counts the patterns of repeated primes.</li>
+  <li><strong>General functions.</strong> For the Elliott theorem there is no rate to exploit. The paper fixes an auxiliary scale, uses two bands of primes with different weights, and derives a contradiction from any persistent correlation.</li>
+</ol>
+<p>The paper credits the graph method to Helfgott and Radziwiłł and to Pilatte. OpenAI also released <a href="https://github.com/openai/math/blob/main/reasoning_traces/ordinary-two-point-correlations.pdf">an abridged summary of the model’s reasoning</a> for this result, one of ten such summaries. It records dead ends, including operator-algebra and adelic approaches and a polynomial substitution, before the return to divisor graphs.</p>
+</section>
+
+<section aria-labelledby="lean">
+<h2 id="lean">The Lean statement</h2>
+<pre class="code"><code>theorem liouville_log_saving :
+    ∃ c : ℝ, 0 &lt; c ∧ ∀ a₁ a₂ b₁ b₂ : ℕ,
+      0 &lt; a₁ → 0 &lt; a₂ → a₁ * b₂ ≠ a₂ * b₁ →
+      ∃ C : ℝ, 0 &lt; C ∧ ∀ X : ℝ, 3 ≤ X →
+        ‖affineSum liouville liouville
+            a₁ a₂ b₁ b₂ ⌊X⌋₊‖ ≤
+          C * X / Real.rpow (Real.log X) c</code></pre>
+<p>This is one of three statements in the <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/OrdinaryTwoPointCorrelations.lean">challenge file</a> that OpenAI’s setup checks with the Comparator tool; the other two are the Elliott theorems, which also have a <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/OrdinaryElliott.lean">separate challenge</a>. Here <code>liouville</code> is defined from Mathlib’s <code>ArithmeticFunction.liouville</code>, and <i>c</i> is chosen before the forms, so it is absolute. A passing check guarantees that the proof proves exactly these statements, using only Lean’s standard axioms (<code>propext</code>, <code>Quot.sound</code>, <code>Classical.choice</code>). The OpenAI-written files behind this challenge come to 1,539 files and 153,427 lines; the separate Elliott challenge adds 628 files and 70,806 lines. A search found no <code>sorry</code> and no new axioms, but a search is not a substitute for running the check, and we have not run it. OpenAI says its papers and proof files were produced by an internal AI model; its catalog of formal proofs does not yet list these.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>From our sieve of Ω(<i>n</i>) mod 2 up to 10<sup>8</sup>: Σ<sub><i>n</i>≤10<sup>8</sup></sub> λ(<i>n</i>)λ(<i>n</i> + 1) = −3,916, so neighbors match 49,998,042 times out of 100,000,000 (49.998%). For gaps 2 and 3 the sums are 4,632 and 10,714. Fair coins would typically give an imbalance on the order of √10<sup>8</sup> = 10,000.</li>
+  <li>The running sum <i>L</i>(<i>X</i>) = Σ<sub><i>n</i>≤<i>X</i></sub> λ(<i>n</i>) is −94 at 10<sup>4</sup>, −530 at 10<sup>6</sup> and −3,884 at 10<sup>8</sup>, and never exceeds 0 on [2, 10<sup>8</sup>]. Pólya’s guess that it never does fails first at 906,150,257 (Tanaka, 1980).</li>
+  <li>The toy sequence (−1)<sup>⌊ln <i>n</i>⌋</sup> has logarithmic average tending to 0 (0.047 at 10<sup>8</sup>), while its ordinary average keeps swinging to about ±(<i>e</i> − 1)/(<i>e</i> + 1) ≈ ±0.462.</li>
+  <li>For the character mod 3 (1, −1, 0, 1, −1, 0, …), the product of neighbors averages −1/3.</li>
+  <li>The bound on <i>c</i>: <i>c</i> = δ/(6<i>WA</i>) with δ = 1/200 and <i>A</i> ≥ 1000, and the paper’s choice of <i>W</i> forces <i>W</i> ≥ e<sup>12</sup> · 288 ≈ 4.7 × 10<sup>7</sup>.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/final.pdf">The paper (PDF)</a>, “Ordinary two-point correlations of multiplicative functions,” OpenAI Math Release preprint, September 24, 2026 (87 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/reasoning_traces/ordinary-two-point-correlations.pdf">The reasoning summary (PDF)</a>, 7 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/007.md">The Lean scope note</a> and the challenge files linked above.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 007, and <a href="https://github.com/openai/math/blob/main/history.md">its history</a> of withdrawals and fixes.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +161,36 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/final.pdf">Ordinary two-point correlations of multiplicative functions</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Even or odd</h3>
+<p>Take any whole number and break it into primes. Twelve is two times two times three: three prime factors, an odd count. Ten is two times five: an even count. Color every number by that parity, blue for even and orange for odd. Now look at neighbors. Does the parity of n tell you anything about the parity of n + 1? Up to 100 million, neighbors match 49.998 percent of the time. The imbalance, about 4,000 pairs, is smaller than fair coin flips would typically give. In 1965, Sarvadaman Chowla conjectured that in the limit, the match rate is exactly 1/2, for neighbors and for any fixed gap. As recently as August, a paper called this two-point case open, even for neighbors. Result 007 in OpenAI’s math repository claims to prove it, with a Lean proof attached.</p>
+<h3><span class="t num">0:55</span>The Liouville function</h3>
+<p>This coloring is the Liouville function. λ(n) is plus one when n has an even number of prime factors, counted with repeats, and minus one when the count is odd. It’s completely multiplicative: λ(mn) = λ(m)·λ(n). Add up λ, and you get a running tally: even minus odd. Landau showed that the prime number theorem is equivalent to this tally growing more slowly than n itself. The Riemann hypothesis is equivalent to it growing no faster than roughly the square root of n. So λ alone already encodes the primes. It can fool you, too. Pólya guessed that, from 2 on, the tally never goes above zero. Up to 100 million, it never does. But it fails, for the first time, at 906,150,257.</p>
+<h3><span class="t num">1:47</span>Chowla’s conjecture</h3>
+<p>Chowla’s conjecture is about patterns. Multiply λ(n) by λ(n + h), and add up for n up to X. If the parities behaved like independent coins, the total would be tiny compared with X. The two-point conjecture says it is: for every fixed gap h, the sum is o(X). Chowla’s full conjecture allows any number of points. Why is it hard? Sieve methods, the main tools for studying primes, have a blind spot called the parity problem: they can’t tell an even number of prime factors from an odd number. Chowla’s conjecture is about exactly that parity. It’s often compared to the twin prime conjecture. Neither is known to imply the other, but both ask how the factors of n relate to those of a nearby number.</p>
+<h3><span class="t num">2:34</span>What was known</h3>
+<p>In the last decade, the problem was surrounded. In 2015, Matomäki and Radziwiłł showed that neighbors can’t be perfectly correlated, or perfectly anti-correlated. With Tao, they proved the conjecture on average over the gap h. Then Tao proved a weighted version, in which each n counts with weight 1/n. That logarithmic version was strong enough to settle the Erdős discrepancy problem. Helfgott and Radziwiłł, and then Pilatte, gave it quantitative rates, for neighbors. For the plain, unweighted average, Tao and Teräväinen showed cancellation at almost all scales: any exceptional scales must be very sparse. But nobody could rule them out completely.</p>
+<h3><span class="t num">3:18</span>Two kinds of average</h3>
+<p>Why does the weighting matter? Here is a sequence that flips sign each time the natural log of n passes a whole number. Its logarithmic average settles down to zero. Its ordinary average never settles: it keeps swinging, to about ±0.46. The ordinary average is dominated by its last stretch. The logarithmic average spreads its weight evenly across scales, so one bad stretch barely registers. As the paper puts it, an ordinary estimate must control the terminal scale itself. Ordinary cancellation implies logarithmic cancellation, but not the other way around.</p>
+<h3><span class="t num">3:57</span>The claim</h3>
+<p>Result 007 claims the ordinary version, with a rate. Take two fixed linear forms, a₁n + b₁ and a₂n + b₂, that aren’t proportional. Then the correlation sum up to X is at most a constant times X, divided by (log X) to a power c. The power c is absolute: the same for every pair of forms. The forms n and n + h give Chowla’s two-point conjecture. The paper also proves the binary corrected Elliott conjecture: the same cancellation, without a rate, for any two multiplicative functions bounded by one, provided one of them stays far from every Dirichlet character, even a twisted one, at every large scale, even if the twist changes from scale to scale. Some such condition is needed: the character mod 3 has neighbor correlation −1/3.</p>
+<h3><span class="t num">4:48</span>Inside the proof</h3>
+<p>The proof starts from a symmetry. λ(2) is minus one, so doubling both numbers flips both signs, and their product stays the same. λ(5)·λ(6) equals λ(10)·λ(12). The same holds for any multiplier d. So join each multiple of d to the number dh further along. You get a graph on the integers. The correlation becomes a sum over this graph’s edges. Split each divisibility condition into its average, 1/p, plus a correction with mean zero. A short-interval theorem of Matomäki, Radziwiłł and Tao shows that the averaged parts contribute almost nothing, so only the corrections remain. Bounding those means counting closed walks in the graph. Roughly, a prime used only once along a walk averages out to zero, so essentially only walks that reuse their primes survive. Then the bookkeeping. Each step uses J primes, one from each of J separate supplies, each of weight W. The useful mass grows like W^J. The cost grows only like a constant times √W, to the J. That leaves a gain of √W, up to a constant, J times over. With J growing like log log X, the gain becomes a power of log X. At any finite scale, the primes’ residues aren’t truly independent. For that, the paper borrows a 2010 theorem from computer science, Braverman’s: shallow circuits, of constant depth, can’t tell limited independence from true randomness. A forest encoding handles repeated primes. The general Elliott case uses a different graph argument, by contradiction, with no rate. OpenAI released a summary of the model’s reasoning for this result, one of ten such summaries. It shows dead ends: operator algebras, adelic kernels, a polynomial substitution. Then it returned to divisor graphs, modeled on the work of Helfgott and Radziwiłł, and of Pilatte. The paper credits both.</p>
+<h3><span class="t num">6:50</span>Lean, and the caveats</h3>
+<p>Both theorems are stated in Lean, built on Mathlib’s Liouville function. The proof behind these statements runs to about 1,500 files of OpenAI’s code, more than 150,000 lines. A passing Comparator check would guarantee those exact statements, from Lean’s usual axioms. OpenAI’s catalog of formal proofs doesn’t list them yet, and we haven’t run the check ourselves. The caveats. This is a preprint, not peer reviewed. The saving is real, but tiny. By the paper’s own parameter choices, c is below one fifty-trillionth, and the paper doesn’t claim the constant can be computed. So at any size anyone could compute, the bound says almost nothing: it’s a statement about the limit. The general theorem has no rate at all. And Chowla’s conjecture for three or more points, in ordinary averages, is still open. Even and odd, neighbor to neighbor: a fair coin, at every scale. If the proof holds. And a computer can check it.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20007%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../006-goldfelds-conjecture-densities-mean-analytic/"><span class="dir">Previous · 006</span><span class="pt">Goldfeld’s conjecture: densities and mean analytic rank</span></a>
-  <a class="next" href="../008-deligne-drinfeld-conjecture/"><span class="dir">Next · 008</span><span class="pt">The Deligne–Drinfeld conjecture</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/number-theory/">More in number theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
