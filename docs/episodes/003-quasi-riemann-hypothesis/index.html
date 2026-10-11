@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 003: The quasi-Riemann hypothesis | AI Proved What?</title>
-<meta name="description" content="The quasi-Riemann hypothesis. Result 003 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>A wall at 7/8: the quasi-Riemann hypothesis | AI Proved What?</title>
+<meta name="description" content="An AI system says it proved that no Dirichlet L-function, including the Riemann zeta function, has a zero with real part above 7/8. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/003-quasi-riemann-hypothesis/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 003: The quasi-Riemann hypothesis | AI Proved What?">
-<meta property="og:description" content="The quasi-Riemann hypothesis. Result 003 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="A wall at 7/8">
+<meta property="og:description" content="An AI system says it proved that no Dirichlet L-function, including the Riemann zeta function, has a zero with real part above 7/8. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/003-quasi-riemann-hypothesis/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/003-quasi-riemann-hypothesis/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,33 +37,61 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 003 · <a href="../../subjects/number-theory/">Number theory</a></p>
-<h1 class="result-title">The quasi-Riemann hypothesis</h1>
+<p class="meta">Episode 003, October 2026</p>
+<h1>A wall at 7/8</h1>
+<p class="subtitle">The quasi-Riemann hypothesis: no zeros past real part 7/8</p>
+
+<div class="player" data-youtube="JWUgcXVFf_c" data-title="Episode 003: A wall at 7/8">
+  <a href="https://youtu.be/JWUgcXVFf_c">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 003: No zeros past 7/8? The critical strip, its first zeros on the line at one half, and a gold wall at real part seven eighths.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:44. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/JWUgcXVFf_c?t=0" data-t="0"><span class="t">0:00</span><span>The claim: a wall for the zeros</span></a></li>
+  <li><a href="https://youtu.be/JWUgcXVFf_c?t=38" data-t="38"><span class="t">0:38</span><span>Counting primes</span></a></li>
+  <li><a href="https://youtu.be/JWUgcXVFf_c?t=85" data-t="85"><span class="t">1:25</span><span>The zeta function and its zeros</span></a></li>
+  <li><a href="https://youtu.be/JWUgcXVFf_c?t=139" data-t="139"><span class="t">2:19</span><span>Zeros make the waves</span></a></li>
+  <li><a href="https://youtu.be/JWUgcXVFf_c?t=188" data-t="188"><span class="t">3:08</span><span>What was known</span></a></li>
+  <li><a href="https://youtu.be/JWUgcXVFf_c?t=244" data-t="244"><span class="t">4:04</span><span>The theorem</span></a></li>
+  <li><a href="https://youtu.be/JWUgcXVFf_c?t=312" data-t="312"><span class="t">5:12</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/JWUgcXVFf_c?t=428" data-t="428"><span class="t">7:08</span><span>The Lean proof</span></a></li>
+  <li><a href="https://youtu.be/JWUgcXVFf_c?t=485" data-t="485"><span class="t">8:05</span><span>Why it matters, and the caveats</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves that every Dirichlet <i>L</i>-function, including <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ζ</mi><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\zeta(s)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07378em;">ζ</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span></span></span></span>, is zero-free in <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℜ</mi><mi>s</mi><mo>&gt;</mo><mn>7</mn><mi mathvariant="normal">/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">\Re s\gt 7/8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord">ℜ</span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">7/8</span></span></span></span>, resolving the quasi-Riemann hypothesis. The same half-plane is zero-free for every finite-order Hecke <i>L</i>-function over <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="double-struck">Q</mi><mo stretchy="false">(</mo><msqrt><mrow><mo>−</mo><mn>3</mn></mrow></msqrt><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\mathbb Q(\sqrt{-3})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.1156em;vertical-align:-0.25em;"></span><span class="mord mathbb">Q</span><span class="mopen">(</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8656em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord">−</span><span class="mord">3</span></span></span><span style="top:-2.8256em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
-c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
-c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
-c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
-s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
-c69,-144,104.5,-217.7,106.5,-221
-l0 -0
-c5.3,-9.3,12,-14,20,-14
-H400000v40H845.2724
-s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
-c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
-M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1744em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span>. A companion gives a different proof of the zero-free half-plane <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℜ</mi><mi>s</mi><mo>&gt;</mo><mn>11</mn><mi mathvariant="normal">/</mi><mn>12</mn></mrow><annotation encoding="application/x-tex">\Re s\gt 11/12</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord">ℜ</span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">11/12</span></span></span></span>.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The Riemann zeta function, ζ(<i>s</i>) = 1 + 1/2<sup><i>s</i></sup> + 1/3<sup><i>s</i></sup> + ⋯, is also a product over the primes, so its zeros control how regularly the primes are spread out. Apart from easy zeros at −2, −4, −6, …, every zero lies in the strip where the real part of <i>s</i> is between 0 and 1. A zero with real part β adds a wave of size about <i>x</i><sup>β</sup> to the error when you count primes up to <i>x</i>. The Riemann hypothesis says every zero in the strip has real part ½.</p>
+<p>The quasi-Riemann hypothesis asks for much less: some fixed wall θ &lt; 1 with no zeros to its right, at any height. Until now every proven zero-free region got thinner and thinner as the height grew, so no fixed wall was known.</p>
+<p>Result 003 claims the wall θ = 7/8: no zeros with real part greater than 7/8, for ζ(<i>s</i>) and, with the same wall, for every Dirichlet <i>L</i>-function, and also for every finite-order Hecke <i>L</i>-function over ℚ(√−3), the Eisenstein integers. For ζ, the zeros in the strip come in mirror pairs around the line at ½, so they would all lie in the band from 1/8 to 7/8.</p>
+</section>
+
+<section aria-labelledby="follows">
+<h2 id="follows">What would follow</h2>
+<ul class="sources">
+  <li>The prime number theorem with a power-saving error, π(<i>x</i>) = li(<i>x</i>) + <i>O</i>(<i>x</i><sup>7/8</sup> log <i>x</i>), by a standard argument. The best error previously proved saved less than any power of <i>x</i>.</li>
+  <li>No Siegel zeros: every real zero of every real Dirichlet <i>L</i>-function has real part at most 7/8. A short companion paper proves a weaker form of this by a different method.</li>
+  <li>The main paper also claims Vinogradov’s conjecture on the least quadratic non-residue, with a bound polynomial in log <i>p</i>. That claim, like the prime number theorem bound, is not part of the Lean proof.</li>
+</ul>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>It is not the Riemann hypothesis. It says nothing about zeros with real part between 1/8 and 7/8, and the paper says so itself: “The Riemann hypothesis remains open.” The wall is not claimed for <i>L</i>-functions of other number fields, or for <i>L</i>-functions of elliptic curves. On its own, a wall at 7/8 does not improve the best known results on primes in short intervals or on the least prime in an arithmetic progression.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, main paper dated September 30, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -76,29 +102,78 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
     <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/003.md">scope notes</a>)</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 10, 2026.</p>
+<p class="ledger-note">Last checked October 10, 2026. The claim has not been withdrawn. OpenAI’s Lean formalization covers the 7/8 statements for ζ(<i>s</i>), for every Dirichlet <i>L</i>-function and for the Hecke family over ℚ(√−3), plus the Siegel-zero bound. It does not cover the paper’s later applications or the alternate 11/12 proof. We have not run the Comparator check ourselves, and OpenAI’s Lean catalog lists its formalizations as written by an AI agent, with review status “unchecked.” OpenAI’s <a href="https://github.com/openai/math/blob/main/README.md#how-the-results-were-produced">README</a> says work on this zero-free region was an exception to its fixed procedure, and that the 11/12 write-up was human edited for readability.</p>
 </section>
 
-<section aria-labelledby="papers">
-<h2 id="papers">The papers</h2>
-<ul class="sources papers">
-  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf">The Quasi-Riemann Hypothesis: A Zero-Free Half-Plane <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">ℜ</mi><mi>s</mi><mo>&gt;</mo><mn>7</mn><mi mathvariant="normal">/</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">\Re s\gt 7/8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord">ℜ</span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">7/8</span></span></span></span></a></li>
-  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Quasi-Riemann-Hypothesis-October-5-2026/paper2.pdf">The Quasi-Riemann Hypothesis (alternate 11/12 proof)</a></li>
-  <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf">Uniform exclusion of Landau–Siegel zeros</a></li>
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Go to the Eisenstein integers.</strong> Counting the numbers <i>a</i> + <i>b</i>ω of each norm gives the zeta function of ℚ(√−3), which factors as ζ(<i>s</i>) · <i>L</i>(<i>s</i>, χ<sub>−3</sub>). In the same way every Dirichlet <i>L</i>-function is a factor of a Hecke <i>L</i>-function over ℚ(√−3), so a zero past 7/8 anywhere would be a zero of one of those. There the arithmetic has sixth roots of unity, sextic residue symbols, and Kubota’s cubic theta function, whose symmetry the proof exploits.</li>
+  <li><strong>The alternate proof, to 11/12.</strong> It is enough to show that a Möbius sum <i>A</i>(<i>D</i>) of length <i>D</i> is at most about <i>D</i><sup>11/12</sup>. The proof hides it in a crowd of sums twisted by sextic residue symbols and shows, using the cubic theta function, Poisson summation and a large sieve, that the twisted sums are only about √<i>D</i> on average. When the twisting label is a sixth power of a prime, the twist does almost nothing, so about <i>D</i><sup>1/6</sup> rows are near-copies of the target. If the target were larger than <i>D</i><sup>11/12</sup>, those copies alone would exceed the average.</li>
+  <li><strong>The main proof, to 7/8.</strong> A probe built from cubic Gauss sums secretly contains 1/<i>L</i>. If the rightmost zero of the whole family had real part β, the probe would have to reach size about <i>Z</i><sup>β − 11/16</sup>, while moment and large-sieve bounds cap it at about <i>Z</i><sup>3/16</sup>. Both hold only if β ≤ 11/16 + 3/16 = 7/8. Each step creates new twisted <i>L</i>-functions, so the argument runs over the whole family of Hecke <i>L</i>-functions at once. Most of the 199 pages control those other terms.</li>
+</ol>
+</section>
+
+<section aria-labelledby="lean">
+<h2 id="lean">The Lean statement</h2>
+<pre class="code"><code>theorem riemannZeta_ne_zero_of_seven_eighths_lt_re
+    {s : ℂ} (hs : (7 / 8 : ℝ) &lt; s.re) : riemannZeta s ≠ 0</code></pre>
+<p>This is the <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/QuasiRiemannHypothesis.lean">challenge statement</a> that OpenAI’s setup checks with the Comparator tool. A passing check guarantees that the proof proves exactly this statement, about Mathlib’s <code>riemannZeta</code>, using only Lean’s standard axioms (<code>propext</code>, <code>Quot.sound</code>, <code>Classical.choice</code>). Beyond Mathlib and other libraries, the proof uses 2,924 of OpenAI’s own Lean files, about 486,000 lines. A search of those files found no <code>sorry</code> and no new axioms, but a search is not a substitute for running the check.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>The first zeros of ζ(<i>s</i>) have heights 14.1347…, 21.0220…, 25.0109… (computed with mpmath). Platt and Trudgian (2021) verified the Riemann hypothesis up to height 3·10<sup>12</sup>, about 1.24·10<sup>13</sup> zeros.</li>
+  <li>For every <i>x</i> from 3 to 10<sup>8</sup>, π(<i>x</i>) − li(<i>x</i>) stays between −√<i>x</i> and √<i>x</i>; the largest ratio is about 0.78, just below <i>x</i> = 11 (sieve and mpmath). At <i>x</i> = 10<sup>8</sup> the difference is −754.4.</li>
+  <li>The explicit-formula plot rebuilds ψ(<i>x</i>) from 1 to 100 pairs of zeros. The waves at real part 0.95 are hypothetical, for comparison.</li>
+  <li>Zero-free region widths use the explicit constant 5.558691 of Mossinghoff, Trudgian and Yang: about 0.0039 at height 10<sup>20</sup>; at 10<sup>100</sup> the best known regions are about a thousandth wide. The video draws them five times wider.</li>
+  <li>Primes below 100,000 ending in 1, 3, 7 and 9: 2,387, 2,402, 2,411 and 2,390.</li>
+  <li>The crowd of bars in the proof sketch is a cartoon of the mean-square argument, not data.</li>
 </ul>
 </section>
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf">The main paper (PDF)</a>, “The Quasi-Riemann Hypothesis: A Zero-Free Half-Plane ℜ<i>s</i> &gt; 7/8,” OpenAI Math Release preprint, September 30, 2026 (199 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Quasi-Riemann-Hypothesis-October-5-2026/paper2.pdf">The alternate proof (PDF)</a>, “The Quasi-Riemann Hypothesis,” October 5, 2026 (49 pages): the half-plane ℜ<i>s</i> &gt; 11/12.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf">Uniform exclusion of Landau–Siegel zeros (PDF)</a>, October 1, 2026 (9 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/003.md">OpenAI’s Lean scope notes</a> for result 003.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 003, and <a href="https://github.com/openai/math/blob/main/history.md">its history</a> of withdrawals and fixes.</li>
+</ul>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The claim: a wall for the zeros</h3>
+<p>Result 003 in OpenAI’s math repository claims something number theorists have wanted for more than a century: a fixed wall that the zeros of the Riemann zeta function can never cross. This is not the Riemann hypothesis. That famous conjecture says every one of these zeros sits on a single line. The new claim is weaker: no zero lies to the right of 7/8. But until now, nobody had proved a wall like this at any distance at all. And for the first time in this series, the main theorem comes with a proof a computer can check. To see why it matters, start with the primes.</p>
+<h3><span class="t num">0:38</span>Counting primes</h3>
+<p>Count the primes up to x, and call the count π(x). Up close it’s an irregular staircase. From far away it hugs a smooth curve, guessed by Gauss as a teenager: the logarithmic integral of x. In 1896, Hadamard and de la Vallée Poussin proved that their ratio tends to one: the prime number theorem. The deeper question is the size of the error, the gap between the staircase and the curve. In the data, the error is small. All the way to a hundred million, it stays below the square root of x. But what can anyone prove? The best proven bound is only a little smaller than x itself. No one could show the error is below x to the 0.99, or below x to any power less than one.</p>
+<h3><span class="t num">1:25</span>The zeta function and its zeros</h3>
+<p>The key is a function Riemann studied in 1859: zeta of s, the sum of one over n to the s. Euler had noticed that it’s also a product over the primes. So every fact about the primes is hiding inside zeta. Riemann let s be a complex number. Zeta then extends to the whole plane, except for a single pole at s equals one. And it has zeros. Apart from easy ones at the negative even numbers, every zero lies in a vertical strip, between real part zero and real part one. The first few sit at heights 14.13, 21.02, and 25.01, all on the line with real part 1/2. The Riemann hypothesis says every zero in the strip is on that line. Computers have checked more than twelve trillion of them. Nobody can prove it.</p>
+<h3><span class="t num">2:19</span>Zeros make the waves</h3>
+<p>Why do the zeros matter so much? The explicit formula, from Riemann and von Mangoldt, rebuilds the prime staircase from the smooth curve plus one wave for each zero. A zero with real part beta makes a wave whose size grows like x to the beta. Zeros on the half line make waves the size of the square root of x. That’s the size of the error we see. But a single zero farther right, say at real part 0.95, would make a wave that eventually swamps all the others. So the rightmost zero sets the size of the error. Prove there are no zeros to the right of some wall, at theta less than one, and the error is at most about x to the theta. A wall like that, at any distance short of one, is what people call the quasi-Riemann hypothesis.</p>
+<h3><span class="t num">3:08</span>What was known</h3>
+<p>What was known? The 1896 proof showed there are no zeros on the line with real part one. A few years later, de la Vallée Poussin pushed a little further, to a thin zero-free region just left of that line. But the region gets thinner as you climb. At height ten to the twenty, far above where every zero has been checked, it’s only about four thousandths wide. At height ten to the hundred, about a thousandth. Vinogradov and Korobov slowed the shrinking in 1958, but it still shrinks to nothing. For more than a century, no one could prove a wall of fixed width. The same problem haunts zeta’s cousins, the Dirichlet L-functions, which count primes in arithmetic progressions, like primes ending in seven. They carry an extra worry: a single real zero, sneaking extremely close to one. It’s called a Siegel zero, and no one could rule it out.</p>
+<h3><span class="t num">4:04</span>The theorem</h3>
+<p>Here is what result 003 claims. Every Dirichlet L-function, including zeta itself, has no zeros with real part greater than 7/8. One fixed wall, at every height, for every one of them. For zeta, the zeros in the strip come in mirror pairs around the half line, so they’re trapped in a band from 1/8 to 7/8. And the same wall holds for a family of L-functions built from the Eisenstein integers, which is where the proof does its work. If it’s right, the consequences are big. The prime number theorem gets its first error bound with a power saving: x to the 7/8, up to logarithms. Siegel zeros are ruled out completely. The paper also claims to prove a long-standing conjecture of Vinogradov about the smallest non-square modulo a prime. Neither that nor the prime counting bound is part of the computer-checked proof. What it doesn’t do: it says nothing about zeros between 1/8 and 7/8. The Riemann hypothesis, which would put them all on the half line, is still open. The paper says so itself.</p>
+<h3><span class="t num">5:12</span>How the proof goes</h3>
+<p>How could anyone build such a wall? The proof takes a detour through the Eisenstein integers: numbers a plus b omega, where omega is a complex cube root of one. They form this hexagonal lattice. Count the lattice points of each size, and you get a new zeta function. It splits exactly into zeta times one Dirichlet L-function. So a zero of zeta would also be a zero in the Eisenstein world. And that world has extra symmetry: cube roots and sixth roots of one, and a cubic cousin of the classical theta function. Here’s the idea of the shorter, alternate proof, which reaches 11/12. To rule out zeros past a wall, it’s enough to show that a sum of Möbius values, each plus one, minus one or zero, stays small. Call that sum the target. Now hide the target in a crowd. Twist it by a sixth power residue symbol, one twist for each label u, roughly D of them. A hard theorem, built on that cubic theta function and a large sieve, shows the twisted sums are small on average: about the square root of D, the size of random noise. Here’s the trick. When the label is a perfect sixth power, the twist does almost nothing. That row is nearly a copy of the target, and there are about D to the one sixth such copies. If the target were bigger than D to the 11/12, the copies alone would blow the budget. So the target is small, and there are no zeros past 11/12. The main paper, 199 pages, builds a sharper machine. A zero at real part beta would make a carefully built probe as large as Z to the beta minus 11/16. Other bounds cap the probe at Z to the 3/16. Both can hold only if beta is at most 11/16 plus 3/16: 7/8. And every step spawns new twisted L-functions, so the argument must work for the whole family at once.</p>
+<h3><span class="t num">7:08</span>The Lean proof</h3>
+<p>Unlike our first two episodes, this claim comes with a proof in Lean, a language for computer-checked mathematics. Here is the statement: for every complex number s with real part greater than 7/8, zeta of s is not zero. Behind it sit about 2,900 files, nearly half a million lines, written by an AI agent. OpenAI set it up for a checking tool called Comparator. A passing check guarantees that the proof proves exactly this statement, using the zeta function from Lean’s math library and only Lean’s usual axioms. OpenAI also formalized the Dirichlet and Eisenstein versions, and the Siegel zero bound. We haven’t run the check ourselves. And OpenAI’s catalog lists its Lean work as written by an AI agent, with review status unchecked. A Lean proof checks that one statement, not the paper’s text, and not the extra claims, like Vinogradov’s conjecture.</p>
+<h3><span class="t num">8:05</span>Why it matters, and the caveats</h3>
+<p>If it holds, this is one of the biggest advances in analytic number theory in decades: the first fixed wall for the zeros, and the end of the Siegel zero problem, in one stroke. The caveats. This is a preprint, and it hasn’t been peer reviewed. OpenAI says work on this zero-free region was an exception to its fixed procedure, and that people edited the 11/12 write-up for readability. The computer proof covers the main theorem, but we haven’t run the check ourselves. And the Riemann hypothesis is untouched. A wall at 7/8. Not yet the line at 1/2.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20003%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../002-bsd-formula/"><span class="dir">Previous · 002</span><span class="pt">The full BSD formula from low Selmer corank</span></a>
-  <a class="next" href="../004-hilberts-tenth-problem-q/"><span class="dir">Next · 004</span><span class="pt">Hilbert’s tenth problem over ℚ</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/number-theory/">More in number theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
