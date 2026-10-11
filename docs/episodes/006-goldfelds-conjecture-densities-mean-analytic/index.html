@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 006: Goldfeld’s conjecture: densities and mean analytic rank | AI Proved What?</title>
-<meta name="description" content="Goldfeld’s conjecture: densities and mean analytic rank. Result 006 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Half and half: Goldfeld&#x27;s conjecture for elliptic curve twists | AI Proved What?</title>
+<meta name="description" content="An AI system says it proved Goldfeld&#x27;s conjecture: among the quadratic twists of any elliptic curve, half have rank 0 and half rank 1. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/006-goldfelds-conjecture-densities-mean-analytic/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 006: Goldfeld’s conjecture: densities and mean analytic rank | AI Proved What?">
-<meta property="og:description" content="Goldfeld’s conjecture: densities and mean analytic rank. Result 006 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Half and half">
+<meta property="og:description" content="An AI system says it proved Goldfeld&#x27;s conjecture: among the quadratic twists of any elliptic curve, half have rank 0 and half rank 1. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/006-goldfelds-conjecture-densities-mean-analytic/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/006-goldfelds-conjecture-densities-mean-analytic/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,53 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 006 · <a href="../../subjects/number-theory/">Number theory</a></p>
-<h1 class="result-title">Goldfeld’s conjecture: densities and mean analytic rank</h1>
+<p class="meta">Episode 006, October 2026</p>
+<h1>Half and half</h1>
+<p class="subtitle">Goldfeld’s conjecture: densities and mean analytic rank</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 006 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="CeNAw8PcT90" data-title="Episode 006: Half and half">
+  <a href="https://youtu.be/CeNAw8PcT90">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 006: Half and half? Goldfeld’s conjecture. A bar chart of the ranks of 3,648 twists of one elliptic curve, with dashed lines at one half for ranks 0 and 1.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:38. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/CeNAw8PcT90?t=0" data-t="0"><span class="t">0:00</span><span>One curve, endless twists</span></a></li>
+  <li><a href="https://youtu.be/CeNAw8PcT90?t=60" data-t="60"><span class="t">1:00</span><span>Rank, two ways</span></a></li>
+  <li><a href="https://youtu.be/CeNAw8PcT90?t=109" data-t="109"><span class="t">1:49</span><span>What was known</span></a></li>
+  <li><a href="https://youtu.be/CeNAw8PcT90?t=166" data-t="166"><span class="t">2:46</span><span>The missing converse</span></a></li>
+  <li><a href="https://youtu.be/CeNAw8PcT90?t=224" data-t="224"><span class="t">3:44</span><span>A cube of twists</span></a></li>
+  <li><a href="https://youtu.be/CeNAw8PcT90?t=286" data-t="286"><span class="t">4:46</span><span>From density to average</span></a></li>
+  <li><a href="https://youtu.be/CeNAw8PcT90?t=317" data-t="317"><span class="t">5:17</span><span>Why it matters</span></a></li>
+  <li><a href="https://youtu.be/CeNAw8PcT90?t=351" data-t="351"><span class="t">5:51</span><span>The caveats</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves Goldfeld's conjecture for quadratic twists of every elliptic curve over ℚ: analytic ranks zero and one each have density 1/2, and the mean analytic rank tends to 1/2. Both statements order signed squarefree twist parameters by absolute value.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take an elliptic curve <i>E</i> over the rationals and twist it by a squarefree integer <i>d</i>: in the form <i>Y</i>² = <i>f</i>(<i>x</i>), the twist is <i>d</i><i>Y</i>² = <i>f</i>(<i>x</i>). Each twist has a rank. Its analytic rank is the order of the zero of its <i>L</i>-function at <i>s</i> = 1, and the sign of its functional equation forces that rank to be even or odd. In 1979 Dorian Goldfeld conjectured that the average rank in such a family tends to 1/2: in the limit, half the twists have rank 0 and half have rank 1.</p>
+<p>Result 006 claims this for every elliptic curve over ℚ, with twists by signed squarefree <i>d</i> ordered by |<i>d</i>|: analytic ranks 0 and 1 each have density 1/2, and on almost every twist the analytic and algebraic ranks agree. A companion paper adds that the average analytic rank tends to 1/2, and so does the average algebraic rank.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>It does not prove the Birch and Swinnerton-Dyer conjecture, and it does not say twists of rank 2 or more stop appearing, only that they become a vanishing share. It counts twists by signed squarefree <i>d</i>, not by the quadratic-field discriminants of Goldfeld’s original formulation. The rank data in the video show how slow the limit is: among the 3,648 twists of the conductor-11 curve with |<i>d</i>| ≤ 3,000, about 6% still have rank 2.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, October 7 and 6, 2026 editions</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -64,9 +94,46 @@
     <dd>Not yet</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 10, 2026.</p>
+<p class="ledger-note">Last checked October 10, 2026. The claim has not been withdrawn. Both papers were first posted September 23; the October editions changed only dates and citations. The density step relies on Alexander Smith’s 2025 preprint (<a href="https://arxiv.org/abs/2503.17619">arXiv:2503.17619</a>). On October 8 a reader reported that one displayed congruence in one lemma (<i>a</i><sub><i>p</i></sub> ≡ <i>p</i> + 1 mod 8, in the lemma “Nonempty <i>K</i>-split witness”) fails numerically (<a href="https://github.com/holimart/math/issues/2">report</a>). A second check (<a href="https://github.com/borism/openai-math-slop/issues/1">check</a>) confirmed the numbers but found that every case the report named falls under the proof’s other branch, where the step isn’t used. Neither report claims a counterexample to the theorem; the question about the write-up is open, and we found no public response. We reproduced the failures for <i>y</i>² = <i>x</i>³ − 25<i>x</i>, <i>k</i> = −31: 56 of 98 split primes below 1300.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Smith’s Selmer theorem.</strong> The 2-power Selmer corank is an algebraic upper bound for the rank, with the same parity as the analytic rank. Smith (2025 preprint) proved that for every curve it is 0 for half the twists and 1 for the other half, and deduced Goldfeld’s conjecture assuming Birch and Swinnerton-Dyer. The missing link was a converse theorem at the prime 2; the few known there required complex multiplication.</li>
+  <li><strong>The claimed 2-converse.</strong> For every elliptic curve over ℚ whose 2-power Selmer corank is 0 or 1, the paper claims that the analytic rank and the Mordell–Weil rank both equal it, and that the Tate–Shafarevich group is finite. With Smith’s theorem, the density statement follows in a short deduction.</li>
+  <li><strong>A cube of twists.</strong> The converse surrounds the curve with a binary cube of twists by products of auxiliary primes, with the original curve at the origin. At every other corner a number built from a Kato class or a Heegner point, which detects the <i>L</i>-value or its derivative, is arranged to be nonzero with a bounded number of factors of 2. Building those corners uses modular-form coefficients, Hecke traces, and graphs of quadratic residues or symmetric matrices over 𝔽<sub>2</sub>.</li>
+  <li><strong>Chevalley–Warning.</strong> If the cube has enough dimensions, the 1935 Chevalley–Warning theorem forces some other corner to agree with the origin to high 2-adic precision. So the origin’s number also has few factors of 2, and in particular is nonzero.</li>
+  <li><strong>The average.</strong> The companion paper bounds the rare twists of large rank: the number with rank above <i>k</i> is at most a constant times <i>X</i>/<i>k</i>², for <i>k</i> up to (log <i>X</i>)<sup>3/5</sup>, and every rank is at most a constant times log <i>X</i>. With the densities, the average analytic rank tends to 1/2.</li>
+</ol>
+</section>
+
+<section aria-labelledby="uses">
+<h2 id="uses">What relies on it</h2>
+<p>The paper behind <a href="/002/">episode 2</a> (<a href="https://github.com/openai/math/blob/main/preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf">the BSD formula from low Selmer corank</a>) uses this density theorem as an input. The paper behind <a href="/004/">episode 4</a> can use this 2-converse in place of its own companion.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>The curve is 11a1, <i>y</i>² + <i>y</i> = <i>x</i>³ − <i>x</i>² − 10<i>x</i> − 20, or <i>Y</i>² = 4<i>x</i>³ − 4<i>x</i>² − 40<i>x</i> − 79 with <i>Y</i> = 2<i>y</i> + 1.</li>
+  <li>Analytic ranks and signs of its twists by all 3,648 signed squarefree <i>d</i> with |<i>d</i>| ≤ 3,000 (PARI/GP 2.15, <code>ellanalyticrank</code>): 1,611 rank 0 (44%), 1,822 rank 1 (50%), 208 rank 2 (6%), 7 rank 3; 1,819 signs +1 and 1,829 signs −1; average 0.62.</li>
+  <li>The <i>L</i>-function curves are the twists by <i>d</i> = 1 (rank 0), 2 (rank 1) and −47 (rank 2), each scaled to fit.</li>
+  <li>The mod-8 check: for <i>y</i>² = <i>x</i>³ − 25<i>x</i> twisted by −31, <i>a</i><sub><i>p</i></sub> ≢ <i>p</i> + 1 mod 8 for 56 of the 98 good primes below 1300 split in ℚ(√−31), the first being <i>p</i> = 19; and √329 · <i>L</i>(<i>E</i><sup>(−31·329)</sup>, 1)/<i>L</i>(<i>E</i><sup>(−31)</sup>, 1) = 16.000.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf">The main paper (PDF)</a>, “Goldfeld’s analytic density conjecture and the 2-converse for elliptic curves,” OpenAI Math Release preprint, October 7, 2026 (130 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf">The companion (PDF)</a>, “The mean analytic rank of quadratic twists of elliptic curves,” October 6, 2026 (41 pages).</li>
+  <li><a href="https://arxiv.org/abs/2503.17619">Alexander Smith, “The Birch and Swinnerton-Dyer conjecture implies Goldfeld’s conjecture”</a>, arXiv, 2025.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 006, and <a href="https://github.com/openai/math/blob/main/history.md">its history</a> of withdrawals and fixes.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -75,18 +142,36 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf">The mean analytic rank of quadratic twists of elliptic curves</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>One curve, endless twists</h3>
+<p>Here is an elliptic curve, the first one in the tables, of conductor 11. Multiply one side by a whole number d, and you get a new curve: its twist by d. Every squarefree d, positive or negative, gives a different twist. Each twist has a rank, which measures how many independent rational points it has. Here are all 3,648 twists with d up to 3,000 in size. 44 percent have rank zero, 50 percent rank one, about 6 percent rank two, and just seven have rank three. In 1979, Dorian Goldfeld conjectured that the average rank tends to 1/2: in the limit, half the twists have rank zero and half have rank one, while the higher ranks, which keep appearing, shrink to a vanishing share. At this size, the share of rank two and up hasn’t visibly started to shrink. Result 006 in OpenAI’s math repository claims to prove it, for every elliptic curve over the rationals, with rank measured analytically.</p>
+<h3><span class="t num">1:00</span>Rank, two ways</h3>
+<p>There are two ways to measure rank. The algebraic rank counts independent rational points. The analytic rank comes from the curve’s L-function: it is the order of the zero at s = 1. A twist of rank zero doesn’t vanish there. Rank one crosses zero. Rank two touches zero and turns back. The Birch and Swinnerton-Dyer conjecture says the two ranks always agree. It is one of the Millennium Prize Problems, and it is still open. Every twist also carries a sign, plus or minus one, from its functional equation. A plus sign forces an even analytic rank, and a minus sign forces an odd one. Across the twists, the signs split evenly. So Goldfeld’s conjecture says the rank is almost always as small as its sign allows.</p>
+<h3><span class="t num">1:49</span>What was known</h3>
+<p>For decades, results came in pieces. For particular curves, a positive fraction of twists were shown to have rank zero, and a positive fraction rank one: a curve of conductor 19 in 1998, and every curve with a rational 3-isogeny in 2019. Assuming the generalized Riemann hypothesis, Heath-Brown bounded the average analytic rank by 3/2. Then Alexander Smith studied an algebraic shadow of the rank, the 2-power Selmer corank, which is defined by local conditions, checked one prime at a time. In a 2025 preprint, he proved Goldfeld’s split for it, for every curve: corank zero for half the twists, corank one for the other half. So if Birch and Swinnerton-Dyer is true, Goldfeld’s conjecture follows. What was missing was a converse theorem at the prime 2. As Smith noted, the few known there all required complex multiplication.</p>
+<h3><span class="t num">2:46</span>The missing converse</h3>
+<p>Here is the gap. The Selmer corank is an upper bound for the algebraic rank, and it has the same parity as the analytic rank. In the late 1980s, Gross, Zagier and Kolyvagin proved one direction: if the analytic rank is zero or one, the algebraic rank matches it, and the Selmer corank does too. A converse goes the other way, from the Selmer corank to the analytic rank. Converses were known at many odd primes, under various conditions. At the prime 2, they were known only for curves with complex multiplication. Result 006 claims the full converse at 2. For every elliptic curve over the rationals, if the 2-power Selmer corank is zero or one, then the analytic rank and the algebraic rank both equal it. Combine that with Smith’s theorem, and Goldfeld’s split follows quickly: among twists by squarefree d, ordered by size, ranks zero and one each have density 1/2.</p>
+<h3><span class="t num">3:44</span>A cube of twists</h3>
+<p>How do you prove the converse? The paper surrounds the curve with a cube of twists. Choose some auxiliary primes. Each corner of a many-dimensional cube is a twist by a product of some of them, and one corner, the origin, is the original curve. At every other corner, the paper arranges that a certain number, built from the L-value, or its derivative in the rank one case, is nonzero, with only a bounded number of factors of two. About half of the 130 pages go into building these corners, with modular forms, Hecke operators, and graphs of quadratic residues. Then a counting theorem from 1935 finishes the job. One algebraic object, built from Kato’s classes or from Heegner points, produces the number at every corner. If the cube has enough dimensions, the Chevalley–Warning theorem forces some other corner to agree with the origin to many binary digits. So the origin’s number has few factors of two as well. In particular, it isn’t zero.</p>
+<h3><span class="t num">4:46</span>From density to average</h3>
+<p>Densities aren’t the whole story. A rare set of twists with huge ranks could still drag the average up. A companion paper rules that out: the share of twists with rank above k is at most a constant over k², and no rank in the range can exceed a constant times the logarithm of the size. Together, the average analytic rank of the twists tends to exactly 1/2, as Goldfeld predicted. The companion also shows that the average algebraic rank tends to 1/2.</p>
+<h3><span class="t num">5:17</span>Why it matters</h3>
+<p>If correct, this settles Goldfeld’s conjecture, in the paper’s way of counting, for every elliptic curve over the rationals. And on almost every twist, the analytic and algebraic ranks agree. It also gives a finite test: when a single 2-descent finds a small Selmer group, it certifies the analytic rank. And it is load-bearing. Episode two’s claimed Birch and Swinnerton-Dyer formula uses this density theorem as an input, and episode four’s paper can use its converse in place of its own companion.</p>
+<h3><span class="t num">5:51</span>The caveats</h3>
+<p>The caveats. Both papers are preprints, not peer reviewed, with no Lean proofs. The density step relies on Smith’s 2025 theorem, posted as a preprint. And both papers count twists by signed squarefree d, not by Goldfeld’s original discriminants. Readers have also flagged one step. In one lemma, a congruence modulo 8 fails numerically, and we reproduced the failures. A second check confirmed the numbers, but found that every case the report named falls under the proof’s other branch, where this step isn’t used. Neither report claims a counterexample to the theorem. It remains an open question about the write-up. Half rank zero, half rank one. If the proof holds.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20006%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../005-irrationality-catalans-constant/"><span class="dir">Previous · 005</span><span class="pt">Irrationality of Catalan’s constant</span></a>
-  <a class="next" href="../007-ordinary-two-point-correlations-corrected/"><span class="dir">Next · 007</span><span class="pt">Ordinary two-point correlations and the corrected Elliott conjecture</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/number-theory/">More in number theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
