@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 053: A counterexample to Pixton completeness in Chow | AI Proved What?</title>
-<meta name="description" content="A counterexample to Pixton completeness in Chow. Result 053 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>A relation Pixton missed? A counterexample to Pixton completeness in Chow | AI Proved What?</title>
+<meta name="description" content="An AI system claims an explicit tautological relation on a moduli space of curves, in genus 10^60, that Pixton’s original relations do not generate, disproving his completeness conjecture in Chow and rational cohomology. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/053-counterexample-pixton-completeness-chow/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 053: A counterexample to Pixton completeness in Chow | AI Proved What?">
-<meta property="og:description" content="A counterexample to Pixton completeness in Chow. Result 053 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="A relation Pixton missed?">
+<meta property="og:description" content="An AI system claims an explicit tautological relation on a moduli space of curves, in genus 10^60, that Pixton’s original relations do not generate, disproving his completeness conjecture in Chow and rational cohomology. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/053-counterexample-pixton-completeness-chow/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/053-counterexample-pixton-completeness-chow/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 053 · <a href="../../subjects/algebraic-and-complex-geometry/">Algebraic and complex geometry</a></p>
-<h1 class="result-title">A counterexample to Pixton completeness in Chow</h1>
+<p class="meta">Episode 053, October 2026</p>
+<h1>A relation Pixton missed?</h1>
+<p class="subtitle">A counterexample to Pixton completeness in Chow</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 053 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="WmBfRYvJJrU" data-title="Episode 053: A relation Pixton missed?">
+  <a href="https://youtu.be/WmBfRYvJJrU">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 053: A relation Pixton missed? A large ellipse labeled ker q containing a smaller green ellipse labeled P g,n, with a yellow dot Y inside the large one but outside the small one, above q(Y) = 0, Y not in P g,n.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:55. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/WmBfRYvJJrU?t=0" data-t="0"><span class="t">0:00</span><span>Relations among natural classes</span></a></li>
+  <li><a href="https://youtu.be/WmBfRYvJJrU?t=58" data-t="58"><span class="t">0:58</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/WmBfRYvJJrU?t=124" data-t="124"><span class="t">2:04</span><span>A test the relations pass</span></a></li>
+  <li><a href="https://youtu.be/WmBfRYvJJrU?t=184" data-t="184"><span class="t">3:04</span><span>Why Y vanishes</span></a></li>
+  <li><a href="https://youtu.be/WmBfRYvJJrU?t=243" data-t="243"><span class="t">4:03</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Constructs a tautological relation on a moduli space of stable pointed curves that vanishes in rational Chow, hence in rational cohomology, but lies outside Pixton's original relation span. This disproves the Chow and rational-cohomological forms of his original completeness conjecture.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The moduli space <span style="text-decoration:overline">M</span><sub><i>g</i>,<i>n</i></sub> collects stable curves of genus <i>g</i> with <i>n</i> marked points, nodes allowed. Its tautological ring is spanned by psi and kappa classes pushed forward from boundary strata, the loci where the curve degenerates along a given dual graph. Describing it means knowing every relation among these generators. In <a href="https://arxiv.org/abs/1207.1918">2012</a>, Pixton proposed relations given as weighted sums over decorated dual graphs and conjectured that the span <i>P</i><sub><i>g</i>,<i>n</i></sub> they generate is the whole kernel of the map from formal graph sums to the Chow ring (and to cohomology). Pandharipande, Pixton and Zvonkine proved the relations hold in cohomology, and Janda proved them in Chow; completeness was open, and has been confirmed in some cases, recently including <a href="https://arxiv.org/abs/2607.02249">compact-type spaces studied by Canning, Larson and Schmitt</a>.</p>
+<p>Result 053 is <a href="https://github.com/openai/math/blob/main/preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/paper.pdf">an OpenAI preprint</a> (dated September 24, 2026; 61 pages). It constructs an explicit formal combination of boundary strata <i>Y</i> whose value in the rational Chow ring is zero but which is not in Pixton’s original span, so <i>P</i><sub><i>g</i>,<i>n</i></sub> ⊊ ker <i>q</i>, in Chow and in rational cohomology. The example has genus 10<sup>60</sup> and 3·C(<i>g</i>, 3) ≈ 5 × 10<sup>179</sup> markings; the paper says these sizes are not meant to be minimal. <i>Y</i> is built by coloring the markings with <i>g</i> colors, using every triple of colors once: for each triple (<i>a</i>, <i>b</i>, <i>c</i>) the factor is a product of two sums of rational-tail divisors minus half a class supported on rational bridges, and <i>Y</i> is the product of all factors, alternated over relabelings that keep each color.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The comparison is with Pixton’s original relation span as the paper defines it, and the example lives in genus 10<sup>60</sup>; the paper gives no counterexample in small genus. It is also a different question from the Gorenstein property: <a href="https://arxiv.org/abs/2609.15949">earlier in September Pixton showed</a> that the tautological ring of <i>M</i><sub>25</sub> is not Gorenstein, while also showing that the known relations are complete there.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 24, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,40 @@
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>Not yet</dd>
+    <dd>Main theorem: no; <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/StableGraphs/ExteriorBounds.lean">one Lean file</a> checks bookkeeping only</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 12, 2026. The preprint has not been withdrawn or revised, and it cites no other paper from the release. The main theorem has no Lean formalization. <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/StableGraphs/ExteriorBounds.lean">One Lean file in the release</a> (446 lines) checks bookkeeping: the parameters, the color counts, the number of color-preserving relabelings, that a factorial multiple of the product of all the thetas is nonzero, and some stable-graph counting bounds; its own header says the class <i>Y</i>, the Pixton span, the test and the geometric vanishing are not formalized. We found no public assessment by specialists.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A formal test.</strong> A linear map keeps only rational-tails graphs (one vertex of genus <i>g</i>, everything else rational tails) and evaluates the tails in a Frobenius algebra with unit, top class <i>e</i> and 2<i>g</i> odd symplectic vectors, whose handle element is (2 − 2<i>g</i>)<i>e</i>. Its coefficients lie in an exterior algebra with one odd symbol θ<sub><i>ijk</i></sub> per triple of colors, and three basic odd vectors multiply to θ<sub><i>ijk</i></sub><i>e</i>.</li>
+  <li><strong>Pixton’s relations pass, <i>Y</i> fails.</strong> Every element of Pixton’s span has test zero, while one coefficient of the test of <i>Y</i> is a nonzero multiple of the product of all the θ’s. So <i>Y</i> is outside the span.</li>
+  <li><strong>The cubic and its nilpotence.</strong> For a smooth curve, the small diagonal projected to three odd summands of its Chow correspondences gives an alternating cubic (related to the Gross–Schoen modified diagonal). A Quot scheme with fixed determinant on the surface <i>C</i> × <i>C</i> gives an identity making long enough products of these cubics vanish in Chow, up to errors supported over smaller parts of the family; a localization scalar is shown to be nonzero.</li>
+  <li><strong>The compactification.</strong> Weighted stable curves and a rational-bridge correction with coefficient −1/2 carry the identity to <span style="text-decoration:overline">M</span><sub><i>g</i>,<i>n</i></sub>, and a support induction, with enough colors at every step, removes the errors: <i>Y</i> is zero in rational Chow.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script computes the parameters (C(10<sup>60</sup>, 3) has 180 digits), checks that the degree of <i>Y</i> is below the dimension, builds the paper’s Frobenius algebra for genus 3 and 4 and checks the cubic products, the vanishing of four odd products, and the handle element (2 − 2<i>g</i>)<i>e</i>, and checks that the product of all thetas is a nonzero exterior monomial.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/paper.pdf">A high-arity counterexample to Pixton completeness in Chow (PDF)</a>, September 24, 2026 (61 pages).</li>
+  <li><a href="https://arxiv.org/abs/1207.1918">Aaron Pixton, Conjectural relations in the tautological ring of M̄g,n</a> (arXiv, 2012).</li>
+  <li><a href="https://arxiv.org/abs/2607.02249">Canning, Larson and Schmitt, The Gorenstein property and Pixton’s conjecture for compact type moduli</a> (arXiv, 2026).</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 053.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -74,18 +129,30 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-high-arity-counterexample-to-Pixton-completeness-in-Chow-September-24-2026/paper.pdf">A high-arity counterexample to Pixton completeness in Chow</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Relations among natural classes</h3>
+<p>The moduli space M̄g,n collects all stable curves of genus g with n marked points, where nodes are allowed. It carries natural classes: psi classes from the cotangent lines at the markings, kappa classes, and classes of boundary strata, where the curve degenerates along a dual graph. Psi and kappa classes pushed forward from these strata span the tautological ring. To know that ring, you need every relation among these generators. In 2012, Pixton wrote down a uniform family of relations, built as weighted sums over decorated dual graphs, and conjectured that they, with everything they generate, are all the relations. Pandharipande, Pixton and Zvonkine proved that the relations hold in cohomology, and Janda proved them in the Chow ring. Completeness was the open part. It has been confirmed in some cases, recently including compact-type spaces studied by Canning, Larson and Schmitt.</p>
+<h3><span class="t num">0:58</span>The claim</h3>
+<p>Result 053 is a 61-page OpenAI preprint, dated September 24. It constructs an explicit formal combination of boundary strata, Y, whose value in the rational Chow ring is zero, so it is a genuine relation, but which does not lie in the span of Pixton’s original relations. So Pixton’s completeness conjecture, for his original relations, would fail, in Chow and in rational cohomology. The example is enormous: genus 10^60, with 3·C(g, 3) markings. The paper says these sizes are not meant to be minimal. The class is built from boundary strata. Give the markings g colors, using every triple of colors once. For each triple, multiply two sums of rational-tail divisors, and subtract half of a class supported on rational bridges. Multiply all these factors, and alternate signs over relabelings that keep each color. The proof splits in two: a formal test showing Y is outside Pixton’s span, and geometry showing Y vanishes.</p>
+<h3><span class="t num">2:04</span>A test the relations pass</h3>
+<p>The formal test sends each decorated graph to a value in an algebra. It keeps only graphs where one vertex carries all the genus and everything else is rational tails, and it evaluates the tails by multiplying and comultiplying in a Frobenius algebra, as in a two-dimensional topological field theory. The algebra has a unit, a top class e, and 2g odd vectors with a symplectic pairing, like the cohomology of a genus g curve. Its handle element is (2 − 2g)e. The twist is in the coefficients. They live in an exterior algebra with one independent odd symbol, theta, for every triple of colors, and multiplying three of the basic odd vectors produces the matching theta. The paper checks that every one of Pixton’s relations has test value zero. But one coefficient of the test of Y is a nonzero multiple of the product of all the thetas. So Y cannot be in Pixton’s span.</p>
+<h3><span class="t num">3:04</span>Why Y vanishes</h3>
+<p>Actual geometry is more constrained. For a smooth curve, the small diagonal, projected to three odd pieces, gives an alternating cubic, related to the classical modified diagonal cycle. On the surface C times C, a Quot scheme with fixed determinant yields an extra identity: long enough products of these cubics vanish in Chow, up to error terms supported on smaller parts of the family. That is a nilpotence the formal test ignores, because there the thetas are independent and their product survives. The paper computes a localization scalar for this identity and shows it is nonzero, so the vanishing really holds. Then it passes to the compactification, using weighted stable curves and the correction on rational bridges with coefficient −1/2, and an induction that shrinks the support of the error until nothing is left. The huge genus leaves enough colors for every step. The conclusion: Y is zero in Chow.</p>
+<h3><span class="t num">4:03</span>Where it stands</h3>
+<p>This is a preprint, not yet peer reviewed, and it has not been revised. The main theorem has no Lean formalization; the release’s Lean code checks only some bookkeeping, such as the color counts and that the product of all the thetas is nonzero. The paper cites no other paper from the release. Earlier in September, Pixton showed that the tautological ring of M₂₅ is not Gorenstein, while also showing that the known relations are complete there. That is a different question: Gorenstein is about pairings, completeness is about relations. We found no public assessment of this paper. If it holds, Pixton’s relations are not the whole story: some tautological relations come from geometry they don’t see, at least in very high genus.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20053%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../052-tangent-splittings-product-decompositions/"><span class="dir">Previous · 052</span><span class="pt">Tangent splittings and product decompositions</span></a>
-  <a class="next" href="../054-irrational-cubic-fourfolds-hodge-theoretic/"><span class="dir">Next · 054</span><span class="pt">Irrational cubic fourfolds with Hodge-theoretic and categorical K3 associations</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebraic-and-complex-geometry/">More in algebraic and complex geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

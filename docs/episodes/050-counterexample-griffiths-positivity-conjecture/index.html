@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 050: A counterexample to Griffiths’ positivity conjecture | AI Proved What?</title>
-<meta name="description" content="A counterexample to Griffiths’ positivity conjecture. Result 050 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Ample, not positive? A counterexample to Griffiths’ positivity conjecture | AI Proved What?</title>
+<meta name="description" content="An AI system says ample rank-two vector bundles on the quadric surface need not carry any smooth Griffiths-positive metric, which would disprove Griffiths’ 1969 positivity conjecture, with a Lean formalization published. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/050-counterexample-griffiths-positivity-conjecture/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 050: A counterexample to Griffiths’ positivity conjecture | AI Proved What?">
-<meta property="og:description" content="A counterexample to Griffiths’ positivity conjecture. Result 050 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Ample, not positive?">
+<meta property="og:description" content="An AI system says ample rank-two vector bundles on the quadric surface need not carry any smooth Griffiths-positive metric, which would disprove Griffiths’ 1969 positivity conjecture, with a Lean formalization published. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/050-counterexample-griffiths-positivity-conjecture/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/050-counterexample-griffiths-positivity-conjecture/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,51 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 050 · <a href="../../subjects/algebraic-and-complex-geometry/">Algebraic and complex geometry</a></p>
-<h1 class="result-title">A counterexample to Griffiths’ positivity conjecture</h1>
+<p class="meta">Episode 050, October 2026</p>
+<h1>Ample, not positive?</h1>
+<p class="subtitle">A counterexample to Griffiths’ positivity conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 050 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="qi3lpx19QmM" data-title="Episode 050: Ample, not positive?">
+  <a href="https://youtu.be/qi3lpx19QmM">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 050: Ample, not positive? A counterexample to Griffiths’ positivity conjecture. Three curves in a square, the diagonal and two wavy graphs, crossing at six yellow points, under the line ample does not imply Griffiths positive.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:44. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/qi3lpx19QmM?t=0" data-t="0"><span class="t">0:00</span><span>Two kinds of positive</span></a></li>
+  <li><a href="https://youtu.be/qi3lpx19QmM?t=53" data-t="53"><span class="t">0:53</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/qi3lpx19QmM?t=114" data-t="114"><span class="t">1:54</span><span>Building the bundle</span></a></li>
+  <li><a href="https://youtu.be/qi3lpx19QmM?t=174" data-t="174"><span class="t">2:54</span><span>Why no positive metric</span></a></li>
+  <li><a href="https://youtu.be/qi3lpx19QmM?t=234" data-t="234"><span class="t">3:54</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Constructs ample rank-two bundles on <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="double-struck">P</mi><mn>1</mn></msup><mo>×</mo><msup><mi mathvariant="double-struck">P</mi><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">\mathbb P^1\times\mathbb P^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathbb">P</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathbb">P</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span> with no smooth Hermitian metric of strictly Griffiths-positive curvature, disproving Griffiths' positivity conjecture already on the quadric surface.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>For a holomorphic line bundle, being ample (an algebraic condition) is the same as carrying a metric of positive curvature. For a vector bundle <i>E</i> of higher rank there are several curvature notions. <i>E</i> is ample when the tautological line bundle on its projectivization is ample; it is Griffiths positive when it has a Hermitian metric whose curvature is positive in every pair of a tangent direction and a fiber direction. Griffiths positive implies ample, and in 1969 Griffiths asked whether the converse holds on every smooth projective variety. On curves it does (Umemura; Campana and Flenner). Berndtsson and others found positive metrics after twisting or passing to symmetric powers, not on <i>E</i> itself.</p>
+<p>Result 050 is <a href="https://github.com/openai/math/blob/main/preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/paper.pdf">an OpenAI preprint</a> (dated September 24, 2026; 18 pages). On the quadric surface <i>S</i> = ℙ¹ × ℙ¹ it builds an explicit rank-two bundle <i>G</i>, pulls it back by the map <i>f</i><sub><i>m</i></sub> that raises coordinates to the <i>m</i>th power, and twists: <i>E</i><sub><i>m</i></sub> = <i>f</i><sub><i>m</i></sub><sup>*</sup><i>G</i> ⊗ 𝒪(1, 1). It claims that every <i>E</i><sub><i>m</i></sub> is ample, but that for all sufficiently large <i>m</i> none has a smooth Hermitian metric of strictly Griffiths-positive curvature. If it holds, Griffiths’ conjecture fails in rank two on one of the simplest surfaces.</p>
+<p>It is not the only claim. Two days earlier, <a href="https://arxiv.org/abs/2609.26504">Du and Xie</a> posted an ample rank-two bundle on an abelian surface with no Griffiths-semipositive metric; their preprint discloses that generative AI helped develop parts of the construction and proof. The OpenAI paper cites that work and says its construction is different. It also cites a later preprint by Liu and Wan claiming examples on every Hirzebruch surface; we have not read that preprint.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The threshold <i>m</i><sub>0</sub> is not explicit: the paper does not say which <i>E</i><sub><i>m</i></sub> is the first without a positive metric. The obstruction concerns smooth Hermitian metrics: Kobayashi showed that the dual of every ample bundle carries a negatively curved Finsler structure, so positivity in that weaker, non-Hermitian sense is not in question.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 24, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +89,42 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/050.md">scope notes</a>)</dd>
+    <dd>The main theorem, by OpenAI (<a href="https://github.com/openai/math/blob/main/lean/docs/050.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 12, 2026. The preprint has not been withdrawn or revised, and it cites no other paper from the release. OpenAI’s Lean formalization covers the main theorem: ample for every power, no strictly Griffiths-positive smooth metric for all large powers, about 12,300 lines in 34 files, not counting Mathlib. Since Mathlib has no ample vector bundles or Griffiths curvature, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/QuadricBundles.lean">the formal statement</a> defines ampleness, smooth Hermitian metrics and strict Griffiths positivity itself, so how faithfully those definitions match the usual ones is part of what a reader has to check. The very-ampleness bound for every admissible even exponent is outside the Lean scope. We found no public assessment by specialists.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The ingredients.</strong> Two Möbius transformations <i>A</i> and <i>B</i> of ℙ¹, each of order three, with no common fixed point; their product <i>AB</i> has one attracting and one repelling fixed point. The graphs of the identity, <i>A</i> and <i>B</i> in ℙ¹ × ℙ¹ form a curve <i>D</i> of bidegree (3, 3) with six nodes.</li>
+  <li><strong>The bundle.</strong> <i>G</i> consists of pairs of sections of 𝒪(24, 0) ⊕ 𝒪(0, 24) that agree along <i>D</i> through the matrices of <i>A</i> and <i>B</i>; 24 is a common multiple of the orders 6, 6 and 8 of the relevant matrices, so the gluing is consistent at the nodes.</li>
+  <li><strong>Ampleness.</strong> Using the two quotient line bundles of <i>G</i> alternately filters the symmetric powers of <i>E</i><sub><i>m</i></sub>; after twisting, every piece is globally generated with vanishing first cohomology when <i>n</i> is even and <i>n</i> − 1 ≥ 3<i>m</i>, which gives an explicit very ample embedding.</li>
+  <li><strong>A limit.</strong> If infinitely many <i>E</i><sub><i>m</i></sub> had positive metrics, the dual squared norms are plurisubharmonic; averaging over <i>f</i><sub><i>m</i></sub> and letting <i>m</i> grow gives a nonzero plurisubharmonic function on the dual of <i>G</i>, quadratic on every fiber.</li>
+  <li><strong>A measure.</strong> On the two line subbundles the maximum principle removes the dependence on the other coordinate, and the graph gluing produces one seminorm on 𝒪(−24) over ℙ¹, invariant under <i>A</i> and <i>B</i>. The curvature of its logarithm is a positive measure of nonzero mass.</li>
+  <li><strong>The contradiction.</strong> A measure invariant under <i>AB</i> lives on its two fixed points; <i>A</i> and <i>B</i> permute that support, and having order three they must fix both points, a common fixed point that does not exist.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script checks the matrices of <i>A</i> and <i>B</i>, their traces and orders (6, 6 and 8 for <i>A</i>, <i>B</i> and <i>A</i><sup>−1</sup><i>B</i>; order 3 on ℙ¹), the eigenvalues of <i>AB</i> (about 1.883 and 0.531), the six distinct nodes, that the fixed points of <i>AB</i> are fixed by neither <i>A</i> nor <i>B</i>, the bidegree bookkeeping, and the nonnegativity of the filtration bidegrees for even <i>n</i> with <i>n</i> − 1 ≥ 3<i>m</i>.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/paper.pdf">Ample rank-two bundles on the quadric surface without Griffiths-positive metrics (PDF)</a>, dated September 24, 2026 (18 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/050.md">OpenAI’s Lean scope note for result 050</a>, and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/QuadricBundles.lean">the formal statement</a>.</li>
+  <li><a href="https://arxiv.org/abs/2609.26504">Du and Xie’s preprint on an abelian surface</a> (arXiv, September 22, 2026).</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 050.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +132,30 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/ample-rank-two-bundles-on-the-quadric-surface-without-griffiths-positive-metrics-September-24-2026/paper.pdf">Ample rank-two bundles on the quadric surface without Griffiths-positive metrics</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Two kinds of positive</h3>
+<p>For a line bundle, two notions of positivity agree: it is ample exactly when it carries a metric whose curvature is positive. For vector bundles of higher rank, the two that matter here are these. Ample means, algebraically, that the tautological line bundle on its projectivization is ample. Griffiths positive means a Hermitian metric whose curvature is positive in every pair of tangent and fiber directions. Griffiths positive implies ample. In 1969, Griffiths asked for the converse: does every ample vector bundle on a smooth projective variety carry a Griffiths-positive metric? On curves the answer is yes, by work of Umemura and of Campana and Flenner, so surfaces are the first place a counterexample could live. Berndtsson and others found positive metrics after twisting or taking symmetric powers, but not on the bundle itself.</p>
+<h3><span class="t num">0:53</span>The claim</h3>
+<p>Result 050 is an 18-page OpenAI preprint, dated September 24. On the quadric surface, the product of two projective lines, it builds an explicit rank-two bundle G. Pull it back by the map that raises coordinates to the mth power, and twist by O(1, 1). The paper claims that every such bundle is ample, but for all large m none of them has a smooth, strictly Griffiths-positive metric. If it holds, Griffiths’ conjecture fails in rank two, already on one of the simplest surfaces. It is not alone. Two days earlier, Du and Xie posted their own preprint, which says AI helped with parts of the proof. It claims an ample rank-two bundle on an abelian surface with no Griffiths-semipositive metric. The OpenAI paper cites that work and says its own construction is different. And a later preprint by Liu and Wan, which the paper also cites, claims examples on every Hirzebruch surface, the quadric included.</p>
+<h3><span class="t num">1:54</span>Building the bundle</h3>
+<p>The construction starts with two Möbius transformations A and B of the projective line. Each has order three, they share no fixed point, and their product AB stretches: it has one attracting and one repelling fixed point. Draw the graphs of the identity, of A, and of B on the quadric. They are three curves that meet in six points. Take O(24, 0) ⊕ O(0, 24), and keep only the pairs of sections that agree along the three graphs, matched through A and B. The number 24 is a common multiple of the orders 6, 6 and 8 of the relevant matrices, so the matchings agree at the six crossing points. This defines G. Ampleness comes from the two quotient line bundles of G. Using them alternately filters the symmetric powers, and after twisting, every piece is generated by its sections when n is even and n − 1 ≥ 3m. That gives an explicit very ample embedding for every m.</p>
+<h3><span class="t num">2:54</span>Why no positive metric</h3>
+<p>Now suppose infinitely many of these bundles had positive metrics. On the dual bundles the squared norms are plurisubharmonic. Average them over the power map and let m grow. The twist by O(1, 1) fades away, and in the limit there is a nonzero plurisubharmonic function on the dual of G, quadratic on every fiber. On each of the two line subbundles, the maximum principle makes it independent of the other coordinate, and the graph matchings glue the pieces into one seminorm, invariant under A and B. Its logarithm gives a positive measure on the projective line with fixed total mass. A measure invariant under the stretching map AB must sit on its two fixed points. A and B permute that support. But A and B have order three, and a map of order three can’t swap two points, so it must fix them both. Then A and B would share a fixed point. They don’t. So, the paper concludes, the positive metrics cannot exist for large m.</p>
+<h3><span class="t num">3:54</span>Where it stands</h3>
+<p>This is a preprint, not yet peer reviewed, and it has not been revised. OpenAI also published a Lean formalization of the main theorem, about 12,000 lines, not counting Mathlib. Since Mathlib has no ample vector bundles or Griffiths curvature, the formal statement defines these itself. We haven’t run the check. The explicit very-ampleness range, for every even n, is outside the Lean scope, and the threshold for m is not explicit. The paper cites no other release paper. We found no public assessment. If it holds, algebraic positivity and curvature positivity part ways for vector bundles: an ample bundle on the quadric surface need not carry any smooth Griffiths-positive metric.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20050%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../049-stable-coordinate-counterexample-four-variables/"><span class="dir">Previous · 049</span><span class="pt">A stable-coordinate counterexample in four variables</span></a>
-  <a class="next" href="../051-kobayashis-canonical-ampleness-conjecture/"><span class="dir">Next · 051</span><span class="pt">Kobayashi’s canonical-ampleness conjecture</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebraic-and-complex-geometry/">More in algebraic and complex geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

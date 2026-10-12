@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 052: Tangent splittings and product decompositions | AI Proved What?</title>
-<meta name="description" content="Tangent splittings and product decompositions. Result 052 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Split tangent, split space? Tangent splittings and product decompositions | AI Proved What?</title>
+<meta name="description" content="An AI system claims the two-summand case of Beauville’s splitting conjecture for compact Kähler manifolds, and Höring’s conjecture that tangent splittings of rationally connected manifolds are integrable, with Lean formalizations published. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/052-tangent-splittings-product-decompositions/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 052: Tangent splittings and product decompositions | AI Proved What?">
-<meta property="og:description" content="Tangent splittings and product decompositions. Result 052 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Split tangent, split space?">
+<meta property="og:description" content="An AI system claims the two-summand case of Beauville’s splitting conjecture for compact Kähler manifolds, and Höring’s conjecture that tangent splittings of rationally connected manifolds are integrable, with Lean formalizations published. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/052-tangent-splittings-product-decompositions/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/052-tangent-splittings-product-decompositions/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 052 · <a href="../../subjects/algebraic-and-complex-geometry/">Algebraic and complex geometry</a></p>
-<h1 class="result-title">Tangent splittings and product decompositions</h1>
+<p class="meta">Episode 052, October 2026</p>
+<h1>Split tangent, split space?</h1>
+<p class="subtitle">Tangent splittings and product decompositions</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 052 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="GsSCkkGoAts" data-title="Episode 052: Split tangent, split space?">
+  <a href="https://youtu.be/GsSCkkGoAts">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 052: Split tangent, split space? A rectangle crossed by blue horizontal and orange vertical lines, with a white tangent vector split into a blue and an orange arrow, above TX = E1 plus E2 implies the universal cover is Y1 times Y2.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:11. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/GsSCkkGoAts?t=0" data-t="0"><span class="t">0:00</span><span>Products and splittings</span></a></li>
+  <li><a href="https://youtu.be/GsSCkkGoAts?t=83" data-t="83"><span class="t">1:23</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/GsSCkkGoAts?t=138" data-t="138"><span class="t">2:18</span><span>Continuing local products</span></a></li>
+  <li><a href="https://youtu.be/GsSCkkGoAts?t=246" data-t="246"><span class="t">4:06</span><span>Rational curves force integrability</span></a></li>
+  <li><a href="https://youtu.be/GsSCkkGoAts?t=316" data-t="316"><span class="t">5:16</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>A splitting of the tangent bundle of a compact Kähler manifold into two integrable holomorphic subbundles induces a compatible product decomposition of its universal cover, proving the two-summand form of Beauville's splitting conjecture. On smooth rationally connected projective manifolds, both summands are automatically integrable, establishing Höring's conjecture and the corresponding product decomposition.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>On a product <i>Y</i><sub>1</sub> × <i>Y</i><sub>2</sub>, every tangent vector splits into a part along each factor, so the tangent bundle is a direct sum <i>E</i><sub>1</sub> ⊕ <i>E</i><sub>2</sub>, and each piece is integrable: its directions fit together into leaves. The converse asks whether a holomorphic splitting <i>TX</i> = <i>E</i><sub>1</sub> ⊕ <i>E</i><sub>2</sub> of a complex manifold comes from a product, matching the given pieces. Integrability is needed: Beauville’s example on an abelian surface times a projective line has a complement to the line direction that is not integrable. In <a href="https://arxiv.org/abs/math/9809033">a paper published in 2000</a>, Beauville conjectured that on a compact Kähler manifold whose tangent bundle splits into two integrable pieces (with more pieces, every partial sum integrable), the universal cover is a product whose factors carry those pieces. He proved it for Kähler–Einstein manifolds and for surfaces; later work handled a line summand, a flat summand, or a compact leaf with finite holonomy. On rationally connected manifolds, Höring showed that one integrable summand already gives a product, and conjectured that there the summands are always integrable (<a href="https://arxiv.org/abs/2602.15427">stated as Conjecture 1.5 in his 2026 preprint</a>).</p>
+<p>Result 052 is two OpenAI preprints dated September 23, 2026. <a href="https://github.com/openai/math/blob/main/preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/paper.pdf">The first</a> (33 pages) claims Beauville’s conjecture for two summands: if a compact connected Kähler manifold of dimension at least two has <i>TX</i> = <i>E</i><sub>1</sub> ⊕ <i>E</i><sub>2</sub> with both summands integrable and of positive rank, its universal cover is biholomorphic to a product <i>Y</i><sub>1</sub> × <i>Y</i><sub>2</sub> of simply connected manifolds, with the lifted <i>E</i><sub><i>i</i></sub> as the factor directions. The factors are the universal covers of the leaves through a point and can be noncompact. <a href="https://github.com/openai/math/blob/main/preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/main.pdf">The second</a> (16 pages) claims that on a smooth rationally connected projective manifold, both summands of every holomorphic splitting into two positive-rank pieces are integrable; with Höring’s theorem, the manifold is then an actual product <i>X</i><sub>1</sub> × <i>X</i><sub>2</sub> matching the split.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What they don’t claim</h2>
+<p>The first paper is about the ordinary universal cover: it does not say that a finite cover of <i>X</i> is a product, and it treats two summands, not the general multi-summand conjecture. The second needs smoothness: Höring gives a singular rationally connected variety with a non-integrable summand.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, both dated September 23, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,42 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/052.md">scope notes</a>)</dd>
+    <dd>Both main theorems, by OpenAI (<a href="https://github.com/openai/math/blob/main/lean/docs/052.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 12, 2026. Neither preprint has been withdrawn or revised, and they cite no other paper from the release except each other. OpenAI’s Lean formalizations cover the two main theorems: the universal-cover product for two integrable summands (about 15,000 lines in 46 files) and integrability on rationally connected manifolds (about 17,300 lines in 15 files), not counting Mathlib. Since Mathlib lacks this geometry, the formal statements (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/KahlerSplitting.lean">the first</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SplitTangentIntegrability.lean">the second</a>) define Kähler metrics, holomorphic splittings, integrability and rational connectedness themselves. The corollaries, including the product decomposition for rationally connected manifolds, are outside the Lean scope. We found no public assessment by specialists.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Product charts.</strong> Integrability gives local coordinates (<i>z</i><sub>1</sub>, <i>z</i><sub>2</sub>) with <i>E</i><sub><i>i</i></sub> along <i>z</i><sub><i>i</i></sub>; on overlaps the new <i>z</i><sub>1</sub> depends only on the old <i>z</i><sub>1</sub>, and likewise for <i>z</i><sub>2</sub>. The task is to continue these local products globally.</li>
+  <li><strong>Holomorphic boxes.</strong> A box is a map <i>f</i>(<i>s</i>, <i>t</i>) whose <i>s</i>-derivative lies in <i>E</i><sub>1</sub> and <i>t</i>-derivative in <i>E</i><sub>2</sub>; in a chart it is (<i>f</i><sub>1</sub>(<i>s</i>), <i>f</i><sub>2</sub>(<i>t</i>)). A box on a Hartogs figure extends to the filled region: an extension theorem for maps into compact Kähler manifolds gives a meromorphic extension, and the two tangencies forbid a point spreading into a curve. A box can also be pushed across a convex boundary where the complex tangent mixes both variables: Stokes’ theorem for the closed Kähler form bounds areas of small discs, one of many small annuli has tiny area, and a Hartogs shell built from it reaches past the boundary.</li>
+  <li><strong>Grids and monodromy.</strong> Two discs through a point, one in each leaf, span a box on the whole bidisc. Grids of boxes turn a path in each leaf into the edges of a rectangle, and any path into the diagonal of one, so the local product map and its inverse continue along every path; on simply connected covers this gives the product.</li>
+  <li><strong>Tangent boxes on ℙ¹ × ℙ¹.</strong> For the second paper, any rational curve <i>g</i> gives <i>F</i>: ℙ¹ × ℙ¹ → <i>X</i> with <i>F</i>(<i>s</i>, <i>s</i>) = <i>g</i>(<i>s</i>) and the two tangencies, with no integrability assumed: a formal solution along the diagonal, a section count showing it comes from a rational map, and a resolution in which the tangencies contract every exceptional curve.</li>
+  <li><strong>The obstruction dies.</strong> Along a factor line the complementary summand is trivial, so the bracket obstruction <i>P</i><sub><i>j</i></sub>[<i>e</i>, <i>e</i>′] on two sections is constant there. Rational connectedness supplies sections vanishing at one marked point and spanning at another, so the obstruction vanishes on an open set and hence everywhere.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short symbolic script checks Beauville’s example (the bracket [<i>U</i> + <i>S</i>, <i>V</i> + <i>T</i>] = ∂<sub><i>w</i></sub> is vertical and leaves the span), the product form of boxes, a tangent box for a Möbius map on ℙ¹ × ℙ¹, and the formal recursion along the diagonal to order six. The Lean line counts are our counts of the import closures of the two proof modules.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Universal-cover-splitting-for-compact-Kahler-manifolds-September-23-2026/paper.pdf">Universal-cover splitting for compact Kähler manifolds (PDF)</a>, September 23, 2026 (33 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/main.pdf">Integrability of split tangent bundles on rationally connected manifolds (PDF)</a>, September 23, 2026 (16 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/052.md">OpenAI’s Lean scope note for result 052</a>.</li>
+  <li><a href="https://arxiv.org/abs/math/9809033">Arnaud Beauville, Complex manifolds with split tangent bundle</a> (arXiv; published 2000).</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 052.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -75,18 +132,30 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Integrability-of-split-tangent-bundles-on-rationally-connected-manifolds-September-23-2026/main.pdf">Integrability of split tangent bundles on rationally connected manifolds</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Products and splittings</h3>
+<p>On a product of two manifolds, every tangent vector splits into a part along the first factor and a part along the second. The tangent bundle is a direct sum, and each piece is integrable: its directions fit together into leaves, the copies of each factor. The converse asks: if the tangent bundle of a complex manifold splits into two holomorphic pieces, does the manifold come from a product? Integrability is needed. Beauville’s example on an abelian surface times a projective line tilts the surface directions by two vector fields on the line that don’t commute, and the tilted directions are not integrable. In a paper published in 2000, Beauville conjectured that integrability is enough, after passing to the universal cover. For two pieces: on a compact Kähler manifold whose tangent bundle splits into two integrable pieces, the universal cover is a product whose factors carry those pieces. With more pieces, every combination of pieces has to be integrable too. He proved it for Kähler-Einstein manifolds and for surfaces. Later work handled a line summand, a flat summand, or a compact leaf with finite holonomy. For rationally connected manifolds, Höring showed that one integrable summand already gives a product, and he conjectured that there the summands are always integrable.</p>
+<h3><span class="t num">1:23</span>The claim</h3>
+<p>Result 052 is two OpenAI preprints, both dated September 23. The first, 33 pages, claims Beauville’s conjecture for two summands. If a compact connected Kähler manifold has its tangent bundle split into two integrable holomorphic subbundles of positive rank, then its universal cover is a product of two simply connected manifolds, matching the split. The factors are the universal covers of the leaves through a point, and they can be noncompact. The second, 16 pages, claims that on a smooth rationally connected projective manifold, both summands of any holomorphic splitting are automatically integrable. Combined with Höring’s theorem, such a manifold is then literally a product, matching the split. Smoothness matters: Höring has a singular rationally connected example where integrability fails.</p>
+<h3><span class="t num">2:18</span>Continuing local products</h3>
+<p>Start with the first paper. Integrability gives local product charts: near each point, two groups of coordinates, z₁ and z₂, with the first piece along z₁ and the second along z₂. Where two such charts overlap, the new z₁ depends only on the old z₁, and the new z₂ only on the old z₂. The problem is to continue these local products globally: to transport a path in one leaf all the way along a path in the other. The paper’s tool is a holomorphic box: a map of two variables, s and t, whose s-direction stays in the first piece and whose t-direction stays in the second. In a product chart it is just f₁(s) next to f₂(t). First, a box on a Hartogs figure extends to the filled region. An extension theorem for maps into compact Kähler manifolds gives a meromorphic extension, which might spread a single point out into a whole curve, but the two tangencies rule that out. Second, a box can be pushed across the boundary of a convex domain, wherever the boundary’s complex tangent direction mixes both variables. Stokes’ theorem for the closed Kähler form bounds the areas of small discs, and among many small annuli one has tiny area, so its image fits in a single product chart. From it the paper builds a Hartogs shell that reaches past the boundary, and fills it. Together, two discs through the same point, one in each leaf, span a box on the whole bidisc. Grids of these boxes turn a path in one leaf and a path in the other into the edges of a rectangle, and any path in the manifold into the diagonal of one. So the local product map and its inverse continue along every path. On simply connected covers the continuation doesn’t depend on the path, and it gives the product.</p>
+<h3><span class="t num">4:06</span>Rational curves force integrability</h3>
+<p>The second paper needs no integrability to start. Given any rational curve g in the manifold, it builds a tangent box: a map F from the product of two projective lines, equal to g on the diagonal, with the first direction in the first piece and the second direction in the second. It solves for F as a power series along the diagonal, shows by counting sections that the series comes from a rational map, and then the tangencies force every exceptional curve of a resolution to collapse, so F is holomorphic everywhere. Along a factor line of the box, the complementary piece becomes a trivial bundle. Now take the bracket of two sections of one piece and project it to the other piece: that is the obstruction to integrability. On a factor line it is a section of a trivial bundle on the projective line, so it is constant. Rational connectedness supplies sections that vanish at one marked point and span the piece at another. The constant vanishes at the first point, so it vanishes at the second. Those second points fill an open set, so the obstruction vanishes there, and hence everywhere.</p>
+<h3><span class="t num">5:16</span>Where it stands</h3>
+<p>Both are preprints, not yet peer reviewed, and neither has been revised. OpenAI published Lean formalizations of the two main theorems, about 15,000 and 17,000 lines, not counting Mathlib. Since Mathlib lacks this geometry, the formal statements define Kähler metrics, holomorphic splittings and rational connectedness themselves. We haven’t run the check. The corollaries, including the product decomposition for rationally connected manifolds, are outside the Lean scope. We found no public assessment. If they hold, on compact Kähler manifolds any splitting of the tangent bundle into two integrable pieces comes from a product on the universal cover, and on smooth rationally connected manifolds any splitting into two holomorphic pieces comes from an actual product.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20052%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../051-kobayashis-canonical-ampleness-conjecture/"><span class="dir">Previous · 051</span><span class="pt">Kobayashi’s canonical-ampleness conjecture</span></a>
-  <a class="next" href="../053-counterexample-pixton-completeness-chow/"><span class="dir">Next · 053</span><span class="pt">A counterexample to Pixton completeness in Chow</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebraic-and-complex-geometry/">More in algebraic and complex geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

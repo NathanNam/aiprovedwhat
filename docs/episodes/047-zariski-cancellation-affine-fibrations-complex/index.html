@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 047: Zariski cancellation and affine fibrations over the complex numbers | AI Proved What?</title>
-<meta name="description" content="Zariski cancellation and affine fibrations over the complex numbers. Result 047 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Cancel a line? Zariski cancellation over the complex numbers | AI Proved What?</title>
+<meta name="description" content="An AI system says it has found an explicit complex fourfold X, not affine space, whose product with a line is affine five-space, a counterexample to Zariski’s cancellation problem, with a Lean formalization published. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/047-zariski-cancellation-affine-fibrations-complex/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 047: Zariski cancellation and affine fibrations over the complex numbers | AI Proved What?">
-<meta property="og:description" content="Zariski cancellation and affine fibrations over the complex numbers. Result 047 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Cancel a line?">
+<meta property="og:description" content="An AI system says it has found an explicit complex fourfold X, not affine space, whose product with a line is affine five-space, a counterexample to Zariski’s cancellation problem, with a Lean formalization published. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/047-zariski-cancellation-affine-fibrations-complex/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/047-zariski-cancellation-affine-fibrations-complex/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 047 · <a href="../../subjects/algebraic-and-complex-geometry/">Algebraic and complex geometry</a></p>
-<h1 class="result-title">Zariski cancellation and affine fibrations over the complex numbers</h1>
+<p class="meta">Episode 047, October 2026</p>
+<h1>Cancel a line?</h1>
+<p class="subtitle">Zariski cancellation and affine fibrations over the complex numbers</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 047 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="1ampvAW6zDY" data-title="Episode 047: Cancel a line?">
+  <a href="https://youtu.be/1ampvAW6zDY">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 047: Cancel a line? Zariski cancellation fails over the complex numbers. An orange blob and its translated copy joined by teal lines, a cylinder over X, under X times the affine line isomorphic to affine five-space, and X not isomorphic to affine four-space.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:53. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/1ampvAW6zDY?t=0" data-t="0"><span class="t">0:00</span><span>Cancelling a line</span></a></li>
+  <li><a href="https://youtu.be/1ampvAW6zDY?t=57" data-t="57"><span class="t">0:57</span><span>One equation</span></a></li>
+  <li><a href="https://youtu.be/1ampvAW6zDY?t=131" data-t="131"><span class="t">2:11</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/1ampvAW6zDY?t=175" data-t="175"><span class="t">2:55</span><span>Why X is not affine space</span></a></li>
+  <li><a href="https://youtu.be/1ampvAW6zDY?t=255" data-t="255"><span class="t">4:15</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Constructs an integral complex affine fourfold <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>≇</mo><msup><mi mathvariant="double-struck">A</mi><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">X\not\cong\mathbb A^4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel"><span class="mord vbox"><span class="thinbox"><span class="rlap"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="inner"><span class="mord"><span class="mrel"></span></span></span><span class="fix"></span></span></span></span></span></span><span class="base"><span class="strut" style="height:0.589em;"></span><span class="mrel">≅</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathbb">A</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span> with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>×</mo><msup><mi mathvariant="double-struck">A</mi><mn>1</mn></msup><mo>≅</mo><msup><mi mathvariant="double-struck">A</mi><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">X\times\mathbb A^1\cong\mathbb A^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathbb">A</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≅</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathbb">A</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span>, disproving affine-space cancellation over ℂ in dimension four. It also disproves the Dolgachev–Weisfeiler affine-fibration conjecture: smooth surjections <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>→</mo><msup><mi mathvariant="double-struck">A</mi><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">X\to\mathbb A^1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathbb">A</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="double-struck">A</mi><mn>5</mn></msup><mo>→</mo><msup><mi mathvariant="double-struck">A</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\mathbb A^5\to\mathbb A^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathbb">A</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathbb">A</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> have every residue-field fiber isomorphic to affine three-space but are not Zariski-locally trivial.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Zariski’s cancellation problem asks: if <i>X</i> × 𝔸¹ is affine space, must <i>X</i> be affine space? Algebraically, if adjoining one variable to a finitely generated ring gives a polynomial ring, was the ring already polynomial? In topology the answer can be no (the Whitehead manifold is not ℝ³, but its product with a line is ℝ⁴). Cancellation holds for curves (Abhyankar–Heinzer–Eakin) and for the complex plane (Fujita; Miyanishi–Sugie). <a href="https://arxiv.org/abs/1309.1368">Neena Gupta</a> showed in 2014 that it fails in every dimension from three up over fields of positive characteristic; over the complex numbers, dimensions three and higher stayed open (see <a href="https://arxiv.org/abs/2208.14736">Gupta’s survey</a>).</p>
+<p>Result 047 is <a href="https://github.com/openai/math/blob/main/preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/paper.pdf">a single 29-page OpenAI preprint</a> with one explicit equation in five variables: with <i>x</i> = <i>s</i>² + <i>u</i>³ + <i>p</i>²<i>F</i>, the fourfold <i>X</i> is the zero set of <i>H</i> = <i>x</i>²<i>F</i> − (1 + 2<i>sx</i>)<i>J</i> − <i>p</i>²<i>J</i>² − <i>pu</i>. It claims <i>X</i> × 𝔸¹ ≅ 𝔸⁵ but <i>X</i> ≇ 𝔸⁴, so cancellation fails over ℂ in dimension four. Consequences in the paper: <i>H</i> is a coordinate after adjoining one variable but not before (the stable coordinate conjecture fails in five variables), and the maps <i>p</i>: <i>X</i> → 𝔸¹ and (<i>p</i>, <i>H</i>): 𝔸⁵ → 𝔸² have every fiber 𝔸³ but are not Zariski-locally trivial, contrary to the Dolgachev–Weisfeiler conjecture over ℂ.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Cancellation in dimension three over ℂ is not addressed; the counterexample is a fourfold. The Lean formalization covers the main theorem only, not the stable coordinate or fibration consequences.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 23, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +88,39 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/047.md">scope notes</a>)</dd>
+    <dd>The main theorem, by OpenAI (<a href="https://github.com/openai/math/blob/main/lean/docs/047.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 12, 2026. The paper has not been withdrawn or revised and cites no other paper from the release. OpenAI’s Lean proof of the <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/ComplexCancellation.lean">main statement</a> runs to about 5,600 lines in 55 files, not counting Mathlib. An open <a href="https://github.com/google-deepmind/formal-conjectures/pull/6898">pull request</a> to Google DeepMind’s formal-conjectures repository proposes marking the problem refuted over ℂ in dimension four, citing that proof. We found no public assessment by specialists.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Slices.</strong> With <i>y</i> = <i>s</i> + <i>x</i>(<i>x</i> − <i>u</i>³) and <i>z</i> = <i>sx</i> + <i>p</i>²<i>J</i>, the identity <i>xy</i> − <i>z</i>(<i>z</i> + 1) = <i>p</i>²(<i>H</i> + <i>pu</i>) makes each slice <i>p</i> = <i>c</i> ≠ 0 affine three-space; at <i>p</i> = 0, <i>H</i> is linear in <i>F</i>, <i>J</i> and a determinant-one change of coordinates makes that slice affine three-space too.</li>
+  <li><strong>The cylinder.</strong> The derivation −<i>p</i>² ∂/∂<i>u</i> (fixing <i>x</i>, <i>y</i>, <i>z</i>) sends <i>H</i> to <i>p</i>³; its exponential turns <i>H</i> into <i>H</i> + <i>p</i>³<i>w</i>, and five explicit coordinates follow.</li>
+  <li><strong>Not affine space.</strong> A polynomial <i>X</i> would give a coordinate of positive degree for the order along <i>p</i> = 0, hence a homogeneous additive action on the degeneration, built from the quadric <i>xy</i> = <i>z</i>(<i>z</i> + 1), with a positive-degree invariant. Pulled back along the torus bundle from SL<sub>2</sub>, it yields a derivation of nonpositive weight killing an explicit polynomial when applied twice.</li>
+  <li><strong>Mason–Stothers.</strong> The polynomial abc theorem and the fact that −<i>u</i>³ is not a square force that derivation to fix <i>a</i>, <i>d</i>, <i>u</i>, and the determinant relation then gives the wrong sign.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script checks, as exact polynomial identities, the slice identity, the determinant-one change of coordinates at <i>p</i> = 0, the derivation (it kills <i>x</i>, <i>y</i>, <i>z</i>, sends <i>H</i> to <i>p</i>³ and <i>p</i>³ to 0), and the paper’s identity for the fifth coordinate; <i>H</i> has degree 7 and 12 terms.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/paper.pdf">An explicit failure of complex affine-space cancellation (PDF)</a>, September 23, 2026 (29 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/047.md">OpenAI’s Lean scope note for result 047</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 047.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +128,30 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/An-explicit-failure-of-complex-affine-space-cancellation-September-23-2026/paper.pdf">An explicit failure of complex affine-space cancellation</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Cancelling a line</h3>
+<p>Suppose a variety X, times a line, is affine space. Must X itself be affine space? This is Zariski’s cancellation problem. In topology the answer can be no: the Whitehead manifold is not ordinary three-space, yet its product with a line is four-space. In algebra, the question is whether a ring that becomes a polynomial ring after adjoining one variable was already a polynomial ring. For curves, Abhyankar, Heinzer and Eakin showed that cancellation holds. For the plane over the complex numbers, it holds too: if a surface times a line is three-space, the surface is the plane. That is work of Fujita, Miyanishi and Sugie, around 1980. In 2014, Neena Gupta showed that it fails in every dimension from three up, over every field of positive characteristic. Over the complex numbers, dimensions three and higher stayed open.</p>
+<h3><span class="t num">0:57</span>One equation</h3>
+<p>The paper writes down one equation in five variables, p, s, u, F and J. Put x = s² + u³ + p²F. Then H = x²F − (1 + 2sx)J − p²J² − pu. The fourfold X is the zero set of H. Slice X along p. Away from p = 0, two more combinations, y and z, satisfy xy − z(z + 1) = p²(H + pu). There, x, y, z and u can replace s, u, F and J as coordinates. On X, u is then fixed by x, y and z, so each slice is affine three-space. At p = 0, H becomes linear in F and J, and a change of coordinates with determinant one shows that slice is affine three-space too. Now add one new variable, w. A derivation that moves u while fixing x, y and z sends H to p³, so its flow turns H into H + p³w. The paper then writes five explicit coordinates on the result: X times a line is affine five-space.</p>
+<h3><span class="t num">2:11</span>The claim</h3>
+<p>Result 047 is a 29-page OpenAI preprint, dated September 23. It claims that X is not affine four-space, so cancellation fails over the complex numbers in dimension four. Two consequences follow. H becomes a coordinate after adding one variable without being one before, which disproves the stable coordinate conjecture in five variables. And the maps from X to the line, and from affine five-space to the plane given by p and H, have every fiber affine three-space, but are not products even over small Zariski-open pieces of the base. Over the complex numbers, that goes against a conjecture of Dolgachev and Weisfeiler.</p>
+<h3><span class="t num">2:55</span>Why X is not affine space</h3>
+<p>Affine space has many additive symmetries, like sliding along a coordinate. Makar-Limanov used such actions to show that the Russell cubic is not affine three-space. Here the paper measures how fast each function blows up as p goes to zero, using a simpler model of X near that slice. If X were affine four-space, one coordinate would have positive degree. Its leading terms would give a homogeneous additive action on a simpler, degenerate ring, with an invariant of positive degree. That degenerate ring is built from the smooth quadric xy = z(z + 1). Pulling back along the torus bundle from 2-by-2 matrices of determinant one makes everything explicit. It yields a derivation on the matrix ring, of weight zero or negative, that kills one polynomial when applied twice. After one more grading step, the polynomial to kill becomes d² + a²u³. The last step is the Mason–Stothers theorem, the polynomial version of the abc conjecture, together with the fact that −u³ is not a square. These force the action to fix a, d and u, and the determinant relation then gives the wrong sign. So, the paper concludes, no such action exists, and X is not affine four-space.</p>
+<h3><span class="t num">4:15</span>Where it stands</h3>
+<p>This is a preprint, not yet peer reviewed, and it has not been revised. OpenAI also published a Lean formalization of the main theorem, about 5,600 lines, not counting Mathlib. We haven’t run the check. The stable coordinate and fibration consequences are outside the Lean scope. The paper cites no other release paper. We found no public assessment. If it holds, one extra line can erase the difference between a strange fourfold and affine space, and Zariski’s question has a negative answer over the complex numbers.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20047%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../046-shafarevich-counterexamples-dimension-two-large/"><span class="dir">Previous · 046</span><span class="pt">Shafarevich counterexamples in dimension two and with large fundamental group</span></a>
-  <a class="next" href="../048-characteristic-zero-counterexample-lipman-zariski/"><span class="dir">Next · 048</span><span class="pt">A characteristic-zero counterexample to Lipman–Zariski</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebraic-and-complex-geometry/">More in algebraic and complex geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

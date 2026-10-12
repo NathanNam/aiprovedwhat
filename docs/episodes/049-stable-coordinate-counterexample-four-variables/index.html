@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 049: A stable-coordinate counterexample in four variables | AI Proved What?</title>
-<meta name="description" content="A stable-coordinate counterexample in four variables. Result 049 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>One variable too few? A stable coordinate that is not a coordinate | AI Proved What?</title>
+<meta name="description" content="An AI system says a degree-five polynomial in four complex variables becomes a coordinate after one variable is added but is not one before, refuting the stable coordinate and Abhyankar–Sathaye conjectures in four variables, with Lean formalizations published. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/049-stable-coordinate-counterexample-four-variables/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 049: A stable-coordinate counterexample in four variables | AI Proved What?">
-<meta property="og:description" content="A stable-coordinate counterexample in four variables. Result 049 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="One variable too few?">
+<meta property="og:description" content="An AI system says a degree-five polynomial in four complex variables becomes a coordinate after one variable is added but is not one before, refuting the stable coordinate and Abhyankar–Sathaye conjectures in four variables, with Lean formalizations published. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/049-stable-coordinate-counterexample-four-variables/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/049-stable-coordinate-counterexample-four-variables/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 049 · <a href="../../subjects/algebraic-and-complex-geometry/">Algebraic and complex geometry</a></p>
-<h1 class="result-title">A stable-coordinate counterexample in four variables</h1>
+<p class="meta">Episode 049, October 2026</p>
+<h1>One variable too few?</h1>
+<p class="subtitle">A stable-coordinate counterexample in four variables</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 049 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="1lJqDX5fWLQ" data-title="Episode 049: One variable too few?">
+  <a href="https://youtu.be/1lJqDX5fWLQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 049: One variable too few? A stable coordinate that is not a coordinate. Six wavy orange level curves under the formulas f equals x1 minus 2Q times (Q times (x2 plus x4) plus x1 x4), and Q equals x2 squared minus x4 squared plus x1 x3.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:41. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/1lJqDX5fWLQ?t=0" data-t="0"><span class="t">0:00</span><span>Coordinates</span></a></li>
+  <li><a href="https://youtu.be/1lJqDX5fWLQ?t=55" data-t="55"><span class="t">0:55</span><span>One polynomial</span></a></li>
+  <li><a href="https://youtu.be/1lJqDX5fWLQ?t=107" data-t="107"><span class="t">1:47</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/1lJqDX5fWLQ?t=159" data-t="159"><span class="t">2:39</span><span>Why f is not a coordinate</span></a></li>
+  <li><a href="https://youtu.be/1lJqDX5fWLQ?t=223" data-t="223"><span class="t">3:43</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Constructs a polynomial in four complex variables that is not a coordinate but becomes one after adjoining a single variable, disproving the Stable Coordinate conjecture in four variables. Every fiber is affine three-space, yet none of its embeddings is rectifiable, also disproving the Abhyankar–Sathaye conjecture even when all fibers are affine spaces.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A polynomial <i>f</i> in ℂ[<i>x</i><sub>1</sub>, …, <i>x</i><sub><i>n</i></sub>] is a coordinate if a polynomial automorphism turns it into <i>x</i><sub>1</sub>; then every level set of <i>f</i> is a hyperplane in disguise. The stable coordinate conjecture (<a href="https://arxiv.org/abs/math/0110324">Shpilrain and Yu</a>) says adding variables cannot create coordinates; it holds in two and three variables, and <a href="../047-zariski-cancellation-affine-fibrations-complex/">episode 047</a> covered a claimed failure in five. The Abhyankar–Sathaye conjecture asks whether an irreducible <i>f</i> whose zero set is a copy of affine space must be a coordinate; in the plane, the Abhyankar–Moh–Suzuki theorem says yes, and above the plane only special cases were known.</p>
+<p>Result 049 is two OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/stable-coordinate-four-variables.pdf">The main one</a> (October 5, 2026; 14 pages) takes <i>Q</i> = <i>x</i><sub>2</sub>² − <i>x</i><sub>4</sub>² + <i>x</i><sub>1</sub><i>x</i><sub>3</sub> and <i>f</i> = <i>x</i><sub>1</sub> − 2<i>Q</i>(<i>Q</i>(<i>x</i><sub>2</sub> + <i>x</i><sub>4</sub>) + <i>x</i><sub>1</sub><i>x</i><sub>4</sub>), of degree five, and claims that <i>f</i> becomes a coordinate after adjoining one variable but is not a coordinate of ℂ[<i>x</i><sub>1</sub>, …, <i>x</i><sub>4</sub>]. Every level set of <i>f</i> is affine three-space, embedded so that no change of coordinates straightens it: the stable coordinate conjecture would fail in four variables, the first possible case, and Abhyankar–Sathaye would fail in dimension four. <a href="https://github.com/openai/math/blob/main/preprints/An-explicit-noncoordinate-polynomial-with-affine-three-space-zero-fibre-September-24-2026/paper.pdf">A companion</a> (September 24, 2026; 6 pages) gives a degree-17 polynomial whose zero set is affine three-space but whose gradient vanishes at (2, 0, −1/2, 1/2), so it is not a coordinate; adding variables gives Abhyankar–Sathaye counterexamples in every dimension from four up.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Neither paper addresses three variables, where the Abhyankar–Sathaye question (can every plane in three-space be straightened?) remains open.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, dated October 5 and September 24, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,40 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/049.md">scope notes</a>)</dd>
+    <dd>The four-variable package and the companion, by OpenAI (<a href="https://github.com/openai/math/blob/main/lean/docs/049.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 12, 2026. Neither paper has been withdrawn or revised. OpenAI’s Lean formalizations cover the four-variable package (degree five, one-stable, not a coordinate, every fiber affine three-space and not straightenable), the companion in every dimension from four up, and a related statement about commuting derivations: about 18,200 lines in 145 files, not counting Mathlib. The main paper adapts the method of result 047 but proves everything it needs. We found no public assessment by specialists.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A hypersurface model.</strong> Four-space is built as the hypersurface <i>H</i> = <i>x</i>²<i>F</i> − (1 + 2<i>sx</i>)<i>J</i> − <i>pJ</i>² − <i>u</i> = 0 in ℂ[<i>p</i>, <i>s</i>, <i>u</i>, <i>F</i>, <i>J</i>], <i>x</i> = <i>s</i>² − <i>u</i>² + <i>pF</i>; a determinant-one matrix change makes it linear in one variable and turns <i>p</i> into <i>f</i>.</li>
+  <li><strong>Stabilization.</strong> A derivation sends <i>H</i> to <i>p</i>; its flow turns <i>H</i> into <i>H</i> + <i>pw</i>, and after adjoining <i>w</i>, <i>f</i> is a coordinate. The same formulas make every level set affine three-space.</li>
+  <li><strong>A graded shadow.</strong> With weights −1, 0, 0, 1, 1 on <i>p</i>, <i>s</i>, <i>u</i>, <i>F</i>, <i>J</i>, the associated graded ring is built over the quadric <i>xy</i> = <i>z</i>(<i>z</i> + 1); a coordinate system containing <i>f</i> would give a nonzero additive action on the quadric killing a nonzero element of an explicit ideal.</li>
+  <li><strong>A factorization.</strong> Lifted to SL<sub>2</sub> (with <i>u</i>), the ideal becomes principal, generated by <i>v</i> = <i>a</i>³<i>b</i> + <i>a</i>²<i>u</i>² − <i>d</i>²; a second grading isolates <i>a</i>²<i>u</i>² − <i>d</i>² = (<i>au</i> − <i>d</i>)(<i>au</i> + <i>d</i>), which forces a coefficient of negative weight in ℂ[<i>a</i>, <i>d</i>, <i>u</i>]: impossible.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script checks that <i>f</i> has degree 5 and 16 terms, that the determinant-one matrix change turns <i>p</i> into <i>f</i> exactly, the derivation identities, the fiber <i>p</i> = 0, the factorization, and the companion’s identity <i>x</i>² + <i>y</i>³ = <i>hs</i>, its value −1 and zero gradient at (2, 0, −1/2, 1/2), and its degree 17.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-stable-coordinate-that-is-not-a-coordinate-in-four-variables-October-5-2026/stable-coordinate-four-variables.pdf">A stable coordinate that is not a coordinate in four variables (PDF)</a>, October 5, 2026 (14 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-explicit-noncoordinate-polynomial-with-affine-three-space-zero-fibre-September-24-2026/paper.pdf">An explicit noncoordinate polynomial with affine three-space zero fibre (PDF)</a>, September 24, 2026 (6 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/049.md">OpenAI’s Lean scope note for result 049</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 049.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -75,18 +130,30 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/An-explicit-noncoordinate-polynomial-with-affine-three-space-zero-fibre-September-24-2026/paper.pdf">An explicit noncoordinate polynomial with affine three-space zero fibre</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Coordinates</h3>
+<p>In a polynomial ring in n variables, a polynomial f is a coordinate if some invertible polynomial change of variables turns it into x₁. Then every level set of f is a flat hyperplane in disguise. The stable coordinate conjecture says that adding variables cannot create coordinates: if f becomes a coordinate after one more variable is adjoined, it was already one. It holds in two and three variables, so four is the first case that could fail. Episode 047 claimed a failure in five. A related question, the Abhyankar–Sathaye conjecture, asks: if f is irreducible and its zero set is a copy of affine space, must f be a coordinate? In the plane, the Abhyankar–Moh–Suzuki theorem says yes: an embedded line can always be straightened. Above the plane, only special cases were known.</p>
+<h3><span class="t num">0:55</span>One polynomial</h3>
+<p>The new example is short. Put Q = x₂² − x₄² + x₁x₃. Then f = x₁ − 2Q(Q(x₂ + x₄) + x₁x₄). It has degree five and 16 terms. The paper builds four-space as a hypersurface in five variables, p, s, u, F and J, where f is simply the variable p. A matrix of determinant one makes the equation linear in one variable, which identifies the hypersurface with four-space and turns p into f. Then, much as in episode 047, a derivation sends the equation to p, its flow adds p times a new variable w, and after adjoining w, f is a coordinate. The same formulas show that every level set of f is affine three-space.</p>
+<h3><span class="t num">1:47</span>The claim</h3>
+<p>Result 049 has two OpenAI preprints. The main one, 14 pages dated October 5, claims that f is not a coordinate in four variables. So the stable coordinate conjecture would fail in four variables, the first possible case. And since every level set is affine three-space but cannot be straightened, the Abhyankar–Sathaye conjecture would fail in dimension four, even when all fibers are affine spaces. A 6-page companion, dated September 24, gives a different polynomial of degree 17 whose zero set is affine three-space, but whose gradient vanishes at the point (2, 0, −1/2, 1/2). A coordinate never has a critical point, so this polynomial is not one. Adding extra variables gives Abhyankar–Sathaye counterexamples in every dimension from four up.</p>
+<h3><span class="t num">2:39</span>Why f is not a coordinate</h3>
+<p>Give p weight minus one, s and u weight zero, F and J weight one. The leading terms form a simpler graded ring, built over the quadric xy = z(z + 1). If f were a coordinate, some other coordinate would have positive degree, and differentiating along a third would give an additive action on the quadric that kills a nonzero element of an explicit ideal. Lifting the action to 2-by-2 matrices of determinant one, together with u, makes that ideal principal, generated by v = a³b + a²u² − d². The action must kill v. Here the paper’s quadratic choice pays off. A second grading isolates a²u² − d², which factors as (au − d)(au + d). That forces the leading part of the action, in this second grading, to fix a, d and u, and one coefficient would then have to be a polynomial in a, d and u with negative weight, which is impossible. So, the paper concludes, f is not a coordinate.</p>
+<h3><span class="t num">3:43</span>Where it stands</h3>
+<p>These are preprints, not yet peer reviewed, and neither has been revised. OpenAI also published Lean formalizations: of the four-variable package, of the companion in every dimension from four up, and of a related statement about commuting derivations, about 18,000 lines in all, not counting Mathlib. We haven’t run the check. The main paper adapts the method of result 047 but proves everything it needs. Neither paper says anything about three variables, where the Abhyankar–Sathaye question, whether every plane sitting in three-space can be straightened, is still open. We found no public assessment. If it holds, a polynomial in four variables can become a coordinate the moment one variable is added, and a copy of affine three-space can sit in affine four-space in a way that no change of coordinates can straighten.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20049%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../048-characteristic-zero-counterexample-lipman-zariski/"><span class="dir">Previous · 048</span><span class="pt">A characteristic-zero counterexample to Lipman–Zariski</span></a>
-  <a class="next" href="../050-counterexample-griffiths-positivity-conjecture/"><span class="dir">Next · 050</span><span class="pt">A counterexample to Griffiths’ positivity conjecture</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebraic-and-complex-geometry/">More in algebraic and complex geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
