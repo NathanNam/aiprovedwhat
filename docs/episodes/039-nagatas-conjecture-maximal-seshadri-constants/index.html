@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 039: Nagata’s conjecture and maximal Seshadri constants | AI Proved What?</title>
-<meta name="description" content="Nagata’s conjecture and maximal Seshadri constants. Result 039 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Nagata was right? Nagata’s conjecture and maximal Seshadri constants | AI Proved What?</title>
+<meta name="description" content="An AI system says it has proved Nagata’s 1959 conjecture: at ten or more very general points, every plane curve of degree d has d√r greater than the sum of its multiplicities, with Lean formalizations published. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/039-nagatas-conjecture-maximal-seshadri-constants/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 039: Nagata’s conjecture and maximal Seshadri constants | AI Proved What?">
-<meta property="og:description" content="Nagata’s conjecture and maximal Seshadri constants. Result 039 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Nagata was right?">
+<meta property="og:description" content="An AI system says it has proved Nagata’s 1959 conjecture: at ten or more very general points, every plane curve of degree d has d√r greater than the sum of its multiplicities, with Lean formalizations published. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/039-nagatas-conjecture-maximal-seshadri-constants/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/039-nagatas-conjecture-maximal-seshadri-constants/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,33 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 039 · <a href="../../subjects/algebraic-and-complex-geometry/">Algebraic and complex geometry</a></p>
-<h1 class="result-title">Nagata’s conjecture and maximal Seshadri constants</h1>
+<p class="meta">Episode 039, October 2026</p>
+<h1>Nagata was right?</h1>
+<p class="subtitle">Nagata’s conjecture and maximal Seshadri constants</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 039 in OpenAI’s catalog: <a href="#papers-in-result">all 4 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="Sj6zEQI7Sk0" data-title="Episode 039: Nagata was right?">
+  <a href="https://youtu.be/Sj6zEQI7Sk0">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 039: Nagata was right? A 1959 conjecture on curves through points. Ten yellow points in a frame with a blue curve through some of them, under d times the square root of r greater than m 1 plus up to m r.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:45. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/Sj6zEQI7Sk0?t=0" data-t="0"><span class="t">0:00</span><span>Curves through points</span></a></li>
+  <li><a href="https://youtu.be/Sj6zEQI7Sk0?t=61" data-t="61"><span class="t">1:01</span><span>Close, but not there</span></a></li>
+  <li><a href="https://youtu.be/Sj6zEQI7Sk0?t=118" data-t="118"><span class="t">1:58</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/Sj6zEQI7Sk0?t=164" data-t="164"><span class="t">2:44</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/Sj6zEQI7Sk0?t=247" data-t="247"><span class="t">4:07</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves Nagata's strict inequality <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>m</mi><mi>i</mi></msub><mo>&lt;</mo><mi>d</mi><msqrt><mi>r</mi></msqrt></mrow><annotation encoding="application/x-tex">\sum_i m_i\lt d\sqrt r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0497em;vertical-align:-0.2997em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.162em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.2397em;"></span><span class="mord mathnormal">d</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8003em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;padding-left:0.833em;">r</span></span><span style="top:-2.7603em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
-c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
-c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
-c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
-s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
-c69,-144,104.5,-217.7,106.5,-221
-l0 -0
-c5.3,-9.3,12,-14,20,-14
-H400000v40H845.2724
-s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
-c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
-M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2397em;"><span></span></span></span></span></span></span></span></span> for every nonzero effective plane curve of degree <i>d</i> through <i>r</i> ≥ 10 very general complex points, with arbitrary multiplicities <i>m</i><sub><i>i</i></sub>. It also proves maximal multipoint Seshadri constants <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msup><mi>L</mi><mi>n</mi></msup><mi mathvariant="normal">/</mi><mi>r</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">(L^n/r)^{1/n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">L</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1/</span><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span></span> for every smooth polarized projective variety of dimension <i>n</i> ≥ 2 and all sufficiently large <i>r</i>: at very general points over ℂ, and at the geometric generic tuple over any algebraically closed field of positive characteristic.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>How low can the degree of a plane curve be if it must pass through <i>r</i> given points with multiplicity <i>m</i>? A curve of degree <i>d</i> has about <i>d</i>²/2 coefficients, and the multiplicities impose about <i>rm</i>²/2 conditions, so the count balances at <i>d</i> ≈ <i>m</i>√<i>r</i>. Masayoshi Nagata conjectured in 1959 (<i>On the 14th problem of Hilbert</i>, American Journal of Mathematics) that for <i>r</i> ≥ 10 points in very general position nothing beats the count: every curve satisfies <i>d</i>√<i>r</i> &gt; <i>m</i><sub>1</sub> + ⋯ + <i>m</i><sub><i>r</i></sub>. It fails below ten points (a conic through five points, a cubic through nine), and Nagata proved it when <i>r</i> is a square, 16 or more.</p>
+<p>Result 039 has four preprints. <a href="https://github.com/openai/math/blob/main/preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/main.pdf">The central one</a> (24 pages) claims the conjecture in its strict, nonhomogeneous form for every <i>r</i> ≥ 10 at very general complex points, for all curves at once (reducible and nonreduced included) and arbitrary multiplicities; on the blowup, √<i>r</i> times a line minus the exceptional curves is then nef with self-intersection zero, and the multipoint Seshadri constant is 1/√<i>r</i>. <a href="https://github.com/openai/math/blob/main/preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/main.pdf">A 19-page companion</a> claims the qualitative Nagata–Biran–Szemberg conjecture for surfaces: on every smooth complex projective surface with an ample <i>L</i>, the Seshadri constant at <i>r</i> very general points equals √(<i>L</i>²/<i>r</i>) for every sufficiently large <i>r</i>. Two papers dated October 5 claim the same in <a href="https://github.com/openai/math/blob/main/preprints/Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026/main.pdf">dimension three and up</a>, (<i>L</i><sup><i>n</i></sup>/<i>r</i>)<sup>1/<i>n</i></sup>, and <a href="https://github.com/openai/math/blob/main/preprints/Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026/seshadri-positive-characteristic.pdf">in positive characteristic</a> at the geometric generic tuple of points.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The plane theorem is for very general points over the complex numbers (and other uncountable algebraically closed fields of characteristic zero), not for every configuration. The surface and higher-dimensional thresholds for “large <i>r</i>” are not explicit and depend on the variety. It does not settle the stronger Segre–Harbourne–Gimigliano–Hirschowitz conjecture.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, four papers dated September 23 and October 5, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -73,12 +88,50 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/039.md">scope notes</a>)</dd>
+    <dd>The plane and surface theorems, by OpenAI (<a href="https://github.com/openai/math/blob/main/lean/docs/039.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 12, 2026. None of the papers has been withdrawn or revised. The Lean formalizations, of the plane theorem and the surface theorem, run to over 93,000 lines not counting Mathlib. The higher-dimensional and positive-characteristic papers have no Lean proof. We found no public assessment by specialists.</p>
 </section>
 
+<section aria-labelledby="known">
+<h2 id="known">What was known</h2>
+<ul class="sources">
+  <li>Nagata (1959): the strict inequality when <i>r</i> is a square, at least 16.</li>
+  <li>Roé: <i>d</i> &gt; <i>m</i>(√<i>r</i> − 1 − π/8) for <i>r</i> ≥ 10; Harbourne: further cases and bounds. For ten points, degeneration methods (Eckl; Ciliberto–Dumitrescu–Miranda–Roé) give <i>d</i>/<i>m</i> ≥ 117/37 = 3.16216…, just below √10 = 3.16228….</li>
+  <li>Seshadri constants: Biran’s symplectic packing stability; Harbourne’s maximality when <i>rL</i>² is a square; asymptotic bounds in every dimension (Küchle).</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Equal multiplicities.</strong> The product of a bad curve’s copies with the points cyclically permuted has equal multiplicities, and a bad curve at very general points gives one at every configuration.</li>
+  <li><strong>Slide to a curve.</strong> Moving the points toward a smooth curve <i>B</i> leaves a nonzero polynomial on the normal bundle of <i>B</i>, vanishing to order <i>m</i> at the displaced points. For square <i>r</i> = <i>k</i>², a curve of degree <i>k</i> and the two highest coefficients finish the proof.</li>
+  <li><strong>A cubic.</strong> For other <i>r</i>, <i>B</i> is a plane cubic with nine of the points pinned on it and zero displacements there; the other <i>r</i> − 9 points collide along a line, and theta functions give explicit bases.</li>
+  <li><strong>One matrix.</strong> The limit is the matrix (<i>K</i><sup>ℓ</sup><i>j</i><sup><i>b</i></sup>) with 0 ≤ <i>b</i> &lt; <i>m</i> and 0 ≤ ℓ &lt; (<i>r</i> − 9)(<i>m</i> − <i>b</i>), its columns lattice points in a polygon. Interpolating one horizontal row at a time gives full rank when no row is longer than <i>m</i> and long rows are few; the polygon’s slice widths give this, using the strict gap between rational <i>d</i>/<i>m</i> and irrational √<i>r</i>.</li>
+</ol>
+<p>The surface paper instead uses a divisor with an ordinary node, exponent diagrams compressed to a triangle, and jet tests at finite subgroups of a two-dimensional torus.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A conic through five points: 2√5 ≈ 4.47 &lt; 5. A cubic through nine points: 3√9 = 9, so the strict inequality fails at nine.</li>
+  <li>For ten points the naive count first guarantees a curve at <i>d</i> = 4, 7, 10, 13, 16 for <i>m</i> = 1 to 5, always with <i>d</i>/<i>m</i> above √10. A short Python script recomputes these and the decimals of 117/37 and √10.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Nagatas-Conjecture-for-Plane-Curves-September-23-2026/main.pdf">Nagata’s conjecture for plane curves (PDF)</a>, September 23, 2026 (24 pages); <a href="https://github.com/openai/math/blob/main/preprints/Maximal-Seshadri-Constants-on-Arbitrary-Polarized-Surfaces-September-23-2026/main.pdf">Maximal Seshadri constants on arbitrary polarized surfaces (PDF)</a>, September 23, 2026 (19 pages); <a href="https://github.com/openai/math/blob/main/preprints/Maximal-Multipoint-Seshadri-Constants-in-Higher-Dimensions-October-5-2026/main.pdf">Maximal Multipoint Seshadri Constants in Higher Dimensions (PDF)</a>, October 5, 2026 (20 pages); <a href="https://github.com/openai/math/blob/main/preprints/Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026/seshadri-positive-characteristic.pdf">Maximal multipoint Seshadri constants in positive characteristic (PDF)</a>, October 5, 2026 (17 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/039.md">OpenAI’s Lean scope note for result 039</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 039.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 4 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -89,18 +142,30 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
   <li><a href="https://github.com/openai/math/blob/main/preprints/Maximal-multipoint-Seshadri-constants-in-positive-characteristic-October-5-2026/seshadri-positive-characteristic.pdf">Maximal multipoint Seshadri constants in positive characteristic</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Curves through points</h3>
+<p>Pick r points in the plane, and ask for the lowest-degree curve that passes through each of them with multiplicity m, meaning it vanishes there to order m. A curve of degree d has about d²/2 coefficients, and multiplicity m at r points imposes about r·m²/2 conditions. The two balance when d is about m times the square root of r. In 1959, Masayoshi Nagata conjectured that for ten or more points in very general position, nothing beats that count: every curve has degree d with d√r greater than the sum of its multiplicities. With equal multiplicities, d/m is greater than √r. Below ten points it fails. Through any five points passes a conic, and 2√5 is less than five. Through any nine points passes a cubic, which gives exactly nine, so the strict inequality can’t start before ten. Nagata himself proved it when r is a perfect square, sixteen or more.</p>
+<h3><span class="t num">1:01</span>Close, but not there</h3>
+<p>For every non-square number of points from ten on, it stayed open for more than sixty years. Lower bounds crept toward the square root without reaching it. For ten points, degeneration methods gave d/m at least 117/37, which is 3.16216, while √10 is 3.16228. The conjecture has a geometric form. Blow up the plane at the points. Nagata’s inequality says the class √r times a line, minus the exceptional curves, is nef, with self-intersection zero. Equivalently, the multipoint Seshadri constant is 1/√r, an irrational number whenever r isn’t a square. The Nagata–Biran–Szemberg conjecture asks the same on any polarized surface, and in higher dimensions: once r is large, at very general points, this constant should reach its volume bound.</p>
+<h3><span class="t num">1:58</span>The claim</h3>
+<p>Result 039 has four OpenAI preprints. The central one, 24 pages dated September 23, claims Nagata’s conjecture in its full, strict form: for every r of at least ten, at very general complex points, every nonzero plane curve, reducible or not, with any multiplicities, has d√r greater than their sum. A 19-page companion claims the surface version: on any smooth complex projective surface with an ample line bundle, the Seshadri constant at r very general points reaches its maximum for every large r. Two papers dated October 5 extend this to higher dimensions, and, at generic points, to positive characteristic.</p>
+<h3><span class="t num">2:44</span>How the proof goes</h3>
+<p>The plane proof argues by contradiction. Multiplying a bad curve by copies of itself with the points permuted gives equal multiplicities, and a bad curve at very general points gives one at every configuration. Now slide the points toward a smooth curve B. In the limit, the curves leave a nonzero polynomial on the normal bundle of B, still vanishing to order m at the displaced points. For a square r, take B of degree √r: the polynomial’s two highest coefficients are already impossible. For other r, take B to be a cubic, an elliptic curve, and pin nine of the points on it. The other r − 9 points then collide along a line, and theta functions on the elliptic curve give explicit bases. That reduces everything to one explicit matrix, with entries K^ℓ·j^b, having full rank. Its columns are lattice points in a polygon. Filling them in one horizontal row at a time works when no row is too long and long rows are few, and the polygon’s widths supply exactly those bounds, using the strict gap between a rational d/m and an irrational √r. Full rank contradicts the bad curve. The surface paper uses a curve with a node and finite subgroups of a torus as test points instead, which is how it reaches every polarized surface once r is large.</p>
+<h3><span class="t num">4:07</span>Where it stands</h3>
+<p>These are preprints, not yet peer reviewed, and none has been revised. OpenAI also published Lean formalizations of the plane theorem and the surface theorem, over 93,000 lines, not counting Mathlib. We haven’t run the check. The higher-dimensional and positive-characteristic papers have no Lean proof. We found no public assessment. If they hold, Nagata’s conjecture is settled after sixty-seven years: at ten or more very general points, no plane curve passes through them more cheaply than the square-root count allows.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20039%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../038-fujitas-freeness-conjecture/"><span class="dir">Previous · 038</span><span class="pt">Fujita’s freeness conjecture</span></a>
-  <a class="next" href="../040-blochs-conjecture-complex-surfaces/"><span class="dir">Next · 040</span><span class="pt">Bloch’s conjecture for complex surfaces</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebraic-and-complex-geometry/">More in algebraic and complex geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

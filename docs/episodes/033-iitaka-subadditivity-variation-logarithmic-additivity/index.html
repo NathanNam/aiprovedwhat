@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 033: Iitaka subadditivity, variation, and logarithmic additivity | AI Proved What?</title>
-<meta name="description" content="Iitaka subadditivity, variation, and logarithmic additivity. Result 033 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Do the forms add up? Iitaka&#x27;s subadditivity conjecture | AI Proved What?</title>
+<meta name="description" content="An AI system says it has proved Iitaka&#x27;s subadditivity conjecture for Kodaira dimension in every dimension, with its logarithmic and orbifold forms and two refinements of Popa. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/033-iitaka-subadditivity-variation-logarithmic-additivity/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 033: Iitaka subadditivity, variation, and logarithmic additivity | AI Proved What?">
-<meta property="og:description" content="Iitaka subadditivity, variation, and logarithmic additivity. Result 033 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Do the forms add up?">
+<meta property="og:description" content="An AI system says it has proved Iitaka&#x27;s subadditivity conjecture for Kodaira dimension in every dimension, with its logarithmic and orbifold forms and two refinements of Popa. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/033-iitaka-subadditivity-variation-logarithmic-additivity/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/033-iitaka-subadditivity-variation-logarithmic-additivity/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,35 +37,99 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 033 · <a href="../../subjects/algebraic-and-complex-geometry/">Algebraic and complex geometry</a></p>
-<h1 class="result-title">Iitaka subadditivity, variation, and logarithmic additivity</h1>
+<p class="meta">Episode 033, October 2026</p>
+<h1>Do the forms add up?</h1>
+<p class="subtitle">Iitaka’s subadditivity conjecture, variation, and logarithmic additivity</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 033 in OpenAI’s catalog: <a href="#papers-in-result">all 5 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="IvYfiqMrHEI" data-title="Episode 033: Do the forms add up?">
+  <a href="https://youtu.be/IvYfiqMrHEI">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 033: Do the forms add up? Iitaka's subadditivity conjecture in every dimension. A family of curves drawn as loops over a base line, one loop highlighted, under the inequality kappa of X at least kappa of F plus kappa of Z.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:43. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/IvYfiqMrHEI?t=0" data-t="0"><span class="t">0:00</span><span>Counting forms</span></a></li>
+  <li><a href="https://youtu.be/IvYfiqMrHEI?t=57" data-t="57"><span class="t">0:57</span><span>Fibered shapes</span></a></li>
+  <li><a href="https://youtu.be/IvYfiqMrHEI?t=142" data-t="142"><span class="t">2:22</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/IvYfiqMrHEI?t=203" data-t="203"><span class="t">3:23</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/IvYfiqMrHEI?t=300" data-t="300"><span class="t">5:00</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves Campana's orbifold Iitaka subadditivity conjecture for smooth Fujiki-class-<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="script">C</mi></mrow><annotation encoding="application/x-tex">\mathcal C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathcal" style="margin-right:0.05834em;">C</span></span></span></span> manifolds with rational simple-normal-crossing boundaries. For projective fibrations <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>:</mo><mi>U</mi><mo>→</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">f:U\to V</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span></span></span></span> of smooth complex quasi-projective varieties with connected fibers, general fiber <i>F</i>, and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>κ</mi><mo>ˉ</mo></mover><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\bar\kappa(V)\ge0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.5678em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">κ</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">ˉ</span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>, proves Popa's inequality <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><mi>κ</mi><mo>ˉ</mo></mover><mo stretchy="false">(</mo><mi>U</mi><mo stretchy="false">)</mo><mo>≥</mo><mi>κ</mi><mo stretchy="false">(</mo><mi>F</mi><mo stretchy="false">)</mo><mo>+</mo><mi>max</mi><mo>⁡</mo><mo stretchy="false">{</mo><mover accent="true"><mi>κ</mi><mo>ˉ</mo></mover><mo stretchy="false">(</mo><mi>V</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mo><mrow><mi mathvariant="normal">V</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow></mo><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">)</mo><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\bar\kappa(U)\ge\kappa(F)+\max\{\bar\kappa(V),\mathop{\mathrm{Var}}\nolimits (f)\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.5678em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">κ</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">ˉ</span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">κ</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">{</span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.5678em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">κ</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">ˉ</span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mord"><span class="mord mathrm">Var</span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mclose">)}</span></span></span></span>, where variation measures the whole geometric generic fiber.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The Kodaira dimension κ of a smooth projective variety measures how fast the number of its pluricanonical forms grows with the degree <i>m</i>: −∞ if there are none, otherwise a whole number from 0 up to the dimension. For a fibration <i>f</i>: <i>X</i> → <i>Z</i> with connected fibers and general fiber <i>F</i>, Iitaka’s subadditivity conjecture <i>C</i><sub><i>n</i>,<i>m</i></sub> asks whether κ(<i>X</i>) ≥ κ(<i>F</i>) + κ(<i>Z</i>).</p>
+<p>Result 033 spans five preprints. The main one, <a href="https://github.com/openai/math/blob/main/preprints/Orbifold-and-logarithmic-Iitaka-subadditivity-September-26-2026/paper.pdf">Orbifold and logarithmic Iitaka subadditivity</a> (55 pages), claims Campana’s orbifold form of the conjecture for compact complex manifolds in Fujiki’s class 𝒞 (bimeromorphic to Kähler manifolds) with rational simple normal-crossing boundaries, from which the logarithmic and ordinary conjectures follow in every dimension. <a href="https://github.com/openai/math/blob/main/preprints/Projective-Hodge-lines-and-ordinary-Iitaka-subadditivity-September-27-2026/paper.pdf">A second paper</a> gives a separate projective proof of the ordinary case over any algebraically closed field of characteristic zero. <a href="https://github.com/openai/math/blob/main/preprints/Logarithmic-Kodaira-dimension-and-whole-fiber-variation-September-26-2026/paper.pdf">A third</a> claims Popa’s variation inequality κ̄(<i>U</i>) ≥ κ(<i>F</i>) + max{κ̄(<i>V</i>), Var(<i>f</i>)} over bases with κ̄(<i>V</i>) ≥ 0 (and with it the projective Iitaka–Viehweg inequality), and <a href="https://github.com/openai/math/blob/main/preprints/The-reverse-logarithmic-Kodaira-inequality-and-additivity-September-26-2026/paper.pdf">a fourth</a> claims logarithmic additivity when the family and all its boundary strata are smooth over the open base.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Positive characteristic is not covered, and the additivity statement needs smoothness of the family and its boundary strata over the open base. The orbifold theorem is stated for simple normal-crossing boundaries with rational coefficients.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, five papers dated September 10 to 27, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
+  <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/033.md">scope notes</a>)</dd>
+    <dd>Only one narrow branch: <a href="https://github.com/openai/math/blob/main/lean/docs/033.md">if the fiber’s log Kodaira dimension is −∞, so is the total space’s</a></dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 11, 2026. None of the five papers has been withdrawn or revised, and we found no public assessment by specialists. Earlier preprints by Tsuji and Maehara state general versions; the new papers say they don’t rely on them. Result 034 (log abundance for compact Kähler spaces) assumes logarithmic Iitaka subadditivity.</p>
 </section>
 
+<section aria-labelledby="known">
+<h2 id="known">What was known</h2>
+<ul class="sources">
+  <li>Kawamata: curve bases, and fibers with good minimal models. Viehweg: bases of general type (weak positivity). Kollár: fibers of general type.</li>
+  <li>Birkar: total dimension at most six. Cao–Păun: abelian varieties as bases. Hacon–Popa–Schnell: bases of maximal Albanese dimension. Cao: klt pairs over surfaces.</li>
+  <li>Logarithmic and orbifold forms: Kovács–Patakfalvi (log general type fibers), Hashizume (abundant fibers), Maehara and Fujino (log general type bases), Campana (orbifold bases of general type).</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Relative Iitaka reduction.</strong> If the fiber has Kodaira dimension <i>k</i>, factor the map as <i>X</i> → <i>W</i> → <i>Y</i>, with <i>k</i>-dimensional fibers over the base and fibers <i>G</i> over <i>W</i> of Kodaira dimension zero.</li>
+  <li><strong>A Hodge line.</strong> In suitable degrees each <i>G</i> has one pluricanonical form up to scale; a root on a cyclic cover is a top-degree form (with at most logarithmic poles), spanning a Hodge line that varies over <i>W</i>. Its orders give a boundary <i>T</i> and a line bundle <i>M</i> with <i>H</i><sup>0</sup>(<i>X</i>, <i>m</i>(<i>K<sub>X</sub></i>+Δ)) ≅ <i>H</i><sup>0</sup>(<i>W</i>, <i>m</i>(<i>K<sub>W</sub></i>+<i>T</i>+<i>M</i>)).</li>
+  <li><strong>Positivity.</strong> Through the period map, <i>M</i> is pulled back from a nef line <i>P</i> on a projective base <i>S</i> with <i>K<sub>S</sub></i> + <i>aP</i> big; the key point is that the map remembering the line loses rank along the boundary.</li>
+  <li><strong>Addition.</strong> <i>K<sub>W</sub></i>+<i>T</i>+<i>M</i> is big on the fibers over the base, so log-general-type addition gives many sections; weak positivity gives one more fixed section, and multiplying them cancels the ample correction terms.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script computes the pluricanonical counts of the Fermat plane cubic, quartic and quintic for <i>m</i> = 1 to 8 from explicit ranks (cubic 1, 1, …; quartic 3, 6, 10, …, 30, that is 4<i>m</i> − 2 from <i>m</i> = 2; quintic 6, 15, 25, …, 75) and checks them against Riemann–Roch.</li>
+  <li>For a product of two quartics the counts are (4<i>m</i> − 2)², growing like <i>m</i>². The projective line minus two points has one logarithmic form in every degree; minus three points, <i>m</i> + 1.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Orbifold-and-logarithmic-Iitaka-subadditivity-September-26-2026/paper.pdf">Orbifold and logarithmic Iitaka subadditivity</a> (September 26, 55 pages); <a href="https://github.com/openai/math/blob/main/preprints/Projective-Hodge-lines-and-ordinary-Iitaka-subadditivity-September-27-2026/paper.pdf">Projective Hodge lines and ordinary Iitaka subadditivity</a> (September 27, 40 pages); <a href="https://github.com/openai/math/blob/main/preprints/Logarithmic-Kodaira-dimension-and-whole-fiber-variation-September-26-2026/paper.pdf">Logarithmic Kodaira dimension and whole-fiber variation</a> (September 26, 75 pages); <a href="https://github.com/openai/math/blob/main/preprints/The-reverse-logarithmic-Kodaira-inequality-and-additivity-September-26-2026/paper.pdf">The reverse logarithmic Kodaira inequality and additivity</a> (September 26, 51 pages); <a href="https://github.com/openai/math/blob/main/preprints/B-semiampleness-for-compact-log-smooth-Kahler-fibrations-September-10-2026/paper.pdf">B-semiampleness for compact log-smooth Kähler fibrations</a> (September 10, 38 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 033, and <a href="https://github.com/openai/math/blob/main/lean/docs/033.md">the scope of its Lean formalization</a>.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 5 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -79,18 +141,30 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/B-semiampleness-for-compact-log-smooth-Kahler-fibrations-September-10-2026/paper.pdf">B-semiampleness for compact log-smooth Kähler fibrations</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Counting forms</h3>
+<p>Here’s one way to measure how complicated a shape is. On a smooth projective variety, look at its pluricanonical forms: locally, a function times the m-th power of a top-degree differential form. Count how many independent ones there are for each m, and watch how fast that count grows. Take curves. On the projective line, there are none at all. On a plane cubic, an elliptic curve, there’s exactly one for every m. On a smooth plane quartic, of genus three, the count is 4m − 2, from m = 2 on: it grows like m. The growth exponent is the Kodaira dimension: here minus infinity, zero, and one. In general it’s minus infinity, or a whole number from zero up to the dimension. For a product of two shapes, the counts multiply, so Kodaira dimensions add. Two quartic curves give a surface whose counts grow like m²: Kodaira dimension two.</p>
+<h3><span class="t num">0:57</span>Fibered shapes</h3>
+<p>Most varieties aren’t products. But many are fibered: a map f from X onto a base Z, whose fibers can vary from point to point, like a family of curves over a curve. Write F for a typical fiber. In the 1970s, Shigeru Iitaka asked whether Kodaira dimension is at least additive in a fibration: is κ(X) always at least κ(F) + κ(Z)? This is Iitaka’s subadditivity conjecture, often called C(n,m), after the dimensions n and m of X and Z. Many cases were proved. Kawamata handled curve bases, and fibers with good minimal models. Viehweg did bases of general type, and Kollár fibers of general type. Birkar proved it in total dimension up to six. Cao and Păun did abelian varieties as bases, and Hacon, Popa and Schnell bases of maximal Albanese dimension. Earlier preprints by Tsuji and Maehara state general versions, and the new papers don’t rely on them. There are versions for open varieties too. Allow the forms simple poles at punctures: the projective line minus two points then has log Kodaira dimension zero, and minus three points it has one. And Campana’s orbifold version also weighs multiple fibers: a fiber whose components all have multiplicity at least m adds at least 1 − 1/m to the base, at its point.</p>
+<h3><span class="t num">2:22</span>The claim</h3>
+<p>Result 033 claims the whole family. Across five OpenAI preprints dated September 2026, the main one claims a proof of Campana’s orbifold conjecture for compact complex manifolds in Fujiki’s class C, those bimeromorphic to Kähler manifolds, with rational simple normal-crossing boundaries. The logarithmic and ordinary conjectures follow: κ(X) ≥ κ(F) + κ(Z), in every dimension. Another paper gives a separate projective proof of the ordinary case. Two of the others claim refinements proposed by Mihnea Popa. When the base has nonnegative log Kodaira dimension, the bound improves to the fiber plus the larger of the base and the variation, which counts how many parameters the fibers depend on, up to birational equivalence. And when the family and all its boundary strata are smooth over the open base, the inequality also reverses, giving exact additivity.</p>
+<h3><span class="t num">3:23</span>How the proof goes</h3>
+<p>Here is the route in the orbifold paper. Suppose the fiber has Kodaira dimension k. First, a relative Iitaka reduction factors the map through an intermediate space W, with k-dimensional fibers over the base, so that the remaining fibers G, over W, have Kodaira dimension zero. Kodaira dimension zero means that, in suitable degrees, each G carries one pluricanonical form, up to scale. Taking a root of it on a cyclic cover turns it into an ordinary top-degree form, with at most logarithmic poles, and the line it spans in cohomology varies over W: a Hodge line. The orders of that form give an exact comparison. The forms on X match the forms of K + T + M on W, where T is a boundary and M is the line bundle of the Hodge line. Second, positivity of the Hodge line. The period map records how the Hodge structures vary. The paper uses it to show that M is pulled back from a nef line on a new base S, on which the canonical class plus a multiple of that line is big. The delicate part is the boundary, where the paper shows the map remembering the line loses rank. Third, addition. On the fibers of W over the base, K + T + M is big, so an addition theorem for log general type fibers applies. Weak positivity supplies one more fixed section, and multiplying sections cancels the ample correction terms. The forms on X then grow at least as fast as the fiber and the base require.</p>
+<h3><span class="t num">5:00</span>Where it stands</h3>
+<p>These are preprints, not yet peer reviewed. OpenAI’s Lean formalization covers only one narrow branch of the additivity paper: the case where the fiber’s log Kodaira dimension is minus infinity. None of the five papers has been withdrawn or revised, and we found no public assessment by specialists yet. Other results in the release build on this one, including the abundance claims in our next episode. If it holds, the forms on a fibered variety always account for at least those of its fiber and its base: a question at the heart of the classification of algebraic varieties for half a century.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20033%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../032-rational-hodge-conjecture-cm-abelian/"><span class="dir">Previous · 032</span><span class="pt">The rational Hodge conjecture for CM abelian varieties</span></a>
-  <a class="next" href="../034-log-abundance-compact-kahler-spaces/"><span class="dir">Next · 034</span><span class="pt">Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebraic-and-complex-geometry/">More in algebraic and complex geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

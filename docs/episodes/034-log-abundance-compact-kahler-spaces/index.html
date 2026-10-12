@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 034: Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity | AI Proved What?</title>
-<meta name="description" content="Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity. Result 034 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Always semiample? The abundance conjecture | AI Proved What?</title>
+<meta name="description" content="An AI system says it has proved the log abundance conjecture in every dimension in characteristic zero: on a log canonical pair, a nef adjoint K + B is semiample. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/034-log-abundance-compact-kahler-spaces/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 034: Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity | AI Proved What?">
-<meta property="og:description" content="Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity. Result 034 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Always semiample?">
+<meta property="og:description" content="An AI system says it has proved the log abundance conjecture in every dimension in characteristic zero: on a log canonical pair, a nef adjoint K + B is semiample. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/034-log-abundance-compact-kahler-spaces/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/034-log-abundance-compact-kahler-spaces/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 034 · <a href="../../subjects/algebraic-and-complex-geometry/">Algebraic and complex geometry</a></p>
-<h1 class="result-title">Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity</h1>
+<p class="meta">Episode 034, October 2026</p>
+<h1>Always semiample?</h1>
+<p class="subtitle">The log abundance conjecture, projective and compact Kähler</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 034 in OpenAI’s catalog: <a href="#papers-in-result">all 14 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="TeUznTEM7pA" data-title="Episode 034: Always semiample?">
+  <a href="https://youtu.be/TeUznTEM7pA">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 034: Always semiample? The abundance conjecture in every dimension. The real points of the elliptic curve y squared equals x cubed plus 17 with orange dots at multiples of the point (minus 2, 3) scattered along it, under the question whether K plus B nef implies semiample.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:22. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/TeUznTEM7pA?t=0" data-t="0"><span class="t">0:00</span><span>Minimal models</span></a></li>
+  <li><a href="https://youtu.be/TeUznTEM7pA?t=59" data-t="59"><span class="t">0:59</span><span>Nef versus semiample</span></a></li>
+  <li><a href="https://youtu.be/TeUznTEM7pA?t=152" data-t="152"><span class="t">2:32</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/TeUznTEM7pA?t=217" data-t="217"><span class="t">3:37</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/TeUznTEM7pA?t=320" data-t="320"><span class="t">5:20</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Using logarithmic Iitaka subadditivity, proves log abundance in every dimension for normal compact Kähler log canonical pairs with effective rational boundary: an analytically nef ℚ-Cartier adjoint is semiample. It also proves projective log abundance over every algebraically closed field of characteristic zero and the effective Iitaka fibration conjecture for smooth projective varieties of nonnegative Kodaira dimension in that setting. A further result resolves the finite-rational-coefficient index conjecture for connected projective semi-log-canonical log Calabi–Yau pairs over such fields in each fixed dimension and for each fixed finite set of rational boundary coefficients, with a uniform index independent of the number of components.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A line bundle is nef if its degree on every curve is nonnegative, and semiample if some multiple is generated by its sections, which then define a map. Every semiample bundle is nef, but not conversely: on an elliptic curve, the degree-zero bundle of a point <i>P</i> minus the origin is semiample only when <i>P</i> is a torsion point. The abundance conjecture says that this never happens for the canonical class: on a log canonical pair (<i>X</i>, <i>B</i>), if <i>K<sub>X</sub></i> + <i>B</i> is nef, it is semiample.</p>
+<p>Result 034 is a family of fourteen preprints. The core one, <a href="https://github.com/openai/math/blob/main/preprints/Log-abundance-in-characteristic-zero-September-24-2026/paper.pdf">Log abundance in characteristic zero</a> (September 24, 85 pages), claims log abundance with effective rational boundary in every dimension over every algebraically closed field of characteristic zero, and, over the complex numbers, nonvanishing: a pseudo-effective canonical class has a nonzero pluricanonical form. Its induction gives good minimal models for every complex projective log canonical pair with pseudo-effective adjoint. <a href="https://github.com/openai/math/blob/main/preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/main.pdf">A 157-page companion</a> extends abundance to compact Kähler spaces, assuming logarithmic Iitaka subadditivity (<a href="/episodes/033-iitaka-subadditivity-variation-logarithmic-additivity/">episode 033</a>). Others claim the <a href="https://github.com/openai/math/blob/main/preprints/Uniform-Pluricanonical-Iitaka-Fibrations-October-3-2026/paper.pdf">effective Iitaka fibration conjecture</a> and <a href="https://github.com/openai/math/blob/main/preprints/Uniform-indices-for-semi-log-canonical-log-Calabi-Yau-pairs-October-5-2026/uniform-slc-index.pdf">uniform indices for semi-log-canonical log Calabi–Yau pairs</a>.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Positive characteristic is not covered by these papers (other results in the release treat threefolds in characteristic <i>p</i>), and the boundary coefficients must be rational for the abundance statement. The compact Kähler theorem is conditional on logarithmic Iitaka subadditivity.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 14 papers; the core one dated September 24, 2026 (85 pages); released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,49 @@
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>Not yet</dd>
+    <dd>No: OpenAI published no Lean proof for this result</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 11, 2026. In OpenAI’s <a href="https://github.com/openai/math/blob/main/history.md">October 7 update</a> the Kähler paper (<a href="https://github.com/openai/math/blob/main/preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-4-2026/main.pdf">first version</a> October 4) and <a href="https://github.com/openai/math/blob/main/preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026/paper.pdf">a conditional fourfold paper</a> were revised; the projective paper was not. That fourfold paper’s appendix presents the same projective argument as “a positive conditional resolution of the log abundance conjecture”, conditional on logarithmic Iitaka subadditivity, although it too uses that assumption only in an Albanese step which the projective paper says also follows from a theorem of Hacon, Popa and Schnell. <a href="https://vibemathed.com/problem/log-abundance-conjecture-char-zero">VibeMathed</a> lists the claim as contested for that reason. We found no assessment by specialists.</p>
 </section>
 
+<section aria-labelledby="known">
+<h2 id="known">What was known</h2>
+<ul class="sources">
+  <li>Curves and surfaces (classical). Threefolds: Miyaoka (numerical dimension one, 1988) and Kawamata (1992); log threefolds: Keel, Matsuki and McKernan (1994); semi-log-canonical threefolds: Fujino.</li>
+  <li>Minimal models of general type: the base-point-free theorem of Kawamata and Shokurov. Numerically trivial adjoints: Nakayama, Gongyo. Numerical dimension at most one in dimension at most five: Liu and Xu.</li>
+  <li>The minimal model program: Mori (threefolds, 1988); Birkar, Cascini, Hacon and McKernan (general type, 2010). From dimension four on, abundance and even nonvanishing were open.</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Induction on dimension.</strong> Assuming good models in lower dimension, first prove nonvanishing for smooth varieties, then make log minimal models good.</li>
+  <li><strong>A signed-boundary criterion.</strong> If a nef dlt adjoint <i>L</i> = <i>K<sub>X</sub></i> + <i>D</i> is a combination of boundary components with coefficients of either sign and is semiample on the whole boundary, then κ(<i>L</i>) = ν(<i>L</i>). A root construction separates the positive part, a Hodge-module calculation lifts local parameters through every infinitesimal neighbourhood (as in Miyaoka’s threefold argument), boundary fibres deform into the interior to give a covering family on which <i>L</i> is trivial, and the nef reduction finishes.</li>
+  <li><strong>Nonvanishing by contradiction.</strong> In a counterexample, a nonconstant Albanese map is ruled out by Iitaka subadditivity (its one use; also covered by Hacon–Popa–Schnell), and positive currents and bounds on curves rule out two special kinds of covering family.</li>
+  <li><strong>A clash of estimates.</strong> On one copy of the variety, sections vanish only to a limited order at a very general point; on the product of two copies they separate many jets. After reduction modulo a large prime, comparing ordinary and Frobenius jets on the diagonal forces a determinant to vanish to higher order than allowed.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>On <i>y</i>² = <i>x</i>³ + 1, the point (2, 3) has order 6: (2, 3), (0, 1), (−1, 0), (0, −1), (2, −3), then the origin.</li>
+  <li>On <i>y</i>² = <i>x</i>³ + 17, the point <i>P</i> = (−2, 3) has 2<i>P</i> = (8, −23), and 23² does not divide 27·17², so by the Nagell–Lutz theorem <i>P</i> is not a torsion point. A short Python script computes <i>mP</i> exactly for <i>m</i> ≤ 12; the denominators reach 28 digits.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Log-abundance-in-characteristic-zero-September-24-2026/paper.pdf">Log abundance in characteristic zero</a> (September 24, 2026; 85 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/main.pdf">Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity</a> (October 6, 2026; 157 pages) and <a href="https://github.com/openai/math/blob/main/preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026/paper.pdf">Conditional good minimal models for compact Kähler fourfolds</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 034 with all fourteen papers.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 14 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -87,18 +151,30 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Abundance-after-nonvanishing-for-compact-Kahler-fourfolds-September-27-2026/paper.pdf">Abundance after nonvanishing for compact Kähler fourfolds</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Minimal models</h3>
+<p>Algebraic geometers classify varieties up to birational change: two count as the same if they agree once you remove some lower-dimensional pieces. So the first job is to choose a best representative in each class. Blowing up a point on a surface replaces it with a curve E whose self-intersection is minus one. The canonical class K meets E negatively, in minus one, so K is not nef. Nef means nonnegative on every curve. Castelnuovo’s theorem lets you contract such curves, undoing the blowups. What remains is a minimal surface with K nef, unless the surface is ruled. The minimal model program does this in higher dimensions: Mori for threefolds, in 1988, and Birkar, Cascini, Hacon and McKernan in 2010 for varieties of general type. The program aims to end with either a nef canonical class, or a fibration by simpler pieces of Fano type.</p>
+<h3><span class="t num">0:59</span>Nef versus semiample</h3>
+<p>Nef is a numerical condition. Semiample is geometric: some multiple of the line bundle is generated by its sections, so those sections define a map. Every semiample bundle is nef, but not the other way around. On an elliptic curve, take the line bundle of a point P minus the origin. Its degree is zero, so it’s nef. A multiple of it has a section only if that multiple of P is the origin. On y² = x³ + 1, the point (2, 3) returns to the origin after six steps, so six times the bundle is trivial: semiample. On y² = x³ + 17, the point (−2, 3) never returns. The Nagell–Lutz test rules it out at 2P, and the denominators of its multiples keep growing. That bundle is nef, but never semiample. The abundance conjecture says this never happens for the canonical class. On a log canonical pair, if K + B is nef, then it’s semiample. Its sections then give the Iitaka fibration as an honest map, and the Kodaira dimension equals the numerical dimension. It’s known for curves and surfaces. For threefolds it’s due to Miyaoka and Kawamata, and for log threefolds to Keel, Matsuki and McKernan. For minimal models of general type, it’s the base-point-free theorem of Kawamata and Shokurov. From dimension four on it has been open, along with the weaker nonvanishing conjecture: that some multiple has a section at all.</p>
+<h3><span class="t num">2:32</span>The claim</h3>
+<p>Result 034 is a family of fourteen OpenAI preprints. At its core is an 85-page paper, dated September 24. It claims that in characteristic zero, in every dimension, a nef log canonical divisor with rational boundary, on a projective log canonical pair, is semiample. Over the complex numbers it also claims nonvanishing for smooth projective varieties: a pseudo-effective canonical class has a nonzero pluricanonical form. Over the complex numbers, its induction gives good minimal models for every projective log canonical pair with a pseudo-effective adjoint, and, with a companion paper, finite generation of rational log canonical rings. A 157-page companion extends abundance to compact Kähler spaces, assuming the logarithmic Iitaka subadditivity from our previous episode. Others claim the effective Iitaka fibration conjecture, and uniform indices for log Calabi–Yau pairs.</p>
+<h3><span class="t num">3:37</span>How the proof goes</h3>
+<p>The proof is an induction on dimension, with two tasks in each dimension. First prove nonvanishing. Then use it to make minimal models good, meaning that the adjoint becomes semiample. Both tasks use a criterion about the boundary. Suppose the nef adjoint is a combination of boundary components, with coefficients of either sign, and is already semiample on the whole boundary. Then its Kodaira dimension equals its numerical dimension. To prove it, a root cover separates the positive and negative parts, and a Hodge-module calculation lifts local parameters through every infinitesimal neighborhood of the boundary, an idea that goes back to Miyaoka. Pieces of the boundary then deform into the interior, sweeping out the variety with subvarieties on which the adjoint is trivial, and the nef reduction finishes the argument. Nonvanishing is proved by contradiction. In a counterexample, a nonconstant Albanese map is ruled out first. This is the paper’s one use of Iitaka subadditivity, and it notes that this case also follows from a theorem of Hacon, Popa and Schnell. Positive currents and bounds on curves then rule out two special kinds of covering family. What’s left is a clash of two estimates at a moving point. On one copy of the variety, sections can vanish there only to a limited order. On the product of two copies, they separate many jets. Reducing modulo a large prime, the paper compares ordinary jets with Frobenius jets along the diagonal, and a determinant then has to vanish to a higher order than the first estimate allows. The contradiction gives nonvanishing.</p>
+<h3><span class="t num">5:20</span>Where it stands</h3>
+<p>These are preprints, not yet peer reviewed, and there’s no Lean proof. In OpenAI’s October 7 update, the Kähler abundance paper and a related fourfold paper were revised, adding arguments and spelling out hypotheses. The 85-page projective paper hasn’t been revised. There’s a tension inside the release. The projective paper states abundance unconditionally, but an appendix to the fourfold paper presents the same argument as conditional on logarithmic Iitaka subadditivity, even though it, too, uses it only in the Albanese step, which the projective paper says Hacon, Popa and Schnell already cover. One public tracker lists the claim as contested for that reason. We found no assessment by specialists. If the proof holds, it settles a central conjecture of the minimal model program: every complex projective log canonical pair with a pseudo-effective adjoint has a good minimal model.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20034%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../033-iitaka-subadditivity-variation-logarithmic-additivity/"><span class="dir">Previous · 033</span><span class="pt">Iitaka subadditivity, variation, and logarithmic additivity</span></a>
-  <a class="next" href="../035-log-canonical-threefold-abundance-numerical/"><span class="dir">Next · 035</span><span class="pt">Log-canonical threefold abundance in numerical dimension one</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebraic-and-complex-geometry/">More in algebraic and complex geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

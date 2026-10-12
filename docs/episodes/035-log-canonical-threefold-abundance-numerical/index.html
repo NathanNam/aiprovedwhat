@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 035: Log-canonical threefold abundance in numerical dimension one | AI Proved What?</title>
-<meta name="description" content="Log-canonical threefold abundance in numerical dimension one. Result 035 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Abundance mod p? Threefolds in numerical dimension one | AI Proved What?</title>
+<meta name="description" content="An AI system says it has proved log abundance for threefolds in characteristic p greater than 3 when the adjoint has numerical dimension one, the case left open by earlier work. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/035-log-canonical-threefold-abundance-numerical/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 035: Log-canonical threefold abundance in numerical dimension one | AI Proved What?">
-<meta property="og:description" content="Log-canonical threefold abundance in numerical dimension one. Result 035 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Abundance mod p?">
+<meta property="og:description" content="An AI system says it has proved log abundance for threefolds in characteristic p greater than 3 when the adjoint has numerical dimension one, the case left open by earlier work. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/035-log-canonical-threefold-abundance-numerical/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/035-log-canonical-threefold-abundance-numerical/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 035 · <a href="../../subjects/algebraic-and-complex-geometry/">Algebraic and complex geometry</a></p>
-<h1 class="result-title">Log-canonical threefold abundance in numerical dimension one</h1>
+<p class="meta">Episode 035, October 2026</p>
+<h1>Abundance mod p?</h1>
+<p class="subtitle">Log-canonical threefold abundance in numerical dimension one, characteristic p &gt; 3</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 035 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="5k47trDEOEo" data-title="Episode 035: Abundance mod p?">
+  <a href="https://youtu.be/5k47trDEOEo">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 035: Abundance mod p? Threefold log abundance in numerical dimension one, p greater than 3. A closed outline with a chain of three gold loops and their glowing thickenings, above the chain 5 divides 25 divides 125, which forces 0.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:32. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/5k47trDEOEo?t=0" data-t="0"><span class="t">0:00</span><span>Characteristic p</span></a></li>
+  <li><a href="https://youtu.be/5k47trDEOEo?t=55" data-t="55"><span class="t">0:55</span><span>Numerical dimension one</span></a></li>
+  <li><a href="https://youtu.be/5k47trDEOEo?t=108" data-t="108"><span class="t">1:48</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/5k47trDEOEo?t=148" data-t="148"><span class="t">2:28</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/5k47trDEOEo?t=239" data-t="239"><span class="t">3:59</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves log abundance for projective log canonical threefold pairs over algebraically closed fields of characteristic <i>p</i> &gt; 3 when the effective boundary is rational and the ℚ-Cartier adjoint is nef of numerical dimension one. The adjoint is semiample, without requiring the original variety to be terminal or ℚ-factorial.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The abundance conjecture (our <a href="/episodes/034-log-abundance-compact-kahler-spaces/">episode 034</a>) says a nef log canonical class should be semiample. A nef class <i>L</i> on a threefold has numerical dimension one when <i>L</i>·<i>H</i>² &gt; 0 but <i>L</i>²·<i>H</i> = 0 for an ample <i>H</i>. In characteristic <i>p</i> &gt; 3 the remaining case for threefolds in numerical dimension one was a class with only one section up to scale and nef dimension three.</p>
+<p>Result 035 has two preprints. <a href="https://github.com/openai/math/blob/main/preprints/Abundance-in-numerical-dimension-one-for-terminal-threefolds-in-positive-characteristic-September-24-2026/paper.pdf">The first</a> (46 pages) claims that on a projective ℚ-factorial terminal threefold over an algebraically closed field of characteristic <i>p</i> &gt; 3, a nef canonical class of numerical dimension one is semiample, with Kodaira dimension one. <a href="https://github.com/openai/math/blob/main/preprints/Log-abundance-in-numerical-dimension-one-for-threefolds-in-positive-characteristic-October-5-2026/paper.pdf">The second</a> (16 pages) extends this to projective log canonical threefold pairs with effective rational boundary and ℚ-Cartier adjoint, without terminal or ℚ-factorial assumptions.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Only threefolds, only numerical dimension one, only characteristic greater than three, over algebraically closed fields.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, dated September 24 (46 pages) and October 5, 2026 (16 pages), released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,48 @@
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>Not yet</dd>
+    <dd>No: OpenAI published no Lean proof for this result</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 12, 2026. Neither paper has been revised or withdrawn, and we found no public assessment by specialists. They build on Zheng Xu’s published work, and the log canonical paper uses the terminal paper’s obstruction as an input.</p>
 </section>
 
+<section aria-labelledby="known">
+<h2 id="known">What was known</h2>
+<ul class="sources">
+  <li>The threefold minimal model program: Hacon–Xu (2015), Birkar (2016) and Birkar–Waldron (2017) for <i>p</i> &gt; 5; Hacon–Witaszek (2022) for <i>p</i> = 5.</li>
+  <li>Abundance pieces: Chenyang Xu and Lei Zhang (nonvanishing, <i>p</i> &gt; 5), Witaszek, and Zheng Xu (<a href="https://arxiv.org/abs/2212.04039">nonvanishing for log canonical pairs and semiampleness for positive Kodaira dimension or nef dimension at most two, <i>p</i> &gt; 3</a>; <a href="https://arxiv.org/abs/2307.03938">numerical dimension two</a>).</li>
+  <li>Over the complex numbers: Miyaoka (1988), Kawamata (1992), Keel–Matsuki–McKernan (1994).</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The shape.</strong> A counterexample is normalized to a smooth threefold <i>V</i> with a connected nef cycle <i>D</i>, numerically trivial on its components, with torsion normal bundle, and with a <i>p</i>-power of the canonical bundle equal near <i>D</i> to a divisor supported on <i>D</i>.</li>
+  <li><strong>Thickenings.</strong> The tangent bundle is strongly semistable (otherwise a foliation gives <i>D</i>-trivial curves through very general points), and a jet count on the thickenings <i>sD</i> pins down the canonical bundle near <i>D</i> and how deep powers of its normal bundle stay trivial, with limiting ratio <i>p</i>/(<i>p</i> + 1).</li>
+  <li><strong>Frobenius.</strong> Cartier descent makes every line bundle on the punctured formal neighborhood of <i>D</i> a <i>p</i>-th power, while the numerical conditions give a nonzero degree map to the integers: a contradiction, since every degree would be divisible by every power of <i>p</i>.</li>
+  <li><strong>Log pairs.</strong> Bend-and-break, a partial minimal model program, surface abundance and a finite cover turn a log canonical counterexample into the same forbidden shape.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>On <b>P</b>¹ × <b>P</b>² with <i>H</i> = <i>a</i> + <i>b</i>: the pullback <i>a</i> of a point of the line has <i>L</i>·<i>H</i>² = 1 and <i>L</i>²·<i>H</i> = 0 (numerical dimension one); <i>b</i> has numerical dimension two and <i>a</i> + <i>b</i> three.</li>
+  <li>For <i>p</i> = 5 and 7, the derivative of <i>x</i><sup><i>p</i></sup> and the middle binomial coefficients of (<i>x</i> + <i>y</i>)<sup><i>p</i></sup> vanish modulo <i>p</i>.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Abundance-in-numerical-dimension-one-for-terminal-threefolds-in-positive-characteristic-September-24-2026/paper.pdf">Abundance in numerical dimension one for terminal threefolds in positive characteristic (PDF)</a>, September 24, 2026 (46 pages); <a href="https://github.com/openai/math/blob/main/preprints/Log-abundance-in-numerical-dimension-one-for-threefolds-in-positive-characteristic-October-5-2026/paper.pdf">Log abundance in numerical dimension one for threefolds in positive characteristic (PDF)</a>, October 5, 2026 (16 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 035.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -75,18 +138,30 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Abundance-in-numerical-dimension-one-for-terminal-threefolds-in-positive-characteristic-September-24-2026/paper.pdf">Abundance in numerical dimension one for terminal threefolds in positive characteristic</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Characteristic p</h3>
+<p>Our last episode was about abundance: a nef canonical class should be semiample, so that its sections define a map. This episode moves to characteristic p, where varieties are cut out by equations over a field in which a prime p equals zero. There, familiar tools break. The derivative of x^p is p·x^(p−1), which is zero. And Kodaira’s vanishing theorem can fail. Still, the minimal model program for threefolds now works when p is greater than five, by Hacon and Xu, Birkar, and Birkar and Waldron, and for p equal to five, by Hacon and Witaszek. Abundance for threefolds in characteristic p has been assembled piece by piece, by Chenyang Xu and Lei Zhang, Witaszek, and others. Most recently, Zheng Xu proved nonvanishing when p is greater than three, and then the case of numerical dimension two.</p>
+<h3><span class="t num">0:55</span>Numerical dimension one</h3>
+<p>The numerical dimension of a nef class L on a threefold measures how many copies of L can still meet. Numerical dimension one means that L·H² &gt; 0, but L²·H = 0, for an ample class H. Here’s the typical example. On the product of a line and a plane, pull back a point of the line. Its intersection numbers are one and zero. It’s semiample: it comes from the map to the line, and every fiber is full of curves on which L has degree zero. The danger is a class with the same numbers, but only one section up to scale, and no degree-zero curve through a very general point. Its nef dimension would be three. Zheng Xu’s results, covering positive Kodaira dimension and nef dimension at most two, left exactly this case open, in numerical dimension one.</p>
+<h3><span class="t num">1:48</span>The claim</h3>
+<p>Result 035 has two OpenAI preprints. A 46-page paper, dated September 24, treats projective, ℚ-factorial terminal threefolds over an algebraically closed field of characteristic greater than three. If K is nef of numerical dimension one, it’s semiample, with Kodaira dimension one. A 16-page paper, dated October 5, extends this to log canonical pairs with rational boundary, without assuming that the variety is terminal or ℚ-factorial. That would settle the numerical-dimension-one case of threefold log abundance when p is greater than three.</p>
+<h3><span class="t num">2:28</span>How the proof goes</h3>
+<p>Suppose a counterexample exists. The terminal paper first puts it in a precise shape: a smooth threefold V with a connected nef cycle D. The cycle is numerically trivial on each of its components, its normal bundle is torsion, and near D, a p-power of the canonical bundle is a divisor supported on D. Then it studies forms on thicker and thicker neighborhoods of D. The tangent bundle is strongly semistable, since otherwise a foliation would give curves of degree zero through very general points. A careful count of jets pins down the canonical bundle near D, and how deep powers of D’s normal bundle stay trivial: a limiting ratio of p/(p + 1). The finish is pure characteristic p. Cartier descent, built on the Frobenius, shows that every line bundle on the punctured formal neighborhood of D is a p-th power. But the numerical conditions give a degree map from those line bundles to the integers that is not zero. A p-th power has degree divisible by p, so every degree is divisible by every power of p, and must be zero. That’s the contradiction. The log canonical paper builds the same forbidden shape from a pair with boundary. Bend-and-break makes each boundary component lie inside the cycle or away from it, a partial minimal model program isolates one component, surface abundance gives torsion there, and a finite cover removes the part of the exponent prime to p.</p>
+<h3><span class="t num">3:59</span>Where it stands</h3>
+<p>These are preprints, not yet peer reviewed, with no Lean proof, and neither has been revised. They build on Zheng Xu’s published work, and the log canonical paper takes the terminal paper’s obstruction as an input. We found no public assessment. If they hold, this case of abundance is settled for threefolds in every characteristic greater than three, matching what Miyaoka, Kawamata, and Keel, Matsuki and McKernan proved over the complex numbers more than thirty years ago.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20035%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../034-log-abundance-compact-kahler-spaces/"><span class="dir">Previous · 034</span><span class="pt">Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity</span></a>
-  <a class="next" href="../036-numerical-semiampleness-generalized-minimal-models/"><span class="dir">Next · 036</span><span class="pt">Numerical semiampleness and generalized minimal models</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebraic-and-complex-geometry/">More in algebraic and complex geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
