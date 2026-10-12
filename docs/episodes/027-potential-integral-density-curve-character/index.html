@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 027: Potential integral density on curve character varieties | AI Proved What?</title>
-<meta name="description" content="Potential integral density on curve character varieties. Result 027 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Integral points, everywhere? Character varieties of curves | AI Proved What?</title>
+<meta name="description" content="An AI system says it has proved that, on character varieties of complex curves in every rank, integral points become Zariski dense after one enlargement of the integers, answering the curve case of a question of Daniel Litt. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/027-potential-integral-density-curve-character/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 027: Potential integral density on curve character varieties | AI Proved What?">
-<meta property="og:description" content="Potential integral density on curve character varieties. Result 027 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Integral points, everywhere?">
+<meta property="og:description" content="An AI system says it has proved that, on character varieties of complex curves in every rank, integral points become Zariski dense after one enlargement of the integers, answering the curve case of a question of Daniel Litt. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/027-potential-integral-density-curve-character/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/027-potential-integral-density-curve-character/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,35 +37,102 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 027 · <a href="../../subjects/number-theory/">Number theory</a></p>
-<h1 class="result-title">Potential integral density on curve character varieties</h1>
+<p class="meta">Episode 027, October 2026</p>
+<h1>Integral points, everywhere?</h1>
+<p class="subtitle">Potential integral density on curve character varieties</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 027 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="xyzo6_Hio14" data-title="Episode 027: Integral points, everywhere?">
+  <a href="https://youtu.be/xyzo6_Hio14">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 027: Integral points, everywhere? Potential integral density on curve character varieties. A torus with one puncture, its loops labeled A and B, and a matrix B with entries involving the square root of two, above the relation that the commutator of A and B to the sixth power is the identity.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:18. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/xyzo6_Hio14?t=0" data-t="0"><span class="t">0:00</span><span>Loops and matrices</span></a></li>
+  <li><a href="https://youtu.be/xyzo6_Hio14?t=60" data-t="60"><span class="t">1:00</span><span>Integral points</span></a></li>
+  <li><a href="https://youtu.be/xyzo6_Hio14?t=133" data-t="133"><span class="t">2:13</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/xyzo6_Hio14?t=179" data-t="179"><span class="t">2:59</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/xyzo6_Hio14?t=239" data-t="239"><span class="t">3:59</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/xyzo6_Hio14?t=342" data-t="342"><span class="t">5:42</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Resolves the determinant-one curve case of Litt's integral-density question. For every smooth connected complex algebraic curve and every rank, integral points become Zariski dense in every component of its SL<sub><i>r</i></sub> character variety over the full ring of integers of one number field. Prescribed quasi-unipotent boundary conjugacy classes are allowed, including nonsemisimple classes.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A representation of a curve’s fundamental group assigns an invertible matrix to every loop, compatibly with how loops combine. Up to change of basis, these form the character variety <i>M<sub>r</sub></i>(<i>X</i>), which has a natural model over the integers. For a torus with one puncture in rank 2 it is all of 3-space, with coordinates <i>x</i> = tr <i>A</i>, <i>y</i> = tr <i>B</i>, <i>z</i> = tr <i>AB</i>; the loop around the puncture has trace <i>x</i>² + <i>y</i>² + <i>z</i>² − <i>xyz</i> − 2.</p>
+<p>Result 027 (<a href="https://github.com/openai/math/blob/main/preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/paper.pdf">27 pages</a>) claims: for every smooth connected complex curve <i>X</i>, every rank <i>r</i>, and prescribed puncture classes in SL<sub><i>r</i></sub> whose eigenvalues are roots of unity (non-diagonalizable classes allowed), there is one number field <i>L</i> such that the points of <i>M<sub>r</sub></i>(<i>X</i>) with coordinates in the ring of integers of <i>L</i> are Zariski dense in the locus with exactly those puncture classes, and so in every one of its components. For closed curves, and with prescribed punctures, <i>L</i> is explicit: adjoin √2 and a primitive <i>pq</i>-th root of unity (<i>p</i> ≠ <i>q</i> primes larger than <i>r</i>) to the field of the eigenvalues, then all <i>r</i>-th roots of units. The paper says this answers the SL<sub><i>r</i></sub> form of Daniel Litt’s question for curves.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Integrality is measured in the full character variety: an integral point’s representation has the exact puncture classes over the complex numbers, but need not keep them after reduction modulo every prime. The result is about curves; higher-dimensional varieties in rank 3 and up are not covered. For punctured curves with no conditions at the punctures, density was already easy over the ordinary integers.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 25, 2026, released October 6; 27 pages</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
+  <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/027.md">scope notes</a>)</dd>
+    <dd>No: OpenAI’s Lean files check one supporting step, not the theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/027.md">scope note</a>)</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 11, 2026.</p>
+<p class="ledger-note">Last checked October 11, 2026. The claim has not been withdrawn (unlike three other papers in the same release), and we found no public response to it. OpenAI’s <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/CharacterVarietiesAllSeamsSupport.lean">Lean statement</a> covers one supporting step of the construction: when a solution is cut open along a nonseparating band, the values built from it satisfy every seam equation. Following its imports gives 79 files and about 27,000 lines, not counting Mathlib, with no unfinished proofs (<code>sorry</code>). The main theorem is not formalized, and we have not run the check.</p>
 </section>
 
+<section aria-labelledby="known">
+<h2 id="known">What was known</h2>
+<ul class="sources">
+  <li>Simpson (1992) conjectured that rigid irreducible representations of fundamental groups of smooth projective varieties are integral. Esnault and Groechenig (2018) proved this for cohomologically rigid ones (with finite determinant and quasi-unipotent boundary). <a href="https://arxiv.org/abs/2211.03857">de Jong and Esnault</a> (2024) showed that integral ℓ-adic local systems exist for every prime ℓ, given a complex one.</li>
+  <li>Daniel Litt asked whether integral points become Zariski dense after a finite extension; his <a href="https://arxiv.org/abs/2409.02234">survey</a> asks whether one number field suffices. <a href="https://arxiv.org/abs/2507.00167">Coccia and Litt</a> (2025) proved potential density in rank 2 (SL<sub>2</sub> and PGL<sub>2</sub>), by finding an integral point whose orbit under the mapping class group is Zariski dense.</li>
+  <li><a href="https://arxiv.org/abs/1706.06712">Ghosh and Sarnak</a> (2022) studied the Markoff-type surfaces <i>x</i>² + <i>y</i>² + <i>z</i>² − <i>xyz</i> = <i>k</i>: the Hasse principle holds for almost all <i>k</i> but fails for infinitely many, so integer points can be missing without any congruence obstruction.</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Flags and caps.</strong> Work in GL<sub><i>n</i></sub> first. A puncture matrix of given Jordan type preserves a flag on whose layers it acts by roots of unity; capping the puncture with disks carrying those scalars gives a diagram of surfaces of various ranks, glued along flags.</li>
+  <li><strong>Rank induction.</strong> A top-rank surface with boundary is cut into disks. Their punctures act by scalars, so a subspace taken from a boundary flag is preserved, and each disk splits into a subspace and a quotient of lower rank. The lost gluing data are recovered by linear choices, and integral choices are dense.</li>
+  <li><strong>Closed surfaces.</strong> Cut along a circle with eigenvalues 1, ζ, …, ζ<sup><i>n</i>−1</sup> (ζ a primitive <i>pq</i>-th root of unity, whose differences are units), reglue integrally, and use powers of a Dehn twist to fill in the remaining directions. The closed equation is irreducible in genus at least 2, by counting points over finite fields (the method of Liebeck and Shalev) and the Lang–Weil estimate.</li>
+  <li><strong>Determinants and exact classes.</strong> Handle determinants are units; by Dirichlet’s unit theorem, adjoining <i>r</i>-th roots of finitely many generators gives one field where everything can be rescaled to determinant one. The unit 1 + √2 has infinite order, which makes integral choices dense. Exact Jordan classes are selected last, on the character variety.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script checks Fricke’s identity symbolically and on 500 random integer pairs, and the matrices <i>A</i> = (1 1; 1 2), <i>B</i> = (1 −1; −1 2): traces (3, 3, 3) and commutator (−1 0; −6 −1), a non-diagonalizable matrix with eigenvalues −1, −1. The Dehn twist (<i>A</i>, <i>B</i>) ↦ (<i>AB</i>, <i>B</i>) sends (3, 3, 3) to (3, 3, 6), (6, 3, 15), (15, 3, 39), (39, 3, 102).</li>
+  <li>Modulo 4, <i>x</i>² + <i>y</i>² + <i>z</i>² − <i>xyz</i> takes only the values 0, 1, 2, so the trace-1 surface has no integer points. Over ℤ[√2], <i>A</i> = (1 1; 1 2) and <i>B</i> = (3+√2 −√2; −1−√2 1) have traces (3, 4+√2, 4−√2) and a commutator of order 6.</li>
+  <li>The finite-field chart is the exact count of solutions of [<i>A</i><sub>1</sub>, <i>B</i><sub>1</sub>][<i>A</i><sub>2</sub>, <i>B</i><sub>2</sub>] = <i>I</i> in SL<sub>2</sub>(𝔽<sub><i>q</i></sub>), divided by |SL<sub>2</sub>(𝔽<sub><i>q</i></sub>)|³, from the Frobenius formula; brute force agrees for <i>q</i> = 3, 5, 7. It falls from 3.86 at <i>q</i> = 3 to 1.005 at <i>q</i> = 199.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/paper.pdf">Integral points on character varieties of curves (PDF)</a>, dated September 25, 2026 (27 pages).</li>
+  <li>The Lean statement: <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/CharacterVarietiesAllSeamsSupport.lean">CharacterVarietiesAllSeamsSupport.lean</a>, and <a href="https://github.com/openai/math/blob/main/lean/docs/027.md">OpenAI’s scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 027.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -74,18 +140,32 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/paper.pdf">Integral points on character varieties of curves</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Loops and matrices</h3>
+<p>Take a torus with one puncture. Two loops, a and b, go around it. A third loop circles the puncture, and going around it is the same as a, then b, then a backwards, then b backwards: the commutator of a and b. A representation assigns an invertible matrix to each loop, consistent with how loops combine. In rank 2 with determinant one, pick matrices A and B, and the puncture loop gets their commutator. Changing basis doesn’t change the representation, so we record traces: x is the trace of A, y of B, and z of A times B. An identity going back to Fricke says the commutator has trace x² + y² + z² − xyz − 2. The triples x, y, z make up the character variety: here, all of three-dimensional space. The same recipe works for any curve and any rank. Fixing the type of the puncture matrix cuts out a smaller piece, here a surface.</p>
+<h3><span class="t num">1:00</span>Integral points</h3>
+<p>Say the puncture matrix has both eigenvalues −1, but can’t be diagonalized. The surface is then x² + y² + z² = xyz. These integer matrices give the point (3, 3, 3). A Dehn twist along b replaces A by A times B. On traces, (x, y, z) becomes (z, y, yz − x). So (3, 3, 3) goes to (3, 3, 6), then (6, 3, 15), always with y = 3, on one curve. Twists along other loops branch out into a tree of integer points. They aren’t trapped on any curve. In algebraic terms they’re Zariski dense: the only polynomial equations that hold at all of them are the ones that hold on the whole surface. Now let the puncture matrix have eigenvalues that are primitive sixth roots of unity, so its trace is one. The surface becomes x² + y² + z² − xyz = 3, and no integer triple works: divided by four, the left side never leaves remainder three. But allow the square root of two. These matrices have determinant one, and their commutator has order six. Integral points appear once the integers are enlarged.</p>
+<h3><span class="t num">2:13</span>The question</h3>
+<p>Simpson conjectured in 1992 that rigid irreducible representations, ones that can’t be deformed, can be written with integral matrices. Esnault and Groechenig proved it for cohomologically rigid ones, and de Jong and Esnault showed integral ones exist, one prime at a time. Daniel Litt asked for more: after enlarging the integers, do integral points become Zariski dense? His survey asks whether a single number field is enough. In 2025, Simone Coccia and Litt proved this in rank 2, by finding an integral point whose orbit under the twists is Zariski dense. And Ghosh and Sarnak showed that for surfaces of this kind, infinitely many with no congruence obstruction still have no integer points at all.</p>
+<h3><span class="t num">2:59</span>The claim</h3>
+<p>Result 027 in OpenAI’s math repository claims the answer for every curve and every rank. The preprint, 27 pages, dated September 25, claims: for a smooth complex curve, any rank r, and prescribed puncture classes whose eigenvalues are roots of unity, including classes that can’t be diagonalized, there is one number field L whose integral points, measured in the full character variety, are Zariski dense in the locus with those classes, in every component. For closed curves and for prescribed punctures, L is explicit: start with the puncture eigenvalues, the square root of two, and a primitive pq-th root of unity, for distinct primes p and q larger than r, then adjoin the r-th roots of every unit. On a punctured curve with no conditions at the punctures, the ordinary integers already suffice. The paper says this answers the SL(r) form of Litt’s question for curves.</p>
+<h3><span class="t num">3:59</span>How the proof goes</h3>
+<p>The proof first allows any determinant. A puncture matrix of a given Jordan type keeps a chain of subspaces, a flag, and acts on each layer between steps by a root of unity. The proof caps the puncture with disks carrying those scalars, giving a diagram of surfaces of different ranks, glued along flags. Then comes induction on the largest rank. A top-rank surface with boundary is cut into disks. Their punctures act by scalars, so a subspace taken from a boundary flag is preserved, and the disk splits into a subspace and a quotient, both of lower rank. The lost gluing data come back by choosing linear maps, and integral choices are dense among all choices. Closed surfaces need more. Cut along a circle and fix the eigenvalues there to 1, ζ, ζ² and so on, with ζ a primitive pq-th root of unity: their differences are units, so eigenvectors split off integrally. Powers of a Dehn twist then fill in the remaining directions. And the closed equation has only one piece: counting solutions over finite fields, in the style of Liebeck and Shalev, plus the Lang–Weil estimate, shows it. For SL(2) in genus 2, the count divided by the expected size drops toward one. Last, determinants. Every handle determinant is a unit, and by Dirichlet’s unit theorem the units come from finitely many, so adjoining their r-th roots gives one field L that rescales everything to determinant one. Why the square root of two? Its unit, 1 + √2, has infinite order, which makes integral choices dense. The exact Jordan classes are selected at the very end, on characters.</p>
+<h3><span class="t num">5:42</span>Where it stands</h3>
+<p>This is a preprint, not peer reviewed. OpenAI’s Lean files, 79 files and about 27,000 lines, check one supporting step: when a solution is cut open, the values built from it satisfy every seam equation. The main theorem isn’t formalized, and we haven’t run the check. The paper leaves higher-dimensional varieties in rank three and up open. If the proof holds, then for curves in every rank, one enlargement of the integers makes integral points dense.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20027%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../026-positive-lower-density-large-prime/"><span class="dir">Previous · 026</span><span class="pt">Positive lower density of large prime gaps</span></a>
-  <a class="next" href="../028-uniformly-bounded-components-gaussian-prime/"><span class="dir">Next · 028</span><span class="pt">Uniformly bounded components of Gaussian-prime graphs</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/number-theory/">More in number theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

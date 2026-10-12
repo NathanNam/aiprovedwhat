@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 023: Patterson&#x27;s first moment for cubic Gauss sums | AI Proved What?</title>
-<meta name="description" content="Patterson&#x27;s first moment for cubic Gauss sums. Result 023 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Still biased? Patterson’s first moment for cubic Gauss sums | AI Proved What?</title>
+<meta name="description" content="An AI system says it has proved Patterson’s conjecture unconditionally: the bias Kummer saw in cubic Gauss sums in 1846 adds up to exactly the predicted size, X^(5/6)/log X. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/023-pattersons-first-moment-cubic-gauss/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 023: Patterson&#x27;s first moment for cubic Gauss sums | AI Proved What?">
-<meta property="og:description" content="Patterson&#x27;s first moment for cubic Gauss sums. Result 023 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Still biased?">
+<meta property="og:description" content="An AI system says it has proved Patterson’s conjecture unconditionally: the bias Kummer saw in cubic Gauss sums in 1846 adds up to exactly the predicted size, X^(5/6)/log X. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/023-pattersons-first-moment-cubic-gauss/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/023-pattersons-first-moment-cubic-gauss/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,51 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 023 · <a href="../../subjects/number-theory/">Number theory</a></p>
-<h1 class="result-title">Patterson's first moment for cubic Gauss sums</h1>
+<p class="meta">Episode 023, October 2026</p>
+<h1>Still biased?</h1>
+<p class="subtitle">Patterson’s first moment for cubic Gauss sums</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 023 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="76lQWhWZ_TQ" data-title="Episode 023: Still biased?">
+  <a href="https://youtu.be/76lQWhWZ_TQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 023: Still biased? Patterson’s first moment for cubic Gauss sums. Kummer’s 45 values on a line from −1 to 1, split 7, 14 and 24 between the bottom, middle and top thirds, above the sum of S_p/(2√p) approximately 0.50 X^(5/6)/log X.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:14. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/76lQWhWZ_TQ?t=0" data-t="0"><span class="t">0:00</span><span>Kummer’s walk</span></a></li>
+  <li><a href="https://youtu.be/76lQWhWZ_TQ?t=46" data-t="46"><span class="t">0:46</span><span>A fading bias</span></a></li>
+  <li><a href="https://youtu.be/76lQWhWZ_TQ?t=129" data-t="129"><span class="t">2:09</span><span>Eisenstein primes</span></a></li>
+  <li><a href="https://youtu.be/76lQWhWZ_TQ?t=170" data-t="170"><span class="t">2:50</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/76lQWhWZ_TQ?t=211" data-t="211"><span class="t">3:31</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/76lQWhWZ_TQ?t=277" data-t="277"><span class="t">4:37</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves unconditionally the all-primary-prime form of Patterson’s first-moment asymptotic: normalized cubic Gauss sums over primary Eisenstein primes of norm at most <i>X</i>, including both conjugates, have an explicit positive main term of order <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>X</mi><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>6</mn></mrow></msup><mi mathvariant="normal">/</mi><mi>log</mi><mo>⁡</mo><mi>X</mi></mrow><annotation encoding="application/x-tex">X^{5/6}/\log X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">5/6</span></span></span></span></span></span></span></span></span><span class="mord">/</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span></span></span>. Every fixed nonzero prime-angle Fourier mode has smaller order.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>For a prime <i>p</i> ≡ 1 mod 3, Kummer’s sum <i>S<sub>p</sub></i> adds up the unit steps <i>e</i>(<i>x</i><sup>3</sup>/<i>p</i>) = e<sup>2πi<i>x</i><sup>3</sup>/<i>p</i></sup> for <i>x</i> = 0, …, <i>p</i> − 1. It is a real number with |<i>S<sub>p</sub></i>| &lt; 2√<i>p</i>, so <i>S<sub>p</sub></i>/(2√<i>p</i>) lies between −1 and 1. Kummer noticed in 1846 that these values lean positive. They do not lean in the limit, but the lean fades slowly, and Patterson predicted in 1978 that their total up to <i>X</i> grows like <i>X</i><sup>5/6</sup>/log <i>X</i>.</p>
+<p>Result 023 (<a href="https://github.com/openai/math/blob/main/preprints/An-unconditional-first-moment-for-cubic-Gauss-sums-September-25-2026/paper.pdf">52 pages</a>) claims this unconditionally and with a sharp cutoff, in the language of the Eisenstein integers ℤ[ω]. For each primary prime π (π ≡ 1 mod 3), let <i>G</i>(π) be the cubic Gauss sum, scaled to length 1. Then the sum of <i>G</i>(π) over all primary primes of norm up to <i>X</i> is (6/5)<i>c</i><sub>*</sub><i>X</i><sup>5/6</sup>/log <i>X</i> plus a smaller error, where <i>c</i><sub>*</sub> = (2π)<sup>2/3</sup>/(3Γ(2/3)) ≈ 0.838. Since <i>G</i>(π) + <i>G</i>(π̄) = <i>S<sub>p</sub></i>/√<i>p</i>, this says the total of <i>S<sub>p</sub></i>/(2√<i>p</i>) up to <i>X</i> is about (3/5)<i>c</i><sub>*</sub><i>X</i><sup>5/6</sup>/log <i>X</i> ≈ 0.50 <i>X</i><sup>5/6</sup>/log <i>X</i>. The paper also proves cancellation after twisting by any fixed nonzero power of π/|π|.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The error is only shown to be smaller than the main term, with no rate. Patterson’s companion prediction, cancellation for the sums of <i>G</i>(π)<sup><i>k</i></sup>, is covered only when 3 does not divide <i>k</i>. And the paper flags that one earlier paper printed the same constant for two sums that differ by a factor of two; it proves the form stated above and does not decide which printed version was intended.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 25, 2026, released October 6; 52 pages</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +89,51 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/023.md">scope notes</a>)</dd>
+    <dd>By OpenAI (<a href="https://github.com/openai/math/blob/main/lean/docs/023.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 11, 2026.</p>
+<p class="ledger-note">Last checked October 11, 2026. The claim has not been withdrawn, and we found no public response to it. OpenAI’s <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PattersonFirstMoment.lean">Lean statement</a> covers the first moment and both angular statements. Following its imports gives about 3,600 files and 306,000 lines, not counting Mathlib and other libraries, with no unfinished proofs (<code>sorry</code>) in OpenAI’s files. The result is not listed in OpenAI’s formalization catalog.</p>
 </section>
 
+<section aria-labelledby="known">
+<h2 id="known">What was known</h2>
+<ul class="sources">
+  <li>Kummer (1846) computed the 45 primes below 500 and conjectured the proportions 1/2, 1/3, 1/6 for the top, middle and bottom thirds.</li>
+  <li><a href="https://doi.org/10.1090/S0025-5718-1953-0055784-0">Von Neumann and Goldstine (1953)</a> computed the 611 primes below 10,000 (272, 201 and 138), with the calculation programmed by Hedvig Selberg, and saw “a trend toward randomness”.</li>
+  <li>Heath-Brown and Patterson (1979) proved that the normalized sums are equidistributed, so each third gets 1/3 in the limit. Patterson (1978) predicted the <i>X</i><sup>5/6</sup>/log <i>X</i> bias.</li>
+  <li>Heath-Brown (2000), with his cubic large sieve, bounded the total by <i>X</i><sup>5/6+ε</sup>. <a href="https://doi.org/10.4007/annals.2024.200.3.3">Dunn and Radziwiłł</a> (2021; Annals of Mathematics, 2024) proved Patterson’s prediction assuming the generalized Riemann hypothesis, with a smooth weight.</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A model.</strong> Each <i>G</i>(π) is compared with <i>c</i><sub>*</sub><i>N</i>(π)<sup>−1/6</sup> on dyadic ranges; summed over primes, the model gives the main term. The sharp cutoff forces smoothing at a fine scale, which brings in oscillation at heights up to about <i>X</i><sup>1/6</sup>.</li>
+  <li><strong>Type I and bilinear sums.</strong> Sums with one long smooth variable use the unconditional Voronoi formula of Dunn and Radziwiłł, with a mean-square bound of Heath-Brown. In bilinear sums, Poisson summation leaves frequencies that are perfect cubes, which produce exactly the model term; a corrected dispersion method subtracts it, and large sieves control the rest except in two configurations, handled by moments at several lengths and a Gram-matrix estimate.</li>
+  <li><strong>Prime decomposition and large heights.</strong> An exact stopping rule decomposes the primes while keeping the coefficients independent; the only delicate transition, three primes of nearly equal norm, is handled by prime sparsity. At large heights, localizing both norm variables finishes the argument. No result conditional on the Riemann hypothesis is used.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script computes <i>S<sub>p</sub></i> directly for all 8,988 primes <i>p</i> ≡ 1 mod 3 below 200,000. It reproduces Kummer’s 24, 14, 7 and von Neumann and Goldstine’s 272, 201, 138 exactly; below 200,000 the thirds hold 3,628, 2,990 and 2,370.</li>
+  <li>The running total of <i>S<sub>p</sub></i>/(2√<i>p</i>) at 200,000 is 1,160, against 1,208 for the model sum <i>c</i><sub>*</sub>Σ<i>p</i><sup>−1/6</sup> and 1,078 for the leading term (3/5)<i>c</i><sub>*</sub><i>X</i><sup>5/6</sup>/log <i>X</i>.</li>
+  <li>The arrows are the 414 Gauss sums <i>G</i>(π) at primary primes of prime norm below 3,000; the script checks |<i>G</i>(π)| = 1 and <i>G</i>(π) + <i>G</i>(π̄) = <i>S<sub>p</sub></i>/√<i>p</i> for each.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-unconditional-first-moment-for-cubic-Gauss-sums-September-25-2026/paper.pdf">An unconditional first moment for cubic Gauss sums (PDF)</a>, dated September 25, 2026 (52 pages).</li>
+  <li>The Lean statement: <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PattersonFirstMoment.lean">PattersonFirstMoment.lean</a>, and <a href="https://github.com/openai/math/blob/main/lean/docs/023.md">OpenAI’s scope note</a>.</li>
+  <li><a href="https://doi.org/10.4007/annals.2024.200.3.3">Dunn and Radziwiłł, Bias in cubic Gauss sums: Patterson’s conjecture</a> (Annals of Mathematics, 2024).</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 023.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +141,32 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/An-unconditional-first-moment-for-cubic-Gauss-sums-September-25-2026/paper.pdf">An unconditional first moment for cubic Gauss sums</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Kummer’s walk</h3>
+<p>Take a prime p that leaves remainder one when divided by three, say thirteen. For each x from zero to twelve, cube it, and take one step of length one, at the angle 2π·x³/p. Where does the walk end? It always ends on the real line, within 2√p of the start. Divide by 2√p, and you get a number between minus one and one. In 1846, Ernst Kummer computed this for the 45 such primes below 500, and saw a pattern: about half the values above 1/2, a third in the middle, and a sixth below −1/2. Result 023 in OpenAI’s math repository is about the bias Kummer saw, and how much of it survives, to leading order.</p>
+<h3><span class="t num">0:46</span>A fading bias</h3>
+<p>Kummer’s pattern did not hold up. In the early 1950s, John von Neumann and Herman Goldstine ran the sums on one of the first electronic computers, for every such prime below 10,000, with Hedvig Selberg programming the calculation. Of 611 primes, nearly 45 percent landed in the top third, which they called a trend toward randomness. In 1979, Roger Heath-Brown and Samuel Patterson proved that in the long run, each third gets exactly one third. But the bias fades slowly. Below 200,000, the top third still holds 40%. In 1978, Patterson had predicted the size of what remains. Add up the values for all primes up to X, and the total should grow like X^(5/6)/log X, times an explicit constant. That’s far less than the number of primes, but far more than chance alone would give. Up to 200,000, the total is about 1,160, from almost 9,000 primes. Heath-Brown’s cubic large sieve, in 2000, bounded the total by X^(5/6+ε). In 2021, Alexander Dunn and Maksym Radziwiłł proved Patterson’s prediction, assuming the generalized Riemann hypothesis, and with a smooth weight in place of a sharp cutoff.</p>
+<h3><span class="t num">2:09</span>Eisenstein primes</h3>
+<p>The natural setting is the Eisenstein integers, a + bω, where omega is a complex cube root of one. Each of these primes p splits into two Eisenstein primes, π and its conjugate, each chosen to leave remainder one mod three. For each such prime, the cubic residue symbol and an additive phase build a cubic Gauss sum, G(π), scaled to have length one. The two conjugate sums average to Kummer’s value: G(π) plus G(π̄) is S_p/√p. Picture an arrow for each prime. Heath-Brown and Patterson showed the arrows point every way equally often; Patterson’s bias is a slight lean to the right.</p>
+<h3><span class="t num">2:50</span>The claim</h3>
+<p>The preprint, 52 pages, dated September 25, claims Patterson’s prediction without any unproved hypothesis, and with a sharp cutoff. The sum of G(π), over all these primes of norm up to X, is (6/5)c* times X^(5/6)/log X, plus a smaller error. The constant c* is about 0.84. It also claims cancellation after twisting by any fixed nonzero power of the prime’s direction. OpenAI published a Lean proof of these statements, about 3,600 files and 300,000 lines, not counting Mathlib and other libraries. We haven’t run the check.</p>
+<h3><span class="t num">3:31</span>How the proof goes</h3>
+<p>The proof compares each G(π) with a simple model, c* times the norm of π to the power −1/6. Summed over primes, the model gives the main term. The hard part is the sharp cutoff: smoothing the edge finely brings in oscillation at heights up to about X^(1/6). For sums with one long smooth variable, an unconditional Voronoi formula of Dunn and Radziwiłł, with a mean-square bound of Heath-Brown, does the work. For bilinear sums, Poisson summation leaves frequencies that are perfect cubes, and these produce exactly the model term. A corrected dispersion method subtracts it. Large sieves control the rest, except in two configurations, which need moments at several lengths and a Gram-matrix estimate. To feed these estimates, the primes are decomposed exactly, by a stopping rule that keeps the coefficients independent. The one delicate transition, a product of three primes of nearly equal norm, is handled because primes are sparse. At the largest heights, localizing both norm variables finishes the job.</p>
+<h3><span class="t num">4:37</span>Where it stands</h3>
+<p>This is a preprint, not peer reviewed, and we haven’t run the Lean check. The error is only shown to be smaller than the main term, with no rate. Patterson’s companion prediction for higher powers is covered only for powers not divisible by three. And earlier work printed the same constant for two sums that differ by a factor of two; the paper says which form it proves. Kummer saw a bias in 45 primes. It fades like one over the sixth root of p, and the claim pins down the leading size of what is left. If the proof holds.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20023%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../022-weak-inhomogeneous-duffin-schaeffer-conjecture/"><span class="dir">Previous · 022</span><span class="pt">The weak inhomogeneous Duffin–Schaeffer conjecture</span></a>
-  <a class="next" href="../024-asymptotic-formula-number-totients/"><span class="dir">Next · 024</span><span class="pt">An asymptotic formula for the number of totients</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/number-theory/">More in number theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

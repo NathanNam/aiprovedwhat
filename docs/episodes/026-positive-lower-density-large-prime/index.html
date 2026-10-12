@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 026: Positive lower density of large prime gaps | AI Proved What?</title>
-<meta name="description" content="Positive lower density of large prime gaps. Result 026 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Long gaps, how often? Large prime gaps | AI Proved What?</title>
+<meta name="description" content="An AI system says it has proved that for every fixed C, a positive fraction of prime gaps exceed C log p, answering a question of Erdős and Prachar. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/026-positive-lower-density-large-prime/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 026: Positive lower density of large prime gaps | AI Proved What?">
-<meta property="og:description" content="Positive lower density of large prime gaps. Result 026 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Long gaps, how often?">
+<meta property="og:description" content="An AI system says it has proved that for every fixed C, a positive fraction of prime gaps exceed C log p, answering a question of Erdős and Prachar. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/026-positive-lower-density-large-prime/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/026-positive-lower-density-large-prime/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,35 +37,102 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 026 · <a href="../../subjects/number-theory/">Number theory</a></p>
-<h1 class="result-title">Positive lower density of large prime gaps</h1>
+<p class="meta">Episode 026, October 2026</p>
+<h1>Long gaps, how often?</h1>
+<p class="subtitle">Positive lower density of large prime gaps</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 026 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="77GDNtdCHis" data-title="Episode 026: Long gaps, how often?">
+  <a href="https://youtu.be/77GDNtdCHis">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 026: Long gaps, how often? Positive lower density of large prime gaps. A histogram of prime gaps divided by log p below 200 million, with the long ones in gold and an e to the minus x curve, above the claim that a positive fraction of gaps exceed C log p.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:47. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/77GDNtdCHis?t=0" data-t="0"><span class="t">0:00</span><span>Gaps between primes</span></a></li>
+  <li><a href="https://youtu.be/77GDNtdCHis?t=39" data-t="39"><span class="t">0:39</span><span>Counting long gaps</span></a></li>
+  <li><a href="https://youtu.be/77GDNtdCHis?t=96" data-t="96"><span class="t">1:36</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/77GDNtdCHis?t=135" data-t="135"><span class="t">2:15</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/77GDNtdCHis?t=202" data-t="202"><span class="t">3:22</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>For every fixed <i>C</i> &gt; 0, a positive proportion of consecutive prime gaps exceed <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>log</mi><mo>⁡</mo><msub><mi>p</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">C\log p_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, throughout every sufficiently large initial segment of the primes. The proportion may depend on <i>C</i>. Consequently, the indices where <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>n</mi></msub><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">p_n/n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mord mathnormal">n</span></span></span></span> increases have positive lower density, answering Erdős and Prachar.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Near a number <i>p</i>, primes are about log <i>p</i> apart on average (natural log). Some gaps are far longer, but how often is a gap long? Result 026 (<a href="https://github.com/openai/math/blob/main/preprints/Positive-lower-density-of-large-prime-gaps-September-25-2026/main.pdf">19 pages</a>), claims unconditionally that for every fixed <i>C</i> &gt; 0 there is a <i>c</i>(<i>C</i>) &gt; 0 such that, for every large <i>N</i>, at least <i>c</i>(<i>C</i>)·<i>N</i> of the first <i>N</i> gaps <i>p</i><sub><i>n</i>+1</sub> − <i>p<sub>n</sub></i> exceed <i>C</i> log <i>p<sub>n</sub></i>.</p>
+<p>Since <i>p<sub>n</sub></i>/<i>n</i> &lt; <i>p</i><sub><i>n</i>+1</sub>/(<i>n</i> + 1) exactly when the gap exceeds <i>p<sub>n</sub></i>/<i>n</i> ≈ log <i>p<sub>n</sub></i>, the case <i>C</i> = 2 shows that <i>p<sub>n</sub></i>/<i>n</i> increases on a set of indices of positive lower density. That answers a question of Erdős and Prachar (<a href="https://www.erdosproblems.com/968">Erdős problem #968</a>).</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The proportions <i>c</i>(<i>C</i>) are not computed, and the claim says nothing about the exact fraction that a random model predicts (about e<sup>−<i>C</i></sup>). It concerns how often gaps are long, not how long the longest gaps are.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 25, 2026, released October 6; 19 pages</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/026.md">scope notes</a>)</dd>
+    <dd>By OpenAI (<a href="https://github.com/openai/math/blob/main/lean/docs/026.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 11, 2026.</p>
+<p class="ledger-note">Last checked October 11, 2026. The claim has not been withdrawn, and we found no public response to it. OpenAI’s <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PrimeGaps.lean">Lean statement</a> covers both the theorem for every <i>C</i> &gt; 0 and the corollary. Following its imports gives 56 files and about 23,000 lines, not counting Mathlib, with no unfinished proofs (<code>sorry</code>); the Bombieri–Vinogradov theorem is proved there, not assumed. The result is not listed in OpenAI’s formalization catalog.</p>
 </section>
 
+<section aria-labelledby="known">
+<h2 id="known">What was known</h2>
+<ul class="sources">
+  <li>Westzynthius (1931) showed that some gaps exceed any fixed multiple of log <i>p</i>. Later work, up to Ford, Green, Konyagin, Maynard and Tao, found much longer gaps. These results concern the size of rare record gaps, not how often gaps are long.</li>
+  <li><a href="https://arxiv.org/abs/0809.2967">Bazzanella, Languasco and Zaccagnini</a> (2010) proved, unconditionally, that a positive fraction of gaps exceed <i>C</i> log <i>p</i> for <i>C</i> below about 0.58.</li>
+  <li>Gallagher (1976), assuming a strong form of the prime tuples conjecture, derived Poisson statistics for primes in short intervals: the random-model picture.</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Two windows.</strong> Near a large <i>X</i>, take <i>h</i> ≈ λ log <i>X</i> with λ &gt; max(<i>C</i>, 1). For a start <i>m</i>, if (<i>m</i>, <i>m</i> + <i>h</i>] contains a prime and (<i>m</i> + <i>h</i>, <i>m</i> + 2<i>h</i>] contains none, the last prime in the first window starts a gap longer than <i>h</i>.</li>
+  <li><strong>Bounded counting.</strong> That prime arises from at most <i>h</i> starts <i>m</i>, however long its gap. So δ<i>X</i> good starts give at least δ<i>X</i>/<i>h</i> distinct long gaps.</li>
+  <li><strong>The weights.</strong> The paper builds nonnegative weights on the starts, squares of signed sums of smooth divisor sums built from divisors of integers in the second window. They detect a prime in the first window but give the second window arbitrarily small prime mass, because where the second window has a prime, terms of neighboring sizes nearly cancel. Two second-moment estimates turn this into a positive fraction of ordinary starts.</li>
+  <li><strong>Inputs.</strong> Smooth divisor-sum correlations (as in Goldston–Yıldırım and Maynard), the Bombieri–Vinogradov theorem, and Gallagher’s singular-series average.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script sieves all 11,078,937 primes below 200 million. It finds 37.5% of gaps above log <i>p</i>, 11.5% above 2 log <i>p</i> and 0.99% above 4 log <i>p</i>; the model values e<sup>−<i>C</i></sup> are 36.8%, 13.5% and 1.8%.</li>
+  <li>The share above 2 log <i>p</i> among the first <i>N</i> gaps is steady near 11% for <i>N</i> = 10<sup>4</sup> to 10<sup>7</sup>. The ratio <i>p<sub>n</sub></i>/<i>n</i> rises at 42.0% of steps.</li>
+  <li>The largest gap relative to log <i>p</i> in this range is 248, after 191,912,783 (about 13 log <i>p</i>).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Positive-lower-density-of-large-prime-gaps-September-25-2026/main.pdf">Positive lower density of large prime gaps (PDF)</a>, dated September 25, 2026 (19 pages).</li>
+  <li>The Lean statement: <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PrimeGaps.lean">PrimeGaps.lean</a>, and <a href="https://github.com/openai/math/blob/main/lean/docs/026.md">OpenAI’s scope note</a>.</li>
+  <li><a href="https://www.erdosproblems.com/968">Erdős problem #968</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 026.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +140,30 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Positive-lower-density-of-large-prime-gaps-September-25-2026/main.pdf">Positive lower density of large prime gaps</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Gaps between primes</h3>
+<p>Near a number p, primes are about log p apart on average, with log the natural logarithm. That’s the prime number theorem. Some gaps are much longer: in 1931, Erik Westzynthius showed that some gaps exceed any fixed multiple of log p, and later work, up to Ford, Green, Konyagin, Maynard and Tao, found gaps far longer still. But those results are about rare record gaps. How often is a gap long? Is a positive fraction of all gaps longer than twice log p? Ten times log p? Result 026 in OpenAI’s math repository claims yes, for every fixed multiple.</p>
+<h3><span class="t num">0:39</span>Counting long gaps</h3>
+<p>Among the primes below 200 million, about 37.5% of gaps exceed log p, 12% exceed twice log p, and 1% exceed four times log p. A simple random model predicts a fraction near e^(−C) for C times log p. The counts look steady as you take more primes. Proving it is another matter. Earlier unconditional work, by Bazzanella, Languasco and Zaccagnini, showed a positive fraction of gaps exceed C log p only for C below about 0.58. Assuming a strong form of the prime tuples conjecture, Gallagher’s work gives the random-model picture. Erdős and Prachar asked a related question: how often does p_n/n go up? It rises exactly when the next gap exceeds p_n/n, which is about log p. Below 200 million, it rises at 42% of the steps.</p>
+<h3><span class="t num">1:36</span>The claim</h3>
+<p>The preprint, 19 pages, dated September 25, claims, with no unproved hypothesis: for every fixed C, there is a positive constant c(C) such that, for every large N, at least c times N of the first N gaps exceed C log p. The fraction may depend on C, and it isn’t computed. With C equal to two, it answers Erdős and Prachar: the indices where p_n/n increases have positive lower density. OpenAI published a Lean proof of both statements, about 56 files and 23,000 lines, not counting Mathlib. We haven’t run the check.</p>
+<h3><span class="t num">2:15</span>How the proof goes</h3>
+<p>Near a large number X, pick a length h, about λ log X, with λ bigger than C and one. From a starting point m, look at two windows: m to m + h, and m + h to m + 2h. If the first window has a prime and the second has none, the last prime in the first window starts a gap longer than h. That prime is counted by at most h starting points, however long its gap. So if a positive fraction of starting points are good, a positive fraction of gaps are long. To find good starting points, the paper builds weights: squares of signed sums of smooth divisor sums, built from divisors of integers in the second window. They detect a prime in the first window, yet leave the second window almost no prime mass, because terms of neighboring sizes nearly cancel. Two second-moment estimates turn the weights into a positive fraction of ordinary starting points. The inputs are divisor-sum correlations, as in Goldston, Yıldırım and Maynard, the Bombieri–Vinogradov theorem, and Gallagher’s singular-series average.</p>
+<h3><span class="t num">3:22</span>Where it stands</h3>
+<p>This is a preprint, not peer reviewed, and we haven’t run the Lean check. The proportions aren’t computed, and the claim says nothing about the exact fraction the random model predicts. If the proof holds, long gaps are not just rare records: every fixed multiple of log p is exceeded by a positive fraction of prime gaps.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20026%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../025-short-egyptian-fractions/"><span class="dir">Previous · 025</span><span class="pt">Short Egyptian fractions</span></a>
-  <a class="next" href="../027-potential-integral-density-curve-character/"><span class="dir">Next · 027</span><span class="pt">Potential integral density on curve character varieties</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/number-theory/">More in number theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

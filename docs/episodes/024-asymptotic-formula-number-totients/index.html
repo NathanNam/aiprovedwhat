@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 024: An asymptotic formula for the number of totients | AI Proved What?</title>
-<meta name="description" content="An asymptotic formula for the number of totients. Result 024 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Double x, double V? The number of totients | AI Proved What?</title>
+<meta name="description" content="An AI system says it has found an asymptotic formula for the number of distinct values of Euler’s totient function, and that doubling x doubles that count in the limit, answering Erdős and Hall. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/024-asymptotic-formula-number-totients/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 024: An asymptotic formula for the number of totients | AI Proved What?">
-<meta property="og:description" content="An asymptotic formula for the number of totients. Result 024 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Double x, double V?">
+<meta property="og:description" content="An AI system says it has found an asymptotic formula for the number of distinct values of Euler’s totient function, and that doubling x doubles that count in the limit, answering Erdős and Hall. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/024-asymptotic-formula-number-totients/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/024-asymptotic-formula-number-totients/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 024 · <a href="../../subjects/number-theory/">Number theory</a></p>
-<h1 class="result-title">An asymptotic formula for the number of totients</h1>
+<p class="meta">Episode 024, October 2026</p>
+<h1>Double x, double V?</h1>
+<p class="subtitle">An asymptotic formula for the number of totients</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 024 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="GTI8GXkgD4E" data-title="Episode 024: Double x, double V?">
+  <a href="https://youtu.be/GTI8GXkgD4E">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 024: Double x, double V? An asymptotic formula for the number of totients. A 10 by 10 grid of the numbers 1 to 100 with the totient values in gold, above V(cx)/V(x) tends to c.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:20. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/GTI8GXkgD4E?t=0" data-t="0"><span class="t">0:00</span><span>Missing values</span></a></li>
+  <li><a href="https://youtu.be/GTI8GXkgD4E?t=44" data-t="44"><span class="t">0:44</span><span>How many values?</span></a></li>
+  <li><a href="https://youtu.be/GTI8GXkgD4E?t=103" data-t="103"><span class="t">1:43</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/GTI8GXkgD4E?t=161" data-t="161"><span class="t">2:41</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/GTI8GXkgD4E?t=227" data-t="227"><span class="t">3:47</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Gives an asymptotic equivalent for the number <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">V(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span> of distinct totient values up to <i>x</i>, with a positive bounded phase-dependent factor determined by convergent arithmetic approximations. In particular, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>V</mi><mo stretchy="false">(</mo><mi>c</mi><mi>x</mi><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><mi>V</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>→</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">V(cx)/V(x)\to c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal">c</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">c</span></span></span></span> for every fixed <i>c</i> &gt; 0, answering Erdős and Hall’s scaling question.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Euler’s totient φ(<i>n</i>) counts the numbers up to <i>n</i> that share no factor with <i>n</i> except 1. Its values skip every odd number above 1 and some even numbers, like 14 and 26. Let <i>V</i>(<i>x</i>) be the number of distinct values up to <i>x</i>: <i>V</i>(10) = 6, <i>V</i>(10<sup>6</sup>) = 180,184 and <i>V</i>(10<sup>7</sup>) = 1,634,372.</p>
+<p>Result 024 (<a href="https://github.com/openai/math/blob/main/preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf">39 pages</a>) claims an asymptotic formula, <i>V</i>(<i>x</i>) ~ (<i>x</i>/log <i>x</i>)·<i>G<sub>m</sub></i>·<i>A</i>(θ). Here (<i>x</i>/log <i>x</i>)<i>G<sub>m</sub></i> is the scale found by Ford, and θ is a phase that moves with log log log <i>x</i>. <i>A</i> is a uniform limit of explicit formulas built from finite arithmetic data, and it stays between two positive constants. Separately, by counting the largest prime factor of a preimage, the paper claims that <i>V</i>(<i>cx</i>)/<i>V</i>(<i>x</i>) → <i>c</i> for every fixed <i>c</i> &gt; 0, answering a question of Erdős and Hall (<a href="https://www.erdosproblems.com/416">Erdős problem #416</a>). It also gives asymptotics for totients counted by the size of their smallest preimage.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The coefficient <i>A</i> is a limit, not a computed number. The paper doesn’t say whether <i>A</i> really varies with the phase, and it gives no rate of convergence. The phase is about 0.64 at <i>x</i> = 10<sup>7</sup> and completes its turn only around <i>x</i> ≈ 10<sup>213</sup>. Whether the smallest preimage of a value can be arbitrarily large compared with the value is left open.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 25, 2026, released October 6; 39 pages</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +88,51 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/024.md">scope notes</a>)</dd>
+    <dd>By OpenAI (<a href="https://github.com/openai/math/blob/main/lean/docs/024.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 11, 2026.</p>
+<p class="ledger-note">Last checked October 11, 2026. The claim has not been withdrawn, and we found no public response to it; erdosproblems.com still lists <a href="https://www.erdosproblems.com/416">problem #416</a>, which asks both whether <i>V</i>(2<i>x</i>)/<i>V</i>(<i>x</i>) → 2 and for an asymptotic formula, as open. OpenAI’s Lean statements (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/TotientAsymptotic.lean">the main theorems</a> and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/TotientCompanionZero.lean">the zero case</a>) match Theorems 2.1 and 2.2. Following their imports gives about 800 files and 73,000 lines, not counting Mathlib and the prime number theorem library they use, with no unfinished proofs (<code>sorry</code>) in OpenAI’s files. Ford’s structure theorems are proved there, not assumed. The result is not listed in OpenAI’s formalization catalog.</p>
 </section>
 
+<section aria-labelledby="known">
+<h2 id="known">What was known</h2>
+<ul class="sources">
+  <li>Since φ(<i>p</i>) = <i>p</i> − 1, <i>V</i>(<i>x</i>) is at least about <i>x</i>/log <i>x</i>. Pillai (1929) proved the values have density zero.</li>
+  <li>Erdős (1935), Erdős and Hall (1976) and Pomerance (1986) brought the bounds onto the same scale, and Maier and Pomerance (1988) found <i>V</i>(<i>x</i>) = (<i>x</i>/log <i>x</i>)·exp{(<i>C</i><sub>0</sub> + <i>o</i>(1))(log log log <i>x</i>)<sup>2</sup>}, <i>C</i><sub>0</sub> = 0.8178….</li>
+  <li><a href="https://arxiv.org/abs/1104.3264">Ford (1998)</a> found <i>V</i>(<i>x</i>) up to a bounded factor and proved <i>V</i>(<i>cx</i>) − <i>V</i>(<i>x</i>) ≍ <i>V</i>(<i>x</i>), so the ratio <i>V</i>(<i>cx</i>)/<i>V</i>(<i>x</i>) stays between two constants above 1 for <i>c</i> &gt; 1.</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Structure.</strong> By Ford’s structure theorems, almost every value has all its preimages of a typical shape: prime factors <i>p</i><sub>0</sub> &gt; <i>p</i><sub>1</sub> &gt; … whose log log sizes sit near a fixed decreasing pattern.</li>
+  <li><strong>Prefix and tail.</strong> A long prefix of large primes is counted by volume, as a region of a simplex. A short tail of small primes is kept exactly, because different tails can give the same totient; inclusion–exclusion over those finitely many tails produces the coefficient.</li>
+  <li><strong>Collisions.</strong> Comparing products of shifted primes (<i>p</i> − 1)(<i>q</i> − 1)… in the layered method of Maier, Pomerance and Ford, with each sieve step handling two or three linear forms, shows that different prefixes rarely give the same value.</li>
+  <li><strong>Scaling.</strong> Counting the largest prime <i>p</i> with (<i>p</i> − 1)·<i>d</i> ≤ <i>x</i> is like counting primes up to <i>x</i>/<i>d</i>, which scales by <i>c</i> when <i>x</i> does. Done uniformly, this gives <i>V</i>(<i>cx</i>)/<i>V</i>(<i>x</i>) → <i>c</i>; identifying the mass with <i>A</i> gives the formula.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script computes φ(<i>n</i>) for every <i>n</i> up to 62 million, which gives every totient value up to 10<sup>7</sup>. It finds <i>V</i>(10<sup><i>k</i></sup>) = 6, 38, 291, 2,374, 20,254, 180,184 and 1,634,372 for <i>k</i> = 1, …, 7.</li>
+  <li>The ratio <i>V</i>(<i>x</i>)/(<i>x</i>/log <i>x</i>) is 2.19, 2.33, 2.49 and 2.63 at 10<sup>4</sup>, …, 10<sup>7</sup>. The ratio <i>V</i>(2<i>x</i>)/<i>V</i>(<i>x</i>) is 1.890, 1.925, 1.939 and 1.945 at <i>x</i> = 10<sup>4</sup>, 10<sup>5</sup>, 10<sup>6</sup> and 5·10<sup>6</sup>.</li>
+  <li>The script also reproduces <i>C</i><sub>0</sub> = 0.8178146 and <i>D</i><sub>0</sub> = 2.1769687, and the phase at 10<sup>7</sup>.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf">An asymptotic formula for the number of totients (PDF)</a>, dated September 25, 2026 (39 pages).</li>
+  <li>The Lean statements: <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/TotientAsymptotic.lean">TotientAsymptotic.lean</a> and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/TotientCompanionZero.lean">TotientCompanionZero.lean</a>, and <a href="https://github.com/openai/math/blob/main/lean/docs/024.md">OpenAI’s scope note</a>.</li>
+  <li><a href="https://arxiv.org/abs/1104.3264">Kevin Ford, The distribution of totients</a>, and <a href="https://www.erdosproblems.com/416">Erdős problem #416</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 024.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +140,30 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf">An asymptotic formula for the number of totients</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Missing values</h3>
+<p>Euler’s totient, φ(n), counts the numbers up to n that share no factor with n except one. φ(9) is six, and φ(10) is four. As n runs through the integers, φ(n) hits some values many times, and skips others completely. Every odd number above one is skipped, and so are some even numbers, like 14 and 26. Let V(x) count the distinct values up to x. Up to ten there are six. Up to a million, about 180,000. Up to 10 million, about 1.63 million. Result 024 in OpenAI’s math repository claims an asymptotic formula for V(x), and answers a question of Erdős and Hall.</p>
+<h3><span class="t num">0:44</span>How many values?</h3>
+<p>φ of a prime p is p − 1, so every prime gives a value: V(x) is at least about x/log x. In 1929, S. S. Pillai showed that the values still have density zero. Over the next 60 years, Erdős, Hall, Pomerance and Maier narrowed the growth to x/log x, times a factor like e to the power of a constant times (log log log x)². In 1998, Kevin Ford pinned down the size, up to a bounded factor. Up to 10 million, V(x) is about 2.6 times x/log x, and that ratio keeps creeping up, extremely slowly. Erdős and Hall asked a sharper question. If you double x, does V(x) double, in the limit? More generally, does V(cx)/V(x) tend to c? Ford showed the ratio stays between two constants above one, but not where it goes. Up to 10 million, doubling x multiplies V by about 1.95.</p>
+<h3><span class="t num">1:43</span>The claim</h3>
+<p>The preprint, 39 pages, dated September 25, claims an asymptotic formula: V(x) is Ford’s scale, times a coefficient A of a slowly turning phase, theta. A is a limit of formulas built from finite arithmetic data, and stays between two positive constants. The phase moves with log log log x. At 10 million it sits at about 0.64, and it doesn’t complete its turn until x is around 10^213. Separately, by counting the largest prime factor, the paper proves that V(cx)/V(x) tends to c, for every fixed c. The paper’s answer to Erdős and Hall is yes. It also counts totients by the size of their smallest preimage. OpenAI published a Lean proof of these statements, about 800 files and 73,000 lines, not counting Mathlib and the libraries it uses. We haven’t run the check.</p>
+<h3><span class="t num">2:41</span>How the proof goes</h3>
+<p>A typical value comes from an n whose prime factors, in decreasing order, shrink in a regular pattern: Ford showed where their log log sizes sit. The proof splits these primes into a long prefix and a short tail of small primes. The prefix is counted by volume, as a region of a simplex. The tail is kept exactly, because different tails can give the same value. Inclusion-exclusion over those finitely many tails produces the coefficient A. The danger is collisions: different prefixes giving the same value. Comparing products of shifted primes, like (p − 1)(q − 1), in the layered method of Maier, Pomerance and Ford, shows they are rare. Then the largest prime does the scaling. Fix the rest of n, with totient d. Counting the largest prime p with (p − 1)·d below x is like counting primes up to x/d, and multiplying x by c multiplies that count by c, in the limit. The paper makes this work for all the pieces at once.</p>
+<h3><span class="t num">3:47</span>Where it stands</h3>
+<p>This is a preprint, not peer reviewed, and we haven’t run the Lean check. The coefficient A is a limit, not a number you can look up, and the paper doesn’t say whether it really varies with the phase. No rate is claimed. Whether the smallest preimage of a value can be arbitrarily large compared with the value stays open. Totient values thin out in a way that took most of a century to measure. If the proof holds, multiplying x by c multiplies their count by c, in the limit.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20024%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../023-pattersons-first-moment-cubic-gauss/"><span class="dir">Previous · 023</span><span class="pt">Patterson's first moment for cubic Gauss sums</span></a>
-  <a class="next" href="../025-short-egyptian-fractions/"><span class="dir">Next · 025</span><span class="pt">Short Egyptian fractions</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/number-theory/">More in number theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

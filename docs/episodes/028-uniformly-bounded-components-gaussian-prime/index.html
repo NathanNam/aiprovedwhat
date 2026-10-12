@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 028: Uniformly bounded components of Gaussian-prime graphs | AI Proved What?</title>
-<meta name="description" content="Uniformly bounded components of Gaussian-prime graphs. Result 028 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Walk to infinity? The Gaussian moat conjecture | AI Proved What?</title>
+<meta name="description" content="An AI system says it has proved the Gaussian moat conjecture: no walk through Gaussian primes with steps of bounded length reaches infinity, and every cluster has a size bound depending only on the step length. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/028-uniformly-bounded-components-gaussian-prime/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 028: Uniformly bounded components of Gaussian-prime graphs | AI Proved What?">
-<meta property="og:description" content="Uniformly bounded components of Gaussian-prime graphs. Result 028 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Walk to infinity?">
+<meta property="og:description" content="An AI system says it has proved the Gaussian moat conjecture: no walk through Gaussian primes with steps of bounded length reaches infinity, and every cluster has a size bound depending only on the step length. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/028-uniformly-bounded-components-gaussian-prime/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/028-uniformly-bounded-components-gaussian-prime/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 028 · <a href="../../subjects/number-theory/">Number theory</a></p>
-<h1 class="result-title">Uniformly bounded components of Gaussian-prime graphs</h1>
+<p class="meta">Episode 028, October 2026</p>
+<h1>Walk to infinity?</h1>
+<p class="subtitle">The Gaussian moat conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 028 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="rLDtzy4HOvY" data-title="Episode 028: Walk to infinity?">
+  <a href="https://youtu.be/rLDtzy4HOvY">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 028: Walk to infinity? The Gaussian moat conjecture. The Gaussian primes in a square around the origin, with the cluster reachable from the origin by steps of length at most 2 shown in gold, a star-shaped region surrounded by primes it cannot reach.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:31. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/rLDtzy4HOvY?t=0" data-t="0"><span class="t">0:00</span><span>Gaussian primes</span></a></li>
+  <li><a href="https://youtu.be/rLDtzy4HOvY?t=49" data-t="49"><span class="t">0:49</span><span>Moats</span></a></li>
+  <li><a href="https://youtu.be/rLDtzy4HOvY?t=105" data-t="105"><span class="t">1:45</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/rLDtzy4HOvY?t=144" data-t="144"><span class="t">2:24</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/rLDtzy4HOvY?t=242" data-t="242"><span class="t">4:02</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves the Gaussian moat conjecture: no infinite walk through distinct Gaussian primes can have uniformly bounded steps. More strongly, for every distance bound <i>D</i>, the graph joining Gaussian primes at distance at most <i>D</i> has uniformly bounded finite component sizes, depending only on <i>D</i>, including primes on the coordinate axes.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Gaussian primes are the Gaussian integers <i>a</i> + <i>bi</i> that cannot be factored. Off the axes they are exactly those with <i>a</i>² + <i>b</i>² prime; on the axes they are ±<i>p</i> and ±<i>pi</i> for primes <i>p</i> ≡ 3 (mod 4). In 1962 Basil Gordon asked whether one can walk to infinity on Gaussian primes with steps of bounded length (<a href="https://www.erdosproblems.com/952">Erdős problem #952</a>).</p>
+<p>Result 028 (<a href="https://github.com/openai/math/blob/main/preprints/Bounded-Step-Walks-on-Gaussian-Primes-September-26-2026/paper.pdf">29 pages</a>) claims the Gaussian moat conjecture in a strong form: for every step length <i>D</i> there is a finite <i>B</i>(<i>D</i>) such that every connected cluster of Gaussian primes, joining primes at distance at most <i>D</i>, has at most <i>B</i>(<i>D</i>) primes, wherever it is and including the axes. So every walk through distinct Gaussian primes with steps at most <i>D</i> has at most <i>B</i>(<i>D</i>) terms.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The bound <i>B</i>(<i>D</i>) is not explicit. The proof gives no estimate of how far a walk from the origin can get, so it does not replace the computer searches for the width of the moat around the origin.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 26, 2026, released October 6; 29 pages</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,51 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/028.md">scope notes</a>)</dd>
+    <dd>By OpenAI (<a href="https://github.com/openai/math/blob/main/lean/docs/028.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 11, 2026.</p>
+<p class="ledger-note">Last checked October 11, 2026. The claim has not been withdrawn, and we found no public response to it; Erdős problem #952 was still listed as open. OpenAI’s <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/GaussianMoat.lean">Lean statement</a> covers both the absence of an infinite walk and the uniform bound on every cluster and every finite walk. Following its imports gives 41 files and about 12,700 lines, not counting Mathlib, with no unfinished proofs (<code>sorry</code>). The result is listed in OpenAI’s formalization catalog.</p>
 </section>
 
+<section aria-labelledby="known">
+<h2 id="known">What was known</h2>
+<ul class="sources">
+  <li>Gethner and Stark trace the question to Basil Gordon at the 1962 International Congress of Mathematicians; Erdős credited Gordon and Motzkin. Jordan and Rabung ran early computer searches (1970).</li>
+  <li><a href="https://doi.org/10.1080/10586458.1997.10504616">Gethner and Stark</a> (1997) formulated a bound uniform in the starting point, built periodic obstructions for steps √2 and 2, and proposed sieving by small Gaussian primes for larger steps. <a href="https://doi.org/10.1080/10586458.1998.10504373">Vardi</a> (1998) studied the periodic coprimality graphs and the passage to a uniform bound.</li>
+  <li><a href="https://doi.org/10.1080/00029890.1998.12004889">Gethner, Wagon and Wick</a> (1998) showed that prime-free disks can be as large as you like, and found a moat of width √26 around the origin. <a href="https://doi.org/10.1093/ietfec/e88-a.5.1267">Tsuchimura</a> (2005) showed that steps up to √32 reach 2,106,442 + 1,879,505<i>i</i>, about 2.8 million from the origin, and that steps up to 6 stay within about 80 million.</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A periodic sieve.</strong> For primes <i>p</i> ≡ 1 (mod 4), split <i>p</i> into two conjugate Gaussian primes and remove all their multiples. Every Gaussian prime survives except the chosen factors and their associates, and the surviving set repeats with period <i>Q</i>, the product of the chosen primes.</li>
+  <li><strong>Periodicity gives uniformity.</strong> If the survivors have no infinite walk with steps at most <i>D</i>, a cluster cannot contain two points a period apart, so every cluster has at most <i>Q</i>² points; adding back the removed factors gives a bound for all Gaussian primes (also in Vardi).</li>
+  <li><strong>Avoidance costs information.</strong> Suppose an infinite walk avoids the removed points for a long list of prime batches. Sampling differences along the walk and choosing one Gaussian factor of each prime at random, the paper shows that, for each batch of primes near <i>T</i>, each step must reveal on average at least <i>c</i>/log <i>T</i> about the walk’s residues modulo those primes.</li>
+  <li><strong>The budget.</strong> A step has at most <i>K<sub>D</sub></i> possible values, so it carries at most log <i>K<sub>D</sub></i>. With batches at geometrically growing sizes, the costs add up like the harmonic series, so enough batches exceed the budget. An entropy telescope, related to Tao’s entropy-decrement argument, makes the costs add.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script checks the primality rule by brute-force division in the Gaussian integers, and follows every walk from the origin (added as a starting point). Over the whole plane, steps up to √2 reach 100 primes, farthest 11 + 4<i>i</i>; up to 2, 720 primes, farthest 42 + 17<i>i</i>; up to √8, 2,996, farthest 84 + 41<i>i</i>; up to √10, 249,508, farthest 976 + 311<i>i</i>.</li>
+  <li>Tsuchimura’s count of about 1.04 × 10<sup>11</sup> primes for steps up to √32 is for one eighth of the plane; the whole cluster has about 8 × 10<sup>11</sup>.</li>
+  <li>The toy sieve removes the multiples of 2 ± <i>i</i> and 3 ± 2<i>i</i> (the factors of 5 and 13). The survivors have density (4/5)²(12/13)² ≈ 0.545 and period 65; with unit steps they form finite islands, the largest of 580 points.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Bounded-Step-Walks-on-Gaussian-Primes-September-26-2026/paper.pdf">Bounded-Step Walks on Gaussian Primes (PDF)</a>, dated September 26, 2026 (29 pages).</li>
+  <li>The Lean statement: <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/GaussianMoat.lean">GaussianMoat.lean</a>, and <a href="https://github.com/openai/math/blob/main/lean/docs/028.md">OpenAI’s scope note</a>.</li>
+  <li><a href="https://www.erdosproblems.com/952">Erdős problem #952</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 028.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -74,18 +140,30 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Bounded-Step-Walks-on-Gaussian-Primes-September-26-2026/paper.pdf">Bounded-Step Walks on Gaussian Primes</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Gaussian primes</h3>
+<p>Gaussian integers are the points a + bi of the square grid. Some of them factor: five is 2 + i, times 2 − i. The ones that don’t are the Gaussian primes. Off the axes, a + bi is prime exactly when a² + b² is an ordinary prime. On the axes, the primes are ordinary primes that leave remainder three when divided by four, like three, seven and eleven, and their turns by i. In 1962, Basil Gordon asked: can you walk to infinity, stepping only on Gaussian primes, with steps of bounded length? Along a line, no: there are arbitrarily long gaps between primes. But in the plane, a walk can go around a gap. The Gaussian moat conjecture says the answer is still no: for every step length, some moat stops you.</p>
+<h3><span class="t num">0:49</span>Moats</h3>
+<p>Computers can follow every walk from the origin. With steps up to √2, you never get farther than about 12: the reachable primes are walled in. Steps up to two reach 42 + 17i, about 45 away. √8 reaches about 93. √10 reaches about 1,000, through a quarter of a million primes. In 2005, Tsuchimura went much further. With steps up to √32, the walk reaches about 2.8 million from the origin, through about 800 billion primes. With steps up to six, it’s walled in within 80 million. But a computation only surrounds one starting region. Gethner, Wagon and Wick showed that prime-free disks can be as large as you like. But a walk can go around a disk. Gethner and Stark built periodic walls for the smallest steps, and suggested sieving by small primes for larger ones.</p>
+<h3><span class="t num">1:45</span>The claim</h3>
+<p>Result 028 in OpenAI’s math repository claims to settle the question. The preprint, 29 pages, dated September 26, claims: for every step length D, there’s a number B(D) such that every cluster of Gaussian primes joined by steps of length at most D has at most B(D) primes, wherever it is, including on the axes. So every such walk that never revisits a prime ends after at most B(D) primes. B(D) isn’t computed. OpenAI also published a Lean proof: 41 files and about 12,700 lines, not counting Mathlib. We haven’t run the check.</p>
+<h3><span class="t num">2:24</span>How the proof goes</h3>
+<p>The proof starts with a sieve. Take ordinary primes that leave remainder one when divided by four, like five and thirteen. Each splits into two Gaussian primes: five into 2 + i and 2 − i. Remove every multiple of these factors. Every Gaussian prime survives, except those factors and their turns by i, and the survivors repeat with period Q, the product of the chosen primes. Suppose the survivors have no infinite walk. Then a cluster can’t contain two points a period apart: shifting by the period would map the finite cluster into itself, which is impossible. So each cluster has at most Q² points, wherever it starts. Here’s a toy case, with steps of length one: after sieving by the factors of five and thirteen, the survivors break into islands, the largest with 580 points. The hard part is showing that enough primes trap every walk. Suppose an infinite walk with steps at most D avoids every removed point. The paper shows that dodging costs information: for each batch of primes near a size T, each step must reveal, on average, at least c/log T about where the walk sits modulo those primes. But each step is one of a bounded number of moves, so it carries at most a fixed amount of information. Over batches at sizes that grow geometrically, the costs add up like the harmonic series, without bound. So enough batches exceed the budget, and no such walk exists. The tools include sampling differences along the walk, picking one Gaussian factor of each prime at random, and an entropy telescope related to Tao’s entropy-decrement argument.</p>
+<h3><span class="t num">4:02</span>Where it stands</h3>
+<p>This is a preprint, not peer reviewed. OpenAI’s Lean proof covers both the cluster bound and the walk statement, and we haven’t run it. The bound isn’t explicit, so it doesn’t say how far a walk can actually get. If the proof holds, there’s no walk to infinity on Gaussian primes with bounded steps: every cluster is finite, with a size limit that depends only on the step length.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20028%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../027-potential-integral-density-curve-character/"><span class="dir">Previous · 027</span><span class="pt">Potential integral density on curve character varieties</span></a>
-  <a class="next" href="../029-primitive-roots-every-admissible-integer/"><span class="dir">Next · 029</span><span class="pt">Primitive roots for every admissible integer base</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/number-theory/">More in number theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

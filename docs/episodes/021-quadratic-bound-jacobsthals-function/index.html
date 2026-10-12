@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 021: A quadratic bound for Jacobsthal’s function | AI Proved What?</title>
-<meta name="description" content="A quadratic bound for Jacobsthal’s function. Result 021 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>How long a run? Jacobsthal’s function is quadratic | AI Proved What?</title>
+<meta name="description" content="An AI system says it has proved that k primes can never cover more than a constant times k² consecutive integers, answering Jacobsthal’s question. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/021-quadratic-bound-jacobsthals-function/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 021: A quadratic bound for Jacobsthal’s function | AI Proved What?">
-<meta property="og:description" content="A quadratic bound for Jacobsthal’s function. Result 021 in OpenAI&#x27;s math release (Number theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="How long a run?">
+<meta property="og:description" content="An AI system says it has proved that k primes can never cover more than a constant times k² consecutive integers, answering Jacobsthal’s question. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/021-quadratic-bound-jacobsthals-function/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/021-quadratic-bound-jacobsthals-function/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,51 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 021 · <a href="../../subjects/number-theory/">Number theory</a></p>
-<h1 class="result-title">A quadratic bound for Jacobsthal’s function</h1>
+<p class="meta">Episode 021, October 2026</p>
+<h1>How long a run?</h1>
+<p class="subtitle">A quadratic bound for Jacobsthal’s function</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 021 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="WwXctn2i2jE" data-title="Episode 021: How long a run?">
+  <a href="https://youtu.be/WwXctn2i2jE">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 021: How long a run? Jacobsthal’s function is at most quadratic. The integers 1 to 11 in boxes, with 2 through 10 outlined in gold and colored dots marking divisibility by 2, 3, 5 and 7, above h(k) ≪ k².">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:36. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/WwXctn2i2jE?t=0" data-t="0"><span class="t">0:00</span><span>Covering a run</span></a></li>
+  <li><a href="https://youtu.be/WwXctn2i2jE?t=52" data-t="52"><span class="t">0:52</span><span>The covering game</span></a></li>
+  <li><a href="https://youtu.be/WwXctn2i2jE?t=109" data-t="109"><span class="t">1:49</span><span>Upper bounds</span></a></li>
+  <li><a href="https://youtu.be/WwXctn2i2jE?t=142" data-t="142"><span class="t">2:22</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/WwXctn2i2jE?t=198" data-t="198"><span class="t">3:18</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/WwXctn2i2jE?t=252" data-t="252"><span class="t">4:12</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Answers Jacobsthal's quadratic-bound question: every interval of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><msup><mi>k</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">Ck^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span> consecutive integers contains an integer coprime to any prescribed positive integer with at most <i>k</i> distinct prime divisors, for an absolute constant <i>C</i>. The bound is uniform over prime sets and interval positions and removes the classical logarithmic loss.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The nine integers 2, 3, …, 10 are each divisible by 2, 3, 5 or 7, but no ten consecutive integers are: every run of ten contains a number coprime to 210. For a number <i>n</i>, Jacobsthal’s <i>j</i>(<i>n</i>) is the shortest length such that every run of that length contains a number coprime to <i>n</i>; so <i>j</i>(210) = 10. Jacobsthal’s function <i>h</i>(<i>k</i>) is the largest <i>j</i>(<i>n</i>) over numbers <i>n</i> with at most <i>k</i> distinct prime factors. Equivalently, <i>h</i>(<i>k</i>) − 1 is the longest interval that one residue class for each of <i>k</i> primes can cover, because by the Chinese remainder theorem choosing the classes is the same as shifting the interval.</p>
+<p>Result 021 (<a href="https://github.com/openai/math/blob/main/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf">83 pages</a>) claims that <i>h</i>(<i>k</i>) ≤ <i>C</i>·<i>k</i><sup>2</sup>/(log log 3<i>k</i>)<sup>2</sup> for every <i>k</i> ≥ 1, with an absolute constant <i>C</i>. In particular <i>h</i>(<i>k</i>) ≪ <i>k</i><sup>2</sup>, which answers the question Jacobsthal asked and Erdős recorded in 1962: the key question of <a href="https://www.erdosproblems.com/970">Erdős problem #970</a>.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The constant <i>C</i> is not computed (the paper’s constants need not be effective). The true order of <i>h</i>(<i>k</i>) remains open: the best lower bound is roughly <i>k</i>(log <i>k</i>)<sup>2</sup>, far below this upper bound, and the “order of magnitude” part of problem #970 is still unanswered.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 25, 2026, released October 6; 83 pages</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +89,50 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/021.md">scope notes</a>)</dd>
+    <dd>Both bounds, by OpenAI (<a href="https://github.com/openai/math/blob/main/lean/docs/021.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 11, 2026.</p>
+<p class="ledger-note">Last checked October 11, 2026. The claim has not been withdrawn, and we found no public critique; erdosproblems.com still lists problem #970 as open. OpenAI’s Lean proofs assert both the <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/Jacobsthal.lean">quadratic bound</a> and the <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/JacobsthalImproved.lean">bound with the iterated-logarithm saving</a>; with their supporting library they run to 819 files and about 152,000 lines, not counting Mathlib. The quadratic statement is listed in OpenAI’s <a href="https://github.com/openai/math/blob/main/lean/formalization.yaml">formalization catalog</a>, whose review status is “unchecked”.</p>
 </section>
 
+<section aria-labelledby="known">
+<h2 id="known">What was known</h2>
+<ul class="sources">
+  <li>Exact values: <i>h</i>(<i>k</i>) = 2, 4, 6, 10, 14, 22, 26, 34 for <i>k</i> = 1, …, 8. Hajdu and Saradha (2012) proved that the first <i>k</i> primes are a best choice for <i>k</i> ≤ 23, but not for <i>k</i> = 24, where they give 234 while <i>h</i>(24) = 236.</li>
+  <li>Upper bounds: Brun’s sieve gives a fixed power of <i>k</i> (Erdős, 1962); Vaughan (1977) <i>k</i><sup>2</sup>(log <i>k</i>)<sup>4</sup>; Iwaniec (1978) <i>k</i><sup>2</sup>(log <i>k</i>)<sup>2</sup>.</li>
+  <li>Lower bound: the construction behind the long prime gaps of Ford, Green, Konyagin, Maynard and Tao (2018) gives <i>h</i>(<i>k</i>) ≫ <i>k</i>(log <i>k</i>)<sup>2</sup> log log log <i>k</i> / log log <i>k</i>.</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A counting theorem.</strong> Forbid any residue class for every prime up to <i>z</i>. In an interval of length about <i>z</i><sup>2</sup>/(log <i>z</i>)<sup>2</sup>, the paper proves that a definite number of integers survive, not just one. Taking <i>z</i> about <i>k</i> log <i>k</i>/log log <i>k</i>, that surplus absorbs the remaining prime factors.</li>
+  <li><strong>The decreasing-prime tree.</strong> The removed integers are sorted by the smallest prime at which they hit a forbidden class, then the same is repeated inside each piece; the result is a tree of decreasing prime tuples whose levels alternately overcount and undercount.</li>
+  <li><strong>The reference calculation.</strong> If every branch held exactly its expected count, the tree is governed by the classical linear-sieve functions, right at the limit where their main term vanishes; a smaller boundary term survives and is positive.</li>
+  <li><strong>The comparison.</strong> The actual classes can disagree with the reference. An inverse estimate shows that many disagreements force the forbidden classes to line up with one of finitely many fractions <i>A</i>/<i>D</i> (with <i>D</i>·<i>a<sub>p</sub></i> ≡ <i>A</i> mod <i>p</i>); variance estimates narrow these fractions, and a stopping rule shows the aligned branches leave more survivors, not fewer.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script checks the run 2–10, <i>j</i>(210) = 10, the values <i>j</i> of the first eight primorials (2, 4, 6, 10, 14, 22, 26, 34), and that <i>h</i>(<i>k</i>) equals these for <i>k</i> ≤ 5 by searching all sets of primes below 30.</li>
+  <li>The growth-rate chart plots the shapes of the bounds with constants set to 1; it is not a comparison of actual values.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf">A quadratic bound for Jacobsthal’s function (PDF)</a>, dated September 25, 2026 (83 pages).</li>
+  <li>The Lean statements: <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/Jacobsthal.lean">quadratic bound</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/JacobsthalImproved.lean">iterated-log bound</a>, and <a href="https://github.com/openai/math/blob/main/lean/docs/021.md">OpenAI’s scope note</a>.</li>
+  <li><a href="https://www.erdosproblems.com/970">Erdős problem #970</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 021.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +140,32 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf">A quadratic bound for Jacobsthal's function</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Covering a run</h3>
+<p>Take the primes 2, 3, 5 and 7. How long a run of consecutive integers can you find where every number is divisible by at least one of them? 2 through 10 works: 9 numbers in a row. 10 in a row is impossible. So every 10 consecutive integers contain a number with none of these four prime factors. Jacobsthal’s function, h(k), is the shortest length that always contains such a number, for any k primes and wherever the run starts. For k = 4, it’s 10. Ernst Jacobsthal studied this function from 1960, and asked whether h(k) grows at most like k². That’s the key question in Erdős problem #970, still listed as open. Result 021 in OpenAI’s math repository claims the answer is yes.</p>
+<h3><span class="t num">0:52</span>The covering game</h3>
+<p>Here’s the same question as a game. For each prime, you may forbid one residue class: one out of every p integers. Your goal is to cover an interval completely. By the Chinese remainder theorem, choosing classes is the same as shifting the interval, so h(k) − 1 is the longest interval that k primes can cover. Small cases are known exactly: 2, 4, 6, 10, 14, 22, and so on. Up to 23 primes, the first k primes do best. At 24, Lajos Hajdu and N. Saradha found a set that beats them, so h(24) is 236. The construction behind the long prime gaps of Ford, Green, Konyagin, Maynard and Tao shows that h(k) grows at least roughly like k (log k)². So the truth lies somewhere between about k (log k)², and k² (log k)².</p>
+<h3><span class="t num">1:49</span>Upper bounds</h3>
+<p>Upper bounds come from sieve theory. Brun’s sieve gave some fixed power of k. Robert Vaughan proved k² (log k)⁴ in 1977, and Henryk Iwaniec, in 1978, k² (log k)². Those two extra logs had stood ever since. Why does the square appear? A sieve handles primes only up to about the square root of the interval’s length. The question sits exactly at the limit of the linear sieve, the point where its usual lower bound drops to zero.</p>
+<h3><span class="t num">2:22</span>The claim</h3>
+<p>The preprint, 83 pages, dated September 25, claims that h(k) is at most a constant times k²/(log log 3k)². That grows more slowly than k², and it holds for every k and every set of primes. It answers Jacobsthal’s question, and even saves a little more. The engine is a counting theorem. Forbid any class for every prime up to z. In an interval of length about z²/(log z)², not just one integer survives, but a definite number of them. That surplus absorbs the remaining prime factors. OpenAI also published a Lean proof of the quadratic bound and of the stronger version: about 800 files and 150,000 lines, not counting Mathlib. The quadratic statement is in OpenAI’s formalization catalog. We haven’t run the check.</p>
+<h3><span class="t num">3:18</span>How the proof goes</h3>
+<p>First, sort the removed integers by the smallest prime at which they hit a forbidden class, then repeat inside each piece with smaller primes. This expands the count into a tree of decreasing prime tuples, whose levels alternately overcount and undercount, like inclusion and exclusion. Next, pretend every branch holds exactly its expected count. This reference tree is governed by the classical sieve functions, right at the limit where the main term vanishes. A smaller boundary term survives, and it’s positive. The real classes can disagree with the reference. The paper proves an inverse estimate: if many branches disagree, the forbidden classes must line up with one of finitely many fractions, A/D. Variance estimates narrow the fractions, and a stopping rule shows such aligned branches actually leave more survivors, not fewer.</p>
+<h3><span class="t num">4:12</span>Where it stands</h3>
+<p>This is a preprint, not peer reviewed. The constant isn’t computed, and the true size of h(k) is still unknown: the gap between the lower bound and this upper bound remains wide. Four primes can cover 9 numbers in a row. If the proof holds, k primes can never cover more than a constant times k².</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20021%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../020-squarefree-quartics-power-free-polynomial/"><span class="dir">Previous · 020</span><span class="pt">Squarefree quartics and power-free polynomial values</span></a>
-  <a class="next" href="../022-weak-inhomogeneous-duffin-schaeffer-conjecture/"><span class="dir">Next · 022</span><span class="pt">The weak inhomogeneous Duffin–Schaeffer conjecture</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/number-theory/">More in number theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
