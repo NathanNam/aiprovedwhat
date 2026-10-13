@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 075: The L log L Fourier-convergence conjecture | AI Proved What?</title>
-<meta name="description" content="The L log L Fourier-convergence conjecture. Result 075 in OpenAI&#x27;s math release (Real and complex analysis): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Enough to converge? The L log L Fourier-convergence conjecture | AI Proved What?</title>
+<meta name="description" content="An AI system claims that the Fourier series of every L log L function converges almost everywhere, with a Lean proof. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/075-fourier-convergence-conjecture/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 075: The L log L Fourier-convergence conjecture | AI Proved What?">
-<meta property="og:description" content="The L log L Fourier-convergence conjecture. Result 075 in OpenAI&#x27;s math release (Real and complex analysis): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Enough to converge?">
+<meta property="og:description" content="An AI system claims that the Fourier series of every L log L function converges almost everywhere, with a Lean proof. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/075-fourier-convergence-conjecture/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/075-fourier-convergence-conjecture/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,51 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 075 · <a href="../../subjects/real-and-complex-analysis/">Real and complex analysis</a></p>
-<h1 class="result-title">The <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mi>log</mi><mo>⁡</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">L\log L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">L</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">L</span></span></span></span> Fourier-convergence conjecture</h1>
+<p class="meta">Episode 075, October 2026</p>
+<h1>Enough to converge?</h1>
+<p class="subtitle">The L log L Fourier-convergence conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 075 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="OHhyljpwDdc" data-title="Episode 075: Enough to converge?">
+  <a href="https://youtu.be/OHhyljpwDdc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 075: Enough to converge? A blue square wave with a yellow Fourier partial sum wiggling around it, above the formula f in L log L implies S N f converges to f almost everywhere.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:00. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/OHhyljpwDdc?t=0" data-t="0"><span class="t">0:00</span><span>Do Fourier series converge?</span></a></li>
+  <li><a href="https://youtu.be/OHhyljpwDdc?t=90" data-t="90"><span class="t">1:30</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/OHhyljpwDdc?t=129" data-t="129"><span class="t">2:09</span><span>Why L log L</span></a></li>
+  <li><a href="https://youtu.be/OHhyljpwDdc?t=216" data-t="216"><span class="t">3:36</span><span>Trees, noise and phases</span></a></li>
+  <li><a href="https://youtu.be/OHhyljpwDdc?t=310" data-t="310"><span class="t">5:10</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves that the ordinary symmetric Fourier partial sums of every complex-valued function in <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mi>log</mi><mo>⁡</mo><mi>L</mi><mo stretchy="false">(</mo><mi mathvariant="double-struck">T</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">L\log L(\mathbb T)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">L</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">L</span><span class="mopen">(</span><span class="mord mathbb">T</span><span class="mclose">)</span></span></span></span> converge almost everywhere along the full sequence. This resolves the classical sufficiency conjecture at the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mi>log</mi><mo>⁡</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">L\log L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">L</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">L</span></span></span></span> scale.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A periodic function can be written as a sum of sines and cosines. Cutting the sum off at frequency N gives the partial sum S<sub>N</sub>f. For a square wave the partial sums converge at every point away from the jumps, overshooting near a jump by about 9% of the jump. But in 1923 Kolmogorov built an integrable function whose Fourier series diverges almost everywhere, and later one that diverges everywhere.</p>
+<p>In 1966 Carleson proved that the Fourier series of every square-integrable function converges almost everywhere, and Hunt extended this to L<sup>p</sup> for every p &gt; 1. Between L<sup>p</sup> and L<sup>1</sup> lies a ladder of classes: Sjölin reached L log L log log L, Antonov L log L log log log L, and Soria, Arias de Reyna and others found further convergence classes. In the other direction, Konyagin built everywhere divergent examples in every class a little smaller than L√(log L / log log L). The conjecture in between is that L log L, the functions with |f| log |f| integrable, is enough.</p>
+<p>Result 075 is <a href="https://github.com/openai/math/blob/main/preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/paper.pdf">one OpenAI preprint</a> (76 pages, dated September 23, 2026). It claims to prove the conjecture: for every complex-valued function in L log L on the circle, the ordinary symmetric partial sums converge to f almost everywhere, along the full sequence of N. As a consequence the largest partial sum obeys a weak-type bound in terms of the L log L norm.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Nothing about the classes between Konyagin’s divergent examples and L log L, and nothing beyond ordinary one-dimensional Fourier series.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 23, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +89,41 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/075.md">scope notes</a>)</dd>
+    <dd>The main theorem, by OpenAI (<a href="https://github.com/openai/math/blob/main/lean/docs/075.md">scope note</a>); we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 12, 2026. The preprint has not been revised. OpenAI’s <a href="https://github.com/openai/math/blob/main/lean/docs/075.md">scope note</a> describes a Lean proof of the theorem, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/FourierLLogL.lean">a formal statement</a>: over 150 files and about 30,000 lines with no unfinished proofs, which we have not built. The paper cites no other release paper. Its outside inputs are published results: Chang’s large-spectrum method in Lee’s entropy form, the Griffiths–Ginibre inequalities, Ville’s maximal inequality, the dyadic averaging of Petermichl and of Hytönen, and Stein’s theorem for the maximal bound. We have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>One estimate.</strong> Take a nonnegative input ρ of mass one with values below e<sup>d</sup>. Remove the points where its maximal average exceeds (log d)<sup>4</sup>; the removed set has measure at most C/(log d)<sup>4</sup>, and on the rest the integral of the largest partial sum is at most C d.</li>
+  <li><strong>Height layers.</strong> Split f into layers with values between e<sup>2<sup>j</sup></sup> and e<sup>2<sup>j+1</sup></sup>. A layer of mass m, rescaled to mass one, has height about e<sup>d</sup> and costs about m d; adding these costs is essentially the integral of |f| log |f|, so the total is finite exactly at the L log L scale.</li>
+  <li><strong>Almost every point.</strong> The removed sets shrink at least as fast as 1/j<sup>4</sup>, so almost every point is removed only finitely often. Off them, the integral bound and the finite total cost make the largest partial sums of the far layers summable almost everywhere; the first layers are bounded.</li>
+  <li><strong>A tree of intervals.</strong> Along a path down a dyadic tree, half the difference of the averages of the modulated input on the two halves is emitted with the sign of a later step, and the path stops when the input’s average exceeds the threshold. The key proposition bounds the integral of the largest such sum over all integer frequencies by C d, uniformly in the depth and the number of frequencies.</li>
+  <li><strong>Noise and phases.</strong> The input point is observed through noise whose density is proportional to e<sup>−A</sup>, with A a nonnegative combination of one-minus-cosine terms. An entropy compression lemma finds a large set of frequencies whose phases nearly agree on one region; Griffiths–Ginibre inequalities help control the cost of each observation; on plateaus of the tree the costs come to order d/h each, with total weight order h.</li>
+  <li><strong>Back to Fourier sums.</strong> Averaging the tree kernels over shifts and scales gives a nonzero multiple of the Hilbert kernel, up to an error controlled on the good set, and the Hilbert transform produces the ordinary partial sums.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script checks the Gibbs overshoot (0.0895 of the jump) and the square-wave partial sums; computes the height layers of 1/(x log<sup>3</sup>(1/x)), whose costs halve and sum to about 0.14, and of 1/(x log<sup>2</sup>(1/x)), whose costs approach 1 per layer; checks that the removed-set bounds are summable and that e<sup>4 log log d</sup> = (log d)<sup>4</sup>; and averages dyadic kernels over shifts and scales, finding x times the kernel constant at −0.18.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/paper.pdf">Almost-everywhere Fourier convergence in L log L (PDF)</a>, September 23, 2026 (76 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/075.md">OpenAI’s note on the scope of the Lean proof</a> and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/FourierLLogL.lean">the formal statement</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 075.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +131,30 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/paper.pdf">Almost-everywhere Fourier convergence in L log L</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Do Fourier series converge?</h3>
+<p>A periodic function can be written as a sum of sines and cosines. Cut the sum off at frequency N, and you get the partial sum S_N f. Do the partial sums converge back to f? For a square wave they do, at every point away from the jumps, though near a jump they overshoot by about 9% of the jump. But in 1923, Kolmogorov built an integrable function whose Fourier series diverges almost everywhere, and a few years later one that diverges everywhere. In 1966, Carleson proved that the Fourier series of every square-integrable function converges almost everywhere, and Hunt extended this to Lᵖ for every p greater than one. Between Lᵖ and L¹ lies a ladder of classes, measured by how much more than the absolute value of f is integrable. Sjölin reached L log L log log L in 1969, and Antonov L log L log log log L in 1996; Soria found other convergence spaces by extrapolation, and Arias de Reyna and others later found classes larger than Antonov’s. In the other direction, Konyagin built everywhere divergent examples in every class a little smaller than L√(log L / log log L). The conjecture in between: L log L is enough. That is the class of functions for which the absolute value of f, times log of the absolute value of f, is integrable.</p>
+<h3><span class="t num">1:30</span>The claim</h3>
+<p>Result 075 is one OpenAI preprint, 76 pages, dated September 23. It claims to prove the conjecture: for every complex-valued function in L log L on the circle, the ordinary symmetric partial sums converge to f almost everywhere, along the full sequence of N. As a consequence, the largest partial sum obeys a weak-type bound in terms of the L log L norm. OpenAI also published a Lean proof of the theorem: over 150 files and about 30,000 lines, matched against a formal statement in the release. We have not run it.</p>
+<h3><span class="t num">2:09</span>Why L log L</h3>
+<p>The proof rests on one estimate. Take a nonnegative input ρ with total mass one and values below e^d, for large d. Remove the points where its maximal average exceeds (log d)⁴; the removed set has measure at most a constant over (log d)⁴. On the rest, the integral of the largest partial sum is at most a constant times d. Why does that give L log L? Split f into layers by height: values between e^(2^j) and e^(2^(j+1)). A layer of mass m, rescaled to mass one, has height about e^d and costs about m times d, and adding mass times the log of the height over all layers is essentially the integral of the absolute value of f times its log. For a function in L log L, the costs shrink and their sum is finite. For a function like this one, just outside L log L, every layer costs about the same, and the sum diverges. The removed sets shrink at least as fast as 1/j⁴, and those measures have a finite sum. So almost every point is removed only finitely often. Off the removed sets, the integral bound and the finite total cost mean that, at almost every point, the largest partial sums of the far layers add up to something finite. The few remaining layers are bounded functions, which the same estimate handles. That is where the conclusion comes from.</p>
+<h3><span class="t num">3:36</span>Trees, noise and phases</h3>
+<p>To prove the estimate, the paper works on a binary tree of intervals. Follow a path down the tree. At each interval, take half the difference of the averages of the modulated input on the two halves, and emit it with the sign of a later left-or-right step. Stop the path when the input’s average first exceeds the threshold. The key proposition bounds the integral of the largest such sum, over all integer frequencies, by a constant times d, however deep the tree and however many frequencies. Handling many frequencies at once, without a loss that grows with their number, is where the new ideas enter. The paper observes the input point through noise: a label equal to the point plus a random shift, whose density is proportional to e^(−A), with A a nonnegative combination of one-minus-cosine terms. An entropy compression lemma finds a large set of frequencies whose phases nearly agree on one region. Correlation inequalities of Griffiths and Ginibre help control what each new observation costs. Counted on plateaus of the tree, the costs come to order d/h on each, with total weight order h, so order d overall, where h is log log d. Finally, averaging these tree kernels over shifts and scales of the tree gives a nonzero multiple of the Hilbert kernel, 1/(x − y), up to an error controlled on the good set, following Petermichl and Hytönen. The Hilbert transform then produces the ordinary Fourier partial sums.</p>
+<h3><span class="t num">5:10</span>Where it stands</h3>
+<p>The preprint is not yet peer reviewed, and it has not been revised. OpenAI published a Lean proof; we have not run the check. The paper cites no other release paper. Its outside inputs are published results: Chang’s method for large spectra in Lee’s entropy form, the Griffiths and Ginibre inequalities, Ville’s maximal inequality, the dyadic averaging of Petermichl and of Hytönen, and Stein’s theorem for the maximal bound. We have seen no expert review. If it holds, the classical question at the L log L scale is settled: every function in L log L has an almost everywhere convergent Fourier series, along the full sequence of partial sums. What happens in the classes between Konyagin’s divergent examples and L log L remains open.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20075%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../074-kakeya-three-four-dimensions/"><span class="dir">Previous · 074</span><span class="pt">Kakeya in three and four dimensions</span></a>
-  <a class="next" href="../076-real-ultraflat-littlewood-polynomials-unbounded/"><span class="dir">Next · 076</span><span class="pt">Real ultraflat Littlewood polynomials and unbounded binary merit factors</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/real-and-complex-analysis/">More in real and complex analysis</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
