@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 064: Topological triviality of μ-constant surface singularities | AI Proved What?</title>
-<meta name="description" content="Topological triviality of μ-constant surface singularities. Result 064 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Same number, same shape? The μ-constant problem for surfaces | AI Proved What?</title>
+<meta name="description" content="An AI system claims the surface case of the μ-constant problem: a family of isolated surface singularities in three variables with constant Milnor number is topologically trivial. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/064-topological-triviality-mu-constant-surface/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 064: Topological triviality of μ-constant surface singularities | AI Proved What?">
-<meta property="og:description" content="Topological triviality of μ-constant surface singularities. Result 064 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Same number, same shape?">
+<meta property="og:description" content="An AI system claims the surface case of the μ-constant problem: a family of isolated surface singularities in three variables with constant Milnor number is topologically trivial. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/064-topological-triviality-mu-constant-surface/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/064-topological-triviality-mu-constant-surface/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,51 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 064 · <a href="../../subjects/algebraic-and-complex-geometry/">Algebraic and complex geometry</a></p>
-<h1 class="result-title">Topological triviality of <i>μ</i>-constant surface singularities</h1>
+<p class="meta">Episode 064, October 2026</p>
+<h1>Same number, same shape?</h1>
+<p class="subtitle">Topological triviality of μ-constant families of surface singularities</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 064 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="te_PY1ukk_o" data-title="Episode 064: Same number, same shape?">
+  <a href="https://youtu.be/te_PY1ukk_o">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 064: Same number, same shape? A double cone with a red singular point next to a smooth waisted hyperboloid, each inside a ball, a bouquet of four circles below, and the formula f t composed with phi t equals f zero.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:55. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/te_PY1ukk_o?t=0" data-t="0"><span class="t">0:00</span><span>The μ-constant problem</span></a></li>
+  <li><a href="https://youtu.be/te_PY1ukk_o?t=77" data-t="77"><span class="t">1:17</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/te_PY1ukk_o?t=156" data-t="156"><span class="t">2:36</span><span>A logarithmic invariant</span></a></li>
+  <li><a href="https://youtu.be/te_PY1ukk_o?t=245" data-t="245"><span class="t">4:05</span><span>From resolution to homeomorphism</span></a></li>
+  <li><a href="https://youtu.be/te_PY1ukk_o?t=301" data-t="301"><span class="t">5:01</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves topological right-triviality for every holomorphic one-parameter family of isolated hypersurface singularities in ℂ<sup>3</sup> with constant Milnor number, resolving the surface case of the <i>μ</i>-constant problem. After shrinking the parameter disk and representatives, ambient homeomorphisms vary jointly continuously, fix the origin section and preserve the defining functions.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take a polynomial in three complex variables with an isolated critical point at the origin, like x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup>. Its zero set is a surface with one singular point. Nearby level sets are smooth, and inside a small ball each one, the Milnor fiber, looks like a bouquet of two-spheres. The number of spheres is the Milnor number μ, the dimension of the local ring modulo the three partial derivatives: 1 for x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup>, and 6 for x<sup>2</sup> + y<sup>3</sup> + z<sup>4</sup>.</p>
+<p>Now let the polynomial move in a family f<sub>t</sub>. If μ stays constant, is the family topologically trivial: is there, for each t, a homeomorphism of space, varying continuously with t, that turns f<sub>t</sub> into f<sub>0</sub>? Lê and Ramanujam proved in 1976 that constant μ gives constant topological type whenever the hypersurface dimension is not two, and Timourian and King upgraded this to triviality of the family. For surfaces in three-space, where the cobordism argument does not give a product, the question stayed open: the μ-constant problem.</p>
+<p>Result 064 is <a href="https://github.com/openai/math/blob/main/preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/main.pdf">one OpenAI preprint</a> (September 24, 2026; 37 pages). It claims a positive answer for surfaces: every holomorphic one-parameter family of isolated surface singularities in ℂ<sup>3</sup> with constant Milnor number is topologically right-trivial. After shrinking, there are homeomorphisms φ<sub>t</sub>, fixing the origin and continuous in t together with their inverses, with f<sub>t</sub> ∘ φ<sub>t</sub> = f<sub>0</sub>. So the zero sets and all nearby level sets move together.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Topological triviality is weaker than Whitney regularity. In the Briançon–Speder family z<sup>5</sup> + t y<sup>6</sup> z + x y<sup>7</sup> + x<sup>15</sup>, μ stays 364 but the Milnor number of a generic plane section drops from 28 to 26 once t ≠ 0, so the family is not Whitney regular; the theorem says nothing about such finer invariants staying constant. The result is about one-parameter families of isolated singularities in three variables; <a href="https://annals.math.princeton.edu/2024/200-1/p04">constant multiplicity</a> for μ-constant families was already known (Fernández de Bobadilla and Pełka).</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 24, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +89,40 @@
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>Not yet</dd>
+    <dd>No: OpenAI published no Lean proof for this result</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 12, 2026. The preprint has not been revised, and it cites no other paper from the release; one of the Zariski counterexample papers of <a href="https://aiprovedwhat.com/059">episode 059</a> mentions it for context. Its inputs are substantial established theorems: Okuma’s simultaneous resolution, the threefold minimal model program, Langer’s orbifold Bogomolov–Miyaoka–Yau inequality, Greuel and Steenbrink, nearby cycles, and Fernández de Bobadilla and Pełka. We found no public assessment by specialists.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Easy cases.</strong> If the central surface is a double point, the problem reduces to plane curves. If it is log canonical, its multiplicity is at most three, constant multiplicity keeps every generic plane section the same, and Teissier’s criterion finishes.</li>
+  <li><strong>Wahl’s invariant.</strong> Otherwise the paper uses Wahl’s logarithmic invariant β = −P<sub>loc</sub><sup>2</sup>, built from the positive part of the canonical divisor plus all exceptional curves on a resolution. If β is constant, Okuma’s theorem gives a simultaneous resolution after a finite base change.</li>
+  <li><strong>Constant μ forces constant β.</strong> After compactifying, semistable reduction and the threefold log minimal model program, the special fiber is a main component plus extra surfaces S<sub>a</sub>. Constant μ gives 0 = Σ χ<sub>c</sub>(S<sub>a</sub>°) + δ with δ ≥ 0 (Greuel–Steenbrink); nefness and Langer’s inequality give 0 ≤ (K + B)<sup>2</sup> ≤ 3χ<sub>c</sub>(S<sub>a</sub>°). So every extra square vanishes and β is constant.</li>
+  <li><strong>Homeomorphisms.</strong> With the simultaneous resolution (after t = u<sup>e</sup>), an Euler count shows the exceptional curves keep normal crossings. The parameter direction lifts to complete vector fields on the resolved tubes; the flows descend to the punctured zero sets and extend to nearby levels, preserving f. Properness and reverse transport give continuity of the maps and their inverses, and a correction along the angular seam returns to the original disk.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script computes Milnor numbers by Gröbner bases (1, 4, 6, 8 for A<sub>1</sub>, A<sub>4</sub>, E<sub>6</sub>, E<sub>8</sub>; 364 for the Briançon–Speder family at several t, matching the weighted formula 14 × 13/2 × 4), checks the constant multiplicity 5, and computes the generic plane-section Milnor numbers 28 and 26 from Newton polygons with Kouchnirenko’s formula after checking nondegeneracy.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/main.pdf">Topological triviality of mu-constant families of surface singularities (PDF)</a>, September 24, 2026 (37 pages).</li>
+  <li><a href="https://annals.math.princeton.edu/2024/200-1/p04">Fernández de Bobadilla and Pełka, Symplectic monodromy at radius zero and equimultiplicity of μ-constant families</a> (Annals of Mathematics, 2024).</li>
+  <li><a href="https://aiprovedwhat.com/059">Episode 059</a>, on counterexamples to Zariski’s multiplicity conjecture.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 064.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -74,18 +130,30 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Topological-triviality-of-mu-constant-families-of-surface-singularities-September-24-2026/main.pdf">Topological triviality of mu-constant families of surface singularities</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The μ-constant problem</h3>
+<p>Take a polynomial in three complex variables with an isolated critical point at the origin, like x² + y² + z². Its zero set is a surface with one singular point. Nearby level sets are smooth, and inside a small ball each one, the Milnor fiber, looks like a bouquet of two-spheres. The number of spheres is the Milnor number, μ. Algebraically, it is the dimension of the local ring modulo the three partial derivatives: one for x² + y² + z², and six for x² + y³ + z⁴. Now let the polynomial move in a family with a parameter t. If the Milnor number stays constant, is the family topologically trivial: is there, for each t, a homeomorphism of space, varying continuously with t, that turns each function into the first one? Lê and Ramanujam proved in 1976 that constant Milnor number gives constant topological type whenever the hypersurface dimension is not two, and Timourian and King upgraded this to triviality of the family. For surfaces in three-space, where their cobordism argument does not give a product, the question stayed open: the μ-constant problem.</p>
+<h3><span class="t num">1:17</span>The claim</h3>
+<p>Result 064 is one OpenAI preprint, 37 pages, dated September 24. It claims a positive answer for surfaces: every holomorphic one-parameter family of isolated surface singularities in complex three-space with constant Milnor number is topologically right-trivial. After shrinking, there are homeomorphisms φ_t of the ambient space, fixing the origin and varying continuously with t, together with their inverses, such that f_t ∘ φ_t = f_0. So the zero sets and all nearby level sets move together. Constant Milnor number is weaker than Whitney regularity, a stronger form of equisingularity. By Teissier and by Briançon and Speder, Whitney regularity means that the whole sequence of sectional Milnor numbers is constant. In the Briançon–Speder family, z⁵ + t·y⁶z + x·y⁷ + x¹⁵, μ stays 364, but the Milnor number of a generic plane section drops from 28 to 26 once t is nonzero. A proof must handle such families. Fernández de Bobadilla and Pełka had already shown that the multiplicity stays constant.</p>
+<h3><span class="t num">2:36</span>A logarithmic invariant</h3>
+<p>Here is the plan. If the central surface is a double point, or log canonical, the paper reduces to known tools: plane curves in the first case, and multiplicity at most three, constant multiplicity and Teissier’s criterion in the second. The main case is a surface that is not log canonical. There the paper uses Wahl’s logarithmic invariant beta: minus the self-intersection of the positive part of the sum of the canonical divisor and all exceptional curves on a resolution. If beta is constant, Okuma’s theorem gives a simultaneous resolution after a finite base change. So the numerical task is to show that constant μ forces constant beta. To compare beta across the family, the paper compactifies to projective surfaces and runs semistable reduction and the threefold log minimal model program. The special fiber becomes one main component plus extra surfaces over the singular point. Constant Milnor number makes the Euler characteristics cancel: zero equals the sum of the Euler characteristics of the extra open surfaces, plus a correction that is never negative, by Greuel and Steenbrink. With nefness from the model, Langer’s orbifold Bogomolov–Miyaoka–Yau inequality bounds each extra log canonical square between zero and three times that Euler characteristic. Together these force every extra square to vanish, so beta is constant.</p>
+<h3><span class="t num">4:05</span>From resolution to homeomorphism</h3>
+<p>With beta constant, Okuma’s theorem gives, after a base change t = uᵉ, a simultaneous resolution whose exceptional curves stay reduced. An Euler characteristic count shows that they keep normal crossings, since smoothing a node would lower it. On these resolved tubes, the paper lifts the parameter direction to complete vector fields. The flows descend to the punctured zero sets and extend to the nearby nonzero levels, preserving the function. Properness of the tubes and reverse transport give continuity at the origin, for the maps and for their inverses. An explicit correction along the angular seam of the base change brings the trivialization back to the original disk. Parusiński had built trivializing vector fields for linear families, f + t·g, by a gradient method. An appendix explains why a continuous gradient lift alone is not enough: the trajectories need control too.</p>
+<h3><span class="t num">5:01</span>Where it stands</h3>
+<p>The preprint is not yet peer reviewed, and it has not been revised. There is no Lean formalization, and it cites no other paper from the release, though one of the Zariski counterexample papers of episode 059 mentions it for context. Its inputs are substantial established theorems: Okuma’s simultaneous resolution, the threefold minimal model program, Langer’s inequality, Greuel and Steenbrink, nearby cycles, and Fernández de Bobadilla and Pełka. We found no public assessment. If it holds, the μ-constant problem is settled for surfaces: in three variables, a constant Milnor number means the function itself does not change topologically along the family, even when finer invariants, like the Milnor number of a plane section, jump.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20064%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../063-generalized-mukai-conjecture/"><span class="dir">Previous · 063</span><span class="pt">The generalized Mukai conjecture</span></a>
-  <a class="next" href="../065-virasoro-constraints-complete-intersections-projective/"><span class="dir">Next · 065</span><span class="pt">Virasoro constraints for complete intersections and projective-bundle towers</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebraic-and-complex-geometry/">More in algebraic and complex geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

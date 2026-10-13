@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 066: Bounded klt complements for Fano contractions | AI Proved What?</title>
-<meta name="description" content="Bounded klt complements for Fano contractions. Result 066 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>A bounded index? Bounded klt complements for Fano contractions | AI Proved What?</title>
+<meta name="description" content="An AI system claims bounded klt complements for ε-lc Fano contractions, the finite-rational-coefficient form of Shokurov’s conjecture, and the Birkar–Shokurov Cartier-divisor conjecture. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/066-bounded-klt-complements-fano-contractions/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 066: Bounded klt complements for Fano contractions | AI Proved What?">
-<meta property="og:description" content="Bounded klt complements for Fano contractions. Result 066 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="A bounded index?">
+<meta property="og:description" content="An AI system claims bounded klt complements for ε-lc Fano contractions, the finite-rational-coefficient form of Shokurov’s conjecture, and the Birkar–Shokurov Cartier-divisor conjecture. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/066-bounded-klt-complements-fano-contractions/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/066-bounded-klt-complements-fano-contractions/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,35 +37,94 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 066 · <a href="../../subjects/algebraic-and-complex-geometry/">Algebraic and complex geometry</a></p>
-<h1 class="result-title">Bounded klt complements for Fano contractions</h1>
+<p class="meta">Episode 066, October 2026</p>
+<h1>A bounded index?</h1>
+<p class="subtitle">Bounded klt complements for Fano contractions</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 066 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="E153lk2FH_o" data-title="Episode 066: A bounded index?">
+  <a href="https://youtu.be/E153lk2FH_o">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 066: A bounded index? Three orange cones, each sharper than the last with a red vertex, above the formula N times K X plus B is linearly trivial, with N equal to N of d and epsilon.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:40. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/E153lk2FH_o?t=0" data-t="0"><span class="t">0:00</span><span>Complements</span></a></li>
+  <li><a href="https://youtu.be/E153lk2FH_o?t=85" data-t="85"><span class="t">1:25</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/E153lk2FH_o?t=153" data-t="153"><span class="t">2:33</span><span>A threshold, by contradiction</span></a></li>
+  <li><a href="https://youtu.be/E153lk2FH_o?t=229" data-t="229"><span class="t">3:49</span><span>Traces and the companion route</span></a></li>
+  <li><a href="https://youtu.be/E153lk2FH_o?t=290" data-t="290"><span class="t">4:50</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves the finite-rational-coefficient form of Shokurov’s bounded-klt-complement conjecture for <i>ϵ</i>-lc complex Fano-type pairs with nef anti-log-canonical divisor. For <i>ϵ</i>-lc Fano contractions over any algebraically closed characteristic-zero field, it gives klt complements near every base point, with index bounded only by dimension and positive rational <i>ϵ</i>.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>Take a contraction f: X → Z with connected fibers, where minus the canonical divisor K is ample over Z: a Fano contraction. A complement near a point of Z is an effective boundary B that makes K + B trivial there: N(K + B) is an integral Cartier divisor linearly equivalent to zero, and N is the index. On the projective line over a point, two points with coefficient one give index one, but that pair is only log canonical; a klt complement needs every coefficient below one, like four points with coefficient one half, index two.</p>
+<p>Shokurov introduced complements in his work on threefold flips and conjectured that their index can be bounded in each dimension. Birkar proved bounded log canonical complements, a key step toward his boundedness theorem for Fano varieties. Klt complements are harder, because bad singularities push the index up: the cone over a rational normal curve of degree n has a vertex with log discrepancy 2/n, and its klt complements need index at least n/2. So one fixes ε and allows only ε-lc varieties, whose log discrepancies are all at least ε. <a href="https://arxiv.org/abs/2403.01154">Chen</a> reduced the conjecture to a local threshold statement and proved it over bases of dimension at most two.</p>
+<p>Result 066 is two OpenAI preprints, both dated September 25, 2026. <a href="https://github.com/openai/math/blob/main/preprints/Bounded-klt-complements-for-Fano-contractions-September-25-2026/Bounded-klt-complements-for-Fano-contractions-September-25-2026.pdf">The first</a> (93 pages) claims: for each dimension d and rational ε there is an index N(d, ε) such that every ε-lc Fano contraction of dimension d, over any algebraically closed field of characteristic zero, has a klt complement of that index near every point of the base. Over ℂ this gives the finite-rational-coefficient form of Shokurov’s bounded-klt-complement conjecture, as Chen stated it. <a href="https://github.com/openai/math/blob/main/preprints/Uniform-Cartier-sections-for-Fano-type-contractions-September-25-2026/Uniform-Cartier-sections-for-Fano-type-contractions-September-25-2026.pdf">The second</a> (106 pages) claims the Cartier-divisor conjecture of Birkar and Shokurov: for an ε-lc Fano type contraction with nef −(K + B) and a positive-dimensional base, through any base point there is a Cartier divisor whose pullback has log canonical threshold bounded below in terms of the dimension and ε alone. Over ℂ, Chen showed the two conjectures are equivalent; the papers reach them by independent routes.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What they don’t claim</h2>
+<p>The complements are klt, not ε-lc (the stronger version in Chen’s Remark 1.2 is not asserted), and the coefficient version needs a finite set of rational coefficients. The index depends on the dimension and ε; without a fixed ε it cannot be bounded, as the cones show.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, both dated September 25, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
+  <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/066.md">scope notes</a>)</dd>
+    <dd>Main theorems: no; <a href="https://github.com/openai/math/blob/main/lean/docs/066.md">OpenAI’s Lean check</a> covers one supporting compactness lemma of the companion paper (we have not run it)</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 12, 2026. Neither preprint has been revised. The two cite each other as independent companions. The Cartier paper adapts two lemmas from the ordinary-double-point gap paper of <a href="https://aiprovedwhat.com/037">episode 037</a>, without using its theorem as a black box, and discusses a local phase assertion from <a href="https://aiprovedwhat.com/036">episode 036</a> without relying on it. Inputs include Birkar’s boundedness theorems and complements, Chen’s reduction, minimal model theory, Ambro’s canonical bundle formula, normalized volumes (Li, Blum, Xu, Zhuang) and Takagi’s comparison of multiplier and test ideals. Both papers are long, and each adds new technical steps that experts must check. We found no public assessment by specialists.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A threshold.</strong> Through Chen’s equivalence, the first paper needs a uniform lower bound for the log canonical threshold of the pullback of a base point’s maximal ideal, in the birational case with no boundary. For the cones this threshold is exactly 2/n, never below ε for ε-lc members.</li>
+  <li><strong>By contradiction.</strong> A sequence breaking the bound has divisors whose order along the ideal is huge compared with their log discrepancy. Small log discrepancy at a real valuation is not enough, because rescaling rescales it, so the proof must also control the normalization.</li>
+  <li><strong>Volumes and degenerations.</strong> Anticanonical sections are encoded in an affine cone; normalized volume is minimized under a log canonical constraint, after an exact-penalization step; stable degeneration and a torus of maximal rank give a graded model, and counts of independent sections control the valuations.</li>
+  <li><strong>Traces.</strong> An auxiliary reduction to positive characteristic uses Cartier trace maps, compared with multiplier ideals through Takagi’s theorem, to produce sections of controlled degree and value. Values are rounded to integers layer by layer until the initial terms form a full transcendence basis; then a bounded multiple of the valuation is a whole-number multiple of a prime divisor whose log discrepancy is below ε, a contradiction.</li>
+  <li><strong>The companion route.</strong> The Cartier paper uses characters on affine cones and a pinning obstruction instead.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script checks the least klt complement index 2 on the projective line and, for the cones P(1,1,n), the vertex log discrepancy 2/n from the Hirzebruch surface F<sub>n</sub>, the threshold 2/n of the vertex’s maximal ideal, and the least klt complement index max(2, ⌈n/2⌉), at most max(2, ⌈1/ε⌉) for ε-lc members.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Bounded-klt-complements-for-Fano-contractions-September-25-2026/Bounded-klt-complements-for-Fano-contractions-September-25-2026.pdf">Bounded klt complements for Fano contractions (PDF)</a>, September 25, 2026 (93 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-Cartier-sections-for-Fano-type-contractions-September-25-2026/Uniform-Cartier-sections-for-Fano-type-contractions-September-25-2026.pdf">Uniform Cartier sections for Fano type contractions (PDF)</a>, September 25, 2026 (106 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/066.md">OpenAI’s note on the scope of the Lean check</a>.</li>
+  <li><a href="https://arxiv.org/abs/2403.01154">Chen, on bounded klt complements and local thresholds</a> (arXiv).</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 066.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -75,18 +133,30 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-Cartier-sections-for-Fano-type-contractions-September-25-2026/Uniform-Cartier-sections-for-Fano-type-contractions-September-25-2026.pdf">Uniform Cartier sections for Fano type contractions</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Complements</h3>
+<p>Start with a Fano contraction: a map f from X onto Z with connected fibers, where minus the canonical divisor K is ample over Z. A complement near a point of Z is an effective boundary B that makes K plus B trivial there: N times K plus B is an integral Cartier divisor, linearly equivalent to zero, and N is the index. For the projective line over a point, two points with coefficient one work, with index one, but that pair is only log canonical. A klt complement needs every coefficient below one, like four points with coefficient one half, and so index two. Shokurov introduced complements in his work on threefold flips, and conjectured that their index can be bounded in each dimension. Birkar proved bounded log canonical complements, a key step toward his boundedness theorem for Fano varieties. klt complements are harder, because bad singularities push the index up. The cone over a rational normal curve of degree n has a vertex with log discrepancy 2/n, and its klt complements need index at least n/2. So one fixes ε, and allows only ε-lc varieties, whose log discrepancies are all at least ε. Chen reduced the conjecture to a local threshold statement, and proved it over bases of dimension at most two.</p>
+<h3><span class="t num">1:25</span>The claims</h3>
+<p>Result 066 is two OpenAI preprints, both dated September 25. The first, 93 pages, claims: for each dimension d and rational ε there is an index N, such that every ε-lc Fano contraction of dimension d, over any algebraically closed field of characteristic zero, has a klt complement of index N near every point of the base. Over the complex numbers, this gives the finite-rational-coefficient form of Shokurov’s bounded klt complement conjecture, as Chen stated it. The second, 106 pages, claims the Cartier divisor conjecture of Birkar and Shokurov: for an ε-lc Fano type contraction with nef −(K + B) and a positive-dimensional base, through any base point there is a Cartier divisor whose pullback has log canonical threshold bounded below by a number depending only on the dimension and ε. Over the complex numbers, Chen showed that the two conjectures are equivalent, and the two papers reach them by independent routes.</p>
+<h3><span class="t num">2:33</span>A threshold, by contradiction</h3>
+<p>Through Chen’s equivalence, the first paper needs a uniform lower bound for one number: the log canonical threshold of the pullback of the maximal ideal of a base point, in the birational case with no boundary. For the cones, that threshold is exactly 2/n, the same as the log discrepancy, so it is never below ε. The paper argues by contradiction. A sequence breaking the bound has divisors whose order along the ideal is huge compared with their log discrepancy. The goal is a prime divisor with log discrepancy below ε, which ε-lc forbids. Small log discrepancy at a real valuation is not enough, because rescaling a valuation rescales it; the proof must also control how the divisor is normalized. It encodes anticanonical sections in an affine cone and minimizes normalized volume, using work of Li, Blum, Xu and Zhuang, under a log canonical constraint, after showing that a small perturbation makes the constrained minimizer an ordinary one. Stable degeneration and a torus of maximal rank give a graded model, and counts of independent sections control the possible valuations.</p>
+<h3><span class="t num">3:49</span>Traces and the companion route</h3>
+<p>The last stage borrows a tool from positive characteristic. Cartier trace maps, compared with multiplier ideals through Takagi’s theorem, turn a strict budget for the valuation into actual sections of controlled degree and value. Values are rounded to integers, layer by layer, until the initial terms form a full transcendence basis. Then a bounded multiple of the valuation is a whole-number multiple of a prime divisor, and the final choice of constants makes its log discrepancy less than ε: the contradiction. The companion paper reaches the Cartier statement differently, with characters on cones and a pinning obstruction. It adapts two lemmas from one of the release papers of episode 037, without using its theorem as a black box. OpenAI’s Lean check concerns one supporting lemma of that companion paper: a compactness statement for normalized chart-field retractions. It does not cover either main theorem.</p>
+<h3><span class="t num">4:50</span>Where it stands</h3>
+<p>Neither preprint is peer reviewed yet, and neither has been revised. The only Lean check is that supporting lemma. Their inputs include Birkar’s boundedness theorems and complements, Chen’s reduction, minimal model theory, Ambro’s canonical bundle formula, normalized volumes, and Takagi’s comparison of multiplier and test ideals. Both papers are long, and each adds new technical steps that experts must check. We found no public assessment. If they hold, Shokurov’s program gets a central piece: in each dimension, once the singularities are uniformly mild, Fano contractions have klt complements of bounded index, and every base point lies on a local Cartier divisor whose pullback has uniformly controlled singularities.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20066%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../065-virasoro-constraints-complete-intersections-projective/"><span class="dir">Previous · 065</span><span class="pt">Virasoro constraints for complete intersections and projective-bundle towers</span></a>
-  <a class="next" href="../067-campana-peternell-conjecture-dimension-six/"><span class="dir">Next · 067</span><span class="pt">The Campana–Peternell conjecture in dimension six</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebraic-and-complex-geometry/">More in algebraic and complex geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

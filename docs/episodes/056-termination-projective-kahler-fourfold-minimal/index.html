@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 056: Termination of projective and Kähler fourfold minimal model programs | AI Proved What?</title>
-<meta name="description" content="Termination of projective and Kähler fourfold minimal model programs. Result 056 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Can flips go on forever? Termination of fourfold minimal model programs | AI Proved What?</title>
+<meta name="description" content="An AI system claims that every minimal model program stops on projective log canonical fourfolds with rational boundary, whatever extremal rays are chosen, with companion claims for compact Kähler fourfolds. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/056-termination-projective-kahler-fourfold-minimal/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 056: Termination of projective and Kähler fourfold minimal model programs | AI Proved What?">
-<meta property="og:description" content="Termination of projective and Kähler fourfold minimal model programs. Result 056 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Can flips go on forever?">
+<meta property="og:description" content="An AI system claims that every minimal model program stops on projective log canonical fourfolds with rational boundary, whatever extremal rays are chosen, with companion claims for compact Kähler fourfolds. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/056-termination-projective-kahler-fourfold-minimal/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/056-termination-projective-kahler-fourfold-minimal/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 056 · <a href="../../subjects/algebraic-and-complex-geometry/">Algebraic and complex geometry</a></p>
-<h1 class="result-title">Termination of projective and Kähler fourfold minimal model programs</h1>
+<p class="meta">Episode 056, October 2026</p>
+<h1>Can flips go on forever?</h1>
+<p class="subtitle">Termination of projective and Kähler fourfold minimal model programs</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 056 in OpenAI’s catalog: <a href="#papers-in-result">all 5 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="BUNCdmKpCuE" data-title="Episode 056: Can flips go on forever?">
+  <a href="https://youtu.be/BUNCdmKpCuE">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 056: Can flips go on forever? Teal bars labeled D stepping down to zero, with orange arrows at each drop, above X dashes to X plus dashes to X double plus, and so on, stops.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:35. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/BUNCdmKpCuE?t=0" data-t="0"><span class="t">0:00</span><span>Does every flip sequence stop?</span></a></li>
+  <li><a href="https://youtu.be/BUNCdmKpCuE?t=96" data-t="96"><span class="t">1:36</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/BUNCdmKpCuE?t=191" data-t="191"><span class="t">3:11</span><span>Counting what improves</span></a></li>
+  <li><a href="https://youtu.be/BUNCdmKpCuE?t=285" data-t="285"><span class="t">4:45</span><span>The branch inequality</span></a></li>
+  <li><a href="https://youtu.be/BUNCdmKpCuE?t=390" data-t="390"><span class="t">6:30</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves termination of every existing generalized log canonical flip sequence on globally Weil ℚ-factorial compact Kähler fourfolds, with rational boundary, fixed rational analytically nef b-data, and projective small flip diagrams with the prescribed ample signs. Also proves termination of arbitrary permitted minimal model programs for projective log canonical fourfolds with rational boundary in characteristic zero.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>The minimal model program simplifies a variety step by step, guided by the adjoint divisor K + B, the canonical divisor plus a boundary. At each stage it contracts an extremal ray, a class of curves on which K + B is negative. A divisorial contraction removes a divisor; otherwise the program performs a flip, replacing the collapsed locus by another on which K + B is positive. It should end at a model where K + B is nef or at a Mori fibre space. Each divisorial step lowers a count of divisor classes, but a flip leaves it unchanged, so the question is whether flips can go on forever. In dimension three Shokurov’s difficulty gave the first termination proofs. In dimension four the known cases were terminal singularities (Kawamata–Matsuda–Matsuki), canonical pairs (Fujino), klt pairs with −(K + B) numerically equivalent to an effective divisor (<a href="https://arxiv.org/abs/math/0605137">Alexeev–Hacon–Kawamata</a>), pseudo-effective K + B (<a href="https://arxiv.org/abs/2011.02236">Chen–Tsakanikas</a>, <a href="https://arxiv.org/abs/1802.10202">Moraga</a>) and klt pairs with big boundary (<a href="https://arxiv.org/abs/2509.01501">Han–Liu–Zhuang</a>); Shokurov and Birkar showed that well-chosen programs end.</p>
+<p>Result 056 is five OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/Termination-for-projective-log-canonical-fourfolds-with-rational-boundary-September-24-2026/paper.pdf">The projective paper</a> (September 24, 2026; 44 pages) claims: for a projective log canonical pair (X, B) of dimension four with rational boundary, over any algebraically closed field of characteristic zero, with no Q-factoriality or pseudo-effectivity assumed, every negative extremal ray has its contraction and, when birational, its next model; every program has finitely many steps, for every sequence of choices, including mixed steps (a divisorial contraction followed by a small modification); and every maximal program ends at a nef adjoint or a Mori fibre space. On compact Kähler fourfolds, which need not be projective, <a href="https://github.com/openai/math/blob/main/preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026/termination-generalized-lc-kahler-fourfolds.pdf">a 47-page paper</a> (October 7) claims that every existing sequence of generalized log canonical flips terminates, with rational boundary, fixed nef data and projective small flip diagrams, on globally Weil Q-factorial fourfolds; <a href="https://github.com/openai/math/blob/main/preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf">a 22-page companion</a> (October 6) treats the generalized canonical case; and <a href="https://github.com/openai/math/blob/main/preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026/paper.pdf">an 89-page paper</a> (October 6) claims that for klt pairs with rational boundary every maximal ordinary program terminates, at a nef model or a projective Mori fibre space. <a href="https://github.com/openai/math/blob/main/preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-September-24-2026/paper.pdf">Its September 24 version</a> (35 pages) claimed only that some finite program exists.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What they don’t claim</h2>
+<p>The Kähler flip papers concern flip sequences that exist; they do not claim that every flip exists. The main theorems need rational coefficients, so the general real-coefficient case is not covered, nor is positive characteristic or dimension five and up. A nef endpoint is not claimed to be semiample here; that needs abundance, which the projective paper derives only in a separate section, from another release paper.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, five papers, released October 6, 2026: the projective one dated September 24; three Kähler papers replaced on October 7 (first versions dated October 5)</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,44 @@
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>Not yet</dd>
+    <dd>No: OpenAI published no Lean proof for this result</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 12, 2026. The projective paper has not been revised. Three Kähler papers were replaced in the October 7 update; the versions first released were dated October 5. The finite-program paper and the log canonical flip paper cite each other, and both explain why this is not circular. The projective paper cites three other release papers, including log abundance (<a href="https://aiprovedwhat.com/034">episode 034</a>), bounded klt complements and uniform Cartier sections, only for consequences at the endpoints, and says its termination proof is independent of them. We found no public assessment by specialists.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the projective proof goes</h2>
+<ol class="steps">
+  <li><strong>Compare the two sides.</strong> On a common model, log discrepancies never decrease across a step, and increase strictly exactly over the bad locus, where either map fails to be an isomorphism. The bad loci on the two sides have dimensions adding up to at least three.</li>
+  <li><strong>Count cycle classes.</strong> Ranks of cycle classes allow only finitely many divisor-losing steps, so an infinite program ends in flips; once no surfaces appear on the new side, a second rank count finishes. Everything reduces to bad surfaces on the new side.</li>
+  <li><strong>The difficulty.</strong> On auxiliary terminal models over the steps, each divisor exceptional over the model gets weight ⌈N(2 − a)⌉ for log discrepancy a below 2. Along a typical surface in a boundary component of coefficient b there is a ladder of echoes with log discrepancies 1 + j(1 − b) (for b = 0.7 and N = 10: 1.3, 1.6, 1.9, weights 7, 4, 1, default 12). Following Alexeev–Hacon–Kawamata, the difficulty subtracts this default surface by surface and adds back divisor cycle ranks on the normalized boundary.</li>
+  <li><strong>The branch inequality.</strong> Some coefficients keep decreasing, so N cannot clear them, and where r varying branches of the normalized boundary meet one surface the rounding can fall short by up to r − 1 (three branches at 0.11 round to 4 together, 6 separately). The branch inequality bounds the total excess by cycle ranks on the normalizations plus divisors centered on curves with log discrepancy below two, both already in the difficulty, so it is nonnegative at the terminal model over each step. Its proof starts with mixed Hodge theory, intersection cohomology and the decomposition theorem, and ends with line bundles and divisorial valuations.</li>
+  <li><strong>The difficulty must drop.</strong> Lowering coefficients and small flips never increase it (across a flip the change in defaults cancels the change in cycle ranks), and each bad surface on the new side forces a drop of at least one, because the scaled amount below two is an integer there (1.69 to 1.7 drops a weight from 4 to 3). Special termination gives the log canonical case, and a transfer argument reaches every algebraically closed field of characteristic zero.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script lists the possible dimensions of the two bad loci of a fourfold flip, computes the echo ladder and its default weight for b = 0.7 and N = 10, tests the rounding inequality ⌈x<sub>1</sub> + … + x<sub>r</sub>⌉ ≥ Σ⌈x<sub>j</sub>⌉ − (r − 1) and its sharp case with three branches, and checks the unit drop from weight 4 to 3.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Termination-for-projective-log-canonical-fourfolds-with-rational-boundary-September-24-2026/paper.pdf">Termination for projective log canonical fourfolds with rational boundary (PDF)</a>, September 24, 2026 (44 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026/termination-generalized-lc-kahler-fourfolds.pdf">Termination of generalized log canonical flips on compact Kähler fourfolds (PDF)</a>, October 7, 2026 (47 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf">Termination of generalized-canonical flips on compact Kähler fourfolds (PDF)</a>, October 6, 2026 (22 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026/paper.pdf">Finite ordinary minimal model programs on compact Kähler fourfolds (PDF)</a>, October 6, 2026 (89 pages); <a href="https://github.com/openai/math/blob/main/preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-September-24-2026/paper.pdf">September 24 version</a> (35 pages).</li>
+  <li><a href="https://arxiv.org/abs/math/0605137">Valery Alexeev, Christopher Hacon and Yujiro Kawamata, Termination of (many) 4-dimensional log flips</a> (arXiv).</li>
+  <li><a href="https://arxiv.org/abs/2509.01501">Jingjun Han, Jihao Liu and Ziquan Zhuang, Effective termination of general type MMPs in dimension at most five</a> (arXiv, 2025).</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 056.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 5 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -78,18 +137,30 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-September-24-2026/paper.pdf">Finite ordinary minimal model programs on compact Kähler fourfolds</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Does every flip sequence stop?</h3>
+<p>The minimal model program simplifies a variety by a sequence of surgeries, guided by an adjoint divisor, K + B: the canonical divisor plus a boundary. At each stage, pick an extremal ray, a class of curves on which K + B is negative, and contract it. If the contraction swallows a divisor, that divisor is gone. If it collapses something smaller, the program performs a flip: cut out that locus, and glue in a different one, on which K + B becomes positive. The program should end where K + B is nef, never negative on any curve, or at a Mori fibre space, a fibration along which K + B stays negative. Divisorial contractions cannot go on forever, since each one lowers a count of divisor classes, a whole number that cannot fall forever. But a flip leaves that count unchanged, so why should flips stop? In dimension three, Shokurov’s counting device, the difficulty, gave the first termination proofs. In dimension four, answers came case by case: Kawamata, Matsuda and Matsuki for terminal singularities, Fujino for canonical pairs, Alexeev, Hacon and Kawamata when the negative of K + B is numerically equivalent to an effective divisor, Chen and Tsakanikas, and Moraga, when K + B is pseudo-effective, and Han, Liu and Zhuang for klt pairs with big boundary. Shokurov and Birkar showed that well-chosen programs reach an end. What remained was every program, for log canonical fourfolds, without such positivity assumptions.</p>
+<h3><span class="t num">1:36</span>The claims</h3>
+<p>Result 056 bundles five OpenAI preprints. The projective one, 44 pages, dated September 24, claims the four-dimensional case of termination of flips for log canonical pairs with rational boundary, over any algebraically closed field of characteristic zero. Its theorem has three parts. Every negative extremal ray, at every stage, has its contraction and, when that is birational, its next model. Every program has finitely many steps, for every sequence of choices, with no pseudo-effectivity and no Q-factoriality assumed, and mixed steps, a divisorial contraction followed by a small modification, are allowed. And every maximal program ends at a nef adjoint or a Mori fibre space. The other four work on compact Kähler fourfolds, which need not be projective. A 47-page paper, dated October 7, claims that every sequence of generalized log canonical flips terminates, with rational boundary, fixed nef data, and flips given by projective small diagrams, on globally Weil Q-factorial fourfolds. It concerns flips that exist; it does not claim every flip exists. A 22-page companion treats the generalized canonical case. And an 89-page paper, dated October 6, claims that for klt pairs with rational boundary, every maximal ordinary program terminates, at a nef model or a projective Mori fibre space. Its September version claimed only that some finite program exists.</p>
+<h3><span class="t num">3:11</span>Counting what improves</h3>
+<p>Here is how the projective proof goes. Compare the two sides of a step on a common model. Log discrepancies, which measure how mild the singularities are along each divisor over the variety, never decrease, and they strictly increase exactly over the bad locus, where either map fails to be an isomorphism. The bad loci on the two sides have dimensions adding up to at least three. Ranks of cycle classes show that only finitely many steps lose a divisor, so an infinite program ends in a tail of flips. Once surfaces stop appearing on the new side, a second rank count finishes the job. So everything comes down to one question: can surfaces keep appearing on the new side forever? To answer it, the paper builds an integer called the difficulty, on auxiliary terminal models over the steps. It weighs each divisor exceptional over these models by how far its log discrepancy sits below two, scaled by a fixed integer N and rounded up. Along a typical surface inside a boundary component of coefficient b, there is a ladder of echoes, with log discrepancies 1 + j(1 − b). With b equal to 0.7 and N equal to ten, the echoes sit at 1.3, 1.6, and 1.9, with weights seven, four, and one, a default of twelve at every such surface. Following Alexeev, Hacon and Kawamata, the difficulty subtracts this default surface by surface, and adds back divisor cycle ranks on the normalized boundary.</p>
+<h3><span class="t num">4:45</span>The branch inequality</h3>
+<p>The new trouble is that some coefficients on these models keep decreasing, so N cannot clear them. Where several branches of the normalized boundary meet one surface, rounding can fall short. With N equal to ten and coefficient 0.11, three branches round to four together, but to six separately. The shortfall is at most the number of varying branches minus one. The key geometric input, the branch inequality, bounds the total excess of branches by cycle ranks on the normalizations, plus divisors centered on curves with log discrepancy below two, both already counted in the difficulty. So at the terminal model over each step, the difficulty is never negative. The proof starts in topology: mixed Hodge theory and the decomposition theorem isolate local systems along singular curves, which become line bundles, and then distinct divisors. Two more facts finish the klt case. Lowering coefficients and running small flips never increase the difficulty: across a flip, the change in the defaults cancels exactly against the change in the cycle ranks. And each surface on the new side forces a drop of at least one, because there the scaled amount below two is an integer, so any strict improvement crosses a rounding threshold. With N equal to ten, a log discrepancy rising from 1.69 to 1.7 lowers its weight from four to three. A nonnegative integer that never increases can drop only finitely often. Special termination extends this to log canonical pairs, and a transfer argument carries it from the complex numbers to every algebraically closed field of characteristic zero.</p>
+<h3><span class="t num">6:30</span>Where it stands</h3>
+<p>All five are preprints, not yet peer reviewed, and there is no Lean formalization. The projective paper has not been revised; three of the Kähler papers were replaced in the October 7 update, after versions dated October 5. The finite-program paper and the log canonical flip paper cite each other, and both explain why this is not circular. The projective paper cites three other release papers, including log abundance from episode 034, but only for consequences at the endpoints. We found no public assessment. If they hold, every program, for every choice of extremal rays, on a projective log canonical fourfold with rational boundary in characteristic zero must stop, and on compact Kähler fourfolds, so must every ordinary program for klt pairs with rational boundary, under the stated factoriality assumptions. The general case with real coefficients, positive characteristic, and higher dimensions remain beyond these papers.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20056%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../055-gepner-symmetry-large-volume-stability/"><span class="dir">Previous · 055</span><span class="pt">Gepner symmetry and large-volume stability on threefolds</span></a>
-  <a class="next" href="../057-fundamental-groups-special-complex-varieties/"><span class="dir">Next · 057</span><span class="pt">Fundamental groups of special complex varieties and root orbifolds</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebraic-and-complex-geometry/">More in algebraic and complex geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

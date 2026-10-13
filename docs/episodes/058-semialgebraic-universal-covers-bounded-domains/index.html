@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 058: Semialgebraic universal covers and bounded domains | AI Proved What?</title>
-<meta name="description" content="Semialgebraic universal covers and bounded domains. Result 058 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Three building blocks? The Kollár–Pardon conjecture on semialgebraic universal covers | AI Proved What?</title>
+<meta name="description" content="An AI system claims the Kollár–Pardon conjecture: a semialgebraic universal cover of a normal projective variety is a bounded symmetric domain times affine space times a simply connected projective variety, and that semialgebraic bounded domains with compact quotient are symmetric, checked in Lean. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/058-semialgebraic-universal-covers-bounded-domains/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 058: Semialgebraic universal covers and bounded domains | AI Proved What?">
-<meta property="og:description" content="Semialgebraic universal covers and bounded domains. Result 058 in OpenAI&#x27;s math release (Algebraic and complex geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Three building blocks?">
+<meta property="og:description" content="An AI system claims the Kollár–Pardon conjecture: a semialgebraic universal cover of a normal projective variety is a bounded symmetric domain times affine space times a simply connected projective variety, and that semialgebraic bounded domains with compact quotient are symmetric, checked in Lean. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/058-semialgebraic-universal-covers-bounded-domains/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/058-semialgebraic-universal-covers-bounded-domains/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,35 +37,93 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 058 · <a href="../../subjects/algebraic-and-complex-geometry/">Algebraic and complex geometry</a></p>
-<h1 class="result-title">Semialgebraic universal covers and bounded domains</h1>
+<p class="meta">Episode 058, October 2026</p>
+<h1>Three building blocks?</h1>
+<p class="subtitle">Semialgebraic universal covers and bounded domains</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 058 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="ajJEF3qtusc" data-title="Episode 058: Three building blocks?">
+  <a href="https://youtu.be/ajJEF3qtusc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 058: Three building blocks? A blue disc with curved geodesics labeled D, a green grid labeled C m, and an orange closed curve labeled F, above X tilde isomorphic to D times C m times F.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:50. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/ajJEF3qtusc?t=0" data-t="0"><span class="t">0:00</span><span>Tame universal covers</span></a></li>
+  <li><a href="https://youtu.be/ajJEF3qtusc?t=100" data-t="100"><span class="t">1:40</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/ajJEF3qtusc?t=191" data-t="191"><span class="t">3:11</span><span>Zooming in at the boundary</span></a></li>
+  <li><a href="https://youtu.be/ajJEF3qtusc?t=261" data-t="261"><span class="t">4:21</span><span>The projective classification</span></a></li>
+  <li><a href="https://youtu.be/ajJEF3qtusc?t=358" data-t="358"><span class="t">5:58</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves the Kollár–Pardon conjecture: the semialgebraic universal covers of connected normal projective complex varieties are exactly products <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>×</mo><msup><mi mathvariant="double-struck">C</mi><mi>m</mi></msup><mo>×</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">D\times\mathbb C^m\times F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.7722em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord mathbb">C</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span></span></span>, with <i>D</i> bounded symmetric and <i>F</i> simply connected, normal, and projective. A universal cover is quasi-projective exactly when the bounded symmetric factor is absent. In particular, a smooth projective variety covered by ℂ<sup><i>n</i></sup> has a finite étale cover by an abelian variety.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>In dimension one every Riemann surface is covered by the projective line, the complex plane or the unit disc. In higher dimensions universal covers can be much wilder (<a href="https://aiprovedwhat.com/046">episode 046</a> was about one that is not even holomorphically convex). <a href="https://arxiv.org/abs/1104.2309">Kollár and Pardon</a> asked what happens when the universal cover is tame: biholomorphic to a semialgebraic open subset of a projective variety, described by finitely many real polynomial equations and inequalities in the real and imaginary parts of the coordinates (the unit disc x<sup>2</sup> + y<sup>2</sup> &lt; 1 is an example). Their conjecture, published in 2012, says such a cover is a product D × ℂ<sup>m</sup> × F of a bounded symmetric domain (a ball, a product of discs), a complex affine space, and a simply connected projective variety. Earlier: Iitaka’s question on varieties covered by ℂ<sup>n</sup> (Nakayama, assuming abundance); Claudon, Höring and Kollár’s classification of quasi-projective universal covers (assuming abundance); Kollár and Pardon’s case where the fundamental group maps onto a lattice acting on a symmetric domain. They also asked a separate question about bounded domains alone.</p>
+<p>Result 058 is two OpenAI preprints dated September 24, 2026. <a href="https://github.com/openai/math/blob/main/preprints/Semialgebraic-universal-covers-of-normal-projective-varieties-September-24-2026/paper.pdf">The first</a> (65 pages) claims the Kollár–Pardon conjecture for connected normal projective varieties: the universal cover is biholomorphic to a semialgebraic open subset of a projective variety exactly when it is D × ℂ<sup>m</sup> × F, with F simply connected, normal and projective. No algebraicity of the deck transformations is assumed. A key input is the abelianity theorem of <a href="https://aiprovedwhat.com/057">episode 057</a>; with the log abundance theorem of <a href="https://aiprovedwhat.com/034">episode 034</a>, the paper also removes the abundance assumption from the classification of quasi-projective universal covers, so a smooth projective variety covered by ℂ<sup>n</sup> has a finite unramified cover by an abelian variety. <a href="https://github.com/openai/math/blob/main/preprints/Symmetry-of-semialgebraic-bounded-domains-with-compact-quotient-September-24-2026/paper.pdf">The second</a> (23 pages) answers the bounded-domain question: a connected, bounded, semialgebraic open subset of a complex affine variety, with a group of biholomorphisms acting properly discontinuously with compact quotient, is smooth and biholomorphic to a bounded symmetric domain. No convexity, boundary regularity or homogeneity is assumed, and the proof is independent of the first paper.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What they don’t claim</h2>
+<p>The classification is for connected normal projective varieties; the biholomorphism need not be algebraic, and the deck transformations need not preserve the semialgebraic structure. The Lean formalization covers the bounded-domain theorem only, not the classification.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, both dated September 24, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/058.md">scope notes</a>)</dd>
+    <dd>The bounded-domain theorem, by OpenAI (<a href="https://github.com/openai/math/blob/main/lean/docs/058.md">scope note</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SymmetricDomains.lean">formal statement</a>); we have not run the check. The classification paper: no</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 12, 2026. Neither preprint has been revised. By our count, the Lean proof imports 335 files, about 48,700 lines, not counting Mathlib. The classification depends on the abelianity theorem (episode 057) and, for its quasi-projective corollaries, on log abundance (episode 034), both also unreviewed preprints. We found no public assessment by specialists.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Bounded domains: smoothness.</strong> A peak function and the compact quotient show the domain is smooth. Near a boundary point the disc looks like a half-plane, and the ball is the same as the Siegel domain Im w &gt; |z|<sup>2</sup>.</li>
+  <li><strong>Bounded domains: rescaling.</strong> Semialgebraicity supplies a boundary point with good limits even at corners, and analytic discs keep a ball of definite size inside. Stretching tangential directions by t<sup>−1/2</sup> and normal directions by t<sup>−1</sup>, and using the group to compare with the original domain, gives a biholomorphism onto a quadratic model {Im w − H(z, z) ∈ C}, H Hermitian, C an open cone; Vey’s 1970 theorem on divisible generalized Siegel domains makes it symmetric.</li>
+  <li><strong>Classification: the intrinsic quotient.</strong> Scaling on a resolution of the universal cover, directions where the Levi form vanishes integrate into pieces that close up into projective families, ending in a tower of positive-matrix inequalities and a map onto a contractible bounded domain M.</li>
+  <li><strong>Classification: symmetry and kernel.</strong> Campana’s core and the abelianity theorem make the fundamental group act discretely on M; the compact quotient has ample canonical bundle, and the Nadel–Frankel splitting theorem with M’s own symmetries makes M bounded symmetric. The kernel is finitely generated and virtually abelian.</li>
+  <li><strong>Classification: the factors.</strong> A relative Albanese construction and Kollár–Pardon’s fibre-bundle theorem give a proper map onto M × ℂ<sup>m</sup> with simply connected projective fibres; the fibres cannot vary, because isomorphism classes are semialgebraic and dense and two disjoint semialgebraic sets cannot both be dense; the Oka principle gives the product. Consequences: the cover is holomorphically convex, Stein exactly when F is a point, and for smooth aspherical X the L<sup>2</sup> Betti numbers vanish outside the middle degree.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script checks the Cayley transform from the disc to the upper half-plane, the identity Im w − |z|<sup>2</sup> = (1 − |z<sub>1</sub>|<sup>2</sup> − |z<sub>2</sub>|<sup>2</sup>)/|1 + z<sub>2</sub>|<sup>2</sup> that takes the ball to the Siegel domain, and the dilations and translations preserving the Siegel domain.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Semialgebraic-universal-covers-of-normal-projective-varieties-September-24-2026/paper.pdf">Semialgebraic universal covers of normal projective varieties (PDF)</a>, September 24, 2026 (65 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Symmetry-of-semialgebraic-bounded-domains-with-compact-quotient-September-24-2026/paper.pdf">Symmetry of semialgebraic bounded domains with compact quotient (PDF)</a>, September 24, 2026 (23 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/058.md">Lean scope note</a> and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SymmetricDomains.lean">formal statement</a>.</li>
+  <li><a href="https://arxiv.org/abs/1104.2309">János Kollár and John Pardon, Algebraic varieties with semialgebraic universal cover</a> (arXiv; J. Topology 2012).</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 058.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -76,18 +132,30 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Symmetry-of-semialgebraic-bounded-domains-with-compact-quotient-September-24-2026/paper.pdf">Symmetry of semialgebraic bounded domains with compact quotient</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Tame universal covers</h3>
+<p>In dimension one, every Riemann surface is covered by one of three spaces: the projective line, the complex plane, or the unit disc. A sphere is its own cover. A torus is covered by the plane, its loops unwrapping into a grid. A surface of genus two or more is covered by the disc. In higher dimensions, universal covers can be much wilder; episode 046 was about one that is not even holomorphically convex. Kollár and Pardon asked what happens when the universal cover is tame: biholomorphic to a semialgebraic open subset of a projective variety, described by finitely many real polynomial equations and inequalities in the real and imaginary parts of the coordinates. The unit disc is like this: x² + y² &lt; 1. Their conjecture, published in 2012, says that such a cover must be a product of three pieces: a bounded symmetric domain, like a ball or a product of discs; a complex affine space; and a simply connected projective variety. Each piece occurs: ball quotients are covered by the ball, abelian varieties by complex space, and simply connected varieties are their own covers. The affine case goes back to Iitaka’s question about varieties covered by complex n-space, which Nakayama answered assuming abundance. Claudon, Höring and Kollár classified quasi-projective universal covers, also assuming abundance, and Kollár and Pardon proved a case where the fundamental group maps onto a lattice acting on a symmetric domain. They also asked a separate question about bounded domains alone.</p>
+<h3><span class="t num">1:40</span>The claims</h3>
+<p>Result 058 is two OpenAI preprints, dated September 24. The first, 65 pages, claims the Kollár–Pardon conjecture for connected normal projective varieties: the universal cover is biholomorphic to a semialgebraic open subset of a projective variety exactly when it is a product of a bounded symmetric domain, a complex affine space, and a simply connected normal projective variety. No algebraicity of the deck transformations is assumed. A key input is the abelianity theorem from episode 057. Using the release’s log abundance theorem, the paper also removes the abundance assumption from the classification of quasi-projective universal covers, and from Iitaka’s case: a smooth projective variety covered by complex n-space has a finite unramified cover by an abelian variety. The second, 23 pages, answers the bounded-domain question: a connected, bounded, semialgebraic open subset of a complex affine variety, on which a group of biholomorphisms acts properly discontinuously with compact quotient, is smooth and biholomorphic to a bounded symmetric domain. No convexity, boundary regularity, or homogeneity is assumed, and the proof is independent of the first paper. OpenAI also published a Lean formalization of this theorem, close to 49,000 lines.</p>
+<h3><span class="t num">3:11</span>Zooming in at the boundary</h3>
+<p>Here is the idea of the bounded-domain proof. In one variable, the disc and the upper half-plane are the same domain, and near a boundary point, the disc looks like a half-plane. In two variables, the ball is the same as the Siegel domain, where the imaginary part of w exceeds the squared length of z. The paper first proves that the domain is smooth, using a peak function and the compact quotient. Then semialgebraicity supplies a boundary point with good limits, even at corners, and analytic discs keep a ball of definite size inside after rescaling. Now zoom in at that point: stretch tangential directions by the square root of the zoom factor, and normal directions by the full zoom factor. Using the group to compare with the original domain, the limits give a biholomorphism of the whole domain onto a quadratic model: the imaginary part of w, minus a Hermitian form in z, lies in an open cone. That model is invariant under these dilations and under real translations, and with a compact quotient, Vey’s theorem from 1970 says it is symmetric.</p>
+<h3><span class="t num">4:21</span>The projective classification</h3>
+<p>The classification paper runs a similar scaling on a resolution of the universal cover. Near the boundary, directions where the Levi form vanishes integrate into complex pieces that close up into projective families, and repeated scaling ends in a tower of positive-matrix inequalities. This gives a map from the cover onto a contractible bounded domain M, intrinsic to the cover. To show that the fundamental group acts discretely on M, the paper uses Campana’s core and the abelianity theorem. The compact quotient has ample canonical bundle, and a splitting theorem of Nadel and Frankel, with M’s own symmetries, makes M a bounded symmetric domain. The kernel of that action is finitely generated and, by the abelianity theorem again, virtually abelian. A relative Albanese construction and a fibre-bundle theorem of Kollár and Pardon give a proper map onto M times complex m-space, with simply connected projective fibres. Those fibres cannot vary: in a Chow space, each isomorphism class is semialgebraic, and a topological argument makes it dense among the fibres, and two disjoint semialgebraic sets cannot both be dense. The Oka principle then glues local products into M times complex m-space times F. Consequences in the paper: such a cover is holomorphically convex, Stein exactly when F is a point, and for smooth aspherical varieties, the L² Betti numbers vanish outside the middle degree, as Singer conjectured.</p>
+<h3><span class="t num">5:58</span>Where it stands</h3>
+<p>Both are preprints, not yet peer reviewed, and neither has been revised. The bounded-domain theorem has a Lean formalization by OpenAI; we have not run the check, and the classification paper has none. The classification depends on the abelianity theorem from episode 057, and its quasi-projective corollaries on log abundance from episode 034, both also unreviewed preprints. We found no public assessment. If they hold, Kollár and Pardon’s picture is right: a normal projective variety whose universal cover has a finite real-algebraic description is covered by a bounded symmetric domain, times a complex affine space, times a simply connected projective variety, a higher-dimensional echo of the sphere, the plane and the disc.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20058%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../057-fundamental-groups-special-complex-varieties/"><span class="dir">Previous · 057</span><span class="pt">Fundamental groups of special complex varieties and root orbifolds</span></a>
-  <a class="next" href="../059-counterexamples-zariskis-multiplicity-conjecture/"><span class="dir">Next · 059</span><span class="pt">Counterexamples to Zariski’s multiplicity conjecture</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebraic-and-complex-geometry/">More in algebraic and complex geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
