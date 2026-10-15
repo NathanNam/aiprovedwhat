@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 079: Local smoothing in three dimensions | AI Proved What?</title>
-<meta name="description" content="Local smoothing in three dimensions. Result 079 in OpenAI&#x27;s math release (Real and complex analysis): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Smoother on average? Local smoothing for the wave equation in three dimensions | AI Proved What?</title>
+<meta name="description" content="An AI system claims Sogge’s local smoothing conjecture for the wave equation in three dimensions: averaging over time recovers all of the fixed-time loss at p = 3 except an arbitrarily small part. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/079-local-smoothing-three-dimensions/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 079: Local smoothing in three dimensions | AI Proved What?">
-<meta property="og:description" content="Local smoothing in three dimensions. Result 079 in OpenAI&#x27;s math release (Real and complex analysis): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Smoother on average?">
+<meta property="og:description" content="An AI system claims Sogge’s local smoothing conjecture for the wave equation in three dimensions: averaging over time recovers all of the fixed-time loss at p = 3 except an arbitrarily small part. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/079-local-smoothing-three-dimensions/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/079-local-smoothing-three-dimensions/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 079 · <a href="../../subjects/real-and-complex-analysis/">Real and complex analysis</a></p>
-<h1 class="result-title">Local smoothing in three dimensions</h1>
+<p class="meta">Episode 079, October 2026</p>
+<h1>Smoother on average?</h1>
+<p class="subtitle">Local smoothing for the wave equation in three dimensions</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 079 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="r62e_v2a3hA" data-title="Episode 079: Smoother on average?">
+  <a href="https://youtu.be/r62e_v2a3hA">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 079: Smoother on average? A glowing spherical shell with yellow arrows pointing inward to a bright point at its center, above the formula: the space-time L3 norm of Uf is at most the L3 norm of J to the epsilon applied to f, for every epsilon greater than 0.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:32. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/r62e_v2a3hA?t=0" data-t="0"><span class="t">0:00</span><span>Waves that focus</span></a></li>
+  <li><a href="https://youtu.be/r62e_v2a3hA?t=115" data-t="115"><span class="t">1:55</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/r62e_v2a3hA?t=191" data-t="191"><span class="t">3:11</span><span>Packets, windows, entropy</span></a></li>
+  <li><a href="https://youtu.be/r62e_v2a3hA?t=323" data-t="323"><span class="t">5:23</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Resolves Sogge's local smoothing conjecture for the Euclidean wave equation in three spatial dimensions. The estimate holds throughout the full strict range <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>&lt;</mo><mi>p</mi><mo>&lt;</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">2\lt p\lt \infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6835em;vertical-align:-0.0391em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord">∞</span></span></span></span>, with Sobolev regularity above <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>max</mi><mo>⁡</mo><mo stretchy="false">{</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>−</mo><mn>3</mn><mi mathvariant="normal">/</mi><mi>p</mi><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\max\{0,1-3/p\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop">max</span><span class="mopen">{</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">3/</span><span class="mord mathnormal">p</span><span class="mclose">}</span></span></span></span>. In particular, the critical <i>L</i><sup>3</sup> estimate holds with every positive Sobolev loss.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Waves can focus. A thin spherical shell moving inward collapses to a point and then spreads out again, and at that moment its size in L<sup>p</sup> can be far larger than at the start. In 1980 Peral and Miyachi showed that, at a single time, the half-wave evolution in three dimensions costs exactly 1 − 2/p derivatives in L<sup>p</sup>, for p &gt; 2.</p>
+<p>Focusing happens at one instant. Sogge, who introduced local smoothing in 1991, conjectured that averaging over a time interval recovers almost 1/p derivatives when p ≥ 3: in three dimensions, any loss above max{0, 1 − 3/p} should do, for every p &gt; 2. The critical exponent is p = 3, where the whole fixed-time loss of 1/3 should disappear except an arbitrarily small part. Bourgain and Demeter’s decoupling theorem gave the conjectured gain for p ≥ 4, which by interpolation leaves a loss above 1/6 at p = 3; Gao, Liu, Miao and Xi lowered it to above 1/9, and the work of Gan, He, Li and Wu (gain for p ≥ 10/3) gives above 1/12. In the plane, Guth, Wang and Zhang settled the conjecture in 2020.</p>
+<p>Result 079 is <a href="https://github.com/openai/math/blob/main/preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/paper.pdf">one OpenAI preprint</a>, 165 pages, dated September 24, 2026. Its main theorem: for every ε &gt; 0, the half-wave evolution over times between 1 and 2 is bounded from functions with ε derivatives in L<sup>3</sup>(ℝ<sup>3</sup>) to space-time L<sup>3</sup>. With the energy estimate below 3 and an elementary kernel bound above 3, this gives Sogge’s whole conjectured range in three dimensions. Through known implications it also gives maximal Bochner–Riesz bounds, and almost-everywhere convergence of Bochner–Riesz means, for p ≥ 3 and order above 1 − 3/p; the strict Bochner–Riesz range claimed in <a href="https://github.com/openai/math/blob/main/preprints/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026/Bochner-Riesz-Multipliers-in-Three-Dimensions-September-24-2026.pdf">result 078</a>, by an argument that does not use that paper; the sphere case of the extension estimate claimed in <a href="https://github.com/openai/math/blob/main/preprints/Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026/Diagonal-Fourier-extension-for-positively-curved-surfaces-in-three-dimensions-September-24-2026.pdf">result 077</a>; and the three-dimensional Kakeya maximal estimate claimed in <a href="https://github.com/openai/math/blob/main/preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/paper.pdf">result 074</a>.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Nothing about the lossless estimate, ε = 0 at p = 3, and nothing in higher dimensions. The result is for the Euclidean wave equation: on some curved manifolds, examples of Minicozzi and Sogge rule out the full gain below p = 10/3.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 24, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +88,37 @@
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>Not yet</dd>
+    <dd>No: OpenAI published no Lean proof of this theorem</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 12, 2026. The preprint has not been revised, and OpenAI published no Lean proof of this theorem. Its two outside quantitative inputs are Ren and Wang’s planar Furstenberg estimate and Guth, Wang and Zhang’s cone wave-envelope theorem; its Bochner–Riesz consequences use known implications in the form stated by Beltran, Hickman and Sogge. The paper is not among those OSVerify reviewed, and we have seen no expert review. Its consequences overlap with results 074, 077 and 078, but those are separate, unreviewed preprints from the same release, not independent confirmation.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>One annulus, many packets.</strong> The proof works on one frequency annulus at a time, asking for a loss of at most any small power of the frequency. Null coordinates turn light rays into rays with velocities (A, |A|<sup>2</sup>); the wave is cut into packets, and a synthesis estimate bounds the cubed L<sup>3</sup> norm by a sum of packet energies to the power 3/2. Evolution copies energy into later time intervals, so these are copies, not pieces.</li>
+  <li><strong>Windows and weights.</strong> Packets are tested through windows in position and direction: a round window of angular radius r has position widths ℓr and ℓr<sup>2</sup> at time length ℓ and a relative thickness f, and thin round windows lead to a cylinder model. With test weights r<sup>4</sup>f<sup>1−η</sup> and r<sup>3+η</sup>f<sup>1−η</sup>, the paper bounds the normalized cubic sum with a loss that tends to zero with η. The proof is by contradiction: extremal reductions in the cylinder model make the width exponents affine in depth, and lower-dimensional estimates built on the two outside inputs exclude the configurations where both shear costs vanish.</li>
+  <li><strong>The entropy of a phase name.</strong> For the rest, a finite name records time, direction, base position and the normal phase after subtracting a recorded shear. Its entropy minus a baseline is never negative and vanishes at certain boundary resolutions; planar incidence and projection estimates give directions in which this excess must decrease, and a path that stays where they apply contradicts nonnegativity. A separate entropy argument handles the remaining round configurations, and the annuli are then summed.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script follows a radial wave that focuses at time 1.5 (a closed form, checked by quadrature). As the frequency doubles from 8 to 256, its L<sup>3</sup> norm at the focusing time grows by the cube root of 2 per doubling (fitted slope 0.333), its space-time L<sup>4</sup> norm by the fourth root of 2 (0.251), and its space-time L<sup>3</sup> norm only slowly, from 2.50 to 2.96 times the norm of the data (its cube grows by about 3 ln 2 per doubling). The script also checks the earlier losses at p = 3 by interpolation with the energy estimate: 1/6 from p ≥ 4 and 1/12 from p ≥ 10/3.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/paper.pdf">Critical local smoothing for the three-dimensional wave equation (PDF)</a>, September 24, 2026 (165 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 079.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +126,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/paper.pdf">Critical local smoothing for the three-dimensional wave equation</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Waves that focus</h3>
+<p>Let a wave run through three-dimensional space by the half-wave equation. Its size in Lᵖ can grow, because waves can focus. Start with a thin spherical shell of radius 1.5 that moves inward: at time 1.5 it collapses to a point, and then it spreads out again. In 1980, Peral and Miyachi showed that at a single time, the sharp cost is 1 − 2/p derivatives, for p above two. In our computation, the L³ norm at the focusing time grows like the cube root of the frequency, which is that loss at p equal to three. But focusing happens at one instant. Sogge, who introduced local smoothing in 1991, conjectured that averaging over a time interval recovers almost 1/p derivatives when p is at least three. In three dimensions, any loss above the larger of zero and 1 − 3/p should do, for every p above two. The critical exponent is three, where all of the fixed-time loss of 1/3 should disappear except an arbitrarily small part. For this one wave, the time-averaged L³ norm grows slower than any power of the frequency, like the cube root of its logarithm, while at p equal to four it grows like the fourth root of the frequency, so the conjectured loss there cannot be lowered. Wolff proved the conjectured gain for large p in the plane. In three dimensions, Bourgain and Demeter’s decoupling theorem gives it for p at least four; interpolating with the energy estimate, that leaves a loss above 1/6 at p equal to three. In the plane, Guth, Wang and Zhang reached the critical exponent four with a sharp square function estimate. In three dimensions, Gao, Liu, Miao and Xi lowered the loss at three to above 1/9, and Gan, He, Li and Wu proved the gain for p at least 10/3, which gives above 1/12.</p>
+<h3><span class="t num">1:55</span>The claim</h3>
+<p>Result 079 is one OpenAI preprint, 165 pages, dated September 24. Its main theorem: for every positive ε, the half-wave evolution over times between one and two is bounded from functions with ε derivatives in L³ to space-time L³. Interpolating with the energy estimate below three, and with an elementary bound for p equal to infinity above three, gives Sogge’s whole conjectured range in three dimensions. The lossless case, ε equal to zero, is not addressed. The paper also derives consequences through known implications. For p at least three, Bochner–Riesz means of order above 1 − 3/p are bounded as a maximal operator, so they converge almost everywhere for every Lᵖ function. It also gets the same strict Bochner–Riesz range as result 078, by an argument that does not use that paper. Through Tao’s and Wolff’s implications, it recovers the sphere case of the extension estimate claimed in result 077, and the three-dimensional Kakeya maximal estimate claimed in result 074.</p>
+<h3><span class="t num">3:11</span>Packets, windows, entropy</h3>
+<p>The proof works on one frequency annulus at a time, asking for a loss of at most any small power of the frequency. On an angular sector, null coordinates turn light rays into rays with velocities A and |A|². The wave is cut into packets, and a synthesis estimate bounds the cubed L³ norm by a sum of packet energies to the power 3/2. So the task is a cubic sum of packet masses, where evolution copies energy into later time intervals. At intermediate scales, packets are tested through windows in position and direction. A round window of angular radius r has position widths ℓr and ℓr² at time length ℓ, and a relative thickness f; thin round windows lead to a cylinder model. The models use test weights r⁴ f^(1−η), and r^(3+η) f^(1−η). If the input packets obey a regularity bound in every test, the paper bounds the normalized cubic sum, with a loss that tends to zero with η. The proof is by contradiction: in the cylinder model, extremal reductions make the exponents of the window widths affine functions of depth, and lower-dimensional estimates built on two outside inputs, the cone wave-envelope theorem of Guth, Wang and Zhang and the planar Furstenberg estimate of Ren and Wang, exclude the configurations where both shear costs vanish. For the rest, the paper studies a phase name: bins recording time, direction, base position, and the normal phase after subtracting a recorded shear. From its entropy it subtracts a baseline set by regularity, the test weight and the mass data. This excess is never negative, and it vanishes at certain boundary resolutions, where the name can be recovered from a test label. Planar incidence and projection estimates give directions in which the excess must decrease, followed backward from those points, and a path that stays where these inequalities apply contradicts nonnegativity. A separate entropy argument handles the remaining round configurations, first for rays and then for waves, before the frequency annuli are summed.</p>
+<h3><span class="t num">5:23</span>Where it stands</h3>
+<p>The preprint is not yet peer reviewed, and it has not been revised. There is no Lean proof. Its two outside quantitative inputs are the Furstenberg estimate of Ren and Wang and the wave-envelope theorem of Guth, Wang and Zhang, and its Bochner–Riesz consequences use known implications, in the form stated by Beltran, Hickman and Sogge. It is not among the papers OSVerify reviewed, and we have seen no expert review. Its consequences overlap with results 074, 077 and 078, but those are separate, unreviewed preprints from the same release, not independent confirmation. If it holds, Sogge’s local smoothing conjecture for the Euclidean wave equation is settled in three dimensions, with every positive loss at the critical exponent three. The lossless case is not addressed; for our focusing wave, the lossless ratio keeps growing, slowly. Higher dimensions are not claimed, and on some curved manifolds, examples of Minicozzi and Sogge rule out the full gain below 10/3.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20079%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../078-three-dimensional-bochner-riesz-conjecture/"><span class="dir">Previous · 078</span><span class="pt">The three-dimensional Bochner–Riesz conjecture</span></a>
-  <a class="next" href="../080-exact-sobolev-endpoint-schrodinger-convergence/"><span class="dir">Next · 080</span><span class="pt">The exact Sobolev endpoint for Schrödinger convergence</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/real-and-complex-analysis/">More in real and complex analysis</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 087: The Mahler conjectures, functional inequalities and polar-product symplectic width | AI Proved What?</title>
-<meta name="description" content="The Mahler conjectures, functional inequalities and polar-product symplectic width. Result 087 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Mahler, solved? The smallest volume products of convex bodies | AI Proved What?</title>
+<meta name="description" content="An AI system claims proofs of both Mahler conjectures in every dimension, with Hanner polytopes and simplices as the minimizers, plus the symplectic width of polar products, with Lean formalizations. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/087-mahler-conjectures-functional-inequalities-polar/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 087: The Mahler conjectures, functional inequalities and polar-product symplectic width | AI Proved What?">
-<meta property="og:description" content="The Mahler conjectures, functional inequalities and polar-product symplectic width. Result 087 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Mahler, solved?">
+<meta property="og:description" content="An AI system claims proofs of both Mahler conjectures in every dimension, with Hanner polytopes and simplices as the minimizers, plus the symplectic width of polar products, with Lean formalizations. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/087-mahler-conjectures-functional-inequalities-polar/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/087-mahler-conjectures-functional-inequalities-polar/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 087 · <a href="../../subjects/convex-and-metric-geometry/">Convex and metric geometry</a></p>
-<h1 class="result-title">The Mahler conjectures, functional inequalities and polar-product symplectic width</h1>
+<p class="meta">Episode 087, October 2026</p>
+<h1>Mahler, solved?</h1>
+<p class="subtitle">The smallest volume products of convex bodies, and symplectic balls in polar products</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 087 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="gBNoFT_uAL8" data-title="Episode 087: Mahler, solved?">
+  <a href="https://youtu.be/gBNoFT_uAL8">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 087: Mahler, solved? A yellow wireframe cube beside a pink wireframe octahedron, its polar, and a teal triangle inside its larger pink polar triangle, above the inequality: the volume of K times the volume of its polar is at least 4 to the n over n factorial.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:52. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/gBNoFT_uAL8?t=0" data-t="0"><span class="t">0:00</span><span>The smallest product</span></a></li>
+  <li><a href="https://youtu.be/gBNoFT_uAL8?t=153" data-t="153"><span class="t">2:33</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/gBNoFT_uAL8?t=260" data-t="260"><span class="t">4:20</span><span>Three proofs</span></a></li>
+  <li><a href="https://youtu.be/gBNoFT_uAL8?t=406" data-t="406"><span class="t">6:46</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Resolves the symmetric and nonsymmetric geometric Mahler conjectures in every dimension, with Hanner polytopes and simplices as the respective volume-product minimizers and all equality cases classified. The corresponding sharp functional Mahler inequalities also hold. For <i>n</i> ≥ 2, every symmetric polar product <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>×</mo><msup><mi>K</mi><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">K\times K^\circ</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6741em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∘</span></span></span></span></span></span></span></span></span></span></span> in dimension <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">2n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mord mathnormal">n</span></span></span></span> has Gromov width 4.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>The polar of a convex body K symmetric about the origin is K° = {y : ⟨x, y⟩ ≤ 1 for every x in K}. A large body has a small polar, and the volume product |K| |K°| does not change under invertible linear maps. In the plane a disk gives π² ≈ 9.87, a regular hexagon 9 and a square 8. Ellipsoids give the largest value (the Blaschke–Santaló inequality). In the late 1930s Mahler asked for the smallest; the conjectured answer in n dimensions is 4<sup>n</sup>/n!, the value of a cube and its polar cross-polytope, shared by all Hanner polytopes, built from intervals by products and by convex hulls of copies in complementary directions. Mahler proved the plane inequality, Reisner showed that only parallelograms attain it, and Iriyeh and Shibata proved dimension three in 2020; Saint-Raymond (unconditional bodies) and Reisner (zonoids) settled special classes, and Bourgain and Milman proved the bound up to a factor exponential in the dimension.</p>
+<p>Without symmetry, one minimizes over the position of the origin (the minimizer is the Santaló point), and the conjectured minimum is (n + 1)<sup>n+1</sup>/(n!)², attained by simplices: 27/4 = 6.75 for a triangle, 64/9 ≈ 7.11 for a tetrahedron. Mahler and Meyer settled the plane, Meyer and Reisner polytopes with at most n + 3 vertices, and a 2026 preprint of Chen, Li, Xi and Xu treats dimension three. From symplectic geometry, Artstein-Avidan, Karasev and Ostrover showed in 2014 that a conjecture of Viterbo would imply the symmetric Mahler conjecture.</p>
+<p>Result 087 is three OpenAI preprints, all dated September 22, 2026. <a href="https://github.com/openai/math/blob/main/preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/paper.pdf">The first</a> (26 pages) proves |K| |K°| ≥ 4<sup>n</sup>/n! for every origin-symmetric convex body in every dimension, with equality exactly for linear images of Hanner polytopes. <a href="https://github.com/openai/math/blob/main/preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/paper.pdf">The second</a> (72 pages) proves that the product at the Santaló point is at least (n + 1)<sup>n+1</sup>/(n!)², with equality exactly for simplices. Both derive sharp functional versions for log-concave functions and their convex conjugates, with constants 4<sup>n</sup> for even functions and e<sup>n</sup> in general. <a href="https://github.com/openai/math/blob/main/preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/paper.pdf">The third</a> (19 pages) puts K in the position coordinates and K° in the momentum coordinates of phase space and proves, for n ≥ 2, that standard symplectic balls of every capacity below 4 fit inside and none larger: the Gromov width is 4. Since a ball of capacity 4 has volume 4<sup>n</sup>/n! and symplectic maps preserve volume, this proves the symmetric inequality a second time, without the equality cases.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Viterbo’s broader conjecture is false in general, as Haim-Kislev and Ostrover showed, and the papers claim nothing about it beyond these polar products. An embedding of a ball of capacity exactly 4 is not claimed. The symplectic route gives no equality cases.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, three papers dated September 22, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +88,41 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/087.md">scope notes</a>)</dd>
+    <dd>OpenAI published Lean proofs of the three main theorems; we have not run the checks</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. None of the preprints has been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/087.md">Lean formalizations</a> of the three main theorems, with no unproved steps that we could find: <a href="https://github.com/openai/math/blob/main/lean/OAI/Analysis/Mahler">243 files and 28,853 lines</a> for the symmetric inequality and its equality cases, <a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/Convex/GeneralMahler">302 files and 40,205 lines</a> for the general inequality and its simplex equality, and <a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/PolarProducts">46 files and 12,175 lines</a> for the symplectic width, matched against four separate statements (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/MahlerConjecture.lean">symmetric inequality</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SymmetricMahlerEquality.lean">symmetric equality</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/GeneralMahler.lean">general inequality and equality</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SymmetricPolar.lean">Gromov width</a>). The functional inequalities, which rest on earlier implications of Fradelizi and Meyer, are not formalized. We have not run the checks. The symmetric paper says its argument is independent of the general one, and the symplectic paper uses neither. None of the papers is among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Symmetric: a conformal lens.</strong> A conformal map from the disk onto a lens-shaped region turns uniform angles on the circle into a uniform vertical coordinate; it is a rotation of a map Gross used for a conformal Skorokhod embedding. For a body cut out by finitely many symmetric strips, random boundary angles determine complex points, and a mass estimate at an isolated holomorphic zero, proved with Stokes’ theorem, shows that certain probabilities add up to at least one. An exact identity turns that sum into an integral, over the body, of the volume covered by certain simplices inside the polar body, which gives the bound. For equality, every triple of points in the norm whose unit ball is the polar body has a metric median, and a classification of Hansen and Lima gives the Hanner polytopes.</li>
+  <li><strong>General: Gaussian projections onto cones.</strong> Klartag’s correspondence between a body and a pair of dual cones turns the volume product into a product of Laplace integrals. Gaussian vectors projected onto the two cones, with a carefully chosen bias and covariance, give maps into the cones, and their Jacobians with Jensen’s inequality reduce everything to showing that an error term is at most zero. The derivative matrices need not commute, so the paper compares them with spectral thresholds of a linear Gaussian matrix, using Hermite expansions and divided differences. Its scalar inequalities are proved with finite rational certificates, plus interpolation and tail estimates, and <a href="https://github.com/openai/math/blob/main/preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/verification">supplementary programs</a> check them. Equality forces the matrices to commute, so the cone splits into half-lines and the body is a simplex.</li>
+  <li><strong>Symplectic: balls from holomorphic vanishing.</strong> If holomorphic functions vanish to order k at a single common zero, the region where their squared sizes add up to less than one, with a symplectic form built from those functions, contains balls of every capacity below πk. Using powers of the inverse lens map, the paper maps that region into the body times a polar scaled by about πk/4; dividing out leaves balls of every capacity below 4. A supporting cylinder and Gromov’s nonsqueezing theorem give the matching upper bound.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script computes volume products: π² ≈ 9.87 for a disk, 9 for a regular hexagon, 8 for a square, 27/4 = 6.75 for a triangle at its Santaló point and 64/9 ≈ 7.11 for a tetrahedron. The cube, the cross-polytope and the prism over an octahedron give exactly 4<sup>n</sup>/n!.</li>
+  <li>Among random origin-symmetric polytopes with at least 2n + 2 vertices, the smallest products found were 8.0003, 10.6746 and 10.6707 in dimensions 2, 3 and 4 (the conjectured minima are 8, 10.6667 and 10.6667). Among random general polytopes minimized over the center, the smallest were 6.7533 and 7.2706 in dimensions 2 and 3 (against 6.75 and 7.1111). No computation can test every body.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-symmetric-Mahler-conjecture-and-its-equality-cases-September-22-2026/paper.pdf">The symmetric Mahler conjecture and its equality cases (PDF)</a>, 26 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/paper.pdf">The Mahler Conjecture for General Convex Bodies (PDF)</a>, 72 pages, and <a href="https://github.com/openai/math/blob/main/preprints/The-Mahler-Conjecture-for-General-Convex-Bodies-September-22-2026/verification">its verification programs</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/paper.pdf">Symplectic Balls in Symmetric Polar Products (PDF)</a>, 19 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/087.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 087.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 3 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -77,18 +132,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Symplectic-Balls-in-Symmetric-Polar-Products-September-22-2026/paper.pdf">Symplectic Balls in Symmetric Polar Products</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The smallest product</h3>
+<p>Take a convex body that is symmetric about the origin, and form its polar: all points whose dot product with every point of the body is at most one. A large body has a small polar, and the product of their volumes does not change under any invertible linear map. In the plane, a disk gives π², about 9.87; a regular hexagon gives nine; a square gives eight. The largest value belongs to ellipses and ellipsoids, by the Blaschke–Santaló inequality. In the late 1930s, Mahler asked for the smallest, and the conjectured answer in n dimensions is 4ⁿ/n!: the value of a cube and its polar, the cross-polytope. The cube is not alone. Hanner polytopes, built from intervals by taking products and by taking convex hulls of copies placed in complementary directions, all give the same value. Up to linear maps, in three dimensions these are the cube and the octahedron; from four dimensions on, mixed ones appear, like a prism over an octahedron. In our computation the cube, the cross-polytope and the prism over an octahedron each give exactly 4ⁿ/n!, and among thousands of random symmetric polytopes in dimensions two, three and four, none went lower; the closest came within 0.1%. Mahler proved the plane inequality, Reisner later showed that only parallelograms attain it, and Iriyeh and Shibata proved dimension three in 2020. Special classes, such as Saint-Raymond’s unconditional bodies and Reisner’s zonoids, were settled earlier, and Bourgain and Milman proved the bound up to a factor exponential in the dimension. Without symmetry, the polar depends on where the origin sits, so one takes the point that makes the product smallest, the Santaló point. The conjectured minimum is then (n + 1)ⁿ⁺¹/(n!)², attained by simplices: 6.75 for a triangle, and about 7.11 for a tetrahedron. Our random searches stayed above both, at about 6.753 and 7.27. Mahler and Meyer settled the plane, Meyer and Reisner handled polytopes with few vertices, and a 2026 preprint of Chen, Li, Xi and Xu treats dimension three. A third thread comes from symplectic geometry: Artstein-Avidan, Karasev and Ostrover showed in 2014 that a conjecture of Viterbo would imply the symmetric Mahler conjecture.</p>
+<h3><span class="t num">2:33</span>The claims</h3>
+<p>Result 087 is three OpenAI preprints, all dated September 22. The first, 26 pages, proves the symmetric conjecture in every dimension: every origin-symmetric convex body has volume product at least 4ⁿ/n!, with equality exactly for linear images of Hanner polytopes. The second, 72 pages, proves the general conjecture: at the Santaló point the product is at least (n + 1)ⁿ⁺¹/(n!)², with equality exactly for simplices. Both papers also derive sharp functional versions, for log-concave functions and their convex conjugates, with constants 4ⁿ for even functions and eⁿ in general. The third, 19 pages, works in phase space. Put the body in the position coordinates and its polar in the momentum coordinates. For bodies of dimension at least two, the paper proves that standard symplectic balls of every capacity below four fit inside, and none larger: the Gromov width is four. A ball of capacity four has volume 4ⁿ/n!, and symplectic maps preserve volume, so this proves the symmetric inequality a second time, without the equality cases. OpenAI published Lean formalizations of all three main theorems: about 29,000 lines for the symmetric inequality and its equality cases, 40,000 for the general inequality and its simplex equality, and 12,000 for the symplectic width, checked against four separate comparator statements, two of them for the symmetric paper. The functional inequalities are not formalized. We have not run the checks.</p>
+<h3><span class="t num">4:20</span>Three proofs</h3>
+<p>The symmetric proof is complex-analytic. It uses a conformal map from the disk onto a lens-shaped region, chosen so that uniform angles on the circle become a uniform vertical coordinate, a rotation of a map Gross used for a conformal Skorokhod embedding. For a body cut out by finitely many symmetric strips, random boundary angles determine complex points, and a mass estimate at an isolated holomorphic zero, proved with Stokes’ theorem, shows that certain probabilities add up to at least one. An exact identity turns that sum into an integral, over the body, of the volume covered by certain simplices inside the polar body, which gives the bound. For equality, every triple of points in the norm whose unit ball is the polar body turns out to have a metric median, and a classification of Hansen and Lima then gives the Hanner polytopes. The general proof starts from Klartag’s correspondence between a body and a pair of dual cones, which turns the volume product into a product of Laplace integrals. Gaussian vectors, projected onto the two cones with a carefully chosen bias and covariance, give maps into the cones, and their Jacobians with Jensen’s inequality reduce everything to showing that an error term is at most zero. The derivative matrices need not commute, so the paper compares them with spectral thresholds of a linear Gaussian matrix, using Hermite expansions and divided differences. Its scalar inequalities are proved with finite rational certificates, plus interpolation and tail estimates, and supplementary programs check them. Equality forces the matrices to commute, so the cone splits into half-lines and the body is a simplex. The symplectic proof turns holomorphic vanishing into balls. If holomorphic functions vanish to order k at a single common zero, the region where their squared sizes add up to less than one, given a symplectic form built from those functions, contains balls of every capacity below πk. Using the inverse of the same lens map, raised to the k-th power, the paper maps that region into the body times a rescaled polar, with scale about πk/4; dividing out leaves balls of every capacity below four. Gromov’s nonsqueezing theorem, with a supporting cylinder, gives the matching upper bound.</p>
+<h3><span class="t num">6:46</span>Where it stands</h3>
+<p>None of the three preprints is peer reviewed, and none has been revised. OpenAI’s Lean formalizations cover the symmetric inequality and its equality cases, the general inequality and its simplex equality, and the symplectic width; we have not run them. The functional inequalities rest on earlier implications of Fradelizi and Meyer, and are not formalized. The symmetric paper says its argument is independent of the general one, and the symplectic paper uses neither. None of the papers is among those OSVerify reviewed, and we have seen no expert review. If they hold, Mahler’s questions are answered in every dimension: cubes, cross-polytopes and the other Hanner polytopes minimize the symmetric volume product, and simplices minimize the general one. Viterbo’s broader conjecture is false in general, as Haim-Kislev and Ostrover showed, and these papers claim nothing about it beyond these polar products. An embedding of a ball of capacity exactly four is not claimed.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20087%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../086-l3-bound-trilinear-hilbert-transform/"><span class="dir">Previous · 086</span><span class="pt">An <i>L</i><sup>3</sup> bound for the trilinear Hilbert transform</span></a>
-  <a class="next" href="../088-sharp-projection-body-inequalities-counterexample/"><span class="dir">Next · 088</span><span class="pt">Sharp projection-body inequalities and a counterexample to simplex maximization</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/convex-and-metric-geometry/">More in convex and metric geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

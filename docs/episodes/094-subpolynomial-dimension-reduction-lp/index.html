@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 094: Subpolynomial dimension reduction in Lₚ | AI Proved What?</title>
-<meta name="description" content="Subpolynomial dimension reduction in Lₚ. Result 094 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Squeezed into less? Subpolynomial dimension reduction in Lp | AI Proved What?</title>
+<meta name="description" content="An AI system claims that any n points in an Lp space, p not 2, fit into n to the power o(1) dimensions with any fixed distortion above 1, while exact embeddings can need order n squared, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/094-subpolynomial-dimension-reduction-lp/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 094: Subpolynomial dimension reduction in Lₚ | AI Proved What?">
-<meta property="og:description" content="Subpolynomial dimension reduction in Lₚ. Result 094 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Squeezed into less?">
+<meta property="og:description" content="An AI system claims that any n points in an Lp space, p not 2, fit into n to the power o(1) dimensions with any fixed distortion above 1, while exact embeddings can need order n squared, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/094-subpolynomial-dimension-reduction-lp/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/094-subpolynomial-dimension-reduction-lp/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 094 · <a href="../../subjects/convex-and-metric-geometry/">Convex and metric geometry</a></p>
-<h1 class="result-title">Subpolynomial dimension reduction in <i>L</i><sub><i>p</i></sub></h1>
+<p class="meta">Episode 094, October 2026</p>
+<h1>Squeezed into less?</h1>
+<p class="subtitle">Any n points in an Lp space, p not 2, fit into n<sup>o(1)</sup> dimensions with small distortion</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 094 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="ozOrakyyW2A" data-title="Episode 094: Squeezed into less?">
+  <a href="https://youtu.be/ozOrakyyW2A">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 094: Squeezed into less? A cloud of points flattened into fewer dimensions, above the statement that any n points in Lp space fit in subpolynomial dimension when p is not 2.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:22. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/ozOrakyyW2A?t=0" data-t="0"><span class="t">0:00</span><span>Fewer dimensions</span></a></li>
+  <li><a href="https://youtu.be/ozOrakyyW2A?t=127" data-t="127"><span class="t">2:07</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/ozOrakyyW2A?t=208" data-t="208"><span class="t">3:28</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/ozOrakyyW2A?t=336" data-t="336"><span class="t">5:36</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>For every fixed <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>&lt;</mo><mi>p</mi><mo>&lt;</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">1\lt p\lt \infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6835em;vertical-align:-0.0391em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord">∞</span></span></span></span> and distortion <i>D</i> &gt; 1, every <i>n</i>-point subset of real <i>L</i><sub><i>p</i></sub> embeds into <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi mathvariant="normal">ℓ</mi><mi>p</mi><mi>d</mi></msubsup></mrow><annotation encoding="application/x-tex">\ell_p^d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2322em;vertical-align:-0.3831em;"></span><span class="mord"><span class="mord">ℓ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8491em;"><span style="top:-2.453em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">p</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3831em;"><span></span></span></span></span></span></span></span></span></span> with distortion at most <i>D</i> and dimension <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><msup><mi>n</mi><mrow><mi>o</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">d=n^{o(1)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.888em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">o</span><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span></span>, answering Naor's sublinear-dimension question for <i>p</i> ≠ 2. In contrast, exact embeddings require worst-case dimension <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Θ</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Theta(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord">Θ</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> when <i>p</i> ≠ 2.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take n points and the distances between them, and look for n new points in a space of much lower dimension whose distances are the same up to a factor D, the distortion. In Euclidean space the Johnson–Lindenstrauss lemma does this with a constant times log n dimensions for any fixed D above 1; a random Gaussian map works. In our test, 2,000 random points in 1,000 dimensions, mapped to 400, had largest stretch over smallest stretch about 1.46.</p>
+<p>In an L<sub>p</sub> space the distance is the p-th root of the sum, or integral, of p-th powers of coordinate differences, and the new points must lie in ℓ<sub>p</sub><sup>d</sup>, the same kind of space in d dimensions. For p other than 2 the known bounds were far larger. Ball showed that n(n−1)/2 coordinates always suffice for an exact copy, and that order n² are needed for p below 2. With distortion, Schechtman reached order n for p below 2. Linear maps can need order n dimensions for every p ≠ 2; at p = 1 Brinkman and Charikar showed that even nonlinear maps need a power of n; and for p above 2 Naor and Ren recently showed that order log n is not enough. OpenAI’s catalog presents the new result as answering Naor’s question whether a sublinear dimension is possible.</p>
+<p>Result 094 is <a href="https://github.com/openai/math/blob/main/preprints/Subpolynomial-dimension-reduction-in-Lp-September-23-2026/paper.pdf">one OpenAI preprint</a> dated September 23, 2026 (19 pages). It claims that for every fixed p between 1 and ∞ other than 2 and every D above 1, every n-point subset of an L<sub>p</sub> space embeds into ℓ<sub>p</sub><sup>d</sup> with distortion at most D and d ≤ exp(C (log n)<sup>γ(p)</sup>), which is n<sup>o(1)</sup>: smaller than any fixed power of n. Here γ(p) = 2 − p for p below 2 and 1 − 2/p for p above 2. A packing argument shows that at least log n / log(1 + 2D) coordinates are needed. For exact embeddings the answer is instead of order n²: between ⌊(n − 1)/4⌋² and n(n−1)/2 for n ≥ 9.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The constant C depends on p and D, with no uniformity claimed near p = 1, near p = 2, or as D approaches 1. The result is existential: no efficient algorithm is claimed, and the maps need not be linear. Neither the exponent γ(p) nor the log n lower bound is claimed optimal, so the optimal dimension with distortion remains open, and p = 1 is not covered.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 23, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +88,41 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/094.md">scope notes</a>)</dd>
+    <dd>OpenAI published a Lean proof of the dimension bounds; we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/094.md">a Lean formalization</a> of the dimension bounds, <a href="https://github.com/openai/math/blob/main/lean/OAI/Analysis/LpDimension">45 files and 7,918 lines</a> including the electrical-flow localization from the paper’s appendix, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SubpolynomialLp.lean">a separate statement</a>, with no unproved steps that we could find. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Moments to coordinates.</strong> Give each point a random real label; across a pair, the difference of labels divided by the pair’s distance is a random increment. If one bounded distribution, with bound K, makes the p-th moments of all increments nearly equal, independent samples give the coordinates by Maurey’s empirical method, about K<sup>2p</sup> log n of them. A convexity and separation argument shows it is enough to handle each weighted average over pairs separately, with the same moment and bound K for every weighting.</li>
+  <li><strong>A projection with small rows.</strong> To keep increments consistent with labels on the points, the paper projects onto the space of such increments. A localization estimate for electrical flows, due to Gurel-Gurevich, Nachmias and Sachdeva, with a fixed-point reweighting of the pairs, keeps every row of the projection of total size at most 4 log(2n).</li>
+  <li><strong>Heavy tails, both sides of 2.</strong> Below 2 the paper builds increments with symmetric p-stable marginals, clips their heavy tails and projects back. Above 2 it uses overlapping truncations, signed Poisson sampling and a moment inequality of Rosenthal type. Either way log K is at most a constant times (log n)<sup>γ(p)</sup>, which gives the dimension.</li>
+  <li><strong>Exact embeddings need n².</strong> For p ≠ 2 the parallelogram defect ‖u+v‖<sup>p</sup> + ‖u−v‖<sup>p</sup> − 2‖u‖<sup>p</sup> − 2‖v‖<sup>p</sup> is zero exactly when u and v have disjoint supports. In a k × k grid, rows must stay disjoint from rows and columns from columns, while each row meets each column (their defect is 2<sup>p</sup> − 4), so at least k² coordinates are needed.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Johnson–Lindenstrauss: 2,000 Gaussian points in 1,000 dimensions, random Gaussian map to d dimensions; largest stretch over smallest about 2.03, 1.64 and 1.46 at d = 100, 200 and 400.</li>
+  <li>Blind coordinate sampling at p = 3/2: for 40 spread-out points in 4,000 dimensions, 400 random coordinates give distortion about 1.25; for points with 5 nonzero coordinates each, it stays infinite up to 1,600 coordinates and above 10 at 3,200. That sparse set uses only 195 coordinates, so a map that adapts to it does fine.</li>
+  <li>The parallelogram defect in a 3 × 3 grid: 0 for two rows, and 2<sup>p</sup> − 4 for a row and a column, exactly 4 at p = 3 and −1.17 at p = 3/2.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Subpolynomial-dimension-reduction-in-Lp-September-23-2026/paper.pdf">Subpolynomial dimension reduction in Lp (PDF)</a>, 19 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/094.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 094.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +130,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Subpolynomial-dimension-reduction-in-Lp-September-23-2026/paper.pdf">Subpolynomial dimension reduction in Lp</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Fewer dimensions</h3>
+<p>Take n points and their distances, and look for new points in a space of much lower dimension with nearly the same distances. For Euclidean distances, the Johnson–Lindenstrauss lemma does this with only a constant times log n dimensions, for any fixed distortion above 1. In our test, 2,000 random points in 1,000 dimensions, sent through a random Gaussian map to 400 dimensions, stretched no distance more than about 1.46 times as much as any other. Johnson and Lindenstrauss asked what happens in other spaces. Here the space is Lₚ: distance is the p-th root of the sum, or integral, of p-th powers of the coordinate differences, and the new points must again lie in an Lₚ space, now of finite dimension d. For exact embeddings, Ball showed that C(n, 2) coordinates always suffice, and that order n² are needed for p &lt; 2. Allowing distortion, Schechtman brought the dimension down to a constant times n for p &lt; 2. For any p ≠ 2, linear maps can need order n dimensions, and at p = 1, Brinkman and Charikar showed that even nonlinear maps need a power of n. For p &gt; 2, Naor and Ren recently showed that order log n is not enough. OpenAI’s catalog presents the result as answering Naor’s question: can the dimension be sublinear in n for p ≠ 2? Small examples show why blind sampling fails. The simplest idea is to keep a random sample of the coordinates and rescale. For 40 random points with p = 3/2, spread over 4,000 coordinates, 400 sampled coordinates already give distortion about 1.25. But if each point has only 5 nonzero coordinates, sampling misses some pair’s differences entirely: the distortion stays infinite up to 1,600 coordinates, and is still above 10 at 3,200 of the 4,000. The map has to adapt to each configuration, sparse or spread out.</p>
+<h3><span class="t num">2:07</span>The claim</h3>
+<p>Result 094 is one OpenAI preprint, 19 pages, dated September 23. It claims that for every fixed p between 1 and ∞, other than 2, and every distortion D above 1, every n-point subset of an Lₚ space embeds into Lₚ of dimension n^o(1), smaller than any fixed power of n. Precisely, the dimension is at most exp(C (log n)^γ), where γ is 2 − p below 2, and 1 − 2/p above 2. A packing argument shows that at least log n / log(1 + 2D) coordinates are needed. For exact embeddings, the dimension instead grows like n²: between about n²/16 and C(n, 2). The constants depend on p and D, with no uniformity claimed near the endpoints or as D nears 1, and the result is existential: no efficient algorithm is claimed. The maps need not be linear. Neither the exponent nor the log n lower bound is claimed optimal, and p = 1 is not covered. OpenAI also published a Lean formalization of the dimension bounds, 45 files and about 8,000 lines, matched against a separate statement. We have not run the check.</p>
+<h3><span class="t num">3:28</span>How the proof goes</h3>
+<p>The proof turns embedding into probability. Give each point a random real label. Across a pair, the difference of labels divided by the pair’s distance is a random increment. If one bounded distribution makes the p-th moments of all these increments nearly equal, then independent samples give the coordinates, by Maurey’s empirical method: the number needed grows like K^(2p), times log n. A convexity and separation argument shows it is enough to meet each weighted average over the pairs separately, as long as the common moment and the bound K stay the same for every weighting. To keep the increments consistent with labels on the points, the paper projects onto the space of such increments. A localization estimate for electrical flows, of Gurel-Gurevich, Nachmias and Sachdeva, with a fixed-point reweighting of the pairs, keeps every row of this projection small, of total size at most order log n. Below 2, the paper builds increments with symmetric p-stable marginals, clips their heavy tails, and projects back. Above 2, it uses overlapping truncations and signed Poisson sampling, with a moment inequality of Rosenthal type. Either way, the bound K is exp(C (log n)^γ), and that gives the dimension. The lower bound for exact embeddings is elementary. For p ≠ 2, the parallelogram defect, the p-th power of the norm of u plus v, plus that of u minus v, minus twice the p-th powers of the norms of u and v, is zero exactly when u and v have disjoint supports. Take a k × k grid, with the rows and columns as points, together with their negatives and zero. An exact embedding must keep rows disjoint from rows and columns from columns, while every row must meet every column, since their defect is 2ᵖ − 4, not zero. So it needs at least k² coordinates. In our computation that defect is exactly 4 for p = 3, and −1.17 for p = 3/2.</p>
+<h3><span class="t num">5:36</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. OpenAI’s Lean formalization covers the dimension bounds; we have not run it. The proof uses the electrical-flow localization of Gurel-Gurevich, Nachmias and Sachdeva, presented in an appendix, and Maurey’s empirical method. It is not among the papers OSVerify reviewed, and we have seen no expert review. If it holds, every n-point subset of Lₚ, for p between 1 and ∞ other than 2, fits into n^o(1) dimensions with any distortion above 1, while exact embeddings can need order n². The optimal dimension with distortion remains open.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20094%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../093-dimension-free-logarithmic-sobolev-inequality/"><span class="dir">Previous · 093</span><span class="pt">Dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures</span></a>
-  <a class="next" href="../095-hyperbolicity-cones-without-semidefinite-lifts/"><span class="dir">Next · 095</span><span class="pt">Hyperbolicity cones without semidefinite lifts</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/convex-and-metric-geometry/">More in convex and metric geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 088: Sharp projection-body inequalities and a counterexample to simplex maximization | AI Proved What?</title>
-<meta name="description" content="Sharp projection-body inequalities and a counterexample to simplex maximization. Result 088 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Smallest shadows? Petty’s projection conjecture and the simplex maximum | AI Proved What?</title>
+<meta name="description" content="An AI system claims that ellipsoids uniquely minimize normalized projection-body volume in every dimension from four on, proving Petty’s conjecture there, and gives a product-of-simplices counterexample to Brannen’s simplex maximum, with Lean formalizations. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/088-sharp-projection-body-inequalities-counterexample/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 088: Sharp projection-body inequalities and a counterexample to simplex maximization | AI Proved What?">
-<meta property="og:description" content="Sharp projection-body inequalities and a counterexample to simplex maximization. Result 088 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Smallest shadows?">
+<meta property="og:description" content="An AI system claims that ellipsoids uniquely minimize normalized projection-body volume in every dimension from four on, proving Petty’s conjecture there, and gives a product-of-simplices counterexample to Brannen’s simplex maximum, with Lean formalizations. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/088-sharp-projection-body-inequalities-counterexample/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/088-sharp-projection-body-inequalities-counterexample/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 088 · <a href="../../subjects/convex-and-metric-geometry/">Convex and metric geometry</a></p>
-<h1 class="result-title">Sharp projection-body inequalities and a counterexample to simplex maximization</h1>
+<p class="meta">Episode 088, October 2026</p>
+<h1>Smallest shadows?</h1>
+<p class="subtitle">Petty’s projection-volume conjecture, and a counterexample to the simplex maximum</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 088 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="wsLGs8qkW48" data-title="Episode 088: Smallest shadows?">
+  <a href="https://youtu.be/wsLGs8qkW48">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 088: Smallest shadows? A blue pentagon lit from one side by orange rays, casting an orange shadow segment on a grey screen, above Petty’s bound: the projection-body volume divided by the body’s volume to the power n minus one is at least the ellipsoid value.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:18. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/wsLGs8qkW48?t=0" data-t="0"><span class="t">0:00</span><span>Shadows of a body</span></a></li>
+  <li><a href="https://youtu.be/wsLGs8qkW48?t=115" data-t="115"><span class="t">1:55</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/wsLGs8qkW48?t=203" data-t="203"><span class="t">3:23</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/wsLGs8qkW48?t=316" data-t="316"><span class="t">5:16</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves Petty's projection-volume conjecture in the remaining dimensions <i>n</i> ≥ 4: ellipsoids uniquely minimize projection-body volume at fixed body volume. Also establishes the full Lutwak–Petty projection inequalities. In contrast, products of simplices exceed Brannen's proposed simplex maximum for normalized projection-body volume by an exponential factor in every sufficiently large dimension.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>Shine a light on a convex body from every direction and record the area of its shadow. Those areas define a second convex body, the projection body ΠK: how far it reaches from its center in each direction is the area of the shadow cast by light shining in that direction. The ratio |ΠK|/|K|<sup>n−1</sup>, where n is the dimension, does not change under affine maps. In three dimensions a ball gives about 7.40, a cube 8, a regular octahedron 9 and a tetrahedron 18.</p>
+<p>In 1971 Petty conjectured that, in every dimension from three on, ellipsoids give the smallest value, and only ellipsoids. (A related inequality of Petty for the polar of the projection body was already known.) Lutwak reformulated the conjecture; Saroglou and Zvavitch, and Ivaki, proved local versions near the ball; Mielke-Sulz treated bodies of revolution; and a 2026 preprint of Chen, Feng, Li, Xi and Xu proved dimension three. In 1996 Brannen conjectured that simplices give the largest value. In dimension three that is true, by the same preprint, but a 2026 preprint of Feng, Hu, Liu and Xu found counterexamples in every dimension from nine on.</p>
+<p>Result 088 is two OpenAI preprints dated September 24, 2026. <a href="https://github.com/openai/math/blob/main/preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/paper.pdf">The first</a> (30 pages) proves Petty’s conjecture in every dimension n ≥ 4: for every convex body, |ΠK|/|K|<sup>n−1</sup> ≥ κ<sub>n−1</sub><sup>n</sup> κ<sub>n</sub><sup>2−n</sup>, the ellipsoid value, with equality exactly for ellipsoids. Together with the three-dimensional preprint the conjecture would hold for every n ≥ 3, and the paper derives the Lutwak–Petty lower-degree projection inequalities, a sharp affine Sobolev-type inequality, and Holmes–Thompson isoperimetry in normed spaces. <a href="https://github.com/openai/math/blob/main/preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/paper.pdf">The second</a> (7 pages) shows that the product of two ten-dimensional simplices beats the twenty-dimensional simplex by the factor 22,355,476/22,020,096, about 1.5%, and that repeating ten-dimensional factors makes the excess grow exponentially with the dimension.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>In dimension four and up, the largest value of the ratio, and which bodies attain it, are not determined. The three-dimensional case of Petty’s conjecture is a separate preprint, not this one.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two papers dated September 24, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,40 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/088.md">scope notes</a>)</dd>
+    <dd>OpenAI published Lean proofs of Petty’s inequality (n ≥ 4) and the dimension-20 counterexample; we have not run the checks</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. Neither preprint has been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/088.md">Lean formalizations</a>: Petty’s inequality and its equality case for every n ≥ 4 (<a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/ProjectionBodies">33 files, 13,670 lines</a>, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PettyProjectionVolume.lean">a separate statement</a>), and the dimension-20 counterexample in two versions (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/ProjectionCounterexample.lean">the failure of the simplex bound</a> and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/ProjectionVolume.lean">the exact ratio</a>), with no unproved steps that we could find. The consequences and the exponential excess are not formalized. We have not run the checks. The statement for every dimension from three on, and its consequences as stated from dimension three on, also rely on the separate three-dimensional preprint. Brannen’s bound had already failed in dimensions nine and up; the counterexample paper’s contribution is the product construction, its exact value, and the exponential growth of the excess. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>A measure on vectors.</strong> After normalizing the volume, the first variation of volume gives a probability measure on vectors: integrating the support function of any symmetric body against it gives at least a root of that body’s volume. The same measure represents the projection body through the absolute dot product. The core theorem bounds from below the double integral of the absolute dot product for any two measures with that property; applied to the body and its rescaled projection body, it gives the inequality.</li>
+  <li><strong>Spherical harmonics and affine position.</strong> A new inequality bounds the higher harmonics of a power of any norm by a difference of its spherical means, strictly unless the norm is Euclidean. A sign test bounds the pairing by a bilinear form in the cosine and Funk transforms, and the norm estimate controls every harmonic of degree four and up. The degree-two part is removed by choosing affine coordinates: a family of variational minimizers is extended continuously to singular matrices, an inward-pointing field appears at the boundary, and Brouwer’s fixed-point theorem gives the position. Equality then forces an ellipsoid.</li>
+  <li><strong>The product counterexample.</strong> For a polytope, the projection body is a sum of segments, one for each facet, of length its area. For a product of two polytopes the facets split into two families, and the ratio multiplies. A simplex in dimension d gives (d + 1)d<sup>d</sup>/d!, and the value for ten, squared, exceeds the value for twenty.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script computes projection bodies of polytopes as sums of facet segments. In dimension 3 the ratio is 7.40 for a ball, 8 for a cube, 9 for a regular octahedron and 18 for a tetrahedron; in dimension 4, 12.64, 16, 20 and 53.33. Hulls of 20, 60, 180 and 540 random points on the sphere give 9.68, 8.07, 7.64 and 7.48, approaching the ball. 600 random polytopes in dimension 3 and 200 in dimension 4 all lie between the ball and simplex values.</li>
+  <li>The product rule checks numerically, the exact ratio for two ten-dimensional simplices is 22,355,476/22,020,096 ≈ 1.0152, and among products of two simplices (both of dimension at least two), dimension 20 is the first where one beats the simplex. No computation can test every body.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Pettys-projection-volume-conjecture-in-dimensions-at-least-four-September-24-2026/paper.pdf">Petty’s projection-volume conjecture in dimensions at least four (PDF)</a>, 30 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/paper.pdf">A product counterexample to the simplex maximum for projection-body volume (PDF)</a>, 7 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/088.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 088.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -75,18 +130,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-product-counterexample-to-the-simplex-maximum-for-projection-body-volume-September-24-2026/paper.pdf">A product counterexample to the simplex maximum for projection-body volume</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Shadows of a body</h3>
+<p>Shine a light on a convex body from every direction, and record the area of its shadow. Those shadow areas, one for each direction, define a second convex body, the projection body: how far it reaches from its center in each direction is the area of the shadow cast by light shining in that direction. Divide the volume of the projection body by the volume of the original body to the power n − 1, where n is the dimension, and the result does not change under stretching, shearing or moving the body. In three dimensions, a ball gives about 7.4, a cube eight, a regular octahedron nine, and a tetrahedron eighteen. In 1971, Petty conjectured that in every dimension from three on, ellipsoids give the smallest value, and only ellipsoids. A related inequality for the polar of the projection body, also due to Petty, was already known. Lutwak reformulated the conjecture as a lower bound for an integral of the absolute dot product against surface-area measures. Saroglou and Zvavitch, and Ivaki, proved local versions near the ball; Mielke-Sulz handled bodies of revolution; and a 2026 preprint of Chen, Feng, Li, Xi and Xu proved dimension three. In our computation, hulls of more and more random points on a sphere come down toward the ball’s value, from 9.68 with 20 points to 7.48 with 540. The opposite question is the largest value. In 1996, Brannen conjectured that simplices give the maximum. In dimension three that is true, by the same group’s preprint, and none of our hundreds of random polytopes in dimensions three and four went above the simplex. But a 2026 preprint of Feng, Hu, Liu and Xu found counterexamples in every dimension from nine on, built from perturbed projections of a cube.</p>
+<h3><span class="t num">1:55</span>The claims</h3>
+<p>Result 088 is two OpenAI preprints, both dated September 24. The first, 30 pages, proves Petty’s conjecture in every dimension from four on: for every convex body, the normalized projection volume is at least the ellipsoid value, with equality exactly for ellipsoids. Together with the separate three-dimensional preprint, the conjecture would then hold in every dimension from three on, and the paper derives consequences: the Lutwak–Petty lower-degree projection inequalities, a sharp affine Sobolev-type inequality, and an isoperimetric inequality for the Holmes–Thompson area in normed spaces. The second, 7 pages, gives an explicit counterexample to Brannen’s bound: the product of two ten-dimensional simplices, in dimension twenty, beats the twenty-dimensional simplex by a factor of 22,355,476/22,020,096, about 1.5%. Repeating ten-dimensional factors, the excess grows exponentially with the dimension. OpenAI published Lean formalizations of Petty’s inequality with its equality case for every dimension from four on, about 14,000 lines, and of the dimension-twenty counterexample, in two separate versions. The consequences and the exponential excess are not formalized. We have not run the checks.</p>
+<h3><span class="t num">3:23</span>How the proofs go</h3>
+<p>The proof of Petty’s conjecture turns a body into a measure on vectors. After normalizing the volume, the first variation of volume gives a probability measure: integrating the support function of any symmetric body against it gives at least a root of that body’s volume. The same measure represents the projection body through the absolute dot product. The core theorem bounds from below the double integral of the absolute dot product for any two measures with that property. Applied to the body and its rescaled projection body, it gives the inequality. The estimate runs through spherical harmonics. A new inequality bounds the higher harmonics of a power of any norm by a difference of its spherical means, strictly unless the norm is Euclidean. A sign test bounds the pairing by a bilinear form in the cosine and Funk transforms, and the new norm estimate controls every harmonic of degree four and up. The degree-two part is removed by choosing affine coordinates: the paper extends a family of variational minimizers continuously to singular matrices, finds an inward-pointing field at the boundary, and uses Brouwer’s fixed-point theorem. Equality then forces an ellipsoid. The counterexample is short. For a polytope, the projection body is a sum of segments, one for each facet, of length its area. For a product of two polytopes, the facets split into two families, and the normalized projection volume multiplies: the value of a product is the product of the values. A simplex in dimension d gives (d + 1)·dᵈ/d!. Two ten-dimensional simplices give that value for ten, squared, which exceeds the value for twenty. In our scan, twenty is the first dimension where any product of two simplices wins.</p>
+<h3><span class="t num">5:16</span>Where it stands</h3>
+<p>Neither preprint is peer reviewed, and neither has been revised. OpenAI’s Lean formalizations cover Petty’s inequality and its equality case from dimension four on, and the dimension-twenty counterexample; we have not run them. The statement for every dimension from three on, and its consequences as stated from dimension three on, also rely on the separate three-dimensional preprint. Brannen’s bound had already failed in dimensions nine and up in Feng, Hu, Liu and Xu’s preprint; this paper’s contribution there is the product construction, its exact value, and the exponential growth of the excess. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If they hold, ellipsoids are exactly the bodies with the smallest normalized projection volume in every dimension from four on. In dimension four and up, the largest value, and which bodies attain it, are not determined.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20088%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../087-mahler-conjectures-functional-inequalities-polar/"><span class="dir">Previous · 087</span><span class="pt">The Mahler conjectures, functional inequalities and polar-product symplectic width</span></a>
-  <a class="next" href="../089-bounded-distortion-l1-embeddings-planar/"><span class="dir">Next · 089</span><span class="pt">Bounded-distortion <i>L</i><sub>1</sub> embeddings of planar and bounded-treewidth graphs</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/convex-and-metric-geometry/">More in convex and metric geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

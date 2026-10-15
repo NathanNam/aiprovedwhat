@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Triangle, tamed? The triangular Hilbert transform at the symmetric point | AI Proved What?</title>
+<meta name="description" content="An AI system claims uniform maximal and variation bounds for the triangular Hilbert transform at the symmetric point L3 × L3 → L3/2, Thiele’s Problem 13, with a Lean formalization of the maximal estimate. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/082-triangular-hilbert-transform-symmetric-point/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Triangle, tamed?">
+<meta property="og:description" content="An AI system claims uniform maximal and variation bounds for the triangular Hilbert transform at the symmetric point L3 × L3 → L3/2, Thiele’s Problem 13, with a Lean formalization of the maximal estimate. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/082-triangular-hilbert-transform-symmetric-point/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/082-triangular-hilbert-transform-symmetric-point/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 082, October 2026</p>
+<h1>Triangle, tamed?</h1>
+<p class="subtitle">The triangular Hilbert transform at the symmetric point</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 082 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="kOsAD1XQPzM" data-title="Episode 082: Triangle, tamed?">
+  <a href="https://youtu.be/kOsAD1XQPzM">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 082: Triangle, tamed? A triangle with vertices a, b and c whose three edges are labelled G0(a, b), G1(b, c) and G2(c, a), above the estimate: the L three-halves norm of B(F, G) is at most a constant times the L3 norms of F and G.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:35. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/kOsAD1XQPzM?t=0" data-t="0"><span class="t">0:00</span><span>A triangle of variables</span></a></li>
+  <li><a href="https://youtu.be/kOsAD1XQPzM?t=112" data-t="112"><span class="t">1:52</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/kOsAD1XQPzM?t=191" data-t="191"><span class="t">3:11</span><span>Energy and heat</span></a></li>
+  <li><a href="https://youtu.be/kOsAD1XQPzM?t=289" data-t="289"><span class="t">4:49</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take two functions F and G on the plane. Read F a distance t to the right and G the same distance up, multiply them, and integrate over t against 1/t, the Hilbert kernel. This is the triangular Hilbert transform; the question is whether it is bounded from L<sup>3</sup> × L<sup>3</sup> to L<sup>3/2</sup>. Pairing with a third function gives a symmetric form in which each of three functions sees one pair of the variables a, b and c, and the three pairs form a triangle. That cycle is what defeats energy methods that telescope across scales for bipartite arrangements; Kovač identified the triangle as an obstacle to his framework.</p>
+<p>With the kernel cut to scales between ε and R, earlier bounds grew with the number of scales: Tao proved bounds growing slower than the logarithm for one-dimensional relatives, Zorin-Kranich extended this to the triangle, and Durcik, Kovač and Thiele proved power-type cancellation, which carried to the symmetric point still grows like the square root of log(R/ε). A bound uniform in the scales at the symmetric point is <a href="https://arxiv.org/abs/1701.06637">Problem 13 in Thiele’s section of a 2017 problem list</a>, which also asks about a dyadic model.</p>
+<p>Result 082 is three OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/The-maximal-triangular-Hilbert-transform-at-the-symmetric-point-September-24-2026/paper.pdf">The first</a> (27 pages, September 24, 2026) proves the maximal estimate: the supremum over both truncation endpoints, chosen separately at each point, is bounded from L<sup>3</sup> × L<sup>3</sup> to L<sup>3/2</sup> with an absolute constant, for complex inputs; this gives principal values almost everywhere and in L<sup>3/2</sup>, and the symmetric scalar estimate of Thiele’s problem. <a href="https://github.com/openai/math/blob/main/preprints/Annular-variation-of-the-triangular-Hilbert-transform-at-the-symmetric-point-October-5-2026/annular-variation.pdf">The second</a> (37 pages, October 5) strengthens this to annular variation bounds for every r &gt; 2, proving all the matrix and heat estimates it needs. <a href="https://github.com/openai/math/blob/main/preprints/An-L3-bound-for-the-dyadic-triangular-Hilbert-form-October-5-2026/dyadic-triangular-hilbert.pdf">The third</a> (11 pages, October 5) bounds the dyadic model: for real inputs, the total of absolute local contributions over any finite set of scales is at most 40 times the product of the norms.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Only the symmetric point, three equal exponents 3, is claimed; other exponents in the expected range are not.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, one dated September 24 and two dated October 5, 2026, released October 6</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>For the maximal estimate only; we have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. None of the three preprints has been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/082.md">a Lean formalization</a> of the first paper’s maximal estimate, <a href="https://github.com/openai/math/blob/main/lean/OAI/Analysis/TriangularHilbert">105 files and 10,861 lines</a> with no unproved steps that we could find, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/TriangularHilbert.lean">a short separate statement</a> with arbitrary complex L<sup>3</sup> inputs and the supremum over all finite hard truncations. The variation and dyadic theorems are not formalized, and we have not run the check ourselves. The dyadic paper reuses the first paper’s matrix inequalities and reproduces real-matrix versions of their proofs. None of the papers is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Matrices on a triangle.</strong> After a change of variables, the inputs become matrices around the triangle of coordinates a, b and c, and a localized piece of the form is a cyclic trace of their product. At each vertex the paper places the two incident matrices side by side as one matrix R and uses the energy tr((R*R)<sup>3/2</sup>), which scales like the form. A mixed trace inequality, with constants independent of the matrix size, bounds the cyclic trace by quadratic costs from the Hessians of these energies.</li>
+  <li><strong>Gaussian heat flow.</strong> Integrating the energies over Gaussian centers whose sum is zero, their decrease as the variance grows pays for the quadratic costs at every scale; the total is bounded by the initial energies, which are bounded by sums of cubed L<sup>3</sup> norms, so one budget covers all scales.</li>
+  <li><strong>Switching scales.</strong> For the maximal estimate each output point picks its own truncation, so entries of the dual matrix switch on and off and the energy can jump. The total of the jumps is bounded by the L<sup>3</sup> masses, through row and column norms and one-dimensional maximal functions; a kernel comparison passes to hard truncations. The variation paper adds a frequency-block estimate and groups endpoints by dyadic radius; the dyadic paper averages the energy over the four children allowed by the binary constraint.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script implements the dyadic form of the third paper on inputs over grids of 8, 16 and 32 cells, counting all scales. It checks the trace formula against a direct sum, gives a one-scale example worth exactly one unit (the product of the three L<sup>3</sup> norms), and runs a gradient-ascent search from random starts: the largest ratios found were 1.99, 2.10 and 2.05, far below the paper’s bound of 40. A search is not a proof.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-maximal-triangular-Hilbert-transform-at-the-symmetric-point-September-24-2026/paper.pdf">The maximal triangular Hilbert transform at the symmetric point (PDF)</a>, September 24, 2026 (27 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Annular-variation-of-the-triangular-Hilbert-transform-at-the-symmetric-point-October-5-2026/annular-variation.pdf">Annular variation of the triangular Hilbert transform at the symmetric point (PDF)</a>, October 5, 2026 (37 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-L3-bound-for-the-dyadic-triangular-Hilbert-form-October-5-2026/dyadic-triangular-hilbert.pdf">An L<sup>3</sup> bound for the dyadic triangular Hilbert form (PDF)</a>, October 5, 2026 (11 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/082.md">The Lean scope note</a> and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/TriangularHilbert.lean">the statement it is checked against</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 082.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Annular-variation-of-the-triangular-Hilbert-transform-at-the-symmetric-point-October-5-2026/annular-variation.pdf">Annular variation of the triangular Hilbert transform at the symmetric point</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-L3-bound-for-the-dyadic-triangular-Hilbert-form-October-5-2026/dyadic-triangular-hilbert.pdf">An L³ bound for the dyadic triangular Hilbert form</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-maximal-triangular-Hilbert-transform-at-the-symmetric-point-September-24-2026/paper.pdf">The maximal triangular Hilbert transform at the symmetric point</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>A triangle of variables</h3>
+<p>Take two functions F and G on the plane. Read F a distance t to the right, and G the same distance up, multiply them, and integrate over t against 1/t, the Hilbert kernel, which is positive on one side and negative on the other. This is the triangular Hilbert transform. The question is whether it is bounded from L³ times L³ to L^(3/2). Pairing with a third function gives a symmetric form: each of three functions sees one pair of the variables a, b and c, and the three pairs form a triangle. That cycle is what makes the problem hard. Energy methods that telescope across scales work for bipartite arrangements, and Kovač identified the triangle as an obstacle to his framework. With the kernel cut to scales between ε and R, the question is whether the bound can be made independent of the number of scales. Tao proved bounds growing slower than the logarithm for one-dimensional relatives, and Zorin-Kranich extended this to the triangle. Durcik, Kovač and Thiele proved power-type cancellation, but carried to the symmetric point their bound still grows like the square root of the logarithm of R over ε. The symmetric case is Problem 13 in Thiele’s section of a 2017 problem list. Thiele’s problem also asks about a dyadic model, where intervals combine by binary addition without carries. A single dyadic scale contributes at most one unit, the product of the three L³ norms, and our one-scale example reaches it. The question is the total over all scales. We searched for inputs that make the total of absolute contributions as large as possible: on grids of 8, 16 and 32 cells, the largest ratio we found was about two. A search is not a proof.</p>
+<h3><span class="t num">1:52</span>The claim</h3>
+<p>Result 082 is three OpenAI preprints. The first, 27 pages, dated September 24, proves the maximal estimate: the supremum over both truncation endpoints, chosen separately at each point, is bounded from L³ times L³ to L^(3/2) with an absolute constant. That gives principal values almost everywhere and in L^(3/2), and the symmetric scalar estimate of Thiele’s problem. The second, 37 pages, dated October 5, strengthens this to an annular variation estimate for every r above two, proving all the matrix and heat estimates it needs. The third, 11 pages, also dated October 5, bounds the dyadic model: the total of absolute local contributions over any finite set of scales, for real inputs, is at most 40 times the product of the norms. OpenAI also published a Lean formalization of the first paper’s maximal estimate, about 11,000 lines in 105 files, matched against a short separate statement with arbitrary complex L³ inputs and the supremum over all finite hard truncations. It does not cover the other two papers. We have not run the check ourselves.</p>
+<h3><span class="t num">3:11</span>Energy and heat</h3>
+<p>After a change of variables, the three inputs become matrices around the triangle of coordinates a, b and c, and a localized piece of the form becomes a cyclic trace of their product. At each vertex, the paper places the two incident matrices side by side as one matrix R, and uses the energy: the trace of R*R to the power 3/2, which scales like the form itself. A mixed trace inequality, with constants independent of the matrix size, bounds the cyclic trace by quadratic costs from the Hessians of these energies. Then comes Gaussian heat flow. The paper integrates the energies over Gaussian centers whose sum is zero; as the variance grows, their decrease pays for the quadratic costs at every scale. The total is bounded by the initial energies, which are bounded by sums of cubed L³ norms, so one budget covers all scales at once. For the maximal estimate, each output point picks its own truncation, so entries of the dual matrix switch on and off at their own scales, and the energy can jump. The key new estimate bounds the total of these jumps by the L³ masses: the derivative in one entry is controlled by its row and column norms, and one-dimensional maximal functions control those uniformly in the switching scales. A comparison of kernels then passes from smooth to hard truncations. The variation paper adds a frequency-block estimate and groups hard endpoints by dyadic radius. The dyadic paper averages the same energy over the four children allowed by the binary constraint.</p>
+<h3><span class="t num">4:49</span>Where it stands</h3>
+<p>None of the three preprints is peer reviewed, and none has been revised. The maximal estimate has a Lean formalization, which we have not run; the variation and dyadic theorems do not. The dyadic paper takes its matrix inequalities from the first paper and reproduces real-matrix versions of their proofs. None of the three is among the papers OSVerify reviewed, and we have seen no expert review. If they hold, the triangular Hilbert transform is bounded at the symmetric point, with maximal and variation bounds and principal values, and the dyadic model is bounded at the same exponents. Other exponents in the expected range are not claimed.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20082%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

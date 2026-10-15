@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 096: The Gaussian propeller conjecture in every dimension | AI Proved What?</title>
-<meta name="description" content="The Gaussian propeller conjecture in every dimension. Result 096 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Three blades win? The Gaussian propeller conjecture in every dimension | AI Proved What?</title>
+<meta name="description" content="An AI system claims that no partition of Gaussian space in any dimension beats the three-blade propeller, whose squared Gaussian first moments add up to 9/(8π), with a Lean formalization, and derives a kernel-clustering hardness threshold. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/096-gaussian-propeller-conjecture-every-dimension/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 096: The Gaussian propeller conjecture in every dimension | AI Proved What?">
-<meta property="og:description" content="The Gaussian propeller conjecture in every dimension. Result 096 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Three blades win?">
+<meta property="og:description" content="An AI system claims that no partition of Gaussian space in any dimension beats the three-blade propeller, whose squared Gaussian first moments add up to 9/(8π), with a Lean formalization, and derives a kernel-clustering hardness threshold. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/096-gaussian-propeller-conjecture-every-dimension/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/096-gaussian-propeller-conjecture-every-dimension/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 096 · <a href="../../subjects/convex-and-metric-geometry/">Convex and metric geometry</a></p>
-<h1 class="result-title">The Gaussian propeller conjecture in every dimension</h1>
+<p class="meta">Episode 096, October 2026</p>
+<h1>Three blades win?</h1>
+<p class="subtitle">No partition of Gaussian space, in any dimension, beats the three-blade propeller</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 096 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="8S1iXRSCmEM" data-title="Episode 096: Three blades win?">
+  <a href="https://youtu.be/8S1iXRSCmEM">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 096: Three blades win? A Gaussian point cloud split into three 120-degree sectors, with an arrow for each sector's Gaussian first moment.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:23. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/8S1iXRSCmEM?t=0" data-t="0"><span class="t">0:00</span><span>Splitting a Gaussian cloud</span></a></li>
+  <li><a href="https://youtu.be/8S1iXRSCmEM?t=123" data-t="123"><span class="t">2:03</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/8S1iXRSCmEM?t=221" data-t="221"><span class="t">3:41</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/8S1iXRSCmEM?t=335" data-t="335"><span class="t">5:35</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves that the sum of squared Gaussian first moments of any finite measurable partition is at most <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9</mn><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mn>8</mn><mi>π</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">9/(8\pi)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">9/</span><span class="mopen">(</span><span class="mord">8</span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mclose">)</span></span></span></span>. In dimension at least two, three planar sectors of angle <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>π</mi><mi mathvariant="normal">/</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">2\pi/3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mord">/3</span></span></span></span>, extended orthogonally, attain the bound. Combined with the separate Unique Games theorem, this proves NP-hardness of improving the loss factor <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>8</mn><mi>π</mi><mi mathvariant="normal">/</mi><mn>9</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>k</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(8\pi/9)(1-1/k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">8</span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mord">/9</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1/</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span> for identity-target kernel clustering with fixed <i>k</i> ≥ 3 on rational centered positive semidefinite inputs.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Scatter points by the standard Gaussian distribution and cut space into a few pieces. For each piece, average the position vectors of all the points but count only those inside the piece, without dividing by the piece’s probability: this is the piece’s Gaussian first moment, z(A) = ∫<sub>A</sub> x dγ(x), an arrow toward where its mass sits. Add up the squared lengths of the arrows. Two half-planes give 1/π, about 0.318; three 120° sectors of the plane, the propeller, give 9/(8π), about 0.358; four equal quarters fall back to 1/π, and more equal sectors do worse.</p>
+<p>The propeller conjecture says that no partition does better, with any number of pieces in any dimension. It arose in Khot and Naor’s 2009 study of kernel clustering, where this best total governs approximation and Unique Games hardness; they showed that a best partition can be taken to be made of cones and found the best value for three cells. Heilman, Jagannath and Naor proved the conjecture in three dimensions in 2013 with a computer-assisted argument, and Heilman later gave a conditional route for three or four cells in any dimension.</p>
+<p>Result 096 is <a href="https://github.com/openai/math/blob/main/preprints/The-Gaussian-Propeller-Bound-in-Every-Dimension-September-24-2026/main.pdf">one OpenAI preprint</a> dated September 24, 2026 (26 pages). It claims that for every dimension and every finite measurable partition, the squared Gaussian first moments add up to at most 9/(8π), with equality for the propeller, crossed with the remaining directions, in every dimension from 2 up. A corollary bounds the expected maximum of Gaussian scores: E max⟨v<sub>i</sub>, g⟩ ≤ 3/(2√(2π)) · (Σ‖v<sub>i</sub> − v̄‖²)<sup>1/2</sup>. The paper also derives a kernel-clustering consequence: with Khot and Naor’s analysis and <a href="https://github.com/openai/math/blob/main/preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf">a separate OpenAI preprint</a> that claims to prove the Unique Games Conjecture (result 102), for each fixed k ≥ 3 no deterministic polynomial-time algorithm can beat Khot and Naor’s loss factor (8π/9)(1 − 1/k) unless P = NP.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The theorem gives the best value; it does not claim the propeller is the only partition attaining it. The upper bound uses two outside theorems, the three-dimensional result of Heilman, Jagannath and Naor and Ehrhard’s Gaussian inequality, and the clustering consequence depends on the separate Unique Games preprint.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 24, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +88,42 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/096.md">scope notes</a>)</dd>
+    <dd>OpenAI published a Lean proof of the full bound and its attainment; we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/096.md">a Lean formalization</a> of the full bound and the propeller’s attainment, in <a href="https://github.com/openai/math/blob/main/lean/OAI/Probability/GaussianPropeller">47 files and 11,622 lines</a>, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/GaussianPropeller.lean">a separate statement</a>, with no unproved steps that we could find. It does not rely on the three-dimensional theorem: it settles three or fewer cells directly, rules out four cells with the same kind of estimates the paper uses for five or more, and proves the cone case of Ehrhard’s inequality the argument needs. Neither the clustering consequence nor the Gaussian-maxima corollary is formalized. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Scores instead of shapes.</strong> By Khot and Naor’s duality, the square root of the best total equals the largest expected maximum of Gaussian scores ⟨v<sub>i</sub>, g⟩ over vectors whose squared lengths add up to one. Suppose some partition beats 9/(8π) and take a best one with the fewest cells. Merging two cells changes the total by twice the inner product of their moments, so every pair of moments is obtuse; each cell is the cone where its own score is largest, and the m moments span m − 1 dimensions. With four or fewer cells that is at most three dimensions, ruled out by the 2013 theorem, so at least five cells remain.</li>
+  <li><strong>Probability against length.</strong> Rescale so that the squared moment lengths r<sub>i</sub>² add up to one, like the cell probabilities P<sub>i</sub>. Each P<sub>i</sub> is at most 1/2, since the scores add up to zero. Comparing a cell with the half-space of the same probability, and for five cells using spherical rearrangement, gives lower bounds such as P<sub>i</sub> ≥ 0.415 r<sub>i</sub> + 0.15 r<sub>i</sub>². Deleting one score must lower the expected maximum by a definite amount, while Ehrhard’s inequality, applied to translates of the deleted cell’s cone, limits how far it can drop.</li>
+  <li><strong>Two competitors.</strong> Take the cell with the shortest moment and project the other moments away from it. Over that cell each residual score integrates to zero; bounding the joint density of two of them gives √det Cov(Y<sub>j</sub>, Y<sub>k</sub>) ≤ (3/π) t (1 + a<sub>j</sub>)(1 + a<sub>k</sub>), with t the shortest normalized length.</li>
+  <li><strong>The contradiction.</strong> Because the probabilities add up to one, the third-longest moment is forced to be too long compared with the shortest, against the determinant bound; the final margin is 1.5(2.6 − 0.12)² − 10(3/π)² ≈ 0.1067. An appendix checks every numerical comparison with exact rational enclosures.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Equal planar sectors give k sin²(π/k)/(2π): 0.318, 0.358, 0.318, 0.275, 0.239 for k = 2 to 6; in three dimensions octants give 0.239, the six cones of a cube 0.293 and the four cones of a regular tetrahedron 0.353.</li>
+  <li>A search with five score vectors in four dimensions from 60 random starts (each point to its largest score, each vector reset to its cell’s moment): 15 runs end with three cells in a plane within 0.00001 of 9/(8π); 44 stall with four cells, 43 of them at the tetrahedron’s value 0.3532; one ends with five cells at 0.338. Recomputed by quadrature over directions, none exceeds 9/(8π).</li>
+  <li>The Gaussian-maxima corollary holds on 300 random lists of vectors (largest ratio 0.9994 by Monte Carlo).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Gaussian-Propeller-Bound-in-Every-Dimension-September-24-2026/main.pdf">The Gaussian propeller bound in every dimension (PDF)</a>, 26 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Unique-Games-Theorem-September-23-2026/paper.pdf">The Unique Games Theorem (PDF)</a>, the separate preprint the clustering consequence relies on.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/096.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 096.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +131,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/The-Gaussian-Propeller-Bound-in-Every-Dimension-September-24-2026/main.pdf">The Gaussian propeller bound in every dimension</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Splitting a Gaussian cloud</h3>
+<p>Scatter points in the plane by the standard Gaussian distribution, and cut the plane into a few pieces. For each piece, average the position vectors of all the points, but count only the ones inside the piece, without dividing by the piece’s probability. This is the piece’s Gaussian first moment: an arrow pointing toward where its mass sits. Now add up the squared lengths of these arrows. Cut the plane in half and each arrow has length 1/√(2π), for a total of 1/π, about 0.318. 3 sectors of 120 degrees, the propeller, do better: 9/(8π), about 0.358. 4 equal quarters fall back to 1/π, and more equal sectors do worse. The propeller conjecture says that no partition does better, with any number of cells in any dimension. It arose in Khot and Naor’s study of kernel clustering, published in 2009, where this best total governs both a rounding algorithm and its hardness under the Unique Games Conjecture. They showed that a best partition can be taken to be made of cones, and they found the best value for 3 cells. Heilman, Jagannath and Naor proved the conjecture in 3 dimensions in 2013, with a computer-assisted argument. Heilman later gave a conditional route for 3 or 4 cells in any dimension, assuming an extra stability property. In our search, we started from 60 random sets of 5 score vectors in 4 dimensions. Each point goes to the cell of its largest score, then each score vector is reset to its cell’s moment, and we repeat; on our fixed sample, neither step can lower the total. 15 runs ended with 3 cells in a plane, within 0.00001 of 9/(8π). 44 stalled with 4 cells in 3 dimensions, all but one at the value of the 4 cones of a regular tetrahedron, about 0.353. Recomputed precisely, none went above 9/(8π).</p>
+<h3><span class="t num">2:03</span>The claim</h3>
+<p>Result 096 is one OpenAI preprint, 26 pages, dated September 24. It claims that in every dimension and for every finite number of cells, the squared Gaussian first moments add up to at most 9/(8π). The propeller attains this in every dimension from 2 up, crossed with the remaining directions, with any extra cells left empty. A corollary bounds the expected maximum of Gaussian scores. The paper also derives a consequence for kernel clustering into k groups, for any fixed k of at least 3: combined with Khot and Naor’s analysis and a separate OpenAI preprint that claims to prove the Unique Games Conjecture, beating the loss factor (8π/9)(1 − 1/k) is NP-hard. The upper bound uses two outside theorems: the 3-dimensional result of Heilman, Jagannath and Naor, and Ehrhard’s Gaussian inequality. The clustering consequence depends on the separate Unique Games preprint, result 102 in the release. OpenAI published a Lean formalization of the bound and its attainment, 47 files and about 11,600 lines, matched against a separate statement. It does not rely on the 3-dimensional theorem: the Lean files settle 3 or fewer cells directly, rule out 4 cells with the same kind of estimates the paper uses for 5 or more, and prove the cone case of Ehrhard’s inequality the argument needs. Neither the clustering consequence nor the corollary on Gaussian maxima is formalized. We have not run the check.</p>
+<h3><span class="t num">3:41</span>How the proof goes</h3>
+<p>The proof first trades shapes for vectors. By duality, the square root of the best total equals the largest expected maximum of Gaussian scores, the inner products of a Gaussian point with vectors whose squared lengths add up to 1. Suppose some partition beats 9/(8π), and take a best one with the fewest cells. Merging two cells changes the total by twice the inner product of their moments, so every pair of moments makes an obtuse angle. Each cell is the cone where its own score is largest, and the m moments span exactly m − 1 dimensions. With 4 or fewer cells that is at most 3 dimensions, which the 2013 theorem rules out. So at least 5 cells remain. Rescale so that the squared moment lengths add up to 1, like the cell probabilities. Each probability is at most 1/2, since the scores add up to zero. And each cell needs enough probability for its moment length. Comparing a cell with the half-space of the same probability gives one lower bound, and spherical rearrangement sharpens it for 5 cells. A second bound comes from deleting one score. The expected maximum must drop by a definite amount, while Ehrhard’s inequality, applied to translates of the deleted cell’s cone, limits how far it can drop. Next, take the cell with the shortest moment, and project the other moments away from it. Over that cell, each residual score integrates to zero; bounding the joint density of two of them gives an inequality between their covariance determinant and the shortest length. Finally, the probabilities must add up to 1. That forces the third-longest moment to be too long compared with the shortest one, against the determinant bound, with a final margin of about 0.107. An appendix checks every numerical comparison with exact rational enclosures.</p>
+<h3><span class="t num">5:35</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. The Lean formalization covers the full bound and the propeller’s attainment; we have not run it. The hardness consequence rests on the separate Unique Games preprint and is not formalized. It is not among the papers OSVerify reviewed, and we have seen no expert review. If it holds, no partition of Gaussian space, in any dimension, does better than the propeller. And if the Unique Games preprint also holds, then for any fixed k of 3 or more, no deterministic polynomial-time algorithm can beat Khot and Naor’s factor for kernel clustering, (8π/9)(1 − 1/k), unless P equals NP.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20096%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../095-hyperbolicity-cones-without-semidefinite-lifts/"><span class="dir">Previous · 095</span><span class="pt">Hyperbolicity cones without semidefinite lifts</span></a>
-  <a class="next" href="../097-euclidean-steinitz-bergstrom-bound/"><span class="dir">Next · 097</span><span class="pt">The Euclidean Steinitz–Bergström bound</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/convex-and-metric-geometry/">More in convex and metric geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

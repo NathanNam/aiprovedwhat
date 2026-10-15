@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No room for halves? The Erdős similarity conjecture for geometric sequences | AI Proved What?</title>
+<meta name="description" content="An AI system claims that for every ratio q between 0 and 1, a set of nearly full measure in [0, 1] contains no shifted or scaled copy of q, q², q³, …, the geometric case of the Erdős similarity conjecture, with a Lean formalization of the dyadic case. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/084-erdos-similarity-geometric-sequences/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="No room for halves?">
+<meta property="og:description" content="An AI system claims that for every ratio q between 0 and 1, a set of nearly full measure in [0, 1] contains no shifted or scaled copy of q, q², q³, …, the geometric case of the Erdős similarity conjecture, with a Lean formalization of the dyadic case. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/084-erdos-similarity-geometric-sequences/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/084-erdos-similarity-geometric-sequences/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 084, October 2026</p>
+<h1>No room for halves?</h1>
+<p class="subtitle">The Erdős similarity conjecture for geometric sequences</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 084 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="MsDKd6xH-Rs" data-title="Episode 084: No room for halves?">
+  <a href="https://youtu.be/MsDKd6xH-Rs">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 084: No room for halves? A blue set of intervals on a line with gaps, above yellow dots at one half, one quarter, one eighth and so on, crowding toward a point, and the claim: E has measure greater than 1 minus eta, and x plus s times q to the n lies outside E for some n.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:27. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/MsDKd6xH-Rs?t=0" data-t="0"><span class="t">0:00</span><span>Hiding a pattern</span></a></li>
+  <li><a href="https://youtu.be/MsDKd6xH-Rs?t=114" data-t="114"><span class="t">1:54</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/MsDKd6xH-Rs?t=173" data-t="173"><span class="t">2:53</span><span>Random routing</span></a></li>
+  <li><a href="https://youtu.be/MsDKd6xH-Rs?t=280" data-t="280"><span class="t">4:40</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take a set of positive length on the line and a pattern of points. A finite pattern can always be shrunk far enough and slid into place so that every point lands inside the set. In 1974 Erdős conjectured that this fails for every infinite pattern: for each infinite set A, some set of positive measure contains no copy x + sA, shifted by any x and scaled by any nonzero s, positive or negative.</p>
+<p>Falconer and Eigen proved this for decreasing sequences whose consecutive ratios tend to one. Kolountzakis and Chlebík gave criteria in terms of gaps: arbitrarily large finite pieces whose smallest gap, relative to their size, shrinks slower than any exponential in the number of points. Geometric sequences fail that test: forty consecutive powers of one half have normalized smallest gap 2<sup>−39</sup>. Bourgain proved that a sum of three infinite sets is never universal, and later work handled sums involving a geometric sequence, but avoiding a larger pattern does not avoid the sequence itself. The sequence 1/2, 1/4, 1/8, … became a well-known hard case.</p>
+<p>Result 084 is two OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/The-dyadic-case-of-the-Erdos-similarity-conjecture-September-25-2026/paper.pdf">The first</a>, 16 pages, dated September 25, 2026, proves the dyadic case: for every η between 0 and 1 there is a compact subset of [0, 1], with measure greater than 1 − η, that contains no copy of 1/2, 1/4, 1/8, … under any translation and any nonzero dilation of either sign. <a href="https://github.com/openai/math/blob/main/preprints/The-geometric-case-of-the-Erdos-similarity-conjecture-October-5-2026/geometric-erdos-similarity.pdf">The second</a>, 13 pages, dated October 5, 2026, extends this to the sequence q, q<sup>2</sup>, q<sup>3</sup>, … for every ratio q between 0 and 1.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The avoiding set may depend on q; nothing is claimed for all ratios at once. The Erdős similarity conjecture for arbitrary infinite sets remains open.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, dated September 25 and October 5, 2026, released October 6</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>OpenAI published a Lean proof of the dyadic case; we have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. Neither preprint has been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/084.md">a Lean formalization of the dyadic case</a>, <a href="https://github.com/openai/math/blob/main/lean/OAI/MeasureTheory/DyadicAvoidance">75 files and 8,455 lines</a> with no unproved steps that we could find, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/DyadicAvoidance.lean">a separate statement</a> of the dyadic theorem, both signs of dilation included. The general-ratio paper is not formalized. We have not run the check ourselves. The general-ratio paper places itself in Kolountzakis’s probabilistic approach, and notes that Solymosi and Tom reported incomplete dyadic constructions using random cells. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Build the complement.</strong> It is enough to find an open set H of period one, with density as small as you like, that meets x + t·q<sup>n</sup> for some n, for every center x and every scale t between 1 and 2. Rescaled and reflected copies of such sets, with total measure in [0, 1] kept below η, handle every nonzero scale, and the complement of their union is the large avoiding set.</li>
+  <li><strong>Random routing on a tree.</strong> Random tests at one center and one scale are easy; the hard part is all scales at once. The tests are arranged on a finite ordered tree. Each point is routed to a leaf by independent random tables read at its grid cells: a node picks the first child whose table says yes, and its last child by default, and the leaf’s table keeps the point with a small probability p. Sequence indices are assigned to the edges in order, with gaps, so that later translations leave earlier routing decisions unchanged, except at a small set of centers.</li>
+  <li><strong>Counting scales, repairing centers.</strong> At the first default on a center’s route, the other children give many independent chances to hit, and a deep tree makes having no default unlikely. Each edge’s index interval is at least as long as the following gap and child subtree together, so the number of representative scales to check depends on one interval, and a large enough branching number makes the failure chance beat that count. For a general ratio the grids sit at resolutions comparable to q<sup>−b</sup>/(1 − q). Finally, an open neighborhood of the exceptional centers repairs the missed copies, because x + t·q<sup>n</sup> tends to x.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script checks the gap numbers: for m consecutive powers of one half, minus log<sub>2</sub> of the normalized smallest gap is 9, 19, 39 and 79 at m = 10, 20, 40 and 80, growing linearly, against 6.34, 8.5, 10.57 and 12.61 for the first m terms of 1, 1/2, 1/3, …, about 2 log<sub>2</sub> m.</li>
+  <li>As an illustration only, a random periodic set of density 0.1 built from cells of a single width 2<sup>−k</sup> misses a fraction of the copies at scales between one and two (over 40,000 random centers) of 0.41, 0.36, 0.24, 0.18 and 0.13 at k = 6, 9, 12, 15 and 18, roughly 0.9<sup>k</sup>: it falls, but never to zero. No computation can test every center and every scale.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-dyadic-case-of-the-Erdos-similarity-conjecture-September-25-2026/paper.pdf">The dyadic case of the Erdős similarity conjecture (PDF)</a>, September 25, 2026 (16 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-geometric-case-of-the-Erdos-similarity-conjecture-October-5-2026/geometric-erdos-similarity.pdf">The geometric case of the Erdős similarity conjecture (PDF)</a>, October 5, 2026 (13 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/084.md">The Lean scope note</a> and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/DyadicAvoidance.lean">the statement it is checked against</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 084.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-geometric-case-of-the-Erdos-similarity-conjecture-October-5-2026/geometric-erdos-similarity.pdf">The geometric case of the Erdős similarity conjecture</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-dyadic-case-of-the-Erdos-similarity-conjecture-September-25-2026/paper.pdf">The dyadic case of the Erdős similarity conjecture</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Hiding a pattern</h3>
+<p>Take any set of positive length on the line, and a pattern of points. Can you always shrink or stretch the pattern, and slide it, so that every point lands inside the set? For a finite pattern, yes: shrink it far enough and slide it around, and some position fits entirely inside. In 1974, Erdős conjectured that this fails for every infinite pattern: for each infinite set, some set of positive measure contains no shifted, scaled or reflected copy of it. Falconer and Eigen proved this for sequences that decrease slowly, with the ratio of consecutive terms tending to one. Kolountzakis and Chlebík gave criteria in terms of gaps: arbitrarily large finite pieces whose smallest gap, relative to their size, shrinks slower than any exponential in the number of points. Geometric sequences fail this test. For forty consecutive powers of one half, the normalized smallest gap is 2^(−39); for the first forty terms of one, one half, one third and so on, it is only about 1 in 1,500. The sequence one half, one quarter, one eighth became a well-known hard case. Bourgain proved that a sum of three infinite sets is never universal, and others handled sums involving a geometric sequence, but avoiding a larger pattern does not avoid the sequence itself. The difficulty is uniformity. In our simulation, a random set of density 0.1, built from cells of a single size, misses a fraction of the copies at scales between one and two that falls only slowly, roughly like 0.9^k, when the cells have width 2^(−k): from about 40% at k = 6 to about 13% at k = 18. The random set plays the role of the complement, so every copy it misses lies entirely inside the large set; the construction must miss none.</p>
+<h3><span class="t num">1:54</span>The claim</h3>
+<p>Result 084 is two OpenAI preprints. The first, 16 pages, dated September 25, proves the dyadic case: for every η, there is a compact subset of the unit interval, with measure greater than 1 − η, that contains no copy of one half, one quarter, one eighth and so on, for any translation and any nonzero dilation of either sign. The second, 13 pages, dated October 5, extends this to every ratio q between zero and one. The set may depend on q, and nothing is claimed for all ratios at once. OpenAI also published a Lean formalization of the dyadic case, about 8,500 lines in 75 files, matched against a short separate statement of exactly that theorem. The general-ratio paper is not formalized. We have not run the check ourselves. The Erdős conjecture for arbitrary infinite sets is not claimed.</p>
+<h3><span class="t num">2:53</span>Random routing</h3>
+<p>The construction builds the complement of the avoiding set. It is enough to find an open set of period one, with density as small as you like, that meets x + t·qⁿ, for some n, for every center x and every scale t between one and two. Dilations and reflections of such sets, with their total measure in the unit interval kept below η, handle every nonzero scale, and the complement of their union is the large avoiding set. Random tests at one center and one scale are easy; the hard part is all scales at once. The paper arranges the tests on a finite ordered tree. Each point is routed to a leaf by independent random tables evaluated at its grid cells: a node picks the first child whose table says yes, and its last child by default. The leaf’s table then keeps the point with a small probability p. Sequence indices are assigned to the edges in order, with gaps, so that later translations leave earlier routing decisions unchanged, except at a small set of centers. At the first default on a center’s route, the other children supply many independent chances to hit, and a deep tree makes having no default unlikely. The key length condition makes each edge’s index interval at least as long as the following gap and child subtree together, so the number of representative scales to check depends on one interval, not on the whole tree, and a large enough branching number makes the failure chance beat that count. For a general ratio, the grids are chosen at resolutions comparable to q^(−b)/(1 − q). Finally, an open neighborhood of the small set of exceptional centers repairs the missed copies, because x + t·qⁿ tends to x.</p>
+<h3><span class="t num">4:40</span>Where it stands</h3>
+<p>Neither preprint is peer reviewed, and neither has been revised. The dyadic case has a Lean formalization, which we have not run; the general-ratio extension does not. The general-ratio paper places itself in Kolountzakis’s probabilistic approach, and notes that Solymosi and Tom reported incomplete dyadic constructions using random cells. Neither is among the papers OSVerify reviewed, and we have seen no expert review. If they hold, no geometric sequence shrinking to zero is universal: for each ratio, some set of nearly full measure avoids every affine copy. The Erdős similarity conjecture for arbitrary infinite sets remains open.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20084%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

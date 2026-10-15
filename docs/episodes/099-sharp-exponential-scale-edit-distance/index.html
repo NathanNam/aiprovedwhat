@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 099: The sharp exponential scale of edit-distance distortion | AI Proved What?</title>
-<meta name="description" content="The sharp exponential scale of edit-distance distortion. Result 099 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Sharp at last? The exponential scale of edit-distance distortion | AI Proved What?</title>
+<meta name="description" content="An AI system claims that the least ℓ1 distortion of edit distance on strings of length at most d is exp(Θ(√(log d · log log d))), so the Ostrovsky–Rabani exponent is sharp up to constants, with Lean formalizations. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/099-sharp-exponential-scale-edit-distance/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 099: The sharp exponential scale of edit-distance distortion | AI Proved What?">
-<meta property="og:description" content="The sharp exponential scale of edit-distance distortion. Result 099 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Sharp at last?">
+<meta property="og:description" content="An AI system claims that the least ℓ1 distortion of edit distance on strings of length at most d is exp(Θ(√(log d · log log d))), so the Ostrovsky–Rabani exponent is sharp up to constants, with Lean formalizations. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/099-sharp-exponential-scale-edit-distance/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/099-sharp-exponential-scale-edit-distance/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,33 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 099 · <a href="../../subjects/convex-and-metric-geometry/">Convex and metric geometry</a></p>
-<h1 class="result-title">The sharp exponential scale of edit-distance distortion</h1>
+<p class="meta">Episode 099, October 2026</p>
+<h1>Sharp at last?</h1>
+<p class="subtitle">How much edit distance must be distorted to fit into ℓ<sub>1</sub>: the claimed answer is exp(Θ(√(log d · log log d)))</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 099 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="fwHqvVcAv8I" data-title="Episode 099: Sharp at last?">
+  <a href="https://youtu.be/fwHqvVcAv8I">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 099: Sharp at last? Rows of tagged slots followed by long markers, and a binary word with its cyclic shift aligned at a cost of two edits.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:09. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/fwHqvVcAv8I?t=0" data-t="0"><span class="t">0:00</span><span>Edit distance and ℓ₁</span></a></li>
+  <li><a href="https://youtu.be/fwHqvVcAv8I?t=118" data-t="118"><span class="t">1:58</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/fwHqvVcAv8I?t=213" data-t="213"><span class="t">3:33</span><span>How the lower bound goes</span></a></li>
+  <li><a href="https://youtu.be/fwHqvVcAv8I?t=332" data-t="332"><span class="t">5:32</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Determines the least distortion of embedding edit distance on words of length at most <i>d</i> into real <i>ℓ</i><sub>1</sub>: it is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>exp</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi mathvariant="normal">Θ</mi><mo stretchy="false">(</mo><msqrt><mrow><mi>log</mi><mo>⁡</mo><mi>d</mi><mtext> </mtext><mi>log</mi><mo>⁡</mo><mi>log</mi><mo>⁡</mo><mi>d</mi></mrow></msqrt><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\exp(\Theta(\sqrt{\log d\,\log\log d}))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.085em;vertical-align:-0.25em;"></span><span class="mop">exp</span><span class="mopen">(</span><span class="mord">Θ</span><span class="mopen">(</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.835em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">d</span></span></span><span style="top:-2.795em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
-c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
-c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
-c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
-s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
-c69,-144,104.5,-217.7,106.5,-221
-l0 -0
-c5.3,-9.3,12,-14,20,-14
-H400000v40H845.2724
-s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
-c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
-M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.205em;"><span></span></span></span></span></span><span class="mclose">))</span></span></span></span>. Insertions, deletions and substitutions have unit cost. The constants are uniform over all finite alphabets with at least two symbols, even when the alphabet grows with <i>d</i>; binary words already force the lower bound.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>The edit distance between two strings is the least number of single-symbol insertions, deletions and substitutions that turn one into the other. Because an insertion or deletion shifts everything after it, the distance depends on the best alignment: cutting the first symbol of a word and pasting it at the end costs at most two edits, though it can change most positions. Many algorithms would be simpler with an ℓ<sub>1</sub> distance, a sum of absolute differences of coordinates, instead. The question is the least distortion D such that some map into ℓ<sub>1</sub> keeps every edit distance within a factor D, after rescaling, for all strings of length at most d.</p>
+<p>Ostrovsky and Rabani embedded the binary strings of length d with distortion exp(O(√(log d · log log d))), and noted extensions to other alphabets and lengths. Lower bounds grew from close to 3/2 (Andoni, Deza, Gupta, Indyk and Raskhodnikova) to order √(log d / log log d) (Khot and Naor) and order log d (Krauthgamer and Rabani), leaving a large gap.</p>
+<p>Result 099 is three OpenAI preprints dated September 27, 2026: <a href="https://github.com/openai/math/blob/main/preprints/Edit-Distance-in-l1-Matching-Bounds-up-to-Constants-in-the-Exponent-September-27-2026/paper.pdf">the main paper</a> (15 pages) and two companions, on <a href="https://github.com/openai/math/blob/main/preprints/Finite-Circle-Obstructions-Binary-Codes-and-Histogram-Embeddings-for-Edit-Distance-September-27-2026/paper.pdf">finite circles, binary codes and histogram embeddings</a> (33 pages) and on <a href="https://github.com/openai/math/blob/main/preprints/Tree-Constructions-for-the-l1-Distortion-of-Binary-Edit-Distance-September-27-2026/paper.pdf">tree constructions</a> (23 pages). The main paper claims that for absolute constants c and C, every large d and every finite alphabet with at least two symbols, the least ℓ<sub>1</sub> distortion lies between exp(c √(log d · log log d)) and exp(C √(log d · log log d)). So the Ostrovsky–Rabani exponent is sharp up to constant factors, and binary strings of one common length already force the lower bound. The companions give four further lower-bound constructions, from circles and from trees, and a complete histogram embedding for the upper bound.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Only the exponent is determined: the paper does not specify the constants c and C, and the distortion itself could still improve by a factor that grows with d, as long as the exponent keeps its order. Nothing is claimed about computing the embedding quickly. The main paper takes Ostrovsky and Rabani’s fixed-length theorem as an input and extends it to all alphabets and lengths.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, three preprints dated September 27, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -73,12 +88,43 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/099.md">scope notes</a>)</dd>
+    <dd>OpenAI published Lean proofs of the two-sided bound and the four further lower-bound constructions; we have not run the checks</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. The preprints have not been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/099.md">Lean formalizations</a> matched against four separate statements. The main two-sided bound, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/EditDistance.lean">its comparator statement</a>, takes <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/EditDistance">45 files and 6,275 lines</a> and proves its own histogram upper embedding instead of citing Ostrovsky and Rabani; it fixes the constants at c = 1/1200 and C = 32, beyond a threshold it does not compute. The circle paper’s full statement and the two tree constructions take about 150 more files. We found no unproved steps. We have not run the checks. The papers are not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the lower bound goes</h2>
+<ol class="steps">
+  <li><strong>Rows, payloads and markers.</strong> Words are built level by level. A word is a long list of rows; each row holds a payload of lower-level words in fixed slots, each slot with its own tag so that different slots cannot match, followed by a marker of a fresh symbol as long as the payload. The lower-level words depend on states in many components; in each, a distinguished step cycles the state with a prime period, with different primes for different components. Advancing every component at once shifts the row list by one, which costs only the deletion and insertion of one row.</li>
+  <li><strong>The distinguished step costs.</strong> Advancing only the distinguished component changes it in many separately tagged slots. Pairing row i with row i leaves those slots apart; any other pairing, by a row shift shorter than the word, leaves many of the other prime-period components apart. An alignment that spreads one source payload across several target rows skips a whole marker in between, and the skipped markers are disjoint. So every alignment pays, and relative to the word length the guaranteed separation shrinks by a factor of 24 per level.</li>
+  <li><strong>The ℓ<sub>1</sub> side.</strong> A finite ℓ<sub>1</sub> metric is a nonnegative sum of cut metrics, and each cut is expanded in Fourier characters on the product of the cycles. A character involving few components is caught by the simultaneous step: with distinct prime denominators its phase change is never a whole number, and with few denominators it stays well away from one. A character involving many components is caught by the average of the single-component steps. After k levels, any ℓ<sub>1</sub> map must distort the words by at least (h/24)<sup>k</sup>/(16w) = exp(Ω(k log k)), with h = 10k, while the logarithm of the word length is O(k² log k). A delimiter code makes the words binary, and choosing k of order √(log d / log log d) gives the exponent √(log d · log log d).</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Kitten to sitting takes 3 edits. A cyclic shift of a random 1,000-bit word changes 508 positions, at an edit cost of 2.</li>
+  <li>The exact least ℓ<sub>1</sub> distortion of tiny sets, by linear programming over cut metrics: 8/7 for the 8 binary words of length 3 (127 cuts), 5/4 for the 16 words of length 4 (32,767 cuts), and 4/3 for the 15 words of length at most 3 (16,383 cuts).</li>
+  <li>For the primes 2, 3, 5, 7 and 11, none of the 2,309 nonzero characters has a whole-number phase change; for example 1/2 + 2/3 + 4/5 = 59/30.</li>
+  <li>The bar chart compares log log d with √(log d · log log d), constants set to 1: 2.6 and 6.0 at d = 10<sup>6</sup>, 4.0 and 14.9 at d = 10<sup>24</sup>, 5.4 and 35.4 at d = 10<sup>100</sup>.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Edit-Distance-in-l1-Matching-Bounds-up-to-Constants-in-the-Exponent-September-27-2026/paper.pdf">Edit Distance in ℓ1: Matching Bounds up to Constants in the Exponent (PDF)</a>, 15 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Finite-Circle-Obstructions-Binary-Codes-and-Histogram-Embeddings-for-Edit-Distance-September-27-2026/paper.pdf">Finite-Circle Obstructions, Binary Codes, and Histogram Embeddings for Edit Distance (PDF)</a>, 33 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Tree-Constructions-for-the-l1-Distortion-of-Binary-Edit-Distance-September-27-2026/paper.pdf">Tree Constructions for the ℓ1 Distortion of Binary Edit Distance (PDF)</a>, 23 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/099.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 099.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 3 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -88,18 +134,28 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
   <li><a href="https://github.com/openai/math/blob/main/preprints/Tree-Constructions-for-the-l1-Distortion-of-Binary-Edit-Distance-September-27-2026/paper.pdf">Tree Constructions for the l1 Distortion of Binary Edit Distance</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Edit distance and ℓ₁</h3>
+<p>The edit distance between two strings is the least number of single-symbol insertions, deletions and substitutions that turn one into the other. Kitten becomes sitting in 3 edits. Inserting or deleting a symbol shifts everything after it, so the distance depends on the best alignment of the two strings. Cut the first symbol of a word and paste it at the end: nearly every position may change, yet the cost is at most 2 edits. For a random 1,000-bit word, that shift changes 508 positions, at a cost of 2. Algorithms would like to replace edit distance by a simpler one, such as the ℓ₁ distance, a sum of absolute differences of coordinates. The question is the cost: the least distortion D such that some map into ℓ₁ keeps every distance within a factor D, after rescaling, for all strings of length at most d. Ostrovsky and Rabani embedded the binary strings of length d with distortion exp(C √(log d · log log d)), and noted extensions to other alphabets and lengths. On the other side, Andoni, Deza, Gupta, Indyk and Raskhodnikova found sets needing distortion close to 3/2, Khot and Naor proved a lower bound growing like √(log d / log log d), and Krauthgamer and Rabani one of order log d. A large gap remained. For tiny sets, the least distortion can be computed exactly. Every finite ℓ₁ metric is a nonnegative combination of cut metrics, so the best map comes from a linear program over cuts. All 8 binary words of length 3 need distortion 8/7. All 16 of length 4 need 5/4, a program with over 32,000 cuts. All 15 words of length at most 3 need 4/3. Small cases like these cannot show the growth rate; that takes the constructions below.</p>
+<h3><span class="t num">1:58</span>The claims</h3>
+<p>Result 099 is three OpenAI preprints, all dated September 27. The main one, 15 pages, claims that for every large d and every finite alphabet with at least two symbols, the least ℓ₁ distortion of edit distance on strings of length at most d lies between exp(c √(log d · log log d)) and exp(C √(log d · log log d)), for absolute constants c and C. So the Ostrovsky–Rabani exponent is sharp up to constant factors. The lower bound already holds for binary strings of one common length. Two companions, of 33 and 23 pages, give four further lower-bound constructions, from circles and from trees, and a complete histogram embedding for the upper bound. The paper does not specify the constants, and nothing is claimed about computing the embedding quickly. The main paper takes Ostrovsky and Rabani’s fixed-length theorem as an input, and extends it to all alphabets and lengths. OpenAI published Lean formalizations matched against four separate statements: the main two-sided bound, in 45 files and about 6,300 lines, which proves its own upper embedding instead of citing Ostrovsky and Rabani, and the circle paper’s full statement, with its own histogram embedding, and the two tree constructions, in about 150 more files. The Lean proof of the main bound does fix the constants, at 1/1200 and 32, beyond a threshold it does not compute. We have not run the checks.</p>
+<h3><span class="t num">3:33</span>How the lower bound goes</h3>
+<p>The lower bound builds words level by level. A word is a long list of rows. Each row holds a payload of lower-level words in fixed slots, each slot with its own tag so that different slots cannot match, followed by a long marker made of a fresh symbol. The lower-level words depend on states. In each component, a distinguished step cycles the state with a prime period, and different components use different primes. Advancing every component at once shifts the row list by one, which costs only the deletion and insertion of one row. Advancing only the distinguished component is different. It is repeated in many separately tagged slots, so any pairing of rows either keeps those slots apart, or leaves many other components apart. An alignment could spread one payload across several target rows, but then it skips a whole marker, and the skipped markers are disjoint. So every alignment pays, and relative to word length, the guaranteed separation shrinks only by a fixed factor at each level. On the ℓ₁ side, a finite ℓ₁ metric is a sum of cut metrics, and each cut can be expanded in Fourier characters on the product of the cycles. A character involving few components is caught by the simultaneous step: with distinct prime denominators, its phase change is never a whole number, and with only a few denominators it stays well away from one. In our check with the primes 2, 3, 5, 7 and 11, none of the 2,309 nonzero characters failed. A character involving many components is caught by the average of the single-component steps. After k levels, any ℓ₁ map must distort these words by at least exp(c·k log k), while the logarithm of the word length is only of order k² log k. A delimiter code makes the words binary, and solving for k gives the exponent, √(log d · log log d).</p>
+<h3><span class="t num">5:32</span>Where it stands</h3>
+<p>The three preprints are not peer reviewed and have not been revised. Lean covers the two-sided bound and the four further lower-bound constructions; we have not run it. They are not among the papers OSVerify reviewed, and we have seen no expert review. If it holds, no embedding of edit distance into ℓ₁ can beat Ostrovsky and Rabani’s exponent by more than a constant factor: √(log d · log log d) is the right exponent. The best constants in that exponent remain open.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20099%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../098-compact-counterexamples-bi-lipschitz-dimension/"><span class="dir">Previous · 098</span><span class="pt">Compact counterexamples to bi-Lipschitz dimension reduction</span></a>
-  <a class="next" href="../100-cylinder-coverings-below-half-area/"><span class="dir">Next · 100</span><span class="pt">Cylinder coverings below the half-area bound</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/convex-and-metric-geometry/">More in convex and metric geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 076: Real ultraflat Littlewood polynomials and unbounded binary merit factors | AI Proved What?</title>
-<meta name="description" content="Real ultraflat Littlewood polynomials and unbounded binary merit factors. Result 076 in OpenAI&#x27;s math release (Real and complex analysis): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Flat with signs only? Ultraflat Littlewood polynomials and merit factors | AI Proved What?</title>
+<meta name="description" content="An AI system claims that polynomials with coefficients plus or minus one can be ultraflat, and that binary merit factors are unbounded, with a Lean proof of the main bound. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/076-real-ultraflat-littlewood-polynomials-unbounded/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 076: Real ultraflat Littlewood polynomials and unbounded binary merit factors | AI Proved What?">
-<meta property="og:description" content="Real ultraflat Littlewood polynomials and unbounded binary merit factors. Result 076 in OpenAI&#x27;s math release (Real and complex analysis): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Flat with signs only?">
+<meta property="og:description" content="An AI system claims that polynomials with coefficients plus or minus one can be ultraflat, and that binary merit factors are unbounded, with a Lean proof of the main bound. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/076-real-ultraflat-littlewood-polynomials-unbounded/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/076-real-ultraflat-littlewood-polynomials-unbounded/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,46 +37,93 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 076 · <a href="../../subjects/real-and-complex-analysis/">Real and complex analysis</a></p>
-<h1 class="result-title">Real ultraflat Littlewood polynomials and unbounded binary merit factors</h1>
+<p class="meta">Episode 076, October 2026</p>
+<h1>Flat with signs only?</h1>
+<p class="subtitle">Ultraflat real Littlewood polynomials and unbounded merit factors</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 076 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="ir1D5w5K5Cg" data-title="Episode 076: Flat with signs only?">
+  <a href="https://youtu.be/ir1D5w5K5Cg">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 076: Flat with signs only? A row of blue and orange squares for plus and minus signs above a teal curve that stays between two yellow dashed lines, and the formula the size of P(z) is about the square root of N on the unit circle.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:11. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/ir1D5w5K5Cg?t=0" data-t="0"><span class="t">0:00</span><span>Signs on a circle</span></a></li>
+  <li><a href="https://youtu.be/ir1D5w5K5Cg?t=109" data-t="109"><span class="t">1:49</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/ir1D5w5K5Cg?t=184" data-t="184"><span class="t">3:04</span><span>Chirps and packing</span></a></li>
+  <li><a href="https://youtu.be/ir1D5w5K5Cg?t=296" data-t="296"><span class="t">4:56</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Constructs polynomials with <i>N</i> consecutive coefficients in <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\{-1,1\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">−</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mclose">}</span></span></span></span> whose modulus is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>o</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo><mo stretchy="false">)</mo><msqrt><mi>N</mi></msqrt></mrow><annotation encoding="application/x-tex">(1+o(1))\sqrt N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1767em;vertical-align:-0.25em;"></span><span class="mord mathnormal">o</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">))</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9267em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;padding-left:0.833em;">N</span></span><span style="top:-2.8867em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
-c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
-c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
-c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
-s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
-c69,-144,104.5,-217.7,106.5,-221
-l0 -0
-c5.3,-9.3,12,-14,20,-14
-H400000v40H845.2724
-s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
-c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
-M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1133em;"><span></span></span></span></span></span></span></span></span> uniformly on the entire unit circle, for every sufficiently large integer length <i>N</i>. Thus real Littlewood polynomials are ultraflat, including at the real endpoints. Their binary merit factors tend to infinity, disproving Turyn's bounded-merit-factor conjecture.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A Littlewood polynomial has N coefficients, each +1 or −1. On the unit circle the average of its squared size is exactly N, so its maximum is at least √N. Random signs peak near 3√N at length 1,024, and the Rudin–Shapiro construction never exceeds √(2N) at lengths that are powers of two. Erdős conjectured a fixed gap: a maximum always at least (1 + c)√N. His original question allowed complex coefficients of size one, and Kahane refuted that version in 1980 with ultraflat polynomials. For real signs, Balister, Bollobás, Morris, Sahasrabudhe and Tiba proved in 2020 that flat polynomials exist, between two fixed multiples of √N.</p>
+<p>The merit factor of a sign sequence is N<sup>2</sup> divided by twice the sum of its squared autocorrelations; it is large when shifted copies barely match. The Barker sequence of length 13 reaches 14.08, random sequences about 1, and the best proven families about 6.34. The conjecture that merit factors stay bounded is sometimes called Turyn’s conjecture.</p>
+<p>Result 076 is three OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/Asymptotically-minimal-maxima-of-real-Littlewood-polynomials-September-23-2026/paper.pdf">The first</a> (26 pages, dated September 23, 2026) claims that for every η &gt; 0 and every large length N, some signs keep the maximum below (1 + η)√N. That disproves the real-sign form of Erdős’s fixed-gap conjecture, and since 1/F ≤ m<sub>N</sub><sup>2</sup> − 1, merit factors are unbounded. Two preprints dated October 5 add a floor: <a href="https://github.com/openai/math/blob/main/preprints/Nearly-minimal-maxima-and-positive-minima-of-Littlewood-polynomials-October-5-2026/littlewood-lower-envelope.pdf">one</a> keeps the size between √N/16 and (1 + η)√N, and <a href="https://github.com/openai/math/blob/main/preprints/Ultraflat-real-Littlewood-polynomials-October-5-2026/ultraflat-real-littlewood-polynomials.pdf">the other</a> claims full ultraflatness, between (1 − ε)√N and (1 + ε)√N everywhere on the circle, at every large length.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>No rate of convergence and no efficient algorithm for finding the signs: the constructions are existential.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, dated September 23 and October 5, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/076.md">scope notes</a>)</dd>
+    <dd>The September paper’s maximum bound and its flatness on average, by OpenAI (<a href="https://github.com/openai/math/blob/main/lean/docs/076.md">scope note</a>); not the merit factors or the October papers; we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 12, 2026. None of the preprints has been revised. OpenAI’s <a href="https://github.com/openai/math/blob/main/lean/docs/076.md">scope note</a> describes Lean proofs of <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/AsymptoticallyMinimalLittlewood.lean">the maximum bound</a> and of <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/LittlewoodFiniteFlatness.lean">flatness on average for one all-length family</a>: 27 files and about 9,600 lines with no unfinished proofs, which we have not built. The October papers build on the first, and the first points to <a href="https://github.com/openai/math/blob/main/preprints/A-smooth-three-torus-diffeomorphism-with-simple-Lebesgue-spectrum-September-23-2026/paper.pdf">result 144</a> as a related construction. The first paper says its result contradicts preprints by el Abdalaoui claiming the opposite, and its appendix points to specific gaps in those arguments. The inputs are published theorems, such as the Pippenger–Spencer coloring theorem and Lovett and Meka’s discrepancy method. It is not among the papers OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Relax.</strong> First allow coefficients anywhere in [−1, 1], aiming for a small maximum while the mean square stays close to one, so that most coefficients are close to signs.</li>
+  <li><strong>Chirps.</strong> Coefficients with quadratic phase spread their Fourier mass evenly over an interval whose width is proportional to the curvature; with curvature 1/4 the spectrum sits at height 2 = 1/√(1/4) on an interval of width 1/4.</li>
+  <li><strong>Packing.</strong> Chirps on separate blocks, with different centers, can tile the circle. For real coefficients every interval has a mirror image, so the paper samples a real trigonometric polynomial with |F| ≤ 1 and mean square nearly one on an auxiliary torus, gives each mode its own curvature, and packs all intervals disjointly with a random hypergraph over a finite field and the Pippenger–Spencer theorem.</li>
+  <li><strong>Rounding.</strong> Beck and Spencer’s partial coloring, in Lovett and Meka’s form, rounds the coefficients to signs with an error controlled by the defect, which is small compared with √N.</li>
+  <li><strong>A floor.</strong> In October, correction waves fill the arcs where the main term is small, with matched phases, and the ultraflat paper makes every wave nearly the same height and joins them smoothly.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script searches all sign patterns for lengths 2 to 20 (best maximum ratios between 1.15 and 1.43, best merit factors including 14.08 for Barker 13), measures Rudin–Shapiro (1.414, merit factor 3.0) and random signs (2.95, 0.99) at length 1,024, checks 1/F ≤ m<sup>2</sup> − 1, computes a chirp’s spectrum (height 2 on width 1/4), and a toy with four chirps that stays within 15% of √N on 98% of the circle.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Asymptotically-minimal-maxima-of-real-Littlewood-polynomials-September-23-2026/paper.pdf">Asymptotically minimal maxima of real Littlewood polynomials (PDF)</a>, September 23, 2026 (26 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Nearly-minimal-maxima-and-positive-minima-of-Littlewood-polynomials-October-5-2026/littlewood-lower-envelope.pdf">Nearly minimal maxima and positive minima of Littlewood polynomials (PDF)</a>, October 5, 2026 (28 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Ultraflat-real-Littlewood-polynomials-October-5-2026/ultraflat-real-littlewood-polynomials.pdf">Ultraflat real Littlewood polynomials (PDF)</a>, October 5, 2026 (16 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/076.md">OpenAI’s note on the scope of the Lean proof</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 076.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 3 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -88,18 +133,28 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
   <li><a href="https://github.com/openai/math/blob/main/preprints/Asymptotically-minimal-maxima-of-real-Littlewood-polynomials-September-23-2026/paper.pdf">Asymptotically minimal maxima of real Littlewood polynomials</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Signs on a circle</h3>
+<p>Take N coefficients, each plus one or minus one, and form the polynomial with those coefficients. This is a Littlewood polynomial. On the unit circle, the average of its squared size is exactly N, so its maximum is at least √N. How close to that can the maximum be? A random choice of signs at length 1,024 peaks near three times √N. The Rudin–Shapiro construction never exceeds √(2N) at lengths that are powers of two. Erdős conjectured a fixed gap: the maximum is always at least (1 + c) times √N, for some fixed c. Erdős’s original question allowed complex coefficients of size one, and Kahane refuted that version in 1980: those polynomials can be ultraflat, with size close to √N everywhere on the circle. For real signs, the question stayed open. Meanwhile, Balister, Bollobás, Morris, Sahasrabudhe and Tiba proved in 2020 that flat polynomials exist, staying between two fixed multiples of √N. From length two to twenty, our exhaustive search gives best ratios between about 1.15 and 1.43. The same question has a practical form. The merit factor of a sign sequence is N² divided by twice the sum of its squared autocorrelations; it is large when shifted copies of the sequence barely match, which is what radar and communications want. The Barker sequence of length 13 reaches 14.08, random sequences about one, and the best proven families about 6.34. The conjecture that merit factors stay bounded is sometimes called Turyn’s conjecture.</p>
+<h3><span class="t num">1:49</span>The claims</h3>
+<p>Result 076 is three OpenAI preprints. The first, 26 pages dated September 23, claims that the best ratio tends to one: for every η greater than zero and every large enough N, some choice of signs keeps the maximum below (1 + η) times √N. That disproves the real-sign form of Erdős’s fixed-gap conjecture. Since the fourth moment is at most the maximum squared times the second, one over the merit factor is at most the squared ratio minus one, so merit factors are unbounded, and Turyn’s conjecture fails. Two later preprints, dated October 5, add a floor. One keeps the size between √N/16 and (1 + η) times √N. The other claims full ultraflatness: between (1 − ε) and (1 + ε) times √N, everywhere on the circle, at every large length. OpenAI published a Lean proof of the first paper’s maximum bound, and of flatness on average, measured with any finite power: 27 files and about 9,600 lines. We have not run it, and the October papers are not formalized.</p>
+<h3><span class="t num">3:04</span>Chirps and packing</h3>
+<p>The proof first allows coefficients anywhere between minus one and one. The key tool is a chirp: coefficients whose phase grows quadratically. By stationary phase, a chirp spreads its Fourier mass evenly over an interval whose width is proportional to its curvature. In our example, with curvature one quarter, the spectrum sits at height two, one over the square root of the curvature, on an interval of width one quarter, and nearly vanishes elsewhere. Put chirps on separate blocks of coefficients and give their intervals different centers, and the intervals can tile the circle. In our toy with four blocks and complex coefficients of size one, the size stays within 15% of √N on 98% of the circle. Real coefficients are harder: every interval comes with its mirror image, and the coefficients must stay close to plus or minus one. So the paper samples a real trigonometric polynomial on an auxiliary torus, bounded by one with mean square nearly one, gives each of its modes its own curvature, and packs all the resulting intervals disjointly, using a random hypergraph over a finite field and the Pippenger–Spencer coloring theorem. The last step rounds the relaxed coefficients to signs. A discrepancy argument, the partial coloring method of Beck and Spencer, in the form of Lovett and Meka, changes the polynomial by an amount controlled by how far the coefficients were from signs. Because that defect is small, the change is small compared with √N. In the first October paper, correction waves fill the arcs where the main term is small, and meet the existing waves with matching phases. The ultraflat paper also makes every wave nearly the same height and joins neighboring waves smoothly, so the size stays close to √N everywhere.</p>
+<h3><span class="t num">4:56</span>Where it stands</h3>
+<p>None of the three preprints is peer reviewed, and none has been revised. The Lean proof covers the first paper’s maximum bound and its flatness on average; the merit-factor consequence and the two October papers are not formalized. The October papers build on the first. The first paper also derives a consequence in dynamics, and points to result 144 as a related construction. The first paper notes that its result contradicts preprints by el Abdalaoui claiming the opposite, and its appendix points to specific gaps in those arguments. The inputs are published theorems, such as Pippenger and Spencer’s coloring theorem and Lovett and Meka’s discrepancy method. It is not among the papers OSVerify reviewed, and we have seen no expert review. If they hold, polynomials with real sign coefficients can be ultraflat at every large length, like the complex ones Kahane built. Erdős’s fixed-gap conjecture for real signs is false, and so is Turyn’s conjecture on merit factors. The constructions are existential: the papers claim no rate of convergence and no efficient algorithm for finding the signs.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20076%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../075-fourier-convergence-conjecture/"><span class="dir">Previous · 075</span><span class="pt">The <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mi>log</mi><mo>⁡</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">L\log L</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">L</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">L</span></span></span></span> Fourier-convergence conjecture</span></a>
-  <a class="next" href="../077-fourier-restriction-positively-curved-surfaces/"><span class="dir">Next · 077</span><span class="pt">Fourier restriction for positively curved surfaces</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/real-and-complex-analysis/">More in real and complex analysis</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

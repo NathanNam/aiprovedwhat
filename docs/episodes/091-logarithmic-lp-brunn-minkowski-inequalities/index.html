@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 091: Logarithmic and Lₚ Brunn–Minkowski inequalities and the B-conjecture | AI Proved What?</title>
-<meta name="description" content="Logarithmic and Lₚ Brunn–Minkowski inequalities and the B-conjecture. Result 091 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Blend by multiplying? The logarithmic Brunn–Minkowski inequality | AI Proved What?</title>
+<meta name="description" content="An AI system claims the logarithmic Brunn–Minkowski inequality for origin-symmetric convex bodies in every dimension, with the symmetric Lp inequalities and the (B)-conjecture for even log-concave measures, and a Lean formalization of the main theorem. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/091-logarithmic-lp-brunn-minkowski-inequalities/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 091: Logarithmic and Lₚ Brunn–Minkowski inequalities and the B-conjecture | AI Proved What?">
-<meta property="og:description" content="Logarithmic and Lₚ Brunn–Minkowski inequalities and the B-conjecture. Result 091 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Blend by multiplying?">
+<meta property="og:description" content="An AI system claims the logarithmic Brunn–Minkowski inequality for origin-symmetric convex bodies in every dimension, with the symmetric Lp inequalities and the (B)-conjecture for even log-concave measures, and a Lean formalization of the main theorem. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/091-logarithmic-lp-brunn-minkowski-inequalities/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/091-logarithmic-lp-brunn-minkowski-inequalities/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 091 · <a href="../../subjects/convex-and-metric-geometry/">Convex and metric geometry</a></p>
-<h1 class="result-title">Logarithmic and <i>L</i><sub><i>p</i></sub> Brunn–Minkowski inequalities and the B-conjecture</h1>
+<p class="meta">Episode 091, October 2026</p>
+<h1>Blend by multiplying?</h1>
+<p class="subtitle">The logarithmic Brunn–Minkowski inequality, its L<sub>p</sub> versions and the (B)-conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 091 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="zNu_hQ9HgLk" data-title="Episode 091: Blend by multiplying?">
+  <a href="https://youtu.be/zNu_hQ9HgLk">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 091: Blend by multiplying? A blue square and an orange square turned 45 degrees, overlapping, with their logarithmic midpoint, a gold octagon, above the inequality: the volume of the logarithmic combination is at least the geometric mean of the volumes.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:17. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/zNu_hQ9HgLk?t=0" data-t="0"><span class="t">0:00</span><span>Blending shapes</span></a></li>
+  <li><a href="https://youtu.be/zNu_hQ9HgLk?t=166" data-t="166"><span class="t">2:46</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/zNu_hQ9HgLk?t=232" data-t="232"><span class="t">3:52</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/zNu_hQ9HgLk?t=387" data-t="387"><span class="t">6:27</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves the logarithmic Brunn–Minkowski inequality for origin-symmetric convex bodies in every dimension, and the scalar-dilation B-conjecture for all even log-concave Radon measures. For Lebesgue volume it also proves the additive <i>L</i><sub><i>p</i></sub> Brunn–Minkowski inequality for full-dimensional origin-symmetric convex bodies throughout <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>p</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0\lt p\lt 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6835em;vertical-align:-0.0391em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">p</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The classical Brunn–Minkowski inequality says that blending two convex bodies K and L, by averaging every point of K with every point of L using fixed weights, gives a body whose volume is at least the weighted geometric mean of their volumes. Describe a convex body around the origin by its support function, how far it reaches in each direction; the classical blend averages support functions. The logarithmic version takes the geometric mean of the two support functions instead, and keeps the points that stay within that reach in every direction. That body sits inside the classical blend, so a volume bound for it is stronger. For a square of side 2 and the same square turned 45 degrees (areas 4), the classical midpoint is a regular octagon of area 4.83, and the logarithmic midpoint a slightly smaller one of area 4.69, still above 4.</p>
+<p>Böröczky, Lutwak, Yang and Zhang conjectured in 2012 that for bodies symmetric about the origin the logarithmic blend always has volume at least the geometric mean, and proved it in the plane. Without symmetry it can fail: shifting the square sideways by 0.6, with the origin still inside, makes the logarithmic midpoint of the square and its shifted copy only 3.79. Earlier work settled bodies with extra symmetries (Saroglou; Böröczky and Kalantzopoulos; Rotem for complex norms) and local versions (Colesanti, Livshyts and Marsiglietti; Kolesnikov and Milman; van Handel for zonoids; Putterman showed local implies global). Stancu announced a proof in 2018, with details of a flow argument deferred. Nearby is the (B)-conjecture: for an even log-concave measure μ and a symmetric body K, log μ(e<sup>t</sup>K) should be concave in t, proved for the Gaussian measure by Cordero-Erausquin, Fradelizi and Maurey in 2004.</p>
+<p>Result 091 is <a href="https://github.com/openai/math/blob/main/preprints/The-logarithmic-Brunn-Minkowski-conjecture-September-23-2026/paper.pdf">one OpenAI preprint</a> dated September 23, 2026 (20 pages). It claims the logarithmic Brunn–Minkowski inequality for every pair of origin-symmetric convex bodies in every dimension, with no smoothness assumption. As corollaries it claims the symmetric L<sub>p</sub> Brunn–Minkowski inequality for every p between 0 and 1 and, through a transfer theorem of Saroglou, the logarithmic inequality for every even log-concave measure, and with it the (B)-conjecture.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The claims are for symmetric bodies only. The paper does not determine the equality cases in higher dimensions (in the plane they are dilates and parallelograms with parallel sides), and the (B)-conjecture it proves concerns dilations by a single scalar.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 23, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +88,40 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/091.md">scope notes</a>)</dd>
+    <dd>OpenAI published a Lean proof of the main theorem; we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/091.md">Lean formalization</a> of the main theorem, with no unproved steps that we could find: <a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/LogVolume/BrunnMinkowski.lean">one file of 24,490 lines</a> importing only Mathlib, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/LogBrunnMinkowski.lean">a separate statement</a>. We have not run the check. The L<sub>p</sub> corollary is a short argument in the paper; the measure results rest on Saroglou’s transfer theorem and Borell’s description of log-concave measures, and are not formalized. The paper acknowledges Stancu’s earlier announcement. It is not among the papers OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>From slabs to a variance.</strong> Finitely many symmetric slabs cut out a symmetric polytope. Replace its indicator by the smooth weight exp(−ε|x|²/2 − Σ(⟨p<sub>i</sub>, x⟩/h<sub>i</sub>)<sup>q</sup>); as q grows and ε fades, the integral becomes the polytope’s volume. It is enough that the logarithm of the integral is concave when each slab width changes geometrically. Its second derivative is a variance minus an average, so everything reduces to one bound: the variance of Σ b<sub>i</sub>ψ<sub>i</sub> is at most Σ b<sub>i</sub>² E ψ<sub>i</sub>, where ψ<sub>i</sub> are the power terms.</li>
+  <li><strong>Moment coordinates.</strong> Following the moment-measure theory of Cordero-Erausquin and Klartag, with a theorem of Berman and Berndtsson and a Hessian estimate of Klartag, the paper writes the probability as the image of e<sup>−φ</sup> under the gradient of a convex function φ whose Hessian is positive and bounded above. A differential operator then produces test functions dense among centered even functions; the only obstructions are affine functions, constants removed by centering and linear functions by evenness, which is the key place symmetry enters. A tensor calculation leaves a sum of explicit squares, and two Cauchy–Schwarz inequalities give the bound.</li>
+  <li><strong>Limits and transfers.</strong> Letting q grow and ε vanish gives polytopes, and dense slab directions give every symmetric body. The L<sub>p</sub> inequality follows by the arithmetic–geometric mean inequality after normalizing volumes. Saroglou’s transfer theorem and a reduction for measures living on a subspace give every even log-concave measure, and two dilates of one body give the (B)-conjecture.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script computes Wulff bodies of polygons and polytopes exactly, using every direction where the two support functions can bind. The square and its 45-degree turn: classical midpoint 4.8284, logarithmic midpoint 4.6863. The shifted square: 3.7947.</li>
+  <li>Over 300 random pairs of symmetric polygons the smallest ratio of the logarithmic blend’s volume to the geometric mean was 1.0253; over 80 pairs of symmetric polyhedra, 1.1754. Dilates and parallel rectangles give exact equality.</li>
+  <li>The variance bound, tested on 120 random planar cases, never exceeded ratio 0.9975; in one dimension the ratio tends to 1 as ε vanishes. For the density e<sup>−|x₁|−|x₂|</sup> and a tilted square, log μ(e<sup>t</sup>K) is concave in t, as the theory predicts.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-logarithmic-Brunn-Minkowski-conjecture-September-23-2026/paper.pdf">The logarithmic Brunn–Minkowski conjecture (PDF)</a>, 20 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/091.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 091.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +129,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/The-logarithmic-Brunn-Minkowski-conjecture-September-23-2026/paper.pdf">The logarithmic Brunn–Minkowski conjecture</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Blending shapes</h3>
+<p>Take two convex shapes, K and L. The classical Brunn–Minkowski inequality says that blending them, by averaging every point of K with every point of L using fixed weights, gives a shape whose volume is at least the weighted geometric mean of their volumes. Describe a convex shape around the origin by its support function: how far it reaches in each direction. The classical blend averages support functions. The logarithmic version multiplies them instead: take the geometric mean of the two reaches in every direction, and keep the points that stay within that reach in every direction. That shape sits inside the classical blend, so a volume bound for it is stronger. For a square and the same square turned 45 degrees, both of area 4, the classical midpoint, a regular octagon, has area 4.83, and the logarithmic one, slightly smaller, 4.69, still above 4. Böröczky, Lutwak, Yang and Zhang conjectured in 2012 that for shapes symmetric about the origin, the logarithmic blend always has volume at least the geometric mean, and they proved it in the plane. Symmetry matters: shift a square of side 2 sideways by 0.6, keeping the origin inside, and the logarithmic midpoint of the square and its shifted copy has area 3.79, below 4. Equality holds for dilates of one shape, and for parallelograms with parallel sides. In our computation over 300 random pairs of symmetric polygons, the smallest ratio of the logarithmic blend’s area to the geometric mean was 1.025, and over 80 pairs of random symmetric polyhedra, 1.18. Many special cases were known. Saroglou proved it for bodies symmetric under every sign change of the same coordinates, Böröczky and Kalantzopoulos for pairs sharing enough reflection symmetries, and Rotem for unit balls of complex norms. A second line studied small perturbations: Colesanti, Livshyts and Marsiglietti near the ball, Kolesnikov and Milman through an eigenvalue problem, and van Handel for zonoids, while Putterman showed that local versions imply global ones. Stancu announced a proof in 2018, with details of a flow argument deferred. Between the logarithmic and the classical inequality sit the Lᵖ versions, for p between 0 and 1. And nearby is the (B)-conjecture: for an even log-concave measure, the measure of eᵗ times a symmetric body should be log-concave in t. Cordero-Erausquin, Fradelizi and Maurey proved it for the Gaussian measure in 2004.</p>
+<h3><span class="t num">2:46</span>The claim</h3>
+<p>Result 091 is one OpenAI preprint, 20 pages, dated September 23. It claims the logarithmic Brunn–Minkowski inequality for every pair of origin-symmetric convex bodies, in every dimension, with no smoothness assumption. As corollaries, it claims the symmetric Lᵖ inequality for every p between 0 and 1, and, through a transfer theorem of Saroglou, the same logarithmic inequality for every even log-concave measure, and with it the (B)-conjecture. The claims are for symmetric bodies only; without symmetry it can fail, as the shifted square shows. The paper does not determine the equality cases in higher dimensions, and the (B)-conjecture it proves concerns dilations by a single scalar. OpenAI also published a Lean formalization of the main theorem, a single file of about 24,500 lines, matched against a separate statement. The Lᵖ and measure corollaries are not formalized. We have not run the check.</p>
+<h3><span class="t num">3:52</span>How the proof goes</h3>
+<p>The proof begins with slabs. Finitely many symmetric slabs, each between two parallel hyperplanes, cut out a symmetric polytope. Replace the polytope’s indicator by a smooth weight: e to the minus a small Gaussian term, minus a sum of even powers of the slab coordinates. As the power grows and the Gaussian term fades, the integral of this weight becomes the polytope’s volume. So it is enough that the logarithm of the integral is concave when each slab width changes geometrically. Its second derivative is a variance minus an average, so everything reduces to one variance bound: the variance of a weighted sum of the power terms is at most the sum of the squared weights times their averages. In our tests on 120 random planar cases, the largest ratio was 0.9975, never above one, and in one dimension, where the volume inequality is an equality, it creeps toward one as the Gaussian term vanishes. To prove the variance bound, the paper changes coordinates. Following the moment-measure theory of Cordero-Erausquin and Klartag, and using a theorem of Berman and Berndtsson and a Hessian estimate of Klartag, it writes the probability as the image of a measure e^(−φ) under the gradient of a convex function φ, whose Hessian is positive and bounded above. In these coordinates, a differential operator produces test functions that are dense among centered even functions. The only obstructions are affine functions: centering removes constants, and evenness removes linear ones. This is the key place symmetry enters. Then a tensor calculation leaves a remainder that is a sum of explicit squares, and two Cauchy–Schwarz inequalities give the bound. The rest is limits and known transfers. Letting the power grow and the Gaussian term vanish gives the inequality for polytopes, and adding slab directions densely gives every symmetric body. The Lᵖ inequality follows by the arithmetic–geometric mean inequality after normalizing volumes. For measures, Saroglou showed that the volume inequality transfers to every even log-concave density in the same dimension, and a reduction handles measures living on a subspace; applying it to two dilates of one body gives the (B)-conjecture. For the density e^(−|x₁| − |x₂|), and a tilted square, our computed log measure of eᵗ times the square is concave in t, as the theory predicts.</p>
+<h3><span class="t num">6:27</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. OpenAI’s Lean formalization covers the main theorem; we have not run it. The Lᵖ corollary is a short argument in the paper, while the measure results rest on Saroglou’s transfer theorem and Borell’s description of log-concave measures. The paper acknowledges Stancu’s earlier announcement. It is not among the papers OSVerify reviewed, and we have seen no expert review. If it holds, the logarithmic Brunn–Minkowski conjecture is settled for symmetric bodies in every dimension, together with the symmetric Lᵖ inequalities for p between 0 and 1, and the (B)-conjecture for even log-concave measures. The equality cases in general are not settled here.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20091%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../090-triangular-lattice-optimality-long-range/"><span class="dir">Previous · 090</span><span class="pt">Triangular-lattice optimality, long-range Riesz and Coulomb energies, and spherical logarithmic energy</span></a>
-  <a class="next" href="../092-optimal-order-convex-body-covering/"><span class="dir">Next · 092</span><span class="pt">The optimal order of convex-body covering density</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/convex-and-metric-geometry/">More in convex and metric geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

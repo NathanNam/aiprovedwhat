@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 086: An L³ bound for the trilinear Hilbert transform | AI Proved What?</title>
-<meta name="description" content="An L³ bound for the trilinear Hilbert transform. Result 086 in OpenAI&#x27;s math release (Real and complex analysis): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Three shifts, one bound? The trilinear Hilbert transform | AI Proved What?</title>
+<meta name="description" content="An AI system claims that the trilinear Hilbert transform with slopes 1, 2, 3 is bounded from L3 × L3 × L3 to L1, a case of the trilinear Hilbert transform conjecture; OSVerify refereed the paper. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/086-l3-bound-trilinear-hilbert-transform/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 086: An L³ bound for the trilinear Hilbert transform | AI Proved What?">
-<meta property="og:description" content="An L³ bound for the trilinear Hilbert transform. Result 086 in OpenAI&#x27;s math release (Real and complex analysis): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Three shifts, one bound?">
+<meta property="og:description" content="An AI system claims that the trilinear Hilbert transform with slopes 1, 2, 3 is bounded from L3 × L3 × L3 to L1, a case of the trilinear Hilbert transform conjecture; OSVerify refereed the paper. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/086-l3-bound-trilinear-hilbert-transform/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/086-l3-bound-trilinear-hilbert-transform/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 086 · <a href="../../subjects/real-and-complex-analysis/">Real and complex analysis</a></p>
-<h1 class="result-title">An <i>L</i><sup>3</sup> bound for the trilinear Hilbert transform</h1>
+<p class="meta">Episode 086, October 2026</p>
+<h1>Three shifts, one bound?</h1>
+<p class="subtitle">An L<sup>3</sup> bound for the trilinear Hilbert transform</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 086 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="8xpxzZncVrY" data-title="Episode 086: Three shifts, one bound?">
+  <a href="https://youtu.be/8xpxzZncVrY">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 086: Three shifts, one bound? Four colored points on a line, a point x and its shifts x minus t, x minus 2t and x minus 3t joined by arcs, above an orange quadratic wave, and the bound: the L1 norm of T of f1, f2, f3 is at most C times the product of their L3 norms.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:05. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/8xpxzZncVrY?t=0" data-t="0"><span class="t">0:00</span><span>Three shifted copies</span></a></li>
+  <li><a href="https://youtu.be/8xpxzZncVrY?t=135" data-t="135"><span class="t">2:15</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/8xpxzZncVrY?t=179" data-t="179"><span class="t">2:59</span><span>Summing the scales</span></a></li>
+  <li><a href="https://youtu.be/8xpxzZncVrY?t=286" data-t="286"><span class="t">4:46</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves that the principal-value trilinear Hilbert transform with shifts <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>−</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">x-t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>−</mo><mn>2</mn><mi>t</mi></mrow><annotation encoding="application/x-tex">x-2t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span><span class="mord mathnormal">t</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>−</mo><mn>3</mn><mi>t</mi></mrow><annotation encoding="application/x-tex">x-3t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span><span class="mord mathnormal">t</span></span></span></span> is bounded from <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>L</mi><mn>3</mn></msup><mo stretchy="false">(</mo><mi mathvariant="double-struck">R</mi><msup><mo stretchy="false">)</mo><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">L^3(\mathbb R)^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">L</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathbb">R</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span> to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>L</mi><mn>1</mn></msup><mo stretchy="false">(</mo><mi mathvariant="double-struck">R</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">L^1(\mathbb R)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">L</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathbb">R</span><span class="mclose">)</span></span></span></span>. This resolves the <i>L</i><sup>3</sup> exponent case of the standard conjecture for slopes 1, 2, 3.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take three functions on the line. At each point x, multiply the first at x − t, the second at x − 2t and the third at x − 3t, and integrate against 1/t, the kernel of the Hilbert transform, as a principal value. This is the trilinear Hilbert transform T. Scaling pairs three inputs in L<sup>3</sup> with an output in L<sup>1</sup>, since 1/3 + 1/3 + 1/3 = 1.</p>
+<p>With two functions this is the bilinear Hilbert transform from Calderón’s work, bounded by Lacey and Thiele in 1997 and 1999 using time-frequency analysis. That transform is symmetric under matched linear waves. Three functions bring a quadratic symmetry: the coefficients −1, 3, −3, 1 cancel every constant, line and parabola along x, x − t, x − 2t, x − 3t, so matched quadratic waves pass through, and the output only picks up a quadratic wave. Wave packets built on linear frequencies are not adapted to this symmetry. Each scale on its own is easy; cutting the kernel to N scales, the elementary bound grows in proportion to N, and in 2015 Tao used higher-order Fourier analysis to show it grows more slowly than that. Hu and Lie proved bounds for curved versions; for straight lines with slopes 1, 2 and 3, boundedness remained open in their account.</p>
+<p>Result 086 is <a href="https://github.com/openai/math/blob/main/preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/paper.pdf">one OpenAI preprint</a>, 93 pages, dated October 5, 2026. Its theorem: there is a finite constant C such that ‖T(f<sub>1</sub>, f<sub>2</sub>, f<sub>3</sub>)‖<sub>1</sub> ≤ C ‖f<sub>1</sub>‖<sub>3</sub> ‖f<sub>2</sub>‖<sub>3</sub> ‖f<sub>3</sub>‖<sub>3</sub>, so T extends to a bounded map from L<sup>3</sup> × L<sup>3</sup> × L<sup>3</sup> to L<sup>1</sup>. The paper presents this as resolving the L<sup>3</sup> case of the trilinear Hilbert transform conjecture for slopes 1, 2 and 3.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The conjecture asks for a broader range of exponents, and other slopes are not treated. The constant is not computed. Transforms with more functions are not claimed.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated October 5, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +88,39 @@
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>Not yet</dd>
+    <dd>No Lean formalization published</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised, and OpenAI published no Lean formalization of this result. <a href="https://osverify.github.io/cases/trilinear-hilbert.html">OSVerify refereed the paper</a> (the October 5 version) and reported one major issue and two minor ones, each with a proposed repair. The major one: Lemma 8.6, a counting lemma for bad-density chains, states its nesting hypothesis only before the last position, but the proof uses it at the last one too; the proposed repair leaves the lemma’s bound unchanged, and where the lemma is applied both inclusions are available. The minor ones: an identity in the proof of Lemma 5.3 omits a conditional-expectation term for general inputs, and a convention in Section 9.1 is stated in the wrong order. The report says its findings “do not necessarily establish that the paper’s main theorem is false.” We have seen no other expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Absorbing the scales.</strong> A fourth function turns T into a four-linear form, split into local pieces on dyadic intervals, with kernels that integrate to zero whenever any one of the four points is held fixed. A stopping argument with a maximal function reduces everything to one estimate: on a normalized tree, the length-weighted sum of the pieces is at most the root’s length times A + c·C<sub>N</sub>, where C<sub>N</sub> is the best constant for N scales. Since C<sub>N</sub> is finite (at most of order N), a small c can be absorbed, and the bound no longer depends on N.</li>
+  <li><strong>Structure at one scale.</strong> A large local form forces one of the inputs to correlate with a generalized quadratic phase. The paper uses the degree-two case of the quantitative inverse theorem of Leng, Sah and Sawhney for Gowers norms, and proves the continuous chart and localization statements the singular integral needs. Private orthogonal coordinates make the coefficients of each selected column recoverable, and a compression lemma controls products of inherited projections uniformly in depth, at the cost of a power of a logarithm.</li>
+  <li><strong>Gains against losses.</strong> Curvature is localized jointly in all four arguments, and a short-block comparison costs only a small power of the block length. Each matched column gets one fixed mode expansion; frequency graphs separate errors with square-summable energy from coherent components; and a counting lemma, applied with all four cancellations, bounds the total mass of progression tests on scales of small density with a power saving. The parameters are chosen so that every gain beats every loss, and the absorption closes.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script confirms that the coefficients −1, 3, −3, 1 cancel constants, lines and parabolas but not cubes, while 1, −2, 1 cancel only constants and lines.</li>
+  <li>With three Gaussian inputs, the trilinear output has L<sup>1</sup> norm 2.9753. After matched quadratic waves of strength 0.5, 1 and 2 the output changes only by a quadratic wave, pointwise to rounding, so its L<sup>1</sup> norm stays 2.9753. For the bilinear transform with two of the same Gaussians, matched linear waves leave the L<sup>1</sup> norm at 4.33, while matched quadratic waves shrink it to 1.89, 1.34 and 0.95. No computation can test every input.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/paper.pdf">An L<sup>3</sup> bound for the trilinear Hilbert transform (PDF)</a>, October 5, 2026 (93 pages).</li>
+  <li><a href="https://osverify.github.io/cases/trilinear-hilbert.html">The OSVerify referee report</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 086.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +128,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/An-L3-bound-for-the-trilinear-Hilbert-transform-October-5-2026/paper.pdf">An <i>L</i><sup>3</sup> bound for the trilinear Hilbert transform</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Three shifted copies</h3>
+<p>Take three functions on the line. At each point x, multiply the first at x − t, the second at x − 2t, and the third at x − 3t, and integrate against 1/t, the kernel of the Hilbert transform, cutting out a small symmetric interval around zero and letting it shrink. This is the trilinear Hilbert transform. Scaling pairs three inputs in L³ with an output in L¹, since 1/3 + 1/3 + 1/3 = 1. The question is whether the output’s L¹ norm is at most a constant times the product of the three L³ norms. With two functions, this is the bilinear Hilbert transform from Calderón’s work, bounded by Lacey and Thiele in 1997 and 1999 using time-frequency analysis. That transform has a symmetry: multiply the inputs by matched linear waves, and the output only picks up a wave. Three functions bring a larger symmetry. The coefficients −1, 3, −3, 1 cancel every constant, line and parabola along the points x, x − t, x − 2t, x − 3t. So matched quadratic waves, of any strength, pass through: the output only picks up a quadratic wave, and its size does not change. In our computation, with three Gaussian inputs, the output’s L¹ norm stays at about 2.98, unchanged up to rounding, as the waves get faster; the same kind of quadratic wave shrinks the bilinear output from 4.33 to about 0.95. Wave packets built on linear frequencies are not adapted to this quadratic symmetry, so the methods that worked for two functions do not carry over. Each scale on its own is easy; the trouble is the sum over scales. Cutting the kernel to N scales, the elementary bound grows in proportion to N. In 2015, Tao used higher-order Fourier analysis to show it grows more slowly than that. Hu and Lie proved bounds for curved versions, where the curvature supplies a different kind of oscillation. For straight lines with slopes one, two and three, boundedness remained open, in Hu and Lie’s account.</p>
+<h3><span class="t num">2:15</span>The claim</h3>
+<p>Result 086 is a 93-page OpenAI preprint dated October 5. Its theorem: there is a finite constant C such that the L¹ norm of the trilinear Hilbert transform is at most C times the product of the three L³ norms, so the transform extends to a bounded map from three copies of L³ to L¹. The paper presents this as resolving the L³ case of the trilinear Hilbert transform conjecture for slopes one, two and three. Nothing more is claimed. The conjecture asks for a broader range of exponents, and other slopes are not treated. The constant is not computed. OpenAI published no Lean formalization of this result.</p>
+<h3><span class="t num">2:59</span>Summing the scales</h3>
+<p>The proof adds a fourth function and studies the four-linear form, split into local pieces on dyadic intervals, with kernels that integrate to zero whenever any one of the four points is held fixed. A stopping argument with a maximal function reduces everything to one estimate: on a normalized tree, the sum of the pieces, weighted by their lengths, is at most the root’s length times a constant A plus a small multiple c of the best constant for N scales. That constant is finite, at most of order N, so the small multiple can be absorbed, and the bound no longer depends on N. At one scale, a large local form forces one of the inputs to correlate with a generalized quadratic phase. The paper uses the degree-two case of the quantitative inverse theorem of Leng, Sah and Sawhney for Gowers norms, and proves the continuous chart and localization statements the singular integral needs. Private orthogonal coordinates make the coefficients of each selected column recoverable, and a compression lemma controls products of inherited projections uniformly in depth, at the cost of a power of a logarithm. The inverse theorem alone does not sum the scales. Curvature is localized jointly in all four arguments, and a short-block comparison costs only a small power of the block length. Each matched column gets one fixed mode expansion; frequency graphs separate errors with square-summable energy from coherent components; and a counting lemma, applied with all four cancellations, bounds the total mass of progression tests on scales of small density, with a power saving. The parameters are then chosen so that every gain beats every loss, and the absorption closes.</p>
+<h3><span class="t num">4:46</span>Where it stands</h3>
+<p>The preprint is not peer reviewed, has not been revised, and has no Lean formalization. OSVerify reviewed it and reported one major issue and two minor ones. The major one: Lemma 8.6, a counting lemma for bad-density chains, states its nesting hypothesis only before the last position, but the proof uses it at the last one too. The report proposes a repair that leaves the lemma’s bound unchanged, and notes that where the lemma is applied, both inclusions are available. The minor ones: an identity in the proof of Lemma 5.3 omits a conditional-expectation term for general inputs, and a convention in Section 9.1 is stated in the wrong order. Each has a proposed fix, and the report says its findings do not necessarily show the main theorem is false. We have seen no other expert review. If it holds, the trilinear Hilbert transform with slopes one, two and three is bounded from three copies of L³ to L¹, settling a case that, in Hu and Lie’s account, had remained open, even though matched quadratic waves leave the size of its output untouched. Other exponents, other slopes, and transforms with more functions are not claimed.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20086%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../085-endpoint-sobolev-regularity-centered-disk/"><span class="dir">Previous · 085</span><span class="pt">Endpoint Sobolev regularity of centered disk averages</span></a>
-  <a class="next" href="../087-mahler-conjectures-functional-inequalities-polar/"><span class="dir">Next · 087</span><span class="pt">The Mahler conjectures, functional inequalities and polar-product symplectic width</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/real-and-complex-analysis/">More in real and complex analysis</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

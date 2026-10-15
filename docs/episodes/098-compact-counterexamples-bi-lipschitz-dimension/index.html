@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 098: Compact counterexamples to bi-Lipschitz dimension reduction | AI Proved What?</title>
-<meta name="description" content="Compact counterexamples to bi-Lipschitz dimension reduction. Result 098 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Doubling is not enough? A doubling Hilbert set with no finite-dimensional embedding | AI Proved What?</title>
+<meta name="description" content="An AI system claims a doubling subset of Hilbert space that admits no bi-Lipschitz embedding into any finite-dimensional Euclidean space, answering the Lang–Plaut question, and compact examples in every infinite-dimensional Banach space, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/098-compact-counterexamples-bi-lipschitz-dimension/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 098: Compact counterexamples to bi-Lipschitz dimension reduction | AI Proved What?">
-<meta property="og:description" content="Compact counterexamples to bi-Lipschitz dimension reduction. Result 098 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Doubling is not enough?">
+<meta property="og:description" content="An AI system claims a doubling subset of Hilbert space that admits no bi-Lipschitz embedding into any finite-dimensional Euclidean space, answering the Lang–Plaut question, and compact examples in every infinite-dimensional Banach space, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/098-compact-counterexamples-bi-lipschitz-dimension/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/098-compact-counterexamples-bi-lipschitz-dimension/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 098 · <a href="../../subjects/convex-and-metric-geometry/">Convex and metric geometry</a></p>
-<h1 class="result-title">Compact counterexamples to bi-Lipschitz dimension reduction</h1>
+<p class="meta">Episode 098, October 2026</p>
+<h1>Doubling is not enough?</h1>
+<p class="subtitle">A doubling subset of Hilbert space that fits into no finite-dimensional Euclidean space, at any distortion</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 098 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="FIxHv0E-gvk" data-title="Episode 098: Doubling is not enough?">
+  <a href="https://youtu.be/FIxHv0E-gvk">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 098: Doubling is not enough? Colored horizontal and vertical strips at two scales, with a point lifted in two new directions.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:41. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/FIxHv0E-gvk?t=0" data-t="0"><span class="t">0:00</span><span>Doubling, and finitely many coordinates</span></a></li>
+  <li><a href="https://youtu.be/FIxHv0E-gvk?t=126" data-t="126"><span class="t">2:06</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/FIxHv0E-gvk?t=219" data-t="219"><span class="t">3:39</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/FIxHv0E-gvk?t=360" data-t="360"><span class="t">6:00</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Every infinite-dimensional real Banach space contains a compact doubling set that admits no bi-Lipschitz embedding into any finite-dimensional normed space. The doubling constant is universal. This answers the Lang–Plaut problem negatively, even for compact subsets of Hilbert space.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>A set of points is doubling if every ball in it can be covered by a fixed number of balls of half the radius. Every subset of a finite-dimensional Euclidean space is doubling, so being doubling is necessary for fitting into finitely many coordinates. A bi-Lipschitz embedding sends the points into some ℝ<sup>k</sup> and keeps every distance within a fixed factor D, after one rescaling. Lang and Plaut asked whether every doubling subset of Hilbert space has such an embedding into some finite-dimensional Euclidean space; Gupta, Krauthgamer and Lee asked the same for dimension reduction in algorithms.</p>
+<p>Positive results needed a change of distance: Assouad’s theorem embeds every doubling space once distances are raised to a power below one, and Naor and Neiman bounded the dimension by the doubling constant alone for powers near one, with distortion depending on the power. On the negative side, Lafforgue and Naor built doubling subsets of L<sub>p</sub>, p &gt; 2, with no embedding into any finite-dimensional Euclidean space; independently Bartal, Gottlieb and Neiman found obstructions in ℓ<sub>p</sub>, and Baudier, Święcicki and Swift later gave an elementary proof. The Hilbert case was open; Schioppa announced a negative answer but withdrew it after reporting a possible issue.</p>
+<p>Result 098 is <a href="https://github.com/openai/math/blob/main/preprints/A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026/main.pdf">one OpenAI preprint</a> dated September 25, 2026 (13 pages). It claims a fixed subset of Hilbert space, with doubling constant at most 76,800, that admits no bi-Lipschitz embedding into any finite-dimensional Euclidean space at any finite distortion, answering the Lang–Plaut question negatively. Since Hilbert space sits isometrically inside the function spaces L<sub>p</sub>[0,1], the same set lives there for every finite p, which the paper says answers Lafforgue and Naor’s question for 1 &lt; p &lt; 2. And every infinite-dimensional real Banach space contains a compact doubling set, with one universal doubling bound, that admits no bi-Lipschitz embedding into any finite-dimensional normed space.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The proof is by contradiction and compactness, so it is qualitative: it does not say how large a finite piece must be before it stops embedding. Snowflaked versions of the set still embed, by Assouad’s theorem.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 25, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,40 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/098.md">scope notes</a>)</dd>
+    <dd>OpenAI published Lean proofs of the Hilbert and compact Banach theorems; we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/098.md">a Lean formalization</a> of both the Hilbert theorem, with the doubling bound 76,800, and the compact Banach theorem, with a universal bound, in <a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/DoublingHilbert">28 files and 4,664 lines</a>, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/DoublingHilbert.lean">one separate statement</a> and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/CompactBanach.lean">another</a>, with no unproved steps that we could find. The paper places finite pieces in a Banach space with Dvoretzky’s theorem; the Lean files instead use the set’s coordinate structure and Auerbach-type vectors, placing finite pieces within a factor of 6 either way. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Colored strips at sparse scales.</strong> Over a base plane, at scale r<sub>j</sub> = 1000<sup>−j</sup>, horizontal strips of width r<sub>j</sub> and vertical strips of width W<sub>j</sub>r<sub>j</sub> are colored periodically with N<sub>j</sub> colors, and every pair (N, W) recurs infinitely often. Each color at each level has its own orthogonal direction, and a point may rise by r<sub>j</sub> along one of its strips’ colors, at most one per level and at finitely many levels. A ball of radius t sees fixed coarse coordinates, at most one intermediate level with fewer than 300 choices, and fine coordinates totalling less than t/32; cutting its shadow into 16² squares gives the doubling bound 300 · 16² = 76,800.</li>
+  <li><strong>Sheets and extremal derivatives.</strong> Given an embedding into ℝ<sup>k</sup> with distortion D, fixing the lifts and moving the base point gives D-Lipschitz maps on parts of the plane, the sheets. Over all sheets, take the largest squared length A of the horizontal derivative column, then the largest vertical B allowed with it. Near this extremal pair, the derivatives vary little in mean square along long rows and along columns.</li>
+  <li><strong>Crossings.</strong> Choose the number of colors N larger than (1 + 2D)<sup>k</sup>, the most points pairwise more than 1 apart in a radius-D ball of ℝ<sup>k</sup>, and use a level with N colors and vertical strips much wider than the rows. On one long row and one column of each color, each lifted sheet differs from the base sheet by an offset that, in units of r, is nearly constant. Where a row and a column of different colors cross, both lifts are allowed and are √2 r apart; carrying the offsets to where each color’s row meets its own column gives N points in a radius-D ball pairwise more than 1 apart, which is too many.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>The arithmetic of the doubling bound: at most 129 strips of each kind meet the ball, fewer than 300 labels, fine part under t/32, cells of diameter √33 t/32 &lt; t/2, and 300 · 16² = 76,800.</li>
+  <li>A one-level miniature of the construction in a window where every color occurs: the largest cover of a ball by half-size balls that we found is 29, 30 and 30 for 5, 20 and 80 colors, although 80 colors use 80 separate directions. This illustrates one level; it is not a proof.</li>
+  <li>Lifts at a crossing are √2 r apart; the volume bound (1 + 2D)<sup>k</sup> gives 25 for k = 2, D = 2 and 9,261 for k = 3, D = 10.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026/main.pdf">A doubling Hilbert subset with no finite-dimensional bi-Lipschitz embedding (PDF)</a>, 13 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/098.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 098.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -74,18 +129,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-doubling-Hilbert-subset-with-no-finite-dimensional-bi-Lipschitz-embedding-September-25-2026/main.pdf">A doubling Hilbert subset with no finite-dimensional bi-Lipschitz embedding</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Doubling, and finitely many coordinates</h3>
+<p>A set of points is doubling if every ball in it can be covered by a fixed number of balls of half the radius. Every subset of a finite-dimensional Euclidean space is doubling, so being doubling is necessary for fitting into finitely many coordinates. Is it enough? A bi-Lipschitz embedding sends the points into some ℝᵏ and keeps every distance within a fixed factor D, after one rescaling. Lang and Plaut asked whether every doubling subset of Hilbert space has such an embedding into some finite-dimensional Euclidean space. Gupta, Krauthgamer and Lee asked the same question, for dimension reduction in algorithms. There were positive results after changing the distance. Assouad’s theorem embeds every doubling space once each distance is raised to a power below one, a snowflake. Naor and Neiman showed that, for powers close to one, the dimension can be bounded by the doubling constant alone, though the distortion still depends on the power. On the negative side, Lafforgue and Naor built doubling subsets of Lₚ, for p &gt; 2, with no embedding into any finite-dimensional Euclidean space. Independently, Bartal, Gottlieb and Neiman found obstructions in the sequence spaces ℓₚ, for p &gt; 2, and later Baudier, Święcicki and Swift gave an elementary proof. The Hilbert case stayed open. Schioppa announced a negative answer, but withdrew the preprint after reporting a possible issue. In our miniature of the construction, base points sit on a grid, and each point can rise by 1 unit in the direction of its horizontal strip’s color, or of its vertical strip’s color. We covered balls by balls of half the radius, at many centers and radii. The worst count stayed at 29 or 30, whether there were 5, 20 or 80 colors, although 80 colors use 80 separate directions. This is one level, and these are the worst counts we found, not a proof: a ball meets only a few strips, so it sees only a few colors, however many there are in total.</p>
+<h3><span class="t num">2:06</span>The claims</h3>
+<p>Result 098 is one OpenAI preprint, 13 pages, dated September 25. It claims a fixed subset of Hilbert space, with doubling constant at most 76,800, that admits no bi-Lipschitz embedding into any finite-dimensional Euclidean space, at any finite distortion. That answers the Lang–Plaut question negatively. Hilbert space itself sits isometrically inside the function spaces Lₚ, for every finite p, so the same set lives there too; the paper says this answers Lafforgue and Naor’s question for p between 1 and 2, for those function spaces. And every infinite-dimensional real Banach space contains a compact doubling set, with one universal doubling bound, that admits no such embedding into any finite-dimensional normed space. The proof is by contradiction and compactness, so it is qualitative: it does not say how large a finite piece must be before it stops embedding. The Banach-space version places finite pieces of the set into the space with Dvoretzky’s theorem, and assembles them into a shrinking compact union. OpenAI published a Lean formalization of both the Hilbert theorem and the compact Banach theorem, 28 files and about 4,700 lines, matched against separate statements. In place of Dvoretzky’s theorem, the Lean files use the special shape of the set, placing finite pieces within a factor of 6 either way through an Auerbach-type system of vectors. We have not run the check.</p>
+<h3><span class="t num">3:39</span>How the proof goes</h3>
+<p>The set lives over a base plane. At scale rⱼ = 1000⁻ʲ, horizontal strips of width rⱼ and vertical strips of width Wⱼ rⱼ are colored periodically with Nⱼ colors, and every pair of N and W recurs infinitely often. Each color at each level gets its own unit direction, perpendicular to everything else. A point of the plane may rise by rⱼ in the direction of one of its strips’ colors, at most one color per level, and at finitely many levels. Because the scales shrink a thousandfold, a ball of any radius sees fixed coarse coordinates, tiny fine ones, and at most one level in between, with fewer than 300 choices. Cutting the ball’s shadow on the plane into 256 small squares, and multiplying, gives the bound of 76,800. Now suppose an embedding into ℝᵏ with distortion D exists. Fixing the lifts and moving the base point gives a Lipschitz map on part of the plane, called a sheet. Its derivative has a horizontal and a vertical column. Over all sheets, take the largest possible squared length A of the horizontal column, and then the largest vertical B allowed alongside it. Near this extremal pair, an average derivative close to a reference value forces small mean-square variation, along the long rows and along the columns. Choose the number of colors N larger than the number of points, pairwise more than 1 apart, that fit in a ball of radius D in ℝᵏ, which is at most (1 + 2D)ᵏ. Use a level with N colors and vertical strips n times wider than the rows, inside a tiny square of a nearly extremal sheet. Along one long row and one column of each color, each lifted sheet differs from the base sheet by an offset that, measured in units of r, is nearly constant. Where a row of color i crosses a column of color m, both lifts are allowed, and the two lifted points are √2 r apart. Carrying the offsets along each row and column, to where every color’s row meets its own column, gives N points in a ball of radius D, pairwise more than 1 apart. That is too many, so no embedding exists.</p>
+<h3><span class="t num">6:00</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. OpenAI’s Lean formalization covers the Hilbert theorem with the explicit doubling bound, and the compact Banach theorem with a universal one; we have not run it. It is not among the papers OSVerify reviewed, and we have seen no expert review. If it holds, doubling is not enough. Bounded covering complexity alone does not guarantee that a subset of Hilbert space fits into finitely many coordinates at any finite distortion, even when the set is compact. Its snowflakes still embed, by Assouad’s theorem.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20098%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../097-euclidean-steinitz-bergstrom-bound/"><span class="dir">Previous · 097</span><span class="pt">The Euclidean Steinitz–Bergström bound</span></a>
-  <a class="next" href="../099-sharp-exponential-scale-edit-distance/"><span class="dir">Next · 099</span><span class="pt">The sharp exponential scale of edit-distance distortion</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/convex-and-metric-geometry/">More in convex and metric geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

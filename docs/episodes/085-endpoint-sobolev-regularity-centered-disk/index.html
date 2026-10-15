@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 085: Endpoint Sobolev regularity of centered disk averages | AI Proved What?</title>
-<meta name="description" content="Endpoint Sobolev regularity of centered disk averages. Result 085 in OpenAI&#x27;s math release (Real and complex analysis): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>How much steeper? The centered disk maximal function at p = 1 | AI Proved What?</title>
+<meta name="description" content="An AI system claims that the centered disk maximal function of a W1,1 function in the plane has a gradient whose total size is at most a constant times that of the input, the planar centered case of the Hajłasz–Onninen question, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/085-endpoint-sobolev-regularity-centered-disk/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 085: Endpoint Sobolev regularity of centered disk averages | AI Proved What?">
-<meta property="og:description" content="Endpoint Sobolev regularity of centered disk averages. Result 085 in OpenAI&#x27;s math release (Real and complex analysis): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="How much steeper?">
+<meta property="og:description" content="An AI system claims that the centered disk maximal function of a W1,1 function in the plane has a gradient whose total size is at most a constant times that of the input, the planar centered case of the Hajłasz–Onninen question, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/085-endpoint-sobolev-regularity-centered-disk/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/085-endpoint-sobolev-regularity-centered-disk/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 085 · <a href="../../subjects/real-and-complex-analysis/">Real and complex analysis</a></p>
-<h1 class="result-title">Endpoint Sobolev regularity of centered disk averages</h1>
+<p class="meta">Episode 085, October 2026</p>
+<h1>How much steeper?</h1>
+<p class="subtitle">The centered disk maximal function at p = 1</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 085 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="dqUXsc0UuIQ" data-title="Episode 085: How much steeper?">
+  <a href="https://youtu.be/dqUXsc0UuIQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 085: How much steeper? A blue cone seen from above, a white point to its right with orange circles centered on it, the boldest one reaching back almost to the peak, and the bound: the integral of the gradient of Mf is at most C times the integral of the gradient of f.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:40. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/dqUXsc0UuIQ?t=0" data-t="0"><span class="t">0:00</span><span>Taking the best average</span></a></li>
+  <li><a href="https://youtu.be/dqUXsc0UuIQ?t=143" data-t="143"><span class="t">2:23</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/dqUXsc0UuIQ?t=203" data-t="203"><span class="t">3:23</span><span>Cancellation at the best radius</span></a></li>
+  <li><a href="https://youtu.be/dqUXsc0UuIQ?t=352" data-t="352"><span class="t">5:52</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Resolves the planar centered-disk case of the Hajłasz–Onninen maximal-function regularity problem. For every real <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>∈</mo><msup><mi>W</mi><mrow><mn>1</mn><mo separator="true">,</mo><mn>1</mn></mrow></msup><mo stretchy="false">(</mo><msup><mi mathvariant="double-struck">R</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f\in W^{1,1}(\mathbb R^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathbb">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>, the centered disk maximal function satisfies <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">∥</mi><mi mathvariant="normal">∇</mi><mi>M</mi><mi>f</mi><msub><mi mathvariant="normal">∥</mi><mn>1</mn></msub><mo>≤</mo><mi>C</mi><mi mathvariant="normal">∥</mi><mi mathvariant="normal">∇</mi><mi>f</mi><msub><mi mathvariant="normal">∥</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\|\nabla Mf\|_1\le C\|\nabla f\|_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∥∇</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord"><span class="mord">∥</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord">∥∇</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord"><span class="mord">∥</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> with an absolute constant. It belongs locally to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>W</mi><mrow><mn>1</mn><mo separator="true">,</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">W^{1,1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mpunct mtight">,</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span> and has a globally integrable weak gradient.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>At each point of the plane, average the size of a function f over every disk centered there and keep the largest average. That is the centered disk maximal function Mf. The Hardy–Littlewood maximal theorem bounds Mf in L<sup>p</sup> for every p above one, but at p = 1 it fails: unless f is zero, Mf decays no faster than one over distance squared and is never integrable.</p>
+<p>Smoothness is a separate question. In 1997 Kinnunen proved that for p above one, if f and its gradient lie in L<sup>p</sup>, so do Mf and its gradient, using the pointwise bound |∇Mf| ≤ M(|∇f|). At p = 1 that majorant is not integrable either. In 2004 Hajłasz and Onninen asked whether the gradient bound survives anyway: is the integral of |∇Mf| at most a constant times the integral of |∇f|? In one dimension, Tanaka and then Aldaz and Pérez Lázaro proved such bounds for the uncentered operator, and Kurka for the centered one. In higher dimensions they were known for radial or block-decreasing inputs with uncentered balls, and as variation bounds for the dyadic and uncentered cube operators, but not for centered disks.</p>
+<p>Result 085 is <a href="https://github.com/openai/math/blob/main/preprints/An-Endpoint-Gradient-Bound-for-the-Centered-Disk-Maximal-Operator-September-26-2026/article.pdf">one OpenAI preprint</a>, 45 pages, dated September 26, 2026. Its theorem: there is an absolute constant C such that, for every real f in the Sobolev space W<sup>1,1</sup> of the plane, Mf is locally integrable, lies locally in W<sup>1,1</sup>, and ∫|∇Mf| ≤ C ∫|∇f|. No radial symmetry or compact support is assumed. The paper presents this as answering the planar centered-disk case of Hajłasz and Onninen’s question.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The constant is not computed, and the argument covers disks in the plane only. Balls in higher dimensions, the best constant, and continuity of the map from f to the gradient of Mf are not claimed.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 26, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +88,39 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/085.md">scope notes</a>)</dd>
+    <dd>OpenAI published a Lean proof; we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/085.md">a Lean formalization</a>, <a href="https://github.com/openai/math/blob/main/lean/OAI/Analysis/DiskMaximal">30 files and 19,397 lines</a> with no unproved steps that we could find, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/DiskMaximal.lean">a separate statement</a> of the full theorem: Mf is finite almost everywhere, locally integrable and locally in W<sup>1,1</sup>, with an integrable weak gradient obeying the bound. A separate formalization proves <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SignedFiniteBand.lean">the signed finite-band estimate</a>. We have not run the check ourselves. The paper notes that a 2025 theorem of Lahti and Weigt would turn a variation bound into Sobolev regularity; it proves that bound and removes the singular part directly. It is not among the papers OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A signed estimate.</strong> For a smooth, compactly supported g, the paper averages g itself rather than its size and takes the largest average over radii between a and b. The integral of the gradient of this envelope is bounded by a constant times that of g, however many scales lie between a and b.</li>
+  <li><strong>Cancellation at the best radius.</strong> Where the average is locally largest in the radius, its radial derivative vanishes, and a rotational moment vanishes on every disk; in complex notation, a smoothed disk gives zero total to the gradient weighted by the conjugate of y − x. Two such disks differ on a thin shell, and the factor 1 − conj(y − x)/conj(z − x), which vanishes at a shell point z, makes gradient mass near z nearly free. A sweep by nested disks tangent at z shows that, outside one exceptional set of centers and for every radius within one doubling, the relevant shell mass concentrates near one point, using only a bound on positive mass inside the inner disk. The resulting local estimate charges a localized error piece of size m at scale s, seen at a larger scale r, only m·(s/r)<sup>1/100</sup>.</li>
+  <li><strong>Prices, particles, assembly.</strong> Pairing positive and negative parts of the gradient from the finest grid upward gives every dyadic square a price, and the prices add up to a constant times the gradient integral of g, for every direction in a fixed finite palette. Vector mass followed along refinement paths chooses directions scale by scale, paying for changes of direction and for spatial variation. When the bands are assembled, each row of transition probabilities sums to one, so its spatial derivatives sum to zero, and the direction costs pay for the terms that remain. Finally, approximation extends the estimate to Sobolev inputs, and a signed cutoff that subtracts a local mean shows that the gradient of Mf has no singular part.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script computes Mf for the cone f(y) = max(0, 1 − |y|), whose gradient has total size π. Mf equals f out to a distance of about 0.79 from the peak, where the best radius jumps from 0 to about 0.76. The integral of Mf over the disk of radius R is 3.10, 4.26, 5.55 and 6.90 at R = 5, 10, 20 and 40, and that of the majorant M(|∇f|) is 8.50, 11.85, 15.64 and 19.70: neither is integrable.</li>
+  <li>The level sets of Mf are disks whose area grows like 1/t and whose perimeter grows like 1/√t, so the total gradient of Mf is finite: about 4.50, a ratio of 1.43. For two cones at distances 3, 6 and 12, computed on a grid, the ratio is 1.28, 1.35 and 1.39. No computation can test every input.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-Endpoint-Gradient-Bound-for-the-Centered-Disk-Maximal-Operator-September-26-2026/article.pdf">An Endpoint Gradient Bound for the Centered Disk Maximal Operator (PDF)</a>, September 26, 2026 (45 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/085.md">The Lean scope note</a> and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/DiskMaximal.lean">the statement it is checked against</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 085.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +128,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/An-Endpoint-Gradient-Bound-for-the-Centered-Disk-Maximal-Operator-September-26-2026/article.pdf">An Endpoint Gradient Bound for the Centered Disk Maximal Operator</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Taking the best average</h3>
+<p>At each point of the plane, draw every disk centered there, average the size of a function over each disk, and keep the largest average. That is the centered disk maximal function, Mf. For a cone of height one and radius one, near the peak the best disk is a tiny one, and Mf equals f. But from a distance of about 0.79, a large disk reaching back almost to the peak does better, and the best radius jumps. The maximal theorem of Hardy and Littlewood bounds Mf in Lᵖ for every p above one, but at p = 1 it fails: unless f is zero, Mf decays no faster than 1/distance², and is never integrable. Smoothness is a different question. In 1997, Kinnunen proved that for p above one, if f and its gradient lie in Lᵖ, so do Mf and its gradient, using a pointwise bound: the gradient of Mf is at most the maximal function of the gradient of f. At p = 1 that last step breaks, because a maximal function is never integrable. For the cone, the integral of that majorant over a disk of radius R keeps growing, by roughly four with each doubling of R. In 2004, Hajłasz and Onninen asked whether the gradient bound survives anyway: is the integral of the gradient of Mf at most a constant times the integral of the gradient of f? It can survive, because a gradient only sees boundaries. The level sets of Mf for the cone are disks. As the level t falls, their area grows like 1/t, so Mf has infinite integral; but their perimeter grows only like 1/√t, and the total of the perimeters, which is the integral of the gradient, is finite. In our computation it is about 4.5, against pi for the cone itself, a ratio of 1.43; for two cones at distances three, six and twelve, the ratio stays between 1.28 and 1.39. In one dimension, Tanaka, and then Aldaz and Pérez Lázaro, proved such bounds for the uncentered operator, and Kurka for the centered one. In higher dimensions they were known for radial or block-decreasing inputs with uncentered balls, and as variation bounds for uncentered cubes, but not for centered disks.</p>
+<h3><span class="t num">2:23</span>The claim</h3>
+<p>Result 085 is a 45-page OpenAI preprint dated September 26. Its theorem: there is an absolute constant C such that, for every real function f in the Sobolev space W^(1,1) of the plane, Mf is locally integrable, lies locally in W^(1,1), and the integral of its gradient is at most C times the integral of the gradient of f. No radial symmetry or compact support is assumed. The constant is not computed, and the argument is for disks in the plane only. The paper presents this as answering the planar centered-disk case of Hajłasz and Onninen’s question. OpenAI also published a Lean formalization, about 19,400 lines in 30 files, matched against a separate statement of the full theorem, including that Mf is finite almost everywhere and has an integrable weak gradient obeying the bound. We have not run the check ourselves.</p>
+<h3><span class="t num">3:23</span>Cancellation at the best radius</h3>
+<p>The heart of the proof is a signed estimate. For a smooth, compactly supported g, average g itself, not its size, and take the largest average over radii between a and b. The integral of the gradient of this envelope is bounded by a constant times that of g, however many scales lie between a and b. The first input is cancellation. At a radius where the average is locally largest, its radial derivative vanishes, and a rotational moment vanishes on every disk. In complex notation, a smoothed disk then gives zero total to the gradient weighted by the conjugate of y − x. Comparing two such disks leaves a thin shell, and the factor 1 − conj(y − x)/conj(z − x), which vanishes at a shell point z, makes gradient mass near z nearly free. So the question becomes geometric: when is almost all the relevant mass on a shell concentrated near one point? A sweep by nested disks, all tangent at that point, answers it for every center outside one exceptional set, uniformly over every radius within one doubling, and it needs a bound on positive mass only inside the inner disk. This gives a local directional estimate: split the gradient into positive pieces pointing into a fixed cone of directions, plus localized error pieces. An error of size m spread over scale s, seen at a larger scale r, costs only m·(s/r)^(1/100). Two multiscale constructions pay for the rest. The first pairs positive and negative parts of the gradient from the finest grid upward, giving every dyadic square a price; the prices add up to at most a constant times the gradient integral of g, and one set of prices serves every direction in a fixed finite palette. The second follows vector mass along refinement paths and chooses directions scale by scale, paying for each change of direction and for spatial variation of the choice. When the bands are assembled, each row of transition probabilities sums to one, so its spatial derivatives sum to zero, and this cancellation leaves only terms the direction costs already pay for. Finally, approximation extends the estimate to Sobolev inputs, and a signed cutoff that subtracts a local mean shows that the gradient of Mf has no singular part.</p>
+<h3><span class="t num">5:52</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. The Lean formalization of the full theorem has been published, and we have not run it. The paper notes that a 2025 theorem of Lahti and Weigt would turn a variation bound into Sobolev regularity; it proves that bound and removes the singular part directly. It is not among the papers OSVerify reviewed, and we have seen no expert review. If it holds, taking the best centered disk average in the plane can increase the total size of a gradient by at most a fixed factor, even at the endpoint p = 1. Balls in higher dimensions, the best constant, and continuity of the map from f to the gradient of Mf are not claimed.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20085%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../084-geometric-case-erdos-similarity-conjecture/"><span class="dir">Previous · 084</span><span class="pt">The geometric case of the Erdős similarity conjecture</span></a>
-  <a class="next" href="../086-l3-bound-trilinear-hilbert-transform/"><span class="dir">Next · 086</span><span class="pt">An <i>L</i><sup>3</sup> bound for the trilinear Hilbert transform</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/real-and-complex-analysis/">More in real and complex analysis</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

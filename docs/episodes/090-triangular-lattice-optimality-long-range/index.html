@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 090: Triangular-lattice optimality, long-range Riesz and Coulomb energies, and spherical logarithmic energy | AI Proved What?</title>
-<meta name="description" content="Triangular-lattice optimality, long-range Riesz and Coulomb energies, and spherical logarithmic energy. Result 090 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Triangles win? Universal optimality of the triangular lattice | AI Proved What?</title>
+<meta name="description" content="An AI system claims that no planar configuration of density one has less energy per point than the triangular lattice, for every completely monotone potential, and that the lattice minimizes Coulomb and long-range Riesz renormalized energies, with Lean formalizations of the energy theorem and a packing certificate. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/090-triangular-lattice-optimality-long-range/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 090: Triangular-lattice optimality, long-range Riesz and Coulomb energies, and spherical logarithmic energy | AI Proved What?">
-<meta property="og:description" content="Triangular-lattice optimality, long-range Riesz and Coulomb energies, and spherical logarithmic energy. Result 090 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Triangles win?">
+<meta property="og:description" content="An AI system claims that no planar configuration of density one has less energy per point than the triangular lattice, for every completely monotone potential, and that the lattice minimizes Coulomb and long-range Riesz renormalized energies, with Lean formalizations of the energy theorem and a packing certificate. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/090-triangular-lattice-optimality-long-range/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/090-triangular-lattice-optimality-long-range/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 090 · <a href="../../subjects/convex-and-metric-geometry/">Convex and metric geometry</a></p>
-<h1 class="result-title">Triangular-lattice optimality, long-range Riesz and Coulomb energies, and spherical logarithmic energy</h1>
+<p class="meta">Episode 090, October 2026</p>
+<h1>Triangles win?</h1>
+<p class="subtitle">Universal optimality of the triangular lattice, Coulomb and Riesz energies, and circle packing</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 090 in OpenAI’s catalog: <a href="#papers-in-result">all 4 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="g_Kj0GWeqAs" data-title="Episode 090: Triangles win?">
+  <a href="https://youtu.be/g_Kj0GWeqAs">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 090: Triangles win? A patch of the triangular lattice in teal dots with one equilateral triangle outlined in gold, above the inequality: the energy of any configuration C is at least the energy of the triangular lattice.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:18. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/g_Kj0GWeqAs?t=0" data-t="0"><span class="t">0:00</span><span>Points in the plane</span></a></li>
+  <li><a href="https://youtu.be/g_Kj0GWeqAs?t=178" data-t="178"><span class="t">2:58</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/g_Kj0GWeqAs?t=271" data-t="271"><span class="t">4:31</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/g_Kj0GWeqAs?t=431" data-t="431"><span class="t">7:11</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves that the triangular lattice minimizes the lower limit of energy per particle for every nonnegative completely monotone potential of squared distance among locally finite planar configurations of centered-disk density one. It also minimizes unit-background renormalized Riesz energies for <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>s</mi><mo>&lt;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">0\lt s\lt 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6835em;vertical-align:-0.0391em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">s</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span> and Coulomb energy, resolving Sandier–Serfaty and the two-dimensional Brauchart–Hardin–Saff conjecture on the linear term of optimal spherical logarithmic energy.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>Scatter points across the plane, one per unit of area on average, and give every pair an energy that depends only on their distance. Which arrangement has the least energy per point? The papers allow any potential that is completely monotone in the squared distance: never negative, never increasing, convex, with derivatives alternating in sign forever. Every Gaussian and every inverse power qualifies. With the Gaussian e<sup>−πr²</sup> at density one, the triangular lattice has energy 0.160 per point, the square lattice 0.180, and the honeycomb 0.272.</p>
+<p>Among lattices the answer was classical: Rankin, Cassels, Ennola and Diananda settled the inverse powers whose sums converge, and Montgomery (1988) settled every Gaussian. Cohn and Kumar conjectured in 2007 that sharp Fourier bounds would prove the triangular lattice universally optimal among all configurations, along with the E<sub>8</sub> and Leech lattices, and Cohn, Kumar, Miller, Radchenko and Viazovska later proved those two higher-dimensional cases. In the plane only restricted competitors had been handled. Two neighboring problems point the same way: Cohn and Elkies conjectured that their Fourier bound for packings is exact in dimensions 2, 8 and 24, and Sandier and Serfaty, studying vortices in superconductors, conjectured that the triangular lattice minimizes a renormalized energy for logarithmic repulsion against a uniform background. Brauchart, Hardin and Saff conjectured the constant in the linear term of the least logarithmic energy of points on a sphere.</p>
+<p>Result 090 is four OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/Universal-optimality-of-the-triangular-lattice-September-23-2026/paper.pdf">The first</a> (70 pages, September 23) claims that for every completely monotone potential of squared distance, and every configuration whose density in growing centered disks tends to one, the energy per point, in the lower limit, is at least the triangular lattice’s, even when the energies are infinite. It also claims triangular minimality for renormalized Riesz energies with exponent between 0 and 2, where the raw sums diverge. <a href="https://github.com/openai/math/blob/main/preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026/paper.pdf">The second</a> (31 pages, September 26) proves the same energy theorem with a smaller, independent construction. <a href="https://github.com/openai/math/blob/main/preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/paper.pdf">The third</a> (49 pages) claims the Sandier–Serfaty conjecture and, with a formula of Bétermin and Sandier, the Brauchart–Hardin–Saff constant, 2 log 2 + ½ log(2/3) + 3 log(√π/Γ(1/3)) ≈ −0.0556. <a href="https://github.com/openai/math/blob/main/preprints/A-sharp-Fourier-certificate-for-planar-circle-packing-September-23-2026/paper.pdf">The fourth</a> (49 pages) builds an exact Cohn–Elkies function in the plane, with f(0) = 2/√3.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The claims identify minimum values, not every minimizer: no uniqueness is claimed for the energies. Cohn and Kumar’s stronger request, one sharp Fourier function for each potential, is not claimed; the Gaussian inequalities are added up instead. The packing function does not meet the extra zero-set condition of a further Cohn–Elkies conjecture. Nothing is claimed at Riesz exponent 2 or for quantum crystallization.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, four papers dated September 23 and 26, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +88,43 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/090.md">scope notes</a>)</dd>
+    <dd>OpenAI published Lean proofs of the energy theorem, the atomic paper’s Gaussian functions and the packing certificate; we have not run the checks</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. None of the four preprints has been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/090.md">Lean formalizations</a> following the atomic paper and the packing paper, with no unproved steps that we could find: <a href="https://github.com/openai/math/blob/main/lean/OAI/Analysis/Triangular">276 files and 68,778 lines</a> for the energy theorem and the Gaussian functions, and <a href="https://github.com/openai/math/blob/main/lean/OAI/Analysis/PlanarPacking">562 files and 916,013 lines</a> for the packing certificate, 875,964 of them interval data checked by Lean’s kernel. They are matched against separate statements (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/TriangularEnergy.lean">energy</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/AtomicGaussian.lean">atomic Gaussian functions</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/TriangularGaussian.lean">Gaussian functions with their construction</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PlanarPacking.lean">packing</a>). We have not run the checks. The Coulomb paper and the sphere constant rest on that paper and its interval arithmetic, and the Riesz step is unformalized analysis. The packing paper mentions a 2026 bachelor’s thesis abstract by Zhitniaia announcing a related function built from modular forms. None of the papers is among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>The Fourier route.</strong> For each Gaussian G, the energy papers build a radial function f with f ≤ G, a nonnegative Fourier transform, f = G at every nonzero lattice point, and a transform vanishing at every nonzero point of the dual lattice, which is the triangular lattice turned a quarter turn. For any configuration of density one these signs bound the energy below by f̂(0) − f(0), and Poisson summation shows this is exactly the lattice energy. Every completely monotone potential, shifted slightly, is a positive mixture of Gaussians and a constant (Bernstein–Widder), so the inequalities add up.</li>
+  <li><strong>Building the functions.</strong> Rescaled squared lengths of lattice vectors are the numbers j² + jk + k², which leave remainders 0, 1, 3, 4, 7 or 9 on division by 12. The 70-page paper puts a node at every such positive integer, multiplies by a product of squared sines with a double zero at each node, and builds columns prescribing a value and a slope at every node. Finite blocks of 168 coordinates are certified with interval arithmetic, the infinite tail is solved because its couplings are small, and the signs between nodes are certified with Bernstein polynomial bounds over whole ranges of the Gaussian parameter. The atomic paper uses nodes modulo 36 and blocks of 20. The packing paper built this machinery first, for one function.</li>
+  <li><strong>The Coulomb route.</strong> On square tori the minimizing points stay a definite distance apart. Their Voronoi cells split into sectors, at most six per point on average. With one trial potential glued across all sectors, each sector contributes at least a negative constant plus fixed multiples of its area and angle; areas and angles add up exactly, giving a bound calibrated to equal the triangular value. Two scalar inequalities are verified with interval arithmetic. Sandier and Serfaty’s periodic approximation carries the bound to the whole plane, and Bétermin and Sandier had shown that the sphere constant takes the conjectured value exactly when the triangular lattice wins.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script computes energies at density one. With the Gaussian e<sup>−πr²</sup>: triangular 0.1596, square 0.1803, honeycomb 0.2716. Sixteen random points on a torus that fits the triangular pattern descended to the triangular energy from all 40 starts; on a square torus of the same area the best found was 0.1654.</li>
+  <li>The Cohn–Elkies linear program with 20 Laguerre–Gaussian functions, sign conditions imposed on a fine grid, gives 0.906906, against π/(2√3) = 0.906900. A numerical search only approaches the bound; it cannot show that a function attains it.</li>
+  <li>Local minima of logarithmic energy on the sphere, found by descent, give (energy − (½ − log 2)n² + (n/2) log n)/n of −0.0478 at 50 points and −0.0525 at 800, drifting toward −0.0556. True minima can only be lower.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Universal-optimality-of-the-triangular-lattice-September-23-2026/paper.pdf">Universal optimality of the triangular lattice (PDF)</a>, 70 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-atomic-certificate-for-triangular-lattice-universal-optimality-September-26-2026/paper.pdf">An atomic certificate for triangular-lattice universal optimality (PDF)</a>, 31 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/paper.pdf">Triangular minimality for planar Coulomb renormalized energy (PDF)</a>, 49 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-sharp-Fourier-certificate-for-planar-circle-packing-September-23-2026/paper.pdf">A sharp Fourier certificate for planar circle packing (PDF)</a>, 49 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/090.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 090.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 4 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -78,18 +135,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Triangular-minimality-for-planar-Coulomb-renormalized-energy-September-23-2026/paper.pdf">Triangular minimality for planar Coulomb renormalized energy</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Points in the plane</h3>
+<p>Scatter points across the plane, one per unit of area on average, and give every pair an energy that depends only on the distance between them. Which arrangement has the least energy per point? The natural candidate is the triangular lattice, the pattern of equilateral triangles. The papers here allow any potential that is completely monotone in the squared distance: never negative, never increasing, convex, with derivatives alternating in sign forever. Every Gaussian and every inverse power qualifies. In our computation with the Gaussian e^(−π × squared distance), the triangular lattice has energy 0.160 per point, the square lattice 0.180, and the honeycomb, with two points in each cell, 0.272. Among lattices alone, the answer was classical: Rankin, Cassels, Ennola and Diananda settled the inverse powers whose sums converge, and Montgomery, in 1988, every Gaussian, so among lattice shapes the triangle sits at the bottom. But a competitor need not be a lattice. Cohn and Kumar conjectured in 2007 that sharp Fourier bounds would prove the triangular lattice universally optimal, along with the E8 and Leech lattices, and Cohn, Kumar, Miller, Radchenko and Viazovska later proved those two higher-dimensional cases. In the plane, only restricted competitors were handled: some periodic families, and small displacements of the lattice. In our search, 16 random points on a torus that fits the triangular pattern always slid down to its energy, while on a square torus the best we found was 0.165. Two neighboring problems point the same way. Equal disks packed in the triangular pattern cover π/(2√3), about 90.7 percent of the plane, and nothing does better. Cohn and Elkies gave a Fourier bound for packings and conjectured that, in dimensions 2, 8 and 24, one auxiliary function makes it exact; Viazovska found one in dimension 8, and with collaborators in 24. Our own linear program with 20 Laguerre–Gaussian functions comes within seven millionths of the planar density, but a numerical search only approaches the bound. Then there are charges. Sandier and Serfaty, studying vortices in superconductors, conjectured that the triangular lattice minimizes a renormalized energy for logarithmic repulsion against a uniform background, and Brauchart, Hardin and Saff conjectured the constant in the linear term of the least logarithmic energy of points on a sphere. Our best local minima give −0.048 at 50 points and −0.0525 at 800, drifting toward their value, −0.0556.</p>
+<h3><span class="t num">2:58</span>The claims</h3>
+<p>Result 090 is four OpenAI preprints. The first, 70 pages, dated September 23, proves universal optimality in the plane: for every completely monotone potential of squared distance, and every configuration whose density in growing centered disks tends to one, the energy per point, in the lower limit, is at least the triangular lattice’s, even when the energies are infinite. The second, 31 pages, dated September 26, proves the same theorem with a smaller, independent construction. The third, 49 pages, proves the Sandier–Serfaty conjecture and, with a formula of Bétermin and Sandier, the Brauchart–Hardin–Saff constant. The fourth, also 49 pages, builds an exact Cohn–Elkies function in the plane. The first paper also proves triangular minimality for renormalized Riesz energies with exponent between zero and two, where the raw sums diverge even for the lattice. The claims identify minimum values, not every minimizer, and Cohn and Kumar’s stronger request, a sharp Fourier function for each potential, is not claimed. OpenAI published Lean formalizations of the energy theorem, the atomic paper’s Gaussian functions and the packing certificate: about 69,000 lines for energy, and over 900,000 for packing, mostly interval data checked by Lean’s kernel. The Coulomb paper and the Riesz results are not formalized. We have not run the checks.</p>
+<h3><span class="t num">4:31</span>How the proofs go</h3>
+<p>Both energy papers reduce everything to Gaussians. For each Gaussian they build a radial function f that stays below it, whose Fourier transform is never negative, that touches the Gaussian at every nonzero lattice point, and whose transform vanishes at every nonzero point of the dual lattice, which for the triangular lattice is the same lattice turned a quarter turn. For any configuration of density one, the two sign conditions bound the energy below by f̂(0) − f(0), and Poisson summation over the lattice shows this number is exactly the lattice energy. Finally, every completely monotone potential, shifted slightly, is a positive mixture of Gaussians and a constant, by a classical theorem of Bernstein and Widder, so the Gaussian inequalities add up to the full theorem. The hard part is building f for every Gaussian at once. Rescaled squared lengths of triangular lattice vectors are the numbers j² + jk + k², which leave only certain remainders on division by 12: 0, 1, 3, 4, 7 or 9. The 70-page paper puts a node at every such positive integer, uses a product of squared sines with a double zero at each node, and builds columns that prescribe a value and a slope at every node. Finite blocks of 168 coordinates are certified with interval arithmetic, the infinite tail is solved because its couplings are small, and the signs between nodes are certified with Bernstein polynomial bounds over whole ranges of the Gaussian parameter. The atomic paper uses nodes modulo 36 and blocks of 20. The packing paper built this machinery first, for one function. The Coulomb paper takes a direct route, with no universal-optimality input. On a square torus, minimizing points stay a definite distance apart. Their Voronoi cells, the regions nearest each point, split into sectors, one per edge, and on average a point has at most 6. With one trial potential, glued continuously across all sectors, each sector’s contribution is at least a negative constant plus fixed multiples of its area and angle. Areas and angles add up exactly, so at most 6 sectors per point gives a bound calibrated to equal the triangular value. Two scalar inequalities behind this are verified with interval arithmetic. Sandier and Serfaty’s periodic approximation carries the bound to the whole plane, and Bétermin and Sandier had shown that the sphere constant takes the conjectured value exactly when the triangular lattice wins.</p>
+<h3><span class="t num">7:11</span>Where it stands</h3>
+<p>None of the four preprints is peer reviewed, and none has been revised. OpenAI’s Lean formalizations cover the energy theorem, the atomic paper’s Gaussian functions and the packing certificate; we have not run them. The Coulomb paper and the sphere constant rest on that paper and its interval arithmetic, and the Riesz step is unformalized analysis. The packing paper mentions a 2026 thesis abstract announcing a related function built from modular forms. None of the papers is among those OSVerify reviewed, and we have seen no expert review. If they hold, the plane largely joins dimensions 8 and 24: no configuration of density one beats the triangular lattice, for any completely monotone potential; it minimizes the Coulomb and long-range Riesz renormalized energies, fixes the Brauchart–Hardin–Saff constant, and has an exact Cohn–Elkies function. Whether the minimizers are unique, and whether every single potential has its own sharp Fourier function, are not settled here.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20090%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../089-bounded-distortion-l1-embeddings-planar/"><span class="dir">Previous · 089</span><span class="pt">Bounded-distortion <i>L</i><sub>1</sub> embeddings of planar and bounded-treewidth graphs</span></a>
-  <a class="next" href="../091-logarithmic-lp-brunn-minkowski-inequalities/"><span class="dir">Next · 091</span><span class="pt">Logarithmic and <i>L</i><sub><i>p</i></sub> Brunn–Minkowski inequalities and the B-conjecture</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/convex-and-metric-geometry/">More in convex and metric geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

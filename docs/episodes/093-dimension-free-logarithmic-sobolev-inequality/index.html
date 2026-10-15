@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 093: Dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures | AI Proved What?</title>
-<meta name="description" content="Dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures. Result 093 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Tails are enough? A dimension-free log-Sobolev inequality | AI Proved What?</title>
+<meta name="description" content="An AI system claims that centered log-concave measures whose linear marginals have Gaussian tails satisfy a logarithmic Sobolev inequality with a dimension-free constant, resolving Bizeul’s conjecture. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/093-dimension-free-logarithmic-sobolev-inequality/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 093: Dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures | AI Proved What?">
-<meta property="og:description" content="Dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures. Result 093 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Tails are enough?">
+<meta property="og:description" content="An AI system claims that centered log-concave measures whose linear marginals have Gaussian tails satisfy a logarithmic Sobolev inequality with a dimension-free constant, resolving Bizeul’s conjecture. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/093-dimension-free-logarithmic-sobolev-inequality/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/093-dimension-free-logarithmic-sobolev-inequality/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 093 · <a href="../../subjects/convex-and-metric-geometry/">Convex and metric geometry</a></p>
-<h1 class="result-title">Dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures</h1>
+<p class="meta">Episode 093, October 2026</p>
+<h1>Tails are enough?</h1>
+<p class="subtitle">A dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 093 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="aqk9Qwf_CK8" data-title="Episode 093: Tails are enough?">
+  <a href="https://youtu.be/aqk9Qwf_CK8">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 093: Tails are enough? A concave blue curve, the logarithm of a Gaussian density, above the inequality: the entropy of f squared is at most C a squared times the integral of the squared gradient.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:21. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/aqk9Qwf_CK8?t=0" data-t="0"><span class="t">0:00</span><span>Entropy and energy</span></a></li>
+  <li><a href="https://youtu.be/aqk9Qwf_CK8?t=152" data-t="152"><span class="t">2:32</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/aqk9Qwf_CK8?t=214" data-t="214"><span class="t">3:34</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/aqk9Qwf_CK8?t=342" data-t="342"><span class="t">5:42</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves a dimension-free logarithmic Sobolev inequality for centered log-concave densities with uniformly subgaussian linear marginals, with constant bounded by a universal multiple of the squared linear subgaussian parameter.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A logarithmic Sobolev inequality says that a function cannot carry much entropy without paying in gradient energy: the entropy of f² is at most a constant times the average of the squared gradient. For the standard Gaussian, Gross’s inequality holds with the same constant in every dimension. It is stronger than a Poincaré inequality, which bounds only the variance, and it forces Gaussian concentration for every Lipschitz function, so in particular every linear function must have Gaussian tails. The two-sided exponential law has Poincaré constant 4 but no log-Sobolev inequality at all.</p>
+<p>For log-concave measures, such as the uniform measure on a convex body, positive curvature would give a log-Sobolev inequality by the Bakry–Émery criterion, but log-concavity alone gives no positive curvature. Bizeul conjectured in 2023 that, for centered log-concave measures, uniformly subgaussian linear marginals with parameter a are enough for a log-Sobolev constant at most a universal multiple of a², in every dimension. The general bounds known before grew like n a² (from Bobkov’s criterion) and √n a² (Bizeul), and Bizeul proved the rotationally invariant case.</p>
+<p>Result 093 is <a href="https://github.com/openai/math/blob/main/preprints/A-dimension-free-logarithmic-Sobolev-inequality-for-subgaussian-log-concave-measures-September-23-2026/paper.pdf">one OpenAI preprint</a> dated September 23, 2026 (65 pages). It claims a universal constant C such that, in every dimension, every centered log-concave probability measure with a density whose linear marginals are a-subgaussian satisfies Ent(f²) ≤ C a² ∫|∇f|². Uniform measures on convex bodies are included, and no smoothness or positive curvature is assumed. Through a theorem of Otto and Villani the same constant gives a quadratic transport inequality.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The constant is not computed: the proof works by contradiction and gives no value. The theorem concerns centered log-concave laws with a density; the hypothesis controls only linear functions, and the conclusion then controls every smooth function.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 23, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,39 @@
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>Not yet</dd>
+    <dd>No Lean formalization published</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI did not publish a Lean formalization for this result, so the argument rests on the paper alone. It is not among the papers OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A contradiction.</strong> If the theorem failed, truncation, a weak quadratic tilt and rescaling would give compactly supported log-concave laws with log-Sobolev constant normalized to one while their linear subgaussian parameters tend to zero. Gaussian noise of fixed variance, one eighth, is added to each law. An extremal function for its entropy inequality produces a second law and a vector field w, nearly a first eigenfunction of the associated diffusion; if the log-Sobolev and Poincaré constants coincide, the gradient of a spectral-gap eigenfunction plays this role.</li>
+  <li><strong>Prediction, then tensors.</strong> Observing a point through Gaussian noise of variance r, the best prediction of w keeps, in the limit, a fraction e<sup>−r</sup> of its mean square, on a fixed interval of noise levels. The tools are a formula of Guo, Shamai and Verdú for Gaussian channels and an entropy-loss comparison built from repeated Gaussian observations of independent copies. Gaussian polynomial orthogonality turns this exact curve into a hierarchy of symmetric tensor fields, each nearly the derivative of the one before, all of nearly the same size.</li>
+  <li><strong>Matrices and information.</strong> From the tensors comes a positive matrix field whose square root nearly attains equality in a Hilbert–Schmidt Poincaré inequality. Symmetry in the tensor indices forces its pieces to nearly commute, and a Hermite expansion along the diffusion, run for a time t, makes covariance fluctuations follow the lognormal law exp(√(8t) Z − 4t). Observing a Gaussian vector whose covariance depends on the matrix field, the log-Sobolev inequality bounds the mutual information, integrated over scales, by a universal amount, while the fluctuations push it up like log t. Large t gives the contradiction.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Linear subgaussian parameter (sup over unit θ of E exp(⟨X, θ⟩²/a²) ≤ 2) for variance-one laws: Gaussian a = 1.633 (a² = 8/3 exactly), uniform 1.338, two-sided exponential none.</li>
+  <li>The two-sided exponential density e<sup>−|x|</sup>/2: Poincaré constant 4 (our eigenvalue computation: 3.99 on [−120, 120]); with f = e<sup>s|x|</sup>, Ent(f²)/∫f′² = 6.5, 14.9, 33.1, 188 and 1,979 at s = 0.3, 0.4, 0.45, 0.49 and 0.499.</li>
+  <li>The cube [−1, 1]<sup>n</sup>: a = 0.773 along a coordinate and never above √(8/9) ≈ 0.943 in any direction; by tensorization its log-Sobolev constant equals that of one interval in every dimension, while bounds of order n a² and √n a² grow with n.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-dimension-free-logarithmic-Sobolev-inequality-for-subgaussian-log-concave-measures-September-23-2026/paper.pdf">A dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures (PDF)</a>, 65 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 093.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -74,18 +128,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-dimension-free-logarithmic-Sobolev-inequality-for-subgaussian-log-concave-measures-September-23-2026/paper.pdf">A dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Entropy and energy</h3>
+<p>A logarithmic Sobolev inequality says that a function cannot carry much entropy without paying in gradient energy: the entropy of f² is at most a constant times the average of the squared gradient. For the standard Gaussian, Gross’s inequality holds with the same constant in every dimension. It is stronger than a Poincaré inequality, which bounds only the variance: it forces Gaussian concentration, so every Lipschitz function, and in particular every linear one, has Gaussian tails. The two-sided exponential law shows the difference. Its Poincaré constant is 4, but it has no log-Sobolev inequality at all: with test functions e^(s|x|), the ratio of entropy to energy in our computation passes 1,900 at s = 0.499, and keeps growing. Log-concave measures, like the uniform measure on a convex body, are where the question gets interesting. With positive curvature, the Bakry–Émery criterion gives a log-Sobolev inequality, but log-concavity alone gives no positive curvature. Since the inequality forces subgaussian linear functions, the natural question is the converse. For a centered log-concave measure whose linear marginals are uniformly subgaussian, with parameter a, is the log-Sobolev constant at most a universal constant times a², in every dimension? Bizeul formulated this conjecture in 2023. The general bounds grew with dimension: Bobkov’s criterion gives order n a², and Bizeul improved it to order √n a², and proved the rotationally invariant case. Some numbers. For a Gaussian of variance 1, the parameter a is about 1.63, a² exactly 8/3; for the uniform law with variance 1, about 1.34; for the two-sided exponential law, no finite a works. For the cube [−1, 1]ⁿ in n dimensions, a stays bounded: about 0.77 along a coordinate, and never above about 0.943 in any direction. Its log-Sobolev constant is that of a single interval in every dimension, because the cube is a product. For it, the old general bounds would grow like n and like √n. The conjecture asks for a dimension-free bound for every such measure, products or not.</p>
+<h3><span class="t num">2:32</span>The claim</h3>
+<p>Result 093 is one OpenAI preprint, 65 pages, dated September 23. It claims a universal constant C such that, in every dimension, every centered log-concave probability measure with a density, whose linear marginals are a-subgaussian, satisfies the log-Sobolev inequality with constant C a². Uniform measures on convex bodies are included, and no smoothness or positive curvature is assumed. Through a theorem of Otto and Villani, the same constant also gives a quadratic transport inequality. This resolves Bizeul’s conjecture for centered laws with a density. The constant is not computed: the proof works by contradiction, so it gives no value. The hypothesis controls only linear functions; the conclusion then controls every smooth function. OpenAI did not publish a Lean formalization for this result, so the paper itself is the only evidence.</p>
+<h3><span class="t num">3:34</span>How the proof goes</h3>
+<p>The proof is by contradiction. If the theorem failed, truncation, a weak quadratic tilt and rescaling would give a sequence of compactly supported log-concave laws with log-Sobolev constant normalized to one, while their linear subgaussian parameters tend to zero. Add Gaussian noise of fixed variance, one eighth, to each law. An extremal function for its entropy inequality then produces a second law and a vector field w, nearly a first eigenfunction of the associated diffusion. If the log-Sobolev and Poincaré constants coincide, the gradient of a spectral-gap eigenfunction plays this role instead. The key extra information is about prediction. Observe a point through Gaussian noise of variance r, and predict w from the noisy observation. The paper proves that the prediction keeps, in the limit, a fraction e^(−r) of the mean square of w, on a fixed interval of noise levels. The tools are a formula of Guo, Shamai and Verdú for Gaussian channels, and an entropy-loss comparison built from repeated Gaussian observations of independent copies. Gaussian polynomial orthogonality then turns this exact curve into a hierarchy of symmetric tensor fields, each nearly the derivative of the one before, all with nearly the same size. From these tensors the paper builds a positive matrix field whose square root nearly attains equality in a Hilbert–Schmidt Poincaré inequality. Symmetry in the many tensor indices forces its pieces to nearly commute, and a Hermite expansion along the diffusion, run for a time t, makes covariance fluctuations follow a lognormal law, e^(√(8t) Z − 4t). Finally, observe a Gaussian vector whose covariance depends on this matrix field. The log-Sobolev inequality bounds the mutual information from above by a universal amount, integrated over scales, while the lognormal fluctuations push it up like the logarithm of t. Taking t large gives the contradiction.</p>
+<h3><span class="t num">5:42</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. There is no Lean formalization, so the argument rests on the paper alone, and its constant is not explicit. It is not among the papers OSVerify reviewed, and we have seen no expert review. If it holds, uniform Gaussian tails of linear functions suffice for a centered log-concave density to satisfy a log-Sobolev inequality, with a constant independent of dimension, and with it Gaussian concentration for every Lipschitz function. The size of that constant is unknown.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20093%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../092-optimal-order-convex-body-covering/"><span class="dir">Previous · 092</span><span class="pt">The optimal order of convex-body covering density</span></a>
-  <a class="next" href="../094-subpolynomial-dimension-reduction-lp/"><span class="dir">Next · 094</span><span class="pt">Subpolynomial dimension reduction in <i>L</i><sub><i>p</i></sub></span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/convex-and-metric-geometry/">More in convex and metric geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

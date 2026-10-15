@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 092: The optimal order of convex-body covering density | AI Proved What?</title>
-<meta name="description" content="The optimal order of convex-body covering density. Result 092 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>How much overlap? Covering density of order n log n | AI Proved What?</title>
+<meta name="description" content="An AI system claims that every convex body in n dimensions covers space along one lattice with density at most a constant times n log n, and that some symmetric bodies need density of that order for every arrangement, with Lean formalizations. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/092-optimal-order-convex-body-covering/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 092: The optimal order of convex-body covering density | AI Proved What?">
-<meta property="og:description" content="The optimal order of convex-body covering density. Result 092 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="How much overlap?">
+<meta property="og:description" content="An AI system claims that every convex body in n dimensions covers space along one lattice with density at most a constant times n log n, and that some symmetric bodies need density of that order for every arrangement, with Lean formalizations. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/092-optimal-order-convex-body-covering/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/092-optimal-order-convex-body-covering/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 092 · <a href="../../subjects/convex-and-metric-geometry/">Convex and metric geometry</a></p>
-<h1 class="result-title">The optimal order of convex-body covering density</h1>
+<p class="meta">Episode 092, October 2026</p>
+<h1>How much overlap?</h1>
+<p class="subtitle">Covering space with one convex body: the worst density is of order n log n</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 092 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="tzhcVVqww4M" data-title="Episode 092: How much overlap?">
+  <a href="https://youtu.be/tzhcVVqww4M">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 092: How much overlap? Overlapping teal disks covering the plane in a lattice pattern, above the statement that the largest covering density of a convex body in n dimensions is of order n log n.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:10. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/tzhcVVqww4M?t=0" data-t="0"><span class="t">0:00</span><span>Covering space</span></a></li>
+  <li><a href="https://youtu.be/tzhcVVqww4M?t=133" data-t="133"><span class="t">2:13</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/tzhcVVqww4M?t=217" data-t="217"><span class="t">3:37</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/tzhcVVqww4M?t=381" data-t="381"><span class="t">6:21</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Determines the optimal worst-case covering density as <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Θ</mi><mo stretchy="false">(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Theta(n\log n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">Θ</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>, for both lattice and unrestricted translative coverings. Every convex body in ℝ<sup><i>n</i></sup>, <i>n</i> ≥ 2, admits a lattice covering of density at most <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">Cn\log n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span></span></span></span>; centrally symmetric examples in every sufficiently large dimension require at least <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">cn\log n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">c</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span></span></span></span> even without the lattice restriction, for absolute <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mo separator="true">,</mo><mi>C</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c,C\gt 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">c</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>Cover all of space with copies of one convex body, moved around but never turned. Unless the body tiles, the copies must overlap, and the cost is the density: the total volume of the copies per unit of space, the average number of copies over each point. Squares and hexagons tile, with density 1; for disks the best is 2π/√27, about 1.21 (Kershner; our lattice search agrees). The question is how large the density can be forced to be, for the worst convex body in n dimensions, when every body gets its best arrangement.</p>
+<p>Rogers showed in 1957 that every convex body in dimension n ≥ 3 has a covering of density at most n log n + n log log n + 5n, with centers that may form several shifted copies of a lattice. Random centers explain the n log n: at density θ they leave a fraction e<sup>−θ</sup> of space uncovered, and enlarging the body by a factor 1 + 1/n, which multiplies its volume by less than e, is enough to fill the holes once that fraction is below about n<sup>−n</sup>. With a single lattice the bounds were weaker: Rogers’ n<sup>log₂ log n</sup>, a constant times n² by Ordentlich, Regev and Weiss, and in 2026 n log n times a power of log log n by Li and Liu, who also found symmetric bodies whose lattice coverings need at least a constant times n log n. Naszódi had recorded the question whether some arrangement could always achieve a constant times n.</p>
+<p>Result 092 is two OpenAI preprints dated September 23, 2026. <a href="https://github.com/openai/math/blob/main/preprints/A-single-lattice-covering-bound-of-order-n-log-n-September-23-2026/paper.pdf">The first</a> (23 pages) claims that every convex body in n dimensions, n ≥ 2, has a covering by translates along one lattice with density at most an absolute constant times n log n, with no symmetry or smoothness assumed. <a href="https://github.com/openai/math/blob/main/preprints/Translative-covering-densities-of-order-n-log-n-September-23-2026/paper.pdf">The second</a> (30 pages) claims that, for every large n, some centrally symmetric convex body has translative covering density above c n log n against every arrangement of centers, lattice or not. Together they pin the worst covering density at order n log n, for lattice and unrestricted coverings, over all bodies or only symmetric ones.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The constants are not computed, and the result concerns the worst body in each dimension, not the covering density of any particular body. Euclidean balls are not settled: the best known bounds for them are still of order n (Coxeter, Few and Rogers) and about ½ n log n (Dumer).</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two papers dated September 23, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +88,41 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/092.md">scope notes</a>)</dd>
+    <dd>OpenAI published Lean proofs of the single-lattice theorem and of the optimal order; we have not run the checks</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. Neither preprint has been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/092.md">Lean formalizations</a> with no unproved steps that we could find: <a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/LatticeCovering">41 files and 25,913 lines</a> for the single-lattice theorem, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SingleLatticeCovering.lean">a separate statement</a>, and 103 more files and 14,185 lines (<a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/TranslativeCovering">the translative lower bound</a> and the assembly) for the optimal order of all four worst-case densities, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/CoveringDensity.lean">another</a>. We have not run the checks. Both papers build directly on Li and Liu’s 2026 work, a preprint and a companion manuscript. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>One lattice: slices.</strong> Following Li and Liu, split coordinates into a large horizontal part and a small vertical part. After an affine change, Eldan and Klartag’s theorem makes the horizontal slices of the body have volumes close to a Gaussian profile in the vertical direction. The Rogers–Schmidt mean-hole estimate, in the form of Ordentlich, Regev and Weiss, gives one horizontal lattice that leaves only an exponentially small fraction uncovered in every slice on a finite list, and one shear of a vertical lattice spreads the slices over all heights.</li>
+  <li><strong>Binary corrections and the last holes.</strong> Each vertical coordinate gets two adjacent integer choices. The paper keeps a hierarchy of weighted branches, in blocks of sizes about b, b<sup>0.9</sup>, b<sup>0.81</sup>, … down to a fixed cutoff; each block loses only a tiny fraction of the Gaussian mass, while every piece stays small enough for the mean-hole estimate. A random subset-sum sampler makes each block work from any starting point, and one shear handles all patterns at once. The last holes go by a classical lemma going back to Rogers: if the uncovered fraction δ of K + Γ satisfies δ &lt; (1 − δ)k<sup>−n</sup>, then (1 + 1/k)K + Γ covers everything.</li>
+  <li><strong>The lower bound: a random body.</strong> A ball slightly larger than the unit ball is cut by symmetric slabs whose directions are random Poisson points on the sphere; with positive probability it keeps a substantial volume. Any low-density periodic covering, localized and rounded, becomes one of a finite list of patterns fixed before the body is drawn. A hole appears at a target point when the slabs cut it out of every nearby copy; about e<sup>c n log n</sup> well-separated targets let the bound reach order n log n. Grouped cap conditions and Janson’s inequality make each pattern’s covering probability doubly exponentially small, enough to beat the number of patterns, and a periodization principle extends the result to all coverings.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A numerical search over lattices finds the best lattice covering density for disks, 1.2092 = 2π/√27; squares and regular hexagons tile with density 1.</li>
+  <li>Random unit balls in a 3-dimensional torus (10 realizations per density) leave uncovered fractions matching e<sup>−θ</sup>, for example 0.139 at θ = 2 and 0.00031 at θ = 8.</li>
+  <li>The completion lemma: disks of radius 0.68 on the square grid leave 0.298 percent uncovered (exactly), the lemma allows k = 18, and the enlarged radius 0.7178 covers, since the grid needs √2/2 = 0.7071. No low-dimensional computation can test an n log n bound.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-single-lattice-covering-bound-of-order-n-log-n-September-23-2026/paper.pdf">A single-lattice covering bound of order n log n (PDF)</a>, 23 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Translative-covering-densities-of-order-n-log-n-September-23-2026/paper.pdf">Translative covering densities of order n log n (PDF)</a>, 30 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/092.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 092.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -76,18 +131,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Translative-covering-densities-of-order-n-log-n-September-23-2026/paper.pdf">Translative covering densities of order n log n</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Covering space</h3>
+<p>Cover all of space with copies of one convex shape, moved around but never turned. Unless the shape tiles, the copies must overlap, so the cost is measured by density: the total volume of the copies per unit of space, the average number of copies over each point. Squares and hexagons tile, with density 1. Round disks cannot: Kershner showed the best density for disks is about 1.21, 2π/√27, and our lattice search agrees. The question here is about high dimensions. Give every convex body its best arrangement. How large can the density still be forced to be, for the worst body in n dimensions? Rogers showed in 1957 that every convex body in dimension 3 and up has a covering of density at most n log n + n log log n + 5n. Random centers show where n log n comes from. If copies of total density θ are dropped at random, a fraction e^(−θ) of space stays uncovered, and our simulation in 3 dimensions matches this. To fill the last holes by enlarging the body by a factor 1 + 1/n, which multiplies its volume by less than e, it is enough for the uncovered fraction to be below about n^(−n), and that takes density about n log n. Rogers’ centers may form several shifted copies of a lattice. A single lattice is harder: Rogers’ lattice bound grew like n^(log₂ log n), Ordentlich, Regev and Weiss brought it down to a constant times n², and earlier this year Li and Liu reached n log n times a power of log log n. They also found symmetric bodies whose lattice coverings need at least a constant times n log n. Two questions remained. Can the extra log log factor for single lattices be removed? And could a cleverer arrangement, with many lattice cosets or no pattern at all, do better than n log n for every body, perhaps even a constant times n? Naszódi recorded that linear-bound question. For Euclidean balls the gap is still wide: Coxeter, Few and Rogers proved a lower bound of order n, and Dumer an upper bound of about ½ n log n.</p>
+<h3><span class="t num">2:13</span>The claims</h3>
+<p>Result 092 is two OpenAI preprints, both dated September 23. The first, 23 pages, claims that every convex body in n dimensions, for n ≥ 2, has a covering by translates along one lattice with density at most an absolute constant times n log n, with no symmetry or smoothness assumed. The second, 30 pages, claims that for every large n, some centrally symmetric convex body has translative covering density above c·n log n, for an absolute constant c, against every arrangement of centers, lattice or not. Together they pin down the worst covering density as order n log n, for lattice and unrestricted coverings, and for all bodies or only symmetric ones. The constants are not computed, and the result concerns the worst body in each dimension, not the covering density of any particular body. Euclidean balls are not settled. The bodies in the lower bound can even be taken to be symmetric polytopes with rational vertices. OpenAI also published Lean formalizations: the single-lattice theorem, about 26,000 lines, and the optimal order for all four worst-case densities, with the translative lower bound, about 14,000 more, matched against separate statements. We have not run the checks.</p>
+<h3><span class="t num">3:37</span>How the proofs go</h3>
+<p>The lattice proof develops a framework of Li and Liu. Split the coordinates into a large horizontal part and a much smaller vertical part. After an affine change, a theorem of Eldan and Klartag says the horizontal slices of the body have volumes close to a Gaussian profile in the vertical direction. A mean-hole estimate of Rogers and Schmidt, in the form of Ordentlich, Regev and Weiss, gives one horizontal lattice that leaves only an exponentially small fraction uncovered in every slice on a finite list. Then one shear of a vertical lattice has to spread these slices so that every height gets enough horizontal coverage. Li and Liu’s binary corrections give each vertical coordinate two adjacent integer choices. The new paper keeps a whole hierarchy of these weighted branches, in blocks of sizes about b, b^0.9, b^0.81, and so on, down to a fixed cutoff. Each block loses only a tiny fraction of the Gaussian mass, so the losses stay bounded, while every single piece stays small enough for the mean-hole estimate. A random subset-sum sampler makes each block work from any starting point, and one shear handles all the patterns at once. The last holes go by a classical lemma going back to Rogers: if the uncovered fraction is below about k^(−n), enlarging the body by a factor 1 + 1/k covers everything. In the plane, disks of radius 0.68 on the square grid leave 0.3 percent uncovered; the lemma allows k = 18, and the enlarged radius, 0.718, does cover, since the grid needs 0.707. The lower bound uses a random body: a ball slightly larger than the unit ball, cut by symmetric slabs whose directions are random Poisson points on the sphere. With positive probability it keeps a substantial volume. Any periodic covering of low density, localized to a small window and rounded, becomes one of a finite list of center patterns, fixed before the body is drawn. For each pattern, a hole appears at a target point if the random slabs cut that point out of every nearby copy. Using about e^(c n log n) well-separated targets is what lets the bound reach order n log n. Following Li and Liu, these conditions are grouped into blocks, and Janson’s inequality shows that each pattern covers the window with doubly exponentially small probability, small enough to beat the number of patterns. A periodization principle carries the result from periodic to all coverings.</p>
+<h3><span class="t num">6:21</span>Where it stands</h3>
+<p>Neither preprint is peer reviewed, and neither has been revised. OpenAI’s Lean formalizations cover the single-lattice theorem and the optimal order; we have not run them. Both papers build directly on Li and Liu’s 2026 work, a preprint and a companion manuscript, which supply the horizontal and vertical framework, the binary corrections, the random slab bodies and the witness method. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If they hold, the worst covering density in n dimensions grows like n log n, up to constant factors, whether the centers form one lattice or not. The constants, and the case of Euclidean balls, are not settled.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20092%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../091-logarithmic-lp-brunn-minkowski-inequalities/"><span class="dir">Previous · 091</span><span class="pt">Logarithmic and <i>L</i><sub><i>p</i></sub> Brunn–Minkowski inequalities and the B-conjecture</span></a>
-  <a class="next" href="../093-dimension-free-logarithmic-sobolev-inequality/"><span class="dir">Next · 093</span><span class="pt">Dimension-free logarithmic Sobolev inequality for subgaussian log-concave measures</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/convex-and-metric-geometry/">More in convex and metric geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

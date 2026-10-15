@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exactly enough? Schrödinger convergence at the exact Sobolev endpoint | AI Proved What?</title>
+<meta name="description" content="An AI system claims the endpoint of Carleson’s problem: Schrödinger solutions with data in the critical Sobolev space converge back to the data almost everywhere, in every dimension. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/080-schrodinger-convergence-sobolev-endpoint/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Exactly enough?">
+<meta property="og:description" content="An AI system claims the endpoint of Carleson’s problem: Schrödinger solutions with data in the critical Sobolev space converge back to the data almost everywhere, in every dimension. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/080-schrodinger-convergence-sobolev-endpoint/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/080-schrodinger-convergence-sobolev-endpoint/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 080, October 2026</p>
+<h1>Exactly enough?</h1>
+<p class="subtitle">Schrödinger convergence at the exact Sobolev endpoint</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 080 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="FDot_uSJgpw" data-title="Episode 080: Exactly enough?">
+  <a href="https://youtu.be/FDot_uSJgpw">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 080: Exactly enough? A bright diagonal streak in a space-time box, a fast Schrödinger wave packet crossing space in a short time, above the claim: e to the i t Laplacian f converges to f almost everywhere for f in H to the n over 2(n+1).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:02. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/FDot_uSJgpw?t=0" data-t="0"><span class="t">0:00</span><span>Carleson’s problem</span></a></li>
+  <li><a href="https://youtu.be/FDot_uSJgpw?t=118" data-t="118"><span class="t">1:58</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/FDot_uSJgpw?t=189" data-t="189"><span class="t">3:09</span><span>Three ingredients</span></a></li>
+  <li><a href="https://youtu.be/FDot_uSJgpw?t=303" data-t="303"><span class="t">5:03</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Run the free Schrödinger equation from initial data f for a short time t. Does the solution return to f at almost every point as t goes to zero? Carleson asked this in 1980. For square-integrable data it returns on average, but pointwise convergence can fail on a set of positive measure; the question is how much smoothness, measured by the Sobolev space H<sup>s</sup>, guarantees it.</p>
+<p>The obstruction is speed. Each frequency travels at a speed proportional to its size: in one dimension, a packet at frequency N with spread √N moves at speed 2N and stays together for a time of about 1/N, long enough to sweep across a whole unit interval. Carleson proved that s = 1/4 suffices in one dimension, and Dahlberg and Kenig showed that nothing less does. In dimension n, Bourgain’s 2016 counterexample showed that s must be at least n/(2(n+1)), which is 1/3 in the plane; Du, Guth and Li proved convergence for every s above 1/3 in the plane, and Du and Zhang for every s above n/(2(n+1)) in higher dimensions. Equality itself was open.</p>
+<p>Result 080 is two OpenAI preprints, both dated September 24, 2026: <a href="https://github.com/openai/math/blob/main/preprints/Endpoint-convergence-for-the-planar-Schrodinger-equation-September-24-2026/paper.pdf">83 pages for the plane</a> and <a href="https://github.com/openai/math/blob/main/preprints/Endpoint-pointwise-convergence-for-the-Schrodinger-equation-in-higher-dimensions-September-24-2026/paper.pdf">96 pages for dimensions three and up</a>. They claim the endpoint: for every f in H<sup>n/(2(n+1))</sup>(ℝ<sup>n</sup>), the solution converges to f at almost every point. The evolution is defined as a limit of Gaussian-smoothed solutions, taken before t goes to zero, on one full-measure set of points and for every time between 0 and 1, and the limit is the value of f at its Lebesgue points. The key estimate bounds the integral over any unit ball of the supremum in time of the solution by the H<sup>s</sup> norm at the exact exponent.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The planar paper does not claim the stronger endpoint maximal estimate with local L<sup>3</sup> output. Below the endpoint, Bourgain’s counterexample already rules out convergence, so if the papers hold, convergence for every f in H<sup>s</sup>(ℝ<sup>n</sup>) holds exactly when s ≥ n/(2(n+1)).</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, both dated September 24, 2026, released October 6</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Not fully: uncatalogued Lean code checks the planar paper’s final step, assuming its main estimate</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 12, 2026. Neither preprint has been revised. OpenAI catalogued no Lean proof; an <a href="https://github.com/openai/math/blob/main/lean/OAI/Analysis/PlanarEndpoint">uncatalogued Lean development</a> proves the planar theorem assuming the paper’s short-time distribution bound, so it checks the final step but not the main estimate, and nothing covers the higher-dimensional paper. The higher-dimensional paper relies on lemmas and the time-tree mechanism of the planar one, and notes that Singh and Singh Parmar found a mismatch in a published packet estimate from work on Falconer’s distance problem; it proves the version it needs in every dimension. Outside inputs include multilinear restriction, Du and Zhang’s fractal estimate, a projection theorem of Weikun He, polynomial partitioning and decoupling. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A transverse power saving.</strong> The planar proof works with packets of width L lasting time L<sup>2</sup>, and a measure models the area of a time graph that picks where the supremum is attained. Multilinear restriction and Du and Zhang’s refined fractal estimate reduce a saturated transverse configuration to weighted incidences between points and tubes; information profiles across scales have slopes forced to 0 or 1 by a robust projection theorem, and polynomial partitioning excludes the last jump.</li>
+  <li><strong>A bilinear frame estimate.</strong> For packets with separated frequency groups, positive masks remove large pieces of a tight frequency frame, charged to lost energy, and a quartic potential with the curvature identity of the parabola controls changes in the spatial smoothing scale. The estimate is uniform in the number of scales; with flat-frequency and rich-tube reductions it gives a distribution bound with an exponent above 2 and no growing loss.</li>
+  <li><strong>Square summation at the endpoint.</strong> All frequencies are linearized on one time graph, and a binary time tree separates heavier children from lighter siblings. Spatial localization gives decay in relative depth and the exponent above 2 gives a convexity deficit, so the Sobolev square norm is kept with no small loss. In higher dimensions, a transverse frame estimate and a geometric induction to polynomial walls, whose relevant pieces are flat plates, replace the planar steps.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script lists the thresholds n/(2(n+1)) (1/4, 1/3, 3/8, 2/5, …) and the earlier planar thresholds 1/2, 15/32, 2/5, 3/8 and 1/3. For a one-dimensional Gaussian packet at frequency N with width √N (a closed form, checked by quadrature), the integral over [0, 1] of the supremum in time grows like √N (fitted slope 0.498), so divided by the H<sup>s</sup> norm it grows like N<sup>1/4 − s</sup> (slopes 0.048, −0.002 and −0.052 for s = 0.2, 1/4 and 0.3).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Endpoint-convergence-for-the-planar-Schrodinger-equation-September-24-2026/paper.pdf">Endpoint convergence for the planar Schrödinger equation (PDF)</a>, September 24, 2026 (83 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Endpoint-pointwise-convergence-for-the-Schrodinger-equation-in-higher-dimensions-September-24-2026/paper.pdf">Endpoint pointwise convergence for the Schrödinger equation in higher dimensions (PDF)</a>, September 24, 2026 (96 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 080.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Endpoint-convergence-for-the-planar-Schrodinger-equation-September-24-2026/paper.pdf">Endpoint convergence for the planar Schrodinger equation</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Endpoint-pointwise-convergence-for-the-Schrodinger-equation-in-higher-dimensions-September-24-2026/paper.pdf">Endpoint pointwise convergence for the Schrodinger equation in higher dimensions</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Carleson’s problem</h3>
+<p>The free Schrödinger equation moves a wave without friction, and each frequency travels at a speed proportional to its size. Start from initial data f and run the evolution for a short time t. In 1980, Carleson asked when the solution returns to f at almost every point as t goes to zero. For square-integrable data it returns on average, but pointwise convergence can fail on a set of positive measure. The question is how much smoothness, measured by the Sobolev space Hˢ, guarantees convergence everywhere except on a set of measure zero. The obstruction is speed. In one dimension, a packet at frequency N with frequency spread √N moves at speed 2N, and it stays together for a time of about 1/N, long enough to sweep across a whole unit interval. So the supremum over time is about √N on that interval, while the Hˢ norm is about N^(s+1/4). In our computation, the ratio grows like N^(1/4−s): it stays bounded exactly when s is at least 1/4. Carleson proved that 1/4 suffices in one dimension, and Dahlberg and Kenig showed that nothing less does. In higher dimensions, Sjölin and Vega independently proved convergence above 1/2. In the plane, the threshold came down through work of Bourgain, of Moyua, Vargas and Vega, of Tao and Vargas, and of Tao, to Lee’s 3/8. In 2016, Bourgain built a counterexample showing that n/(2(n+1)) derivatives are needed in dimension n, which is 1/3 in the plane. Du, Guth and Li proved convergence above 1/3 in the plane, and Du and Zhang proved it above n/(2(n+1)) in every higher dimension. In one dimension the same formula gives Carleson’s 1/4, where the endpoint holds. In higher dimensions, equality itself was open.</p>
+<h3><span class="t num">1:58</span>The claim</h3>
+<p>Result 080 is two OpenAI preprints, both dated September 24: 83 pages for the plane, and 96 pages for dimensions three and up. They claim the endpoint: for every f in H^(n/(2(n+1))), the solution converges to f at almost every point. The evolution is defined as a limit of Gaussian-smoothed solutions, taken before t goes to zero, on one full-measure set of points and for every time between zero and one, and the limit is the value of f at its Lebesgue points. The key estimate bounds the integral, over any unit ball, of the supremum in time of the solution by the Hˢ norm, at the exact exponent. The higher-dimensional paper uses lemmas and the time-tree mechanism of the planar paper, though not its planar conclusion. It also notes that Singh and Singh Parmar found a mismatch in a published packet estimate, from work on Falconer’s distance problem, and proved a corrected version in ambient dimension two; the paper proves the version it needs in every dimension. The planar paper does not claim the stronger endpoint estimate with local L³ output.</p>
+<h3><span class="t num">3:09</span>Three ingredients</h3>
+<p>The planar proof works with packets of width L that last for time L², and a measure models the area of a time graph that picks where the supremum is attained. First, a power saving for transverse packets. Multilinear restriction and the refined fractal estimate of Du and Zhang reduce a saturated configuration to weighted incidences between points and tubes. Information profiles across scales then have slopes forced to zero or one by a robust projection theorem of Weikun He; a further argument rules out unboundedly many alternations, and polynomial partitioning excludes the last jump. Second, a bilinear estimate for packets with separated frequency groups and general smooth profiles. Positive masks remove large pieces of a tight frequency frame, charging them to the lost energy, and a quartic potential, with the curvature identity of the parabola, controls changes in the spatial smoothing scale. The estimate is uniform in the number of scales, which the long, nearly flat frequency configurations require. With flat-frequency and rich-tube reductions, this gives a distribution bound with an exponent above two and no growing loss. Third, square summation at the endpoint. All frequencies are linearized on the same time graph, and a binary time tree separates heavier children from their lighter siblings. Spatial localization gives decay in the relative depth of the tree, and the exponent above two gives a convexity deficit that sums the lighter masses across frequency scales, so the Sobolev square norm is kept with no small loss. In higher dimensions, a frame estimate for transverse packets and a geometric induction that reduces to polynomial walls whose relevant pieces are flat plates replace the planar steps, with the same time tree.</p>
+<h3><span class="t num">5:03</span>Where it stands</h3>
+<p>Neither preprint is peer reviewed, and neither has been revised. There is no full Lean proof: uncatalogued Lean code checks only the planar paper’s final step, taking its main estimate as given. The higher-dimensional paper relies on lemmas from the planar one. Outside inputs include multilinear restriction, the fractal estimate of Du and Zhang, a projection theorem of Weikun He, polynomial partitioning and decoupling. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If they hold, Carleson’s problem has its exact Sobolev answer in every dimension: convergence for every f in Hˢ holds exactly when s is at least n/(2(n+1)), endpoint included, as Carleson found in one dimension. The stronger endpoint estimate with local L³ output in the plane is not claimed.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20080%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

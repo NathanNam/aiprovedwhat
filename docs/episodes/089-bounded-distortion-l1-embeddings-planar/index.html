@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 089: Bounded-distortion L₁ embeddings of planar and bounded-treewidth graphs | AI Proved What?</title>
-<meta name="description" content="Bounded-distortion L₁ embeddings of planar and bounded-treewidth graphs. Result 089 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Cut to size? Planar graph metrics in L1 with constant distortion | AI Proved What?</title>
+<meta name="description" content="An AI system claims that planar graph metrics, and those of bounded treewidth, embed into L1 with bounded distortion, the planar and bounded-treewidth cases of the Gupta–Newman–Rabinovich–Sinclair conjecture, with Lean formalizations. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/089-bounded-distortion-l1-embeddings-planar/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 089: Bounded-distortion L₁ embeddings of planar and bounded-treewidth graphs | AI Proved What?">
-<meta property="og:description" content="Bounded-distortion L₁ embeddings of planar and bounded-treewidth graphs. Result 089 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Cut to size?">
+<meta property="og:description" content="An AI system claims that planar graph metrics, and those of bounded treewidth, embed into L1 with bounded distortion, the planar and bounded-treewidth cases of the Gupta–Newman–Rabinovich–Sinclair conjecture, with Lean formalizations. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/089-bounded-distortion-l1-embeddings-planar/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/089-bounded-distortion-l1-embeddings-planar/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 089 · <a href="../../subjects/convex-and-metric-geometry/">Convex and metric geometry</a></p>
-<h1 class="result-title">Bounded-distortion <i>L</i><sub>1</sub> embeddings of planar and bounded-treewidth graphs</h1>
+<p class="meta">Episode 089, October 2026</p>
+<h1>Cut to size?</h1>
+<p class="subtitle">Planar and bounded-treewidth graph metrics in L<sub>1</sub> with bounded distortion</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 089 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="Ay2gq8M06gw" data-title="Episode 089: Cut to size?">
+  <a href="https://youtu.be/Ay2gq8M06gw">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 089: Cut to size? A planar graph with white vertices and blue edges, four vertices circled in pink on one side of a dashed pink cut line, above the inequality: the graph distance is at most the L1 distance of the images, which is at most C times the graph distance.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:40. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/Ay2gq8M06gw?t=0" data-t="0"><span class="t">0:00</span><span>Cuts and distances</span></a></li>
+  <li><a href="https://youtu.be/Ay2gq8M06gw?t=135" data-t="135"><span class="t">2:15</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/Ay2gq8M06gw?t=212" data-t="212"><span class="t">3:32</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/Ay2gq8M06gw?t=346" data-t="346"><span class="t">5:46</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Resolves the planar and bounded-treewidth cases of the Gupta–Newman–Rabinovich–Sinclair conjecture. Shortest-path metrics of finite connected graphs with arbitrary positive edge lengths embed into real <i>L</i><sub>1</sub> with universal distortion for planar graphs, and distortion depending only on treewidth for bounded-treewidth graphs. The corresponding multicommodity flow–cut gaps are uniformly bounded.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>Give the edges of a graph positive lengths and measure distances along shortest paths. Distances in the space L<sub>1</sub> are exactly weighted sums of cuts: split the vertices into two sides and count the weight once for every pair the split separates. Embedding a graph metric into L<sub>1</sub> with distortion C means choosing weighted cuts that separate every pair in proportion to its distance while charging every edge at most C times its length. With unit edge lengths, a cycle of eight and a 3 × 3 grid embed exactly, while the complete bipartite graph K<sub>2,3</sub> needs exactly 4/3.</p>
+<p>Linial, London and Rabinovich, and independently Aumann and Rabani, connected such embeddings to the gap between multicommodity flow and sparsest cut, and Gupta, Newman, Rabinovich and Sinclair showed that on a fixed graph the worst flow–cut gap equals the worst L<sub>1</sub> distortion over all edge lengths. In a paper first presented in 1999 they conjectured that every proper minor-closed family of graphs has bounded distortion. For planar graphs, Rao proved a bound growing like √(log n), through Euclidean space, and Newman and Rabinovich showed that route cannot do better. Constants were known for special classes: series-parallel graphs (where the best constant is exactly 2, the lower bound due to Lee and Raghavendra), planar graphs that peel away in a fixed number of outer layers, and graphs of bounded pathwidth.</p>
+<p>Result 089 is two OpenAI preprints dated September 23, 2026. <a href="https://github.com/openai/math/blob/main/preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/paper.pdf">The first</a> (45 pages) claims one universal constant C such that every finite connected planar graph, with any positive edge lengths, embeds into L<sub>1</sub> with distortion at most C. <a href="https://github.com/openai/math/blob/main/preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/paper.pdf">The second</a> (30 pages) claims, for graphs with a tree decomposition whose bags have at most k vertices, a distortion bound depending only on k. Through the flow–cut connection both give uniformly bounded flow–cut gaps, and with a reduction of Lee and Sidiropoulos they also cover fixed-parameter almost-embeddable families.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The constants are not computed, and any universal planar constant must be at least 2. The full conjecture, for every minor-closed family, still needs gluing along larger cliques and is not claimed.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two papers dated September 23, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,40 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/089.md">scope notes</a>)</dd>
+    <dd>OpenAI published Lean proofs of both main theorems; we have not run the checks</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. Neither preprint has been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/089.md">Lean formalizations</a> of both main theorems, with no unproved steps that we could find: <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/PlanarL1">63 files and 33,806 lines</a> for the planar theorem and <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/TreewidthL1">33 files and 14,913 lines</a> for bounded treewidth, matched against separate statements (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PlanarL1.lean">planar</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/BoundedTreewidthL1.lean">bounded treewidth</a>). We have not run the checks. The treewidth paper uses the padded decompositions of Filtser and coauthors and Markov gluing from Chlamtáč, Krauthgamer and Raghavendra. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Columns and a free upper bound.</strong> Take a shortest-path tree from a root and use distance from the root as height. Each edge outside the tree becomes two rising branches that meet at a tip, and planarity puts the resulting vertical columns in a circular order where the switches between them never cross. For any label, the active points on each column form an upper interval, switches keep membership, and the labels that change along a vertical stretch have total measure equal to its length, so every path’s length bounds the cut distance between its endpoints, however many updates follow.</li>
+  <li><strong>Local updates.</strong> Thresholds take the form height plus a random sign times a field, pieced together from distance functions within thin bands. Because links never cross, each region is entered through at most two portals, so neighboring pieces choose exactly the same formula at their interfaces. A first system tries to raise the field near one endpoint of each pair; when that fails it finds short descending paths, and it can also certify separation through a low inactive tip. Surviving pairs leave seeds whose interference a packing bound limits, and a second system, with fields ordered along the two arcs of the circle, separates them.</li>
+  <li><strong>Scales, and the treewidth proof.</strong> Sparse schedules of widely spaced scales keep coarser scales from breaking up the regions a pair needs and finer scales from erasing what it gained. The treewidth proof glues consistent cut laws on the bags of a tree decomposition; pairs of particles are replaced by their average plus and minus a function vanishing on the current bag, which keeps that bag’s law, while frozen pairs carry uncertainty that becomes separation between distant bags.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script computes exact L<sub>1</sub> distortions by linear programming over all cuts. With unit lengths: a cycle of 8 and a 3 × 3 grid, 1; K<sub>2,3</sub>, 4/3; the 12-vertex diamond graph obtained by replacing each edge of a 4-cycle by a 4-cycle, 5/4.</li>
+  <li>Among 120 random planar graphs on 10 vertices with straight-line edge lengths, the largest distortion found was 1.2052 and the median 1. No computation on small graphs can test a universal bound.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Planar-Graph-Metrics-Embed-into-L1-with-Constant-Distortion-September-23-2026/paper.pdf">Planar Graph Metrics Embed into L<sub>1</sub> with Constant Distortion (PDF)</a>, 45 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/paper.pdf">L<sub>1</sub> Embeddings of Graphs of Bounded Treewidth (PDF)</a>, 30 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/089.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 089.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -75,18 +130,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/L1-Embeddings-of-Graphs-of-Bounded-Treewidth-September-23-2026/paper.pdf">L1 Embeddings of Graphs of Bounded Treewidth</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Cuts and distances</h3>
+<p>Take a graph whose edges have positive lengths, and measure the distance between two vertices by the shortest path. Can these distances be reproduced, up to a fixed factor, by points in the space L₁? L₁ distances are exactly sums of weighted cuts: split the vertices into two sides, and count the weight once for every pair the split separates. So the question is whether one can choose weighted cuts that separate every pair in proportion to its distance, while charging every edge at most a constant times its length. The best constant is the distortion. In our exact computation by linear programming, with every edge of length one, a cycle of 8 and a 3 × 3 grid embed with no distortion at all, while the complete bipartite graph K₂,₃ needs exactly 4/3. The question matters for algorithms. Linial, London and Rabinovich, and independently Aumann and Rabani, connected such embeddings to the gap between multicommodity flows and sparsest cuts, and Gupta, Newman, Rabinovich and Sinclair showed that on a fixed graph, the worst flow-cut gap equals the worst L₁ distortion over all edge lengths. In a paper first presented in 1999, they conjectured that every family of graphs closed under taking minors, other than the family of all graphs, has bounded distortion. Planar graphs are the central test. For planar graphs, Rao proved a bound growing like the square root of the logarithm of the number of vertices, through Euclidean space, and Newman and Rabinovich showed that route cannot do better. Constant bounds were known for special classes: series-parallel graphs, where the best constant is exactly two, planar graphs that peel away in a fixed number of outer layers, and, beyond planarity, graphs of bounded pathwidth. The lower bound two, due to Lee and Raghavendra, comes from diamond-like graphs built by repeatedly replacing each edge with many parallel paths of two edges. Even the thinnest version, with just two paths per edge, needs 1.25 after two rounds in our computation. Among 120 random planar graphs on 10 vertices, with straight-line edge lengths, the largest distortion we found was about 1.21.</p>
+<h3><span class="t num">2:15</span>The claims</h3>
+<p>Result 089 is two OpenAI preprints, both dated September 23. The first, 45 pages, proves the planar case: there is one universal constant C such that every finite connected planar graph, with any positive edge lengths, embeds into L₁ with distortion at most C. The second, 30 pages, proves the bounded-treewidth case: for graphs with a tree decomposition whose bags have at most k vertices, the distortion is bounded by a constant depending only on k. Neither paper computes its constant. Through the flow-cut connection, both give uniformly bounded gaps between multicommodity flow and sparsest cut on these graphs. With a reduction of Lee and Sidiropoulos, they also cover graphs that are almost embeddable in a fixed surface, with a bounded number of extra vertices and of attached strips of bounded width. The full conjecture, for every minor-closed family, still needs gluing along larger cliques and is not claimed. OpenAI also published Lean formalizations of both main theorems, about 34,000 lines for the planar case and 15,000 for bounded treewidth, matched against separate statements. We have not run the checks.</p>
+<h3><span class="t num">3:32</span>How the proofs go</h3>
+<p>The planar proof first redraws the graph as vertical columns. Take a shortest-path tree from a root, and use distance from the root as height. Each edge outside the tree becomes two rising branches that meet at a tip, and planarity puts the columns in a circular order where the switches between them never cross. For any label, the active points on each column form an upper interval, switches keep membership, and the labels that change along a vertical stretch have total measure equal to its length, so every path’s length bounds the cut distance between its endpoints. That gives the upper bound for free, however many updates follow. The lower bound comes from random local updates at each scale. Thresholds take the form height plus a random sign times a field, and the fields are pieced together from distance functions within thin bands. Because links never cross, the entrances to each region come through at most two portals, so neighboring pieces choose exactly the same formula at their interfaces. A first system tries to raise the field near one endpoint of each pair; when that fails it finds short descending paths, and it can also certify separation through a low inactive tip. The pairs that survive leave seeds, and a packing bound limits how many can interfere. A second system uses fields ordered along the two arcs of the circle to separate the survivors. Sparse schedules of scales, with large gaps between them, keep coarser scales from breaking up the local regions a pair needs, and keep finer scales from erasing what it gained: each point moves by at most a constant times the scale, each eligible pair gains separation with at least a fixed probability, and a small ball is split between new regions with probability at most proportional to its radius over the scale. The treewidth proof works on the tree decomposition instead: consistent cut laws on bags glue into a global law, and particles, real functions whose threshold sweeps give cuts, are perturbed in pairs, plus and minus a function vanishing on the current bag, so that bag’s law is unchanged, while frozen pairs carry uncertainty along the decomposition that turns into separation between distant bags.</p>
+<h3><span class="t num">5:46</span>Where it stands</h3>
+<p>Neither preprint is peer reviewed, and neither has been revised. OpenAI’s Lean formalizations cover both main theorems; we have not run them. The papers prove that the constants exist but give no value, and the series-parallel graphs show any planar constant must be at least two. The treewidth paper uses the padded decompositions of Filtser and coauthors and Markov gluing from Chlamtáč, Krauthgamer and Raghavendra. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If they hold, planar graph metrics, and those of bounded treewidth, sit in L₁ with bounded distortion, and the corresponding flow-cut gaps are bounded too. The Gupta, Newman, Rabinovich and Sinclair conjecture for all minor-closed families remains open.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20089%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../088-sharp-projection-body-inequalities-counterexample/"><span class="dir">Previous · 088</span><span class="pt">Sharp projection-body inequalities and a counterexample to simplex maximization</span></a>
-  <a class="next" href="../090-triangular-lattice-optimality-long-range/"><span class="dir">Next · 090</span><span class="pt">Triangular-lattice optimality, long-range Riesz and Coulomb energies, and spherical logarithmic energy</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/convex-and-metric-geometry/">More in convex and metric geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

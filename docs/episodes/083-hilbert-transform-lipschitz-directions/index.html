@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lines that turn? The Hilbert transform along Lipschitz directions | AI Proved What?</title>
+<meta name="description" content="An AI system claims a uniform L2 bound for the Hilbert transform along any Lipschitz direction field in the plane at the natural short scale, answering Stein’s question, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/083-hilbert-transform-lipschitz-directions/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Lines that turn?">
+<meta property="og:description" content="An AI system claims a uniform L2 bound for the Hilbert transform along any Lipschitz direction field in the plane at the natural short scale, answering Stein’s question, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/083-hilbert-transform-lipschitz-directions/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/083-hilbert-transform-lipschitz-directions/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 083, October 2026</p>
+<h1>Lines that turn?</h1>
+<p class="subtitle">The Hilbert transform along Lipschitz directions</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 083 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="HtRBj-3Yv6s" data-title="Episode 083: Lines that turn?">
+  <a href="https://youtu.be/HtRBj-3Yv6s">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 083: Lines that turn? A field of small blue arrows that turn slowly across the plane, with three pink line segments drawn through points in the directions of the arrows there, above the estimate: the L2 norm of the directional Hilbert transform is bounded by the L2 norm of f, for lengths up to about one over the Lipschitz constant.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:48. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/HtRBj-3Yv6s?t=0" data-t="0"><span class="t">0:00</span><span>Lines that turn</span></a></li>
+  <li><a href="https://youtu.be/HtRBj-3Yv6s?t=123" data-t="123"><span class="t">2:03</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/HtRBj-3Yv6s?t=193" data-t="193"><span class="t">3:13</span><span>Bands, tops, phases</span></a></li>
+  <li><a href="https://youtu.be/HtRBj-3Yv6s?t=303" data-t="303"><span class="t">5:03</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Give every point of the plane a direction, a unit vector v(x). At each point, integrate a function along the straight line through that point in its own direction, against the Hilbert kernel 1/t, for ε &lt; |t| &lt; a. If the field is constant, this is the one-dimensional Hilbert transform on parallel lines, and every truncation is bounded on L<sup>2</sup> with norm at most 2 Si(π) ≈ 3.70. When the direction varies, nearby points sample different lines and the operator is no longer a Fourier multiplier.</p>
+<p>Stein asked whether, for a Lipschitz field, this transform obeys a uniform weak L<sup>2</sup> bound when the length a is at most a fixed multiple of one over the Lipschitz constant. Lacey and Li trace the question to Zygmund’s conjecture on averages over shrinking segments in direction v(x), and recall a Besicovitch obstruction: for the averaging operator, Hölder continuity of any exponent below one is not enough. Bourgain proved an L<sup>2</sup> theorem for averages along analytic fields; Lacey and Li proved single-annulus estimates for measurable directions and a Lipschitz Kakeya maximal theorem; Guo proved single-annulus variation bounds for Lipschitz fields; Bateman and Thiele handled fields depending on one coordinate; Guo and Thiele, then Di Plinio and Parissis, handled lacunary roundings; and Di Plinio, Guo, Thiele and Zorin-Kranich showed that uniform bounds on vertical frequency bands would give the full short bound.</p>
+<p>Result 083 is <a href="https://github.com/openai/math/blob/main/preprints/A-uniform-Hilbert-transform-estimate-for-Lipschitz-directions-September-25-2026/main.pdf">one OpenAI preprint</a>, 87 pages, dated September 25, 2026. Its theorem: there are absolute constants a* and C* such that, for every unit vector field with Lipschitz constant at most one, every truncation at outer length a*, with any smaller inner length, has L<sup>2</sup> operator norm at most C*. The principal value is therefore bounded on L<sup>2</sup>, which is stronger than the weak bound Stein asked for. By scaling, a field with Lipschitz constant L gets the same bound at length a*/L, and the field may depend on both coordinates.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Zygmund’s conjecture for averages is not claimed, and neither are longer lengths for varying fields or other L<sup>p</sup> spaces.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, dated September 25, 2026, released October 6</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>OpenAI published a Lean proof; we have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/083.md">a Lean formalization</a>, <a href="https://github.com/openai/math/blob/main/lean/OAI/Analysis/LipschitzHilbert">1,910 files and 185,580 lines</a> with no unproved steps that we could find, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/LipschitzHilbert.lean">a separate statement</a> covering the uniform truncation bounds, the principal value, the weak-type bound and bounded extensions to all of L<sup>2</sup>, plus a version for Lipschitz constant K at lengths up to 1/(10<sup>6</sup>K). The formalization also proves the Lacey–Li input. We have not run the check ourselves. The paper’s two specialized outside inputs are Lacey and Li’s Lipschitz Kakeya maximal theorem and Lépingle’s martingale variation inequality. It is not among the papers OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Bands.</strong> After localizing and rotating, the field becomes a slope, and the operator integrates along (x − t, y − t·slope). The vertical frequencies are split into bands, which a Lipschitz commutator lets the paper reassemble. The core is a restricted estimate on one band, for functions bounded by indicators of sets F and E, with a gain of (1 + |log(|F|/|E|)|)<sup>−3</sup>, so that the sum over levels converges.</li>
+  <li><strong>Packets and popular tops.</strong> Where E is much larger than F, the band is cut into narrow bins and the operator into wave packets with direction labels. Size and density estimates remove the low-density packets; the rest are assigned to tops whose direction is popular on part of the test set, and Lacey and Li’s Lipschitz Kakeya theorem counts the tops at a polynomial cost in the logarithm. On every line, moment, square-function and variation bounds then, outside one small exceptional set, limit the number of separated significant directions to a power of the logarithm.</li>
+  <li><strong>A Fourier inequality with constant one.</strong> A sum of a few separated frequencies obeys a bound with a slightly improved exponent and a constant of exactly one, since any larger constant would accumulate at every angular level. The paper iterates this through nested angular intervals, predicting finer amplitudes from one good point, controlling prediction errors with a telescoping mass and leftover terms with variation bounds, and averaging over shifted angular grids. The strict gain beats every fixed polynomial loss.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script checks that for a constant field every truncation’s symbol is at most 2 Si(π) = 3.7039 (its search reached 3.7032). As an illustration only, with one smooth field at length 0.3, well beyond the theorem’s a*, and smooth random inputs, the L<sup>2</sup> size of the truncations levels off at about 2.9 as the inner length shrinks from a/2 to a/2048, as it must for smooth inputs. No computation can test every field and every input.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-uniform-Hilbert-transform-estimate-for-Lipschitz-directions-September-25-2026/main.pdf">A uniform Hilbert transform estimate for Lipschitz directions (PDF)</a>, September 25, 2026 (87 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/083.md">The Lean scope note</a> and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/LipschitzHilbert.lean">the statement it is checked against</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 083.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-uniform-Hilbert-transform-estimate-for-Lipschitz-directions-September-25-2026/main.pdf">A uniform Hilbert transform estimate for Lipschitz directions</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Lines that turn</h3>
+<p>Give every point of the plane a direction, a unit vector v of x. At each point, integrate a function along the straight line through that point in its direction, against the Hilbert kernel 1/t, for t between ε and a in absolute value, on both sides of the point. If the field is constant, this is the one-dimensional Hilbert transform along parallel lines, and every truncation is bounded on L², with norm at most two times the sine integral at pi, about 3.7. When the direction varies, nearby points sample different lines, and the operator is no longer a Fourier multiplier. Stein asked whether, for a Lipschitz field, this transform obeys a uniform weak L² bound when the length a is at most a fixed multiple of one over the Lipschitz constant. Lacey and Li trace the question to Zygmund’s conjecture on averages over shrinking segments in direction v of x, and they recall a Besicovitch obstruction: for the averaging operator, Hölder continuity of any exponent below one is not enough. In our illustration, one smooth field at a length well beyond the theorem’s, the L² size of the truncations of smooth random inputs levels off, as it must for smooth inputs; no computation can test every field and every input. Bourgain proved an L² theorem for averages along analytic fields. Lacey and Li proved estimates on single frequency annuli for measurable directions, and a Lipschitz Kakeya maximal theorem. Guo proved single-annulus bounds for the variation of these transforms along Lipschitz fields. Bateman and Thiele handled fields that depend on one coordinate, and Guo and Thiele, then Di Plinio and Parissis, handled lacunary roundings. Di Plinio, Guo, Thiele and Zorin-Kranich showed that uniform bounds on vertical frequency bands would give the full short bound. The full bound for general Lipschitz fields, depending on both coordinates, remained open.</p>
+<h3><span class="t num">2:03</span>The claim</h3>
+<p>Result 083 is one OpenAI preprint, 87 pages, dated September 25. Its theorem: there are absolute constants a* and C* such that, for every unit vector field with Lipschitz constant at most one, every truncation at outer length a*, with any smaller inner length, has L² operator norm at most C*. So the principal value is bounded on L², which is stronger than the weak bound Stein asked for. By scaling, a field with Lipschitz constant L gets the same bound at length a*/L, and the field may depend on both coordinates. OpenAI also published a Lean formalization, about 186,000 lines in 1,910 files, matched against a separate statement. That statement includes the uniform truncation bounds, the principal value, the weak-type bound and bounded extensions to all of L², and a version for Lipschitz constant K at lengths up to 1/(1,000,000 K). The formalization also proves the Lacey–Li input itself. We have not run the check ourselves.</p>
+<h3><span class="t num">3:13</span>Bands, tops, phases</h3>
+<p>After localizing and rotating, the field becomes a slope, and the operator integrates along (x − t, y − t × slope). The paper splits the vertical frequencies into bands. A Lipschitz commutator lets the bands be reassembled, a principle already present in the work of Di Plinio, Guo, Thiele and Zorin-Kranich. The core is a restricted estimate on one band, for functions bounded by indicators of sets F and E, with a gain of the logarithm of the ratio of their measures to the power minus three, so that the sum over levels converges. In the hard regime, where E is much larger than F, the band is cut into narrow bins and the operator into wave packets with direction labels. Size and density estimates remove the low-density packets. The rest are assigned to tops whose direction is popular on part of the test set, and Lacey and Li’s Lipschitz Kakeya theorem counts the tops at a polynomial cost in the logarithm. On every line, moment, square-function and variation bounds then, outside one small exceptional set, limit the number of separated significant directions to a power of the logarithm. The oscillatory gain comes from a finite Fourier inequality: a sum of a few separated frequencies obeys a bound with a slightly improved exponent and a constant of exactly one, since any larger constant would accumulate at every angular level. The paper iterates this through nested angular intervals, predicting finer amplitudes from one good point, controlling prediction errors with a telescoping mass and leftover terms with variation bounds, and averaging over shifted angular grids. The strict gain beats every fixed polynomial loss and gives the logarithmic estimate.</p>
+<h3><span class="t num">5:03</span>Where it stands</h3>
+<p>The preprint is not yet peer reviewed, and it has not been revised. The Lean formalization was matched against a separate statement, but we have not run it ourselves. The paper’s two specialized outside inputs are Lacey and Li’s Lipschitz Kakeya maximal theorem and Lépingle’s martingale variation inequality. It is not among the papers OSVerify reviewed, and we have seen no expert review. If it holds, Stein’s question has an affirmative answer at the short scale where it was posed, with a strong L² bound. Zygmund’s conjecture for averages is not claimed, and neither are longer lengths for varying fields or other Lᵖ spaces.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20083%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 100: Cylinder coverings below the half-area bound | AI Proved What?</title>
-<meta name="description" content="Cylinder coverings below the half-area bound. Result 100 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Below half? Cylinder covers of the tetrahedron below the half-area bound | AI Proved What?</title>
+<meta name="description" content="An AI system claims finite cylinder covers of the regular tetrahedron with total base area below half its smallest shadow, disproving the half-area cylinder-covering bound and the directionwise conjecture, with Lean formalizations. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/100-cylinder-coverings-below-half-area/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 100: Cylinder coverings below the half-area bound | AI Proved What?">
-<meta property="og:description" content="Cylinder coverings below the half-area bound. Result 100 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Below half?">
+<meta property="og:description" content="An AI system claims finite cylinder covers of the regular tetrahedron with total base area below half its smallest shadow, disproving the half-area cylinder-covering bound and the directionwise conjecture, with Lean formalizations. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/100-cylinder-coverings-below-half-area/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/100-cylinder-coverings-below-half-area/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 100 · <a href="../../subjects/convex-and-metric-geometry/">Convex and metric geometry</a></p>
-<h1 class="result-title">Cylinder coverings below the half-area bound</h1>
+<p class="meta">Episode 100, October 2026</p>
+<h1>Below half?</h1>
+<p class="subtitle">Finitely many cylinders cover the regular tetrahedron for less than half its smallest shadow</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 100 in OpenAI’s catalog: <a href="#papers-in-result">all 4 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="lHeYk1LoLw0" data-title="Episode 100: Below half?">
+  <a href="https://youtu.be/lHeYk1LoLw0">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 100: Below half? A regular tetrahedron split at mid-height, its lower and upper halves covered by two families of thin triangular cylinders fanning out from opposite edges.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:34. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/lHeYk1LoLw0?t=0" data-t="0"><span class="t">0:00</span><span>Planks and cylinders</span></a></li>
+  <li><a href="https://youtu.be/lHeYk1LoLw0?t=110" data-t="110"><span class="t">1:50</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/lHeYk1LoLw0?t=221" data-t="221"><span class="t">3:41</span><span>How the cover works</span></a></li>
+  <li><a href="https://youtu.be/lHeYk1LoLw0?t=349" data-t="349"><span class="t">5:49</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Covers the entire closed regular tetrahedron by finitely many cylinders with compact triangular perpendicular bases whose total area is less than half its smallest orthogonal projection area. This disproves Bang's half-area cylinder-covering bound and the stronger directionwise normalized conjecture in dimension three.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>A plank is the slab between two parallel planes. Tarski asked how thin a set of planks covering a convex body can be in total, and Bang proved that their widths add up to at least the body’s smallest width. Ball proved a sharper, direction-by-direction version for centrally symmetric bodies.</p>
+<p>For cylinders in space, a cylinder is a flat base extended infinitely along the line perpendicular to it, and its cost is the area of that base. The yardstick is the body’s smallest shadow A<sub>min</sub>, the least area of its orthogonal projections onto planes: one cylinder over that shadow covers the body at cost A<sub>min</sub>. The regular tetrahedron does better. With edge 2, its smallest shadow is √2, seen along an edge, and two cylinders parallel to opposite edges, one below the middle height and one above, each over a triangle of area √2/4, cover it for exactly half. Bezdek recorded the question, attributed to Bang’s 1951 paper, whether every finite cylinder cover costs at least half the smallest shadow. A stronger version measures each base against the body’s shadow in that cylinder’s own direction: Bezdek and Litvak proved this relative cost is always at least 1/3, and at least 1 for ellipsoids, and Bezdek and Khan conjectured 1/2. Verreault’s 2026 survey lists the half-area question as open.</p>
+<p>Result 100 is four OpenAI preprints dated September 27, 2026: <a href="https://github.com/openai/math/blob/main/preprints/Finite-angular-cylinder-covers-below-the-half-area-bound-September-27-2026/main.pdf">the main paper</a> (20 pages) and companions on <a href="https://github.com/openai/math/blob/main/preprints/Finite-cylinder-approximation-of-ruled-sets-September-27-2026/main.pdf">finite approximation of ruled sets</a> (12 pages), <a href="https://github.com/openai/math/blob/main/preprints/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026.pdf">slope-field perturbations of the two-cylinder covering</a> (23 pages) and <a href="https://github.com/openai/math/blob/main/preprints/Finite-triangular-approximation-of-radial-sweeps-September-27-2026/main.pdf">triangular approximation of radial sweeps</a> (28 pages). The main paper covers the regular tetrahedron of edge 2, for each tilt 0 &lt; ε ≤ 1/2000, by 2⌈2/ε²⌉ cylinders with compact triangular bases whose total area, in units of the smallest shadow, is 1/2 − (13/6000)ε², with an error of at most 2ε⁴. That is below one half, so the half-area bound fails. The relative cost is unchanged by affine maps, so the directionwise conjecture fails for every tetrahedron. The slope-field and radial-sweep papers build their own counterexamples, with parallelogram and triangular bases.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The saving is tiny: at ε = 1/2000 the cover uses 16 million cylinders and saves about 5.4 × 10<sup>−10</sup> of the smallest shadow. The papers do not improve the lower bound of 1/3 and do not say how low the cost can go, for the tetrahedron or for convex bodies in general; the best universal constant now lies between 1/3 and 1/2. For ellipsoids the answer was already settled.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, four preprints dated September 27, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,44 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/100.md">scope notes</a>)</dd>
+    <dd>OpenAI published Lean proofs of the regular-tetrahedron counterexamples and selected approximation theorems; we have not run the checks</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. The preprints have not been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/100.md">Lean formalizations</a> in three folders: the explicit triangular cover, with an unspecified error constant, in 9 files and 2,247 lines, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/TriangularCovering.lean">its comparator statement</a>; selected ruled-set theorems and a further tetrahedron cover in 30 files and 4,303 lines; and <a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/CylinderCovering">602 files and 64,073 lines</a> proving selected statements of all four papers, including the explicit cover with the stated constants, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/CylinderCovering.lean">a combined statement</a>. We found no unproved steps. The extension to every tetrahedron is outside the formalized statements. We have not run the checks. The papers are not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the cover works</h2>
+<ol class="steps">
+  <li><strong>Sectors with their own tilts.</strong> Each triangular base of the two-cylinder cover is cut into narrow sectors fanning out from its tip, labelled by slopes q from −1 to 1, at most ε² wide. Each sector gets its own axis, tilted in proportion to ε: (1, εα<sub>j</sub>, √2 εβ<sub>j</sub>) for the lower family, with α<sub>j</sub> = (1 + q<sub>j</sub>q<sub>j+1</sub>)/4 and β<sub>j</sub> = (q<sub>j</sub> + q<sub>j+1</sub>)/4. A cylinder’s cost is the area of its base perpendicular to the axis, and tilting shrinks it by the factor 1/√(1 + ε²(α<sub>j</sub>² + 2β<sub>j</sub>²)).</li>
+  <li><strong>Matching the shared sides.</strong> The tilts are chosen so that the plane swept by a side shared by two neighbouring sectors is the same for both: y = qt + εx(1 − q²)/4. At any point of the tetrahedron these planes give a list of positions starting at −t and ending at t, where t is the height scaled to run from 0 to 1; some adjacent pair brackets the point, even if the list is out of order, so a sector in each family is aimed at it.</li>
+  <li><strong>Margins.</strong> Each sector is extended past the middle height by ε² times 1/1000 plus the largest value of q²(1 + q²)/16 on the sector. Near the middle the two families’ heights shift by −εxy and +εxy, so the first-order shifts cancel, and the margins close the second-order gaps. Per ε², tilting saves 17/240 and the margins cost 103/1500, leaving a net saving of 13/6000.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>The tetrahedron’s shadow formula agrees with convex hulls of projected vertices; the smallest shadow is √2 ≈ 1.414, along an edge, and the shadow from above is 2.</li>
+  <li>Summing the base areas of the tilted cover, divided by the smallest shadow, gives 1/2 − 2.153 × 10<sup>−7</sup> at ε = 1/100 (40,000 cylinders) and 1/2 − 5.41658 × 10<sup>−10</sup> at ε = 1/2000 (16 million cylinders), against (13/6000)ε² = 5.41667 × 10<sup>−10</sup>.</li>
+  <li>Sampling 200,000 points (40,000 of them from the middle band) at tilt 1/20: none missed with the margins, 298 missed without them, all with heights between 0.488 and 0.511. With the margins, a few points were still missed at tilts 1/10 (4) and 1/5 (22); the proof takes ε ≤ 1/2000.</li>
+  <li>The exact coefficients: 17/240 − 103/1500 = 13/6000; without the fixed 1/1000 in the margin, the saving would be 1/240.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Finite-angular-cylinder-covers-below-the-half-area-bound-September-27-2026/main.pdf">Finite angular cylinder covers below the half-area bound (PDF)</a>, 20 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Finite-cylinder-approximation-of-ruled-sets-September-27-2026/main.pdf">Finite cylinder approximation of ruled sets (PDF)</a>, 12 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026.pdf">Slope-field perturbations of the two-cylinder covering (PDF)</a>, 23 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Finite-triangular-approximation-of-radial-sweeps-September-27-2026/main.pdf">Finite triangular approximation of radial sweeps (PDF)</a>, 28 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/100.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 100.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 4 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -77,18 +136,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Finite-triangular-approximation-of-radial-sweeps-September-27-2026/main.pdf">Finite triangular approximation of radial sweeps</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Planks and cylinders</h3>
+<p>Cover a convex body with planks, the slabs between pairs of parallel planes. Tarski asked how thin they can be in total. Bang proved that the widths must add up to at least the body’s smallest width: no arrangement of planks beats a single plank laid across the narrowest direction. Ball later proved a sharper, direction-by-direction version for centrally symmetric bodies, where each plank’s width is divided by the body’s width in the same direction, and the sum is still at least one. Now cover a body in space with cylinders. A cylinder here is a flat base, extended along the line perpendicular to it, infinitely in both directions. Its cost is the area of its base. Let A_min be the body’s smallest shadow, the least area of its projections onto planes. One cylinder over that shadow covers everything, at cost A_min. For the regular tetrahedron, two cylinders do it for half as much. With edge 2, its smallest shadow is √2, seen along an edge. Two cylinders parallel to opposite edges, one covering everything below the middle height and one everything above, each have a triangle of area √2/4 as base. So does every finite cylinder cover cost at least half the smallest shadow? Bezdek recorded this question, attributing it and the tetrahedron example to Bang’s 1951 paper. A stronger version divides each base by the body’s shadow in that cylinder’s own direction. Bezdek and Litvak proved that this relative cost is always at least 1/3, and at least 1 for ellipsoids. Bezdek and Khan conjectured 1/2. Verreault’s 2026 survey lists the half-area question as open. The tetrahedron’s two-cylinder cover sits exactly on the line.</p>
+<h3><span class="t num">1:50</span>The claims</h3>
+<p>Result 100 is four OpenAI preprints, all dated September 27. The main one, 20 pages, covers the regular tetrahedron of edge 2 by finitely many cylinders with triangular bases. For each small tilt ε, at most 1/2000, it uses 2⌈2/ε²⌉ cylinders. Measured in units of the smallest shadow, their total base area is 1/2 − (13/6000)ε², with an error of at most 2ε⁴. That is below 1/2, so the half-area bound fails. The relative cost does not change under affine maps, so the stronger directionwise conjecture fails for every tetrahedron. The saving is tiny. At ε = 1/2000, the cover uses 16 million cylinders and saves about 5.4 × 10⁻¹⁰ of the smallest shadow. The papers do not improve the lower bound of 1/3, and do not say how low the cost can go. Three companions, of 12, 23 and 28 pages, give a way to turn smooth families of segments, whose directions vary in a controlled way, into finite cylinder covers with almost no extra cost; covers with parallelogram bases; and triangular covers of radial sweeps. The last two also build their own tetrahedron counterexamples. OpenAI published Lean formalizations: the explicit triangular cover, with a looser error constant, in 9 files, about 2,200 lines; a segment-family theorem and a further tetrahedron cover in 30 files; and a combined statement of selected results from all four papers, with the stated constants, in about 600 more files and 64,000 lines. We have not run the checks.</p>
+<h3><span class="t num">3:41</span>How the cover works</h3>
+<p>Start from the two-cylinder cover. Cut each triangular base into narrow sectors fanning out from its tip, labelled by slopes q from −1 to 1, and give each sector its own axis, tilted by an amount proportional to ε. The cylinder’s cost is the area of its base perpendicular to the axis, and tilting shrinks it by the factor 1/√(1 + tilt²). That is the saving. The danger is gaps: between neighbouring sectors, and between the two families. Neighbouring sectors are handled by matching. Each sector’s tilt is chosen so that the plane swept by a shared side is the same for both sectors that share it. At any point of the tetrahedron, these planes give a list of positions starting at −t and ending at t, where t is the point’s height, scaled so the tetrahedron runs from 0 to 1. Some adjacent pair brackets the point, even if the list is out of order, so some sector in each family is aimed at it. What remains is reach: near the middle height, each family’s sectors could stop just short. So every sector is extended past the middle by ε² times a margin: 1/1000 + the largest value on the sector of q²(1 + q²)/16. Near the middle, the two families’ heights shift by −εxy and +εxy, so the first-order shifts cancel and the margins close what is left. In our check at tilt 1/20, without the margins 298 of 200,000 sampled points were missed, all near the middle; with them, none. At larger tilts a few points still slipped through even with the margins, so the tilt really must be small; the proof takes it at most 1/2000. Per ε², tilting saves 17/240, the margins cost 103/1500, and the difference is 13/6000. Summing all 16 million base areas at ε = 1/2000, we found a saving that matches 13/6000 of ε² to four digits.</p>
+<h3><span class="t num">5:49</span>Where it stands</h3>
+<p>The four preprints are not peer reviewed and have not been revised. Lean covers the regular-tetrahedron counterexamples and selected forms of the approximation theorems, but not the step to every tetrahedron; we have not run it. They are not among the papers OSVerify reviewed, and we have seen no expert review. If it holds, the classic two-cylinder cover of the regular tetrahedron is not the cheapest: many slightly turned cylinders cover it for a little less than half its smallest shadow. How low the cost can go for the tetrahedron remains open, and so does the best bound for all bodies, which now lies between 1/3 and 1/2.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20100%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../099-sharp-exponential-scale-edit-distance/"><span class="dir">Previous · 099</span><span class="pt">The sharp exponential scale of edit-distance distortion</span></a>
-  <a class="next" href="../101-sharp-simplex-conjecture-isotropic-constants/"><span class="dir">Next · 101</span><span class="pt">The sharp simplex conjecture for isotropic constants</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/convex-and-metric-geometry/">More in convex and metric geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

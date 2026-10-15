@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 081: Riesz transforms and rectifiability in higher codimension | AI Proved What?</title>
-<meta name="description" content="Riesz transforms and rectifiability in higher codimension. Result 081 in OpenAI&#x27;s math release (Real and complex analysis): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>One operator enough? Riesz transforms and uniform rectifiability in higher codimension | AI Proved What?</title>
+<meta name="description" content="An AI system claims that a bounded Riesz transform forces uniform rectifiability for Ahlfors–David regular measures of every dimension from 2 to d − 2, with a Lean formalization of the main theorem. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/081-riesz-transforms-rectifiability-higher-codimension/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 081: Riesz transforms and rectifiability in higher codimension | AI Proved What?">
-<meta property="og:description" content="Riesz transforms and rectifiability in higher codimension. Result 081 in OpenAI&#x27;s math release (Real and complex analysis): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="One operator enough?">
+<meta property="og:description" content="An AI system claims that a bounded Riesz transform forces uniform rectifiability for Ahlfors–David regular measures of every dimension from 2 to d − 2, with a Lean formalization of the main theorem. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/081-riesz-transforms-rectifiability-higher-codimension/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/081-riesz-transforms-rectifiability-higher-codimension/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 081 · <a href="../../subjects/real-and-complex-analysis/">Real and complex analysis</a></p>
-<h1 class="result-title">Riesz transforms and rectifiability in higher codimension</h1>
+<p class="meta">Episode 081, October 2026</p>
+<h1>One operator enough?</h1>
+<p class="subtitle">Riesz transforms and uniform rectifiability in higher codimension</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 081 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="5nuAE9QrEwQ" data-title="Episode 081: One operator enough?">
+  <a href="https://youtu.be/5nuAE9QrEwQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 081: One operator enough? Two blue circles joined by a times sign, above two four-corner Cantor dusts joined by a times sign, with the claim: a bounded Riesz transform implies uniform rectifiability.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:30. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/5nuAE9QrEwQ?t=0" data-t="0"><span class="t">0:00</span><span>One operator, many shapes</span></a></li>
+  <li><a href="https://youtu.be/5nuAE9QrEwQ?t=121" data-t="121"><span class="t">2:01</span><span>The claim and the Lean check</span></a></li>
+  <li><a href="https://youtu.be/5nuAE9QrEwQ?t=187" data-t="187"><span class="t">3:07</span><span>Excess, heights, packing</span></a></li>
+  <li><a href="https://youtu.be/5nuAE9QrEwQ?t=274" data-t="274"><span class="t">4:34</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Resolves the remaining higher-codimension Riesz-transform rectifiability problem: for <i>d</i> ≥ 4 and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mi>d</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">2\le n\le d-2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">d</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span>, an <i>n</i>-Ahlfors–David regular Radon measure on ℝ<sup><i>d</i></sup> is uniformly <i>n</i>-rectifiable whenever its <i>n</i>-dimensional Riesz transform is uniformly <i>L</i><sup>2</sup>-bounded over all positive hard truncations. The rectifiability bounds depend only on dimension, regularity and operator bounds.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Some sets are rectifiable in a strong, quantitative way: in every ball centered on the set, a fixed fraction of its mass lies on a Lipschitz image of a disk, a flat disk stretched by a controlled amount. David and Semmes called this uniform rectifiability. They showed that this geometry makes a whole class of singular integrals bounded, and that boundedness of all of them forces it back, and they asked whether one natural operator is enough: the n-dimensional Riesz transform, whose kernel is z/|z|<sup>n+1</sup>.</p>
+<p>The setting is an Ahlfors–David regular measure of dimension n, where every ball of radius r centered on the set carries mass comparable to r<sup>n</sup>. On a flat plane the Riesz kernel cancels by symmetry. Mattila, Melnikov and Verdera answered the question for one-dimensional sets in the plane in 1996, curvature methods handle dimension one in every ambient dimension, and Nazarov, Tolsa and Volberg answered it in codimension one in 2014. Mas and Tolsa characterized uniform rectifiability under a stronger hypothesis, a bound on the variation of the truncations. The range in between is listed as an open question in Tolsa’s plenary lecture for the 2026 International Congress.</p>
+<p>Result 081 is <a href="https://github.com/openai/math/blob/main/preprints/Riesz-transforms-and-uniform-rectifiability-in-higher-codimension-September-24-2026/paper.pdf">one OpenAI preprint</a>, 56 pages, dated September 24, 2026. Its theorem: in ℝ<sup>d</sup> with d ≥ 4 and 2 ≤ n ≤ d − 2, every n-dimensional Ahlfors–David regular measure whose hard-truncated Riesz transforms are bounded on L<sup>2</sup> with one common constant is uniformly rectifiable, with constants depending only on the dimensions and the two bounds. No principal values and no variation bounds are assumed; a final section combines the theorem with Mas and Tolsa’s work to get variation bounds and principal values.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The theorem is for Ahlfors–David regular measures of integer dimension. The Lean formalization covers the main theorem but not the variation and principal-value section.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 24, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +88,38 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/081.md">scope notes</a>)</dd>
+    <dd>OpenAI published a Lean proof of the main theorem; we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 12, 2026. The preprint has not been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/081.md">a Lean formalization</a> of the main theorem, <a href="https://github.com/openai/math/blob/main/lean/OAI/Analysis/RieszRectifiability">824 files and 65,638 lines</a> with no unproved steps that we could find, matched against a <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/RieszQuantitative.lean">62-line statement</a> that has hard truncations, Ahlfors–David regularity with one constant, and Lipschitz images of balls with constants fixed before the measure. We have not run the check ourselves. The paper proves its own limiting and rigidity statements, in the spirit of the reflectionless-measure methods of Jaye and Nazarov, and for its last step cites the David–Semmes criterion. It is not among the papers OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Excess and normal heights.</strong> The difficulty is to carry flatness down to smaller scales. The paper measures the excess, the scale-normalized L<sup>2</sup> distance of the measure from an affine n-plane, and the normal heights, the displacement perpendicular to that plane, and divides the heights by the size of the initial excess before passing to a limit, when the Riesz pairings against mean-zero Lipschitz tests are small compared with that scale.</li>
+  <li><strong>Energy, then rigidity.</strong> Testing the transform against a normal height times a cutoff produces a positive fractional energy, which gives compactness of the normalized heights even while the measures move. In the limit the heights satisfy an equation whose Fourier symbol has order one; with weighted integrability at infinity, this forces every limiting height to be affine, and approximating by an affine graph improves the excess at the smaller scale.</li>
+  <li><strong>Counting failures.</strong> Outside a family with a packing bound, every cell has a smaller cell a few generations down that is close to a plane from both sides. A later failure of flatness forces a cell in between where the transform oscillates detectably, and a finite counting argument controls these failures. The packing is the bilateral weak geometric lemma, and a theorem of David and Semmes turns it into the Lipschitz images.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A short Python script checks that the Riesz transform of 1 vanishes at the centre of a flat symmetric patch, and compares two 2-dimensional sets in four-dimensional space, each discretized by 16<sup>k</sup> equal point masses: the torus (circle × circle) and K × K, the four-corner Cantor set squared. The mean square of the truncated Riesz transform of 1 is 0.119, 0.182, 0.200, 0.205 and 0.206 on the torus (k = 1 to 5) and 0.377, 0.803, 1.243 and 1.687 on K × K (k = 1 to 4, growing by about 0.44 per generation). K × K is 2-dimensional Ahlfors–David regular: ball mass over r<sup>2</sup> stays between 0.25 and 0.63.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Riesz-transforms-and-uniform-rectifiability-in-higher-codimension-September-24-2026/paper.pdf">Riesz transforms and uniform rectifiability in higher codimension (PDF)</a>, September 24, 2026 (56 pages).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/081.md">The Lean scope note</a> and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/RieszQuantitative.lean">the statement it is checked against</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 081.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +127,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Riesz-transforms-and-uniform-rectifiability-in-higher-codimension-September-24-2026/paper.pdf">Riesz transforms and uniform rectifiability in higher codimension</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>One operator, many shapes</h3>
+<p>Some sets are rectifiable in a strong, quantitative way: in every ball centered on the set, a fixed fraction of its mass lies on a Lipschitz image of a disk, a flat disk stretched by a controlled amount. David and Semmes called this uniform rectifiability. They showed that this geometry makes a whole class of singular integrals bounded, and that boundedness of all of them forces it back. Their question was whether one natural operator is enough: the n-dimensional Riesz transform, whose kernel is the vector from one point to another divided by the distance to the power n + 1. The setting is an Ahlfors–David regular measure of dimension n: every ball of radius r centered on the set carries mass comparable to rⁿ. On a flat plane the Riesz kernel cancels by symmetry. Compare two two-dimensional sets in four-dimensional space: a torus, the product of two circles, and the product of two four-corner Cantor sets, which is far from flat at every scale. In our computation, the Riesz transform of the constant function settles on the torus as the scale shrinks, while on the Cantor product its mean square keeps growing by about 0.44 per generation. Mattila, Melnikov and Verdera answered the question for one-dimensional sets in the plane in 1996, using the curvature behind the Cauchy integral, and curvature methods handle dimension one in every ambient dimension. In 2014, Nazarov, Tolsa and Volberg answered it in codimension one, and they named a maximum principle with no known higher-codimension analogue as the obstacle. Mas and Tolsa characterized uniform rectifiability under a stronger hypothesis, a bound on the variation of the truncations. The range in between, dimension two up to d − 2, is listed as an open question in Tolsa’s plenary lecture for the 2026 International Congress.</p>
+<h3><span class="t num">2:01</span>The claim and the Lean check</h3>
+<p>Result 081 is one OpenAI preprint, 56 pages, dated September 24. Its theorem: in dimension d at least four, with n between two and d − 2, every n-dimensional Ahlfors–David regular measure whose hard-truncated Riesz transforms are bounded on L² with one common constant is uniformly rectifiable, with constants depending only on the dimensions and the two bounds. No principal values and no variation bounds are assumed. A final section combines it with Mas and Tolsa’s theorem to get variation bounds and principal values. OpenAI also published a Lean formalization of the main theorem, over 65,000 lines in 824 files, matched against a short separate statement of the theorem. We read that statement: it has hard truncations, Ahlfors–David regularity with one constant, and Lipschitz images of balls with uniform constants. The formalization does not cover the variation and principal-value section. We have not run the check ourselves.</p>
+<h3><span class="t num">3:07</span>Excess, heights, packing</h3>
+<p>The difficulty is to carry flatness down to smaller scales. The paper measures the excess, the scale-normalized L² distance of the measure from an affine n-plane, and the normal heights, the displacement perpendicular to that plane. It divides the heights by the size of the initial excess and passes to a limit, but only when the Riesz pairings against mean-zero Lipschitz tests are small compared with that scale. Testing the transform against a normal height times a cutoff produces a positive fractional energy. This gives compactness of the normalized heights, even while the measures themselves move. In the limit, the heights satisfy an equation whose Fourier symbol has order one, and together with weighted integrability at infinity this forces every limiting height to be affine. Approximating by an affine graph then improves the excess at the smaller scale. The rest is counting. The operator bound gives this: outside a family with a packing bound, every cell has a smaller cell a few generations down whose support is close to a plane from both sides. Starting from a flat cell, a later failure of flatness forces a cell in between where the transform oscillates detectably, and a finite counting argument controls these failures even when their scales are far apart. This packing is the bilateral weak geometric lemma, and a theorem of David and Semmes turns it into the Lipschitz images.</p>
+<h3><span class="t num">4:34</span>Where it stands</h3>
+<p>The preprint is not yet peer reviewed, and it has not been revised. The Lean formalization of the main theorem is the strongest check here, though we have not run it ourselves. The paper proves its own limiting and rigidity statements, in the spirit of the reflectionless-measure methods of Jaye and Nazarov, and for its last step it cites the David–Semmes theorem that turns the bilateral weak geometric lemma into Lipschitz images. It is not among the papers OSVerify reviewed, and we have seen no expert review. If it holds, the David–Semmes question for the Riesz transform is answered in every integer dimension: dimension one and codimension one were known, and this fills every case in between, from two-dimensional sets in four-dimensional space upward. The constants are uniform, depending only on the dimensions and the two bounds.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20081%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../080-exact-sobolev-endpoint-schrodinger-convergence/"><span class="dir">Previous · 080</span><span class="pt">The exact Sobolev endpoint for Schrödinger convergence</span></a>
-  <a class="next" href="../082-annular-variation-dyadic-absolute-bounds/"><span class="dir">Next · 082</span><span class="pt">Annular variation and dyadic absolute bounds for the triangular Hilbert transform</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/real-and-complex-analysis/">More in real and complex analysis</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

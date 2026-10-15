@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 097: The Euclidean Steinitz–Bergström bound | AI Proved What?</title>
-<meta name="description" content="The Euclidean Steinitz–Bergström bound. Result 097 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Root d is enough? The Euclidean Steinitz–Bergström bound | AI Proved What?</title>
+<meta name="description" content="An AI system claims that one choice of signs keeps every partial sum of any list of unit vectors in d dimensions within a constant times the square root of d, and that zero-sum lists can be ordered the same way, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/097-euclidean-steinitz-bergstrom-bound/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 097: The Euclidean Steinitz–Bergström bound | AI Proved What?">
-<meta property="og:description" content="The Euclidean Steinitz–Bergström bound. Result 097 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Root d is enough?">
+<meta property="og:description" content="An AI system claims that one choice of signs keeps every partial sum of any list of unit vectors in d dimensions within a constant times the square root of d, and that zero-sum lists can be ordered the same way, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/097-euclidean-steinitz-bergstrom-bound/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/097-euclidean-steinitz-bergstrom-bound/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,44 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 097 · <a href="../../subjects/convex-and-metric-geometry/">Convex and metric geometry</a></p>
-<h1 class="result-title">The Euclidean Steinitz–Bergström bound</h1>
+<p class="meta">Episode 097, October 2026</p>
+<h1>Root d is enough?</h1>
+<p class="subtitle">One choice of signs keeps every partial sum within a constant times √d, however long the list</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 097 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="H29KI6UzGvc" data-title="Episode 097: Root d is enough?">
+  <a href="https://youtu.be/H29KI6UzGvc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 097: Root d is enough? An orange walk forced outward step by step, and a teal signed walk of the same vectors kept inside a small circle.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:20. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/H29KI6UzGvc?t=0" data-t="0"><span class="t">0:00</span><span>Keeping a walk close to home</span></a></li>
+  <li><a href="https://youtu.be/H29KI6UzGvc?t=130" data-t="130"><span class="t">2:10</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/H29KI6UzGvc?t=221" data-t="221"><span class="t">3:41</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/H29KI6UzGvc?t=332" data-t="332"><span class="t">5:32</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves that any finite sequence in the Euclidean unit ball of ℝ<sup><i>d</i></sup> admits signs keeping every partial sum within <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><msqrt><mi>d</mi></msqrt></mrow><annotation encoding="application/x-tex">C\sqrt d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.04em;vertical-align:-0.1078em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9322em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="padding-left:0.833em;">d</span></span><span style="top:-2.8922em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
-c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
-c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
-c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
-s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
-c69,-144,104.5,-217.7,106.5,-221
-l0 -0
-c5.3,-9.3,12,-14,20,-14
-H400000v40H845.2724
-s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
-c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
-M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1078em;"><span></span></span></span></span></span></span></span></span>, independently of length. Consequently every zero-sum family can be reordered with the same bound on unsigned partial sums. A matching lower bound gives the optimal order <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>d</mi><mo stretchy="false">)</mo><mo>=</mo><mi mathvariant="normal">Θ</mi><mo stretchy="false">(</mo><msqrt><mi>d</mi></msqrt><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">S_2(d)=\Theta(\sqrt d)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0576em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">d</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.1822em;vertical-align:-0.25em;"></span><span class="mord">Θ</span><span class="mopen">(</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9322em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="padding-left:0.833em;">d</span></span><span style="top:-2.8922em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
-c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
-c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
-c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
-s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
-c69,-144,104.5,-217.7,106.5,-221
-l0 -0
-c5.3,-9.3,12,-14,20,-14
-H400000v40H845.2724
-s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
-c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
-M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1078em;"><span></span></span></span></span></span><span class="mclose">)</span></span></span></span>.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take a list of vectors of length at most one in d-dimensional space, in a fixed order, and give each a sign, plus or minus. The aim is one choice of signs that keeps every partial sum short, not just the last, with a bound depending only on the dimension, however long the list. A companion problem: if the vectors add up to zero, reorder them, without signs, so that every partial sum stays short. Steinitz studied this to rearrange series of vectors, and Grinberg and Sevast’yanov showed that some order keeps every partial sum within d times the unit ball, for any norm.</p>
+<p>For Euclidean length the expected answer is a constant times √d: the Steinitz–Bergström conjecture for orderings, and the same question for prescribed-order signs asked by Bansal, Jiang, Meka, Singla and Sinha. Banaszczyk proved a bound of order √d + √(log N), growing slowly with the length N, and a 2026 preprint of Dutta, Jha and Jiang gave an efficient bound of order √d + d<sup>1/4</sup> log<sup>7/4</sup> N. The square root is needed: the d + 1 unit vectors pointing to the corners of a regular simplex add up to zero, and in any order the partial sum halfway through has length at least ½√d.</p>
+<p>Result 097 is <a href="https://github.com/openai/math/blob/main/preprints/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026.pdf">one OpenAI preprint</a> dated September 24, 2026 (29 pages). It claims an absolute constant C such that every list in the Euclidean unit ball of ℝ<sup>d</sup>, of any length, has one choice of signs keeping every partial sum within C√d. By Chobanyan’s transference, starting from the best ordering and putting the plus vectors in order and then the minus vectors in reverse, every zero-sum list can be ordered with every partial sum within the same bound. With the simplex example this pins down the growth of the Euclidean Steinitz constant, up to a constant factor: ½√d ≤ S<sub>2</sub>(d) ≤ C√d.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The constant C is not computed. The proof is existential: each sign may depend on the whole list, so it gives no rule that works one step at a time and no efficient algorithm. In two or more dimensions no online rule can work: if each new vector is perpendicular to the current sum, both signs give the same length, and after t steps it is √t.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated September 24, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -84,12 +88,41 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/097.md">scope notes</a>)</dd>
+    <dd>OpenAI published a Lean proof of both statements; we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/097.md">a Lean formalization</a> of both statements, with an unspecified absolute constant, in <a href="https://github.com/openai/math/blob/main/lean/OAI/Analysis/Steinitz">29 files and 15,082 lines</a>, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SteinitzBergstrom.lean">a separate statement</a>, with no unproved steps that we could find; its files include a proof of the Gaussian correlation inequality. We have not run the check. The paper builds on several 2026 preprints on related balancing problems, including a symmetrization method of Guo, Fang and Lu whose authors credit an AI research agent for their proof. It is not among the papers OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A body of coefficients.</strong> The proof works in a space of coefficients, one for each incoming vector plus d for an initial state. Linear maps R<sub>t</sub>x = C<sub>t</sub>R<sub>t−1</sub>x + b<sub>t</sub>x<sub>d+t</sub>, with C<sub>t</sub>C<sub>t</sub><sup>T</sup> + b<sub>t</sub>b<sub>t</sub><sup>T</sup> = I, contract the old state and inject the incoming vector. The convex body of coefficients whose every state is within a constant times √d holds the whole walk at once, and a shift in each new coefficient undoes the contraction, so each state becomes a signed partial sum times a fixed factor.</li>
+  <li><strong>From energy to signs.</strong> If a symmetric convex body has small Dirichlet energy for every positive diagonal weighting, signs can be chosen one coordinate at a time, using domains prepared from the whole list, so that the final point lands inside the body, even when each step is shifted by up to a quarter. This adapts a symmetrization method of Guo, Fang and Lu; the paper proves the version it needs.</li>
+  <li><strong>An energy bound for every length.</strong> The body of short states has such an energy bound, uniformly in the number of steps. The paper runs a stationary Ornstein–Uhlenbeck process in coefficient space, splits the states into dyadic spectral scales, charges each change to an additive trace budget, shows that a group of constraints survives together with probability bounded below at one scale, and combines groups, scales and time intervals with the Gaussian correlation inequality.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>With 20,000 random unit vectors in 16 dimensions, random signs drift to 160.5, while greedy signs (the shorter of the two new sums) stay below 4.</li>
+  <li>The perpendicular adversary in the plane forces length √t against any online rule; for 18 such vectors built against greedy signs, the best signs with hindsight, among all 2¹⁸ patterns, keep every partial sum within √2.</li>
+  <li>The simplex example: the best ordering, found by brute force for d up to 7, attains exactly the forced value, at least ½√d.</li>
+  <li>Chobanyan’s transference holds on 200 random zero-sum families: the new order stays within the average of the old order’s largest partial sum and the signed walk’s.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026.pdf">The Euclidean Steinitz–Bergström theorem (PDF)</a>, 29 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/097.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 097.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -97,18 +130,28 @@ M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
   <li><a href="https://github.com/openai/math/blob/main/preprints/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026/The-Euclidean-Steinitz-Bergstrom-theorem-September-24-2026.pdf">The Euclidean Steinitz–Bergström theorem</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Keeping a walk close to home</h3>
+<p>Take a list of vectors in d-dimensional space, each of length at most one, in a fixed order. Give each one a sign, plus or minus, and follow the walk of partial sums. The goal is one choice of signs that keeps every partial sum short, not just the last one, with a bound that depends only on the dimension, however long the list. A second problem goes with it. If the vectors add up to zero, reorder them, without signs, so that every partial sum stays short. Steinitz studied this to rearrange series of vectors, and Grinberg and Sevast’yanov showed that some order keeps every partial sum within d times the unit ball, for any norm. For Euclidean length, the expected answer is the square root of d. The Steinitz–Bergström conjecture asks for orderings with every partial sum within a constant times √d, and Bansal, Jiang, Meka, Singla and Sinha asked the same for signs in a prescribed order. Banaszczyk proved a bound of order √d + √(log N), which grows slowly with the number of vectors N. A 2026 preprint of Dutta, Jha and Jiang gave an efficient bound of order √d + d^(1/4) times a power of log N. And √d is needed: d + 1 unit vectors pointing to the corners of a regular simplex add up to zero, and in any order, the partial sum halfway through has length at least half of √d. In our test, with 20,000 random unit vectors in 16 dimensions, random signs let the walk drift past 160, while the greedy rule, which picks whichever sign makes the new sum shorter, stays below 4, about √d. But in 2 or more dimensions, a list can be built against any rule that decides one step at a time. Send each new vector perpendicular to the current sum: then both signs give the same length, and after t steps it is √t. For 18 such vectors in the plane, built against the greedy rule, the walk reaches length 4.24. Yet trying all 2¹⁸ sign patterns, with hindsight, keeps every partial sum within √2, the least possible for this list.</p>
+<h3><span class="t num">2:10</span>The claim</h3>
+<p>Result 097 is one OpenAI preprint, 29 pages, dated September 24. It claims an absolute constant C such that every list of vectors in the Euclidean unit ball of d-dimensional space, of any length, has one choice of signs keeping every partial sum within C√d. Consequently, every list that adds up to zero can be reordered with every partial sum within the same bound. With the simplex example, this pins down the growth of the Euclidean Steinitz constant, up to a constant factor: it grows like √d. That would settle the Steinitz–Bergström conjecture and the question of Bansal and his coauthors. The constant is not computed. The proof is existential: each sign may depend on the whole list, so it gives no rule that works one step at a time, and no efficient algorithm. The step from signs to orderings is Chobanyan’s transference. Start from the best ordering and sign it with the theorem. Put the plus vectors in that order, then the minus vectors in reverse. Every new partial sum is at most the average of the old bound and C√d, and since the old ordering was already the best, its bound is at most C√d. In our test on 200 zero-sum families with greedy signs, the new order always stayed within that average. OpenAI published a Lean formalization of both statements, 29 files and about 15,000 lines, matched against a separate statement. We have not run the check.</p>
+<h3><span class="t num">3:41</span>How the proof goes</h3>
+<p>The proof moves to a space of coefficients, one for each incoming vector plus d for an initial state. A chain of linear maps turns coefficients into states: at each step, an invertible contraction shrinks the old state, and the next coefficient adds a multiple of the incoming vector. The convex body of coefficients whose every state is short, within a constant times √d, will hold the whole walk at once. A shift in each new coefficient exactly undoes the contraction, so that, for the chosen coefficients, every state is exactly a signed partial sum, scaled by a fixed factor. The first ingredient turns a geometric bound into signs. If a symmetric convex body has small Dirichlet energy for every positive diagonal weighting, then signs can be chosen one coordinate at a time, using domains prepared from the whole list, so that the final point lands inside the body, even when each step is also shifted by up to 1/4. This adapts a symmetrization method from a September 2026 preprint by Guo, Fang and Lu, on a related balancing problem, whose authors credit an AI research agent for their proof; the paper proves the version it needs in full. The second ingredient is the energy bound for the body of short states, uniform in the number of steps. The paper runs a stationary Ornstein–Uhlenbeck process in coefficient space and splits the states into dyadic spectral scales. A matrix estimate charges each change to an additive trace budget. At one scale, a group of constraints survives together with probability bounded below, over a matched time interval. The Gaussian correlation inequality combines the groups, scales and intervals, and the survival rate gives the energy bound.</p>
+<h3><span class="t num">5:32</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. OpenAI’s Lean formalization covers both the signed and the reordered bound, with an unspecified absolute constant; its files include a proof of the Gaussian correlation inequality. We have not run it. The paper builds on several 2026 preprints on related balancing problems. It is not among the papers OSVerify reviewed, and we have seen no expert review. If it holds, signs for any list, or an ordering for any list that adds up to zero, can keep every partial sum within a constant times √d, however long the list, and √d is the best possible growth. The proof gives no efficient way to find them.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20097%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../096-gaussian-propeller-conjecture-every-dimension/"><span class="dir">Previous · 096</span><span class="pt">The Gaussian propeller conjecture in every dimension</span></a>
-  <a class="next" href="../098-compact-counterexamples-bi-lipschitz-dimension/"><span class="dir">Next · 098</span><span class="pt">Compact counterexamples to bi-Lipschitz dimension reduction</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/convex-and-metric-geometry/">More in convex and metric geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

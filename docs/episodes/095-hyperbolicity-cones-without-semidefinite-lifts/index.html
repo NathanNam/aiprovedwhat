@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 095: Hyperbolicity cones without semidefinite lifts | AI Proved What?</title>
-<meta name="description" content="Hyperbolicity cones without semidefinite lifts. Result 095 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>No lift at all? Hyperbolicity cones without semidefinite lifts | AI Proved What?</title>
+<meta name="description" content="An AI system claims an explicit hyperbolicity cone that is not a spectrahedron, with a Lean formalization, shows that cone has a semidefinite lift, and claims another hyperbolicity cone with no semidefinite lift at all, disproving the generalized and projected Lax conjectures. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/095-hyperbolicity-cones-without-semidefinite-lifts/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 095: Hyperbolicity cones without semidefinite lifts | AI Proved What?">
-<meta property="og:description" content="Hyperbolicity cones without semidefinite lifts. Result 095 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="No lift at all?">
+<meta property="og:description" content="An AI system claims an explicit hyperbolicity cone that is not a spectrahedron, with a Lean formalization, shows that cone has a semidefinite lift, and claims another hyperbolicity cone with no semidefinite lift at all, disproving the generalized and projected Lax conjectures. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/095-hyperbolicity-cones-without-semidefinite-lifts/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/095-hyperbolicity-cones-without-semidefinite-lifts/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,35 +37,95 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 095 · <a href="../../subjects/convex-and-metric-geometry/">Convex and metric geometry</a></p>
-<h1 class="result-title">Hyperbolicity cones without semidefinite lifts</h1>
+<p class="meta">Episode 095, October 2026</p>
+<h1>No lift at all?</h1>
+<p class="subtitle">A hyperbolicity cone that no semidefinite description reaches, even with extra variables</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 095 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="HIG6NmOeWRQ" data-title="Episode 095: No lift at all?">
+  <a href="https://youtu.be/HIG6NmOeWRQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 095: No lift at all? Three nested ovals for spectrahedral cones, shadows and hyperbolicity cones, with one marked cone outside the shadows.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:19. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/HIG6NmOeWRQ?t=0" data-t="0"><span class="t">0:00</span><span>Cones from polynomials</span></a></li>
+  <li><a href="https://youtu.be/HIG6NmOeWRQ?t=168" data-t="168"><span class="t">2:48</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/HIG6NmOeWRQ?t=272" data-t="272"><span class="t">4:32</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/HIG6NmOeWRQ?t=448" data-t="448"><span class="t">7:28</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Disproves the Projected Lax conjecture: some hyperbolicity cones are not spectrahedral shadows. The examples admit no exact finite affine semidefinite lift, regardless of the number of auxiliary variables or the real coefficients used. This also disproves the generalized Lax conjecture that every hyperbolicity cone is spectrahedral.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>A homogeneous polynomial p is hyperbolic in a direction e if it is nonzero at e and, for every point x, the polynomial t ↦ p(te − x) has only real roots. The points where all those roots are nonnegative form the hyperbolicity cone, which Gårding proved is always convex. For x₀² − x₁² − x₂² with e along the x₀ axis it is the ice-cream cone; for the determinant on symmetric matrices with e the identity it is the cone of positive semidefinite matrices. Güler showed that these cones carry the barrier functions of interior-point methods, so they support optimization beyond semidefinite programming.</p>
+<p>A spectrahedron is a slice of the positive semidefinite cone: the points where a matrix depending affinely on x is positive semidefinite. A spectrahedral cone whose matrix is positive definite somewhere is a hyperbolicity cone. The generalized Lax conjecture asked for the converse, that every hyperbolicity cone is a spectrahedron; in three variables this holds, by Helton and Vinnikov with an equivalence of Lewis, Parrilo and Ramana. The weaker projected Lax conjecture of Netzer and Sanyal allows extra variables: every hyperbolicity cone should be a spectrahedral shadow, a projection of a spectrahedron. Netzer and Sanyal proved it when every nonzero boundary point is a smooth point of the polynomial, and Scheiderer, who found other convex sets that are not shadows, asked whether his methods could settle it. The difference already shows in the plane: x⁴ + y⁴ ≤ 1 is a shadow (u ≥ x², v ≥ y², u² + v² ≤ 1) but not a spectrahedron.</p>
+<p>Result 095 is three OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/A-Nonspectrahedral-Hyperbolicity-Cone-September-24-2026/nonspectrahedral-hyperbolicity-cone.pdf">The first</a> (September 24, 2026, 14 pages) writes down a polynomial of degree 20 in 23 variables, det((det X) Z − Φ<sub>y</sub>(adj X)) for 4 × 4 symmetric X and Z and y in ℝ³, built from the Choi–Lam form, and claims it is hyperbolic but its cone is not a spectrahedron in any matrix size; dividing by det X gives degree 16. <a href="https://github.com/openai/math/blob/main/preprints/An-Exact-Semidefinite-Lift-of-a-Nonspectrahedral-Hyperbolicity-Cone-October-5-2026/Exact-Semidefinite-Lift-of-a-Nonspectrahedral-Hyperbolicity-Cone.pdf">A companion</a> (October 5, 10 pages) shows that this cone is nonetheless a shadow, exactly the projection of a 100 × 100 matrix inequality with 307 extra variables. <a href="https://github.com/openai/math/blob/main/preprints/Hyperbolicity-Cones-Without-Semidefinite-Lifts-October-5-2026/nonliftable-hyperbolicity.pdf">The third</a> (October 5, 29 pages) claims a hyperbolic polynomial whose closed cone has no finite semidefinite lift at all, with any number of extra variables and any real coefficients, which disproves the projected Lax conjecture and with it the generalized one.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The third paper’s polynomial is not written down: it is an existence argument in very high dimension, not a bound on the size of representations. With the paper’s stated choice N &gt; 10 · 36², the degree comes to about 67 billion. The sizes in the first two papers are not claimed minimal, and no explicit or small cone without a lift is given. The first paper also records a counterexample to an intermediate step in an earlier preprint by González Nevado that claimed the conjecture was true.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, three papers dated September 24 and October 5, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/095.md">scope notes</a>)</dd>
+    <dd>OpenAI published a Lean proof of the explicit counterexample only; we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 12, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. None of the three preprints has been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/095.md">a Lean formalization</a> of the first paper’s theorem: its degree-20 polynomial is hyperbolic and its cone is not a spectrahedron, in <a href="https://github.com/openai/math/blob/main/lean/OAI/Analysis/HyperbolicCones">101 files and 6,612 lines</a>, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/HyperbolicCones.lean">a separate statement</a>, with no unproved steps that we could find. We have not run the check. The exact lift and the headline result, no lift at all, are not formalized. The headline proof is closely related to Scheiderer’s local sum-of-squares obstructions. None of the papers is among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>A form with no square under it.</strong> The Choi–Lam form b(z, y) is nonnegative, but the only bilinear form whose square stays below it is zero: it vanishes at certain pairs and grows like s<sup>4</sup> along certain curves. Writing b = zᵀQ(y)z gives a positive map Φ<sub>y</sub>, and the polynomial det((det X) Z − Φ<sub>y</sub>(adj X)). Along each line parallel to e its 20 roots are the eigenvalues of a symmetric 20 × 20 matrix, so they are real.</li>
+  <li><strong>No slice.</strong> Where X is positive definite, membership means Z ⪰ Φ<sub>y</sub>(X⁻¹). Assuming a pencil describes the cone, the first paper rescales it, sends X⁻¹ and Z⁻¹ toward rank-one projections to get an exact identity for kernel projections of its blocks, and differentiates one of them. That produces bilinear forms whose squares fit under b, so they vanish, which would make b zero: a contradiction.</li>
+  <li><strong>But a shadow.</strong> The companion covers y-space by planes through the vertical axis; on each, Q has a Gram factor linear in the plane’s coordinates, giving a 20 × 20 pencil. A linear functional on trigonometric polynomials replaces the angle: testing against 5 basis functions gives one 100 × 100 matrix, and of its 330 coordinates 23 are the original variables, leaving 307 extra.</li>
+  <li><strong>No lift at all.</strong> The third paper allows any quadratic matrix map Q that is positive at every input and reduces the question to the set of (A, t, y) with A ⪰ 0, the range of Q(y) inside that of A, and t ≥ tr(A<sup>†</sup>Q(y)). It builds Q from moment matrices on quadratic forms in 8 variables, starting from a rank-20 seed whose rank conditions are certified by determinants over the field with 7 elements, then takes more than 12,960 copies and a quadratic form separating one vector from every limit of the moment images. A positive moment functional produces points violating the defining inequality by order ε<sup>4</sup>, while a finite lift would force feasible points within order ε<sup>16</sup>.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>The TV screen x⁴ + y⁴ ≤ 1: on 1,440 lines through four interior points, exactly 2 of the 4 roots of 1 − x⁴ − y⁴ are real each time; the three 2 × 2 matrix inequalities match the region at 20,000 random points.</li>
+  <li>The Choi–Lam form: its minors, 11 zeros and the s<sup>4</sup> curves are checked exactly with sympy.</li>
+  <li>The explicit polynomial: the identity p(te − x) = det(tI − D) holds at 1,000 random points (relative error below 10<sup>−11</sup>), exact root counts on 20 integer lines find all 20 roots real, and the slice criterion Z ⪰ Φ<sub>y</sub>(X⁻¹) agrees at 5,000 random points.</li>
+  <li>The companion’s angular Gram factor reproduces Q to within 10<sup>−14</sup> at 2,000 random angles.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Hyperbolicity-Cones-Without-Semidefinite-Lifts-October-5-2026/nonliftable-hyperbolicity.pdf">Hyperbolicity Cones Without Semidefinite Lifts (PDF)</a>, 29 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Nonspectrahedral-Hyperbolicity-Cone-September-24-2026/nonspectrahedral-hyperbolicity-cone.pdf">A nonspectrahedral hyperbolicity cone (PDF)</a>, 14 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-Exact-Semidefinite-Lift-of-a-Nonspectrahedral-Hyperbolicity-Cone-October-5-2026/Exact-Semidefinite-Lift-of-a-Nonspectrahedral-Hyperbolicity-Cone.pdf">An Exact Semidefinite Lift of a Nonspectrahedral Hyperbolicity Cone (PDF)</a>, 10 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/095.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 095.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 3 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -76,18 +135,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/An-Exact-Semidefinite-Lift-of-a-Nonspectrahedral-Hyperbolicity-Cone-October-5-2026/Exact-Semidefinite-Lift-of-a-Nonspectrahedral-Hyperbolicity-Cone.pdf">An Exact Semidefinite Lift of a Nonspectrahedral Hyperbolicity Cone</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Cones from polynomials</h3>
+<p>A homogeneous polynomial is hyperbolic in a direction e if it is nonzero at e and, along every line parallel to e, all its roots are real. Precisely, for every point x, the polynomial in t given by p(te − x) has only real roots, and where all of them are nonnegative, x lies in the hyperbolicity cone. Take x₀² − x₁² − x₂², with e pointing along the x₀ axis. The roots are x₀ ± the distance from that axis, and the cone is the ice-cream cone. For the determinant of a symmetric matrix, with e the identity, the roots are the eigenvalues, and the cone is the positive semidefinite matrices. Gårding proved in 1959 that every hyperbolicity cone is convex, and Güler showed that these cones carry the barrier functions of interior-point methods, so they support optimization beyond semidefinite programming. A spectrahedron is a slice of the positive semidefinite cone: the points x where a matrix depending affinely on x is positive semidefinite. For a cone the dependence is linear, and when the matrix is positive definite somewhere, its determinant is hyperbolic, so spectrahedral cones are hyperbolicity cones. Is the converse true? In 3 variables, yes: the theorem of Helton and Vinnikov, with an equivalence of Lewis, Parrilo and Ramana, settled Lax’s original question. The generalized Lax conjecture says that every hyperbolicity cone is a spectrahedron. A weaker version, the projected Lax conjecture of Netzer and Sanyal, allows extra variables: every hyperbolicity cone should be a spectrahedral shadow, the projection of a spectrahedron. Netzer and Sanyal proved this when every nonzero boundary point is a smooth point of the polynomial. Scheiderer found other convex sets that are not shadows, and asked whether his methods could settle the question for hyperbolicity cones. The difference between a slice and a shadow already shows in the plane. The region where x⁴ + y⁴ ≤ 1 is a shadow: add variables u and v with u ≥ x², v ≥ y², and u² + v² ≤ 1, each a 2 × 2 matrix condition. In our check this matches the region at 20,000 random points. But the region is not a spectrahedron. Along a line through an interior point, its quartic boundary polynomial has four roots, and on every such line exactly two are real. Helton and Vinnikov showed that for a spectrahedron, the lowest-degree polynomial vanishing on its boundary has only real roots along every line through an interior point.</p>
+<h3><span class="t num">2:48</span>The claims</h3>
+<p>Result 095 is three OpenAI preprints. The first, dated September 24, 14 pages, writes down an explicit polynomial of degree 20 in 23 variables, a 4 × 4 determinant built from two symmetric matrices X and Z and a vector y in 3 dimensions. It claims the polynomial is hyperbolic but its cone is not a spectrahedron, in any matrix size: a counterexample to the generalized Lax conjecture. Dividing out one factor lowers the degree to 16. A companion, dated October 5, 10 pages, shows that this cone is nonetheless a shadow: a 100 × 100 matrix with 307 extra variables describes it exactly. The third preprint, also dated October 5, 29 pages, claims a hyperbolic polynomial whose cone has no semidefinite lift at all, with any number of extra variables and any real coefficients. That disproves the projected Lax conjecture. The third paper’s polynomial is not written down. It is an existence argument in very high dimension, not a bound on the size of representations: with the parameters the paper states, the degree comes to about 67 billion. The sizes in the first two papers are not claimed minimal. The first paper also gives a counterexample to a step in an earlier preprint by González Nevado that claimed the conjecture was true. OpenAI published a Lean formalization of the first paper’s theorem, 101 files and about 6,600 lines, matched against a separate statement. The other two papers are not formalized. We have not run the check.</p>
+<h3><span class="t num">4:32</span>How the proofs go</h3>
+<p>The first paper starts from the Choi–Lam form, a polynomial b in two triples of variables, z and y, quadratic in each. It is never negative, yet the only bilinear form whose square fits under it is zero: b vanishes at certain pairs, and along certain curves it grows only like the fourth power of the parameter. We checked these identities exactly. Writing b as zᵀQ(y)z gives a matrix Q(y) that is positive for every y, and from it a positive map Φ. The polynomial is the determinant of (det X) Z − Φ(adj X). As the later papers show, along every line parallel to e its 20 roots are the eigenvalues of one symmetric 20 × 20 matrix, so they are real. On 20 random integer lines, our exact root count found all 20 real each time. Suppose some matrix pencil described the cone. Where X is positive definite, membership means that Z dominates Φ(X⁻¹). The paper rescales the pencil, pushes X⁻¹ and Z⁻¹ toward rank-one projections, and gets an exact identity for kernel projections of the pencil’s blocks. Differentiating one of them produces bilinear forms whose squares fit under b. So they all vanish, which would make b zero everywhere: a contradiction, so no pencil exists. The companion lifts the same cone. It covers the y-space by planes through the vertical axis; on each, Q has a Gram factor linear in the plane’s coordinates, giving a 20 × 20 pencil. A linear functional on trigonometric polynomials replaces the angle. Tested against 5 basis functions, it gives one matrix of size 20 × 5 = 100, and of its 330 coordinates, 23 are the original variables, leaving 307 extra ones. The third paper keeps the determinant construction but lets Q be any quadratic matrix map that is positive at every input. It reduces the question to one convex set: positive matrices A and numbers t with t at least the trace of A†Q(y). To build Q, it uses moment matrices on quadratic forms in 8 variables, a space of dimension 36, starting from a rank-20 seed matrix, with its rank conditions certified by explicit determinants over the field with 7 elements. More than 12,960 copies, and a quadratic form that separates one vector from every limit of the moment images, give Q. Finally, a positive moment functional produces points that violate the defining inequality by order ε⁴, while any finite lift would force feasible points within order ε¹⁶. That contradiction is the theorem.</p>
+<h3><span class="t num">7:28</span>Where it stands</h3>
+<p>The three preprints are not peer reviewed and have not been revised. Lean covers the first paper’s theorem: its degree-20 polynomial is hyperbolic and its cone is not a spectrahedron; we have not run it. The exact lift and the headline result, no lift at all, are checked only on paper. The headline proof is closely related to Scheiderer’s local sum-of-squares obstructions. None of the papers is among those OSVerify reviewed, and we have seen no expert review. If it holds, hyperbolic programming truly reaches beyond semidefinite programming: some hyperbolicity cones cannot be described exactly by semidefinite constraints, even with extra variables. No explicit cone without a lift is given, and no small one.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20095%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../094-subpolynomial-dimension-reduction-lp/"><span class="dir">Previous · 094</span><span class="pt">Subpolynomial dimension reduction in <i>L</i><sub><i>p</i></sub></span></a>
-  <a class="next" href="../096-gaussian-propeller-conjecture-every-dimension/"><span class="dir">Next · 096</span><span class="pt">The Gaussian propeller conjecture in every dimension</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/convex-and-metric-geometry/">More in convex and metric geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
