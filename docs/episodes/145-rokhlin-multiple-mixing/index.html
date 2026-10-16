@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two is enough? Rokhlin’s multiple-mixing problem for one transformation | AI Proved What?</title>
+<meta name="description" content="An AI system claims that every invertible mixing probability-preserving transformation is mixing of every finite order, answering Rokhlin’s question for one transformation, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/145-rokhlin-multiple-mixing/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Two is enough?">
+<meta property="og:description" content="An AI system claims that every invertible mixing probability-preserving transformation is mixing of every finite order, answering Rokhlin’s question for one transformation, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/145-rokhlin-multiple-mixing/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/145-rokhlin-multiple-mixing/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 145, October 2026</p>
+<h1>Two is enough?</h1>
+<p class="subtitle">A claimed answer to Rokhlin’s multiple-mixing problem: for one transformation, ordinary mixing implies mixing of every finite order</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 145 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="r2NRYGV_xdg" data-title="Episode 145: Two is enough?">
+  <a href="https://youtu.be/r2NRYGV_xdg">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 145: Two is enough? Three swirled sets stacked above a time line with three far-apart points, under the product mu(A) mu(B) mu(C).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:28. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/r2NRYGV_xdg?t=0" data-t="0"><span class="t">0:00</span><span>Two snapshots, three snapshots</span></a></li>
+  <li><a href="https://youtu.be/r2NRYGV_xdg?t=135" data-t="135"><span class="t">2:15</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/r2NRYGV_xdg?t=208" data-t="208"><span class="t">3:28</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/r2NRYGV_xdg?t=348" data-t="348"><span class="t">5:48</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A map T that preserves volume keeps stirring a space. It is mixing if any two events become independent when they are far apart in time: μ(A ∩ T<sup>−n</sup>B) tends to μ(A)μ(B). Mixing of order three asks the same for three events as both gaps grow, and so on for any number. For the doubling map, a textbook case long known to mix at every order, with A = [0, 1/3), the two-event chance is 1/6 after one step and within about two ten-millionths of 1/9 after twenty; the three-event chance with both gaps equal to twelve is within a tenth of a percent of 1/27, but with one gap stuck at a single step the ratio to 1/27 stays near 1.5.</p>
+<p>Rokhlin introduced higher-order mixing in 1949. Whether ordinary mixing alone implies it is presented, in de la Rue’s account, as Rokhlin’s question, and a 2024 survey by Ryzhikov is titled “Multiple mixing, 75 years of Rokhlin’s problem.” As the paper recounts, earlier answers needed extra structure: Kalikow for rank-one maps (from two to three), Host under a singular-spectrum hypothesis, Ryzhikov for finite rank, Kanigowski and Ravotti for certain shearing flows. The difficulty is that pairwise independence does not force full independence: three fair bits a, b and a + b mod 2 are pairwise independent, but the third is fixed by the first two. With two time directions the statement fails: in Ledrappier’s example, bits fill the plane so that every little three-dot triangle sums to zero mod 2, the shifts of the plane mix, yet the same triangle stretched by any power of two, with its shape and direction kept, still always sums to zero. “The distinction between one time generator and several is essential.”</p>
+<p>Result 145 is <a href="https://github.com/openai/math/blob/main/preprints/Rokhlins-multiple-mixing-problem-for-one-transformation-September-23-2026/paper.pdf">one OpenAI preprint</a> (40 pages, September 23, 2026). Theorem 1.1 claims that every invertible mixing probability-preserving transformation is mixing of every finite order: μ(A<sub>1</sub> ∩ T<sup>−t<sub>2</sub></sup>A<sub>2</sub> ∩ ⋯ ∩ T<sup>−t<sub>k</sub></sup>A<sub>k</sub>) tends to μ(A<sub>1</sub>)⋯μ(A<sub>k</sub>) as all the gaps grow, with “no standardness or countable-generation assumption” on the space. The paper says this “answers Rokhlin’s multiple-mixing problem affirmatively for one transformation,” and a corollary extends it to non-invertible maps (forward times) and to suitably continuous flows.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Rates of convergence, or anything new for actions with several time directions, where Ledrappier’s example already shows failure. The paper does not call the problem open or famous; the 75 years appear only in the survey’s title. Release result 154 builds on this theorem, and result 144 uses it for one corollary.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 40 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The main theorem, with statement and definitions matching the paper. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/145.md">Lean formalization</a> of Theorem 1.1, added to the repository in its initial commit on October 6, 2026 (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/Rokhlin.lean">comparator statement</a>, which also pins the four definitions of mixing it uses; <a href="https://github.com/openai/math/blob/main/lean/OAI/Dynamics/MultipleMixing">13 files and 27,889 lines</a>, with no unproved steps that we could find). We have not run the check. The corollary for non-invertible maps and flows is not formalized. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A least failure.</strong> Suppose some order fails and take the least one: every smaller family of far-apart snapshots is independent in the limit, and only the full family conspires.</li>
+  <li><strong>Squeezing out randomness.</strong> Replacing the sets by their expectations given the remote past changes little when the gaps are huge, and that remote past has zero entropy, so the conspiracy lives in a zero-entropy process with finitely many symbols (a reduction with antecedents in Thouvenot, Ryzhikov and de la Rue).</li>
+  <li><strong>Joinings and arrays.</strong> The conspiring joint law of the snapshots is frozen into a limit joining, and then into square arrays of snapshots built from sums of two layouts. The arrays are enlarged with hidden information until no further enlargement improves any prediction (a saturation idea due to Austin); then, given that information, rows too become independent in every proper family.</li>
+  <li><strong>Exact lines.</strong> Conditional-expectation operators along rows and columns satisfy rectangle identities, which force their phases into one abelian group of unitaries; diagonalizing produces exact lines, functions of size one whose product across the snapshots is constant, like the bits a, b and a + b. All the shared dependence is carried by such lines. They form a group of labels, cut into finite blocks permuted by time and moved by a single group automorphism, and one witness function keeps a fixed positive amount of correlation with a moving block at every time.</li>
+  <li><strong>One time dimension.</strong> A label’s orbit either has no cancelling ± combination, like the Fibonacci orbit of the cat map, and then behaves like independent coin flips, which a zero-entropy process cannot keep correlating with; or it drifts polynomially, like a shear, and repeated differencing reduces it to ordinary mixing. Either way the time-averaged correlation tends to zero, contradicting the fixed positive amount. So no order fails.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Doubling map, A = [0, 1/3), computed exactly: 1/6 after one step, 1/8 after three, 0.111111323 after twenty (target 1/9); three-event ratios to 1/27 of 2.25 at gaps (1, 1), 1.063 at (6, 6), 1.001 at (12, 12) and 1.501 at (1, 12).</li>
+  <li>Three bits (a, b, a + b mod 2): pairwise independent; all three zero with chance 1/4, not 1/8.</li>
+  <li>Ledrappier’s system, computed exactly over GF(2): every pair of sites independent; the stretched triangles (0, 0), (2<sup>m</sup>, 0), (0, 2<sup>m</sup>) have all three corners zero with chance 1/4 instead of 1/8 for every m from 0 to 10; other sizes and the mirrored triangle give 1/8; six single directions show no such relation.</li>
+  <li>Label orbits: the cat map’s Fibonacci orbit (1, 0), (2, 1), (5, 3), (13, 8), … has no cancelling ± combination among its first eleven terms; a shear’s orbit has 556.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Rokhlins-multiple-mixing-problem-for-one-transformation-September-23-2026/paper.pdf">Rokhlin’s multiple-mixing problem for one transformation (PDF)</a>, 40 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/145.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 145.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Rokhlins-multiple-mixing-problem-for-one-transformation-September-23-2026/paper.pdf">Rokhlin's multiple-mixing problem for one transformation</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Two snapshots, three snapshots</h3>
+<p>A map that preserves volume keeps stirring a space. It is mixing if any two events become independent when they are far apart in time: the chance of being in A now and in B after n steps tends to the product of their sizes. In our run with the doubling map and A the interval [0, 1/3), the chance of being in A now and again n steps later is 1/6 after one step, and within about two ten-millionths of 1/9 after 20. The doubling map is a textbook case, long known to mix at every order; here it only shows what the definitions mean. Mixing of order three asks the same for three events, as both gaps grow: the target is 1/27, and with both gaps equal to 12 we are within a tenth of a percent. Both gaps must grow: with one gap stuck at a single step, the ratio to the target stays near 1.5. Rokhlin introduced higher-order mixing in 1949. Whether ordinary mixing alone implies it is presented, in de la Rue’s account, as Rokhlin’s question, and a 2024 survey by Ryzhikov is titled: multiple mixing, 75 years of Rokhlin’s problem. Partial answers needed extra structure: Kalikow for rank-one maps, from two to three; Host under a singular-spectrum hypothesis; Ryzhikov for finite rank; Kanigowski and Ravotti for certain shearing flows. The difficulty is that pairwise independence does not force full independence: three fair bits a, b, and a + b mod 2 are pairwise independent, but the third is fixed by the first two. With two time directions, it really fails. Ledrappier’s example fills the plane with bits so that every little three-dot triangle sums to zero mod 2. As an action of the plane’s shifts it is mixing, yet stretch that little triangle by any power of two, keeping its shape and direction, and its three corners still always sum to zero. In our exact computation, the chance that all three corners are zero is 1/4 instead of 1/8, at every power-of-two size up to 1,024, while in the 6 single directions we tested, we found no such relation. The paper puts it this way: the distinction between one time generator and several is essential.</p>
+<h3><span class="t num">2:15</span>The claim</h3>
+<p>Result 145 is one OpenAI preprint, 40 pages, dated September 23. It claims that every invertible mixing probability-preserving transformation is mixing of every finite order: for any k sets, the chance of being in the first, then in the second after one gap, then in the third after another gap, and so on, tends to the product of their measures as all the gaps grow. No standardness or countable-generation assumption is imposed on the space. The paper says this answers Rokhlin’s multiple-mixing problem affirmatively for one transformation, and a corollary extends it to non-invertible maps and to suitably continuous flows. It gives no rates of convergence, and it says nothing new for actions with several time directions, where Ledrappier’s example already shows failure. Release result 154 builds on it, and result 144 uses it for one corollary. The paper does not call the problem open or famous; the 75 years appear only in the survey’s title. The theorem is formalized in Lean, with the comparator pinning both the statement and its four definitions.</p>
+<h3><span class="t num">3:28</span>How the proof goes</h3>
+<p>The proof works by contradiction. Suppose some order fails, and take the least one: then every smaller family of far-apart snapshots is independent in the limit, and only the full family conspires. Step one squeezes out randomness, a reduction with antecedents in Thouvenot, Ryzhikov and de la Rue. Replacing the sets by their expectations given the remote past changes little when the gaps are huge, and that remote past has zero entropy, so the conspiracy lives in a zero-entropy process with finitely many symbols. Then the conspiring joint law of the snapshots is frozen into a limit object, a joining, and then into square arrays of snapshots, built from sums of two layouts. The arrays are enlarged with hidden information until no further enlargement can improve any prediction, a saturation idea due to Austin. Then, given the hidden information, rows too become independent in every proper family, as columns already were, and the conditional expectation operators along rows and columns satisfy rectangle identities: going around a rectangle either way gives the same operator. These identities force their phases into one abelian group of unitaries, and diagonalizing produces exact lines: functions of size one whose product across the snapshots is constant, just like the bits a, b, and a + b. All the shared dependence is carried by such lines. They form a group of labels, cut into finite blocks that time permutes, moved by a single group automorphism, and one witness function keeps a fixed positive amount of correlation with one moving block at every time. One time dimension finishes it. Follow a label’s orbit under the automorphism. Either no plus-or-minus combination of its labels ever cancels, as along the Fibonacci orbit of the cat map, and then it behaves like independent coin flips, which a zero-entropy process cannot keep correlating with; or it drifts polynomially, like a shear, and then repeated differencing reduces it to ordinary mixing, which kills it too. Either way the time-averaged correlation tends to zero, but one block keeps a fixed positive amount at every time: a contradiction. So no order fails.</p>
+<h3><span class="t num">5:48</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. The theorem is formalized in Lean, with a statement matching the paper, in 13 files and about 28,000 lines, with no unproved steps that we found; we have not run the check. The corollary for non-invertible maps and flows is not formalized. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, for a single transformation, mixing of two events is enough: independence of far-apart snapshots extends automatically to any finite number of them.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20145%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

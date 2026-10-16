@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lost only to coincidences? The entropy-rate dimension formula for self-similar measures | AI Proved What?</title>
+<meta name="description" content="An AI system claims that the dimension of every self-similar measure on the line is the entropy rate of its distinct maps over the average contraction, capped at one, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/148-entropy-rate-dimension/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Lost only to coincidences?">
+<meta property="og:description" content="An AI system claims that the dimension of every self-similar measure on the line is the entropy rate of its distinct maps over the average contraction, capped at one, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/148-entropy-rate-dimension/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/148-entropy-rate-dimension/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 148, October 2026</p>
+<h1>Lost only to coincidences?</h1>
+<p class="subtitle">A claim that the dimension of every self-similar measure on the line is the entropy rate of its distinct composite maps divided by the average contraction, capped at one: the entropy-rate dimension conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 148 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="D--kSwVmbv4" data-title="Episode 148: Lost only to coincidences?">
+  <a href="https://youtu.be/D--kSwVmbv4">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 148: Lost only to coincidences? A histogram of a fractal self-similar measure under three overlapping shrinking maps.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:23. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/D--kSwVmbv4?t=0" data-t="0"><span class="t">0:00</span><span>Random shrinking maps</span></a></li>
+  <li><a href="https://youtu.be/D--kSwVmbv4?t=132" data-t="132"><span class="t">2:12</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/D--kSwVmbv4?t=218" data-t="218"><span class="t">3:38</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/D--kSwVmbv4?t=346" data-t="346"><span class="t">5:46</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take a few maps of the line that each shrink, possibly flip, and shift, for example x/3, x/3 + 1/3 and x/3 + 1. Pick one at random with fixed probabilities, apply it, and repeat: after many steps the point’s position follows a fractal distribution, a self-similar measure. Its dimension can never exceed one, nor the information in each random choice divided by how much each step shrinks; here that ratio is log 3/log 3 = 1. But different recipes can build exactly the same map: x/3 + 1 followed by x/3, and x/3 followed by x/3 + 1/3, both give x/9 + 1/3, an <em>exact overlap</em>. So the paper counts maps, not recipes: its random-walk entropy rate h<sub>RW</sub> is the information per step in the distinct composite maps, each a signed shrink factor and a shift. After four steps there are 81 recipes but only 55 distinct maps, and in our exact counts the rate settles near 1.33 bits per step against 1.58 for the choices, giving dimension 0.837 rather than 1.</p>
+<p>As the paper recounts, Moran and Hutchinson gave the classical dimension formula for self-similar sets whose pieces are well separated. Hochman showed that a drop below the natural bound forces superexponential concentration of the composite maps, and the formula under weak exponential separation follows from his work. Rapaport proved the no-exact-overlap formula for algebraic contraction ratios; Feng and Feng, Breuillard and Varjú, and Varjú treated algebraic translations, approximation by algebraic parameters, and transcendental Bernoulli convolutions; Rapaport and Varjú proved the entropy-rate formula for rational translations with one positive ratio, which covers our example. Baker, and independently Bárány and Käenmäki, built systems without exact overlaps whose pieces come together superexponentially fast, so separation cannot simply be assumed.</p>
+<p>Result 148 is <a href="https://github.com/openai/math/blob/main/preprints/The-entropy-rate-dimension-formula-for-self-similar-measures-on-the-line-September-24-2026/main.pdf">one OpenAI preprint</a> (22 pages, September 24, 2026). Theorem 1.1 claims that for every finite family of maps x ↦ r<sub>i</sub>x + t<sub>i</sub> of the line with 0 &lt; |r<sub>i</sub>| &lt; 1 (ratios may be unequal or negative, translations any real numbers, repeated maps allowed) and every strictly positive probability vector, the self-similar measure has dimension min{1, h<sub>RW</sub>/χ}, where χ = −∑ p<sub>i</sub> log|r<sub>i</sub>| is the average logarithmic contraction. No separation or arithmetic assumption is needed, and exact overlaps are allowed. The paper says: “This proves the entropy-rate dimension conjecture, formulated as Conjecture 3 in Varjú’s survey.” Without exact overlaps the rate equals the entropy of the weights, so dimension falls below the usual formula only through exact coincidences (Corollary 6.2), and the attractor itself has dimension min{1, s*}, with s* the similarity dimension (Corollary 6.3).</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The theorem “asserts dimension, without an assertion of absolute continuity,” and the paper stresses that these are different questions. It covers only finitely many similarities of the line, claims no effective separation, effective bounds or rates, and gives no closed form for the entropy rate. Beyond saying it resolves the conjecture, it does not call the problem famous or long-standing.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 22 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The main theorem and two corollaries. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/148.md">Lean formalization</a>, added to the repository in its initial commit on October 6, 2026: <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SelfSimilar.lean">a comparator statement</a> for the main theorem, and a second one for the homogeneous and attractor corollaries, with the entropy rate, the contraction and the dimension of a measure all written out, and <a href="https://github.com/openai/math/blob/main/lean/OAI/MeasureTheory/SelfSimilar">64 files and 12,093 lines</a> of proof, with no unproved steps that we could find. The Lean files also prove exact dimensionality, the only outside dimension theorem the paper’s proof uses, and two further corollaries that no comparator checks. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The easy half.</strong> Treating each distinct n-step map as a single letter and covering the measure by the likely pieces shows the dimension is at most min{1, H(G<sub>n</sub>)/(nχ)} for every n. The rest is by contradiction: suppose the dimension d is below 1 and dχ is below h<sub>RW</sub>.</li>
+  <li><strong>A uniform margin.</strong> If d &lt; 1, every doubling of resolution gains less than one bit by a fixed margin δ at every scale (uniform nonsaturation); otherwise self-similarity would copy a nearly saturated scale everywhere. Adding a fair two-point jump of the right size then gains, over a window of scales, at least nearly that margin.</li>
+  <li><strong>Hidden information.</strong> A new pair bound: if a finite distribution with few distinct sums has much more exact entropy than it shows on a coarse grid, it has mass in fair pairs of nearby points at finer scales, with a constant (60000k<sup>4</sup>) independent of how close the points are. Recording only each block’s type (how many times each map appears) fixes the block’s signed shrink factor, so the shifts keep almost all of the entropy rate and have few distinct sums, even when different words give the same map. Comparing with what the measure shows gives fair-pair mass growing linearly, in a finite but possibly enormous band of scales.</li>
+  <li><strong>Disjoint windows.</strong> Each fair pair, followed by a random future that averages back to a copy of the measure, gains at least half the margin in a window of scales. Choosing block lengths one after another separates their bands; at each observation scale the stretches of blocks using different bands are disjoint, so their total gain is bounded, while on average over scales each band contributes a fixed positive amount. The number of bands was arbitrary: a contradiction.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>The maps x/3, x/3 + 1/3, x/3 + 1 with equal weights, in exact integer arithmetic: 3, 8, 21, 55, 144, … distinct composite maps after 1, 2, 3, 4, 5, … steps, against 3<sup>n</sup> recipes. The increments of H(G<sub>n</sub>) settle at 1.326676 bits from n = 10 to 13; with χ = log<sub>2</sub> 3 = 1.584963 the formula gives dimension 0.837.</li>
+  <li>The golden-ratio Bernoulli convolution (λx ± 1 with λ = 0.618…, equal weights): the increments settle at 0.6912658 bits against χ = 0.6942419, giving dimension 0.9957.</li>
+  <li>For the first example, the averaged grid entropy gains between 0.82 and 0.85 bits per doubling of resolution from scale 1/2 down to 2<sup>−11</sup>.</li>
+  <li>The paper itself contains no numerics; these are our illustrations, and by the paper’s own account the first example is covered by Rapaport and Varjú’s earlier theorem.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-entropy-rate-dimension-formula-for-self-similar-measures-on-the-line-September-24-2026/main.pdf">The entropy-rate dimension formula for self-similar measures on the line (PDF)</a>, 22 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/148.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 148.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-entropy-rate-dimension-formula-for-self-similar-measures-on-the-line-September-24-2026/main.pdf">The entropy-rate dimension formula for self-similar measures on the line</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Random shrinking maps</h3>
+<p>Take a few maps of the line that each shrink, possibly flip, and shift: for example, x/3, x/3 + 1/3, and x/3 + 1. Pick one at random with fixed probabilities, apply it, and keep going. After many steps, the point’s position follows a fractal distribution called a self-similar measure. How big is it? Its dimension can never exceed one, nor the information in each random choice divided by how much each step shrinks. Here three equally likely maps each shrink by three, so that ratio is exactly one. But different recipes can build exactly the same map. Here, applying x/3 + 1 and then x/3, versus x/3 and then x/3 + 1/3, both give x/9 + 1/3. When that happens, the choices carry more information than the point they produce. So the paper counts maps, not recipes: the random-walk entropy rate measures the information in the distinct composite maps, each a shrink factor with its sign, and a shift. After four steps there are 81 recipes but only 55 distinct maps. In our exact counts, the rate settles near 1.33 bits per step, against 1.58 for the choices, so the formula gives dimension 0.837, not one. For the golden-ratio Bernoulli convolution, the same count gives 0.9957. As the paper recounts, Moran and Hutchinson gave the classical dimension formula for self-similar sets whose pieces are well separated. Hochman showed that a drop in dimension forces the composite maps to bunch together superexponentially, which gives the formula under exponential separation. Rapaport handled algebraic contraction ratios; Feng and Feng, and Varjú, building on Breuillard and Varjú, handled special families; and Rapaport and Varjú proved the entropy-rate formula for rational shifts with one positive ratio, which covers our example. And Baker, and Bárány and Käenmäki, built systems with no exact overlaps whose pieces come together superexponentially fast, so separation cannot simply be assumed.</p>
+<h3><span class="t num">2:12</span>The claim</h3>
+<p>Result 148 is one OpenAI preprint, 22 pages, dated September 24. It claims that for every finite family of such maps on the line, with contraction ratios that may be unequal or negative, any real shifts, and any positive weights, the dimension of the self-similar measure is the minimum of one and the random-walk entropy rate divided by chi, the average logarithmic contraction. No separation or arithmetic assumption is needed, and exact overlaps are allowed. The paper says this proves the entropy-rate dimension conjecture, formulated as Conjecture 3 in Varjú’s survey. Without exact overlaps, the rate is just the entropy of the weights, so dimension falls below the usual formula only through exact coincidences; a corollary gives the same for the fractal set itself. It asserts dimension, not absolute continuity; the paper stresses that these are different questions. It covers only finitely many similarities of the line, claims no effective bounds or rates, and gives no closed form for the entropy rate. Beyond resolving that conjecture, it does not call the problem famous or long-standing. The main theorem and two corollaries are formalized in Lean, with the definitions written out, and the Lean files even prove exact dimensionality, the only outside dimension theorem the proof uses.</p>
+<h3><span class="t num">3:38</span>How the proof goes</h3>
+<p>One half is easy. Treat each distinct n-step map as a single letter: covering the measure by the likely pieces shows the dimension is at most the map entropy per step divided by the contraction. The real content is the reverse, by contradiction: suppose the dimension is below one and below the formula. First, uniform nonsaturation: if the dimension is below one, then each doubling of resolution gains less than one bit, by a fixed margin at every scale, since self-similarity would otherwise copy a nearly saturated scale everywhere. In our example, every doubling finer than one half gains between 0.82 and 0.85 bits. And adding a fair coin flip of the right size gains, over a window of scales, at least nearly that margin. Next, hidden information. If a finite distribution with few distinct sums has much more exact entropy than it shows on a coarse grid, a new pair bound forces fair-pair mass at finer scales, with a constant independent of how close the points are. To use it, the paper chops the random choices into blocks and records only each block’s type: how many times each map appears. The type fixes the block’s signed shrink factor, so the shifts keep almost all of the entropy rate and have few distinct sums, even when different words give the same map. Comparing with what the measure shows at the matching scale leaves a gap that grows linearly, so fair-pair mass grows linearly too, in a finite but possibly enormous band of scales. Finally, each fair pair, followed by a random future that averages back to a copy of the measure, gains at least half the margin in a window of scales. The paper picks block lengths one after another so that their bands separate. At any observation scale, the stretches of blocks that use these bands are disjoint, so their total gain is at most a fixed amount. But averaged over observation scales, every band contributes a fixed positive amount, and the number of bands was arbitrary: a contradiction. So the dimension is the minimum of one and the entropy rate over chi.</p>
+<h3><span class="t num">5:46</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. Its main theorem and two corollaries are formalized in Lean, in 64 files and about 12,000 lines, with no unproved steps that we found; we have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, then on the line, the dimension of every self-similar measure is set by the information in the distinct maps: dimension can be lost only to exact coincidences.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20148%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One signal, every pattern? A smooth three-torus map with simple Lebesgue spectrum | AI Proved What?</title>
+<meta name="description" content="An AI system claims a smooth volume-preserving map of the three-torus whose iterates of one observable form an orthonormal basis of all mean-zero functions, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/144-simple-lebesgue-spectrum/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="One signal, every pattern?">
+<meta property="og:description" content="An AI system claims a smooth volume-preserving map of the three-torus whose iterates of one observable form an orthonormal basis of all mean-zero functions, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/144-simple-lebesgue-spectrum/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/144-simple-lebesgue-spectrum/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 144, October 2026</p>
+<h1>One signal, every pattern?</h1>
+<p class="subtitle">A claimed smooth volume-preserving map of the three-torus whose iterates of one observable form an orthonormal basis of all mean-zero functions</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 144 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="RjLXNr-7QK4" data-title="Episode 144: One signal, every pattern?">
+  <a href="https://youtu.be/RjLXNr-7QK4">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 144: One signal, every pattern? A wave packet and its shifted copies stacked in a column, labelled f composed with T to the n.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:19. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/RjLXNr-7QK4?t=0" data-t="0"><span class="t">0:00</span><span>One signal, every pattern</span></a></li>
+  <li><a href="https://youtu.be/RjLXNr-7QK4?t=111" data-t="111"><span class="t">1:51</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/RjLXNr-7QK4?t=202" data-t="202"><span class="t">3:22</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/RjLXNr-7QK4?t=335" data-t="335"><span class="t">5:35</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take a map T that moves the points of a space while preserving volume, and an observable f. The functions …, f∘T<sup>−1</sup>, f, f∘T, f∘T<sup>2</sup>, … form a sequence. If they are orthonormal and together build every square-integrable function of mean zero, then the dynamics, seen through functions, is exactly a shift: one signal, moved back and forth in time, builds every pattern. That is simple Lebesgue spectrum: Lebesgue, because that one signal’s spectrum is perfectly flat, and simple, because a single orbit suffices.</p>
+<p>Familiar maps fall short in opposite ways. An irrational rotation of the circle only multiplies the wave e(x) by a phase, so its correlations never decay. The cat map on the two-torus moves Fourier modes along infinite orbits, each of them an orthonormal sequence, so its spectrum is Lebesgue, but there are infinitely many independent orbits. As the paper recounts the history, Banach’s question, recorded by Ulam, was set on the real line, and the paper says its probability-space version is distinct from it; Rokhlin asked in 1949 for ergodic maps with simple, or at least finite-multiplicity, Lebesgue spectrum; Mathew and Nadkarni found a Lebesgue component of multiplicity two; Fayad built smooth torus maps with simple spectrum, with no claim of Lebesgue type; and a nonzero time map of a flow with simple Lebesgue spectrum has infinite multiplicity. The paper does not call the problem open; as far as we know, no such map of a probability space had been found before, even without smoothness.</p>
+<p>Result 144 is <a href="https://github.com/openai/math/blob/main/preprints/A-smooth-three-torus-diffeomorphism-with-simple-Lebesgue-spectrum-September-23-2026/paper.pdf">one OpenAI preprint</a> (30 pages, September 23, 2026). Theorem 1.1 claims a C<sup>∞</sup> volume-preserving diffeomorphism T of the three-torus, with smooth inverse, and a real square-integrable f of mean zero such that {f∘T<sup>n</sup> : n ∈ ℤ} is an orthonormal basis of the mean-zero space. So T is ergodic, and on that space its Koopman operator is unitarily equivalent to multiplication by w on L<sup>2</sup> of the circle. The paper calls this a solution of “the probability-preserving form of Banach’s simple Lebesgue-spectrum problem in smooth dynamics.” It also derives mixing, zero entropy, and all three Lyapunov exponents equal to zero almost everywhere; mixing of all orders uses release result 145, another unreviewed paper.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>A formula. T is a smooth limit of infinitely many explicit steps, each with a sufficiently large parameter, and f is only square-integrable, not claimed smooth or even continuous. The map is on the three-torus and smooth, with no claim that it is analytic. Lebesgue spectrum here does not mean chaos: with zero entropy and zero Lyapunov exponents, nothing is stretched at an exponential rate, unlike the cat map. The paper does not address the historical real-line question.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 30 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The main theorem, with a statement matching the paper. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/144.md">Lean formalization</a> of Theorem 1.1, added to the repository in its initial commit on October 6, 2026 (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/ThreeTorus.lean">comparator statement</a>, which matches the theorem; <a href="https://github.com/openai/math/blob/main/lean/OAI/Dynamics/ThreeTorus">37 files and 33,818 lines</a>, with no unproved steps that we could find). We have not run the check. The corollary on mixing, entropy and Lyapunov exponents is not formalized. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Twists and flat vectors.</strong> In a twist (θ, u, a) ↦ (θ + φ(u), u, a), each circle rotates at its own speed, and a wave in θ times a bump in u picks up a phase at each step. With the bump’s square proportional to the slope of φ, over a stretch where the wave’s speed rises by exactly one turn, the spectral density is exactly one: an orthonormal orbit. But a twist leaves every function of u unchanged, so one orbit cannot reach most of the space.</li>
+  <li><strong>Passages.</strong> A passage is a map very close to the twist that, in new coordinates (θ′, u′, a′) = (u, a, θ − H<sub>N</sub>(u)), is again a twist, much slower, with the three coordinates trading roles. By stationary phase, each old wave spreads over a band of new frequencies near N times its speed, with the same spectral density, now resolved on a finer scale. In our reading, the spare coordinate becoming the new speed variable is why three dimensions are needed.</li>
+  <li><strong>Ripples that carry labels.</strong> A spare coordinate jitters the new speed. Choosing its law, a positive density with compact Fourier support combined with a prime sieve, writes a tiny ripple into each piece’s spectral density, encoding a label.</li>
+  <li><strong>Blocks.</strong> One ripple is far too weak to read, so ripples are stacked at huge, well-separated frequencies, and enormous numbers of blocks are averaged. Each block is centered on the average label, so the total density barely moves while a combination of iterates learns to predict the target.</li>
+  <li><strong>Whitening and the limit.</strong> Dividing by the square root of the density restores density exactly one at a small cost. A diagonal limit treats every sine and cosine on the torus again and again; the maps converge in every derivative, orthonormality survives, and the orbit becomes complete.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>The cat map’s Fourier modes with coordinates up to 80 in size (25,920 modes) lie on 12,960 different orbits.</li>
+  <li>A flat vector for the twist with φ(u) = sin(2πu)/π: correlations 1, 0, 0, 0, … to eight decimals.</li>
+  <li>The passage map with V = 3 + φ is within 0.193, 0.0191 and 0.0019 of the twist at N = 10, 100 and 1000, and is exactly a slower twist in the new coordinates.</li>
+  <li>At N = 200, one old wave’s energy lands on about a hundred new frequencies near 600, matching the stationary-phase prediction (ratio 0.9986 at the center).</li>
+  <li>One block of 25 ripples predicts a ±1 label with mean-square error about 100; for a modest target (ε = 0.1, τ = 0.01), the paper’s bounds call for about 4 × 10<sup>10</sup> blocks, by our arithmetic.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-smooth-three-torus-diffeomorphism-with-simple-Lebesgue-spectrum-September-23-2026/paper.pdf">A smooth three-torus diffeomorphism with simple Lebesgue spectrum (PDF)</a>, 30 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/144.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 144.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-smooth-three-torus-diffeomorphism-with-simple-Lebesgue-spectrum-September-23-2026/paper.pdf">A smooth three-torus diffeomorphism with simple Lebesgue spectrum</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>One signal, every pattern</h3>
+<p>Take a map that moves the points of a space while preserving volume, and a function on that space, an observable. Composing with the map again and again, forward and backward in time, gives a sequence of observables. Could they form a perfect coordinate system: unit vectors, each orthogonal to all the others, that together build every square-integrable function of mean zero? Then the dynamics, seen through functions, is exactly a shift: one signal, moved back and forth in time, builds every pattern. This is simple Lebesgue spectrum: Lebesgue, because that one signal’s spectrum is perfectly flat; simple, because a single orbit suffices. Two familiar maps fail in opposite ways. An irrational rotation of the circle only multiplies the wave e(x) by a phase, so its correlations never decay: the spectrum is discrete. The cat map on the two-torus pushes Fourier modes along infinite orbits, and each orbit is a perfectly orthonormal sequence, so its spectrum is Lebesgue. But there are infinitely many independent orbits; the modes up to 80 already lie on 12,960 different orbits. One orbit is never enough. The question has a long history. Banach’s version, recorded by Ulam, was set on the real line, and the paper says its own version, on a probability space, is distinct from it. Rokhlin asked in 1949 for ergodic maps with simple, or at least finite-multiplicity, Lebesgue spectrum. As the paper recounts, Mathew and Nadkarni found a Lebesgue component of multiplicity two, Fayad built smooth torus maps with simple spectrum, with no claim of Lebesgue type, and flows with simple Lebesgue spectrum do not help, because each nonzero time map of such a flow has infinite multiplicity.</p>
+<h3><span class="t num">1:51</span>The claim</h3>
+<p>Result 144 is one OpenAI preprint, 30 pages, dated September 23. It claims a smooth, volume-preserving diffeomorphism of the three-dimensional torus, with smooth inverse, and one real square-integrable function f, such that the iterates of f, over all integer times, form an orthonormal basis of the whole space of mean-zero functions. So on that space the map acts exactly like the shift, and it is ergodic. The paper calls this a solution of the probability-preserving form of Banach’s problem in smooth dynamics. It also derives mixing, zero entropy, and all three Lyapunov exponents equal to zero almost everywhere; mixing of all orders uses result 145, another unreviewed paper in the release. There is no formula for the map: it is a smooth limit of infinitely many explicit steps, each with a sufficiently large parameter, and the function f is only square-integrable, not claimed smooth or even continuous. The result is for the three-torus, and the map is smooth, with no claim that it is analytic. And Lebesgue spectrum here does not mean chaos: with zero entropy and zero exponents, nothing is stretched at an exponential rate, unlike the cat map. The paper does not call the problem open; as far as we know, no such map of a probability space had been found before, even without smoothness. The theorem is formalized in Lean.</p>
+<h3><span class="t num">3:22</span>How the proof goes</h3>
+<p>The construction starts from a twist: each circle rotates at its own speed, θ goes to θ + φ(u). A wave in θ, times a bump in u, picks up a phase at each step, so its correlations are averages of phases. Make the bump’s square proportional to the slope of φ, over a stretch where the wave’s speed climbs by exactly one turn, and the spectral density is exactly one: an orthonormal orbit. In our run, the correlations come out 1, 0, 0, 0, to eight decimals. But a twist leaves every function of u unchanged, so one orbit can never reach most of the space. The fix is a passage: a map very close to the twist, within about 2/N in our run, which in new coordinates is again a twist, now much slower, with the three coordinates trading roles. In our reading, that is why three dimensions are needed: the spare coordinate becomes the variable that sets the new speed. By stationary phase, each old wave spreads over a band of new frequencies, about a hundred in our run, near N times the old wave’s speed, with the same spectral density, now resolved on a finer scale. A spare coordinate jitters the new speed, and by choosing its law, a positive density with compact Fourier support combined with a prime sieve, the paper writes a tiny ripple into each piece’s density, a ripple that encodes a label. One ripple is far too weak to read: in our toy, even a block of 25 ripples predicts a label of ±1 with a mean-square error of about 100. So the paper stacks ripples at huge, well-separated frequencies, averages enormous numbers of blocks, tens of billions by our arithmetic for one modest target, and gets a combination of iterates that predicts the target while the total density barely moves, because each block is centered on the average label. Whitening then divides by the square root of the density, restoring density exactly one at a small cost. A diagonal limit treats every sine and cosine on the torus, again and again; the maps converge in every derivative, orthonormality survives, and the orbit becomes complete.</p>
+<h3><span class="t num">5:35</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. The theorem is formalized in Lean, with a statement matching the paper, in 37 files and about 34,000 lines, with no unproved steps that we found; we have not run the check. The corollary about mixing, entropy and exponents is not formalized. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, a smooth volume-preserving map of the three-torus behaves, on every mean-zero function, exactly like a shift: one signal, moved through time, builds every pattern, with no chaos in the usual sense.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20144%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

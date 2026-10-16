@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chaos with positive area? Positive metric entropy for the standard map | AI Proved What?</title>
+<meta name="description" content="An AI system claims that the standard map has positive metric entropy for area at every sufficiently large parameter, answering Sinai’s conjecture, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/146-standard-map-entropy/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Chaos with positive area?">
+<meta property="og:description" content="An AI system claims that the standard map has positive metric entropy for area at every sufficiently large parameter, answering Sinai’s conjecture, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/146-standard-map-entropy/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/146-standard-map-entropy/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 146, October 2026</p>
+<h1>Chaos with positive area?</h1>
+<p class="subtitle">A claim that the standard map has positive metric entropy for area at every sufficiently large kick, answering Sinai’s conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 146 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="Xjl7Y4sbS6s" data-title="Episode 146: Chaos with positive area?">
+  <a href="https://youtu.be/Xjl7Y4sbS6s">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 146: Chaos with positive area? A phase portrait of the standard map: islands of regular motion in a chaotic sea.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:16. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/Xjl7Y4sbS6s?t=0" data-t="0"><span class="t">0:00</span><span>A kicked rotor</span></a></li>
+  <li><a href="https://youtu.be/Xjl7Y4sbS6s?t=121" data-t="121"><span class="t">2:01</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/Xjl7Y4sbS6s?t=201" data-t="201"><span class="t">3:21</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/Xjl7Y4sbS6s?t=337" data-t="337"><span class="t">5:37</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The standard map models a rotor kicked once per period: the momentum y gets a kick k sin(2πx), then the angle x advances by the new momentum, both mod 1, so the motion lives on a torus and preserves area. For small kicks smooth invariant curves wrap the torus; as the kicks grow, a chaotic sea spreads. Chaos means nearby points separate exponentially fast: a positive Lyapunov exponent. In our run at k = 5 the typical exponent is 2.756, close to the classical estimate log(πk) = 2.754.</p>
+<p>By Pesin’s formula, positive metric entropy for area means exponential separation on a set of positive area, not just somewhere. As the paper puts it, a hyperbolic set may have zero area, and even full Hausdorff dimension does not imply positive area. As it recounts, Duarte exhibited elliptic islands and tangencies; Gorodetski found transitive sets of full dimension for a residual set of large parameters, but residual sets of parameters need not have positive measure; Oliveira proved positive topological entropy and Obata uniqueness of the measure of maximal entropy, neither of which gives entropy for area; perturbed, random or coupled versions change the system. Islands keep coming back: elliptic fixed points appear for kicks just above every positive whole number, and in our run near k = 5 each island covers about 1/6,000 of the torus. Sinai’s conjecture, in the formulation of Berger and Turaev, asks for positive metric entropy on a set of parameters of positive measure.</p>
+<p>Result 146 is <a href="https://github.com/openai/math/blob/main/preprints/Positive-Metric-Entropy-for-the-Standard-Map-at-Large-Parameters-September-23-2026/paper.pdf">one OpenAI preprint</a> (45 pages, September 23, 2026). Theorem 1.1 claims a threshold k<sub>0</sub> such that for every k ≥ k<sub>0</sub> the standard map has positive metric entropy with respect to area; equivalently, the largest Lyapunov exponent is positive on a set of positive area. So the good parameters contain a whole tail, and in particular an interval of positive length; the paper “resolves affirmatively Sinai’s positive metric entropy conjecture in the formulation of Berger and Turaev.” Corollary 1.2 gives a positive-area ergodic hyperbolic piece that splits into finitely many cyclic parts, each Bernoulli under the corresponding iterate.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The threshold k<sub>0</sub> is never computed; the proof is by contradiction. The paper “makes no claim of ergodicity, almost-everywhere positive exponents, or a uniform positive lower bound on entropy,” and says nothing about small or intermediate kicks. It does not call the problem open or famous.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 45 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The theorem and its corollary, in three statements. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/146.md">Lean formalization</a> of the theorem and its corollary, added to the repository in its initial commit on October 6, 2026: three <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/StandardMapEntropy.lean">comparator statements</a> (positive entropy, positive Lyapunov exponents, and the Bernoulli component), with metric entropy defined from scratch, and <a href="https://github.com/openai/math/blob/main/lean/OAI/Dynamics/StandardMap">274 files and 54,864 lines</a> of proof, with no unproved steps that we could find. The files also prove Pesin’s formula for this map, though none of the three checked statements relies on it. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The stretching game.</strong> A tiny displacement is multiplied at each step by a 2×2 matrix whose main entry is 2 + K cos(2πx), with K = 2πk. That entry is usually huge, so displacements usually grow by about K/2 per step on average, but near the two lines where the cosine vanishes the growing direction can be turned into the shrinking one and growth can cancel. The paper tracks the average shortfall from maximal stretching over n steps, a number between 0 and 1.</li>
+  <li><strong>A contradiction across scales.</strong> If exponents vanished almost everywhere along parameters going to infinity, the shortfall would climb to 1 at long lengths while tending to 0 at every fixed length, and a doubling bound forces the climb through a critical range of scales.</li>
+  <li><strong>Two engines.</strong> Cancellations are exponentially rare: stretching almost maximally for n steps backward and forward yet almost entirely cancelling over the whole stretch has probability decaying exponentially in n, through a local estimate in which a cubic polynomial cannot match two shifted reciprocal-cosine terms. And across a stretch that grows fast, events near its two ends are bounded as if independent, up to a constant factor, with no mixing assumed.</li>
+  <li><strong>Three shapes and a balance.</strong> Rescaled limits of the growth geometry are tree-like because the matrices have determinant one; the engines leave three shapes (all slow; slow with one ray of maximal growth; a slow middle between two such rays). A capped bookkeeping of shortfalls telescopes to a positive total, while splitting the limit makes it strictly smaller: a contradiction. Pesin’s formula then turns positive exponents on positive area into positive entropy.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Finite-time top Lyapunov exponents from 600 random points: 2.756 at k = 5, 3.447 at k = 10 and 5.750 at k = 100, against log(πk) = 2.754, 3.447 and 5.750.</li>
+  <li>The mean shortfall from maximal stretching for lengths 1 to 256: 0.218 to 0.227 at k = 5, and about 0.109 at k = 100.</li>
+  <li>Elliptic fixed points for k between m and √(m<sup>2</sup> + 4/π<sup>2</sup>); at k = 5.010 one island has area 1.66 × 10<sup>−4</sup>, about 1/6,000 of the torus (islands come in mirror pairs).</li>
+  <li>Phase portraits at k = 0.05, 0.3, 1.05 and 5.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Positive-Metric-Entropy-for-the-Standard-Map-at-Large-Parameters-September-23-2026/paper.pdf">Positive Metric Entropy for the Standard Map at Large Parameters (PDF)</a>, 45 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/146.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 146.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Positive-Metric-Entropy-for-the-Standard-Map-at-Large-Parameters-September-23-2026/paper.pdf">Positive Metric Entropy for the Standard Map at Large Parameters</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>A kicked rotor</h3>
+<p>The standard map models a rotor that is kicked once per period. Each step, the momentum y gets a kick, k sin(2πx), and then the angle x advances by the new momentum, both wrapped around, so the motion lives on a torus. The map preserves area. For small kicks, smooth invariant curves wrap around the torus; as the kicks grow, a chaotic sea spreads. Chaos here means that nearby points separate exponentially fast: a positive Lyapunov exponent. In our run at k = 5, the typical exponent is about 2.76, matching the classical estimate, log(πk). The hard part is what counts as chaos. By Pesin’s formula, positive entropy for area means exponential separation on a set of positive area, not just somewhere. As the paper puts it, a hyperbolic set may have zero area, and even full Hausdorff dimension does not imply positive area. Duarte exhibited elliptic islands and tangencies; Gorodetski found transitive sets of full dimension for a residual set of large parameters, but residual sets of parameters need not have positive measure. And islands keep coming back: elliptic fixed points appear just above every positive whole number k, and in our run near k = 5, each island covers about 1/6,000 of the torus. Sinai’s conjecture, in the formulation of Berger and Turaev, asks for positive metric entropy on a set of parameters of positive measure. As the paper recounts, related results answer different questions: Oliveira proved positive topological entropy, which does not give entropy for area; Obata proved uniqueness of the measure of maximal entropy, without identifying it with area; and perturbed, random or coupled versions change the system itself. The question here is the exact sine map, with plain area, at each large kick.</p>
+<h3><span class="t num">2:01</span>The claim</h3>
+<p>Result 146 is one OpenAI preprint, 45 pages, dated September 23. It claims a threshold, k₀, such that for every k at least k₀, the standard map has positive metric entropy with respect to area. Equivalently, by Pesin’s entropy formula, the largest Lyapunov exponent is positive on a set of positive area. So the good parameters contain a whole tail, and in particular an interval of positive length; the paper says this resolves Sinai’s conjecture in Berger and Turaev’s formulation. A corollary gives a positive-area ergodic hyperbolic piece that splits into finitely many cyclic parts, each a Bernoulli system under the corresponding iterate. The threshold k₀ is never computed; the proof is by contradiction. The paper makes no claim of ergodicity, of positive exponents almost everywhere, or of a uniform lower bound on entropy, and says nothing about small or intermediate kicks. It does not call the problem open or famous. All three statements are formalized in Lean, with metric entropy defined from scratch, and the Lean files even prove Pesin’s formula for this map, though none of the three checked statements relies on it.</p>
+<h3><span class="t num">3:21</span>How the proof goes</h3>
+<p>Follow a tiny displacement along an orbit. Each step multiplies it by a 2×2 matrix whose main entry is 2 + K cos(2πx), where K = 2πk. That entry is usually huge, so displacements usually grow by a large factor each step, about K/2 on average. But near the two lines where the cosine vanishes, the growing direction can be turned into the shrinking one, and growth built up so far can cancel. The paper measures the average shortfall from maximal stretching over n steps, a number between 0 and 1. In our run it is flat across lengths from 1 to 256: about 0.22 at k = 5, and 0.11 at k = 100. Now suppose that, along parameters going to infinity, the exponents vanish almost everywhere. Then the shortfall must climb to one at long lengths, while at any fixed length it tends to zero as k grows, and a doubling bound forces the climb through a critical range of scales. Two engines control that range. First, cancellations are exponentially rare: stretching almost maximally for n steps backward and n steps forward, yet almost entirely cancelling over the whole stretch, has probability that decays exponentially in n. Its core is a local estimate in which a cubic polynomial cannot match two shifted reciprocal-cosine terms. Second, across a stretch that grows fast, events near its two ends are bounded as if independent, up to a constant factor, with no mixing assumed. Then the paper zooms out. Rescaling time and growth by the length, it takes limits of the random growth geometry across the critical scales. Determinant one makes these limits tree-like, and the two engines rule out shapes until only three remain: all slow; slow with one ray of maximal growth; or a slow middle between two such rays. A capped bookkeeping of shortfalls then telescopes to a positive total, while splitting the limit shows the total must be strictly smaller: a contradiction. So for every large k the exponent is positive on positive area, and Pesin’s formula turns that into positive entropy.</p>
+<h3><span class="t num">5:37</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. It is formalized in Lean, with three comparator statements matching the theorem and its corollary, in 274 files and about 55,000 lines, with no unproved steps that we found; we have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, the standard map, the textbook model of Hamiltonian chaos, has chaos visible to area at every large kick, even though islands of regular motion keep reappearing.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20146%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

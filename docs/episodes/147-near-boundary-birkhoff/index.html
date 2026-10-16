@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Only the ellipse? The near-boundary Birkhoff conjecture for convex billiards | AI Proved What?</title>
+<meta name="description" content="An AI system claims that a smooth convex billiard table whose shallowest shots all ride on a continuous family of invariant curves must be an ellipse, the near-boundary Birkhoff conjecture. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/147-near-boundary-birkhoff/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Only the ellipse?">
+<meta property="og:description" content="An AI system claims that a smooth convex billiard table whose shallowest shots all ride on a continuous family of invariant curves must be an ellipse, the near-boundary Birkhoff conjecture. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/147-near-boundary-birkhoff/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/147-near-boundary-birkhoff/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 147, October 2026</p>
+<h1>Only the ellipse?</h1>
+<p class="subtitle">A claim that a smooth convex billiard table whose shallowest shots all ride on a continuous family of invariant curves must be an ellipse, the near-boundary Birkhoff conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 147 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="nDaWmfmlHMQ" data-title="Episode 147: Only the ellipse?">
+  <a href="https://youtu.be/nDaWmfmlHMQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 147: Only the ellipse? An elliptical billiard table with nested confocal caustics, the path of a ball and a five-bounce periodic orbit.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:32. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/nDaWmfmlHMQ?t=0" data-t="0"><span class="t">0:00</span><span>Billiards in an ellipse</span></a></li>
+  <li><a href="https://youtu.be/nDaWmfmlHMQ?t=133" data-t="133"><span class="t">2:13</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/nDaWmfmlHMQ?t=211" data-t="211"><span class="t">3:31</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/nDaWmfmlHMQ?t=356" data-t="356"><span class="t">5:56</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A ball bounces inside a smooth, strictly convex table whose wall curves at every point. In an elliptical table, a ball launched at a shallow angle keeps touching a smaller ellipse with the same two foci: every segment it travels is tangent to that inner curve, its caustic. Shallower launches give caustics closer to the wall, so nested caustics fill a whole band next to the wall. In the picture that records each bounce by where the ball hits and the angle at which it leaves, every caustic becomes a closed curve the motion never leaves, and for the ellipse these curves completely fill the strip of shallow angles. Give the ellipse a 1% three-bump wobble and the picture near the wall still looks the same, while islands and a chaotic sea appear farther in.</p>
+<p>The Birkhoff conjecture asks whether an integrable convex billiard must be an ellipse; as the long paper puts it, it is traditionally attributed to Birkhoff, with an early printed formulation by Poritsky in 1950. As the papers recount, Lazutkin showed that every sufficiently smooth table of positive curvature has a Cantor family of caustics near the wall, which can leave gaps rather than a full band, and Mather excluded grazing caustics where the curvature vanishes. Earlier rigidity results needed extra or different assumptions: Bialy assumed the whole phase space is filled with invariant curves and concluded a circle; Avila, De Simoi and Kaloshin, Kaloshin and Sorrentino, and Koval worked near ellipses; Bialy and Mironov assumed central symmetry and curves reaching the four-bounce orbits.</p>
+<p>Result 147 is two companion OpenAI preprints, both dated September 24, 2026. In <a href="https://github.com/openai/math/blob/main/preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/paper.pdf">the long one</a> (146 pages), Theorem 1.2 says that a bounded strictly convex table whose boundary is infinitely smooth with positive curvature, and which has a continuous collar of smooth closed convex caustics next to the wall (Definition 1.1; no differentiability across the caustics is assumed), is an ellipse, circles included. The paper says this “resolves the near-boundary Birkhoff conjecture positively in the smooth positively curved class.” <a href="https://github.com/openai/math/blob/main/preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/paper.pdf">The short one</a> (27 pages) starts from rougher input: in Theorem 1.1, a strip of all outgoing angles below some η &gt; 0, however thin, is filled by merely continuous invariant curves in phase space, each mapped to itself. From those curves it builds a jointly analytic collar of real caustics (Theorem 1.3), then applies the long paper’s theorem: again, an ellipse.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>“Full” is the point: “A Cantor family of invariant curves, even one accumulating at the boundary, does not satisfy this assumption,” and the hypothesis “makes no assertion about the billiard dynamics farther inside the domain.” The wall must be infinitely smooth with positive curvature, so finite smoothness and flat spots are outside the scope, as are other formulations of the conjecture. The short paper’s conclusion rests on the long paper’s theorem. Neither paper calls the problem famous or open, or says how wide a non-ellipse’s gaps must be.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two companion papers of 146 and 27 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>No</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. Neither preprint has been revised since it was added to the repository in its initial commit on October 6, 2026. Neither is formalized in Lean: there is no Lean entry for this result, and we found no Lean files for it in the repository. The weight rests on the 146-page argument, most of it a new combination of complex analysis and probability, and neither paper contains numerics or computer checks. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Taming the curves.</strong> Billiards twist: a shallower shot advances less far along the wall. Using the twist and Poincaré recurrence, the short paper shows each invariant curve is a graph, with one shot in each direction, and each small rotation 1/q lies on exactly one curve, made entirely of periodic orbits.</li>
+  <li><strong>One equation per frequency.</strong> A chain of q segments that obeys the reflection law at every bounce in between and goes once around has a total action, a length-like quantity, that normally depends on where it starts; on a curve of periodic orbits it cannot. Exact constancy for every large q gives one equation per frequency, and an analytic Newton scheme shows the wall is real analytic.</li>
+  <li><strong>A collar of analytic caustics.</strong> Near the wall the motion becomes a pure rotation, analytic in both the position and the amount of rotation; this means dividing by quantities that vanish at rational rotations, and the periodic curves supply the compatibility in value and in first derivative. The envelopes of the invariant curves of lines then move strictly inward: nested, strictly convex, analytic caustics filling a collar, which is the long paper’s hypothesis. The short paper adapts this machinery from the long paper, which runs the same first stage from its own caustics.</li>
+  <li><strong>The long paper goes complex.</strong> It continues everything to complex positions, up to a first wall; finite chains of reflections are determined algebraically by data at their ends, so the continuation cannot be patched across even one point of that wall. If the complexified normal direction hits zero or infinity, it is an elliptic function, and the boundary has the support function of an ellipse. Otherwise growth estimates leave one critical case, excluded by moment bounds that limit the total turning, Brownian paths driving one odd periodic chain, and a sign test on one row.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>An ellipse with half-axes 1 and 0.6, traced exactly: over 2,000 segments of one orbit, every segment stays tangent to the same confocal caustic, up to rounding (about 5 × 10<sup>−14</sup>).</li>
+  <li>The caustic for rotation 1/5: 400 starting points all close after five bounces, and every pentagon has perimeter 4.814 (the ellipse’s perimeter is 5.105).</li>
+  <li>The wobbled table adds 0.01 cos 3θ to the ellipse’s support function; phase portraits for both tables.</li>
+  <li>The total action of q-segment chains over 64 starting points: constant to rounding for the ellipse; for the wobbled table it varies by about 0.004 at q = 7 and 7.8 × 10<sup>−13</sup> at q = 50.</li>
+  <li>The papers themselves contain no numerics; these are our illustrations.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/paper.pdf">Rigidity of Smooth Billiards with a Continuous Caustic Collar (PDF)</a>, 146 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/paper.pdf">Continuous Phase Foliations Create Analytic Caustic Collars (PDF)</a>, 27 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 147.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Continuous-Phase-Foliations-Create-Analytic-Caustic-Collars-September-24-2026/paper.pdf">Continuous Phase Foliations Create Analytic Caustic Collars</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Rigidity-of-Smooth-Billiards-with-a-Continuous-Caustic-Collar-September-24-2026/paper.pdf">Rigidity of Smooth Billiards with a Continuous Caustic Collar</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Billiards in an ellipse</h3>
+<p>Picture a billiard table shaped like an oval, with a smooth wall that curves at every point. In an elliptical table, something special happens. A ball launched at a shallow angle to the wall keeps touching a smaller ellipse inside, with the same two foci: every segment it travels is tangent to that inner curve, called a caustic. Launch at a shallower angle, and the caustic moves closer to the wall. So nested caustics fill a whole band next to the wall. In our run on an ellipse with half-axes 1 and 0.6, 2,000 segments of one orbit all stayed tangent to the same caustic, up to rounding error. Each bounce can be recorded by two numbers: where the ball hits the wall, and the angle at which it leaves. In this picture, each caustic becomes a closed curve that the motion never leaves, and for the ellipse these curves completely fill the strip of shallow angles. Some of these curves consist entirely of periodic orbits. On the caustic for rotation 1/5, every starting point closes up after five bounces, and in our run every such pentagon has the same perimeter, 4.814. Now give the ellipse a small wobble with three bumps, about one percent. Near the wall the picture still looks the same, though if the papers are right, it cannot be completely filled there. Farther in, chains of islands and a chaotic sea appear. The Birkhoff conjecture asks whether an integrable convex billiard must be an ellipse. As the long paper puts it, it is traditionally attributed to Birkhoff, with an early printed formulation by Poritsky in 1950. Near the wall, Lazutkin showed that every sufficiently smooth table with positive curvature has a Cantor family of caustics, which can leave gaps rather than a full band. Earlier rigidity results, as the papers describe them, need extra or different assumptions: Bialy assumed the whole phase space is filled with invariant curves, and concluded a circle; Avila, De Simoi and Kaloshin, Kaloshin and Sorrentino, and Koval worked near ellipses; Bialy and Mironov assumed central symmetry and curves reaching the four-bounce orbits. And Mather excluded grazing caustics when the curvature vanishes.</p>
+<h3><span class="t num">2:13</span>The claim</h3>
+<p>Result 147 is two companion OpenAI preprints, both dated September 24. The longer one, 146 pages, takes a smooth, strictly convex table with positive curvature, and a collar next to the wall filled by smooth convex caustics that vary only continuously from one to the next. It claims the table is an ellipse, circles included, and says this resolves the near-boundary Birkhoff conjecture in that class. The shorter one, 27 pages, starts from rougher input: a strip of all the shallow angles, however thin, filled by merely continuous invariant curves in phase space, each mapped to itself. From those curves it builds an analytic collar of real caustics, then applies the longer paper’s theorem: again, an ellipse. Full is the whole point. A family of caustics with gaps, even one piling up at the wall, does not qualify, and nothing is assumed about the motion farther inside. The wall must be infinitely smooth with positive curvature, so finite smoothness and flat spots are outside its scope, as are other versions of the conjecture. The short paper’s conclusion rests on the long one. Neither paper calls the problem famous or open, or says how wide a non-ellipse’s gaps must be.</p>
+<h3><span class="t num">3:31</span>How the proof goes</h3>
+<p>The short paper first tames the curves. Billiards twist: a shallower shot advances less far along the wall. Using this twist and Poincaré recurrence, each invariant curve turns out to be a graph, with one shot in each direction, and each small rotation 1/q lies on exactly one curve, made entirely of periodic orbits. Now take a chain of q segments that obeys the reflection law at every bounce in between and goes once around. Its total action, a length-like quantity, normally depends on where the chain starts; on a curve of periodic orbits, it cannot. For the ellipse it is constant up to rounding. For our wobbly table it is not: its variation falls from about 0.004 at q = 7 to under 10⁻¹² at q = 50. Exact constancy for every large q gives one equation per frequency, and a Newton scheme shows that the wall is real analytic. Next, near the wall, the short paper turns the motion into a pure rotation, analytic in both the position and the amount of rotation. That means dividing by quantities that vanish at rational rotations, and the periodic curves supply exactly the compatibility needed, in value and in first derivative. Each analytic invariant curve of lines then has an envelope inside the table, and these envelopes move strictly inward: nested, strictly convex, analytic caustics filling a collar. That is the long paper’s hypothesis. The short paper adapts this machinery from the long paper, which runs the same first stage from its caustics. Then the long paper makes the position along the wall complex, and continues everything as far as it will go, up to a first wall in the complex plane. Finite chains of reflections are determined algebraically by data at their ends, so the continuation cannot be patched across even one point of that wall. Next it follows the complexified normal direction. If that ever hits zero or infinity, it becomes an elliptic function, doubly periodic, and that forces the support function of an ellipse. If not, growth estimates exclude most behaviors at the edge of the strip, leaving one critical case. There, moment bounds limit the total turning, Brownian paths driving one odd periodic chain carry that control, and a sign test on one row gives the contradiction.</p>
+<h3><span class="t num">5:56</span>Where it stands</h3>
+<p>Neither preprint is peer reviewed or revised, and neither is formalized in Lean. Neither is among the papers OSVerify reviewed, and we have seen no expert review. The weight rests on the 146-page argument, most of it new complex analysis and probability, with no numerics or computer checks. If it holds, the ellipse is the only smooth table of positive curvature whose shallowest shots all ride on a continuous family of invariant curves, however thin the band next to the wall.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20147%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
