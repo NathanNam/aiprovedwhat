@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 192: Boolean functions violate the square-root degree bound by arbitrary factors | AI Proved What?</title>
-<meta name="description" content="Boolean functions violate the square-root degree bound by arbitrary factors. Result 192 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Beyond the square root? The Gopalan–Servedio degree bound | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that for every constant C some Boolean function has sum of linear Fourier coefficients above C·√(degree), disproving the Gopalan–Servedio square-root conjecture. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/192-boolean-functions-violate-square-root/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 192: Boolean functions violate the square-root degree bound by arbitrary factors | AI Proved What?">
-<meta property="og:description" content="Boolean functions violate the square-root degree bound by arbitrary factors. Result 192 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Beyond the square root?">
+<meta property="og:description" content="An AI preprint claims that for every constant C some Boolean function has sum of linear Fourier coefficients above C·√(degree), disproving the Gopalan–Servedio square-root conjecture. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/192-boolean-functions-violate-square-root/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/192-boolean-functions-violate-square-root/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,33 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 192 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Boolean functions violate the square-root degree bound by arbitrary factors</h1>
+<p class="meta">Episode 192, October 2026</p>
+<h1>Beyond the square root?</h1>
+<p class="subtitle">A preprint claims that a yes-or-no rule’s total correlation with its inputs is not bounded by any constant times the square root of its degree</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 192 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="iMG6R9kmZkg" data-title="Episode 192: Beyond the square root?">
+  <a href="https://youtu.be/iMG6R9kmZkg">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 192: Beyond the square root? Bars of the largest sum of linear coefficients by degree for 7 coins (ours), under the square-root curve, with an arrow breaking above it.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:59. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/iMG6R9kmZkg?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/iMG6R9kmZkg?t=94" data-t="94"><span class="t">1:34</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/iMG6R9kmZkg?t=168" data-t="168"><span class="t">2:48</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/iMG6R9kmZkg?t=304" data-t="304"><span class="t">5:04</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Disproves the proposed square-root bound relating a Boolean function's linear Fourier coefficients to its polynomial degree. For every <i>C</i> &gt; 0, there is a sign-valued Boolean function <i>f</i> with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mo>∑</mo><mi>i</mi></msub><mover accent="true"><mi>f</mi><mo stretchy="true">^</mo></mover><mo stretchy="false">(</mo><mo stretchy="false">{</mo><mi>i</mi><mo stretchy="false">}</mo><mo stretchy="false">)</mo><mo>&gt;</mo><mi>C</mi><msqrt><mrow><mi>deg</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">)</mo></mrow></msqrt></mrow><annotation encoding="application/x-tex">\sum_i\widehat f(\{i\})\gt C\sqrt{\deg(f)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2342em;vertical-align:-0.2997em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.162em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2997em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9344em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span><span class="svg-align" style="width:calc(100% - 0.3333em);margin-left:0.3333em;top:-3.6944em;"><span class="pstrut" style="height:3em;"></span><span style="height:0.24em;"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="0.24em" viewBox="0 0 1062 239" preserveAspectRatio="none"><path d="M529 0h5l519 115c5 1 9 5 9 10 0 1-1 2-1 3l-4 22
-c-1 5-5 9-11 9h-2L532 67 19 159h-2c-5 0-9-4-11-9l-5-22c-1-6 2-12 8-13z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1944em;"><span></span></span></span></span></span><span class="mopen">({</span><span class="mord mathnormal">i</span><span class="mclose">})</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.24em;vertical-align:-0.305em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.935em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mop">de<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mclose">)</span></span></span><span style="top:-2.895em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.28em" viewBox="0 0 400000 1296" preserveAspectRatio="xMinYMin slice"><path d="M263,681c0.7,0,18,39.7,52,119
-c34,79.3,68.167,158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120
-c340,-704.7,510.7,-1060.3,512,-1067
-l0 -0
-c4.7,-7.3,11,-11,19,-11
-H40000v40H1012.3
-s-271.3,567,-271.3,567c-38.7,80.7,-84,175,-136,283c-52,108,-89.167,185.3,-111.5,232
-c-22.3,46.7,-33.8,70.3,-34.5,71c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1
-s-109,-253,-109,-253c-72.7,-168,-109.3,-252,-110,-252c-10.7,8,-22,16.7,-34,26
-c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26s76,-59,76,-59s76,-60,76,-60z
-M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.305em;"><span></span></span></span></span></span></span></span></span>. Thus its total signed correlation with individual input bits can exceed the proposed bound by an arbitrary factor.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Feed n fair ±1 coins to a yes-or-no rule f. Its linear Fourier coefficients f̂({i}) are its correlations with single coins, and their sum is its correlation with the total of the coins. That sum is at most √n, and majority, the sign of the total, gets about 0.8√n. The rule’s degree, the degree of the polynomial that represents it exactly, can be far smaller than n. A dictator has degree 1 and sum 1; majority of 3 has degree 3 and sum 1.5. In our search of every rule on 4 coins, and exact optimization up to 7 coins, the sum never exceeds √(degree).</p>
+<p>The paper credits the question to Gopalan and Servedio, around 2009, as recorded in O’Donnell’s problem list: can √n be replaced by √(degree)? A sharper version using majority’s exact value was settled for degrees 2 and 3 and refuted at degree 4 by Kudin and Pašalić (2021); our search finds one such function on 7 coins, with degree 4 and sum 1.75, above majority’s 1.5 but below √4 = 2. Square-root bounds do hold for decision trees, with average depth in place of degree (O’Donnell and Servedio), and the sum is known to be at most the degree.</p>
+<p>Result 192 is one OpenAI preprint, <a href="https://github.com/openai/math/blob/main/preprints/Unbounded-Violations-of-the-Square-Root-Degree-Bound-September-26-2026/Unbounded-Violations-of-the-Square-Root-Degree-Bound-September-26-2026.pdf">Unbounded Violations of the Square-Root Degree Bound</a> (23 pages, dated September 26, 2026). Its Theorem 1.1: for every real C &gt; 0 there are n and a nonconstant f : {−1,1}<sup>n</sup> → {−1,1} with Σ<sub>i</sub> f̂({i}) &gt; C·√deg(f); consequently the ratio Σ<sub>i</sub>|f̂({i})| / √deg(f) is unbounded. So the square-root bound fails with every constant, and the truth lies somewhere between √(degree) and the degree.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Any explicit rule or size: “we do not obtain useful bounds on their growth”. By our numerics on the proof’s own parameters, its key step meets the paper’s own condition (J &lt; 1/4) only when its parameter m is about 10<sup>23</sup>, and then gains about 10<sup>−10<sup>25</sup></sup> per round; that describes the proof, not the smallest counterexample, which nobody knows. Nothing about where between √(degree) and the degree the truth lies, nothing about monotone rules, and nothing for small rules.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, 23 pages, dated September 26, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -73,12 +88,42 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/192.md">scope notes</a>)</dd>
+    <dd>The theorem, exactly as stated, formalized by OpenAI by a variant route; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 16, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/192.md">Lean formalization</a>: <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SquareRootDegree.lean">the comparator statement</a> gives both the signed version and the unbounded ratio of Theorem 1.1. The Lean proof follows one of the paper’s variant routes (the switching rule), with smoothed tests and explicit constants (about 10<sup>308</sup> leaves). By our count it takes 21 files and about 3,600 lines, excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/BooleanFunctions">source</a>). We found no unproved steps by search; we have not rebuilt the proof. The collection’s formalization.yaml does not list this result. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Value per unit of degree.</strong> Build an observation, a way of chopping the cube into cells, with a value (the variance of the total the cell still predicts) and a price (the highest degree of a cell’s indicator). The sign of the best guess is a rule of degree at most the price, and with many copies the ratio approaches about 0.8√(value/price) (Lemma 2.2). Revealing coins gives value = price.</li>
+  <li><strong>A rule that keeps a sliver more.</strong> With m + 1 roughly Gaussian scores, one selects a leaf and every leaf has a tiny target window. Usually the rule reports all scores but one; on the rare event that only the selected leaf misses, it reports a tag, and there the total is predicted with mean squared error below 1. So the value exceeds m (Lemmas 3.1, 3.2).</li>
+  <li><strong>The tag is cheap.</strong> Its indicator looks at all m + 1 scores, yet equals a sum of terms each using only m of them, minus one more such term (identity (3)): the degree saving comes from cancellation.</li>
+  <li><strong>Amplify.</strong> Scores built from many coins are nearly Gaussian; feeding m + 1 blocks into the rule multiplies value/price by at least 1 + η/m. Repeat finitely many times, then take the sign. The paper gives several further routes to the same theorem (§4.1, §4.2, §5, Appendices A and B).</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Small cases (ours): every Boolean function on up to 4 inputs, and exact integer programs up to 7; the largest sum by degree on 7 coins is 1, 1, 1.5, 1.75, 1.875, 1.875, 2.1875 for degrees 1 to 7, never above √(degree); the best ratio at degree 2 or more is 0.875.</li>
+  <li>The majority benchmark B<sub>d</sub> = E|X<sub>1</sub>+…+X<sub>d</sub>| (1, 1, 1.5, 1.5, 1.875, …).</li>
+  <li>Identity (3) on our 8-bit toy: it holds on all 256 inputs; the tag’s indicator depends on all 8 bits but has degree 6; this small instance has no gain.</li>
+  <li>The curve of J against m, the crossing of the proof’s condition J &lt; 1/4 near m ≈ 10<sup>23.4</sup>, and J = 1 (where the gain turns positive) near m ≈ 10<sup>21</sup> are our numerical evaluation of the quantities in Lemma 3.2. The Lean count is our count of the import closure.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Unbounded-Violations-of-the-Square-Root-Degree-Bound-September-26-2026/Unbounded-Violations-of-the-Square-Root-Degree-Bound-September-26-2026.pdf">Unbounded Violations of the Square-Root Degree Bound (PDF)</a>, 23 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/192.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 192.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -86,18 +131,28 @@ M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">�
   <li><a href="https://github.com/openai/math/blob/main/preprints/Unbounded-Violations-of-the-Square-Root-Degree-Bound-September-26-2026/Unbounded-Violations-of-the-Square-Root-Degree-Bound-September-26-2026.pdf">Unbounded Violations of the Square-Root Degree Bound</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Flip n fair coins, each plus or minus one, and feed them to a yes-or-no rule. The rule’s correlation with a single coin is one of its linear Fourier coefficients; add them all up, and you get its correlation with the total of the coins. That sum is at most √n, and majority, which outputs the sign of the total, comes close, at about 0.8√n. The rule’s degree, the degree of the polynomial that represents it exactly, can be much smaller than n. A dictator, which copies one coin, has degree 1 and sum 1. Majority on 3 coins has degree 3 and sum 1.5. In our exhaustive search of every rule on 4 coins, and exact optimization up to 7 coins, the sum never exceeds √deg. The paper credits the question to Gopalan and Servedio, around 2009, as recorded in O’Donnell’s problem list: can √n be replaced by √deg? The same list floated a sharper version, using majority’s exact value. Kudin and Pašalić proved degrees 2 and 3 of that version, and refuted it at degree 4, in 2021. Our search finds one such function: 7 coins, degree 4, sum 1.75, above majority’s 1.5, but still below √4 = 2. Square-root bounds do hold for decision trees, with average depth in place of degree, by O’Donnell and Servedio. And a linear bound is known to hold: the sum is at most the degree.</p>
+<h3><span class="t num">1:34</span>The claim</h3>
+<p>Result 192 is one OpenAI preprint, 23 pages, dated September 26, 2026. It claims: for every constant C, there is a nonconstant yes-or-no rule whose sum of linear coefficients exceeds C√deg. So the square-root bound fails, not just with constant 1 but with every constant, and the ratio of the sum of absolute values to √deg is unbounded. The linear bound survives, so the truth lies somewhere between √deg and the degree itself. Not claimed: any explicit rule, or any size. The paper says it obtains no useful bounds on how large its examples are. By our numerics on the proof’s own parameters, its key step meets the paper’s own condition only when its parameter m is about 10^23, and then gains about 10^(−10^25) per round. That describes the proof, not the smallest counterexample, which nobody knows. Nothing about where between √deg and the degree the truth lies, nothing about monotone rules, and nothing for small rules: every one we could check obeys the bound.</p>
+<h3><span class="t num">2:48</span>How the proof goes</h3>
+<p>The proof changes the question. Instead of a rule, build an observation: a way of chopping the cube into cells. It has a value, how much of the variance of the total the cell still predicts, and a price, the highest degree of the cells’ indicator functions. Reading off the sign of the best guess gives a yes-or-no rule of degree at most the price, and, after averaging many copies, the ratio we care about approaches 0.8√(value/price). So if value over price can be made as large as we like, the theorem follows. Revealing coins outright gives value equal to price: ratio 1. The key trade uses m + 1 roughly Gaussian scores. Revealing m of them keeps exactly m units of variance, at price m. The paper’s rule does slightly better. One score selects one of the other m, the leaf, and every leaf has a tiny target window. Usually the rule reports all scores but one. But on a rare event, where every leaf hits its window except the selected one, it reports just a tag. On that event the windows pin the total down with mean squared error less than 1, so the rule keeps slightly more than m. And the tag is cheap: its indicator looks at all m + 1 scores, yet equals a sum of terms that each involve only m of them, minus one more such term. The degree saving comes from cancellation. On our 8-bit toy, that identity holds on all 256 inputs, and the tag depends on all 8 bits but has degree only 6. At that size, though, there is no gain. Scores built from many coins are nearly Gaussian, by the central limit theorem, and the small gain survives the approximation. Feed m + 1 blocks of the current observation into the rule, and value over price grows by a factor of at least 1 + gain/m. Start from a single coin, repeat finitely many times until the ratio is large enough, and take the sign. The catch is size: the gain per round is about the chance that m narrow windows are all hit, which is astronomically small, so the number of rounds, and of coins, is far beyond anything physical. The paper also gives several further routes to the same theorem.</p>
+<h3><span class="t num">5:04</span>Where it stands</h3>
+<p>The preprint is unrefereed and has not been revised. OpenAI’s Lean files state the theorem exactly, both the signed version and the unbounded ratio, and prove it in 21 files and about 3,600 lines, with no gaps we could find by search; we did not run the check. The Lean proof follows one of the paper’s variant routes, the switching rule, with smoothed tests and explicit constants, about 10^308 leaves. The collection’s formalization catalog does not list it. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, a yes-or-no rule’s total correlation with its inputs is not bounded by any constant times √deg. The truth lies somewhere between that and the degree itself.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20192%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../191-power-improvement-heilbronn-triangle-lower/"><span class="dir">Previous · 191</span><span class="pt">A power improvement in the Heilbronn triangle lower bound</span></a>
-  <a class="next" href="../193-serres-intersection-multiplicity-conjecture/"><span class="dir">Next · 193</span><span class="pt">Serre’s intersection-multiplicity conjecture</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

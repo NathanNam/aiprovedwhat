@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 190: Polynomial removal fails for ordered binary matrices | AI Proved What?</title>
-<meta name="description" content="Polynomial removal fails for ordered binary matrices. Result 190 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>No polynomial bound? Removal for ordered 0-1 matrices | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims one fixed 66-by-66 pattern of 0s and 1s for which ordered matrix removal has no polynomial bound, disproving the polynomial ordered binary matrix-removal conjecture. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/190-polynomial-removal-fails-ordered-binary/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 190: Polynomial removal fails for ordered binary matrices | AI Proved What?">
-<meta property="og:description" content="Polynomial removal fails for ordered binary matrices. Result 190 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="No polynomial bound?">
+<meta property="og:description" content="An AI preprint claims one fixed 66-by-66 pattern of 0s and 1s for which ordered matrix removal has no polynomial bound, disproving the polynomial ordered binary matrix-removal conjecture. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/190-polynomial-removal-fails-ordered-binary/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/190-polynomial-removal-fails-ordered-binary/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 190 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Polynomial removal fails for ordered binary matrices</h1>
+<p class="meta">Episode 190, October 2026</p>
+<h1>No polynomial bound?</h1>
+<p class="subtitle">A preprint claims one fixed 66-by-66 pattern of 0s and 1s for which ordered matrix removal has no polynomial bound</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 190 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="5h4dYMWrlCQ" data-title="Episode 190: No polynomial bound?">
+  <a href="https://youtu.be/5h4dYMWrlCQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 190: No polynomial bound? The paper's 66-by-66 pattern of 0s and 1s (ours, drawn from its definition): nearly all ones with a diagonal of zeros, a striped strip of five-bit words, and a 2-by-2 corner.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:29. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/5h4dYMWrlCQ?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/5h4dYMWrlCQ?t=119" data-t="119"><span class="t">1:59</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/5h4dYMWrlCQ?t=217" data-t="217"><span class="t">3:37</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/5h4dYMWrlCQ?t=394" data-t="394"><span class="t">6:34</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Disproves polynomial ordered binary matrix removal with one fixed <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>66</mn><mo>×</mo><mn>66</mn></mrow><annotation encoding="application/x-tex">66\times66</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">66</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">66</span></span></span></span> zero–one pattern. Matrices can require many binary-entry changes to become pattern-free while their copy density is smaller than every proposed polynomial bound in that distance. Copies preserve row and column orders and match both zeros and ones.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take a grid of 0s and 1s whose rows and columns keep a fixed order. A small pattern has an ordered copy wherever you can choose some rows, top to bottom, and some columns, left to right, chosen independently, so that the grid shows exactly the pattern, zeros as well as ones. The distance from being pattern-free is the fewest entries you must flip, in either direction, as a fraction of all entries. A removal lemma says a grid far from pattern-free must contain a fraction of all possible copies that depends only on the distance; removal is polynomial if that fraction can be taken to be c·ε<sup>C</sup> at distance ε.</p>
+<p>As the paper tells it, Alon, Fischer and Newman raised the ordered-matrix question after proving polynomial testing when row and column order is ignored; Alon and Ben-Eliezer formulated the polynomial removal question for finite families of patterns; and the conjecture for a single pattern appears in the first arXiv version of a 2025 survey by Gishboliner and Shapira (which itself calls it one of the key open problems in the area). Alon, Ben-Eliezer and Fischer proved the qualitative version. Polynomial bounds were known for families closed under row (or column) permutations, and nonpolynomial examples were already known for grids with a third symbol, even with order ignored (Fischer and Rozenberg; a related construction of Alon and Ben-Eliezer).</p>
+<p>Result 190 is one OpenAI preprint, <a href="https://github.com/openai/math/blob/main/preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/paper.pdf">Polynomial removal fails for ordered binary matrices</a> (12 pages, dated September 25, 2026). Its Theorem 1.1: there is a fixed 66-by-66 binary pattern H such that, for every h ≥ 1, with n<sub>h</sub> = (386h+2)·2<sup>h</sup> and ε<sub>h</sub> = (386h+2)<sup>−2</sup>, there is an n<sub>h</sub>-by-n<sub>h</sub> binary grid A<sub>h</sub> with distance at least ε<sub>h</sub> from being H-free and copy fraction N<sub>H</sub>(A<sub>h</sub>)/n<sub>h</sub><sup>132</sup> at most ε<sub>h</sub>·2<sup>−h</sup>. So no constants c, C &gt; 0 give a polynomial removal bound for this H. The paper also derives a lower bound for the test that samples random rows and columns.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>That removal fails for every pattern: this is one pattern of size 66, with no claim that it is the smallest, and nothing about small patterns. Removal itself is not refuted; only polynomial dependence fails. The distance does not stay large: the fraction ε<sub>h</sub> tends to 0, only much more slowly than the copies vanish. The examples are explicit but huge: by our arithmetic, the paper’s bound first beats ε<sup>2</sup> (with c = 1) at h = 27, a grid with about 10<sup>12</sup> rows. The testing bound covers only sampling random rows and columns.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, 12 pages, dated September 25, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +88,44 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/190.md">scope notes</a>)</dd>
+    <dd>The disproof for the exact pattern, and the explicit sequence of grids, formalized by OpenAI; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 16, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/190.md">Lean formalization</a>: <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/MatrixRemoval.lean">the comparator statement</a> uses the paper’s exact pattern, ordered copies matching zeros and ones, and edit distance with flips in both directions, and says that no polynomial bound holds; the formalization also proves the explicit sequence of grids. By our count it takes 61 files and about 7,600 lines, excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/MatrixRemoval">source</a>). We found no unproved steps by search; we have not rebuilt the proof. The sampling corollary and the remark on repairs are not formalized. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>An anchor and a body.</strong> The pattern’s 64-by-64 anchor is all ones except a diagonal of zeros, with a strip whose 32 rows spell every five-bit word; its 2-by-2 body (one zero, three ones) is wired to the anchor by single ones. Avoiding the body works like a logic gate: in a 2-by-2 whose left column is all ones, it forces the bottom-right entry to be at most the top-right one.</li>
+  <li><strong>A tree of gates.</strong> The host grid lays out a binary tree on its rows and another on its columns, with plus and minus blocks at every node in mirror-image orders. The root’s plus entry is 1 and its minus entry is 0; at each leaf, plus and minus are the same row and column. Copies of the anchor, six modes per level, wire the gate between neighbouring levels.</li>
+  <li><strong>Far from free.</strong> With fewer than 4<sup>h</sup> flips, a random root-to-leaf path with random anchor and dummy positions misses them all (each flipped cell lands on a protected spot with chance at most 4<sup>−h</sup>). If the edited grid had no copy, the gates would carry the root’s 1 down the plus side and its 0 down the minus side, and the shared leaf cell would have to be both. So at least 4<sup>h</sup> flips are needed: a fraction (386h+2)<sup>−2</sup>.</li>
+  <li><strong>Copies are rare.</strong> The five-bit strip forces a copy to use anchor positions (on tree and dummy rows, any five tree or dummy columns show at most 27 of the 32 words); density and the zeros between modes put it in one mode’s block; the order and threshold rules allow the body only at a leaf, on the diagonal. So every copy passes through one of 2<sup>h</sup> cells, giving copy fraction at most ε<sub>h</sub>·2<sup>−h</sup>.</li>
+  <li><strong>Hitting is not repairing.</strong> Those 2<sup>h</sup> cells meet every copy, but flipping them creates new copies; any repair needs at least 4<sup>h</sup> changes (Remark 4.7; Proposition 3.1).</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Exhaustive 4-by-4 statistics (ours) for the 2-by-2 body pattern: 16,927 of the 65,536 grids are free of it; the farthest need 4 flips and have at least 9 copies. The worked grid has 8 copies; the far grid shown needs 4 flips and has 12.</li>
+  <li>The 66-by-66 pattern (ours, from the paper’s definition): equal entry for entry to the Lean definition; 3,964 ones and 392 zeros.</li>
+  <li>The host grids (ours, from the paper’s rules) for h = 1 to 4 have 776, 3,096, 9,280 and 24,736 rows; every placement of the body in a mode’s designated rows and columns (8, 32, 128, 512 of them) sits on the leaf diagonal. The 8-by-8 grid is the non-anchor part of the first.</li>
+  <li>Our 4-by-4 analogue of hitting versus repair: one cell meets both copies, but flipping it creates a new copy; 2 flips are needed.</li>
+  <li>The sequence numbers and the “h = 27” arithmetic are ours, from the paper’s formulas. The Lean count is our count of the import closure.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/paper.pdf">Polynomial removal fails for ordered binary matrices (PDF)</a>, 12 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/190.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 190.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +133,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Polynomial-removal-fails-for-ordered-binary-matrices-September-25-2026/paper.pdf">Polynomial removal fails for ordered binary matrices</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Take a grid of zeros and ones, with its rows in a fixed order and its columns in a fixed order. A small pattern, like this 2-by-2 grid with one zero and three ones, has an ordered copy wherever you can choose some rows, top to bottom, and some columns, left to right, chosen independently, so that the big grid shows exactly the pattern, zeros as well as ones. This 4-by-4 grid contains 8 copies. Now ask how far a grid is from having none: the fewest entries you must flip, either way, as a fraction of all its entries. A removal lemma says that a grid far from pattern-free must contain many copies, a fraction of all possible choices that depends only on the distance. In our exhaustive search of 4-by-4 grids, the farthest from free of this pattern need 4 flips, and each of them has at least 9 copies. The question is how fast that guaranteed fraction must shrink as the distance shrinks. If it shrinks only like a power of the distance, removal is called polynomial. As the paper tells it, Alon, Fischer and Newman raised the ordered-matrix question, after proving polynomial testing when row and column order is ignored. Alon and Ben-Eliezer formulated the polynomial removal question for finite families of patterns, and the conjecture for a single pattern appears in a 2025 survey by Gishboliner and Shapira, which itself calls it one of the key open problems in the area. Alon, Ben-Eliezer and Fischer had proved the qualitative version: some positive fraction always exists. Polynomial bounds were known for families closed under row permutations, or column permutations. And polynomial removal was already known to fail when the big grid may use a third symbol, even with order ignored, by Fischer and Rozenberg, and in a related construction of Alon and Ben-Eliezer. For grids of only zeros and ones, the conjecture stood.</p>
+<h3><span class="t num">1:59</span>The claim</h3>
+<p>Result 190 is one OpenAI preprint, 12 pages, dated September 25, 2026. It claims a counterexample: one fixed 66-by-66 pattern H, and for every positive whole number h, a grid with (386h+2)·2^h rows and columns. Each of these grids needs at least a fraction 1/(386h+2)² of its entries flipped to be free of H, yet its fraction of copies is smaller than that by a further factor of 2^(−h). Since 2^(−h) shrinks faster than any power of one over h, no bound of the form a constant times a power of the distance can hold for this pattern. The first grid already has 776 rows. The paper also derives a lower bound for one natural sampling test. Not claimed: that removal fails for every pattern. This is one pattern of size 66, with no claim that it is the smallest, and nothing about small patterns. Removal itself is not refuted: the qualitative version still holds, and only polynomial dependence fails. The distance does not stay large: the required fraction tends to zero, just much more slowly than the copies vanish. The examples are explicit but huge: by our arithmetic, the paper’s bound first beats the square of the distance at h = 27, a grid with about 10^12 rows. And the testing bound covers only the test that samples random rows and columns and looks for the pattern.</p>
+<h3><span class="t num">3:37</span>How the proof goes</h3>
+<p>The pattern has two parts. The paper calls the big one the anchor: 64-by-64, all ones except a diagonal of zeros, with a corner strip whose 32 rows spell out every 5-bit word. The small part is the body: one zero and three ones in the bottom-right corner, wired to the anchor by single ones. The body acts like a logic gate. In a 2-by-2 whose left column is all ones, avoiding the body forces the bottom-right entry to be at most the top-right one: if the smaller entry is one, the larger is forced to one, and if the larger is zero, the smaller is forced to zero. The anchor’s job is to pin down which rows and columns can play the body’s roles. The big grid lays out a binary tree on its rows and another on its columns, with a plus block and a minus block at every node, in mirror-image orders. At the root, the plus entry is one and the minus entry is zero. At each leaf, plus and minus are the same single row and the same single column. In front sit many copies of the anchor, one family for each mode, six modes per level of the tree, each wiring the gate between neighbouring levels. Here is the whole non-anchor part of the first grid, 8 by 8. Now suppose someone flips fewer than 4^h entries. Pick a random root-to-leaf path, with random anchor and dummy positions: each flipped cell lands on a protected spot with chance at most 1/4^h, so some choice survives untouched. If the edited grid had no copy of H, the gates would carry the root’s one down the plus side, level by level, rows then columns, and the root’s zero down the minus side. At the leaf, plus and minus are the same cell, which cannot be both. So at least 4^h flips are needed: a fraction 1/(386h+2)². Why are copies rare? Look for every copy in the unedited grid. The 5-bit strip needs 5 columns showing all 32 words, but on tree and dummy rows, any five tree or dummy columns show at most 27, so a copy must use anchor positions. Density, and the zeros between modes, then force its whole anchor part into one mode’s block, and the body into that mode’s designated rows and columns. The order and threshold rules then rule out the body everywhere except at a leaf, where the shared cell lies on the diagonal. So every copy passes through one of only 2^h cells, which leaves at most 2^h/n² of all choices. Our brute force for h up to 4 agrees: every placement of the body in a mode’s designated rows and columns sits on the leaf diagonal. And the twist: those 2^h cells meet every copy, yet flipping them creates new copies, and any repair needs at least 4^h changes. The same thing happens in this small grid of ours: one cell meets both copies, and flipping it makes a new one.</p>
+<h3><span class="t num">6:34</span>Where it stands</h3>
+<p>The preprint is unrefereed and has not been revised. OpenAI’s Lean files state the paper’s pattern exactly, with the exact definitions of ordered copies and of distance, flips in both directions, and prove that no polynomial bound holds; they also prove the explicit sequence of grids. That is 61 files and about 7,600 lines, with no gaps we could find by search; we did not run the check. The sampling corollary and the remark about repairs are not formalized. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, ordered removal for zero-one grids has no polynomial bound: for this one 66-by-66 pattern, grids can be far from free of it while its copies are rarer than any power of the distance.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20190%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../189-cycle-clique-ramsey-numbers/"><span class="dir">Previous · 189</span><span class="pt">Cycle–clique Ramsey numbers</span></a>
-  <a class="next" href="../191-power-improvement-heilbronn-triangle-lower/"><span class="dir">Next · 191</span><span class="pt">A power improvement in the Heilbronn triangle lower bound</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

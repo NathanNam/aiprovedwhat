@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 191: A power improvement in the Heilbronn triangle lower bound | AI Proved What?</title>
-<meta name="description" content="A power improvement in the Heilbronn triangle lower bound. Result 191 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Bigger than 1/n²? Heilbronn&#x27;s smallest-triangle problem | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that for every large n, some n points in the unit square have every triangle of area at least c·n^(−2+η) for a fixed η &gt; 0, refuting the almost n^(−2) formulation of Heilbronn&#x27;s triangle problem. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/191-power-improvement-heilbronn-triangle-lower/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 191: A power improvement in the Heilbronn triangle lower bound | AI Proved What?">
-<meta property="og:description" content="A power improvement in the Heilbronn triangle lower bound. Result 191 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Bigger than 1/n²?">
+<meta property="og:description" content="An AI preprint claims that for every large n, some n points in the unit square have every triangle of area at least c·n^(−2+η) for a fixed η &gt; 0, refuting the almost n^(−2) formulation of Heilbronn&#x27;s triangle problem. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/191-power-improvement-heilbronn-triangle-lower/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/191-power-improvement-heilbronn-triangle-lower/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,35 +37,95 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 191 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">A power improvement in the Heilbronn triangle lower bound</h1>
+<p class="meta">Episode 191, October 2026</p>
+<h1>Bigger than 1/n²?</h1>
+<p class="subtitle">A preprint claims that for every large n, some n points in the unit square have every triangle bigger than n<sup>−2</sup> by a fixed power of n, even if that power is only about 10<sup>−236</sup></p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 191 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="tC0quIPiB8c" data-title="Episode 191: Bigger than 1/n²?">
+  <a href="https://youtu.be/tC0quIPiB8c">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 191: Bigger than 1/n²? Twenty-three points of Erdős's finite-field parabola in the unit square (ours, from the construction the paper cites), with one triangle shaded.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:02. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/tC0quIPiB8c?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/tC0quIPiB8c?t=113" data-t="113"><span class="t">1:53</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/tC0quIPiB8c?t=198" data-t="198"><span class="t">3:18</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/tC0quIPiB8c?t=356" data-t="356"><span class="t">5:56</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>For every sufficiently large <i>n</i>, constructs <i>n</i> points in the unit square such that every triangle has area at least <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mrow><mo>−</mo><mn>2</mn><mo>+</mo><mi>c</mi></mrow></msup></mrow><annotation encoding="application/x-tex">n^{-2+c}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">2</span><span class="mbin mtight">+</span><span class="mord mathnormal mtight">c</span></span></span></span></span></span></span></span></span></span></span></span> for one absolute <i>c</i> &gt; 0. This disproves the conjectured almost-<i>n</i><sup>−2</sup> upper bound in Heilbronn's triangle problem, which asks how large the smallest determined triangle can be.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Put n points in the unit square. Every three of them make a triangle, and one is the smallest; Heilbronn’s problem asks how large that smallest triangle can be made. Three points on a line make it zero. Purely random points do badly: in our simulations their smallest triangle shrinks roughly like 1/n³. Erdős’s finite-field parabola reaches 1/n² (in our check, the smallest triangle of the p-point parabola is exactly 1/(2p²) for every prime p from 5 to 97), and so does sampling random points and deleting one point from each tiny triangle.</p>
+<p>As the paper tells it, Heilbronn’s original conjecture asked whether the answer is O(1/n²); Komlós, Pintz and Szemerédi disproved it in 1982, reaching (log n)/n² with a hypergraph argument. On the upper side, Roth proved the first o(1/n) bound, refined by Schmidt and Roth; Komlós, Pintz and Szemerédi reached n<sup>−8/7+ε</sup>, and Cohen, Pohoata and Zakharov n<sup>−7/6+ε</sup>. The paper refutes “the almost n<sup>−2</sup> formulation, discussed in Zakharov’s survey”: that for every ε &gt; 0 the answer is at most C<sub>ε</sub> n<sup>−2+ε</sup>. It attributes that formulation to no one. It also notes that earlier preprints by Ellmann and Agama claim stronger lower bounds, finds unresolved issues in the versions it cites, and says its objections concern the arguments, not the bounds themselves.</p>
+<p>Result 191 is one OpenAI preprint, <a href="https://github.com/openai/math/blob/main/preprints/A-power-improvement-in-the-Heilbronn-triangle-lower-bound-September-25-2026/main.pdf">A power improvement in the Heilbronn triangle lower bound</a> (24 pages, dated September 25, 2026). Its Theorem 1.1: there are absolute constants η, c<sub>1</sub> &gt; 0 and n<sub>0</sub> such that Δ(n) ≥ c<sub>1</sub> n<sup>−2+η</sup> for every n ≥ n<sub>0</sub>. The paper gives an explicit η = 2/(45435k + 16), where k = C(M,3)² + 1 and M = C(163,41); by our arithmetic k has 232 digits and η is about 3 × 10<sup>−236</sup>. The paper calls it “fixed but extremely small”.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>An explicit point set: the points are sampled at random and pruned, so the proof shows that good sets exist without writing one down. The constant c<sub>1</sub> and the starting size are not given. The gain is only in the exponent: by our arithmetic, n<sup>η</sup> reaches 2 only when n has about 10<sup>235</sup> digits, and for any n anyone could write down, the old log n factor is larger. Nothing new about the upper bound or the true answer; the gap runs from n<sup>−2+η</sup> to n<sup>−7/6+ε</sup>. No verdict on the earlier preprints’ bounds.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, 24 pages, dated September 25, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/191.md">scope notes</a>)</dd>
+    <dd>The refutation of the almost n<sup>−2</sup> bound, with a weaker lower bound, formalized by OpenAI; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 16, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/191.md">Lean formalization</a>: <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/HeilbronnTriangle.lean">the comparator statements</a> use the paper’s definitions of triangle area and of the almost n<sup>−2</sup> bound and refute that bound. Their lower bound is weaker than Theorem 1.1, but enough for the refutation: it holds along an infinite sequence of sizes rather than for every large n, with an exponent 4.4 times smaller, though with no constant in front. By our count the proof takes 195 files and about 24,000 lines, excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/HeilbronnTriangle">source</a>). We found no unproved steps by search; we have not rebuilt the proof. The collection’s formalization.yaml does not list this result. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Areas as determinants.</strong> A point is a vector of three whole numbers (u<sub>1</sub>, u<sub>2</sub>, u<sub>3</sub>), plotted at (u<sub>1</sub>/u<sub>3</sub>, u<sub>2</sub>/u<sub>3</sub>). A triangle’s area is a 3-by-3 determinant divided by twice the product of the third coordinates; with third coordinates between N and 2N, a big determinant means a big triangle.</li>
+  <li><strong>Hidden labels.</strong> Every point gets a random label ξ from a finite field with r<sup>41</sup> elements. The vectors (1, ξ, ξ²), the finite-field parabola behind Erdős’s construction, have nonzero determinant when the three labels differ.</li>
+  <li><strong>One designated coefficient.</strong> Coordinates are written in a huge base B with small digits whose remainders are set by the label. The lower terms are too small to cancel one designated coefficient of the determinant, which equals, modulo r, the field norm of the label determinant: so for distinct labels every representative of the determinant modulo B<sup>k</sup> exceeds half of B<sup>k−1</sup> in absolute value (Lemma 3.3). A shared random matrix of determinant one mixes the rows, and the columns are lifted to whole numbers in a big box.</li>
+  <li><strong>Rare bad triples, and a second lock.</strong> Labels collide with chance at most 3/r<sup>41</sup>, and lattice counting makes any fixed nonzero determinant unlikely. Collinear triples (determinant zero) are handled by a second prime, with residues from a quadric surface with no three points on a line, joined by the Chinese remainder theorem.</li>
+  <li><strong>Sample and delete.</strong> Sample twice as many points as needed and delete one from each bad pair or triple. Every remaining triangle has area at least τ/(16N³), so n²Δ ≥ r²/64; since n grows like r<sup>α</sup>, r² is about n<sup>2/α</sup> = n<sup>η</sup>. No hypergraph lemma is needed; primes in every doubling range fill in every large n.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Random points (ours): the median smallest triangle times n³ stays between about 0.2 and 0.8 for n = 10 to 320, while n² times it falls from 0.07 to 0.001 (Jiang, Li and Vitányi proved the n<sup>−3</sup> order).</li>
+  <li>Erdős’s parabola (ours): points (x, x² mod p)/p; the smallest triangle is exactly 1/(2p²) for every prime p from 5 to 97 (for p = 17, area 1/578).</li>
+  <li>Deletion at the n<sup>−2</sup> scale (ours): from 40 random points, the triangles below 0.05/n² are removed by deleting a few points, leaving 20 points with n²Δ at least 0.05.</li>
+  <li>The toy of the determinant obstruction with labels in the field of r elements (ours, not the paper’s parameters): every one of about 29,000 random triples with distinct labels had a large determinant; small ones appeared only with a repeated label.</li>
+  <li>The digit count of k, η ≈ 3 × 10<sup>−236</sup>, the 10<sup>235</sup>-digit threshold and the Lean exponent ratio 4.4 are our arithmetic from the paper’s formulas. The Lean count is our count of the import closure.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-power-improvement-in-the-Heilbronn-triangle-lower-bound-September-25-2026/main.pdf">A power improvement in the Heilbronn triangle lower bound (PDF)</a>, 24 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/191.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 191.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +133,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-power-improvement-in-the-Heilbronn-triangle-lower-bound-September-25-2026/main.pdf">A power improvement in the Heilbronn triangle lower bound</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Scatter n points in a square. Every three of them make a triangle, and one of those triangles is the smallest. Heilbronn’s problem asks how large that smallest triangle can be made. Three points on a line make it zero, so a good set must avoid that. Purely random points do badly: in our simulations, their smallest triangle shrinks roughly like 1/n³. Two simple constructions reach 1/n². One is Erdős’s parabola over a finite field: with p points, every triangle has area at least 1/(2p²), and in our check, for every prime from 5 to 97, the smallest is exactly that. The other is to sample random points and delete one point from each tiny triangle. On the other side, the best upper bound proved so far is about n^(−7/6). The truth lies somewhere in between. As the paper tells it, Heilbronn’s original conjecture asked whether the smallest triangle is always at most a constant over n². Komlós, Pintz and Szemerédi disproved that in 1982, reaching (log n)/n² with a hypergraph argument. On the upper side, Roth proved the first bound smaller than 1/n; Schmidt and Roth refined it; Komlós, Pintz and Szemerédi reached n^(−8/7); and Cohen, Pohoata and Zakharov, n^(−7/6). Still open was a weaker guess: that the answer is n^(−2), up to factors smaller than any power of n. The paper calls this the almost n^(−2) formulation, discussed in Zakharov’s survey, and does not attribute it to anyone. Earlier preprints by Ellmann and Agama claim stronger lower bounds; the paper finds unresolved issues in the versions it cites, and says its objections concern the arguments, not the bounds themselves.</p>
+<h3><span class="t num">1:53</span>The claim</h3>
+<p>Result 191 is one OpenAI preprint, 24 pages, dated September 25, 2026. It claims: there are absolute constants η and c₁, both positive, such that for every large enough n, some n points in the unit square have every triangle at least c₁ times n^(−2+η). So the almost n^(−2) formulation is false. The paper even gives an explicit η: 2/(45435k + 16), where k is built from binomial coefficients and has 232 digits. By our arithmetic, η is about 3 × 10^(−236). The paper calls it fixed but extremely small. Not claimed: an explicit point set. The points are sampled at random and then pruned, so the proof shows that good sets exist, without writing one down. The constant c₁ and the starting size are not given. The gain is only in the exponent: by our arithmetic, n^η reaches two only when n has about 10^235 digits, and for any n anyone could write down, the old log n factor is far larger. Nothing new about the upper bound or the true answer: the gap now runs from n^(−2+η) to n^(−7/6). And no verdict on the earlier preprints’ bounds.</p>
+<h3><span class="t num">3:18</span>How the proof goes</h3>
+<p>The proof turns areas into determinants. Write each point as a vector of three whole numbers, and plot it at the first over the third, and the second over the third. Then a triangle’s area is a 3-by-3 determinant, divided by twice the product of the three third coordinates. If every third coordinate lies between N and 2N, a big determinant means a big triangle. Next, every point gets a random hidden label from a huge finite field, with r^41 elements. The vectors one, label, label squared, the finite-field parabola behind Erdős’s construction, have a nonzero determinant whenever the three labels differ. But that holds in the finite field, and the paper needs it in whole numbers. So it hides the field fact in one coefficient. The coordinates are written in a huge base B, with small digits whose remainders are set by the label. Multiply out the determinant: the base is so large that the lower terms are too small to cancel one designated coefficient, and that coefficient equals, modulo r, the field norm of the label determinant, which is not zero when the labels differ. So, modulo B^k, the determinant cannot be small: it exceeds half of B^(k−1). In our toy version, with the plain field of r elements, every one of about 29,000 random triples with three distinct labels had a large determinant; small ones appeared only with a repeated label. Then one shared random matrix of determinant one mixes the rows without changing any determinant, and the columns are lifted to whole numbers in a big box. Triples with a repeated label can be small, but labels collide with chance at most 3/r^41, and lattice counting shows that any fixed nonzero determinant is unlikely. Determinant zero, three points on a line, escapes that count, so a second prime adds another lock: residues from a piece of a quadric surface with no three points on a line, joined by the Chinese remainder theorem. Finally, sample twice as many points as needed, delete one point from each bad pair or triple, and keep n. Every remaining triangle has area at least τ/(16N³), which gives n² times the smallest area at least r²/64. Since n grows like a huge power α of r, r² is about n^(2/α): that is η. The deletion is elementary; the paper does not need the hypergraph lemma of 1982. A prime in every doubling range then fills in every large n.</p>
+<h3><span class="t num">5:56</span>Where it stands</h3>
+<p>The preprint is unrefereed and has not been revised. OpenAI’s Lean files use the paper’s definitions of triangle area and of the almost n^(−2) bound, and prove that the bound fails. Their lower bound is weaker than the paper’s, but still enough: it holds along an infinite sequence of sizes rather than for every large n, with an exponent 4.4 times smaller, though with no constant in front. That is 195 files and about 24,000 lines, with no gaps we could find by search; we did not run the check. The collection’s formalization catalog does not list this result. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, the best smallest triangle is not n^(−2) up to small factors: for every large n, some n points make every triangle bigger than n^(−2) by a fixed power of n, even if that power is only about 10^(−236).</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20191%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../190-polynomial-removal-fails-ordered-binary/"><span class="dir">Previous · 190</span><span class="pt">Polynomial removal fails for ordered binary matrices</span></a>
-  <a class="next" href="../192-boolean-functions-violate-square-root/"><span class="dir">Next · 192</span><span class="pt">Boolean functions violate the square-root degree bound by arbitrary factors</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
