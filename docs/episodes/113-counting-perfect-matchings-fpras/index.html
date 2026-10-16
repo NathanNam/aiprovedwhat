@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Counting any graph? Approximate counting of perfect matchings in general graphs | AI Proved What?</title>
+<meta name="description" content="An AI system claims a fully polynomial randomized approximation scheme for counting perfect matchings in every graph, and a pointwise entropy bound for random perfect matchings, with Lean formalizations. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/113-counting-perfect-matchings-fpras/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Counting any graph?">
+<meta property="og:description" content="An AI system claims a fully polynomial randomized approximation scheme for counting perfect matchings in every graph, and a pointwise entropy bound for random perfect matchings, with Lean formalizations. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/113-counting-perfect-matchings-fpras/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/113-counting-perfect-matchings-fpras/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 113, October 2026</p>
+<h1>Counting any graph?</h1>
+<p class="subtitle">A claimed fully polynomial randomized approximation scheme for perfect matchings in every graph, and an entropy bound for random perfect matchings</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 113 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="ZdjGAHp7IVs" data-title="Episode 113: Counting any graph?">
+  <a href="https://youtu.be/ZdjGAHp7IVs">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 113: Counting any graph? The Petersen graph with one perfect matching highlighted.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:53. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/ZdjGAHp7IVs?t=0" data-t="0"><span class="t">0:00</span><span>Counting perfect matchings</span></a></li>
+  <li><a href="https://youtu.be/ZdjGAHp7IVs?t=83" data-t="83"><span class="t">1:23</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/ZdjGAHp7IVs?t=168" data-t="168"><span class="t">2:48</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/ZdjGAHp7IVs?t=315" data-t="315"><span class="t">5:15</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>A perfect matching pairs up all the vertices of a graph along its edges. Finding one is easy: Edmonds gave a polynomial-time algorithm in 1965. Counting them is another matter: Valiant showed in 1979 that exact counting is #P-complete, even for bipartite graphs, where the count is the permanent of a 0–1 matrix. For planar graphs, Pfaffian methods give exact counts.</p>
+<p>The realistic goal is approximation: a fully polynomial randomized approximation scheme (FPRAS) gets within any relative error ε with probability at least 1 − δ, in time polynomial in the graph’s size, 1/ε and log(1/δ). Jerrum and Sinclair (1989) gave one for all matchings together, and for perfect matchings when near-perfect matchings, with two unmatched vertices, outnumber them at most polynomially. Jerrum, Sinclair and Vigoda removed that condition for bipartite graphs, approximating every nonnegative permanent. For general graphs the question stayed open, and Štefankovič, Vigoda and Wilmes showed that chains of the bipartite type fail on some graphs, whatever hole weights they use.</p>
+<p>Result 113 is two OpenAI preprints, 45 pages each, dated September 23, 2026. <a href="https://github.com/openai/math/blob/main/preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/main.pdf">The first</a> claims an FPRAS for perfect matchings in every finite simple graph, in worst-case time polynomial in the input length, 1/ε and log(1/δ), returning zero with certainty when there is no perfect matching; the method also counts subgraphs with prescribed degrees and matchings of a given size. <a href="https://github.com/openai/math/blob/main/preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/main.pdf">The second</a> proves a pointwise entropy bound that settles a conjecture of Anari, Oveis Gharan and Vinzant: if x gives the probability of each edge in a random perfect matching of a graph on 2m vertices, the largest possible entropy H(x) of such a random matching satisfies F(x) − (2 − 2/m)·B(x) ≤ H(x) ≤ F(x), where F(x) = −Σ x<sub>e</sub> log x<sub>e</sub> and B(x) = −Σ (1 − x<sub>e</sub>) log(1 − x<sub>e</sub>).</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The counting result is approximate and randomized: exact counting remains #P-complete. The entropy bound is pointwise and does not by itself give an algorithm; its optimized form gives log N ≤ max(F + B) ≤ log N + 3m − 2, the linear-error estimate Anari, Oveis Gharan and Vinzant asked for.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 45 pages each, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>OpenAI published Lean proofs of the counting algorithm and the entropy bound; we have not run the checks</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprints have not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/113.md">Lean formalization</a> of the counting algorithm as a fixed randomized machine with a worst-case polynomial running time, <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/MatchingCount">415 files and 66,246 lines</a> in the import closure, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/MatchingFPRAS.lean">its comparator statement</a>, and of the entropy bound, <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/MatchingEntropy">26 files and 5,172 lines</a>, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/MatchingEntropyBounds.lean">its comparator</a>; the sharp face-dimension bound is proved there as an internal lemma. Nothing outside Mathlib, with no unproved steps that we could find. We have not run the checks. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>From the complete graph.</strong> The algorithm starts from the complete graph, whose perfect matchings are easy to count, and gradually lowers the weights of the non-edges of G. Up to a tiny bias, the count for G is the starting count times a product of ratios of successive partition functions, each estimated by sampling. Vertex scales keep the ratios with two vertices deleted balanced.</li>
+  <li><strong>An enlarged graph.</strong> Each edge becomes a weighted path, and weak clique edges are added in overlapping bags along a tree. A capacity bound built from bottleneck paths shows that, under balance, the extra edges at most double the partition function, so a sample uses only real edges at least half the time; a marked edge exposes the two-hole ratios for the next step.</li>
+  <li><strong>A sampler on pairs of matchings.</strong> The chain runs on a product of perfect-matching spaces, with local switches and exchanges of alternating cycles between two coordinates, avoiding the near-perfect states where the bipartite approach breaks down. A quadrangulation adapted to the bag labels gives an exact signed identity for a whole cycle, bounding the variance of sums of one-coordinate functions by their energy; replicating coordinates across a ladder of nearby weights gives a spectral gap for all functions. The bottom tier, at unit weights, is counted and sampled exactly by dynamic programming on the tree.</li>
+  <li><strong>The entropy bound.</strong> Shearer’s inequality gives H ≤ F. The lower bound uses Edmonds’ description of the perfect-matching polytope by odd cuts and the sharp estimate |supp x| − dim F<sub>x</sub> ≤ 3m − 2, followed by a covariance calculation. A consequence: a graph on 2m vertices with k ≥ 2 edge-disjoint perfect matchings has at least k<sup>m</sup>(1 − 1/k)<sup>2(m−1)(k−1)</sup> ≥ k<sup>m</sup>/e<sup>2m−2</sup> perfect matchings.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Exact counts: the Petersen graph has 6 perfect matchings, the three-dimensional cube 9, the four-dimensional cube 272, the complete graph on 10 vertices 945; on a random bipartite graph the count equals the permanent.</li>
+  <li>Fifteen ratios, each estimated from 4,000 samples while the weight of the Petersen graph’s non-edges inside the complete graph on 10 vertices was halved step by step, took 945 down to an estimate of 5.9 for the exact 6.</li>
+  <li>At the uniform point of the complete graph on 10 vertices (each edge with probability 1/9), the entropy bounds read 3.45 ≤ log 945 = 6.85 ≤ 10.99.</li>
+  <li>The counting corollary held for complete graphs up to 16 vertices (2,027,025 ≥ 3,435 for 16), and trivially for small cubes.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/main.pdf">A Fully Polynomial Randomized Approximation Scheme for Perfect Matchings in General Graphs (PDF)</a>, 45 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/main.pdf">Entropy and Face Dimension of the Perfect-Matching Polytope (PDF)</a>, 45 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/113.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 113.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Fully-Polynomial-Randomized-Approximation-Scheme-for-Perfect-Matchings-in-General-Graphs-September-23-2026/main.pdf">A Fully Polynomial Randomized Approximation Scheme for Perfect Matchings in General Graphs</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Entropy-and-Face-Dimension-of-the-Perfect-Matching-Polytope-September-23-2026/main.pdf">Entropy and Face Dimension of the Perfect-Matching Polytope</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Counting perfect matchings</h3>
+<p>A perfect matching pairs up all the vertices of a graph along its edges. Finding one is easy: Edmonds gave a polynomial-time algorithm in 1965. Counting them is another matter. Valiant showed in 1979 that exact counting is #P-complete, even for bipartite graphs, where the count is the permanent of a zero-one matrix. For planar graphs, Pfaffian methods give exact counts. In our check, the Petersen graph has 6 perfect matchings, the three-dimensional cube 9, and the complete graph on 10 vertices 945. So the realistic goal is approximation: a fully polynomial randomized approximation scheme, or FPRAS, gets within any relative error ε with high probability, in time polynomial in the graph’s size and 1/ε. Jerrum and Sinclair, in 1989, gave one for all matchings together, and for perfect matchings when near-perfect matchings, with two unmatched vertices, outnumber them at most polynomially. Jerrum, Sinclair and Vigoda removed that condition for bipartite graphs, approximating every nonnegative permanent. For general graphs the question stayed open, and Štefankovič, Vigoda and Wilmes showed that chains of the bipartite type fail on some graphs, whatever hole weights they use.</p>
+<h3><span class="t num">1:23</span>The claims</h3>
+<p>Result 113 is two OpenAI preprints, of 45 pages each, dated September 23. The first claims an FPRAS for perfect matchings in every finite simple graph. For any relative error ε and failure probability δ, it returns an estimate within a factor 1 ± ε with probability at least 1 − δ, in worst-case time polynomial in the input length, 1/ε and log(1/δ). If there is no perfect matching, it returns zero with certainty. The same method counts subgraphs with prescribed degrees and matchings of a given size. The second preprint proves a pointwise entropy bound that settles a conjecture of Anari, Oveis Gharan and Vinzant. Fix the probability x of each edge in a random perfect matching. The largest possible entropy H of such a random matching is at most F(x) = −Σ x log x, and at least F − (2 − 2/m)·B, with B = −Σ (1 − x) log(1 − x), on a graph with 2m vertices. In our check, these bounds held at the uniform point of complete graphs. OpenAI published Lean formalizations: about 415 files and 66,000 lines for the counting algorithm, and 26 files for the entropy bound. We have not run the checks.</p>
+<h3><span class="t num">2:48</span>How the proof goes</h3>
+<p>The counting algorithm starts from the complete graph, whose perfect matchings are easy to count, and gradually suppresses the non-edges of G by lowering their weights. The count for G is, up to a tiny bias, the starting count times a product of ratios of successive partition functions, and each ratio is estimated by sampling. In our check, 15 such ratios, each estimated from samples, took the 945 matchings of the complete graph on 10 vertices to an estimate of 5.9 for the Petersen graph’s 6. The difficulty is sampling. The algorithm keeps vertex scales so that ratios with two vertices deleted stay balanced, and it enlarges the graph: each edge becomes a weighted path, and weak clique edges are added in overlapping bags along a tree. A capacity bound built from bottleneck paths shows that, under balance, the extra edges at most double the partition function. So a sample uses only real edges at least half the time, and a marked edge exposes the two-hole ratios needed for the next step. The sampler runs on a product of perfect-matching spaces, with local switches and exchanges of alternating cycles between two coordinates, avoiding the near-perfect states where the bipartite approach breaks down. A quadrangulation adapted to the bag labels gives an exact signed identity for a whole cycle, which bounds the variance of sums of one-coordinate functions by their energy. Replicating coordinates across a ladder of nearby weights then gives a spectral gap for all functions. The bottom tier, at unit weights, is counted and sampled exactly by dynamic programming on the tree. For the entropy bound, Shearer’s inequality gives the upper side. The lower side uses Edmonds’ description of the perfect-matching polytope by odd cuts and a sharp rank estimate: the support of x exceeds the dimension of its minimal face by at most 3m − 2. A covariance calculation turns this into the entropy comparison. One consequence: a graph on 2m vertices with k edge-disjoint perfect matchings has at least k^m / e^(2m−2) perfect matchings. In our check, this held for complete graphs up to 16 vertices, and trivially for small cubes.</p>
+<h3><span class="t num">5:15</span>Where it stands</h3>
+<p>The preprints are not peer reviewed and have not been revised. The Lean formalizations cover the counting algorithm, as a fixed randomized machine with its running time, and the entropy bound, which proves the face-dimension bound along the way; we have not run them. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If it holds, perfect matchings in every graph can be counted approximately in randomized polynomial time, answering the question Jerrum and Sinclair raised in 1989.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20113%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

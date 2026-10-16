@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One point for all? Matrix hitting points for noncommutative formulas | AI Proved What?</title>
+<meta name="description" content="An AI system claims one explicit matrix tuple, for each characteristic, that detects every small noncommutative formula, and polynomial hitting lists for rational formulas, with Lean formalizations. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/116-noncommutative-identity-testing-hitting-points/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="One point for all?">
+<meta property="og:description" content="An AI system claims one explicit matrix tuple, for each characteristic, that detects every small noncommutative formula, and polynomial hitting lists for rational formulas, with Lean formalizations. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/116-noncommutative-identity-testing-hitting-points/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/116-noncommutative-identity-testing-hitting-points/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 116, October 2026</p>
+<h1>One point for all?</h1>
+<p class="subtitle">A claimed single matrix substitution, for each characteristic, that detects every small noncommutative formula, and polynomial hitting lists for rational formulas</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 116 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="gj-5jpvtLj8" data-title="Episode 116: One point for all?">
+  <a href="https://youtu.be/gj-5jpvtLj8">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 116: One point for all? A strictly lower-triangular integration matrix, shaded by entry size.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:42. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/gj-5jpvtLj8?t=0" data-t="0"><span class="t">0:00</span><span>Testing without looking</span></a></li>
+  <li><a href="https://youtu.be/gj-5jpvtLj8?t=101" data-t="101"><span class="t">1:41</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/gj-5jpvtLj8?t=194" data-t="194"><span class="t">3:14</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/gj-5jpvtLj8?t=343" data-t="343"><span class="t">5:43</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>Polynomial identity testing asks whether an expression computes the zero polynomial. With commuting variables, substituting random numbers usually settles it. With noncommuting variables, numbers are not enough: x<sub>1</sub>x<sub>2</sub> − x<sub>2</sub>x<sub>1</sub> is zero at every pair of numbers, yet it is a nonzero noncommutative polynomial. So one substitutes matrices. A formula is a tree of additions and ordered multiplications with variables or constants at the leaves, and its size counts every vertex. A small formula can hide many words: the product of k copies of x<sub>1</sub> + x<sub>2</sub> has 4k − 1 vertices and 2<sup>k</sup> words. And a fixed small dimension cannot work: by the Amitsur–Levitzki theorem, the 24-term standard polynomial in four variables vanishes on all 2-by-2 matrices.</p>
+<p>When the formula can be read, Raz and Shpilka gave a deterministic polynomial-time test, building on Nisan’s rank characterization. In the black-box setting one may only evaluate: Bogdanov and Wee gave a randomized matrix test, Forbes and Shpilka deterministic hitting sets of quasipolynomial size over large enough fields, and Arvind, Chatterjee and Mukhopadhyay quasipolynomial hitting sets for formulas with inverses.</p>
+<p>Result 116 is three OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026.pdf">The first</a> (13 pages, September 24, 2026) constructs in deterministic polynomial time one tuple of rational matrices of dimension at most 2ns² such that every nonzero formula of size at most s in n variables, over any field of characteristic zero, is nonzero there: a single matrix evaluation decides whether a formula promised to be that small is zero. Its entries are explicit: (T<sub>i</sub>)<sub>r,q</sub> = (−1)<sup>r−q−1</sup>/(r·i<sup>r−q</sup>) for q &lt; r, and 0 otherwise. <a href="https://github.com/openai/math/blob/main/preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/uniform-matrix-hitting-points-positive-characteristic.pdf">The second</a> (14 pages, October 4, 2026) does the same for each positive characteristic p, including 2, with matrices over 𝔽<sub>p</sub> of dimension O(n³s⁶). <a href="https://github.com/openai/math/blob/main/preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026.pdf">The third</a> (25 pages, September 24, 2026) treats rational formulas over ℚ, which may also take inverses: a polynomial-size list of rational matrix tuples such that every nonzero formula with a defined matrix evaluation has a defined, invertible value at one of them, with no bound on how deeply inverses are nested. For example, (x<sub>1</sub>x<sub>2</sub> − x<sub>2</sub>x<sub>1</sub>)<sup>−1</sup> is undefined at every pair of numbers but defined at a pair of 2-by-2 matrices.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>There is no single tuple for all characteristics: the rational tuple serves characteristic zero, and a separate tuple over 𝔽<sub>p</sub> serves each prime p. The guarantee is for formulas, which have no shared subexpressions (and for acyclic algebraic branching programs); no bound is claimed for general circuits. The bit-time bounds concern constructing the matrices, not evaluating an unknown formula at them.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 13, 14 and 25 pages, dated September 24 and October 4, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>OpenAI published Lean proofs for the rational tuple and the rational-formula lists, not the positive-characteristic paper; we have not run the checks</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprints have not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/116.md">Lean formalization</a> of the hitting property of the explicit rational tuple (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/FormulaHitting.lean">comparator statement</a>), whose dimension 2ns² is part of its definition, in <a href="https://github.com/openai/math/blob/main/lean/OAI/Algebra/FormulaHitting">36 files and 5,803 lines</a>; its construction cost is bounded only in the repository’s own cost model, outside the checked statement. The hitting lists for rational formulas, with their time, output-length and dimension bounds, are formalized against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/RationalHitting.lean">their comparator</a> in <a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/RationalHitting">53 files and 15,304 lines</a>. Both counts exclude Mathlib. The positive-characteristic paper is not formalized. We have not run the checks. None of the papers is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Words as iterated integrals.</strong> Each word becomes a series in one variable: the empty word gives 1, and putting letter i in front integrates the series divided by z + i. These series are linearly independent, so a nonzero polynomial gives a nonzero series. The matrices are these integration operators acting on the first d Taylor coefficients.</li>
+  <li><strong>How many coefficients?</strong> A formula of size s has a path representation with at most 2s states, so its series is a component of a linear differential system with poles at −1, …, −n. Moura’s multiplicity estimate bounds how deeply a nonzero component can vanish at zero, whatever the coefficients: below 2ns². So the first d = 2ns² coefficients show it.</li>
+  <li><strong>Positive characteristic.</strong> Integration divides by whole numbers, differentiation kills pth powers, and the poles can collide. The second paper replaces the derivative by a multiplicative shift z ↦ tz, which divides by t<sup>r</sup> − 1. A pole argument gives independence, a shifted Wronskian whose leading term is a Vandermonde determinant bounds the order of vanishing, and truncating powers of t yields matrices over 𝔽<sub>p</sub>.</li>
+  <li><strong>Inverses.</strong> A formula of size s yields at most s + 1 affine matrix pencils of order at most 2s + 1, whose simultaneous invertibility certifies every inverse gate and an invertible output. The list makes every such family of feasible pencils invertible at one tuple, using a rank-expansion bound proved with a Wronskian, lifts into a division algebra, and a fixed integer grid of parameters.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>The 24-term standard polynomial vanished on 200 random 2-by-2 integer tuples but not on a random 3-by-3 one.</li>
+  <li>The series of all 63 words of length at most 5 in 2 letters were linearly independent.</li>
+  <li>339 different random nonzero formulas of size up to 9 in 2 variables were all detected at the 324-dimensional tuple, none needing more than 6 coefficients; this is a sanity check, not a test of the bound.</li>
+  <li>For X = (0 1; 0 0) and Y = (0 0; 1 0), XY − YX = diag(1, −1) has determinant −1, so its inverse is defined.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026.pdf">One Rational Matrix Hitting Point for Noncommutative Formulas (PDF)</a>, 13 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/uniform-matrix-hitting-points-positive-characteristic.pdf">Uniform Matrix Hitting Points in Every Positive Characteristic (PDF)</a>, 14 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026.pdf">Polynomial Hitting Lists for Noncommutative Rational Formulas (PDF)</a>, 25 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/116.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 116.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-Matrix-Hitting-Points-in-Every-Positive-Characteristic-October-4-2026/uniform-matrix-hitting-points-positive-characteristic.pdf">Uniform Matrix Hitting Points in Every Positive Characteristic</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026/One-Rational-Matrix-Hitting-Point-for-Noncommutative-Formulas-September-24-2026.pdf">One Rational Matrix Hitting Point for Noncommutative Formulas</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026/Polynomial-Hitting-Lists-for-Noncommutative-Rational-Formulas-September-24-2026.pdf">Polynomial Hitting Lists for Noncommutative Rational Formulas</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Testing without looking</h3>
+<p>Polynomial identity testing asks whether an expression computes the zero polynomial. With commuting variables, substituting random numbers usually settles it. With noncommuting variables, numbers are not enough: x one times x two, minus x two times x one, is zero at every pair of numbers, yet it is a nonzero noncommutative polynomial. So one substitutes matrices. A formula here is a tree of additions and ordered multiplications whose leaves are variables or constants, and its size counts every vertex. A small formula can hide many words: the product of k copies of x one plus x two has 2^k of them. And a fixed small dimension cannot work: by the theorem of Amitsur and Levitzki, a certain 24-term polynomial in four variables vanishes on all 2-by-2 matrices. In our check, it vanished on 200 random integer examples, but not on a random 3-by-3 example. When the formula itself can be read, Raz and Shpilka gave a deterministic polynomial-time test, building on Nisan’s rank characterization. In the black-box setting, one may only evaluate. Bogdanov and Wee gave a randomized matrix test, and Forbes and Shpilka built deterministic hitting sets of quasipolynomial size over large enough fields. For formulas that may also invert, Arvind, Chatterjee and Mukhopadhyay gave quasipolynomial hitting sets. The goal is a list of polynomial size, or even a single point, built from the size bounds alone, before seeing the formula.</p>
+<h3><span class="t num">1:41</span>The claims</h3>
+<p>Result 116 is three OpenAI preprints. The first, 13 pages, dated September 24, constructs in deterministic polynomial time one tuple of rational matrices, of dimension at most 2ns² for n variables and size s. Every nonzero formula of size at most s, over any field of characteristic zero, has a nonzero value there. So a single matrix evaluation decides whether a formula promised to be that small is zero. The second, 14 pages, dated October 4, does the same over every field of a given positive characteristic, including characteristic two, with matrices over the prime field of dimension of order n³s⁶. The third, 25 pages, dated September 24, treats rational formulas over the rationals, which may also take inverses. It builds a polynomial-size list of rational matrix tuples, so that every nonzero formula with some defined matrix evaluation has a defined, invertible value at one of them, with no bound on how deeply inverses are nested. For example, the inverse of x one x two minus x two x one is undefined at every pair of numbers, but defined at a pair of 2-by-2 matrices. OpenAI published Lean formalizations of the first and third papers; the positive-characteristic paper is not formalized. We have not run the Lean checks ourselves.</p>
+<h3><span class="t num">3:14</span>How the proofs go</h3>
+<p>The characteristic-zero proof encodes each word as an iterated integral in one variable. The empty word gives the constant one, and putting letter i in front integrates the series divided by z plus i. These series are linearly independent, so a nonzero polynomial gives a nonzero series. The matrices are simply these integration operators acting on the first d Taylor coefficients; each entry is plus or minus one over r times a power of i. In our check, the series for all 63 words of length at most 5 in 2 letters were independent. How many coefficients are enough? A formula of size s has a path representation with at most 2s states, so its series is a component of a linear differential system with poles at minus one through minus n. Moura’s multiplicity estimate bounds how deeply a nonzero component of such a system can vanish at zero, whatever the coefficients, and that bound is below 2ns². So the first d coefficients already show it. In our check, 339 different random nonzero formulas of size up to 9 in 2 variables were all detected at the 324-dimensional tuple; none needed more than 6 coefficients. In positive characteristic this breaks: integration divides by whole numbers, differentiation kills pth powers, and the poles can collide. The second paper replaces the derivative by a multiplicative shift, z to t z, which divides by t^r − 1, never zero. A pole argument gives independence, a shifted Wronskian, whose leading term is a Vandermonde determinant, bounds the order of vanishing, and truncating powers of t yields matrices over the prime field. For inverses, a formula of size s yields at most s + 1 linear matrix pencils of order at most 2s + 1, and making them all invertible certifies every inverse gate and an invertible output. The list is built so that every such family of feasible pencils becomes invertible at one tuple, using a rank-expansion bound proved with a Wronskian, lifts into a division algebra, and a fixed integer grid of parameters. In our check, the commutator of two simple 2-by-2 matrices was diagonal with determinant −1, so its inverse is defined there.</p>
+<h3><span class="t num">5:43</span>Where it stands</h3>
+<p>The preprints are not peer reviewed and have not been revised. The Lean formalizations check the hitting property of the explicit rational tuple, whose dimension, 2ns², is part of its definition; its construction cost is bounded only in the repository’s own cost model, outside the checked statement. They also check the hitting lists for rational formulas with their time and size bounds. The positive-characteristic paper is not formalized, and we have not run the checks. None of these papers is among those OSVerify reviewed, and we have seen no expert review. If they hold, then for each characteristic a single explicit matrix substitution of polynomial size tests every small noncommutative formula, and a polynomial list does the same for rational formulas over the rationals, improving the quasipolynomial constructions known before.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20116%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Any margins? Exact sampling and approximate counting of contingency tables | AI Proved What?</title>
+<meta name="description" content="An AI system claims exact uniform sampling of contingency tables with any margins, and a fully polynomial randomized approximation scheme for tables with cell bounds, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/115-contingency-tables-arbitrary-margins/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Any margins?">
+<meta property="og:description" content="An AI system claims exact uniform sampling of contingency tables with any margins, and a fully polynomial randomized approximation scheme for tables with cell bounds, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/115-contingency-tables-arbitrary-margins/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/115-contingency-tables-arbitrary-margins/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 115, October 2026</p>
+<h1>Any margins?</h1>
+<p class="subtitle">A claimed exact uniform sampler for contingency tables with arbitrary margins, and a fully polynomial randomized approximation scheme for tables with cell bounds</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 115 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="R1T_-vxobwE" data-title="Episode 115: Any margins?">
+  <a href="https://youtu.be/R1T_-vxobwE">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 115: Any margins? A 3 by 3 table of whole numbers with every row and column summing to 3.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:46. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/R1T_-vxobwE?t=0" data-t="0"><span class="t">0:00</span><span>Tables with fixed margins</span></a></li>
+  <li><a href="https://youtu.be/R1T_-vxobwE?t=93" data-t="93"><span class="t">1:33</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/R1T_-vxobwE?t=180" data-t="180"><span class="t">3:00</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/R1T_-vxobwE?t=361" data-t="361"><span class="t">6:01</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>A contingency table is a grid of nonnegative whole numbers with prescribed row sums and column sums. Statisticians use such tables to test whether two classifications are independent, which raises two basic questions: how many tables share the same margins, and how can one be drawn uniformly at random? The 2-by-2 tables with every margin 2 are already instructive: there are exactly 3, the integer points of a segment, and only the two ends are vertices. With margins written in binary the count can be enormous: the 3-by-3 tables with every margin 1,000,000 number about 1.25 × 10<sup>23</sup>.</p>
+<p>Exact counting is #P-complete even with two rows (Dyer, Kannan and Mount). Approximation had partial answers: Dyer and Greenhill handled two rows, Cryan and Dyer any fixed number of rows, and geometric methods of Dyer, Kannan and Mount, and later Morris, handled large margins. For sparse margins, Arman, Gao and Wormald gave exact uniform generation, and in 2021 they reported that no polynomial-time approximately uniform sampler for arbitrary margins was known. A cap on every cell connects the problem to perfect matchings and network flows; Cryan, Dyer and Randall identified the unrestricted capped case as an open problem in 2010.</p>
+<p>Result 115 is two OpenAI preprints dated September 24, 2026. <a href="https://github.com/openai/math/blob/main/preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/main.pdf">The first</a>, 31 pages, claims an exactly uniform sampler for tables with any margins, with no positivity, balance, sparsity or fixed-dimension assumption: it stops with probability one, and its expected number of bit operations is polynomial in both dimensions and the number of bits in the margins. A second algorithm has a polynomial time bound on every execution and outputs a table within 2<sup>−k</sup> of uniform in total variation, for any requested k. <a href="https://github.com/openai/math/blob/main/preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/main.pdf">The second</a>, 47 pages, claims a fully polynomial randomized approximation scheme (FPRAS) for tables with an individual upper bound on every cell, where a zero bound forbids the cell: on every execution the bit operations are polynomial in the input length, 1/ε and log(1/δ), and an empty set of tables gives zero. It also yields approximate counting and sampling of bounded integer flows in networks.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The exact sampler is polynomial in expectation, not on every run: a rare correction branch does exhaustive work. Its guarantees are for tables without cell bounds; with cell bounds, the claim is approximate counting (and, through it, approximate sampling). The authors note that their exponents are deliberately large: these are complexity guarantees, not practical running times.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 31 and 47 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>OpenAI published a Lean proof of both samplers and the counting scheme; we have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprints have not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/115.md">Lean formalization</a> of the bounded sampler, the exact sampler and the counting scheme, each as a statement about one fixed randomized machine (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/ContingencyTables.lean">the comparator statements</a>), proved in <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/ContingencyTables">files whose import closure has 1,297 files and 191,813 lines</a>, not counting Mathlib, with no unproved steps that we could find. The network-flow consequences are not formalized. We have not run the check. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Small cells and a padded rectangle.</strong> Cells in a row or column with a small margin become explicit coordinates; the remaining cells form a complete rectangle, padded so that filling it in is always a dense problem. Each small cell carries a row value x<sub>s</sub> and a column value q<sub>s</sub>; states where they agree are transversals, and the chain also allows a surplus of one at one cell and a deficit of one at another. Each state is weighted by its number of padded completions. Sampling a state and then a completion, and accepting only a transversal whose large entries are all at least the padding, gives a uniform table once the padding is subtracted.</li>
+  <li><strong>Why the chain mixes.</strong> The proof reveals the small-cell values one at a time and compares neighboring fibers. Quadratic forms indexed by pairs of unit removals have at most one positive eigenvalue, a property central to the theory of Lorentzian polynomials, and the property survives summing out a balanced pair. A weighted transport between neighboring fibers gives a Poincaré inequality, which bounds the mixing time.</li>
+  <li><strong>From approximate to exact.</strong> Completions of the dense rectangle are drawn approximately on a finite scaled grid; a log-concave density appears only in the analysis, and in an ordinary run large ranges are never enumerated. For exactness, the residual-mixture idea of Göbel, Liu, Manurangsi and Pappik: with probability δ the algorithm enters a correction branch, lists all tables, computes the bounded sampler’s exact output law p<sub>k</sub>, and draws from r(z) = (1/M − (1 − δ)p<sub>k</sub>(z))/δ, so that (1 − δ)p<sub>k</sub> + δr is exactly uniform. The branch is exponentially expensive but exponentially rare.</li>
+  <li><strong>Counting with caps.</strong> Each cell is tightened to the range it can actually take, and cells are split at a threshold. Large cells are handled through a maximum-capacity spanning forest and soft penalties, hardened along a schedule while ratios are estimated by sampling; the final softened count is within a factor 1 + ε/32 of the true count. Each small cell with bound b becomes b labelled pairs, giving transversals and defect states as in the <a href="https://github.com/openai/math/blob/main/preprints/Approximate-counting-of-common-bases-of-two-matroids-September-23-2026/main.pdf">common-bases result</a> (episode 114), with learned multipliers as in the permanent algorithm.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>The 3-by-3 tables with every margin 3 number 55; MacMahon’s formula, checked by direct counting up to margin 12, gives 125,000,750,001,875,002,250,001 when every margin is 1,000,000.</li>
+  <li>Padding every entry of a small example (rows 3, 2; columns 2, 2, 1; 5 tables) by 2 gave 33 tables, exactly 5 of which had every entry at least 2, matching the 5 originals.</li>
+  <li>A slightly biased law on the 55 tables, mixed with its residual at probability 2<sup>−12</sup>, was exactly uniform in exact arithmetic.</li>
+  <li>Seven labelled pairs gave six transversals; weighting each by 1/∏C(b<sub>s</sub>, x<sub>s</sub>) gave a total of 2, exactly the number of tables. Separately, with 0/1 bounds and unit margins, direct counts equalled the permanents.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/main.pdf">Exact Uniform Sampling of Contingency Tables with Arbitrary Margins (PDF)</a>, 31 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/main.pdf">An FPRAS for Cell-Bounded Contingency Tables (PDF)</a>, 47 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/115.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 115.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Exact-Uniform-Sampling-of-Contingency-Tables-with-Arbitrary-Margins-September-24-2026/main.pdf">Exact Uniform Sampling of Contingency Tables with Arbitrary Margins</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/main.pdf">An FPRAS for Cell-Bounded Contingency Tables</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Tables with fixed margins</h3>
+<p>A contingency table is a grid of nonnegative whole numbers with prescribed row sums and column sums. Statisticians use such tables to test whether two classifications are independent, which raises two basic questions: how many tables share the same margins, and how can one be drawn uniformly at random? The 2-by-2 tables with every margin equal to two already show the geometry: there are exactly 3, the integer points of a segment, and only the two ends are vertices. In our check, the 3-by-3 tables with every margin equal to 3 number 55. With margins written in binary the count can be enormous: for 3-by-3 tables with every margin 1,000,000, about 20 bits each, there are about 1.25 × 10^23. Exact counting is hard: Dyer, Kannan and Mount proved it #P-complete even with two rows. Approximation had partial answers. Dyer and Greenhill handled two rows, Cryan and Dyer any fixed number of rows, and geometric methods of Dyer, Kannan and Mount, and later Morris, handled large margins. For sparse margins, Arman, Gao and Wormald gave exact uniform generation, and in 2021 they reported that no polynomial-time approximately uniform sampler for arbitrary margins was known. Adding a cap on every cell connects the problem to perfect matchings and network flows, and Cryan, Dyer and Randall identified the unrestricted capped case as an open problem in 2010.</p>
+<h3><span class="t num">1:33</span>The claims</h3>
+<p>Result 115 is two OpenAI preprints dated September 24. The first, 31 pages, claims an exact uniform sampler for tables with any margins, with no positivity, balance, sparsity or fixed-dimension assumption. It terminates with probability one, and its expected number of bit operations is polynomial in both dimensions and the number of bits in the margins. A second algorithm stops within a polynomial time bound on every execution, and its output is within 2^−k of uniform in total variation, for any requested k. The authors note that their exponents are deliberately large. The second preprint, 47 pages, claims an FPRAS for tables with an individual upper bound on every cell, where a zero bound forbids the cell. Margins and bounds are written in binary and both dimensions vary. On every execution the bit operations are polynomial in the input length, 1/ε and log(1/δ), and an empty set of tables gives zero. It also yields approximate counting and sampling for bounded integer flows in networks. OpenAI published a Lean formalization of the two samplers and the counting scheme, about 1,300 files and 190,000 lines with its imports, not counting Mathlib. We have not run the Lean check ourselves.</p>
+<h3><span class="t num">3:00</span>How the proofs go</h3>
+<p>The sampler separates small numbers from large ones. Cells in a row or column with a small margin become explicit coordinates; the remaining cells form a complete rectangle, which is padded so that filling it in is always a dense problem. Each small cell carries two bounded values, one for its row and one for its column. States where they agree are called transversals, and the chain also allows a surplus of one at one cell and a deficit of one at another. Each state is weighted by its number of padded completions. Sampling a state and then a completion, and accepting only a transversal whose large entries are all at least the padding, gives a uniform table once the padding is subtracted. In our check, padding every entry of a small example by 2 gave 33 tables, and exactly 5 had every entry at least 2, matching the 5 original tables. To show that the chain mixes quickly, the proof reveals the small-cell values one at a time and compares neighboring fibers. Quadratic forms indexed by pairs of unit removals have at most one positive eigenvalue, a property central to the theory of Lorentzian polynomials and also used in the common-bases result, and the property survives summing out a balanced pair. A weighted transport between neighboring fibers then gives a Poincaré inequality, which bounds the mixing time. Completions of the dense rectangle are drawn approximately on a finite scaled grid; a log-concave density appears only in the analysis, and in an ordinary run large ranges are never enumerated. That gives the bounded sampler. For exactness, the algorithm uses the residual-mixture idea of Göbel, Liu, Manurangsi and Pappik. With tiny probability it enters a correction branch, enumerates all tables, computes the bounded sampler’s exact output law, and draws from the leftover mass. The branch is exponentially expensive but exponentially rare, so the expected cost stays polynomial. In our check, a slightly biased law on the 55 tables, mixed with its residual at probability 2^−12, came out exactly uniform. The counting paper first tightens every cell to the range it can actually take, and splits cells at a threshold. Large cells are handled through a maximum-capacity spanning forest and soft penalties, which are hardened along a schedule while ratios are estimated by sampling; the final softened count is within a factor 1 + ε/32 of the true count. Each small cell with bound b becomes b labelled pairs, giving transversals and defect states as in the common-bases result, with learned multipliers as in the permanent algorithm. In our check, 7 labelled pairs gave 6 transversals; weighting each by one over the number sharing its profile gave a total of 2, exactly the number of tables. Separately, with 0/1 bounds and unit margins, a direct count equalled the permanent.</p>
+<h3><span class="t num">6:01</span>Where it stands</h3>
+<p>The preprints are not peer reviewed and have not been revised. OpenAI’s Lean formalization covers the bounded sampler, the exact sampler and the counting scheme, as statements about a fixed randomized machine, but not the network-flow consequences; we have not run it. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If they hold, tables with any margins can be sampled exactly in polynomial expected time, and tables with caps on individual cells can be counted approximately in polynomial time, without the fixed number of rows, large margins or sparse margins that earlier methods needed.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20115%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

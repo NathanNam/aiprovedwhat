@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Counting common bases? Approximate counting for any two matroids | AI Proved What?</title>
+<meta name="description" content="An AI system claims a fully polynomial randomized approximation scheme for counting the common bases of any two matroids, and common integer bases of two polymatroids, with a Lean formalization of the matroid case. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/114-common-matroid-bases-fpras/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Counting common bases?">
+<meta property="og:description" content="An AI system claims a fully polynomial randomized approximation scheme for counting the common bases of any two matroids, and common integer bases of two polymatroids, with a Lean formalization of the matroid case. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/114-common-matroid-bases-fpras/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/114-common-matroid-bases-fpras/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 114, October 2026</p>
+<h1>Counting common bases?</h1>
+<p class="subtitle">A claimed fully polynomial randomized approximation scheme for the common bases of any two matroids, extended to common integer bases of two polymatroids</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 114 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="MyxZk1I3QI8" data-title="Episode 114: Counting common bases?">
+  <a href="https://youtu.be/MyxZk1I3QI8">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 114: Counting common bases? Two copies of a ground set in pairs, with one transversal circled.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:52. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/MyxZk1I3QI8?t=0" data-t="0"><span class="t">0:00</span><span>Common bases</span></a></li>
+  <li><a href="https://youtu.be/MyxZk1I3QI8?t=92" data-t="92"><span class="t">1:32</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/MyxZk1I3QI8?t=172" data-t="172"><span class="t">2:52</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/MyxZk1I3QI8?t=315" data-t="315"><span class="t">5:15</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>A matroid captures the idea of independence, like forests in a graph or linearly independent vectors. Its maximal independent sets, the bases, all have the same size. Two matroids on the same ground set can share bases. When no vertex is isolated, the perfect matchings of a bipartite graph are exactly the common bases of two partition matroids, each allowing at most one edge at every vertex on one side. Edmonds showed how to find a largest common independent set in polynomial time, using only an oracle that answers whether a set is independent.</p>
+<p>Counting is harder. A fully polynomial randomized approximation scheme (FPRAS) gets within any relative error ε with probability at least 1 − δ, in time polynomial in the input size, 1/ε and log(1/δ). Anari, Liu, Oveis Gharan and Vinzant gave one for the bases of a single matroid, using log-concave polynomials; Jerrum, Sinclair and Vigoda’s permanent algorithm covers bipartite perfect matchings. For two arbitrary matroids given by independence oracles, Anari, Oveis Gharan and Vinzant gave a deterministic approximation within a factor 2<sup>O(r)</sup>, exponential in the rank r. An FPRAS for two oracle matroids was recorded as an open problem in Liu’s dissertation, and Cryan, Guo and Mousa asked for a rapidly mixing chain.</p>
+<p>Result 114 is two OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/Approximate-counting-of-common-bases-of-two-matroids-September-23-2026/main.pdf">The first</a>, 26 pages, dated September 23, 2026, claims an FPRAS for the number of common bases of any two matroids of the same rank, given by independence oracles: on every execution, the numbers of oracle calls and bit operations are polynomial in the ground-set size, the input length, 1/ε and log(1/δ), and a zero count gives zero. It also covers common independent sets of a prescribed size, of any size, or of maximum size, even when the ranks differ. <a href="https://github.com/openai/math/blob/main/preprints/An-FPRAS-for-Common-Integer-Polymatroid-Bases-with-Binary-Capacities-October-5-2026/polymatroid-fpras.pdf">The second</a>, 42 pages, dated October 5, 2026, extends this, together with a <a href="https://github.com/openai/math/blob/main/preprints/An-FPRAS-for-Cell-Bounded-Contingency-Tables-September-24-2026/main.pdf">companion contingency-table preprint</a>, to common integer bases of two polymatroids of equal total rank given by rank-value oracles, with capacities written in binary and each integer vector counted once.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The count is approximate and randomized, not exact. The guarantee is in the oracle model: the matroids are accessed only through independence queries, and the bounds count both the queries and the bit operations around them. The polymatroid extension relies on a separate preprint and is not part of the Lean formalization.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 26 and 42 pages, dated September 23 and October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>OpenAI published a Lean proof of the matroid FPRAS, not of the polymatroid extension; we have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprints have not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/114.md">Lean formalization</a> of the matroid FPRAS with its oracle and bit bounds, a <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/MatroidCounting/CommonBases.lean">single file of 26,126 lines</a> importing only Mathlib, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/CommonBasesFPRAS.lean">its comparator statement</a>, with no unproved steps that we could find. The common-independent-set results and the polymatroid extension are not formalized. We have not run the check. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Two copies of the ground set.</strong> Following Anari, Oveis Gharan and Vinzant, put the first matroid on one copy and the dual of the second on the other, K = M<sub>1</sub> ⊕ M<sub>2</sub><sup>*</sup>. A transversal chooses one element from every pair; the transversal that takes the first copy on a set A and the second copy elsewhere is a basis of K exactly when A is a common basis.</li>
+  <li><strong>Weights and a chain.</strong> Every transversal gets weight q<sup>d</sup>, where d is its rank deficiency. At q = 1 the total is 2<sup>n</sup>; as q shrinks, it approaches the number of common bases. The algorithm lowers q in small steps and estimates each ratio by sampling. The chain also visits defective states, with one empty pair and one doubly occupied pair, whose total weights are balanced by learned multipliers, as in the permanent algorithm; it moves by one-element exchanges with Metropolis acceptance.</li>
+  <li><strong>The algebraic engine.</strong> By a theorem of Brändén and Huh, for 0 &lt; q ≤ 1 a matroid’s homogeneous multivariate Tutte polynomial is Lorentzian, so every quadratic obtained from it by derivatives and nonnegative substitutions has at most one positive eigenvalue. Applied to the paired matroid and its dual, this gives inequalities between defect totals, such as 4·c<sub>ij</sub>·c<sub>ji</sub> ≤ c<sub>0</sub><sup>2</sup>, and a transport inequality comparing states that differ in which slot is missing.</li>
+  <li><strong>From inequalities to an algorithm.</strong> The chain’s visits to transversals mix rapidly, and a separate variance bound covers the defect indicators and ratio observables. Fresh restarts along the schedule give warm starts, even though the multipliers are learned from earlier observations, and a bit-level implementation bounds the work on every execution.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A 3-by-3 bipartite graph had 3 common bases, matching its permanent; two random binary matroids of rank 4 on 9 elements shared 8 bases.</li>
+  <li>For the paired reduction, all 512 subsets of the 9-element example agreed.</li>
+  <li>The total transversal weight fell from 512 at q = 1 to 142.25, 22.24, 9.20 and 8.01 at q = 0.5, 0.1, 0.01 and 1/10,000, against 8 common bases.</li>
+  <li>The defect inequality held for every pair of the 9-element example, with largest ratios 4·c<sub>ij</sub>·c<sub>ji</sub>/c<sub>0</sub><sup>2</sup> of 0.25, 0.39 and 0.59 at q = 1, 0.3 and 0.05.</li>
+  <li>All 57 derivative Hessians for the graphic matroid of the complete graph K<sub>4</sub>, at three values of q, had at most one positive eigenvalue.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Approximate-counting-of-common-bases-of-two-matroids-September-23-2026/main.pdf">Approximate counting of common bases of two matroids (PDF)</a>, 26 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-FPRAS-for-Common-Integer-Polymatroid-Bases-with-Binary-Capacities-October-5-2026/polymatroid-fpras.pdf">An FPRAS for Common Integer Polymatroid Bases with Binary Capacities (PDF)</a>, 42 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/114.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 114.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-FPRAS-for-Common-Integer-Polymatroid-Bases-with-Binary-Capacities-October-5-2026/polymatroid-fpras.pdf">An FPRAS for Common Integer Polymatroid Bases with Binary Capacities</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Approximate-counting-of-common-bases-of-two-matroids-September-23-2026/main.pdf">Approximate counting of common bases of two matroids</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Common bases</h3>
+<p>A matroid captures the idea of independence, like forests in a graph or linearly independent vectors. Its maximal independent sets, the bases, all have the same size. Two matroids on the same ground set can share bases. When no vertex is isolated, the perfect matchings of a bipartite graph are exactly the common bases of two partition matroids, each allowing at most one edge at every vertex on one side. Edmonds showed how to find a largest common independent set in polynomial time, using only an oracle that answers whether a set is independent. In our check, a 3-by-3 bipartite graph had 3 common bases, matching its permanent, and two random binary matroids of rank 4 on 9 elements shared 8. Counting common bases is harder. For a single matroid, Anari, Liu, Oveis Gharan and Vinzant gave a fully polynomial randomized approximation scheme, or FPRAS, using log-concave polynomials. For bipartite perfect matchings, the permanent algorithm of Jerrum, Sinclair and Vigoda applies. For two arbitrary matroids given by independence oracles, Anari, Oveis Gharan and Vinzant gave a deterministic approximation within a factor exponential in the rank. An FPRAS for two matroids given by independence oracles was recorded as an open problem in Liu’s dissertation, and Cryan, Guo and Mousa asked for a rapidly mixing chain.</p>
+<h3><span class="t num">1:32</span>The claims</h3>
+<p>Result 114 is two OpenAI preprints. The first, 26 pages, dated September 23, claims an FPRAS for the number of common bases of any two matroids of the same rank, given by independence oracles. With probability at least 1 − δ, the estimate is within a factor 1 ± ε, and on every execution the numbers of oracle calls and bit operations are polynomial in the ground-set size, the input length, 1/ε and log(1/δ). A zero count gives zero. It also covers common independent sets of a prescribed size, of any size, or of maximum size, even when the ranks differ. The second preprint, 42 pages, dated October 5, extends this, together with a companion contingency-table preprint, to common integer bases of two polymatroids of equal total rank given by rank oracles, with capacities written in binary and each integer vector counted once, without expanding capacities into labelled copies. OpenAI published a Lean formalization of the matroid theorem, a single file of about 26,000 lines; the polymatroid extension is not part of it. We have not run the Lean check ourselves.</p>
+<h3><span class="t num">2:52</span>How the proof goes</h3>
+<p>The proof starts from a reduction of Anari, Oveis Gharan and Vinzant. Make two copies of the ground set, put the first matroid on one copy and the dual of the second on the other, and choose one element from every pair: a transversal. The transversal that takes the first copy on a set A and the second copy elsewhere is a basis of this direct sum exactly when A is a common basis. In our check, this held for all 512 subsets of a 9-element example. Every transversal gets weight q^(rank deficiency). At q = 1 the total is 2^n; as q shrinks, it approaches the number of common bases. The algorithm lowers q in small steps and estimates each ratio by sampling. The chain also visits defective states, with one empty pair and one doubly occupied pair, whose total weights are balanced by learned multipliers, as in the permanent algorithm, and it moves by one-element exchanges. In our check, the total fell from 512 to 8.01 as q went to 1/10,000, against 8 common bases. The algebraic engine is the theorem of Brändén and Huh that, for 0 &lt; q ≤ 1, a matroid’s homogeneous multivariate Tutte polynomial is Lorentzian, so every quadratic obtained from it by derivatives and nonnegative substitutions has at most one positive eigenvalue. Applied to the paired matroid and its dual, this gives inequalities between defect totals, such as 4·c_ij·c_ji ≤ c_0², and a transport inequality comparing states that differ in which slot is missing. In our check, all 57 derivative Hessians for the graphic matroid of the complete graph K4, at 3 values of q, had at most one positive eigenvalue, and on the 9-element example the defect inequality held for every pair. These bounds control what the algorithm actually measures. The chain’s visits to transversals mix rapidly, and a separate variance bound covers the defect indicators and ratio observables. Fresh restarts along the schedule give warm starts, even though the multipliers are learned from earlier observations, and a bit-level implementation bounds the work on every execution.</p>
+<h3><span class="t num">5:15</span>Where it stands</h3>
+<p>The preprints are not peer reviewed and have not been revised. The Lean formalization covers the matroid FPRAS with its oracle and bit bounds, but not the common-independent-set results or the polymatroid extension; we have not run it. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If it holds, common bases of any two matroids can be counted approximately in randomized polynomial time, answering a problem left open after the single-matroid breakthrough.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20114%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
