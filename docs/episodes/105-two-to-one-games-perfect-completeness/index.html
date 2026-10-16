@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Satisfiable yet hard? Khot’s 2-to-1 games conjecture with perfect completeness | AI Proved What?</title>
+<meta name="description" content="An AI system claims a proof of Khot’s 2-to-1 Games Conjecture with perfect completeness, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/105-two-to-one-games-perfect-completeness/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Satisfiable yet hard?">
+<meta property="og:description" content="An AI system claims a proof of Khot’s 2-to-1 Games Conjecture with perfect completeness, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/105-two-to-one-games-perfect-completeness/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/105-two-to-one-games-perfect-completeness/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 105, October 2026</p>
+<h1>Satisfiable yet hard?</h1>
+<p class="subtitle">A claimed proof of Khot’s 2-to-1 Games Conjecture with perfect completeness</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 105 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="-SZ1zRQbDoc" data-title="Episode 105: Satisfiable yet hard?">
+  <a href="https://youtu.be/-SZ1zRQbDoc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 105: Satisfiable yet hard? A 2-to-1 map from four left labels to two right labels, each right label with two preimages, and the words value = 1.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:15. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/-SZ1zRQbDoc?t=0" data-t="0"><span class="t">0:00</span><span>Projection games</span></a></li>
+  <li><a href="https://youtu.be/-SZ1zRQbDoc?t=121" data-t="121"><span class="t">2:01</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/-SZ1zRQbDoc?t=217" data-t="217"><span class="t">3:37</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/-SZ1zRQbDoc?t=335" data-t="335"><span class="t">5:35</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A projection game labels the vertices of a bipartite graph: left vertices from a larger alphabet, right vertices from a smaller one. Each edge carries a map from left labels to right labels and is satisfied when the right label is the image of the left label; the value is the largest fraction of edges one labelling satisfies. In a 2-to-1 game the left alphabet is twice the right, and under every map each right label has exactly two preimages.</p>
+<p>Projection games are where most hardness-of-approximation proofs begin. The PCP theorem and Raz’s parallel repetition make it NP-hard to tell games of value 1 from games of tiny value, but only with many preimages per label. When every map is one-to-one (unique games), a satisfiable game is easy: fix one label and follow the constraints. In 2002 Khot conjectured that 2-to-1 games stay hard with perfect completeness: telling value 1 from value at most δ is NP-hard for every δ. Austrin, O’Donnell, Tan and Wright proved perfect completeness against soundness about 23/24; the 2-to-2 theorem of Khot, Minzer and Safra (2018, with Dinur and Kindler) gave arbitrarily small soundness with completeness only near 1; Fei, Minzer and Wang proved perfect completeness for 4-to-1 games. Repeating a 2-to-1 game k times gives 2<sup>k</sup> preimages, so the usual amplification does not help.</p>
+<p>Result 105 is <a href="https://github.com/openai/math/blob/main/preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/paper.pdf">one OpenAI preprint</a> (53 pages) dated September 23, 2026. For every fixed rational δ in (0, 1) it gives an alphabet size q and a deterministic polynomial-time reduction from 3-SAT to 2-to-1 games over alphabets of 2q and q labels: satisfiable formulas give value exactly 1, unsatisfiable ones value at most δ. The output is an explicit unweighted list of edges, and every map has exactly two preimages for each right label.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it implies, and what it doesn’t</h2>
+<p>Guruswami and Sinop’s conditional bound, through their reduction, becomes unconditional: for every large enough k it is NP-hard to tell k-colorable graphs from graphs where every k-coloring properly colors at most 1 − 1/k + O((log k)/k²) of the edges, close to what a random coloring achieves. It also recovers known results: Håstad’s hardness for satisfiable Not-Two constraints and the hardness of telling 3-colorable graphs from graphs that are not c-colorable. The alphabet size and running time depend on δ through a long chain of constants; this is a hardness statement, not a practical construction.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 53 pages, dated September 23, 2026, released October 6</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>OpenAI published a Lean proof of the main theorem; we have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/105.md">Lean formalization</a>, <a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/PerfectCompleteness">581 files and 137,399 lines</a> that also import 282 files of the unique games formalization of result 102, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PerfectCompleteness.lean">its comparator statement</a>: there is a polynomial-time Turing-machine reduction producing exactly 2-to-1 games of value 1 on satisfiable inputs and at most δ otherwise. We found no unproved steps. By our reading it proves its inputs as well: the PCP theorem, parallel repetition, and a level inequality used in place of Grassmann expansion. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The source game.</strong> One player receives a clause and answers with a satisfying assignment of its variables; the other receives a variable and answers with a bit. A PCP theorem with perfect completeness and parallel repetition make its value tiny for unsatisfiable formulas, while a satisfying assignment wins every round.</li>
+  <li><strong>A tree of function spaces.</strong> Independent copies of the questions sit at the leaves of a finite tree. Each leaf carries all binary functions of its answers, and each node above carries the span of products of two functions from the same child.</li>
+  <li><strong>Questions are partitions.</strong> A question shows a list of functions at every node; together they cut the space of all leaf answers into parts by their joint values, and a legal answer is one nonempty part, so a satisfying assignment answers every question consistently. Deleting one function merges each part with at most one other: that gives the 2-to-1 maps, and value exactly 1 for satisfiable formulas.</li>
+  <li><strong>Soundness.</strong> If a labelling satisfies a fixed fraction of the edges, an inverse theorem for the shortcode, derived from Khot, Minzer and Safra’s Grassmann expansion, finds a linear form z whose matrix z(s<sub>t</sub>s<sub>u</sub>) on the displayed functions has rank at most one, as it does for evaluation at a point. Further steps show that low-rank forms carry part of the success; they pick short odd lists of answers at each leaf, decoders read off answers for the source game, and parallel repetition rules that out. Finally every map is completed to exactly 2-to-1 and the weights are replaced by an explicit edge list.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A 2-to-1 game with labels 1–4 on the left and 1–2 on the right, three vertices on each side and seven edges, built around a planted labelling: value exactly 1 by brute force.</li>
+  <li>Following constraints along a path from one fixed label leaves one candidate in a unique game, and 2<sup>m−1</sup> in a 2-to-1 game with m left vertices: 549,755,813,888 for 40.</li>
+  <li>Repeating a 2-to-1 map k = 1, 2, 3, 4 times gives 2, 4, 8, 16 preimages.</li>
+  <li>Four random binary functions cut 64 points into 16 parts; deleting one leaves 8, each the union of 2.</li>
+  <li>For 8 functions on 32 points, evaluation at a point always gave a matrix of rank at most 1; random forms gave median rank 7 (200 trials).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/paper.pdf">Perfect completeness for 2-to-1 games (PDF)</a>, 53 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/105.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 105.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Perfect-completeness-for-2-to-1-games-September-23-2026/paper.pdf">Perfect completeness for 2-to-1 games</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Projection games</h3>
+<p>A projection game is a labelling puzzle on a bipartite graph. Each left vertex gets a label from a larger alphabet, each right vertex a label from a smaller one, and each edge carries a map from left labels to right labels. The edge is satisfied when the right label is the image of the left label. The value of the game is the largest fraction of edges a single labelling can satisfy. In a 2-to-1 game, the left alphabet has twice as many labels as the right, and under every edge’s map, every right label has exactly two preimages. This small game, with 4 left labels and 2 right ones, has a labelling that satisfies all 7 edges: its value is exactly one. Projection games are where most hardness-of-approximation proofs begin. The PCP theorem and Raz’s parallel repetition make it NP-hard to tell games of value one from games of tiny value, but only when each right label has many preimages. If every map is one-to-one, the unique games case, a satisfiable game is easy: fix one label and follow the constraints. In a 2-to-1 game, every step back from a right label to a left label offers two choices: along a path of 40 left vertices, over half a trillion candidates. In 2002, Khot conjectured that 2-to-1 games stay hard even with perfect completeness: telling value one from value at most delta is NP-hard, for every delta. Progress came close from several sides. Austrin, O’Donnell, Tan and Wright proved hardness with perfect completeness, but only against value about 23/24. Khot, Minzer and Safra’s 2-to-2 theorem, completed in 2018, gave arbitrarily small value, but with completeness only near one. Fei, Minzer and Wang reached perfect completeness for 4-to-1 games. And the usual amplification fails: repeating a 2-to-1 game k times gives 2^k preimages.</p>
+<h3><span class="t num">2:01</span>The claim</h3>
+<p>Result 105 is one OpenAI preprint, 53 pages, dated September 23. For every fixed rational delta between zero and one, it gives an alphabet size and a deterministic polynomial-time reduction from 3-SAT to 2-to-1 games: satisfiable formulas give value exactly one, unsatisfiable ones value at most delta. The output is an explicit unweighted list of edges, and every map has exactly two preimages for each right label. That is Khot’s 2-to-1 games conjecture with perfect completeness. Plugged into Guruswami and Sinop’s reduction, it makes their conditional bound unconditional: for every large enough k, it is NP-hard to tell k-colorable graphs from graphs where every k-coloring properly colors at most about 1 − 1/k of the edges, the fraction a random coloring already achieves, up to order (log k)/k². It also recovers known results, such as Håstad’s hardness for satisfiable Not-Two constraints, where random assignments satisfy 5/8. OpenAI published a Lean formalization: 581 files and about 137,000 lines, which also import about 280 files from the unique games formalization of result 102. Its target is the reduction itself, computed by a Turing machine in polynomial time. We found no unproved steps, so by our reading it proves its inputs as well, in places by a different route. We have not run the check.</p>
+<h3><span class="t num">3:37</span>How the proof goes</h3>
+<p>The proof starts from a clause-versus-variable game. One player receives a clause and answers with a satisfying assignment of its variables; the other receives a variable and answers with a bit. A PCP theorem with perfect completeness and parallel repetition make its value tiny for unsatisfiable formulas, while a satisfying assignment still wins every round. Independent copies of these questions sit at the leaves of a finite tree. Each leaf carries all binary functions of its answers, and each node above carries the span of products of two functions from the same child. A question shows a list of functions at every node. They cut the space of all leaf answers into parts, by their joint values, and a legal answer is one nonempty part, so a single satisfying assignment answers every question consistently. Deleting one function merges each part with at most one other: that is where the 2-to-1 maps come from, and why satisfiable formulas give value exactly one. In our example, 4 functions cut 64 points into 16 parts; dropping one leaves 8, each the union of 2. For soundness, suppose a labelling satisfies a fixed fraction of the edges. An inverse theorem for the shortcode, derived from Khot, Minzer and Safra’s Grassmann expansion, finds structure: a linear form whose matrix on the displayed functions has rank at most one, as it does for evaluation at one point. In our check, point evaluations always gave rank at most one, while random forms gave median rank 7 out of 8. Further steps show that low-rank forms carry part of the success; they pick short odd lists of answers at each leaf, decoders read off answers for the original game, and parallel repetition rules that out. Finally, every map is completed to exactly 2-to-1, and the weights are replaced by an explicit list of edges.</p>
+<h3><span class="t num">5:35</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. The Lean formalization covers the main theorem and proves its own inputs, with a level inequality in place of Grassmann expansion; we have not run it. It is not among the papers OSVerify reviewed, and we have seen no expert review. The alphabet size and running time depend on delta through a long chain of constants; this is a hardness statement, not a practical construction. If it holds, 2-to-1 games are hard even when one labelling satisfies every edge, and Khot’s conjecture from 2002 is a theorem.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20105%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

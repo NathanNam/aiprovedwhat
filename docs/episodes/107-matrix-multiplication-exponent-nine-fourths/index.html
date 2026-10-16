@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two and a quarter? The matrix multiplication exponent at most 9/4 | AI Proved What?</title>
+<meta name="description" content="An AI system claims that the exponent of matrix multiplication is at most 9/4, with companion bounds and Lean formalizations. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/107-matrix-multiplication-exponent-nine-fourths/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Two and a quarter?">
+<meta property="og:description" content="An AI system claims that the exponent of matrix multiplication is at most 9/4, with companion bounds and Lean formalizations. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/107-matrix-multiplication-exponent-nine-fourths/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/107-matrix-multiplication-exponent-nine-fourths/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 107, October 2026</p>
+<h1>Two and a quarter?</h1>
+<p class="subtitle">A claimed proof that the exponent of matrix multiplication is at most 9/4</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 107 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="ILvHD7163h0" data-title="Episode 107: Two and a quarter?">
+  <a href="https://youtu.be/ILvHD7163h0">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 107: Two and a quarter? Dots for the best bounds on the matrix multiplication exponent over time, a long plateau near 2.37, and a drop to 9/4.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:36. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/ILvHD7163h0?t=0" data-t="0"><span class="t">0:00</span><span>Multiplying matrices</span></a></li>
+  <li><a href="https://youtu.be/ILvHD7163h0?t=79" data-t="79"><span class="t">1:19</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/ILvHD7163h0?t=164" data-t="164"><span class="t">2:44</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/ILvHD7163h0?t=298" data-t="298"><span class="t">4:58</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>Multiplying two n × n matrices the schoolbook way takes n³ multiplications. In 1969 Strassen multiplied 2 × 2 matrices with seven multiplications instead of eight; used recursively on blocks, that gives about n<sup>2.81</sup> operations. The exponent of matrix multiplication, ω, is the smallest exponent reachable in the limit; it is at least 2, since there are n² entries to write down.</p>
+<p>Approximate algorithms, Schönhage’s asymptotic sum inequality and Strassen’s laser method turned the search into a question about tensors. Coppersmith and Winograd reached about 2.375 in 1990. Over the following decades a long line of work, by Stothers, Vassilevska Williams, Le Gall, Alman, Duan, Wu, Zhou and others, lowered the bound only to about 2.3712, the latest step by Dupont and colleagues using AlphaEvolve. Ambainis, Filmus and Le Gall showed that a wide class of laser-method analyses of the Coppersmith–Winograd tensors cannot go below about 2.31.</p>
+<p>Result 107 is three OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/paper.pdf">The headline paper</a> (13 pages, October 2, 2026) claims ω ≤ 9/4 = 2.25 over the complex numbers: for every ε &gt; 0, n × n matrices can be multiplied with O(n<sup>9/4+ε</sup>) arithmetic operations. <a href="https://github.com/openai/math/blob/main/preprints/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026.pdf">An 83-page write-up</a> (September 24) proves the weaker square bound 2.258 together with new rectangular bounds, including a dual exponent α above 0.465 and ω(1, 0.709, 1) below 2.092. <a href="https://github.com/openai/math/blob/main/preprints/Staggered-extraction-for-exact-matrix-multiplication-over-every-field-September-24-2026/Staggered-extraction-for-exact-matrix-multiplication-over-every-field-September-24-2026.pdf">A third paper</a> (35 pages, September 24) proves ω below 2.371054886006746 over every field, including positive characteristic, by refining the existing extraction methods.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The bounds are about asymptotic arithmetic operation counts. The proof gives no practical algorithm and no crossover size at which it would beat existing methods. The 9/4 proof does not use the Coppersmith–Winograd tensors at all, so the limits known for analyses of those tensors do not apply to it.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, three preprints dated September 24 and October 2, 2026, released October 6</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>OpenAI published Lean proofs of the 9/4 bound, the rectangular bounds and the every-field bound; we have not run the checks</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprints have not been revised. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/107.md">Lean formalizations</a>. The 9/4 bound and the rectangular bounds, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/MatrixMultiplication.lean">their comparator statements</a>, use 251 files and 41,721 lines; <a href="https://github.com/openai/math/blob/main/lean/OAI/LinearAlgebra/MatrixMultiplication/AuxiliarySeparation">the 9/4 proof</a> itself uses 129 files and follows the 9/4 paper, including its detecting-character appendix, with Brouwer’s fixed-point theorem taken from an external Lean package. The every-field bound, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/MatrixFields.lean">its comparator statement</a>, uses <a href="https://github.com/openai/math/blob/main/lean/OAI/LinearAlgebra/MatrixFields">350 files and 181,240 lines</a>. We found no sorry or axiom in the repository’s files. We have not run the checks. None of the papers is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the 9/4 proof goes</h2>
+<ol class="steps">
+  <li><strong>Characters.</strong> A bilinear map is a trilinear form, and forms can be compared by restriction and degeneration. Strassen’s asymptotic spectrum supplies characters: numbers attached to tensors that add on direct sums, multiply on tensor products and can only drop under restriction. A detecting-character lemma reduces the problem to bounding every character on matrix multiplication, where its value is n<sup>3t</sup>; the goal is t ≤ 3/4 for every character.</li>
+  <li><strong>Polynomial multiplication.</strong> Multiplying a polynomial with a coefficients by one with b coefficients gives a + b − 1 outputs; evaluation at that many points and counting outputs show its rank is exactly a + b − 1. A geometric mean of a character over the six orderings of the legs gives a profile P(a, b) with P ≤ (a + b − 1)<sup>1/t</sup> and P(1, b) = b.</li>
+  <li><strong>Separation, concavity, tripling.</strong> A separation step uses a Fourier projection over 5M copies and a degeneration weighted by (g − h)² to make blocks that shared one leg fully independent; the number of blocks pays for the copies, and each block gains a dot product. Applied to a determinant filtration, it makes the profile concave in each input length; applied to three sectors, it gives P(a, 3h + a − 1) ≥ 3P(a, h).</li>
+  <li><strong>Growth.</strong> A short discrete argument turns concavity and tripling into P(a, a) ≥ a<sup>4/3</sup>. With the cap, a<sup>4/3</sup> ≤ (2a − 1)<sup>1/t</sup> for every a, which forces t ≤ 3/4 and hence ω ≤ 9/4.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Strassen’s seven products reproduced 1,000 of 1,000 random 2 × 2 integer products exactly.</li>
+  <li>The polynomial multiplication tensor C(a, b) has output flattening rank a + b − 1, and evaluation at a + b − 1 points recovers every product exactly.</li>
+  <li>The separation step’s Fourier identity and weight (g − h)² check out for M up to 6; the three-sector split leaves exactly three blocks and no negative weights in five test cases.</li>
+  <li>From a single a, a<sup>4/3</sup> ≤ (2a − 1)<sup>1/t</sup> gives t ≤ 0.959 (a = 10), 0.825 (10³), 0.788 (10⁶), 0.769 (10¹²), approaching 3/4.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/paper.pdf">An Upper Bound of 9/4 for the Matrix Multiplication Exponent (PDF)</a>, 13 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026.pdf">Complex Matrix Multiplication Below 2.258 and Rectangular Bounds (PDF)</a>, 83 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Staggered-extraction-for-exact-matrix-multiplication-over-every-field-September-24-2026/Staggered-extraction-for-exact-matrix-multiplication-over-every-field-September-24-2026.pdf">Staggered extraction for exact matrix multiplication over every field (PDF)</a>, 35 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/107.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 107.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Matrix-Multiplication-Nine-Fourths-October-2-2026/paper.pdf">An Upper Bound of 9/4 for the Matrix Multiplication Exponent</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026/Complex-Matrix-Multiplication-Below-2.258-and-Rectangular-Bounds-September-24-2026.pdf">Complex Matrix Multiplication Below 2.258 and Rectangular Bounds</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Staggered-extraction-for-exact-matrix-multiplication-over-every-field-September-24-2026/Staggered-extraction-for-exact-matrix-multiplication-over-every-field-September-24-2026.pdf">Staggered extraction for exact matrix multiplication over every field</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Multiplying matrices</h3>
+<p>Multiplying two n by n matrices the schoolbook way takes n³ multiplications. In 1969, Strassen found a way to multiply two-by-two matrices with seven multiplications instead of eight. Used recursively on blocks, it multiplies n by n matrices with about n^2.81 operations. The exponent of matrix multiplication, omega, is the smallest exponent reachable in the limit. It is at least two, because there are n² entries to write down. In our check, Strassen’s seven products reproduced 1,000 random products exactly. Approximate algorithms, Schönhage’s asymptotic sum inequality and Strassen’s laser method turned the search into a question about tensors. Coppersmith and Winograd reached about 2.375 in 1990. Over the following decades, a long line of work, by Stothers, Vassilevska Williams, Le Gall, Alman, Duan, Wu, Zhou and others, lowered it only to about 2.3712, the latest step by Dupont and colleagues using AlphaEvolve. Ambainis, Filmus and Le Gall showed that a wide class of laser-method analyses of the Coppersmith and Winograd tensors cannot go below about 2.31.</p>
+<h3><span class="t num">1:19</span>The claims</h3>
+<p>Result 107 is three OpenAI preprints. The headline paper, 13 pages, dated October 2, claims that omega is at most 9/4, 2.25, over the complex numbers: for every epsilon, n by n matrices can be multiplied with O(n^(9/4 + ε)) arithmetic operations. An 83-page write-up dated September 24 proves the weaker square bound 2.258, with new rectangular bounds: for example, the dual exponent alpha exceeds 0.465. A third paper proves omega below 2.371055 over every field, including positive characteristic, by refining the existing extraction methods. Two and a quarter (2.25) is far below every bound before these preprints, and the new proof does not use the Coppersmith and Winograd tensors at all. The bounds are asymptotic: the proof gives no practical algorithm or crossover size. OpenAI published Lean formalizations: the 9/4 bound and the rectangular bounds in about 250 files and 42,000 lines, of which the 9/4 proof uses about 130 files, and the every-field bound in about 350 files and 181,000 lines. We have not run the checks.</p>
+<h3><span class="t num">2:44</span>How the proof goes</h3>
+<p>The proof works with tensors. A bilinear map is a trilinear form, and forms can be compared by restriction and by degeneration. Strassen’s asymptotic spectrum supplies characters: numbers attached to tensors that add on direct sums, multiply on tensor products, and can only drop under restriction. A detecting-character lemma reduces the problem to bounding every character on matrix multiplication, where its value is n^(3t) for some t. The goal is to show t is at most 3/4 for every character. The test object is polynomial multiplication. Multiplying a polynomial with a coefficients by one with b coefficients gives a + b − 1 outputs, and evaluating at that many points, plus counting outputs, shows its rank is exactly a + b − 1. Averaging a character over the six orderings of the three legs, as a geometric mean, gives a profile, P(a, b). Interpolation caps it: P is at most (a + b − 1)^(1/t). And with one input of length one, P equals b. Two constructions push the profile up. A separation step uses a finite Fourier projection, and a degeneration weighted by the square of a label mismatch, to make blocks that shared one leg fully independent; the number of blocks pays for the copies, and each block gains a dot product. Applied to a determinant filtration, it shows the profile is concave in each input length. Applied to three sectors, it shows that P(a, 3h + a − 1) is at least 3·P(a, h). In our checks, the separation identity and the three-sector split held exactly in every case we tried. A short discrete argument turns concavity and tripling into growth along the diagonal: P(a, a) is at least a^(4/3). Comparing with the cap, a^(4/3) is at most (2a − 1)^(1/t), for every a. That forces t to be at most 3/4, so omega is at most 3 × 3/4: 9/4. The bound from a single a approaches 3/4 slowly: 0.79 at a million.</p>
+<h3><span class="t num">4:58</span>Where it stands</h3>
+<p>The three preprints are not peer reviewed and have not been revised. Lean formalizations cover the 9/4 bound, the rectangular bounds and the every-field bound; we have not run them. None of the papers is among those OSVerify reviewed, and we have seen no expert review. The result is about asymptotic operation counts, not a practical algorithm. If it holds, the best bound on the exponent of matrix multiplication drops from about 2.37 to two and a quarter, by a short argument about multiplying polynomials.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20107%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

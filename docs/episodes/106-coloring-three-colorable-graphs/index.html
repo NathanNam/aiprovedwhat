@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three colors, no help? Hardness of finding independent sets in three-colorable graphs | AI Proved What?</title>
+<meta name="description" content="An AI system claims it is NP-hard to tell three-colorable graphs from graphs with only tiny independent sets, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/106-coloring-three-colorable-graphs/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Three colors, no help?">
+<meta property="og:description" content="An AI system claims it is NP-hard to tell three-colorable graphs from graphs with only tiny independent sets, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/106-coloring-three-colorable-graphs/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/106-coloring-three-colorable-graphs/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 106, October 2026</p>
+<h1>Three colors, no help?</h1>
+<p class="subtitle">A claimed proof that a three-coloring promise does not make large independent sets easy to find</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 106 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="ZHw4MBarBbA" data-title="Episode 106: Three colors, no help?">
+  <a href="https://youtu.be/ZHw4MBarBbA">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 106: Three colors, no help? A circle of phases cut into three colored arcs, with one point and its neighbors near the opposite side.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:59. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/ZHw4MBarBbA?t=0" data-t="0"><span class="t">0:00</span><span>Coloring with a promise</span></a></li>
+  <li><a href="https://youtu.be/ZHw4MBarBbA?t=118" data-t="118"><span class="t">1:58</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/ZHw4MBarBbA?t=192" data-t="192"><span class="t">3:12</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/ZHw4MBarBbA?t=318" data-t="318"><span class="t">5:18</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A proper coloring gives adjacent vertices different colors. If a graph can be colored with three colors, one color class holds at least a third of the vertices, and no two of them are adjacent: it is an independent set. Deciding whether a graph is three-colorable is NP-complete. But suppose it is promised to be: can we color it with four colors, or ten, or find an independent set of 1% of the vertices?</p>
+<p>Algorithms do poorly: Bansal, Huang and Lee’s method uses O(n<sup>0.19539</sup>) colors, improving Kawarabayashi, Thorup and Yoneda, and newer randomized preprints report somewhat smaller exponents. On the hardness side, Khanna, Linial and Safra showed that four colors are NP-hard, Barto, Bulín, Krokhin and Opršal five, and Fei, Minzer and Wang’s recent theorem on 4-to-1 games, through reductions of Guruswami and Sandeep and of Krokhin, Opršal, Wrochna and Živný, gives any fixed number. Independent sets are a stronger question: small independent sets force many colors, but adding isolated vertices keeps the colors while making the independent sets huge. Earlier results reached it from conjectures (Dinur, Mossel and Regev; Braverman, Khot, Lifshitz and Minzer), for almost three-colorable graphs with density 1/9 (Dinur, Khot, Perkins and Safra), or with an eight-coloring promise (Fei, Minzer and Wang).</p>
+<p>Result 106 is <a href="https://github.com/openai/math/blob/main/preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026.pdf">one OpenAI preprint</a> (21 pages) dated September 24, 2026. For every fixed δ below 1/3 it gives a deterministic polynomial-time reduction from 3-SAT to graphs: satisfiable formulas give three-colorable graphs, and unsatisfiable ones give graphs in which every independent set has fewer than δ times the number of vertices. Since a graph colored with c colors has an independent set of at least a c-th of its vertices, coloring three-colorable graphs with any fixed number of colors is NP-hard.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What is new</h2>
+<p>The coloring consequence was already known through Fei, Minzer and Wang, and also follows from result 105. The new part is the independent-set bound under the full three-coloring promise, proved from ordinary label cover with no condition on the sizes of its projection fibers.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 21 pages, dated September 24, 2026, released October 6</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>OpenAI published a Lean proof of the main theorem; we have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised since its release; its text cites preprints posted after its September 24 date line. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/106.md">Lean formalization</a>, <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/IndependentSets">454 files and 94,095 lines</a> importing only Mathlib, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/IndependentSets.lean">its comparator statement</a>: a polynomial-time Turing-machine reduction, with a polynomial bound on the output graph, from three-colorable graphs to graphs with independence number below δn. We found no unproved steps; it proves its own inputs, a PCP theorem, parallel repetition and a Friedgut-type junta theorem in place of Austin’s. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Phases on a circle.</strong> Start from label cover with perfect completeness and tiny value on unsatisfiable formulas. Build chains of question tuples, replacing one question at a time. A vertex is a point, drawn by a finite random experiment, that assigns a phase on the circle to every possible answer of a tuple; projections link points at distance zero, and an edge joins x and y when x is within 1/8 of y shifted by half a turn.</li>
+  <li><strong>Completeness.</strong> If the formula is satisfiable, evaluating every point at the satisfying answer gives each vertex one phase, and adjacent vertices get phases at least 3/8 apart, so the three arcs [0, 1/3), [1/3, 2/3), [2/3, 1) color the graph properly.</li>
+  <li><strong>Few coordinates matter.</strong> An independent set gives bounded functions on the phase spaces that flip sign under the half turn and share a Lipschitz bound. Austin’s junta theorem, a continuous counterpart of Friedgut’s, approximates them using a bounded number of answer coordinates, however many there are. Coordinate lists are chosen for whole stretches of a chain, with random rotations at every layer; two separated stretches sharing an answer would satisfy a label cover test in between, which low label cover value makes rare.</li>
+  <li><strong>A density bound.</strong> An alignment lemma (finite minimax, Ramsey-type homogenization, random arrays) assigns each listed label, on most sampled sets of layers, one index shared by all its occurrences. Coefficients sampled at finitely many levels with geometrically decreasing probabilities, and a bound on influential coordinates, give a small mean square and hence a small independent set. The random experiment is expanded exactly into unweighted vertices, so the reduction is deterministic.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A random 15-vertex graph with a planted three-coloring (42 edges): chromatic number 3, color classes of 5, largest independent set 6.</li>
+  <li>K<sub>4</sub> plus isolated vertices keeps 4 colors while its independence ratio rises: 0.700, 0.970, 0.997.</li>
+  <li>The completeness rule on 20,000 random pairs of phases: 5,071 edges, every one joining phases at least 3/8 apart, all properly colored by the three arcs.</li>
+  <li>n<sup>0.19539</sup>, ignoring the constant: about 15 for a million vertices, 57 for a billion.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026.pdf">Hardness of finding large independent sets in three-colorable graphs (PDF)</a>, 21 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/106.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 106.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026/Hardness-of-finding-large-independent-sets-in-three-colorable-graphs-September-24-2026.pdf">Hardness of finding large independent sets in three-colorable graphs</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Coloring with a promise</h3>
+<p>A proper coloring gives adjacent vertices different colors. If a graph can be colored with three colors, one of the three color classes holds at least a third of the vertices, and no two of them are adjacent: it is an independent set. Deciding whether a graph is three-colorable is NP-complete. But suppose we are promised that it is. Can we then color it with four colors, or ten, or at least find an independent set of 1% of the vertices? In our example, 15 vertices with a hidden three-coloring, the largest independent set has 6 vertices. Algorithms do poorly. The best known polynomial-time method, by Bansal, Huang and Lee, improving Kawarabayashi, Thorup and Yoneda, uses about n^0.195 colors, up to a constant factor; for a million vertices that power is about 15, and newer randomized preprints report somewhat smaller exponents. Hardness lagged far behind. Khanna, Linial and Safra showed that four colors are NP-hard, and Barto, Bulín, Krokhin and Opršal five. Recently Fei, Minzer and Wang proved a games theorem that, through earlier reductions, makes any fixed number of colors NP-hard. A stronger question is about independent sets. Is it NP-hard to tell three-colorable graphs from graphs whose independent sets are all tiny? Small independent sets force many colors, but not the other way round: adding isolated vertices to a graph keeps its colors but makes its independent sets huge. Dinur, Mossel and Regev, and later Braverman, Khot, Lifshitz and Minzer, derived this from conjectures. Dinur, Khot, Perkins and Safra proved that, if a few vertices may be deleted, even independent sets of 1/9 of the vertices are hard to find, and Fei, Minzer and Wang’s route gives tiny independent sets, but only with an eight-coloring promise.</p>
+<h3><span class="t num">1:58</span>The claim</h3>
+<p>Result 106 is one OpenAI preprint, 21 pages, dated September 24. For every fixed delta below 1/3, it gives a deterministic polynomial-time reduction from 3-SAT to graphs: satisfiable formulas give three-colorable graphs, and unsatisfiable formulas give graphs in which every independent set has fewer than delta times the number of vertices. Since a graph colored with c colors has an independent set of at least a c-th of its vertices, coloring three-colorable graphs with any fixed number of colors is NP-hard. That coloring consequence was already known through Fei, Minzer and Wang, and also follows from result 105. The new part is the independent-set bound under the full three-coloring promise, proved from ordinary label cover with no condition on the sizes of its projection fibers. OpenAI published a Lean formalization, 454 files and about 94,000 lines, self-contained. Its target is the reduction, including the size of the output graph. We found no unproved steps; we have not run the check.</p>
+<h3><span class="t num">3:12</span>How the proof goes</h3>
+<p>The proof starts from label cover with perfect completeness and tiny value on unsatisfiable formulas, from the PCP theorem and parallel repetition. It builds chains of question tuples, replacing one question at a time. A vertex of the graph is a point, drawn by a finite random experiment, that assigns a phase on the circle to every possible answer of a tuple. Projections between answers link points at distance zero, and an edge joins x and y when x is within 1/8 of y shifted by half a turn. If the formula is satisfiable, evaluating every point at the satisfying answer gives each vertex one phase; adjacent vertices then get phases at least 3/8 apart, so three equal arcs of the circle color the graph properly. In our test of this rule on random phases, every edge got two different colors. For soundness, an independent set gives bounded functions on the phase spaces that flip sign under the half turn and obey a common Lipschitz bound. Austin’s junta theorem, a continuous counterpart of Friedgut’s, approximates such functions using a bounded number of answer coordinates, however many there are. The proof chooses such coordinate lists for whole stretches of a chain, with independent random rotations at every layer. If two separated stretches share an answer, that answer satisfies a label cover test in between, so low label cover value makes this rare. Two further steps turn this into a density bound. An alignment lemma, built from minimax, Ramsey-type homogenization and random arrays, lets each listed label, on most sampled sets of layers, be assigned one index shared by all its occurrences. Then coefficients are sampled at finitely many levels between zero and one, with geometrically decreasing probabilities, and a bound on influential coordinates gives a small mean square, hence a small independent set. Finally the random experiment is expanded exactly into unweighted vertices, so the reduction is deterministic.</p>
+<h3><span class="t num">5:18</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised since its release. The Lean formalization covers the main theorem and proves its own inputs, with a Friedgut-type junta theorem in place of Austin’s; we have not run it. It is not among the papers OSVerify reviewed, and we have seen no expert review. The gap between the algorithms’ growing number of colors and hardness for every fixed number remains wide. If it holds, then unless P equals NP, even knowing that a graph is three-colorable does not make it easy to find an independent set holding any fixed fraction of its vertices.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20106%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

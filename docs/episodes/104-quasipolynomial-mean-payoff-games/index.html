@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who wins in the long run? Quasipolynomial algorithms for mean-payoff games | AI Proved What?</title>
+<meta name="description" content="An AI system claims quasipolynomial algorithms for mean-payoff games, turn-based stochastic games and mean-payoff parity games, with a Lean formalization of the randomized algorithm. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/104-quasipolynomial-mean-payoff-games/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Who wins in the long run?">
+<meta property="og:description" content="An AI system claims quasipolynomial algorithms for mean-payoff games, turn-based stochastic games and mean-payoff parity games, with a Lean formalization of the randomized algorithm. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/104-quasipolynomial-mean-payoff-games/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/104-quasipolynomial-mean-payoff-games/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 104, October 2026</p>
+<h1>Who wins in the long run?</h1>
+<p class="subtitle">Claimed quasipolynomial algorithms for mean-payoff games, turn-based stochastic games and mean-payoff parity games</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 104 in OpenAI’s catalog: <a href="#papers-in-result">all 4 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="M2X2TVSRZYM" data-title="Episode 104: Who wins in the long run?">
+  <a href="https://youtu.be/M2X2TVSRZYM">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 104: Who wins in the long run? A six-vertex mean-payoff game with Max’s and Min’s winning regions tinted, a token, and the question whether the long-run average is at least zero.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:10. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/M2X2TVSRZYM?t=0" data-t="0"><span class="t">0:00</span><span>Games that last forever</span></a></li>
+  <li><a href="https://youtu.be/M2X2TVSRZYM?t=105" data-t="105"><span class="t">1:45</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/M2X2TVSRZYM?t=226" data-t="226"><span class="t">3:46</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/M2X2TVSRZYM?t=394" data-t="394"><span class="t">6:34</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>In a mean-payoff game two players move a token around a directed graph forever. Max chooses the next edge at some vertices and Min at the others; every edge carries an integer weight, and the payoff of the infinite walk is its long-run average weight. Max wants that average to be at least zero. Ehrenfeucht and Mycielski showed that both players have optimal strategies depending only on the current vertex, so deciding the winner lies in NP ∩ co-NP. No polynomial-time algorithm is known.</p>
+<p>The difficulty is the size of the weights. Zwick and Paterson’s algorithms take time polynomial in the number of vertices and in the largest weight, but a weight written with 60 binary digits is about 10<sup>18</sup>, so that time can be exponential in the length of the input. Björklund and Vorobyov’s randomized algorithm takes an expected 2<sup>O(√(n log n))</sup> operations for n vertices. Parity games reduce to mean-payoff games with very large weights, and Calude, Jain, Khoussainov, Li and Stephan solved them in quasipolynomial time in 2017; that does not by itself handle general mean-payoff games.</p>
+<p>Result 104 is four OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf">The deterministic paper</a> (27 pages) and <a href="https://github.com/openai/math/blob/main/preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf">the randomized paper</a> (41 pages), dated September 25, 2026, compute the complete set of vertices from which Max can keep the average at least zero, using 2<sup>O((log L)²)</sup> bit operations for an input of length L: quasipolynomial, faster-growing than any polynomial but far slower than exponential. A reduction also gives the exact value at every vertex and optimal positional strategies for both players. The randomized algorithm is correct with probability at least 7/8, and a polynomial-time check certifies its answer. Two companions, dated October 5, extend the results: <a href="https://github.com/openai/math/blob/main/preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/stochastic-mean-payoff-games.pdf">one</a> (20 pages) finds the vertices of nonnegative value in turn-based stochastic mean-payoff games, deterministically and with the same bound, and so decides whether a simple stochastic game has value at least 1/2; <a href="https://github.com/openai/math/blob/main/preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/mean-payoff-parity.pdf">the other</a> (14 pages) solves mean-payoff parity games, using the deterministic algorithm as a subroutine.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The bounds are quasipolynomial, not polynomial; the deterministic paper calls a polynomial bound “a further improvement”. With constants set to one, at an input of a million bits a cubic bound has 19 digits, 2<sup>(log₂ L)²</sup> about 120, and 2<sup>L</sup> about 300,000: the claims are theoretical. The stochastic paper decides which vertices have nonnegative value; it does not compute values or strategies.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, four preprints dated September 25 and October 5, 2026, released October 6</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>In part: OpenAI published a Lean proof of the randomized algorithm’s winning-set theorem; we have not run the checks</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprints have not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/104.md">Lean formalization</a> of the randomized algorithm’s winning-set theorem, <a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/MeanPayoff">72 files</a> and <a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/RandomMean">17 more</a>, about 27,000 lines, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/RandomizedMeanPayoff.lean">its comparator statement</a>: a Turing machine reading random bits that halts within 2<sup>C(log₂(L+2))²</sup> steps on every tape and is correct on at least 7/8 of them. It also formalizes <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/TruffetCounterexample.lean">a small counterexample</a> from the randomized paper’s appendix to one variable-selection step of the claimed strongly polynomial tropical algorithm in Truffet’s arXiv version 4, within a model of that step; the appendix makes no claim about other versions. The deterministic, stochastic and parity results are not formalized, and we found no unproved steps in what is. We have not run the checks. None of the papers is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Potentials in a wide box.</strong> Every weight w becomes (n + 1)w + 1, so no simple cycle sums to zero and a simple cycle’s new sum is positive exactly when its old sum is at least zero. A vertex’s update takes the best edge for its owner: the new weight plus the potential at the edge’s head. Clipped to a wide integer box, these updates have a unique fixed point whose coordinates fall into two bands: those near the top are exactly Max’s winning vertices, those near the bottom Min’s. Iterating to it can take about as many steps as the box is wide.</li>
+  <li><strong>Labels instead of the fixed point.</strong> Each vertex gets two positive masses, one per player. A Max witness is a potential at most its own update wherever it sits above the bottom of the box, on vertices of total mass at most one; wherever it comes near the top, the vertex must be labelled plus. Min witnesses are the mirror image. One labelling must satisfy every witness at once; with all masses 1/n the fixed point is a witness for both players, so a correct labelling is the winning set.</li>
+  <li><strong>The recursion.</strong> A pivot moves near the middle of the box, down and then up, guided by calls on boxes 128 times narrower. When a pass stops, every witness of the other type still needing labels has a set of mass more than 3/4 near its extreme. One call on a box half as wide labels those sets, and its labels reweight the masses by 4/5 or 8/5. Every child except the half-width one multiplies each product of a vertex’s two masses by at least 32/25; from 1/n² that happens only O(log n) times along a branch, so there are 2<sup>O((log L)²)</sup> calls.</li>
+  <li><strong>The companions.</strong> The stochastic paper replaces the long-run average by a discounted game, with a discount of polynomial bit length close enough to recover the exact set, and runs an adapted labelling. The parity paper adapts Parys’s recursion on dominions, with strategies that follow a mean-payoff strategy for longer and longer rounds between visits to a good priority.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A six-vertex game (Max owns 0, 2 and 4): brute force over positional strategies gives Max’s winning set {2, 4, 5}. From 4 the play settles on the cycle 2 → 5 → 2 with weights +2 and −2, average 0; from 0, Min keeps the play on 1 → 3 → 1, average −2.</li>
+  <li>The wide box has width 32,768; the fixed point is (0, 0, 32768, 1, 32768, 32755), with vertices 2, 4 and 5 at the top. The simple iteration takes 32,743 steps; with every weight multiplied by 10, 100 and 1,000 it takes 261,867, 2,094,355 and 16,749,219 steps, while the weights grow from 38 to 140 bits.</li>
+  <li>The recursion’s budget 1 + ⌊log<sub>32/25</sub> n²⌋: 15 for 6 vertices, 56 for 1,000, 112 for a million.</li>
+  <li>A mean-payoff parity game where Max wins only with infinite memory (vertex a: reward 0, priority 1; vertex b: reward −1, priority 0): the increasing-round strategy averages −0.0139 after 10<sup>4</sup> steps and −0.0014 after 10<sup>6</sup>.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf">Deterministic quasipolynomial-time mean-payoff games (PDF)</a>, 27 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf">Randomized quasipolynomial-time mean-payoff games (PDF)</a>, 41 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/stochastic-mean-payoff-games.pdf">Turn-Based Stochastic Mean-Payoff Games in Deterministic Quasipolynomial Time (PDF)</a>, 20 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/mean-payoff-parity.pdf">Mean-payoff parity games in quasipolynomial time (PDF)</a>, 14 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/104.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 104.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 4 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Turn-Based-Stochastic-Mean-Payoff-Games-in-Deterministic-Quasipolynomial-Time-October-5-2026/stochastic-mean-payoff-games.pdf">Turn-Based Stochastic Mean-Payoff Games in Deterministic Quasipolynomial Time</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Mean-payoff-parity-games-in-quasipolynomial-time-October-5-2026/mean-payoff-parity.pdf">Mean-payoff parity games in quasipolynomial time</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Deterministic-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf">Deterministic quasipolynomial-time mean-payoff games</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Randomized-quasipolynomial-time-mean-payoff-games-September-25-2026/paper.pdf">Randomized quasipolynomial-time mean-payoff games</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Games that last forever</h3>
+<p>Two players push a token around a directed graph, forever. At the round vertices Max chooses the next edge; at the square ones, Min does. Each edge carries a whole-number weight, and the payoff of the infinite walk is its long-run average weight. Max wants that average to be at least zero; Min wants it negative. In this six-vertex game, starting here, the play settles into a cycle with weights +2 and −2, so the average tends to zero and Max wins. From this vertex, Min traps the play in a cycle averaging −2. Ehrenfeucht and Mycielski showed that both players have optimal strategies that depend only on the current vertex. Such a strategy is a short certificate, so deciding the winner lies in NP and in co-NP. No polynomial-time algorithm is known. The difficulty is the size of the weights. Zwick and Paterson gave algorithms whose time is polynomial in the number of vertices and in the largest weight. But weights are written in binary: a weight with 60 binary digits is about 10¹⁸, so their time can be exponential in the length of the input. In our example, a simple iteration took about 33,000 steps; multiplying every weight by 1,000 multiplied the steps by about 500, while the weights grew by only about 100 bits. Björklund and Vorobyov’s randomized algorithm takes an expected 2^(O(√(n log n))) operations, for n vertices. Parity games reduce to mean-payoff games with very large weights, and Calude, Jain, Khoussainov, Li and Stephan solved them in quasipolynomial time in 2017; that does not by itself handle general mean-payoff games.</p>
+<h3><span class="t num">1:45</span>The claims</h3>
+<p>Result 104 is four OpenAI preprints. The first two, dated September 25, give a deterministic and a randomized algorithm for the complete set of vertices from which Max can keep the average at least zero. For an input of length L, each uses 2^(O(log² L)) bit operations. That is quasipolynomial: it grows faster than any polynomial, but far slower than exponential. A reduction also gives the exact value at every vertex, and optimal positional strategies for both players. The randomized algorithm is correct with probability at least 7/8, and a polynomial-time check certifies its answer. Two companions, dated October 5, extend the results. One finds the vertices of nonnegative value in turn-based stochastic mean-payoff games, where some moves are made by chance, deterministically and with the same bound. As a consequence, it decides whether a simple stochastic game, whose decision problem Condon placed in NP and co-NP, has value at least 1/2. The other solves mean-payoff parity games, which add a condition on which priorities recur, using the deterministic algorithm as a subroutine. For scale, with constants set to one, at an input of a million (10⁶) bits a cubic bound has 19 digits, this bound about 120, and 2^L about 300,000. The claims are theoretical. OpenAI published a Lean formalization of the randomized algorithm, 89 files and about 27,000 lines, in an explicit Turing-machine model. The deterministic, stochastic and parity results are not formalized. An appendix of the randomized paper gives a small counterexample to one step of a claimed strongly polynomial algorithm, in one version of a preprint by Truffet, also checked in Lean. We have not run the checks.</p>
+<h3><span class="t num">3:46</span>How the proof goes</h3>
+<p>The proof works with potentials: one number per vertex. First, every weight w becomes (n + 1)w + 1. Then no simple cycle sums to zero, and each one’s new sum is positive exactly when its old sum is at least zero. Each vertex’s update takes the best edge for its owner: the weight plus the potential at the edge’s head. Clipped to a wide box, from 0 to D, these updates have a unique fixed point, and its coordinates fall into two bands: those near the top are exactly Max’s winning vertices, those near the bottom Min’s. In our game the box has width 32,768, and the fixed point puts vertices 2, 4 and 5 at the top, matching a brute-force check. But iterating to it takes about as many steps as the width. So the algorithm never computes the fixed point. It only decides which boundary each vertex is near. Each vertex gets two positive masses, one for each player. A Max witness is a potential that is at most its own update wherever it sits above the bottom of the box, on vertices of total mass at most one; wherever it comes near the top, the vertex must be labelled plus. Min witnesses are the mirror image. One labelling must satisfy every witness at once. With all masses 1/n, the fixed point is a witness for both players, so a correct labelling is exactly the winning set. The recursion moves a pivot near the middle of the box, first down and then up, guided by calls on boxes 128 times narrower. When a pass stops, any witness of the other type still needing labels has a set of mass more than 3/4 close to its extreme. One call on a box half as wide labels those sets, and the labels reweight the masses: lighter, by 4/5, where a vertex is labelled in a witness’s favor, and heavier, by 8/5, elsewhere. Every child call except the half-width one multiplies the product of each vertex’s two masses by at least 32/25. Starting from 1/n², that can happen only order log n times along any branch, so the number of calls is 2^(O(log² L)). The stochastic paper replaces the long-run average by a discounted game, with a discount of polynomial bit length that is close enough to recover the exact set, and runs an adapted labelling on the discounted update. The parity paper adapts Parys’s recursion on dominions, with strategies that follow a mean-payoff strategy for longer and longer rounds between visits to a good priority. In our example, where Max must visit a costly vertex infinitely often, the average of this strategy climbs toward zero: −0.0014 after a million steps.</p>
+<h3><span class="t num">6:34</span>Where it stands</h3>
+<p>The four preprints are not peer reviewed and have not been revised. Lean covers the randomized algorithm and the counterexample; we have not run it. None of the papers is among those OSVerify reviewed, and we have seen no expert review. A polynomial-time algorithm would still be a further step. If the claims hold, the winners of mean-payoff games, of turn-based stochastic games and of mean-payoff parity games can all be found in quasipolynomial time, however large the weights.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20104%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
