@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 176: The second Kahn–Kalai conjecture with an edge-count bound | AI Proved What?</title>
-<meta name="description" content="The second Kahn–Kalai conjecture with an edge-count bound. Result 176 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Kahn–Kalai, the second one? A graph appears once its pieces are expected | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims the second Kahn–Kalai conjecture: a graph appears in a random graph once every piece of it is expected, up to a fixed constant and the logarithm of its number of edges. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/176-second-kahn-kalai-conjecture-edge/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 176: The second Kahn–Kalai conjecture with an edge-count bound | AI Proved What?">
-<meta property="og:description" content="The second Kahn–Kalai conjecture with an edge-count bound. Result 176 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Kahn–Kalai, the second one?">
+<meta property="og:description" content="An AI preprint claims the second Kahn–Kalai conjecture: a graph appears in a random graph once every piece of it is expected, up to a fixed constant and the logarithm of its number of edges. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/176-second-kahn-kalai-conjecture-edge/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/176-second-kahn-kalai-conjecture-edge/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,49 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 176 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">The second Kahn–Kalai conjecture with an edge-count bound</h1>
+<p class="meta">Episode 176, October 2026</p>
+<h1>Kahn–Kalai, the second one?</h1>
+<p class="subtitle">A preprint claims that a graph appears in a random graph once every piece of it is expected, up to a fixed constant and the logarithm of its number of edges</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 176 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="zm9HOhNkXMA" data-title="Episode 176: Kahn–Kalai, the second one?">
+  <a href="https://youtu.be/zm9HOhNkXMA">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 176: Kahn–Kalai, the second one? A random graph on eleven dots with one copy of a small graph highlighted in pink (our drawing).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:37. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/zm9HOhNkXMA?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/zm9HOhNkXMA?t=110" data-t="110"><span class="t">1:50</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/zm9HOhNkXMA?t=205" data-t="205"><span class="t">3:25</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/zm9HOhNkXMA?t=297" data-t="297"><span class="t">4:57</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves the second Kahn–Kalai conjecture: for every finite simple graph <i>H</i> with <i>h</i> ≥ 1 edges and at most <i>n</i> vertices, its appearance threshold in <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo stretchy="false">(</mo><mi>n</mi><mo separator="true">,</mo><mi>p</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">G(n,p)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">G</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">p</span><span class="mclose">)</span></span></span></span> is at most <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><msub><mi>p</mi><mi mathvariant="normal">E</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mo separator="true">,</mo><mi>H</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>h</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">C p_{\mathrm E}(n,H)(1+\log_2 h)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">E</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.08125em;">H</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.207em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2441em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">h</span><span class="mclose">)</span></span></span></span>, with universal <i>C</i>. Here <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi mathvariant="normal">E</mi></msub></mrow><annotation encoding="application/x-tex">p_{\mathrm E}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">E</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is the least density at which every subgraph of <i>H</i> has expected copy count at least 1/2.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>In the random graph G(n,p), each pair of n dots is joined independently with probability p. For a fixed graph H, the threshold p<sub>c</sub>(n,H) is the p at which a copy of H appears with probability one half. There is an obvious lower bound: at the threshold H appears half the time, and so does every subgraph F of H, so every F must have an expected number of copies of at least one half. The least p where that holds for every F is the graph expectation threshold p<sub>E</sub>(n,H), counting ordinary (unlabelled) copies, and always p<sub>E</sub> ≤ p<sub>c</sub>. For a triangle on six dots, p<sub>E</sub> ≈ 0.29 and p<sub>c</sub> ≈ 0.36 (our exact computation). The two can drift apart: for a perfect matching on n dots, p<sub>E</sub> is about e/n, but a perfect matching needs every dot to have an edge, which takes about (ln n)/n; at a million dots that is about 5 times higher (our computation). Kahn and Kalai conjectured in 2007 that p<sub>c</sub> is always at most p<sub>E</sub> times a logarithmic factor. As the paper recounts, their abstract conjecture with covers was proved by Frankston, Kahn, Narayanan and Park (fractional form) and by Park and Pham, but for graphs the cover threshold is at least p<sub>E</sub> and possibly larger, so the abstract theorem alone did not settle the graph version; Mossel, Niles-Weed, Sun and Zadik proved a single logarithm for a modified threshold, Dubroff, Kahn and Park reached log<sup>3</sup> n, and a preprint by Tran, in a version dated the same day as this paper, reached the square of a logarithm and settled trees and some other classes.</p>
+<p>Result 176 is one OpenAI preprint, <a href="https://github.com/openai/math/blob/main/preprints/The-second-Kahn-Kalai-conjecture-September-24-2026/paper.pdf">The second Kahn–Kalai conjecture</a> (12 pages, dated September 24, 2026). Its Theorem 1.1: for every n ≥ 2 and every graph H with h ≥ 1 edges and at most n vertices, p<sub>c</sub>(n,H) ≤ min{1, 2048 e<sup>50</sup> p<sub>E</sub>(n,H)(1 + log<sub>2</sub> h)}. The constant is explicit and universal, and H may grow with n, so spanning graphs such as perfect matchings are included. In particular, p<sub>c</sub>(n,H) ≤ 6144 e<sup>50</sup> p<sub>E</sub>(n,H) log<sub>2</sub> n.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>No small constant. 2048 e<sup>50</sup> is about 1.06 × 10<sup>25</sup>, so the bound says something only when p<sub>E</sub>(1 + log<sub>2</sub> h) is below about 10<sup>−25</sup>; for perfect matchings, by our computation, only beyond about 2.6 × 10<sup>27</sup> dots. It locates no threshold exactly, and it does not say the logarithm is needed for every graph. The counting convention matters: with labelled copies instead of ordinary ones, a perfect matching’s expectation threshold at a million dots would be smaller by a factor of about 370,000 (our computation). That factor grows like n, so for large enough n the statement would be false: by our computation the bound would fall below the no-isolated-dot threshold, a lower bound for p<sub>c</sub>, beyond about 1.1 × 10<sup>26</sup> dots. The paper cites result 175’s comparison of expectation thresholds only as context; “the proof below does not use it.”</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, 12 pages, dated September 24, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +87,44 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/176.md">scope notes</a>)</dd>
+    <dd>Formalized by OpenAI with the same explicit constants; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/176.md">Lean formalization</a> whose <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SecondKahnKalai.lean">comparator statement</a> states Theorem 1.1 with the same explicit constants, counting ordinary copies. By our count the proof takes 37 files and 6,753 lines, excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/GraphThreshold">source</a>), with no unproved steps by our search; we have not rebuilt it. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A spread hierarchy.</strong> Following a construction of Tran, the proof peels H into a chain of subgraphs from the empty graph to H, in which each step adds at least 16 times as many new edges as the step before. The steps are spread: no particular set J of new edges is likelier than (128 p<sub>E</sub>)<sup>|J|</sup>.</li>
+  <li><strong>A tree of copies.</strong> All the ways of extending a copy of one stage to the next form a tree. Each path from the root spells out a copy of H, and along a path the new edges never overlap.</li>
+  <li><strong>Bayesian resampling.</strong> A trick of Mossel, Niles-Weed, Sun and Zadik: pick a random next step (one step’s new edges), add a random set of edges W, and resample a step from the posterior given the union. The part of the new step outside W is the leftover, and with high probability it is at most half as big.</li>
+  <li><strong>One W for the whole tree.</strong> The paper’s move is to do this at every node with the same W. Sharing W creates dependence, but disjointness along paths keeps it under control, and a potential function shows that the whole tree shrinks with probability at least 3/4.</li>
+  <li><strong>Iteration.</strong> After about log<sub>2</sub> h successful rounds every leftover is empty. The random sets, failed rounds included, form one random graph of density at most 2048 e<sup>50</sup> p<sub>E</sub>(1 + log<sub>2</sub> h), which contains a copy of H with probability at least 2/3.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our exact computation of p<sub>c</sub> and p<sub>E</sub> for small graphs on six dots, by enumerating all 2<sup>15</sup> graphs: a triangle has p<sub>E</sub> = 0.292402 and p<sub>c</sub> = 0.355724.</li>
+  <li>Perfect matchings: n p<sub>E</sub> tends to e, while the threshold for having no isolated dot grows like ln n (our computation, from 10 to 10<sup>9</sup> dots).</li>
+  <li>The labelled-copies comparison at a million dots: p<sub>E</sub> = 2.72 × 10<sup>−6</sup> with ordinary copies and 7.39 × 10<sup>−12</sup> with labelled copies; the threshold is at least about 1.42 × 10<sup>−5</sup>, the no-isolated-dot threshold (our computation). With labelled copies the bound would fail beyond about 1.1 × 10<sup>26</sup> dots (our computation).</li>
+  <li>The constants: 2048 e<sup>50</sup> ≈ 1.06 × 10<sup>25</sup> and 6144 e<sup>50</sup> ≈ 3.19 × 10<sup>25</sup>; for perfect matchings the bound first drops below 1 at about 2.6 × 10<sup>27</sup> dots (our computation).</li>
+  <li>The Lean count: our count of the import closure.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-second-Kahn-Kalai-conjecture-September-24-2026/paper.pdf">The second Kahn–Kalai conjecture (PDF)</a>, 12 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/176.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 176.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +132,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/The-second-Kahn-Kalai-conjecture-September-24-2026/paper.pdf">The second Kahn–Kalai conjecture</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Throw down edges at random: between every pair of n dots, an edge, independently, with probability p. When does a fixed graph H, like a triangle, appear? Its threshold is the p at which the chance of seeing a copy reaches 1/2. There is an obvious lower bound. At the threshold, H is there half the time, so every piece of it is too, and so every subgraph of H must have an expected count of at least 1/2. The smallest p where that holds for all subgraphs at once is the graph expectation threshold, p_E, counting ordinary copies, without labels. On 6 dots, a triangle has p_E of about 0.29 and a threshold of about 0.36. The two can drift apart. For a perfect matching on n dots, p_E is about e/n. But a perfect matching needs every dot to have an edge, which takes about the log of n, over n. In our computation for a million dots, that is about 5 times higher. In 2007, Kahn and Kalai conjectured that this obvious obstruction decides the threshold up to a logarithmic factor, for every graph. They also made an abstract conjecture, for any increasing property, with an expectation threshold defined by covers. Frankston, Kahn, Narayanan and Park proved a fractional form of it, and Park and Pham proved it in full. But for graphs, the cover threshold is at least p_E and possibly larger, so the abstract theorem alone did not settle the graph version. Mossel, Niles-Weed, Sun and Zadik proved a single logarithm for a modified threshold. Dubroff, Kahn and Park reached the cube of the log of n. And a preprint by Tran, in a version dated the same day as this paper, reached the square of a logarithm and settled trees and some other classes.</p>
+<h3><span class="t num">1:50</span>The claim</h3>
+<p>Result 176 is a single OpenAI preprint, 12 pages long, dated September 24, 2026. Its theorem: for every n of at least 2, and every graph H with h edges, at least one, and at most n vertices, the threshold is at most 2048 e⁵⁰, times p_E, times one plus the base-two log of h. The constant is explicit and universal, and H may grow with n, so spanning graphs like perfect matchings are included. In particular, the threshold is at most 6144 e⁵⁰, times p_E, times the base-two log of n. Not claimed: a small constant. 2048 e⁵⁰ is about 10²⁵, so the bound says something only when p_E times the log factor is below about 10⁻²⁵; for perfect matchings, by our computation, only beyond about 2.6 × 10²⁷ dots. It locates no threshold exactly, and does not say the log is needed for every graph. The counting convention matters: with labelled copies instead of ordinary ones, the perfect matching’s expectation threshold would be smaller by a factor of about 370,000 at a million dots. That factor grows like n, so for large enough n the statement would be false. The paper cites result 175’s comparison of expectation thresholds only as context; its proof does not use it.</p>
+<h3><span class="t num">3:25</span>How the proof goes</h3>
+<p>The proof plants H in stages. Following a construction of Tran, it peels H into a chain of subgraphs, from empty to all of H, in which each step adds at least 16 times as many new edges as the step before. The steps are chosen to be spread: no particular set of new edges is likelier than 128 p_E, to the power of its size. All the ways of extending a copy of one stage to the next form a tree. Each path from the root spells out a copy of H, and along any path the new edges never overlap. Then comes a Bayesian trick of Mossel, Niles-Weed, Sun and Zadik. Pick a random next step, add a random set of edges W, and resample a step from the posterior, given the union. The part of the new step outside W is the leftover, and with high probability it is at most half as big. The paper’s move is to do this at every node of the tree with the same W. Sharing W creates dependence, but disjointness along paths keeps it under control, and a potential function shows that the whole tree shrinks with probability at least 3/4. After about the log of h successful rounds, every leftover is empty. The random sets, failed rounds included, form one random graph, of density at most 2048 e⁵⁰, times p_E, times one plus the base-two log of h, and it contains a copy of H with probability at least 2/3.</p>
+<h3><span class="t num">4:57</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. OpenAI’s Lean files state the theorem with the same explicit constants, counting ordinary copies, and prove it in 37 files and about 6,800 lines, with no gaps we could find by search; we did not run the check. It is not among the papers OSVerify reviewed, and we have seen no expert review. If it holds, the second Kahn–Kalai conjecture is true: a graph appears in a random graph once every piece of it is expected, up to a fixed constant and the logarithm of its number of edges.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20176%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../175-talagrands-expectation-thresholds-discrete-convexity/"><span class="dir">Previous · 175</span><span class="pt">Talagrand’s expectation thresholds, discrete convexity, and graph decompositions</span></a>
-  <a class="next" href="../177-bounded-degree-coboundary-expanders/"><span class="dir">Next · 177</span><span class="pt">Bounded-degree coboundary expanders</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

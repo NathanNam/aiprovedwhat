@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 175: Talagrand’s expectation thresholds, discrete convexity, and graph decompositions | AI Proved What?</title>
-<meta name="description" content="Talagrand’s expectation thresholds, discrete convexity, and graph decompositions. Result 175 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Talagrand, up to a constant? Expectation thresholds, discrete convexity and graph decompositions | AI Proved What?</title>
+<meta name="description" content="Three AI preprints claim that Talagrand’s fractional and ordinary expectation thresholds agree up to a fixed factor, prove his discrete convexity conjecture, and split every graph into boundedly many pieces that each appear near its expectation threshold. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/175-talagrands-expectation-thresholds-discrete-convexity/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 175: Talagrand’s expectation thresholds, discrete convexity, and graph decompositions | AI Proved What?">
-<meta property="og:description" content="Talagrand’s expectation thresholds, discrete convexity, and graph decompositions. Result 175 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Talagrand, up to a constant?">
+<meta property="og:description" content="Three AI preprints claim that Talagrand’s fractional and ordinary expectation thresholds agree up to a fixed factor, prove his discrete convexity conjecture, and split every graph into boundedly many pieces that each appear near its expectation threshold. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/175-talagrands-expectation-thresholds-discrete-convexity/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/175-talagrands-expectation-thresholds-discrete-convexity/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,49 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 175 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Talagrand’s expectation thresholds, discrete convexity, and graph decompositions</h1>
+<p class="meta">Episode 175, October 2026</p>
+<h1>Talagrand, up to a constant?</h1>
+<p class="subtitle">Preprints claim that fractional and ordinary expectation thresholds agree up to a fixed factor, prove Talagrand’s discrete convexity conjecture, and split every graph into boundedly many pieces that each appear near its expectation threshold</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 175 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="XCbKKJkHbXQ" data-title="Episode 175: Talagrand, up to a constant?">
+  <a href="https://youtu.be/XCbKKJkHbXQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 175: Talagrand, up to a constant? A graph on nine dots whose edges are split into three pieces, coloured yellow, teal and pink (our drawing).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:13. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/XCbKKJkHbXQ?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/XCbKKJkHbXQ?t=112" data-t="112"><span class="t">1:52</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/XCbKKJkHbXQ?t=237" data-t="237"><span class="t">3:57</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/XCbKKJkHbXQ?t=377" data-t="377"><span class="t">6:17</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves that integral and fractional expectation thresholds differ by at most a universal factor, and resolves Talagrand's discrete-convexity conjecture. An application proves the Ascoli–He–Park–Talagrand graph-decomposition conjecture: every graph's edges split into a universally bounded number of fixed pieces, each with containment threshold at most a universal constant times the original graph's integral expectation threshold. The pieces' embeddings need not agree on shared vertices.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Keep each element of a finite set with probability p, and consider a property that stays true when elements are added. A cover is a list of small sets such that every set with the property contains one of them; its cost is the sum of p<sup>|S|</sup>, and a cover of cost at most one half shows by a union bound that the property has probability at most one half. The expectation threshold q is the largest p with such a cover. Talagrand also allowed fractional covers, with weights between zero and one and every member covered by total weight at least one; the fractional threshold q<sub>f</sub> is never smaller than q. For example, on four points, the sets containing abc, abd or acd have q ≈ 0.565 (cover abc and ad) and q<sub>f</sub> = 1/√3 ≈ 0.577 (weight one half on ab, ac and ad), our example. As the papers recount, Kahn and Kalai conjectured in 2007 that the true threshold is at most q times a logarithmic factor; Frankston, Kahn, Narayanan and Park proved the fractional version and Park and Pham the conjecture itself. Talagrand conjectured in 2010 that q and q<sub>f</sub> agree up to a fixed factor; special kinds of weights were handled one by one, and in September 2026 Park reached a factor growing like log log(1/q).</p>
+<p>Result 175 is three OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/Integral-and-fractional-expectation-thresholds-are-equivalent-September-23-2026/paper.pdf">Integral and fractional expectation thresholds are equivalent</a> (12 pages, September 23, 2026), Theorem 1.1: “For every finite nonempty X and every nonempty proper increasing family F ⊆ 2<sup>X</sup>, q<sub>f</sub>(F) ≤ 25·512<sup>4</sup> q(F). Both thresholds use the budget 1/2.” <a href="https://github.com/openai/math/blob/main/preprints/Talagrands-discrete-convexity-conjecture-September-23-2026/paper.pdf">Talagrand’s discrete-convexity conjecture</a> (10 pages, same date), Theorem 1.1: with k = 2<sup>75</sup>, for every N, every p in (0,1) and every family D of subsets of [N], if μ<sub>p</sub>(D) ≥ 1 − 1/k then the sets inside no union of k members of D form a p-small family; “no monotonicity is assumed.” <a href="https://github.com/openai/math/blob/main/preprints/Graph-Decompositions-at-the-Integral-Expectation-Threshold-October-5-2026/graph-threshold-decompositions.pdf">Graph Decompositions at the Integral Expectation Threshold</a> (11 pages, October 5, 2026) uses the second, as “an essential companion input”, to prove Conjecture 8.1 of Ascoli, He, Park and Talagrand: for absolute k and L, the edges of every graph H on at most n vertices split into k pieces with p<sub>c</sub>(H<sub>i</sub>;n) ≤ L q(H;n). “The pieces may be empty and may share vertices. The partition depends only on H, n and is fixed before the random host is sampled.”</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>No small constants. The first theorem’s 25·512<sup>4</sup> is about 1.7 × 10<sup>12</sup>, so, since q<sub>f</sub> never exceeds 1, it says something only when q is below about 6 × 10<sup>−13</sup>. The third allows about 7.6 × 10<sup>31</sup> pieces and gives no value for L; by our reading of its cutoffs (5.2), its bound is trivial for random graphs on fewer than about 5.3 × 10<sup>15</sup> vertices. It does not say the whole graph appears at L q(H;n): each piece is tested on its own, and “their embeddings need not agree on shared vertices.” In our simulation of a random graph on 2,000 vertices with edge probability 3/n, 68 to 125 vertices were isolated, so there was no perfect matching, yet every sample had a matching of more than 900 edges. And discrete convexity needs a very likely family: for D = {∅} on N ≥ 2 points with μ<sub>p</sub>(D) = 1/2, every nonempty set is exceptional for every k, and the cheapest cover costs Np, which tends to ln 2 &gt; 1/2 (our example).</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, three preprints of 12, 10 and 11 pages, dated September 23 and October 5, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +87,44 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/175.md">scope notes</a>)</dd>
+    <dd>The first two theorems, formalized by OpenAI; not the graph decomposition; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. None of the preprints has been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/175.md">Lean formalization</a> whose comparator statements match the first two theorems with their exact constants (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/TalagrandExpectationThreshold.lean">expectation thresholds</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/TalagrandDiscreteConvexity.lean">discrete convexity</a>). By our count the proofs take 47 files and 4,834 lines and 36 files and 4,259 lines, excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/ExpectationThreshold">thresholds</a>, <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/DiscreteConvexity">discrete convexity</a>), with no unproved steps by our search; we have not rebuilt them. The graph-decomposition paper is not formalized, nor are the corollaries about unions of two members, which also use a September 2026 preprint by Chen Li. The papers are not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Rounding a fractional cover.</strong> Suppose a fractional cover costs at most one half at density r, but no ordinary cover is cheap at r/C. Spread each set’s weight evenly over its points, and colour every point at random in levels whose chances grow by a factor of 256. The multiscale selector estimate gives, with probability at least 9/10, one member that keeps most of its weight at every level at once (“Separate estimates at individual scales could choose different members”). Weighting each point by 512 to the power four minus its colour, the expected total must be at least 9/40, but independence caps it at 1/10. The estimate adapts methods of Park and Pham, of Pham, and of Bednorz, Martynek and Meller.</li>
+  <li><strong>Discrete convexity at half measure.</strong> If a family has probability at least one half at density q, the sets inside no union of 32 members are cheap to cover at q/2<sup>70</sup>: an exceptional set forces the identity Σ<sub>U⊆S</sub> (−1)<sup>|U|</sup> b(U)<sup>32</sup> = 0 among biased Fourier coefficients, which leaves enough weight on its subsets to build a cover with an elementary covering lemma.</li>
+  <li><strong>An exact coupling.</strong> 2<sup>70</sup> random rows, each exactly at density p, have a union exactly at density 2<sup>70</sup>p (when that is below one; otherwise the union covers everything). All rows lie in the family with probability at least 31/32, so the first step applies with 32 × 2<sup>70</sup> = 2<sup>75</sup> unions, back at density p.</li>
+  <li><strong>Splitting a graph.</strong> Graphs of degeneracy below 1000 split into forests, star forests and small pieces, embedded one star at a time. For denser graphs, a class of typical random graphs at twice the expectation threshold has probability at least 1 − 2<sup>−75</sup>; discrete convexity puts a copy of H inside a union of 2<sup>75</sup> of them, and each edge goes to one. High-degree vertices are separated out, and the edges to them are embedded by Hall’s theorem after a compression lemma keeps the number of tests small.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our exact computation of q and q<sub>f</sub> for every nonempty proper increasing property on up to 5 points: on 5 points, 200 of the 208 types have ratio exactly 1 and the largest ratio is 1.052579; the four-point example above has ratio 1.021501.</li>
+  <li>Our perfect-matching simulation (2,000 vertices, edge probability 3/n, 20 samples) and our example D = {∅}.</li>
+  <li>The constants: 25·512<sup>4</sup> = 1,717,986,918,400; 2<sup>75</sup>; the third paper’s k ≈ 7.57 × 10<sup>31</sup>; its explicit cutoffs (5.2) hold only from about 5.33 × 10<sup>15</sup> (our computation).</li>
+  <li>The Lean count: our count of the import closures.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Integral-and-fractional-expectation-thresholds-are-equivalent-September-23-2026/paper.pdf">Integral and fractional expectation thresholds are equivalent (PDF)</a>, 12 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Talagrands-discrete-convexity-conjecture-September-23-2026/paper.pdf">Talagrand’s discrete-convexity conjecture (PDF)</a>, 10 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Graph-Decompositions-at-the-Integral-Expectation-Threshold-October-5-2026/graph-threshold-decompositions.pdf">Graph Decompositions at the Integral Expectation Threshold (PDF)</a>, 11 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/175.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 175.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 3 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -76,18 +134,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Talagrands-discrete-convexity-conjecture-September-23-2026/paper.pdf">Talagrand’s discrete-convexity conjecture</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Pick each item of a finite set independently with probability p, and ask about a property that stays true when you add items, like a random graph containing a triangle. One way to show the property is unlikely is a cover: a list of small sets such that every set with the property contains one of them. A set of size s shows up with chance p^s, so if those chances add up to at most one half, the property has chance at most one half. The expectation threshold q is the largest p with such a cheap cover. Talagrand also allowed fractional covers: weights between zero and one, with every member covered by total weight at least one. That gives the fractional threshold, q_f, which is never smaller. On four points a, b, c, d, take the sets containing abc, abd or acd. One best ordinary cover, abc and ad, works up to p of about 0.565. Half weights on the pairs ab, ac and ad work up to 1/√3, about 0.577. Kahn and Kalai conjectured in 2007 that the true threshold, where the property has probability one half, is at most q times a logarithmic factor. Frankston, Kahn, Narayanan and Park proved the fractional version, and Park and Pham proved the conjecture itself. Talagrand had conjectured, in 2010, that the two expectation thresholds always agree up to a fixed factor. Earlier work handled special kinds of weights, and in September 2026, Park reached a factor that grows like log log of one over q. In our check of every such property on up to 5 points, the ratio is never more than about 1.05, and it is exactly one for 200 of the 208 types. Small cases say nothing about the worst case.</p>
+<h3><span class="t num">1:52</span>The claims</h3>
+<p>Result 175 is three OpenAI preprints. The first, 12 pages long, dated September 23, 2026, proves Talagrand’s comparison: q_f is at most 25 × 512⁴, about 1.7 trillion, times q, for every nonempty proper increasing property, with the same budget of one half. The second, 10 pages, same date, proves Talagrand’s discrete convexity conjecture: with k equal to 2⁷⁵, if a family of sets has probability at least 1 − 1/k, then the sets that lie inside no union of k of its members have a cheap cover at the same p. The third, 11 pages, dated October 5, uses the second to prove a conjecture of Ascoli, He, Park and Talagrand: the edges of every graph split into a bounded number of pieces, each of which appears in the random graph with probability one half once p reaches a fixed multiple of the whole graph’s expectation threshold. Not claimed: small constants. Since q_f never exceeds one, the first theorem only says something when q is below about 6 × 10⁻¹³. The third allows about 8 × 10³¹ pieces and gives no value for its multiple, and by our reading its written proof only bites when the random graph has more than 5 quadrillion vertices. Nor does it say the whole graph appears at that density: each piece is tested on its own, and their copies need not fit together. A perfect matching shows why. In our simulation of a random graph on 2,000 dots, with 3/n as the edge probability, about 100 dots are isolated, so there is no perfect matching, yet a matching of more than 900 edges is there, so any tenth of a perfect matching appears. And discrete convexity needs a very likely family: in our example, a family of probability one half fails for every number of unions.</p>
+<h3><span class="t num">3:57</span>How the proofs go</h3>
+<p>The first proof argues by contradiction. Suppose the property has a fractional cover of cost at most one half at a density r, but no cheap ordinary cover at r over the constant. Spread each set’s fractional weight evenly over its points. Then colour every point at random at several scales, with chances growing by a factor of 256. The key estimate says that, with probability at least 9/10, one single member keeps most of its weight at every scale at once; separate estimates at each scale could pick different members. Weighting each point by 512 to the power (4 − its colour), the expected total must then be at least 9/40, but independence caps it at 1/10. The estimate adapts methods of Park and Pham, of Pham, and of Bednorz, Martynek and Meller. The second proof first works at probability one half and a lower density: if a family has probability at least one half at density q, the sets inside no union of 32 members have a cheap cover at q/2⁷⁰. An exceptional set forces an identity among the family’s biased Fourier coefficients, raised to the 32nd power, and that leaves enough weight on its subsets to build a cover. Then an exact coupling returns to density p: 2⁷⁰ random rows, each distributed exactly at density p, whose union, when 2⁷⁰ p is below one, is distributed exactly at that density. By a union bound, all the rows lie in the family with probability at least 31/32, so the first step applies, with 32 × 2⁷⁰ unions, which is 2⁷⁵. The third proof splits by degeneracy, a measure of how dense its densest part is. Sparse graphs break into forests, then star forests, then small pieces that embed one star at a time. For dense ones, it builds a class of typical random graphs at twice the expectation threshold, with probability at least 1 − 2⁻⁷⁵, and discrete convexity puts a copy of the graph inside a union of 2⁷⁵ typical graphs; each edge goes to one of them. High-degree vertices are separated out, and the edges between them and the rest are embedded with Hall’s theorem, after a compression lemma keeps the number of tests small.</p>
+<h3><span class="t num">6:17</span>Where it stands</h3>
+<p>All three are preprints, not peer reviewed, and not revised. OpenAI’s Lean files state and prove the first two theorems with their exact constants, in about 4,800 and 4,300 lines, with no gaps we could find by search; we did not run the check. Not formalized: the graph-decomposition paper, and the papers’ corollaries about unions of two members, which also rely on a September 2026 preprint by Chen Li. None of the papers is among those OSVerify reviewed, and we have seen no expert review. If they hold, Talagrand’s fractional and ordinary expectation thresholds agree up to a fixed factor, his discrete convexity conjecture is true, and every graph splits into a bounded number of pieces that each appear at a fixed multiple of the whole graph’s expectation threshold.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20175%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../174-deterministic-construction-strong-thin-spanning/"><span class="dir">Previous · 174</span><span class="pt">Deterministic construction of strong thin spanning trees</span></a>
-  <a class="next" href="../176-second-kahn-kalai-conjecture-edge/"><span class="dir">Next · 176</span><span class="pt">The second Kahn–Kalai conjecture with an edge-count bound</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

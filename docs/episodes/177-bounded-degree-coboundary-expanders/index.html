@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 177: Bounded-degree coboundary expanders | AI Proved What?</title>
-<meta name="description" content="Bounded-degree coboundary expanders. Result 177 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Expanders in every dimension? Bounded-degree coboundary expanders | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims bounded-degree coboundary expanders in every dimension from three up: huge complexes, each vertex in a bounded number of pieces, with no bottlenecks at any level below the top. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/177-bounded-degree-coboundary-expanders/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 177: Bounded-degree coboundary expanders | AI Proved What?">
-<meta property="og:description" content="Bounded-degree coboundary expanders. Result 177 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Expanders in every dimension?">
+<meta property="og:description" content="An AI preprint claims bounded-degree coboundary expanders in every dimension from three up: huge complexes, each vertex in a bounded number of pieces, with no bottlenecks at any level below the top. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/177-bounded-degree-coboundary-expanders/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/177-bounded-degree-coboundary-expanders/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 177 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Bounded-degree coboundary expanders</h1>
+<p class="meta">Episode 177, October 2026</p>
+<h1>Expanders in every dimension?</h1>
+<p class="subtitle">A preprint claims bounded-degree coboundary expanders in every dimension from three up: huge complexes, each vertex in a bounded number of pieces, with no bottlenecks at any level below the top</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 177 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="3m01K40GxVc" data-title="Episode 177: Expanders in every dimension?">
+  <a href="https://youtu.be/3m01K40GxVc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 177: Expanders in every dimension? A patch of triangles with a few marked edges in red and the triangles containing an odd number of them in yellow (our drawing).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:52. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/3m01K40GxVc?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/3m01K40GxVc?t=142" data-t="142"><span class="t">2:22</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/3m01K40GxVc?t=232" data-t="232"><span class="t">3:52</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/3m01K40GxVc?t=360" data-t="360"><span class="t">6:00</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Constructs arbitrarily large finite <i>d</i>-dimensional simplicial complexes, for every <i>d</i> ≥ 3, with uniformly bounded vertex degrees and uniform 𝔽<sub>2</sub> coboundary expansion in every degree below <i>d</i>. Together with the known graph and two-dimensional cases, this establishes the existence of such expanders in every positive dimension.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>An expander graph has no bottlenecks: for any set of dots, the edges leaving it are many compared with how far the set is from nothing or everything. A long cycle is a poor expander (two edges cut it in half); a complete graph is a good one, but every dot touches every other. The classical achievement is graphs of any size with a bounded number of edges at each dot that all expand by the same margin. In a simplicial complex (dots, edges, triangles, tetrahedra, and so on), the coboundary of a set of edges is the set of triangles containing an odd number of them, and in general the coboundary of a set of i-faces is the set of (i+1)-faces containing an odd number of them. The star of a dot is the coboundary of that dot, and lights up no triangle. Coboundary expansion asks, at every level, that a set with a small coboundary be close to such a trivial set, a coboundary from one level down, with sizes measured by the paper’s weights (pick a top face at random, then one of its i-faces). Holes spoil this: on our 9-dot torus a ring of edges around the hole has no coboundary yet is not trivial, so the constant is 0. Size spoils it too: on a long sphere with at most 6 triangles at each dot, a crack of marked edges lights only its two ends, so the constant is at most 3/199 at 300 dots (our computation). Complete complexes expand well (10/7 at the edge level on 8 dots, by our computation), but each dot touches more and more triangles.</p>
+<p>As the paper recounts, Gromov asked for arbitrarily large complexes with a bounded number of pieces at each vertex and uniform filling bounds; the full coboundary expansion problem also demands that there be no holes (a recent formulation is Chapman and Lubotzky’s Problem 1.3). Random coboundary expanders by Lubotzky and Meshulam (dimension 2) and by Lubotzky, Luria and Rosenthal (every dimension) bound the top faces around faces one level below the top, but their vertex degrees grow. Kaufman, Kazhdan and Lubotzky, and Evra and Kaufman, proved that certain bounded-degree complexes are cosystolic expanders, which measures distance to sets with no coboundary, so holes are allowed. Chapman and Lubotzky settled dimension two over the field with two elements.</p>
+<p>Result 177 is one OpenAI preprint, <a href="https://github.com/openai/math/blob/main/preprints/Bounded-degree-coboundary-expanders-in-every-dimension-September-24-2026/paper.pdf">Bounded-degree coboundary expanders in every dimension</a> (14 pages, dated September 24, 2026). Its Theorem 1.1: for every d ≥ 3 there are constants D and ε &gt; 0 and finite, connected, pure d-dimensional complexes X<sub>m</sub> with more and more vertices, such that every vertex lies in at most D faces of dimension d and ‖δ<sub>i</sub>f‖ ≥ ε dist(f, B<sup>i</sup>) for every set f of i-faces, for 0 ≤ i &lt; d. “The constants are independent of m, i, and f.” Together with expander graphs and Chapman and Lubotzky’s dimension two, the paper concludes that bounded-degree F<sub>2</sub> coboundary expanders exist in every positive dimension.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>No small or computed constants. The prime q is only “sufficiently large”, partly through a threshold in a cited theorem that the paper does not quantify. Its explicit conditions alone force q ≥ 37 in dimension three, and by our computation that makes the paper’s degree bound D at least about 1.7 × 10<sup>34</sup> and the first complex at least about 1.3 × 10<sup>76</sup> vertices. It gives one growing sequence, not every size, and no algorithm. The coefficients are mod 2 only, and it claims no applications. It is not the first bounded-degree high-dimensional expander: its step is from cocycles to coboundaries, by proving that the holes vanish.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, 14 pages, dated September 24, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,44 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/177.md">scope notes</a>)</dd>
+    <dd>Formalized by OpenAI in the same form; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/177.md">Lean formalization</a> whose <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/CoboundaryExpanders.lean">comparator statement</a> states the theorem in the same form, with the paper’s weights and mod-2 coefficients. By our count the proof takes 36 files and 33,125 lines, excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/Coboundary">source</a>), with no unproved steps by our search; we have not rebuilt it. The Lean proof assumes none of the paper’s cited results: it proves what it needs itself (the case of the cosystolic inequality it uses, not the general theorem), and by its own notes it avoids the stability theorems. The result is not listed in the repository’s formalization.yaml. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The construction.</strong> In an established program of Kac–Moody–Steinberg complexes, take matrices of size 2d+1 with determinant one, entries polynomials in t over the field with q elements (q a large odd prime), upper unitriangular at t = 0. They are generated by 2d+1 simple moves arranged in a cycle; leaving out any one, the others generate a finite group. The cosets of these finite groups are the vertices, and overlapping cosets form faces. Reducing modulo t<sup>m</sup> (Oppenheim and Valentiner-Branth’s related construction used other quotients) keeps the finite groups, so every vertex sees the same number of top faces for every m while the complexes grow. These complexes have dimension 2d; the expanders are their d-skeletons.</li>
+  <li><strong>Geometry.</strong> The infinite complex is the set of chambers opposite one chamber in an affine twin building. Rebuilding that half of the building layer by layer, each layer’s effect is governed by a spherical piece (an opposition complex) with no mod-2 holes once q is large, and that half is contractible, so the infinite complex, and its group, have no holes below dimension 2d − 1.</li>
+  <li><strong>Algebra.</strong> Iwasa’s homological stability theorem, with an input from Morrow, and a transfer argument that works because the finite quotients have odd order, show that the finite complexes have no mod-2 cohomology in degrees 1 to d − 1. This is where the matrix size 2d+1 is needed.</li>
+  <li><strong>Analysis.</strong> A theorem of Oppenheim and Valentiner-Branth gives cosystolic expansion with one constant η for every m: a small coboundary means close to a set with no coboundary. With no holes those are all trivial, and comparing weights moves the inequality to the d-skeleton, with ε = η divided by the number of top faces at a vertex of the full 2d-dimensional complex.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our exact constants with the paper’s weights: cycles on 12 and 24 dots, 1/3 and 1/6; the complete graph on 8 dots, 8/7; the Petersen graph, 2/3.</li>
+  <li>Our 3 × 3 torus (9 dots, 18 triangles): the ring of edges between two columns has no coboundary and is not a coboundary, so the coboundary constant is 0 (the cosystolic constant is 3/4).</li>
+  <li>Our long spheres made from a tube, at most 6 triangles per dot: constant at most 3/19, 3/99 and 3/199 at 30, 150 and 300 dots.</li>
+  <li>Our complete 2-complexes on 5 to 8 dots, edge level: 5/3, 3/2, 7/5 and 10/7, with 6, 10, 15 and 21 triangles per dot.</li>
+  <li>Sizes, from the paper’s explicit conditions on q (an odd prime, q ≥ 5, q ≥ 2<sup>2d−1</sup>): in dimension 3, q ≥ 37, D ≥ 20 · 37<sup>21</sup> ≈ 1.7 × 10<sup>34</sup>, and the first complex has at least 7 · 37<sup>48</sup> ≈ 1.3 × 10<sup>76</sup> vertices (our computation; the true q may be larger).</li>
+  <li>The Lean count: our count of the import closure.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Bounded-degree-coboundary-expanders-in-every-dimension-September-24-2026/paper.pdf">Bounded-degree coboundary expanders in every dimension (PDF)</a>, 14 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/177.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 177.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -74,18 +133,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Bounded-degree-coboundary-expanders-in-every-dimension-September-24-2026/paper.pdf">Bounded-degree coboundary expanders in every dimension</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>An expander graph is a sparse network with no bottlenecks. Take any set of dots: the edges leaving it are many, compared with how far the set is from the two trivial answers, nothing and everything. A long cycle is a poor expander, because two edges cut it in half. A complete graph is a good one, but every dot touches every other dot. The classical achievement is to have both: graphs as large as you like, with a bounded number of edges at every dot, that all expand by the same margin. Now fill in triangles, and their higher-dimensional cousins, to get a simplicial complex. Mark a set of edges. Its coboundary is the set of triangles containing an odd number of marked edges, the analogue of the edges leaving a set. Mark every edge at one dot, and no triangle lights up: that marked set is itself the coboundary of a single dot, a trivial case. Coboundary expansion asks, at every level, that a marked set with a small coboundary be close to one of these trivial ones. Holes spoil this. On a torus, a ring of edges around the hole lights up no triangle, yet it is not the coboundary of any set of dots. In our computation on a 9-dot torus, the coboundary constant is zero. Size can spoil it too. On a long sphere with at most 6 triangles at each dot, a crack of marked edges lights up only its two end triangles, so the constant falls toward zero as the sphere grows. Complete complexes expand well: on 8 dots with every triangle, our computation gives 10/7 at the edge level, but each dot already touches 21 triangles, and that number grows. Gromov asked for arbitrarily large complexes with a bounded number of pieces at each vertex and uniform filling bounds; the full problem also demands that there be no holes. Random coboundary expanders by Lubotzky and Meshulam, and by Lubotzky, Luria and Rosenthal, bound the pieces around faces one level below the top, but their vertex degrees grow. Kaufman, Kazhdan and Lubotzky, and Evra and Kaufman, proved that certain bounded-degree complexes are cosystolic expanders, which measure distance to marked sets with no coboundary, so holes are allowed. Chapman and Lubotzky settled dimension two, over the field with two elements.</p>
+<h3><span class="t num">2:22</span>The claim</h3>
+<p>Result 177 is a single OpenAI preprint, 14 pages long, dated September 24, 2026. Its theorem: for every dimension d of at least 3, there are finite, connected d-dimensional complexes, with as many vertices as you like, in which every vertex lies in at most D faces of the top dimension, and at every level below d, the coboundary of any marked set is at least epsilon times its distance from the trivial ones, measured with the paper’s weights. D and epsilon depend on d, but not on the complex. Together with expander graphs and Chapman and Lubotzky’s dimension two, the paper concludes that bounded-degree coboundary expanders over the field with two elements exist in every positive dimension. Not claimed: small or computed constants. The paper’s prime must be large in a sense it does not quantify. Its explicit conditions alone force at least 37 in dimension three, and by our computation that makes the paper’s degree bound at least about 10³⁴, and the first complex at least about 10⁷⁶ vertices. It gives one growing sequence, not every size, and no algorithm. The coefficients are mod 2 only, and it claims no applications. It is also not the first bounded-degree high-dimensional expander: its step is from cocycles to coboundaries, by proving that the holes vanish.</p>
+<h3><span class="t num">3:52</span>How the proof goes</h3>
+<p>The construction belongs to an established program of Kac–Moody–Steinberg complexes. Fix d, and take matrices of size 2d + 1, with determinant one, whose entries are polynomials in t over a finite field with q elements, q a large odd prime, and which are upper unitriangular when t is zero. They are generated by 2d + 1 simple moves, arranged in a cycle. Leave out any one move, and the others generate a finite group. The cosets of these finite groups are the vertices, and cosets that overlap form a face. Now reduce the polynomials modulo t to the m. The finite groups survive unchanged, so every vertex sees the same fixed number of top faces, whatever m is, while the complexes grow with m. These complexes have dimension 2d. The expanders are their bottom halves: everything up to dimension d. The proof has three steps. First, geometry. The infinite complex sits inside an affine twin building, as the chambers opposite one fixed chamber. Rebuild that half of the building from it, layer by layer: each layer’s effect is governed by a spherical piece with no mod-2 holes once q is large, and that half is contractible. So the infinite complex has no holes below dimension 2d − 1, and the same goes for its group. Second, algebra. To pass to the finite quotients, the paper combines Iwasa’s homological stability theorem, with an input from Morrow, and a transfer argument that works because the finite quotients have odd order. The finite complexes then have no mod-2 holes from degree 1 to d − 1; this is where the size 2d + 1 is needed. Third, analysis. A theorem of Oppenheim and Valentiner-Branth says these complexes are cosystolic expanders, with one constant for every m: a small coboundary means close to something with no coboundary. With no holes, those are all trivial, and comparing weights moves the inequality down to the bottom half, with epsilon equal to that constant divided by the number of top faces at a vertex of the full complex.</p>
+<h3><span class="t num">6:00</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. OpenAI’s Lean files state the theorem in the same form, with the paper’s weights, and prove it in 36 files and about 33,000 lines, with no gaps we could find by search; we did not run the check. The Lean proof assumes none of the paper’s cited results: it proves what it needs itself, and by its own notes it avoids the stability theorems. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, coboundary expansion with bounded degree exists in every dimension: complexes as large as you like, each vertex in a bounded number of pieces, in which, at every level below the top, a marked set with a small coboundary is close to a trivial one.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20177%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../176-second-kahn-kalai-conjecture-edge/"><span class="dir">Previous · 176</span><span class="pt">The second Kahn–Kalai conjecture with an edge-count bound</span></a>
-  <a class="next" href="../178-deterministic-nonbipartite-ramanujan-graphs-every/"><span class="dir">Next · 178</span><span class="pt">Deterministic nonbipartite Ramanujan graphs in every fixed degree</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
