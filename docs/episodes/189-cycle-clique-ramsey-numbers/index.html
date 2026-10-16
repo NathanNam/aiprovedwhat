@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 189: Cycle–clique Ramsey numbers | AI Proved What?</title>
-<meta name="description" content="Cycle–clique Ramsey numbers. Result 189 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Red cycle or blue clique? Every cycle-clique Ramsey number | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that R(C_m, K_n) = (m-1)(n-1)+1 for all m at least n at least 3 except (3,3), where it is 6, settling the cycle-clique conjecture of Erdős, Faudree, Rousseau and Schelp. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/189-cycle-clique-ramsey-numbers/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 189: Cycle–clique Ramsey numbers | AI Proved What?">
-<meta property="og:description" content="Cycle–clique Ramsey numbers. Result 189 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Red cycle or blue clique?">
+<meta property="og:description" content="An AI preprint claims that R(C_m, K_n) = (m-1)(n-1)+1 for all m at least n at least 3 except (3,3), where it is 6, settling the cycle-clique conjecture of Erdős, Faudree, Rousseau and Schelp. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/189-cycle-clique-ramsey-numbers/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/189-cycle-clique-ramsey-numbers/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 189 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Cycle–clique Ramsey numbers</h1>
+<p class="meta">Episode 189, October 2026</p>
+<h1>Red cycle or blue clique?</h1>
+<p class="subtitle">A preprint claims that exactly (m−1)(n−1)+1 dots force a red cycle through m dots or a blue clique of n dots, for every m ≥ n ≥ 3 except the triangle pair, where the answer is 6</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 189 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="WbxGW55Q2-k" data-title="Episode 189: Red cycle or blue clique?">
+  <a href="https://youtu.be/WbxGW55Q2-k">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 189: Red cycle or blue clique? Twelve dots in three groups of four, every link inside a group red and every link between groups blue: the classical colouring with no red 5-cycle and no blue 4-clique.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:46. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/WbxGW55Q2-k?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/WbxGW55Q2-k?t=120" data-t="120"><span class="t">2:00</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/WbxGW55Q2-k?t=195" data-t="195"><span class="t">3:15</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/WbxGW55Q2-k?t=347" data-t="347"><span class="t">5:47</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves the Erdős–Faudree–Rousseau–Schelp conjecture: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo stretchy="false">(</mo><msub><mi>C</mi><mi>m</mi></msub><mo separator="true">,</mo><msub><mi>K</mi><mi>n</mi></msub><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mi>m</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">R(C_m,K_n)=(m-1)(n-1)+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span> for every <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>≥</mo><mi>n</mi><mo>≥</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">m\ge n\ge3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span>, except <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mo stretchy="false">(</mo><msub><mi>C</mi><mn>3</mn></msub><mo separator="true">,</mo><msub><mi>K</mi><mn>3</mn></msub><mo stretchy="false">)</mo><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">R(C_3,K_3)=6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span></span></span></span>. This is the exact threshold forcing a red <i>m</i>-cycle or a blue <i>n</i>-clique in every red–blue coloring of a complete graph.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Colour every link of a complete network red or blue. The Ramsey number R(C<sub>m</sub>, K<sub>n</sub>) is the number of dots that forces a red cycle through exactly m dots or n dots all joined in blue. Splitting (m−1)(n−1) dots into n−1 groups of m−1, red inside the groups and blue between, avoids both: a red cycle stays in one group, which is too small, and a blue clique takes at most one dot per group. Triangles are special: a red pentagon with its blue pentagram has no one-colour triangle, so R(C<sub>3</sub>, K<sub>3</sub>) = 6, not 5.</p>
+<p>The paper credits the conjecture that one more dot always suffices to Erdős, Faudree, Rousseau and Schelp (1978), in the form stated by Keevash, Long and Skokan. As the paper lists it, the triangle case goes back to Chartrand and Schuster; Bondy and Erdős proved it for m ≥ n² − 2; all m were settled for cliques of 4, 5, 6 and 7 dots in papers from 1999 to 2008, and parts of the case of 8; Nikiforov’s paper states it for n ≥ 4 and m ≥ 4n + 2; and Keevash, Long and Skokan proved it whenever m is at least a constant times log n / log log n, which, as the paper puts it, leaves at most finitely many pairs. Which pairs depends on their constant, which they do not give; the new proof never needs it.</p>
+<p>Result 189 is one OpenAI preprint, <a href="https://github.com/openai/math/blob/main/preprints/Cycle-clique-Ramsey-numbers-September-25-2026/Cycle-clique-Ramsey-numbers-September-25-2026.pdf">Cycle–clique Ramsey numbers</a> (41 pages, dated September 25, 2026). Its Theorem 1.1: for all integers m ≥ n ≥ 3 with (m, n) ≠ (3, 3), R(C<sub>m</sub>, K<sub>n</sub>) = (m−1)(n−1)+1, and R(C<sub>3</sub>, K<sub>3</sub>) = 6. The lower bound is the classical construction; the new content is the upper bound for every pair in the range. The last step is computer-assisted: the paper reduces the remaining cases to 3,099 finite patterns and refutes every one with two separate programs, which <a href="https://github.com/openai/math/blob/main/preprints/Cycle-clique-Ramsey-numbers-September-25-2026/verification">accompany the paper</a>.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Anything for cycles shorter than the clique size (m &lt; n). A new lower-bound construction, or a classification of the colourings that come closest (our search finds more than one). The proof does not use Keevash, Long and Skokan’s theorem or its constant. And the computer does not search through graphs or colourings: it checks patterns of paths, using inference rules proved in the paper.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, 41 pages, dated September 25, 2026, with programs and deduction traces</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +88,45 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/189.md">scope notes</a>)</dd>
+    <dd>The theorem, exactly as stated with the triangle exception, formalized by OpenAI; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 16, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. We ran the paper’s compact checker on a copy: its output matches the paper’s Table 2 exactly. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/189.md">Lean formalization</a>: <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/CycleCliqueRamsey.lean">the comparator statement</a> is Theorem 1.1 with the triangle exception, and every finite case is re-checked by Lean’s kernel rather than by the Python programs. By our count the main proof route takes 182 files and about 78,000 lines, excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/Ramsey/CycleClique">source</a>); the full module adds a second, independent development, for 443 files and about 2.8 million lines, almost all of it machine-generated certificate data. We found no unproved steps by search; we have not rebuilt the proof. The collection’s formalization.yaml does not list this result. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Red graph.</strong> Keep only the red links: a blue clique of n dots is an independent set of n dots. So the claim is that every graph on (m−1)(n−1)+1 dots has a cycle through exactly m dots or n independent dots.</li>
+  <li><strong>A smallest counterexample.</strong> Keep m fixed and take a counterexample with n as small as possible. Then any independent dots, together with their neighbours, cover a lot of the graph, or deleting them and their neighbours would leave a smaller counterexample (Lemma 2.2); every dot has at least m−1 neighbours. The paper credits this kind of expansion, and rooted distance layers, to Erdős, Faudree, Rousseau and Schelp.</li>
+  <li><strong>A large clique.</strong> Such a graph with no cycle of exactly m dots contains a clique of at least about half of m−1 dots (Theorem 3.1), via a crowded distance layer and Pósa-style path rotation. Cycles of 4 and 5 dots are done by hand.</li>
+  <li><strong>Paths through the clique.</strong> Paths hung between clique dots, with enough outside dots but not too many, close into a cycle of exactly m dots (Lemma 6.1). The best system below that line forces separated regions, each holding 2 or 3 independent dots; if the clique has 9 or more dots, that is too many (Proposition 8.4).</li>
+  <li><strong>The finite remainder.</strong> A clique of 3 to 8 dots and cycles of 6 to 18: a path system is described by a pattern (the number of inside dots on each path, chain by chain), 3,099 patterns over 42 parameter pairs. The programs apply the proved rules (forbidden outside paths, required paths, trial additions, packing): 3,049 refuted by the first packing test, 50 after further deductions, none left unresolved. Pósa rotation, a special case of Chvátal–Erdős, and a shortening argument of Radziszowski and Jin are re-proved in the paper.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Exhaustive search (ours; these values were known before): R(C<sub>3</sub>, K<sub>3</sub>) = 6; R(C<sub>4</sub>, K<sub>3</sub>) = 7, R(C<sub>5</sub>, K<sub>3</sub>) = 9, R(C<sub>6</sub>, K<sub>3</sub>) = 11, R(C<sub>4</sub>, K<sub>4</sub>) = 10, R(C<sub>5</sub>, K<sub>4</sub>) = 13, R(C<sub>6</sub>, K<sub>4</sub>) = 16. For m = 4, n = 3 the 6-dot colourings avoiding both come in two kinds: two red triangles, and two red triangles joined by one red link.</li>
+  <li>The lower-bound colouring checked for 3 ≤ n ≤ m ≤ 7, and the pentagon (ours).</li>
+  <li>Our own recount of the paper’s Table 1: 42 parameter pairs, 3,099 patterns, row by row; the bar chart shows patterns per cycle length from Table 1.</li>
+  <li>The map of which pairs the listed results cover is ours; the paper does not draw it.</li>
+  <li>The Lean count: our count of the import closures.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Cycle-clique-Ramsey-numbers-September-25-2026/Cycle-clique-Ramsey-numbers-September-25-2026.pdf">Cycle–clique Ramsey numbers (PDF)</a>, 41 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Cycle-clique-Ramsey-numbers-September-25-2026/verification">The verification programs and traces</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/189.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 189.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +134,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Cycle-clique-Ramsey-numbers-September-25-2026/Cycle-clique-Ramsey-numbers-September-25-2026.pdf">Cycle--clique Ramsey numbers</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Colour every link of a complete network red or blue. How many dots does it take to force one of two things: a red cycle through exactly m dots, or n dots all joined to each other in blue? That number is the Ramsey number of the m-cycle against the n-clique. Here is why it must be more than (m−1)(n−1). Split that many dots into n−1 groups of m−1 dots, colour every link inside a group red, and every link between groups blue. A red cycle stays inside one group, which is too small, and a blue clique can take only one dot from each group. With m = 4 and n = 3, that is two red triangles on 6 dots. Our exhaustive search confirms that 7 dots force a red 4-cycle or a blue triangle, and that the six-dot colourings that avoid both are not unique. The triangle is special: a red pentagon with its blue pentagram has neither colour’s triangle, so the answer there is 6, not 5. The paper credits the conjecture to Erdős, Faudree, Rousseau and Schelp, published in 1978, in the form stated by Keevash, Long and Skokan: for every m ≥ n ≥ 3, except (3,3), one more dot than that construction is always enough. Many cases were known. For triangles it goes back to Chartrand and Schuster; Bondy and Erdős proved it when the cycle is long, m ≥ n² − 2; the full ranges of m for cliques of 4, 5, 6 and 7 dots came in papers from 1999 to 2008, and parts of the case of 8. Nikiforov’s paper states it when m ≥ 4n + 2. And Keevash, Long and Skokan proved it whenever m is at least a constant times log n / log log n. As the paper puts it, that leaves at most finitely many pairs in the range. Which pairs depends on their constant, which they do not give, and the new proof never needs it.</p>
+<h3><span class="t num">2:00</span>The claim</h3>
+<p>Result 189 is one OpenAI preprint, 41 pages, dated September 25, 2026. It claims: for all whole numbers m ≥ n ≥ 3, other than the pair (3,3), the Ramsey number of the m-cycle against the n-clique is (m−1)(n−1)+1; and for the triangle pair it is 6. The lower bound is the classical construction; the new content is the upper bound, for every pair in the range. The last step is computer-assisted: the paper reduces the remaining cases to 3,099 finite patterns, and refutes every one with two separate programs. We ran the compact one: its output matches the paper’s table exactly, and our own count of the patterns agrees. Not claimed: anything for cycles shorter than the clique size. No new lower-bound construction, and no classification of the colourings that come closest; our search already finds more than one. The proof does not use Keevash, Long and Skokan’s theorem or its constant. And the computer does not search through graphs or colourings: it checks patterns of paths, using rules proved in the paper. Our small exact values were known before; they only illustrate the formula.</p>
+<h3><span class="t num">3:15</span>How the proof goes</h3>
+<p>Look only at the red links. A blue clique of n dots is then a set of n dots with no red link between them, an independent set. So the claim is: every graph on that many dots has a cycle through exactly m dots, or an independent set of n dots. Suppose not: keep m fixed, and take a counterexample with n as small as possible. Minimality forces expansion: any few independent dots, together with their neighbours, must cover a lot of the graph, because otherwise deleting them and their neighbours would leave a smaller counterexample. In particular, every dot has at least m−1 neighbours. The paper credits this kind of expansion, and rooted distance layers, to Erdős, Faudree, Rousseau and Schelp’s original argument. Next, an expanding graph with no cycle of exactly m dots must contain a large clique, of at least about half of m−1 dots. Grow a breadth-first tree from one dot; some distance layer is crowded; inside it, a path-rotation argument going back to Pósa finds a path of just the right length whose ends lie in different branches, and closing it through the tree would give a cycle of exactly the forbidden length, unless the clique is there. Cycles of 4 and 5 dots are finished by hand. Then the paper hangs paths between the clique’s dots. Because a clique lets you jump between any two of its dots, a system of such paths with enough outside dots, but not too many, closes into a cycle of exactly m dots. So take the best system that stays below that line: every improvement is forbidden, which forces separated regions, each holding 2 or 3 independent dots. If the clique has 9 or more dots, that is too many independent dots: a contradiction. What remains is a finite range: a clique of 3 to 8 dots, and cycles of 6 to 18. A path system is then described by a pattern, the number of inside dots on each path, chain by chain, and there are exactly 3,099 of them over 42 parameter pairs. For each pattern, the programs apply the proved rules, forbidden outside paths, required paths, trial additions, and packing, until they find more independent dots than allowed. Every pattern is refuted: 3,049 by the first packing test, 50 after further deductions, none left unresolved. Classical ingredients, Pósa rotation, a special case of Chvátal and Erdős, and a shortening argument from Radziszowski and Jin, are re-proved in the paper.</p>
+<h3><span class="t num">5:47</span>Where it stands</h3>
+<p>The preprint is unrefereed and has not been revised. OpenAI’s Lean files state the theorem exactly, including the triangle exception, and prove it, with every finite case re-checked by Lean’s own kernel rather than by the Python programs; the main proof route is about 78,000 lines, with no gaps we could find by search. A second, independent Lean development sits in the same folder, which brings it to about 2.8 million lines, almost all of it machine-generated certificate data. We did not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, (m−1)(n−1)+1, dots are exactly what it takes to force a red cycle of m or a blue clique of n, for every m ≥ n ≥ 3, except the triangle pair, where the answer is 6.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20189%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../188-sharp-terminal-leave-random-triangle/"><span class="dir">Previous · 188</span><span class="pt">The sharp terminal leave in random triangle removal</span></a>
-  <a class="next" href="../190-polynomial-removal-fails-ordered-binary/"><span class="dir">Next · 190</span><span class="pt">Polynomial removal fails for ordered binary matrices</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

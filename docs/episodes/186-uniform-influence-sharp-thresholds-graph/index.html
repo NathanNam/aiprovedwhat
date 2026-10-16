@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 186: Uniform influence and sharp thresholds for graph and hypergraph properties | AI Proved What?</title>
-<meta name="description" content="Uniform influence and sharp thresholds for graph and hypergraph properties. Result 186 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>How fast must it switch? The Friedgut–Kalai sharp-threshold conjecture | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim that every symmetric increasing property of a random graph switches on within a window of order 1/(log n)^2, as Friedgut and Kalai conjectured, and the analogue for hypergraphs. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/186-uniform-influence-sharp-thresholds-graph/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 186: Uniform influence and sharp thresholds for graph and hypergraph properties | AI Proved What?">
-<meta property="og:description" content="Uniform influence and sharp thresholds for graph and hypergraph properties. Result 186 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="How fast must it switch?">
+<meta property="og:description" content="Two AI preprints claim that every symmetric increasing property of a random graph switches on within a window of order 1/(log n)^2, as Friedgut and Kalai conjectured, and the analogue for hypergraphs. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/186-uniform-influence-sharp-thresholds-graph/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/186-uniform-influence-sharp-thresholds-graph/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,35 +37,98 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 186 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Uniform influence and sharp thresholds for graph and hypergraph properties</h1>
+<p class="meta">Episode 186, October 2026</p>
+<h1>How fast must it switch?</h1>
+<p class="subtitle">Two preprints claim that every symmetric increasing property of a random graph switches on within a window of order 1/(log n)², as Friedgut and Kalai conjectured, and the analogue for hypergraphs</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 186 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="rgsVQLCHViE" data-title="Episode 186: How fast must it switch?">
+  <a href="https://youtu.be/rgsVQLCHViE">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 186: How fast must it switch? Four S-shaped curves, the chance that a random network on 4 to 7 dots contains a triangle as the link probability rises, steepening as the network grows, with the 10%-to-90% window marked (our exact computation).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:42. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/rgsVQLCHViE?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/rgsVQLCHViE?t=122" data-t="122"><span class="t">2:02</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/rgsVQLCHViE?t=260" data-t="260"><span class="t">4:20</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/rgsVQLCHViE?t=467" data-t="467"><span class="t">7:47</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves the Friedgut–Kalai threshold-width conjectures for graphs and fixed-uniformity hypergraphs. For fixed <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>ε</mi><mo>&lt;</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">0\lt \varepsilon\lt 1/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6835em;vertical-align:-0.0391em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">ε</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1/2</span></span></span></span>, every nontrivial increasing relabeling-invariant property crosses from probability <i>ε</i> to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>−</mo><mi>ε</mi></mrow><annotation encoding="application/x-tex">1-\varepsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">ε</span></span></span></span> within width <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><msup><mo stretchy="false">)</mo><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O((\log n)^{-2})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">((</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> for graphs and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>O</mi><mi>r</mi></msub><mo stretchy="false">(</mo><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><msup><mo stretchy="false">)</mo><mrow><mo>−</mo><mi>r</mi><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mi>r</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O_r((\log n)^{-r/(r-1)})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">((</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mtight">/</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> for <i>r</i>-uniform hypergraphs, <i>r</i> ≥ 3. The hypergraph influence bound also applies to nonmonotone properties.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Link every pair of n dots independently with probability p, and take a property of the resulting network that ignores how the dots are labelled and that adding links can never destroy: containing a triangle, being connected, having no isolated dot. As p rises, the chance that the property holds climbs from 0 to 1. The question is how quickly: how far apart in p are the points where the chance reaches 10% and 90%? In our exact count over every labelled network, the window for “contains a triangle” narrows from about 0.52 on 4 dots to about 0.32 on 7.</p>
+<p>The graph paper tells the history this way. Kahn, Kalai and Linial (1988) connected Fourier analysis with the influence of single coordinates; Bourgain, Kahn, Kalai, Katznelson and Linial extended this to product spaces. Friedgut and Kalai (1996) combined it with the Margulis–Russo formula and proved that every such graph property switches within a window of width at most C log(1/(2ε))/log n, and conjectured (log n)² in the denominator. That would be best possible: they pointed to containing a clique of size proportional to log n, whose window can be of order 1/(log n)². Bourgain and Kalai (1997) came within an arbitrarily small power of the logarithm, (log n)<sup>−2+η</sup> for every η &gt; 0, and Kelman, Kindler, Lifshitz, Minzer and Safra (2020) proved a related influence bound at p = 1/2.</p>
+<p>Result 186 is two OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/A-Sharp-Threshold-Bound-for-Monotone-Graph-Properties-September-25-2026/paper.pdf">A Sharp Threshold Bound for Monotone Graph Properties</a> (10 pages, dated September 25, 2026) proves, as its Theorem 1.1: “For every integer n ≥ 2, every nontrivial increasing family P of graphs on n vertices invariant under all vertex permutations, and every 0 &lt; ε &lt; 1/2, p<sub>1−ε</sub>(P) − p<sub>ε</sub>(P) ≤ 2<sup>19</sup> log(1/(2ε))/(log n)².” It follows from Theorem 1.2: for every Boolean function f on the edges invariant under vertex permutations and every 0 &lt; p &lt; 1, Var<sub>p</sub>(f) ≤ 2<sup>17</sup> I<sub>p</sub>(f)/(log n)², where I<sub>p</sub> is the total influence; “No monotonicity assumption is needed.” <a href="https://github.com/openai/math/blob/main/preprints/A-uniform-influence-bound-for-hypergraph-properties-October-5-2026/hypergraph-influences.pdf">A uniform influence bound for hypergraph properties</a> (8 pages, dated October 5, 2026) uses the graph paper’s method for r-uniform hypergraphs, r ≥ 3: Var<sub>p</sub>(f) ≤ C<sub>r</sub> I<sub>p</sub>(f)/(log n)<sup>r/(r−1)</sup>, and for increasing properties a width of at most 2C<sub>r</sub> log((1−ε)/ε)/(log n)<sup>r/(r−1)</sup>, proving Friedgut and Kalai’s hypergraph conjecture; the constant C<sub>r</sub> is shown to exist but not computed.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>A useful number: the graph paper calls its constant “only a convenient explicit choice”, and by our arithmetic its width bound beats the trivial width 1 (at ε = 0.1) only when n exceeds about 10<sup>398.9</sup>. The content is the rate in n. The width is measured in p itself, so for properties that switch close to p = 0, such as connectivity, it tells us nothing new (our observation). It is a worst case: typical properties switch much faster, by our calculations (in our exact calculation, “no isolated dot” has a window of about 3/n). It is not about where thresholds sit, the subject of results 175 and 176; the graph paper says its proof uses neither. The hypergraph paper does not claim that its exponent r/(r−1) is best possible, and the width bounds need monotonicity, though the variance–influence inequalities do not.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI: graph paper, 10 pages, September 25, 2026; hypergraph paper, 8 pages, October 5, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/186.md">scope notes</a>)</dd>
+    <dd>The graph theorem, exactly as stated, formalized by OpenAI; not run by us. The hypergraph paper: no Lean</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. Neither preprint has been revised since they were added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/186.md">Lean formalization</a> of the graph paper: <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SharpThreshold.lean">the comparator statement</a> matches Theorem 1.1 exactly, with the constant 2<sup>19</sup>, and the development also proves the variance inequality with 2<sup>17</sup>. By our count it takes 78 files and 7,699 lines, excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/SharpThreshold">source</a>). We found no unproved steps by search; we have not rebuilt the proof. The collection’s formalization.yaml does not list this result, though the Lean is linked from its scope note. The hypergraph paper has no Lean formalization. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>From slope to width.</strong> By the Margulis–Russo formula, which the paper works out directly, the slope of the curve is the total influence. For a yes-or-no property the variance is μ(1−μ), so Theorem 1.2 forces the log odds log(μ/(1−μ)) to climb at rate at least (log n)²/2<sup>17</sup>; integrating gives the window.</li>
+  <li><strong>Fourier weight.</strong> In the Fourier basis for coins of bias p, the variance is the total squared weight and p(1−p) times the influence weights each term by its degree, so weight above degree L is at most p(1−p) I/L; the proof shows that low-degree weight is small compared with the influence. The first tool (Lemma 2.1, in the style of Kahn, Kalai and Linial; the paper proves the two-point inequality directly and uses Bonami’s product argument): if no coordinate carries more than a 1/m share of the influence, the weight up to degree √(p(1−p)) log m/64 is at most m<sup>−1/4</sup> I.</li>
+  <li><strong>The vertex block.</strong> Leave free every link touching a random block of about √n dots and fix all other links. Permutations of the block move no fixed link, so each restricted property is still symmetric under them; every free link lies in a group (orbit) of at least m links, and the first tool applies, averaged exactly over the fixings.</li>
+  <li><strong>The degree trade.</strong> A Fourier term’s set of links, seen as a graph with at most k²/2 edges, has a vertex touching between 1 and k of them; with probability at least m/(2n) the block catches that vertex and no other vertex of the term. So control up to degree k becomes control up to degree k²/2, proportional to p(1−p)(log n)². In the high-degree weight that factor cancels, and the constants fit under 2<sup>17</sup>.</li>
+  <li><strong>Hypergraphs.</strong> An r-graph with s edges has a vertex of positive degree at most r s<sup>(r−1)/r</sup>, which gives the exponent r/(r−1). The graph paper credits random restrictions with symmetry (Bourgain–Kalai; Kelman et al.) and the Fourier tools to earlier work; what it adds is choosing the restriction through a vertex block, and the degree trade. The hypergraph paper calls its r-uniform degree bound “the additional combinatorial step”.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Exact curves over every labelled network on 4 to 7 dots (2,097,152 networks on 7): for “contains a triangle” the 10%-to-90% window runs from 0.3049 to 0.8260 on 4 dots (width 0.52) and from 0.1492 to 0.4670 on 7 dots (width 0.32).</li>
+  <li>Margulis–Russo, “contains a triangle” on 6 dots at p = 0.3: each of the 15 links has influence 0.170935, and their sum, 2.564022, equals the slope to 12 digits.</li>
+  <li>Fourier weights of “contains a triangle” on 6 dots at its median p = 0.3557: 42% of the variance at degree 1, then 10%, 28%, 12%.</li>
+  <li>The constants: 8192 × 9 + 256 = 73,984 ≤ 2<sup>17</sup>; the width bound is below 1 (ε = 0.1) only when log n &gt; 918.6.</li>
+  <li>“No isolated dot” (exact formula): window 0.0459 at 64 dots, 0.0119 at 256, 0.0030 at 1,024, about 3/n. Cliques of size proportional to log n, by a rough Poisson estimate of ours: width × (log n)² about 0.63 at 10<sup>3</sup> dots down to 0.42 at 10<sup>30</sup>.</li>
+  <li>The block: with 100 dots and a block of 10, 945 of the 4,950 links stay free (45 inside the block, and 10 to the block from each of the 90 others). The degree fact holds on every graph with up to 7 dots (largest ratio of the lowest positive degree to √(2s): 0.926, at K<sub>7</sub>).</li>
+  <li>The Lean count: our count of the import closure.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Sharp-Threshold-Bound-for-Monotone-Graph-Properties-September-25-2026/paper.pdf">A Sharp Threshold Bound for Monotone Graph Properties (PDF)</a>, 10 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-uniform-influence-bound-for-hypergraph-properties-October-5-2026/hypergraph-influences.pdf">A uniform influence bound for hypergraph properties (PDF)</a>, 8 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/186.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 186.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -76,18 +137,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-Sharp-Threshold-Bound-for-Monotone-Graph-Properties-September-25-2026/paper.pdf">A Sharp Threshold Bound for Monotone Graph Properties</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Take n dots, and link each pair independently with probability p. Now pick a property of the network: it contains a triangle, it is connected, or no dot is left without a link. The property must not care how the dots are labelled, and adding links must never destroy it. As p rises from zero to one, the chance that the property holds climbs from zero to one. The question is how quickly. Measure the window: the distance in p between the point where the chance reaches 10% and the point where it reaches 90%. Our exact count over every labelled network shows the trend. For a triangle on 4 dots, the window runs from about 0.30 to 0.83, a width of about 0.52. On 7 dots it runs from about 0.15 to 0.47, a width of about 0.32. Must every such property switch on quickly once the network is large, and at what rate? The papers trace the tools to Kahn, Kalai and Linial, in 1988, who tied the Fourier analysis of yes-or-no functions to the influence of single coordinates. Bourgain, Kahn, Kalai, Katznelson and Linial extended that to product spaces. In 1996, Friedgut and Kalai combined it with the Margulis–Russo formula, and proved that every such graph property switches within a window of width at most a constant, times the log of one over two epsilon, divided by log n. They conjectured that the denominator can be log n squared. That would be the best possible rate: they pointed to containing a clique of size proportional to log n, whose window can be of order one over log n squared. Bourgain and Kalai, in 1997, came within an arbitrarily small power of the logarithm, with the exponent two minus eta, for every eta greater than zero. And in 2020, Kelman, Kindler, Lifshitz, Minzer and Safra proved a related influence bound at p of one half, short of log n squared by a factor of log log n squared.</p>
+<h3><span class="t num">2:02</span>The claim</h3>
+<p>Result 186 is two OpenAI preprints. The first, 10 pages, dated September 25, 2026, claims a proof of Friedgut and Kalai’s conjecture, with an explicit constant. For every n of at least two, every nontrivial increasing graph property that ignores labels, and every epsilon between zero and one half, the window from epsilon to one minus epsilon has width at most 2^19, divided by log n squared, times the log of one over two epsilon. It follows from a stronger inequality. For any yes-or-no property of the network that ignores labels, monotone or not, and for every p, the variance is at most 2^17, divided by log n squared, times the total influence. The second preprint, 8 pages, dated October 5, extends this to hypergraphs, where each link joins r dots, for every r of at least three. The window shrinks like one over log n to the power r over r minus one, with a constant depending on r that the paper shows exists but does not compute. Not claimed: a useful number. The constant is, in the paper’s words, only a convenient explicit choice. By our arithmetic, the width bound beats the trivial width of one only when n exceeds about 10^399. The content is the rate in n. The width is measured in p itself, not relative to where the switch happens, so for properties that switch close to p equal to zero, such as connectivity, it tells us nothing new. And it is a worst case. Typical properties switch much faster: in our exact calculation, having no isolated dot has a window of about three over n, 0.003 at 1,024 dots. Cliques of size proportional to log n are the slow ones; by our rough estimate, their windows, times log n squared, stay between about 0.4 and 0.6, from 1,000 dots to 10^30. Nor is this about where thresholds sit, which results 175 and 176 address; the graph paper says its proof uses neither. And the hypergraph paper does not claim that its exponent is best possible.</p>
+<h3><span class="t num">4:20</span>How the proof goes</h3>
+<p>The proof starts from slope. By the Margulis–Russo formula, which the paper works out directly, the slope of the curve at p equals the total influence: the sum, over all links, of the chance that flipping that one link changes the answer. In our check, for a triangle on 6 dots at p of 0.3, each of the 15 links has influence 0.171, and the sum, 2.564, equals the slope to 12 digits. For a yes-or-no property, the variance is the chance times one minus the chance. So the variance inequality says the slope is at least log n squared over 2^17, times that variance. The log odds must climb at a guaranteed rate, and integrating that rate gives the window. Everything rests on the variance inequality. To prove it, the paper expands the property in a Fourier basis adapted to coins of bias p. Each term is labelled by a set of links, and the size of the set is the term’s degree. The variance is the total squared weight of the terms; p times one minus p, times the influence, counts the same weight with each term multiplied by its degree. So high-degree weight is cheap: above any degree, it is at most p times one minus p, times the influence, divided by that degree. The danger is low degree. For the triangle on 6 dots, 42% of the weight sits at degree one; the proof shows that for large n, low-degree weight must be small compared with the influence. The first tool follows the method of Kahn, Kalai and Linial, with a 2-to-4 inequality that the paper proves using Bonami’s product argument. If no single link carries more than a one over m share of the influence, then the weight up to a degree proportional to the square root of p times one minus p, times log m, is at most m to the minus one quarter, times the influence. The new move is to freeze most of the network. Pick a random block of about the square root of n dots. Leave free every link that touches the block, and fix every other link, whatever its value. Shuffling the dots inside the block moves no frozen link, so the frozen property is still symmetric under every reshuffle of the block. With 100 dots and a block of 10, 945 of the 4,950 links stay free, and each lies in a group of at least m lookalikes, so none carries more than a one over m share. The first tool applies to every freezing, and since its bound is linear in influence, it averages back exactly. The second ingredient treats each Fourier term’s set of links as a small graph. A graph with at most k squared over two edges has a vertex touching between one and k of them. With probability at least m over two n, the block catches that vertex and no other vertex of the term, leaving between one and k of its links free. So control up to degree k becomes control up to degree k squared over two, proportional to p times one minus p, times log n squared. In the high-degree weight that factor cancels, and the constants fit under 2^17. For hypergraphs, a vertex of degree at most r times s to the power r minus one over r plays the same role, giving the exponent r over r minus one. The paper credits random restrictions with symmetry, and the Fourier tools, to earlier work; what it adds is choosing the restriction through a vertex block, and this degree trade.</p>
+<h3><span class="t num">7:47</span>Where it stands</h3>
+<p>Both preprints are unrefereed and have not been revised. OpenAI’s Lean files state the graph theorem exactly, with the constant 2^19, and prove it, together with the variance inequality, in 78 files and about 7,700 lines, with no gaps we could find by search; we did not run the check. The hypergraph paper has no Lean formalization, and its constant is not computed. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If it holds, every label-blind, monotone property of a large random network switches on within a window of order one over log n squared, the best possible rate, as Friedgut and Kalai conjectured, and r-uniform hypergraphs follow with the exponent r over r minus one.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20186%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../185-counterexamples-infinite-matroid-intersection-packing/"><span class="dir">Previous · 185</span><span class="pt">Counterexamples to infinite matroid intersection and packing/covering</span></a>
-  <a class="next" href="../187-snaky-21-maker-moves/"><span class="dir">Next · 187</span><span class="pt">Snaky in 21 Maker moves</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

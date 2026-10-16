@@ -11,7 +11,7 @@
 <meta property="og:title" content="AI Proved What? New AI mathematics, explained and checked">
 <meta property="og:description" content="Short animated explainers of mathematics that AI systems claim to have proved, with a running record of how far each proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/">
-<meta property="og:image" content="https://aiprovedwhat.com/episodes/184-correspondence-coloring-fixed-forbidden-subgraph/thumbnail.jpg">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/189-cycle-clique-ramsey-numbers/thumbnail.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <meta name="generator" content="tools/site/build.py">
@@ -39,39 +39,84 @@
 </header>
 <main id="main">
 
-<h1>An AI system says graphs with no r-clique have independent sets of order n log d/d and correspondence chromatic number of order Δ/log Δ, proving conjectures of Ajtai, Erdős, Komlós and Szemerédi and of Alon, Krivelevich and Sudakov.</h1>
+<h1>An AI system says the Ramsey number of a cycle on m vertices against a clique on n vertices is (m − 1)(n − 1) + 1 for all m at least n at least 3, except m = n = 3.</h1>
 <p class="lede">What does that even mean, and has anyone checked? Each episode takes one claim like this, builds the intuition with animation, and keeps a running record of how far the proof has been verified.</p>
 
 <div class="player">
-  <a href="episodes/184-correspondence-coloring-fixed-forbidden-subgraph/">
-    <img src="episodes/184-correspondence-coloring-fixed-forbidden-subgraph/thumbnail.jpg" width="1280" height="720" alt="Episode 184: Forbid a clique, gain a log? The Petersen graph with a proper 3-coloring in blue, pink and teal (our drawing).">
+  <a href="episodes/189-cycle-clique-ramsey-numbers/">
+    <img src="episodes/189-cycle-clique-ramsey-numbers/thumbnail.jpg" width="1280" height="720" alt="Episode 189: Red cycle or blue clique? Twelve dots in three groups of four, every link inside a group red and every link between groups blue: the classical colouring with no red 5-cycle and no blue 4-clique.">
     <span class="play" aria-hidden="true"></span>
   </a>
 </div>
-<p class="player-caption">Episode 184: <a href="episodes/184-correspondence-coloring-fixed-forbidden-subgraph/">Forbid a clique, gain a log?</a>, about 8 minutes.</p>
+<p class="player-caption">Episode 189: <a href="episodes/189-cycle-clique-ramsey-numbers/">Red cycle or blue clique?</a>, about 7 minutes.</p>
 
 <section class="measure" aria-labelledby="record">
 <h2 id="record">Where this claim stands</h2>
 <dl class="ledger ledger-auto">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, September 25 and October 5, 2026</dd>
+    <dd>OpenAI, September 25, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/184.md">scope notes</a>)</dd>
+    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/189.md">scope notes</a>)</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026. The claims have not been withdrawn. OpenAI published a Lean proof of the independence theorem; the coloring theorem is not formalized. We have not run the check.</p>
+<p class="ledger-note">Last checked October 16, 2026. The claim has not been withdrawn. The last step is computer-assisted; OpenAI published a Lean proof of the theorem that re-checks the finite cases; we have not run the check.</p>
 </section>
 
 <section aria-labelledby="episodes">
 <h2 id="episodes">Recent episodes</h2>
 <ul class="thumbs">
+  <li>
+    <a href="episodes/189-cycle-clique-ramsey-numbers/">
+      <img src="episodes/189-cycle-clique-ramsey-numbers/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 189 · 6:46</span>
+      <span class="thumb-title">Red cycle or blue clique?</span>
+      <span class="thumb-sub">A preprint claims that exactly (m−1)(n−1)+1 dots force a red cycle through m dots or a blue clique of n dots, for every m ≥ n ≥ 3 except the triangle pair, where the answer is 6</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
+    </a>
+  </li>
+  <li>
+    <a href="episodes/188-sharp-terminal-leave-random-triangle/">
+      <img src="episodes/188-sharp-terminal-leave-random-triangle/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 188 · 6:30</span>
+      <span class="thumb-title">What’s left over?</span>
+      <span class="thumb-sub">A preprint claims that random triangle removal from the complete graph typically leaves, for large n, about 0.354 n^(3/2) links, the constant Joos and Kühn conjectured</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
+    </a>
+  </li>
+  <li>
+    <a href="episodes/187-snaky-21-maker-moves/">
+      <img src="episodes/187-snaky-21-maker-moves/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 187 · 6:46</span>
+      <span class="thumb-title">Snaky in 21 moves?</span>
+      <span class="thumb-sub">A preprint claims that Maker can force the six-square Snaky shape within 21 moves on an empty infinite grid, with a checkable 722-line certificate</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
+    </a>
+  </li>
+  <li>
+    <a href="episodes/186-uniform-influence-sharp-thresholds-graph/">
+      <img src="episodes/186-uniform-influence-sharp-thresholds-graph/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 186 · 8:42</span>
+      <span class="thumb-title">How fast must it switch?</span>
+      <span class="thumb-sub">Two preprints claim that every symmetric increasing property of a random graph switches on within a window of order 1/(log n)², as Friedgut and Kalai conjectured, and the analogue for hypergraphs</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of part of the claim"><span class="box on"></span><span class="box"></span><span class="box part"></span></span>
+    </a>
+  </li>
+  <li>
+    <a href="episodes/185-counterexamples-infinite-matroid-intersection-packing/">
+      <img src="episodes/185-counterexamples-infinite-matroid-intersection-packing/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 185 · 7:36</span>
+      <span class="thumb-title">No fair split at infinity?</span>
+      <span class="thumb-sub">A preprint claims two self-dual matroids on a countable set that no independent sets can cover, refuting the unrestricted infinite matroid intersection and packing/covering conjectures</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
+    </a>
+  </li>
   <li>
     <a href="episodes/184-correspondence-coloring-fixed-forbidden-subgraph/">
       <img src="episodes/184-correspondence-coloring-fixed-forbidden-subgraph/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -99,51 +144,6 @@
       <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of part of the claim"><span class="box on"></span><span class="box"></span><span class="box part"></span></span>
     </a>
   </li>
-  <li>
-    <a href="episodes/181-erdos-gallai-cycle-decomposition-conjecture/">
-      <img src="episodes/181-erdos-gallai-cycle-decomposition-conjecture/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 181 · 7:04</span>
-      <span class="thumb-title">C times n pieces?</span>
-      <span class="thumb-sub">A preprint claims the Erdős–Gallai conjecture: the edges of every graph on n vertices split into at most a constant times n cycles and single edges</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
-  <li>
-    <a href="episodes/180-barnettes-hamiltonian-cycle-conjecture/">
-      <img src="episodes/180-barnettes-hamiltonian-cycle-conjecture/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 180 · 5:48</span>
-      <span class="thumb-title">A tour of every corner?</span>
-      <span class="thumb-sub">A preprint claims Barnette’s conjecture: every cubic polyhedron whose corners can be colored black and white along every edge has a Hamiltonian cycle</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
-  <li>
-    <a href="episodes/179-circulant-hadamard-barker-sequence-conjectures/">
-      <img src="episodes/179-circulant-hadamard-barker-sequence-conjectures/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 179 · 6:00</span>
-      <span class="thumb-title">Only orders 1 and 4?</span>
-      <span class="thumb-sub">A preprint claims the circulant Hadamard conjecture, and with classical results the complete list of Barker sequences</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
-  <li>
-    <a href="episodes/178-deterministic-nonbipartite-ramanujan-graphs-every/">
-      <img src="episodes/178-deterministic-nonbipartite-ramanujan-graphs-every/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 178 · 7:05</span>
-      <span class="thumb-title">Ramanujan graphs, made to order?</span>
-      <span class="thumb-sub">A preprint claims a deterministic polynomial-time construction of nonbipartite Ramanujan graphs in every fixed degree, at every large even size, tight at both ends of the spectrum</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; not yet checked in Lean"><span class="box on"></span><span class="box"></span><span class="box"></span></span>
-    </a>
-  </li>
-  <li>
-    <a href="episodes/177-bounded-degree-coboundary-expanders/">
-      <img src="episodes/177-bounded-degree-coboundary-expanders/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 177 · 6:52</span>
-      <span class="thumb-title">Expanders in every dimension?</span>
-      <span class="thumb-sub">A preprint claims bounded-degree coboundary expanders in every dimension from three up: huge complexes, each vertex in a bounded number of pieces, with no bottlenecks at any level below the top</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
 </ul>
 </section>
 
@@ -156,7 +156,7 @@
   <li><a href="subjects/convex-and-metric-geometry/"><span class="tile-name">Convex and metric geometry</span><span class="tile-count num">15 of 15 explained</span></a></li>
   <li><a href="subjects/theoretical-computer-science/"><span class="tile-name">Theoretical computer science</span><span class="tile-count num">40 of 40 explained</span></a></li>
   <li><a href="subjects/dynamical-systems-and-ergodic-theory/"><span class="tile-name">Dynamical systems and ergodic theory</span><span class="tile-count num">12 of 12 explained</span></a></li>
-  <li><a href="subjects/combinatorics/"><span class="tile-name">Combinatorics</span><span class="tile-count num">29 of 37 explained</span></a></li>
+  <li><a href="subjects/combinatorics/"><span class="tile-name">Combinatorics</span><span class="tile-count num">34 of 37 explained</span></a></li>
   <li><a href="subjects/algebra/"><span class="tile-name">Algebra</span><span class="tile-count num">0 of 18 explained</span></a></li>
   <li><a href="subjects/probability-and-statistical-mechanics/"><span class="tile-name">Probability and statistical mechanics</span><span class="tile-count num">0 of 29 explained</span></a></li>
   <li><a href="subjects/mathematical-logic/"><span class="tile-name">Mathematical logic</span><span class="tile-count num">0 of 6 explained</span></a></li>
@@ -175,7 +175,7 @@
 <dl class="stats">
   <div>
     <dt>Explained</dt>
-    <dd><span class="stat num">179</span> of 372 results <span class="stat-note">(719 papers in all)</span></dd>
+    <dd><span class="stat num">184</span> of 372 results <span class="stat-note">(719 papers in all)</span></dd>
   </div>
   <div>
     <dt>Lean proof published by OpenAI</dt>

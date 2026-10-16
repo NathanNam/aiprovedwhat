@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 185: Counterexamples to infinite matroid intersection and packing/covering | AI Proved What?</title>
-<meta name="description" content="Counterexamples to infinite matroid intersection and packing/covering. Result 185 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>No fair split at infinity? Counterexamples to infinite matroid intersection and packing/covering | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims two self-dual matroids on a countable set that no independent sets can cover, refuting the unrestricted infinite matroid intersection and packing/covering conjectures. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/185-counterexamples-infinite-matroid-intersection-packing/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 185: Counterexamples to infinite matroid intersection and packing/covering | AI Proved What?">
-<meta property="og:description" content="Counterexamples to infinite matroid intersection and packing/covering. Result 185 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="No fair split at infinity?">
+<meta property="og:description" content="An AI preprint claims two self-dual matroids on a countable set that no independent sets can cover, refuting the unrestricted infinite matroid intersection and packing/covering conjectures. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/185-counterexamples-infinite-matroid-intersection-packing/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/185-counterexamples-infinite-matroid-intersection-packing/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 185 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Counterexamples to infinite matroid intersection and packing/covering</h1>
+<p class="meta">Episode 185, October 2026</p>
+<h1>No fair split at infinity?</h1>
+<p class="subtitle">A preprint claims two self-dual matroids on a countable set that no independent sets can cover, refuting the unrestricted infinite matroid intersection and packing/covering conjectures</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 185 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="V31VJ5DO2lc" data-title="Episode 185: No fair split at infinity?">
+  <a href="https://youtu.be/V31VJ5DO2lc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 185: No fair split at infinity? A doubly infinite path of vertices and bundles, with the central bundle and the bundles to its right highlighted in yellow (our drawing).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:37. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/V31VJ5DO2lc?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/V31VJ5DO2lc?t=127" data-t="127"><span class="t">2:07</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/V31VJ5DO2lc?t=242" data-t="242"><span class="t">4:02</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/V31VJ5DO2lc?t=398" data-t="398"><span class="t">6:38</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Disproves the unrestricted infinite matroid intersection and packing/covering conjectures in ZFC, using two self-dual partitional matroids on a countably infinite ground set. The same examples answer Joó’s partitional-matroid question negatively. They are neither finitary nor cofinitary, so Nash-Williams’ original finitary conjecture remains outside the result.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A matroid captures what independence means, for vectors or for sets of edges without cycles. Its maximal independent sets are its bases, a set is spanning if it contains a basis, and the dual matroid’s bases are the complements of the bases. For two finite matroids on one set, Edmonds’ intersection theorem (background; the paper does not cite it) guarantees a common independent set that splits into two parts whose closures, one in each matroid, cover everything. In our example, two matroids on the 8 edges of a bipartite graph (one edge per left vertex; one edge per right vertex) have a common independent set of 3 edges that does this.</p>
+<p>A packing is a choice of disjoint spanning sets, one per matroid; a covering is a choice of independent sets, one per matroid, whose union is everything; a packing/covering partition splits the ground set into a part with a packing and a part with a covering (p.2). Infinite matroids got workable axioms from Bruhn, Diestel, Kriesell, Pendavingh and Wollan in 2013. Nash-Williams conjectured intersection for finitary matroids; Bowler and Carmesin (published 2015) formulated the conjecture that every family of infinite matroids has a packing/covering partition and related it to intersection for every pair. Joó proved positive cases on countable sets and asked whether intersection holds for two partitional matroids (direct sums of uniform matroids) on a common countable ground set.</p>
+<p>Result 185 is one OpenAI preprint, <a href="https://github.com/openai/math/blob/main/preprints/A-Counterexample-to-the-Infinite-Matroid-Packing-Covering-Conjecture-September-24-2026/paper.pdf">A Counterexample to the Infinite Matroid Packing/Covering Conjecture</a> (20 pages, dated September 24, 2026). Its Theorem 1.1: “In ZFC, there exist a countably infinite set E and two infinite matroids M<sub>0</sub>, M<sub>1</sub> on E such that M<sub>i</sub><sup>*</sup> = M<sub>i</sub> on the same labelled ground set for i = 0, 1, and I<sub>0</sub> ∪ I<sub>1</sub> ≠ E for every independent I<sub>0</sub> in M<sub>0</sub> and independent I<sub>1</sub> in M<sub>1</sub>. The pair (M<sub>0</sub>, M<sub>1</sub>) has no packing/covering partition. Consequently, the infinite matroid packing/covering conjecture is false.” Corollary 1.2, via Bowler and Carmesin’s equivalence, says the same pair is partitional and fails intersection, so the unrestricted infinite matroid intersection conjecture is false and Joó’s question has a negative answer; Corollary 7.1 refutes Bowler and Carmesin’s separate covering and packing conjectures. Along the way the paper builds a self-dual uniform matroid on a countable set in ZFC, which it says answers a question Bowler and Geschke left open (their examples used Martin’s axiom for countable partially ordered sets, and hence the continuum hypothesis).</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Anything about Nash-Williams’ original finitary conjecture: the paper “does not refute” it, and its matroids are neither finitary nor cofinitary. Nothing computable: the construction rests on choice, through a non-principal ultrafilter, a listing of sets of length continuum and a transfinite recursion, so it gives no way to write down a basis. For Corollary 7.1, the paper does not identify which families break the separate conjectures. Finite matroids cannot do this: in our check, all 41 self-dual matroids on 6 labelled elements share a common basis pairwise, so every such pair covers.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, 20 pages, dated September 24, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,44 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/185.md">scope notes</a>)</dd>
+    <dd>The main theorem and its corollaries, formalized by OpenAI; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/185.md">Lean formalization</a> with two comparator statements: <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/InfiniteMatroid.lean">the main theorem</a> and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/InfiniteMatroidCorollaries.lean">the corollaries</a>, including the existence of the self-dual uniform gadget and two-matroid counterexamples to the separate conjectures, which goes beyond what the paper states. The Lean proof derives the needed direction of Bowler and Carmesin’s equivalence itself. By our count the development takes 33 files and 4,477 lines, excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/InfiniteMatroid">source</a>). We found no unproved steps by search; we have not rebuilt the proof. The paper is not among those OSVerify reviewed, and we have seen no expert review; the claimed answer to Bowler and Geschke’s question especially deserves one.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Self-duality.</strong> For two matroids that equal their own duals, a packing/covering partition yields two independent sets that cover everything (Lemma 2.2), so it suffices to build a self-dual pair that can never be covered.</li>
+  <li><strong>The double ray.</strong> Between consecutive integer vertices runs a bundle, a labelled copy of a countable set D. Each vertex carries a copy of a gadget matroid Q on its two bundles, with its L side toward the central bundle and its R side outward. Even vertices form M<sub>0</sub>, odd vertices M<sub>1</sub>.</li>
+  <li><strong>The one-way valve.</strong> Q is self-dual and uniform; in particular every finite set is independent, the whole set is not. With an ultrafilter on D (each subset large or small) and an ordinal rank ρ on large sets, every basis B of Q satisfies: if B<sub>L</sub> is large, then D ∖ B<sub>R</sub> is large and ρ(B<sub>L</sub>) &gt; ρ(D ∖ B<sub>R</sub>).</li>
+  <li><strong>The descent.</strong> A covering, trimmed so that no element is used twice, would give each element of a bundle to one endpoint; one endpoint of the central bundle receives a large set, and walking outward each vertex passes on a large set of strictly smaller rank: an infinite descending sequence of ordinals, which cannot exist.</li>
+  <li><strong>Building Q.</strong> Blocks of size 2<sup>2<sup>m</sup></sup>; sets compared up to a vanishing proportion; probes measuring a net count at infinity, with a half-open window selecting the bases of a chosen class relative to a prototype; interpolation for maximal extensions; a transfinite recursion of length continuum. The paper credits Bowler and Geschke’s basis criterion and recursion pattern.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>The bipartite example: largest common independent set 3, equal to Edmonds’ min-max value; one witness is J = {a2, b1, d3} split as {d3} and {a2, b1}.</li>
+  <li>Two forest matroids on K<sub>5</sub> plus one extra edge: no packing, no covering, and exactly one packing/covering partition (the K<sub>5</sub> edges take two disjoint spanning trees; the extra edge is covered).</li>
+  <li>All 41 self-dual matroids on 6 labelled elements: every one of the 861 pairs (each matroid also paired with itself) shares a basis.</li>
+  <li>Finite truncations of the double ray (U<sub>3,6</sub> at every vertex of a cycle of 4 or 6 vertices): in all 164 and 1,460 coverings the majority share keeps its size, so nothing strictly decreases.</li>
+  <li>The Lean count: our count of the import closure.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Counterexample-to-the-Infinite-Matroid-Packing-Covering-Conjecture-September-24-2026/paper.pdf">A Counterexample to the Infinite Matroid Packing/Covering Conjecture (PDF)</a>, 20 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/185.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 185.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -74,18 +133,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-Counterexample-to-the-Infinite-Matroid-Packing-Covering-Conjecture-September-24-2026/paper.pdf">A Counterexample to the Infinite Matroid Packing/Covering Conjecture</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A matroid captures what independence means, in linear algebra or in a graph. Call a set of edges independent if it contains no cycle, or split a set into blocks and call a subset independent if it takes at most one element from each block. The maximal independent sets are the bases, a set is spanning if it contains a basis, and every matroid has a dual, whose bases are the complements of the original bases. Two matroids on the same set can compete. Take the edges of this graph, with one matroid allowing one edge at each left vertex, and the other one edge at each right vertex. A set independent in both is a matching. For finite matroids, Edmonds’ intersection theorem, background that the paper does not cite, guarantees a split: some common independent set divides into two parts, so that what the first part spans in one matroid, together with what the second spans in the other, is everything. Here a matching of 3 edges does it. A second finite fact concerns packing and covering. A packing is a choice of disjoint spanning sets, one per matroid; a covering is a choice of independent sets, one per matroid, that together use every element. In our example, two copies of the forest matroid of this graph have neither, but the ground set splits into a part with a packing and a part with a covering. Infinite matroids got workable axioms in 2013, from Bruhn, Diestel, Kriesell, Pendavingh and Wollan, who demand that independent sets extend to maximal ones inside every subset. Nash-Williams conjectured the intersection property for finitary matroids, where a set is independent whenever all its finite subsets are. Bowler and Carmesin, in a paper published in 2015, conjectured that every family has a packing/covering partition, and showed this is equivalent to the intersection property for every pair of infinite matroids. Joó proved positive cases on countable sets, and asked about two partitional matroids, sums of uniform ones, on a countable set.</p>
+<h3><span class="t num">2:07</span>The claim</h3>
+<p>Result 185 is one OpenAI preprint, 20 pages, dated September 24, 2026. It claims, in ordinary set theory with the axiom of choice: there is a countably infinite set with two matroids on it, each equal to its own dual, such that no independent set of the first together with an independent set of the second covers the whole set. The pair has no packing/covering partition, so the packing/covering conjecture is false, with just two matroids. Through an equivalence proved by Bowler and Carmesin, a corollary says the same pair, both partitional, fails intersection, so the unrestricted intersection conjecture is false, and Joó’s question has a negative answer. A further corollary refutes their separate covering and packing conjectures. Along the way, the paper builds a self-dual uniform matroid on a countable set without extra axioms, which it says answers a question Bowler and Geschke left open; their examples assumed Martin’s axiom for countable partial orders, which follows from the continuum hypothesis. Not claimed: anything about Nash-Williams’ original finitary conjecture, which the paper says it does not refute; its matroids are neither finitary nor cofinitary. Nothing computable either: the construction rests on choice, through an ultrafilter and a transfinite recursion as long as the continuum, so it gives no way to list a basis. The paper uses choice openly; what it stresses is that it needs no further axioms, such as the continuum hypothesis. And for the separate covering and packing conjectures, it does not say which families break them. Finite matroids cannot do this: in our check, all 41 matroids on 6 labelled elements that equal their own duals share a common basis with each other, so every such pair covers.</p>
+<h3><span class="t num">4:02</span>How the proof goes</h3>
+<p>The proof first simplifies. For two matroids that equal their own duals, any packing/covering partition can be turned into two independent sets that cover everything, so it is enough to build a self-dual pair that can never be covered. The pair lives on a doubly infinite path. Between consecutive integer vertices runs a bundle, a labelled copy of one countable set D. At every vertex sits a copy of a gadget matroid, Q, on its two bundles, with its side L toward a central bundle and its side R pointing outward. The copies at even vertices form the first matroid, the copies at odd vertices the second, so every bundle is shared by one of each. Q is self-dual and uniform; in particular, every finite set is independent, but the whole set is not. Fix an ultrafilter on D, which calls every subset large or small, with exactly one of a set and its complement large, and an ordinal rank on large sets that can only go down as the sets grow. Q’s bases obey a one-way rule: if a basis takes a large part of its L side, it leaves a large part of its R side untaken, with strictly smaller rank. Now suppose the two matroids covered everything; trim the cover so each element is covered once. Hand each element of a bundle to the endpoint whose matroid covers it. On the central bundle, one of the two vertices gets a large share. Walk outward from it: each vertex receives a large set, and passes on a large set to the next with strictly smaller rank. That would be an infinite strictly decreasing sequence of ordinals, which cannot exist. In our finite experiments with ordinary pieces, the share keeps the same size all the way along; it takes a piece like Q to force a strict drop in rank. Most of the paper builds Q. D is cut into blocks of rapidly growing size, 2 to the 2 to the m, and sets are compared up to a vanishing proportion. Within each class, probes measure a kind of net count at infinity, and a set in a chosen class is a basis when that count, relative to a prototype, lies in a half-open window of length one, so swapping one element for another keeps a basis. An interpolation argument supplies the maximal extensions that the axioms demand, and a transfinite recursion, as long as the continuum, inserts new classes of bases until every interval of subsets is served, keeping the one-way rule. The paper credits the basis criterion and the recursion pattern to Bowler and Geschke.</p>
+<h3><span class="t num">6:38</span>Where it stands</h3>
+<p>The preprint is unrefereed and has not been revised. OpenAI’s Lean files state the main theorem and its corollaries, including the self-dual uniform gadget, and prove them in 33 files and about 4,500 lines, with no gaps we could find by search; we did not run the check. The Lean proof derives the needed direction of Bowler and Carmesin’s equivalence itself, and for the separate conjectures it goes further than the paper, producing pairs of matroids that break them. The paper is not among those OSVerify reviewed, and we have seen no expert review; the claimed answer to Bowler and Geschke’s question especially deserves one. If it holds, the packing/covering conjecture for infinite matroids fails already for two matroids on a countable set, and so does the unrestricted intersection conjecture, while Nash-Williams’ finitary conjecture is untouched.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20185%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../184-correspondence-coloring-fixed-forbidden-subgraph/"><span class="dir">Previous · 184</span><span class="pt">Correspondence coloring with a fixed forbidden subgraph</span></a>
-  <a class="next" href="../186-uniform-influence-sharp-thresholds-graph/"><span class="dir">Next · 186</span><span class="pt">Uniform influence and sharp thresholds for graph and hypergraph properties</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

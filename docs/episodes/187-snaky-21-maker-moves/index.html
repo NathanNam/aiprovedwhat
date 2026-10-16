@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 187: Snaky in 21 Maker moves | AI Proved What?</title>
-<meta name="description" content="Snaky in 21 Maker moves. Result 187 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Snaky in 21 moves? A Maker win for the Snaky polyomino game | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that Maker can force the six-square Snaky shape within 21 moves on an empty infinite grid, with a 722-line checkable certificate. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/187-snaky-21-maker-moves/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 187: Snaky in 21 Maker moves | AI Proved What?">
-<meta property="og:description" content="Snaky in 21 Maker moves. Result 187 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Snaky in 21 moves?">
+<meta property="og:description" content="An AI preprint claims that Maker can force the six-square Snaky shape within 21 moves on an empty infinite grid, with a 722-line checkable certificate. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/187-snaky-21-maker-moves/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/187-snaky-21-maker-moves/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 187 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Snaky in 21 Maker moves</h1>
+<p class="meta">Episode 187, October 2026</p>
+<h1>Snaky in 21 moves?</h1>
+<p class="subtitle">A preprint claims that Maker can force the six-square Snaky shape within 21 moves on an empty infinite grid, with a checkable 722-line certificate</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 187 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="5bVOhWMXZ9E" data-title="Episode 187: Snaky in 21 moves?">
+  <a href="https://youtu.be/5bVOhWMXZ9E">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 187: Snaky in 21 moves? A grid with Maker's 21 yellow squares and Breaker's 20 pink squares at the end of a game, and the completed six-square Snaky outlined in green (our worst-case game against the paper's strategy).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:46. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/5bVOhWMXZ9E?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/5bVOhWMXZ9E?t=107" data-t="107"><span class="t">1:47</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/5bVOhWMXZ9E?t=193" data-t="193"><span class="t">3:13</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/5bVOhWMXZ9E?t=347" data-t="347"><span class="t">5:47</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Settles the Snaky achievement problem: Maker can force the six-cell Snaky shape within 21 of its own moves on the initially empty infinite square board. Maker moves first, each player claims one free cell per turn, and translations, rotations and reflections count as wins.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Two players take turns claiming squares of an endless grid. Maker wants to own a copy of one fixed shape, shifted anywhere, turned or flipped; Breaker only wants to stop that. The shape is Snaky: six squares, four in a row and then a step up to two more. Turned and flipped, it has 8 different versions, and by our count 48 placed copies pass through any one square.</p>
+<p>The paper tells the history starting from Sieben’s account, which credits these games to Frank Harary. Harary, Harborth and Seemann had Maker wins with a head start of two extra stones. Separately, Breaker has no pairing defense (one that pairs up squares and always answers in the partner square); Csernenszky, Martin and Pluhár later proved this without a computer. But ruling out one kind of defense does not give Maker a win. Sieben proved a win in 41 dimensions; Halupczok and Schlage-Puchta proved a win in 3 dimensions, a loss on an 8×8 board, and a planar win with a head start of one, as did Ito and Miyagawa; Sieben (2008) gave a finite proof for that head start and described the plain planar problem as undecided at the time. (Sieben’s 2004 paper, which we read, called Snaky “the only undecided 2-dimensional poliomino”.)</p>
+<p>Result 187 is one OpenAI preprint, <a href="https://github.com/openai/math/blob/main/preprints/Snaky-in-21-Maker-moves-September-25-2026/article.pdf">Snaky in 21 Maker moves</a> (84 pages, dated September 25, 2026; most pages are printed certificates and code). Its Theorem 1: “In this game, there is one globally legal Maker policy that completes an allowed copy of S within at most 21 actual Maker claims against every legal continuation of Breaker.” That is a win by the 41st turn, on the empty infinite board with no head start. Corollary 6 gives the same bound on a 17×17 board, with Maker’s moves inside one fixed region of 251 squares; the appendices give separate 25- and 35-move strategies.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>That 21 is best possible: “We do not assert optimal move counts or board sizes”, and no lower bound is stated. In our exact search, an all-knowing Breaker can make this particular strategy use all 21 moves, which says nothing about Maker’s best play. Together with the 8×8 loss, by our reading the smallest winning square board lies between 9×9 and 17×17. The strong game, where both players race for Snaky, is excluded, and the paper does not say how its certificate was found; it says only that checking it needs no search.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, 84 pages, dated September 25, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,45 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/187.md">scope notes</a>)</dd>
+    <dd>The 21-move theorem on the infinite board, formalized by OpenAI; not run by us. The 17×17 corollary is not formalized</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 16, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/187.md">Lean formalization</a>: <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SnakyTwentyOne.lean">the comparator statement</a> is Theorem 1 on the infinite board. By our count its proof takes 94 files and 71,326 lines, excluding Mathlib, nearly all of it card data (<a href="https://github.com/openai/math/blob/main/lean/OAI/GameTheory/SnakyTwentyOne">source</a>); every card is closed by kernel-checked computation (decide +kernel, no native_decide), and we found no unproved steps by search; we have not rebuilt the proof. A separate formalization proves the 35-move strategy; the 17×17 corollary is not formalized. The paper’s own appendix describes a narrower formal supplement than the one in the repository, and the collection’s formalization.yaml does not list this result. The paper’s <a href="https://github.com/openai/math/blob/main/preprints/Snaky-in-21-Maker-moves-September-25-2026/verification">certificate checker</a> passed when we ran it. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Cards.</strong> A card (the paper’s “valid claim”) names a few squares A, a region T and a number h: if it is Maker’s turn, Maker owns A and Breaker has nothing in T, Maker wins within h more moves, whatever else is on the board. The six starting cards: five squares of a copy owned, the sixth not Breaker’s, win in one.</li>
+  <li><strong>One rule.</strong> From some cards and a square p, Maker claims p; the rule arranges that afterwards every square in all the children’s regions is Maker’s, so Breaker’s single reply misses at least one child’s region, and that child takes over at the cost of one more move. A reply far away misses every region, so the infinite board needs no separate case.</li>
+  <li><strong>Forks.</strong> Card 6: Maker owns a column of five and plays beside its top square; two copies each need one more square, and Breaker can block only one. Card 7: from four in a column, Maker makes five, and a card-6 fork remains at whichever end Breaker does not block.</li>
+  <li><strong>The certificate.</strong> 722 lines build new cards from turned and shifted copies of earlier ones. The last, card 727, needs nothing, has a 251-square region inside a 17×17 box, and 21 moves; its 32 sub-cards all require only the centre, and the squares common to their regions shrink from 35 to none besides the centre.</li>
+  <li><strong>The strategy.</strong> Claim the centre; after each Breaker reply, follow the first sub-card whose region the reply missed. Each move lowers the remaining move bound, so Maker wins by its 21st move. The paper credits Sieben’s proof trees as a close antecedent.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Snaky has 8 distinct orientations and no symmetry; 48 allowed copies pass through any square; it is one of 35 hexominoes (216 counting all orientations separately). Our counts.</li>
+  <li>The paper’s checker, run by us: PASS, 728 cards, final card with no required squares, 251 squares in its region and height 21, in about 0.05 seconds.</li>
+  <li>Our own evaluator of the certificate: the same final card, Maker’s first move at the centre (8, 8), and the common region of the 32 sub-cards shrinking 35, 31, 21, 12, 4, 0 by group.</li>
+  <li>The worst case against this strategy, by our exact search: 21 Maker moves; the game in the video is one such line, with the first completed copy at Maker’s 21st move.</li>
+  <li>The Lean count: our count of the import closure.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Snaky-in-21-Maker-moves-September-25-2026/article.pdf">Snaky in 21 Maker moves (PDF)</a>, 84 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Snaky-in-21-Maker-moves-September-25-2026/verification">The certificate and its checkers</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/187.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 187.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -74,18 +134,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Snaky-in-21-Maker-moves-September-25-2026/article.pdf">Snaky in 21 Maker moves</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Two players take turns claiming the squares of an endless grid. The first player, Maker, wants to own a copy of one fixed shape, shifted anywhere, turned, or flipped. The second player, Breaker, has only one job: to stop that. Breaker never needs a shape of its own. The shape here is Snaky: 6 squares, four in a row, then a step up to two more. Turn it and flip it, and you get 8 different versions; by our count, 48 placed copies pass through any single square. Snaky is one of the 35 hexominoes, the shapes made of 6 squares. The question is simple. On an empty endless board, with no head start, can Maker always force a copy of Snaky, and if so, how fast? The paper tells the history, starting from Nándor Sieben’s account, which credits these games to Frank Harary. Harary, Harborth and Seemann had winning strategies when Maker gets a head start of two extra stones. Separately, Breaker was shown to have no pairing defense, one that pairs up squares and always answers in the partner square; Csernenszky, Martin and Pluhár later gave a proof of that without a computer. But ruling out one kind of defense does not give Maker a win. Sieben proved that Maker wins in 41 dimensions. Halupczok and Schlage-Puchta proved that Snaky wins in 3 dimensions, loses on an 8 by 8 board, and wins in the plane with a head start of one extra stone; Ito and Miyagawa also gave a head-start-one construction. And in 2008, Sieben gave a finite proof for that head start, and described the plain planar problem as undecided at the time. Sieben’s earlier, 2004 paper, which we read directly, called Snaky the only planar polyomino whose game was still undecided.</p>
+<h3><span class="t num">1:47</span>The claim</h3>
+<p>Result 187 is one OpenAI preprint, 84 pages, dated September 25, 2026; most of those pages are printed proof data and program listings. It claims: on the empty infinite square board, with no head start, there is one Maker strategy that completes a copy of Snaky within at most 21 of Maker’s own moves, against every legal play by Breaker. That means a win no later than the 41st turn of the game. A corollary gives the same bound on a 17 by 17 board, and in fact Maker can keep all its moves inside one fixed region of 251 squares. Appendices give two further, separate strategies, with 25 and 35 moves. Not claimed: that 21 is the best possible. The paper says it does not assert optimal move counts or board sizes, and it states no lower bound. Our own check makes the point: against this particular strategy, an all-knowing Breaker can drag the game out to all 21 moves, which says nothing about Maker’s best play. Combining the corollary with the 8 by 8 loss, by our reading, the smallest winning square board lies between 9 by 9 and 17 by 17. The strong game, where both players race for Snaky, is excluded. And the paper does not say how its proof was found; it only says checking it needs no search.</p>
+<h3><span class="t num">3:13</span>How the proof goes</h3>
+<p>The infinite board is the obstacle: Breaker may play anywhere, so no finite game tree covers every reply. The paper works with conditional promises, which it calls valid claims, or cards. A card names a few squares Maker already owns, a region, and a number of moves. It says: if it is Maker’s turn, Maker owns those squares, and Breaker has nothing inside the region, then Maker wins within that many more moves, whatever else is on the board. The starting cards are simple. If Maker owns five of the 6 squares of a copy, and the sixth is not Breaker’s, Maker wins in one move. There are six of these, one for each missing square. One rule builds bigger cards from smaller ones. Take a few cards and a square. Maker claims the square. The rule arranges that, after this move, every square lying in all the children’s regions belongs to Maker. Then Breaker’s single reply must miss at least one child’s region, and that child’s promise takes over, at the cost of one more move. A reply far away misses every region, so distant play needs no separate case. Here is the paper’s card six. Maker owns a column of five. Maker plays beside its top square; now two copies each need just one more square, above and below, and Breaker can block only one. Card seven starts from four in a column: Maker extends it to five, and whichever end Breaker blocks, card six’s fork remains at the other end. The proof is a certificate: 722 lines, each building a new card from turned and shifted copies of earlier ones. It ends with card 727: nothing required, a region of 251 squares inside a 17 by 17 box, and 21 moves. Its 32 sub-cards each require only the centre, and the squares common to their regions shrink, group by group, from 35 to none besides the centre itself. So the strategy is: claim the centre, and after each Breaker reply, follow the first sub-card whose region the reply missed. Every step uses one move and lowers the remaining move bound, so Maker wins by its 21st move. Checking the certificate is pure set arithmetic. The paper’s own checker passed in a twentieth of a second when we ran it, and our independent re-implementation rebuilds the same final card. Here is a game in which a Breaker that knows the strategy holds out for all 21 moves. The paper credits Sieben’s proof trees as a close antecedent of its method.</p>
+<h3><span class="t num">5:47</span>Where it stands</h3>
+<p>The preprint is unrefereed and has not been revised. OpenAI’s Lean files state the 21-move theorem on the infinite board and prove it, in 94 files and about 71,000 lines, nearly all of it card data; every card is checked by Lean’s kernel, with no compiled-code shortcuts and no gaps we could find by search. We did not run the check. A separate Lean proof covers the 35-move strategy. The 17 by 17 corollary is not formalized. The paper’s own appendix describes a narrower formal supplement than the one in the repository. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, Snaky is a win for Maker on the empty plane, within 21 of Maker’s moves, and on a 17 by 17 board; how few moves best play needs is not claimed.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20187%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../186-uniform-influence-sharp-thresholds-graph/"><span class="dir">Previous · 186</span><span class="pt">Uniform influence and sharp thresholds for graph and hypergraph properties</span></a>
-  <a class="next" href="../188-sharp-terminal-leave-random-triangle/"><span class="dir">Next · 188</span><span class="pt">The sharp terminal leave in random triangle removal</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
