@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A ceiling on limit cycles? Uniform bounds for Hilbert’s sixteenth problem | AI Proved What?</title>
+<meta name="description" content="An AI system claims a finite bound, depending only on the degree, on the limit cycles of planar polynomial vector fields, and an exact maximum of two for quintic Liénard systems, the latter checked in Lean. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/143-hilbert-sixteenth-uniform/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="A ceiling on limit cycles?">
+<meta property="og:description" content="An AI system claims a finite bound, depending only on the degree, on the limit cycles of planar polynomial vector fields, and an exact maximum of two for quintic Liénard systems, the latter checked in Lean. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/143-hilbert-sixteenth-uniform/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/143-hilbert-sixteenth-uniform/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 143, October 2026</p>
+<h1>A ceiling on limit cycles?</h1>
+<p class="subtitle">A claimed uniform bound on the number of limit cycles of planar polynomial vector fields of each degree, and an exact maximum of two for quintic Liénard systems</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 143 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="5MmLX1A3K00" data-title="Episode 143: A ceiling on limit cycles?">
+  <a href="https://youtu.be/5MmLX1A3K00">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 143: A ceiling on limit cycles? Two nested limit cycles, inner red and outer green, with an orbit spiralling between them under a bar labelled B(d).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:05. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/5MmLX1A3K00?t=0" data-t="0"><span class="t">0:00</span><span>Loops in a flow</span></a></li>
+  <li><a href="https://youtu.be/5MmLX1A3K00?t=125" data-t="125"><span class="t">2:05</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/5MmLX1A3K00?t=220" data-t="220"><span class="t">3:40</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/5MmLX1A3K00?t=387" data-t="387"><span class="t">6:27</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>In a planar polynomial vector field, the velocity at each point (x, y) is given by polynomials P and Q. Some orbits close up into loops, and a loop with no other closed orbit nearby is a limit cycle: neighbouring orbits spiral toward it or away from it. The van der Pol oscillator has exactly one. In 1900 Hilbert asked, in the second part of his sixteenth problem, for the maximum number and arrangement of limit cycles of polynomial systems of a given degree.</p>
+<p>As the first paper explains, two finiteness assertions must be distinguished. Individual finiteness, for one fixed system, was claimed by Dulac in 1923; after a gap was found, Écalle and Ilyashenko developed proofs using complex and asymptotic analysis of return maps, and a 2025 paper by Yeung identifies an obstruction in one step of Ilyashenko’s argument, which the paper says is not a counterexample. Uniform boundedness asks for one bound depending only on the degree, and “even finiteness for every member of a family does not by itself bound the numbers occurring as its coefficients vary.” Partial results controlled cycles born from a focus, near elementary loops through saddles in generic families, or in an infinitesimal version with Abelian integrals. As far as we know, no uniform bound was known even for quadratic systems; the paper itself does not call the problem open.</p>
+<p>Result 143 is two OpenAI preprints, both dated September 24, 2026. <a href="https://github.com/openai/math/blob/main/preprints/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026.pdf">The first</a> (160 pages) claims that for each degree d there is a finite B(d) such that every real planar polynomial vector field of degree at most d has at most B(d) limit cycles in the whole plane, with “no restriction on the coefficients, the locations of the cycles, or their stability.” It calls this “a positive resolution of the uniform boundedness assertion in the second part of Hilbert’s sixteenth problem.” <a href="https://github.com/openai/math/blob/main/preprints/two-limit-cycles-for-quintic-lienard-systems-September-24-2026/two-limit-cycles-for-quintic-lienard-systems-September-24-2026.pdf">The second</a> (40 pages) claims that the classical Liénard oscillator ẋ = y − F(x), ẏ = −x with F of degree at most five has at most two limit cycles, and that two occur, with no sign or parity assumptions on F. That settles the degree-five case of the conjecture of Lins Neto, de Melo and Pugh (at most ⌊(n − 1)/2⌋ cycles when F has degree n), which has counterexamples in degrees six and seven; Rychkov had handled odd quintics in 1975, and the paper calls general degree five “undecided” before this work.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>A number. The first paper “does not furnish an effective formula for B(d)” and gives no value for any degree, not even 2. It does not address the arrangement of the cycles, or the first part of Hilbert’s problem, about real algebraic curves. It does not assume individual finiteness, and it does not claim to repair or refute earlier proofs of it. The second paper covers only the classical Liénard form with restoring force exactly x and F of degree at most five; its two-cycle example, ε(4x − (20/3)x<sup>3</sup> + (8/5)x<sup>5</sup>), is proved for some small ε &gt; 0, not a specific value. The two papers do not cite each other, and the first gives no value of B(5) that would imply the second.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two preprints, 160 and 40 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Only the quintic Liénard theorem. The uniform bound is not formalized</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. Neither preprint has been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/143.md">Lean formalization</a> of the quintic Liénard theorem, at most two limit cycles for every F of degree at most five and exactly two for some, added to the repository in its initial commit on October 6, 2026 (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/QuinticLienard.lean">comparator statement</a>; <a href="https://github.com/openai/math/blob/main/lean/OAI/Analysis/LienardCycles">146 files and 16,659 lines</a>, with no unproved steps that we could find). We have not run the check. The uniform bound, the headline claim, has no Lean formalization anywhere in the repository. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>What has to be counted.</strong> Any finite set of cycles can be shrunk into a fixed square without changing the degree, and a small rotation V + μ(−Q, P) of the field produces at least as many hyperbolic cycles, which nearby orbits approach or leave at a definite rate.</li>
+  <li><strong>Finitely many ways around.</strong> A subanalytic preparation cuts the square into pieces whose number depends only on the degree. A periodic orbit crosses each transverse cut at most once, so every cycle, apart from a bounded number running along the cuts, is a closed word of boundedly many passages from a finite alphabet. Passages near saddles are the hard part: with a tiny eigenvalue, the time spent near the saddle can blow up while the contraction stays mild.</li>
+  <li><strong>Matching and counting.</strong> For each word, matching equations say that each passage ends where the next begins. A hyperbolic cycle gives nondegenerate solutions, and within each chart different hyperbolic cycles lie on different connected components, so it is enough to bound the number of components uniformly in the coefficients. That count needs every derived system to have finitely many isolated solutions even when all its variables move freely.</li>
+  <li><strong>Separation.</strong> When solutions escape to infinity, each function is expanded as a tree of exponentially small terms on nested complex domains, and either every coefficient vanishes and the function is exactly zero, or its first nonzero term dominates. The final bound is a finite sum whose terms the proof never computes.</li>
+  <li><strong>Two arches (the Liénard paper).</strong> Each periodic orbit crosses the y-axis once in each direction; with u = x<sup>2</sup>/2 its two halves become arches, and a cycle is a width at which both arches have the same midpoint. A quadratic fit of each arch and a model inequality, transported along the width, split the problem into four cases by the signs of the x and x<sup>3</sup> coefficients (after making the x<sup>5</sup> coefficient nonnegative): one allows no cycle, two allow at most one, and in the last the mismatch times a positive weight can only fall and then rise, so it vanishes at most twice.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Van der Pol, ẋ = y − (x<sup>3</sup>/3 − x), ẏ = −x: orbits from inside and outside approach one cycle of amplitude 2.0086 and period 6.6633.</li>
+  <li>The quintic example at ε = 1/10: an inner repelling cycle of amplitude about 1.0009 and an outer attracting cycle of amplitude about 2.0008; the averaged energy change is −πs<sup>2</sup>(s<sup>2</sup> − 1)(s<sup>2</sup> − 4).</li>
+  <li>A non-odd quintic of the two-cycle case, F = 0.1914x + 0.1279x<sup>2</sup> − 0.4722x<sup>3</sup> − 0.113x<sup>4</sup> + 0.1306x<sup>5</sup>: the mismatch has zeros at widths 0.798 and 2.142, one repelling and one attracting cycle.</li>
+  <li>A double cycle at radius 1 (field of degree 5): rotating by μ = 0.01 gives cycles at radii 0.949 and 1.049; μ = −0.01 gives none.</li>
+  <li>Two clocks at a saddle from height 10<sup>−6</sup>: time 13.8; exit heights 10<sup>−6</sup>, 0.25 and 0.87 for eigenvalues 1, 0.1 and 0.01.</li>
+  <li>sin x = 0 on 0 &lt; x &lt; p: 3, 31 and 318 solutions for p = 10, 100 and 1000.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026.pdf">Uniform bounds for planar polynomial limit cycles (PDF)</a>, 160 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/two-limit-cycles-for-quintic-lienard-systems-September-24-2026/two-limit-cycles-for-quintic-lienard-systems-September-24-2026.pdf">Two limit cycles for quintic Liénard systems (PDF)</a>, 40 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/143.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 143.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026/uniform-bounds-for-planar-polynomial-limit-cycles-September-24-2026.pdf">Uniform bounds for planar polynomial limit cycles</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/two-limit-cycles-for-quintic-lienard-systems-September-24-2026/two-limit-cycles-for-quintic-lienard-systems-September-24-2026.pdf">Two limit cycles for quintic Liénard systems</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Loops in a flow</h3>
+<p>Picture a flow in the plane, where the velocity at every point is given by polynomials in x and y. Some orbits close up into loops, and a loop with no other closed orbit nearby is a limit cycle: neighbouring orbits spiral toward it or away from it. The van der Pol oscillator has one; in our run, orbits from inside and from outside both spiral onto a single loop of amplitude about 2. In 1900, Hilbert asked, in the second part of his sixteenth problem, for the maximum number and arrangement of limit cycles of polynomial systems of a given degree. Two finiteness questions hide here. Individual finiteness asks whether one fixed system has only finitely many limit cycles. Dulac claimed it in 1923; after a gap was found, Écalle and Ilyashenko gave proofs through complex and asymptotic analysis of return maps, and a 2025 paper by Yeung finds an obstruction in one step of Ilyashenko’s argument, which the first paper says is no counterexample. Uniform boundedness asks for more: one bound depending only on the degree. Finiteness for each system does not bound the numbers as the coefficients vary. Partial results controlled cycles born from a focus, from loops through saddles in generic families, or in an infinitesimal version. As far as we know, no uniform bound was known even for quadratic systems, though the paper itself does not call the problem open. A classical test case is the Liénard oscillator: x is pushed back toward zero, with a damping that depends on x. Written as a system, ẋ = y − F(x) and ẏ = −x. In 1977, Lins Neto, de Melo and Pugh conjectured at most (n − 1)/2 limit cycles, rounded down, when F has degree n. Counterexamples later appeared in degrees seven and six, and Rychkov had handled odd quintics, but general degree five was, in the second paper’s word, undecided.</p>
+<h3><span class="t num">2:05</span>The claims</h3>
+<p>Result 143 is two OpenAI preprints, both dated September 24. The first, 160 pages long, claims that for every degree d there is a finite number, B(d), such that every real polynomial vector field in the plane of degree at most d has at most B(d) limit cycles, with no restriction on the coefficients, the locations of the cycles, or their stability. It calls this a positive resolution of the uniform boundedness assertion in the second part of Hilbert’s sixteenth problem. It does not assume individual finiteness; it recovers it. And it gives no number: there is no effective formula, not even for degree 2. Nor does it address the arrangement of the cycles. The second preprint, 40 pages long, settles one corner exactly. For the Liénard oscillator with F of degree at most five, with no sign or parity assumptions, there are at most two limit cycles, and two occur; the even coefficients take it beyond Rychkov’s case. Its example is ε(4x − (20/3)x³ + (8/5)x⁵), for small ε, with cycles near radius 1 and 2. The paper proves the inner cycle repels and the outer one attracts, and our run at ε = 1/10 agrees. It also says a recently proposed four-cycle quintic has exactly two. This second theorem is formalized in Lean, in 146 files, with no unproved steps that we found; we have not run the check. The first paper has no Lean.</p>
+<h3><span class="t num">3:40</span>How the proofs go</h3>
+<p>The uniform proof first reduces what must be counted. Any cycles can be shrunk into a fixed square without changing the degree, and a tiny rotation of the field turns isolated cycles into at least as many hyperbolic ones, which nearby orbits approach or leave at a definite rate. In our toy, a double cycle splits into two for one sign of the rotation and vanishes for the other. Next, an analytic preparation cuts the square into a number of pieces depending only on the degree. A periodic orbit crosses each transverse cutting arc at most once, so every cycle, apart from a bounded number running along the cuts, is a closed word of boundedly many passages from a finite alphabet. Passages near saddles are the hard part: with a tiny eigenvalue, the time spent near the saddle can blow up while the contraction stays mild, two clocks running at different rates. For each word, matching equations say that each passage ends where the next begins. A hyperbolic cycle gives nondegenerate solutions, and within each chart different hyperbolic cycles lie on different connected components, so it is enough to bound the number of components uniformly in the coefficients. That count needs a strong hypothesis: every derived system must have finitely many isolated solutions even when all its variables move freely. The equation sin x = 0, for x between 0 and p, has about p/π solutions, unbounded as p grows; alone it has no isolated solutions, but adding p = x + 1 creates infinitely many. The analytic heart is a separation theorem. When solutions escape to infinity, each function is expanded as a tree of exponentially small terms on nested complex domains, and either every coefficient vanishes and the function is exactly zero, or its first nonzero term dominates. The final bound is a finite sum whose terms the proof never computes. The Liénard proof is concrete. Each periodic orbit crosses the y-axis once in each direction, so it is made of a right half and a left half, and with u = x²/2, each half becomes an arch. A cycle is a width at which both arches have the same midpoint. The paper fits each arch with a quadratic profile, proves a model inequality by transporting a sign along the width, and, after making the fifth-power coefficient nonnegative, splits into four cases by the signs of the x and x³ coefficients. One case allows no cycle and two allow at most one; in the last, the mismatch between the arches, times a positive weight, can only fall and then rise, so it vanishes at most twice.</p>
+<h3><span class="t num">6:27</span>Where it stands</h3>
+<p>Neither preprint is peer reviewed, and neither has been revised. The Liénard theorem is formalized in Lean; the uniform bound, the headline claim, is not formalized at all. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If the first paper holds, every degree has a finite ceiling on the number of limit cycles, though nobody knows the ceiling, even for quadratic systems. If the second holds, the quintic Liénard oscillator has at most two, and its Lean proof is there to be checked.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20143%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

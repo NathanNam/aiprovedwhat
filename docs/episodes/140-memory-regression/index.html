@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exact equations, limited memory: memory–sample lower bounds for Gaussian regression | AI Proved What?</title>
+<meta name="description" content="An AI system claims that a learner keeping order d² bits needs on the order of d log(1/ε) exact Gaussian equations to find a hidden direction to angle ε, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/140-memory-regression/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Exact equations, limited memory">
+<meta property="og:description" content="An AI system claims that a learner keeping order d² bits needs on the order of d log(1/ε) exact Gaussian equations to find a hidden direction to angle ε, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/140-memory-regression/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/140-memory-regression/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 140, October 2026</p>
+<h1>Exact equations, limited memory</h1>
+<p class="subtitle">A claimed lower bound: a learner with order d<sup>2</sup> bits of memory needs on the order of d log(1/ε) exact Gaussian equations to find a hidden direction to angle ε</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 140 in OpenAI’s catalog: <a href="#papers-in-result">all 6 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="nzul2YJL4lU" data-title="Episode 140: Exact equations, limited memory">
+  <a href="https://youtu.be/nzul2YJL4lU">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 140: Exact equations, limited memory. A sphere, the circle left by one exact equation, two candidate points and the hidden direction.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:13. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/nzul2YJL4lU?t=0" data-t="0"><span class="t">0:00</span><span>Exact equations, limited memory</span></a></li>
+  <li><a href="https://youtu.be/nzul2YJL4lU?t=83" data-t="83"><span class="t">1:23</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/nzul2YJL4lU?t=185" data-t="185"><span class="t">3:05</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/nzul2YJL4lU?t=322" data-t="322"><span class="t">5:22</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A hidden unit vector s lives in d-dimensional space. Each sample is a Gaussian vector x together with its exact inner product ⟨x, s⟩: a linear equation with no noise. With unlimited memory, d such equations determine s exactly. A learner that reads the equations once, in order, and keeps only M bits between them cannot store real numbers exactly. The Kaczmarz method with real-number registers shrinks its expected squared error by a factor 1 − 1/d per equation, so it needs about 2d log(1/ε) equations to reach angle ε. Sharan, Sidford and Valiant proved memory–sample lower bounds for a noisy version of this regression and asked whether this dependence on precision is optimal under bounded memory; earlier, Raz showed that learning parities needs either quadratic memory or exponentially many samples.</p>
+<p>Result 140 is six OpenAI preprints, 301 pages dated September 27, 2026. <a href="https://github.com/openai/math/blob/main/preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/paper.pdf">The headline</a> (42 pages) claims that for every fixed A, a learner keeping at most A·d<sup>2</sup> bits between equations needs at least c<sub>A</sub>·d·log(1/ε) equations to reach angle ε with probability at least 2/3 for a random hidden direction, for every ε up to 1/10, once d is large. Transitions may use unlimited computation and randomness, but the answer must come from the last memory state, the stopping time and fresh coins. The same holds when success is required for every direction, and with memory o(d<sup>2</sup>) the constant is universal. The companions give alternative proofs and tools: <a href="https://github.com/openai/math/blob/main/preprints/Subsphere-methods-for-memory-sample-lower-bounds-in-noiseless-Gaussian-regression-September-27-2026/paper.pdf">subsphere methods</a> (25 pages; an explicit 2<sup>−16</sup>·d·log<sub>2</sub>(1/ε) for o(d<sup>2</sup>) memory), <a href="https://github.com/openai/math/blob/main/preprints/Posterior-replicas-and-conditional-information-in-Gaussian-regression-September-27-2026/paper.pdf">posterior replicas</a> (60 pages), <a href="https://github.com/openai/math/blob/main/preprints/Localization-costs-and-information-growth-for-exact-Gaussian-observations-September-27-2026/paper.pdf">localization costs</a> (93 pages), <a href="https://github.com/openai/math/blob/main/preprints/Projection-moments-positive-cap-domination-and-Riesz-estimates-on-the-sphere-September-27-2026/paper.pdf">projection moments</a> (29 pages; the trade-off c·d·log(1/ε)/(1 + M/d<sup>2</sup>)) and <a href="https://github.com/openai/math/blob/main/preprints/Replacing-Gaussian-observations-in-memory-constrained-inference-September-27-2026/paper.pdf">replacing observations</a> (52 pages).</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>A matching bounded-memory algorithm: the Kaczmarz calculation stores real numbers and, in the paper’s words, “supplies no finite-bit upper bound”. Tightness: at exponentially small ε the true cost is far higher. Any constant that is uniform as A grows. The constants are tiny: the Lean proof’s constant for A = 1 is 1/1,600,400, so the result is about how the count scales, not about concrete sample sizes. Noisy regression is reached only through a consequence for the Sharan–Sidford–Valiant setting.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, six preprints, 301 pages, dated September 27, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The headline and many supporting statements, with explicit constants. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. None of the six preprints has been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/140.md">Lean formalization</a> of the headline (subquadratic and fixed-quadratic memory, with explicit constants c<sub>A</sub> = 1/(4·(400000 + 100A)) and d ≥ 32) and of many supporting statements, through eight comparators (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/NoiselessRegression.lean">headline comparator</a>; <a href="https://github.com/openai/math/blob/main/lean/OAI/Probability/GaussianRegression">415 proof files and 74,493 lines</a> in their imports, not counting Mathlib, with no unproved steps that we could find). The 1/(1 + M/d<sup>2</sup>) trade-off and the 3/5-success streaming theorems are not among the comparators; an uncatalogued file in the repository proves a subquadratic-memory version with success probability 3/5. We have not run the check. The papers are not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Work backward.</strong> For each memory state, consider the chance of eventual success for each possible hidden direction. At the end, a fixed answer is right only on a cap of angle ε. The paper tracks one number R that bounds how concentrated the successful directions can be around any point; at the end, R = ε.</li>
+  <li><strong>One block, a constant factor.</strong> Going backward across a block of about d/8 equations, R grows by at most a factor exp(C(1 + M/d<sup>2</sup>)), a constant when M is a constant times d<sup>2</sup>. Constant success needs R of order one, so the number of blocks is proportional to log(1/ε): on the order of d log(1/ε) equations.</li>
+  <li><strong>Inside a block.</strong> The learner may use all of a block’s exact real data, but must land in one of about 2<sup>M</sup> states. The density of the block’s data is bounded by expanding a moment into independent copies of the hidden direction; the chance their labels coincide is an inverse Gram determinant, controlled by successive orthogonalization (with a close predecessor in Sharan–Sidford–Valiant). The size of the region cancels between the density bound and the projected volume.</li>
+  <li><strong>Other routes.</strong> An accurate answer carries about d log(1/ε) nats about the hidden direction while each block of order d equations adds order d nats; each block leaves a random residual subsphere; and the equations a message depends on can be swapped for fresh ones at small cost.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>In three dimensions, one exact equation leaves a circle of possible directions, two leave two points, three leave one.</li>
+  <li>Kaczmarz in 50 dimensions: mean squared error following (1 − 1/d)<sup>t</sup>; a median of 223 equations to reach angle 0.1 and 670 to reach 0.001.</li>
+  <li>Naming the answer to angle 10<sup>−6</sup> at d = 100 takes about 1,978 bits, against d<sup>2</sup> = 10,000.</li>
+  <li>Storing 50 equations at b bits per number and solving: median angular error 0.26 at b = 8 and 1.5 × 10<sup>−8</sup> at b = 32, about 33·d<sup>2</sup> bits.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/paper.pdf">Memory and precision in noiseless Gaussian regression (PDF)</a>, 42 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Subsphere-methods-for-memory-sample-lower-bounds-in-noiseless-Gaussian-regression-September-27-2026/paper.pdf">Subsphere methods for memory–sample lower bounds in noiseless Gaussian regression (PDF)</a>, 25 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Posterior-replicas-and-conditional-information-in-Gaussian-regression-September-27-2026/paper.pdf">Posterior replicas and conditional information in Gaussian regression (PDF)</a>, 60 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Localization-costs-and-information-growth-for-exact-Gaussian-observations-September-27-2026/paper.pdf">Localization costs and information growth for exact Gaussian observations (PDF)</a>, 93 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Projection-moments-positive-cap-domination-and-Riesz-estimates-on-the-sphere-September-27-2026/paper.pdf">Projection moments, positive cap domination, and Riesz estimates on the sphere (PDF)</a>, 29 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Replacing-Gaussian-observations-in-memory-constrained-inference-September-27-2026/paper.pdf">Replacing Gaussian observations in memory-constrained inference (PDF)</a>, 52 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/140.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 140.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 6 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Memory-and-precision-in-noiseless-Gaussian-regression-September-27-2026/paper.pdf">Memory and precision in noiseless Gaussian regression</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Posterior-replicas-and-conditional-information-in-Gaussian-regression-September-27-2026/paper.pdf">Posterior replicas and conditional information in Gaussian regression</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Localization-costs-and-information-growth-for-exact-Gaussian-observations-September-27-2026/paper.pdf">Localization costs and information growth for exact Gaussian observations</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Projection-moments-positive-cap-domination-and-Riesz-estimates-on-the-sphere-September-27-2026/paper.pdf">Projection moments, positive cap domination, and Riesz estimates on the sphere</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Replacing-Gaussian-observations-in-memory-constrained-inference-September-27-2026/paper.pdf">Replacing Gaussian observations in memory-constrained inference</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Subsphere-methods-for-memory-sample-lower-bounds-in-noiseless-Gaussian-regression-September-27-2026/paper.pdf">Subsphere methods for memory-sample lower bounds in noiseless Gaussian regression</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Exact equations, limited memory</h3>
+<p>Somewhere in d-dimensional space there is a hidden direction, a unit vector. Each sample is a random Gaussian vector together with its exact inner product with the hidden one: a linear equation with no noise at all. With unlimited memory, d of these equations pin the hidden vector down exactly. In three dimensions, one equation leaves a circle of possibilities, two leave two points, and three leave one. But a learner that reads the equations once, in order, and keeps only a limited number of bits between them, cannot store real numbers exactly. How many equations does it need to find the direction to within an angle ε? A natural benchmark is the Kaczmarz method: move the current guess onto each new equation. With real-number registers, its expected squared error shrinks by a factor of 1 − 1/d per equation, so it needs about 2d log(1/ε) equations. In our run in 50 dimensions, it took about 220 equations to reach an angle of 1/10, and about 670 to reach 1/1000. Sharan, Sidford and Valiant proved memory-sample lower bounds for a noisy version of this regression, and asked whether this dependence on precision is optimal under bounded memory. Earlier, Raz showed that learning parities needs either quadratic memory or exponentially many samples.</p>
+<h3><span class="t num">1:23</span>The claim</h3>
+<p>Result 140 is six OpenAI preprints, 301 pages in all, dated September 27. The headline paper claims that for every fixed A, a learner that keeps at most A·d² bits between equations needs at least a constant times d log(1/ε) equations to reach angle ε with probability at least two thirds, for a random hidden direction, for every ε up to 1/10, once d is large. Transitions may use unlimited computation and randomness, but the final answer must come from the last memory state, the stopping time and fresh coins. Requiring success for every direction is covered too, and with memory below the order of d², the constant can be universal. The other five papers supply tools and alternative proofs; as one says of its own routes, they offer distinct tests rather than a succession of stronger bounds. One gives an explicit constant, 2^(−16), with base-2 logarithms, for memory below the order of d². Another trades the bound smoothly against memory M: a constant times d log(1/ε), divided by one plus M/d². The papers give no matching upper bound: the Kaczmarz calculation stores real numbers and, in the paper’s words, supplies no finite-bit upper bound. The constants are tiny; the Lean proof’s constant, for A equal to one, is about 1/1,600,000. The headline and many supporting statements, though not that trade-off, are formalized in Lean: eight comparator files, backed by four hundred fifteen proof files and about 74,000 lines.</p>
+<h3><span class="t num">3:05</span>How the proof goes</h3>
+<p>The headline proof works backward from the end. Fix a memory state, and ask how likely eventual success is for each possible hidden direction. At the end, a fixed answer is right only on a small cap of angle ε. The paper tracks one number, R, which bounds how concentrated the successful directions can be around any point; at the end, R is ε. The key step: going backward across a block of about d/8 equations, R grows by at most a constant factor, when memory is of order d² bits. Constant success needs R of order one, so climbing from ε takes a number of blocks proportional to log(1/ε): on the order of d log(1/ε) equations. Why only a constant factor? Within a block, the learner may use all the exact real data, but it must land in one of about 2^M states. The paper bounds the density of a block’s data by expanding a moment into independent copies of the hidden direction, replicas, and computing exactly how likely their labels are to coincide: an inverse Gram determinant, controlled by successive orthogonalization, with a close predecessor in work of Sharan, Sidford and Valiant. Then the size of the region cancels: what the density bound loses, the volume of the projected data gives back. Choosing among 2^M destinations adds at most a constant times M/d² to the logarithm of R, a constant when M is a constant times d². The companion papers reach the same scaling by other routes. Information: an accurate answer must carry about d log(1/ε) nats about the hidden direction, while each block of order d exact equations adds only order d nats. Geometry: each block leaves a random residual subsphere. And replacement: the equations a stored message depends on can be swapped for fresh ones at small cost. Our toy shows why memory matters: storing 50 equations at 8 bits per number and solving gives an angular error of about a quarter; at 32 bits it is about 10^(−8), but that takes about 33 times d² bits.</p>
+<h3><span class="t num">5:22</span>Where it stands</h3>
+<p>None of the six preprints is peer reviewed or revised. The headline theorem and many supporting results are formalized in Lean, with explicit constants; we did not build it or run the comparators. The repository also holds an uncatalogued Lean proof of a subquadratic-memory version with success probability 3/5. The papers are not among those OSVerify reviewed, and we have seen no expert review. If it holds, a learner with at most order d² bits of memory needs at least on the order of d log(1/ε) exact equations to reach angle ε, even though d equations would determine the answer exactly. The papers give no matching bounded-memory algorithm, and the constants are far from practical.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20140%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

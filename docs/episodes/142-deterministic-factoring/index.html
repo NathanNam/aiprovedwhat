@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Factoring with no coin flips? Deterministic polynomial factorization over prime fields | AI Proved What?</title>
+<meta name="description" content="An AI system claims a deterministic algorithm that completely factors every polynomial over a prime field in polynomial time, with no randomness and no GRH, using result 29. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/142-deterministic-factoring/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Factoring with no coin flips?">
+<meta property="og:description" content="An AI system claims a deterministic algorithm that completely factors every polynomial over a prime field in polynomial time, with no randomness and no GRH, using result 29. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/142-deterministic-factoring/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/142-deterministic-factoring/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 142, October 2026</p>
+<h1>Factoring with no coin flips?</h1>
+<p class="subtitle">A claimed deterministic algorithm that completely factors every polynomial over a prime field, with one polynomial bound for all degrees and all primes</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 142 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="TLa6LepzP4s" data-title="Episode 142: Factoring with no coin flips?">
+  <a href="https://youtu.be/TLa6LepzP4s">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 142: Factoring with no coin flips? A crossed-out coin above a factor tree whose leaves are roots.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:33. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/TLa6LepzP4s?t=0" data-t="0"><span class="t">0:00</span><span>Breaking a polynomial apart</span></a></li>
+  <li><a href="https://youtu.be/TLa6LepzP4s?t=113" data-t="113"><span class="t">1:53</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/TLa6LepzP4s?t=233" data-t="233"><span class="t">3:53</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/TLa6LepzP4s?t=401" data-t="401"><span class="t">6:41</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>x<sup>4</sup> + 1 cannot be factored over the integers, yet modulo every prime it breaks apart: modulo 13 into (x<sup>2</sup> + 5)(x<sup>2</sup> − 5), modulo 17 into four linear factors. Factoring over the integers modulo a prime p means finding the irreducible pieces and how often each repeats. The input is the list of coefficients and p written in binary, so its size is about the degree times the number of digits of p, and a method whose cost grows like p is far too slow for a large prime.</p>
+<p>As the paper recounts the history, Berlekamp put linear algebra at the center: elements fixed by the p-th power map encode the factors, and greatest common divisors pull them out. Randomized methods, including Cantor and Zassenhaus’s, make factoring fast with coin flips. Deterministically, Shoup’s bound grows like the square root of p; under the generalized Riemann hypothesis, Rónyai gave polynomial bounds for a bounded number of factors and Evdokimov a bound quasi-polynomial in the degree. Even taking square roots modulo p by the standard methods needs a non-square to start from, and a bound on the least non-square growing like a power of log p was known only under that hypothesis, until release result 3 claimed one. The paper itself does not call deterministic polynomial-time factoring an open problem, though the literature has long treated it as one.</p>
+<p>Result 142 is <a href="https://github.com/openai/math/blob/main/preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/Deterministic-Polynomial-Factorization-over-Prime-Fields.pdf">one OpenAI preprint</a> (48 pages, October 4, 2026). Theorem 1.1 claims a uniform deterministic algorithm that, given a prime p in binary and a nonzero polynomial f over 𝔽<sub>p</sub> of degree n, outputs its leading coefficient and its distinct monic irreducible factors with their multiplicities in O(((n + 1)⌈log<sub>2</sub> p⌉)<sup>10<sup>12</sup></sup>) bit operations, using no randomness, no integer-factorization oracle, no primitive-root oracle and no generalized Riemann hypothesis. The paper calls the exponent “deliberately generous”; the proof gives O(B<sup>400,000,100</sup>) with B = 20 + (n + 1)(L + 1) and L the bit length of p.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>A practical algorithm. When p ≤ B<sup>200000</sup> the algorithm runs Berlekamp’s method and tries field elements one by one, which counts as polynomial only because that cutoff is a fixed power of the input size; by our arithmetic, for a quadratic the other branch starts only at primes of about 1.43 million digits. Randomized methods remain the practical choice. The paper produces no primitive roots and states its result only for prime fields. Splitting an even number of roots given a non-square goes back to Rónyai (1988); the paper calls the odd-degree separator, with the divisions it needs, its substantive step.</p>
+<p>The unconditional bound depends on another release result. Theorem 1.2, the core reduction, runs in time polynomial in the input and in supplied auxiliary primes ℓ (with ℓ ≡ 1 mod 12q and p not a q-th power modulo ℓ); under the generalized Riemann hypothesis this alone gives polynomial time. To find small auxiliary primes without that hypothesis, the paper imports from <a href="https://github.com/openai/math/blob/main/preprints/Primitive-roots-for-every-admissible-integer-base-October-4-2026/primitive-roots-all-integer-bases.pdf">result 29</a> (<a href="/episodes/029-primitive-roots-every-admissible-integer/">our episode 29</a>) a zero-free strip, Re s &gt; 1 − 10<sup>−6</sup>, for every finite-order Hecke L-function of every cyclotomic field containing the twelfth roots of unity, and proves that an auxiliary prime exists below c<sub>0</sub>B<sup>20,000,000</sup>.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 48 pages, dated October 4, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>No, and neither is the zero-free strip it borrows from result 29</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The preprint has not been revised. It is not formalized in Lean, we found no Lean files for this result in the repository, and result 29’s zero-free strip is not formalized either. Theorem 1.1 is proved only if result 29’s analytic theorem is; the reduction and the version under the generalized Riemann hypothesis do not depend on it. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Unknown roots.</strong> Strip repeated factors with the derivative and greatest common divisors. Berlekamp’s algebra then reduces everything to splitting a polynomial F with distinct roots, all in 𝔽<sub>p</sub>, none of them known. Computing in 𝔽<sub>p</sub>[T]/F works at all roots at once, and any test whose answer differs between two roots yields a factor by a greatest common divisor.</li>
+  <li><strong>Even degree: a tournament.</strong> Given a generator of the 2-power part of the multiplicative group, each pair of roots is compared through one binary digit of a discrete logarithm of their difference; reversing the pair flips the digit, so exactly one direction of each pair is chosen. If every root won equally often, each would win (N − 1)/2 times, impossible for even N. The win counts are traces, computed without knowing any root.</li>
+  <li><strong>Auxiliary primes.</strong> From a prime ℓ ≡ 1 mod 12q, modulo which p is not a q-th power, linear algebra in 𝔽<sub>p</sub>[T]/(1 + T + ⋯ + T<sup>ℓ−1</sup>) builds the generators the splitters need, in increasing order of q, without factoring p − 1.</li>
+  <li><strong>Odd degree: a curve.</strong> For an odd prime q dividing the number of roots, the curve y<sup>q</sup> = F(x) meets the x-axis once at each unknown root. With σ multiplying y by a q-th root of unity, the classes of those points are divided by 1 − σ again and again, summed over the roots, and read off as labels modulo q at each root. If the labels always agreed, a fixed divisor at infinity would be divisible by one more power of 1 − σ than it is, so some label separates the roots.</li>
+  <li><strong>Making division an algorithm.</strong> Each division reduces to a norm equation, solved with explicit maximal orders, Grothendieck’s splitting of vector bundles on the projective line, and a rank-one idempotent found by linear algebra.</li>
+  <li><strong>The analytic input.</strong> Everything is polynomial in the input and in the auxiliary primes; result 29’s strip guarantees one below c<sub>0</sub>B<sup>20,000,000</sup>, found by searching upward.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>x<sup>4</sup> + 1 is (x<sup>2</sup> + 5)(x<sup>2</sup> − 5) modulo 13, (x + 2)(x − 2)(x + 8)(x − 8) modulo 17 and (x + 1)<sup>4</sup> modulo 2. Modulo 7, x<sup>8</sup> + 3x<sup>7</sup> − 2x<sup>6</sup> − 2x<sup>3</sup> + 3x<sup>2</sup> + x = x(x + 1)<sup>3</sup>(x<sup>2</sup> + 1)<sup>2</sup>.</li>
+  <li>For (x − 3)(x − 50) modulo 101, the greatest common divisor with (x + a)<sup>50</sup> − 1 is 1 at a = 0 and x − 3 at a = 1.</li>
+  <li>Over all 664,577 primes from 5 to ten million, the least non-square averages 3.66 and is at most 53 (at p = 9,257,329).</li>
+  <li>The even-degree tournament, run blind modulo 10,009 on eight roots: win counts 3, 7, 2, 1, 3, 3, 5 and 4, and the factor x + 2046 (the root 7,963) split off.</li>
+  <li>A separate example of the q = 2 table entry: p = 10,009 and ℓ = 313 give a fixed field of dimension 2 inside a space of dimension 312 and the non-square 7,585.</li>
+  <li>For q = 3 and nine roots, the divisor at infinity (−9, 9, 0) divides by 1 − σ exactly four times, ending at (0, −1, 1).</li>
+  <li>Least auxiliary primes for a 100-digit prime: 73, 37 and 61 for q = 2, 3 and 5; none above 1,201 in all our checks, against the proved c<sub>0</sub>B<sup>20,000,000</sup>.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/Deterministic-Polynomial-Factorization-over-Prime-Fields.pdf">Deterministic Polynomial Factorization over Prime Fields (PDF)</a>, 48 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Primitive-roots-for-every-admissible-integer-base-October-4-2026/primitive-roots-all-integer-bases.pdf">Primitive roots for every admissible integer base (PDF)</a>, the companion that supplies the zero-free strip (result 29).</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 142.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/Deterministic-Polynomial-Factorization-over-Prime-Fields.pdf">Deterministic Polynomial Factorization over Prime Fields</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Breaking a polynomial apart</h3>
+<p>Take the polynomial x⁴ + 1. Over the integers it cannot be factored, but modulo every prime it breaks apart: modulo 13 into two quadratics, and modulo 17 into four linear factors. Factoring over the integers modulo a prime p means finding the irreducible pieces and how often each repeats. Modulo 7, one polynomial of degree 8 is x · (x + 1)³ · (x² + 1)². This is a basic task in computer algebra. The size of the input is about the degree times the number of digits of p, so an algorithm that takes about p steps is hopeless for a large prime. Berlekamp, in the late 1960s, put linear algebra at the center: elements fixed by the p-th power map encode the factors. Randomized methods, such as Cantor and Zassenhaus’s, made it fast with coin flips: a random shift a separates two given roots about half the time, through a greatest common divisor with (x + a)^((p − 1)/2) − 1. For (x − 3)(x − 50), modulo 101, a = 0 fails, and a = 1 splits off x − 3. Trying a = 0, 1, 2 in order almost always works quickly, but no one could prove that a short search always succeeds. Even the standard methods for square roots modulo p need a non-square to start from. Below ten million the least one is never more than 53, but a bound growing like a power of the number of digits of p was known only under the generalized Riemann hypothesis, before result 3 of this release claimed one. As the paper recounts, earlier deterministic bounds grew like the square root of p, due to Shoup, or, under that hypothesis, quasi-polynomially in the degree, due to Evdokimov.</p>
+<h3><span class="t num">1:53</span>The claim</h3>
+<p>Result 142 is a single OpenAI preprint, 48 pages, dated October 4. It claims one deterministic algorithm that completely factors every nonzero polynomial over the integers modulo a prime, with multiplicities, for every degree and every prime given in binary. Its cost is at most a constant times the input size to the power 10^12, in bit operations, with no randomness, no integer-factoring oracle, no supplied primitive root, and no generalized Riemann hypothesis. The paper calls that exponent deliberately generous; the proof gives about 400 million. Its core is a reduction: given small auxiliary primes, the algorithm runs in time polynomial in the input and in those primes, and under the generalized Riemann hypothesis this reduction alone already gives polynomial time. That is polynomial in principle, not fast. Below an astronomically large cutoff, it simply runs Berlekamp’s method and tries field elements one by one, which counts as polynomial only because the cutoff is a fixed power of the input size. By our arithmetic, for a quadratic, the other branch starts only at primes of about 1.4 million digits. Randomized methods remain the practical choice. The unconditional bound rests on result 29, which claims a zero-free strip of width one millionth for every finite-order Hecke L-function of every cyclotomic field containing the twelfth roots of unity; that paper is unreviewed, with no Lean proof. Splitting an even number of roots, given a non-square, goes back to Rónyai in 1988; the paper calls the odd-degree separator its substantive step. It does not produce primitive roots, and the paper states it only for prime fields. The paper does not call the problem open, though the literature has long treated it as one.</p>
+<h3><span class="t num">3:53</span>How the proof goes</h3>
+<p>The proof first strips repeated factors, using the derivative and greatest common divisors. Berlekamp’s algebra then reduces everything to one task: split a polynomial with distinct roots, all of which lie in the field, but none of which is known. To compute with unknown roots, compute at all of them at once, in the ring of remainders modulo the polynomial. Any test whose answer differs between two roots shows up there, and a greatest common divisor then splits the polynomial. So the goal becomes: find a question the roots cannot all answer the same way. For an even number of roots, the paper uses a tournament. Given a generator of the part of the multiplicative group whose order is a power of two, each pair of roots is compared through one binary digit of a discrete logarithm of their difference, a digit that flips when the pair is reversed, so exactly one direction of each pair is chosen. With n roots, if every root won equally often, each would win (n − 1)/2 times, which is impossible when n is even, and the win counts are computed by traces without knowing any root. In our run modulo 10,009, eight roots won between 1 and 7 times, and the algorithm split off one root. The generators come from auxiliary primes ℓ, one more than a multiple of 12q, modulo which p is not a q-th power; linear algebra in the cyclotomic ring of order ℓ builds them. For p = 10,009 and ℓ = 313, it produced the non-square 7,585. For an odd number of roots, take an odd prime q dividing it, and the curve y^q equals the polynomial, which meets the x-axis once at each unknown root. Multiplying y by a q-th root of unity is a symmetry, sigma. The paper repeatedly divides classes of those points by one minus sigma, adds them up over all roots, and reads off a label at each root. If every label always agreed, a fixed divisor at infinity would become divisible by one more power of one minus sigma than it can be; in our toy with q = 3 and nine roots, it divides exactly four times and then stops. Each division means solving a norm equation, by explicit maximal orders and linear algebra. All of this is polynomial in the input size and in the auxiliary primes themselves, and through result 29’s strip the paper proves one exists below a constant times the input size to the power 20 million, found by searching upward. In our checks the least ones were tiny: 73, 37 and 61 for a hundred-digit prime, and none above 1,201.</p>
+<h3><span class="t num">6:41</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. It is not formalized in Lean, and neither is the zero-free strip it borrows. It is not among those OSVerify reviewed, and we have seen no expert review. The unconditional theorem is proved only if result 29’s analytic theorem is; the reduction itself, and the version under the generalized Riemann hypothesis, which would already improve on Evdokimov’s bound, do not depend on it. If it holds, every polynomial over a prime field can be completely factored by one deterministic procedure, with a single polynomial bound for all degrees and all primes, and no coin flips. The bound is astronomically large, so randomized algorithms stay in use; what changes is what is proved, not what is practical.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20142%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

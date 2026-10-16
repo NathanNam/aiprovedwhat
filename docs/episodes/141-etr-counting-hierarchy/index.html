@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Real solutions at level 26? The existential theory of the reals in the counting hierarchy | AI Proved What?</title>
+<meta name="description" content="An AI system claims that the existential theory of the reals lies at level 26 of the counting hierarchy, and that existential-universal real sentences sit at one fixed level. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/141-etr-counting-hierarchy/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Real solutions at level 26?">
+<meta property="og:description" content="An AI system claims that the existential theory of the reals lies at level 26 of the counting hierarchy, and that existential-universal real sentences sit at one fixed level. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/141-etr-counting-hierarchy/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/141-etr-counting-hierarchy/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 141, October 2026</p>
+<h1>Real solutions at level 26?</h1>
+<p class="subtitle">A claim that the existential theory of the reals, and existential–universal real sentences with circuit-given polynomials, sit at a fixed level of the counting hierarchy</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 141 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="0TOFm_8Oi3k" data-title="Episode 141: Real solutions at level 26?">
+  <a href="https://youtu.be/0TOFm_8Oi3k">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 141: Real solutions at level 26? A circle with one marked point above a tower of 26 majority-voting layers inside PSPACE.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:56. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/0TOFm_8Oi3k?t=0" data-t="0"><span class="t">0:00</span><span>Is there a real solution?</span></a></li>
+  <li><a href="https://youtu.be/0TOFm_8Oi3k?t=93" data-t="93"><span class="t">1:33</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/0TOFm_8Oi3k?t=181" data-t="181"><span class="t">3:01</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/0TOFm_8Oi3k?t=315" data-t="315"><span class="t">5:15</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Given polynomial equations and inequalities with integer coefficients, is there a real point that satisfies them all? On the unit circle x<sup>2</sup> + y<sup>2</sup> = 1 there is a point with xy &gt; 1/4, but none with xy &gt; 1/2: the hyperbola xy = 1/2 only touches the circle. Deciding such questions is the existential theory of the reals (ETR); the problems that reduce to it in polynomial time form the class ∃ℝ, which captures many geometric realization and continuous feasibility problems. As the paper cites the history, Tarski showed these questions are decidable, Collins gave cylindrical algebraic decomposition, Canny placed the existential fragment in polynomial space, and Renegar did the same for any fixed number of quantifier blocks.</p>
+<p>The counting hierarchy lies inside polynomial space. Its first level, PP, decides by a majority vote over a fast machine’s random choices; each next level gives such a machine an oracle for the level below. Allender, Bürgisser, Kjeldgaard-Pedersen and Miltersen showed that the sign of an integer computed by a division-free arithmetic circuit can be decided in this hierarchy, even though such integers can have far too many bits to write down.</p>
+<p>Result 141 is <a href="https://github.com/openai/math/blob/main/preprints/Existential-universal-real-sentences-in-the-counting-hierarchy-October-4-2026/etr-counting-hierarchy.pdf">one OpenAI preprint</a> (35 pages, October 4, 2026). Theorem 1.1 claims an absolute level j such that the true sentences ∃x ∈ ℝ<sup>r</sup> ∀y ∈ ℝ<sup>s</sup> : Φ(x, y) form a language in C<sub>j</sub>P, where Φ combines atoms p = 0 and p &gt; 0 with AND, OR and NOT, and each p is given by an arithmetic circuit (+, −, ×) with binary integer constants. The level does not depend on the input, the numbers of variables, the degrees or the coefficient sizes. For the purely existential part, Theorem A.1 counts the levels: ETR ∈ C<sub>26</sub>P, and so ∃ℝ ⊆ C<sub>26</sub>P.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>A faster algorithm: this is a containment. It is not known whether the counting hierarchy is smaller than polynomial space, so the result does not show these problems are easier than PSPACE-complete ones. The level j for two quantifier blocks is not computed, the paper calls 26 a conservative bound, and three or more blocks are not covered. The paper does not present membership in the counting hierarchy as a known open problem. It builds on the counting arithmetic of Allender and coauthors, and cites recent work placing Hilbert’s Nullstellensatz over the rationals (Andrews, Garg and Schost) and approximate polynomial satisfiability (Balaji, Shirmohammadi, Tavenas and Worrell) in the counting hierarchy; over the reals, it says, one must also control whether solutions are real and attained.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 35 pages, dated October 4, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>No</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The preprint has not been revised. It is not formalized in Lean, and we found no Lean files for this result in the repository. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>One quartic.</strong> Give every circuit wire its own variable, so every condition becomes an equation of degree at most two. The sum of their squares is one nonnegative quartic F, with a real zero exactly when the existential sentence is true.</li>
+  <li><strong>A penalty minimum.</strong> Add a coercive bowl G to u times F and minimize. If F has a real zero the minimum stays bounded as u grows; otherwise it runs off to infinity.</li>
+  <li><strong>Eigenvalues and one large value.</strong> Values at critical points are eigenvalues of multiplication by the function on the critical-point equations, a matrix of dimension 5<sup>n</sup>, far too big to write down. The limit in u is replaced by one specialization u = 2<sup>σ</sup>, with σ given by an explicit formula: F has a real zero exactly when a resulting one-variable polynomial has a real root below a fixed cutoff 2<sup>ρ</sup>.</li>
+  <li><strong>Counting instead of computing.</strong> Everything is handled implicitly: counting is majority voting, products modulo a prime become sums of discrete logarithms, coefficients come from averages over a finite field, and determinants come from traces, without building matrices.</li>
+  <li><strong>Signs of gigantic integers.</strong> A short list of derivative signs names one real root, and is turned into a polynomial test: a suitable root exists exactly when, for some guessed test list and small shift, a determinant is negative. The sign of that integer is recovered from small residues, by approximating it divided by a product of primes, modulo one, and doubling until the result lands well away from zero.</li>
+  <li><strong>The for-all block.</strong> A further geometric argument (a growth test, degree pieces, candidate coordinates from roots of computed polynomials) finds a good parameter without describing the whole good set.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>2<sup>2<sup>64</sup></sup> mod 1,000,003 = 560,597 by 64 modular squarings. The circuit (a+1)<sup>2</sup> − a<sup>2</sup> − 2a with a = 2<sup>64</sup> has exact value 1 but evaluates to about −3.69 × 10<sup>19</sup> in double precision.</li>
+  <li>For h<sub>u</sub> = x<sup>6</sup> + 6uF in one variable: with F = (x<sup>2</sup> − 2)<sup>2</sup> the minimum is 4.862, 7.454, 7.941, 7.994, 7.9994 and 7.99999 at u = 1, 10, …, 10<sup>6</sup>, tending to 8; with F = (x<sup>2</sup> + 1)<sup>2</sup> it is exactly 6u.</li>
+  <li>The specialization in one variable, using the paper’s G and formulas fed the exact coefficient size H = 142: ρ = 146 and σ = 2,456; the resulting polynomial has degree 5 and coefficients of up to 17,264 bits; 2 of its 3 real roots lie below the cutoff in the true case, and its 1 real root does not in the false case. The paper’s a-priori bound would give a much larger u.</li>
+  <li>A toy multiplication map of dimension 9 with one real eigenvalue, 4.9088, and four complex pairs: det(M − cI) is positive for c = 3, 4 and 4.9 and negative for c = 4.95, 5 and 6.</li>
+  <li>Signs from residues at toy scale: 84 primes between 100 and 600 (a 692-bit product) recover the signs of 2<sup>64</sup> − 3<sup>40</sup>, 3<sup>41</sup> − 2<sup>65</sup>, 1 and 0.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Existential-universal-real-sentences-in-the-counting-hierarchy-October-4-2026/etr-counting-hierarchy.pdf">Existential–universal real sentences in the counting hierarchy (PDF)</a>, 35 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 141.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Existential-universal-real-sentences-in-the-counting-hierarchy-October-4-2026/etr-counting-hierarchy.pdf">Existential–universal real sentences in the counting hierarchy</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Is there a real solution?</h3>
+<p>Given some polynomial equations and inequalities with integer coefficients, is there any real point that satisfies them all? For example, is there a point on the unit circle where x times y exceeds 1/4? Yes. Where it exceeds 1/2? No. This is the existential theory of the reals. Problems that reduce to it in polynomial time form a class called ∃R, which captures many geometric realization and continuous feasibility problems. Tarski showed such questions are decidable, Collins gave cylindrical algebraic decomposition, and Canny placed the existential fragment in polynomial space; Renegar’s bounds do the same for any fixed number of quantifier blocks. The counting hierarchy sits inside polynomial space. Its first level, PP, is decision by a majority vote over a fast machine’s random choices, and each next level gives such a machine an oracle for the level below. Allender, Bürgisser, Kjeldgaard-Pedersen and Miltersen showed that deciding the sign of an integer computed by a division-free arithmetic circuit lies in this hierarchy. That is subtle: n squarings of two produce 2^(2^n), and after a few hundred of them that number has more bits than could ever be written down, although its remainder modulo a prime is easy. Ordinary floating point gets such signs wrong: in our check, a circuit whose exact value is one evaluates to about −37 quintillion in double precision.</p>
+<h3><span class="t num">1:33</span>The claim</h3>
+<p>Result 141 is a single OpenAI preprint, 35 pages, dated October 4. It claims that sentences of the form, there exist real x such that for all real y, a formula holds, can be decided at one fixed level of the counting hierarchy, even when the polynomials are given as arithmetic circuits with binary integer constants. For the purely existential part, it counts the levels: the existential theory of the reals, and so all of ∃R, lies at level 26. That is a tower of 26 nested layers of majority voting, still inside polynomial space. This is a containment, not a faster algorithm. It is not known whether the counting hierarchy is smaller than polynomial space, so the result does not show these problems are easier than PSPACE-complete ones. The level for the two-block sentences is not computed, 26 is called conservative, and three or more blocks are not covered. Nor does the paper present membership in the counting hierarchy as a known open problem. It builds on the counting arithmetic of Allender and coauthors, and cites recent work placing Hilbert’s Nullstellensatz over the rationals, and approximate polynomial satisfiability, in the counting hierarchy; over the reals, it says, one must also control whether solutions are real and attained. There is no Lean formalization.</p>
+<h3><span class="t num">3:01</span>How the proof goes</h3>
+<p>For the existential part, the proof goes like this. Give every circuit wire its own variable, so every condition becomes an equation of degree at most two; the sum of their squares is one nonnegative quartic, which has a real zero exactly when the sentence is true. Then add a coercive bowl to u times that quartic, and minimize. If the quartic has a real zero, the minimum stays bounded as u grows; if not, it runs off to infinity. In our one-variable check, for x² = 2, the minimum tends to 8; for x² = −1, it is exactly 6u. Minimum values are eigenvalues: the critical-point equations turn multiplication by the function into a matrix, of dimension five to the power of the number of variables, far too big to write down. The limit in u is replaced by one astronomically large value. In our one-variable run, the paper’s formula, fed the exact coefficient size, takes u equal to 2^2456, and the resulting polynomial has coefficients of up to about 17,000 bits; it has a real root below a fixed cutoff exactly in the true case. Everything is computed implicitly: counting is majority voting, products modulo a prime become sums of discrete logarithms, and determinants come from traces, without building matrices. To pick out one real root, the paper uses a short list of derivative signs there, turned into a polynomial test, and the question collapses to signs of gigantic integers: a suitable real root exists exactly when, for some guessed test and small shift, a determinant comes out negative. In our toy, such a determinant changes sign exactly when the test value passes the one real eigenvalue, while complex pairs contribute positive factors. The integer’s sign is recovered from small residues: approximate it divided by a product of primes, modulo one, and keep doubling until it lands far from zero. The for-all block needs a further geometric argument, which finds a good parameter through roots of computed polynomials, without describing the whole good set.</p>
+<h3><span class="t num">5:15</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. It is not formalized in Lean, and we found no Lean files for this result in the repository. It is not among those OSVerify reviewed, and we have seen no expert review. If it holds, deciding whether polynomial systems have real solutions, even with arithmetic circuits and one block of for-all quantifiers, sits at a fixed level of the counting hierarchy, a refinement of the polynomial-space bounds of Canny and Renegar. Whether that level is truly smaller than polynomial space remains unknown.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20141%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

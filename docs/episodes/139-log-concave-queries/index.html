@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sampling with almost no queries? Log-concave sampling in d^ε queries | AI Proved What?</title>
+<meta name="description" content="An AI system claims that well-conditioned log-concave sampling needs fewer gradient queries than any power of the dimension, with a logarithmic lower bound and a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/139-log-concave-queries/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Sampling with almost no queries?">
+<meta property="og:description" content="An AI system claims that well-conditioned log-concave sampling needs fewer gradient queries than any power of the dimension, with a logarithmic lower bound and a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/139-log-concave-queries/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/139-log-concave-queries/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 139, October 2026</p>
+<h1>Sampling with almost no queries?</h1>
+<p class="subtitle">A claimed sampler for well-conditioned log-concave distributions that needs fewer oracle queries than any power of the dimension</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 139 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="OIAxry00MGE" data-title="Episode 139: Sampling with almost no queries?">
+  <a href="https://youtu.be/OIAxry00MGE">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 139: Sampling with almost no queries? Samples from a log-concave target inside its level curves.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:25. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/OIAxry00MGE?t=0" data-t="0"><span class="t">0:00</span><span>Sampling by queries</span></a></li>
+  <li><a href="https://youtu.be/OIAxry00MGE?t=104" data-t="104"><span class="t">1:44</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/OIAxry00MGE?t=191" data-t="191"><span class="t">3:11</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/OIAxry00MGE?t=340" data-t="340"><span class="t">5:40</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Many problems need random samples from a density proportional to e<sup>−V</sup>. Here V is a C<sup>2</sup> function on d-dimensional space with V(0) = 0 and ∇V(0) = 0, whose curvature is between 1 and 2 in every direction (I ⪯ ∇<sup>2</sup>V ⪯ 2I). An algorithm may ask an oracle for V and its gradient at any points it likes, adaptively and with private randomness; computing in between is free, and the cost is the number of queries. The goal is a sample within total variation 1/10 of the target. Rejection from a standard Gaussian needs exponentially many queries. The paper cites analyses of the unadjusted Langevin algorithm (Dalalyan; Durmus and Moulines), results with about d<sup>1/3</sup> queries at this fixed conditioning and accuracy (Altschuler, Chewi and Zhang; Chen, Chewi, Rakhlin and Zhang), and d<sup>1/6</sup> expected queries from the smoothed Picard Hamiltonian Monte Carlo of Chen, Chewi, Lu and Zhang; from below, results of Chewi and coauthors already gave logarithmic growth at a suitable fixed accuracy.</p>
+<p>Result 139 is <a href="https://github.com/openai/math/blob/main/preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/article.pdf">one OpenAI preprint</a> (55 pages, September 26, 2026). It claims that for every exponent ε &gt; 0 there is a constant C<sub>ε</sub> such that C<sub>ε</sub>·d<sup>ε</sup> queries suffice on every run, not just on average, for every such potential and every d ≥ 2; so the best exponent of d is zero. It also proves that at least c·log d queries are needed for large d, even for quadratic potentials, following the strategy of Chewi and coauthors. Here ε is an exponent: the accuracy stays at 1/10.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Any bound on arithmetic or running time: the construction “is aimed at oracle complexity rather than practical running time”. The upper bound’s constants are not given, and by our reading they are astronomical (with the smallest choices the paper’s rules allow, one depth bound in the proof is 86,701 when ε = 1/5). Nothing is claimed for other curvature windows or accuracies, or for the finer growth rate between log d and d<sup>ε</sup>. With the constant in the paper’s proof, the lower bound rules out even one-query algorithms only beyond about 2 × 10<sup>12</sup> dimensions.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 55 pages, dated September 26, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The upper bound, the logarithmic lower bound and the zero exponent. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The posted preprint has not been revised (it cites a September 30 preprint as subsequent, so the text was edited after its date). OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/139.md">Lean formalization</a> of the main theorem: the C<sub>ε</sub>d<sup>ε</sup> upper bound, the logarithmic lower bound and the zero exponent (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/LogConcaveQuery.lean">comparator statement</a>; <a href="https://github.com/openai/math/blob/main/lean/OAI/Probability/LogConcave">326 files and 63,748 lines</a> with its imports, not counting Mathlib, with no unproved steps that we could find). We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Add noise, then condition.</strong> If X has the target law and Gaussian noise of variance h is added, X given the noisy point has a density that is a Gaussian times a gentle correction, which in rescaled units bends by at most 2h. Alternating the two moves keeps the target fixed and needs about 1/h steps (times log d); with h = d<sup>−e</sup>/2 for a small e, these steps carry nearly all of the growth with d. Each conditional sample must then be far more accurate than one over the number of steps, using almost no queries.</li>
+  <li><strong>Recursion through transport.</strong> A Gaussian is carried into the inner target by a flow whose velocity is a conditional average of gradients, the same kind of problem one level down.</li>
+  <li><strong>Dimension-free derivatives.</strong> Bounding each derivative tensor as a matrix under every split of its slots into two groups makes repeated integration by parts cost only polylogarithmic factors, plus one √d at the end.</li>
+  <li><strong>Fixed depth.</strong> Picard iteration gives finite formulas whose dependency depth is fixed; accuracy is raised by the interpolation order, which changes only constants. So every positive exponent is within reach.</li>
+  <li><strong>Exact seeds.</strong> A nested call run at a noisy center, with its random seeds shrunk by the right amount, has exactly the law of a call at the true center. Variance-halving steps then remove the auxiliary noise, and a Gaussian centered at the peak of the last conditional law finishes.</li>
+  <li><strong>The lower bound.</strong> A hidden random rotation of a quadratic potential confines a q-query output to a Krylov space built from a few Gaussian directions. A statistic stays small everywhere on that space, but true samples show a bias in it while q is below a constant times log d.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>In our test potential Σ(x<sup>2</sup>/2 + log cosh x), rejection from a standard Gaussian accepts with probability 0.741<sup>d</sup>: about 1 in 20 at d = 10 and 1 in 10 trillion at d = 100.</li>
+  <li>A Gaussian with a 1% curvature error is at total variation 0.089 in 1,000 dimensions and 0.73 in 100,000.</li>
+  <li>In one dimension, the noise-then-condition chain reaches total variation 10<sup>−3</sup> in 5, 19 and 89 steps for noise 0.5, 0.1 and 0.02.</li>
+  <li>A one-dimensional check of the seed identity gives a KS distance of 0.0018 between the trick and the true call (0.028 without shrinking).</li>
+  <li>At d = 10<sup>6</sup>, the lower-bound statistic separates true samples from anything one query can produce, narrowly, but not from two.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/article.pdf">Subpolynomial query complexity for well-conditioned log-concave sampling (PDF)</a>, 55 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/139.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 139.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Subpolynomial-query-complexity-for-well-conditioned-log-concave-sampling-September-26-2026/article.pdf">Subpolynomial query complexity for well-conditioned log-concave sampling</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Sampling by queries</h3>
+<p>Statistics and physics often need random samples from a density of the form e^(−V). Here V is a smooth bowl in d dimensions, whose curvature is pinned between one and two in every direction, with its lowest point at the origin. An algorithm may ask an oracle for V and its gradient at any point it likes, and computing in between is free; the cost is the number of questions. The goal is a sample whose distribution is within total variation one tenth of the target. The simplest method is rejection: propose a standard Gaussian point and accept it with the right probability. In our test potential, the acceptance rate falls like 0.74^d: about one in twenty at ten dimensions, and about one in 10 trillion at a hundred. Methods based on Langevin dynamics do far better, but small errors add up across dimensions: in our check, a Gaussian whose curvature is off by one percent is at total variation about 0.09 in a thousand dimensions, and 0.73 in a hundred thousand. The paper cites analyses of the unadjusted Langevin algorithm by Dalalyan and by Durmus and Moulines, and recent results with about d^(1/3) queries at this fixed conditioning and accuracy, by Altschuler, Chewi and Zhang, and by Chen, Chewi, Rakhlin and Zhang. The smallest exponent it cites is one sixth, counting expected queries, from smoothed Picard Hamiltonian Monte Carlo by Chen, Chewi, Lu and Zhang. In the other direction, results of Chewi and coauthors already gave growth at least like log d, at a suitable fixed accuracy. Is any positive power of the dimension really necessary?</p>
+<h3><span class="t num">1:44</span>The claim</h3>
+<p>Result 139 is a single OpenAI preprint, 55 pages, dated September 26. It claims no: for every positive exponent ε, there is a constant C such that C times d^ε queries suffice, on every run, not just on average, for every such potential in every dimension. So the best exponent of d is zero. Here ε is an exponent, not an accuracy: the accuracy stays at one tenth. The count still grows, though: the paper also proves a lower bound of a constant times log d, even for quadratic potentials, following a strategy of Chewi and coauthors, whose results already give logarithmic growth. The fine print matters. Only queries are counted: the paper bounds no arithmetic, and says the construction aims at oracle complexity rather than practical running time. The upper bound’s constants are not given, and by our reading they are astronomical: one depth bound in the proof is already about 87,000 when ε is 1/5. The curvature window and the accuracy are fixed, and with the constant in the paper’s proof, the lower bound rules out even one-query algorithms only beyond about 2 trillion dimensions. The main theorem, upper and lower bounds together, is formalized in Lean: 326 files, about 64,000 lines, with no sorry.</p>
+<h3><span class="t num">3:11</span>How the proof goes</h3>
+<p>The proof adds noise, then conditions. If X has the target law and you add Gaussian noise of variance h, then X, given the noisy point, has a density that is a Gaussian times a gentle correction: in rescaled units, the correction bends by at most two h. Alternating the two moves gives a chain that keeps the target fixed, and it needs about one over h steps. The paper sets h to d to the minus a small power, and these steps account for essentially all of the growth with d. In our one-dimensional run, noise 1/2 reached total variation 1/1000 in 5 steps, 1/10 in 19, and 1/50 in 89: smaller noise makes each step easier, but needs more of them. The catch is that each conditional sample must be far more accurate than one over the number of steps, using almost no queries. For that inner problem, a Gaussian is carried into the target by a flow, and the flow’s velocity is a conditional average of gradients: the same kind of problem one level down. So the algorithm is recursive. Integrating the flow to high order needs high derivatives, and naive bounds would lose a power of d at every differentiation. The paper instead bounds each derivative tensor under every split of its slots into two groups, so repeated integration by parts costs only polylogarithmic factors, plus one square root of d at the end. Picard iteration then gives finite formulas of fixed depth, and accuracy is raised by raising the interpolation order, which changes only constants. That is why every positive exponent is within reach. Nested calls need exact centers they cannot know. The paper’s trick: run the inner call at a noisy center, but shrink its random seeds by exactly the right amount, and the result has exactly the law of a call at the true center. Then steps that halve the remaining variance remove the auxiliary noise, and a final Gaussian, centered at the peak of the last conditional law, finishes. The lower bound hides a random rotation inside a quadratic potential. With q queries, an algorithm’s output lies in a Krylov space built from a few Gaussian directions. A statistic stays small everywhere on that space, but true samples show a clear bias in it while q is below a constant times log d. In our simulation at a million dimensions, the matching statistic still told true samples apart, narrowly, from everything one query can produce, but not from two.</p>
+<h3><span class="t num">5:40</span>Where it stands</h3>
+<p>The preprint is not peer reviewed, and the posted version has not been revised. Its main theorem, the upper bound, the lower bound and the zero exponent, is formalized in Lean; we did not build it or run the comparator. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, for well-conditioned log-concave sampling with a known minimizer, the number of queries need not grow like any power of the dimension: it lies between a constant times log d and a constant times d^ε, for every ε. It says nothing about running time, and by our reading the constants are far from practical.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20139%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
