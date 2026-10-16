@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Almost-linear edit distance? A claimed approximation scheme for edit distance | AI Proved What?</title>
+<meta name="description" content="An AI system claims a randomized algorithm that approximates edit distance within any fixed factor 1 + ε in almost-linear expected time, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/121-edit-distance-approximation-scheme/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Almost-linear edit distance?">
+<meta property="og:description" content="An AI system claims a randomized algorithm that approximates edit distance within any fixed factor 1 + ε in almost-linear expected time, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/121-edit-distance-approximation-scheme/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/121-edit-distance-approximation-scheme/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 121, October 2026</p>
+<h1>Almost-linear edit distance?</h1>
+<p class="subtitle">A claimed randomized algorithm that approximates edit distance within any fixed factor 1 + ε in almost-linear expected time</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 121 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="5_JiduV0JCM" data-title="Episode 121: Almost-linear edit distance?">
+  <a href="https://youtu.be/5_JiduV0JCM">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 121: Almost-linear edit distance? The edit-distance table with a narrow band around an alignment path.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:33. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/5_JiduV0JCM?t=0" data-t="0"><span class="t">0:00</span><span>Edit distance</span></a></li>
+  <li><a href="https://youtu.be/5_JiduV0JCM?t=111" data-t="111"><span class="t">1:51</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/5_JiduV0JCM?t=203" data-t="203"><span class="t">3:23</span><span>How the algorithm works</span></a></li>
+  <li><a href="https://youtu.be/5_JiduV0JCM?t=403" data-t="403"><span class="t">6:43</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Edit distance counts the fewest single-character insertions, deletions and substitutions that turn one string into another: kitten becomes sitting in three. The Wagner–Fischer dynamic program fills a table with one entry for every pair of prefixes, so two strings of length n take about n² steps. If you knew roughly where the best alignment runs, you could fill only a narrow band of the table; the hard part is knowing where the band should go.</p>
+<p>Exact computation seems stuck near quadratic time: Backurs and Indyk showed that a strongly subquadratic exact algorithm would refute the Strong Exponential Time Hypothesis, while Ukkonen, and Landau and Vishkin, gave exact methods that are fast when the distance is small. Approximation had long offered another route. Factors growing with n came from Bar-Yossef, Jayram, Krauthgamer and Kumar, and from Batu, Ergün and Sahinalp; Andoni, Krauthgamer and Onak reached a polylogarithmic factor in time n<sup>1+ξ</sup> for any fixed ξ; Chakraborty, Das, Goldenberg, Koucký and Saks a constant factor in truly subquadratic time; and Andoni and Nosatzki a constant factor in time n<sup>1+ξ</sup>, the constant depending on ξ. For accuracy 1 + ε, Mao and Rubinstein’s recent algorithm beats quadratic time, though not by any fixed power of n.</p>
+<p>Result 121 is <a href="https://github.com/openai/math/blob/main/preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/paper.pdf">one OpenAI preprint</a> (46 pages, September 24, 2026). It claims one uniform randomized algorithm that takes two strings and a rational ε between 0 and 1 and returns an integer that, with probability at least 2/3, lies between the edit distance and (1 + ε) times it. For every fixed ε, the worst-case expected running time on strings of total length N is N<sup>1+o(1)</sup> on a logarithmic-word machine, counting all arithmetic, sampling and data structures. Equal strings always get zero, and the symbols may be integers as large as a polynomial in N.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The constants, and the length at which the bound applies, may depend on ε, and nothing is claimed about how the cost grows with 1/ε. Below a threshold the algorithm runs the exact quadratic dynamic program, and the paper says its thresholds are very large: by its parameter rule (Section 2.2), the fast branch needs a parameter ℓ of at least 2<sup>1000</sup>, while even 10<sup>80</sup> symbols give ℓ = 16. So this is a statement about the limit, not a practical tool. The output is a distance estimate, not an edit script.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 46 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>OpenAI published a Lean proof of the full theorem for a concrete algorithm; we have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/121.md">Lean formalization</a> of the full theorem for a concrete binary algorithm, including expected work and polynomial space, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/EditApproximation.lean">its comparator statement</a> (19,169 lines, because it defines the algorithm and counts its work step by step), in <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/EditApproximation">1,024 files and 137,267 lines</a> with its imports (not counting Mathlib), with no unproved steps that we could find. The running time is measured by the counter defined in that statement. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the algorithm works</h2>
+<ol class="steps">
+  <li><strong>Intervals and actions.</strong> The first string is cut into a tree of intervals, down to single characters. An interval state pairs a source interval with a target interval in the second string; its true cost is the edit distance between those two pieces. An action at a node assigns a target interval to each child, and is charged the children’s costs plus the gaps and overlaps between consecutive targets and at the two ends. With true child costs, that total is an upper bound for the parent.</li>
+  <li><strong>A seed.</strong> Everything starts from a table of coarse upper estimates for every interval state, adapted from the shift tree and precision sampling of Andoni, Krauthgamer and Onak: blocks of a balanced tree each get their own shift, paying twice each change of shift from the parent, and precision sampling avoids computing all of it. The guarantee holds at every state at once, so adaptive requests are safe; entries are computed only when requested, each from its own random stream, which keeps the expected cost of each request under control.</li>
+  <li><strong>Predicted bands.</strong> A refinement pass propagates the seed through a wide family of actions and averages the results into cost proxies. The shift at a cut is target position minus source position; spreading the total shift change in proportion to predicted cost predicts how the shift should evolve, leaving a narrow band of target positions at each cut. In the analysis, a cost-weighted variance of the departures of optimal alignments from the prediction telescopes, which controls the total cost of the places where the prediction fails.</li>
+  <li><strong>Predict, clip, repeat.</strong> Inside a band, an entropy-regularized rule in the online-learning framework of Rakhlin and Sridharan predicts an action, computed by a finite Frank–Wolfe procedure in exact rational arithmetic and then sampled exactly. Estimates that fall below the true cost are raised to it in the analysis, so an underestimate cannot cancel an error elsewhere. Repetitions and medians give a better seed; the passes repeat, and a final refinement gives the answer. The work bound comes from reuse of child values and lazy evaluation.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Two strings of about 3,000 symbols differing by 60 planted edits: cells within 20 of the diagonal give the exact distance, 60, from 122,744 of 9,027,000 cells (about 1/74); within 10 give 123; within 5 cannot reach the corner, because the second string is 9 symbols longer.</li>
+  <li>600 symbols with distance 39: blocks of 100 matched to back-to-back windows of the same length give 88; with lengths within 3 of the block length, the best choice gives 39.</li>
+  <li>Along an optimal alignment of the 3,000-symbol pair, all 31 cuts stay within 4 of the line that spreads the total shift change in proportion to cost; the shift itself reaches 12.</li>
+  <li>The paper’s parameter rule gives ℓ = 8, 8, 8 and 16 for 10<sup>6</sup>, 10<sup>12</sup>, 10<sup>24</sup> and 10<sup>80</sup> symbols, against the cutoff 2<sup>1000</sup>.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/paper.pdf">An Almost-Linear Approximation Scheme for Edit Distance (PDF)</a>, 46 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/121.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 121.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-Almost-Linear-Approximation-Scheme-for-Edit-Distance-September-24-2026/paper.pdf">An Almost-Linear Approximation Scheme for Edit Distance</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Edit distance</h3>
+<p>Edit distance counts the fewest single-character insertions, deletions and substitutions that turn one string into another. Kitten becomes sitting in three: change the k to an s and the e to an i, then add a g. The Wagner–Fischer dynamic program fills a table with one entry for every pair of prefixes, so two strings of length n take about n squared steps. If you knew roughly where the best alignment runs, you could fill only a narrow band. In our check, two strings of about 3,000 symbols differ by 60 planted edits. Keeping only cells within 20 of the diagonal gave the exact distance, 60, from about 1/74 of the table. Within 10, it overestimated, at 123, and within 5, it could not even reach the end, because the second string is 9 symbols longer. The hard part is knowing where the band should go. Exact computation seems stuck near quadratic time: Backurs and Indyk showed that a strongly subquadratic exact algorithm would refute the Strong Exponential Time Hypothesis. Ukkonen, and Landau and Vishkin, gave exact methods that are fast when the distance is small. Approximation had long offered another route. Early factors grew with n, from Bar-Yossef, Jayram, Krauthgamer and Kumar, and from Batu, Ergün and Sahinalp. Andoni, Krauthgamer and Onak reached a polylogarithmic factor in time n to any fixed power above one. Chakraborty, Das, Goldenberg, Koucký and Saks reached a constant factor in truly subquadratic time, and Andoni and Nosatzki a constant factor in time n to any fixed power above one, with the constant depending on that power. For accuracy 1 + ε, Mao and Rubinstein’s recent algorithm beats quadratic time, though not by any fixed power of n.</p>
+<h3><span class="t num">1:51</span>The claim</h3>
+<p>Result 121 is one OpenAI preprint, 46 pages, dated September 24. It claims one uniform randomized algorithm that takes two strings and a rational ε between zero and one, and returns an integer that, with probability at least 2/3, lies between the edit distance and (1 + ε) times it. For every fixed ε, the worst-case expected running time on strings of total length N is N^(1+o(1)), on a logarithmic-word machine, counting all arithmetic, sampling and data structures. Equal strings always get zero, and the symbols may be integers as large as a polynomial in N. The fine print matters. The constants, and the length at which the bound applies, may depend on ε, and nothing is claimed about how the cost grows with 1/ε. Below a threshold, the algorithm simply runs the exact dynamic program, and the paper says its thresholds are very large. In our check of its parameter rule, even 10^80 symbols stay far below the cutoff, so the fast branch only starts at lengths no computer could store. OpenAI published a Lean proof of the full statement, about a thousand files and 137,000 lines with its imports, not counting Mathlib. The statement alone runs to 19,000 lines, because it defines the algorithm and counts its work step by step. We have not run the Lean check ourselves.</p>
+<h3><span class="t num">3:23</span>How the algorithm works</h3>
+<p>The algorithm cuts the first string into a tree of intervals, down to single characters. An interval state pairs a source interval with a target interval in the second string, and its true cost is the edit distance between those two pieces. An action at a node assigns a target interval to each child, and is charged the children’s costs plus the gaps and overlaps between consecutive targets and at the two ends. These connection charges let nearby actions be compared even when their targets do not join exactly, and with true child costs the total is still an upper bound for the parent. In our check, blocks of 100 matched to back-to-back windows of the same length gave 88 against a true distance of 39; letting each window stretch or shrink by up to 3, the best choice reached the exact distance, 39. Everything starts from a seed: a table of coarse upper estimates for every interval state, adapted from the shift tree and precision sampling of Andoni, Krauthgamer and Onak. The shift tree splits a piece into a balanced tree of blocks, each allowed its own shift, paying twice each change of shift from its parent. That gives an upper bound, too large by at most a slowly growing factor. Precision sampling avoids computing all of it, by giving different blocks random, uneven precisions. The guarantee holds at every state at once, so it survives adaptive requests; entries are computed only when requested, each from its own private random stream, which keeps the expected cost of each request under control. Refinement passes then shrink the approximation factor. A refinement pass first propagates the seed through a wide family of actions and averages the results into cost proxies. At a cut in the first string, the alignment’s shift is its target position minus its source position. Spreading the total shift change in proportion to predicted cost tells how the shift should evolve, and requiring agreement with that leaves a narrow band of target positions at each cut, computed from the proxies alone. The analysis compares with optimal alignments, rounded into a comparison tree that the algorithm never computes. A cost-weighted variance of their departures from the prediction telescopes, which controls the total cost of the places where the prediction fails. In our illustration, with exact costs in place of proxies, all 31 cuts along an optimal alignment stayed within 4 of the cost-proportional line, while the shift itself strayed as far as 12 from the diagonal. Inside a band, an entropy-regularized rule, in the online-learning framework of Rakhlin and Sridharan, predicts an action from earlier child values, and a finite Frank–Wolfe procedure approximates it closely in exact rational arithmetic, and the action is then sampled exactly. Some intermediate estimates can fall below the true cost, so the analysis raises them to the true cost, and then an underestimate in one place cannot cancel an error elsewhere. Repetitions and medians turn the result into a better seed, the passes repeat, and one last refinement gives the answer. The work bound comes from reuse: searches draw on child values already gathered, only slightly more calls than the tree’s branching factor need values from the current round, and table entries are computed only on demand.</p>
+<h3><span class="t num">6:43</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. OpenAI’s Lean formalization covers the full theorem for a concrete binary algorithm, including expected work and polynomial space, with work measured by the counter defined in the statement; we have not run it. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, edit distance can be approximated within any fixed factor 1 + ε in almost-linear expected time. Before this, near-linear time gave only constant factors, and accuracy 1 + ε needed nearly quadratic time. The thresholds are astronomically large, so this is a statement about the limit, not a practical tool.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20121%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

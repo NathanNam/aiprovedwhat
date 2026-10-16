@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polynomially many traces? Lower and upper bounds for trace reconstruction | AI Proved What?</title>
+<meta name="description" content="An AI system claims that trace reconstruction needs superpolynomially many traces at every fixed deletion probability, with a Lean formalization, and gives a uniform quasipolynomial decoder. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/122-trace-reconstruction-bounds/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Polynomially many traces?">
+<meta property="og:description" content="An AI system claims that trace reconstruction needs superpolynomially many traces at every fixed deletion probability, with a Lean formalization, and gives a uniform quasipolynomial decoder. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/122-trace-reconstruction-bounds/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/122-trace-reconstruction-bounds/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 122, October 2026</p>
+<h1>Polynomially many traces?</h1>
+<p class="subtitle">A claimed superpolynomial lower bound for trace reconstruction, and a uniform quasipolynomial decoder</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 122 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="7hM03aW3xr8" data-title="Episode 122: Polynomially many traces?">
+  <a href="https://youtu.be/7hM03aW3xr8">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 122: Polynomially many traces? A binary string with deleted bits and the traces that remain.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:06. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/7hM03aW3xr8?t=0" data-t="0"><span class="t">0:00</span><span>Traces</span></a></li>
+  <li><a href="https://youtu.be/7hM03aW3xr8?t=93" data-t="93"><span class="t">1:33</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/7hM03aW3xr8?t=198" data-t="198"><span class="t">3:18</span><span>How it works</span></a></li>
+  <li><a href="https://youtu.be/7hM03aW3xr8?t=375" data-t="375"><span class="t">6:15</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>Take a binary string, delete each bit independently with a fixed probability, and glue the survivors together. That is a trace: you see its length and its bits, but not where they came from. Trace reconstruction asks how many independent traces it takes to recover every string of length n with high probability, knowing n and the deletion probability. The known hard cases are strings that differ only by a small shift.</p>
+<p>Batu, Kannan, Khanna and McGregor posed the problem in its modern form, motivated by sequence alignment. At a fixed deletion probability, upper bounds came down from exp(Õ(√n)) traces (Holenstein, Mitzenmacher, Panigrahy and Wieder) to exp(O(n<sup>1/3</sup>)) (De, O’Donnell and Servedio; Nazarov and Peres) and exp(Õ(n<sup>1/5</sup>)) (Chase). A 2026 preprint by Burudgunte, Valiant and Wang, cited by these papers, reached a quasipolynomial number of traces, with an unspecified power of log n, but no quasipolynomial-time algorithm. Lower bounds stood near n<sup>5/4</sup> (Holden and Lyons) and n<sup>3/2</sup> (Chase). Whether polynomially many traces always suffice was open.</p>
+<p>Result 122 is three OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/paper.pdf">The first</a> (42 pages, September 24, 2026) claims that at every fixed deletion probability q, exact reconstruction of every binary string of length n needs at least n<sup>c log(q³ log n)</sup> traces for every c below 1/(4 log 2), once n is large enough: n<sup>Ω(log log n)</sup>, even with unlimited computation and any fixed positive chance of success. So polynomially many traces never suffice. It also claims that, for large n, some two different strings have single-trace laws closer in total variation than any fixed inverse power of n.</p>
+<p><a href="https://github.com/openai/math/blob/main/preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/uniform-trace-reconstruction.pdf">The second</a> (29 pages, October 5, 2026) gives one randomized algorithm that, knowing n and a rational retention probability (one minus the deletion probability), recovers any string with probability at least 2/3. At a fixed retention probability it uses exp(C (log n)³ (log log n)⁶) traces with quasipolynomial bit complexity; when the deletion probability is at most n<sup>−ε</sup>, both bounds become polynomial. <a href="https://github.com/openai/math/blob/main/preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/paper.pdf">The third</a> (15 pages, October 5, 2026) proves the same sample bound, also for general symbols, with no efficient algorithm.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What they don’t claim</h2>
+<p>The lower bound is about growth, not size: its constant is small, and at deletion probability 1/2 the formula passes Chase’s exponent 3/2 only once n has more than 220 digits; the theorem only says “eventually”. A gap remains between the bounds: the logarithm of the number of traces is between order log n · log log n and (log n)³, up to log log factors. The decoder needs the retention probability as a known rational number.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, three preprints: 42 pages (September 24, 2026), 29 and 15 pages (October 5, 2026)</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>OpenAI published a Lean proof of the lower bounds; the upper bounds are not formalized; we have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprints have not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/122.md">Lean formalization</a> of the lower bounds (the quantitative bound, superpolynomial one-trace indistinguishability and superpolynomial sample complexity), stated for every estimator with unlimited computation and matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/TraceReconstruction.lean">its comparator statement</a>, in <a href="https://github.com/openai/math/blob/main/lean/OAI/Probability/TraceReconstruction">31 files and 33,984 lines</a> with its imports (not counting Mathlib), with no unproved steps that we could find. We have not run the check. The upper bounds are not formalized. None of the papers is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How it works</h2>
+<ol class="steps">
+  <li><strong>Hiding a shift.</strong> If the traces of k copies of a word and of k + 1 copies share some mass, place such a pair of runs on both sides of a central segment and let a fair coin decide which side gets the extra copy. On the shared part the coin stays hidden even after the outputs are seen, and many independent pairs leave the central segment at a binomially random offset.</li>
+  <li><strong>Signs that cancel.</strong> The two words differ in their central segments by complementary Prouhet–Thue–Morse signed patterns (plus, minus, minus, plus, then that block with every sign flipped, and so on). The generating polynomial vanishes to high order at 1, so after averaging over the broad offset the difference nearly cancels.</li>
+  <li><strong>Climbing scales.</strong> A hard pair at one length becomes the building block for a much longer pair. The proof tracks a likelihood score on auxiliary laws that turn into genuine traces up to small, recorded errors; each low-degree term of the score difference cancels between the two words, is smoothed away by the signs, or forces a binary tree of earlier score factors. A level of depth B raises the sample exponent by about (B − 1)/4, and there are about log log n/(B log 2) levels.</li>
+  <li><strong>A decoder, bit by bit.</strong> The decoder estimates products of trace bits at chosen ranks and tests each guess for the next bit by asking whether a positive moment array for the remaining bits, in the style of Lasserre’s relaxations, matches the estimates. The key theorem separates the true string from every such array that fixes a wrong prefix, pushing the signal at the first wrong bit through larger scales and then, by a generating-function identity, to trace statistics. The true prefix has slack, so finitely many exact rational updates find a feasible array.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Exact one-trace laws for every pair of binary strings up to length 10, deletion probability 1/2: the closest pairs at length 10 are a single one, or a single zero, moved by one place in the middle, at total variation 63/512 ≈ 0.123.</li>
+  <li>Runs of 100 and 101 zeros have trace laws sharing 96% of their mass; runs of 10,000 and 10,001 share 99.6%.</li>
+  <li>Against a binomial offset with 40,000 steps, a single sign leaves a signal of 0.004; the Thue–Morse pattern of length 32 leaves about 2 billionths.</li>
+  <li>At deletion probability 1/2, even with c at its limit 1/(4 log 2), the exponent is at most 0.20 at n = 10<sup>6</sup> and 1.21 at n = 10<sup>100</sup>, passing 3/2 only for n beyond 10<sup>222</sup>.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/paper.pdf">Quantitative lower bounds for trace reconstruction (PDF)</a>, 42 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/uniform-trace-reconstruction.pdf">Uniform quasipolynomial-time trace reconstruction (PDF)</a>, 29 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/paper.pdf">A latest-anchor induction with spectrally compact masks for worst-case trace reconstruction (PDF)</a>, 15 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/122.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 122.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-quasipolynomial-time-trace-reconstruction-October-5-2026/uniform-trace-reconstruction.pdf">Uniform quasipolynomial-time trace reconstruction</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-latest-anchor-induction-with-spectrally-compact-masks-for-worst-case-trace-reconstruction-October-5-2026/paper.pdf">A latest-anchor induction with spectrally compact masks for worst-case trace reconstruction</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/quantitative-lower-bounds-for-trace-reconstruction-September-24-2026/paper.pdf">Quantitative lower bounds for trace reconstruction</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Traces</h3>
+<p>Take a binary string, delete each bit independently with some fixed probability, say 1/2, and glue the survivors together. That is a trace: you see its length and its bits, but not where they came from. Trace reconstruction asks how many independent traces it takes to recover every string of length n, with high probability, knowing n and the deletion probability. The known hard cases are strings that differ only by a small shift. In our check of every pair of strings up to length 10, the closest pairs at length 10 are a single one, or a single zero, moved by one place in the middle, and the trace laws of the two differ in total variation by only about 1/8. Batu, Kannan, Khanna and McGregor posed the problem in its modern form, motivated by sequence alignment. At a fixed deletion probability, upper bounds came down from exp(√n), up to logarithms, by Holenstein, Mitzenmacher, Panigrahy and Wieder, to exp(n^(1/3)), by De, O’Donnell and Servedio and by Nazarov and Peres, and to exp(n^(1/5)), up to logarithms, by Chase. A 2026 preprint by Burudgunte, Valiant and Wang, cited by these papers, reached a quasipolynomial number of traces, with an unspecified power of log n, but no quasipolynomial-time algorithm. Lower bounds were far smaller: Holden and Lyons proved about n^(5/4), and Chase about n^(3/2). Whether polynomially many traces always suffice was open.</p>
+<h3><span class="t num">1:33</span>The claims</h3>
+<p>Result 122 is three OpenAI preprints. The first, 42 pages, dated September 24, claims that at every fixed deletion probability, exact reconstruction of every binary string of length n needs at least n^(c log log n) traces, even with unlimited computation and any fixed positive chance of success. So polynomially many traces never suffice. More precisely, the bound is n^(c log(q³ log n)), for every c below 1/(4 log 2), once n is large enough, where q is the deletion probability. It also claims that, for large n, some two different strings have single-trace laws closer in total variation than any fixed inverse power of n. Two companions, dated October 5, go the other way. One, 29 pages, gives a single randomized algorithm that, knowing n and a rational retention probability, one minus the deletion probability, recovers any string with probability at least 2/3. At a fixed retention probability, the number of traces is exp(C (log n)³ (log log n)⁶), and the bit complexity is quasipolynomial. When the deletion probability is at most n^(−ε), both bounds become polynomial. The other, 15 pages, proves the same sample bound, with no efficient algorithm, and also for larger alphabets. A gap remains in the exponent. OpenAI published a Lean formalization of the lower bounds, 31 files and about 34,000 lines with its imports, not counting Mathlib. The upper bounds are not formalized.</p>
+<h3><span class="t num">3:18</span>How it works</h3>
+<p>The lower bound hides differences in position at many scales. It starts from common mass: if the traces of k copies of a word and of k + 1 copies share mass ω, place such a pair of runs on both sides of a central segment, and let a fair coin decide which side gets the extra copy. On the shared part, the coin stays hidden even after the outputs are seen, and many independent pairs leave the central segment at a binomially random offset. In our check, at retention one half, runs of 100 and 101 zeros share 96% of their trace mass, and runs of 10,000 and 10,001 share 99.6%. The two words differ in their central segments by complementary signed patterns, taken from the Prouhet–Thue–Morse sequence: plus, minus, minus, plus, then that block with every sign flipped, and so on, doubling the length each time. Its generating polynomial vanishes to high order at one, so after averaging over a broad random offset, the difference nearly cancels. In our check, with an offset spread like a binomial with 40,000 steps, a single sign leaves a signal of 0.004, while the Thue–Morse pattern of length 32 leaves about 2 billionths. The construction is recursive. A hard pair at one length becomes the building block for a much longer pair, and the proof tracks a likelihood score on auxiliary laws that turn into genuine traces up to small, recorded errors. Each low-degree term of the score difference either cancels between the two words, is smoothed away by the signs, or forces a binary tree of earlier score factors. A level of depth B raises the sample exponent by about (B − 1)/4, and there are about log log n/(B log 2) levels, so, with B large, the exponent gets close to log log n/(4 log 2). That constant is small: at deletion probability one half, the formula passes Chase’s 3/2 only once n has more than 220 digits, and the theorem only says eventually. The point is the growth. The decoder works one bit at a time. It estimates products of trace bits at chosen ranks, which may be far apart, and tests each guess for the next bit by asking whether some positive moment array for the remaining bits, in the style of Lasserre’s relaxations, matches the estimates. The key theorem separates the true string from every such array that fixes a wrong prefix. It pushes the signal at the first wrong bit through larger and larger scales, using positivity, damped Fourier sums and a Gaussian contour shift, then a generating-function identity carries it from input statistics to trace statistics. The true prefix has slack, so finitely many exact rational updates find a feasible array, and the running time is polynomial in the sample budget.</p>
+<h3><span class="t num">6:15</span>Where it stands</h3>
+<p>The three preprints are not peer reviewed and have not been revised. The Lean formalization covers the lower bounds, stated for every estimator with unlimited computation; we have not run it. The upper bounds are not formalized. None of the papers is among those OSVerify reviewed, and we have seen no expert review. If they hold, trace reconstruction needs superpolynomially many traces at every fixed deletion probability, answering the polynomial question in the negative, while quasipolynomially many suffice, now with an explicit exponent and, for rational probabilities, a decoder to match. What remains is the gap in the logarithm of the number of traces: between log n · log log n and (log n)³, up to log log factors.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20122%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

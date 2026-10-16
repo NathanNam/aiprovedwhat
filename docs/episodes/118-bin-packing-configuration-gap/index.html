@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One more bin? Unbounded configuration gaps and additive hardness in bin packing | AI Proved What?</title>
+<meta name="description" content="An AI system claims to disprove the modified integer round-up conjecture for bin packing and to prove that approximating bin packing within any fixed additive number of bins is NP-hard, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/118-bin-packing-configuration-gap/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="One more bin?">
+<meta property="og:description" content="An AI system claims to disprove the modified integer round-up conjecture for bin packing and to prove that approximating bin packing within any fixed additive number of bins is NP-hard, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/118-bin-packing-configuration-gap/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/118-bin-packing-configuration-gap/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 118, October 2026</p>
+<h1>One more bin?</h1>
+<p class="subtitle">A claimed disproof of the modified integer round-up conjecture for bin packing, and NP-hardness of every fixed additive approximation</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 118 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="OGiTBHInawc" data-title="Episode 118: One more bin?">
+  <a href="https://youtu.be/OGiTBHInawc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 118: One more bin? Four bins of stacked items, the last holding a single item.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:54. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/OGiTBHInawc?t=0" data-t="0"><span class="t">0:00</span><span>Packing bins</span></a></li>
+  <li><a href="https://youtu.be/OGiTBHInawc?t=83" data-t="83"><span class="t">1:23</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/OGiTBHInawc?t=166" data-t="166"><span class="t">2:46</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/OGiTBHInawc?t=311" data-t="311"><span class="t">5:11</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>Bin packing asks how few bins of capacity one can hold a list of items of given sizes. Finding the optimum is NP-hard, yet approximation works remarkably well: Fernandez de la Vega and Lueker came within a factor 1 + ε for large optima, Karmarkar and Karp within an additive O(log² OPT), and Hoberg and Rothvoss, with a randomized algorithm, within an additive O(log OPT). Whether an efficient algorithm could always come within a fixed number of bins of the optimum, even one extra bin, stayed open; Williamson and Shmoys listed it among the open problems in their textbook.</p>
+<p>The configuration linear program, in the tradition of Gilmore and Gomory, gives fractional weights to feasible bin patterns so that every item is covered. Its value is a lower bound, and it is remarkably tight. The integer round-up property asks whether the optimum equals that value rounded up; Marcotte found an instance where it fails. The modified integer round-up conjecture of Scheithauer and Terno asserted that the optimum never exceeds the rounded-up value by more than one.</p>
+<p>Result 118 is <a href="https://github.com/openai/math/blob/main/preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026.pdf">one OpenAI preprint</a> (26 pages, September 24, 2026). Its first theorem: for every whole number c there is an instance, with every item larger than 1/6 (so at most five items per bin), whose configuration value is an integer B, for both the numerical-type and the individual-copy programs, but which needs more than B + c bins. Taking c = 1 disproves the modified conjecture, with no complexity assumption. Its second theorem: for every fixed c it is NP-hard to tell instances that fit in B bins from those that need more than B + c. So a deterministic polynomial-time algorithm that always stays within a fixed number of bins of the optimum exists if and only if P = NP.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The instances grow very rapidly with c, so the result is compatible with the logarithmic additive algorithms; the paper does not obtain a matching logarithmic lower bound as a function of the instance size. The hardness result is about deterministic algorithms with a fixed additive allowance.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 26 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>OpenAI published a Lean proof of both theorems and the equivalence with P = NP; we have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/118.md">Lean formalization</a> of both theorems and the equivalence with P = NP, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/BinPackingGap.lean">its comparator statement</a>, in <a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/BinPacking">284 files and 158,527 lines</a> (not counting Mathlib), including its own formal proof of the needed satisfiability gap, with no unproved steps that we could find. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Two trees that compete.</strong> The proof reduces vertex cover to bin packing. Each graph vertex gets a pair of rooted trees with a quota at each depth: each tree on its own can have every root-to-leaf path marked d times within the quotas, but with shared quotas the two cannot both have every path marked even once. The trees become nested interval cells, a plus side and a minus side, and the side that receives the extra global resources records the choice.</li>
+  <li><strong>Five items per bin.</strong> An intended bin holds a row, an anchor, a global auxiliary, a local auxiliary and a flag, with sizes near 1/5. A row moves from a baseline b to a completion h, and the bin fits exactly when h is no later than the anchor’s deadline z, so the row covers [h, b). Shifting deadlines across a test interval forces extra coverage there; repeated job positions with limited permits force every edge to have a well-funded endpoint, and the funded plus sides form a vertex cover.</li>
+  <li><strong>Any packing at all.</strong> Integer scores and their conservation leave only boundedly many items outside four five-item patterns, and a second score orders the vertex labels with a per-vertex error independent of the construction’s size. So a cover of size k gives a packing into B bins, and every packing into B + c bins gives a cover of size at most k plus a small fraction of the number of vertices.</li>
+  <li><strong>Two consequences.</strong> For the gap: the four-vertex clique with k = 2 needs a cover of 3 vertices, more than 2.5, so no packing fits in B + c bins, while an even mixture of the two local states at every vertex gives a fractional solution of value exactly B. For hardness: Håstad’s theorem makes it NP-hard to tell satisfiable 3-SAT formulas from those where at most 15/16 of the clauses can be satisfied, and Karp’s clause graph turns this into a vertex-cover gap.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>600 random instances of 8 to 12 items with sizes between 1/6 and 1/2, solved exactly and with both configuration programs: the optimum never exceeded the rounded-up value; the largest gap was 0.97 of a bin (optimum 4, LP 3.03).</li>
+  <li>On all five formulas we tried, the clause graph’s smallest cover equalled 3 times the number of clauses minus the most that can be satisfied, including an unsatisfiable one (17 = 24 − 7).</li>
+  <li>The four-vertex clique needs 3 vertices to cover its edges, more than 2 + 4/8 = 2.5.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026.pdf">Additive hardness and unbounded configuration gaps in bin packing (PDF)</a>, 26 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/118.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 118.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026/Additive-hardness-and-unbounded-configuration-gaps-in-bin-packing-September-24-2026.pdf">Additive hardness and unbounded configuration gaps in bin packing</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Packing bins</h3>
+<p>Bin packing asks how few bins of capacity one can hold a list of items of given sizes. Finding the optimum is NP-hard, yet approximation works remarkably well. Fernandez de la Vega and Lueker came within a factor 1 + ε for large optima, Karmarkar and Karp within an additive O(log²) of the optimum, and Hoberg and Rothvoss, with a randomized algorithm, within an additive O(log) of the optimum. Whether an efficient algorithm could always come within a fixed number of bins of the optimum, even one extra bin, stayed open; Williamson and Shmoys listed it among the open problems in their textbook. The configuration linear program, in the tradition of Gilmore and Gomory, gives fractional weights to feasible bin patterns so that every item is covered. Its value is a lower bound, and it is remarkably tight. The integer round-up property asks whether the optimum always equals that value rounded up; Marcotte found an instance where it fails. The modified integer round-up conjecture of Scheithauer and Terno asserted that the optimum never exceeds the rounded-up value by more than one. In our check, on 600 random small instances with every item larger than 1/6, the optimum never exceeded the rounded-up value, and the largest gap was 0.97 of a bin.</p>
+<h3><span class="t num">1:23</span>The claims</h3>
+<p>Result 118 is one OpenAI preprint, 26 pages, dated September 24. Its first theorem disproves the modified round-up conjecture: for every whole number c, there is an instance whose configuration value is an integer B, but which needs more than B + c bins. Every item is larger than 1/6, so a bin holds at most 5 items, and the same value B holds for the stronger program whose patterns are sets of individual item copies. No complexity assumption is used. Its second theorem: for every fixed c, it is NP-hard to tell instances that fit in B bins from instances that need more than B + c. So a deterministic polynomial-time algorithm that always stays within a fixed number of bins of the optimum exists if and only if P equals NP. The paper notes that its instances grow very rapidly with c, which is compatible with the logarithmic additive algorithms. OpenAI published a Lean formalization of both theorems and the equivalence, 284 files and about 159,000 lines, counting its own imports but not Mathlib, including its own formal proof of the needed satisfiability gap, with a far smaller constant than Håstad’s. We have not run the Lean check ourselves.</p>
+<h3><span class="t num">2:46</span>How the proof goes</h3>
+<p>The proof reduces vertex cover to bin packing. For each graph vertex it uses a pair of rooted trees with a quota at each depth. Each tree on its own can have every root-to-leaf path marked d times within the quotas, but when the two trees share the quotas, they cannot both have every path marked even once. The trees become nested interval cells, a plus side and a minus side, and the side that receives the extra global resources records the choice. Each intended bin holds five items: a row, an anchor, a global auxiliary, a local auxiliary and a flag, with sizes near 1/5. In one kind of bin, a row moves from a baseline to a completion coordinate, and the bin fits exactly when the completion comes no later than the anchor’s deadline, so each row covers an interval. Shifting deadlines from the right end of a test interval to its left end forces extra coverage there. Every edge gets repeated job positions with limited permits, so every edge must have a well-funded endpoint, and the funded plus sides form a vertex cover. An arbitrary packing need not use the intended bins. Integer scores and their conservation leave only a bounded number of items outside four five-item patterns, and a second score orders the vertex labels, with an error at each vertex that does not depend on the size of its construction. So every packing into B + c bins yields a vertex cover of size at most k plus a small fraction of the number of vertices, while a cover of size k gives a packing into B bins. For the gap, apply this to the 4-vertex clique with k = 2. Its smallest vertex cover has 3 vertices, more than k plus 1/8 of the 4 vertices, 2.5, so no packing fits in B + c bins, while an even mixture of the two local states at every vertex gives a fractional solution of value exactly B. For hardness, Håstad’s theorem makes it NP-hard to tell satisfiable 3-SAT formulas from those where at most 15/16 of the clauses can be satisfied, and Karp’s clause graph turns this into a vertex-cover gap. In our check, on all five formulas we tried, the clause graph’s smallest cover equalled 3 times the number of clauses minus the most that can be satisfied, including for an unsatisfiable formula.</p>
+<h3><span class="t num">5:11</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. The Lean formalization covers the configuration gap for both programs, the NP-hardness for every fixed c, and the equivalence with P equals NP; we have not run it. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, the modified integer round-up conjecture is false, and no efficient deterministic algorithm can guarantee bin packing within a fixed number of extra bins unless P equals NP, settling a question that stayed open alongside the logarithmic additive algorithms.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20118%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

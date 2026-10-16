@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 119: The Courtade–Kumar and Hellinger conjectures | AI Proved What?</title>
-<meta name="description" content="The Courtade–Kumar and Hellinger conjectures. Result 119 in OpenAI&#x27;s math release (Theoretical computer science): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>The best bit? The Courtade–Kumar and Hellinger conjectures | AI Proved What?</title>
+<meta name="description" content="An AI system claims proofs of the Courtade–Kumar conjecture on the most informative Boolean function and of the stronger Hellinger conjecture, with a Lean formalization of the first. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/119-courtade-kumar-hellinger-conjectures/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 119: The Courtade–Kumar and Hellinger conjectures | AI Proved What?">
-<meta property="og:description" content="The Courtade–Kumar and Hellinger conjectures. Result 119 in OpenAI&#x27;s math release (Theoretical computer science): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="The best bit?">
+<meta property="og:description" content="An AI system claims proofs of the Courtade–Kumar conjecture on the most informative Boolean function and of the stronger Hellinger conjecture, with a Lean formalization of the first. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/119-courtade-kumar-hellinger-conjectures/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/119-courtade-kumar-hellinger-conjectures/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 119 · <a href="../../subjects/theoretical-computer-science/">Theoretical computer science</a></p>
-<h1 class="result-title">The Courtade–Kumar and Hellinger conjectures</h1>
+<p class="meta">Episode 119, October 2026</p>
+<h1>The best bit?</h1>
+<p class="subtitle">Claimed proofs of the Courtade–Kumar conjecture on the most informative Boolean function, and of the stronger Hellinger conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 119 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="ADPWc1l79jA" data-title="Episode 119: The best bit?">
+  <a href="https://youtu.be/ADPWc1l79jA">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 119: The best bit? Five coins before and after noise, with the first coin singled out.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:50. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/ADPWc1l79jA?t=0" data-t="0"><span class="t">0:00</span><span>The most informative bit</span></a></li>
+  <li><a href="https://youtu.be/ADPWc1l79jA?t=91" data-t="91"><span class="t">1:31</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/ADPWc1l79jA?t=178" data-t="178"><span class="t">2:58</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/ADPWc1l79jA?t=300" data-t="300"><span class="t">5:00</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves the Courtade–Kumar conjecture: among Boolean functions of independent uniform bits, a single coordinate retains the most mutual information after independent bit-flip noise. A stronger theorem treats randomized binary summaries at fixed initial information. The Hellinger conjecture is also proved for every Boolean output bias and noise correlation.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>Flip n fair coins, then send them through a noisy channel that flips each one independently with probability ε. Before the noise, you may summarize the coins by a single yes-or-no answer, any Boolean function. Which summary shares the most information with the noisy observation? Kumar and Courtade conjectured in 2013 that the best is simply to report one coin, a dictator, which keeps 1 − h<sub>2</sub>(ε) bits, at every noise level and in every dimension. Majority, for instance, keeps less.</p>
+<p>At high noise, Ordentlich, Shayevitz and Weinstein found nearly sharp bounds for balanced functions, and Samorodnitsky proved the conjecture for all functions in a dimension-independent high-noise range; Yu extended the range for balanced functions with computer assistance. In 2017 Anantharam, Bogdanov, Chakrabarti, Jayram and Nair formulated a Hellinger conjecture that implies Courtade–Kumar, and Chen, Gohari and Nair developed a differential approach. Several other recent preprints also announce proofs of the Courtade–Kumar conjecture.</p>
+<p>Result 119 is two OpenAI preprints dated September 24, 2026. <a href="https://github.com/openai/math/blob/main/preprints/Sharp-binary-information-contraction-on-the-discrete-cube-September-24-2026/main.pdf">The first</a> (29 pages) proves a sharp contraction for any randomized binary summary: at a fixed initial information, a noisy coordinate keeps the most. For Boolean functions this gives the Courtade–Kumar inequality, and a refined bound that accounts for the function’s bias; it also proves a mean-dependent entropy-production bound. The paper notes that a production bound in an earlier preprint by Chen and coauthors, integrated from the initial information, also gives its main theorem. <a href="https://github.com/openai/math/blob/main/preprints/Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026/main.pdf">The second</a> (50 pages) proves the Hellinger conjecture for every output bias and noise level: for a Boolean function of mean m, √(1 − m²) − E√(1 − (T<sub>ρ</sub>f)²) ≤ 1 − √(1 − ρ²), with ρ = 1 − 2ε and equality for signed coordinates. It implies the Courtade–Kumar bound again; its proof is computer-assisted through fixed scalar inequalities with exact rational certificates.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>These are not the only claimed proofs of the Courtade–Kumar inequality: other groups have announced proofs by different routes, and the first paper itself notes that an earlier preprint’s production bound yields its main theorem. The Hellinger form is the distinct contribution. The refined bound for biased functions is an upper curve; the paper does not claim every biased function attains it.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 29 and 50 pages, dated September 24, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,41 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/119.md">scope notes</a>)</dd>
+    <dd>OpenAI published a Lean proof of the contraction paper, including Courtade–Kumar; not of the Hellinger paper; we have not run the check</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. The preprints have not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/119.md">Lean formalization</a> of the contraction paper: the Courtade–Kumar inequality with equality for dictators, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/CourtadeKumar.lean">its comparator</a> (<a href="https://github.com/openai/math/blob/main/lean/OAI/InformationTheory/BooleanNoise">43 files and 7,790 lines</a>), and the sharp soft-channel contraction, bias refinement and production bound, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SoftChannel204.lean">its comparator</a> (<a href="https://github.com/openai/math/blob/main/lean/OAI/InformationTheory/SoftChannel">70 files and 11,590 lines</a> with its imports), not counting Mathlib. The Hellinger paper is not formalized. We have not run the checks. Neither paper is among those OSVerify reviewed.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Information along the noise.</strong> As the noise grows, information drops at a rate given by an entropy production. If that production is always at least what a soft coordinate with the same information would produce, the effective amplitude shrinks at least as fast as a coordinate’s, which is the theorem. Following Chen, Gohari and Nair, the production inequality is proved by induction on dimension: split the cube along one coordinate and make the joining edges pay for the increase.</li>
+  <li><strong>The joining problem.</strong> Tracking information alone fails for some pairs, so the proof keeps the mean as well, solving the local joining problem with an explicit three-point optimizer and a common entropy budget, two entropy capacities and a common-output thinning inequality.</li>
+  <li><strong>The Hellinger proof.</strong> With s = √(1 − ρ²): for s ≤ 0.84, compression to increasing functions and dimension induction with an asymmetric profile and a sheared two-point comparison; for larger s, very biased functions are handled directly, and otherwise, at a first failure, an energy estimate along the noise forces a signed coordinate. The scalar inequalities, independent of the dimension, are certified with exact arithmetic.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Every Boolean function on up to 4 bits (65,536 on 4 bits), at four noise levels: the bound held, and equality occurred exactly for the signed dictators; the refined and Hellinger bounds held too.</li>
+  <li>At ε = 1/4, the best other function on 4 bits keeps 0.161 bits against 0.189 for a dictator; on 7 bits, majority keeps 0.134 bits.</li>
+  <li>3,000 random soft summaries on 5 bits never beat the sharp contraction curve.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Sharp-binary-information-contraction-on-the-discrete-cube-September-24-2026/main.pdf">Sharp binary-information contraction on the discrete cube (PDF)</a>, 29 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026/main.pdf">Hellinger contraction with arbitrary Boolean output bias (PDF)</a>, 50 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/119.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 119.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -75,18 +131,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Hellinger-contraction-with-arbitrary-Boolean-output-bias-September-24-2026/main.pdf">Hellinger contraction with arbitrary Boolean output bias</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The most informative bit</h3>
+<p>Flip n fair coins, then send them through a noisy channel that flips each one independently with probability epsilon. Before the noise, you may summarize the coins by a single yes-or-no answer, any Boolean function. Which summary shares the most information with the noisy observation? Kumar and Courtade conjectured in 2013 that the best is simply to report one coin, a dictator, which retains 1 − h₂(ε) bits, at every noise level and in every dimension. Majority, for instance, retains less. In our check, among all 65,536 Boolean functions of 4 bits, at 4 noise levels, the maximum was attained exactly by the 8 signed dictators. At high noise, Ordentlich, Shayevitz and Weinstein found nearly sharp bounds for balanced functions, and Samorodnitsky proved the conjecture for all functions in a dimension-independent high-noise range. Yu extended the range for balanced functions with computer assistance. In 2017, Anantharam, Bogdanov, Chakrabarti, Jayram and Nair formulated a Hellinger conjecture, a square-root version that implies the Courtade–Kumar conjecture. Chen, Gohari and Nair developed a differential approach: a local entropy-production inequality, lifted by induction on dimension and integrated along the noise. Several other recent preprints also announce proofs of the Courtade–Kumar conjecture, by different routes.</p>
+<h3><span class="t num">1:31</span>The claims</h3>
+<p>Result 119 is two OpenAI preprints dated September 24. The first, 29 pages, proves a sharp contraction for any randomized binary summary: at a fixed amount of initial information, a noisy coordinate retains the most. For Boolean functions this gives the Courtade–Kumar inequality, and a refined bound that accounts for the function’s bias and is strictly smaller for biased functions. It also proves a mean-dependent entropy-production bound. The paper notes that a production bound in an earlier preprint by Chen and coauthors, integrated from the initial information, also gives its main theorem. The second preprint, 50 pages, proves the Hellinger conjecture for every output bias and every noise level: for a Boolean function of mean m, the loss of square-root affinity is at most 1 − √(1 − ρ²), where ρ = 1 − 2ε, is the correlation between a coin and its noisy copy, with equality for signed coordinates. It implies the Courtade–Kumar bound again. Its proof is computer-assisted, through fixed scalar inequalities with exact rational certificates. OpenAI published a Lean formalization of the first paper, about 70 files and 12,000 lines; the Hellinger paper is not formalized. We have not run the Lean check ourselves.</p>
+<h3><span class="t num">2:58</span>How the proofs go</h3>
+<p>The first proof works along the noise. As the noise grows, information drops at a rate given by an entropy production. If that production is always at least what a soft coordinate with the same information would produce, then the effective amplitude shrinks at least as fast as a coordinate’s, which is the theorem. Following Chen, Gohari and Nair, the production inequality is proved by induction on dimension: split the cube along one coordinate, and make the edges joining the two halves pay for the increase. The joining step cannot track information alone: Chen, Gohari and Nair showed that such a comparison fails for some pairs. The new proof keeps the mean as well. It solves the local joining problem with an explicit three-point optimizer and a common entropy budget, and uses two entropy capacities and a common-output thinning inequality to cover every case. The Hellinger proof splits by noise level. Write s for √(1 − ρ²). For s at most 0.84, it compresses to increasing functions and inducts on dimension, with an asymmetric profile and a sheared two-point comparison. For larger s, it continues from that range: very biased functions are handled directly, and otherwise, at a first failure, an energy estimate along the noise would force the function to be a signed coordinate. The remaining scalar inequalities, independent of the dimension, are certified with exact arithmetic. In our check, the bound held for every Boolean function on up to 4 bits at 4 noise levels, with equality only for the dictators. At ε = 1/4, the best other function on 4 bits kept 0.16 bits, against 0.19 for a dictator, and majority on 7 bits kept 0.13. The Hellinger inequality held with the same maximizers, and 3,000 random soft summaries on 5 bits never beat the sharp contraction curve.</p>
+<h3><span class="t num">5:00</span>Where it stands</h3>
+<p>The preprints are not peer reviewed and have not been revised. The Lean formalization covers the sharp contraction for soft summaries, the Courtade–Kumar inequality with equality for dictators, the bias refinement and the entropy-production bound; the Hellinger paper is not formalized. We have not run the check. Neither paper is among those OSVerify reviewed, and other groups have announced proofs of the Courtade–Kumar conjecture. If they hold, the most informative Boolean function under bit-flip noise is a single coordinate, at every noise level and in every dimension. Alongside the other recent proofs, that confirms a conjecture open since 2013, and these preprints also prove its stronger Hellinger form, which the others do not claim.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20119%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../118-bin-packing-unbounded-configuration-lp/"><span class="dir">Previous · 118</span><span class="pt">Bin packing and unbounded configuration-LP gaps</span></a>
-  <a class="next" href="../120-almost-linear-time-exact-matching/"><span class="dir">Next · 120</span><span class="pt">Almost-linear-time exact matching and prescribed-degree factors in general graphs</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/theoretical-computer-science/">More in theoretical computer science</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

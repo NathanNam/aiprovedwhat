@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matching in almost-linear time? Maximum matching in general graphs | AI Proved What?</title>
+<meta name="description" content="An AI system claims a randomized algorithm that finds a maximum matching in any graph in almost-linear time, and the same for prescribed-degree factors; there is no Lean proof of it. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/120-almost-linear-general-matching/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Almost-linear matching?">
+<meta property="og:description" content="An AI system claims a randomized algorithm that finds a maximum matching in any graph in almost-linear time, and the same for prescribed-degree factors; there is no Lean proof of it. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/120-almost-linear-general-matching/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/120-almost-linear-general-matching/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 120, October 2026</p>
+<h1>Almost-linear matching?</h1>
+<p class="subtitle">A claimed randomized algorithm that finds a maximum matching in any graph in almost-linear time</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 120 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="pKmfuQIeQKY" data-title="Episode 120: Almost-linear matching?">
+  <a href="https://youtu.be/pKmfuQIeQKY">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 120: Almost-linear matching? A graph with a five-vertex odd cycle and a perfect matching highlighted.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:23. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/pKmfuQIeQKY?t=0" data-t="0"><span class="t">0:00</span><span>Matchings and odd cycles</span></a></li>
+  <li><a href="https://youtu.be/pKmfuQIeQKY?t=83" data-t="83"><span class="t">1:23</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/pKmfuQIeQKY?t=155" data-t="155"><span class="t">2:35</span><span>How the algorithm works</span></a></li>
+  <li><a href="https://youtu.be/pKmfuQIeQKY?t=289" data-t="289"><span class="t">4:49</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A matching pairs up vertices along edges, using each vertex at most once; the classic problem is to find a largest one. In bipartite graphs, alternating paths settle it. In general graphs, odd cycles get in the way: on a triangle, giving each edge 1/2 satisfies every vertex constraint, yet only one edge can be matched. Edmonds overcame this in 1965 by shrinking odd cycles, called blossoms, and his matching polytope adds constraints for odd sets.</p>
+<p>For decades the best bound for sparse general graphs was that of Micali and Vazirani, O(m√n). Algebraic methods of Mucha, Sankowski and Harvey run in matrix-multiplication time, best on dense graphs. For bipartite graphs, the almost-linear exact flow algorithms of Chen, Kyng, Liu, Peng, Probst Gutenberg and Sachdeva, and of van den Brand and coauthors, gave almost-linear exact matching. Sparse general graphs, with their odd blocks, stayed at the square-root bound.</p>
+<p>Result 120 is <a href="https://github.com/openai/math/blob/main/preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/main.pdf">one OpenAI preprint</a> (86 pages, September 24, 2026). It claims one uniform randomized algorithm that finds a maximum-cardinality matching in any simple graph with n vertices and m edges in time (n + m)<sup>1+o(1)</sup>, on every computation path in a logarithmic-word model, outputting an explicit maximum matching with probability at least 2/3. No perfect matching is assumed; on the densest graphs the bound is n<sup>2+o(1)</sup>. The same guarantees hold for finding a spanning subgraph with prescribed vertex degrees (an f-factor) or deciding that none exists, via Tutte’s reduction with rearrangeable networks.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The algorithm is randomized: it may fail, with probability at most 1/3, though its running time is bounded on every computation path. The o(1) in the exponent is not a fixed constant, so this is an asymptotic guarantee rather than a practical running time. The result is about cardinality; weighted matching is not claimed.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 86 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>No Lean proof of the theorem; uncatalogued Lean files check one ingredient, the degree-reduction lemma (we have not run them)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published no Lean proof of the theorem, so the 86 pages are the only proof of the algorithm and its running time. OpenAI’s files do contain five uncatalogued (not linked from the collection’s catalog) <a href="https://github.com/openai/math/tree/main/lean/OAI/Combinatorics/PortMatching">Lean files</a>, 645 lines excluding Mathlib, with no unproved steps by our search, that check one ingredient: the paper’s degree-reduction lemma. Replacing each vertex by a path gives a graph of maximum degree three, with 4<i>m</i> − <i>n</i> vertices, that has a perfect matching exactly when the original graph does (for graphs without isolated vertices). The lemma’s running time is not formalized, and we have not run these files. It is not among those OSVerify reviewed, and we have seen no expert review. A claim of this size would need careful independent checking.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the algorithm works</h2>
+<ol class="steps">
+  <li><strong>Bins, rows and ledgers.</strong> The core subproblem is a perfect matching in a graph of maximum degree 3. The current matching is stored through a partition: odd blocks called bins, matched internally apart from one exposed vertex; single vertices called rows, assigned along edges to distinct bins; and matched pairs. Ledgers split a fixed amount from each row among its neighbouring bins. At a settled state the lowest ledger certifies a strict Hall surplus, and the highest carries a logarithmic objective that can always improve when a perfect matching exists and no structural step is available.</li>
+  <li><strong>Debt pays for repairs.</strong> Repairs are exact flow problems on row–bin incidences, initially explored only where debt is large relative to bin size. An unexplored bin accepts flow optimistically; if enough arrives, it is explored and locks in an amount proportional to its size, so the explored region stays proportional to the starting debt. When a margin cannot be met, bins are removed instead, which also reduces debt.</li>
+  <li><strong>Priced steps.</strong> The matching objective and the local flow tests use one interface: find a circulation direction with enough improvement relative to its weighted length, and take a small exact step. Directions live in a changing forest; the data structure behind it, built in full, uses a routing sparsifier, frozen forest decompositions into local correction cycles, and prebuilt copies of paths, adapting the minimum-ratio-cycle machinery of the almost-linear flow algorithms.</li>
+  <li><strong>One program.</strong> A threshold search turns the cardinality question into perfect-matching questions on degree-3 graphs, keeping explicit witnesses. Capping every random retry and running all branches side by side with an exact fallback makes the bound hold on every computation path, while the error budgets keep the chance of success at least 2/3.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>The Tutte–Berge formula, which counts odd components, matched the blossom algorithm’s maximum on 60 random graphs.</li>
+  <li>The best fractional matching with only vertex constraints exceeded the true maximum on 43 of 296 random graphs.</li>
+  <li>Tutte’s gadget for prescribed degrees agreed with brute force on 143 small instances.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/main.pdf">Almost-Linear-Time Maximum-Cardinality Matching in General Graphs (PDF)</a>, 86 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 120.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/main.pdf">Almost-Linear-Time Maximum-Cardinality Matching in General Graphs</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Matchings and odd cycles</h3>
+<p>A matching pairs up vertices along edges, using each vertex at most once, and the classic problem is to find a largest one. In bipartite graphs, alternating paths settle it. In general graphs, odd cycles get in the way: on a triangle, giving each edge 1/2 satisfies every vertex constraint, yet only one edge can be matched. Edmonds overcame this in 1965 by shrinking odd cycles, called blossoms, and his matching polytope adds constraints for odd sets. In our check, the Tutte–Berge formula, which counts odd components, matched the maximum on 60 random graphs, while the best fractional matching, with only vertex constraints, exceeded the true maximum on 43 of 296. For decades the best bound for sparse general graphs was that of Micali and Vazirani, m√n. Algebraic methods of Mucha, Sankowski and Harvey run in matrix-multiplication time, best on dense graphs. For bipartite graphs, a series of advances in flow algorithms, culminating in the almost-linear exact flow algorithms of Chen, Kyng, Liu, Peng, Probst Gutenberg and Sachdeva, and of van den Brand and coauthors, gave almost-linear exact matching. Sparse general graphs, with their odd blocks, stayed at the square-root bound.</p>
+<h3><span class="t num">1:23</span>The claim</h3>
+<p>Result 120 is one OpenAI preprint, 86 pages, dated September 24. It claims one uniform randomized algorithm that finds a maximum-cardinality matching in any simple graph with n vertices and m edges in time (n + m)^(1+o(1)). The time bound holds on every computation path in a logarithmic-word model, and with probability at least 2/3 the output is an explicit maximum matching. No perfect matching is assumed, and on the densest graphs the bound is n^(2+o(1)). The same guarantees hold for finding a spanning subgraph with prescribed vertex degrees, called an f-factor, or deciding that none exists. This follows Tutte’s reduction to perfect matching, with rearrangeable networks so that high-degree vertices do not blow up the instance. In our check, Tutte’s gadget agreed with brute force on 143 small instances. There is no Lean proof of the theorem; a few files that OpenAI’s catalog does not link check one ingredient, the degree-reduction lemma.</p>
+<h3><span class="t num">2:35</span>How the algorithm works</h3>
+<p>The core subproblem is a perfect matching in a graph of maximum degree 3; a reduction handles general inputs while keeping the original edge names. The algorithm stores its current matching through a partition: odd blocks called bins, each matched internally apart from one exposed vertex; single vertices called rows, assigned along edges to distinct bins; and matched pairs. Ledgers split a fixed amount from each row among its neighboring bins. At a settled state the lowest ledger certifies a strict Hall surplus, and the highest carries a logarithmic objective that can always improve when a perfect matching exists and no structural step is available. Repairs are exact flow problems on row-bin incidences, initially explored only where debt is large relative to bin size. An unexplored bin accepts flow optimistically; if enough arrives, the bin is explored and locks in an amount proportional to its size, so the region explored stays proportional to the starting debt. When a margin cannot be met, bins are removed instead, which also reduces debt. Debt pays both for exploration and for structural change. Both the matching objective and these local flow tests use one interface: find a circulation direction with enough improvement relative to its length, and take a small exact step. Directions live in a changing forest, so a long path need not be expanded at every step. The data structure behind it is built in full: a routing sparsifier, frozen forest decompositions into local correction cycles, and prebuilt copies of paths, adapting the minimum-ratio-cycle machinery of the almost-linear flow algorithms. A threshold search turns the maximum-cardinality question into perfect-matching questions on degree-3 graphs, keeping explicit witnesses. A single finite program, with one exponent envelope for every density, then gives the bound in the theorem. Capping every random retry, and running all branches side by side with an exact fallback, makes the bound hold on every computation path, while the error budgets keep the chance of success at least 2/3.</p>
+<h3><span class="t num">4:49</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised, and there is no Lean proof of the theorem. It is not among those OSVerify reviewed, and we have seen no expert review. A claim of this size would need careful independent checking of all 86 pages. If it holds, maximum matching in general graphs joins bipartite matching and maximum flow in almost-linear time, below the square-root bound that has stood since Micali and Vazirani in 1980.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20120%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

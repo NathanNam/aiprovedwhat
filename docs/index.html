@@ -11,7 +11,7 @@
 <meta property="og:title" content="AI Proved What? New AI mathematics, explained and checked">
 <meta property="og:description" content="Short animated explainers of mathematics that AI systems claim to have proved, with a running record of how far each proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/">
-<meta property="og:image" content="https://aiprovedwhat.com/episodes/117-uniform-sparsest-cut-hardness-gaps/thumbnail.jpg">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/122-trace-reconstruction-bounds/thumbnail.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <meta name="generator" content="tools/site/build.py">
@@ -39,39 +39,84 @@
 </header>
 <main id="main">
 
-<h1>An AI system says approximating uniform sparsest cut within any constant factor is NP-hard, with no unproven hypothesis, and its semidefinite relaxation has near square-root-logarithmic gaps.</h1>
+<h1>An AI system says exact trace reconstruction needs more than polynomially many traces, and gives a decoder that uses quasipolynomially many.</h1>
 <p class="lede">What does that even mean, and has anyone checked? Each episode takes one claim like this, builds the intuition with animation, and keeps a running record of how far the proof has been verified.</p>
 
 <div class="player">
-  <a href="episodes/117-uniform-sparsest-cut-hardness-gaps/">
-    <img src="episodes/117-uniform-sparsest-cut-hardness-gaps/thumbnail.jpg" width="1280" height="720" alt="Episode 117: Hard to approximate? Two five-vertex cliques joined by one edge, cut at the bridge.">
+  <a href="episodes/122-trace-reconstruction-bounds/">
+    <img src="episodes/122-trace-reconstruction-bounds/thumbnail.jpg" width="1280" height="720" alt="Episode 122: Polynomially many traces? A binary string with deleted bits and the traces that remain.">
     <span class="play" aria-hidden="true"></span>
   </a>
 </div>
-<p class="player-caption">Episode 117: <a href="episodes/117-uniform-sparsest-cut-hardness-gaps/">Hard to approximate?</a>, about 6 minutes.</p>
+<p class="player-caption">Episode 122: <a href="episodes/122-trace-reconstruction-bounds/">Polynomially many traces?</a>, about 7 minutes.</p>
 
 <section class="measure" aria-labelledby="record">
 <h2 id="record">Where this claim stands</h2>
 <dl class="ledger ledger-auto">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, September 24, 2026</dd>
+    <dd>OpenAI, September 24 and October 5, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/117.md">scope notes</a>)</dd>
+    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/122.md">scope notes</a>)</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026. The claims have not been withdrawn. OpenAI published a Lean proof of the integrality-gap theorem only; the hardness reduction is not formalized. We have not run the check.</p>
+<p class="ledger-note">Last checked October 16, 2026. The claims have not been withdrawn. OpenAI published a Lean proof of the lower bounds only; the upper bounds are not formalized. We have not run the check.</p>
 </section>
 
 <section aria-labelledby="episodes">
 <h2 id="episodes">Recent episodes</h2>
 <ul class="thumbs">
+  <li>
+    <a href="episodes/122-trace-reconstruction-bounds/">
+      <img src="episodes/122-trace-reconstruction-bounds/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 122 · 7:06</span>
+      <span class="thumb-title">Polynomially many traces?</span>
+      <span class="thumb-sub">A claimed superpolynomial lower bound for trace reconstruction, and a uniform quasipolynomial decoder</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
+    </a>
+  </li>
+  <li>
+    <a href="episodes/121-edit-distance-approximation-scheme/">
+      <img src="episodes/121-edit-distance-approximation-scheme/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 121 · 7:32</span>
+      <span class="thumb-title">Almost-linear edit distance?</span>
+      <span class="thumb-sub">A claimed randomized algorithm that approximates edit distance within any fixed factor 1 + ε in almost-linear expected time</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
+    </a>
+  </li>
+  <li>
+    <a href="episodes/120-almost-linear-general-matching/">
+      <img src="episodes/120-almost-linear-general-matching/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 120 · 5:23</span>
+      <span class="thumb-title">Almost-linear matching?</span>
+      <span class="thumb-sub">A claimed randomized algorithm that finds a maximum matching in any graph in almost-linear time</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; not yet checked in Lean"><span class="box on"></span><span class="box"></span><span class="box"></span></span>
+    </a>
+  </li>
+  <li>
+    <a href="episodes/119-courtade-kumar-hellinger-conjectures/">
+      <img src="episodes/119-courtade-kumar-hellinger-conjectures/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 119 · 5:50</span>
+      <span class="thumb-title">The best bit?</span>
+      <span class="thumb-sub">Claimed proofs of the Courtade–Kumar conjecture on the most informative Boolean function, and of the stronger Hellinger conjecture</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
+    </a>
+  </li>
+  <li>
+    <a href="episodes/118-bin-packing-configuration-gap/">
+      <img src="episodes/118-bin-packing-configuration-gap/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 118 · 5:54</span>
+      <span class="thumb-title">One more bin?</span>
+      <span class="thumb-sub">A claimed disproof of the modified integer round-up conjecture for bin packing, and NP-hardness of every fixed additive approximation</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
+    </a>
+  </li>
   <li>
     <a href="episodes/117-uniform-sparsest-cut-hardness-gaps/">
       <img src="episodes/117-uniform-sparsest-cut-hardness-gaps/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -99,51 +144,6 @@
       <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
     </a>
   </li>
-  <li>
-    <a href="episodes/114-common-matroid-bases-fpras/">
-      <img src="episodes/114-common-matroid-bases-fpras/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 114 · 5:52</span>
-      <span class="thumb-title">Counting common bases?</span>
-      <span class="thumb-sub">A claimed fully polynomial randomized approximation scheme for the common bases of any two matroids, extended to common integer bases of two polymatroids</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of part of the claim"><span class="box on"></span><span class="box"></span><span class="box part"></span></span>
-    </a>
-  </li>
-  <li>
-    <a href="episodes/113-counting-perfect-matchings-fpras/">
-      <img src="episodes/113-counting-perfect-matchings-fpras/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 113 · 5:53</span>
-      <span class="thumb-title">Counting any graph?</span>
-      <span class="thumb-sub">A claimed fully polynomial randomized approximation scheme for perfect matchings in every graph, and an entropy bound for random perfect matchings</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
-  <li>
-    <a href="episodes/112-depth-three-circuits-beyond-square-root/">
-      <img src="episodes/112-depth-three-circuits-beyond-square-root/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 112 · 5:27</span>
-      <span class="thumb-title">Past the square root?</span>
-      <span class="thumb-sub">A claimed polynomial-time language that needs more than 2^(A√n) gates in depth-three circuits, for every constant A</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
-  <li>
-    <a href="episodes/111-one-sample-matroid-prophet-inequality/">
-      <img src="episodes/111-one-sample-matroid-prophet-inequality/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 111 · 5:55</span>
-      <span class="thumb-title">One sample is enough?</span>
-      <span class="thumb-sub">A claimed matroid prophet inequality with one sample per element, against an adversary who sees everything</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
-  <li>
-    <a href="episodes/110-randomized-k-server-squared-log/">
-      <img src="episodes/110-randomized-k-server-squared-log/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 110 · 6:02</span>
-      <span class="thumb-title">Log squared, everywhere?</span>
-      <span class="thumb-sub">A claimed randomized k-server policy with competitive ratio O(log² k) on every metric space</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
 </ul>
 </section>
 
@@ -154,7 +154,7 @@
   <li><a href="subjects/algebraic-and-complex-geometry/"><span class="tile-name">Algebraic and complex geometry</span><span class="tile-count num">36 of 36 explained</span></a></li>
   <li><a href="subjects/real-and-complex-analysis/"><span class="tile-name">Real and complex analysis</span><span class="tile-count num">16 of 16 explained</span></a></li>
   <li><a href="subjects/convex-and-metric-geometry/"><span class="tile-name">Convex and metric geometry</span><span class="tile-count num">15 of 15 explained</span></a></li>
-  <li><a href="subjects/theoretical-computer-science/"><span class="tile-name">Theoretical computer science</span><span class="tile-count num">16 of 40 explained</span></a></li>
+  <li><a href="subjects/theoretical-computer-science/"><span class="tile-name">Theoretical computer science</span><span class="tile-count num">21 of 40 explained</span></a></li>
   <li><a href="subjects/dynamical-systems-and-ergodic-theory/"><span class="tile-name">Dynamical systems and ergodic theory</span><span class="tile-count num">0 of 12 explained</span></a></li>
   <li><a href="subjects/combinatorics/"><span class="tile-name">Combinatorics</span><span class="tile-count num">0 of 37 explained</span></a></li>
   <li><a href="subjects/algebra/"><span class="tile-name">Algebra</span><span class="tile-count num">0 of 18 explained</span></a></li>
@@ -175,7 +175,7 @@
 <dl class="stats">
   <div>
     <dt>Explained</dt>
-    <dd><span class="stat num">114</span> of 372 results <span class="stat-note">(719 papers in all)</span></dd>
+    <dd><span class="stat num">119</span> of 372 results <span class="stat-note">(719 papers in all)</span></dd>
   </div>
   <div>
     <dt>Lean proof published by OpenAI</dt>
