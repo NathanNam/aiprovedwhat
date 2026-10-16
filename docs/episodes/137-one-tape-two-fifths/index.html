@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Below the square root? One-tape time T in T^(2/5) space | AI Proved What?</title>
+<meta name="description" content="An AI system claims that a one-tape Turing machine running for T steps can be simulated in about T^(2/5) bits of memory, below the classical square root, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/137-one-tape-two-fifths/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Below the square root?">
+<meta property="og:description" content="An AI system claims that a one-tape Turing machine running for T steps can be simulated in about T^(2/5) bits of memory, below the classical square root, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/137-one-tape-two-fifths/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/137-one-tape-two-fifths/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 137, October 2026</p>
+<h1>Below the square root?</h1>
+<p class="subtitle">A claimed simulation of T steps of a one-tape Turing machine in about T<sup>2/5</sup> bits of memory</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 137 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="RGnjcnauWG8" data-title="Episode 137: Below the square root?">
+  <a href="https://youtu.be/RGnjcnauWG8">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 137: Below the square root? A one-tape space-time diagram, the head zigzagging across blocks.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:27. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/RGnjcnauWG8?t=0" data-t="0"><span class="t">0:00</span><span>Time versus space</span></a></li>
+  <li><a href="https://youtu.be/RGnjcnauWG8?t=81" data-t="81"><span class="t">1:21</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/RGnjcnauWG8?t=177" data-t="177"><span class="t">2:57</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/RGnjcnauWG8?t=341" data-t="341"><span class="t">5:41</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>How much memory does it take to reproduce T steps of a computation, if the simulation may take as long as it likes? For a Turing machine with a single tape it can write on, whose head moves at most one cell per step, about √T bits is classical; the paper, following Ryan Williams’s account, attributes that to Hopcroft and Ullman. In 2025 Williams showed that a multitape machine running for time t can be simulated in space about √(t log t), building on the tree evaluation algorithm of Cook and Mertz. That did not lower the one-tape exponent of one half, and Williams asked whether, for one-tape machines, it could be lowered by a fixed positive constant.</p>
+<p>Result 137 is <a href="https://github.com/openai/math/blob/main/preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/article.pdf">one OpenAI preprint</a> (17 pages, September 25, 2026). It claims yes, for this model: one writable tape, any fixed number of read-only input heads, every head moving at most one cell per step, and starting contents fixed independently of the cap, which a fixed accessor can look up in polylogarithmic space. Given the machine, its input and a time cap T ≥ 2, the machine’s state and whether it has halted by time T can be computed deterministically in O(T<sup>2/5</sup> log<sup>C</sup>(T+2)) bits of work space, not counting the input. If the machine halts but its running time t is not supplied, the same holds with (t+2)<sup>2/5</sup>. Since 2/5 = 1/2 − 1/10, the bound is below √T by a fixed power, up to logarithmic factors.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Any useful bound on the simulator’s own running time, which can be astronomically long, so the result cannot be iterated as a speedup. Any improvement for machines with several writable tapes, for which the paper proves only Õ(√T) again. Optimality, or a log-free bound at exponent 2/5. The gain is asymptotic: T<sup>1/10</sup> is about 4 at a million steps and 16 at a trillion, and by our arithmetic it outgrows even one factor of log<sub>2</sub>T only beyond about 2<sup>59</sup> steps. The paper also states hierarchy corollaries for one-tape machines; those are not part of the Lean formalization.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 17 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The main theorem, with a time cap and without one. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/137.md">Lean formalization</a> of the main theorem, with a time cap and without one, added to the repository on October 7, 2026 (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/OneTapeSpace.lean">comparator statement</a>; <a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/SpaceSimulation">49 files and 8,328 lines</a> with its imports, not counting Mathlib, with no unproved steps that we could find). The hierarchy corollaries and the multitape comparison are not formalized. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Blocks and visits.</strong> Cut the tape into blocks of width b. A visit lasts until the head leaves its block. Each move crosses a block boundary for exactly one of the b ways to shift the grid, so some shift sees at most T/b crossings and at most ⌈1 + T/b⌉ visits; the simulator tries every shift. Between visits only a short controller passes: the state, head positions, the time and a few flags, a few times log T bits.</li>
+  <li><strong>Checking factors over blocks.</strong> Guess the whole list of controllers. Each block checks it alone, by replaying its own visits from its starting contents and comparing each result with the next guessed controller; the list is right exactly when every block agrees.</li>
+  <li><strong>Epochs and rounds.</strong> With k = ⌈T<sup>1/5</sup>⌉ and b = k<sup>2</sup>, group visits into epochs of b visits, each split into k rounds of k visits. Two kinds of words, of O(b log T) bits, describe the run: each block at the start of an epoch, and the epoch’s controllers through each round. A round’s update is a sum over guesses of the next k controllers, of the guess appended to the history, times one replay check per block; exactly one guess passes them all.</li>
+  <li><strong>One shared memory.</strong> The paper’s own evaluator, built on the shared-memory idea of Cook and Mertz in the interpolation form Goldreich described, turns words into vectors over a finite field and rules into low-degree polynomials. Its key step adds a multiple of a value into one register and restores every other register, whatever they held, so nested calls share one pool. Space is about a word’s width plus the heaviest chain of dependencies.</li>
+  <li><strong>The balance.</strong> Within an epoch a chain takes at most k cheap steps and at most one expensive step, about k log T bits, holding a guess while it recomputes a block from the epoch before. With about T/b<sup>2</sup> epochs the stack is about (T/b<sup>2</sup>)√b, and balancing it against b gives b ≈ T<sup>2/5</sup>. The paper explains why tuning this construction cannot beat 2/5, and why it needs one writable tape: a two-tape test of whether two bits are equal accepts {00, 11}, which is not a product of checks on each bit.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our own one-tape palindrome checker accepts 0110110 after 36 steps; its head crosses the cell boundaries 3, 5, 7, 8, 6, 4 and 2 times, 35 crossings, one per moving step.</li>
+  <li>With blocks of width 3 the three shifts see 11, 13 and 11 crossings (at most T/b = 12 for the best); replaying the 12 visits block by block confirms the true controller list, and changing one state makes the two blocks that hand on and receive that controller fail.</li>
+  <li>Ignoring log factors, at T = 10<sup>9</sup>: k = 64, b = 4,096 and E·k = 3,840, against T<sup>2/5</sup> ≈ 3,981 and √T ≈ 31,623.</li>
+  <li>T<sup>1/10</sup> overtakes log<sub>2</sub>T at about T = 2<sup>58.8</sup> ≈ 4.9 × 10<sup>17</sup>.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/article.pdf">Simulating One-Tape Time in Two-Fifths-Power Space (PDF)</a>, 17 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/137.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 137.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Simulating-One-Tape-Time-in-Two-Fifths-Power-Space-September-25-2026/article.pdf">Simulating One-Tape Time in Two-Fifths-Power Space</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Time versus space</h3>
+<p>How much memory do you need to reproduce a computation, if you may take as long as you like? Take a Turing machine with a single tape it can write on, and a head that moves at most one cell per step. Here is one we built that checks whether 0110110 is a palindrome: it erases the first symbol, runs to the far end, compares, erases, and walks back. It accepts after 36 steps. Draw time going down and the tape across, and the head zigzags. Now count how often it crosses each boundary between cells: 3, 5, 7, 8, 6, 4, 2. The middle boundaries carry the traffic, and the counts add up to 35, one for each step that moves. So a running time T is also a budget of at most T crossings. Simulating a one-tape machine that runs for T steps in about √T space is classical; the paper, following Ryan Williams’s account, attributes it to Hopcroft and Ullman. In 2025, Williams showed that a multitape machine running for time t can be simulated in space about √(t log t), building on the tree evaluation algorithm of Cook and Mertz. That did not lower the one-tape exponent of one half, and Williams asked whether, for one-tape machines, it could be lowered by a fixed positive constant.</p>
+<h3><span class="t num">1:21</span>The claim</h3>
+<p>Result 137 is a single OpenAI preprint, 17 pages, dated September 25. It claims the answer is yes, for this model: one writable tape, any fixed number of read-only input heads, every head moving at most one cell per step, and fixed starting contents, independent of the cap, that a small accessor can look up in polylogarithmic space. Given such a machine, its input and a time cap T, the machine’s state, and whether it has halted by time T, can be computed deterministically with about T^(2/5) bits of memory, times logarithmic factors, not counting the input. If the machine halts but its running time is not supplied, the same holds with the actual running time t in place of T. Two fifths is one half minus one tenth, so the bound beats the square root by a fixed power. The paper is careful about limits. The simulation can be astronomically slow: it gives no useful bound on its own running time, so it cannot be iterated as a speedup. It does not cover machines with several writable tapes; for those, the paper proves only a square-root bound again. It claims no optimality, and the gain is asymptotic: T^(1/10) is about four at a million steps and sixteen at a trillion, and by our arithmetic it outgrows even a single factor of log₂T only beyond about 2^59 steps. The main theorem, in both versions, is formalized in Lean: 49 files, about 8,300 lines, with no sorry. The paper’s hierarchy corollaries are not.</p>
+<h3><span class="t num">2:57</span>How the proof goes</h3>
+<p>The proof first cuts the tape into blocks of width b. A visit lasts until the head leaves its block. Each move crosses a block boundary for exactly one of the b ways to shift the grid, so some shift sees at most T/b crossings, and so at most one more visit than that. The simulator simply tries every shift. Between visits, all that passes from one block to the next is a short controller: the state, head positions, the time and a few flags, a few times log T bits. Now guess the whole list of controllers. Each block can check it alone: replay that block’s visits from its starting contents, and compare each result with the next guessed controller. In our run with blocks of width three, the true list passes every block, and changing one state makes the block that hands that controller on, and the block that receives it, both fail. Consistency factors over blocks. Next, group the visits into epochs of b visits, each split into k rounds of k visits, with k about T^(1/5) and b equal to k². Two kinds of words, each about b log T bits, describe the run: the contents of each block at the start of an epoch, and the controllers seen so far within that epoch. One round’s update is a sum over all guesses for the next k controllers, of that guess appended to the history, times one replay check per block, and exactly one guess passes them all. The paper evaluates such sums with its own evaluator, built on the shared-memory idea of Cook and Mertz, in the interpolation form Goldreich described: words become vectors over a finite field, each rule becomes a low-degree polynomial, and the key procedure adds a multiple of a value into one register and restores every other register, whatever they held before. So nested calls borrow one shared pool of memory instead of each needing its own. The memory then has two parts: the width of a word, about b up to log factors, and a stack along the longest chain of dependencies. Within an epoch, a chain takes at most k cheap steps, then pays at most once, about k log T bits, to hold a guess while it recomputes a block from the epoch before. With about T/b² epochs, the stack is about T/b², times √b. Balancing the two gives b about T^(2/5). In our table, ignoring log factors, at a billion steps the two parts are about 4,000 each, against about 32,000 for the square root. The paper also explains why tuning this construction’s scales cannot beat two fifths, and why it needs a single writable tape: with two tapes, a step can depend on whether two bits are equal, and that test is not a product of checks on each bit.</p>
+<h3><span class="t num">5:41</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. The Lean proof of the main theorem was added to the repository on October 7; we did not build it or run the comparator. The hierarchy corollaries and the multitape comparison are not formalized. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, Williams’s one-tape question has a positive answer for this model: one-tape time T fits in about T^(2/5) space, below the classical square root by a fixed power. The paper claims no such improvement for machines with several writable tapes, and no bound at all on how long the simulation takes.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20137%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

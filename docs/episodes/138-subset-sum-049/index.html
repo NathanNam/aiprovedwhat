@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Subset Sum in 2^0.49n? Beating meet in the middle | AI Proved What?</title>
+<meta name="description" content="An AI system claims a randomized algorithm deciding worst-case Subset Sum in O(2^0.49n) time, beating meet in the middle by an exponential factor. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/138-subset-sum-049/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Subset Sum in 2^0.49n?">
+<meta property="og:description" content="An AI system claims a randomized algorithm deciding worst-case Subset Sum in O(2^0.49n) time, beating meet in the middle by an exponential factor. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/138-subset-sum-049/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/138-subset-sum-049/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 138, October 2026</p>
+<h1>Subset Sum in 2<sup>0.49n</sup>?</h1>
+<p class="subtitle">A claimed randomized algorithm that beats meet in the middle for worst-case Subset Sum by an exponential factor</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 138 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="9GHHsOt1MuU" data-title="Episode 138: Subset Sum in 2^0.49n?">
+  <a href="https://youtu.be/9GHHsOt1MuU">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 138: Subset Sum in 2^0.49n? A walk of phase arrows and the single unit arrow that survives.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:33. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/9GHHsOt1MuU?t=0" data-t="0"><span class="t">0:00</span><span>Splitting in half</span></a></li>
+  <li><a href="https://youtu.be/9GHHsOt1MuU?t=88" data-t="88"><span class="t">1:28</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/9GHHsOt1MuU?t=182" data-t="182"><span class="t">3:02</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/9GHHsOt1MuU?t=349" data-t="349"><span class="t">5:49</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Given n positive integers and a target, is there a subset that adds up exactly to the target? Subset Sum is one of the foundational NP-complete problems, Knapsack in Karp’s list. Trying every subset takes 2<sup>n</sup> steps. Horowitz and Sahni’s 1974 meet-in-the-middle algorithm splits the numbers in half, lists and sorts the subset sums of each half, and scans for a complementary pair, in about 2<sup>n/2</sup> steps. Schroeppel and Shamir kept that time with about 2<sup>n/4</sup> memory; Chen, Jin, Randolph and Servedio saved a polynomial factor (2<sup>n/2</sup>/n<sup>γ</sup> with γ &gt; 0.5023); representation methods of Howgrave-Graham and Joux and of Becker, Coron and Joux go faster on random instances, without a guarantee for every input. As the new paper puts it, a fixed reduction of the exponential rate below one half is a different objective from such polynomial-factor savings.</p>
+<p>Result 138 is <a href="https://github.com/openai/math/blob/main/preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/subset-sum.pdf">an OpenAI preprint</a> (33 pages, October 4, 2026) with <a href="https://github.com/openai/math/blob/main/preprints/A-Low-Space-Algorithm-for-Worst-Case-Subset-Sum-September-26-2026/paper.pdf">a separate companion</a> (36 pages, September 26, 2026). The headline claims a randomized algorithm that, for n numbers of at most n<sup>c</sup> bits (any fixed c), decides Subset Sum on every run in at most C<sub>c</sub>·2<sup>0.49n</sup> word operations, in a word RAM with words of about 4(n + b) bits, and answers correctly with probability at least 2/3 on every input. The analysis gives 2<sup>0.489995n</sup> times a polynomial, rounded up to 0.49; small inputs and enormously long numbers fall back to ordinary meet in the middle, and nothing is assumed about how the numbers are distributed. The companion keeps the 2<sup>n/2</sup> time but uses only (n+b+2)<sup>15</sup>·2<sup>0.199n</sup> words of memory, so O(2<sup>n/5</sup>), and never answers yes wrongly. Neither paper cites the other.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>A deterministic algorithm, a practical speedup, or any bound for numbers with super-polynomially many bits. The gain 2<sup>0.01n</sup> is a factor of 2 at n = 100 and 4 at n = 200, and by our arithmetic it outgrows a single factor of n only from n = 997; the constants are not given. The headline makes no claim about memory, and the companion makes none below 2<sup>n/2</sup> time. The 2<sup>0.246n</sup> memory bound the companion cites from earlier work (Belova, Chukhin, Kulikov and Mihajlin) is for numbers of magnitude 2<sup>O(n)</sup>.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 33 pages, dated October 4, 2026, with a 36-page companion dated September 26, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Not the headline. The companion’s main theorem has an uncatalogued Lean proof, which we have not built</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. Neither preprint has been revised. The headline is not formalized in Lean, and the release’s catalog lists no Lean proof for this result. The repository does contain an uncatalogued <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/LowSpaceSubsetSum">Lean formalization of the companion</a>: its <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/LowSpaceSubsetSum/Main.lean">main theorem</a> states one-sided correctness, success probability at least 2/3, and operation and storage counts of order 2<sup>n/2</sup> and 2<sup>0.199n</sup> on every outcome (633 files and 86,107 lines with its imports, not counting Mathlib, with no unproved steps that we could find). We have not built it, and have not checked how its counts match the paper’s word RAM. The papers are not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>One solution.</strong> Multiply every number by a large multiplier, add a small random tie-breaking weight, and try polynomially many shifted targets. If a solution exists, then with probability at least 11/12 some target has exactly one (the isolation lemma of Mulmuley, Vazirani and Vazirani).</li>
+  <li><strong>Deficiency.</strong> The deficiency of a set of numbers is how many powers of two you save by storing only its distinct subset sums. The algorithm first runs meet in the middle with duplicates removed, stopping once a list passes 2<sup>⌈0.489985n⌉</sup>; that reliably finishes when a typical half has expected deficiency above 0.01004n.</li>
+  <li><strong>A checksum that cancels.</strong> Otherwise, pick a random prime P and random phases, so each subset gets a point on the unit circle. The phase sum over subsets hitting the target modulo P, minus the phase sum over aliases (subsets hitting it modulo P but not exactly), is the phase sum over true solutions: zero if there are none, a single unit phase if the solution is unique.</li>
+  <li><strong>Loud frequencies.</strong> Both sums are huge and must be subtracted to small absolute error, and P has about 0.52n bits. Fourier inversion writes the modular sum as an average over frequencies, but each term’s square averages 2<sup>n</sup>, carried by rare loud values. Random filters, related to locality-sensitive filtering, find them, and each sample is divided by its number of matches.</li>
+  <li><strong>Listing aliases.</strong> A representation technique (random sign flips, a shared block of coordinates, a small prime filter, and a rule that skips every pair hitting the exact target) lists every alias. It needs a block with many distinct sums, which is exactly the low-deficiency case. The three costly steps land at 0.489985, 0.48996 and 0.4899602 in the exponent.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Meet in the middle on 41, 34, 21, 20, 8, 7, 7, 4 with target 100: 14 and 12 distinct half sums; the scan finds 82 + 18 on its 14th step.</li>
+  <li>Distinct subset sums of 20 numbers: 1,048,576 for powers of two, 211 for 1 to 20, 21 when all are equal.</li>
+  <li>1 to 16 with target 40 has 498 solutions; random tie weights left the lightest unique in 98.9% of 20,000 trials.</li>
+  <li>With 14 numbers and P = 101, a bin of 165 subsets adds up to a vector of length 12.98; subtracting its 164 aliases leaves one arrow of length exactly 1, and a target with no solution leaves 0.</li>
+  <li>Over 10<sup>6</sup> random phase draws, |J|<sup>2</sup> had mean close to 2<sup>14</sup> but median 2.2, with the top 1% of draws carrying 79% of the total.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/subset-sum.pdf">Subset Sum in Time O(2<sup>0.49n</sup>) (PDF)</a>, 33 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Low-Space-Algorithm-for-Worst-Case-Subset-Sum-September-26-2026/paper.pdf">A Low-Space Algorithm for Worst-Case Subset Sum (PDF)</a>, 36 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/LowSpaceSubsetSum/Main.lean">The companion’s uncatalogued Lean main file</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 138.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/subset-sum.pdf">Subset Sum in Time O(2^(0.49n))</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Low-Space-Algorithm-for-Worst-Case-Subset-Sum-September-26-2026/paper.pdf">A Low-Space Algorithm for Worst-Case Subset Sum</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Splitting in half</h3>
+<p>Given some positive whole numbers and a target, is there a subset that adds up exactly to the target? This is Subset Sum, one of the foundational NP-complete problems; it appears as Knapsack in Karp’s list. With n numbers there are 2^n subsets to try. The classic shortcut, by Horowitz and Sahni, splits the numbers in half. Take these eight numbers and the target 100. List the distinct subset sums of each half, 14 on the left and 12 on the right, and sort them. Then scan the left list upward and the right list downward, looking for a pair that adds up to the target. After 14 steps: 82 + 18, that is 41, 21 and 20, with 7, 7 and 4. The work is about 2^(n/2), instead of 2^n. Schroeppel and Shamir kept that time while cutting the memory to about 2^(n/4). In 2023, Chen, Jin, Randolph and Servedio saved a polynomial factor, a power of n a little above one half. Representation methods, introduced by Howgrave-Graham and Joux and developed by Becker, Coron and Joux, go faster on random instances, but give no guarantee for every input. And Austrin, Kaski, Koivisto and Nederlof exploited blocks of numbers with many distinct subset sums, or with few. As the new paper puts it, lowering the exponent of one half by a fixed amount is a different objective from polynomial savings.</p>
+<h3><span class="t num">1:28</span>The claim</h3>
+<p>Result 138 is two OpenAI preprints. The headline, 33 pages, dated October 4, claims a randomized algorithm that decides Subset Sum, on every input whose numbers have polynomially many bits, in at most a constant times 2^(0.49n) word operations, on every run, answering correctly with probability at least two thirds. The analysis actually gives 2^(0.489995n) times a polynomial, rounded up to 0.49. Small inputs, and ones with enormously long numbers, fall back to ordinary meet in the middle, so the answer is right with that probability on every input, and nothing is assumed about how the numbers are distributed. The gain is small and asymptotic. Two to the point oh one n is a factor of two at a hundred numbers and four at two hundred, and by our arithmetic it outgrows even a single factor of n only beyond about a thousand numbers. The constants are not given. The second preprint, 36 pages, dated September 26, is a separate companion result: it keeps the 2^(n/2) time, and uses only about 2^(n/5) words of memory, below the 2^(0.246n) it cites from earlier work for numbers of about n bits, and it never wrongly answers yes. Neither paper cites the other. The headline has no Lean proof, but the repository holds an uncatalogued Lean formalization of the companion’s main theorem.</p>
+<h3><span class="t num">3:02</span>How the proof goes</h3>
+<p>The headline proof starts by making the answer unique. Multiply every number by a large multiplier, add a small random tie-breaking weight, and try polynomially many shifted targets: if a solution exists, then with probability at least 11/12 some target has exactly one. In our run, the numbers 1 to 16 have 498 subsets summing to 40, and the lightest one was unique in about 99 percent of trials. Next comes what the paper calls deficiency: how many powers of two you save by storing only the distinct subset sums, because many subsets share a sum. 1 to 20 has only 211 distinct subset sums, out of about a million subsets. So the algorithm first runs meet in the middle with duplicates removed, stopping if a list grows past about 2^(0.49n). That reliably finishes when a typical half has deficiency above about one percent of n. Otherwise, a typical half has deficiency below about one percent of n, and the paper uses a checksum. Pick a random prime P and random phases, so that each subset gets a point on the unit circle. Add up the phases of all subsets that hit the target modulo P, then subtract the aliases: subsets that hit it modulo P, but not exactly. What remains is exactly the phases of the true solutions: nothing, if there are none, and one arrow of length one if the solution is unique. In our run with 14 numbers and P equal to 101, the bin held 165 subsets, adding up to a vector of length about 13; after subtracting 164 aliases, a single arrow of length one remained. For a target with no solution, nothing remained. Both sums are huge, and their difference must be found to small absolute error. The prime has about 0.52n bits, so scanning its residues is unaffordable. Fourier inversion writes the bin as an average over frequencies, but at each frequency, a term’s square averages 2^n, carried by rare loud values: in our simulation the median was about two, and the loudest one percent of draws carried about 80 percent of the total. So the paper looks for loud frequencies with random filters, related to locality-sensitive filtering, and divides each sample by how many matches represent it. The aliases are listed with a representation technique: random sign flips, a shared block of coordinates, a small prime filter, and a rule that skips every pair hitting the exact target. That needs a block with many distinct sums, which is exactly the low-deficiency case. The three costly steps each land just under 0.49.</p>
+<h3><span class="t num">5:49</span>Where it stands</h3>
+<p>Neither preprint is peer reviewed, and neither has been revised. The headline is not formalized in Lean; the companion’s Lean proof is not listed in the catalog, and we did not build it. They are not among those OSVerify reviewed, and we have seen no expert review. If it holds, worst-case Subset Sum on numbers of polynomial bit length can be decided faster than 2^(n/2) by an exponential factor, 2^(0.01n): the exponent of one half from Horowitz and Sahni’s 1974 algorithm is not the limit. The method is randomized, and the saving is tiny at sizes anyone could run.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20138%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

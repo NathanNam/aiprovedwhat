@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three stars suffice? Generalized star height at most three | AI Proved What?</title>
+<meta name="description" content="An AI system claims every regular language has a generalized regular expression with at most three nested stars, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/134-generalized-star-height/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Three stars suffice?">
+<meta property="og:description" content="An AI system claims every regular language has a generalized regular expression with at most three nested stars, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/134-generalized-star-height/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/134-generalized-star-height/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 134, October 2026</p>
+<h1>Three stars suffice?</h1>
+<p class="subtitle">A claimed uniform bound: every regular language has a generalized regular expression with at most three nested stars</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 134 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="mOSfH8IsnWc" data-title="Episode 134: Three stars suffice?">
+  <a href="https://youtu.be/mOSfH8IsnWc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 134: Three stars suffice? Three nested boxes, each closed by a Kleene star.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:15. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/mOSfH8IsnWc?t=0" data-t="0"><span class="t">0:00</span><span>Stars and complements</span></a></li>
+  <li><a href="https://youtu.be/mOSfH8IsnWc?t=96" data-t="96"><span class="t">1:36</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/mOSfH8IsnWc?t=166" data-t="166"><span class="t">2:46</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/mOSfH8IsnWc?t=340" data-t="340"><span class="t">5:40</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Regular expressions build languages, sets of words, from letters with union, concatenation and the Kleene star, and star height counts how deeply the stars are nested. Generalized expressions also allow complement over the same alphabet, which costs nothing in height and can make stars unnecessary: (ab)* is exactly the set of words that do not start with b, do not end with a, and contain no doubled letter, with no star at all. Some languages do need a star, such as the words of even length over one letter.</p>
+<p>Without complement, Eggan tied star height to the cycles of automata, and Dejean and Schützenberger showed it is unbounded even over two letters. With complement, height zero means star-free, which Schützenberger characterized by aperiodic monoids. Henneman showed one star suffices for languages recognized by finite abelian groups, as Pin, Straubing and Thérien recall, and they added more families. No language was known to need two stars, and Straubing stressed that a universal bound and a bound of one are different questions.</p>
+<p>Result 134 is three OpenAI preprints, 116 pages dated September 25, 2026, each with its own complete proof. Every regular language over a finite alphabet has a generalized expression over that same alphabet with at most thirteen (<a href="https://github.com/openai/math/blob/main/preprints/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026.pdf">44 pages</a>), four (<a href="https://github.com/openai/math/blob/main/preprints/Generalized-Star-Height-at-Most-Four-September-25-2026/Generalized-Star-Height-at-Most-Four-September-25-2026.pdf">34 pages</a>) and three (<a href="https://github.com/openai/math/blob/main/preprints/Generalized-Star-Height-at-Most-Three-September-25-2026/article.pdf">38 pages</a>) nested stars. The bound does not depend on the alphabet, the language or the automaton. The construction never adds letters: as one companion paper notes, by results of Pin, Straubing and Thérien, if height bounds survived replacing letters by whole words, one star would already suffice.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>That three is optimal: no language is shown to need two stars, so the true worst case is one, two or three. The papers bound only the nesting, not the size of the expressions or the time to build them, which can be enormous.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, three preprints, 116 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The bound of three, which implies four and thirteen. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The preprints have not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/134.md">Lean formalization</a> of the bound of three (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/GeneralizedStarHeight.lean">comparator statement</a>; <a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/StarHeight">37 files and 11,956 lines</a> with its imports, not counting Mathlib, with no unproved steps that we could find), which implies the other two bounds. We have not run the check. None of the papers is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Monoids and episodes.</strong> Running an automaton turns each word into a map of states; these maps form a finite monoid, and it suffices to describe the words with a given product. Words are cut into episodes, pieces of a prefix code ending a fixed distance after a marker or after a periodic stretch first breaks, so each episode is bounded data, at most one long periodic run and a bounded tail. Powers in a finite monoid eventually repeat, so the run lengths that matter are eventually periodic: one star.</li>
+  <li><strong>Splits and a clock.</strong> An episode is cut into a prefix test for the incoming state and a suffix test for the outgoing one, and one star repeats this along the word; each split costs a star. The two sides share only where the cut falls, so a clock lets each measure its distance to the cut; once an end guard makes them agree on the end, the sum is the episode’s own. Either the sides agree or exactly one disagreeing pair remains, absorbed by an affine correction that costs nothing, since comparing with a run from zero cancels it by unions and intersections.</li>
+  <li><strong>A shift table.</strong> The block straddling the cut cannot be read in full by either side. A shift table, one tuple length for every table of maps with a correction chosen per table, ensures that some coordinate can change without changing the result, so the hidden block never needs to be known; random corrections work with positive probability by the Erdős–Lovász local lemma.</li>
+  <li><strong>Where the three stars go.</strong> The three-star paper needs two splits: an outer split over all episodes, skipping those where the clock or marker searches fail, and an inner split over those, with copies of the information at spaced positions so one can always be decoded. Periodic runs give the first star, the inner split the second, the outer split the third. The thirteen-star paper used twelve splits, the four-star paper three.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>(ab)* and its star-free description agree on all 32,767 words over two letters up to length 14.</li>
+  <li>Counting a’s modulo 3: the usual expression nests two stars; writing each run of b’s with a complement leaves one (checked on every word up to length 12).</li>
+  <li>Transition monoids: (ab)* and “contains aa” are aperiodic (star-free); (aa)* and counting modulo 3 are not.</li>
+  <li>The smallest nontrivial shift table (two symbols, a one-bit state): length 3 works for every table, lengths 1 and 2 fail for some (2 of 4 and 8 of 16 tables); the paper’s general estimate would need length 13.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Generalized-Star-Height-at-Most-Three-September-25-2026/article.pdf">Generalized Star Height at Most Three (PDF)</a>, 38 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Generalized-Star-Height-at-Most-Four-September-25-2026/Generalized-Star-Height-at-Most-Four-September-25-2026.pdf">Generalized Star Height at Most Four (PDF)</a>, 34 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026.pdf">Finite Monoid Computations and a Uniform Generalized Star-Height Bound (PDF)</a>, 44 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/134.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 134.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026/Finite-Monoid-Computations-and-a-Uniform-Generalized-Star-Height-Bound-September-25-2026.pdf">Finite Monoid Computations and a Uniform Generalized Star-Height Bound</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Generalized-Star-Height-at-Most-Four-September-25-2026/Generalized-Star-Height-at-Most-Four-September-25-2026.pdf">Generalized Star Height at Most Four</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Generalized-Star-Height-at-Most-Three-September-25-2026/article.pdf">Generalized Star Height at Most Three</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Stars and complements</h3>
+<p>Regular expressions build languages, sets of words, from letters with union, concatenation and the Kleene star, which repeats a pattern any number of times. Star height counts how deeply the stars are nested. Now also allow complement: everything not in a language, over the same alphabet. Complement costs nothing in height, and it can make some stars unnecessary. Take the empty word, ab, abab, and so on. With complement they need no star at all: they are exactly the words that do not start with b, do not end with a, and contain no doubled letter. In our check, the starred and the star-free expressions agree on all 32,767 words up to length 14. But some languages do need a star, such as the words of even length over a single letter. Without complement, star height is a deep subject. Eggan tied it to the cycles of automata in 1963, and Dejean and Schützenberger showed it is unbounded, even over two letters. With complement, height zero means star-free, and Schützenberger characterized those languages in 1965 by aperiodic monoids. Henneman showed that one star suffices for languages recognized by finite abelian groups, as Pin, Straubing and Thérien recall, and they added more families. Counting a’s modulo three, the usual expression nests two stars; writing each run of b’s with a complement leaves one. But no language was known to need two, and Straubing stressed that two questions differ: is there any universal bound at all, and is that bound one?</p>
+<h3><span class="t num">1:36</span>The claim</h3>
+<p>Result 134 is three OpenAI preprints, 116 pages in all, dated September 25. Each gives its own complete proof of a uniform bound: every regular language over a finite alphabet has a generalized expression over that same alphabet with at most thirteen nested stars in one paper, four in another, and three in the third. The bound does not depend on the alphabet, the language or the size of its automaton. Keeping the same alphabet matters. One companion paper notes that, by results of Pin, Straubing and Thérien, if height bounds survived replacing letters by whole words, one star would already suffice; so the construction never adds letters. What is not claimed: that three is optimal. No language is shown to need two stars, so the true worst case is one, two or three. The expressions can be enormous: the papers bound only the nesting, not the size of the expression or the time to build it. OpenAI published a Lean formalization of the bound of three, which implies the other two: 37 files and about 12,000 lines, not counting Mathlib. We have not run the Lean check.</p>
+<h3><span class="t num">2:46</span>How the proof goes</h3>
+<p>All three proofs start from a finite monoid. Run an automaton on a word and record the resulting map from states to states. These maps form a finite monoid, and the language is a union of the sets of words with a given product, so it suffices to describe each of those sets. The proofs cut each word into episodes, pieces from a prefix code so that the cutting is unique. An episode ends by a local rule: a fixed distance after a marker pattern, or else a fixed distance after a periodic stretch first breaks. So each episode is bounded data, at most one long periodic run, and a bounded tail. Powers of a monoid element eventually repeat, so the run lengths that matter form an eventually periodic set, written with one star. That is the first star. To string episodes together, the proof cuts an episode in two: a prefix test for the incoming state and a suffix test for the outgoing one. One star repeats this along the word, passing over skipped episodes. Each split costs one star. The trouble is that a prefix and a suffix are separate pieces of a concatenation: the only thing they share is where the cut falls. So the proof uses a clock. The prefix measures one distance to the cut and the suffix another, and once an end guard makes both sides agree on where the episode ends, their sum is fixed by the episode itself. The sets are built so that either the two sides agree, or there is exactly one disagreeing pair, which an affine correction absorbs. Corrections are free: comparing the run from the real input with a run from zero cancels the translation, using only unions and intersections. The remaining obstacle is the one block of the word that straddles the cut, which neither side can read in full. A shift table handles it: with one tuple length that works for every table of maps, a fixed correction is chosen for each table, such that for every tuple and every input, some coordinate can change without changing the result. Then the hidden block never needs to be known. For long enough tuples, a random correction works with positive probability, by the Erdős–Lovász local lemma. In our check, in the smallest nontrivial case, two symbols and a one-bit state, length three works for every table, while lengths one and two fail for some; the paper’s general estimate would need length thirteen. With these tools, the three-star paper needs only two splits. The outer split, over all episodes, skips those where the clock or the marker searches fail. The inner split, over those, places copies of the information at carefully spaced positions so that one copy can always be decoded. Periodic runs give the first star, the inner split the second, and the outer split the third. The thirteen-star paper used twelve splits, and the four-star paper used three.</p>
+<h3><span class="t num">5:40</span>Where it stands</h3>
+<p>The three preprints are not peer reviewed and have not been revised. The Lean formalization covers the bound of three; we have not run it. None of these papers is among those OSVerify reviewed, and we have seen no expert review. If it holds, three nested stars, together with complement over the same alphabet, are enough for every regular language, answering the uniform boundedness question. Whether one star always suffices is still open, so the answer now is one, two or three.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20134%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

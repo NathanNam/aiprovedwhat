@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PCP for PPAD? A quasilinear, gate-robust reduction from End-of-Line | AI Proved What?</title>
+<meta name="description" content="An AI system claims a proof of the quasilinear PCP-for-PPAD conjecture: End-of-Line reduces to generalized circuits that stay hard with a constant fraction of broken gates. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/136-pcp-for-ppad/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="PCP for PPAD?">
+<meta property="og:description" content="An AI system claims a proof of the quasilinear PCP-for-PPAD conjecture: End-of-Line reduces to generalized circuits that stay hard with a constant fraction of broken gates. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/136-pcp-for-ppad/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/136-pcp-for-ppad/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 136, October 2026</p>
+<h1>PCP for PPAD?</h1>
+<p class="subtitle">A claimed quasilinear reduction from End-of-Line to generalized circuits that stays hard when a constant fraction of the gates is broken</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 136 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="eQ2OKa4LGHQ" data-title="Episode 136: PCP for PPAD?">
+  <a href="https://youtu.be/eQ2OKa4LGHQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 136: PCP for PPAD? An End-of-Line path above a strip of gates, a few of them broken.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:28. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/eQ2OKa4LGHQ?t=0" data-t="0"><span class="t">0:00</span><span>End-of-Line and generalized circuits</span></a></li>
+  <li><a href="https://youtu.be/eQ2OKa4LGHQ?t=109" data-t="109"><span class="t">1:49</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/eQ2OKa4LGHQ?t=189" data-t="189"><span class="t">3:09</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/eQ2OKa4LGHQ?t=342" data-t="342"><span class="t">5:42</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>In End-of-Line, two circuits name each n-bit string’s successor and predecessor, and the all-zero string starts a path. Following it must end somewhere, and that end, or any other place where a path starts or stops, is a solution. The class PPAD collects problems like this; finding a Nash equilibrium of a two-player game is one of them. The standard bridge is a generalized circuit: wires carry numbers between 0 and 1, and gates that set constants, copy, add, subtract, scale, compare or act like logic gates must hold up to an error ε.</p>
+<p>Chen, Deng and Teng developed generalized circuits; similar gadgets underlie the equilibrium reductions of Daskalakis, Goldberg and Papadimitriou. Rubinstein showed hardness for a constant error when every gate must hold. Babichenko, Papadimitriou and Rubinstein conjectured a PCP-like version: a quasilinear-size reduction from End-of-Line in which both the error and the fraction of gates allowed to fail are positive constants, with the failures chosen by an adversary. In 2016 Rubinstein combined encoded paths with a holographic proof system to show quasipolynomial hardness for constant-error two-player Nash, assuming an exponential time hypothesis for PPAD, but left the conjecture open.</p>
+<p>Result 136 is <a href="https://github.com/openai/math/blob/main/preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/paper.pdf">one OpenAI preprint</a> (147 pages, September 25, 2026) claiming a proof of the quasilinear conjecture: fixed constants 0 &lt; ε &lt; 1/10 and 0 &lt; δ &lt; 1, and a deterministic polynomial-time reduction from End-of-Line instances of length N to generalized circuits of length at most a constant times N times a fixed power of log N, such that from any assignment satisfying all but a δ fraction of the gates to within ε, wherever the failures fall, a decoder recovers a solution in polynomial time. Such assignments always exist, by Brouwer’s fixed point theorem and rounding to a grid.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Explicit constants: ε, δ and the power of the logarithm exist but are never computed. The paper also derives PPAD-hardness for approximate equilibria in several games and markets, but through earlier reductions that need only robustness to a constant fraction of broken gates, not the quasilinear size. Running-time lower bounds for equilibria still need the exponential time hypothesis for PPAD.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 147 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>No: a partial Lean file states the theorem and proves only supporting lemmas</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The preprint has not been revised. There is no Lean formalization of the theorem: a <a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/GeneralizedCircuits/Mesh.lean">partial Lean file</a> defines End-of-Line and generalized circuits, states the quasilinear statement, and proves only supporting lemmas. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Paths become geometry.</strong> Following Rubinstein, each vertex gets a well-separated codeword and each edge becomes a short route through a box of four blocks: change the second block, raise a flag, change the first block, lower the flag. A field pushes points along the routes; away from the endpoints every point moves by a definite amount, so a near-fixed point sits near an endpoint, whose first block names a solution. Computing this field robustly on N-bit vertices directly would cost a polynomial in N.</li>
+  <li><strong>The outer scale.</strong> The graph is rewritten so that each step changes at most one tape bit plus an in-use marker, and vertices become words of short symbols indexed by a group of quasilinear size: binary vectors shuffled by projective linear groups over three primes, which Helfgott’s ternary Goldbach theorem supplies. Checking uses certificates rather than sampling: residuals become polynomial remainders, so one false equation gives a nonzero codeword at constant distance. Since one tape edit changes every encoded array, the construction prepares differences, one small group of Fourier frequencies at a time.</li>
+  <li><strong>The inner scale.</strong> A fixed robust gadget, built from low-degree tests and expander codes, is applied only to symbols of polylogarithmic length, where its polynomial cost is affordable.</li>
+  <li><strong>Replicas and broken gates.</strong> Each coordinate is held by many replicas coupled by a half-lazy Margulis–Gabber–Galil expander with spectral gap at least 1/100. When an adversary breaks a δ fraction of the gates, the replicas stay synchronized, all but a few compute the true field, and the average point barely moves under one step of the field, so it lies near an endpoint and its first block decodes a solution, without knowing which gates failed.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A toy End-of-Line instance on 3-bit strings: solutions 100, 110 and 111; the path from 000 ends at 111.</li>
+  <li>With ε = 1/20 on a grid of step 1/400, a comparator that tests its own output against a constant one half keeps its wire within 2ε of one half in all 68,921 assignments satisfying its gates.</li>
+  <li>The averaging operator’s largest mean-zero eigenvalue for eight grid sizes from 2 to 25: between 0.75 and 0.89, below the paper’s bound of about 0.942.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/paper.pdf">The PCP-for-PPAD conjecture: a quasilinear reduction (PDF)</a>, 147 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/GeneralizedCircuits/Mesh.lean">The partial Lean file</a> (states the theorem; proves supporting lemmas only).</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 136.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-PCP-for-PPAD-conjecture-a-quasilinear-reduction-September-25-2026/paper.pdf">The PCP-for-PPAD conjecture: a quasilinear reduction</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>End-of-Line and generalized circuits</h3>
+<p>Some search problems always have a solution, for a parity reason. In End-of-Line, two circuits name each n-bit string’s successor and predecessor, and the all-zero string starts a path. Follow it, and it must end somewhere; that end, or any other place where a path starts or stops, is a solution. The class PPAD collects problems like this, and finding a Nash equilibrium of a two-player game is one of them. The standard bridge between the two is a generalized circuit: wires carry numbers between zero and one, and gates that set constants, copy, add, subtract, scale, compare, or act like logic gates must hold up to an error ε. In our check, a comparator that tests its own output against a constant one half is forced into the middle: every assignment satisfying its gates keeps that wire within 2ε of one half. Chen, Deng and Teng developed generalized circuits; similar arithmetic and logic gadgets underlie the equilibrium reductions of Daskalakis, Goldberg and Papadimitriou. Rubinstein showed hardness when the error ε is a constant, but with every gate required to hold. Babichenko, Papadimitriou and Rubinstein conjectured a stronger, PCP-like version: a reduction from End-of-Line of only quasilinear size, in which the error and the fraction of gates allowed to fail are both positive constants. The decoder must then work even when an adversary picks which gates to break. In 2016, Rubinstein combined encoded paths with a holographic proof system to show quasipolynomial hardness for constant-error Nash equilibria in two-player games, assuming an exponential time hypothesis for PPAD, but left this conjecture open.</p>
+<h3><span class="t num">1:49</span>The claim</h3>
+<p>Result 136 is a single OpenAI preprint, 147 pages, dated September 25. It claims a proof of the quasilinear conjecture. There are fixed constants, ε below 1/10 and δ, and a deterministic polynomial-time reduction that turns an End-of-Line instance of length N into a generalized circuit of length at most a constant times N times a fixed power of log N. From any assignment that satisfies all but a δ fraction of the gates to within ε, wherever the failures fall, a decoder recovers a solution in polynomial time. And such assignments always exist, by Brouwer’s fixed point theorem and rounding to a grid. The constants exist but are not given: ε, δ and the power of the logarithm come out of a long chain of choices, and are never computed. The paper also derives PPAD-hardness for approximate equilibria in several games and markets, but through earlier reductions that need only robustness to a constant fraction of broken gates, not the quasilinear size, and running-time lower bounds still need the exponential time hypothesis for PPAD. There is no Lean formalization of the theorem: a partial Lean file states it and proves only supporting lemmas.</p>
+<h3><span class="t num">3:09</span>How the proof goes</h3>
+<p>The proof follows Rubinstein’s geometry. Give each vertex a well-separated binary codeword, and turn every edge into a short route through a box whose dimension is four times the codeword length: change the second block, raise a flag, change the first block, lower the flag. Corners are rounded, and a field pushes points along these routes. Away from the endpoints, every point moves by a definite amount, so anything that is nearly a fixed point sits near an endpoint, and an endpoint’s first block names a solution. The difficulty is that the circuit must compute this field locally, and doing that robustly, directly on N-bit vertices, would cost a polynomial in N. So the construction works at two scales. The outer scale rewrites the graph so that each step changes at most one tape bit, plus a marker saying whether that cell is in use, and encodes vertices as words of short symbols, indexed by a group of quasilinear size: binary vectors, shuffled by projective linear groups over three primes; Helfgott’s ternary Goldbach theorem supplies three primes with the right sum. Checking is done by certificates, not sampling: residuals become polynomial remainders, so a single false equation produces a nonzero codeword at constant distance. Because one tape edit changes every encoded array, the construction prepares differences instead, one small group of Fourier frequencies at a time. The inner scale applies a fixed robust gadget, built from low-degree tests and expander codes, only to symbols of polylogarithmic length, where its polynomial cost is affordable. Finally, each coordinate of the point is held by many replicas, coupled by an averaging operator on a grid, a Margulis–Gabber–Galil expander with a spectral gap of at least 1/100. Expensive gadgets are shared, and every comparison gets its own routed read. Now let an adversary break a δ fraction of the gates. First, the replicas stay synchronized, without assuming any decision is correct. Second, once synchronized, all but a small fraction compute the true field. Third, the average point barely moves under one step of the field, so it lies near an endpoint, and rounding its first block decodes a solution, without knowing which gates failed. In our check, the averaging operator’s second eigenvalue stayed between 0.75 and 0.89 for eight grid sizes, from side 2 to 25, below the paper’s bound of 0.942.</p>
+<h3><span class="t num">5:42</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. There is no Lean formalization of the theorem; a partial Lean file states it and proves only supporting lemmas. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, the PCP for PPAD conjecture of Babichenko, Papadimitriou and Rubinstein is true: End-of-Line reduces, with only polylogarithmic overhead, to numerical circuits that stay hard even when a constant fraction of the gates may be broken. Turning that into concrete running-time lower bounds for equilibria still needs an exponential time hypothesis for PPAD.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20136%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

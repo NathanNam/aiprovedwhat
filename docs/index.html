@@ -11,7 +11,7 @@
 <meta property="og:title" content="AI Proved What? New AI mathematics, explained and checked">
 <meta property="og:description" content="Short animated explainers of mathematics that AI systems claim to have proved, with a running record of how far each proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/">
-<meta property="og:image" content="https://aiprovedwhat.com/episodes/133-weisfeiler-leman-complexity/thumbnail.jpg">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/138-subset-sum-049/thumbnail.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <meta name="generator" content="tools/site/build.py">
@@ -39,39 +39,84 @@
 </header>
 <main id="main">
 
-<h1>An AI system says Weisfeiler–Leman refinement needs n^(ck) time unconditionally and that its variable-dimension versions are EXPTIME-complete.</h1>
+<h1>An AI system says worst-case Subset Sum can be decided by a randomized algorithm in 2^(0.49n) time, beating meet in the middle.</h1>
 <p class="lede">What does that even mean, and has anyone checked? Each episode takes one claim like this, builds the intuition with animation, and keeps a running record of how far the proof has been verified.</p>
 
 <div class="player">
-  <a href="episodes/133-weisfeiler-leman-complexity/">
-    <img src="episodes/133-weisfeiler-leman-complexity/thumbnail.jpg" width="1280" height="720" alt="Episode 133: How hard is WL? A six-cycle and two triangles with every vertex coloured alike.">
+  <a href="episodes/138-subset-sum-049/">
+    <img src="episodes/138-subset-sum-049/thumbnail.jpg" width="1280" height="720" alt="Episode 138: Subset Sum in 2^0.49n? A walk of phase arrows and the single unit arrow that survives.">
     <span class="play" aria-hidden="true"></span>
   </a>
 </div>
-<p class="player-caption">Episode 133: <a href="episodes/133-weisfeiler-leman-complexity/">How hard is WL?</a>, about 8 minutes.</p>
+<p class="player-caption">Episode 138: <a href="episodes/138-subset-sum-049/">Subset Sum in 2^0.49n?</a>, about 7 minutes.</p>
 
 <section class="measure" aria-labelledby="record">
 <h2 id="record">Where this claim stands</h2>
 <dl class="ledger ledger-auto">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, September 25, 2026</dd>
+    <dd>OpenAI, September 26 and October 4, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-done">
+  <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/133.md">scope notes</a>)</dd>
+    <dd>Not yet</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026. The claims have not been withdrawn. OpenAI published Lean proofs of the main theorems; we have not run the checks.</p>
+<p class="ledger-note">Last checked October 16, 2026. The claims have not been withdrawn. The headline result has no Lean proof; uncatalogued Lean files cover only the low-memory companion.</p>
 </section>
 
 <section aria-labelledby="episodes">
 <h2 id="episodes">Recent episodes</h2>
 <ul class="thumbs">
+  <li>
+    <a href="episodes/138-subset-sum-049/">
+      <img src="episodes/138-subset-sum-049/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 138 · 6:33</span>
+      <span class="thumb-title">Subset Sum in 2^0.49n?</span>
+      <span class="thumb-sub">A claimed randomized algorithm that beats meet in the middle for worst-case Subset Sum by an exponential factor</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; not yet checked in Lean"><span class="box on"></span><span class="box"></span><span class="box"></span></span>
+    </a>
+  </li>
+  <li>
+    <a href="episodes/137-one-tape-two-fifths/">
+      <img src="episodes/137-one-tape-two-fifths/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 137 · 6:27</span>
+      <span class="thumb-title">Below the square root?</span>
+      <span class="thumb-sub">A claimed simulation of T steps of a one-tape Turing machine in about T^(2/5) bits of memory</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
+    </a>
+  </li>
+  <li>
+    <a href="episodes/136-pcp-for-ppad/">
+      <img src="episodes/136-pcp-for-ppad/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 136 · 6:28</span>
+      <span class="thumb-title">PCP for PPAD?</span>
+      <span class="thumb-sub">A claimed quasilinear reduction from End-of-Line to generalized circuits that stays hard when a constant fraction of the gates is broken</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; not yet checked in Lean"><span class="box on"></span><span class="box"></span><span class="box"></span></span>
+    </a>
+  </li>
+  <li>
+    <a href="episodes/135-depth-five-imm/">
+      <img src="episodes/135-depth-five-imm/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 135 · 7:12</span>
+      <span class="thumb-title">Depth five, sharply?</span>
+      <span class="thumb-sub">A claimed n^Θ(√n) gate bound for computing iterated matrix multiplication with homogeneous depth-five circuits</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
+    </a>
+  </li>
+  <li>
+    <a href="episodes/134-generalized-star-height/">
+      <img src="episodes/134-generalized-star-height/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 134 · 6:15</span>
+      <span class="thumb-title">Three stars suffice?</span>
+      <span class="thumb-sub">A claimed uniform bound: every regular language has a generalized regular expression with at most three nested stars</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
+    </a>
+  </li>
   <li>
     <a href="episodes/133-weisfeiler-leman-complexity/">
       <img src="episodes/133-weisfeiler-leman-complexity/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -99,51 +144,6 @@
       <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
     </a>
   </li>
-  <li>
-    <a href="episodes/130-fourier-below-n-log-n/">
-      <img src="episodes/130-fourier-below-n-log-n/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 130 · 7:20</span>
-      <span class="thumb-title">Faster than the FFT?</span>
-      <span class="thumb-sub">Claimed exact discrete Fourier transforms below n log n operations, in exact complex arithmetic</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
-  <li>
-    <a href="episodes/129-two-way-automata-state-costs/">
-      <img src="episodes/129-two-way-automata-state-costs/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 129 · 7:41</span>
-      <span class="thumb-title">Sakoda–Sipser, settled?</span>
-      <span class="thumb-sub">Claimed exponential state lower bounds for simulating and complementing two-way nondeterministic automata, over growing alphabets</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
-  <li>
-    <a href="episodes/128-superstring-factor-two/">
-      <img src="episodes/128-superstring-factor-two/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 128 · 7:19</span>
-      <span class="thumb-title">Factor two, at last?</span>
-      <span class="thumb-sub">A claimed polynomial-time algorithm that finds a common superstring at most twice as long as the shortest one</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
-  <li>
-    <a href="episodes/127-ptf-average-sensitivity/">
-      <img src="episodes/127-ptf-average-sensitivity/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 127 · 7:10</span>
-      <span class="thumb-title">How sensitive can it be?</span>
-      <span class="thumb-sub">A claimed bound of 8d√n on the average sensitivity of polynomial threshold functions, the asymptotic Gotsman–Linial conjecture</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
-  <li>
-    <a href="episodes/126-matching-psd-rank/">
-      <img src="episodes/126-matching-psd-rank/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 126 · 7:12</span>
-      <span class="thumb-title">No small SDP for matching?</span>
-      <span class="thumb-sub">A claimed exponential lower bound on the PSD rank of shifted matching matrices, and on exact semidefinite lifts of the perfect matching polytope</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of part of the claim"><span class="box on"></span><span class="box"></span><span class="box part"></span></span>
-    </a>
-  </li>
 </ul>
 </section>
 
@@ -154,7 +154,7 @@
   <li><a href="subjects/algebraic-and-complex-geometry/"><span class="tile-name">Algebraic and complex geometry</span><span class="tile-count num">36 of 36 explained</span></a></li>
   <li><a href="subjects/real-and-complex-analysis/"><span class="tile-name">Real and complex analysis</span><span class="tile-count num">16 of 16 explained</span></a></li>
   <li><a href="subjects/convex-and-metric-geometry/"><span class="tile-name">Convex and metric geometry</span><span class="tile-count num">15 of 15 explained</span></a></li>
-  <li><a href="subjects/theoretical-computer-science/"><span class="tile-name">Theoretical computer science</span><span class="tile-count num">31 of 40 explained</span></a></li>
+  <li><a href="subjects/theoretical-computer-science/"><span class="tile-name">Theoretical computer science</span><span class="tile-count num">36 of 40 explained</span></a></li>
   <li><a href="subjects/dynamical-systems-and-ergodic-theory/"><span class="tile-name">Dynamical systems and ergodic theory</span><span class="tile-count num">0 of 12 explained</span></a></li>
   <li><a href="subjects/combinatorics/"><span class="tile-name">Combinatorics</span><span class="tile-count num">0 of 37 explained</span></a></li>
   <li><a href="subjects/algebra/"><span class="tile-name">Algebra</span><span class="tile-count num">0 of 18 explained</span></a></li>
@@ -175,7 +175,7 @@
 <dl class="stats">
   <div>
     <dt>Explained</dt>
-    <dd><span class="stat num">129</span> of 372 results <span class="stat-note">(719 papers in all)</span></dd>
+    <dd><span class="stat num">134</span> of 372 results <span class="stat-note">(719 papers in all)</span></dd>
   </div>
   <div>
     <dt>Lean proof published by OpenAI</dt>

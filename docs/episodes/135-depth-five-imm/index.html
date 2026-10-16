@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Depth five, sharply? Lower bounds for iterated matrix multiplication | AI Proved What?</title>
+<meta name="description" content="An AI system claims that homogeneous depth-five circuits for iterated matrix multiplication need n^Θ(√n) gates over characteristic zero, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/135-depth-five-imm/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Depth five, sharply?">
+<meta property="og:description" content="An AI system claims that homogeneous depth-five circuits for iterated matrix multiplication need n^Θ(√n) gates over characteristic zero, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/135-depth-five-imm/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/135-depth-five-imm/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 135, October 2026</p>
+<h1>Depth five, sharply?</h1>
+<p class="subtitle">A claimed n<sup>Θ(√n)</sup> gate bound for computing iterated matrix multiplication with homogeneous depth-five circuits</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 135 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="Qyi5h3TKMHw" data-title="Episode 135: Depth five, sharply?">
+  <a href="https://youtu.be/Qyi5h3TKMHw">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 135: Depth five, sharply? A five-layer circuit of sum and product gates.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:12. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/Qyi5h3TKMHw?t=0" data-t="0"><span class="t">0:00</span><span>Circuits for matrix products</span></a></li>
+  <li><a href="https://youtu.be/Qyi5h3TKMHw?t=97" data-t="97"><span class="t">1:37</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/Qyi5h3TKMHw?t=185" data-t="185"><span class="t">3:05</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/Qyi5h3TKMHw?t=388" data-t="388"><span class="t">6:28</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>An arithmetic circuit computes a polynomial with sum and product gates. Multiply n matrices of size n×n whose entries are distinct variables: the top-left entry of the product, iterated matrix multiplication, is a sum over paths through n layers with n<sup>n−1</sup> terms, and circuits of polynomial size compute it when depth is unrestricted. The question here is about depth five, sums of products of sums of products of sums, with the circuit syntactically homogeneous (every sum adds inputs of the same formal degree), bottom linear forms of any support, and arbitrary sharing.</p>
+<p>Nisan and Wigderson asked for an explicit homogeneous polynomial needing superpolynomial size at constant depth, even at depth five. Depth reduction (Agrawal and Vinay, Koiran, Tavenas) turns a polynomial-size circuit for a homogeneous polynomial of degree d in N variables into a homogeneous depth-four circuit of size N<sup>O(√d)</sup>, which sets the square-root scale. Earlier lower bounds reached that scale only with extra restrictions (much wider matrices, small bottom fan-in, multilinear circuits, other polynomials, or finite fields); Limaye, Srinivasan and Tavenas gave superpolynomial bounds that, for this polynomial, are superpolynomial but not of the square-root exponent.</p>
+<p>Result 135 is <a href="https://github.com/openai/math/blob/main/preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026.pdf">one OpenAI preprint</a> (22 pages, September 25, 2026). It claims that over every field of characteristic zero, every syntactically homogeneous depth-five circuit computing the n×n case has at least n<sup>√n/400</sup> gates for all sufficiently large n, with a threshold that does not depend on the field; and that over every field, for n ≥ 2, a block construction does it with at most n<sup>√n+4</sup> gates, leaves included. So the answer is n<sup>Θ(√n)</sup>, with the exponent pinned down up to a constant factor.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>A lower bound in positive characteristic, or for circuits that are not homogeneous. The constants are far apart (1/400 against about 1), the threshold is not given, and the lower bound only exceeds the roughly n<sup>3</sup> variables a circuit must read as leaves once n passes about 1.4 million.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 22 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The lower bound over every characteristic-zero field and the construction. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/135.md">Lean formalization</a> of the lower bound over every characteristic-zero field, with a threshold independent of the field, and of the construction over every field (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/DepthFive.lean">comparator statement</a>; <a href="https://github.com/openai/math/blob/main/lean/OAI/Algebra/DepthFive">164 files and 20,323 lines</a> with its imports, not counting Mathlib, with no unproved steps that we could find). We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The upper bound.</strong> Cut the matrices into about √n consecutive blocks of about √n each. The lower products write out every monomial of every block product, the middle sums add them into block-product entries, the upper products multiply one entry from each block along every choice of indices between blocks, and the top sum adds everything: about n<sup>√n</sup> gates per layer.</li>
+  <li><strong>A rank measure.</strong> Split the layers into a smaller team of (n − s)/2 and a larger team of (n + s)/2, with s about √n. Replacing each variable of the smaller team by a partial derivative and each variable of the larger team by multiplication turns every polynomial into a linear map; the measure is its rank. Rank is subadditive, and the substitution turns products of polynomials into products of operators.</li>
+  <li><strong>Circuits lose rank.</strong> In a product of middle sums, each factor would like a fair share, just below one half, of the smaller team’s degree, but degrees are integers, and each unit missed costs about 1/√n in rank. If all factors have degree below about √n/4, the misses add up to at least s/2; otherwise a large factor opens into at most S products of linear forms, each missing at least 3/8. So a circuit with S gates has rank at most about S<sup>2</sup> times n<sup>−√n/100</sup> of the full rank.</li>
+  <li><strong>The polynomial keeps its rank.</strong> With no two layers of the smaller team adjacent, the trace inequality rank H ≥ (tr H)<sup>2</sup>/tr(H<sup>2</sup>) reduces to counting paths and quadruples of paths; in each layer a quadruple pairs up in one of two patterns, and each switch of pattern forces four labels to agree. The rank is within e<sup>O(√n)</sup> of full over the complex numbers, and since the matrix has integer entries, over every field of characteristic zero. Comparing gives S ≥ n<sup>√n/200</sup> up to smaller losses, hence n<sup>√n/400</sup>.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>The block construction, expanded symbolically for n = 2, 3, 4, 5: it equals iterated matrix multiplication, with 30, 112, 293 and 1,056 gates, leaves included.</li>
+  <li>For 3×3 matrices, the relaxed counts of path quadruples (dropping the rule that paired labels differ) match the paper’s formula n<sup>2L−w</sup> for all eight pattern words.</li>
+  <li>The lower bound n<sup>√n/400</sup> passes n<sup>3</sup> at n = 1,440,000.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026.pdf">Homogeneous depth-five lower bounds for iterated matrix multiplication (PDF)</a>, 22 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/135.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 135.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026/Homogeneous-depth-five-lower-bounds-for-iterated-matrix-multiplication-September-25-2026.pdf">Homogeneous depth-five lower bounds for iterated matrix multiplication</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Circuits for matrix products</h3>
+<p>An arithmetic circuit computes a polynomial with sum gates and product gates. Take n matrices, each n by n, whose entries are all distinct variables, and multiply them. The top-left entry of the product is called iterated matrix multiplication: a sum over paths through n layers, one variable per step, with n^(n−1) terms. With unrestricted depth, circuits of polynomial size compute it. But restrict the depth to five alternating layers, sums of products of sums of products of sums, and require the circuit to be syntactically homogeneous: every sum gate adds inputs of the same formal degree. The bottom sums may be any linear forms, and gates may be shared. How many gates are needed then? Nisan and Wigderson asked for an explicit homogeneous polynomial that needs superpolynomial size at constant depth, even at depth five. Depth reduction, by Agrawal and Vinay, Koiran and Tavenas, raised the stakes: a polynomial-size circuit for a homogeneous polynomial of degree d in N variables becomes a homogeneous depth-four circuit of size N^O(√d), which sets the square-root scale here. Earlier lower bounds reached this scale only with extra restrictions: matrices much wider than their number, small bottom fan-in, multilinear circuits, other polynomials, or finite fields. Limaye, Srinivasan and Tavenas proved superpolynomial bounds at constant depth over characteristic zero, which for this polynomial give a superpolynomial bound, but not the square-root exponent.</p>
+<h3><span class="t num">1:37</span>The claim</h3>
+<p>Result 135 is a single OpenAI preprint, 22 pages, dated September 25. It claims that over every field of characteristic zero, every syntactically homogeneous depth-five circuit computing the n by n case needs at least n^(√n/400) gates, for all sufficiently large n, with a threshold that does not depend on the field. Bottom linear forms may involve all the variables, and fan-in, fan-out and sharing are arbitrary. Over every field, for every n from 2 on, a block construction does it with at most n^(√n+4) gates, counting leaves. So the answer is n^Θ(√n): the exponent is pinned down up to a constant factor. What is not claimed: a lower bound in positive characteristic, or for circuits that are not homogeneous. The constants are far apart, 1/400 against about one, the threshold is not given, and the bound only beats the roughly n³ variables a circuit must read as leaves once n passes about 1.4 million. OpenAI published a Lean formalization of the lower bound, over every characteristic-zero field with a threshold that does not depend on the field, and of the construction over every field: 164 files and about 20,000 lines, not counting Mathlib. We have not run the Lean check.</p>
+<h3><span class="t num">3:05</span>How the proof goes</h3>
+<p>The upper bound is direct. Cut the n matrices into about √n consecutive blocks of about √n matrices each. The bottom sums read the variables. The lower products write out every monomial of every block product, and the middle sums add them into the entries of each block product. The upper products multiply one entry from each block along every choice of indices between blocks, and the top sum adds them all. A block has about n^√n monomials, and there are about n^√n choices of indices. In our check, symbolic expansion confirmed this circuit for n from 2 to 5, with 30, 112, 293 and 1,056 gates, leaves included. The lower bound uses a rank measure. Split the n layers into two teams: a smaller one of (n − s)/2 layers and a larger one of (n + s)/2, with s about √n. In a polynomial, replace each variable of the smaller team by a partial derivative, and each variable of the larger team by multiplication. Every polynomial becomes a linear map between huge spaces of polynomials, and the measure is its rank. Rank is subadditive, and because derivatives in one team commute with multiplication in the other, the substitution turns a product of polynomials into a product of operators. Now take one product in the circuit: a product of middle sums whose degrees add up to n. Each factor would like a fair share of the smaller team’s degree, a fraction slightly below one half, but degrees are integers, so small factors miss their share, and every unit missed costs a factor of about 1/√n in rank. If every factor has degree below about √n/4, the misses add up to at least s/2. Otherwise, open the big factor into products of linear forms, and each linear form misses by at least 3/8. Either way, each product, or each of the at most S pieces it opens into, keeps at most about n^(−√n/100) of the full rank. There are at most S products, so a circuit with S gates has rank at most about S² times that. For the polynomial itself, order the layers so that no two layers of the smaller team are adjacent, and use the fact that a rank is at least the square of a trace divided by the trace of the square. The first trace is a sum over paths. The second is a sum over quadruples of paths, and in each layer a contributing quadruple pairs up in one of only two patterns. Each switch of pattern forces four labels to agree, costing a factor n, and the balanced order keeps the total in check: the rank is nearly full, within a factor e^(C√n). That is over the complex numbers; the matrix has integer entries, so the same rank holds over every field of characteristic zero. Comparing the two sides, S² must be at least about n^(√n/100), so S is at least about n^(√n/200), and after absorbing the smaller losses, at least n^(√n/400). In our check, with three-by-three matrices, the relaxed counts of path quadruples, where the paper drops the rule that paired labels differ, matched its formula for all eight pattern words.</p>
+<h3><span class="t num">6:28</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. The Lean formalization covers the lower bound over every field of characteristic zero and the upper bound construction; we have not run it. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, syntactically homogeneous depth-five circuits for iterated matrix multiplication need n^Θ(√n) gates, with unrestricted bottom linear forms, over every field of characteristic zero, matching the square-root scale of depth reduction. Positive characteristic and circuits without homogeneity are not covered.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20135%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
