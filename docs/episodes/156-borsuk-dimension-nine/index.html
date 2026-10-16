@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Borsuk fails in nine? A nine-dimensional counterexample to Borsuk&#x27;s covering assertion | AI Proved What?</title>
+<meta name="description" content="An AI system claims that the projection matrices of all lines in four-dimensional space, a compact set in nine dimensions, cannot be covered by ten pieces of smaller diameter, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/156-borsuk-dimension-nine/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Borsuk fails in nine?">
+<meta property="og:description" content="An AI system claims that the projection matrices of all lines in four-dimensional space, a compact set in nine dimensions, cannot be covered by ten pieces of smaller diameter, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/156-borsuk-dimension-nine/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/156-borsuk-dimension-nine/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 156, October 2026</p>
+<h1>Borsuk fails in nine?</h1>
+<p class="subtitle">A claim that the lines through the origin in four-dimensional space, seen as points in nine dimensions, cannot be cut into ten pieces of smaller diameter</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 156 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="IdBkxufJ4oY" data-title="Episode 156: Borsuk fails in nine?">
+  <a href="https://youtu.be/IdBkxufJ4oY">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 156: Borsuk fails in nine? Two perpendicular lines inside a circle split into ten coloured arcs.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:01. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/IdBkxufJ4oY?t=0" data-t="0"><span class="t">0:00</span><span>Borsuk’s question</span></a></li>
+  <li><a href="https://youtu.be/IdBkxufJ4oY?t=105" data-t="105"><span class="t">1:45</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/IdBkxufJ4oY?t=179" data-t="179"><span class="t">2:59</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/IdBkxufJ4oY?t=306" data-t="306"><span class="t">5:06</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>“Borsuk’s partition problem asks whether every bounded set of positive diameter in ℝ<sup>d</sup> can be covered by d+1 subsets of strictly smaller diameter.” Borsuk posed it in 1933. A disc in the plane can be cut into three such pieces but not two (our illustration); in nine-dimensional space the question asks for ten.</p>
+<p>As the paper recounts, Kahn and Kalai disproved it in high dimensions, and later work brought the dimension down to 946, 903 (announced), 561 and 560; with spherical codes to 323, 321 and 298; and with strongly regular graphs to 65 and 64. The paper cites a 2026 author manuscript by Grinsztajn, which we could not check, giving a finite counterexample in dimension 63.</p>
+<p>Result 156 is <a href="https://github.com/openai/math/blob/main/preprints/A-nine-dimensional-counterexample-to-Borsuks-covering-assertion-September-23-2026/paper.pdf">an OpenAI preprint</a> (18 pages, September 23, 2026). Each line through the origin in ℝ<sup>4</sup> has a projection matrix uu<sup>T</sup>; all symmetric 4 × 4 matrices with trace one form a nine-dimensional Euclidean space, and the Frobenius distance between two projection matrices is the sine of the angle between the lines times √2. “The projector embedding itself is classical.” Its Theorem 1.1: this set of projection matrices has diameter √2, reached exactly by perpendicular lines, and cannot be covered by ten subsets of diameter strictly less than √2. “Thus Borsuk’s assertion fails in dimension nine.” Corollary 7.1 adds one point per extra dimension, each at distance √2 from everything else, to get a counterexample in every dimension d ≥ 9.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>It is not the first counterexample, and the set is classical; “Our contribution is the covering obstruction for the projector set associated with ℝ<sup>4</sup>.” “The theorem does not determine the smallest dimension in which it fails or the exact value” of the number of pieces needed. Unlike the 63-dimensional example, the set is not finite: it is a three-dimensional object, every line through the origin in ℝ<sup>4</sup>, and it spans all nine dimensions (our check). The paper notes that the strict gap in diameter matters: “merely excluding individual orthogonal pairs from arbitrary color classes does not supply this reduction.”</p>
+<p>In our search, ten lines, each with the region of lines nearest to it, never gave a valid cover, as the theorem predicts, while eleven did: no region holds two lines more than 82.1 degrees apart (diameter 1.4007 &lt; √2). If the theorem holds, eleven pieces is then the exact count. That is our floating-point computation, not the paper’s.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 18 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The main theorem. We have not rebuilt it</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/156.md">Lean formalization</a>: a <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/BorsukNine.lean">comparator statement</a> of Theorem 1.1 in 4 × 4 matrix coordinates (compact, inside the trace-one symmetric matrices, diameter √2, no cover by ten arbitrary subsets of diameter below √2), and <a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/Borsuk">269 files and 78,964 lines</a> of proof, not counting Mathlib, with no unproved steps that we could find. About 66,000 of those lines are 4,093 lemmas named like clause numbers, which appear to be a computer-generated case check; they replace the paper’s final combinatorial argument (Lemmas 6.2–6.4 and Theorem 6.5). Corollary 7.1 is not formalized. We have not rebuilt the Lean. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>From pieces to labels.</strong> Suppose ten pieces of diameter below √2 cover the set. Fatten each slightly; it still contains no perpendicular pair. A smooth partition of unity gives every line ten weights, one per piece, summing to one; the pieces with positive weight are the line’s labels, and perpendicular lines never share a label (an “admissible map”).</li>
+  <li><strong>An odd map between spheres.</strong> The weights extend from lines to all symmetric matrices. A matrix splits into a positive and a negative part with perpendicular ranges, so their labels never overlap and nothing cancels. The result is an odd map from the nine-dimensional sphere of matrices to the sphere of label vectors, which forces at least ten labels; with exactly ten it has mod-two degree one, and a parity argument shows that every maximal overlap of labels uses exactly four, every pair of labels overlaps somewhere, and every three labels that overlap somewhere lie in a positive, even number of these four-label groups.</li>
+  <li><strong>A finite contradiction.</strong> The lines perpendicular to a line where four labels meet form a projective plane using only the other six labels; one dimension down, those six form what the paper calls a triangle system: ten triangles, every pair of labels in exactly two (in our enumeration, 12 labelled versions, all the six-vertex projective plane). The pattern is rigid: no swap of two labels preserves it. The paper then shows that each triangle lies in exactly two four-label groups, sorts some labels into partner blocks, and forces block sizes 3, 2 and 2, which leaves a triangle with at most one completion: a contradiction.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Distance against angle (our check of the paper’s formula): 0.7071 at 30°, 1.0000 at 45°, 1.3927 at 80°, √2 = 1.4142 at 90°.</li>
+  <li>One and two dimensions down (ours): the lines in a plane (in two dimensions) are covered by three arcs of 60°; the lines in space (in five dimensions) by six regions around the icosahedron’s axes, each at most 70.5° wide (distance 4/3). Both match Borsuk’s count.</li>
+  <li>In ℝ<sup>4</sup> (ours): the 24-cell’s 12 lines give regions exactly 90° wide, so not a valid cover; our 11-line configuration gives regions at most 82.1° wide.</li>
+  <li>The ten-label obstruction, by a 0/1 solver from the paper’s inputs (ours): 330 yes/no switches, 11,701 rules, no consistent pattern. This is a floating-point check, not a certificate.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-nine-dimensional-counterexample-to-Borsuks-covering-assertion-September-23-2026/paper.pdf">A nine-dimensional counterexample to Borsuk’s covering assertion (PDF)</a>, 18 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/156.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 156.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-nine-dimensional-counterexample-to-Borsuks-covering-assertion-September-23-2026/paper.pdf">A nine-dimensional counterexample to Borsuk's covering assertion</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Borsuk’s question</h3>
+<p>Take a bounded shape in d-dimensional space. Its diameter is the largest distance between two of its points. Borsuk asked, in 1933, whether every such shape can be cut into d + 1 pieces, each of strictly smaller diameter. A disc in the plane can be cut into three such pieces, but not into two. In nine-dimensional space, the question asks for ten pieces. As the paper recounts, Kahn and Kalai disproved it in high dimensions. Later work brought the dimension down: to 946, then 561 and 560; with spherical codes, to 323, 321 and 298; and with strongly regular graphs, to 65 and 64. The paper cites a 2026 author manuscript by Grinsztajn, which we could not check, giving 63. This paper claims nine. The set it uses is classical. Each line through the origin in four-dimensional space has a projection matrix: 4 × 4, symmetric, with trace one. All symmetric 4 × 4 matrices with trace one form a nine-dimensional space, and the distance between two of them depends only on the angle between the lines: it is the sine of that angle, times √2. So the diameter, √2, is reached exactly by perpendicular lines, and a piece of smaller diameter cannot contain two perpendicular lines. One and two dimensions down, Borsuk’s count works for this kind of set. In our check, the lines in space, which sit in five dimensions, are covered by six regions around the axes of an icosahedron, and the lines in a plane, which sit in two, by three arcs.</p>
+<h3><span class="t num">1:45</span>The claim</h3>
+<p>Result 156 is an 18-page OpenAI preprint, dated September 23. Its theorem: the set of all these projection matrices, for lines in four-dimensional space, has diameter √2, and cannot be covered by ten subsets of strictly smaller diameter. So Borsuk’s assertion fails in dimension nine. Adding one point per extra dimension, each at the full diameter from everything else, extends this to every higher dimension. It is not the first counterexample, and the paper claims only the covering obstruction, not the set. It does not determine the smallest dimension where Borsuk’s assertion fails, or the exact number of pieces this set needs. Unlike the 63-dimensional example, the set is not finite: it is a three-dimensional object, every line through the origin in four-dimensional space, and it spans all nine dimensions. In our search, ten lines, each with the region nearest to it, never gave a valid cover, as the theorem predicts, while eleven did, with no region holding two lines more than about 82 degrees apart. If the theorem holds, eleven is then the exact count; that is our floating-point computation, not the paper’s.</p>
+<h3><span class="t num">2:59</span>How the proof goes</h3>
+<p>The proof starts from a supposed cover by ten pieces, and fattens each piece slightly. Since each piece is strictly smaller than the diameter, the fattened piece still contains no perpendicular pair. Blending the pieces smoothly gives every line ten weights, one per piece, summing to one. Call the pieces with positive weight a line’s labels: perpendicular lines never share a label. The paper notes that this strict gap matters: merely keeping perpendicular pairs out of each piece would not give this step. Next, the weights extend from lines to all symmetric matrices. A matrix splits into a positive and a negative part, whose ranges are perpendicular, so their labels never overlap, and nothing cancels. The result is an odd map from a nine-dimensional sphere of matrices to the sphere of label vectors, and a classical fact about odd maps between spheres forces at least ten labels. With exactly ten, the map has odd degree, and a parity argument shows that every maximal overlap of labels uses exactly four, every pair of labels overlaps somewhere, and every three labels that overlap somewhere lie in a positive, even number of these four-label groups. Then comes a finite contradiction. The lines perpendicular to a line where four labels meet form a projective plane, and may use only the other six labels. Running the argument one dimension down, those six must form what the paper calls a triangle system: ten triangles, with every pair of labels in exactly two. In our enumeration, there are exactly 12 labelled versions, all of the same shape: the six-vertex projective plane. The pattern is rigid: no swap of two labels preserves it. From this, the paper shows that each triangle lies in exactly two four-label groups, sorts some of the labels into partner blocks, and forces block sizes three, two and two, which leaves a triangle that can be completed in only one way, a contradiction. A computer check of ours, with 330 yes-or-no switches and the paper’s inputs, also finds no consistent pattern.</p>
+<h3><span class="t num">5:06</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. OpenAI’s Lean formalization states the main theorem exactly. Its proof runs to 269 files and about 79,000 lines, not counting Mathlib, with no unproved steps that we found; most of it, about 66,000 lines, is what appears to be a computer-generated case check, replacing the paper’s final combinatorial argument. The extension to higher dimensions is not formalized, and we have not rebuilt the Lean ourselves. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, ten pieces of smaller diameter cannot cover the lines through the origin in four-dimensional space, seen as points in nine dimensions: Borsuk’s assertion fails already in dimension nine.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20156%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

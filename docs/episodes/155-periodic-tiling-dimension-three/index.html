@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No periodic tiling in 3D? A translational tile with no fully periodic tiling | AI Proved What?</title>
+<meta name="description" content="An AI system claims a finite tile that tiles three-dimensional space by translations but admits no fully periodic tiling, the least lattice dimension for this, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/155-periodic-tiling-dimension-three/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="No periodic tiling in 3D?">
+<meta property="og:description" content="An AI system claims a finite tile that tiles three-dimensional space by translations but admits no fully periodic tiling, the least lattice dimension for this, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/155-periodic-tiling-dimension-three/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/155-periodic-tiling-dimension-three/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 155, October 2026</p>
+<h1>No periodic tiling in 3D?</h1>
+<p class="subtitle">A claim of a finite tile that fills three-dimensional space by sliding copies, but never in a pattern that repeats along three independent directions</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 155 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="wrevnIexDs0" data-title="Episode 155: No periodic tiling in 3D?">
+  <a href="https://youtu.be/wrevnIexDs0">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 155: No periodic tiling in 3D? A schematic tile made of separate unit cubes, drawn in perspective.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:54. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/wrevnIexDs0?t=0" data-t="0"><span class="t">0:00</span><span>Tiles and tilings</span></a></li>
+  <li><a href="https://youtu.be/wrevnIexDs0?t=93" data-t="93"><span class="t">1:33</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/wrevnIexDs0?t=176" data-t="176"><span class="t">2:56</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/wrevnIexDs0?t=361" data-t="361"><span class="t">6:01</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take a finite set of cubes, not necessarily in one piece, and fill all of space with copies of it, sliding them without turning, so that every cube of space is covered exactly once. If that works, the set is a translational tile, and the positions of the copies form a tiling. The tiling is fully periodic if the pattern repeats along three independent directions. “The periodic tiling conjecture asks whether every translational tile admits a periodic tiling”; the paper points to an explicit formulation by Lagarias and Wang. A tile can have both kinds of tilings: dominoes in rows, each row shifted at random, repeat sideways but not vertically, while aligned rows repeat both ways.</p>
+<p>As the paper recounts, the answer is yes on a line (Newman: every tiling of ℤ by a finite tile is periodic) and in the plane grid (Bhattacharya: every finite tile of ℤ<sup>2</sup> admits a periodic tiling; Greenfeld and Tao gave a quantitative version). “Greenfeld and Tao disproved the periodic tiling conjecture in sufficiently large dimension”, by encoding a Sudoku rule with an arithmetic obstruction to periodicity.</p>
+<p>Result 155 is <a href="https://github.com/openai/math/blob/main/preprints/A-translational-tile-with-no-fully-periodic-tiling-in-dimension-three-September-23-2026/paper.pdf">an OpenAI preprint</a> (26 pages, September 23, 2026). Its Theorem 1.1: there is a finite nonempty set T in ℤ<sup>3</sup> that tiles ℤ<sup>3</sup> by translations, but no tiling by T is invariant under a subgroup of finite index; and the thickened set T + [0,1]<sup>3</sup> tiles ℝ<sup>3</sup> up to null sets, but no such tiling, even with arbitrary real translation vectors, is invariant under a full-rank lattice. “For lattice tilings, dimension three is the smallest possible dimension for this conclusion”, by the cited results for ℤ and ℤ<sup>2</sup>.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>It is not the first counterexample: the paper credits the disproof in sufficiently large dimension to Greenfeld and Tao and follows their strategy; what it calls its central construction keeps the finite factor cyclic, so that it can become the third coordinate. “Neither connectedness of the tile nor absence of every individual nonzero period is asserted”; its own example tiling repeats along one axis. Only translations are allowed. For tiles of arbitrary shape in the plane, it notes only that the positive planar results it cites “do not establish the conjecture for arbitrary bounded measurable Euclidean tiles.” The tile is never written down: its data “can be selected by terminating finite searches”, and “No practical bound on the size of the finite construction is required.” By our count of the distinct primes its recipe needs at the smallest allowed prime, 211, there are 9,438,458 of them, and the number of cubes in the tile has at least 73,292,424 digits.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 26 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The main theorem, and three as the least lattice dimension. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/155.md">Lean formalization</a>: a <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PeriodicTilingThree.lean">comparator statement</a> with its own definitions of tilings, full periodicity, the unit-cube thickening and almost-everywhere tilings, asking for one finite tile with both properties of Theorem 1.1 and for three to be the least lattice dimension; and <a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/PeriodicTiling">122 files and 16,899 lines</a> of proof, not counting Mathlib, with no unproved steps that we could find. Because of the least-dimension clause, the Lean also proves the results for the line and the plane that the paper only cites. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A Sudoku that cannot repeat.</strong> Fix a prime p above 200 and fill an array with p<sup>2</sup> columns and infinitely many rows with nonzero digits mod p. The rule, from Greenfeld and Tao: along every line of integer slope, the entries are the last base-p digit of one affine function with integer coefficients; where that function is a multiple of p, read its next digit instead; at multiples of p<sup>2</sup>, anything goes. Writing in row m the last nonzero base-p digit of m gives a solution. No solution whose columns all change repeats vertically: take the smallest period M that any such solution can have; then p divides M, and after shifting each column so the pattern lines up, keeping every p-th row gives a solution with period M/p, a contradiction.</li>
+  <li><strong>Encoding with a cyclic clock.</strong> The puzzle becomes simultaneous tiling equations for one unknown set in ℤ<sup>2</sup> times a finite cyclic group, built from pieces of pairwise coprime orders. A first equation makes the set the graph of a function. Each puzzle column gets a channel, a function with one input digit set aside for each symbol; a symbol is active when changing its digit can change the output. Cycle tests forbid disallowed words from being active together, activation tests force every column to show a symbol, and two seed channels make the columns change. A fully periodic solution would give a vertically repeating puzzle solution, which is impossible; an explicit solution is built from the last nonzero digit array.</li>
+  <li><strong>One tile, then three dimensions.</strong> The finitely many equations are stacked into one tile along a fresh prime clock, split into parts that each contain every difference, giving one tile in ℤ<sup>2</sup> × ℤ/Q: ℤ<sup>3</sup> with one axis wrapped around. To unwrap it, each cell becomes a block of m<sup>3</sup> cubes, one per residue class, scrambled so that every short difference except whole-block steps occurs. Scrambled blocks cannot slide, so in a fully periodic tiling the blocks sit on a grid; a marked cube, displaced in one of two block types, then makes the tiling fold back to a periodic tiling of the wrapped version, which is impossible.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Tiles of a line whose end cells are 1 to 12 apart: the longest repeat of any tiling is exactly twice that distance (our check).</li>
+  <li>The Sudoku rule at p = 5 (the paper needs p above 200): 404 allowed words; the last-nonzero-digit array passes all 14,641 lines we tried; a fake that repeats every 25 rows breaks the rule on 20 of 625 classes of lines, all with slopes having exactly one factor of 5, such as m = 5n.</li>
+  <li>A stacking clock of size 7 for two equations: {0, 1, 2, 4} and {3, 5, 6}, each containing every difference mod 7.</li>
+  <li>Scrambled blocks with m = 12 (our random choice, which had every short difference on the first try): sliding along a neighbour’s face, the overlap is 0 only at whole-block steps and at least 2 cubes’ volume in between; a plain cube slides with overlap 0.</li>
+  <li>Size: at p = 211, the recipe needs 9,438,458 distinct primes, so the tile has at least 10<sup>73,292,423</sup> cubes. The paper gives no size; pictures of cubes and blocks are schematic.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-translational-tile-with-no-fully-periodic-tiling-in-dimension-three-September-23-2026/paper.pdf">A translational tile with no fully periodic tiling in dimension three (PDF)</a>, 26 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/155.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 155.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-translational-tile-with-no-fully-periodic-tiling-in-dimension-three-September-23-2026/paper.pdf">A translational tile with no fully periodic tiling in dimension three</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Tiles and tilings</h3>
+<p>Take a finite set of cubes, not necessarily in one piece. Make copies, slide them without turning, and try to fill all of space so that every cube of space is covered exactly once. If that works, the set is a translational tile, and the positions of the copies form a tiling. The tiling is fully periodic if the whole pattern repeats along three independent directions. The periodic tiling conjecture asks: if a tile can tile at all, can it always do so periodically? The paper points to an explicit formulation in Lagarias and Wang. As the paper recounts, on a line of cells the answer is yes: by Newman’s finite-state argument, every tiling of the line by a finite tile repeats. In our check of every such tile whose end cells are at most 12 apart, the longest repeat was twice that distance. In the plane grid the answer is also yes: Bhattacharya proved that every finite tile of the plane grid has a periodic tiling. In high dimension the answer is no: Greenfeld and Tao disproved the conjecture in sufficiently large dimension, by hiding a Sudoku-like puzzle inside a tile. A tile can have both kinds of tilings. Dominoes laid in rows tile the plane; shift each row at random by one cell or not, and the pattern still repeats sideways, but not vertically. Line the rows up, and it repeats in both directions. So the question is about the tile: does it have at least one fully periodic tiling?</p>
+<h3><span class="t num">1:33</span>The claim</h3>
+<p>Result 155 is a 26-page OpenAI preprint, dated September 23. Its theorem: there is a finite set T in the three-dimensional integer grid that tiles the grid by translations, but no tiling by T repeats along three independent directions. The same T, thickened into unit cubes, tiles real three-dimensional space, and none of those tilings is fully periodic either, even when the copies may be shifted by arbitrary real vectors. The paper adds that, for tilings of integer grids, three is the smallest possible dimension, citing the results for the line and the plane. It is not the first counterexample: the paper credits the disproof in sufficiently large dimension to Greenfeld and Tao, and follows their strategy. It does not claim that the tile is connected, and it does not rule out tilings that repeat in one direction; its own example tiling repeats along one axis. Only translations are allowed. For tiles of arbitrary shape in the plane, it notes only that the positive planar results it cites do not settle the question. And the tile is never written down. The paper says no practical bound on its size is needed; by our count of the distinct primes its recipe requires, the number of cubes has more than 73 million digits.</p>
+<h3><span class="t num">2:56</span>How the proof goes</h3>
+<p>The proof starts from a puzzle, which the paper, following Greenfeld and Tao, calls a Sudoku rule. Fix a prime p above 200, and fill an array with p² columns and infinitely many rows with nonzero digits mod p. The rule: along every line of integer slope, the entries must be the last base-p digit of one affine function with integer coefficients; where that function is a multiple of p, read its next digit instead, and at multiples of p², anything goes. One solution exists: in row m, write the last nonzero base-p digit of m. But no solution whose columns all change can repeat vertically. If one did, take the smallest period M that any such solution can have. The paper shows that p divides M. Then, after shifting each column so the pattern lines up, keeping every p-th row gives another such solution with period M/p, a contradiction. In our run with p = 5, a fake that repeats every 25 rows breaks the rule only on lines whose slope has exactly one factor of 5, such as the line climbing 5 rows per column. Next, the puzzle becomes tiling equations for one unknown set of positions, in the plane grid times a finite clock. The paper keeps that clock cyclic, with pairwise coprime orders, so that it can later become the third coordinate; this, the paper says, is its central construction. A first equation makes the positions the graph of a function. Each column of the puzzle gets a channel: a function with one input digit set aside for each symbol. A symbol is active when changing its digit can change the output. Cycle tests forbid disallowed words from being active together, activation tests force every column to show some symbol, and two seed channels make the columns change. A fully periodic solution would then give a puzzle solution that repeats vertically, which is impossible. And an explicit solution, built from the last nonzero digit array, exists. The finitely many equations are then stacked into one tile, in layers along a fresh prime clock. In our run with two equations, a clock of size 7 splits into {0, 1, 2, 4} and {3, 5, 6}; each part contains every difference, so any two shifted copies of one part overlap. That gives one tile in the plane grid times a cyclic group, which is the three-dimensional grid with one axis wrapped around. To unwrap it, each cell becomes a block of m³ cubes, one in each residue class, scrambled so that every short difference, except whole-block steps, occurs. Scrambled blocks cannot slide. In our run with m = 12, a scrambled block slid along a neighbour overlapped it everywhere except at whole-block steps, while a plain cube slid freely. A marked cube, displaced in one of two block types, then forces any fully periodic tiling to fold back into a periodic tiling of the wrapped version, which is impossible.</p>
+<h3><span class="t num">6:01</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. OpenAI’s Lean formalization states both parts of the theorem for one tile, together with the claim that three is the least dimension for integer grids, so it also proves the results for the line and the plane that the paper only cites. Its proof runs to 122 files and about 17,000 lines, not counting Mathlib, with no unproved steps that we found; we have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, a single tile can fill three-dimensional space by sliding alone, yet never in a pattern that repeats along three independent directions: the periodic tiling conjecture fails already in dimension three.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20155%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

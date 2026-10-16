@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hadwiger disproved? Counterexamples to Hadwiger&#x27;s conjecture and a linear list bound | AI Proved What?</title>
+<meta name="description" content="Three AI preprints claim graphs needing more colours than their largest clique minor, disproving Hadwiger&#x27;s conjecture and Colin de Verdière&#x27;s chromatic bound, and a linear list-colouring bound, partly formalized in Lean. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/157-hadwiger-counterexample/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Hadwiger disproved?">
+<meta property="og:description" content="Three AI preprints claim graphs needing more colours than their largest clique minor, disproving Hadwiger&#x27;s conjecture and Colin de Verdière&#x27;s chromatic bound, and a linear list-colouring bound, partly formalized in Lean. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/157-hadwiger-counterexample/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/157-hadwiger-counterexample/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 157, October 2026</p>
+<h1>Hadwiger disproved?</h1>
+<p class="subtitle">Three preprints claim graphs that need more colours than their largest clique minor, a second disproof through Colin de Verdière’s invariant, and a linear bound that survives</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 157 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="vuv90s7AAyU" data-title="Episode 157: Hadwiger disproved?">
+  <a href="https://youtu.be/vuv90s7AAyU">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 157: Hadwiger disproved? Two bars: the Hadwiger number h, shorter than the chromatic number chi.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:47. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/vuv90s7AAyU?t=0" data-t="0"><span class="t">0:00</span><span>Colours and clique minors</span></a></li>
+  <li><a href="https://youtu.be/vuv90s7AAyU?t=104" data-t="104"><span class="t">1:44</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/vuv90s7AAyU?t=222" data-t="222"><span class="t">3:42</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/vuv90s7AAyU?t=344" data-t="344"><span class="t">5:44</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>Colour the vertices of a graph so that neighbours differ. A clique minor of order t is a set of t disjoint, connected blobs of vertices, every two joined by an edge; the Hadwiger number h(G) is the largest such t. “Hadwiger’s conjecture, formulated in 1943, asserts that h(G) ≥ χ(G) for every finite nonempty simple graph G.” As the paper recounts, the cases t = 4 (Hadwiger, Dirac), t = 5 (equivalent to the Four-Colour Theorem, through Wagner’s structure theorem) and t = 6 (Robertson, Seymour and Thomas) were proved, and general bounds went down to O(t log log log t) in a 2026 preprint by Liu and Luo. If no three vertices are pairwise non-adjacent (independence number at most two), each colour is used at most twice, so a graph on m vertices needs at least m/2 colours, even fractionally; Duchet and Meyniel guarantee a clique minor of order m/3.</p>
+<p>Result 157 lists three OpenAI preprints dated September 23, 2026. <a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/paper.pdf">A counterexample to Hadwiger’s conjecture</a> (104 pages) claims arbitrarily large graphs on m vertices with independence number at most two and no connected matching of m/100 edges, so that h(G) &lt; 26m/75 + 2/3 &lt; m/2 ≤ χ_f(G) ≤ χ(G): Hadwiger’s conjecture, and the fractional weakening discussed by Reed and Seymour, are false. Reed and Seymour’s proven bound χ_f ≤ 2h stands; by our arithmetic these graphs show the factor is at least about 1.44.</p>
+<p><a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-the-Colin-de-Verdiere-chromatic-conjecture-September-23-2026/paper.pdf">A counterexample to the Colin de Verdière chromatic conjecture</a> (131 pages) claims graphs with μ(G) + 1 &lt; |V(G)|/2 ≤ χ(G), where μ is Colin de Verdière’s spectral invariant. Since h ≤ μ + 1, Hadwiger’s conjecture would imply χ ≤ μ + 1, so this is a second disproof, on similar random graphs with a different final argument (a matrix-rank obstruction); it claims no real gap beyond χ &gt; μ + 1. <a href="https://github.com/openai/math/blob/main/preprints/A-linear-list-coloring-bound-in-terms-of-the-Hadwiger-number-September-23-2026/paper.pdf">A linear list-coloring bound in terms of the Hadwiger number</a> (42 pages) claims that a constant factor survives: χ_list(G) ≤ C·h(G), and so χ(G) ≤ C·h(G), for one absolute integer C that is never computed (any such constant must be at least 2).</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What they don’t claim</h2>
+<p>The graphs are random samples, not explicit, and no smallest example or effective threshold is given; by the paper’s own formulas the number of vertices has more than 10<sup>30</sup> digits (our arithmetic). The papers do not say which order t fails first; the cases t = 4, 5 and 6 remain theorems. It is not the first disproof of a Hadwiger-type conjecture: the Hadwiger paper credits a December 2025 preprint by Kühn, Sauermann, Steiner and Wigderson for the odd Hadwiger conjecture, and the list paper cites Barát, Joret and Wood’s 2011 “Disproof of the list Hadwiger conjecture”. None of the papers calls the problem famous or long-standing. Hadwiger’s conjecture is unrelated to the Hadwiger–Nelson problem of colouring the plane (result 158).</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 104, 131 and 42 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Two of three: the ordinary Hadwiger counterexample and the list bound. We have not rebuilt them</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The preprints have not been revised since they were added to the repository in its initial commit on October 6, 2026, though the list paper, dated September 23, cites work posted on October 1. OpenAI published <a href="https://github.com/openai/math/blob/main/lean/docs/157.md">Lean formalizations</a> of two statements: the Hadwiger counterexample for ordinary colouring (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/HadwigerCounterexample.lean">comparator</a>: independence number at most two, connected matchings below m/100, and h &lt; 26m/75 + 2/3 &lt; m/2 ≤ χ; not the fractional form), added in the October 7 commit, with 288 files and 39,776 lines of proof; and the list bound in full (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/ListHadwiger.lean">comparator</a>), with 53 files and 19,965 lines, which also proves the three structural results the paper cites without proof. Both counts exclude Mathlib, and we found no unproved steps. We have not rebuilt them. The Colin de Verdière paper is not formalized, apart from a small support file of conditional lemmas. None of the papers is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>From clique minors to matchings.</strong> In a clique minor, blobs of three or more vertices are expensive. Single-vertex blobs are pairwise adjacent, so they pair up into edges, and two-vertex blobs are edges already; all these edges touch pairwise, forming a connected matching. Counting gives h(G) ≤ (m + 4cm(G) + 2)/3 (Proposition 3.5), so graphs with independence number at most two and cm &lt; m/100 have h &lt; 26m/75 + 2/3.</li>
+  <li><strong>Holes that never form a triangle.</strong> Vertices are random objects of linear algebra over the field with two elements; two are non-adjacent (a hole) when a short list of linear identities, built from a symmetric bilinear form and including a parity condition, can be met. Summed around a hypothetical triangle of holes, everything cancels except the parity bits, leaving 0 = 1, so the independence number is at most two for every sample. Two disjoint edges fail to touch exactly when all four cross pairs are holes; about eighty pages (Theorem 3.1) show that such conflicts cannot be avoided, and a container-style counting argument makes every connected matching smaller than m/100 with high probability.</li>
+  <li><strong>The other two papers.</strong> The Colin de Verdière paper replaces each vertex of a similar random graph by a clique, which keeps the colouring bound, and shows that every well-signed matrix with one negative eigenvalue has rank greater than half the number of vertices plus one. The list paper handles small graphs by removing random independent sets, starting from Reed and Seymour’s fractional bound, and large graphs by extracting highly connected pieces and building the clique minor in a three-way recursion; it cites three structural results without proof.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our check: all 172 graphs on up to 7 vertices with no three pairwise non-adjacent vertices, and 108 random ones on 8 to 16 vertices, satisfy h ≥ χ (with equality in 113 and 29 of them). Complements of C<sub>5</sub>, C<sub>7</sub>, C<sub>9</sub>, the Petersen, Grötzsch, Chvátal and Heawood graphs: (χ, h) = (3, 3), (4, 5), (5, 6), (5, 6), (6, 6), (6, 7), (7, 9).</li>
+  <li>Proposition 3.5 holds on all 1,252 graphs up to 7 vertices, with equality only for K<sub>1</sub>, K<sub>3</sub>, K<sub>5</sub>, K<sub>7</sub> (our check).</li>
+  <li>The hole relation in small models over the field with two elements (ours): no triangles under the paper’s hypotheses; 58,240 with a non-symmetric form.</li>
+  <li>(1 + 4/100)/3 = 26/75; 26m/75 + 2/3 &lt; m/2 from m = 5; the ratio (m/2)/(26m/75) tends to 75/52 ≈ 1.44 (our arithmetic).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/paper.pdf">A counterexample to Hadwiger’s conjecture (PDF)</a>, 104 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-the-Colin-de-Verdiere-chromatic-conjecture-September-23-2026/paper.pdf">A counterexample to the Colin de Verdière chromatic conjecture (PDF)</a>, 131 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-linear-list-coloring-bound-in-terms-of-the-Hadwiger-number-September-23-2026/paper.pdf">A linear list-coloring bound in terms of the Hadwiger number (PDF)</a>, 42 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/157.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 157.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-Hadwigers-conjecture-September-23-2026/paper.pdf">A counterexample to Hadwiger's conjecture</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-the-Colin-de-Verdiere-chromatic-conjecture-September-23-2026/paper.pdf">A counterexample to the Colin de Verdière chromatic conjecture</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-linear-list-coloring-bound-in-terms-of-the-Hadwiger-number-September-23-2026/paper.pdf">A linear list-coloring bound in terms of the Hadwiger number</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Colours and clique minors</h3>
+<p>Colour the vertices of a graph so that neighbours always get different colours. A clique minor of order t is a set of t disjoint, connected blobs of vertices, every two of them joined by an edge; squeeze each blob to a point and you see t vertices, all joined to each other. In 1943, Hadwiger conjectured that a graph needing t colours always contains a clique minor of order t. As the paper recounts, this was proved for four; for five, where it is equivalent to the four colour theorem; and for six, by Robertson, Seymour and Thomas. For general t, the paper cites bounds of t times a slowly growing factor; the most recent, in a 2026 preprint, involves a triple logarithm. One special case is cleaner. If no three vertices are pairwise non-adjacent, each colour can be used at most twice, so a graph on m vertices needs at least m/2 colours, even when colours may be split fractionally. The conjecture then asks for a clique minor of order half the vertices; known results, the paper notes, guarantee about a third. In our check of every such graph up to 7 vertices, and of about 100 random ones up to 16, the conjecture held, often exactly. Weaker forms were also studied. Reed and Seymour proved that a fractional colouring with twice the Hadwiger number of colours always exists. And a linear list version, formulated by Kawarabayashi and Mohar, asks whether some constant multiple of the Hadwiger number suffices even when each vertex has its own list of allowed colours. With the constant equal to one, that list version was already known to fail, and any such constant must be at least two.</p>
+<h3><span class="t num">1:44</span>The claims</h3>
+<p>Result 157 lists three OpenAI preprints, all dated September 23. The first, 104 pages long, claims that, for arbitrarily large m, there are graphs on m vertices, with no three pairwise non-adjacent vertices, whose largest clique minor has order below 26m/75 + 2/3. That is below m/2, so these graphs need more colours than their Hadwiger number, even fractionally. This disproves Hadwiger’s conjecture, and the fractional form that Reed and Seymour discussed. Their proven factor of two still stands; by our arithmetic, these graphs show the factor cannot be below about 1.44. The second, 131 pages long, disproves Colin de Verdière’s proposed bound: chromatic number at most his spectral graph invariant, μ, plus one. Since the Hadwiger number is at most μ + 1, Hadwiger’s conjecture would imply that bound, so this is a second disproof, on similar random graphs but with a different final argument, though it claims no real gap: only that the chromatic number exceeds mu plus one. The third, 42 pages long, shows that a constant factor does survive: for one absolute constant C, never computed, the list chromatic number is at most C times the Hadwiger number, and so is the ordinary chromatic number. The graphs are random, not explicit. No smallest example is given, and by the paper’s own formulas the number of vertices has more than 10³⁰ digits. The paper does not say which order t fails first; the cases four to six still stand. And it is not the first disproof of a Hadwiger-type conjecture: the paper credits a 2025 preprint for the odd version, and, as the third paper cites, the list Hadwiger conjecture had already been disproved in 2011.</p>
+<h3><span class="t num">3:42</span>How the proofs go</h3>
+<p>The first paper’s proof turns minors into matchings. In a large clique minor, blobs of three or more vertices are expensive. Single-vertex blobs are all joined to each other, so they pair up into edges, and two-vertex blobs are edges already; all these edges touch each other pairwise, forming a connected matching. Counting gives a bound: the Hadwiger number is at most m, plus four times the largest connected matching, plus two, all over three. So it suffices to build graphs with no three pairwise non-adjacent vertices, whose connected matchings have fewer than m/100 edges. The vertices are random objects from linear algebra over the field with two elements. Two vertices are non-adjacent, a hole, when a short list of linear identities can be met, including a parity condition. Summed around a hypothetical triangle of holes, everything cancels except the parity bits, leaving one equals zero. So no three vertices are pairwise non-adjacent, for every sample. In our small version of this rule, holes never formed a triangle; with a non-symmetric form in place of the paper’s symmetric one, they formed 58,240. Two matching edges fail to touch exactly when all four cross pairs are holes. About eighty pages show that such conflicts cannot be avoided, and a counting argument then makes every connected matching smaller than m/100, with high probability. The second paper replaces every vertex of a similar random graph by a clique, which keeps the colouring bound, and shows that every matrix allowed in the definition of μ has rank greater than half the number of vertices, plus one. The third paper handles small graphs by repeatedly removing random independent sets, starting from Reed and Seymour’s fractional bound, and large graphs by extracting highly connected pieces and building the clique minor in a three-way recursion. It cites three structural results without proof.</p>
+<h3><span class="t num">5:44</span>Where it stands</h3>
+<p>None of the three is peer reviewed, and the preprints have not been revised, though the third, dated September 23, cites work posted on October 1. OpenAI’s Lean formalizations cover the first paper’s ordinary statement, added a day after the repository’s first commit, in 288 files and about 40,000 lines; and the third paper’s theorem in full, in 53 files and about 20,000 lines, including the three results it cites. We found no unproved steps in either, and we have not rebuilt them. The fractional statements and the second paper are not formalized, apart from a small support file. None of the papers is among those OSVerify reviewed, and we have seen no expert review. If they hold, Hadwiger’s conjecture is false, but only by a constant factor: the number of colours a graph needs is still controlled by its largest clique minor, up to a constant.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20157%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

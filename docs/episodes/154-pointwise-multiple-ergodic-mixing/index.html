@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mixing is enough? Pointwise multiple ergodic averages for mixing transformations | AI Proved What?</title>
+<meta name="description" content="An AI system claims that, for an invertible mixing transformation, multiple ergodic averages converge at almost every point for every number of functions, building on companion preprints. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/154-pointwise-multiple-ergodic-mixing/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Mixing is enough?">
+<meta property="og:description" content="An AI system claims that, for an invertible mixing transformation, multiple ergodic averages converge at almost every point for every number of functions, building on companion preprints. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/154-pointwise-multiple-ergodic-mixing/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/154-pointwise-multiple-ergodic-mixing/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 154, October 2026</p>
+<h1>Mixing is enough?</h1>
+<p class="subtitle">A claim that, for an invertible mixing transformation, multiple ergodic averages converge at almost every starting point, for every number of functions</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 154 in OpenAI’s catalog: <a href="#papers-in-result">all 4 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="oWgHSt_-QWQ" data-title="Episode 154: Mixing is enough?">
+  <a href="https://youtu.be/oWgHSt_-QWQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 154: Mixing is enough? One orbit of a coin-flipping shift, sampled at equally spaced times, with its average settling to the product of the integrals.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:03. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/oWgHSt_-QWQ?t=0" data-t="0"><span class="t">0:00</span><span>Equally spaced samples</span></a></li>
+  <li><a href="https://youtu.be/oWgHSt_-QWQ?t=113" data-t="113"><span class="t">1:53</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/oWgHSt_-QWQ?t=217" data-t="217"><span class="t">3:37</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/oWgHSt_-QWQ?t=383" data-t="383"><span class="t">6:23</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take a transformation T that shuffles a space while preserving probability, start at a point x and follow its orbit. At step k, look at the points T<sup>k</sup>x, T<sup>2k</sup>x, …, T<sup>nk</sup>x, evaluate bounded functions f<sub>1</sub>, …, f<sub>n</sub> there, multiply, and average over k from 1 to N. These are multiple ergodic averages. If T is mixing (any two events become nearly independent when far enough apart in time), one might expect the averages to approach the product of the integrals of the functions. The question is whether that happens at almost every single starting point, not just with an error that is small on average over starting points.</p>
+<p>As the paper recounts, these averages became central to ergodic Ramsey theory through Furstenberg’s proof of Szemerédi’s theorem. Host and Kra proved convergence in mean square for every number of functions on every system, and Ziegler gave another proof. “The distinction between norm and pointwise convergence is substantial.” Bourgain’s double recurrence theorem handles two functions pointwise; longer products needed extra structure: K-systems, two classes of weakly mixing systems, and, by Huang, Shao and Ye, ergodic measure-distal systems. The paper calls no question open and makes no priority claim.</p>
+<p>Result 154 is <a href="https://github.com/openai/math/blob/main/preprints/Pointwise-Multiple-Ergodic-Averages-for-Mixing-Transformations-October-4-2026/multiple-ergodic-averages.pdf">an OpenAI preprint</a> (25 pages, October 4, 2026), listed with three companion preprints of the same date. Its Theorem 1.1: if T is invertible and mixing, then for every n ≥ 2 and every fixed tuple of bounded functions, the averages converge almost everywhere to the product of the integrals, as N runs through all positive integers. “The probability space need not be standard, and no rate of mixing is required.” The exceptional null set may depend on the system and the tuple. The companions claim the cases of three and four functions for mixing systems; this paper extends the argument to every number.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim, and what it rests on</h2>
+<p>The theorem says nothing about systems that are only weakly mixing or ergodic, about commuting transformations or polynomial times, and it gives no rate of convergence; the proof is by contradiction and not effective.</p>
+<p>It builds on three results in the same release, which it says are “not reproduced here”: two of its listed companions (fourfold averages, 36 pages; triple averages at distinct slopes, 43 pages) and result 145 (mixing of all orders). Those two companions rely in turn on the third listed companion (triple averages for mixing transformations, 61 pages) and on result 86, an L<sup>3</sup> bound for the trilinear Hilbert transform (93 pages). OSVerify’s review of result 86 reported one major issue, in its Lemma 8.6, with a proposed repair; the distinct-slopes companion imports that lemma by number. Counting result 145, the three companions and result 86, the papers involved total about 300 pages.</p>
+<p><strong>Flagged for expert review.</strong> Along the way (Lemma 2.5), the paper derives from a companion’s estimate that “on any standard invertible probability-preserving system, averages of at most three bounded functions at distinct positive integer slopes converge almost everywhere along all positive integer lengths”, mixing or not. That is a strong claim of its own, which the catalog does not headline; the proof’s small-slot step uses it.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 25 pages, dated October 4, 2026, with three companion preprints</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>No. The multiple-mixing theorem it imports from result 145 is formalized</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The preprint, its companions and result 145 have not been revised since they were added to the repository in its initial commit on October 6, 2026. There is no Lean formalization of this paper; result 145’s multiple-mixing theorem, for sets, is <a href="https://github.com/openai/math/blob/main/lean/docs/145.md">formalized</a>, and the bounded-function form used here is derived in the paper. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Record a failure as a law.</strong> Suppose the averages fail to approach the product on a set of positive measure. Then a centered average rises above a fixed level at arbitrarily late lengths. An adversary picks, for each starting point, one of those bad lengths; averaging the configuration of n points up to the selected lengths (on a suspension flow) and passing to a limit along an ultrafilter gives a selected law on n copies of a system, carrying a positive correlation. Averages of at most three slots converge anyway, by the flagged three-function claim, and so do those of the structured, distal part, so selection cannot change their laws.</li>
+  <li><strong>Channels.</strong> A length chosen from the starting point can bias other coordinates. The paper sorts them into three groups and asks that the original coordinate be independent of any two groups, though not necessarily of all three: a channel. The key lemma is that selecting again keeps a channel a channel. Mixing of all orders makes the relevant vectors nearly orthogonal outside a graph of bounded degree, and a tensor packing theorem says that a subspace of moderately growing dimension captures a substantial part of only a small fraction of such a family. The rest is bounded by the chosen dimension alone, and those bounds are summable over doubling lengths, so no rate of mixing is needed.</li>
+  <li><strong>A smallest counterexample, and a square.</strong> Take a nonzero bad correlation with the fewest slots; given the structured part, laws of at most three slots are products, so it uses at least four, and up to three functions are already done. Among those, take one with the most output slots, and saturate the system: conditioning on the structured part, alone or with one slot, cannot be improved by any extension. Selecting once more and regrouping the other slots into three groups gives a square of states whose chosen row and column both have the old law, for different reasons. Saturation gives an exact formula for their correlation, and a random vector almost surely orthogonal to an independent copy of itself must be zero. So the correlation survives with one more output slot, a contradiction.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A coin-flipping shift (mixing, and a K-system, so already covered before this paper), three functions reading the flips: the average along one orbit approaches the product of the integrals, 1/16 (our run, N up to 10<sup>5</sup>).</li>
+  <li>Median distance from the product over 12 random starts, for two to six functions: 1.2 × 10<sup>−3</sup> to 8.5 × 10<sup>−3</sup> at N = 10<sup>3</sup>, and 3.8 × 10<sup>−5</sup> to 3.7 × 10<sup>−4</sup> at N = 10<sup>6</sup>.</li>
+  <li>Our adversary (our reading of the paper’s selectors) picks the worst length in each doubling range: its best average shrinks from about 0.12 at lengths 16 to 31 to about 0.0013 at lengths 262,144 to 524,287.</li>
+  <li>An irrational rotation (not mixing), with f<sub>1</sub> = cos 4πx and f<sub>2</sub> = cos 2πx: the averages settle to ½ cos 2πx, which depends on the start, while the product of the integrals is 0.</li>
+  <li>Three fair signs U, V, W and their product: the product is independent of any two signs, yet fixed by all three.</li>
+  <li>Pictures cannot prove almost-everywhere convergence; the paper itself contains no computations.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Pointwise-Multiple-Ergodic-Averages-for-Mixing-Transformations-October-4-2026/multiple-ergodic-averages.pdf">Pointwise Multiple Ergodic Averages for Mixing Transformations (PDF)</a>, 25 pages.</li>
+  <li><a href="https://github.com/openai/math/tree/main/preprints">The release’s preprints folder</a>, with the three companions (fourfold; distinct slopes; triple mixing), all dated October 4, 2026.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/145.md">Result 145’s Lean notes</a>, for the multiple-mixing input.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 154.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 4 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Pointwise-Multiple-Ergodic-Averages-for-Mixing-Transformations-October-4-2026/multiple-ergodic-averages.pdf">Pointwise Multiple Ergodic Averages for Mixing Transformations</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Pointwise-convergence-of-fourfold-ergodic-averages-for-mixing-transformations-October-4-2026/fourfold-ergodic-averages.pdf">Pointwise convergence of fourfold ergodic averages for mixing transformations</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Triple-ergodic-averages-with-distinct-integer-slopes-October-4-2026/triple-ergodic-distinct-slopes.pdf">Triple ergodic averages with distinct integer slopes</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Pointwise-convergence-of-triple-ergodic-averages-for-mixing-transformations-October-4-2026/pointwise-triple-ergodic-averages-mixing-transformations.pdf">Pointwise convergence of triple ergodic averages for mixing transformations</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Equally spaced samples</h3>
+<p>Take a transformation T that shuffles a space while preserving probability. Start at a point x and follow its orbit. At step k, look at T^k x, T^(2k) x, and so on up to T^(nk) x: equally spaced times along one orbit. Evaluate a bounded function at each of these points, possibly a different one at each, multiply, and average over k from 1 to N. These are multiple ergodic averages. If T is mixing, meaning that any two events become nearly independent when they are far enough apart in time, you might expect the average to approach the product of the functions’ integrals. The question is whether that happens at almost every single starting point, not just with an error that is small on average over starting points. As the paper recounts, these averages became central to ergodic Ramsey theory through Furstenberg’s proof of Szemerédi’s theorem. Host and Kra proved that they converge in mean square for every number of functions, on every system, and Ziegler gave another proof. Pointwise convergence is a substantially different matter. Bourgain’s double recurrence theorem handles two functions. For longer products, earlier results needed extra structure: K-systems, two classes of weakly mixing systems, and, by Huang, Shao and Ye, ergodic measure-distal systems. The paper itself calls no question open. Mixing matters for the limit. On an irrational rotation of the circle, which is not mixing, these averages still settle, but to the wrong value. In our example with two functions, the limit is ½ cos(2πx), which depends on where you start, while the product of the integrals is 0. On a coin-flipping shift, which is mixing, and among the cases already covered, our averages along single orbits approach the product of the integrals.</p>
+<h3><span class="t num">1:53</span>The claim</h3>
+<p>Result 154 is a 25-page OpenAI preprint, dated October 4, listed with three companion preprints. Its theorem: if T is invertible and mixing, then for every number of functions n, at least 2, and every fixed tuple of bounded functions, the averages converge almost everywhere to the product of the integrals, as N runs through all the whole numbers, not just a subsequence. The probability space need not be standard, and no rate of mixing is required. The exceptional null set may depend on the system and the tuple. Companion preprints in the same release claim the cases of three and four functions; this paper extends the argument to every number. Its theorem says nothing about systems that are only weakly mixing or ergodic, about commuting transformations, or about polynomial times, and it gives no rate of convergence. It builds on three results in the same release, which it does not reprove: two of its listed companions, on four functions and on triple averages at distinct slopes, and result 145, on mixing of all orders. Those two companions rely in turn on the third, on three functions, and on result 86, whose OSVerify review reported one major issue, with a proposed repair; one companion imports, by number, the lemma where that issue sits. Along the way, the paper derives from a companion’s estimate that, on every standard invertible system, mixing or not, averages of up to three functions at distinct positive slopes converge almost everywhere: a strong claim the catalog does not headline, which we flag for expert review.</p>
+<h3><span class="t num">3:37</span>How the proof goes</h3>
+<p>The proof is by contradiction. Suppose the averages fail to approach the product on a set of positive measure. Then, on such a set, a centered version of the average rises above a fixed level at arbitrarily late lengths. Let an adversary pick, for each starting point, one of those bad lengths. Averaging the configuration of n points up to the selected lengths, and passing to a limit along an ultrafilter, records the failure as a probability law on n copies of a system, a selected law, which carries a positive correlation. Averages of at most three slots converge anyway, by the three-function claim we flagged, and so do those of the structured, distal part, so selection cannot change their laws. In our coin-flip run, an adversary picking the worst length in each doubling range still saw its advantage shrink, from about 0.12 at lengths 16 to 31, to about 0.001 at lengths between a quarter and half a million. But a length chosen from the starting point can bias other coordinates. The paper sorts them into three groups. The original coordinate is independent of any two groups, though not necessarily of all three; a system arranged this way is called a channel. In our toy with three fair signs and their product, the product is independent of any two signs, yet fixed by all three. The key lemma: selecting again keeps a channel a channel. Mixing of all orders makes the relevant vectors nearly orthogonal, outside a graph of bounded degree, and a tensor packing theorem says that a subspace of slowly growing dimension captures a substantial part of only a small fraction of such a family. What remains is bounded by the chosen dimension alone, and those bounds are summable over doubling lengths, so no rate of mixing is needed. Now take a nonzero bad correlation that uses the fewest slots. Given the structured part, laws of at most three slots are products, so it uses at least four; for up to three functions, the proof is already done. Among the smallest, take one with the most output slots, and saturate: enlarge the system until conditioning on its structured part, alone or together with one slot, cannot be improved by any further extension. Selecting once more, and regrouping the other slots into the three groups, produces a square of states, in which a chosen row and the matching column both have the old law, for different reasons. Saturation gives an exact formula for their correlation, and a Hilbert space fact finishes it: a random vector that is almost surely orthogonal to an independent copy of itself must be zero. So the correlation survives with one more output slot, contradicting the choice. No failure is possible.</p>
+<h3><span class="t num">6:23</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. It has no Lean formalization, although the theorem it imports from result 145 is formalized. Counting result 145, the three listed companions and result 86, the papers involved total about 300 pages. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, for an invertible map, mixing alone is enough: along almost every single orbit, equally spaced samples average out as if they were independent.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20154%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
