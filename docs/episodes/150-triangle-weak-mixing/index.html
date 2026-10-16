@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No hidden rhythm? Ergodicity and weak mixing of irrational triangular billiards | AI Proved What?</title>
+<meta name="description" content="An AI system claims that billiards in every triangle with an irrational angle are ergodic and even weakly mixing, with a Lean formalization of the ergodicity theorem. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/150-triangle-weak-mixing/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="No hidden rhythm?">
+<meta property="og:description" content="An AI system claims that billiards in every triangle with an irrational angle are ergodic and even weakly mixing, with a Lean formalization of the ergodicity theorem. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/150-triangle-weak-mixing/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/150-triangle-weak-mixing/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 150, October 2026</p>
+<h1>No hidden rhythm?</h1>
+<p class="subtitle">A claim that billiards in every triangle with an irrational angle are ergodic, and even weakly mixing</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 150 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="kUBNzzQOlb8" data-title="Episode 150: No hidden rhythm?">
+  <a href="https://youtu.be/kUBNzzQOlb8">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 150: No hidden rhythm? A long billiard path filling a triangle with angles of one and root two radians.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:50. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/kUBNzzQOlb8?t=0" data-t="0"><span class="t">0:00</span><span>A ball in a triangle</span></a></li>
+  <li><a href="https://youtu.be/kUBNzzQOlb8?t=147" data-t="147"><span class="t">2:27</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/kUBNzzQOlb8?t=228" data-t="228"><span class="t">3:48</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/kUBNzzQOlb8?t=368" data-t="368"><span class="t">6:08</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Shoot a frictionless ball inside a triangular table: it travels in straight lines and bounces with the angle in equal to the angle out. If every angle is a rational multiple of π, the walls can only send the ball in finitely many directions (in our runs, 8 for the 45-45-90 table and 12 for 30-60-90), so the ball never forgets which family of directions it started in and the motion is not ergodic. If an angle is an irrational multiple of π, the directions can spread: in a triangle with angles of 1 and √2 radians, each of our trajectories used over 200,000 distinct directions in a million bounces. Ergodic means time averages equal space averages for a typical start. Weak mixing asks for more: no hidden rhythm, no quantity that turns steadily like a clock hand; equivalently, two independent balls watched together are ergodic. A standard example that is ergodic but not weakly mixing is the 45-45-90 table restricted to one typical family of eight directions; in our run the average squared correlation for a corner region stays near 0.09 there, while in the irrational triangle it falls to about 0.005.</p>
+<p>As the papers recount, Zemlyakov and Katok unfolded billiards into straight lines on a surface, which for rational polygons is a translation surface. Kerckhoff, Masur and Smillie proved unique ergodicity in almost every direction there, and ergodicity of the full flow for a dense G<sub>δ</sub> family of polygons. Vorobets gave explicit ergodic examples, including some irrational right triangles, whose angles have exceptionally fast simultaneous rational approximations. Chaika and Forni proved weak mixing for a dense G<sub>δ</sub> set of polygons with any fixed number of sides, which, the papers note, is not the same as almost every triangle. Numerical studies disagreed: some suggested weak mixing or even mixing, others non-ergodicity in some irrational right or symmetric triangles.</p>
+<p>Result 150 is two OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/Ergodicity-of-triangular-billiards-with-an-irrational-angle-September-25-2026/Ergodicity-of-triangular-billiards-with-an-irrational-angle-September-25-2026.pdf">The earlier one</a> (12 pages, September 25, 2026) claims, in its Theorem 1, that in every nondegenerate triangle with at least one angle irrational relative to π the billiard flow is ergodic for area times uniform direction, trajectories hitting a corner being discarded (a null set), with “no genericity or Diophantine condition”. Its Corollary 7 derives, from outside theorems, quantum ergodicity and nodal-domain counts that grow without bound along density-one subsequences of the triangle’s Dirichlet or Neumann eigenfunctions. <a href="https://github.com/openai/math/blob/main/preprints/Weak-mixing-of-triangular-billiards-with-an-irrational-angle-October-5-2026/weak-mixing-triangular-billiards.pdf">The later one</a> (13 pages, October 5, 2026) is the headline: in its Theorem 1.1 the same flow is weakly mixing. It holds for all but countably many triangle shapes, including irrational right triangles, and “the irrationality assumption is sharp for the full phase space.”</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Neither paper claims mixing, rates, unique ergodicity, or anything about every individual orbit, and nothing is claimed beyond triangles. Neither calls the problem famous or open, or says who first asked it.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two preprints, 12 and 13 pages, dated September 25 and October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Only the ergodicity theorem. Weak mixing is not formalized</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. Neither preprint has been revised since both were added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/150.md">Lean formalization</a> of the earlier paper’s ergodicity theorem: a <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/IrrationalTriangleBilliard.lean">comparator statement</a> that also requires the flow to be well defined off a null set, unique and measure-preserving, and <a href="https://github.com/openai/math/blob/main/lean/OAI/Dynamics/TriangleBilliards">39 files and 12,363 lines</a> of proof, with no unproved steps that we could find. We have not run the check. The spectral corollary and the later paper’s weak-mixing theorem, the headline claim, have no Lean formalization anywhere in the repository, although the catalog lists the Lean link under the weak-mixing headline. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Double the table.</strong> Gluing two copies of the triangle along their sides gives a flat pillow with three cone points, cone angles twice the triangle’s angles, on which bounces become straight motion. Expanding a function of position and direction in Fourier modes of the direction turns motion along and across the trajectory into Cauchy–Riemann derivatives that shift the mode by one. As the papers explain, Forni and Moll had shown that, when a corner angle is irrational, invariant functions with square-integrable derivatives along and across the motion are constant; the difficulty is that the indicator of an invariant set is merely measurable.</li>
+  <li><strong>Ergodicity.</strong> The earlier paper smooths in space away from the corners, shows each Fourier coefficient has a square-integrable gradient, sums every second mode from a fixed index upward so that the flow derivative telescopes to one endpoint term, and uses long averages clear of the corners with two limits in a careful order. Every coefficient is then parallel, without using the irrational angle. Going once around the irrational corner turns directions by twice its angle, which no parallel coefficient of nonzero mode survives; only the average over directions remains, and it is constant.</li>
+  <li><strong>Weak mixing.</strong> The later paper runs the same machinery on an eigenfunction, which the flow multiplies by a phase turning at rate λ, and gets a sharp bound: the total gradient squared is at most λ² times the function squared. The forward derivative uses all of it, so the sideways derivative vanishes and the eigenfunction is a plane wave c(v)e<sup>iλx·v</sup>. Reflection in either wall through the irrational corner leaves the amplitude unchanged, and together they rotate directions by twice that angle, forcing a constant amplitude; the third wall misses that corner, so reflecting in it shifts the phase by an amount that changes with the direction, impossible unless λ = 0. With only constant eigenfunctions, a standard Hilbert–Schmidt argument makes the product flow ergodic.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Distinct directions along single trajectories: 8 for the 45-45-90 table and 12 for 30-60-90 (four starts each); for angles of 1 and √2 radians, medians of 394, 3,206, 27,337 and 213,652 after 10<sup>3</sup>, 10<sup>4</sup>, 10<sup>5</sup> and 10<sup>6</sup> bounces (eight starts, each over 206,000 at 10<sup>6</sup>).</li>
+  <li>The average over [0, T] of the squared correlation of a corner region (a quarter of the area), 20,000 starting states: 0.095, 0.088 and 0.087 at T = 10, 50 and 200 for the 45-45-90 table restricted to one family of eight directions, against 0.059, 0.018 and 0.0046 for the irrational triangle.</li>
+  <li>In the irrational triangle, the third wall is 0.988 from the corner of angle 1 radian, so the offset in the reflection is 1.976.</li>
+  <li>Numerics cannot prove weak mixing, and the papers themselves contain no numerics; these are our illustrations.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Weak-mixing-of-triangular-billiards-with-an-irrational-angle-October-5-2026/weak-mixing-triangular-billiards.pdf">Weak mixing of triangular billiards with an irrational angle (PDF)</a>, 13 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Ergodicity-of-triangular-billiards-with-an-irrational-angle-September-25-2026/Ergodicity-of-triangular-billiards-with-an-irrational-angle-September-25-2026.pdf">Ergodicity of triangular billiards with an irrational angle (PDF)</a>, 12 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/150.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 150.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Weak-mixing-of-triangular-billiards-with-an-irrational-angle-October-5-2026/weak-mixing-triangular-billiards.pdf">Weak mixing of triangular billiards with an irrational angle</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Ergodicity-of-triangular-billiards-with-an-irrational-angle-September-25-2026/Ergodicity-of-triangular-billiards-with-an-irrational-angle-September-25-2026.pdf">Ergodicity of triangular billiards with an irrational angle</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>A ball in a triangle</h3>
+<p>Shoot a frictionless ball inside a triangular table. It travels in straight lines and bounces with the angle in equal to the angle out, forever. If every angle of the triangle is a rational multiple of pi, like 45-45-90 degrees, the walls can only ever send the ball in finitely many directions: in our runs, 8 directions for that triangle, and 12 for 30-60-90. So the ball never forgets which family of directions it started in, and the motion is not ergodic. If an angle is an irrational multiple of pi, the directions can spread: in a triangle with angles of 1 radian and √2 radians, our trajectories used over 200,000 distinct directions in a million bounces. Ergodic means that a typical ball’s long-run statistics match the uniform spread over positions and directions: time averages equal space averages. Weak mixing asks for more. There is no hidden rhythm, no quantity that turns steadily like a clock hand; equivalently, two independent balls, watched together, are ergodic too. A standard example that is ergodic but not weakly mixing: the 45-45-90 table restricted to one typical family of 8 directions. In our run, the average squared correlation for a corner region stays near 0.09, while in the irrational table it falls to about 0.005. As the papers recount, Zemlyakov and Katok unfolded billiards into straight lines on a surface; for rational polygons this gives a translation surface. Kerckhoff, Masur and Smillie proved unique ergodicity in almost every direction there, and ergodicity of the full flow for a dense G-delta family of polygons. Vorobets gave explicit ergodic examples, including some irrational right triangles, whose angles have exceptionally fast simultaneous rational approximations. Chaika and Forni proved weak mixing for a dense G-delta set of polygons with any fixed number of sides, which, the papers note, is not the same as almost every triangle. These cover generic or specially approximable tables, not every triangle. And numerical studies have disagreed: some suggest weak mixing or even mixing, others non-ergodicity in some irrational right or symmetric triangles.</p>
+<h3><span class="t num">2:27</span>The claim</h3>
+<p>Result 150 is two OpenAI preprints. The earlier one, 12 pages, dated September 25, claims that in every nondegenerate triangle with at least one angle irrational relative to pi, the billiard flow is ergodic for area times uniform direction, ignoring the null set of trajectories that hit a corner, with no genericity or Diophantine condition. It also derives, from outside theorems, quantum ergodicity and nodal-domain counts that grow without bound along almost all of the triangle’s Dirichlet or Neumann eigenfunctions. The later one, 13 pages, dated October 5, is the headline: the same flow is weakly mixing, which is stronger. In particular, it holds for all but countably many triangle shapes, including irrational right triangles, where earlier computer experiments pointed both ways, and the paper notes the irrationality assumption is sharp for the full phase space. Neither paper claims mixing, rates, unique ergodicity, or anything about every individual orbit, and nothing is claimed beyond triangles. Neither calls the problem famous or open, or says who first asked it. The ergodicity theorem, though not its spectral corollary, is formalized in Lean; the weak mixing paper is not.</p>
+<h3><span class="t num">3:48</span>How the proof goes</h3>
+<p>Both papers glue two copies of the triangle along their sides: a flat pillow with three cone points at the corners, whose cone angles are twice the triangle’s angles. Bounces become straight motion on this surface. Expand a function of position and direction in Fourier modes of the direction; moving along the trajectory and moving sideways become Cauchy-Riemann derivatives that shift the mode by one. As the papers explain, Forni and Moll had shown that, when a corner angle is irrational, invariant functions with square-integrable derivatives along and across the motion are constant. The difficulty is that the indicator of an invariant set is merely measurable. The first paper smooths in space, away from the corners, and shows that each Fourier coefficient has a square-integrable gradient. It then sums every second mode from a fixed index upward, where the flow derivative telescopes to a single endpoint term, and uses long averages along trajectory pieces that stay clear of the corners, taking two limits in a careful order. The result: every coefficient is parallel. None of this uses the irrational angle; it enters only at the corner. Going once around the irrational corner rotates directions by twice its angle, and a parallel coefficient of nonzero mode cannot survive that rotation. Only the average over directions remains, and it is constant: the flow is ergodic. For weak mixing, the second paper runs the same machinery on an eigenfunction, a function that the flow multiplies by a phase turning at rate lambda. It gets a sharp bound: the total gradient squared is at most lambda squared times the function squared. The forward derivative already uses all of that, so the sideways derivative must vanish, and the eigenfunction becomes a plane wave for each direction. Reflection in either wall through the irrational corner leaves the amplitude unchanged; together they rotate directions by twice that irrational angle, forcing a constant amplitude. The third wall misses that corner, so reflecting in it shifts the phase by an amount that changes with the direction, impossible unless lambda is zero. With no eigenfunctions but constants, a standard Hilbert-Schmidt argument makes the product flow ergodic.</p>
+<h3><span class="t num">6:08</span>Where it stands</h3>
+<p>Neither preprint is peer reviewed or revised. The ergodicity theorem is formalized in Lean, in 39 files and about 12,400 lines that also construct the flow itself, with no unproved steps that we found; we have not run the check. The weak mixing theorem has no Lean, although the catalog lists the Lean link under the weak mixing headline. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If it holds, billiards in every triangle with an irrational angle have no hidden rhythm: correlations fade on average over time, though not necessarily at every moment.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20150%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

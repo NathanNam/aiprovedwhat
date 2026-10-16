@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wrapping without chaos? A C¹ counterexample to Shub’s entropy conjecture | AI Proved What?</title>
+<meta name="description" content="An AI system claims a noninvertible C¹ map with zero topological entropy whose action on second homology has eigenvalue 2, a counterexample to the general C¹ self-map form of Shub’s entropy conjecture, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/151-entropy-conjecture-c1/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Wrapping without chaos?">
+<meta property="og:description" content="An AI system claims a noninvertible C¹ map with zero topological entropy whose action on second homology has eigenvalue 2, a counterexample to the general C¹ self-map form of Shub’s entropy conjecture, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/151-entropy-conjecture-c1/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/151-entropy-conjecture-c1/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 151, October 2026</p>
+<h1>Wrapping without chaos?</h1>
+<p class="subtitle">A claim of a once continuously differentiable map with zero topological entropy whose action on second homology has eigenvalue 2: a C¹ counterexample to Shub’s entropy conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 151 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="wNMcxS9iRSs" data-title="Episode 151: Wrapping without chaos?">
+  <a href="https://youtu.be/wNMcxS9iRSs">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 151: Wrapping without chaos? Points on a circle doubling their angle, beside a sphere wrapped around itself twice.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:24. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/wNMcxS9iRSs?t=0" data-t="0"><span class="t">0:00</span><span>Two ways to count</span></a></li>
+  <li><a href="https://youtu.be/wNMcxS9iRSs?t=135" data-t="135"><span class="t">2:15</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/wNMcxS9iRSs?t=204" data-t="204"><span class="t">3:24</span><span>How the map works</span></a></li>
+  <li><a href="https://youtu.be/wNMcxS9iRSs?t=408" data-t="408"><span class="t">6:48</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Square complex numbers on the Riemann sphere, the plane plus a point at infinity. Points inside the unit circle fall to 0 and points outside fly to ∞, but on the circle the angle doubles, so nearby points separate. Topological entropy is the exponential growth rate of the number of orbits you can tell apart (at a fixed resolution, which is then made finer); for squaring it is log 2, and in our counts on the circle the number of distinguishable orbits doubles every step. Squaring also wraps the sphere around itself twice, so in homology it multiplies the sphere’s class by 2. Shub’s entropy conjecture links the two pictures. In the general C¹ self-map formulation recorded by Saghin and Xia, which the paper uses, it asks whether every C¹ map f of a compact smooth manifold without boundary satisfies h<sub>top</sub>(f) ≥ log ρ(f<sub>*</sub>), where ρ(f<sub>*</sub>) is the spectral radius of f’s action on real homology in all degrees. For squaring both sides are log 2.</p>
+<p>As the paper recounts, Shub’s later account explicitly includes endomorphisms as well as diffeomorphisms and distinguishes the earlier Lipschitz counterexamples discussed by Pugh from the C¹ question. Manning’s inequality controls the action on first homology for every continuous map; Misiurewicz and Przytycki’s C¹ bound concerns the topological degree, that is, top-dimensional homology; Yomdin proved the inequality for C<sup>∞</sup> maps by controlling homological growth through volume growth, with Gromov’s exposition; Saghin and Xia proved it for partially hyperbolic diffeomorphisms with one-dimensional center, and Liao, Viana and Yang for diffeomorphisms away from homoclinic tangencies. In the paper’s words, “None of these statements covers the combination of finite regularity, noninvertibility, and intermediate-degree homology.”</p>
+<p>Result 151 is <a href="https://github.com/openai/math/blob/main/preprints/A-C1-Counterexample-to-the-Entropy-Conjecture-September-25-2026/article.pdf">one OpenAI preprint</a> (15 pages, September 25, 2026). Its Theorem 1.1 claims that there are a positive integer q and a C¹ self-map f of M = (ℝ/100ℤ) × (S²)<sup>q+1</sup>, a circle times q + 1 two-spheres, with h<sub>top</sub>(f) = 0 whose action on H<sub>2</sub>(M; ℝ) has eigenvalue 2, so h<sub>top</sub>(f) = 0 &lt; log 2 ≤ log ρ(f<sub>*</sub>). The paper concludes: “Thus the general C¹ self-map formulation of the entropy conjecture has a negative answer.” The map is noninvertible, and its eigenvalue lies in H<sub>2</sub> while dim M = 2q + 3 ≥ 5, so it does not conflict with the first-homology or top-dimensional results.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The paper claims nothing about diffeomorphisms or homeomorphisms, nothing about maps smoother than C¹ (by Yomdin’s theorem no C<sup>∞</sup> example can exist), and it does not say what remains open. It asserts no uniform time for orbits to settle, fixes no particular q, and claims only that ρ(f<sub>*</sub>) is at least 2. The map is not a disguised copy of squaring: the paper calls the link “a homological intertwining, not a dynamical semiconjugacy.” It does not call the problem famous or open. As we read the construction (not a claim of the paper), each register is read during less than one step, so covering the readout window needs at least two registers and the manifold as built has dimension at least 7; the Lean uses three registers, dimension 9.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 15 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The main theorem. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/151.md">Lean formalization</a>: a <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/C1EntropyCounterexample.lean">comparator statement</a> that uses Mathlib’s topological entropy and Mathlib’s singular homology with real coefficients, defines C¹ as locally the restriction of a C¹ map of the surrounding Euclidean space, and asks for a nonzero class in second homology that the map doubles, the inequality for the spectral radius over all degrees, and that the map is not bijective; and <a href="https://github.com/openai/math/blob/main/lean/OAI/Dynamics/EntropyCounterexample">201 files and 22,878 lines</a> of proof (counting the solution’s imports, including a singular-homology library), with no unproved steps that we could find. The directory’s aggregator module pulls in 66 further files of alternative routes. The Lean proves noninvertibility by showing the map is not onto (registers never land on ∞), where the paper shows it is not one-to-one. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A clock that can stall.</strong> The coordinates are a clock t on a circle of length 100, a main sphere coordinate z, and q register spheres. Mostly z squares. The clock advances by 1 except within 2 of the reading 50, where it advances by b(t) + (1 − b(t))e(z): b is a barrier that vanishes only at 50, and e is 1 once |z| ≥ 3/4 and 0 once |z| ≤ 1/2. With |z| ≤ 1/2 the clock can never pass 50, squaring keeps z small, and the orbit is attracted to the clock at 50 with z = 0. A clock that only just slips past 50 crawls, so the time until the next readout is unbounded.</li>
+  <li><strong>Prepare for every delay.</strong> Each lap resets the registers to 0. Every orbit that completes a lap has |z| &gt; 1/2 at the preparation readings 8 to 12, where the map writes into register ℓ the series (α(t)/10) ∑<sub>m≥1</sub> L<sup>1−m</sup> β<sub>ℓ</sub>(T<sub>m</sub>) χ(z) (z/|z|)<sup>2<sup>m+1</sup></sup>: T<sub>m</sub> is the clock predicted m steps ahead if z keeps squaring, β<sub>ℓ</sub> selects the readout window, and (z/|z|)<sup>2<sup>m+1</sup></sup> is the phase z² will have then. The registers are multiplied by L each step and stay in their linear range, so the term for the true delay arrives at full size exactly at the readout and is added along z², lifting |z| above 2; z then squares off to ∞ and the registers die out. “The infinite prediction series is essential to the argument: a finite truncation need not supply the compulsory contribution after an arbitrarily long delay.”</li>
+  <li><strong>Why C¹.</strong> The m-th term’s phase winds 2<sup>m+1</sup> times around, and the predicted clock’s derivative is at most B<sup>m</sup> for a fixed bound B. With L &gt; max{B, 2} the derivative series converge, so the map is C¹, including at z = ∞ and across the clock’s seams.</li>
+  <li><strong>Zero entropy.</strong> Every orbit approaches one of two sets: the clock at 50 with z = 0, where the registers only stretch or saturate along rays, or z = ∞ with the registers at 0, where the clock turns with period 100. Both have zero entropy, and a localization lemma (pointwise attraction to a compact invariant set of zero entropy forces zero entropy) gives h<sub>top</sub>(f) = 0, with no uniform entry time.</li>
+  <li><strong>Eigenvalue 2.</strong> Projecting to the main sphere gives z² plus a bounded readout term C(t, v); shrinking it with z² + sC is a homotopy, so the projection carries f<sub>*</sub> on second homology to the action of squaring, which has degree 2. Since the projection is onto in second homology, 2 is an eigenvalue of f<sub>*</sub>.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Squaring: the n-th iterate has 2<sup>n</sup> + 1 fixed points (0, ∞ and 2<sup>n</sup> − 1 roots of unity; checked for n ≤ 10). Greedy separated sets of angle doubling at resolution 0.25: 21, 42, 85, 170, 341, 682, 1,365 and 2,730 orbits for n = 1 to 8, a ratio of 2.000.</li>
+  <li>The paper’s map with our own concrete cutoffs (3 registers, L = 8, the paper’s example barrier) and exact rational phases: 300 starts with the clock between 0 and 2 and |z| just below 1, on the edge between stalling and completing a lap, split 182 escaping and 118 stalled; all 327 readouts were aligned by exact equality and none was off; the largest register at its readout was 0.3, within the paper’s bound of 1/2. Of 400 fully random starts, 266 escaped and 134 stalled.</li>
+  <li>Slow passages: slipping past 50 by margins of 6.99 × 10<sup>−4</sup>, 2.25 × 10<sup>−4</sup> and 6.93 × 10<sup>−5</sup> gave delays of 5,792, 17,860 and 57,780 steps between preparation and readout, about 4/ε for our barrier. In the last, |z| at the readout was about 10<sup>−4.1 × 10<sup>17380</sup></sup>; the readout lifted it to 6, and one step later it was about 42.</li>
+  <li>For our cutoffs we estimate B ≈ 5.86 on a grid, so L = 8 exceeds max{B, 2}.</li>
+  <li>The paper itself contains no numerics; these are our illustrations.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-C1-Counterexample-to-the-Entropy-Conjecture-September-25-2026/article.pdf">A C¹ Counterexample to the Entropy Conjecture (PDF)</a>, 15 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/151.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 151.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-C1-Counterexample-to-the-Entropy-Conjecture-September-25-2026/article.pdf">A C^1 Counterexample to the Entropy Conjecture</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Two ways to count</h3>
+<p>Take the map that squares complex numbers, on the Riemann sphere: the plane plus one point at infinity. Points inside the unit circle fall to zero, and points outside fly off to infinity. On the circle itself, squaring doubles the angle, and that is where the complexity lives: two nearby points on it double their angular distance every step, until they are far apart. Topological entropy measures this. Count how many orbits of n steps you can tell apart at a fixed resolution, take the exponential growth rate, then let the resolution get finer. In our runs on the circle, the count doubles with every step: a growth rate of log 2. The same doubling shows in the fixed points: the n-th iterate of squaring has exactly 2ⁿ + 1 fixed points. There is a second way to see the number 2. Squaring wraps the sphere around itself twice. In homology, which records how a map wraps cycles, it multiplies the sphere’s class by 2. Shub’s entropy conjecture relates the two views. In the general C¹ self-map formulation recorded by Saghin and Xia, it asks whether every once continuously differentiable map of a compact smooth manifold without boundary has entropy at least the logarithm of the spectral radius of its action on real homology, the fastest growth that homology can see. For squaring, both sides are log 2. As the paper recounts, Shub’s later account explicitly includes endomorphisms as well as diffeomorphisms, and distinguishes earlier Lipschitz counterexamples, discussed by Pugh, from the C¹ question. On the positive side, Manning’s inequality controls the action on first homology, for every continuous map. Misiurewicz and Przytycki’s C¹ bound concerns the topological degree, which is top-dimensional homology. Yomdin proved the inequality for C^∞ maps, by controlling homological growth through volume growth. Saghin and Xia, and separately Liao, Viana and Yang, proved it for classes of C¹ diffeomorphisms. None of these positive results, the paper says, covers the combination of finite regularity, noninvertibility, and intermediate-degree homology.</p>
+<h3><span class="t num">2:15</span>The claim</h3>
+<p>Result 151 is a 15-page OpenAI preprint, dated September 25. Its theorem: on a circle times several two-spheres, there is a C¹ self-map whose topological entropy is zero, while its action on second homology has eigenvalue 2. So the entropy, zero, is below log 2, and so below the log of the spectral radius, and the paper concludes that the general C¹ self-map formulation of the entropy conjecture has a negative answer. The map is noninvertible, and its eigenvalue lies in the second homology of a manifold of dimension at least 5, so it does not conflict with the first-homology or top-dimensional results. The paper claims nothing about diffeomorphisms, or about maps smoother than C¹, and it does not say what remains open. It asserts no uniform time for orbits to settle, and it does not call the problem famous or open. A Lean formalization states the theorem with Mathlib’s entropy and real singular homology, including a nonzero second-homology class that the map doubles.</p>
+<h3><span class="t num">3:24</span>How the map works</h3>
+<p>The manifold has a clock, a main sphere coordinate z, and some register spheres. Mostly, z just squares. The clock runs around a circle of length 100, advancing by 1 each step, except near the reading 50, where a barrier holds it back. There it advances fully when the size of z is at least 3/4. If z has size at most 1/2, the barrier alone moves the clock, and it can never pass 50. Squaring then keeps z small, so the clock stalls for good: it tends to 50, and z tends to zero. But if the clock just slips past 50, the barrier is nearly zero there, and the clock crawls. In our runs, slipping past by a margin ε cost about 4/ε steps. So delays can be arbitrarily long. Every orbit that completes a lap has z of size above 1/2 at the preparation stage. There, the map predicts how many steps m remain until a readout, if z keeps squaring, and writes into a register a tiny signal: L to the power 1 − m, times the phase that z squared will have at the readout, with L a fixed large constant. Each lap starts by resetting the registers to zero. They multiply by L each step, staying small enough to amplify cleanly, so the signal arrives at full size exactly at the readout, where it is added along z squared, lifting the size of z above 2. From then on, z squares off to infinity. Because the clock can crawl, m is unbounded, so the formula for the signal is an infinite series over every possible delay; the paper stresses that the argument needs the whole series, since a finite truncation could miss a long delay. With our own concrete choices, 3 registers and L = 8, 300 random starts just inside the unit circle, on the edge between stalling and completing a lap, split 182 escaping, 118 stalled, and all 327 readouts aligned exactly. In one engineered start, the readout came 57,780 steps after preparation, when z was astronomically small, and still threw it out to size 6; one step later, it was past 40. Why is the map C¹? The phase in the m-th term winds 2^(m+1) times around, and the predicted clock’s derivative is bounded by B^m, for a fixed bound B. Weights of L to the 1 − m, with L larger than both B and 2, make the derivatives sum, so the map is C¹. The paper claims nothing smoother, and by Yomdin’s theorem, no C^∞ map could do this. For entropy: every orbit approaches one of two sets. Either the clock sits at 50 with z at zero, where the registers only stretch or saturate along rays, or z sits at infinity, where the clock simply turns. Both carry zero entropy, and a localization lemma passes this to the whole map, with no uniform settling time needed. For homology: project to the main sphere, and shrink the readout additions to zero. That homotopy shows the projection carries the map’s action on second homology to that of squaring, which doubles the sphere’s class. Since the projection is onto in second homology, 2 is an eigenvalue. In the paper’s words, this is a homological intertwining, not a dynamical semiconjugacy.</p>
+<h3><span class="t num">6:48</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. OpenAI’s Lean formalization uses 3 registers, and its proof runs to 201 files and about 22,900 lines, with no unproved steps that we found; we have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, a once continuously differentiable map can double a homology class at every step with zero entropy: wrapping without chaos.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20151%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

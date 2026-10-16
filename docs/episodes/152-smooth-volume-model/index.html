@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No smooth volume model? A zero-entropy system without a smooth positive-volume model | AI Proved What?</title>
+<meta name="description" content="An AI system claims a zero-entropy ergodic system that no C∞ diffeomorphism preserving a smooth positive density can reproduce, in any dimension, with a Lean formalization of the finite-entropy version. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/152-smooth-volume-model/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="No smooth volume model?">
+<meta property="og:description" content="An AI system claims a zero-entropy ergodic system that no C∞ diffeomorphism preserving a smooth positive density can reproduce, in any dimension, with a Lean formalization of the finite-entropy version. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/152-smooth-volume-model/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/152-smooth-volume-model/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 152, October 2026</p>
+<h1>No smooth volume model?</h1>
+<p class="subtitle">A claim of a zero-entropy system that no smooth diffeomorphism preserving a smooth positive density can reproduce, in any dimension</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 152 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="bLG1Vtdtpg0" data-title="Episode 152: No smooth volume model?">
+  <a href="https://youtu.be/bLG1Vtdtpg0">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 152: No smooth volume model? Two points in a small cell, and the spliced point that follows one into the future and the other into the past.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:19. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/bLG1Vtdtpg0?t=0" data-t="0"><span class="t">0:00</span><span>Playing a process smoothly</span></a></li>
+  <li><a href="https://youtu.be/bLG1Vtdtpg0?t=142" data-t="142"><span class="t">2:22</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/bLG1Vtdtpg0?t=217" data-t="217"><span class="t">3:37</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/bLG1Vtdtpg0?t=395" data-t="395"><span class="t">6:35</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>An abstract dynamical system moves the points of a probability space around, forever, so that every region keeps its probability; many are built from sequences of symbols with no geometry at all. The smooth realization problem, as the paper puts it, asks which of these can be represented by smooth dynamics on a compact manifold. The paper asks for a demanding kind of model: a C<sup>∞</sup> diffeomorphism of a compact manifold (of any finite dimension, possibly with boundary, orientable or not) preserving a smooth, strictly positive density, matched to the abstract system by a relabelling that need only be measurable, not continuous.</p>
+<p>Finite entropy is necessary: in the paper’s words, “Ruelle’s differentiable entropy inequality … gives finite entropy from compact derivative bounds.” In our own example, a perturbed cat map on the torus, the natural logarithm of the stretch grows by about 0.96 per step, never faster than about 1.09. As the paper recounts, Lind and Thouvenot realized finite-entropy ergodic transformations by area-preserving homeomorphisms of the two-torus and showed that a hyperbolic torus automorphism represents every such system with entropy below the automorphism’s own, using an invariant measure of full support; Quas and Soo extended this. So every ergodic finite-entropy system has a smooth model, but its measure need not be a smooth density. Katok and Thouvenot built ℤ² actions with no Lipschitz realization on a compact space of finite box dimension, which, the paper notes, does not settle the case of one map; anti-classification results of Foreman and Weiss, Kunde, and Gerber and Kunde study equivalence inside families of smooth models.</p>
+<p>Result 152 is <a href="https://github.com/openai/math/blob/main/preprints/A-finite-entropy-system-without-a-smooth-positive-volume-model-September-25-2026/paper.pdf">one OpenAI preprint</a> (42 pages, September 25, 2026). Its Theorem 1.1 claims an ergodic invertible transformation of a standard nonatomic probability space with zero Kolmogorov–Sinai entropy that is not measurably conjugate, on invariant conull sets, to any C<sup>∞</sup> diffeomorphism of a compact finite-dimensional manifold preserving a strictly positive smooth probability density. One example excludes every dimension: “the symbolic system is fixed first. Only then is a hypothetical smooth model, with any one finite dimension, considered.” The paper calls this “a negative answer to the smooth-volume realization question, already among systems of zero entropy.” (The repository folder is named “A-finite-entropy-system…”, but the paper’s title, abstract and theorem say zero entropy.)</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The obstruction is about the smooth positive density. By the results the paper cites, this system does have a smooth model whose invariant measure has full support but no smooth density, and “we do not assert an obstruction for every equivalent-to-volume invariant measure”; Remark 7.4 adds that the proof “makes no analogous assertion for models carrying only a singular measure or a nonsmooth density equivalent to volume.” Nothing is said about finitely differentiable maps. The system is shown to exist by a probabilistic construction, not written down, and the paper does not say which systems do have smooth volume models. It does not call the problem famous or open or name who first posed it.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 42 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>With finite entropy in place of zero. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/152.md">Lean formalization</a>: a <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SmoothObstruction.lean">comparator statement</a> that writes out standard nonatomic spaces, measurable conjugacy on invariant conull sets, smooth positive densities in charts (including charts with boundary), C<sup>∞</sup> diffeomorphisms and every finite dimension, but asks only for <em>finite</em> entropy: in the scope note’s words, “the paper’s stronger zero-entropy conclusion is outside this statement.” The proof, <a href="https://github.com/openai/math/blob/main/lean/OAI/Dynamics/SmoothObstruction">53 files and 30,090 lines</a>, formalizes the switch, the word construction, the window entropy and the final contradiction, with no unproved steps that we could find; its finite-entropy bound is the crude alphabet bound (about 80,000 bits per step), so the paper’s zero-entropy count is the paper’s alone. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Splicing in a smooth volume model.</strong> At a time n = 2<sup>k</sup>, cut the manifold into at most exp(CB<sub>k</sub>n) cells, where ∑ B<sub>k</sub><sup>16</sup> &lt; ∞. Pick a cell with probability equal to its volume and two independent points x, y in it. For most pairs there is a point z whose next n steps follow x and whose last n steps follow y, and the law of z is at most twice the volume (Theorem 4.1). The paper builds z from a dyadic chord estimate for derivative growth, slow and fast directions on finite orbit segments (zero or positive slow rates allowed) and a boundary-value problem. It builds the mirror splice w as well; the Jacobian of (x, y) ↦ (z, w) is a ratio of four endpoint determinants in which the large stretch factors cancel, and injectivity turns this into the factor 2.</li>
+  <li><strong>Words with built-in relations.</strong> The system is a hierarchy of words of words. Each level-i word carries a label, a nonzero vector in 𝔽<sub>2</sub><sup>2s<sub>i</sub></sup>, and labels u, v pass the test when the symplectic form [u, v] is 0. Inside each group, labels a power of two apart must pass. This costs a sliver of each label’s information, so at high levels short lists of labels keep at least 99.6% of their full entropy for any invariant measure; words are recognizable from slightly corrupted copies; and the information per symbol tends to 0, so every invariant measure has zero entropy.</li>
+  <li><strong>The clash.</strong> Compare y’s past list with x’s future list, a power-of-two number of words apart, and let Z be the fraction of passing pairs. Given the cell the lists are independent, and at well-chosen scales naming the cell costs few bits (because ∑ B<sub>k</sub><sup>16</sup> &lt; ∞ while the word rates make ∑ K<sub>i</sub>R<sub>i</sub><sup>16</sup> = ∞), so a character-sum bound gives E Z ≤ 0.62. But z is a point of the system whose symbols match x’s ahead and y’s behind in all but a tiny fraction of places, so recognition aligns its words and a legal point’s own lists pass: E Z ≥ (0.96 − 0.01) × 0.96 = 0.912. Both cannot hold.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our map S = A ∘ Sh on the torus, A = [[2, 1], [1, 1]], Sh(x, y) = (x, y + (0.3/2π) sin 2πx): average log-stretch 0.958 per step (1,000 orbits of 1,024 steps); ceiling ln sup ‖DS‖ = 1.091.</li>
+  <li>The paper’s splice built on that map in two dimensions: every pair Jacobian, from the four-determinant identity, in [0.9967, 1.0027] (72 pairs, n = 8, 16, 32); in the worked pair the distances to x forward and to y backward shrink from about 0.02 to below 0.0001 in 8 steps; 300 splice points spread evenly over the cell.</li>
+  <li>A small version of the words (labels in 𝔽<sub>2</sub><sup>20</sup>, groups of 64, distances 1, 2, 4, 8): labels at the prescribed distances passed 100% of the time, labels from two unrelated lists 52%.</li>
+  <li>The paper’s parameters at its smallest start (our arithmetic): an alphabet of 2<sup>65538</sup> − 1 labels and information per symbol of 65,538, then 81.9, then 0.051 bits, tending to 0.</li>
+  <li>The paper itself contains no numerics; these are our illustrations, and none of them models the paper’s system.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-finite-entropy-system-without-a-smooth-positive-volume-model-September-25-2026/paper.pdf">A zero-entropy system without a smooth positive-volume model (PDF)</a>, 42 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/152.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 152.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-finite-entropy-system-without-a-smooth-positive-volume-model-September-25-2026/paper.pdf">A zero-entropy system without a smooth positive-volume model</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Playing a process smoothly</h3>
+<p>Picture a machine that moves the points of a space around, forever, keeping the probability of every region unchanged. Ergodic theory studies such systems up to relabelling, and many are built from sequences of symbols, with no geometry at all. The smooth realization problem, as the paper puts it, asks which of these abstract systems can be represented by smooth dynamics on a compact manifold. This paper asks for a demanding kind of model: a C^∞ diffeomorphism that preserves a smooth, strictly positive density, a smooth volume, matched to the abstract system by a relabelling that only has to be measurable, not continuous. The manifold may have any finite dimension, may have a boundary, and need not be orientable. A first restriction comes from entropy. Entropy measures how fast a system produces new information, in bits per step. A smooth map of a compact manifold can only stretch at a bounded rate. In our own example, a perturbed cat map on the torus, the natural logarithm of the stretch grows by about 0.96 per step, never faster than a fixed ceiling of about 1.09. As the paper cites, Ruelle’s differentiable entropy inequality turns such derivative bounds into finite entropy. So finite entropy is necessary. The question the paper addresses: is it enough, when the invariant measure must be a smooth positive density? As the paper recounts, Lind and Thouvenot realized finite-entropy ergodic systems by homeomorphisms of the two-torus that preserve area, and showed that a hyperbolic torus automorphism represents every such system whose entropy is below the automorphism’s own, using an invariant measure of full support; Quas and Soo extended this. Taking a high enough power of the automorphism, every ergodic finite-entropy system gets a smooth model, but its measure need not be a smooth density. Katok and Thouvenot built actions of two commuting maps with no Lipschitz realization on any compact space of finite box dimension, whatever the measure, though that does not settle the case of one map; and anti-classification results by Foreman and Weiss, by Kunde, and by Gerber and Kunde study equivalence inside families of smooth models.</p>
+<h3><span class="t num">2:22</span>The claim</h3>
+<p>Result 152 is a 42-page OpenAI preprint, dated September 25. Its theorem: there is an ergodic invertible system on a standard probability space without atoms, with zero entropy, that is not measurably conjugate to any C^∞ diffeomorphism of a compact manifold preserving a strictly positive smooth density. One example rules out every finite dimension, with or without boundary, orientable or not: the system is fixed first, and only then is any smooth model considered. The paper calls this a negative answer to the smooth-volume realization question, already among systems of zero entropy. It does not rule out smooth models with other invariant measures: by the results just cited, this system has a smooth model whose measure has full support but no smooth density, and the paper asserts nothing for measures merely equivalent to volume. It says nothing about finitely differentiable maps. The system is shown to exist, not written down, and the paper does not call the problem famous or open. Its Lean formalization proves the statement with finite entropy in place of zero.</p>
+<h3><span class="t num">3:37</span>How the proof goes</h3>
+<p>The smooth side is a theorem about every C^∞ diffeomorphism preserving a smooth positive density. At a time n, a power of two, chop the manifold into small cells, not too many of them. Pick a cell with probability equal to its volume, then two independent points, x and y, inside it. For most such pairs, there is a point z whose future follows x for n steps, and whose past follows y for n steps: a splice. More than its existence is needed: the law of z is at most twice the volume, so splicing piles up mass nowhere. To build z, the paper tracks how the derivative stretches along orbit segments, splits directions into slow and fast, zero rates allowed, and solves a boundary-value problem. The paper builds the mirror splice too, x’s past joined to y’s future, and the Jacobian of the pair is a ratio of four endpoint determinants, in which the huge stretch factors cancel. In our own toy, the perturbed cat map, every pair Jacobian we computed stayed within about a third of a percent of one. The symbolic side is a hierarchy: words made of words made of words. Each word carries a label, a nonzero vector of bits, and two labels can be tested with a symplectic product: they pass when it is zero. The rule: inside each group of consecutive words, labels at distances 1, 2, 4, 8, and so on up to a limit, must pass. That costs only a sliver of each label’s information, and at high levels, short lists of labels keep at least 99.6% of their full entropy, whatever the invariant measure. Words can be recognized from a slightly corrupted copy. And the information per symbol shrinks from level to level toward zero, which makes the entropy zero. In our small version, labels at the prescribed distances always passed, while unrelated labels passed about half the time. Now suppose a smooth model existed. Take the list of labels in y’s past and the list in x’s future, a power-of-two number of words apart, and count how often corresponding labels pass. Given their cell, x and y are independent, so their lists are too, and since naming the cell costs few bits at well-chosen scales, the lists still carry high entropy. A character-sum bound then caps the expected passing rate at 62%. But the splice z is itself a point of the system. For most pairs, because its law is spread like volume, its future symbols match x’s and its past symbols match y’s in more than 99% of places. Recognition then aligns its words, and a legal point’s own lists pass, except near rare group boundaries. So the lists of x and y must pass, on average, at least 91.2% of the time. Both cannot hold, so no smooth positive-volume model exists, in any dimension.</p>
+<h3><span class="t num">6:35</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. OpenAI’s Lean formalization, 53 files and about 30,000 lines with no unproved steps that we found, proves the theorem with finite entropy in place of zero: the obstruction is formalized, but the zero-entropy count is the paper’s alone. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, even zero entropy does not guarantee a smooth volume model: a smooth volume lets the past of one point be spliced onto the future of a nearby one, and these words remember which past goes with which future.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20152%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Singular beyond Pisot? An arithmetic classification of Bernoulli convolutions | AI Proved What?</title>
+<meta name="description" content="An AI system claims an arithmetic classification of singular Bernoulli convolutions and singular examples beyond Pisot parameters: two quartic Salem parameters and one of degree 31, with an exact-arithmetic certificate. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/153-bernoulli-convolutions/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Singular beyond Pisot?">
+<meta property="og:description" content="An AI system claims an arithmetic classification of singular Bernoulli convolutions and singular examples beyond Pisot parameters: two quartic Salem parameters and one of degree 31, with an exact-arithmetic certificate. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/153-bernoulli-convolutions/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/153-bernoulli-convolutions/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 153, October 2026</p>
+<h1>Singular beyond Pisot?</h1>
+<p class="subtitle">A claim of an arithmetic classification of Bernoulli convolutions, and of singular examples at two quartic Salem parameters and one degree-31 parameter</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 153 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="zscuflGt-O0" data-title="Episode 153: Singular beyond Pisot?">
+  <a href="https://youtu.be/zscuflGt-O0">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 153: Singular beyond Pisot? Histograms of random coin-flip sums for several values of lambda.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:44. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/zscuflGt-O0?t=0" data-t="0"><span class="t">0:00</span><span>Coin flips and a sum</span></a></li>
+  <li><a href="https://youtu.be/zscuflGt-O0?t=93" data-t="93"><span class="t">1:33</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/zscuflGt-O0?t=188" data-t="188"><span class="t">3:08</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/zscuflGt-O0?t=367" data-t="367"><span class="t">6:07</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Flip a fair coin forever and, on flip n, add or subtract λ<sup>n</sup> for a fixed λ between 0 and 1. The law ν<sub>λ</sub> of the total is a Bernoulli convolution. As the paper recalls (citing Jessen and Wintner), it is of pure type: singular, living on a set of total length zero, or absolutely continuous, with a density. Below 1/2 it is singular, at 1/2 it is flat, and between 1/2 and 1 the type depends on the arithmetic of λ.</p>
+<p>As the paper recounts, Erdős proved singularity when 1/λ is a Pisot number (an algebraic integer above 1 whose other conjugates are smaller than 1 in size, such as the golden ratio) by showing that the Fourier transform does not tend to zero. Garsia found a class with densities and connected singularity with the entropy of finite sums. Solomyak proved an L<sup>2</sup> density for almost every λ in (1/2, 1); Shmerkin proved the possible exceptions have Hausdorff dimension zero; Varjú proved full dimension for every transcendental λ, and “full dimension alone does not imply absolute continuity.” Salem proved that the Fourier transform tends to zero whenever 1/λ is not Pisot, so Fourier nondecay cannot prove singularity beyond Pisot. The paper says: “The existence of singular examples with non-Pisot reciprocal is explicitly recorded as open in the recent literature.”</p>
+<p>Result 153 is <a href="https://github.com/openai/math/blob/main/preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/paper.pdf">one OpenAI preprint</a> (36 pages, October 3, 2026) with three claims. Its Theorem 2.1 classifies every λ: above 1/2, ν<sub>λ</sub> is singular exactly when, at all fine scales n, λ lies within 4<sup>−n</sup> just below algebraic units whose minimal polynomials have coefficients −1, 0 or 1 and are irreducible modulo 2, and whose nearby units of the same kind supply crowds of initial coefficient vectors in a fixed share of the sign patterns. The units are defined by polynomial algebra alone, and “it is an infinite approximation condition, not a finite membership algorithm.” Its Theorem 5.1 claims singularity at 1/β for every quartic Salem number β in (1, 2) (a Salem number has all other conjugates on the unit circle, apart from 1/β); by our count there are exactly two, 1.72208… (x<sup>4</sup> − x<sup>3</sup> − x<sup>2</sup> − x + 1) and 1.88320… (x<sup>4</sup> − 2x<sup>3</sup> + x<sup>2</sup> − 2x + 1), the two of its Corollary 5.4. Its Theorem 6.1 claims singularity at 1/β for the non-Pisot real root β ≈ 1.8393 of p(t) = t<sup>31</sup> − 2t<sup>30</sup> + ∑<sub>j=0</sub><sup>9</sup>(t<sup>3j+1</sup> − t<sup>3j</sup>).</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The classification decides no new parameter by itself: the Salem and degree-31 results are proved directly, the Garsia class is recovered through the criterion, and the Pisot case still comes from the Fourier argument. No other specific parameter is decided, and nothing is claimed for Salem numbers of higher degree, about dimension, or for biased coins. The paper does not call the problem famous, and makes no priority claim beyond the sentence quoted above.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 36 pages, dated October 3, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>No. The degree-31 certificate’s finite arithmetic passes; we ran it</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. There is no Lean formalization. The degree-31 proof ships with an exact-arithmetic <a href="https://github.com/openai/math/blob/main/preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/verification/verify_degree31.py">verifier script</a>; we ran it and it printed “PASS: all degree-31 finite arithmetic checks passed.” in about 13 seconds. As the paper’s README says, it checks the finite certificate only; the analytic bounds for the infinite tails, the rest of the degree-31 argument, the classification and the Salem argument are proved by hand. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Coincidences become algebra.</strong> If many coin-flip strings give nearly the same total, the mass crowds into a few small bins: crowded targets force singularity. The difference of two strings is a vector of −1s, 0s and 1s, the first coefficients of a polynomial nearly vanishing at λ. Conversely, for λ above 1/2 the heads-first and tails-first strings overlap (an entropy count), and singularity makes their near-coincidences crowd. Each difference vector is extended greedily, then completed by a tail that makes the polynomial irreducible modulo 2 (primes in arithmetic progressions over 𝔽<sub>2</sub>, via the function-field Riemann hypothesis); one of the two versions, adding or subtracting the tail, changes sign just above λ, so an algebraic unit sits within 4<sup>−n</sup>/2 above λ with the prescribed first coefficients.</li>
+  <li><strong>Quartic Salem: frozen Fourier phases.</strong> The Fourier transform decays here, but not at every frequency equally. Multiplying the frequency by A<sub>m</sub> = ∏(β<sup>k</sup> − β<sup>−k</sup>), with powers chosen (by Dirichlet approximation) so that the same factors at the unit-circle conjugate nearly vanish, keeps the Fourier coefficient above e<sup>−L<sub>m</sub>/20</sup> along a long range. Integer traces make each such phase depend, up to a tiny error, only on a short window of signs, and phases on non-overlapping windows are independent. Their average stays near a positive value under ν<sub>λ</sub> but has mean square at most C(1 + log M)/M under Lebesgue measure, so ν<sub>λ</sub> lives on a set of length zero.</li>
+  <li><strong>Degree 31: beating a lattice count by a hair.</strong> The root β ≈ 1.8393 has one conjugate pair just outside the unit circle, with squared modulus between 1.0002089 and 1.0002094. Counting possible totals as lattice points leaves room for about 0.0002094 per digit too many. A product of trigonometric factors with a bounded integral grows on typical digit strings by more than 0.000220 per digit, so typical strings fit into fewer lattice points: a certified saving of 0.0000066 per digit. The moment inequalities behind this come from exact rational products plus hand-proved tail bounds.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Quartic Salem numbers in (1, 2), by our enumeration of reciprocal quartics: exactly two, 1.7220838057 and 1.8832035059.</li>
+  <li>log<sub>10</sub>|ν̂<sub>λ</sub>(πβ<sup>n</sup>)| at n = 100: −2.18 (golden ratio) and −2.90 (tribonacci), which stay flat; −30.1 and −27.1 at the two Salem parameters; −24.3 at the degree-31 parameter.</li>
+  <li>For β ≈ 1.72208 with multiplier powers 62 and 124 (our choice, far below the paper’s asymptotic regime): the multiplied Fourier coefficient levels off at about 10<sup>−69.9</sup> from step 200 to step 10<sup>6</sup>, while the plain one decays like e<sup>−0.573n</sup>.</li>
+  <li>The degree-31 root: β = 1.8392867573; |α|<sup>2</sup> = 1.00020921; the tribonacci constant (our comparison) is 1.8392867552, a difference of 2.1 × 10<sup>−9</sup>.</li>
+  <li>The realization step with small parameters of our choosing (n = 8, polynomials of degree 88): 12 of 12 succeeded, with roots 0.2 to 4.7 billionths above λ.</li>
+  <li>The histograms are our simulations and cannot show singularity; the paper’s only computation is its degree-31 certificate.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/paper.pdf">Arithmetic classification and non-Pisot singularity for Bernoulli convolutions (PDF)</a>, 36 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/verification/verify_degree31.py">The degree-31 verifier script</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 153.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/paper.pdf">Arithmetic classification and non-Pisot singularity for Bernoulli convolutions</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Coin flips and a sum</h3>
+<p>Flip a fair coin forever. On flip number n, add or subtract λ to the power n, for a fixed λ between 0 and 1. Where does the total land? Its law is called a Bernoulli convolution. As the paper recalls, it is always one of two pure types: singular, living on a set of total length zero, or absolutely continuous, with a density. Below 1/2, the possible totals form a dust of length zero, so the law is singular. At exactly 1/2, it is flat. Between 1/2 and 1, the possible totals overlap, and which type you get depends on the arithmetic of λ. As the paper recounts, Erdős proved singularity when 1/λ is a Pisot number, an algebraic integer above 1 whose other conjugates are smaller than 1 in size, like the golden ratio. He showed the Fourier transform does not tend to 0. Garsia found a class with densities. Solomyak proved a density for almost every λ between 1/2 and 1, Shmerkin showed the possible exceptions form a set of Hausdorff dimension 0, and Varjú proved full dimension for every transcendental λ, though full dimension alone does not give a density. But Salem proved that the Fourier transform does tend to 0 whenever 1/λ is not Pisot, so the Fourier argument cannot go further. The paper says the existence of singular examples beyond Pisot, between 1/2 and 1, is explicitly recorded as open in the recent literature.</p>
+<h3><span class="t num">1:33</span>The claim</h3>
+<p>Result 153 is a 36-page OpenAI preprint, dated October 3. It makes three claims. First, a classification for every λ: above 1/2, the convolution is singular exactly when, at every fine scale, λ sits just below special algebraic units, roots of polynomials with coefficients −1, 0 or 1 that are irreducible modulo 2, surrounded by crowds of similar units. These units are defined by polynomial algebra alone, with no reference to the measure. The paper stresses that this is an infinite approximation condition, not a finite membership algorithm. Second, singularity at 1/β for every quartic Salem number between 1 and 2. A Salem number has its other conjugates on the unit circle, apart from its reciprocal; in degree four, by our count, there are exactly two below 2. Third, singularity at 1/β for a specified non-Pisot root of an explicit polynomial of degree 31. The classification decides no new case by itself: the paper proves the Salem and degree-31 results directly, and recovers the Garsia case through the criterion, while the Pisot case still comes from the Fourier argument. No other specific parameter is decided, and nothing is claimed for Salem numbers of higher degree, or about dimension. The degree-31 proof comes with an exact-arithmetic certificate and a script that checks its finite arithmetic only; the analytic bounds around it are proved by hand.</p>
+<h3><span class="t num">3:08</span>How the proofs go</h3>
+<p>Singularity comes from coincidences: if many strings of coin flips give nearly the same total, the mass crowds into a few small bins. Write the difference of two such strings as a vector of −1s, 0s and 1s, and read it as the first coefficients of a polynomial that nearly vanishes at λ. Conversely, once λ is above 1/2, the strings that start with heads and those that start with tails always overlap, and singularity makes their near-coincidences crowd together, giving many such vectors. The realization step extends each one so the polynomial is nearly zero at λ, then appends a tail that makes it irreducible modulo 2, using primes in arithmetic progressions over the field with 2 elements. One of the two versions, adding or subtracting the tail, changes sign just above λ, so a root, an algebraic unit, sits just above λ with the prescribed first coefficients. In our small runs, 12 out of 12 realizations succeeded, with roots within 5 billionths above λ. For the quartic Salem parameters, the Fourier transform does decay, but not at every frequency equally. The paper multiplies the frequency by a product of factors, β^k − β^(−k), with powers k chosen so that the same factors, taken at the conjugate on the unit circle, nearly vanish. Then the decay stalls. In our run for the smaller quartic Salem number, the plain Fourier coefficient fell below 10^(−30) by step 100 and kept falling, while one multiplied with small powers of our choosing levelled off near 10^(−70), and stayed there from step 200 out to a million. Integer traces make each such phase depend, up to a tiny error, only on a short window of coin flips, and keeping the windows from overlapping makes them independent. So their average concentrates at a positive value under the Bernoulli convolution, but tends to 0 in mean square under Lebesgue measure: the convolution lives on a set of length zero. The degree-31 root is about 1.8393, within about 2 billionths of the tribonacci constant, a Pisot number; that comparison is ours. It is not Pisot: one conjugate pair sits just outside the unit circle, with squared size about 1.0002. Counting possible totals as lattice points leaves a little too much room, about 2 ten-thousandths per digit. A product of trigonometric factors with a bounded integral grows, on typical strings of flips, slightly faster than that. So typical strings fit into fewer lattice points, a certified net saving of about 6.6 millionths per digit, and the measure lives on a set of vanishing length. The needed moment bounds come from exact rational arithmetic, plus hand-proved bounds for the infinite tails. We ran the paper’s script: it passed in about 13 seconds.</p>
+<h3><span class="t num">6:07</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised, and it has no Lean formalization. The degree-31 certificate passes, but the analytic steps around it, and the whole classification and Salem arguments, rest on hand-written proofs only. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, singularity is not only a Pisot phenomenon: crowds of near-coincidences can be written as algebra, and three specific parameters beyond Pisot are singular.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20153%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

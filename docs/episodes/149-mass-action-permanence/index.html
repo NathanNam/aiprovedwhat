@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One trap for every start? Permanence for weakly reversible reaction networks | AI Proved What?</title>
+<meta name="description" content="An AI system claims that every weakly reversible mass-action network with fixed rates keeps every species alive and bounded, with one trap per class, with a Lean formalization of part of it. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/149-mass-action-permanence/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="One trap for every start?">
+<meta property="og:description" content="An AI system claims that every weakly reversible mass-action network with fixed rates keeps every species alive and bounded, with one trap per class, with a Lean formalization of part of it. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/149-mass-action-permanence/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/149-mass-action-permanence/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 149, October 2026</p>
+<h1>One trap for every start?</h1>
+<p class="subtitle">A claim that every weakly reversible mass-action network with fixed rates keeps every species alive and bounded, with one trap per class that every trajectory eventually enters</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 149 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="jSFVWepLHEk" data-title="Episode 149: One trap for every start?">
+  <a href="https://youtu.be/jSFVWepLHEk">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 149: One trap for every start? Trajectories of a weakly reversible reaction network on log axes, all entering one box and circling a cycle.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:38. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/jSFVWepLHEk?t=0" data-t="0"><span class="t">0:00</span><span>Reactions that can be undone</span></a></li>
+  <li><a href="https://youtu.be/jSFVWepLHEk?t=139" data-t="139"><span class="t">2:19</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/jSFVWepLHEk?t=238" data-t="238"><span class="t">3:58</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/jSFVWepLHEk?t=361" data-t="361"><span class="t">6:01</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A chemical reaction network is a list of reactions, such as 2A ⇄ B. Under mass action, each reaction fires at a rate proportional to the product of its input concentrations, with a fixed rate constant, so the concentrations follow a polynomial differential equation. Conservation laws confine each trajectory to its stoichiometric compatibility class (here a + 2b never changes), and a class can be unbounded. So a concentration could blow up, or sink toward zero. Weak reversibility is a condition on the reaction graph, whose nodes are complexes like 2A: whenever one complex can turn into another, some chain of reactions leads back. Without it things can fail: in our run of A → 0 with 2A → 3A, a start at 1/2 dies out and a start at 2 blows up at time ln 2, while the weakly reversible completion brings every start from 10<sup>−9</sup> to 10<sup>9</sup> within a factor of two of 1 after about 0.64 time units. Even with weak reversibility recovery can be slow: in A ⇄ 2A, a start at 10<sup>−12</sup> takes about 27.6 time units to reach 1/2.</p>
+<p>As the papers recount, the theory begins with Horn and Jackson and with Feinberg; for complex-balanced systems it gives a unique positive equilibrium in each class and an entropy-like Lyapunov function. Feinberg raised the question of excluding limits with a zero concentration, and Anderson separated the boundedness conjecture from the persistence conjecture. Permanence asks for one compact set per class, kept away from zero, that eventually holds every trajectory. As the papers describe them, Gopalkrishnan, Miller and Shiu proved permanence for strongly endotactic networks, which include every weakly reversible network with one linkage class; Boros and Hofbauer gave another single-linkage proof; Craciun, Nazarov and Pantea treated two species; Pantea proved persistence of bounded trajectories when the reaction directions span a plane; and Craciun’s revised manuscript of September 23, 2026 gives persistence for bounded trajectories. Those results also allow rates that vary in time within fixed positive bounds.</p>
+<p>Result 149 is two OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/Boundedness-and-persistence-of-weakly-reversible-mass-action-systems-September-25-2026/paper.pdf">The first</a> (16 pages, September 25, 2026) claims, in its Theorem 1.1, that for every finite weakly reversible network with fixed positive rates, every positive start gives a solution that exists for all time and stays between ε and 1/ε, with ε depending on the network, the rates and the start: boundedness and persistence, whether or not the class is bounded. It notes that August and Barahona stated this in 2010, and argues that a step of their proof fails. <a href="https://github.com/openai/math/blob/main/preprints/Uniform-Permanence-in-Weakly-Reversible-Mass-Action-Systems-October-5-2026/permanence.pdf">The second</a> (13 pages, October 5, 2026) is the headline: its Theorem 1.1 says each positive class, even an unbounded one, has a single compact convex forward-invariant set that every trajectory in the class enters in finite time, so after a transient all trajectories in the class share the same bounds. “Thus the fixed-positive-rate, weakly reversible formulation of the permanence conjecture holds, including on unbounded classes.”</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The entry time depends on the start, and the trap depends on the class and the rates. In our example 0 ⇄ X + Y, the equilibrium of each class has its smaller concentration near one over the gap x − y once that gap is large, so no single box serves every class. Nothing is claimed about converging to an equilibrium, except under complex balance (the first paper’s Remark 3.5, which it calls “the known global-attractor conclusion”): in our run of a weakly reversible network, all 24 of our starts enter one box and then circle a cycle of period about 20. Rates are fixed in time, the bounds are not explicit, and the papers call these conjectures but never call them famous or long-standing.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two preprints, 16 and 13 pages, dated September 25 and October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Only the boundedness and persistence theorem. Classwise permanence is not formalized</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 14, 2026. Neither preprint has been revised since both were added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/149.md">Lean formalization</a> of the first paper’s theorem (global existence, and bounds between ε and 1/ε depending on the start): a <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/MassAction.lean">comparator statement</a> with the network, weak reversibility and the mass-action equation written out, and <a href="https://github.com/openai/math/blob/main/lean/OAI/Analysis/MassAction">71 files and 7,758 lines</a> of proof, with no unproved steps that we could find. We have not run the check. The second paper’s classwise permanence, the headline claim, has no Lean formalization anywhere in the repository. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Levels and cuts.</strong> Pick a tiny scale h and write each concentration as a power of h. Each complex’s monomial is then h raised to a power, its level, and since h is tiny the complex at the lowest level dominates. Cut between two levels: a reaction crossing the cut downward has a path back that must cross upward somewhere, from a vastly larger monomial, so one upward flux beats the whole downward flux and a linear level function cannot decrease. In our far-out example every cut has upward flux at least 1 and downward flux at most 0.001.</li>
+  <li><strong>A function that never decreases.</strong> Near a tie the comparison can flip, so both papers build a minimum of finitely many affine functions with slopes fixed in advance, whose active slopes track the point’s log coordinates so closely that clear comparisons keep their sign and near ties become exact ties (the same four-page lemma in both papers). The first paper picks h so small that the start looks central; the top plateau then contains the start and is a compact convex set inside the box, and since the function never decreases there, the trajectory never leaves it.</li>
+  <li><strong>One trap per class.</strong> The second paper fixes a class. An affine piece whose slope is perpendicular to the class is constant on it and never below the plateau value, so below the plateau every active slope has a reaction crossing a cut, and the function climbs at a definite rate; capped at the plateau, any trajectory that stays in the box reaches it in finite time. The plateau at scale h sits inside the smaller box for √h, so a start trapped at a tiny scale climbs a ladder of square roots up to one scale fixed for the class, whose plateau, cut down to the class, is the common trap.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>A ⇄ 2A (rates 1): from a<sub>0</sub> the time to reach 1/2 is ln((1 − a<sub>0</sub>)/a<sub>0</sub>), 27.6 from 10<sup>−12</sup>.</li>
+  <li>A → 0 with 2A → 3A (rates 1): from 1/2, a(10) = 4.5 × 10<sup>−5</sup>; from 2, blow-up at t = ln 2. The completion 0 ⇄ A, 2A ⇄ 3A: every start from 10<sup>−9</sup> to 10<sup>9</sup> is in [1/2, 2] by t ≈ 0.64.</li>
+  <li>0 ⇄ X + Y (rates 1): the class x − y = Δ has smaller equilibrium concentration 0.618, 0.0990, 0.0100 and 0.0010 for Δ = 1, 10, 100 and 1000.</li>
+  <li>0 ⇄ X (rates 0.05, 1), 0 ⇄ Y (0.5, 0.001), 2X + Y ⇄ 3X (1, 0.001): weakly reversible, deficiency one, not complex-balanced; a periodic orbit of period 19.7; 24 starts from 10<sup>−6</sup> to 10<sup>6</sup> stay in [0.01, 10]<sup>2</sup> from t ≤ 11.4. With two species, permanence here was already covered by Craciun, Nazarov and Pantea.</li>
+  <li>The network X + Y ⇄ 2Z, 0 → X → Y → Z → 0 at the far-out point with h = 10<sup>−30</sup>: upward cut fluxes 5 × 10<sup>8</sup>, 5 × 10<sup>8</sup>, 1, 1, 1; downward at most 10<sup>−3</sup>.</li>
+  <li>The papers themselves contain no numerics; these are our illustrations.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-Permanence-in-Weakly-Reversible-Mass-Action-Systems-October-5-2026/permanence.pdf">Uniform Permanence in Weakly Reversible Mass-Action Systems (PDF)</a>, 13 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Boundedness-and-persistence-of-weakly-reversible-mass-action-systems-September-25-2026/paper.pdf">Boundedness and persistence of weakly reversible mass-action systems (PDF)</a>, 16 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/149.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 149.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-Permanence-in-Weakly-Reversible-Mass-Action-Systems-October-5-2026/permanence.pdf">Uniform Permanence in Weakly Reversible Mass-Action Systems</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Boundedness-and-persistence-of-weakly-reversible-mass-action-systems-September-25-2026/paper.pdf">Boundedness and persistence of weakly reversible mass-action systems</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Reactions that can be undone</h3>
+<p>A chemical reaction network is a list of reactions, such as two A turning into B. Under mass action, each reaction fires at a rate proportional to the product of its input concentrations, with a fixed rate constant, so the concentrations follow a polynomial differential equation. Conservation laws confine each trajectory to a slice called its stoichiometric compatibility class; in this example, A plus twice B never changes. But a class can be unbounded. Two things could go wrong: a concentration could blow up, or sink toward zero, a species dying out. Weak reversibility is a condition on the reaction graph, whose nodes are complexes like two A: whenever one complex can turn into another, some chain of reactions leads back. Without it, things can fail. In our run of A turning into nothing, plus two A turning into three A, a start at 1/2 dies out, and a start at 2 blows up in finite time. Add the reverse reactions, and every start from a billionth to a billion is within a factor of two of one after about 2/3 of a time unit. Even with weak reversibility, recovery can be slow: in A to two A and back, a start at 10⁻¹² takes about 28 time units to reach 1/2, and the closer to zero, the longer. As the papers recount, the theory begins with Horn and Jackson and with Feinberg; for complex-balanced systems it gives a unique positive equilibrium in each class and an entropy-like Lyapunov function. Feinberg raised the question of excluding limits with a zero concentration, and Anderson separated the boundedness conjecture from the persistence conjecture. Permanence asks for one compact set per class, kept away from zero, that eventually holds every trajectory. It was proved for one linkage class by Gopalkrishnan, Miller and Shiu, and again by Boros and Hofbauer, and for two species by Craciun, Nazarov and Pantea; Pantea proved persistence of bounded trajectories when the reaction directions span a plane; and, as the papers describe it, Craciun’s revised manuscript of September 23 gives persistence for bounded trajectories. Those results also allow rates that vary in time within fixed positive bounds.</p>
+<h3><span class="t num">2:19</span>The claim</h3>
+<p>Result 149 is two OpenAI preprints. The first, 16 pages, dated September 25, claims that for every finite weakly reversible network with fixed positive rates, every positive start gives a solution that exists forever and stays between some epsilon and one over epsilon, with epsilon depending on the start: boundedness and persistence, whether or not the class is bounded. The first paper notes that August and Barahona stated this in 2010, but argues that a step of their proof fails. The second, 13 pages, dated October 5, is the headline: each positive class, even an unbounded one, has a single compact convex set that every trajectory in the class enters in finite time and never leaves. So after a transient, all trajectories in the class share the same bounds. The paper says this proves the fixed-positive-rate, weakly reversible formulation of the permanence conjecture. The entry time depends on the start, and the trap depends on the class and the rates. In our example of nothing turning into X plus Y and back, the equilibrium of each class has its smaller concentration near one over the gap between x and y once that gap is large, so no single box serves every class. Nothing is claimed about converging to an equilibrium: in our run of a weakly reversible network, all 24 of our starts enter one box and then circle a cycle of period about 20. Rates are fixed in time, the bounds are not explicit, and the papers call these conjectures but never call them famous or long-standing.</p>
+<h3><span class="t num">3:58</span>How the proof goes</h3>
+<p>Both papers zoom out on a log scale. Pick a tiny scale h and write each concentration as h to some power. Far from the center, each complex’s monomial is h raised to a power, its level, and since h is tiny, the complex at the lowest level dominates. Line up the complexes by level and cut between two levels. If a reaction crosses the cut downward, weak reversibility gives a path back, which must cross upward somewhere, and that upward reaction starts from a vastly larger monomial. So one upward flux beats the whole downward flux, and a linear level function cannot decrease. In our far-out example, every cut has upward flux at least 1, against at most 0.001 downward. Near a tie, when two complexes have almost equal levels, that comparison can flip. So the papers build a single function: the minimum of finitely many affine functions with slopes fixed in advance, whose active slopes track the point’s log coordinates so closely that clear comparisons keep their sign and near ties become exact ties. This four-page lemma appears in both papers. The first paper picks h so small that the start looks central. The top plateau of this function then contains the start and is a compact convex set inside the box; since the function never decreases there, the trajectory never leaves it. The second paper fixes a class. An affine piece whose slope is perpendicular to the class is constant on it, never below the plateau value, so below the plateau every active slope has a reaction crossing a cut, and the function climbs at a definite rate. Because it is capped at the plateau, any trajectory that stays in the box reaches the plateau in finite time. And the plateau at scale h sits inside the smaller box for the square root of h. So a start trapped at a tiny scale climbs a ladder of square roots, up to one scale fixed for the class, whose plateau, cut down to the class, is the common trap.</p>
+<h3><span class="t num">6:01</span>Where it stands</h3>
+<p>Neither preprint is peer reviewed or revised. The first paper’s theorem is formalized in Lean, in 71 files and about 7,800 lines, with no unproved steps that we found; we have not run the check. The second paper’s permanence theorem has no Lean. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If it holds, every weakly reversible network with fixed rates keeps every species alive and bounded, with one trap per class that every trajectory eventually enters.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20149%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
