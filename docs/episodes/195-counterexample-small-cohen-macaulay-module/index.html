@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 195: A counterexample to the small Cohen–Macaulay module conjecture | AI Proved What?</title>
-<meta name="description" content="A counterexample to the small Cohen–Macaulay module conjecture. Result 195 in OpenAI&#x27;s math release (Algebra): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>No finite repair? Small Cohen–Macaulay modules | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims a three-dimensional complete local domain over the complex numbers with no small Cohen–Macaulay module, disproving the domain form of Hochster&#x27;s conjecture. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/195-counterexample-small-cohen-macaulay-module/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 195: A counterexample to the small Cohen–Macaulay module conjecture | AI Proved What?">
-<meta property="og:description" content="A counterexample to the small Cohen–Macaulay module conjecture. Result 195 in OpenAI&#x27;s math release (Algebra): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="No finite repair?">
+<meta property="og:description" content="An AI preprint claims a three-dimensional complete local domain over the complex numbers with no small Cohen–Macaulay module, disproving the domain form of Hochster&#x27;s conjecture. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/195-counterexample-small-cohen-macaulay-module/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/195-counterexample-small-cohen-macaulay-module/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,35 +37,93 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 195 · <a href="../../subjects/algebra/">Algebra</a></p>
-<h1 class="result-title">A counterexample to the small Cohen–Macaulay module conjecture</h1>
+<p class="meta">Episode 195, October 2026</p>
+<h1>No finite repair?</h1>
+<p class="subtitle">A preprint claims a three-dimensional complete local domain over the complex numbers with no small Cohen–Macaulay module, settling Hochster’s question the way he came to expect</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 195 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="rUyGrJwaNWs" data-title="Episode 195: No finite repair?">
+  <a href="https://youtu.be/rUyGrJwaNWs">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 195: No finite repair? Four points in the plane and the six lines joining them, the complete quadrangle behind the paper's surface.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:12. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/rUyGrJwaNWs?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/rUyGrJwaNWs?t=98" data-t="98"><span class="t">1:38</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/rUyGrJwaNWs?t=174" data-t="174"><span class="t">2:54</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/rUyGrJwaNWs?t=303" data-t="303"><span class="t">5:03</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Constructs a three-dimensional complete Noetherian normal local domain over ℂ with no nonzero finitely generated maximal Cohen–Macaulay module. A three-dimensional local domain essentially of finite type over ℂ has the same property, disproving the domain form of the small Cohen–Macaulay module conjecture.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Slice through a point with one function after another, so that nothing collapses at any step: the number of slices is the depth, and a ring whose depth equals its dimension is Cohen–Macaulay. A smooth point is. Two planes in 4-dimensional space touching at a single point are not: dimension 2, depth 1 in our computation. Macaulay’s quartic cone has the same defect, and it can be repaired: its normalization has full depth and is a well-shaped module over it. A nonzero, finitely generated module whose depth equals the dimension of the ring is a small Cohen–Macaulay module.</p>
+<p>Hochster asked in the early 1970s whether every complete local domain has one. As the paper tells it, the answer is yes in dimension 2 (the normalization works) and, in positive characteristic, for graded three-dimensional domains over a perfect field (Hartshorne, Peskine–Szpiro, Hochster); big Cohen–Macaulay modules, not necessarily finitely generated, exist in every characteristic. Hochster later came to expect counterexamples; in his 2017 account, “one of these conjectures is bound to be correct”. In September 2026, Anghel argued that cones like this one have no graded such modules, and Liang Chen proposed a counterexample over a completed cone, two days before this paper’s date.</p>
+<p>Result 195 is one OpenAI preprint, <a href="https://github.com/openai/math/blob/main/preprints/A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026/paper.pdf">A Complete Local Domain without a Small Cohen–Macaulay Module</a> (17 pages, dated September 23, 2026). Its Theorem 1.1: there is a three-dimensional complete Noetherian normal local domain R containing ℂ, with residue field ℂ, such that no nonzero finitely generated R-module has depth 3. Corollary 7.1 gives the same for a local ring essentially of finite type over ℂ, a case Bhatt, Hochster and Ma had described as open. The paper says its completed-ring claim overlaps with Chen’s, and that its surface is the construction in Anghel’s earlier preprint.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Anything in positive characteristic, where graded three-dimensional cones over a perfect field do have such modules, or in mixed characteristic; anything about big Cohen–Macaulay modules, which still exist. The ring is explicit, but the proof is by contradiction. Our examples are small rings computed by us and only illustrate the definitions.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, 17 pages, dated September 23, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
+  <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/195.md">scope notes</a>)</dd>
+    <dd>Not the main claim: OpenAI’s Lean checks only the ring’s properties; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 16, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/195.md">Lean formalization</a>, but <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SurfaceConeCandidateSupport.lean">its comparator statement</a> checks only that some ring exists that is three-dimensional, complete, a normal Noetherian local domain containing ℂ with residue field ℂ; as stated, an ordinary power series ring would also satisfy it. The main claim is defined in Lean but not proved, and Bogomolov’s inequality is not formalized. By our count the catalogued part takes 11 files and about 7,800 lines, plus about 37,000 lines of supporting work, excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/AlgebraicGeometry/SurfaceCones">source</a>). The Lean files were added on October 7, 2026. The paper is not among those OSVerify reviewed, and we have seen no expert review of it or, as far as we know, of the overlapping preprints.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A cone over a surface.</strong> A smooth complex surface X with a positive line bundle H, generated by its sections, gives, by stacking its sections, the ring of a three-dimensional cone; complete it at the tip to get R. Three sections of H give a finite map X → ℙ² of degree H², so R is finite over A = ℂ[[x<sub>0</sub>,x<sub>1</sub>,x<sub>2</sub>]].</li>
+  <li><strong>A module would be free below.</strong> A small Cohen–Macaulay module M over R has full depth over the regular ring A, so it is free: M ≅ A<sup>N</sup> (eq. (5)).</li>
+  <li><strong>Blow up and balance.</strong> Blow up both tips; extend M across the new surface and restrict it there; modify the extension until the slopes of the layers it is built from lie within one unit (Lemma 3.1).</li>
+  <li><strong>A variance squeezed from both sides.</strong> Because M is free, a variance v of Chern numbers is at least 0 on the plane side (Lemma 4.1); Bogomolov’s inequality, the Hodge index theorem and Riemann–Roch cap it at 1/2 − (K<sup>2</sup> − 2c<sub>2</sub>)/(12H<sup>2</sup>) (Lemma 5.1 and the proof of Theorem 1.2). So a module needs K<sup>2</sup> − 2c<sub>2</sub> ≤ 6H<sup>2</sup> (Theorem 1.2).</li>
+  <li><strong>A surface that breaks the bound.</strong> Blow up the four points of a complete quadrangle and take a cover of degree 7<sup>5</sup> branched along the six lines and four exceptional curves (the construction in Anghel’s September 2 preprint, re-verified in the paper): H<sup>2</sup> = 1,715 and K<sup>2</sup> − 2c<sub>2</sub> = 13,377, more than 6H<sup>2</sup> = 10,290.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Depth by Koszul homology (ours, exact modulo a prime): smooth 3-space depth 3; two planes touching at a point dimension 2, depth 1; twisted cubic cone 2, 2; Macaulay’s quartic 2, 1, its normalization 2, 2; elliptic cone 2, 2; the cone over E × E dimension 3, depth 2.</li>
+  <li>The family of surfaces (ours, from the paper’s formulas, H<sup>2</sup> = 5n<sup>3</sup>, K<sup>2</sup> − 2c<sub>2</sub> = n<sup>3</sup>(n<sup>2</sup> − 10)): the bound fails exactly when n ≥ 7; at n = 6 (not prime, so outside the paper’s statement) the formulas give Chen’s constant 99, so Theorem 1.2 does not reach the exponent-six cover Chen uses.</li>
+  <li>The upper end of the variance window for n = 7, −0.150, is our arithmetic. The Lean counts are our counts of the import closures.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026/paper.pdf">A Complete Local Domain without a Small Cohen–Macaulay Module (PDF)</a>, 17 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/195.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 195.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -74,18 +131,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-Complete-Local-Domain-Without-a-Small-Cohen-Macaulay-Module-September-23-2026/paper.pdf">A Complete Local Domain without a Small Cohen–Macaulay Module</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Some rings are well-shaped in a precise sense. Take a point of a space, and slice through it with one function after another, so that nothing collapses at any step. The number of slices you can make is the depth; when it equals the dimension, the ring is called Cohen–Macaulay. A smooth point is. Two planes in 4-dimensional space that touch at a single point are not: they have dimension 2, but in our computation only one slice works. Another of our examples, Macaulay’s quartic cone, has the same defect, and it can be repaired: its normalization, a slightly bigger ring, is well-shaped, and serves as a well-shaped module over it. A nonzero, finitely generated module whose depth equals the dimension of the ring is called a small Cohen–Macaulay module. Hochster asked in the early 1970s whether every complete local domain has one. In dimension 2 the answer is yes: the normalization works. In positive characteristic, graded three-dimensional domains over a perfect field have them, by Hartshorne, Peskine and Szpiro, and Hochster. Big Cohen–Macaulay modules, which need not be finitely generated, exist in every characteristic. By the 2000s, Hochster had come to expect counterexamples; in his words, one of his two conjectures is bound to be correct. And in September 2026, several preprints closed in: Anghel argued that cones like this one have no graded such modules, and Liang Chen proposed a counterexample over a completed cone, two days before this paper’s date.</p>
+<h3><span class="t num">1:38</span>The claim</h3>
+<p>Result 195 is one OpenAI preprint, 17 pages, dated September 23, 2026. It claims: there is a three-dimensional complete Noetherian normal local domain, containing the complex numbers, with residue field the complex numbers, that has no nonzero finitely generated module of depth 3. So, if this holds, the domain form of the small Cohen–Macaulay module conjecture is false, as Hochster had come to expect. The same holds for a local ring of an ordinary three-dimensional variety over the complex numbers, a case that Bhatt, Hochster and Ma had described as open. The paper says its completed-ring claim overlaps with Chen’s, and that its surface comes from Anghel’s earlier preprint. Not claimed: anything in positive characteristic, where graded three-dimensional cones do have such modules, or in mixed characteristic; or anything about big Cohen–Macaulay modules, which still exist. The ring is explicit, but the proof is by contradiction: nobody searched through modules. Our examples are small rings computed by us; they only illustrate the definitions.</p>
+<h3><span class="t num">2:54</span>How the proof goes</h3>
+<p>Start with a smooth complex surface X and a positive line bundle H on it, generated by its sections. Stacking its sections, degree by degree, gives the ring of a three-dimensional cone; complete it at the tip, and that is the ring R. Three sections of H give a finite map from X to the projective plane, of degree H², which makes R a finite extension of the power series ring in three variables, the cone over the plane. Now suppose R had a small Cohen–Macaulay module M. Over the power series ring, full depth forces M to be free: just N copies of power series. Blow up the tips of both cones, replacing each with a copy of the surface or the plane. Extend M across the new surface to a sheaf, and restrict it there. The restriction is built up from layers of decreasing slope, and by repeatedly modifying the extension, the paper balances them until all the slopes lie within one unit. Push everything down to the plane: because M was free, a variance built from Chern numbers is at least zero. On the surface side, Bogomolov’s inequality, the Hodge index theorem and Riemann–Roch cap that same variance at 1/2 − (K² − 2c₂)/(12H²). So a module can exist only if K² − 2c₂ ≤ 6H². The paper’s surface breaks this bound. Take four points in the plane, no three on a line, and the six lines joining them; blow up the four points, and take a cover of degree 7⁵, branched along the 10 resulting curves: a Hirzebruch–Kummer construction, taken from Anghel’s preprint and re-verified in the paper. Its H² is 1,715, and K² − 2c₂ is 13,377, more than 6H², 10,290. So no small Cohen–Macaulay module exists. By our arithmetic, 7 is the smallest exponent in this family that works; at 6 the bound holds, so this inequality does not reach the exponent-six cover that Chen uses.</p>
+<h3><span class="t num">5:03</span>Where it stands</h3>
+<p>The preprint is unrefereed and has not been revised. OpenAI’s Lean files check only that a ring with the paper’s stated properties exists: three-dimensional, complete, and a normal domain with residue field the complex numbers; and that statement, as checked, would also be satisfied by an ordinary power series ring. The main claim, that no small Cohen–Macaulay module exists, is defined in Lean but not proved, and Bogomolov’s inequality is not formalized. That is 11 catalogued files and about 7,800 lines, plus about 37,000 lines of supporting work; we did not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review of it, or, as far as we know, of the overlapping preprints. If it holds, over the complex numbers some three-dimensional complete local domains have no finite Cohen–Macaulay module at all, settling Hochster’s question in the direction he came to expect.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20195%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../194-lechs-multiplicity-conjecture/"><span class="dir">Previous · 194</span><span class="pt">Lech’s multiplicity conjecture</span></a>
-  <a class="next" href="../196-counterexample-kaplanskys-zero-divisor-conjecture/"><span class="dir">Next · 196</span><span class="pt">A counterexample to Kaplansky’s zero-divisor conjecture</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebra/">More in algebra</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

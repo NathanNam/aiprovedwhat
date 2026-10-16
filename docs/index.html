@@ -11,7 +11,7 @@
 <meta property="og:title" content="AI Proved What? New AI mathematics, explained and checked">
 <meta property="og:description" content="Short animated explainers of mathematics that AI systems claim to have proved, with a running record of how far each proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/">
-<meta property="og:image" content="https://aiprovedwhat.com/episodes/194-lechs-multiplicity-conjecture/thumbnail.jpg">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/196-counterexample-kaplanskys-zero-divisor-conjecture/thumbnail.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <meta name="generator" content="tools/site/build.py">
@@ -39,16 +39,16 @@
 </header>
 <main id="main">
 
-<h1>An AI system says a flat local homomorphism of Noetherian local rings never lowers the Hilbert–Samuel multiplicity, proving Lech’s conjecture in every characteristic.</h1>
+<h1>An AI system says there is a finitely presented torsion-free group whose group algebra over the two-element field has two nonzero elements with product zero, disproving Kaplansky’s zero-divisor conjecture.</h1>
 <p class="lede">What does that even mean, and has anyone checked? Each episode takes one claim like this, builds the intuition with animation, and keeps a running record of how far the proof has been verified.</p>
 
 <div class="player">
-  <a href="episodes/194-lechs-multiplicity-conjecture/">
-    <img src="episodes/194-lechs-multiplicity-conjecture/thumbnail.jpg" width="1280" height="720" alt="Episode 194: Never smoother? One row of dots for a smooth line (multiplicity 1) and two rows for a cusp (multiplicity 2): the functions that survive up to each order (ours).">
+  <a href="episodes/196-counterexample-kaplanskys-zero-divisor-conjecture/">
+    <img src="episodes/196-counterexample-kaplanskys-zero-divisor-conjecture/thumbnail.jpg" width="1280" height="720" alt="Episode 196: Torsion-free, yet zero? Three small graphs in which every vertex has odd degree, each with an even number of vertices.">
     <span class="play" aria-hidden="true"></span>
   </a>
 </div>
-<p class="player-caption">Episode 194: <a href="episodes/194-lechs-multiplicity-conjecture/">Never smoother?</a>, about 6 minutes.</p>
+<p class="player-caption">Episode 196: <a href="episodes/196-counterexample-kaplanskys-zero-divisor-conjecture/">Torsion-free, yet zero?</a>, about 6 minutes.</p>
 
 <section class="measure" aria-labelledby="record">
 <h2 id="record">Where this claim stands</h2>
@@ -61,17 +61,35 @@
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/194.md">scope notes</a>)</dd>
+    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/196.md">scope notes</a>)</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026. The claim has not been withdrawn. OpenAI published a Lean proof of a supporting characteristic-p result, not of Lech’s inequality itself; we have not run the check.</p>
+<p class="ledger-note">Last checked October 16, 2026. The claim has not been withdrawn. OpenAI published a Lean proof of the full statement; like the paper, it shows such a group exists without writing one down. We have not run the check.</p>
 </section>
 
 <section aria-labelledby="episodes">
 <h2 id="episodes">Recent episodes</h2>
 <ul class="thumbs">
+  <li>
+    <a href="episodes/196-counterexample-kaplanskys-zero-divisor-conjecture/">
+      <img src="episodes/196-counterexample-kaplanskys-zero-divisor-conjecture/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 196 · 5:48</span>
+      <span class="thumb-title">Torsion-free, yet zero?</span>
+      <span class="thumb-sub">A preprint claims a torsion-free group whose group algebra over the two-element field has two nonzero elements with product zero, disproving Kaplansky’s zero-divisor conjecture</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
+    </a>
+  </li>
+  <li>
+    <a href="episodes/195-counterexample-small-cohen-macaulay-module/">
+      <img src="episodes/195-counterexample-small-cohen-macaulay-module/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 195 · 6:12</span>
+      <span class="thumb-title">No finite repair?</span>
+      <span class="thumb-sub">A preprint claims a three-dimensional complete local domain over the complex numbers with no small Cohen–Macaulay module, settling Hochster’s question the way he came to expect</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of part of the claim"><span class="box on"></span><span class="box"></span><span class="box part"></span></span>
+    </a>
+  </li>
   <li>
     <a href="episodes/194-lechs-multiplicity-conjecture/">
       <img src="episodes/194-lechs-multiplicity-conjecture/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -126,24 +144,6 @@
       <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
     </a>
   </li>
-  <li>
-    <a href="episodes/188-sharp-terminal-leave-random-triangle/">
-      <img src="episodes/188-sharp-terminal-leave-random-triangle/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 188 · 6:30</span>
-      <span class="thumb-title">What’s left over?</span>
-      <span class="thumb-sub">A preprint claims that random triangle removal from the complete graph typically leaves, for large n, about 0.354 n^(3/2) links, the constant Joos and Kühn conjectured</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
-  <li>
-    <a href="episodes/187-snaky-21-maker-moves/">
-      <img src="episodes/187-snaky-21-maker-moves/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 187 · 6:46</span>
-      <span class="thumb-title">Snaky in 21 moves?</span>
-      <span class="thumb-sub">A preprint claims that Maker can force the six-square Snaky shape within 21 moves on an empty infinite grid, with a checkable 722-line certificate</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
 </ul>
 </section>
 
@@ -157,7 +157,7 @@
   <li><a href="subjects/theoretical-computer-science/"><span class="tile-name">Theoretical computer science</span><span class="tile-count num">40 of 40 explained</span></a></li>
   <li><a href="subjects/dynamical-systems-and-ergodic-theory/"><span class="tile-name">Dynamical systems and ergodic theory</span><span class="tile-count num">12 of 12 explained</span></a></li>
   <li><a href="subjects/combinatorics/"><span class="tile-name">Combinatorics</span><span class="tile-count num">37 of 37 explained</span></a></li>
-  <li><a href="subjects/algebra/"><span class="tile-name">Algebra</span><span class="tile-count num">2 of 18 explained</span></a></li>
+  <li><a href="subjects/algebra/"><span class="tile-name">Algebra</span><span class="tile-count num">4 of 18 explained</span></a></li>
   <li><a href="subjects/probability-and-statistical-mechanics/"><span class="tile-name">Probability and statistical mechanics</span><span class="tile-count num">0 of 29 explained</span></a></li>
   <li><a href="subjects/mathematical-logic/"><span class="tile-name">Mathematical logic</span><span class="tile-count num">0 of 6 explained</span></a></li>
   <li><a href="subjects/group-theory/"><span class="tile-name">Group theory</span><span class="tile-count num">0 of 14 explained</span></a></li>
@@ -175,7 +175,7 @@
 <dl class="stats">
   <div>
     <dt>Explained</dt>
-    <dd><span class="stat num">189</span> of 372 results <span class="stat-note">(719 papers in all)</span></dd>
+    <dd><span class="stat num">191</span> of 372 results <span class="stat-note">(719 papers in all)</span></dd>
   </div>
   <div>
     <dt>Lean proof published by OpenAI</dt>
