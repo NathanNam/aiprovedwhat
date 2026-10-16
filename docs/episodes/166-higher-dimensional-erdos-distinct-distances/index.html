@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 166: The higher-dimensional Erdős distinct-distances conjecture | AI Proved What?</title>
-<meta name="description" content="The higher-dimensional Erdős distinct-distances conjecture. Result 166 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Erdős distances in 3D and up? The higher-dimensional Erdős distinct-distances conjecture | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that any n points in three or more dimensions determine at least a constant times n^(2/d) distinct distances, the integer grid’s order, resolving the higher-dimensional Erdős distinct-distances conjecture. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/166-higher-dimensional-erdos-distinct-distances/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 166: The higher-dimensional Erdős distinct-distances conjecture | AI Proved What?">
-<meta property="og:description" content="The higher-dimensional Erdős distinct-distances conjecture. Result 166 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Erdős distances in 3D and up?">
+<meta property="og:description" content="An AI preprint claims that any n points in three or more dimensions determine at least a constant times n^(2/d) distinct distances, the integer grid’s order, resolving the higher-dimensional Erdős distinct-distances conjecture. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/166-higher-dimensional-erdos-distinct-distances/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/166-higher-dimensional-erdos-distinct-distances/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,49 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 166 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">The higher-dimensional Erdős distinct-distances conjecture</h1>
+<p class="meta">Episode 166, October 2026</p>
+<h1>Erdős distances in 3D and up?</h1>
+<p class="subtitle">A preprint claims that n points in three or more dimensions always determine at least a constant times n<sup>2/d</sup> different distances, the order of the integer grid</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 166 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="S7nTcfhEed0" data-title="Episode 166: Erdős distances in 3D and up?">
+  <a href="https://youtu.be/S7nTcfhEed0">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 166: Erdős distances in 3D and up? A 3 by 3 by 3 grid of points with the segments from one corner coloured by their nine lengths (our drawing).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:48. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/S7nTcfhEed0?t=0" data-t="0"><span class="t">0:00</span><span>The problem</span></a></li>
+  <li><a href="https://youtu.be/S7nTcfhEed0?t=92" data-t="92"><span class="t">1:32</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/S7nTcfhEed0?t=164" data-t="164"><span class="t">2:44</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/S7nTcfhEed0?t=302" data-t="302"><span class="t">5:02</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>For every fixed <i>d</i> ≥ 3, any <i>n</i> ≥ 2 distinct points in ℝ<sup><i>d</i></sup> determine at least <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>d</mi></msub><msup><mi>n</mi><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mi>d</mi></mrow></msup></mrow><annotation encoding="application/x-tex">c_dn^{2/d}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.038em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2/</span><span class="mord mathnormal mtight">d</span></span></span></span></span></span></span></span></span></span></span></span> distinct distances, with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>d</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c_d\gt 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6891em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> depending only on dimension. This matches the integer-grid order and resolves the higher-dimensional Erdős distinct-distances conjecture with a constant-factor bound.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Put n points in space and list the distances between pairs. Random points give all different distances; a grid repeats them heavily. The grid of t<sup>d</sup> points in d dimensions has squared distances that are whole numbers from 1 to d(t − 1)<sup>2</sup>, so fewer than d·n<sup>2/d</sup> distances. “Erdős introduced the problem in 1946.” In the plane the square grid gives about n/√log n, and Guth and Katz, building on Elekes and Sharir, proved at least a constant times n/log n, so “the planar problem consequently has a different conjectural order”. In three or more dimensions the conjecture predicts a constant multiple of n<sup>2/d</sup>. As the paper recounts, the bounds in three dimensions climbed from the square-root scale (Clarkson, Edelsbrunner, Guibas, Sharir and Welzl) through 77/141 (Aronov, Pach, Sharir and Tardos), 0.5643 (Solymosi and Vu) and 3/5 (Guth–Katz with Solymosi–Vu) to n<sup>2/3 − o(1)</sup> by Tidor, Yu and Zakharov in August 2026, whose methods the paper credits as close antecedents along with Bardwell-Evans and Sheffer. In four and five dimensions that gave n<sup>8/17 − o(1)</sup> and n<sup>3/8 − o(1)</sup>, short of 1/2 and 2/5, and the exponents fell short in every higher dimension too. A 2020 manuscript by Aksoy Yazici claimed the full result but “was withdrawn by the author because the proof of its Theorem 1.2 is not correct”.</p>
+<p>Result 166 is a single OpenAI preprint, <a href="https://github.com/openai/math/blob/main/preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/paper.pdf">The higher-dimensional Erdős distinct-distances conjecture</a> (103 pages, dated September 23, 2026). Theorem 1.1: “For every integer d ≥ 3, there is a constant c<sub>d</sub> &gt; 0 such that every finite set P ⊂ ℝ<sup>d</sup> of n ≥ 2 distinct points satisfies |∆(P)| ≥ c<sub>d</sub> n<sup>2/d</sup>.” “This resolves the higher-dimensional Erdős distinct-distances conjecture positively.” The constant factor is the point: “An estimate |∆(P)| ≥ n<sup>2/d−o(1)</sup> does not by itself imply Theorem 1.1”, since the ratio to n<sup>2/d</sup> could still sink to zero slowly.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>No value of c<sub>d</sub>: the proof argues by contradiction along sequences, with parameters that grow “sufficiently slowly”. Nothing new about the plane; the Guth–Katz bound is re-proved in an appendix because the induction on dimension uses it. No pinned version, where a single point sees that many distances, and nothing about which sets come closest to the minimum, unit distances, other norms or other fields. As our own illustration of why the best constant is open, three shapes of about 7,000 points give different ratios of distances to n<sup>2/3</sup>: 1.64 for the 19 × 19 × 19 cube, 1.28 for a ball of grid points and 1.12 for a ball of the face-centred lattice.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, 103 pages, dated September 23, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +87,46 @@
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>Not yet</dd>
+    <dd>None listed; one uncatalogued file covers small ingredients, not the theorem</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. The release catalog lists no Lean formalization for this result, and none appears in the repository’s formalization list. The repository does contain one file, not linked from the catalog, <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/Distances/PolynomialIsolation.lean">PolynomialIsolation.lean</a> (392 lines, using only Mathlib), which proves small ingredients: the separating polynomials, the Cauchy–Schwarz count of equal-length pairs, the reformulation of a failure as a sequence, and an elementary bound n ≤ (2|∆| + 1)<sup>d</sup>, which gives only about half the d-th root of n distances. By our scan it has no unproved steps, and we have not rebuilt it. Theorem 1.1 is not formalized. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Suppose it failed.</strong> Take point sets whose distance count divided by n<sup>2/d</sup> tends to zero, in the lowest dimension where this happens. Lower dimensions then limit how many points can lie on a line, a circle, a plane or any smaller flat (Lemma 2.1).</li>
+  <li><strong>Many repeats.</strong> By Cauchy–Schwarz, few distances force many ordered pairs of equal-length segments: at least the number of segments squared divided by the number of lengths, counting a segment paired with itself. A product of one factor per distance gives a polynomial of degree 2|∆| that is 1 at a chosen point and 0 at every other point.</li>
+  <li><strong>Crossing flats.</strong> Two segments of equal length are matched by a rigid motion. In suitable coordinates the motions taking p to q form a flat F<sub>p,q</sub>, the complexified point-pair flats of Bardwell-Evans and Sheffer, and F<sub>p,q</sub> meets F<sub>p′,q′</sub> exactly when |p − p′| = |q − q′|. Few distances produce a huge web of crossing flats.</li>
+  <li><strong>Sparse cones.</strong> The central part of the paper (Theorem 6.1) shows that the directions from each point cannot crowd onto cones of small total degree, so polynomials of degree about n<sup>2/d</sup> can tell them apart. This yields global and local bounds on how the flats concentrate; in three dimensions a separate section (Theorem 7.1) limits motions that match very many points.</li>
+  <li><strong>One random sample.</strong> Keep each flat with a fixed small probability. Comparing ranks, a polynomial of degree about n<sup>2/d</sup> vanishes on every kept flat but not on all flats. A flat where it is not zero is crossed by more kept flats than the local bound allows, and on it the polynomial cannot vanish at all the crossings. No constant depends on how fast the ratio falls, which gives a fixed c<sub>d</sub>.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our grids: 3 × 3 × 3 has 27 points, 351 pairs and 9 distances; 10 × 10 × 10 has 1,000 points, 499,500 pairs and 144 distances. Distances divided by n<sup>2/d</sup>: 1.44 at 10<sup>3</sup> and 1.98 at 100<sup>3</sup>; 246 distances for 10<sup>4</sup> points in four dimensions and 331 for 10<sup>5</sup> in five.</li>
+  <li>Our 200 random points: 19,900 pairs, all different distances.</li>
+  <li>Our planar grids: the ratio to n/√ln n stays near 1.11 from 900 to a million points (299,230 distances at n = 10<sup>6</sup>).</li>
+  <li>Our Cauchy–Schwarz check on the 10<sup>3</sup> grid: 3,396,220,944 ordered pairs of equal-length segments, against the bound 499,500<sup>2</sup>/144 ≈ 1.73 × 10<sup>9</sup>.</li>
+  <li>Our separating polynomial on the unit cube: degree 6, value 1 at one corner and 0 at the other seven, 15/128 at the centre.</li>
+  <li>Our check of the flat equation: a skew solution exists exactly when the two segments have equal length, in 1,000 of 1,000 random cases.</li>
+  <li>Our shapes of about 7,000 points: ratios 1.64, 1.28 and 1.12. The Lean elementary bound for the 10<sup>3</sup> grid: 4.5 against the actual 144.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/paper.pdf">The higher-dimensional Erdős distinct-distances conjecture (PDF)</a>, 103 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/Distances/PolynomialIsolation.lean">The uncatalogued Lean file of ingredients</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 166.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +134,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/paper.pdf">The higher-dimensional Erdős distinct-distances conjecture</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The problem</h3>
+<p>Put n points in space and measure the distance between every pair. How few different distances can there be? Erdős introduced this question in 1946. Scatter the points at random, and every distance differs: in our check, 200 random points gave 19,900 pairs and as many distances. A grid does much better. A 3 by 3 by 3 cube has 27 points and 351 pairs, but only 9 distances. A 10 by 10 by 10 cube has 1,000 points, nearly half a million pairs, and only 144 distances, because every squared distance is a whole number of limited size. In d dimensions, a grid of n points has fewer than d times n^(2/d) distances. The plane is different: there the square grid has about n over the square root of log n distances, only a slowly growing factor below n, and, as the paper recounts, Guth and Katz proved a lower bound of order n over log n. In three or more dimensions the prediction is that nothing beats the grid by more than a constant factor. As the paper recounts, lower bounds crept upward over the years, from about the square root of n in three dimensions, and an August 2026 preprint by Tidor, Yu and Zakharov reached n^(2/3) in three dimensions, up to a loss smaller than any power of n. In four dimensions and up, the best exponents still fell short. A 2020 manuscript that claimed the full result was withdrawn by its author.</p>
+<h3><span class="t num">1:32</span>The claim</h3>
+<p>Result 166 is a 103-page OpenAI preprint, dated September 23. Its theorem: for every dimension d of at least three, there is a constant c_d, greater than zero, such that every set of n points in d-dimensional space, with n at least two, determines at least c_d times n^(2/d) distinct distances. That matches the grid up to a constant factor. The paper stresses that a bound whose exponent falls short of 2/d by an amount shrinking to zero would not be enough: the ratio could still sink to zero, slowly, and the proof has to rule that out. In three dimensions, what is new is removing that vanishing loss; from four dimensions up, the exponent itself is new. The paper gives no value for the constant: the proof argues by contradiction, along sequences, and never computes one. It says nothing new about the plane, it does not find a single point that sees that many distances, and it says nothing about which sets come closest. The grid fixes the order, not the constant: in our check with about seven thousand points, a ball of lattice points has noticeably fewer distances than a cube.</p>
+<h3><span class="t num">2:44</span>How the proof goes</h3>
+<p>Suppose the theorem failed: point sets whose distance counts fall ever further below the grid’s. Take the lowest dimension where this happens. Then lower dimensions behave, so no line, circle, plane or smaller flat can hold too many of the points. Few distances force many repeats: by the Cauchy-Schwarz inequality, if about n squared over two segments share only M lengths, then, counting ordered pairs and letting a segment pair with itself, at least that number squared over M pairs of segments have equal length. And few distances give low-degree polynomials that separate points: multiplying one factor per distance gives a polynomial that is one at a chosen point and zero at all the others. Two segments of equal length are matched by a rigid motion. For each point p and each point q of a rotated copy, the motions taking p to q form, in suitable coordinates, a flat in a space of motions, and two of these flats meet exactly when the corresponding segments have equal length; we checked this algebra numerically. So few distances produce a huge web of crossing flats. This rigid-motion picture goes back to Elekes and Sharir, and Guth and Katz, in the plane; the paper’s flats are a complex version of Bardwell-Evans and Sheffer’s, and it credits the Tidor, Yu and Zakharov preprint for several ingredients. The central part of the paper, the sparse-cones theorem, rules out a way to escape: the directions from each point lying on cones of unusually small total degree, which would stop polynomials of degree about n^(2/d) from telling them apart. In three dimensions, a separate section limits the motions that match very many points. The knockout is a random sample. Keep a small fixed fraction of the flats. Comparing ranks, using a global bound on how many flats a low-degree surface can contain, gives a polynomial of degree about n^(2/d) that vanishes on every kept flat but not on all of them. On a flat where it is not zero, so many kept flats cross that, by a local version of that bound, it cannot vanish at all those crossings. That contradiction, with constants that never depend on how fast the counts fall, gives a fixed constant c_d in each dimension.</p>
+<h3><span class="t num">5:02</span>Where it stands</h3>
+<p>The paper is not peer reviewed and has not been revised. There is no Lean formalization of the theorem. The repository contains one uncatalogued Lean file of about 400 lines, which we did not run, covering small ingredients: the separating polynomials, the Cauchy-Schwarz count of equal-length pairs, the reformulation as a sequence, and an elementary bound of only about half the d-th root of n. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, in three dimensions and up, grids are within a constant factor of the fewest distances possible, though the constant is unknown, and the plane keeps its own gap.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20166%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../165-harary-hill-zarankiewicz-crossing-number/"><span class="dir">Previous · 165</span><span class="pt">The Harary–Hill and Zarankiewicz crossing-number formulas</span></a>
-  <a class="next" href="../167-planar-distinct-distances-unit-distance/"><span class="dir">Next · 167</span><span class="pt">Planar distinct distances and unit-distance bounds</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

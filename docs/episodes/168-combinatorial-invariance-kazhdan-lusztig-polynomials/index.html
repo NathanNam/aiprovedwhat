@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 168: Combinatorial invariance of Kazhdan–Lusztig polynomials | AI Proved What?</title>
-<meta name="description" content="Combinatorial invariance of Kazhdan–Lusztig polynomials. Result 168 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Shape is enough? Combinatorial invariance of Kazhdan–Lusztig polynomials | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that isomorphic Bruhat intervals in any Coxeter groups have equal Kazhdan–Lusztig polynomials, resolving the combinatorial invariance conjecture, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/168-combinatorial-invariance-kazhdan-lusztig-polynomials/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 168: Combinatorial invariance of Kazhdan–Lusztig polynomials | AI Proved What?">
-<meta property="og:description" content="Combinatorial invariance of Kazhdan–Lusztig polynomials. Result 168 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Shape is enough?">
+<meta property="og:description" content="An AI preprint claims that isomorphic Bruhat intervals in any Coxeter groups have equal Kazhdan–Lusztig polynomials, resolving the combinatorial invariance conjecture, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/168-combinatorial-invariance-kazhdan-lusztig-polynomials/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/168-combinatorial-invariance-kazhdan-lusztig-polynomials/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,49 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 168 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Combinatorial invariance of Kazhdan–Lusztig polynomials</h1>
+<p class="meta">Episode 168, October 2026</p>
+<h1>Shape is enough?</h1>
+<p class="subtitle">A preprint claims that the shape of a Bruhat interval alone determines its Kazhdan–Lusztig polynomial, in every Coxeter group</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 168 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="MNtA5KGq0l4" data-title="Episode 168: Shape is enough?">
+  <a href="https://youtu.be/MNtA5KGq0l4">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 168: Shape is enough? The Bruhat interval from 1234 to 3412 in the symmetric group, each step coloured by the two values it swaps (our drawing).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:48. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/MNtA5KGq0l4?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/MNtA5KGq0l4?t=111" data-t="111"><span class="t">1:51</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/MNtA5KGq0l4?t=202" data-t="202"><span class="t">3:22</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/MNtA5KGq0l4?t=308" data-t="308"><span class="t">5:08</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Resolves the full combinatorial invariance conjecture: isomorphic Bruhat intervals in arbitrary Coxeter systems have identical equal-parameter Kazhdan–Lusztig polynomials. Thus the abstract order of the interval determines the polynomial, even across different Coxeter systems.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Order the permutations of a few numbers by Bruhat order: one is below another if you can climb from it to the other by swapping two values, each swap increasing the length (the fewest neighbour swaps needed). Coxeter groups generalize this to groups generated by reflections with only pairwise relations, finite or infinite, and every interval [u, b] between two elements is a finite ordered set. “Kazhdan and Lusztig introduced these polynomials through the canonical basis of the Hecke algebra”, and in the Weyl-group setting they are local intersection-cohomology invariants of Schubert varieties. For four numbers, by our count, only 6 of the 213 intervals have a polynomial other than 1, all equal to 1 + q. The combinatorial invariance conjecture, “attributed to Lusztig and Dyer”, asks whether the abstract ordered set alone determines the polynomial. As the paper recounts, it was known for intervals starting at the identity in every Coxeter group (Brenti, Caselli and Marietti; Delanoy), in rank at most six (Barkley, Gaetz and Lam), and up to rank ten in finite Weyl groups and twelve in finite type A (Esposito, Marietti and Stella); Blundell, Buesing, Davies, Veličković and Williamson found a recurrence for symmetric groups “guided by analyses of trained machine-learning models”.</p>
+<p>Result 168 is a single OpenAI preprint, <a href="https://github.com/openai/math/blob/main/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/paper.pdf">Combinatorial invariance of Kazhdan–Lusztig polynomials</a> (31 pages, dated September 24, 2026). Theorem 1.1: “Let (W,S) and (W′,S′) be arbitrary Coxeter systems, and let u ≤ b in W and u′ ≤ b′ in W′. If ι : [u,b] → [u′,b′] is an isomorphism of abstract Bruhat interval posets, then their equal-parameter Kazhdan–Lusztig polynomials satisfy P<sup>W</sup><sub>u,b</sub>(q) = P<sup>W′</sup><sub>u′,b′</sub>(q).” “The statement includes infinite and noncrystallographic groups”, and Corollary 6.1 extends it to every Kazhdan–Lusztig polynomial and R-polynomial on the subintervals. As our own illustration, [1234, 3412] and [2134, 4231] in S<sub>4</sub> have the same shape at different heights, and the same shape appears as [e, s<sub>1</sub>s<sub>3</sub>s<sub>2</sub>s<sub>1</sub>] in the infinite affine group Ã<sub>2</sub> and in the rank-3 group with no relations linking different generators; all have polynomial 1 + q.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>No formula: the shape determines the polynomial, but the paper gives no recipe for reading it off, and it does not claim the machine-learning-guided recurrence conjecture or Caselli and Marietti’s proposed algorithm. One parameter q for all generators; order-preserving isomorphisms only; “no matching of root labels is asserted.” As our own illustration of why the whole shape matters, the interval [1324, 4231] of S<sub>4</sub> and the interval [s<sub>2</sub>, s<sub>2</sub>s<sub>3</sub>s<sub>1</sub>s<sub>2</sub>s<sub>1</sub>] of B<sub>3</sub> have the same number of elements at every rank (1, 4, 6, 4, 1) and the same 32 covers, but different shapes and different polynomials (1 and 1 + q). All of our small examples lie in ranges settled before this paper.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, 31 pages, dated September 24, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +87,44 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/168.md">scope notes</a>)</dd>
+    <dd>The main theorem, formalized by OpenAI; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/168.md">Lean formalization</a> whose <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/KLInvariance.lean">comparator statement</a> matches Theorem 1.1: arbitrary Coxeter systems, an order isomorphism of intervals, and the polynomial defined by the paper’s R-recursion, reciprocity and degree bound. By our count the proof takes 34 files and 42,948 lines excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/RepresentationTheory/KazhdanLusztig">the development</a>), with no unproved steps by our search; we have not rebuilt it. Corollary 6.1 is not part of the comparator, and the repository’s formalization list omits this result. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The missing labels.</strong> “The defining recursion for Kazhdan–Lusztig polynomials uses the simple generators of a Coxeter system, while geometric and categorical constructions use root labels. An abstract Bruhat interval poset retains neither kind of data.”</li>
+  <li><strong>Two separate worlds.</strong> After reducing to finite rank, each group gets a real reflection representation and a Braden–MacPherson sheaf on its Bruhat graph (following Fiebig and Soergel); with the character theorem of Elias and Williamson, the sizes of its pieces are given by Kazhdan–Lusztig polynomials.</li>
+  <li><strong>Edges from the order.</strong> A closure rule on six points in four layers recovers every reflection edge, including the longer ones, from the poset alone (Theorem 3.4), but not their labels. Our check: it rebuilds the edges of all 213 intervals of S<sub>4</sub>.</li>
+  <li><strong>Borrowed labels.</strong> A reflection order in the second group, carried over by the isomorphism, schedules the edges of the first interval, though it “need not be a reflection order in the first system”. Rank-two pieces transport intact; in each, the borrowed order gives the right difference in later edges at the two ends of an edge, and these sum to (d − 1)/2. Localizing at root planes bounds each edge’s image in the sheaf.</li>
+  <li><strong>The squeeze.</strong> Removing the edge conditions in the borrowed order bounds the polynomial through a count of label-ordered paths, which by Dyer’s formula is the second group’s R-polynomial. The inequality holds in both directions, and the degree bound forces equality; equality makes every bound exact and keeps the induction going.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our counts: S<sub>3</sub> has 19 intervals, all with polynomial 1; S<sub>4</sub> has 213, of which 6 have 1 + q; S<sub>5</sub> has 3,781 with five different polynomials.</li>
+  <li>Our isomorphic intervals: [1234, 3412] and [2134, 4231] in S<sub>4</sub> (14 elements, rank sizes 1, 3, 5, 4, 1), and [e, s<sub>1</sub>s<sub>3</sub>s<sub>2</sub>s<sub>1</sub>] in Ã<sub>2</sub> and in the rank-3 group with no relations linking different generators, all with 1 + q.</li>
+  <li>Our equal counts with different shapes: S<sub>4</sub> [1324, 4231] (polynomial 1) and B<sub>3</sub> [s<sub>2</sub>, s<sub>2</sub>s<sub>3</sub>s<sub>1</sub>s<sub>2</sub>s<sub>1</sub>] (1 + q).</li>
+  <li>Our path count: from 1234 to 3412 with increasing labels, two paths, giving R̃ = T<sup>2</sup> + T<sup>4</sup>.</li>
+  <li>The Lean count: 34 files and 42,948 lines, our count of the import closure.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/paper.pdf">Combinatorial invariance of Kazhdan–Lusztig polynomials (PDF)</a>, 31 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/168.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 168.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -74,18 +132,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Combinatorial-Invariance-of-Kazhdan-Lusztig-Polynomials-September-24-2026/paper.pdf">Combinatorial invariance of Kazhdan–Lusztig polynomials</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Start with the symmetric group: all orderings of a few numbers, built by swapping neighbours. The fewest neighbour swaps needed to reach an ordering is its length. Bruhat order puts one ordering below another when you can climb from the first to the second by swapping two values, each swap increasing the length. For three numbers this gives six orderings on four levels, plus one longer step from the bottom straight to the top. For four numbers there are 24 orderings. An interval is everything between two elements, and it has a shape: a finite ordered set. Coxeter groups generalize all of this to groups generated by mirror-like flips, where the only rules say how each pair of flips combines, including infinite groups, and every interval in them is still finite. In 1979, Kazhdan and Lusztig attached a polynomial to each such interval, through a special basis of the Hecke algebra. In the Weyl-group setting, these polynomials record the singularities of Schubert varieties. For three numbers they all equal one. In our count for four numbers, only 6 of the 213 intervals have a different polynomial, all equal to 1 + q; one of them runs from the bottom up to 3412. The polynomial is defined using the group’s generators. The combinatorial invariance conjecture, attributed to Lusztig and Dyer, says the shape of the interval alone determines it. As the paper recounts, it was known for intervals starting at the bottom, in every Coxeter group; Barkley, Gaetz and Lam proved it up to rank 6, and Esposito, Marietti and Stella reached rank 10 in finite Weyl groups and 12 for permutations. Work guided by machine-learning models found a recurrence for permutations built on cube-shaped decompositions, proved for one decomposition and conjectured for all, and later proved for intervals starting at the bottom.</p>
+<h3><span class="t num">1:51</span>The claim</h3>
+<p>Result 168 is a 31-page OpenAI preprint, dated September 24. Its theorem: take any two Coxeter systems, possibly different, and an interval in each. If the two intervals are isomorphic as ordered sets, their Kazhdan–Lusztig polynomials are equal. That includes infinite groups and groups with no Schubert varieties behind them. Applying it to every smaller interval, all the polynomials inside are determined too, and so are the related R-polynomials. In our example, the interval from 1234 up to 3412 and the interval from 2134 up to 4231 have the same shape, at different heights, and both polynomials are 1 + q. The same shape appears in an infinite affine group and in a group with no relations linking different generators, again with 1 + q. It does not claim a formula. The shape determines the polynomial, but the paper gives no recipe for reading it off, and the machine-learning-guided conjecture is not claimed. It covers one parameter q for all generators, and order-preserving isomorphisms. Simple counts are not enough: in our check, an interval of permutations of four numbers and one in the group B3 have the same number of elements at every rank and the same number of covers, yet different shapes and different polynomials. And our small examples lie inside ranges that were settled before.</p>
+<h3><span class="t num">3:22</span>How the proof goes</h3>
+<p>The difficulty is missing labels. The polynomial’s recursion uses the group’s generators, and the geometric tools use root labels on edges; the bare ordered set has neither. The proof first reduces to finitely many generators. In each group separately, it uses sheaves on the Bruhat graph, from Braden and MacPherson and from Fiebig, and a theorem of Elias and Williamson identifies their sizes with Kazhdan–Lusztig polynomials. Then it recovers every reflection edge from the order alone, with a closure rule on six points in four layers; we checked that this rebuilds the edges of all 213 intervals for four numbers. But the order never says which reflection labels an edge. The new idea is to borrow labels. Choose a reflection order in the second group, and use it, through the isomorphism, to schedule the edges of the first interval, even though it need not be a reflection order there. Rank-two pieces carry over intact, and in each one the borrowed order gives the right difference in later edges at the two ends of each edge; summed over these planes, that difference is half of one less than the length gap. Localizing at each plane turns this into a bound comparing the two ends of each edge inside the sheaf. Removing the edge conditions in the borrowed order then bounds the polynomial through a count of label-ordered paths, which by Dyer’s formula gives the second group’s R-polynomial. In our example, the two paths up to 3412 with increasing labels give T² + T⁴. That is an inequality one way; swapping the two groups gives it the other way, and the degree bound then forces the polynomials to be equal; equality makes every bound exact, which keeps the induction going.</p>
+<h3><span class="t num">5:08</span>Where it stands</h3>
+<p>The paper is a preprint, not peer reviewed, and not revised. Its main theorem is stated in Lean to match the paper’s theorem, and OpenAI’s files contain a proof of about 43,000 lines, with no gaps we could find by search; we did not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, the shape of a Bruhat interval alone fixes its Kazhdan–Lusztig polynomial, in every Coxeter group, finite or infinite, though the paper gives no way to read the polynomial off the shape directly.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20168%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../167-planar-distinct-distances-unit-distance/"><span class="dir">Previous · 167</span><span class="pt">Planar distinct distances and unit-distance bounds</span></a>
-  <a class="next" href="../169-shareshian-wachs-elementary-positivity/"><span class="dir">Next · 169</span><span class="pt">Shareshian–Wachs elementary positivity</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

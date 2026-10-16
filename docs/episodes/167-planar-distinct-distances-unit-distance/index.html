@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 167: Planar distinct distances and unit-distance bounds | AI Proved What?</title>
-<meta name="description" content="Planar distinct distances and unit-distance bounds. Result 167 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Erdős distances, pinned down? The weak pinned conjecture and a power saving for unit distances | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim that almost every point of a planar set sees at least n^(1−ε) distances, resolving the weak pinned Erdős conjecture, and that n points have at most C n^β unit distances for some β below 4/3, with Lean formalizations. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/167-planar-distinct-distances-unit-distance/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 167: Planar distinct distances and unit-distance bounds | AI Proved What?">
-<meta property="og:description" content="Planar distinct distances and unit-distance bounds. Result 167 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Erdős distances, pinned down?">
+<meta property="og:description" content="Two AI preprints claim that almost every point of a planar set sees at least n^(1−ε) distances, resolving the weak pinned Erdős conjecture, and that n points have at most C n^β unit distances for some β below 4/3, with Lean formalizations. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/167-planar-distinct-distances-unit-distance/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/167-planar-distinct-distances-unit-distance/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,35 +37,97 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 167 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Planar distinct distances and unit-distance bounds</h1>
+<p class="meta">Episode 167, October 2026</p>
+<h1>Erdős distances, pinned down?</h1>
+<p class="subtitle">Two preprints claim that almost every point of a planar set sees nearly n distances, and that one distance can repeat at most a constant times n to a power below 4/3</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 167 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="BRKK4GJIidc" data-title="Episode 167: Erdős distances, pinned down?">
+  <a href="https://youtu.be/BRKK4GJIidc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 167: Erdős distances, pinned down? A 7 by 7 grid of points with one circle around its centre point for each of the nine distances it sees (our drawing).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:53. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/BRKK4GJIidc?t=0" data-t="0"><span class="t">0:00</span><span>The problems</span></a></li>
+  <li><a href="https://youtu.be/BRKK4GJIidc?t=113" data-t="113"><span class="t">1:53</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/BRKK4GJIidc?t=193" data-t="193"><span class="t">3:13</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/BRKK4GJIidc?t=352" data-t="352"><span class="t">5:52</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves the weak pinned Erdős distance conjecture: for every fixed <i>ε</i> &gt; 0, all but <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>o</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">o(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">o</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> points of any <i>n</i>-point planar set determine at least <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>n</mi><mrow><mn>1</mn><mo>−</mo><mi>ε</mi></mrow></msup></mrow><annotation encoding="application/x-tex">n^{1-\varepsilon}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mbin mtight">−</span><span class="mord mathnormal mtight">ε</span></span></span></span></span></span></span></span></span></span></span></span> distinct nonzero distances. A complementary theorem bounds the number of unit-distance pairs by <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mrow><mn>4</mn><mi mathvariant="normal">/</mi><mn>3</mn><mo>−</mo><mi>δ</mi></mrow></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^{4/3-\delta})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4/3</span><span class="mbin mtight">−</span><span class="mord mathnormal mtight" style="margin-right:0.03785em;">δ</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> for an absolute <i>δ</i> &gt; 0.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Stand at one of n points in the plane and count the different distances to the others. In a 7 × 7 grid the centre sees only 9, because each circle around it passes through several points, while a corner sees 26; the centre of a circle of points sees just one. “Erdős initiated the planar distinct-distance and repeated-distance problems in 1946”, and in 1957 he asked whether some point must always see nearly n distances. As the pinned paper recounts, Solymosi and Tóth proved a pinned bound of order n<sup>6/7</sup>, Tardos improved the exponent, and Katz and Tardos reached every exponent below 0.864137…. “These results guarantee one pin in every configuration.” The weak pinned conjecture asks for n<sup>1−ε</sup> at some point, for every fixed ε &gt; 0 and all large n. The second problem is how often one distance can repeat; by rescaling, how many pairs can be exactly 1 apart. Spencer, Szemerédi and Trotter proved at most a constant times n<sup>4/3</sup> in 1984, and Székely gave a crossing-number proof using two facts: “two unit circles meet in at most two points, and two points belong to at most two unit circles.” The unit-distance paper cites 2026 constructions, which we could not check, that disprove Erdős’s conjecture of n<sup>1+o(1)</sup>, reaching n<sup>1.014114</sup> for infinitely many sizes.</p>
+<p>Result 167 rests on two OpenAI preprints, both dated September 23, 2026, which do not cite each other. <a href="https://github.com/openai/math/blob/main/preprints/The-weak-pinned-planar-distance-theorem-September-23-2026/paper.pdf">The weak pinned planar distance theorem</a> (27 pages), Theorem 1.1: “For every fixed s &gt; 0, one has F<sub>n</sub>(s) → 0 as n → ∞”, where F<sub>n</sub>(s) is the largest fraction, over n-point planar sets, of ordered pairs (x, y) whose circle about x through y holds at least n<sup>s</sup> points. Corollary 1.2: for every fixed ε &gt; 0, all but a vanishing fraction of the points of any n-point planar set see at least n<sup>1−ε</sup> distances, which resolves the weak pinned conjecture in a stronger form. <a href="https://github.com/openai/math/blob/main/preprints/A-power-saving-for-planar-unit-distances-September-23-2026/paper.pdf">A power saving for planar unit distances</a> (53 pages), Theorem 1.1: “There are absolute constants 0 &lt; C &lt; ∞ and 1 ≤ β &lt; 4/3 such that u(n) ≤ Cn<sup>β</sup> for every nonnegative integer n.”</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What they don’t claim</h2>
+<p>No numbers: the pinned theorem “supplies no explicit rate of decay”, and the unit-distance proof establishes “the existence of a fixed positive gap without estimating its size”. Not every point: “An exceptional set is necessary: if P consists of points on a circle and its center, the center sees just one nonzero distance.” Not the sharper pinned conjecture of order n/√log n at a point, the most a grid allows. Nothing new for the total number of distances, where Guth and Katz’s bound of order n/log n stands. Nothing about the true unit-distance exponent between the cited constructions and the new β. As our own illustration, grids fall further behind n<sup>4/3</sup> as they grow: scaled so their most common distance is 1, the 10 × 10 grid has 288 unit pairs (n<sup>4/3</sup> ≈ 464) and the 1000 × 1000 grid 25,992,416 (n<sup>4/3</sup> = 10<sup>8</sup>).</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 27 and 53 pages, both dated September 23, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
-    <dd>Not yet</dd>
+    <dd>Not yet; OSVerify reported one major issue in the unit-distance paper, with a proposed repair</dd>
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/167.md">scope notes</a>)</dd>
+    <dd>Both main theorems formalized by OpenAI; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. Neither preprint has been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/167.md">Lean formalization</a> with comparator statements matching both main theorems exactly (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PinnedDistances.lean">pinned</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PlanarUnitDistances.lean">unit distances</a>). By our count the proofs take 47 files and 15,657 lines and 40 files and 28,113 lines, excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/PinnedDistances">pinned development</a>, <a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/UnitDistances">unit-distance development</a>), with no unproved steps by our search; we have not rebuilt them. The almost-every-point corollary is proved in a further file, Pins.lean, that the catalog does not link. The Lean scope note says the unit-distance theorem “is not included” and then describes its formalization, and the repository’s formalization list omits the unit-distance paper. OSVerify, a Stanford review project, <a href="https://osverify.github.io/cases/planar-unit-distances.html">refereed the unit-distance paper</a> and reported one major issue. The last sentence of Section 8.2 (p.46) says that a point generic over the coefficient field stays generic after the other grid points are adjoined; the grid lemma gives independence only over the base field, and OSVerify gives a counterexample over a larger field. It does not say the main theorem is false: the later arguments use only the correct, weaker form, and it proposes restricting the claim to the base field. An expert comment on its page says the issue and the fix are both correct, calling the sentence “false as stated, but this error is fixable.” No response from the authors is posted. A Lean proof that checks would settle the theorem whatever the paper’s write-up, but we have not run it. We have seen no other expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Pinned: two coordinates.</strong> Assume a fixed fraction of pairs sit on crowded circles, and make the coordinates algebraic by a transfer principle that keeps every distance equality. With z = x + iy and w = x − iy, the squared distance is (z<sub>q</sub> − z<sub>p</sub>)(w<sub>q</sub> − w<sub>p</sub>), so on a circle about a point, w is a Möbius function of z.</li>
+  <li><strong>Pinned: arithmetic and random grids.</strong> The product formula balances the sizes of algebraic numbers over all absolute values. Points are grouped by closeness at each one, using randomly shifted and rotated nested square grids at the complex places, whose error has the same law for every pair (Lemma 3.1); a cell with more than half the points is replaced by its complement. Summed over all levels and absolute values, the overlap of two points is a constant plus a part for each point, “the main use of arithmetic in the proof”.</li>
+  <li><strong>Pinned: two cases.</strong> The identity forces points on crowded circles to spread over the cells like the whole set. If the total scale grows, the cells form trees, and an elementary tree bound contradicts the identity; if it stays bounded, a limit would need Möbius maps carrying one non-atomic law onto another, which Lemma 7.1 rules out.</li>
+  <li><strong>Unit distances: incidences and information.</strong> From sets with nearly n<sup>4/3</sup> unit pairs, points and unit circles form an incidence graph; random cuttings and Székely’s bound isolate a piece with controlled degrees, where two neighbours of one centre share little information, so a point can be predicted from a short record of test answers.</li>
+  <li><strong>Unit distances: heights and algebra.</strong> A unit step changes z by d and w by 1/d. If the variation of these steps over all absolute values stays bounded, a determinant rules out a predicted point that nearly satisfies three unit equations; if it grows, the paper extracts many pairs whose ratios have large height while certain products of ratios have small height. Square roots that must be independent then allow one sign to flip, a contradiction. That fails when points share a unit circle, so pairs on unit circles through very many points are removed first.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our pinned counts: in the 7 × 7 grid the centre sees 9 distances and a corner 26; in the 400 × 400 grid, from 13,787 to 51,347.</li>
+  <li>Our circle and centre: with 12 points on the circle, the centre sees 1 distance and each rim point 6.</li>
+  <li>Our unit pairs in grids scaled so the most common distance is 1: 288 for 100 points (n<sup>4/3</sup> ≈ 464), 98,176 for 10,000 (≈ 215,443), 25,992,416 for a million (10<sup>8</sup>).</li>
+  <li>Our small sets: the hexagon with its centre has 7 points and 12 unit pairs.</li>
+  <li>Our circle check: on the circle of radius 5 about the origin, all 12 grid points satisfy w = 25/z.</li>
+  <li>Our simulation of random nested grids: the average error is −1.457, −1.460 and −1.454 for pairs at distances 0.001, 1 and 50,000.</li>
+  <li>Our check of the unit-distance paper’s excluded case: with L = −b(ζ − 1)<sup>2</sup>/ζ, at b = 1 the quantity L(L − 4) is the perfect square ((ζ<sup>2</sup> − 1)/ζ)<sup>2</sup>.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-weak-pinned-planar-distance-theorem-September-23-2026/paper.pdf">The weak pinned planar distance theorem (PDF)</a>, 27 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-power-saving-for-planar-unit-distances-September-23-2026/paper.pdf">A power saving for planar unit distances (PDF)</a>, 53 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/167.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 167.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -76,18 +136,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-power-saving-for-planar-unit-distances-September-23-2026/paper.pdf">A power saving for planar unit distances</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The problems</h3>
+<p>Put n points in the plane, stand at one of them, and measure the distance to every other point. How many different distances do you see? Erdős raised this pinned version of his distance problem in 1957. In a 7 by 7 grid, the centre sees only 9 distances, because each circle around it passes through several points, while a corner sees 26. And one point can see a single distance: put points on a circle and add its centre. So the question is whether some point always sees many. The best earlier results each guaranteed one such point: Solymosi and Tóth reached n^(6/7), and Katz and Tardos pushed the exponent to about 0.864. The weak pinned conjecture asks for n^(1−ε), for every fixed ε, once n is large. The second problem asks how often a single distance can repeat. Rescaling turns any distance into distance one, so count the pairs at distance exactly one. Scale our 10 by 10 grid so its most common distance, √5, becomes one, and 100 points give 288 unit pairs. In 1984, Spencer, Szemerédi and Trotter proved at most a constant times n^(4/3). Székely later gave a short crossing-number proof needing just two facts: two unit circles meet in at most two points, and two points lie on at most two unit circles. Grids fall further behind n^(4/3) as they grow. Erdős’s lattice construction gives a little more than n, and he conjectured n^(1+o(1)); the paper cites 2026 constructions, which we could not check, that disprove this, reaching about n^1.014 for infinitely many sizes. Later work improved the constant in the upper bound; the question was whether the exponent 4/3 itself could be lowered.</p>
+<h3><span class="t num">1:53</span>The claims</h3>
+<p>Result 167 is two OpenAI preprints, both dated September 23. The first, 27 pages long, claims the weak pinned conjecture in a stronger form: for every fixed ε, all but a vanishing fraction of the points of any planar set of n points see at least n^(1−ε) distances. Its main theorem says that if you pick an ordered pair of points at random, the chance that the circle about the first point through the second holds at least n^s points tends to zero, for every fixed positive s, uniformly over all sets. The second preprint, 53 pages long, claims a power saving: there are constants C and β, with β below 4/3, such that n points never have more than C times n^β unit pairs. Neither paper gives a number. There is no rate for the vanishing fraction, and no value of β, only that it is below 4/3. Not every point is claimed; the centre of a circle shows why. Seeing on the order of n/√(log n) distances at one point, the most a grid allows, is a sharper conjecture left open. Nothing changes for the total number of distances, where Guth and Katz’s bound stands. The two papers do not cite each other; they share a toolkit, not a lemma.</p>
+<h3><span class="t num">3:13</span>How the proofs go</h3>
+<p>The pinned proof starts from a failure: sets where a fixed fraction of pairs sit on crowded circles. A transfer principle replaces the coordinates by algebraic numbers without changing any distance equality. Then it uses two coordinates, z = x + iy and w = x − iy. The squared distance is the change in z times the change in w, so on a circle about a point, w is a Möbius function of z; we checked this at all 12 grid points on a circle of radius 5. Algebraic numbers have a size at every absolute value, ordinary and p-adic, and the product formula balances these sizes. At each absolute value, the proof groups points by closeness, using randomly shifted and rotated nested square grids at the complex ones. Our simulation shows the grids’ error has the same average for pairs at very different distances, the property the proof needs. Summed over all levels and absolute values, the overlap of two points is a constant plus a part for each point. That additive identity forces the points on crowded circles to spread over the cells like the whole set. Then there are two cases. If the total scale grows, the cells form trees, and an elementary bound shows that distances in trees fluctuate more than the identity allows. If it stays bounded, a limit would need Möbius maps carrying one spread-out distribution onto another in a way the paper shows is impossible. The unit-distance proof also argues by contradiction, from sets with nearly n^(4/3) unit pairs. It treats them as points and unit circles, and uses random cuttings and Székely’s incidence bound to isolate a piece with controlled degrees. There, two points that are neighbours of one centre share little information, so a point can be predicted from a short record of test answers. In the same two coordinates, a unit step changes z by some number d and w by 1/d, and the proof measures how these changes vary across all absolute values. If that variation stays bounded, a determinant rules out a predicted point that nearly satisfies three unit equations. If it grows, the paper extracts many pairs of points whose ratios have large height, a measure of arithmetic complexity, while certain products of ratios have small height. The finish is algebraic: square roots that must be independent let one sign flip, a contradiction. That step fails when the points share a unit circle, so pairs on unit circles through very many points are removed first; we checked the identity behind that case.</p>
+<h3><span class="t num">5:52</span>Where it stands</h3>
+<p>Both papers are preprints, not peer reviewed, and not revised. Both main theorems are stated in Lean, and OpenAI’s files contain proofs of about 16,000 and 28,000 lines, with no gaps we could find by search; we did not run the check. The almost-every-point consequence is proved in a further uncatalogued file. The Lean documentation contradicts itself on whether the unit-distance theorem is included; its formalization is there. OSVerify, a Stanford review project, refereed the unit-distance paper and reported one major issue. A Lean proof that checks would settle the theorem whatever the paper’s write-up, but we have not run it. If they hold, almost every point of a planar set sees nearly n distances, and one distance repeats at most a constant times n to a power below 4/3: the exponent drops by a fixed amount, of unknown size.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20167%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../166-higher-dimensional-erdos-distinct-distances/"><span class="dir">Previous · 166</span><span class="pt">The higher-dimensional Erdős distinct-distances conjecture</span></a>
-  <a class="next" href="../168-combinatorial-invariance-kazhdan-lusztig-polynomials/"><span class="dir">Next · 168</span><span class="pt">Combinatorial invariance of Kazhdan–Lusztig polynomials</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

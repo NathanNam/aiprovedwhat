@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 165: The Harary–Hill and Zarankiewicz crossing-number formulas | AI Proved What?</title>
-<meta name="description" content="The Harary–Hill and Zarankiewicz crossing-number formulas. Result 165 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Brickyard solved? The Harary–Hill and Zarankiewicz crossing-number formulas | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim the exact crossing numbers of all complete and complete bipartite graphs, proving the Harary–Hill and Zarankiewicz conjectures, with a Lean formalization of both theorems. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/165-harary-hill-zarankiewicz-crossing-number/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 165: The Harary–Hill and Zarankiewicz crossing-number formulas | AI Proved What?">
-<meta property="og:description" content="The Harary–Hill and Zarankiewicz crossing-number formulas. Result 165 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Brickyard solved?">
+<meta property="og:description" content="Two AI preprints claim the exact crossing numbers of all complete and complete bipartite graphs, proving the Harary–Hill and Zarankiewicz conjectures, with a Lean formalization of both theorems. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/165-harary-hill-zarankiewicz-crossing-number/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/165-harary-hill-zarankiewicz-crossing-number/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,49 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 165 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">The Harary–Hill and Zarankiewicz crossing-number formulas</h1>
+<p class="meta">Episode 165, October 2026</p>
+<h1>Brickyard solved?</h1>
+<p class="subtitle">Two preprints claim the exact crossing numbers of all complete and complete bipartite graphs, proving the Harary–Hill and Zarankiewicz conjectures</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 165 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="Chm5vdrMURk" data-title="Episode 165: Brickyard solved?">
+  <a href="https://youtu.be/Chm5vdrMURk">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 165: Brickyard solved? Five orange kilns and five teal yards on two axes joined by blue tracks, with the 16 crossings marked in red (our drawing).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:53. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/Chm5vdrMURk?t=0" data-t="0"><span class="t">0:00</span><span>The problem</span></a></li>
+  <li><a href="https://youtu.be/Chm5vdrMURk?t=109" data-t="109"><span class="t">1:49</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/Chm5vdrMURk?t=187" data-t="187"><span class="t">3:07</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/Chm5vdrMURk?t=312" data-t="312"><span class="t">5:12</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Resolves the Harary–Hill conjecture and Turán's brickyard problem in the Zarankiewicz formulation, determining the crossing numbers of every complete and complete bipartite graph. The result proves the optimality of the classical drawings among all plane drawings with continuous edge arcs.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Draw a graph in the plane with its edges as curves. The crossing number cr(G) is the fewest crossings any drawing can have; in the papers’ words, edges are “simple continuous arcs”, crossings are proper, and c(D) counts crossing points, “counting every crossing when two edges meet repeatedly”, with “no restriction on vertex positions or edge routes”. For the complete bipartite graph K<sub>m,n</sub>, the question is Turán’s brickyard problem, which began, as the paper recounts, with rail connections between kilns and storage yards at a brick factory near Budapest in 1944. Zarankiewicz’s axis drawing has ⌊m/2⌋⌊(m−1)/2⌋⌊n/2⌋⌊(n−1)/2⌋ crossings, “but the published argument for its optimality contained a gap”. For the complete graph K<sub>n</sub>, Hill’s number ¼⌊n/2⌋⌊(n−1)/2⌋⌊(n−2)/2⌋⌊(n−3)/2⌋ is attained by classic drawings, and Harary and Hill conjectured it is optimal (Guy’s 1960 note gave the first published upper bound). As the papers recount, Kleitman proved the bipartite formula when one side has at most six vertices; Pan and Richter’s computer-assisted proof gave cr(K<sub>11</sub>) = 100, Aichholzer reported cr(K<sub>13</sub>) = 225, and Woodall verified K<sub>7,7</sub> and K<sub>7,9</sub> by computation; the strongest general bounds they cite are a ratio above 0.98559895 for K<sub>n</sub> and cr(K<sub>n,n</sub>) ≥ 0.9118 times the conjectured value, asymptotically.</p>
+<p>Result 165 rests on two OpenAI preprints, both dated September 23, 2026. <a href="https://github.com/openai/math/blob/main/preprints/The-crossing-number-of-complete-graphs-September-23-2026/paper.pdf">The crossing number of complete graphs</a> (13 pages), Theorem 1.1: “For every integer n ≥ 3, cr(K<sub>n</sub>) = ¼⌊n/2⌋⌊(n−1)/2⌋⌊(n−2)/2⌋⌊(n−3)/2⌋”, which “resolves the Harary–Hill conjecture positively”. <a href="https://github.com/openai/math/blob/main/preprints/The-crossing-number-of-complete-bipartite-graphs-September-23-2026/paper.pdf">The crossing number of complete bipartite graphs</a> (16 pages), Theorem 1.1: “For all positive integers m, n, cr(K<sub>m,n</sub>) = d<sub>m</sub>d<sub>n</sub>”, with d<sub>r</sub> = ⌊r/2⌋⌊(r−1)/2⌋, resolving “the Zarankiewicz crossing-number conjecture positively”. So, for example, cr(K<sub>7</sub>) = 9, cr(K<sub>11</sub>) = 100, cr(K<sub>5,5</sub>) = 16 and cr(K<sub>9,9</sub>) = 256.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The papers concern the ordinary crossing number only, not the pair, odd or straight-line versions, and drawings in the plane, not other surfaces. They do not classify the optimal drawings. The upper bounds are well-known drawings: Zarankiewicz’s axis drawing, and a two-page drawing that de Klerk, Pasechnik and Salazar presented, building on book drawings of Blažek and Koman and of Damiani, D’Antona and Salemi. Neither theorem is derived from the other (“The lower bound does not depend on the bipartite crossing-number formula”), though the complete-graph paper adapts the companion’s tools and re-proves what it uses; no computer search is involved. Both papers mention earlier published claims of both formulas by Hebbar and Mangam; the complete-graph paper notes that “counting crossings in prescribed drawings gives upper bounds; establishing the minimum over all drawings also requires a lower-bound argument.”</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 13 and 16 pages, both dated September 23, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +87,44 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/165.md">scope notes</a>)</dd>
+    <dd>Both theorems exactly, under the standard definition. We have not rebuilt it</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. Neither preprint has been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/165.md">Lean formalization</a> with one comparator per paper (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/CompleteCrossing.lean">complete graphs</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/BipartiteCrossing.lean">complete bipartite graphs</a>): vertices at distinct points, edges as injective continuous paths avoiding other vertices, finitely many proper crossings defined by local charts, no triple points, and crossing points counted. By our count the proofs take 385 files and 38,663 lines excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/CompleteCrossing">complete-graph development</a>, <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/Crossing">bipartite development and shared geometry</a>). We found no unproved steps, and we have not rebuilt it. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Normalize and keep signed books.</strong> A minimum drawing can be made polygonal with no crossings between edges that share an endpoint. Direct the edges, give each crossing a sign by orientation, and record the counterclockwise order of edges at each vertex.</li>
+  <li><strong>Loops cross zero times net.</strong> Two closed polygonal walks have total signed intersection zero; with half-weighted corrections where two cycles share a vertex, this gives J(z, z′) = 0 for every pair of cycles (the “cycle pairing”).</li>
+  <li><strong>Complete graphs, odd n = 2s + 1.</strong> Label the vertices by distinct reals. Polynomials in the four endpoints of a pair of edges, symmetric within each edge and of degree at most s − 2 in each variable, form a space of dimension exactly (s choose 2)², Hill’s number. Evaluating them on the edge pairs with nonzero signed count is injective with a totally isotropic image, so those pairs, and hence the crossings, number at least Hill’s number.</li>
+  <li><strong>Complete bipartite graphs, odd n = 2s + 1.</strong> A detector turns the signed counts between the fans of two kilns into an s² × s² matrix whose rank is at most their number of crossings, with full rank for a fan against itself. An inequality about subspaces, proved in the paper, forces the ranks to sum to at least twice Zarankiewicz’s number.</li>
+  <li><strong>Even sizes.</strong> Delete each vertex in turn and average; the odd formulas give the even ones exactly.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our exact counts: Zarankiewicz’s axis drawing of K<sub>5,5</sub> has 16 crossings; the two-page drawing of K<sub>7</sub> has 2 above the spine and 7 below, 9 in all; the two-page counts equal Hill’s number for n = 3 to 30.</li>
+  <li>Our check of the cycle identity, in exact arithmetic, on all pairs of triangles in random drawings of K<sub>6</sub> and K<sub>7</sub> with straight edges (12 and 23 crossing points) and of K<sub>6</sub> with two bends per edge (186 crossing points, with pairs crossing up to six times): no exception.</li>
+  <li>The K<sub>7</sub> basis {1, x+u, xu} ⊗ {1, y+v, yv}, nine polynomials; in the 5 × 5 axis drawing, fans of kilns on the same side cross 4 times and on opposite sides 0 times (ours), the equality case of the rank bound by our reckoning.</li>
+  <li>The Lean counts: 385 files and about 39,000 lines, our count of the two import closures.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-crossing-number-of-complete-graphs-September-23-2026/paper.pdf">The crossing number of complete graphs (PDF)</a>, 13 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-crossing-number-of-complete-bipartite-graphs-September-23-2026/paper.pdf">The crossing number of complete bipartite graphs (PDF)</a>, 16 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/165.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 165.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -75,18 +133,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/The-crossing-number-of-complete-bipartite-graphs-September-23-2026/paper.pdf">The crossing number of complete bipartite graphs</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The problem</h3>
+<p>Put n dots in the plane and join every pair by a curve. The curves may wiggle anywhere, but each crossing costs one, and the crossing number is the fewest crossings any drawing can get away with. Five dots already force one crossing. The bipartite version is older. It comes from Turán: as the paper recounts, it began with rail tracks between kilns and storage yards at a brick factory near Budapest in 1944: join every kiln to every yard, with as few track crossings as possible. There are classic drawings. Put the kilns on a vertical line and the yards on a horizontal line, each split as evenly as possible across the centre, and use straight tracks. Five kilns and five yards then cross sixteen times, and in general the count is Zarankiewicz’s number. He published a proof that this is best, but it contained a gap. For n dots, Hill’s formula, a quarter of the product of the halves of n, n minus one, n minus two and n minus three, each rounded down, is attained, for example, by putting the dots on a line and drawing each edge as an arch, above or below by a simple rule on the dots’ labels: seven dots, nine crossings. Harary and Hill conjectured that nothing does better. A good drawing only gives an upper bound; a lower bound must beat every possible drawing. As the papers recount, Kleitman proved the bipartite formula when one side has at most six vertices, computer-assisted proofs settled eleven dots and seven kilns with seven or nine yards, and one was reported for thirteen dots. In general, the strongest bounds the papers cite reached about ninety-eight and a half percent of Hill’s number, and about ninety-one percent of Zarankiewicz’s for equal sides, in the limit.</p>
+<h3><span class="t num">1:49</span>The claim</h3>
+<p>Result 165 rests on two OpenAI preprints, both dated September 23: 13 pages on complete graphs, and 16 on complete bipartite graphs. The first proves that for every n of at least three, the crossing number of n dots, all joined, is exactly Hill’s number. The second proves that for all m and n, m kilns and n yards need exactly Zarankiewicz’s number of crossings. Both use the standard definition: edges are any continuous curves that never cross themselves, and every crossing point counts, even when two edges cross repeatedly. If the proofs hold, the classic drawings are optimal and both conjectures are true. The papers do not classify the best drawings, and they treat only drawings in the plane, not other surfaces. Their drawings are well-known ones: Zarankiewicz’s own, and a two-page drawing that de Klerk, Pasechnik and Salazar presented, building on earlier book drawings. Neither theorem is derived from the other, though they share tools, and no computer search is involved. Both papers also mention earlier published claims of both formulas; the first notes that counting the crossings of particular drawings only gives upper bounds.</p>
+<h3><span class="t num">3:07</span>How the proof goes</h3>
+<p>Both proofs first simplify a best drawing, so that edges sharing an endpoint never cross. Then give each edge a direction, score each crossing plus or minus one according to which way the second edge passes, and at every vertex record the counterclockwise order of its edges. The key fact is that two closed loops in the plane cross zero times net. Applied to cycles of edges, with half-credit corrections where two cycles meet at a vertex, it gives one exact equation for every pair of cycles. In our check, these equations held exactly on random drawings, including messy ones where two edges cross up to six times. For an odd number of dots, two s plus one, label the dots with distinct numbers and look at polynomials in the four endpoints of a pair of edges, symmetric within each edge, with degree at most s minus two in each variable. A basis of them has exactly Hill’s number of members: for seven dots, three times three, nine. Evaluate them on the pairs of edges with a nonzero signed count. The cycle equations, used with polynomial weights, show that this evaluation loses nothing, and that its image fills at most half of the available room. So there are at least as many crossings as basis polynomials. Even sizes follow by deleting each vertex in turn and averaging. For kilns and yards, with an odd number of yards, the crossings are grouped by which two kilns’ fans of track they involve. A detector turns each group’s signed counts into a square matrix whose rank is at most the number of crossings in it, while a fan compared with itself gives full rank. An inequality about subspaces, proved in the paper, then forces the ranks to add up to at least twice Zarankiewicz’s number, and even numbers of yards again follow by deletion. In the five-by-five axis drawing, fans on the same side cross four times each and fans on opposite sides not at all; by our reckoning, that is exactly the extreme case of the inequality.</p>
+<h3><span class="t num">5:12</span>Where it stands</h3>
+<p>Both papers are preprints, not peer reviewed and not revised since release. OpenAI’s Lean formalization states both theorems exactly, with edges as continuous paths that never cross themselves and every crossing point counted, and proves them in about 39,000 lines, by our count. We found no unproved steps, and we have not rebuilt it. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If the proofs hold, two problems from the 1940s, 1950s and 1960s are settled: the brick-factory tracks, and the dots on a page, can do no better than the classic drawings.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20165%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../164-hindmans-finite-sums-products-conjecture/"><span class="dir">Previous · 164</span><span class="pt">Hindman’s finite sums and products conjecture</span></a>
-  <a class="next" href="../166-higher-dimensional-erdos-distinct-distances/"><span class="dir">Next · 166</span><span class="pt">The higher-dimensional Erdős distinct-distances conjecture</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
