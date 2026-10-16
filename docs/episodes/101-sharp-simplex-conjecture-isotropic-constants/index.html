@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 101: The sharp simplex conjecture for isotropic constants | AI Proved What?</title>
-<meta name="description" content="The sharp simplex conjecture for isotropic constants. Result 101 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Simplex wins? The sharp isotropic constant conjecture | AI Proved What?</title>
+<meta name="description" content="An AI system claims that simplices uniquely maximize the isotropic constant in every dimension, through a sharp entropy bound for log-concave densities. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/101-sharp-simplex-conjecture-isotropic-constants/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 101: The sharp simplex conjecture for isotropic constants | AI Proved What?">
-<meta property="og:description" content="The sharp simplex conjecture for isotropic constants. Result 101 in OpenAI&#x27;s math release (Convex and metric geometry): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Simplex wins?">
+<meta property="og:description" content="An AI system claims that simplices uniquely maximize the isotropic constant in every dimension, through a sharp entropy bound for log-concave densities. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/101-sharp-simplex-conjecture-isotropic-constants/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/101-sharp-simplex-conjecture-isotropic-constants/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 101 · <a href="../../subjects/convex-and-metric-geometry/">Convex and metric geometry</a></p>
-<h1 class="result-title">The sharp simplex conjecture for isotropic constants</h1>
+<p class="meta">Episode 101, October 2026</p>
+<h1>Simplex wins?</h1>
+<p class="subtitle">Simplices maximize the isotropic constant in every dimension, through a sharp entropy bound for log-concave laws</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 101 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="Zm8doY_lIrs" data-title="Episode 101: Simplex wins?">
+  <a href="https://youtu.be/Zm8doY_lIrs">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 101: Simplex wins? A triangle filled with random points and its covariance ellipse, beside a square and a disk with their isotropic constants.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:08. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/Zm8doY_lIrs?t=0" data-t="0"><span class="t">0:00</span><span>The isotropic constant</span></a></li>
+  <li><a href="https://youtu.be/Zm8doY_lIrs?t=114" data-t="114"><span class="t">1:54</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/Zm8doY_lIrs?t=208" data-t="208"><span class="t">3:28</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/Zm8doY_lIrs?t=331" data-t="331"><span class="t">5:31</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves that simplices uniquely maximize the isotropic constant among convex bodies in every dimension, resolving the strong isotropic constant conjecture. Also establishes the sharp entropy lower bound for log-concave probability densities, with equality precisely for invertible affine images of products of one-sided exponential laws.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>Pick a point uniformly at random from a convex body K in ℝ<sup>n</sup>. Its isotropic constant L<sub>K</sub> is the determinant of the point’s covariance matrix divided by the squared volume, to the power 1/(2n). It is the same for a body and every affine image of it. In the plane, a disk gives about 0.282, a regular hexagon 0.283, a square 0.289 and a triangle about 0.310.</p>
+<p>Bourgain asked whether L<sub>K</sub> stays below one fixed number in every dimension: the slicing problem. Klartag proved a bound growing like n<sup>1/4</sup>; Eldan’s stochastic localization led to subpolynomial and then polylogarithmic bounds; and Klartag and Lehec, using an estimate of Guan, proved a bound independent of the dimension. The strong form asks for the exact maximum: is it the simplex? In the plane, Campi, Colesanti and Gronchi proved the triangle is a maximizer and Saroglou proved no other body is; Rademacher showed that a maximizing polytope whose faces are all simplices must be a simplex.</p>
+<p>Result 101 is <a href="https://github.com/openai/math/blob/main/preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/isotropic-simplex.pdf">one OpenAI preprint</a> dated October 5, 2026 (42 pages). It claims that in every dimension L<sub>K</sub> ≤ (n!)<sup>1/n</sup> / ((n+1)<sup>(n+1)/(2n)</sup> √(n+2)), the value for a simplex, with equality only for simplices. The route is a sharp entropy bound: every log-concave probability density f on ℝ<sup>m</sup> (f = e<sup>−V</sup> with V convex, allowed to equal +∞) has entropy h(f) ≥ m + ½ log det Cov(f), with equality exactly for invertible affine images of products of one-sided exponential laws. Fradelizi and Marín Sola had formulated this statement and shown it equivalent, across dimensions, to the simplex bound; Melbourne, Nayar and Roberto proved dimension one. Through a result of Klartag, the simplex bound also implies the general Mahler inequality, which episode 87 met in a separate preprint.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>There is no Lean formalization. The paper’s scalar inequalities come with <a href="https://github.com/openai/math/blob/main/preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/verification/verify_scalar.py">a checker in exact rational arithmetic</a>; it checks the rational bounds, not the calculus statements behind them, which are proved in the paper’s appendix.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, dated October 5, 2026, released October 6</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,41 @@
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>Not yet</dd>
+    <dd>No; a released checker verifies the rational scalar bounds, and we ran it</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 14, 2026.</p>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. We ran the released checker: it exits normally and reports ALL CHECKS PASSED, in about a second. It is not among the papers OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>From entropy to bodies: the cone.</strong> Place K, centered at its centroid, at height one in ℝ<sup>n+1</sup> and take the cone from the origin through it, with density e<sup>−t</sup>/(n!|K|). Its entropy is n + 1 + log(n!|K|) and its covariance is block diagonal, (n+1)(n+2)Cov(K) and n + 1, so the entropy bound for this density becomes exactly the simplex inequality for K. Equality forces the cone to be an affine image of an orthant, so its slice at height one is a simplex.</li>
+  <li><strong>Gaussian transport.</strong> The gradient of a convex function carries the standard Gaussian to the density (Brenier; Caffarelli’s bounds in the smooth case). In one dimension the map to the exponential law is t(a) = −log Φ(−a), and its derivative q serves as the reference scale: the transport’s derivative matrix is written q(A) for a symmetric matrix field A, normalized by an affine change of the target so that A has mean zero. Convexity of the potential gives an energy estimate for A that keeps a term for pairs of distinct eigenvalues.</li>
+  <li><strong>Chaos, certified constants, equality.</strong> In the Gaussian chaos expansion of A, the linear part picks a supporting plane for the covariance term and the higher parts give a spectral gap. Two scalar estimates, built on one-variable bounds with exact rational constants on a bounded interval and separate tail estimates, bound the entropy deficit by a quantity that is never positive. For equality, the limiting field is linear, its coefficient matrices commute, and diagonalizing them gives independent one-sided exponentials. Approximation removes the smoothness assumptions.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Exact isotropic constants: disk 0.28209, regular hexagon 0.28317, square 0.28868, triangle 0.31020, tetrahedron 0.32250. As the dimension grows, the simplex value approaches 1/e ≈ 0.368, the cube stays at 1/√12 ≈ 0.289 and the ball falls toward 1/√(2πe) ≈ 0.242.</li>
+  <li>A search: 40 hill-climbs from random polygons all ended as triangles, at 0.3102; 20 from random polytopes in space reached the tetrahedron’s 0.3225 and no higher.</li>
+  <li>Entropy minus half the log of the variance, one dimension: one-sided exponential 1 (the bound), uniform 1.24, right-triangular 1.25, Laplace 1.35, symmetric triangular 1.40, Gaussian 1.42.</li>
+  <li>For a triangle, sampling the cone density reproduced the predicted covariance to about 0.1%, and its entropy equals the bound.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/isotropic-simplex.pdf">A sharp entropy bound and the simplex inequality for isotropic constants (PDF)</a>, 42 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/verification/verify_scalar.py">The scalar certificate checker</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 101.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -74,18 +130,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-sharp-entropy-bound-and-the-simplex-inequality-for-isotropic-constants-October-5-2026/isotropic-simplex.pdf">A sharp entropy bound and the simplex inequality for isotropic constants</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The isotropic constant</h3>
+<p>Pick a point uniformly at random from a convex body, and measure how spread out it is: the covariance matrix of its coordinates. The isotropic constant compares that spread with the volume. It is the determinant of the covariance, divided by the squared volume, all to the power 1/(2n). Stretching or shearing the body changes both in step, so the constant sees only the shape, up to affine maps. In the plane, a disk gives about 0.282, a regular hexagon 0.283, a square 0.289, and a triangle about 0.310. Bourgain asked whether the isotropic constant stays below one fixed number in every dimension. This is the slicing problem. Klartag proved a bound growing like the fourth root of the dimension. Eldan’s stochastic localization led to bounds growing more slowly than any power, then polylogarithmic ones, and Klartag and Lehec, using an estimate of Guan, proved a bound independent of the dimension. The strong form asks for the exact maximum: is it the simplex, in every dimension? In the plane, Campi, Colesanti and Gronchi proved the triangle is a maximizer, and Saroglou proved it is the only one. Rademacher showed that a maximizing polytope whose faces are all simplices must be a simplex itself. Our own search agrees. In 40 runs starting from random polygons, moving vertices to raise the constant, every run ended as a triangle, at 0.3102. In 20 runs in space, random polytopes climbed to the tetrahedron’s value, about 0.3225, and no higher. As the dimension grows, the simplex value approaches 1/e, about 0.368. The cube stays at 1/√12, and the ball falls toward about 0.242.</p>
+<h3><span class="t num">1:54</span>The claims</h3>
+<p>Result 101 is one OpenAI preprint, 42 pages, dated October 5. It claims the strong conjecture: in every dimension, no convex body has a larger isotropic constant than a simplex, and only simplices attain the maximum. The route is a sharp entropy bound. A density is log-concave if its logarithm is concave, like a Gaussian, or the uniform density on a convex body. For every log-concave probability density in m dimensions, the paper claims that the entropy is at least m plus half the log of the covariance determinant, with equality exactly for affine images of products of one-sided exponential laws. Fradelizi and Marín Sola had formulated this entropy statement and shown it equivalent, across all dimensions, to the simplex bound. Melbourne, Nayar and Roberto proved it in dimension one. In our one-dimensional examples, the exponential law sits exactly at the bound, 1; a uniform density gives about 1.24, a Laplace density 1.35, and a Gaussian 1.42. Through a result of Klartag, the simplex bound also implies the general Mahler inequality, which episode 87 met in a separate preprint. There is no Lean formalization. The paper’s scalar inequalities come with a checker in exact rational arithmetic; we ran it, and it reported that all checks passed. It checks the rational bounds, not the calculus behind them.</p>
+<h3><span class="t num">3:28</span>How the proof goes</h3>
+<p>The proof goes from entropy to bodies. Place the body at height one, centered at its centroid, in a space of one more dimension, and take the cone from the origin through it. Put the density e^(−height) on this cone. Its entropy and covariance can be computed exactly from the body’s volume and covariance, and the entropy bound in dimension n + 1 becomes exactly the simplex inequality. For a triangle, our sampling matched the predicted covariance to about 0.1%. Equality forces the cone to be an affine image of an orthant, the support of a product of exponentials, and the slice of such a cone at height one is a simplex. The entropy bound itself is proved with optimal transport. The gradient of a convex function carries the standard Gaussian to the density, and its derivative is a positive definite matrix field. In one dimension, the map carrying a Gaussian to the exponential law is minus the log of the Gaussian tail. Its derivative, q, serves as a ruler. The paper writes the derivative matrix as q applied to a symmetric matrix field A, and moves the target by an affine map so that A has mean zero. Convexity of the density’s potential then controls the derivatives of A, keeping a term for pairs of distinct eigenvalues. Expanding A in Gaussian chaos, its linear part has no energy to spare, but it picks a supporting plane for the covariance term; the higher parts supply a spectral gap. Two scalar estimates, built on one-variable bounds with exact rational constants, checked on a bounded interval and estimated separately on both tails, then bound the entropy deficit by a quantity that is never positive. For equality, the limiting matrix field must be linear in the Gaussian coordinates, its coefficient matrices must commute, and diagonalizing them splits the density into independent one-sided exponentials. Approximation removes the smoothness assumptions.</p>
+<h3><span class="t num">5:31</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. There is no Lean formalization; the released checker covers only the rational scalar bounds. It is not among the papers OSVerify reviewed, and we have seen no expert review. If it holds, the sharp form of the slicing problem is settled: in every dimension, the simplex has the largest covariance determinant for its squared volume, and among log-concave laws, products of one-sided exponential laws have the least entropy for their covariance.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20101%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../100-cylinder-coverings-below-half-area/"><span class="dir">Previous · 100</span><span class="pt">Cylinder coverings below the half-area bound</span></a>
-  <a class="next" href="../102-unique-games-conjecture-optimal-approximation/"><span class="dir">Next · 102</span><span class="pt">The Unique Games Conjecture and optimal approximation thresholds</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/convex-and-metric-geometry/">More in convex and metric geometry</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
