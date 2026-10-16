@@ -11,7 +11,7 @@
 <meta property="og:title" content="AI Proved What? New AI mathematics, explained and checked">
 <meta property="og:description" content="Short animated explainers of mathematics that AI systems claim to have proved, with a running record of how far each proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/">
-<meta property="og:image" content="https://aiprovedwhat.com/episodes/179-circulant-hadamard-barker-sequence-conjectures/thumbnail.jpg">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/184-correspondence-coloring-fixed-forbidden-subgraph/thumbnail.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <meta name="generator" content="tools/site/build.py">
@@ -39,39 +39,84 @@
 </header>
 <main id="main">
 
-<h1>An AI system says real circulant Hadamard matrices exist only in orders 1 and 4, so Barker sequences exist only at lengths 2, 3, 4, 5, 7, 11 and 13.</h1>
+<h1>An AI system says graphs with no r-clique have independent sets of order n log d/d and correspondence chromatic number of order Δ/log Δ, proving conjectures of Ajtai, Erdős, Komlós and Szemerédi and of Alon, Krivelevich and Sudakov.</h1>
 <p class="lede">What does that even mean, and has anyone checked? Each episode takes one claim like this, builds the intuition with animation, and keeps a running record of how far the proof has been verified.</p>
 
 <div class="player">
-  <a href="episodes/179-circulant-hadamard-barker-sequence-conjectures/">
-    <img src="episodes/179-circulant-hadamard-barker-sequence-conjectures/thumbnail.jpg" width="1280" height="720" alt="Episode 179: Only orders 1 and 4? The 4 by 4 circulant Hadamard matrix, plus and minus signs in teal and pink, each row the one above shifted one step (our drawing).">
+  <a href="episodes/184-correspondence-coloring-fixed-forbidden-subgraph/">
+    <img src="episodes/184-correspondence-coloring-fixed-forbidden-subgraph/thumbnail.jpg" width="1280" height="720" alt="Episode 184: Forbid a clique, gain a log? The Petersen graph with a proper 3-coloring in blue, pink and teal (our drawing).">
     <span class="play" aria-hidden="true"></span>
   </a>
 </div>
-<p class="player-caption">Episode 179: <a href="episodes/179-circulant-hadamard-barker-sequence-conjectures/">Only orders 1 and 4?</a>, about 6 minutes.</p>
+<p class="player-caption">Episode 184: <a href="episodes/184-correspondence-coloring-fixed-forbidden-subgraph/">Forbid a clique, gain a log?</a>, about 8 minutes.</p>
 
 <section class="measure" aria-labelledby="record">
 <h2 id="record">Where this claim stands</h2>
 <dl class="ledger ledger-auto">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, September 23, 2026</dd>
+    <dd>OpenAI, September 25 and October 5, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-done">
+  <div class="ledger-row is-partial">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/179.md">scope notes</a>)</dd>
+    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/184.md">scope notes</a>)</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026. The claim has not been withdrawn. OpenAI published a Lean proof of the circulant theorem; the odd-length Barker classification is not formalized. We have not run the check.</p>
+<p class="ledger-note">Last checked October 16, 2026. The claims have not been withdrawn. OpenAI published a Lean proof of the independence theorem; the coloring theorem is not formalized. We have not run the check.</p>
 </section>
 
 <section aria-labelledby="episodes">
 <h2 id="episodes">Recent episodes</h2>
 <ul class="thumbs">
+  <li>
+    <a href="episodes/184-correspondence-coloring-fixed-forbidden-subgraph/">
+      <img src="episodes/184-correspondence-coloring-fixed-forbidden-subgraph/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 184 · 8:18</span>
+      <span class="thumb-title">Forbid a clique, gain a log?</span>
+      <span class="thumb-sub">Two preprints claim that forbidding any fixed clique buys a logarithmic factor, for independent sets and for correspondence coloring</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of part of the claim"><span class="box on"></span><span class="box"></span><span class="box part"></span></span>
+    </a>
+  </li>
+  <li>
+    <a href="episodes/183-power-savings-planar-halving-lines/">
+      <img src="episodes/183-power-savings-planar-halving-lines/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 183 · 5:59</span>
+      <span class="thumb-title">Below 4/3?</span>
+      <span class="thumb-sub">A preprint claims that n points in the plane have at most n^(4/3−ε) halving lines, improving the exponent in Dey’s bound</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
+    </a>
+  </li>
+  <li>
+    <a href="episodes/182-power-savings-intersective-polynomial-differences/">
+      <img src="episodes/182-power-savings-intersective-polynomial-differences/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 182 · 7:01</span>
+      <span class="thumb-title">No square gaps?</span>
+      <span class="thumb-sub">Three preprints claim that sets of numbers with no two elements a square apart are smaller by a power of N, with extensions to polynomial differences and to values at primes</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of part of the claim"><span class="box on"></span><span class="box"></span><span class="box part"></span></span>
+    </a>
+  </li>
+  <li>
+    <a href="episodes/181-erdos-gallai-cycle-decomposition-conjecture/">
+      <img src="episodes/181-erdos-gallai-cycle-decomposition-conjecture/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 181 · 7:04</span>
+      <span class="thumb-title">C times n pieces?</span>
+      <span class="thumb-sub">A preprint claims the Erdős–Gallai conjecture: the edges of every graph on n vertices split into at most a constant times n cycles and single edges</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
+    </a>
+  </li>
+  <li>
+    <a href="episodes/180-barnettes-hamiltonian-cycle-conjecture/">
+      <img src="episodes/180-barnettes-hamiltonian-cycle-conjecture/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 180 · 5:48</span>
+      <span class="thumb-title">A tour of every corner?</span>
+      <span class="thumb-sub">A preprint claims Barnette’s conjecture: every cubic polyhedron whose corners can be colored black and white along every edge has a Hamiltonian cycle</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
+    </a>
+  </li>
   <li>
     <a href="episodes/179-circulant-hadamard-barker-sequence-conjectures/">
       <img src="episodes/179-circulant-hadamard-barker-sequence-conjectures/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -99,51 +144,6 @@
       <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
     </a>
   </li>
-  <li>
-    <a href="episodes/176-second-kahn-kalai-conjecture-edge/">
-      <img src="episodes/176-second-kahn-kalai-conjecture-edge/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 176 · 5:37</span>
-      <span class="thumb-title">Kahn–Kalai, the second one?</span>
-      <span class="thumb-sub">A preprint claims that a graph appears in a random graph once every piece of it is expected, up to a fixed constant and the logarithm of its number of edges</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
-  <li>
-    <a href="episodes/175-talagrands-expectation-thresholds-discrete-convexity/">
-      <img src="episodes/175-talagrands-expectation-thresholds-discrete-convexity/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 175 · 7:13</span>
-      <span class="thumb-title">Talagrand, up to a constant?</span>
-      <span class="thumb-sub">Preprints claim that fractional and ordinary expectation thresholds agree up to a fixed factor, prove Talagrand’s discrete convexity conjecture, and split every graph into boundedly many pieces that each appear near its expectation threshold</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
-  <li>
-    <a href="episodes/174-deterministic-construction-strong-thin-spanning/">
-      <img src="episodes/174-deterministic-construction-strong-thin-spanning/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 174 · 6:55</span>
-      <span class="thumb-title">Strong thin trees: always C/k?</span>
-      <span class="thumb-sub">Two preprints claim that every k-edge-connected multigraph has a spanning tree taking at most a constant over k share of every cut, and that such a tree can be found in polynomial time</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
-  <li>
-    <a href="episodes/173-seymours-second-neighborhood-conjecture/">
-      <img src="episodes/173-seymours-second-neighborhood-conjecture/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 173 · 5:24</span>
-      <span class="thumb-title">Seymour’s conjecture: two steps keep up?</span>
-      <span class="thumb-sub">A preprint claims that every finite oriented graph has a vertex with at least as many vertices exactly two arrows away as one arrow away</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
-  <li>
-    <a href="episodes/172-classification-finite-euclidean-ramsey-configurations/">
-      <img src="episodes/172-classification-finite-euclidean-ramsey-configurations/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 172 · 6:22</span>
-      <span class="thumb-title">Euclidean Ramsey: classified?</span>
-      <span class="thumb-sub">A preprint claims an exact algebraic test for which finite point patterns every finite colouring of high-dimensional space must contain, at their original size</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
 </ul>
 </section>
 
@@ -156,7 +156,7 @@
   <li><a href="subjects/convex-and-metric-geometry/"><span class="tile-name">Convex and metric geometry</span><span class="tile-count num">15 of 15 explained</span></a></li>
   <li><a href="subjects/theoretical-computer-science/"><span class="tile-name">Theoretical computer science</span><span class="tile-count num">40 of 40 explained</span></a></li>
   <li><a href="subjects/dynamical-systems-and-ergodic-theory/"><span class="tile-name">Dynamical systems and ergodic theory</span><span class="tile-count num">12 of 12 explained</span></a></li>
-  <li><a href="subjects/combinatorics/"><span class="tile-name">Combinatorics</span><span class="tile-count num">24 of 37 explained</span></a></li>
+  <li><a href="subjects/combinatorics/"><span class="tile-name">Combinatorics</span><span class="tile-count num">29 of 37 explained</span></a></li>
   <li><a href="subjects/algebra/"><span class="tile-name">Algebra</span><span class="tile-count num">0 of 18 explained</span></a></li>
   <li><a href="subjects/probability-and-statistical-mechanics/"><span class="tile-name">Probability and statistical mechanics</span><span class="tile-count num">0 of 29 explained</span></a></li>
   <li><a href="subjects/mathematical-logic/"><span class="tile-name">Mathematical logic</span><span class="tile-count num">0 of 6 explained</span></a></li>
@@ -175,7 +175,7 @@
 <dl class="stats">
   <div>
     <dt>Explained</dt>
-    <dd><span class="stat num">174</span> of 372 results <span class="stat-note">(719 papers in all)</span></dd>
+    <dd><span class="stat num">179</span> of 372 results <span class="stat-note">(719 papers in all)</span></dd>
   </div>
   <div>
     <dt>Lean proof published by OpenAI</dt>

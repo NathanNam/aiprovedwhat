@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 184: Correspondence coloring with a fixed forbidden subgraph | AI Proved What?</title>
-<meta name="description" content="Correspondence coloring with a fixed forbidden subgraph. Result 184 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Forbid a clique, gain a log? Correspondence coloring and independent sets without a fixed clique | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim that forbidding any fixed clique buys a log factor: independent sets of order n log d/d and correspondence colorings with order Delta/log Delta colors. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/184-correspondence-coloring-fixed-forbidden-subgraph/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 184: Correspondence coloring with a fixed forbidden subgraph | AI Proved What?">
-<meta property="og:description" content="Correspondence coloring with a fixed forbidden subgraph. Result 184 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Forbid a clique, gain a log?">
+<meta property="og:description" content="Two AI preprints claim that forbidding any fixed clique buys a log factor: independent sets of order n log d/d and correspondence colorings with order Delta/log Delta colors. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/184-correspondence-coloring-fixed-forbidden-subgraph/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/184-correspondence-coloring-fixed-forbidden-subgraph/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,35 +37,98 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 184 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Correspondence coloring with a fixed forbidden subgraph</h1>
+<p class="meta">Episode 184, October 2026</p>
+<h1>Forbid a clique, gain a log?</h1>
+<p class="subtitle">Two preprints claim that forbidding any fixed clique buys a logarithmic factor, for independent sets and for correspondence coloring</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 184 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="GT9tzLxtaz4" data-title="Episode 184: Forbid a clique, gain a log?">
+  <a href="https://youtu.be/GT9tzLxtaz4">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 184: Forbid a clique, gain a log? The Petersen graph with a proper 3-coloring in blue, pink and teal (our drawing).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:18. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/GT9tzLxtaz4?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/GT9tzLxtaz4?t=101" data-t="101"><span class="t">1:41</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/GT9tzLxtaz4?t=248" data-t="248"><span class="t">4:08</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/GT9tzLxtaz4?t=447" data-t="447"><span class="t">7:27</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves the Alon–Krivelevich–Sudakov coloring conjecture in correspondence-coloring form: graphs avoiding any fixed subgraph <i>F</i> need <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>O</mi><mi>F</mi></msub><mo stretchy="false">(</mo><mi mathvariant="normal">Δ</mi><mi mathvariant="normal">/</mi><mi>log</mi><mo>⁡</mo><mi mathvariant="normal">Δ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O_F(\Delta/\log\Delta)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.13889em;">F</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord">Δ/</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">Δ</span><span class="mclose">)</span></span></span></span> colors when their maximum degree Δ is sufficiently large. Also proves the Ajtai–Erdős–Komlós–Szemerédi independence conjecture: for fixed <i>r</i> ≥ 4, every <i>n</i>-vertex <i>K</i><sub><i>r</i></sub>-free graph of average degree <i>d</i> ≥ 2 has an independent set of size <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi mathvariant="normal">Ω</mi><mi>r</mi></msub><mo stretchy="false">(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>d</mi><mi mathvariant="normal">/</mi><mi>d</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\Omega_r(n\log d/d)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord">Ω</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">d</span><span class="mord">/</span><span class="mord mathnormal">d</span><span class="mclose">)</span></span></span></span>.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>An independent set in a graph is a set of vertices, no two joined by an edge. A graph with n vertices and average degree d always has one of size at least n/(d+1), and disjoint cliques show that this is best possible. Forbid triangles and the answer grows to order n log d/d (Ajtai, Komlós and Szemerédi, 1980). Coloring is the same question in reverse: each color class is an independent set. With maximum degree Δ, greedy coloring uses at most Δ+1 colors, and for triangle-free graphs Johansson obtained order Δ/log Δ, even for list coloring.</p>
+<p>As the papers recount, Ajtai, Erdős, Komlós and Szemerédi conjectured in 1981 that forbidding any fixed clique K<sub>r</sub> gives the same order n log d/d, and proved n log log d/d; Shearer (1995) reached n log d/(d log log d), and later refinements kept a log log loss. For coloring graphs with no K<sub>r</sub>, Johansson’s bound and Bernshteyn’s correspondence-coloring version kept a factor log log Δ, and Alon, Krivelevich and Sudakov (1999) conjectured O(Δ/log Δ) colors for every fixed forbidden graph.</p>
+<p>Result 184 is two OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/A-Logarithmic-Independence-Bound-for-Clique-Free-Graphs-September-25-2026/paper.pdf">A logarithmic independence bound for clique-free graphs</a> (21 pages, dated September 25, 2026), Theorem 1.1: “For every integer r ≥ 4, there is a constant c<sub>r</sub> &gt; 0 such that every finite simple K<sub>r</sub>-free graph G with n vertices and average degree d ≥ 2 satisfies α(G) ≥ c<sub>r</sub> n log d/d.” <a href="https://github.com/openai/math/blob/main/preprints/Correspondence-Coloring-Graphs-with-a-Forbidden-Clique-October-5-2026/correspondence-coloring-forbidden-clique.pdf">Correspondence coloring graphs with a forbidden clique</a> (29 pages, dated October 5, 2026), which calls the first its companion manuscript, Theorem 1.1: “For every integer r ≥ 4 there are constants C<sub>r</sub> &gt; 0 and Δ<sub>r</sub> ≥ 3 such that every K<sub>r</sub>-free graph G of maximum degree Δ ≥ Δ<sub>r</sub> satisfies χ<sub>DP</sub>(G) ≤ ⌈C<sub>r</sub> Δ/log Δ⌉.” Since every fixed graph F sits inside a large enough clique, Corollary 1.2 gives the same for F-free graphs, which the paper says proves the Alon–Krivelevich–Sudakov conjecture in the stronger correspondence-coloring form.</p>
+<p>In correspondence (DP) coloring, introduced by Dvořák and Postle, each vertex has its own list and each edge its own rule pairing up entries at its two ends that clash; the rules need not agree around a cycle. So χ ≤ χ<sub>list</sub> ≤ χ<sub>DP</sub> ≤ Δ+1, and a bound for correspondence coloring covers the other two. Our check on the 4-cycle: every assignment of 2-color lists can be colored, but with two entries per corner, rules straight on three sides and crossed on the fourth, no choice works; with three entries per corner every set of rules works.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Usable constants. The independence paper says “We do not optimize the constant c<sub>r</sub>”; its constants are explicit except a computable threshold, and with the smallest threshold its argument allows, our arithmetic gives c<sub>4</sub> below 10<sup>−3.6×10<sup>18</sup></sup>. The coloring paper’s constants are shown to exist (“We do not optimize the constant or the degree threshold”); its explicit choices force C<sub>r</sub> ≥ 1.6 million, so ⌈C<sub>r</sub> Δ/log Δ⌉ is below Δ+1 only when Δ has at least about 700,000 digits (our arithmetic). No algorithm. No coefficient: only the order n log d/d, which the independence paper notes is best possible; our Paley graph on 17 vertices has no K<sub>4</sub> and no 4 independent vertices, while n log d/d ≈ 4.4, so c<sub>4</sub> ≤ 0.68.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI: 21 pages (September 25, 2026) and 29 pages (October 5, 2026)</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/184.md">scope notes</a>)</dd>
+    <dd>The independence theorem only, formalized by OpenAI; not run by us. The coloring theorem is not formalized.</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. Neither preprint has been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/184.md">Lean formalization</a> of the independence paper whose <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/CliqueFreeLog.lean">comparator statement</a> matches its Theorem 1.1 exactly. By our count the proof takes 31 files and 5,539 lines, excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/CliqueFree">source</a>); like the theorem, it shows that the constant exists without giving its value. We found no unproved steps by search; we have not rebuilt the proof. The coloring theorem, the headline of this entry, has no formalization. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Weights.</strong> Score vertex weights by F(w) = Σ w<sub>v</sub>(1 − log w<sub>v</sub>) − Σ<sub>uv</sub> w<sub>u</sub>w<sub>v</sub> (credited to Davies). Weight 1 on an independent set scores its size, so the best score is at least α (our remark); the proof shows α ≥ (best score)/(D<sub>r</sub> log Δ). At the best weights each w<sub>v</sub> = e<sup>−w(N(v))</sup>.</li>
+  <li><strong>Peeling.</strong> Keep a vertex and delete it with its neighbors; the best score drops by at most the deleted weight plus the weight of the edges among the deleted vertices, and each edge among a vertex’s neighbors makes a triangle with it. So the proof needs triangle weight at most a constant times edge weight at the best weights. (On our 14-vertex example, peeling at the cheapest vertex keeps 5 vertices, the maximum.)</li>
+  <li><strong>Cross mass.</strong> Comparing the best weights with random perturbations, built by the Ajtai–Erdős–Komlós–Szemerédi recursion (in a K<sub>r</sub>-free graph, neighborhoods are K<sub>r−1</sub>-free), bounds the edge weight between sets.</li>
+  <li><strong>Splitting.</strong> A separate theorem, with no clique hypothesis, turns that bound into the triangle bound: split vertices into copies of the same weight, group edges by lazy random walks inside neighborhoods (an entropy count makes walks from two corners of a typical triangle look alike) and shared sampling, and shrink neighborhood weights from e<sup>x</sup> to e<sup>√x</sup> while losing a summable fraction of triangles.</li>
+  <li><strong>Coloring.</strong> The coloring paper colors in many small random rounds, a Johansson-style process with weighted list entries: an activated entry becomes its vertex’s color if no clashing entry next door activates. A new adjustment lemma, proved by duality from a triangle bound of the same kind, offsets the triangle cost, up to a constant times the edge cost, everywhere at once; because correspondence coloring has no shared color names, each adjustment touches only a bounded number of entries of any one list, which gives concentration. The Lovász local lemma lets every vertex progress at once, and greedy coloring finishes.</li>
+</ol>
+<p>The independence paper credits its score to Davies, entropy increments to Benjamini, Duminil-Copin, Kozma and Yadin, and shared sampling to Kleinberg and Tardos and to Angel and Spinka.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our exact counts: three disjoint K<sub>4</sub>’s have 3 independent vertices (= n/(d+1)); the Petersen graph has 4 and a 3-coloring; the Paley graph on 17 vertices has no K<sub>4</sub> and at most 3 independent vertices.</li>
+  <li>The 4-cycle: all 614,656 assignments of 2-element lists from 8 colors can be colored; 8 of the 16 full 2-fold correspondence covers cannot (those with an odd number of crossed sides); all 1,296 full 3-fold covers can.</li>
+  <li>A 14-vertex graph with no K<sub>4</sub> (from a Delaunay triangulation): numerically best weights of the score (not certified), and the peeling step run as an algorithm, which keeps 5 vertices, the maximum.</li>
+  <li>The splitting picture after the coloring paper’s Figure 1: 7 edges before and after, 3 triangles before, 2 after.</li>
+  <li>The constants: our arithmetic from the papers’ explicit choices.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Correspondence-Coloring-Graphs-with-a-Forbidden-Clique-October-5-2026/correspondence-coloring-forbidden-clique.pdf">Correspondence coloring graphs with a forbidden clique (PDF)</a>, 29 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Logarithmic-Independence-Bound-for-Clique-Free-Graphs-September-25-2026/paper.pdf">A logarithmic independence bound for clique-free graphs (PDF)</a>, 21 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/184.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 184.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -76,18 +137,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-Logarithmic-Independence-Bound-for-Clique-Free-Graphs-September-25-2026/paper.pdf">A logarithmic independence bound for clique-free graphs</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Pick some vertices of a graph, no two of them joined by an edge. That is an independent set. If each vertex has on average d neighbors, there is always one with at least n/(d+1) of the n vertices, and disjoint cliques show that you cannot do better: 3 separate groups of 4, each fully joined, allow only one vertex per group. Forbid triangles, and the answer grows. In 1980, Ajtai, Komlós and Szemerédi proved that triangle-free graphs have independent sets of order n log d/d, a gain of a factor log d. Coloring is the same question in reverse: color the vertices so that neighbors differ, and each color is an independent set. If no vertex has more than Δ neighbors, Δ+1 colors always suffice, and for triangle-free graphs, Johansson brought that down to order Δ/log Δ, even for list coloring. What if we forbid a larger clique, say 4 vertices all joined to each other? In 1981, Ajtai, Erdős, Komlós and Szemerédi conjectured the same log d gain for every fixed forbidden clique, and proved a gain of log log d. In 1995, Shearer reached n log d/(d log log d), and later work, as the papers recount, kept a log log loss. Coloring followed the same pattern: for graphs with no clique of r vertices, Johansson’s bound, and Bernshteyn’s version for a stronger kind of coloring, kept a factor log log Δ. In 1999, Alon, Krivelevich and Sudakov conjectured that forbidding any fixed graph allows order Δ/log Δ colors.</p>
+<h3><span class="t num">1:41</span>The claim</h3>
+<p>Result 184 is two OpenAI preprints. The first, 21 pages, dated September 25, 2026, claims the independence conjecture: for every r at least 4, there is a positive constant c_r such that every graph with no r-clique and average degree d at least 2 has an independent set of at least c_r times n log d/d. The second, 29 pages, dated October 5, claims the coloring version: for every r at least 4, there are constants such that every graph with no r-clique and large enough maximum degree Δ can be correspondence colored from lists of a constant times Δ/log Δ entries. Every fixed graph sits inside a large enough clique, so the same holds when any fixed graph is forbidden. The paper says this proves the Alon, Krivelevich and Sudakov conjecture in a stronger form. Correspondence coloring, also called DP coloring after Dvořák and Postle, is that stronger form. Each vertex has its own list of entries, and each edge carries its own rule that pairs up entries at its two ends, and paired entries clash. The rules need not agree around a cycle. A square shows the difference. Two colors suffice, and in our check, so does every assignment of two-color lists. But give each corner two entries, with the rules straight along three sides and crossed along the fourth, and every choice runs into a clash. With such rules, the square needs 3 entries per corner. So a bound for correspondence coloring covers list coloring and ordinary coloring too. Not claimed: usable constants. The independence paper’s constants are explicit, but with its own choices, our arithmetic puts the constant for 4-cliques below 10 to the minus 3.6 billion billion. The coloring paper’s constants are only shown to exist; its own choices make the color constant at least 1.6 million, so the bound beats the easy Δ+1 only when Δ has at least about 700,000 digits. Neither paper claims an algorithm. The order n log d/d is best possible, as the independence paper notes, but no coefficient is claimed: the Paley graph on 17 vertices, pictured earlier, has no 4-clique and no 4 independent vertices, though n log d/d is about 4.4.</p>
+<h3><span class="t num">4:08</span>How the proof goes</h3>
+<p>The independence proof weighs the vertices. Give each vertex a nonnegative weight, and score the weights: the sum of w times one minus log w, minus the total weight of the edges, each edge weighing the product of its ends. Weight one on an independent set scores its size, so the best score is at least the independence number, and the proof shows that the independence number is at least the best score divided by a constant times log Δ. At the best weights, each vertex weighs e to the minus the weight of its neighbors. Now peel: keep one vertex, delete it with its neighbors, and repeat. Each deletion lowers the best score by at most the deleted weight plus the weight of the edges among the deleted vertices, and each edge among a vertex’s neighbors makes a triangle with it. In our small example, this keeps 5 vertices, the most possible. So everything hinges on one bound: at the best weights, triangles must cost at most a constant times the edges. First, testing the best weights against random perturbations bounds the edge weight between any two sets, using the recursion of Ajtai, Erdős, Komlós and Szemerédi: when no r vertices are all joined, no r − 1 neighbors of a vertex are all joined. Second, a separate theorem, with no clique hypothesis at all, turns that into the triangle bound by splitting vertices. If every neighborhood were light, triangles would be few. So split a vertex into copies of the same weight, and hand each copy some of its edges, each edge used once; the bound between sets survives the split, but a triangle whose edges go to different copies is lost. To decide which edges travel together, run a lazy random walk inside each neighborhood. An entropy count shows that at some step, walks started at two corners of a typical triangle look alike, and a shared sampling scheme then usually gives them the same label, so most triangles survive. Each round shrinks the neighborhood weights from e to the x to e to the square root of x, and the triangles lost over all rounds add up to less than the whole, so a fixed share survives until the neighborhoods are light. The paper credits the score to Davies, and the entropy and sampling tools to earlier work that it cites. The coloring paper reuses this engine in a Johansson-style process: color in many small random rounds. Every list entry carries a weight. In each round, entries switch on at random, an entry that switches on becomes its vertex’s color if no clashing entry next door switches on, and the other weights are adjusted to compensate. The enemy is again triangles, now in the graph whose vertices are list entries and whose edges are clashing pairs, which also has no r-clique. A new adjustment lemma, proved by duality from a triangle bound of the same kind, finds local reweightings that offset the triangle cost, up to a constant times the edge cost, everywhere at once. What correspondence coloring adds is that there are no shared color names, so each adjustment must also touch only a limited number of entries of any one list; that gives the concentration the rounds need. The Lovász local lemma lets every vertex progress at once, and at the end, greedy coloring finishes the job.</p>
+<h3><span class="t num">7:27</span>Where it stands</h3>
+<p>Both preprints are unrefereed and have not been revised. OpenAI’s Lean files state the independence theorem exactly, and prove it in 31 files and about 5,500 lines, with no gaps we could find by search; we did not run the check. The Lean statement, like the theorem, says that a constant exists, without giving its value. The coloring theorem, the headline of this entry, is not formalized. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If they hold, forbidding any fixed clique buys the same log factor as forbidding triangles, for independent sets and for coloring, even correspondence coloring, though with constants far too weak to matter for any graph anyone could write down.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20184%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../183-power-savings-planar-halving-lines/"><span class="dir">Previous · 183</span><span class="pt">Power savings for planar halving lines and <i>k</i>-sets</span></a>
-  <a class="next" href="../185-counterexamples-infinite-matroid-intersection-packing/"><span class="dir">Next · 185</span><span class="pt">Counterexamples to infinite matroid intersection and packing/covering</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

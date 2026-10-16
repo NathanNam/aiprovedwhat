@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 182: Power savings for intersective polynomial differences and prime arguments | AI Proved What?</title>
-<meta name="description" content="Power savings for intersective polynomial differences and prime arguments. Result 182 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>No square gaps? Power savings for square and polynomial differences | AI Proved What?</title>
+<meta name="description" content="Three AI preprints claim that sets of numbers up to N with no two elements a square apart have at most C N^(1-c) elements, with extensions to polynomial differences and to values at primes. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/182-power-savings-intersective-polynomial-differences/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 182: Power savings for intersective polynomial differences and prime arguments | AI Proved What?">
-<meta property="og:description" content="Power savings for intersective polynomial differences and prime arguments. Result 182 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="No square gaps?">
+<meta property="og:description" content="Three AI preprints claim that sets of numbers up to N with no two elements a square apart have at most C N^(1-c) elements, with extensions to polynomial differences and to values at primes. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/182-power-savings-intersective-polynomial-differences/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/182-power-savings-intersective-polynomial-differences/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,35 +37,99 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 182 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Power savings for intersective polynomial differences and prime arguments</h1>
+<p class="meta">Episode 182, October 2026</p>
+<h1>No square gaps?</h1>
+<p class="subtitle">Three preprints claim that sets of numbers with no two elements a square apart are smaller by a power of N, with extensions to polynomial differences and to values at primes</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 182 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="6T2KCLLMvmY" data-title="Episode 182: No square gaps?">
+  <a href="https://youtu.be/6T2KCLLMvmY">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 182: No square gaps? The numbers 1 to 30 in rows of five, the residues 1 and 3 mod 5 highlighted, and 26 marked 25 = 5 squared away from 1 (our drawing).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:01. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/6T2KCLLMvmY?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/6T2KCLLMvmY?t=111" data-t="111"><span class="t">1:51</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/6T2KCLLMvmY?t=216" data-t="216"><span class="t">3:36</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/6T2KCLLMvmY?t=355" data-t="355"><span class="t">5:55</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>For every fixed intersective integer polynomial <i>h</i> of degree <i>k</i> ≥ 2 with positive leading coefficient, proves that a subset of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><mn>1</mn><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><mi>N</mi><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\{1,\ldots,N\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mclose">}</span></span></span></span> avoiding nonzero values <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo><mo separator="true">,</mo><mi>h</mi><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo><mo separator="true">,</mo><mo>…</mo></mrow><annotation encoding="application/x-tex">h(1),h(2),\ldots</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">h</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">h</span><span class="mopen">(</span><span class="mord">2</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner">…</span></span></span></span> as differences has size <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>O</mi><mi>h</mi></msub><mo stretchy="false">(</mo><msup><mi>N</mi><mrow><mn>1</mn><mo>−</mo><msub><mi>c</mi><mi>k</mi></msub></mrow></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O_h(N^{1-c_k})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">h</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mbin mtight">−</span><span class="mord mtight"><span class="mord mathnormal mtight">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3488em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1512em;"><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>, with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>k</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">c_k\gt 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6891em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span> depending only on degree. Here intersective means having a root modulo every modulus. For prime arguments, a power saving also holds when <i>h</i> has a unit root modulo every modulus, with exponent allowed to depend on <i>h</i>.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Pick as many numbers from 1 to N as you can, so that no two differ by a perfect square (1, 4, 9, 16, …). For N = 10 the set {2, 4, 7, 9} works, and by our exact search no five numbers do. Repeating patterns fail: the numbers leaving remainder 1 or 3 on division by 5 have no square differences up to 25, but 1 and 26 differ by 5². Any pattern with period q meets the square q², since q² is a multiple of q. As the papers recount, the problem goes back to a question of Lovász, and Furstenberg and Sárközy proved independently in the late 1970s that the best fraction tends to zero. By our exact computations the best is 4 of 10, 10 of 30 and 24 of 100.</p>
+<p>Upper bounds since then, by Sárközy, by Pintz, Steiger and Szemerédi, by Bloom and Maynard, and by Green and Sawhney (N·e<sup>−c√log N</sup>), all saved factors that grow more slowly than any power of N, and Green and Sawhney asked whether a fixed power saving holds. In the other direction, Ruzsa built such sets of size about N<sup>0.733</sup>, using residues modulo 65 with no square differences to restrict selected digits, and a later construction cited in the first paper passes the exponent 3/4. Our check of a digit construction of that kind (seven residues modulo 65 on every other base-65 digit; our reconstruction) gives 455 numbers below 65², against 308 for the greedy choice.</p>
+<p>Result 182 is three OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/A-power-saving-for-square-difference-free-sets-September-24-2026/paper.pdf">A power saving for square-difference-free sets</a> (48 pages, dated September 24, 2026), Theorem 1.1: “There are absolute constants c &gt; 0 and C &lt; ∞ such that, for every integer N ≥ 1 and every square-difference-free set A ⊆ [N], |A| ≤ CN<sup>1−c</sup>.” <a href="https://github.com/openai/math/blob/main/preprints/A-power-saving-for-intersective-polynomial-differences-with-an-exponent-depending-only-on-the-degree-October-5-2026/power-saving-intersective-polynomial-differences.pdf">A power saving for intersective polynomial differences with an exponent depending only on the degree</a> (47 pages, October 5, 2026) extends this to every intersective polynomial h of degree at least two, one with a root modulo every positive integer (such as n² − 1): |A| ≤ C<sub>h</sub>N<sup>1−c<sub>k</sub></sup> for N ≥ N<sub>h</sub>, with c<sub>k</sub> depending only on the degree. The condition is needed: n² + 1 is never a multiple of 3, so the multiples of 3 avoid all its values. <a href="https://github.com/openai/math/blob/main/preprints/A-Power-Saving-for-Polynomial-Differences-at-Prime-Arguments-October-5-2026/prime-argument-polynomial-differences.pdf">A Power Saving for Polynomial Differences at Prime Arguments</a> (42 pages, October 5, 2026) forbids only the values h(p) at primes, such as (p − 1)², for polynomials of degree at least two with a root coprime to every modulus; it uses result 003’s claimed zero-free half-plane for Dirichlet L-functions (no zeros with real part above 7/8) as an input.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>A value of the exponent. The first paper calls it “positive and absolute, but extremely small”. Its finite model has d = (24!)<sup>161</sup> labels, a number with 3,831 digits, and c = a<sub>0</sub>/d; by our arithmetic on its formulas, c is below 10<sup>−7600</sup>, and far smaller once the prime threshold is included. Nothing about the true exponent, which lies somewhere between about 3/4 and 1 − c. The prime version is only as sound as result 003, a separate, unrefereed claim. The papers build no extremal sets and give no algorithm.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI: 48 pages (September 24, 2026), 47 and 42 pages (October 5, 2026)</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/182.md">scope notes</a>)</dd>
+    <dd>The square-difference theorem only, formalized by OpenAI; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. None of the preprints has been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/182.md">Lean formalization</a> whose <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SquareDifference.lean">comparator statement</a> is the first paper’s Theorem 1.1 exactly. By our count the proof takes 81 files and 24,221 lines, excluding Mathlib, about 2,000 of them near-copies of other files (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/SquareDifference">source</a>); like the paper, it shows that the exponent exists without computing it. The polynomial and prime papers are not formalized. Result 003’s zero-free half-plane is formalized in Lean according to OpenAI’s files; we did not run that check either. We found no unproved steps by search; we have not rebuilt the proofs. None of these papers is among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A signed lift.</strong> Keep the Fourier coefficients of the set at fractions whose denominators are squarefree products of chosen primes, up to a small power of N, and rebuild a function on a product of finite fields. Its average is exactly the density, but it can be negative.</li>
+  <li><strong>A huge reflection-positive model.</strong> For each large prime, a probability law on (24!)<sup>161</sup> labels in which a designated cycle of 24 labels has nonzero square differences, apart from a part of mass at most p<sup>−4</sup>. Mirror cuts give positive semidefinite matrices (the chessboard method from mathematical physics), and repeated Cauchy–Schwarz gives (|A|/N)<sup>d</sup> ≤ Y(N, A).</li>
+  <li><strong>Zoom out.</strong> Restricting to a residue class and splitting it into progressions with square step D² keeps the rule, since D²x² = (Dx)². So Y at length N is controlled by Y at length about N/D².</li>
+  <li><strong>Cancel.</strong> For a fixed positive proportion of residue choices, cut the interval into pieces; unless all 24 cycle labels land in one piece, some cycle edge goes from an earlier piece to a later one, and there a signed kernel on actual squares, which matches the model up to a small error and which the set avoids, makes the contribution small.</li>
+  <li><strong>Contract.</strong> The two estimates give a recurrence that contracts, so Y decays like a power of N, and so does the density.</li>
+</ol>
+<p>The polynomial paper runs the same argument along Lucier’s family of auxiliary polynomials, since passing to a progression changes the polynomial; the prime paper adds a count of primes in progressions with a power-saving error, where result 003 enters. The papers credit the chessboard method to Fröhlich, Lieb and their coauthors, and cite Bloom and Maynard and Green and Sawhney as precedents for the arithmetic side.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our exact maxima: 4 for N = 10, 10 for N = 30, 24 for N = 100 (an integer program, checked by branch and bound up to N = 40).</li>
+  <li>The residues 1 and 3 mod 5: no square difference through 25; 1 and 26 clash.</li>
+  <li>Seven residues modulo 65 with no square difference (the most possible) on every other base-65 digit: 455 numbers below 4,225, checked; the greedy set has 308.</li>
+  <li>The first paper’s Remark 5.1 example, with our numbers (residues 1 mod 2 and 2 mod 3; denominators 1, 2 and 3 kept, 6 dropped): values from −1/6 to 2/3, mean 1/6.</li>
+  <li>The exponent bound: our arithmetic on the first paper’s parameters (pp. 8, 35, 46).</li>
+  <li>The Lean count: our count of the import closure.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-power-saving-for-square-difference-free-sets-September-24-2026/paper.pdf">A power saving for square-difference-free sets (PDF)</a>, 48 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-power-saving-for-intersective-polynomial-differences-with-an-exponent-depending-only-on-the-degree-October-5-2026/power-saving-intersective-polynomial-differences.pdf">A power saving for intersective polynomial differences with an exponent depending only on the degree (PDF)</a>, 47 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Power-Saving-for-Polynomial-Differences-at-Prime-Arguments-October-5-2026/prime-argument-polynomial-differences.pdf">A Power Saving for Polynomial Differences at Prime Arguments (PDF)</a>, 42 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/182.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 182.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 3 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -77,18 +139,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-power-saving-for-square-difference-free-sets-September-24-2026/paper.pdf">A power saving for square-difference-free sets</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Pick as many whole numbers from 1 to N as you can, so that no two of them differ by a perfect square: 1, 4, 9, 16, and so on. For N = 10, the set 2, 4, 7, 9 works, and in our exact search no 5 numbers do. A natural trick is a repeating pattern: take every number that leaves remainder 1 or 3 on division by 5. Their differences are never 1, 4, 9 or 16, and the pattern survives up to 25. But 1 and 26 differ by 25, which is 5 squared. Every repeating pattern dies this way, since the square of its period is a multiple of the period. As the paper recounts, the problem goes back to a question of Lovász, and in the late 1970s, Furstenberg and Sárközy proved independently that the best fraction you can take shrinks to zero. In our exact computations, the best is 4 out of 10, 10 out of 30, and 24 out of 100. How fast does the fraction shrink? Sárközy’s bound saved a small power of log N. Pintz, Steiger and Szemerédi, and then Bloom and Maynard, made that power of log N grow, slowly, with N, and Green and Sawhney saved a factor of e to the c times the square root of log N. Each of these saves less than any power of N, and Green and Sawhney asked whether a fixed power saving holds: at most a constant times N to the one minus c. In the other direction, Ruzsa built sets of size about N to the 0.733, using 7 remainders modulo 65 with no square differences to restrict selected digits. In our check of that construction, restricting every other digit in base 65, it gives 455 numbers below 65 squared, against 308 for the greedy choice. A later construction, cited in the paper, passes an exponent of three quarters.</p>
+<h3><span class="t num">1:51</span>The claim</h3>
+<p>Result 182 consists of three OpenAI preprints. The earliest, 48 pages long and dated September 24, 2026, claims exactly that: there are absolute constants c and C such that every square-difference-free set of numbers up to N has at most C times N to the one minus c elements. That would answer Green and Sawhney’s question. The second, dated October 5, 47 pages long, extends this to every intersective polynomial of degree at least two: one with a root modulo every positive whole number, like n squared minus one. Its exponent depends only on the degree. The condition is needed: n squared plus one is never a multiple of three, so the multiples of three avoid all its values. The third, also dated October 5, 42 pages long, forbids only the values at primes, such as p minus one, squared, for polynomials of degree at least two with a root coprime to every modulus. It uses, as an input, another claim from this release: result 3’s zero-free half-plane for Dirichlet L-functions. Not claimed: a value of the exponent. The first paper calls it positive and absolute, but extremely small. Its finite model has 24 factorial to the power 161 labels, a number with 3,831 digits, and by our arithmetic on the paper’s formulas, c is below 10 to the minus 7,600, and in fact far smaller. Nothing about the true exponent, which lies somewhere between about three quarters and one minus c. And the prime version is only as sound as result 3, a separate, unrefereed claim.</p>
+<h3><span class="t num">3:36</span>How the proof goes</h3>
+<p>The first paper’s proof, in outline. Keep only the Fourier coefficients of the set at fractions whose denominators are small products of distinct primes from a chosen range, and rebuild a function on a product of finite fields, one coordinate per prime. Its average is exactly the density of the set, but it can take negative values, which rules out the usual positivity arguments. Then comes a huge finite model. For each large prime, there is a probability law on 24 factorial to the 161st power labels, in which a designated cycle of 24 labels has consecutive differences that are nonzero squares modulo the prime, apart from a part of mass at most one over p to the fourth. The law is reflection positive, an idea from mathematical physics: mirror cuts give positive semidefinite matrices. Repeated Cauchy-Schwarz across the mirrors then shows that the density, raised to the number of labels, is at most a single quantity Y. The goal is to show that Y shrinks like a power of N. Two estimates do it. First, zooming out: restricting to a residue class and splitting it into progressions whose step is a square, D squared, keeps the rule, because D squared times x squared is the square of D x. So Y at length N is controlled by Y at length about N over D squared. Second, cancellation: for a fixed positive proportion of residue choices, cut the interval into many pieces. Unless all 24 cycle labels land in the same piece, some edge of the cycle goes from an earlier piece to a later one, and on that edge the model matches, up to a small error, a signed kernel supported on actual square differences, which the set does not have. Together these give a recurrence that contracts, so Y decays like a power of N, and so does the density. The polynomial paper runs the same machine along Lucier’s family of auxiliary polynomials, since passing to a progression changes the polynomial. The prime paper adds a count of primes in progressions with a power-saving error, which is where result 3 enters. The papers credit the chessboard method to Fröhlich, Lieb and their coauthors, and cite Bloom and Maynard and Green and Sawhney as precedents for the arithmetic side.</p>
+<h3><span class="t num">5:55</span>Where it stands</h3>
+<p>None of the three preprints is peer reviewed or has been revised. Only the first is formalized: OpenAI’s Lean files state its theorem exactly and prove it in 81 files and about 24,000 lines, roughly 2,000 of them near-copies, with no gaps we could find by search; we did not run the check. Like the paper, the proof shows that the exponent exists without computing it. The polynomial and prime papers have no Lean. Result 3’s zero-free half-plane is formalized in Lean according to OpenAI’s files; we did not run that check either. None of these papers is among those OSVerify reviewed, and we have seen no expert review. If it holds, a set with no square differences is smaller than N by a fixed power of N, the first such saving, as the papers present it, after nearly 50 years of savings smaller than any power of N. The same holds for every intersective polynomial of degree two or more, and, given result 3, at primes.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20182%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../181-erdos-gallai-cycle-decomposition-conjecture/"><span class="dir">Previous · 181</span><span class="pt">The Erdős–Gallai cycle-decomposition conjecture</span></a>
-  <a class="next" href="../183-power-savings-planar-halving-lines/"><span class="dir">Next · 183</span><span class="pt">Power savings for planar halving lines and <i>k</i>-sets</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

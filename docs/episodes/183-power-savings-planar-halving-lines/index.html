@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 183: Power savings for planar halving lines and k-sets | AI Proved What?</title>
-<meta name="description" content="Power savings for planar halving lines and k-sets. Result 183 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Below 4/3? Power savings for planar halving lines and k-sets | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that n points in the plane, no three on a line, have at most C n^(4/3 - epsilon) halving lines, improving the exponent in Dey&#x27;s bound. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/183-power-savings-planar-halving-lines/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 183: Power savings for planar halving lines and k-sets | AI Proved What?">
-<meta property="og:description" content="Power savings for planar halving lines and k-sets. Result 183 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Below 4/3?">
+<meta property="og:description" content="An AI preprint claims that n points in the plane, no three on a line, have at most C n^(4/3 - epsilon) halving lines, improving the exponent in Dey&#x27;s bound. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/183-power-savings-planar-halving-lines/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/183-power-savings-planar-halving-lines/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 183 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Power savings for planar halving lines and <i>k</i>-sets</h1>
+<p class="meta">Episode 183, October 2026</p>
+<h1>Below 4/3?</h1>
+<p class="subtitle">A preprint claims that n points in the plane have at most n<sup>4/3−ε</sup> halving lines, improving the exponent in Dey’s bound</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 183 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="zMRn8clUoO8" data-title="Episode 183: Below 4/3?">
+  <a href="https://youtu.be/zMRn8clUoO8">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 183: Below 4/3? Twelve points with their 18 halving lines drawn in yellow (a configuration from our search; our drawing).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:59. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/zMRn8clUoO8?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/zMRn8clUoO8?t=93" data-t="93"><span class="t">1:33</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/zMRn8clUoO8?t=170" data-t="170"><span class="t">2:50</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/zMRn8clUoO8?t=307" data-t="307"><span class="t">5:07</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Improves the planar halving-line bound to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mrow><mn>4</mn><mi mathvariant="normal">/</mi><mn>3</mn><mo>−</mo><mi>ε</mi></mrow></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^{4/3-\varepsilon})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4/3</span><span class="mbin mtight">−</span><span class="mord mathnormal mtight">ε</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> for sets with no three collinear and an absolute <i>ε</i> &gt; 0. More generally, an <i>n</i>-point set with no three collinear has <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">(</mo><mi>k</mi><mo>+</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn><mo>−</mo><msub><mi>ε</mi><mn>0</mn></msub></mrow></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n(k+1)^{1/3-\varepsilon_0})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1/3</span><span class="mbin mtight">−</span><span class="mord mtight"><span class="mord mathnormal mtight">ε</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3173em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> strictly separable <i>k</i>-subsets for <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1\le k\le n/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7804em;vertical-align:-0.136em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mord">/2</span></span></span></span>, with an absolute <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ε</mi><mn>0</mn></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\varepsilon_0\gt 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6891em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">ε</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span>. The constants and positive exponents are nonquantitative.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Scatter an even number of points in the plane, no three on a line. A halving line passes through two of the points and leaves the same number of the others on each side. Four points in convex position have two (the diagonals); a triangle with a point inside has three; points on a circle have exactly half as many halving lines as points. In our experiments, random points have about two thirds as many. How many can n points have at most?</p>
+<p>As the paper recounts, Lovász (1971) and Erdős, Lovász, Simmons and Straus (1973) established an upper bound of order n<sup>3/2</sup> and built sets with about n log n halving lines. Pach, Steiger and Szemerédi saved an iterated-logarithm factor, and Dey (1998) proved O(n<sup>4/3</sup>) using convex chains and the crossing lemma (many segments on few points force many crossings), together with O(n(k+1)<sup>1/3</sup>) for k-sets, groups of k points that a line can cut off. From below, Tóth built sets with n·e<sup>c√log n</sup> halving lines, and Nivasch improved the constant. A 2024 paper the preprint cites improved only a lower-order term. Our own search among small sets found 12 points with 18 halving lines (a lower bound, not a proven maximum; no three of the points are exactly on a line, though some nearly are).</p>
+<p>Result 183 is one OpenAI preprint, <a href="https://github.com/openai/math/blob/main/preprints/A-power-saving-for-planar-halving-lines-September-25-2026/main.pdf">A power saving for planar halving lines</a> (31 pages, dated September 25, 2026). Its Theorem 1.1: “There exist absolute constants ε &gt; 0, C &lt; ∞, and n<sub>0</sub> such that, for every even n ≥ n<sub>0</sub> and every n-point set P ⊂ ℝ² with no three collinear, h(P) ≤ Cn<sup>4/3−ε</sup>.” Theorem 1.2 gives the same kind of bound for the switches at every rank of a rotating sweep, for generic points (a slightly stronger general position), and Corollary 1.3 bounds the number of k-sets by C<sub>0</sub>n(k+1)<sup>1/3−ε<sub>0</sub></sup>.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>A value of ε. “The proof is nonquantitative: it supplies neither a numerical value of ε nor effective values of C and n<sub>0</sub>.” In the final step ε = log 2/(2 log q) for a fixed scale q that a compactness argument shows exists; the proof takes q ≥ 4, so its ε is at most 1/4. Nothing about the true maximum, which still lies between Tóth’s construction and Cn<sup>4/3−ε</sup>. Nothing for pseudolines, line segments or higher dimensions. The fractions inside the proof, such as 32/17, are not the saving.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, 31 pages, dated September 25, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +88,44 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/183.md">scope notes</a>)</dd>
+    <dd>Both theorems, formalized by OpenAI; not run by us. The k-set corollary is not formalized.</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/183.md">Lean formalization</a> whose <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/HalvingLines.lean">comparator statement</a> contains both theorems exactly: the halving-line bound and the bound at every rank of the sweep. By our count the proof takes 47 files and 18,237 lines, excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/HalvingLines">source</a>); like the paper, it shows that ε exists without computing it. The k-set corollary is not formalized. We found no unproved steps by search; we have not rebuilt the proof. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A rotating sweep.</strong> Turn a direction and mark the lowest half of the points across it. Each time the marked half changes, the two points that trade places span a halving line. The paper counts these switches at every rank, because restricting part of the sweep to the points that move in it changes the rank.</li>
+  <li><strong>Dey’s 4/3.</strong> In each batch of the sweep, every leaving point is joined to every joining point, and across batches these segments link up into convex chains and concave chains. A convex and a concave chain cross at most twice, while the crossing lemma says that many segments on few points force many crossings, which caps the number of batches that each swap a points at about (N/a)<sup>4/3</sup>.</li>
+  <li><strong>Never tight.</strong> If that count were nearly tight, for small batches in larger and larger sets, a limit of the measures of points, edges and crossings would exist, with a positive part of the activity spread out evenly in two coordinates. Monotone coordinates, three directions and three families of parallel lines make the zoomed-in rank coordinates a linear copy of the plane, where every active point lies in one of three thin parallel strips, except for at most two per token crossing the boundary; the strips are too thin, a contradiction.</li>
+  <li><strong>Recurse.</strong> So at some fixed scale q, any sweep splits into at most ½q<sup>4/3</sup> sweeps on at most N/q points each, and repeating gives N<sup>4/3−ε</sup> with ε = log 2/(2 log q).</li>
+</ol>
+<p>The paper builds on Dey’s chains and crossings, the crossing lemma of Ajtai, Chvátal, Newborn and Szemerédi and of Leighton, and, for the k-set corollary, Matoušek’s shallow cuttings.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our exact counts: 2 halving lines for a convex quadrilateral, 3 for a triangle with a point inside, n/2 for points on a circle.</li>
+  <li>Random points uniform in a square: about 0.67n halving lines on average for n = 1,000 (20 samples).</li>
+  <li>Our local search: 3, 6, 9, 13, 18, 22 and 25 halving lines for 4, 6, …, 16 points (lower bounds only). The pictured 8- and 12-point sets were spread out for drawing without changing which pairs are halving; the 12-point set has no three points exactly on a line, though some nearly.</li>
+  <li>ε = log 2/(2 log q) for sample values of q: 0.25 for q = 4, about 0.075 for q = 100.</li>
+  <li>The Lean count: our count of the import closure.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-power-saving-for-planar-halving-lines-September-25-2026/main.pdf">A power saving for planar halving lines (PDF)</a>, 31 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/183.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 183.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +133,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-power-saving-for-planar-halving-lines-September-25-2026/main.pdf">A power saving for planar halving lines</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Scatter an even number of points in the plane, no three on a line. Draw the line through two of them. If the other points split exactly in half, the same number on each side, it is a halving line. 4 points in convex position have two, the diagonals; a triangle with a point inside has three. Points around a circle always have exactly half as many halving lines as points, and in our experiments, random points have about two thirds as many. How many can n points have at most? A note of Lovász from 1971, and a paper of Erdős, Lovász, Simmons and Straus, gave an upper bound of order n to the 3/2, and that paper built sets with about n log n halving lines. As the paper recounts, Pach, Steiger and Szemerédi then saved an iterated-logarithm factor, and in 1998, Dey proved a bound of order n to the 4/3, using convex chains and the crossing lemma: a drawing with many more edges than points must have many crossings. From below, Tóth built sets with n times e to the c root log n halving lines, and Nivasch improved the constant. Among the works the paper cites, Dey’s 4/3 is the last improvement of the exponent; a 2024 paper improved only a lower-order term. In our own search among small sets, 12 points can have at least 18 halving lines, far more than random points. The same question asks about k-sets, groups of k points that a line can cut off from the rest, where Dey’s bound is of order n times k plus one, to the 1/3.</p>
+<h3><span class="t num">1:33</span>The claim</h3>
+<p>Result 183 is a single OpenAI preprint, 31 pages long, dated September 25, 2026. Its theorem: there are absolute constants, a positive epsilon, C and n nought, such that every set of an even number n of points, at least n nought, with no three on a line, has at most C times n to the 4/3 minus epsilon halving lines. So, it claims, 4/3 is not the right exponent. A second theorem bounds the switches at every rank of a rotating sweep in the same way, for points in a slightly stronger general position. And a corollary lowers Dey’s k-set bound to order n times k plus one, to the 1/3 minus epsilon nought. Not claimed: a value of epsilon. The proof is, in its own word, nonquantitative. Epsilon is log 2 over twice the log of a number q that a compactness argument shows to exist, so the proof’s epsilon is at most a quarter, and may be tiny. Nothing about the true answer, which still lies somewhere between Tóth’s construction and n to the 4/3 minus epsilon. And nothing for pseudolines, line segments or higher dimensions. The fractions that appear inside the proof, such as 32/17, are not the saving.</p>
+<h3><span class="t num">2:50</span>How the proof goes</h3>
+<p>The proof tracks a rotating sweep. Turn a direction slowly, and mark the lowest half of the points, measured across that direction. Each time the marked half changes, two points trade places, and the line through them is a halving line. The paper counts these switches at every rank, not just the middle, because restricting part of the sweep to the points that move in it changes the rank. Dey’s engine works on batches of the sweep. In each batch, every point that leaves is linked to every point that joins, and across the batches these segments link up into convex chains, and also into concave chains. A convex chain and a concave chain cross at most twice, so there are few crossings, while the crossing lemma says that many segments on few points force many crossings. That caps the number of busy batches, and gives 4/3. The new goal is to show that, for small batches in a large set, this count is never tight, not even up to a constant factor. Suppose it were nearly tight for larger and larger configurations, and pass to a limit. Give each point coordinates from its rank among the chains, and take limits of the measures of points, edges and crossings; the crossing counts force a positive part of the activity to spread out evenly in two of these coordinates. Monotone coordinates are differentiable almost everywhere, three sweep times give three different directions, and three families of parallel lines pin down a map up to a linear change, so, zoomed in, the rank coordinates become a linear copy of the actual plane. There, every active point lies in one of three thin parallel strips, except for at most two per token crossing the region’s boundary, and a mass estimate makes the strips too thin to hold the activity: a contradiction. So for some large fixed scale q, any sweep splits into at most half of q to the 4/3 smaller sweeps, each on at most N over q points. Repeating the split gives N to the 4/3 minus epsilon, with epsilon equal to log 2 over twice log q. The paper credits Dey’s chains and crossings, the crossing lemma of Ajtai, Chvátal, Newborn and Szemerédi and of Leighton, and Matoušek’s shallow cuttings for the k-set corollary.</p>
+<h3><span class="t num">5:07</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. OpenAI’s Lean files state both theorems exactly, the halving-line bound and the bound at every rank of the sweep, and prove them in 47 files and about 18,000 lines, with no gaps we could find by search; we did not run the check. Like the paper, the Lean proof shows that epsilon exists without computing it. The k-set corollary is not formalized. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, 4/3 is not the truth for halving lines: n points in general position have at most a constant times n to the 4/3 minus a fixed epsilon of them, even though nobody yet knows how small that epsilon is.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20183%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../182-power-savings-intersective-polynomial-differences/"><span class="dir">Previous · 182</span><span class="pt">Power savings for intersective polynomial differences and prime arguments</span></a>
-  <a class="next" href="../184-correspondence-coloring-fixed-forbidden-subgraph/"><span class="dir">Next · 184</span><span class="pt">Correspondence coloring with a fixed forbidden subgraph</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

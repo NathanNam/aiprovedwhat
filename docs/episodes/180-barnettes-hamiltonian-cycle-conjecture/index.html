@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 180: Barnette’s Hamiltonian-cycle conjecture | AI Proved What?</title>
-<meta name="description" content="Barnette’s Hamiltonian-cycle conjecture. Result 180 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>A tour of every corner? Barnette&#x27;s Hamiltonian-cycle conjecture | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims Barnette&#x27;s conjecture: every cubic polyhedron whose corners can be colored black and white along every edge has a tour visiting every corner exactly once. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/180-barnettes-hamiltonian-cycle-conjecture/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 180: Barnette’s Hamiltonian-cycle conjecture | AI Proved What?">
-<meta property="og:description" content="Barnette’s Hamiltonian-cycle conjecture. Result 180 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="A tour of every corner?">
+<meta property="og:description" content="An AI preprint claims Barnette&#x27;s conjecture: every cubic polyhedron whose corners can be colored black and white along every edge has a tour visiting every corner exactly once. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/180-barnettes-hamiltonian-cycle-conjecture/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/180-barnettes-hamiltonian-cycle-conjecture/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 180 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Barnette’s Hamiltonian-cycle conjecture</h1>
+<p class="meta">Episode 180, October 2026</p>
+<h1>A tour of every corner?</h1>
+<p class="subtitle">A preprint claims Barnette’s conjecture: every cubic polyhedron whose corners can be colored black and white along every edge has a Hamiltonian cycle</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 180 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="UrhhbDY9A1c" data-title="Episode 180: A tour of every corner?">
+  <a href="https://youtu.be/UrhhbDY9A1c">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 180: A tour of every corner? A hexagonal prism with black and white corners and one Hamiltonian cycle in yellow (our drawing).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:48. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/UrhhbDY9A1c?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/UrhhbDY9A1c?t=111" data-t="111"><span class="t">1:51</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/UrhhbDY9A1c?t=184" data-t="184"><span class="t">3:04</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/UrhhbDY9A1c?t=295" data-t="295"><span class="t">4:55</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves that every finite simple cubic bipartite planar 3-vertex-connected graph has a Hamiltonian cycle, resolving Barnette's conjecture. Equivalently, every three-edge path in a finite simple cubic 3-vertex-connected bipartite Pfaffian graph lies in a Hamiltonian cycle.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take a polyhedron where three edges meet at every corner, like a cube. A Hamiltonian cycle is a closed tour along its edges that visits every corner exactly once; the cube has 6. Tait conjectured that every such polyhedron has one. Tutte disproved it in 1946 with a polyhedron of 46 corners; our exhaustive search confirms that it has no tour. Each of its three large pieces forces the tour through its own edge to the centre corner, but a tour uses only two of the three. Tutte’s polyhedron has faces with an odd number of sides. Barnette’s conjecture forbids that: if the corners can be colored black and white so that every edge joins opposite colors, which means every face has an even number of sides, as on the cube or a hexagonal prism, then a tour always exists.</p>
+<p>As the paper recounts, the conjecture was recorded by Grünbaum in the proceedings of a 1968 Waterloo conference, published in 1969. Goodey proved it when every face is a square or a hexagon, Feder and Subi allowed faces of any size in one of three face colors, if the other two have only squares and hexagons, and in 2025 Schnieders proved it when no face has more than 8 sides. In our own check, every such polyhedron with up to 20 corners (15 of them) has a tour. Turned inside out, a reformulation going back to Stein and to Alt, Payne, Schmidt and Wood, each face becomes a dot and each corner a black or white triangle, and a tour corresponds to splitting the dots into two groups that each form a tree, counting every edge among their dots; the tour runs along the boundary between them.</p>
+<p>Result 180 is one OpenAI preprint, <a href="https://github.com/openai/math/blob/main/preprints/Paired-states-and-Hamiltonian-cycles-in-cubic-bipartite-planar-graphs-September-24-2026/paper.pdf">Paired states and Hamiltonian cycles in cubic bipartite planar graphs</a> (11 pages, dated September 24, 2026). Its Theorem 1.1: “Every finite simple undirected graph that is cubic, bipartite, planar, and 3-vertex-connected has a Hamiltonian cycle.” Its Corollary 7.1: for every edge, some Hamiltonian cycle avoids it, a strengthening already known to be equivalent. Its Corollary 7.2, combined with an equivalence proved by Gorsky, Steiner and Wiederrecht: in every cubic, 3-connected, bipartite graph with a Pfaffian orientation, a class that includes all the planar ones, every path of three edges lies on a Hamiltonian cycle.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Nothing without the coloring or 3-connectivity: Tutte’s graph shows that the coloring is needed, and our example of three cube-like blocks strung between two corners (26 corners, only 2-connected) has no tour. No algorithm: the proof shows that a certain finite sum of exponentials is not zero, and the paper does not claim a polynomial-time construction. Nothing stronger: on the cube, by our count, 24 of the 72 paths with four edges lie on no tour. The paper reports no computation.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, 11 pages, dated September 24, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,45 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/180.md">scope notes</a>)</dd>
+    <dd>The theorem, with a topological definition of planarity, formalized by OpenAI; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/180.md">Lean formalization</a> whose <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/BarnetteHamiltonian.lean">comparator statement</a> is Theorem 1.1, with planarity defined topologically: points in the plane joined by injective arcs whose interiors do not meet. By our count the proof takes 31 files and 8,936 lines, excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/Hamiltonian">source</a>); it turns the drawing into a minor of a square grid and argues through algebraic duality. The corollaries are not stated in Lean, and the Pfaffian corollary is not formalized. We found no unproved steps by search; we have not rebuilt the proof. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Inside out.</strong> Work on the dual triangulation, with black and white triangles. Put one black triangle on the outside; its three corners are the roots.</li>
+  <li><strong>States and pairs.</strong> A state lets every other black triangle point at one of its own corners, using each remaining dot exactly once; these states come from Tutte’s theory of trinity. A pair is two states that disagree at every black triangle.</li>
+  <li><strong>The disk identity.</strong> Give each directed edge a sign, +1 if its black triangle is on the left and −1 otherwise. Along any cycle whose edges start where a state points, the signs add to exactly −3 counterclockwise and +3 clockwise, by Euler’s formula and the state’s matching condition.</li>
+  <li><strong>A weighted sum.</strong> Sum over all pairs, with phase i to the power of a third of the sign total and a weight that depends only on the second state. Pairs of the wrong shape cancel: rotating the first state around a cycle flips the phase and leaves the weight alone.</li>
+  <li><strong>It is not zero.</strong> Grouping pairs by their cycles, weights on spokes are chosen so that, around every cycle, counterclockwise outweighs clockwise, so the lowest-order terms all have the same phase. Some pair therefore has the right shape, a forest.</li>
+  <li><strong>Two trees and the tour.</strong> A tree on the white triangles selects one edge at each triangle, and the selected edges split the dots into two induced trees. Separating triangles are handled by cutting and gluing, using the freedom to prescribe an edge. Back on the polyhedron, the boundary between the trees is the tour.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>The cube: 6 Hamiltonian cycles; each of its 48 three-edge paths lies on exactly one; 24 of its 72 four-edge paths lie on none.</li>
+  <li>Exhaustive searches: Tutte’s 46-corner polyhedron and our 26-corner 2-connected example have no Hamiltonian cycle.</li>
+  <li>Every cubic polyhedron with black-and-white corners up to 20 corners (15 graphs): each has a tour, a tour avoiding each edge, and a tour through each three-edge path.</li>
+  <li>A suitable pair found by search, then the paper’s tree step: on the truncated octahedron (24 corners; trees of 6 and 8 dots) and the truncated icosidodecahedron (120 corners; faces of 4, 6 and 10 sides; trees of 22 and 40 dots), the output is a Hamiltonian cycle.</li>
+  <li>The Lean count: our count of the import closure.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Paired-states-and-Hamiltonian-cycles-in-cubic-bipartite-planar-graphs-September-24-2026/paper.pdf">Paired states and Hamiltonian cycles in cubic bipartite planar graphs (PDF)</a>, 11 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/180.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 180.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -74,18 +134,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Paired-states-and-Hamiltonian-cycles-in-cubic-bipartite-planar-graphs-September-24-2026/paper.pdf">Paired states and Hamiltonian cycles in cubic bipartite planar graphs</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Take a polyhedron where three edges meet at every corner, like a cube. Can you walk along its edges, visiting every corner exactly once, and return to where you started? Such a closed tour is called a Hamiltonian cycle; the cube has 6. Tait’s conjecture said that every polyhedron with three edges at each corner has one. Tutte disproved it in 1946, with a polyhedron of 46 corners. Our exhaustive search confirms it has no tour: each of its three large pieces forces the tour through its own edge to the centre corner, but a tour uses only two of the three. Tutte’s polyhedron has faces with an odd number of sides. Barnette’s conjecture forbids that: if the corners can be colored black and white so that every edge joins opposite colors, which means every face has an even number of sides, as on the cube or a hexagonal prism, then a tour always exists. The conjecture was recorded by Grünbaum in the proceedings of a Waterloo conference, published in 1969. As the paper recounts, Goodey proved it when every face is a square or a hexagon, Feder and Subi allowed faces of any size in one of three face colors, if the other two have only squares and hexagons, and in 2025, Schnieders proved it when no face has more than 8 sides. In our own check, every such polyhedron with up to 20 corners has a tour. The way in, a reformulation going back to Stein, is to turn the polyhedron inside out. Each face becomes a dot, and each corner becomes a triangle, colored black or white, with opposite colors across every edge. A tour on the polyhedron then corresponds to splitting the dots into two groups that each form a tree, counting every edge among their dots; the tour runs along the boundary between them.</p>
+<h3><span class="t num">1:51</span>The claim</h3>
+<p>Result 180 is a single OpenAI preprint, 11 pages long, dated September 24, 2026. Its theorem: every finite simple graph that is cubic, bipartite, planar and 3-connected has a Hamiltonian cycle. That is Barnette’s conjecture. Its proof also gives, for every edge, a tour that avoids it, a strengthening already known to be equivalent. Combined with an equivalence proved by Gorsky, Steiner and Wiederrecht, the paper concludes more: in every cubic, 3-connected, bipartite graph with a Pfaffian orientation, a class that includes all the planar ones, every path of three edges lies on a tour. Not claimed: anything without the coloring or 3-connectivity. Tutte’s graph shows that the coloring is needed, and our example of three cube-like blocks strung between two corners, which is only 2-connected, has no tour. No algorithm: the proof shows that a certain finite sum of exponentials is not zero, and the paper does not claim a polynomial-time construction. And nothing stronger: in our check of the cube, a third of the paths with four edges lie on no tour at all.</p>
+<h3><span class="t num">3:04</span>How the proof goes</h3>
+<p>The proof works on the inside-out triangulation. Put one black triangle on the outside; its three corners are the roots. A state lets every other black triangle point at one of its own corners, using each remaining dot exactly once; these states come from Tutte’s theory of trinity. A pair is two states that disagree at every black triangle. The engine is a disk identity. Give each directed edge a sign, plus one if its black triangle is on the left and minus one otherwise. Along any cycle whose edges start where a state points, the signs add up to exactly minus three going counterclockwise and plus three going clockwise. Euler’s formula and the state’s matching condition force it. Now sum over all pairs, giving each pair the phase i to the power of a third of its sign total, times a weight that depends only on the second state. Pairs of the wrong shape cancel. If a certain set of edges contains a cycle, rotating the first state around it changes the phase by a factor of minus one and leaves the weight alone. But the total is not zero. Group the pairs by their cycles, and choose weights on spokes from each black triangle’s centre so that, around every cycle, counterclockwise outweighs clockwise; then the lowest-order terms all point the same way and cannot cancel. So some pair has the right shape, a forest. From it, a tree on the white triangles selects one edge at each triangle, and the selected edges split the dots into the two required trees. Separating triangles are handled by cutting the sphere along them and gluing the halves, using the freedom to prescribe an edge. Back on the polyhedron, the boundary between the trees is the tour. In our computation, a search found a suitable pair on a polyhedron with a hundred and 20 corners, and the paper’s tree step then produced a valid tour.</p>
+<h3><span class="t num">4:55</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. OpenAI’s Lean files state the theorem with a genuine topological definition of planarity, a drawing in the plane with non-crossing arcs, and prove it in 31 files and about 9,000 lines, with no gaps we could find by search; we did not run the check. The formal proof turns the drawing into a minor of a square grid and argues algebraically. The Pfaffian corollary is not formalized. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, Barnette’s conjecture is true: on every polyhedron with three edges at each corner, whose corners can be colored black and white with every edge joining opposite colors, you can visit every corner once and come home.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20180%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../179-circulant-hadamard-barker-sequence-conjectures/"><span class="dir">Previous · 179</span><span class="pt">The circulant Hadamard and Barker-sequence conjectures</span></a>
-  <a class="next" href="../181-erdos-gallai-cycle-decomposition-conjecture/"><span class="dir">Next · 181</span><span class="pt">The Erdős–Gallai cycle-decomposition conjecture</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
