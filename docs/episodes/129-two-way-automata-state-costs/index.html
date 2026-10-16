@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sakoda–Sipser, settled? Exponential state costs for two-way automata | AI Proved What?</title>
+<meta name="description" content="An AI system claims exponential state lower bounds for simulating and complementing two-way nondeterministic automata over growing alphabets, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/129-two-way-automata-state-costs/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Sakoda–Sipser, settled?">
+<meta property="og:description" content="An AI system claims exponential state lower bounds for simulating and complementing two-way nondeterministic automata over growing alphabets, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/129-two-way-automata-state-costs/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/129-two-way-automata-state-costs/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 129, October 2026</p>
+<h1>Sakoda–Sipser, settled?</h1>
+<p class="subtitle">Claimed exponential state lower bounds for simulating and complementing two-way nondeterministic automata, over growing alphabets</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 129 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="-yIIX5OA9Wg" data-title="Episode 129: Sakoda–Sipser, settled?">
+  <a href="https://youtu.be/-yIIX5OA9Wg">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 129: Sakoda–Sipser, settled? Columns of points joined by relation arrows, with a live path highlighted.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:41. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/-yIIX5OA9Wg?t=0" data-t="0"><span class="t">0:00</span><span>Two-way automata</span></a></li>
+  <li><a href="https://youtu.be/-yIIX5OA9Wg?t=105" data-t="105"><span class="t">1:45</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/-yIIX5OA9Wg?t=202" data-t="202"><span class="t">3:22</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/-yIIX5OA9Wg?t=417" data-t="417"><span class="t">6:57</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A finite automaton reads a word one letter at a time, with a fixed number of internal states. A two-way automaton may also move its head back to the left. That adds no power, since two-way machines recognize the same languages as one-way ones (Rabin and Scott, and Shepherdson, 1959), but it can change how many states are needed. A nondeterministic machine may guess, and accepts if some guess succeeds. In 1978 Sakoda and Sipser asked how many states a two-way deterministic machine needs to simulate a nondeterministic one, and conjectured that exponentially many are required.</p>
+<p>Their complete problem for one-way nondeterministic machines is now called one-way liveness. Each letter is a binary relation on h points, drawn as arrows between two columns of h dots, and a word is live if some path runs through all the columns. A nondeterministic machine with h + 3 states guesses the path and never moves left; a one-way deterministic machine needs 2<sup>h</sup> states. Against unrestricted two-way deterministic machines, the lower bounds the liveness paper cites are quadratic; exponential bounds were known only for restricted machines, such as sweeping ones.</p>
+<p>Result 129 is two OpenAI preprints, both dated September 25, 2026. <a href="https://github.com/openai/math/blob/main/preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/main.pdf">The first</a> (20 pages) claims that every s-state two-way deterministic machine for one-way liveness on h points satisfies 4(s + 2)<sup>2</sup> ≥ 2<sup>⌊(h − 2)/31⌋</sup>, so s grows roughly like 2<sup>h/62</sup>. <a href="https://github.com/openai/math/blob/main/preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/paper.pdf">The second</a> (18 pages) claims that for an n-state nondeterministic two-way machine recognizing liveness, every nondeterministic two-way machine for the complement needs at least ½·2<sup>⌊(n − 4)/127⌋</sup> − 1 states; since deterministic two-way machines complement cheaply, this gives a second deterministic bound for the same family.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The alphabets grow: liveness on h points uses all 2<sup>h²</sup> relations as letters. Sakoda and Sipser’s question allows this, since the polynomial may not depend on the alphabet, and the release says the results resolve their conjecture in that form. Nothing is claimed for a fixed alphabet, the measure is the number of states rather than the size of the transition table, and the papers say they give no separation of logarithmic-space complexity classes such as L and NL. The bounds are also slow to bite: the deterministic one first exceeds the size of the nondeterministic machine at h = 653, though at h = 2,002 it is over two billion states.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 20 and 18 pages, both dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>All three bounds. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprints have not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/129.md">Lean formalization</a> of all three bounds: the complementation bound (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/TwoWayComplementation.lean">comparator</a>), the deterministic bound for the same family for n ≥ 131 (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/TwoWayDeterminization.lean">comparator</a>), and the liveness bound under both acceptance conventions (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/OneWayLiveness.lean">comparator</a>), in <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/TwoWayAutomata">41 files and 8,477 lines</a> with their imports (including <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/Automata">the liveness modules</a>), not counting Mathlib, with no unproved steps that we could find. We have not run the check. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Machines become matchings.</strong> Add a sink after acceptance. Because each configuration of a deterministic machine has at most one successor, the configurations that reach the sink form a tree. Walking around it along both sides of every edge, and giving every possible transition a reserved slot, each cell’s share of the wiring becomes a perfect matching between 4(s + 1)<sup>2</sup> ports on each side, fixed by the cell’s letter alone. The machine accepts exactly when the glued matchings of a word join a left test port to a right test port.</li>
+  <li><strong>Onto all relations.</strong> Words with the same glued matching behave the same in every context, and liveness tells apart any two different relation products by surrounding them with single-point letters. So the matchings generated by the letters map onto the monoid of all binary relations on h points, preserving products.</li>
+  <li><strong>The rank loss doubles.</strong> An idempotent matching that maps to the identity relation plus one pair must lose at least L(h) = 2<sup>⌊(h − 2)/31⌋</sup> crossing strands. Thirty-two conjugates build 256 successive additions sharing one support budget of 64 times the loss; each addition contains a corner representing all relations on 31 fewer points and loses at least ½L(h − 31), so the bound doubles every 31 points. Since the ports are at least the lost rank, 4(s + 1)<sup>2</sup> ≥ L(h), or s + 2 if acceptance must come after a move.</li>
+  <li><strong>The complement.</strong> For nondeterministic machines each letter becomes a path diagram of four relations recording how a computation can pass through a cell or turn back, multiplied by joining boundaries (partitioned binary relations, after Martin and Mazorchuk). The complement accepts when the relation product is empty, so the map to relations reverses inclusion; tracking the recurrent classes of idempotents and how many each added pair destroys, with a larger amplification, gives a bound that doubles every 127 points.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>The (h + 3)-state one-way machine agreed with liveness on 9,000 random words for h = 2, 3, 4, and one-way deterministic machines need exactly 4, 8 and 16 states there.</li>
+  <li>For 240 random small deterministic two-way machines, the paper’s construction of matchings decided acceptance correctly on all 6,000 test words; for 300 random small nondeterministic machines, the path diagrams decided acceptance correctly on all 7,500 test words.</li>
+  <li>The deterministic bound: at h = 653 at least 723 states (the guessing machine has 656); at h = 1,000 at least 32,766; at h = 2,002 at least 2,147,483,646.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/main.pdf">An exponential two-way deterministic state lower bound for one-way liveness (PDF)</a>, 20 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/paper.pdf">An exponential state lower bound for two-way nondeterministic complementation (PDF)</a>, 18 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/129.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 129.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-exponential-state-lower-bound-for-two-way-nondeterministic-complementation-September-25-2026/paper.pdf">An exponential state lower bound for two-way nondeterministic complementation</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-exponential-two-way-deterministic-state-lower-bound-for-one-way-liveness-September-25-2026/main.pdf">An exponential two-way deterministic state lower bound for one-way liveness</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Two-way automata</h3>
+<p>A finite automaton reads a word one letter at a time, with a fixed number of internal states. A two-way automaton may also move its reading head back to the left, as often as it likes. That adds no power: two-way machines recognize exactly the same languages as one-way ones, as Rabin and Scott, and Shepherdson, showed in 1959. But it can change how many states are needed. Nondeterminism is the other dial: a nondeterministic machine may guess, and it accepts if some guess leads to acceptance. The question is the price, in states, of removing those guesses while keeping two-way motion. In 1978, Sakoda and Sipser asked how many states a two-way deterministic machine needs to simulate a nondeterministic one, and conjectured that the answer is exponential. Their complete problem for one-way nondeterministic machines is now called one-way liveness. Each letter is a binary relation on h points, drawn as arrows between two columns of h dots. A word is live if some path runs through all the columns, left to right. A nondeterministic machine with h + 3 states guesses the path and never moves left. A one-way deterministic machine must track the set of reachable points, which takes 2^h states. Against unrestricted two-way deterministic machines, the lower bounds the liveness paper cites are quadratic; exponential bounds were known only for restricted machines, such as sweeping ones, which turn around only at the ends. In our check, the guessing machine was right on 9,000 random words, and the one-way count is exactly 2^h for h up to 4.</p>
+<h3><span class="t num">1:45</span>The claim</h3>
+<p>Result 129 is two OpenAI preprints, of 20 and 18 pages, both dated September 25. The first claims that every two-way deterministic machine for one-way liveness on h points needs roughly 2^(h/62) states, while the nondeterministic machine has only h + 3. The second claims that complementing two-way nondeterministic machines is also exponential: for a machine with n states recognizing liveness, every two-way nondeterministic machine for the complement needs roughly 2^(n/127) states. Since two-way deterministic machines can be complemented cheaply, this gives a second, weaker deterministic bound for the same family. The alphabets grow: liveness on h points uses all 2^(h²) relations as letters. That is allowed in Sakoda and Sipser’s question, where the polynomial may not depend on the alphabet, and the release says this resolves their conjecture in that form. Nothing is claimed for a fixed alphabet, such as two letters, and the papers say they give no separation of logarithmic-space complexity classes. The rates are slow: the deterministic bound first exceeds the size of the nondeterministic machine at h equals 653, but at h equals 2,002 it is over 2 billion states. OpenAI published a Lean formalization of all three bounds, 41 files and about 8,500 lines with imports, not counting Mathlib. We have not run the Lean check.</p>
+<h3><span class="t num">3:22</span>How the proofs go</h3>
+<p>The deterministic bound starts from configurations, a state and a head position. Add a sink after acceptance. Because each configuration has at most one successor, the configurations that eventually reach the sink form a tree. Walk around that tree, along both sides of every edge. Cut the tape into cells: each cell’s share of this doubled wiring, built for every state at once, becomes a perfect matching between ports on its two sides, 4(s + 1)² ports per side, and it depends only on that cell’s letter, because every possible transition gets a reserved slot. Glue the matchings of a word, and the machine accepts exactly when a test port on the left is joined to one on the right. In our check, we built these matchings for 240 random small machines, and they decided acceptance correctly on all 6,000 words. Two words with the same glued matching behave the same in every context. Liveness tells apart any two different relation products: put a single-point letter on each side, and only one of the surrounded words stays live. So the matchings generated by the letters map onto the monoid of all binary relations on h points, preserving multiplication. The proof shows that this needs exponentially many ports. The rank of a matching counts the strands that cross from left to right, and multiplying never increases it. An idempotent, a matching equal to its own square, has a corner that behaves like a smaller matching monoid on its crossing strands alone. Take an idempotent matching that maps to the identity relation plus one extra pair. The claim is that it must lose at least L(h) crossing strands, where L(h) is 2^⌊(h − 2)/31⌋. The induction uses 32 conjugates of that idempotent to build 256 successive additions of a pair, all sharing one support budget. Each addition contains a corner representing all relations on 31 fewer points, so by induction it loses at least ½ L(h − 31). The shared budget is 64 times the original loss, and 256 of these half-losses must fit inside it, so the bound doubles every 31 points. Since the number of ports is at least the lost rank, 4(s + 1)² is at least 2^⌊(h − 2)/31⌋; if acceptance must come after at least one move, s + 1 becomes s + 2. For the complement, the machine stays nondeterministic, so its computations no longer form a tree. Instead, each letter becomes a path diagram: four relations recording how a computation can enter and leave a cell, passing through in either direction or turning back. These diagrams multiply by joining boundaries, forming the monoid of partitioned binary relations of Martin and Mazorchuk. Adding edges only adds accepting paths, but the complement accepts when the product is empty, so the map to relations reverses inclusion. The proof tracks classes of labels that a repeated diagram keeps returning to, and how many of them each added pair destroys, which a fixed context can at most double; with a larger amplification, the bound doubles every 127 points. In our check, the path diagrams of 300 random small nondeterministic machines decided acceptance correctly on 7,500 words.</p>
+<h3><span class="t num">6:57</span>Where it stands</h3>
+<p>The preprints are not peer reviewed and have not been revised. The Lean formalization covers the complementation bound, the deterministic bound for the same family, and the liveness bound; we have not run it. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If they hold, two-way nondeterministic automata can be neither complemented nor determinized with polynomially many states, uniformly over alphabets, answering Sakoda and Sipser’s question in its standard form after nearly fifty years. The versions over a fixed alphabet, and the question of L versus NL, are not touched.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20129%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

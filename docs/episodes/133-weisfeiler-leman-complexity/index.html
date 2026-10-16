@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How hard is WL? Lower bounds for Weisfeiler–Leman refinement | AI Proved What?</title>
+<meta name="description" content="An AI system claims unconditional time lower bounds and EXPTIME-completeness for Weisfeiler–Leman refinement, with Lean formalizations. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/133-weisfeiler-leman-complexity/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="How hard is WL?">
+<meta property="og:description" content="An AI system claims unconditional time lower bounds and EXPTIME-completeness for Weisfeiler–Leman refinement, with Lean formalizations. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/133-weisfeiler-leman-complexity/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/133-weisfeiler-leman-complexity/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 133, October 2026</p>
+<h1>How hard is WL?</h1>
+<p class="subtitle">Claimed unconditional lower bounds and EXPTIME-completeness for Weisfeiler–Leman refinement, the classic test for graph isomorphism</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 133 in OpenAI’s catalog: <a href="#papers-in-result">all 4 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="7EwZ33R3pUY" data-title="Episode 133: How hard is WL?">
+  <a href="https://youtu.be/7EwZ33R3pUY">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 133: How hard is WL? A six-cycle and two triangles with every vertex coloured alike.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:05. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/7EwZ33R3pUY?t=0" data-t="0"><span class="t">0:00</span><span>Weisfeiler–Leman refinement</span></a></li>
+  <li><a href="https://youtu.be/7EwZ33R3pUY?t=97" data-t="97"><span class="t">1:37</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/7EwZ33R3pUY?t=213" data-t="213"><span class="t">3:33</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/7EwZ33R3pUY?t=434" data-t="434"><span class="t">7:14</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Colour refinement is a classic first test for whether two graphs are the same up to relabelling: give every vertex the same colour, then repeatedly recolour each vertex by its old colour and the multiset of its neighbours’ colours; if the colour counts ever differ, the graphs are not isomorphic. It cannot separate a six-cycle from two triangles. The k-dimensional Weisfeiler–Leman method colours k-tuples instead, starting from which entries are equal or adjacent and updating each tuple from the tuples made by putting any vertex into any one position; in the joint form, two dimensions already separate those graphs.</p>
+<p>Weisfeiler and Leman introduced the method in 1968. Cai, Fürer and Immerman built coloured graphs of maximum degree three that need dimension linear in their size. For a fixed dimension k, refinement decides equivalence in time n<sup>O(k)</sup>. Earlier hardness results were much weaker: identification was P-hard for every fixed dimension, equivalence with the dimension as input was coNP-hard, Berkholz asked whether it is EXPTIME-complete, and some coloured pairs need on the order of n<sup>k/2</sup> rounds, which does not rule out a faster algorithm that decides the outcome another way.</p>
+<p>Result 133 is four OpenAI preprints, 107 pages dated September 25, 2026. <a href="https://github.com/openai/math/blob/main/preprints/Unconditional-time-lower-bounds-for-Weisfeiler-Leman-equivalence-September-25-2026/paper.pdf">The first</a> (27 pages) claims that for every sufficiently large fixed k, any deterministic algorithm deciding k-dimensional equivalence needs time at least n<sup>ck</sup> at every large graph size, for one absolute constant c, with no complexity assumption, even on connected graphs of diameter at most two. <a href="https://github.com/openai/math/blob/main/preprints/Variable-dimension-Weisfeiler-Leman-equivalence-on-general-and-subcubic-graphs-September-25-2026/paper.pdf">The second</a> (39 pages) claims that with the dimension given in binary, equivalence is EXPTIME-complete, even for connected graphs of maximum degree three. <a href="https://github.com/openai/math/blob/main/preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/paper.pdf">The third</a> (25 pages) claims that deciding whether refinement of a given dimension identifies a graph is EXPTIME-complete. <a href="https://github.com/openai/math/blob/main/preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/paper.pdf">The fourth</a> (16 pages) turns finite choice systems into pairs of graphs that are equivalent exactly when no consistent choice exists and, assuming the exponential time hypothesis, rules out fast algorithms even for the first round or two.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The papers use two update rules, joint and separate; the EXPTIME results cover only the joint one (identification uses colour refinement at dimension one). The lower bound is for deterministic sequential machines reading adjacency matrices (multitape Turing machines and logarithmic-word RAMs), not randomized algorithms or advice, and for small dimensions like two or three it gives nothing beyond the cost of reading the input. Sufficiently large is very large: with the paper’s constant 10<sup>−9</sup>, the bound beats the n<sup>2</sup> cost of reading the input only once k passes two billion; the Lean version uses 1/2000 from k = 10<sup>8</sup>.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, four preprints, 107 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The unconditional bound, both EXPTIME results, the parity-lift reduction, and (outside the catalog) the conditional time bounds. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 15, 2026. The preprints have not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/133.md">Lean formalization</a> of the unconditional lower bound (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/WeisfeilerLeman.lean">comparator</a>), the variable-dimension EXPTIME-completeness (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/VariableWL.lean">comparator</a>), the identification EXPTIME-completeness (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/WLIdentification.lean">comparator</a>) and the parity-lift reduction theorem (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/ParityLifts.lean">comparator</a>): 193 files and 65,771 lines with their imports (<a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/WeisfeilerLeman">lower bound</a>, <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/VariableWL">variable dimension</a>, <a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/WLIdentification">identification</a>, <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/ParityLifts">parity lifts</a>), not counting Mathlib. The conditional time bounds are formalized too, in a file the catalog does not link (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/ParityLifts/AsymptoticBounds.lean">AsymptoticBounds.lean</a>), with the exponential time hypothesis as an explicit assumption rather than an axiom; with it, 288 files and 80,477 lines. We found no unproved steps. We have not run the check. None of the papers is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Parity lifts.</strong> Adapted from Roberson’s parity graphs, in the spirit of Cai, Fürer and Immerman: replace each vertex of a base graph by bit vectors with one bit per neighbouring vertex type and a prescribed parity, and join two of them when their base vertices are adjacent and the facing bits agree. Flipping the parity at one vertex twists the graph. On K<sub>4</sub>, both versions have 16 vertices, 48 edges and 32 triangles, but the untwisted one contains 8 copies of K<sub>4</sub> and the twisted one none.</li>
+  <li><strong>Choice systems.</strong> For dimension four and up, with k + 1 domains under the joint rule or k under the separate rule, the two lifts of a choice-system graph are equivalent exactly when no consistent choice exists. A choice changes the number of maps of one small template graph into the lift, visible within two rounds; conversely, refinement only sees counts of patterns of small treewidth, and if one separated the lifts, following the odd parity through its tree decomposition would end at a bag that is a consistent choice.</li>
+  <li><strong>Diagonalization.</strong> A compressed consistency problem on addresses with r digits in base m becomes two connected graphs of diameter at most two, equivalent exactly when it is consistent; a one-tape machine run, with time and position in those digits, is such a problem; and a padded diagonal language has no one-tape decider in m<sup>s</sup> steps at any large length, though it is decidable in time polynomial in m<sup>s</sup>. Hard pairs exist at every size in a window, so one fast size in a late window would contradict the diagonal language.</li>
+  <li><strong>EXPTIME, and identification.</strong> An exponential-time tableau has exponentially many cells but short binary addresses; polynomially many product rules on those addresses, with the dimension equal to the address length, give polynomial-size graphs whose equivalence encodes the answer. Buffers make information flow one way, and a subcubic version uses triangles and colour-coding paths. For identification, every graph equivalent to the construction is a twisted copy; if the machine accepts, every twist refinement misses can be undone, and if it rejects, one twist survives.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Colour refinement cannot separate a six-cycle from two triangles; joint 2-dimensional refinement does in one round (6 against 0 non-adjacent pairs with a common neighbour).</li>
+  <li>Parity graph of K<sub>4</sub>: colour refinement and joint 2-dimensional refinement see no difference between the untwisted and twisted versions; joint 3-dimensional refinement does after one round.</li>
+  <li>A toy choice system with four two-valued domains (separate rule, k = 4): lifts of 16,456 vertices; template map counts equal when no choice exists, and different by 16,698,832,846,848 once one constraint becomes an equality.</li>
+  <li>Constants: c = 10<sup>−9</sup> in the paper (n<sup>ck</sup> passes n<sup>2</sup> at k = 2 × 10<sup>9</sup>); c = 1/2000 from k = 10<sup>8</sup> in Lean.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Unconditional-time-lower-bounds-for-Weisfeiler-Leman-equivalence-September-25-2026/paper.pdf">Unconditional time lower bounds for Weisfeiler–Leman equivalence (PDF)</a>, 27 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Variable-dimension-Weisfeiler-Leman-equivalence-on-general-and-subcubic-graphs-September-25-2026/paper.pdf">Variable-dimension Weisfeiler–Leman equivalence on general and subcubic graphs (PDF)</a>, 39 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/paper.pdf">The complexity of identifying a graph by Weisfeiler–Leman refinement (PDF)</a>, 25 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/paper.pdf">Parity lifts and bounded-treewidth witnesses for Weisfeiler–Leman equivalence (PDF)</a>, 16 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/133.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 133.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 4 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Parity-lifts-and-bounded-treewidth-witnesses-for-Weisfeiler-Leman-equivalence-September-25-2026/paper.pdf">Parity lifts and bounded-treewidth witnesses for Weisfeiler–Leman equivalence</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-complexity-of-identifying-a-graph-by-Weisfeiler-Leman-refinement-September-25-2026/paper.pdf">The complexity of identifying a graph by Weisfeiler–Leman refinement</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Unconditional-time-lower-bounds-for-Weisfeiler-Leman-equivalence-September-25-2026/paper.pdf">Unconditional time lower bounds for Weisfeiler–Leman equivalence</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Variable-dimension-Weisfeiler-Leman-equivalence-on-general-and-subcubic-graphs-September-25-2026/paper.pdf">Variable-dimension Weisfeiler–Leman equivalence on general and subcubic graphs</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Weisfeiler–Leman refinement</h3>
+<p>Are two graphs the same up to relabelling? A classic first test is colour refinement. Give every vertex the same colour, then repeatedly recolour each vertex by its old colour and the multiset of its neighbours’ colours. If the colour counts ever differ, the graphs are not isomorphic. It can fail: in a six-cycle and in two triangles, every vertex has two neighbours, so refinement never separates them. The k-dimensional Weisfeiler–Leman method colours k-tuples of vertices instead. It starts from which entries are equal or adjacent, and updates each tuple from the tuples made by putting any vertex into any one position. In the joint form, which keeps the swaps for each new vertex together, two dimensions already separate these graphs. In our check, in the cycle 6 non-adjacent pairs share a neighbour, and in the triangles none do. Weisfeiler and Leman introduced the method in 1968. Cai, Fürer and Immerman built pairs of non-isomorphic coloured graphs of maximum degree three that need dimension linear in their size. For a fixed dimension k, refinement decides equivalence in time n^O(k). The known hardness was much weaker. Deciding whether refinement identifies a graph was P-hard for every fixed dimension. With the dimension as part of the input, equivalence was coNP-hard, and Berkholz asked whether it is EXPTIME-complete. And some coloured graph pairs need on the order of n^(k/2) rounds of refinement, which still does not rule out a faster algorithm that decides the outcome another way.</p>
+<h3><span class="t num">1:37</span>The claims</h3>
+<p>Result 133 is four OpenAI preprints, 107 pages in all, dated September 25. The first claims an unconditional lower bound: for every sufficiently large fixed k, any deterministic algorithm deciding k-dimensional equivalence needs time at least n^(ck), for one absolute constant c, at every large graph size, even on connected graphs of diameter at most two. The second: with the dimension given in binary, equivalence is EXPTIME-complete, even for connected graphs of maximum degree three. The third: deciding whether refinement of a given dimension identifies a graph, separating it from every non-isomorphic graph, is EXPTIME-complete too. The fourth turns finite choice problems into graph pairs and, assuming the exponential time hypothesis, rules out fast algorithms even for the first round or two. The fine print matters. The papers use two update rules, joint and separate; the second and third results cover only the joint one. The lower bound is for deterministic sequential machines reading adjacency matrices, and for small dimensions like two or three it gives nothing beyond the cost of reading the input. Sufficiently large is very large: with the paper’s constant, 10⁻⁹, the bound only beats the n² cost of reading the input once k passes 2 billion. The Lean version uses 1/2000, from k of 100 million. OpenAI published Lean formalizations of all four. For the parity lifts, the catalogued statement is the reduction theorem, and a further file that the catalog does not link proves the conditional time bounds, with the exponential time hypothesis as an explicit assumption. In all, about 290 files and 80,000 lines, not counting Mathlib. We have not run the Lean check.</p>
+<h3><span class="t num">3:33</span>How the proofs go</h3>
+<p>The building block is a parity lift, adapted from Roberson’s parity graphs, in the spirit of Cai, Fürer and Immerman. Take a base graph. Replace each vertex by bit vectors, one bit per neighbouring vertex type, with a prescribed parity. Join two of them when their base vertices are adjacent and the bits facing each other agree. Flipping the parity at one vertex twists the graph. On the complete graph on four vertices, both versions have 16 vertices, 48 edges and 32 triangles, but the untwisted one contains 8 copies of the complete graph and the twisted one none. In our check, colour refinement and joint two-dimensional refinement could not tell them apart; joint three-dimensional refinement could, after one round. The fourth paper builds the base graph from a choice system: a few domains, and for each pair of domains, labels that the chosen elements must agree on. For dimension four and up, with k plus one domains under the joint rule, or k under the separate rule, the two lifts are equivalent exactly when no consistent choice exists. A consistent choice changes the number of ways to map one small template graph into the lift, and that shows up within two rounds. Conversely, refinement only sees counts of patterns of small treewidth, and if one of them separated the lifts, following the odd parity through its tree decomposition would end at a bag whose vertices form a consistent choice. In our check, a toy system with four two-valued domains, which is dimension four under the separate rule, where three must pairwise differ, gave lifts of 16,456 vertices with equal template map counts. Turning one constraint into an equality made a choice possible, and the counts differed by about 17 trillion. The unconditional bound needs no hypothesis because it diagonalizes. First, a compressed consistency problem, on addresses written with r digits in base m, becomes two connected graphs of diameter at most two that are equivalent exactly when the problem is consistent. Second, the run of a one-tape machine, with its time and tape position written in those digits, is such a problem, so the graphs are equivalent exactly when the machine rejects. Third, a padded diagonal language simulates the machine named by the input’s prefix and flips its answer, so no one-tape machine decides it in m^s steps at any large length, though it is decidable in time polynomial in m^s. Hard pairs exist at every graph size in a window, so a decider beating n^(ck) at even one size in any late window would decide that language too fast. With the dimension as input, the same idea scales up. An exponential-time machine has exponentially many tableau cells, but each cell has a short binary address of time and position bits. The construction describes the tableau by polynomially many product rules on those addresses, sets the dimension equal to the address length, and builds graphs of polynomial size whose equivalence encodes the machine’s answer. Buffers make information flow one way, and the subcubic version rebuilds high-degree parts from paths and trees, then replaces each vertex by a triangle, with paths whose lengths encode its colour. Identification needs more. The third paper shows that every graph equivalent to its construction is a twisted copy, isomorphic exactly when the twist can be undone. If the machine accepts, every twist that refinement misses can be undone, so refinement identifies the graph; if it rejects, one twist survives.</p>
+<h3><span class="t num">7:14</span>Where it stands</h3>
+<p>The four preprints are not peer reviewed and have not been revised. The Lean formalizations cover the unconditional lower bound, both EXPTIME-completeness results and the parity-lift reduction, and a file the catalog does not link covers the conditional time bounds; we have not run them. None of these papers is among those OSVerify reviewed, and we have seen no expert review. If they hold, deciding the outcome of Weisfeiler–Leman refinement is provably hard. For large fixed dimensions no deterministic algorithm beats n^(ck), with no unproved hypothesis, and with the dimension as input, both equivalence and identification are EXPTIME-complete, which by the time hierarchy theorem rules out polynomial time.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20133%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

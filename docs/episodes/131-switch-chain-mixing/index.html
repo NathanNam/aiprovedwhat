@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Switch chain mixes fast? Polynomial mixing for every degree sequence | AI Proved What?</title>
+<meta name="description" content="An AI system claims that the switch chain on simple graphs with any prescribed degrees mixes in at most 2n⁸ steps, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/131-switch-chain-mixing/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Switch chain mixes fast?">
+<meta property="og:description" content="An AI system claims that the switch chain on simple graphs with any prescribed degrees mixes in at most 2n⁸ steps, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/131-switch-chain-mixing/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/131-switch-chain-mixing/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 131, October 2026</p>
+<h1>Switch chain mixes fast?</h1>
+<p class="subtitle">A claimed polynomial mixing bound for the switch chain on simple graphs with any prescribed degrees</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 131 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="RoDAcOwvpwY" data-title="Episode 131: Switch chain mixes fast?">
+  <a href="https://youtu.be/RoDAcOwvpwY">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 131: Switch chain mixes fast? A graph on eight vertices with two edges switched out and two switched in.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:23. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/RoDAcOwvpwY?t=0" data-t="0"><span class="t">0:00</span><span>Random graphs with given degrees</span></a></li>
+  <li><a href="https://youtu.be/RoDAcOwvpwY?t=83" data-t="83"><span class="t">1:23</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/RoDAcOwvpwY?t=165" data-t="165"><span class="t">2:45</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/RoDAcOwvpwY?t=341" data-t="341"><span class="t">5:41</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Fix n labeled vertices and a list of degrees, how many neighbours each vertex must have. Usually many simple graphs realize the same list, and drawing one uniformly at random is a basic null model for networks. The switch chain does it: pick two edges on four distinct vertices, and if another way of pairing those four vertices uses two absent edges, swap them in. Every degree is kept. The question is how many switches it takes before the walk forgets where it started.</p>
+<p>Kannan, Tetali and Vempala started this program with regular bipartite graphs, and the conjecture that grew from it predicts polynomial mixing for every realizable degree list in the bipartite, directed and simple undirected models. Cooper, Dyer and Greenhill proved it for regular graphs; later work covered degree lists with quantitative restrictions, and Erdős and coauthors every P-stable family, in which nudging the degrees changes the number of graphs by at most a polynomial factor. A 2026 preprint by Fu, Qin and Wang proved the bipartite case.</p>
+<p>Result 131 is <a href="https://github.com/openai/math/blob/main/preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/main.pdf">one OpenAI preprint</a> (22 pages, September 25, 2026). It claims that for every n ≥ 4 and every graphical degree list, the lazy switch chain (stay put with probability ½; otherwise a random 4-set and one of the six ordered pairs of distinct perfect matchings on it, switching only if valid) gets within total-variation distance ¼ of uniform in at most 2n<sup>8</sup> steps, and that its spectral gap is at least 1/(24 n<sup>2</sup> C(n, 4)) when more than one graph has these degrees. A corollary is an exactly uniform sampler that uses fair coin flips, stops with probability one, and runs in expected polynomial time.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The bound is polynomial, and the paper does not claim it is tight: for seven vertices it allows more than eleven million steps, while the chains we built mixed within 129. The directed version of the conjecture is not addressed.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 22 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The mixing bound, spectral gap and connectivity; not the exact sampler. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/131.md">Lean formalization</a> of the mixing bound, the spectral gap, the exponential total-variation bound and switch connectivity (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SwitchChain.lean">comparator statement</a>; <a href="https://github.com/openai/math/blob/main/lean/OAI/Probability/SwitchChain">165 files and 22,691 lines</a> with its imports, not counting Mathlib, with no unproved steps that we could find), but not of the exact sampler. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Bigger moves.</strong> For a pair of vertices, every other vertex adjacent to exactly one of them can be handed to the other, as long as each keeps its count; resampling that assignment uniformly is the undirected curveball trade. Each trade is a conditional expectation E<sub>a</sub>, and H = Σ(I − E<sub>a</sub>). The central estimate is H<sup>2</sup> ⪰ H, so every nonzero eigenvalue of H is at least one.</li>
+  <li><strong>Pairs sharing a vertex.</strong> Two pairs inside one triple are encoded by a three-row binary matrix with fixed margins, plus a column for internal edges when needed. The variance of a sum of three row functions is at most twice the sum of their variances (an equivalent form was proved by Fu, Qin and Wang): empty and full columns are discarded, the label assignments are handled with the counts fixed, and the counts by a coupling.</li>
+  <li><strong>Disjoint pairs.</strong> Their trades do not commute, because both can rewire the four edges between the pairs. Each interaction is at least a switch term minus two projections onto the event that two neighbours land on the same endpoint, and a slice inequality bounds those errors by the switch energy, so the disjoint part is never negative. Then H<sup>2</sup> = Σ<sub>T</sub> H<sub>T</sub><sup>2</sup> − (n − 3)H + D ⪰ H.</li>
+  <li><strong>Back to switches.</strong> Havel’s realization argument connects any two graphs with the same degrees, so the kernel of H is the constants. Each trade is at most n<sup>2</sup> times its single swaps, every switch arises from exactly two trades, and H ⪯ 2n<sup>2</sup>L. With each switch having probability 1/(12 C(n, 4)) per step, the gap follows, and since there are at most 2<sup>C(n, 2)</sup> graphs, t<sub>mix</sub> ≤ n<sup>8</sup> + 1 ≤ 2n<sup>8</sup>.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Exact chains for 95 degree lists on 5 to 7 vertices: all connected, all mixed within 129 steps (bounds 781,250 to 11,529,602), every spectral gap at least 0.007.</li>
+  <li>The operator H: H<sup>2</sup> − H never negative beyond rounding, kernel the constants, every nonzero eigenvalue at least 2; the trades sum to exactly twice the switch Laplacian, and H is at most that Laplacian (bound 2n<sup>2</sup> times).</li>
+  <li>The three-row inequality reached ratio 2 on 17 of 20 random margin sets, so its factor cannot be lowered.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/main.pdf">Polynomial mixing of the switch chain for every graphical degree sequence (PDF)</a>, 22 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/131.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 131.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Polynomial-Mixing-of-the-Switch-Chain-for-Every-Graphical-Degree-Sequence-September-25-2026/main.pdf">Polynomial mixing of the switch chain for every graphical degree sequence</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Random graphs with given degrees</h3>
+<p>Fix n labeled vertices and a list of degrees: how many neighbours each vertex must have. Usually many simple graphs realize the same list, and drawing one uniformly at random is a basic null model for networks. A natural random walk does it. Pick two edges on four distinct vertices, and if another way of pairing those four vertices uses two absent edges, swap them in. This switch keeps every degree. The question is how many switches it takes before the walk has forgotten where it started. In our check, we built the exact chain for 95 degree lists on 5 to 7 vertices; it always mixed within 129 steps. Kannan, Tetali and Vempala started this program with regular bipartite graphs, and the conjecture that grew from it says the switch chain mixes in polynomial time for every realizable degree list, in the bipartite, directed and simple undirected models. Cooper, Dyer and Greenhill proved it for regular graphs. Later work covered degree lists with quantitative restrictions, and Erdős and coauthors proved it for every family in which nudging the degrees changes the number of graphs by at most a polynomial factor. A 2026 preprint by Fu, Qin and Wang proved the bipartite case. For simple undirected graphs with arbitrary degrees, it was open.</p>
+<h3><span class="t num">1:23</span>The claim</h3>
+<p>Result 131 is a single OpenAI preprint, 22 pages, dated September 25. It claims that for every n ≥ 4 and every graphical degree list, the lazy switch chain mixes to within 1/4 in total variation in at most 2n⁸ steps. The chain stays put with probability one half; otherwise it picks four vertices at random and one of the six ordered pairs of distinct perfect matchings on them, switching only if that is valid. When more than one graph has these degrees, its spectral gap is at least 1/(24 n² C(n, 4)). A corollary is an exactly uniform sampler that uses fair coin flips, stops with probability one, and runs in expected polynomial time. The bound is polynomial, and the paper does not claim it is tight. For seven vertices it allows more than 11 million steps, while our chains mixed in at most 129. The directed version of the conjecture is not addressed. OpenAI published a Lean formalization of the mixing bound, the spectral gap, the exponential total-variation bound and switch connectivity, but not of the exact sampler: 165 files and about 23,000 lines with imports, not counting Mathlib. We have not run the Lean check.</p>
+<h3><span class="t num">2:45</span>How the proof goes</h3>
+<p>The proof works with bigger moves. Pick a pair of vertices. Every other vertex adjacent to exactly one of them can be handed to the other, as long as each of the two keeps its count. Resample that assignment uniformly: this is the undirected curveball trade. Each trade is a conditional expectation, and H is the sum over all pairs of the part each trade removes. The central estimate is that H squared dominates H, so every nonzero eigenvalue of H is at least one. In our check, H squared minus H never had a negative eigenvalue beyond rounding error, on all 95 degree lists, and every nonzero eigenvalue of H was in fact at least two. Squaring H gives terms for pairs of pairs. Two pairs that share a vertex live inside one triple. Encode that triple’s neighbours as a binary matrix with three rows and fixed row and column sums, adding one column for its internal edges when needed. Then a variance inequality, proved in an equivalent form by Fu, Qin and Wang and reproved here: the variance of a sum of three row functions is at most twice the sum of their variances. Empty and full columns are discarded. Every other column has a single one or a single zero, which picks out a row. The proof first handles those label assignments with the counts fixed, by swapping labels, then handles the counts themselves by a coupling. In our check, the ratio reached two on many random margins, even tiny ones, so the factor two cannot be lowered. Two disjoint pairs are harder: their trades do not commute, because both can rewire the four edges between the pairs. The paper shows that each such interaction is at least a switch term minus two errors, projections onto the event that two neighbours land on the same endpoint. A slice inequality bounds the sum of all those errors by the switch energy available, so the total disjoint contribution is never negative. Collecting terms, H squared is at least the sum of the squared triple terms, minus n − 3 copies of H, and since each pair lies in n − 2 triples, that is at least H. Next, any two graphs with the same degrees are joined by switches, by Havel’s classical realization argument, so the kernel of H is the constants and every variance is at most the energy of H. Each pair trade costs at most n² single swaps in comparison, and every switch arises from exactly two pair trades, so H is at most 2n² times the switch Laplacian. Since each particular switch happens with probability 1/(12 C(n, 4)), the gap follows, and since there are at most 2^C(n, 2) graphs, the mixing time is at most n⁸ + 1, within 2n⁸. In our check, the trades add up to exactly twice the switch Laplacian, and the comparison held with plenty of room.</p>
+<h3><span class="t num">5:41</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. The Lean formalization covers the mixing bound, the spectral gap and connectivity, but not the exact sampler; we have not run it. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, the switch chain samples simple graphs with any prescribed degrees, approximately uniformly, in polynomial time, settling the simple undirected case of the Kannan, Tetali and Vempala conjecture. With the bipartite case settled in a recent preprint, the directed case is the one left.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20131%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

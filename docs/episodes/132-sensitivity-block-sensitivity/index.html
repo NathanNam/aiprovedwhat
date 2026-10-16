@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beats sensitivity squared? A superquadratic sensitivity separation | AI Proved What?</title>
+<meta name="description" content="An AI system claims Boolean functions whose block sensitivity beats any constant times sensitivity squared, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/132-sensitivity-block-sensitivity/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Beats sensitivity squared?">
+<meta property="og:description" content="An AI system claims Boolean functions whose block sensitivity beats any constant times sensitivity squared, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/132-sensitivity-block-sensitivity/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/132-sensitivity-block-sensitivity/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 132, October 2026</p>
+<h1>Beats sensitivity squared?</h1>
+<p class="subtitle">A claimed superquadratic gap between sensitivity and block sensitivity, against the quadratic form of the Sensitivity Conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 132 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="SHQKwja61Ec" data-title="Episode 132: Beats sensitivity squared?">
+  <a href="https://youtu.be/SHQKwja61Ec">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 132: Beats sensitivity squared? A four by four grid of zero bits with eight disjoint pairs outlined.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:26. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/SHQKwja61Ec?t=0" data-t="0"><span class="t">0:00</span><span>Sensitivity and block sensitivity</span></a></li>
+  <li><a href="https://youtu.be/SHQKwja61Ec?t=76" data-t="76"><span class="t">1:16</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/SHQKwja61Ec?t=167" data-t="167"><span class="t">2:47</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/SHQKwja61Ec?t=347" data-t="347"><span class="t">5:47</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take a Boolean function of n bits. Its sensitivity at an input counts the single bits whose flip changes the answer; block sensitivity counts how many disjoint blocks of bits can each, flipped on its own, change it. Both are maximized over inputs, and block sensitivity is always at least sensitivity. In Rubinstein’s example on 16 bits, four rows of four, the function is 1 when some row reads exactly 1100 or 0011: at the all-zero input no single flip matters, but eight disjoint pairs do, while no input has sensitivity above 4.</p>
+<p>Nisan introduced block sensitivity in 1989, and the Sensitivity Conjecture asked whether it is bounded by a polynomial in sensitivity. Nisan and Szegedy suggested the bound might be sensitivity squared. Rubinstein’s family reaches half of sensitivity squared, Virza improved it slightly, and Ambainis and Sun reached two thirds. In 2019 Huang proved the conjecture; with Tal’s bound, block sensitivity is at most sensitivity to the fourth. Whether squared is the truth stayed open.</p>
+<p>Result 132 is <a href="https://github.com/openai/math/blob/main/preprints/A-superquadratic-separation-between-sensitivity-and-block-sensitivity-September-25-2026/paper.pdf">one OpenAI preprint</a> (11 pages, September 25, 2026). It claims that no constant C gives bs(f) ≤ C·s(f)<sup>2</sup> for all nonconstant total Boolean functions: for every depth d ≥ 1 it builds a function with bs(f)/s(f)<sup>2</sup> ≥ 2<sup>d</sup>/(4(d + 2)<sup>2</sup>), which grows without bound. Composing a fixed example with itself gives a fixed exponent α above 2 and an unbounded family with bs(F<sub>m</sub>, 0) ≥ s(F<sub>m</sub>)<sup>α</sup>.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The functions are enormous. The guaranteed ratio first passes 1 at depth 9, where the paper takes M ≥ 9<sup>10</sup> (about 3.5 billion) and the function has more than 10<sup>237</sup> input bits; with the smallest allowed M, the exponent is about 2.00025. The paper claims some fixed exponent above 2, not a particular one, and it does not touch Huang’s upper bound of 4. The construction adapts an August 2026 preprint by Alexander Meiburg showing that block sensitivity can exceed spectral sensitivity squared, a weaker statement since spectral sensitivity is at most sensitivity; according to the paper, Meiburg credits GPT-5.6-Sol with its gated tournament ideas.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 11 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The quantitative bound, the unbounded ratio and the fixed exponent. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/132.md">Lean formalization</a> of the quantitative bound, the unbounded ratio and the fixed exponent (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SensitivitySeparation.lean">comparator statement</a>; <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/Sensitivity">51 files and 4,387 lines</a> with its imports, not counting Mathlib, with no unproved steps that we could find). We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The base.</strong> Place M centres in the cube, each the indicator of its own block of L = d + 2 bits, so any two differ in 2L bits. The base predicates accept inputs within distance d, d − 1, …, 0 of some centre: nested Hamming balls. One flip moves the distance by at most one, so no flip switches two of them at once. From the all-zero input, flipping one centre’s block lands on that centre: M disjoint blocks.</li>
+  <li><strong>The recursion.</strong> Each new level splits its input into k = 2M<sup>2</sup> + 1 rows of r = ⌈√M⌉ children. A tournament orients every pair of rows, each row with M<sup>2</sup> outgoing edges, and every edge carries a label: a position in the row it points to. Clause i asks every child in row i to pass the strongest child predicate (targets) and, for each edge i → j, the labelled child of row j to fail a weaker one (gates). The parent accepts when some clause holds. Flipping copies of one child block across a whole row satisfies that row’s clause at zero, so the number of blocks multiplies by k each level.</li>
+  <li><strong>Sensitivity stays small.</strong> A flipped bit lies in one child, so at a rejecting input only clauses failing exactly one condition can switch on. Among those failing one target, an edge between two of them forces its label, and labels fixed by a random-choice argument rule out sixteen such rows. Among those failing one gate, each has at most one outgoing edge inside the set, so there are at most three, and repairing all but one of them needs one bit to switch two child predicates together. Tracking that joint sensitivity gives four coupled recurrences.</li>
+  <li><strong>Counting up, then composing.</strong> With M ≥ 9<sup>d+1</sup>, sensitivity grows by about a factor M per level while blocks grow by k. An OR of M copies evens out the sensitivity at rejecting and accepting inputs: s(f) ≤ 2L·M<sup>d+1</sup> and bs(f, 0) ≥ M<sup>2</sup>k<sup>d</sup>, so the ratio is at least 2<sup>d</sup>/(4L<sup>2</sup>). Composition multiplies sensitivity at most and block sensitivity at zero at least, so a seed that is zero at zero with bs(f, 0) above s(f)<sup>2</sup>, repeated, gives α = log B / log A above 2.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Rubinstein’s 16-bit example: sensitivity 4 over all 65,536 inputs; block sensitivity 8 at the all-zero input.</li>
+  <li>The base family, exactly on nine small cases: S<sub>0,0</sub> = d + 1, S<sub>0,1</sub> = LM, no joint sensitivity.</li>
+  <li>The construction at depths 1 and 2 with M = 3 (up to 17,328 bits per predicate), far too small for the theorem itself: random labels pass the label property on all 969 sixteen-row sets; all 1,083 depth-2 blocks switch every predicate on at zero; every sensitivity a local search found stays within the recurrences, meeting them on the accepting side at the first level (51 of 51, 24 of 24).</li>
+  <li>Composition: both inequalities held on 56 random pairs of small functions.</li>
+  <li>Depth 9 with M = 9<sup>10</sup>: about 3.5 × 10<sup>237</sup> input bits, ratio bound 512/484 ≈ 1.058, exponent ≈ 2.00025.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-superquadratic-separation-between-sensitivity-and-block-sensitivity-September-25-2026/paper.pdf">A superquadratic separation between sensitivity and block sensitivity (PDF)</a>, 11 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/132.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 132.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-superquadratic-separation-between-sensitivity-and-block-sensitivity-September-25-2026/paper.pdf">A superquadratic separation between sensitivity and block sensitivity</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Sensitivity and block sensitivity</h3>
+<p>Take a Boolean function of n bits. Its sensitivity at an input counts the single bits whose flip changes the answer, and the sensitivity of the function is the largest such count. Block sensitivity allows groups instead: how many disjoint blocks of bits can each, flipped on its own, change the answer? Here is Rubinstein’s example on 16 bits, in four rows of four. The function is one when some row reads exactly 1100, or 0011. At the all-zero input no single flip changes anything, but eight disjoint pairs do, so the block sensitivity is eight. In our check, no input had sensitivity above four. Nisan introduced block sensitivity in 1989, and the Sensitivity Conjecture asked whether it is bounded by a polynomial in sensitivity. Nisan and Szegedy suggested the bound might be sensitivity squared. Rubinstein’s family reaches half of sensitivity squared; Virza improved it slightly, and Ambainis and Sun reached two thirds. In 2019 Huang proved the conjecture, and with Tal’s bound, block sensitivity is at most sensitivity to the fourth. Whether squared is the truth stayed open.</p>
+<h3><span class="t num">1:16</span>The claim</h3>
+<p>Result 132 is a single OpenAI preprint, 11 pages, dated September 25. It claims that no constant times sensitivity squared bounds block sensitivity. For every depth d ≥ 1, it builds a nonconstant function whose block sensitivity divided by sensitivity squared is at least 2^d / (4(d + 2)²). That grows without bound. Composing one fixed example with itself then gives a fixed exponent alpha, greater than two, and an unbounded family with block sensitivity at least sensitivity to the alpha. These functions are enormous. The guaranteed ratio first passes one at depth nine, where the paper takes a size parameter M of at least 9¹⁰, about 3.5 billion, and the function has more than 10²³⁷ input bits. With the smallest allowed M, alpha is about 2.00025, just above two. The construction adapts an August 2026 preprint by Alexander Meiburg showing that block sensitivity can exceed spectral sensitivity squared, a weaker statement; according to the paper, Meiburg credits GPT-5.6-Sol with its gated tournament ideas. OpenAI published a Lean formalization of all three statements: 51 files and about 4,400 lines, not counting Mathlib. We have not run the Lean check.</p>
+<h3><span class="t num">2:47</span>How the proof goes</h3>
+<p>The construction is recursive and starts small. Place M far-apart centres in the cube, each the indicator of its own block of d + 2 bits. The base predicates accept inputs within distance d of some centre, then d − 1, down to zero: nested Hamming balls. One flip moves the distance by at most one, so no flip changes two of these predicates at once. From the all-zero input, flipping one centre’s block lands exactly on that centre, giving M disjoint blocks. At each new level, the input splits into k rows of r children, with k equal to 2M² + 1 and r about √M. A tournament orients every pair of rows, giving each row M² outgoing edges, and every edge carries a label: one position in the row it points to. Clause i asks every child in row i to pass the strongest child predicate, and for each edge from i, the labelled child to fail a weaker one. The parent accepts when some clause holds. At zero, flipping copies of one child block across a whole row satisfies that row’s clause, because its gates sit in other rows, so the number of blocks multiplies by k at every level. The hard part is keeping sensitivity small. A flipped bit lies in one child, so it can repair only one condition of a clause. Take a rejecting input and the clauses that fail exactly one condition. If two of them each fail one target, and one points to the other, the label on that edge is forced, and the labels can be fixed, by a random-choice argument, so that no 16 rows ever line up this way. If they each fail one gate, each has at most one outgoing edge among them, so there are at most three. Repairing all but one of those needs one bit to flip two child predicates together, so the proof tracks that joint sensitivity as well. In our check, we built depths one and two with M equal to three, more than 17,000 bits per predicate, a size far too small for the theorem itself. All 1,083 blocks worked, and every sensitivity our search found stayed within the paper’s recurrences. With M at least 9^(d+1), sensitivity grows by about a factor M per level while the blocks grow by k, about 2M². An OR of M disjoint copies evens out the sensitivity at rejecting and accepting inputs, giving sensitivity at most 2L·M^(d+1), and block sensitivity at zero at least M²·k^d. The ratio is at least 2^d / (4L²). For the fixed exponent, composing functions multiplies sensitivity at most and block sensitivity at zero at least, so a seed that is zero at the all-zero input, with block sensitivity there above its sensitivity squared, repeated, gives alpha above two. In our check, both composition inequalities held on 56 random pairs of small functions.</p>
+<h3><span class="t num">5:47</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. The Lean formalization covers the quantitative bound, the unbounded ratio and the fixed exponent; we have not run it. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, the quadratic strengthening of the Sensitivity Conjecture is false: block sensitivity can beat any constant times sensitivity squared, and even a fixed power above two. The true exponent now lies somewhere between just above two and the four from Huang’s theorem.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20132%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
