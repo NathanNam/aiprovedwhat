@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 199: Counterexamples to Auslander–Reiten, Tachikawa and related homological conjectures | AI Proved What?</title>
-<meta name="description" content="Counterexamples to Auslander–Reiten, Tachikawa and related homological conjectures. Result 199 in OpenAI&#x27;s math release (Algebra): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>No gluing, not projective? Auslander–Reiten and Tachikawa | AI Proved What?</title>
+<meta name="description" content="AI preprints claim a nonprojective module with no positive self-extensions, disproving the Auslander–Reiten conjecture, Tachikawa&#x27;s second conjecture and the Nakayama conjecture family. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/199-counterexamples-auslander-reiten-tachikawa-related/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 199: Counterexamples to Auslander–Reiten, Tachikawa and related homological conjectures | AI Proved What?">
-<meta property="og:description" content="Counterexamples to Auslander–Reiten, Tachikawa and related homological conjectures. Result 199 in OpenAI&#x27;s math release (Algebra): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="No gluing, not projective?">
+<meta property="og:description" content="AI preprints claim a nonprojective module with no positive self-extensions, disproving the Auslander–Reiten conjecture, Tachikawa&#x27;s second conjecture and the Nakayama conjecture family. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/199-counterexamples-auslander-reiten-tachikawa-related/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/199-counterexamples-auslander-reiten-tachikawa-related/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,35 +37,99 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 199 · <a href="../../subjects/algebra/">Algebra</a></p>
-<h1 class="result-title">Counterexamples to Auslander–Reiten, Tachikawa and related homological conjectures</h1>
+<p class="meta">Episode 199, October 2026</p>
+<h1>No gluing, not projective?</h1>
+<p class="subtitle">Two preprints claim a module with no positive self-extensions that is not projective, disproving the Auslander–Reiten conjecture, Tachikawa’s second conjecture and the Nakayama conjecture family over a characteristic-two field</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 199 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="F5W6KqZ2z7E" data-title="Episode 199: No gluing, not projective?">
+  <a href="https://youtu.be/F5W6KqZ2z7E">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 199: No gluing, not projective? A row of degree cells, only degree 0 lit, and a two-by-two matrix of twist weights.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:24. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/F5W6KqZ2z7E?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/F5W6KqZ2z7E?t=100" data-t="100"><span class="t">1:40</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/F5W6KqZ2z7E?t=207" data-t="207"><span class="t">3:27</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/F5W6KqZ2z7E?t=338" data-t="338"><span class="t">5:38</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Constructs finite-dimensional algebras over a characteristic-two rational-function field that disprove the Auslander–Reiten and Gorenstein-projective conjectures, and Tachikawa's second conjecture. An associated endomorphism algebra also disproves the classical, generalized and strong Nakayama conjectures, the Auslander–Gorenstein conjecture, and the Wakamatsu tilting conjecture. The counterexamples persist under every extension of the base field.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>For a module over a finite-dimensional algebra, the Ext groups in degrees 1, 2, 3, … measure the ways to glue it onto another module. The best-behaved modules, the projective ones, glue onto nothing: their Ext groups into any module vanish in every positive degree. Typical modules are the opposite: over polynomials with x² = 0 the one-dimensional module glues onto itself in every degree, and over the quantum exterior algebra of Schulz’s example a two-dimensional module still glues onto itself in degree one (our computations).</p>
+<p>The Auslander–Reiten conjecture, which the paper traces to Maurice Auslander and Idun Reiten’s 1975 work on the generalized Nakayama conjecture, asks: if a module has no positive gluings onto itself and none onto the algebra, must it be projective? For self-injective algebras it is Tachikawa’s second conjecture. As the papers tell it, it was proved for commutative complete intersections, for many other commutative rings and for algebras with radical cube zero; near misses include Schulz’s module, which fails only in degree one, and an example of Böhmler and Marczinzik with no self-extensions in degrees one and two but one in degree three.</p>
+<p>Result 199 bundles two OpenAI preprints, both dated September 23, 2026. <a href="https://github.com/openai/math/blob/main/preprints/An-explicit-counterexample-to-the-Auslander-Reiten-conjecture-September-23-2026/paper.pdf">The first</a> (30 pages) claims: over the field 𝔽<sub>2</sub>(q, H<sub>1</sub>, H<sub>2</sub>) of rational functions in three letters with coefficients mod 2, there are a finite-dimensional algebra with eight simple modules and a nonprojective module with no positive gluings onto itself or onto the algebra, and all of it survives every extension of the field. The module is Gorenstein-projective, so the Gorenstein-projective conjecture fails too. <a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-Tachikawas-second-conjecture-September-23-2026/paper.pdf">The second</a> (39 pages) does the same over a symmetric algebra, so Tachikawa’s second conjecture fails. From that symmetric example, a classical construction gives an algebra whose injective resolution has only projective terms, yet which is not self-injective: the classical, generalized and strong Nakayama conjectures, the Auslander–Gorenstein conjecture and the Wakamatsu tilting conjecture fail, and the same algebra has modules of projective dimension exactly n for every n, an independent characteristic-two answer to the question of result 198.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Other characteristics; finite fields or the algebraic closure of 𝔽<sub>2</sub>, since q must not be a root of unity, and neither may H<sub>1</sub>/H<sub>2</sub>; or the commutative version, which the paper says stays open. The first paper calls its construction explicit, and its ten-dimensional seed is printed in full, but by our count, built literally as described, its final algebra would have about 10<sup>35</sup> dimensions.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 30 and 39 pages, both dated September 23, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/199.md">scope notes</a>)</dd>
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean: both main theorems</dt>
+    <dd>OpenAI’s Lean proofs; not run by us</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>The consequences in Lean</dt>
+    <dd>Nakayama family, Wakamatsu, finitistic: not formalized</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 16, 2026. Neither preprint has been revised since the repository’s initial commit on October 6, 2026. OpenAI’s <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/AuslanderReiten.lean">comparator statements</a> match both main theorems, and the <a href="https://github.com/openai/math/blob/main/lean/docs/199.md">Lean proofs</a> have no sorry, admit, axiom or native_decide in code by our search: 732 files and about 55,500 lines for the Auslander–Reiten example, including the field extensions (<a href="https://github.com/openai/math/blob/main/lean/OAI/Algebra/AuslanderReiten">source</a>), and 31 files and about 28,900 lines for the Tachikawa example. The Nakayama-family and finitistic consequences are not formalized. We did not run the check. Neither paper is among those OSVerify reviewed, and we found no expert reaction.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A seed that almost works.</strong> A ten-dimensional algebra with a full multiplication table and one parameter q. Its simple module s has a resolution that never stops; after the first step, each one multiplies by x + q<sup>i</sup>y, with the power going up by one each time. Since q is not a root of unity, the pattern never breaks, and s has no self-gluings at all, only one gluing onto the algebra, in degree two.</li>
+  <li><strong>A degree-three self-gluing.</strong> Doubling the algebra into a symmetric one of dimension 20 turns that stray class into a self-gluing τ of degree three, and its powers are all the self-gluings: degrees 0, 3, 6, 9, …. A degree-three cocycle with 179 terms, printed in the appendix, gives a degree-three gluing on every module at once, equal to τ on s.</li>
+  <li><strong>Two copies and cones.</strong> With two copies, the self-gluings sit in degrees 3m, m + 1 of them in each. Cones cut this down: maps from the module into the cone object form just two lines, in degrees 0 and 3.</li>
+  <li><strong>Two twists that disagree.</strong> Rescaling half of the doubled algebra by a constant H leaves the module alone but multiplies the degree-3m gluings by H<sup>−m</sup>. With H<sub>1</sub> and H<sub>2</sub>, degree 3m gives the matrix with rows (H<sub>1</sub><sup>−m</sup>, 1) and (H<sub>2</sub><sup>−m</sup>, 1), invertible because H<sub>1</sub><sup>m</sup> ≠ H<sub>2</sub><sup>m</sup>; the disagreement cancels every positive self-gluing. A triangular algebra built from this pair carries the final module: nothing in positive degrees, something in degree 0, so it is not projective.</li>
+  <li><strong>The symmetric version.</strong> The second paper takes a different route, adding vanishing in negative degrees, so that a trivial extension makes the algebra symmetric; then the endomorphism algebra gives the Nakayama family.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Exact checks (ours): the seed and its doubling are associative and the doubling is symmetric; the appendix cocycle’s closure holds on all 15,250 four-letter cases and its boundary identities on all 324 pairs.</li>
+  <li>Self-extension patterns (ours, over a large finite field of characteristic 2): over the seed, s has none and one gluing onto the algebra in degree 2; over the doubling, degrees 0, 3, 6, …, 15; over two copies, 1, 0, 0, 2, 0, 0, 3 in degrees 0 to 6.</li>
+  <li>Toys (ours): polynomials with x² = 0 glue in every degree; Schulz’s example only in degree 1 for q of huge order, in every degree for q = 1.</li>
+  <li>The size estimate (about 1.7 × 10<sup>35</sup>) and the Lean counts are ours.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-explicit-counterexample-to-the-Auslander-Reiten-conjecture-September-23-2026/paper.pdf">An explicit counterexample to the Auslander-Reiten conjecture (PDF)</a>, 30 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-Tachikawas-second-conjecture-September-23-2026/paper.pdf">A counterexample to Tachikawa’s second conjecture (PDF)</a>, 39 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/199.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 199.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -75,18 +138,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-Tachikawas-second-conjecture-September-23-2026/paper.pdf">A counterexample to Tachikawa's second conjecture</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Take a finite-dimensional algebra and a module over it. The best-behaved modules are the projective ones, built from pieces of the algebra itself. For any two modules, groups called Ext, one in each degree, one, two, three and so on, measure the ways to glue one module onto the other. A projective module has no such gluings onto anything: its Ext groups into any module vanish in every positive degree. Typical modules are the opposite. Over polynomials with x² equal to zero, the one-dimensional module glues onto itself in every degree. Over Schulz’s example, a quantum exterior algebra with a parameter q that is not a root of unity, a two-dimensional module’s self-gluings vanish in every degree except the first. If q equals one, they never vanish. These are our small computations. So the question: if a module has no positive gluings onto itself, and none onto the algebra either, must it be projective? This is the Auslander–Reiten conjecture, which the paper traces to Maurice Auslander and Idun Reiten’s work of 1975 on the generalized Nakayama conjecture. For self-injective algebras, where gluings onto the algebra vanish automatically, it is Tachikawa’s second conjecture. As the papers tell it, it was proved for commutative complete intersections, for many other commutative rings, and for algebras whose radical cubed is zero. There were near misses: Schulz’s module, which fails only in degree one, and a recent example with no self-gluings in degrees one and two, but one in degree three.</p>
+<h3><span class="t num">1:40</span>The claim</h3>
+<p>Result 199 bundles two OpenAI preprints, both dated September 23, 2026. The first, 30 pages, claims: over the field of rational functions in three letters, q, H₁ and H₂, with coefficients mod two, there is a finite-dimensional algebra and a module that is not projective, yet has no positive gluings onto itself or onto the algebra. The algebra has eight simple modules, and everything survives any extension of the field. The module is also Gorenstein-projective, so a second conjecture falls with it. The second paper, 39 pages, does the same over a symmetric algebra, so Tachikawa’s second conjecture fails too. From that symmetric example, a classical construction gives a new algebra whose injective resolution has only projective terms, yet which is not self-injective. So the Nakayama conjecture fails, along with its generalized and strong versions, the Auslander–Gorenstein conjecture, and the Wakamatsu tilting conjecture. The same algebra has modules of projective dimension exactly n, for every n: an independent answer, in characteristic two, to the question of the last episode. Not claimed: other characteristics; finite fields, or the algebraic closure of the two-element field, since q must not be a root of unity, and neither may H₁/H₂; or the commutative version, which the paper says stays open. The first paper calls its construction explicit, and its 10-dimensional seed is printed in full. But by our count, built literally as described, its final algebra would have about 10³⁵ dimensions.</p>
+<h3><span class="t num">3:27</span>How the proof goes</h3>
+<p>The proof starts from a 10-dimensional algebra, with a full multiplication table and one parameter q. Its one-dimensional simple module s has a resolution that never stops, and after the first step, each one multiplies by x plus a power of q times y, with the power going up by one each time. Since q is not a root of unity, the pattern never breaks, and s has no self-gluings at all. It fails only once: one gluing onto the algebra, in degree two. Doubling the algebra into a symmetric one of dimension 20 turns that stray class into a self-gluing of degree three, and its powers are now all the self-gluings: degrees 0, 3, 6, 9, and so on. Our computations reproduce both patterns. One formula, a degree-three cocycle with 179 terms printed in the appendix, produces a degree-three gluing on every module at once; on s it is this one. We checked its closure condition on all 15,250 cases, and its boundary identities on all 324 pairs. Next, take two copies of everything. The self-gluings now sit in degrees 3m, with m + 1 of them in each. Cones cut this down: maps from the module into the cone object form just two lines, in degrees 0 and 3. Now the key trick. Rescaling half of the doubled algebra by a constant H leaves the module alone, but multiplies the degree 3m gluings by H^(−m). Do it twice, with H₁ and H₂, and compare: in degree 3m you get a 2×2 matrix with rows H₁^(−m), one, and H₂^(−m), one. It is invertible, because H₁^m never equals H₂^m. The two twists disagree on every positive self-gluing, and that disagreement cancels all of them. A triangular algebra built from this pair carries the final module: no positive gluings, but in degree zero something survives, so the module is not projective. The second paper adds vanishing in negative degrees, so that a trivial extension makes the algebra symmetric.</p>
+<h3><span class="t num">5:38</span>Where it stands</h3>
+<p>Both preprints are unrefereed and unrevised. Their main theorems are formalized in Lean: about 55,000 lines for the Auslander–Reiten example, including the field extensions, and about 29,000 for the Tachikawa example, with no unfinished proofs. We did not run the check. The Nakayama family and the finitistic consequences are not formalized. Neither paper is among those OSVerify reviewed, and we found no expert reaction. If it holds, a module can refuse every gluing, onto itself and onto the algebra, in every positive degree, and still not be projective.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20199%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../198-counterexample-finitistic-dimension-finiteness/"><span class="dir">Previous · 198</span><span class="pt">A counterexample to finitistic-dimension finiteness</span></a>
-  <a class="next" href="../200-eisenbud-green-harris-lex-plus/"><span class="dir">Next · 200</span><span class="pt">Eisenbud–Green–Harris and lex-plus-powers</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebra/">More in algebra</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
