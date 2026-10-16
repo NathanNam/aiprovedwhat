@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 198: A counterexample to finitistic-dimension finiteness | AI Proved What?</title>
-<meta name="description" content="A counterexample to finitistic-dimension finiteness. Result 198 in OpenAI&#x27;s math release (Algebra): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>No ceiling? The little finitistic-dimension conjecture | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims a finite-dimensional complex algebra with finite projective resolutions of unbounded length, disproving the little finitistic-dimension conjecture. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/198-counterexample-finitistic-dimension-finiteness/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 198: A counterexample to finitistic-dimension finiteness | AI Proved What?">
-<meta property="og:description" content="A counterexample to finitistic-dimension finiteness. Result 198 in OpenAI&#x27;s math release (Algebra): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="No ceiling?">
+<meta property="og:description" content="An AI preprint claims a finite-dimensional complex algebra with finite projective resolutions of unbounded length, disproving the little finitistic-dimension conjecture. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/198-counterexample-finitistic-dimension-finiteness/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/198-counterexample-finitistic-dimension-finiteness/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 198 · <a href="../../subjects/algebra/">Algebra</a></p>
-<h1 class="result-title">A counterexample to finitistic-dimension finiteness</h1>
+<p class="meta">Episode 198, October 2026</p>
+<h1>No ceiling?</h1>
+<p class="subtitle">A preprint claims one finite-dimensional complex algebra whose finite projective resolutions have no bound on their length, disproving the little finitistic-dimension conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 198 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="Wud79Vygfxk" data-title="Episode 198: No ceiling?">
+  <a href="https://youtu.be/Wud79Vygfxk">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 198: No ceiling? A row of switches, four plus and one minus, above bars of growing height.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:10. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/Wud79Vygfxk?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/Wud79Vygfxk?t=107" data-t="107"><span class="t">1:47</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/Wud79Vygfxk?t=179" data-t="179"><span class="t">2:59</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/Wud79Vygfxk?t=317" data-t="317"><span class="t">5:17</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Constructs a finite-dimensional complex algebra whose finite-dimensional modules have unbounded finite projective dimensions. This disproves the little finitistic-dimension conjecture.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A finite-dimensional algebra, like square matrices or polynomials with x² = 0, acts on modules. The best-behaved modules are the projective ones, built from pieces of the algebra itself, and any module can be resolved into them step by step: cover it by a projective module, take what the cover overshoots, cover that, and repeat. If this stops, the number of steps is the module’s projective dimension. It need not stop: over polynomials with x² = 0, the one-dimensional module reproduces itself forever. Resolutions that stop can be long, but in the easy examples (a chain of n arrows, where the first simple module takes exactly n steps) the algebra grows with n.</p>
+<p>The question, which Hyman Bass made widely known in 1960: fix one algebra; among its finite-dimensional modules whose resolutions stop, is there a ceiling on the number of steps? That ceiling is the little finitistic dimension, and the conjecture says it is always finite; the big version allows all modules. As the paper tells it, Huisgen-Zimmermann showed in 1992 that the big and little versions can differ (both finite in her examples), and finiteness was proved for monomial algebras (Green, Kirkman and Kuzmanovich), for radical cube zero (Green and Huisgen-Zimmermann) and for representation dimension at most three (Igusa and Todorov).</p>
+<p>Result 198 is one OpenAI preprint, <a href="https://github.com/openai/math/blob/main/preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/paper.pdf">An algebra of infinite little finitistic dimension</a> (24 pages, dated September 23, 2026). Its Theorem 1.1: there is a finite-dimensional complex algebra A, fixed before m varies, and for every m ≥ 1 a finite-dimensional module N<sub>m</sub> with 2m − 2 ≤ pd N<sub>m</sub> &lt; ∞. So the little finitistic dimension of A is infinite, and the big one too. Using theorems of Cummings, the paper also gets an algebra whose finitistic dimensions are infinite on one side and zero on the other (Corollary 1.2).</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>An explicit algebra: it is built from choices made in a localized category of complexes, and its arrows, relations and dimension are never written down. Exact projective dimensions: only the lower bound 2m − 2, which says nothing when m = 1. Fields other than the complex numbers. The question of big versus little, settled in 1992. A companion paper of the same day (result 199) gives an independent example in characteristic two.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, 24 pages, dated September 23, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,42 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/198.md">scope notes</a>)</dd>
+    <dd>OpenAI’s Lean proofs of the theorem and the left–right corollary; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 16, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI’s <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/LittleFinitistic.lean">comparator statement</a> matches Theorem 1.1 exactly, a second one matches the left–right corollary, and the <a href="https://github.com/openai/math/blob/main/lean/docs/198.md">Lean proofs</a> have no sorry, admit, axiom or native_decide in code by our search: 546 files and about 45,200 lines for the theorem, about 50,200 with the corollary, excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Algebra/Finitistic">source</a>). Like the paper, the Lean proof works with one algebra fixed by choices, not written out. We did not run the check. The paper is not among those OSVerify reviewed, and we found no expert reaction. Result 199 reaches the same conclusion in characteristic two by a different route (that corollary is not in Lean).</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A countdown inside a group.</strong> A group with 15 generators and finitely many relations contains an infinite row of central switches z<sub>0</sub>, z<sub>1</sub>, z<sub>2</sub>, …, each squaring to 1, and a symmetry slides the row along by one place. 5×5 matrix pictures over 𝔽<sub>2</sub>[t]/(t<sup>m</sup> − 1) show the first m switches as independent. One step keeps the part of a module where the first switch is +1, then slides; a test module with m − 1 pluses and then a minus survives m − 1 steps and dies on the m-th.</li>
+  <li><strong>Into a finite-dimensional algebra.</strong> The group algebra is encoded in an algebra B with three vertices, over which every module resolves within two steps. One fixed complex of bimodules performs keep-and-slide on every test module at once; the kept part is used twice, the second copy shifted by three steps, and since three is more than two, the leftover mixing vanishes (Theorem 4.1).</li>
+  <li><strong>An ordinary bimodule.</strong> A chain algebra spreads this complex out into an ordinary bimodule X, so that applying X twice performs one step of the countdown (Proposition 5.1).</li>
+  <li><strong>Counting uses of X.</strong> A is a larger algebra extended by X, with X·X = 0. For modules from the smaller algebra, a resolution over A sorts itself by how many times X is used: if applying X enough times gives zero, it stops; if applying it r times does not, it needs at least r steps. The m-th test module survives 2m − 2 applications of X and dies at 2m, and everything except the test module was fixed in advance.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Toy resolutions (ours): over k[x]/(x²) the simple module never stops; chain algebras with n = 1 to 6 arrows (dimension 2n + 1): the first simple module takes exactly n steps.</li>
+  <li>13 small cyclic Nakayama algebras (ours; monomial, so finiteness is already known): the ceiling is finite in each, at most 4.</li>
+  <li>A radical-square-zero toy of the last step (ours): a simple module’s projective dimension is the longest path leaving its vertex (∞, ∞, ∞, 1, 0).</li>
+  <li>The paper’s 5×5 matrices satisfy every defining relation for m up to 8 (ours); the countdown survives m − 1 steps. The Lean counts are ours.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/paper.pdf">An algebra of infinite little finitistic dimension (PDF)</a>, 24 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/198.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 198.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -74,18 +131,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/An-algebra-of-infinite-little-finitistic-dimension-September-23-2026/paper.pdf">An algebra of infinite little finitistic dimension</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Take an algebra: a finite-dimensional space of things you can add and multiply, like square matrices, or polynomials in which x² counts as zero. It acts on modules, much as matrices act on vectors. The best-behaved modules are the projective ones, built from pieces of the algebra itself. Any module can be resolved into them, step by step: cover it by a projective module, take what the cover overshoots, cover that, and repeat. If this stops, the number of steps is the module’s projective dimension. It need not stop. Over polynomials with x² equal to zero, the one-dimensional module reproduces itself at every step, forever. And resolutions that stop can be long: over a chain of n arrows, where two arrows in a row give zero, the first simple module takes exactly n steps. But that algebra grows with n. So the question, which Hyman Bass made widely known in 1960: fix one algebra. Among its finite-dimensional modules whose resolutions do stop, is there a ceiling on the number of steps? That ceiling is the little finitistic dimension, and the conjecture says it is always finite. The big version allows infinite-dimensional modules too. As the paper tells it, Huisgen-Zimmermann showed in 1992 that the big and little versions can differ, but in her examples both are finite. Finiteness was proved for monomial algebras, by Green, Kirkman and Kuzmanovich; for algebras whose radical cubed is zero, by Green and Huisgen-Zimmermann; and for algebras of representation dimension at most three, by Igusa and Todorov. In our 13 small examples, all monomial, every algebra had a ceiling, at most 4.</p>
+<h3><span class="t num">1:47</span>The claim</h3>
+<p>Result 198 is one OpenAI preprint, 24 pages, dated September 23, 2026. It claims: there is a finite-dimensional algebra over the complex numbers, fixed once and for all, and for every m a finite-dimensional module whose resolution stops, but only after at least 2m − 2 steps. So the little finitistic dimension of this algebra is infinite, and the big one too. Using theorems of Cummings, the paper also gets an algebra whose finitistic dimensions are infinite on one side and zero on the other. Not claimed: an explicit algebra. The paper builds it from choices made in a localized category of complexes, and never writes down its arrows, its relations, or even its dimension. Nor exact projective dimensions: only the lower bound 2m − 2, which says nothing when m = 1. Only the complex numbers are claimed. And this is not the question of big versus little, settled in 1992. A companion paper of the same day, result 199, gives an independent example in characteristic two.</p>
+<h3><span class="t num">2:59</span>How the proof goes</h3>
+<p>The engine is a countdown inside a group. The group has 15 generators and finitely many relations, yet it contains an infinite row of central switches, z₀, z₁, z₂, and so on, each squaring to one. A symmetry of the group slides the row along by one place. 5×5 matrix pictures of the group, over a finite ring of characteristic two, show the first m switches as independent. Now define one step: keep only the part of a module where the first switch is +1, then slide. Build a test module with the first m − 1 switches set to +1, and the next to −1. It survives m − 1 steps, and dies on the m-th. We checked the paper’s matrices for m up to 8. The rest of the paper moves this countdown into a finite-dimensional algebra. First, the group algebra is encoded in an algebra B with three vertices, over which every module resolves within two steps. Then comes the hard part: one fixed complex of bimodules that performs keep-and-slide on every test module at once. The kept part may not split off by itself, so the paper uses it twice, the second copy shifted by three steps; since three is more than two, the leftover mixing vanishes. A chain algebra then spreads this complex out into an ordinary bimodule X, so that applying X twice performs one step of the countdown. Finally, take A to be a larger algebra extended by X, with X·X equal to zero. A resolution over A sorts itself by how many times X is used, at least for modules coming from the smaller algebra. If applying X enough times gives zero, the resolution stops; if applying it r times does not, the resolution needs at least r steps. Our toy shows the mechanism: with plain vertices and X made of arrows, a simple module’s projective dimension is the longest path leaving its vertex, and from a vertex that can reach a cycle, the resolution never ends. In the paper, the m-th test module survives 2m − 2 applications of X and dies at 2m. So its resolution stops, after at least 2m − 2 steps. Everything except the test module was fixed in advance.</p>
+<h3><span class="t num">5:17</span>Where it stands</h3>
+<p>The preprint is unrefereed and has not been revised. OpenAI’s Lean statements match the main theorem and the left-right corollary, and their proofs have no unfinished steps: 546 files and about 45,000 lines for the theorem, about 50,000 with the corollary. We did not run the check. Like the paper, the Lean proof works with one algebra fixed by choices, not written out. The paper is not among those OSVerify reviewed, and we found no expert reaction. Result 199, on the same date, reaches the same conclusion in characteristic two by a different route. If it holds, one fixed algebra can have resolutions that stop after as many steps as you like, and Bass’s finiteness question has a negative answer.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20198%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../197-torsion-free-group-algebra-not/"><span class="dir">Previous · 197</span><span class="pt">A torsion-free group algebra that is not directly finite</span></a>
-  <a class="next" href="../199-counterexamples-auslander-reiten-tachikawa-related/"><span class="dir">Next · 199</span><span class="pt">Counterexamples to Auslander–Reiten, Tachikawa and related homological conjectures</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebra/">More in algebra</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
