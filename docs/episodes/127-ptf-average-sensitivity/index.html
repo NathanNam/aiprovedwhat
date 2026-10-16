@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How sensitive can it be? Average sensitivity of polynomial threshold functions | AI Proved What?</title>
+<meta name="description" content="An AI system claims that every polynomial threshold function of degree d has average sensitivity at most 8d√n, the asymptotic Gotsman–Linial conjecture, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/127-ptf-average-sensitivity/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="How sensitive can it be?">
+<meta property="og:description" content="An AI system claims that every polynomial threshold function of degree d has average sensitivity at most 8d√n, the asymptotic Gotsman–Linial conjecture, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/127-ptf-average-sensitivity/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/127-ptf-average-sensitivity/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 127, October 2026</p>
+<h1>How sensitive can it be?</h1>
+<p class="subtitle">A claimed bound of 8d√n on the average sensitivity of polynomial threshold functions, the asymptotic Gotsman–Linial conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 127 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="H1b_SN290uA" data-title="Episode 127: How sensitive can it be?">
+  <a href="https://youtu.be/H1b_SN290uA">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 127: How sensitive can it be? The 4-cube drawn by levels, signed by a degree-2 polynomial in the number of pluses, with its sensitive edges in red.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:10. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/H1b_SN290uA?t=0" data-t="0"><span class="t">0:00</span><span>Threshold functions and sensitivity</span></a></li>
+  <li><a href="https://youtu.be/H1b_SN290uA?t=97" data-t="97"><span class="t">1:37</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/H1b_SN290uA?t=187" data-t="187"><span class="t">3:07</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/H1b_SN290uA?t=389" data-t="389"><span class="t">6:29</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take the Boolean cube: all strings of n pluses and minuses. A polynomial threshold function of degree d labels each corner by the sign of a real polynomial of degree at most d; degree one gives a halfspace, such as majority. Its average sensitivity, also called total influence, is the expected number of coordinates that change the label when flipped one at a time, at a random corner. Majority has average sensitivity about √(2/π)·√n. Taking the sign of a degree-d polynomial in the number of pluses, with one root in each of the d gaps between levels closest to the middle, gives about d√n, as long as d is at most about √n.</p>
+<p>In 1994 Gotsman and Linial conjectured that these symmetric functions are the extreme ones. That exact form was refuted by Chapman, and independently by Kim, Maldonado and Wellens. The asymptotic form, average sensitivity at most a constant times d√n, stayed open. Harsha, Klivans and Meka, and Diakonikolas, Raghavendra, Servedio and Tan, proved bounds growing more slowly than n for each fixed degree; Kane reached √n up to factors that grow with d.</p>
+<p>Result 127 is <a href="https://github.com/openai/math/blob/main/preprints/Average-Sensitivity-of-Polynomial-Threshold-Functions-September-25-2026/main.pdf">one OpenAI preprint</a> (13 pages, September 25, 2026). It claims that every polynomial threshold function of degree at most d on n variables has average sensitivity at most 8d√n, for every n and every d from 1 to n. The polynomial may vanish on the cube, with the sign of zero taken as +1, and no regularity is assumed; the constant is absolute and d may grow with n. With the symmetric examples, this pins the largest possible average sensitivity at order d√n whenever d is at most √n; beyond that the trivial bound n takes over. The paper also derives a noise-sensitivity bound of at most a constant times d√η at noise rate η, and an agnostic learning algorithm under the uniform distribution.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The paper makes no claim that the constant 8 is the best possible; the symmetric examples sit near 0.8, ten times lower. It does not determine which functions are exactly extremal; the original symmetric guess is already known to fail. And the bound adds something only when n exceeds 64d², since average sensitivity is never more than n.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 13 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The main theorem, not the corollaries. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/127.md">Lean formalization</a> of the main theorem: for a multilinear real polynomial of total degree at most d with 1 ≤ d ≤ n, the average sensitivity of its sign, with the sign of zero equal to 1, is at most 8·d·√n (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/GotsmanLinial.lean">comparator statement</a>; <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/GotsmanLinial">22 files and 4,022 lines</a> with its imports, not counting Mathlib, with no unproved steps that we could find). The noise-sensitivity and learning consequences are not part of it. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A one-sided coupling lemma.</strong> If U and V have the same distribution, with variance σ², and V − U is never more than a, then E(U − V)² ≤ 8aσ, even though U − V may be large. The function g(t) = ½(t − m)|t − m|, a primitive of the distance to the mean m, has increments of at least a quarter of the squared gap; equal laws make its expected change zero, so its total change is twice its upward change, and each upward step is at most a times the distance to the mean, which averages to at most σ.</li>
+  <li><strong>A weighted grading.</strong> Multiply the polynomials of degree at most k by the square root of a positive weight and orthogonalize: the layers have dimension C(n, k). Give the k-th layer the eigenvalue k − n/2. With the constant weight this operator is −½ times the cube’s adjacency matrix; for any weight its squared Hilbert–Schmidt norm is n·2ⁿ/4, and multiplying by a coordinate links each layer only to itself and its neighbours. Together these show that each edge entry has size at most ½, and that the total shortfall on edges is at most twice the squared mass on the diagonal.</li>
+  <li><strong>Edges from the anticommutator.</strong> For a sign function h, the anticommutator with multiplication by h kills every entry where h differs and doubles, up to sign, every entry where h agrees, so the number of edges where h agrees is at most twice its squared norm. With h equal to f times the full parity, those edges are exactly the sensitive edges of f.</li>
+  <li><strong>The binomial coupling.</strong> Take the weight to be |p|, after a tiny shift that removes zeros without changing signs. Multiplying p by parity moves its Fourier support to degrees at least n − d, so the blocks of h between layers r and s vanish when r + s &lt; n − d. Their squared norms form a law on pairs of layers with binomial marginals; with U = s and V = n − r, the vanishing says V − U ≤ d, and the anticommutator’s squared norm over 2ⁿ is E(U − V)². The lemma with σ = √n/2 bounds this by 4d√n, and the edge count gives 8d√n.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>The symmetric examples, for n = 25 to 1,600 and d = 1, 2, 5, have average sensitivity between 0.69 and 0.81 times d√n, close to √(2/π) ≈ 0.798 when d is small compared with √n.</li>
+  <li>The worst coupling of two Binomial(100, ½) variables with V − U at most a, found by linear programming, has expected squared gap 15.0, 28.2, 49.6 and 76.9 for a = 1, 2, 4, 8, against the lemma’s bounds 40, 80, 160 and 320.</li>
+  <li>On cubes of up to 7 dimensions, with 12 random polynomials for each (n, d), rebuilding the weighted layers confirms the key identities, the binomial coupling and the chain I(f) ≤ 2‖T‖²/2ⁿ ≤ 8d√n; the largest average sensitivities were 1.50 to 2.94, against bounds of 16 to 58.8.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Average-Sensitivity-of-Polynomial-Threshold-Functions-September-25-2026/main.pdf">Average sensitivity of polynomial threshold functions (PDF)</a>, 13 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/127.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 127.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Average-Sensitivity-of-Polynomial-Threshold-Functions-September-25-2026/main.pdf">Average sensitivity of polynomial threshold functions</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Threshold functions and sensitivity</h3>
+<p>Take the Boolean cube: all strings of n pluses and minuses. A polynomial threshold function of degree d labels each corner by the sign of a real polynomial of degree at most d; degree one gives a halfspace, like majority. Its average sensitivity, also called total influence, counts how many of the n coordinates, on average over the corners, change the label when flipped one at a time. For majority it is of order √n. Taking the sign of a degree-d polynomial in the number of pluses, with one root in each of the d gaps between levels closest to the middle, gives about d√n, as long as d is at most about √n. In our check, these symmetric examples come out between about 0.7 and 0.8 times d√n, approaching √(2/π) when d is small compared with √n. In 1994, Gotsman and Linial conjectured that these symmetric functions are the extreme ones. That exact form turned out to be false: Chapman, and independently Kim, Maldonado and Wellens, found counterexamples. The asymptotic form, that average sensitivity is at most a constant times d√n, stayed open. Two independent teams, Harsha, Klivans and Meka, and Diakonikolas, Raghavendra, Servedio and Tan, proved bounds that grow more slowly than n, for each fixed degree, with an exponent of n that approaches one as d grows. Kane reached root n, up to a power of log n that grows with d, and a factor that grows very fast with d. The question was whether those losses are needed.</p>
+<h3><span class="t num">1:37</span>The claim</h3>
+<p>Result 127 is a single OpenAI preprint, 13 pages, dated September 25. It claims that every polynomial threshold function of degree at most d on the n-dimensional cube has average sensitivity at most 8d√n, for every n and every d from one to n. The polynomial may vanish on the cube, with the sign of zero taken as plus one, and no regularity is assumed. The constant is absolute, and d may grow with n. Together with the symmetric examples, this pins the largest possible average sensitivity at order d√n, whenever d is at most √n; beyond that, the trivial bound n takes over. It makes no claim about the exact extremal functions. The paper makes no claim that the constant eight is the best possible, and the symmetric examples sit near 0.8, ten times lower. And since average sensitivity is never more than n, the bound adds something only when n exceeds 64d². The paper also derives a noise-sensitivity bound of at most a constant times d√η, and an agnostic learning algorithm for these functions under the uniform distribution. OpenAI published a Lean formalization of the main theorem, 22 files and about 4,000 lines with its imports, not counting Mathlib; the two consequences are not part of it. We have not run the Lean check ourselves.</p>
+<h3><span class="t num">3:07</span>How the proof goes</h3>
+<p>The proof has two parts. The first is a probability lemma. Let U and V have the same distribution, with variance σ², and suppose V − U is never more than a. Then the expected squared gap between them is at most 8aσ, even though U − V may be large. The trick is a primitive of the distance to the mean, ½(t − m)|t − m|, whose increments dominate a quarter of the squared gap; equal laws make its expected change zero, so its total change is twice its upward change, and each upward step is at most a times the distance to the mean, which averages to at most σ. In our check, the worst coupling of two binomials with 100 trials and V − U at most one gives an expected squared gap of about 15, against a bound of 40. The second part is an operator on functions on the cube. Take the polynomials of degree at most k, multiply them by the square root of a positive weight, and orthogonalize: you get layers of dimension C(n, k). Give the k-th layer the eigenvalue k − n/2. With the constant weight, this operator is minus one half times the adjacency matrix of the cube. For any weight, its squared Hilbert–Schmidt norm is fixed, at n·2ⁿ/4, and multiplying by a coordinate only links each layer to itself and its immediate neighbours. These two facts show that each edge entry has size at most 1/2, and that the total shortfall on edges is at most twice the squared mass on the diagonal. For a sign function h, the anticommutator of this operator with multiplication by h kills every entry between corners where h differs, and doubles, up to sign, every entry where h agrees, including the diagonal and those edges. So the number of edges where h agrees is at most twice its squared norm. Now multiply f by the full parity: the edges where the new function agrees are exactly the sensitive edges of f. Take the weight to be the absolute value of the polynomial, after a tiny shift that removes zeros without changing any sign. Multiplying the polynomial by parity moves its Fourier support to degrees at least n − d. Since h times the weight is exactly this product, the blocks of multiplication by h between layers r and s vanish whenever r + s is less than n − d. The squared norms of the remaining blocks form a probability law on pairs of layers, with both marginals binomial, with n trials and probability one half. Reflect one index: U is the index s, and V is n − r. They have the same law, and the vanishing blocks say that V − U is at most d. The anticommutator’s blocks are those of h, scaled by r + s − n, so its squared norm over 2ⁿ is exactly the expected squared gap between U and V. The lemma, with σ = √n/2, bounds that gap by 4d√n, and the edge count turns this into 8d√n. In our check, we rebuilt the weighted layers on cubes of up to 7 dimensions, with random polynomials, and checked the key identities, the binomial coupling and the whole chain of inequalities: all held.</p>
+<h3><span class="t num">6:29</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. The Lean formalization covers the main theorem; we have not run it. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, the asymptotic Gotsman–Linial conjecture is settled: polynomial threshold functions of degree d have average sensitivity at most a constant times d√n, with an absolute constant, by a short argument. The paper does not determine which functions are exactly extremal; the original symmetric guess is already known to fail.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20127%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

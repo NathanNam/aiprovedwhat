@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Factor two, at last? A 2-approximation for shortest common superstring | AI Proved What?</title>
+<meta name="description" content="An AI system claims a polynomial-time algorithm that finds a common superstring at most twice the optimum, with a Lean formalization of the full theorem. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/128-superstring-factor-two/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Factor two, at last?">
+<meta property="og:description" content="An AI system claims a polynomial-time algorithm that finds a common superstring at most twice the optimum, with a Lean formalization of the full theorem. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/128-superstring-factor-two/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/128-superstring-factor-two/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 128, October 2026</p>
+<h1>Factor two, at last?</h1>
+<p class="subtitle">A claimed polynomial-time algorithm that finds a common superstring at most twice as long as the shortest one</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 128 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="idys9cakGP8" data-title="Episode 128: Factor two, at last?">
+  <a href="https://youtu.be/idys9cakGP8">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 128: Factor two, at last? Four overlapping fragments assembled into the word superstring.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:20. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/idys9cakGP8?t=0" data-t="0"><span class="t">0:00</span><span>The problem</span></a></li>
+  <li><a href="https://youtu.be/idys9cakGP8?t=99" data-t="99"><span class="t">1:39</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/idys9cakGP8?t=176" data-t="176"><span class="t">2:56</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/idys9cakGP8?t=398" data-t="398"><span class="t">6:38</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Given a few strings, the shortest common superstring problem asks for the shortest string that contains every one of them as a contiguous piece. For abab and baa, one shortest answer is ababaa, six letters, because the end of the first string overlaps the start of the second. The problem is a simple model of reassembling a genome from overlapping fragments, and it is NP-hard. The natural heuristic, Greedy, repeatedly merges the two strings with the largest overlap; on the family c(ab)<sup>k</sup>, (ba)<sup>k</sup>, (ab)<sup>k</sup>c its answer approaches twice the optimum.</p>
+<p>In 1988 Tarhio and Ukkonen conjectured that Greedy is always within a factor of two. Blum, Jiang, Li, Tromp and Yannakakis proved Greedy within four, gave a different algorithm within three, and showed the problem is MAX SNP-hard, which with the later PCP theorem rules out some constant factor above one unless P = NP. Later algorithms reached 2.5 (Sweedyk), 2 + 11/23 (Mucha) and just under 2.466 (Englert, Matsakis and Veselý); an August 2026 preprint by Chukhin, Kulikov, Mihajlin and Smal reports 7/3, and a September 2026 preprint by Shibata reports that the Greedy conjecture itself is false.</p>
+<p>Result 128 is <a href="https://github.com/openai/math/blob/main/preprints/A-Polynomial-Time-2-Approximation-for-Shortest-Common-Superstring-September-24-2026/paper.pdf">one OpenAI preprint</a> (19 pages, September 24, 2026). It claims a deterministic algorithm that, for every finite family of strings, outputs a common superstring at most twice as long as the shortest one, in time polynomial in the full size of the input written out in bits, including the labels of the symbols. The algorithm is new; the guarantee is not claimed for Greedy.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The paper does not claim that two is the best possible factor; whether a polynomial-time algorithm can beat two is open. The lower bound it compares against cannot certify anything better: for all the rotations of a word with p distinct letters, the optimum is 2p − 1 while that bound is p (our observation, not the paper’s).</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 19 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The full theorem, including polynomial running time. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/128.md">Lean formalization</a> of the full theorem: a function computed in polynomial time by a multi-stack Turing machine with finite alphabets, on the bit encoding of the strings, that always returns a string containing every input as a contiguous substring and at most twice the optimum, measured in symbols (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/Superstring.lean">comparator statement</a>; <a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/Superstring">51 files and 20,361 lines</a> with its imports, not counting Mathlib, with no unproved steps that we could find). We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A graph of substrings.</strong> The vertices are all substrings of the inputs, including the empty word. An up edge appends a letter and costs one; a down edge deletes the first letter and costs nothing. If a multiset of these edges is balanced and connected, reaching the empty word and every input, an Euler tour from the empty word spells a common superstring whose length is the number of up edges, because the current vertex is always a suffix of what has been written.</li>
+  <li><strong>Forced counts.</strong> For every substring s the algorithm computes a count m(s) of occurrences that every common superstring must contain: each input needs one; a word occurs at least as often as its one-letter extensions on either side combined; and a rule for periodic words, which discounts occurrences fenced in by mismatching letters within a substring of the inputs, records repetition (for the input a⁶ it forces six a’s). The sum W over single letters is at most the optimum, and differences of the counts give a balanced base graph with exactly W up edges.</li>
+  <li><strong>Layers and budgets.</strong> The base graph may fall apart. Its closed walks give periodic texts, and walks with the same text are rearranged, without changing any edge, into layers going once around the least period p; each layer gets an extra budget p, and the budgets add up to W. Layers with short vertices connect by round trips through the empty word. For the rest, the periodic rule forces a shortened word onto a layer with a differently aligned text, and two such texts agree on fewer than p + q letters, which gives a meeting point. Some layers attach there on their own budgets; others send requests to strictly larger periods, handled later with the receiving layer’s budget.</li>
+  <li><strong>Opening cycles.</strong> Links paid only by their sources can form cycles of blocks. On each cycle, the block whose text has the lexicographically greatest rotation gets a contact word no longer than its target’s period q; dropping the target’s own outgoing link and joining the target internally frees q, which pays the round trip from the contact to the empty word. The added cost is at most W, so the Euler tour spells a superstring of length at most 2W ≤ 2·OPT. Every step searches polynomially many candidates, so the algorithm runs in polynomial time.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>On 2,800 small random instances, the paper’s counts never exceeded the true number of occurrences in any superstring tried (434,808 comparisons), the base graph was always balanced with exactly W up edges, and W ≤ OPT ≤ 2W every time; the largest ratio of OPT to W was 1.6, for bbabbb and bbbba (W = 5, OPT = 8). We did not implement the connection procedure itself.</li>
+  <li>On the same instances Greedy was at most 1.29 times optimal; on c(ab)<sup>k</sup>, (ba)<sup>k</sup>, (ab)<sup>k</sup>c it returns 4k + 2 letters against an optimum of 2k + 4 (162 against 84 at k = 40).</li>
+  <li>For the input a⁶ the counts are 6, 5, 4, 3, 2, 1 for a, aa, …, a⁶, so W = 6; without the periodic rule W would be 1.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Polynomial-Time-2-Approximation-for-Shortest-Common-Superstring-September-24-2026/paper.pdf">A Polynomial-Time 2-Approximation for Shortest Common Superstring (PDF)</a>, 19 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/128.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 128.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Polynomial-Time-2-Approximation-for-Shortest-Common-Superstring-September-24-2026/paper.pdf">A Polynomial-Time 2-Approximation for Shortest Common Superstring</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The problem</h3>
+<p>Given a few strings, find the shortest string that contains every one of them as a contiguous piece. This is the shortest common superstring problem. For abab and baa, one shortest answer is ababaa, six letters, because the end of the first string overlaps the start of the second. It is a simple model of reassembling a genome from overlapping fragments, and it is NP-hard, so no fast exact algorithm is expected. The natural heuristic, Greedy, repeatedly merges the two strings with the largest overlap. On a family of three strings built from repeated ab and a letter c, Greedy’s answer approaches twice the optimum. In our check, on 2,800 small random instances, Greedy was never worse than about 1.3 times the optimum. In 1988, Tarhio and Ukkonen conjectured that Greedy is always within a factor of two. Blum, Jiang, Li, Tromp and Yannakakis proved Greedy within a factor of four, gave a different algorithm within three, and showed the problem is MAX SNP-hard, which, with the later PCP theorem, puts some constant factor above one out of reach unless P equals NP. Better factors followed: Sweedyk reached 2.5; Mucha, 2 + 11/23; Englert, Matsakis and Veselý, just under 2.466. An August 2026 preprint by Chukhin, Kulikov, Mihajlin and Smal reports 7/3, and a September preprint by Shibata reports that the Greedy conjecture itself is false, with a worst case of at least 9/4. Whether any polynomial-time algorithm achieves two was open.</p>
+<h3><span class="t num">1:39</span>The claim</h3>
+<p>Result 128 is a single OpenAI preprint, 19 pages, dated September 24. It claims a deterministic algorithm that, for every finite family of strings, outputs a common superstring at most twice as long as the shortest one. Its running time is polynomial in the full size of the input written out in bits, including the labels of the symbols, so the alphabet may be huge. The algorithm is new; the guarantee is not claimed for Greedy. The paper does not claim that two is the best possible factor. And the lower bound it compares against cannot certify anything better: for the family of all rotations of a word with p distinct letters, the optimum is 2p − 1, while that bound is only p. That observation is ours, not the paper’s. OpenAI published a Lean formalization of the full theorem: a function with a certificate that a multi-stack Turing machine with finite alphabets computes it in polynomial time on the bit encoding, which always returns a common superstring at most twice the optimum, measured in symbols. It runs to 51 files and about 20,000 lines with its imports, not counting Mathlib. We have not run the Lean check.</p>
+<h3><span class="t num">2:56</span>How the proof goes</h3>
+<p>The proof works in a graph whose vertices are all substrings of the inputs, including the empty word. An up edge appends a letter and costs one; a down edge deletes the first letter and costs nothing. Suppose a multiset of these edges is balanced, with as many edges entering as leaving each vertex, and connected, reaching the empty word and every input string. Then an Euler tour from the empty word, writing down each appended letter, spells a common superstring, because the current vertex is always a suffix of what has been written. Its length is the number of up edges. So the task becomes building such an edge set cheaply. The algorithm first computes, for every substring s, a count m of s: a number of occurrences that every common superstring must contain. Each input needs one. A word must occur at least as often as all its one-letter extensions on the left combined, and likewise on the right. And a rule for periodic words, which discounts occurrences fenced in by mismatching letters within some substring of the inputs, records repetition that the extensions miss: for the single input a⁶, extensions alone force one a, but the rule forces six. The sum of the counts over single letters, W, is a lower bound on the optimum. Differences of the counts give multiplicities for up and down edges, forming a balanced base graph with exactly W up edges. In our check, every count stayed at or below the true number of occurrences, in every superstring we tried, over 400,000 comparisons. The base graph costs W but may fall apart into pieces, so the rest of the proof connects every piece to the empty word for at most W more. Split the base graph into closed walks. The letters a walk appends, repeated forever, form a periodic text. Walks with the same text are rearranged, without changing any edge, into layers that each go once around the shortest period p. Each layer gets an extra budget of p, and the budgets add up to exactly W. A round trip from the empty word to a vertex costs its length, so layers with short vertices connect cheaply. For the rest, the periodic rule forces a shortened word to occur on a layer whose text, lined up there, is different, perhaps the same pattern shifted; two differently aligned periodic texts can only agree on a short stretch, so that occurrence gives a meeting point. Some layers attach there using only their own budgets; others send a request to a layer of strictly larger period, which is handled later, together with the receiving layer’s own budget. The links paid only by their sources can form cycles, each block of layers waiting on the next. On each cycle, pick the block whose text has the lexicographically greatest rotation. Its link can be realized with a contact word no longer than q, the period of its target. Drop the target’s own outgoing link and join the target’s layers internally instead; that frees q from the target’s budget, which pays for a round trip from the contact to the empty word. Everything is now connected, the added cost is at most W, and the Euler tour spells a superstring of length at most twice W, so at most twice the optimum. Every step searches only polynomially many candidates: there are at most quadratically many substrings, and no count exceeds the total input length, so the whole algorithm runs in polynomial time. In our check, on the same random instances, the optimum never exceeded twice W, as the theorem requires; we did not implement the connection procedure itself.</p>
+<h3><span class="t num">6:38</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. The Lean formalization covers the full theorem, including polynomial running time on a Turing machine; we have not run it. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, shortest common superstring has a polynomial-time factor-two approximation, the factor long conjectured for Greedy, reached by a different algorithm. Whether a polynomial-time algorithm can beat two is still open; some constant factor above one is ruled out unless P equals NP.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20128%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

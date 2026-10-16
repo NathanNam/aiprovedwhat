@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three machines, polynomial? Scheduling unit jobs with precedence | AI Proved What?</title>
+<meta name="description" content="An AI system claims a polynomial-time algorithm for scheduling unit jobs with precedence constraints on three identical machines, an open problem from Garey and Johnson, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/124-three-machine-scheduling/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Three machines, polynomial?">
+<meta property="og:description" content="An AI system claims a polynomial-time algorithm for scheduling unit jobs with precedence constraints on three identical machines, an open problem from Garey and Johnson, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/124-three-machine-scheduling/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/124-three-machine-scheduling/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 124, October 2026</p>
+<h1>Three machines, polynomial?</h1>
+<p class="subtitle">A claimed polynomial-time algorithm for scheduling unit jobs with precedence constraints on three identical machines</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 124 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="JASg8mT7_0Q" data-title="Episode 124: Three machines, polynomial?">
+  <a href="https://youtu.be/JASg8mT7_0Q">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 124: Three machines, polynomial? A three-machine schedule of unit jobs with precedence arrows.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:59. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/JASg8mT7_0Q?t=0" data-t="0"><span class="t">0:00</span><span>Scheduling with precedence</span></a></li>
+  <li><a href="https://youtu.be/JASg8mT7_0Q?t=104" data-t="104"><span class="t">1:44</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/JASg8mT7_0Q?t=189" data-t="189"><span class="t">3:09</span><span>How it works</span></a></li>
+  <li><a href="https://youtu.be/JASg8mT7_0Q?t=376" data-t="376"><span class="t">6:16</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Some jobs must wait for others: a precedence graph says that job u must finish before job v starts. Every job takes one unit of time, and there are a few identical machines. How short can the schedule be? With two machines, Fujii, Kasami and Ninomiya, and then Coffman and Graham, found optimal schedules in polynomial time; Coffman and Graham’s rule labels the jobs and always runs the highest-labelled jobs that are ready. On three machines the same rule can fail.</p>
+<p>When the number of machines is part of the input, Ullman showed the problem is NP-complete. For exactly three machines, the question appears among the open problems in Garey and Johnson’s 1979 book. Special cases fell (opposing forests, by Garey, Johnson, Tarjan and Yannakakis; graphs of bounded height, by Dolev and Warmuth), approximation schemes followed (Levey and Rothvoss, Garg, Li, Das and Wiese), and in 2025 Nederlof, Swennenhuis and Węgrzycki gave an exact algorithm in time 2<sup>O(√(n log n))</sup> for three machines. But there was no polynomial-time algorithm, and no hardness proof.</p>
+<p>Result 124 is <a href="https://github.com/openai/math/blob/main/preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/paper.pdf">a single OpenAI preprint</a> (22 pages, September 24, 2026). It claims a uniform deterministic algorithm that, for any explicitly listed precedence graph on unit-length jobs and three identical machines, constructs a schedule of minimum length and, given a deadline, decides exactly whether it can be met, returning a schedule if so. The running time is O((L + 2)<sup>150020</sup>) steps on a multitape Turing machine, where L is the length of the input: a polynomial, so, if the proof is right, the open problem is settled in favour of polynomial time.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The exponent is enormous and the paper makes no practical claim: by our count, for a ten-job chain in the encoding of the Lean statement, (L + 2)<sup>150020</sup> has about 351,000 digits. The model is the classic one, with no release dates and no communication delays. The argument uses three machines directly and makes no claim about four or more.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 22 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>OpenAI published a Lean proof of the full theorem for a Turing machine with the stated time bound; we have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/124.md">Lean formalization</a> whose main theorem, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/ThreeMachine.lean">its comparator statement</a>, states that a single multitape Turing machine answers both the optimization and the deadline questions correctly within a constant times (L + 2)<sup>150020</sup> steps, in <a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/Scheduling">53 files and 18,572 lines</a> with its imports (not counting Mathlib), with no unproved steps that we could find. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How it works</h2>
+<ol class="steps">
+  <li><strong>Gaps between triples.</strong> Pad the instance with isolated jobs so that every time slot holds exactly three. Remove some slots from a feasible schedule, and each gap between them can be rescheduled on its own, since reordering its jobs never changes whether they come before or after any job outside. So the algorithm works through sets of jobs, smallest first, accepting a set when a chain of triples of jobs, each able to run in one time step, cuts it into smaller accepted sets.</li>
+  <li><strong>Short descriptions.</strong> The algorithm only considers sets described by a Boolean formula with at most 10,000 leaves, built from precedence to or from a triple of jobs, membership in that triple, and rank thresholds in a fixed linear extension or its reverse. There are only polynomially many such sets (roughly the number of jobs to the power 30,000), and a generous Turing-machine count gives the exponent 15 × 10,000 plus a little. The structural theorem says that every feasible instance has a recursive decomposition in which every gap, at every depth, is such a set, with fewer than 500 leaves.</li>
+  <li><strong>Separators.</strong> The proof fixes a priority order extending precedence and calls an initial segment low and the rest high. A slot separates this cutoff when every high job scheduled earlier is a prerequisite of a job in that slot, and every low job scheduled later must wait for one. In a lexicographically least schedule, promoting jobs from high to low moves a separator forward, and consecutive selected slots separate a common cutoff, building on Dolev and Warmuth and on Nederlof, Swennenhuis and Węgrzycki.</li>
+  <li><strong>Keeping the history short.</strong> The two sides of a center slot are treated alike, reversing time and precedence on one side, with only a short list of successor-closed sets. Each surviving new entry needs its own job in the boundary triple, so at most three new entries survive and at most five remain: this is where three machines matter. Global boundary and exchange conditions, and flattening at each change of direction, give every gap a description valid on all jobs.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Breaking ties by job number, Coffman and Graham’s rule was optimal on all 1,500 random two-machine instances; on three machines it lost on 4 of 20,000 random graphs, each rescued by another tie-break.</li>
+  <li>In the 12-job example, every one of the rule’s 120 tie-breaks needs 5 steps, while 4 suffice.</li>
+  <li>Run over every subset instead of the short descriptions, the paper’s search scheme agreed with brute force on all 130 small deadline questions where the jobs fit.</li>
+  <li>A 10-job chain encodes in 218 bits in the Lean statement’s encoding; (L + 2)<sup>150020</sup> has about 351,000 digits.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/paper.pdf">A Polynomial-Time Algorithm for Three-Machine Unit-Job Scheduling (PDF)</a>, 22 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/124.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 124.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-polynomial-time-algorithm-for-three-machine-unit-job-scheduling-September-24-2026/paper.pdf">A Polynomial-Time Algorithm for Three-Machine Unit-Job Scheduling</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Scheduling with precedence</h3>
+<p>Some jobs must wait for others: a precedence graph says that job u must finish before job v starts. Every job takes one unit of time, and there are a few identical machines. How short can the schedule be? With two machines, Fujii, Kasami and Ninomiya, and then Coffman and Graham, found optimal schedules in polynomial time; Coffman and Graham’s rule labels the jobs and always runs the highest-labelled jobs that are ready. On three machines the same rule can fail. In our check, breaking ties by job number, it was optimal on all 1,500 random two-machine instances, but on three machines it lost on 4 of 20,000 random graphs, each time rescued by a different tie-break. In this 12-job example, found by a longer search, it needs five steps however ties are broken, because it starts the wrong job first, while four steps suffice. When the number of machines is part of the input, Ullman showed the problem is NP-complete. For exactly three machines, the question appears among the open problems in Garey and Johnson’s 1979 book, and it has remained a central open question in scheduling. Special cases fell: Garey, Johnson, Tarjan and Yannakakis handled opposing forests in linear time, and Dolev and Warmuth graphs of bounded height. Approximation schemes followed, for any fixed number of machines: from Levey and Rothvoss, then Garg in quasipolynomial time, Li in even less, and a simpler one from Das and Wiese. In 2025, Nederlof, Swennenhuis and Węgrzycki gave an exact algorithm in time 2^(O(√(n log n))) for three machines. But there was no polynomial-time algorithm, and no hardness proof.</p>
+<h3><span class="t num">1:44</span>The claim</h3>
+<p>Result 124 is a single OpenAI preprint, 22 pages, dated September 24. It claims a uniform deterministic algorithm that, for any explicitly listed precedence graph on unit-length jobs and three identical machines, constructs a schedule of minimum length, and, given a deadline, decides exactly whether it can be met, returning a schedule if so. The running time is O((L + 2)^150020), on a multitape Turing machine, where L is the length of the input. That is a polynomial, so, if the proof is right, it settles the open problem in favour of polynomial time. The exponent is enormous, and the paper makes no practical claim. By our count, for a 10-job chain in the encoding of the Lean statement, (L + 2)^150020 has about 350,000 digits. The model is exactly the classic one, with no release dates and no communication delays. OpenAI published a Lean formalization whose main theorem states that a single multitape Turing machine answers both the optimization and the deadline questions correctly within a constant times that bound, in 53 files and about 18,600 lines with its imports, not counting Mathlib. We have not run the Lean check ourselves.</p>
+<h3><span class="t num">3:09</span>How it works</h3>
+<p>First, pad the instance with isolated jobs, so that every time slot holds exactly three. Remove some slots from a feasible schedule, and each gap between them can be rescheduled on its own, since reordering its jobs never changes whether they come before or after any job outside. So the algorithm works through sets of jobs, smallest first, accepting a set only when it can piece together a schedule for it. A set is accepted if a chain of triples of jobs, each able to run in one time step, cuts it so that the jobs before the first triple, between neighbouring triples, and after the last are all smaller accepted sets. Run over every subset, this is exponential. In our check, done that way, it agreed with brute force on all 130 small deadline questions where the jobs fit in the available slots. The point is which sets to consider. The algorithm uses only sets described by a Boolean formula with at most 10,000 leaves, built from three kinds of test: precedence to or from a triple of jobs, membership in that triple, and rank thresholds in a fixed linear extension or its reverse. There are only polynomially many such sets, roughly the number of jobs to the power 30,000. A deliberately generous count of the search’s steps on a Turing machine then gives the exponent: 15 × 10,000, plus a little. The structural theorem says that every feasible schedule has a recursive decomposition in which every gap, at every depth, is one of these sets, in fact with fewer than 500 leaves. To find such a decomposition, the proof fixes a priority order that extends precedence, and calls an initial segment of it low and the rest high. A slot separates this cutoff when every high job scheduled earlier is a prerequisite of some job in that slot, and every low job scheduled later must wait for one of them. In a lexicographically least schedule, promoting jobs one at a time from high to low moves a separator forward, and each pair of consecutive selected slots separates a common cutoff. This builds on the decompositions of Dolev and Warmuth, and of Nederlof, Swennenhuis and Węgrzycki. The danger is that a gap’s description inherits conditions from all its ancestors. The proof treats the two sides of a center slot alike, reversing time and precedence on one side, and keeps only a short list of sets closed under taking successors. Here the three machines matter: each surviving new entry needs its own job in the boundary triple, so at most three new entries survive, and with at most two set up at the last change of direction, at most 5 entries remain. A global boundary condition excludes distant jobs, an exchange condition keeps it valid after later reorderings, and at each change of direction the inherited history is flattened into a short formula. It matches the history only inside the parent interval, so precedence tests confine its use there, and every gap still gets a description valid on all jobs, not just inside the gap.</p>
+<h3><span class="t num">6:16</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. The Lean formalization covers the full theorem, a multitape Turing machine with the stated time bound; we have not run it. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, scheduling unit jobs with precedence constraints on three machines is solvable in polynomial time, settling the question from Garey and Johnson’s list in favour of polynomial time, more than 45 years later. The argument uses three machines directly, makes no claim about four or more, and gives no practical algorithm.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20124%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

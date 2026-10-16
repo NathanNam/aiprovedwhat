@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No small SDP for matching? Exponential PSD rank of matching matrices | AI Proved What?</title>
+<meta name="description" content="An AI system claims that every exact semidefinite lift of the perfect matching polytope has exponential size; Lean checks a weaker superpolynomial version. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/126-matching-psd-rank/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="No small SDP for matching?">
+<meta property="og:description" content="An AI system claims that every exact semidefinite lift of the perfect matching polytope has exponential size; Lean checks a weaker superpolynomial version. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/126-matching-psd-rank/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/126-matching-psd-rank/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 126, October 2026</p>
+<h1>No small SDP for matching?</h1>
+<p class="subtitle">A claimed exponential lower bound on the PSD rank of shifted matching matrices, and on exact semidefinite lifts of the perfect matching polytope</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 126 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="Le0S3YvMJHE" data-title="Episode 126: No small SDP for matching?">
+  <a href="https://youtu.be/Le0S3YvMJHE">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 126: No small SDP for matching? A perfect matching of K8 crossing the cut of an odd vertex set.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:13. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/Le0S3YvMJHE?t=0" data-t="0"><span class="t">0:00</span><span>Lifts of the matching polytope</span></a></li>
+  <li><a href="https://youtu.be/Le0S3YvMJHE?t=113" data-t="113"><span class="t">1:53</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/Le0S3YvMJHE?t=212" data-t="212"><span class="t">3:32</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/Le0S3YvMJHE?t=380" data-t="380"><span class="t">6:20</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The perfect matching polytope is the convex hull of the perfect matchings of the complete graph on n vertices. Edmonds described it with simple inequalities: every edge weight nonnegative, every vertex covered exactly once, and for every odd set of vertices at least one unit of weight leaving it, exponentially many in all. A lift is a higher-dimensional object that projects onto the polytope; the question is how small it can be. Rothvoss proved in 2014 that every linear lift needs exponential size. Semidefinite lifts, slices of the cone of positive semidefinite matrices, can be far smaller, and whether perfect matching has a polynomial-size one was open.</p>
+<p>By the theory of Gouveia, Parrilo and Thomas, the smallest semidefinite lift has the size of the PSD rank of a slack matrix: one row per inequality, one column per perfect matching. For an odd set U and a matching M the slack is |M ∩ δ(U)| − 1. The PSD rank is the least r such that every entry is the trace of a product of two r×r positive semidefinite matrices, one per row and one per column. Ordinary rank is no help: with 10 vertices the matrix has 512 rows and 945 columns but rank 36.</p>
+<p>Result 126 is <a href="https://github.com/openai/math/blob/main/preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/shifted-matching-psd.pdf">one OpenAI preprint</a> (24 pages, October 5, 2026). Fix ρ strictly between 0 and 1 and add ρ to every odd-set entry. The paper claims that this shifted matrix has real PSD rank at least 2<sup>cn</sup> for one absolute constant c, once n is large enough (depending on ρ), with factors allowed to be any real positive semidefinite matrices and no symmetry assumed. At ρ = 1 diagonal factors of size C(n, 2) exist, so the shift must stay below one. As a corollary, every exact semidefinite lift of the perfect matching polytope has exponential size.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The claim is about exact lifts and exact factorizations. Kaniewski, Lee and de Wolf built matrices of subexponential PSD rank that approximate the unshifted slack matrix up to a tiny entrywise error, so approximate factorizations can be much smaller. A maximum-weight perfect matching can still be found in polynomial time; the result concerns semidefinite descriptions of the polytope.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 24 pages, dated October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>A weaker, superpolynomial version, by a different route; not the exponential bound. We have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/126.md">Lean formalization</a> of a weaker version that still rules out polynomial-size lifts: for every fixed power C, the PSD rank of the unshifted slack matrix (with its edge rows), and the size of every exact affine semidefinite lift, exceed n<sup>C</sup> for all large even n (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/MatchingPSD.lean">comparator statement</a>; <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/MatchingPSD">66 files and 7,542 lines</a> with its imports, not counting Mathlib, with no unproved steps that we could find). Its proof takes a different route from the paper’s argument, and it does not cover the exponential bound or the shifted matrices. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A parity puzzle.</strong> On an expander graph, each vertex carries one bit per incident edge with a prescribed parity, and the parities add up to odd, so some edge sees unequal bits. The number of disagreements minus (1 − ρ) is a positive function f. Yet a linear functional in the style of Grigoriev’s for Tseitin contradictions is nonnegative on squares of functions touching only a small fraction of the vertices, while treating every edge as agreeing, so it gives f a negative value.</li>
+  <li><strong>From parity to matching.</strong> Each vertex of the expander becomes a cell of k vertices, with k a large constant: one terminal per incident edge, the rest paired inside the cell. Restricting cuts so that terminal bits are fixed and internal pairs agree, the only crossing matching edges are the parity disagreements, so averaging a row factor over such cuts and pairing it with a matching’s factor reproduces f exactly.</li>
+  <li><strong>Averaging matrices.</strong> Averaging squares is not squaring averages, so the proof writes the averaged factor exactly as a sum of products HᵀH over branches labelled by Fourier characters, and pushes their coefficients toward characters near the label. A local averaging estimate within a cell has variance that shrinks as k grows, with no dependence on matrix dimension.</li>
+  <li><strong>The contradiction.</strong> A dimension-free splitting inequality and a product averaging theorem control the Fourier mass; after truncation, multiplying by the branch’s character moves each retained term to low block degree while keeping it a square. The functional is nonnegative on the approximation but negative on f, which forces exponential size.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>For n = 4, 6, 8 and 10, every perfect matching crosses every odd set an odd number of times; the matrices have 8, 32, 128 and 512 odd-set rows, 3, 15, 105 and 945 matching columns, and ordinary rank 1, 10, 21 and 36.</li>
+  <li>Least pseudo-expected number of disagreements over sum-of-squares moments: K<sub>4</sub>, degree 4: 0.53, degree 6: 1; K<sub>3,3</sub>, degree 4: 0.35, degree 6: 1; Petersen graph, degree 4: 0. Every real assignment has at least one disagreement.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/shifted-matching-psd.pdf">Exponential PSD rank of positively shifted matching matrices (PDF)</a>, 24 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/126.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 126.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Exponential-PSD-rank-of-positively-shifted-matching-matrices-October-5-2026/shifted-matching-psd.pdf">Exponential PSD rank of positively shifted matching matrices</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Lifts of the matching polytope</h3>
+<p>The perfect matching polytope is the convex hull of all perfect matchings of the complete graph on n vertices. Edmonds described it with simple inequalities: every edge weight nonnegative, every vertex covered exactly once, and, for every odd set of vertices, at least one unit of weight leaving it. There are exponentially many odd-set inequalities. A lift is a higher-dimensional object that projects down onto the polytope, and the question is how small such a lift can be. In 2014, Rothvoss proved that every linear lift, a polyhedron projecting onto the polytope, needs exponential size. But semidefinite lifts, slices of the cone of positive semidefinite matrices, can be far smaller than linear ones, and whether perfect matching has a polynomial-size semidefinite lift remained open. By the theory of Gouveia, Parrilo and Thomas, the smallest semidefinite lift has the size of the positive semidefinite rank of a slack matrix: one row per inequality, one column per perfect matching, entries the slack. For an odd set, the slack is the number of matching edges crossing it, minus one. The PSD rank is the smallest r such that every entry is the trace of a product of two r by r positive semidefinite matrices, one for the row and one for the column. Ordinary rank is no help: in our check, with 10 vertices, 512 odd sets and 945 matchings, the matrix has rank 36, and in general its rank is at most quadratic in n. Lee, Raghavendra and Steurer turned sum-of-squares lower bounds into general semidefinite lower bounds, Braun and Pokutta proved that a shifted version of this matrix has exponential nonnegative rank, and Braun, Pokutta and six coauthors ruled out small symmetric semidefinite lifts.</p>
+<h3><span class="t num">1:53</span>The claim</h3>
+<p>Result 126 is one OpenAI preprint, 24 pages, dated October 5. Fix ρ strictly between zero and one, and add ρ to every odd-set entry. The paper claims that this shifted matrix has real PSD rank at least 2^(cn), for one absolute constant c, once n is large enough, with how large depending on ρ, with factors allowed to be any real positive semidefinite matrices, and no symmetry assumed. At ρ = 1, the entries are just crossing counts, and diagonal matrices indexed by edges factor it with size C(n, 2), so the shift must stay below one. As a corollary, every exact semidefinite lift of the perfect matching polytope has exponential size. Exactness matters: Kaniewski, Lee and de Wolf built matrices of subexponential PSD rank that approximate the unshifted slack matrix up to a tiny entrywise error. OpenAI published a Lean formalization of a weaker version that still rules out polynomial-size lifts: for every fixed power C, the PSD rank of the perfect matching slack matrix, and the size of every exact affine semidefinite lift, exceed n^C for all large even n. That is superpolynomial rather than exponential, and it is stated for the unshifted slack matrix, edge rows included, not for the shifted ones. It runs to 66 files and about 7,500 lines with its imports, not counting Mathlib, and its proof takes a different route from the argument we sketch next.</p>
+<h3><span class="t num">3:32</span>How the proof goes</h3>
+<p>The obstruction is a parity puzzle on an expander graph. Each vertex carries one bit per incident edge, with a prescribed parity, and the parities add up to odd. Then some edge must see unequal bits at its two ends. Subtract 1 − ρ from the number of disagreements, and you get a positive function. Yet a linear functional, in the style of Grigoriev’s for Tseitin contradictions, is nonnegative on squares of functions whose Fourier characters touch only a small fraction of the vertices, while it treats every edge as agreeing, and so gives that positive function a negative value. In our check, degree-4 sum-of-squares moments on the Petersen graph saw zero disagreements, although every real assignment has at least one; on K4 and K3,3, degree 6 caught the contradiction. To bring this into matching, each vertex of the expander becomes a cell of k vertices, with k a large constant. Each incident edge uses one terminal, and the remaining vertices are paired inside the cell. Restrict cuts so that the terminal bits are fixed and each internal pair agrees: then the only matching edges crossing the cut are the disagreements of the parity puzzle. So averaging a row factor of a small PSD factorization over such cuts, and pairing it with a matching’s factor, reproduces the positive function exactly. The hard part is to show that a small factorization would make that function close to a sum of squares of low degree. Square roots of the row factors have no degree bound, and averaging squares is not squaring averages. So the proof builds an exact representation of the averaged factor as a sum of products, HᵀH, over branches, each labelled by a Fourier character, and pushes their coefficients toward characters that differ from the label in only a few vertex blocks. A local averaging estimate within a cell gives a variance that shrinks as k grows, with no dependence on matrix dimension, using a trace bound and lower bounds on the dimensions of invariant eigenspaces, the same spectral trick used in work on quasirandom groups. A dimension-free splitting inequality for positive semidefinite matrices, and a product averaging theorem with weights growing exponentially in the number of differing blocks, control the Fourier mass. After truncation, multiplying by the branch’s character moves each retained term to low block degree while preserving squares. The separating functional is then nonnegative on the approximation, but negative on the function it approximates. That contradiction forces the factorization to have exponential size.</p>
+<h3><span class="t num">6:20</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. The Lean formalization covers superpolynomial lower bounds for the unshifted slack matrix and for exact affine lifts, not the exponential bound or the shifted matrices, and its proof follows a different route from the paper’s; we have not run it. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, perfect matching has no small exact semidefinite description: like linear lifts, semidefinite lifts need exponential size, even though a maximum-weight perfect matching can be found in polynomial time. The claim is about exact lifts and exact factorizations; matrices that only approximate the slack matrix entrywise can have far smaller PSD rank.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20126%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
