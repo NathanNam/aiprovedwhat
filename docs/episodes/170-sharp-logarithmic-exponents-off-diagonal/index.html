@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 170: Sharp logarithmic exponents for off-diagonal Ramsey numbers | AI Proved What?</title>
-<meta name="description" content="Sharp logarithmic exponents for off-diagonal Ramsey numbers. Result 170 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Ramsey numbers: log power settled? Sharp logarithmic exponents for off-diagonal Ramsey numbers | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim that for every fixed s from 5 up, the Ramsey number r(s,t) is t^(s−1) over (log t)^(s−2+o(1)), the same power of log t as in the 1980 upper bound. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/170-sharp-logarithmic-exponents-off-diagonal/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 170: Sharp logarithmic exponents for off-diagonal Ramsey numbers | AI Proved What?">
-<meta property="og:description" content="Sharp logarithmic exponents for off-diagonal Ramsey numbers. Result 170 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Ramsey numbers: log power settled?">
+<meta property="og:description" content="Two AI preprints claim that for every fixed s from 5 up, the Ramsey number r(s,t) is t^(s−1) over (log t)^(s−2+o(1)), the same power of log t as in the 1980 upper bound. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/170-sharp-logarithmic-exponents-off-diagonal/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/170-sharp-logarithmic-exponents-off-diagonal/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,49 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 170 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Sharp logarithmic exponents for off-diagonal Ramsey numbers</h1>
+<p class="meta">Episode 170, October 2026</p>
+<h1>Ramsey numbers: log power settled?</h1>
+<p class="subtitle">Two preprints claim that for every fixed s from 5 up, the off-diagonal Ramsey number r(s,t) is t<sup>s−1</sup> divided by log t to a power that tends to s − 2, the same power as in the 1980 upper bound</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 170 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="o5xkNPLum5o" data-title="Episode 170: Ramsey numbers: log power settled?">
+  <a href="https://youtu.be/o5xkNPLum5o">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 170: Ramsey numbers: log power settled? Five points with the sides of a pentagon in one colour and its diagonals in the other, so no triangle has a single colour (our drawing).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:36. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/o5xkNPLum5o?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/o5xkNPLum5o?t=100" data-t="100"><span class="t">1:40</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/o5xkNPLum5o?t=180" data-t="180"><span class="t">3:00</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/o5xkNPLum5o?t=281" data-t="281"><span class="t">4:41</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>For every fixed integer <i>s</i> ≥ 5, proves <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>t</mi><mrow><mi>s</mi><mo>−</mo><mn>1</mn></mrow></msup><mi mathvariant="normal">/</mi><mo stretchy="false">(</mo><mi>log</mi><mo>⁡</mo><mi>t</mi><msup><mo stretchy="false">)</mo><mrow><mi>s</mi><mo>−</mo><mn>2</mn><mo>+</mo><mi>o</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">r(s,t)=t^{s-1}/(\log t)^{s-2+o(1)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mord">/</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">t</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mbin mtight">−</span><span class="mord mtight">2</span><span class="mbin mtight">+</span><span class="mord mathnormal mtight">o</span><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span></span> as <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">t\to\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord">∞</span></span></span></span>, determining the logarithmic exponent and matching the classical upper bound at that scale. Here <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo stretchy="false">(</mo><mi>s</mi><mo separator="true">,</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">r(s,t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span> is the least number of vertices forcing an <i>s</i>-clique or a <i>t</i>-vertex independent set.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Among six people there are always three who all know each other or three who are all strangers; with five there may not be. The Ramsey number r(s,t) is the fewest people that guarantees s mutual acquaintances or t mutual strangers. These papers study “the off-diagonal regime in which s is fixed and t tends to infinity”. Erdős and Szekeres (1935) showed that r(s,t) is at most about t<sup>s−1</sup>, and Ajtai, Komlós and Szemerédi (1980) saved a power of log t: r(s,t) is at most a constant times t<sup>s−1</sup>/(log t)<sup>s−2</sup>. For s = 3, “Kim proved that r(3,t) has order t<sup>2</sup>/log t, matching the classical upper bound in order.” Lower bounds need graphs with no s-clique and no large independent set. For r(5,t), as the papers recount, Spencer’s local lemma gave order (t/log t)<sup>3</sup> and the Bohman–Keevash random process gave t<sup>3</sup>/(log t)<sup>8/3</sup>: “Thus even the power of t in the upper bound remained out of reach by these methods.” In 2026 Bradač (an arXiv preprint) proved r(s,t) ≥ c<sub>s</sub> t<sup>s−1</sup>/(log t)<sup>2s−4</sup>, “determining the polynomial exponent for every fixed s”; for s = 5 that is t<sup>4</sup>/(log t)<sup>6</sup> against the upper bound’s t<sup>4</sup>/(log t)<sup>3</sup>.</p>
+<p>Result 170 is two OpenAI preprints, both dated September 24, 2026. <a href="https://github.com/openai/math/blob/main/preprints/The-Sharp-Logarithmic-Exponent-of-r-5-t-September-24-2026/paper.pdf">The sharp logarithmic exponent of r(5,t)</a> (41 pages), Theorem 1.1: “There is an absolute constant C&gt;0 such that, for every ε&gt;0, all sufficiently large integers t satisfy t<sup>4</sup>/(log t)<sup>3+ε</sup> ≤ r(5,t) ≤ C·t<sup>4</sup>/(log t)<sup>3</sup>.” <a href="https://github.com/openai/math/blob/main/preprints/Sharp-Logarithmic-Exponents-for-Fixed-Off-Diagonal-Ramsey-Numbers-September-24-2026/paper.pdf">Sharp logarithmic exponents for fixed off-diagonal Ramsey numbers</a> (53 pages), Theorem 1.1: “For every fixed integer s≥6 there is a constant C<sub>s</sub>&gt;0 such that, for every ε&gt;0 and every sufficiently large integer t, t<sup>s−1</sup>/(log t)<sup>s−2+ε</sup> ≤ r(s,t) ≤ C<sub>s</sub> t<sup>s−1</sup>/(log t)<sup>s−2</sup>.” In both, the limit of ((s−1) log t − log r(s,t))/log log t is s − 2. The new part is the lower bound; each paper re-proves the classical upper bound so as to be self-contained. The second paper cites the first’s framework but “supplies all the required arguments locally”.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What they don’t claim</h2>
+<p>“Sharp” here means the exponent of log t, not the constant: the first paper “leaves open a constant-factor asymptotic for t<sup>4</sup>/(log t)<sup>3</sup>”, and the second “does not assert that r(s,t) is bounded below by a positive constant times t<sup>s−1</sup>/(log t)<sup>s−2</sup>”. The lower bound loses a factor (log t)<sup>ε</sup>, and how large t must be is never quantified. s = 4 is not covered; s = 3 was settled before. The graphs are shown to exist by contradiction, with no explicit construction and no algorithm: “No bound on the time needed to search or decode is asserted.” And the exponent is a limit that settles very slowly. In our own calculation, if r(5,t) were exactly t<sup>4</sup>/(100 (log t)<sup>3</sup>), the quantity in the theorem would be 4.75 at t = 10<sup>6</sup>, 4.39 at 10<sup>12</sup> and 3.85 at 10<sup>100</sup>, on its way down to 3.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 41 and 53 pages, both dated September 24, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +87,45 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/170.md">scope notes</a>)</dd>
+    <dd>Both main theorems, formalized by OpenAI; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. Neither preprint has been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/170.md">Lean formalization</a> whose comparator statements, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/RamseyFive.lean">one for s = 5</a> and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SharpLogRamsey.lean">one for every s ≥ 6</a>, state both bounds and the limits as in the papers; the upper bound is formalized from scratch. By our count the proofs take 482 files and 73,678 lines (s = 5, <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/RamseyFive">the development</a>) and 408 files and 63,795 lines (s ≥ 6), excluding Mathlib; the s = 5 proof reuses 32 files from the s ≥ 6 library, with no unproved steps by our search; we have not rebuilt them. One construction lemma in the s ≥ 6 development is stated for every dimension from 3 up; read at face value, it would also bear on r(4,t), which no one claims, so we have flagged it for expert review rather than draw any conclusion. The key earlier construction comes from Bradač’s June 2026 arXiv preprint, and the papers re-prove what they use from it. The papers are not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The graph.</strong> Following Bradač, work in projective space of dimension d = s − 1 over a large prime field. A flag is a point together with a hyperplane through it. Take a random stream of about q<sup>d</sup> log q flags, and join an earlier flag i to a later flag j when the point a<sub>i</sub> lies on the hyperplane b<sub>j</sub> “but a<sub>j</sub> does not lie on b<sub>i</sub>”.</li>
+  <li><strong>No s-clique.</strong> In a clique listed in order, each new point is off the earlier hyperplanes but on all later ones, so the points are linearly independent yet all lie in the last hyperplane: “A five-clique would give five linearly independent points in one hyperplane.” Independent sets are the consistent sequences.</li>
+  <li><strong>An entropy count.</strong> Suppose every stream had a consistent sequence of length about q(log q)<sup>1+η</sup>. Then picking one out of a random stream would carry a lot of information, by a union bound.</li>
+  <li><strong>Cheap descriptions.</strong> Marking scans, adapted from Bradač, put most flags into small known regions. “The principal additional ingredient is a description theorem for sparse point–hyperplane pairs”: a short message, drawn from shared random tables, that pins down part of them, using projections to lower dimensions, a Poisson score, and polynomial-method bounds for rich lines. A balanced tree of tests uses it to shrink the decoder’s domains, and a bounded number of rounds shortens the description.</li>
+  <li><strong>The contradiction.</strong> The final description is shorter than the entropy bound allows, so some stream has no long independent set: a graph on about q<sup>d</sup> log q vertices with no (d+1)-clique and no independent set of about q(log q)<sup>1+η</sup>. Choosing the prime to fit t gives the lower bound.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our check of r(3,3) = 6: the pentagon colouring of five people has no one-coloured triangle, and all 32,768 colourings for six people have at least 2.</li>
+  <li>The bounds for r(5,t), as the papers cite them: Spencer (t/log t)<sup>3</sup>, Bohman–Keevash t<sup>3</sup>/(log t)<sup>8/3</sup>, Bradač t<sup>4</sup>/(log t)<sup>6</sup>, new t<sup>4</sup>/(log t)<sup>3+ε</sup>, against the upper bound t<sup>4</sup>/(log t)<sup>3</sup>.</li>
+  <li>Our Fano-plane example: 7 points, 7 lines and 21 flags, with a sample stream of 5 flags.</li>
+  <li>Our exhaustive check of every ordered sequence of flags: cliques of size d occur (84 and 468 for d = 2 with q = 2 and 3; 10,080 for d = 3; 4,999,680 for d = 4, all with q = 2), but never of size d + 1.</li>
+  <li>Our limit calculation, quoted above; and the Lean counts, our count of the import closures.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Sharp-Logarithmic-Exponent-of-r-5-t-September-24-2026/paper.pdf">The sharp logarithmic exponent of r(5,t) (PDF)</a>, 41 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Sharp-Logarithmic-Exponents-for-Fixed-Off-Diagonal-Ramsey-Numbers-September-24-2026/paper.pdf">Sharp logarithmic exponents for fixed off-diagonal Ramsey numbers (PDF)</a>, 53 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/170.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 170.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -76,18 +134,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Sharp-Logarithmic-Exponents-for-Fixed-Off-Diagonal-Ramsey-Numbers-September-24-2026/paper.pdf">Sharp logarithmic exponents for fixed off-diagonal Ramsey numbers</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A party puzzle: among 6 people, there are always three who all know each other, or three who are all strangers. With 5, there may not be: colour the sides of a pentagon one way and its diagonals the other, and no triangle has a single colour. In our check, every one of the 32,768 colourings for 6 people has at least 2 such triangles. The Ramsey number r(s,t) is the fewest people that guarantees s mutual acquaintances or t mutual strangers. Here s stays fixed and t grows: the off-diagonal regime. Erdős and Szekeres showed it is at most about t^(s−1), and in 1980, Ajtai, Komlós and Szemerédi saved a logarithmic factor: at most a constant times t^(s−1) divided by (log t)^(s−2). For s = 3, Kim showed in 1995 that this is the truth, up to a constant. The question is whether that upper bound has the right shape for larger s; these papers take s from 5 up. Lower bounds need graphs with no clique of size s and no large independent set. For r(5,t), as the papers recount, Spencer’s local lemma gave about (t/log t)³, and Bohman and Keevash’s random process gave t³/(log t)^(8/3); by these methods, even the power of t was out of reach. In 2026, Bradač reached t⁴, the right power of t for every fixed s, but divided by (log t)⁶, against the upper bound’s third power. What remained was the power of log t.</p>
+<h3><span class="t num">1:40</span>The claim</h3>
+<p>Result 170 is two OpenAI preprints, dated September 24: 41 pages on r(5,t), and 53 pages for every fixed s of at least 6. Both theorems say the same thing: for every ε, once t is large, r(s,t) lies between t^(s−1)/(log t)^(s−2+ε), and a constant times t^(s−1)/(log t)^(s−2). So the power of log t is exactly s − 2, matching the classical upper bound. For s = 5, the lower bound’s exponent of log t drops from 6 to 3 + ε. The new part is the lower bound; the upper bound is the classical one, re-proved. Not claimed: the constant. The papers leave open whether r(s,t) is a constant multiple of that formula, and the lower bound loses a factor of (log t)^ε. Four is not covered, and three was settled before. There are no explicit graphs, and no thresholds for how large t must be. And the exponent is a limit that settles very slowly: in our calculation, if r(5,t) were exactly 1/100 of the upper formula, the measured exponent would still be about 4.4 at t equal to 10¹².</p>
+<h3><span class="t num">3:00</span>How the proof goes</h3>
+<p>The graph comes from finite geometry, following Bradač’s construction. Take projective space of dimension d, one less than s, over a large prime field. A flag is a point together with a hyperplane through it. Write down a random stream of flags, about q^d · log q of them. Join an earlier flag to a later one when the earlier point lies on the later hyperplane, but the later point is not on the earlier hyperplane. A clique listed in order would give d + 1 independent points inside one hyperplane, which is impossible, so there is no clique of size s. We checked this in small cases: cliques of size d occur, but never d + 1. Independent sets are the consistent sequences, and the hard part is to show that some stream has no long one. The proof argues by contradiction, with an entropy count. If every stream had a long consistent sequence, picking one out of a random stream would carry a lot of information. The papers show the opposite: such sequences can be described cheaply. Marking scans force most flags into small known regions. The new ingredient is a description theorem for sparse pairs of point sets and hyperplane sets, pinning down part of them with a short message drawn from shared random tables, using projections to lower dimensions, a Poisson score, and polynomial-method bounds for rich lines. A balanced tree of tests uses it to shrink the decoder’s domains, and a bounded number of rounds makes the description shorter than the entropy bound allows. So some stream has no long independent set, and choosing the prime to fit t gives the lower bound.</p>
+<h3><span class="t num">4:41</span>Where it stands</h3>
+<p>Both papers are preprints, not peer reviewed, and not revised. Both main theorems are stated in Lean to match the papers, including the classical upper bound, and OpenAI’s files contain proofs of about 74,000 and 64,000 lines, partly shared, with no gaps we could find by search; we did not run the check. The key earlier construction comes from Bradač’s 2026 preprint, and the papers re-prove what they use from it. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If they hold, for every fixed s of at least 5, the power of log t in r(s,t) is s − 2, as the classical upper bound says, up to a factor of (log t)^ε. The constant is not determined, and s = 4 is not covered.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20170%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../169-shareshian-wachs-elementary-positivity/"><span class="dir">Previous · 169</span><span class="pt">Shareshian–Wachs elementary positivity</span></a>
-  <a class="next" href="../171-hypercube-ramsey-conjecture/"><span class="dir">Next · 171</span><span class="pt">The hypercube Ramsey conjecture</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

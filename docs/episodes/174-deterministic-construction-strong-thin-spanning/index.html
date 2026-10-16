@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 174: Deterministic construction of strong thin spanning trees | AI Proved What?</title>
-<meta name="description" content="Deterministic construction of strong thin spanning trees. Result 174 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Strong thin trees: always C/k? Deterministic construction of strong thin spanning trees | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim that every k-edge-connected multigraph has a spanning tree taking at most a constant over k share of every cut, and that such a tree can be found in polynomial time. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/174-deterministic-construction-strong-thin-spanning/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 174: Deterministic construction of strong thin spanning trees | AI Proved What?">
-<meta property="og:description" content="Deterministic construction of strong thin spanning trees. Result 174 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Strong thin trees: always C/k?">
+<meta property="og:description" content="Two AI preprints claim that every k-edge-connected multigraph has a spanning tree taking at most a constant over k share of every cut, and that such a tree can be found in polynomial time. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/174-deterministic-construction-strong-thin-spanning/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/174-deterministic-construction-strong-thin-spanning/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,49 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 174 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Deterministic construction of strong thin spanning trees</h1>
+<p class="meta">Episode 174, October 2026</p>
+<h1>Strong thin trees: always C/k?</h1>
+<p class="subtitle">Two preprints claim that every k-edge-connected multigraph has a spanning tree taking at most a constant over k share of every cut, and that such a tree can be found in polynomial time</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 174 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="FVECKDfbLng" data-title="Episode 174: Strong thin trees: always C/k?">
+  <a href="https://youtu.be/FVECKDfbLng">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 174: Strong thin trees: always C/k? A multigraph with doubled sides and three diagonals, a spanning path in pink, and its worst cut, with dots coloured by side and crossing links in yellow (our drawing).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:55. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/FVECKDfbLng?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/FVECKDfbLng?t=129" data-t="129"><span class="t">2:09</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/FVECKDfbLng?t=228" data-t="228"><span class="t">3:48</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/FVECKDfbLng?t=357" data-t="357"><span class="t">5:57</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Resolves the strong thin-tree conjecture constructively. Every finite loopless <i>k</i>-edge-connected multigraph on at least two vertices has a spanning tree containing at most a universal <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi mathvariant="normal">/</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">C/k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> fraction of the edges of every cut. Such a tree can be found deterministically in polynomial time, even with binary-encoded parallel-edge multiplicities.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Join dots by links, allowing several parallel links between the same two dots. A cut splits the dots into two sides; the graph is k-edge-connected if every cut has at least k links. A spanning tree T is α-thin if |δ<sub>T</sub>(S)| ≤ α|δ<sub>G</sub>(S)| for every cut: it takes at most a fraction α of every cut’s links at once. With two dots and k parallel links, “every spanning tree uses exactly one of the k edges of the only cut”, so 1/k is the best possible order. In a cycle, or in the Petersen graph, every spanning tree has thinness 1 (our check). The strong thin tree conjecture asks for thinness C/k for one fixed C; it strengthens the question the papers cite from Luis Goddyn’s list of open problems, whether high connectivity alone forces ε-thin trees. As the papers recount, Asadpour, Goemans, Mądry, Oveis Gharan and Saberi used random spanning trees for an O(log n/log log n) approximation to the asymmetric traveling salesman problem, with the matching O(log n/(k log log n)) thin-tree scale; Anari and Oveis Gharan proved trees of thinness poly(log log n)/k exist; and Oveis Gharan and Saberi proved C/k for planar graphs, and for bounded genus with C depending on the genus. Constant-factor approximation for the asymmetric traveling salesman problem “has already been obtained by other methods”, by Svensson, Tarnawski and Végh, improved by Traub and Vygen.</p>
+<p>Result 174 is two OpenAI preprints, both dated September 23, 2026. <a href="https://github.com/openai/math/blob/main/preprints/The-strong-thin-tree-conjecture-September-23-2026/paper.pdf">The strong thin tree conjecture</a> (52 pages), Theorem 1.1: “There is a universal constant C&gt;0 such that, for every integer k≥1, every finite k-edge-connected undirected multigraph without loops and with at least two vertices has a spanning tree T satisfying |δ<sub>T</sub>(S)| ≤ (C/k)|δ<sub>G</sub>(S)| for every ∅≠S⊊V.” <a href="https://github.com/openai/math/blob/main/preprints/A-polynomial-time-construction-of-strong-thin-trees-September-23-2026/paper.pdf">A polynomial-time construction of strong thin trees</a> (38 pages), Theorem 1.1: a deterministic algorithm returns such a tree “in time polynomial in the total binary input length, whether edges are listed explicitly or multiplicities are encoded in binary.” For binary input it first caps and rescales the multiplicities, a = ⌊2n²·min(c, k)/k⌋: two dots with 10<sup>18</sup> links become two dots with 8 (our example). Its Corollary 7.1 rounds any rational weights x with x(δ(S)) ≥ 1 on every cut to a tree with |δ<sub>T</sub>(S)| ≤ 24B·x(δ(S)) and cost at most 24B times the cost of x, for B ≥ max{1, C}.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>No value of C. The first paper sets C = 3C<sub>it</sub>r<sub>*</sub> and requires r ≥ 16<sup>16</sup> along the way, so its constant exceeds 5 × 10<sup>19</sup>; by our reading of its Appendix B (condition (B.69)) the written argument needs more than 10<sup>620</sup>. Since no tree takes more than all of a cut, the theorem says nothing new until k exceeds C. The second paper’s algorithm also starts only above an absolute cutoff and otherwise returns any spanning tree (p.27); by our reading that cutoff is of the same astronomical kind, so on any graph one could store, the algorithm simply returns some spanning tree. The first paper “makes no claim about its computational cost”; the second states no degree for its polynomial. Neither claims a new traveling salesman approximation (“no new approximation-order claim is made”) or thinness in the spectral sense.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 52 and 38 pages, dated September 23, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +87,46 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/174.md">scope notes</a>)</dd>
+    <dd>Both main theorems, formalized by OpenAI; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. Neither preprint has been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/174.md">Lean formalization</a> with two comparator statements: <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/StrongThinTree.lean">the existence theorem</a>, matching the first paper, and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/AlgorithmicThinTrees.lean">the algorithmic theorem</a>, stated for one fixed multi-stack machine over bits that halts within a·(input length + 1)<sup>degree</sup> steps on every valid input, explicit or binary, with a C/k-thin spanning tree on its output stack. By our count the proofs take 72 files and 17,363 lines (existence) and 736 files and 101,101 lines (algorithm, including the existence proof and a 553-file matrix-signing library), excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/ThinTrees">the development</a>), with no unproved steps by our search; we have not rebuilt them. The thin-and-cheap rounding is not formalized. The signing step builds on a September 2026 preprint by Ezeunala and Jiang. The papers are not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Many trees.</strong> By Nash-Williams and Tutte, a k-edge-connected graph contains ⌊k/2⌋ spanning trees with no link in common. On each cut they share its links, so on average each takes a small share; but “this averaging does not select one tree that is small on every cut”. In the complete graph on 9 dots, four disjoint trees average at most a quarter of every cut, yet no tree of that graph beats 2/5 (our check).</li>
+  <li><strong>The halving game.</strong> As Harvey and Olver did for spectrally thin trees under an effective-resistance hypothesis, the proof halves repeatedly; what is new is carrying a tree packing along. Keep a subset of the links so that no cut keeps much more than half, while the number of disjoint trees roughly halves (Proposition 6.2). The relative losses form a summable series, so their product stays bounded. Stop below a fixed number of trees: any spanning tree of what is left is C/k-thin.</li>
+  <li><strong>The shortcut matrix.</strong> In the second paper’s words, “a positive quadratic form that bounds cut sizes; its inverse assigns each edge a resistance, and edges of low resistance are the candidates retained for sparsification.” Its existence (Theorem 4.1) combines the needed consequence of Anari and Oveis Gharan’s hierarchy geometry, proved in a 29-page appendix, with a fixed-point argument.</li>
+  <li><strong>Two systems, one split.</strong> Each kept link carries a vector that controls cuts and one that certifies tree packing, since “q parallel edges between two vertices have the same Laplacian as one edge of weight q, but the former graph packs q edge-disjoint spanning trees and the latter has only one.” The Marcus–Spielman–Srivastava theorem, proved in full in an appendix, splits the links into two halves balanced on both systems.</li>
+  <li><strong>Making it an algorithm.</strong> The second paper replaces the fixed point by convex continuation solved with the ellipsoid method, real whitening by exact rational arithmetic, and the existence of a split by a deterministic rank-one signing algorithm building on Ezeunala and Jiang, each step checked exactly.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our exact checks: two dots and k links (1/k); cycles (every tree 1); the Petersen graph (all 2,000 trees have thinness 1); the hexagon multigraph with doubled sides and three diagonals (k = 5; the path takes 2 of the 5 links around one dot and 4 of the 8 links of its worst cut: thinness 1/2, the best there); and our observation that a tree has thinness below 1 exactly when the links it leaves out still connect every dot.</li>
+  <li>Our simulation: uniformly random spanning trees of complete graphs, mean largest degree 3.4, 5.2, 6.5, 7.7, 8.8 and 9.7 for 10 to a million dots, against a path through all dots, whose thinness stays below 4/k.</li>
+  <li>Our packing check in the complete graph on 9 dots (k = 8), and our cartoon of the halving game: the best of 400 random halvings per round of a 7-dot multigraph with 336 links and k = 59, down to one tree of thinness 1/37 in 7 rounds. It is not the paper’s step.</li>
+  <li>Our use of the second paper’s binary reduction (p.27): 10<sup>18</sup> links between two dots become 8.</li>
+  <li>The constant: 3 · 16<sup>16</sup> ≈ 5.5 × 10<sup>19</sup> from an explicit requirement; about 10<sup>620</sup> from our reading of (B.69).</li>
+  <li>The Lean count: our count of the import closures.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-strong-thin-tree-conjecture-September-23-2026/paper.pdf">The strong thin tree conjecture (PDF)</a>, 52 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-polynomial-time-construction-of-strong-thin-trees-September-23-2026/paper.pdf">A polynomial-time construction of strong thin trees (PDF)</a>, 38 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/174.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 174.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -76,18 +135,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-polynomial-time-construction-of-strong-thin-trees-September-23-2026/paper.pdf">A polynomial-time construction of strong thin trees</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Draw some dots and join them with links, allowing several parallel links between the same two dots. Split the dots into two sides: the links that cross form a cut. The graph is k-edge-connected if every cut has at least k links. A spanning tree joins all the dots with as few links as possible, and its thinness is the largest share it takes of any one cut. With two dots and k parallel links, every tree takes one link out of k: thinness one over k, so no rate faster than one over k is possible. In a cycle, every tree has thinness one. In our check of the Petersen graph, all 2,000 spanning trees have thinness one too. The reason, by a short argument of ours: a tree is thinner than one exactly when the links it leaves out still connect every dot. The strong thin tree conjecture says that every k-edge-connected graph has a tree of thinness at most C over k, for one fixed number C. The papers cite the question from Luis Goddyn’s list of open problems: does high enough connectivity force a tree of thinness below any fixed fraction? The strong form asks for the rate C over k. Thin trees matter for the asymmetric traveling salesman problem. Asadpour, Goemans, Mądry, Oveis Gharan and Saberi rounded its linear program with random spanning trees, for an approximation factor of order log n over log log n, and the same method gives trees with thinness of that order, divided by k. In our simulation, a random spanning tree of a complete graph with a million dots has a dot with about 10 tree links, so its thinness is about 10 over k or more, while a path through all the dots stays below 4 over k. Anari and Oveis Gharan proved that trees exist with thinness polynomial in log log n, over k, and Oveis Gharan and Saberi reached C over k for planar graphs. Meanwhile, constant-factor approximation for the asymmetric traveling salesman problem came by other methods, from Svensson, Tarnawski and Végh, improved by Traub and Vygen.</p>
+<h3><span class="t num">2:09</span>The claim</h3>
+<p>Result 174 is two OpenAI preprints, both dated September 23, 2026. The first, 52 pages long, proves the strong thin tree conjecture: there is a universal constant C such that every k-edge-connected multigraph with at least two dots has a spanning tree taking at most C over k of every cut. The second, 38 pages long, finds such a tree with a deterministic algorithm, in time polynomial in the length of the input, even when the numbers of parallel links are written in binary. For binary input, it first caps and rescales those numbers: in our example, two dots joined by a billion billion (10¹⁸) links become two dots joined by 8. The second paper also rounds any fractional point that puts weight at least one on every cut to a tree that is thin and cheap at once, up to a constant factor. Not claimed: any value of C. The first paper’s written constant is enormous. One explicit requirement already makes it more than 5 × 10¹⁹, and by our reading of the appendix it exceeds 10⁶⁰⁰. Since no tree takes more than all of a cut, the theorem only says something new when k is larger than C. By our reading, the second paper’s cutoff is of the same kind, so on any graph small enough to store, its algorithm just returns some spanning tree. Its polynomial has no stated degree, and the first paper makes no claim about computational cost. Neither paper claims a new traveling salesman approximation or trees that are thin in the spectral sense.</p>
+<h3><span class="t num">3:48</span>How the proof goes</h3>
+<p>The existence proof starts from tree packing. By a theorem of Nash-Williams and Tutte, a k-edge-connected graph contains about k over two spanning trees with no link in common. On each cut, those trees share the cut’s links, so on average each tree takes a small share. But, as the paper says, this averaging does not select one tree that is small on every cut. In our test on the complete graph with 9 dots, four disjoint trees average at most a quarter of every cut, yet no tree of that graph takes less than two fifths of its worst cut. So the proof plays a halving game, as Harvey and Olver did for spectrally thin trees under an extra assumption. Keep a subset of the links so that no cut keeps much more than half, while the number of disjoint trees roughly halves. The small losses of each round multiply to a bounded constant, because the error terms form a geometric series. Stop once the number of trees drops below a fixed cutoff: then any spanning tree of what is left is thin. The hard part is one halving step. The paper builds a shortcut matrix: a positive quadratic form that bounds cut sizes, whose inverse gives each link a resistance. Links of low resistance are the candidates to keep. Its existence uses the hierarchy geometry of Anari and Oveis Gharan, whose needed consequence the paper proves in a long appendix, and a fixed-point theorem. Each kept link then carries two vectors, one that controls cuts and one that certifies tree packing, because the Laplacian, which records cut sizes, cannot see packing: k parallel links have the same Laplacian as a single link of weight k. The theorem of Marcus, Spielman and Srivastava, which settled the Kadison–Singer problem, splits the links into two halves balanced on both systems at once. The second paper makes each step computable: convex optimization by the ellipsoid method instead of the fixed point, exact rational arithmetic, and a deterministic signing algorithm that builds on a September 2026 preprint by Ezeunala and Jiang.</p>
+<h3><span class="t num">5:57</span>Where it stands</h3>
+<p>Both papers are preprints, not peer reviewed, and not revised. OpenAI’s Lean files state both theorems. The existence statement matches the paper. The algorithmic one is stated for a single fixed machine, a simple stack machine over bits, that halts within a polynomial number of steps on every valid input and outputs a thin tree. By our count the proofs take about 17,000 lines and about 101,000 lines, the second including the first, with no gaps we could find by search; we did not run the check. The thin and cheap rounding is not formalized. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If they hold, high edge connectivity alone forces a spanning tree that takes at most a constant over k share of every cut, and such a tree can be found in polynomial time.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20174%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../173-seymours-second-neighborhood-conjecture/"><span class="dir">Previous · 173</span><span class="pt">Seymour’s second-neighborhood conjecture</span></a>
-  <a class="next" href="../175-talagrands-expectation-thresholds-discrete-convexity/"><span class="dir">Next · 175</span><span class="pt">Talagrand’s expectation thresholds, discrete convexity, and graph decompositions</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
