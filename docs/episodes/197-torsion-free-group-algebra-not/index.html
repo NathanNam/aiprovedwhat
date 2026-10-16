@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 197: A torsion-free group algebra that is not directly finite | AI Proved What?</title>
-<meta name="description" content="A torsion-free group algebra that is not directly finite. Result 197 in OpenAI&#x27;s math release (Algebra): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>One-sided inverse? Kaplansky’s direct-finiteness conjecture | AI Proved What?</title>
+<meta name="description" content="AI preprints claim group algebras where ab = 1 but ba ≠ 1, disproving Kaplansky&#x27;s direct-finiteness conjecture, even for a torsion-free group over the two-element field. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/197-torsion-free-group-algebra-not/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 197: A torsion-free group algebra that is not directly finite | AI Proved What?">
-<meta property="og:description" content="A torsion-free group algebra that is not directly finite. Result 197 in OpenAI&#x27;s math release (Algebra): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="One-sided inverse?">
+<meta property="og:description" content="AI preprints claim group algebras where ab = 1 but ba ≠ 1, disproving Kaplansky&#x27;s direct-finiteness conjecture, even for a torsion-free group over the two-element field. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/197-torsion-free-group-algebra-not/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/197-torsion-free-group-algebra-not/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,35 +37,105 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 197 · <a href="../../subjects/algebra/">Algebra</a></p>
-<h1 class="result-title">A torsion-free group algebra that is not directly finite</h1>
+<p class="meta">Episode 197, October 2026</p>
+<h1>One-sided inverse?</h1>
+<p class="subtitle">Preprints claim group algebras in which ab = 1 but ba ≠ 1, disproving Kaplansky’s direct-finiteness conjecture, the headline one for a torsion-free group over the two-element field</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 197 in OpenAI’s catalog: <a href="#papers-in-result">all 4 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="5JHchks3qmM" data-title="Episode 197: One-sided inverse?">
+  <a href="https://youtu.be/5JHchks3qmM">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 197: One-sided inverse? A grid of vertex pairs in which only the diagonal clump survives.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:36. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/5JHchks3qmM?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/5JHchks3qmM?t=100" data-t="100"><span class="t">1:40</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/5JHchks3qmM?t=220" data-t="220"><span class="t">3:40</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/5JHchks3qmM?t=394" data-t="394"><span class="t">6:34</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Constructs a finitely presented torsion-free nonsofic group whose group algebra over 𝔽<sub>2</sub> is not directly finite, disproving Kaplansky's conjecture even without torsion. Companion examples give injective nonsurjective cellular automata on all configurations, refuting Gottschalk's surjunctivity conjecture. Another counterexample is an integral group-ring matrix, invertible over the rational group ring, with Fuglede–Kadison determinant strictly between zero and one, disproving the unrestricted Determinant Conjecture.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>If a square matrix has a left inverse, it is also a right inverse. On an infinite tape this fails: shifting right and then left is the identity, but in the other order the first entry is lost. A group algebra K[G], finite sums of group elements with coefficients in a field, sits in between: infinite-dimensional when G is infinite, but every element is a finite sum. Kaplansky’s direct-finiteness question asks whether ab = 1 always forces ba = 1 there. For finite groups it does (the algebra is finite-dimensional); our search of eight small group algebras, 22,825 pairs, found no one-sided inverse.</p>
+<p>Kaplansky proved the answer is yes in characteristic 0 for every group, using operator algebras, and asked about other fields. Ara, O’Meara and Perera proved it for free-by-amenable groups in any characteristic, and Elek and Szabó for all sofic groups, so a counterexample needs a nonsofic group. Gottschalk’s 1973 conjecture says that on every group, an injective cellular automaton over a finite alphabet is surjective; Elek and Szabó recorded that this would imply direct finiteness over finite fields.</p>
+<p>Result 197 bundles four OpenAI preprints. The headline one, <a href="https://github.com/openai/math/blob/main/preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/direct-finiteness.pdf">A Torsion-Free Group Algebra That Is Not Directly Finite</a> (31 pages, dated October 4, 2026), claims in its Theorem 1.1: there are a finitely presented torsion-free group G and a, b, c in 𝔽<sub>2</sub>[G] with ab = 1, ac = 0 and c ≠ 0. Then ba ≠ 1, since otherwise c = (ba)c = b(ac) = 0. G has a finite two-dimensional classifying complex and, by Elek and Szabó, is nonsofic. The construction is random: the paper proves a suitable choice exists without writing one down.</p>
+<p>The other three came first. <a href="https://github.com/openai/math/blob/main/preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/paper.pdf">A characteristic-two paper</a> (28 pages, September 23) gives a counterexample over a finite field of characteristic two (not asserted to be 𝔽<sub>2</sub>) for a finitely presented group with an element of odd prime order, by a recipe that provably terminates but has not been run; the same elements give an injective, non-surjective cellular automaton, against Gottschalk’s conjecture. <a href="https://github.com/openai/math/blob/main/preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Odd-Characteristic-September-26-2026/paper.pdf">An odd-characteristic paper</a> (25 pages, September 26) does it for one prime only: the smallest prime factor of ((1200 choose 600)!)² + 1, a number with about 10<sup>362</sup> digits by our count. <a href="https://github.com/openai/math/blob/main/preprints/A-Counterexample-to-the-Group-Ring-Determinant-Conjecture-September-23-2026/paper.pdf">A determinant paper</a> (9 pages, September 23) turns the characteristic-two pair into an integer group-ring matrix, invertible over the rational group ring, with Fuglede–Kadison determinant q<sup>−θ</sup>, strictly between 0 and 1, against the unrestricted group-ring Determinant Conjecture.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Anything in characteristic 0, where Kaplansky’s theorem stands; a torsion-free example in odd characteristic (the headline paper works over 𝔽<sub>2</sub>, hence characteristic 2); every odd prime; or an explicit pair that anyone could multiply out. Nonsofic groups are not new to this release: a <a href="https://www.renyi.hu/en/news/openai-mathematical-breakthrough-builds-renyi-researchers-work">Rényi Institute news page</a> (August 4, 2026) reports that OpenAI announced a different one in August.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI: September 23 (two), September 26 and October 4, 2026; none revised</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
-    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/197.md">scope notes</a>)</dd>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean: three of the four</dt>
+    <dd>Characteristic two, odd characteristic and determinant papers, in their main statements; not run by us</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>The torsion-free paper in Lean</dt>
+    <dd>Not formalized</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 16, 2026. None of the four preprints has been revised since the repository’s initial commit on October 6, 2026. Three are formalized in Lean in their main statements (<a href="https://github.com/openai/math/blob/main/lean/docs/197.md">scope note</a>; one <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/KaplanskyFinitelyPresented.lean">comparator statement</a>): the characteristic-two, odd-characteristic and determinant papers, with no sorry, admit, axiom or native_decide in code by our search, 246 files and about 29,700 lines excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/RingTheory/DirectFiniteness">source</a>). The determinant statement leaves out the paper’s spectral-integral conclusion, and nonsoficity is in no formal statement. The torsion-free headline paper is not formalized. By our reading of the Lean files, in place of Linnik’s theorem the Lean proof bounds the needed prime with the Mersenne prime 2<sup>21701</sup> − 1 (we reran the Lucas–Lehmer test). We did not run the check. None of the four is among those OSVerify reviewed, and we found no expert reaction.</p>
+<p>One remark of ours, not in the paper: if ab = 1 and ba ≠ 1, then e = ba satisfies e² = b(ab)a = e, e ≠ 1, and e ≠ 0 since 1 = a(ba)b. So the headline result would also give an idempotent other than 0 and 1 in 𝔽<sub>2</sub>[G] for a torsion-free G.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The machine of result 196.</strong> Two random graphs, A and B, are labelled by letters from the projective plane of order 128: each vertex gets a line as its outgoing letters, and two lines share one point, or all 129 if equal.</li>
+  <li><strong>Seven Fano letters.</strong> Seven extra letters are the points of the Fano plane. A vertex gets none, or the four points off one Fano line; these sets overlap in 0, 2 or 4 letters, so they never change the parity. Only the root of A gets all seven (136 letters). So two vertices of A always share an odd number of letters, except the root with itself.</li>
+  <li><strong>One clump survives.</strong> Cones over the graphs give each vertex a group element; a is the sum over A, b the sum of the inverses. Stepping a pair of vertices along a shared letter leaves its term of ab unchanged, and pairs linked by steps form clumps. Odd degrees make every clump even, so it cancels, except the root’s clump: odd size, term 1. So ab = 1. That clump is always the diagonal (our observation). A sum c over B gives ac = 0, as in result 196.</li>
+  <li><strong>The safeguards.</strong> Most of the remaining pages redo the safeguards: the group has no torsion, and c keeps its identity term, so c ≠ 0.</li>
+  <li><strong>Characteristic two: a rectangle in a square.</strong> Low-degree polynomials sum to zero along every full line of a finite affine space. With a sparse set of holes and vectors built from polynomials picking out each hole, the products sum to zero along every full line but to the identity over the punctured space: a wide matrix X with XX<sup>T</sup> = I, while X<sup>T</sup>X cannot be the identity.</li>
+  <li><strong>The determinant.</strong> Adding an order-3 lamp at each group element gives a projection whose trace is d + θ over the rationals, yet which fits through d columns mod 2; an integer matrix turns the gap into determinant q<sup>−θ</sup> &lt; 1. A nonsingular integer matrix always has determinant at least 1 in absolute value.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our search: all 22,825 pairs in eight small group algebras (𝔽<sub>2</sub> or 𝔽<sub>3</sub> over groups of order up to 7): every ab = 1 has ba = 1.</li>
+  <li>The torsion-free paper’s constants (16,513 points, 16,520 letters, sizes 129, 133, 136, the overlap parities) rechecked by enumeration. Our 7-point toy: 77 × 77 = 5,929 pairs in 2 clumps, the diagonal (77, odd) and the rest (5,852, even).</li>
+  <li>Characteristic-two toy (ours): 64 points over the four-element field, all 336 full lines checked.</li>
+  <li>Determinant toys (ours): identity coefficients 1/3, 2/9, 4/27, 8/81; on finite groups the formula gives determinants 2.52 and 25.4, both above 1.</li>
+  <li>Lucas–Lehmer for 2<sup>21701</sup> − 1 rerun by us; the digit count of ((1200 choose 600)!)² + 1 is ours; the Lean counts are ours.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Torsion-Free-Group-Algebra-That-Is-Not-Directly-Finite-October-4-2026/direct-finiteness.pdf">A Torsion-Free Group Algebra That Is Not Directly Finite (PDF)</a>, 31 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Characteristic-Two-September-23-2026/paper.pdf">A Counterexample to Kaplansky’s Direct-Finiteness Conjecture in Characteristic Two (PDF)</a>, 28 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Odd-Characteristic-September-26-2026/paper.pdf">A Counterexample to Kaplansky’s Direct-Finiteness Conjecture in Odd Characteristic (PDF)</a>, 25 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Counterexample-to-the-Group-Ring-Determinant-Conjecture-September-23-2026/paper.pdf">A Counterexample to the Group-Ring Determinant Conjecture (PDF)</a>, 9 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/197.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 197.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 4 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -77,18 +146,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-Counterexample-to-Kaplanskys-Direct-Finiteness-Conjecture-in-Odd-Characteristic-September-26-2026/paper.pdf">A Counterexample to Kaplansky's Direct-Finiteness Conjecture in Odd Characteristic</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>If a square matrix has a left inverse, that is also a right inverse: A times B equal to the identity forces B times A to be the identity. On an infinite tape this fails. Shift everything one place right, writing a zero at the start, then one place left, and you are back where you began. In the other order, the first entry is lost. Group algebras sit in between. Take a group, and finite sums of its elements with coefficients in a field, multiplied using the group law. The algebra can be infinite-dimensional, like the tape, but every element is a finite sum. Is that enough? If a times b is one, must b times a be one? For a finite group, yes: the algebra is finite-dimensional, so this is linear algebra. Our search of eight small group algebras, nearly 23,000 pairs, found no one-sided inverse. This is Kaplansky’s direct-finiteness question. In characteristic zero he proved the answer is yes for every group, using operator algebras, and he asked about other fields. Ara, O’Meara and Perera proved it for free-by-amenable groups, in any characteristic. Elek and Szabó proved it for all sofic groups: groups whose multiplication can be imitated, approximately, by permutations of finite sets. So a counterexample needs a nonsofic group. There is also a link to cellular automata. Gottschalk’s conjecture, from 1973, says that on every group, a cellular automaton with finitely many symbols that never sends two configurations to the same one must reach every configuration. Elek and Szabó recorded that this would imply direct finiteness over finite fields.</p>
+<h3><span class="t num">1:40</span>The claim</h3>
+<p>Result 197 bundles four OpenAI preprints. The headline one, 31 pages, is dated October 4, 2026. It claims: there is a finitely presented group with no elements of finite order, and three sums a, b and c in its group algebra over the two-element field, with a b equal to one, a c equal to zero, and c not zero. Then b a cannot be one: if it were, c would equal b a c, which is b times a c, which is zero. The group even has a finite two-dimensional classifying complex, and by Elek and Szabó it is nonsofic. As in the last episode, the construction is random: the paper proves a suitable choice exists without writing one down. The other three came first. On September 23, a 28-page paper gave a counterexample over a finite field of characteristic two, for a finitely presented group with torsion; it does not claim the field is the two-element field. Its elements are fixed by a recipe that provably stops, but has not been run. The same elements give a cellular automaton that is injective but not surjective, against Gottschalk’s conjecture. On September 26, a 25-page paper did it in odd characteristic, for one prime only: the smallest prime factor of a huge number: take 1200 choose 600, take its factorial, square it, and add one. Nobody knows that prime. And a 9-page paper, also from September 23, turns the characteristic-two example into a counterexample to the group-ring Determinant Conjecture. Not claimed: anything in characteristic zero, where Kaplansky’s theorem stands; a torsion-free example in odd characteristic; or an explicit pair that anyone could multiply out. And nonsofic groups are not new to this release: a news page of the Rényi Institute reports that OpenAI announced a different one in August.</p>
+<h3><span class="t num">3:40</span>How the proof goes</h3>
+<p>The torsion-free paper reuses the machine of the zero-divisor paper. Two random graphs, A and B, are labelled by letters from the projective plane of order 128. Each vertex gets a line of the plane as its outgoing letters, and two lines share one point, or all 129 if they are equal. The new ingredient is seven extra letters, the points of the 7-point Fano plane. A vertex gets none of them, or the four points off one Fano line, and these sets always overlap in an even number, zero, two or four, so they never change the parity. Only the root of graph A gets all seven extras, giving it 136 letters. So two vertices of A always share an odd number of letters, except the root paired with itself. Glue cones over the graphs, so each vertex has a group element, read along any path from the root. Let a be the sum of graph A’s elements, and b the sum of their inverses. Expanding a times b gives one term for each pair of vertices, and stepping both vertices along a shared letter does not change the term. Pairs linked by such steps form clumps. Every pair has an odd number of steps, except the root pair, so every clump has even size and cancels, except the root’s clump. Its term is the identity, and its size is odd, so one identity survives: a b equals one. In fact, that clump is just the diagonal, each vertex paired with itself, as our 7-point toy shows. A sum c from graph B gives a c equal to zero, as in the last episode. Most of the remaining pages redo the safeguards: the group has no torsion, and c keeps its identity term, so c is not zero. The September characteristic-two paper hides a rectangle inside a square. Over a finite field, a polynomial of low degree sums to zero along every full line of a finite affine space. Punch a sparse set of holes, and build vectors from polynomials that pick out each hole: along every full line their products sum to zero, but over the punctured space they add up to the identity. That is a wide matrix X, with X times X transpose equal to the identity, while X transpose times X cannot be, since X has too few rows. Our toy, 64 points over the four-element field, checks all 336 lines. The 9-page paper then starts from this pair. It adds an order-three lamp at each group element and builds a projection whose trace exceeds d by a small θ, yet mod two fits through d columns. An integer matrix turns that gap into a Fuglede–Kadison determinant of q^(−θ), between zero and one; a nonsingular integer matrix always has determinant at least one in size. In our finite-group toys, the same formula gives determinants above one.</p>
+<h3><span class="t num">6:34</span>Where it stands</h3>
+<p>All four preprints are unrefereed and unrevised. Three are formalized in Lean, in their main statements: the characteristic-two, odd-characteristic and determinant papers, 246 files and about 30,000 lines with no unfinished proofs; we did not run the check. The torsion-free headline paper is not formalized. By our reading, where the paper calls on Linnik’s theorem about primes, the Lean proof instead bounds that prime with a single known Mersenne prime, 2²¹⁷⁰¹ − 1, which we rechecked. None of the four is among those OSVerify reviewed, and we found no expert reaction. One more remark of ours: b a would then be an idempotent other than zero and one in a torsion-free group algebra. The paper does not say this. If it holds, finite sums are not enough: even with no torsion, over the field with two elements, a one-sided inverse need not be two-sided.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20197%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../196-counterexample-kaplanskys-zero-divisor-conjecture/"><span class="dir">Previous · 196</span><span class="pt">A counterexample to Kaplansky’s zero-divisor conjecture</span></a>
-  <a class="next" href="../198-counterexample-finitistic-dimension-finiteness/"><span class="dir">Next · 198</span><span class="pt">A counterexample to finitistic-dimension finiteness</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebra/">More in algebra</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
