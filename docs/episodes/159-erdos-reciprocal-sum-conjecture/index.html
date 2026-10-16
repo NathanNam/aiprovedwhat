@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Erdős was right? Divergent reciprocal sums and arithmetic progressions | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims Erdős’s conjecture: every set of whole numbers with divergent reciprocal sum contains arithmetic progressions of every length, with a Lean formalization of the statement. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/159-erdos-reciprocal-sum-conjecture/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Erdős was right?">
+<meta property="og:description" content="An AI preprint claims Erdős’s conjecture: every set of whole numbers with divergent reciprocal sum contains arithmetic progressions of every length, with a Lean formalization of the statement. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/159-erdos-reciprocal-sum-conjecture/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/159-erdos-reciprocal-sum-conjecture/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 159, October 2026</p>
+<h1>Erdős was right?</h1>
+<p class="subtitle">A preprint claims that every set of whole numbers whose reciprocals add up to infinity contains arithmetic progressions of every length</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 159 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="0heJIj3Het4" data-title="Episode 159: Erdős was right?">
+  <a href="https://youtu.be/0heJIj3Het4">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 159: Erdős was right? The sum of 1 over a for a in A equals infinity, above five rows of evenly spaced dots of lengths three to seven.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:10. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/0heJIj3Het4?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/0heJIj3Het4?t=128" data-t="128"><span class="t">2:08</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/0heJIj3Het4?t=201" data-t="201"><span class="t">3:21</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/0heJIj3Het4?t=316" data-t="316"><span class="t">5:16</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Add up the reciprocals of a set of whole numbers. For the squares the sum converges; for the primes it diverges, though slowly (about 3.17 for the primes up to 100 million, by our count). “Erdős asked whether every set A of positive integers for which Σ 1/a diverges contains arithmetic progressions of every finite length”, citing a 1974 problem list. As the paper recounts, the question extends a density problem: Erdős and Turán conjectured in 1936 that sets without three-term progressions have density tending to zero, Roth proved that case, and Szemerédi proved in 1975 that sets of positive upper density contain progressions of every length.</p>
+<p>Write r<sub>k</sub>(N) for the size of the largest subset of {1, …, N} with no k-term progression. The paper’s link is a counting argument: a progression-free set has at most r<sub>k</sub>(2<sup>m</sup>) members between 2<sup>m</sup> and 2<sup>m+1</sup>, so if the densities r<sub>k</sub>(2<sup>m</sup>)/2<sup>m</sup> have a finite sum, every progression-free set has a finite reciprocal sum. For three terms, Bloom and Sisask crossed that line in 2020, and Kelley and Meka went further. For five or more terms, the paper notes, Leng, Sah and Sawhney’s bound “does not give the dyadic summability”; as far as we know, Green and Tao’s four-term bound does not either.</p>
+<p>Result 159 is a single OpenAI preprint, <a href="https://github.com/openai/math/blob/main/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf">Quasipolynomial Bounds for Arithmetic Progressions</a> (198 pages, dated September 23, 2026). Theorem 1.1: for each fixed k ≥ 3 there are positive constants C<sub>k</sub>, c<sub>k</sub>, ε<sub>k</sub> with r<sub>k</sub>(N) ≤ C<sub>k</sub> N exp(−c<sub>k</sub>(log N)<sup>ε<sub>k</sub></sup>) for every N ≥ 2; equivalently, a set of density α in {1, …, N} contains a k-term progression once log N ≥ A<sub>k</sub>(2 + log 1/α)<sup>A<sub>k</sub></sup>, a quasipolynomial threshold. Corollary 1.2: every set with divergent reciprocal sum contains progressions of every finite length. The paper also recovers Green and Tao’s theorem on dense subsets of the primes, and shows that even a divergent sum of (log a)<sup>B</sup>/a forces progressions of every length.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>No constant is given: “the exponent is not optimized”. By our own inference ε<sub>k</sub> ≤ 1/2, since Behrend’s construction gives r<sub>k</sub>(N) ≥ r<sub>3</sub>(N) ≥ N exp(−C√log N). The paper claims no improvement for three terms (“no improvement of the three-term exponent is claimed”), where Kelley and Meka’s and later bounds already have explicit exponents, and it says nothing about how the constants grow with k. It calls the statement “Erdős’s conjecture”; it does not use the name “Erdős–Turán conjecture” for it, and mentions no prize.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 198 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Erdős’s statement itself, by a weaker route; the paper’s main bound is not formalized. We have not rebuilt it</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 15, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/159.md">Lean formalization</a> of Erdős’s statement for arbitrary sets of natural numbers (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/ErdosReciprocal.lean">comparator</a>), in 4,774 files and 1,122,983 lines (excluding Mathlib); we found no unproved steps, and we have not rebuilt it. It reaches the statement through its own, weaker density bound, r<sub>k</sub>(N) ≤ C N exp(−c(log log N)<sup>1+η</sup>), which still suffices for the doubling-block sum; the paper’s Theorem 1.1 is not formalized. OpenAI also released an abridged summary of the model’s reasoning for this result. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A density increment.</strong> If a set of density α has no k-term progression, it cannot look random: higher-order Fourier analysis, built on Leng, Sah and Sawhney’s quasipolynomial inverse theorem, finds a structured region where it is denser by a fixed factor. Repeating, after about log(1/α) rounds the density would exceed one. The difficulty is the cost: every round shrinks and complicates the region.</li>
+  <li><strong>Triangular polynomial cells.</strong> A number u lies in a cell when a ladder of polynomial expressions all land within narrow widths of integers, each rung using the actual integers found on the rungs below it. Each rung has a precision budget, and the key estimate (Theorem 2.1) makes the extra precision at a rung depend, besides the density and the dimensions, only on the rungs above it, never on its own budget or the rungs below, so the budgets stay polynomial over all rounds.</li>
+  <li><strong>One round.</strong> Prepare the cell by rank cuts; descend along random affine paths to sampled boxes; apply an increment that adds a number of new coordinates independent of the box’s dimension (adapting Kelley and Meka’s sifting and using Schoen and Sisask’s almost-periodicity); return through every layer keeping every old equation exact; extract a new cell. After about log(1/α) rounds the target density would exceed one, which gives the threshold.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our sums: the reciprocals of the primes up to 10<sup>2</sup>, 10<sup>4</sup>, 10<sup>6</sup>, 10<sup>8</sup> add to about 1.80, 2.48, 2.89, 3.17; those of the squares tend to π²/6 ≈ 1.64.</li>
+  <li>Our checks: 199 + 210j is prime for j = 0, …, 9; no four of the first 2,500 squares are evenly spaced.</li>
+  <li>Our exact search: r<sub>3</sub>(74) = 22, r<sub>3</sub>(64) = 20, r<sub>4</sub>(48) = 25; in the 22-element set we found in 1 to 74, the nine numbers 1, 4, …, 25 contain five members.</li>
+  <li>Our budget toy uses a made-up loss rule: charged only from higher layers, the total grows like a power of the number of rounds; charged by itself, its number of digits doubles every round.</li>
+  <li>The Lean counts: 4,774 files and 1,122,983 lines, our count of the import closure.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf">Quasipolynomial Bounds for Arithmetic Progressions (PDF)</a>, 198 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/159.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 159.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf">Quasipolynomial Bounds for Arithmetic Progressions</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Take a set of whole numbers and add up their reciprocals. For the squares, the sum converges, to about 1.64. For the primes it diverges, but slowly: over all primes up to 100 million it only reaches about 3.17. Erdős asked, in a problem list from 1974 that the paper cites: if the sum diverges, must the set contain arithmetic progressions, evenly spaced runs of numbers, of every finite length? The primes have them; one run of ten starts at 199 and steps by 210. Among the first 2,500 squares, we found no four evenly spaced. As the paper recounts, the question extends a density problem. Erdős and Turán conjectured in 1936 that sets without three-term progressions have density tending to zero. Roth proved that case, and Szemerédi proved in 1975 that every set of positive upper density contains progressions of every length. The reciprocal-sum question asks the same of much sparser sets. Write r_k(N) for the size of the largest subset of 1 to N with no k-term progression. In our exact search, the largest such set for three terms has 22 elements in 1 to 74. The paper’s link is a counting argument. Cut the numbers into blocks that double in length. A progression-free set has at most r_k(2^m) members in block m, each contributing at most 1/2^m. So if these densities have a finite sum, every progression-free set has a finite reciprocal sum, and the conjecture follows. For this argument, density tending to zero is not enough; it must fall fast. Roth, Gowers, Green and Tao for four terms, and Leng, Sah and Sawhney for five or more proved stronger savings, but, the paper notes, the bound for five or more terms still does not give this summability, and, as far as we know, neither does the four-term bound. For three terms, Bloom and Sisask crossed the line in 2020, and Kelley and Meka went further.</p>
+<h3><span class="t num">2:08</span>The claim</h3>
+<p>Result 159 is a 198-page OpenAI preprint, dated September 23. It claims, for each fixed k at least three, positive constants C, c and ε with r_k(N) at most C·N·exp(−c·(log N)^ε). Equivalently, a set with a fraction α of the numbers up to N contains a k-term progression once log N exceeds a constant times a fixed power of log(1/α): a quasipolynomial threshold. Summing over the doubling blocks then proves Erdős’s conjecture: every set with divergent reciprocal sum contains progressions of every finite length. The paper also recovers Green and Tao’s theorem on dense subsets of the primes. No constant is given; the paper says the exponent is not optimized. By our own inference, ε can be at most 1/2, because Behrend’s construction of progression-free sets rules out anything stronger. The paper claims no improvement for three terms, where Kelley and Meka, and others since, already have bounds with explicit exponents. And it says nothing about how the constants grow with k.</p>
+<h3><span class="t num">3:21</span>How the proof goes</h3>
+<p>The engine is a density increment. If a set of density α has no k-term progression, it cannot look random: higher-order Fourier analysis, here built on the quasipolynomial inverse theorem of Leng, Sah and Sawhney, finds a structured region where the set is denser by a fixed factor. In the largest three-term-free set we found in 1 to 74, nine evenly spaced numbers starting at one hold five members, almost twice its overall density. Repeat on the new region; after about log(1/α) rounds the density would exceed one, which is impossible. The difficulty is the cost: every round shrinks and complicates the region. The paper keeps the regions as triangular polynomial cells. A number belongs to a cell when a ladder of polynomial expressions all land very close to integers, each rung using the actual integers found on the rungs below it. Every rung carries a precision budget. The key claim is that the extra precision needed at each rung depends, besides the density and the dimensions, only on the rungs above it, never on its own budget or on the rungs below. In a toy with a made-up loss rule, that bookkeeping grows only like a power of the number of rounds; if each rung charged itself instead, the number of digits in the budget would double every round. Each round prepares the cell, descends along random affine paths to sampled boxes, finds an increment there that adds a number of new coordinates independent of the box’s dimension, and carries it back through every layer, keeping every old equation exact. For the increment itself, the paper adapts Kelley and Meka’s sifting and uses Schoen and Sisask’s almost-periodicity. After about log(1/α) rounds, the target density would exceed one, and the threshold follows.</p>
+<h3><span class="t num">5:16</span>Where it stands</h3>
+<p>The paper is not peer reviewed and has not been revised. OpenAI’s Lean formalization proves Erdős’s statement itself, for arbitrary sets of natural numbers, in 4,774 files and about 1.1 million lines. We found no unproved steps, and we have not rebuilt it. It reaches the conjecture through a weaker density bound than the paper’s, still enough for the doubling-block sum; the paper’s headline bound is not formalized. OpenAI also released an abridged summary of the model’s reasoning for this result. The paper is not among those OSVerify reviewed, and we have seen no expert review. If the result holds up, Erdős’s question has a yes answer: divergent reciprocal sums force arithmetic progressions of every length.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20159%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

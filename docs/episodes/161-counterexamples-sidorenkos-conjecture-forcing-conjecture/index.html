@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 161: Counterexamples to Sidorenko’s conjecture and the forcing conjecture | AI Proved What?</title>
-<meta name="description" content="Counterexamples to Sidorenko’s conjecture and the forcing conjecture. Result 161 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Sidorenko disproved? A counterexample to Sidorenko’s conjecture and the forcing conjecture | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims a 35-vertex bipartite pattern that some finite graph contains less often than a random graph of the same edge density, disproving Sidorenko’s conjecture, with a Lean formalization of the main theorem. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/161-counterexamples-sidorenkos-conjecture-forcing-conjecture/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 161: Counterexamples to Sidorenko’s conjecture and the forcing conjecture | AI Proved What?">
-<meta property="og:description" content="Counterexamples to Sidorenko’s conjecture and the forcing conjecture. Result 161 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Sidorenko disproved?">
+<meta property="og:description" content="An AI preprint claims a 35-vertex bipartite pattern that some finite graph contains less often than a random graph of the same edge density, disproving Sidorenko’s conjecture, with a Lean formalization of the main theorem. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/161-counterexamples-sidorenkos-conjecture-forcing-conjecture/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/161-counterexamples-sidorenkos-conjecture-forcing-conjecture/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,49 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 161 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Counterexamples to Sidorenko’s conjecture and the forcing conjecture</h1>
+<p class="meta">Episode 161, October 2026</p>
+<h1>Sidorenko disproved?</h1>
+<p class="subtitle">A preprint claims a bipartite pattern on 35 vertices that some finite graph contains less often than a random graph of the same edge density</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 161 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="3Anga7ClOcw" data-title="Episode 161: Sidorenko disproved?">
+  <a href="https://youtu.be/3Anga7ClOcw">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 161: Sidorenko disproved? Twenty-two yellow triangles with blue vertices forming a polyhedron, our drawing of the pattern as a triangulated sphere.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:29. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/3Anga7ClOcw?t=0" data-t="0"><span class="t">0:00</span><span>The conjecture</span></a></li>
+  <li><a href="https://youtu.be/3Anga7ClOcw?t=119" data-t="119"><span class="t">1:59</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/3Anga7ClOcw?t=214" data-t="214"><span class="t">3:34</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/3Anga7ClOcw?t=334" data-t="334"><span class="t">5:34</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Disproves Sidorenko's conjecture with a connected bipartite pattern on 35 vertices and 66 edges that occurs less frequently than in a random graph of the same edge density. The same pattern disproves the forcing conjecture of Skokan and Thoma: matching its density and the edge density of a constant graphon need not force quasirandomness.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Throw the vertices of a small pattern graph H onto a big host graph G at random, allowing repeats. The homomorphism density t(H,G) is the chance that every edge of H lands on an edge of G. If G is random with edge density p, it is about p<sup>e(H)</sup>. Sidorenko’s conjecture “asserts that t(H,G) ≥ p(G)<sup>|E(H)|</sup> whenever H is bipartite and has at least one edge”, where p(G) = 2|E(G)|/|V(G)|<sup>2</sup>: randomness is the worst case. As the paper recounts, it grew out of supersaturation questions, Sidorenko formulated it (1991, 1993), and it was proved for trees, even cycles and complete bipartite graphs, by Conlon, Fox and Sudakov when one vertex is joined to the whole other side, for hypercubes by Hatami through graph norms, and for many further classes (Kim, Lee and Lee; Conlon and Lee; others); Lovász proved it for weighted hosts close enough to constant.</p>
+<p>Result 161 is a single OpenAI preprint, <a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026/paper.pdf">A counterexample to Sidorenko’s conjecture</a> (51 pages, dated September 23, 2026). Its pattern is explicit: H is the incidence graph of 22 triples on 13 points listed in Table 1, a connected bipartite graph with 35 vertices and 66 edges in which every pair of points in a triple lies in exactly two triples (as we noticed, the 22 triangles tile a sphere). Theorem 1.1: “There is a finite simple undirected graph G with at least one edge such that t(H,G) &lt; p(G)<sup>66</sup>.” The same H disproves the forcing conjecture, which Conlon, Fox and Sudakov formulated following a question of Skokan and Thoma: at one density p there is a nonconstant graphon W with t(K<sub>2</sub>,W) = p and t(H,W) = p<sup>66</sup>.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The paper explains why H escapes several known positive criteria, but the host is proved to exist, not written down, and the paper puts no number on its size or on the shortfall; by our rough reading of the proof’s own estimates, the hosts it guarantees are astronomically large and the shortfall a tiny fraction. Tensor powers push the density of H as far below the random value, proportionally, as you like, while the edge density shrinks; blow-ups give fewer genuine copies than random by a fixed fraction at a fixed density. The forcing failure is shown at one density only (“does not assert failure of p-forcing at every density”), and the paper says nothing about smaller counterexamples or other open cases. The catalog attributes the forcing conjecture to Skokan and Thoma; the paper credits its formulation to Conlon, Fox and Sudakov.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, 51 pages, dated September 23, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +87,42 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/161.md">scope notes</a>)</dd>
+    <dd>Exactly the main theorem; the forcing corollary is not formalized. We have not rebuilt it</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/161.md">Lean formalization</a> of exactly the main theorem (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SidorenkoCounterexample.lean">comparator</a>, with the pattern copied from the paper’s table and homomorphisms counting all maps), in 35 files and 23,761 lines excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/Sidorenko">development</a>). Finite facts about H are checked by computation inside Lean, but the inequality is proved, and, like the paper, Lean shows the host exists without building it. We found no unproved steps, and we have not rebuilt it. The corollaries, including the forcing conjecture, are not formalized. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Two steps.</strong> First a weighted host: a kernel on a finite probability space with t(H,U) &lt; μ<sup>66</sup>, μ its mean. Then sampling: once sampled graphs have enough vertices, at least one has t(H,G) &lt; p(G)<sup>66</sup> (Lemma 3.6).</li>
+  <li><strong>Half-rank tests.</strong> Host vertices carry random symmetric matrices over a finite field, and an edge weight asks whether a difference of two matrices has exactly half the full rank, with a prescribed sign: whether the determinant of its nonzero part is a perfect square. Half rank pins the sign attached to two point matrices meeting a shared triangle’s matrix, up to a fixed sign, to the product of the prescribed signs; as the field grows, the 33 pair signs behave like independent fair coins.</li>
+  <li><strong>Parity and one negative term.</strong> Each pair lies in exactly two triangles, so its coin averages away and leaves the parity of the four corner signs around it. A random choice at each corner, with one corner biased the other way, leaves a single negative term −(θ/2)<sup>66</sup> at the intended arrangement, which colour-refinement scores make dominant. Dilution and symmetrisation give the kernel; the longest part of the paper bounds rare singular configurations with symplectic geometry, with a large matrix dimension (above 1,641 for one estimate) fixed before the field size goes to infinity.</li>
+  <li><strong>Forcing.</strong> Mixing the bad host with a kernel of too high a density of H gives, at some mixture, exactly the random density of H, while the four-cycle density stays above random, so the mixture is not quasirandom.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our rebuild of H from Table 1: 35 vertices, 66 edges, bipartite, connected; point degrees 4 (three), 5 (six), 6 (four); 33 pairs, each in exactly two triples; Euler characteristic 2 with every vertex link a cycle, so a triangulated sphere (ours).</li>
+  <li>Our ratios t(F,G)/p(G)<sup>e(F)</sup> on 30-vertex hosts (random, K<sub>15,15</sub>, two K<sub>15</sub>’s, a star) for P<sub>3</sub>, C<sub>4</sub>, K<sub>2,3</sub>, C<sub>6</sub> and H: all at least 1.</li>
+  <li>Our stand-in for the forcing argument, with triangles (not bipartite): the mixture at s = 2/3 has triangle density exactly 1/8 = p<sup>3</sup>, while the four-cycle density is 0.06404, above p<sup>4</sup> = 0.0625.</li>
+  <li>The Lean counts: 35 files and 23,761 lines, our count of the import closure.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026/paper.pdf">A counterexample to Sidorenko’s conjecture (PDF)</a>, 51 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/161.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 161.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -74,18 +130,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-Sidorenkos-conjecture-September-23-2026/paper.pdf">A counterexample to Sidorenko's conjecture</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The conjecture</h3>
+<p>Pick a small pattern graph H and a big host graph G. Throw the vertices of H onto G at random, allowing two of them to land on the same vertex. The chance that every edge of H lands on an edge of G is the homomorphism density of H in G. If G is random with edge density p, that chance is about p to the power of the number of edges of H. Sidorenko’s conjecture says that when H is bipartite, no host with edge density p does worse: randomness is the worst case. For a triangle, which is not bipartite, it fails at once, since a complete bipartite host contains no triangles at all. As the paper recounts, the conjecture grew out of questions about how many copies of a pattern must appear once a graph has many edges, and Sidorenko formulated it in the early 1990s. It was proved for trees, even cycles and complete bipartite graphs; by Conlon, Fox and Sudakov when one vertex is joined to the whole other side; for hypercubes by Hatami, through graph norms; and for many further classes, by Kim, Lee and Lee, Conlon and Lee, and others. Lovász showed it holds for weighted hosts close enough to constant, how close depending on the pattern. In our check of small patterns, and of H itself, on 30-vertex hosts, random and structured, the inequality always held, often with room to spare. A related question is about randomness itself. Chung, Graham and Wilson showed that a sequence of graphs with the random densities of edges and of four-cycles must, in the limit, contain every small pattern as often as a random graph does. The forcing conjecture, formulated by Conlon, Fox and Sudakov following a question of Skokan and Thoma, says that every bipartite graph containing a cycle can replace the four-cycle here. They note that it is stronger than Sidorenko’s conjecture.</p>
+<h3><span class="t num">1:59</span>The claim</h3>
+<p>Result 161 is a 51-page OpenAI preprint, dated September 23. Its pattern is explicit: 13 points and 22 triples of them, listed in a table. H joins each point to the triples containing it, giving a connected bipartite graph with 35 vertices and 66 edges, and every pair of points in a triple lies in exactly two triples. As we noticed, the 22 triangles tile a sphere. The theorem: some finite graph G, with at least one edge, has homomorphism density of H below its edge density to the 66th. If the proof holds, Sidorenko’s conjecture is false. The same H disproves the forcing conjecture: at one density, a graphon that is not constant matches the random densities of edges and of H exactly. The paper explains why H escapes several known positive criteria, but it does not write the host down: G is proved to exist, and the paper puts no number on its size or on the shortfall. By our rough reading of the proof’s own estimates, the hosts it guarantees are astronomically large, and the shortfall a tiny fraction. Repeated products push the density of H as far below the random value, proportionally, as you like, though the edge density shrinks as they do. Blowing the host up also gives fewer genuine copies of H than random, by a fixed fraction, at a fixed density. The forcing failure is shown at one density, and nothing is said about smaller counterexamples or other open cases.</p>
+<h3><span class="t num">3:34</span>How the proof goes</h3>
+<p>The route has two steps. First build a weighted host, a kernel on a finite probability space, with too low a density of H; then sample finite graphs from it, and once they have enough vertices, at least one keeps the shortfall. The kernel’s raw material is random symmetric matrices over a finite field. Each vertex of the host carries such matrices, and an edge weight asks whether a difference of two matrices has exactly half the full rank, with a prescribed sign: whether the determinant of its nonzero part is a perfect square in the field. Half rank forces a coincidence: when two point matrices both meet the matrix of a shared triangle this way, the sign attached to their difference is pinned, up to a fixed sign, to the product of the two prescribed signs. As the field grows, the 33 pair signs behave like independent fair coins. Each pair lies in exactly two triangles, so its coin appears twice and averages away, leaving only the parity of the four corner signs around that pair. A random choice at each corner, with one corner biased the other way, then leaves a single negative term at the intended arrangement, and scores from colour refinement make it outweigh the rest. Diluting and symmetrising gives a kernel whose density of H is below its edge density to the 66th. The longest part of the paper bounds rare singular configurations, using symplectic geometry; the proof fixes a large matrix dimension, above 1,641 for one estimate, before letting the field size go to infinity. For forcing, the paper mixes the bad host with a kernel that has too high a density of H and finds a mixture with exactly the random count that is still not random. In our stand-in with triangles, which are not bipartite, the mixture hits the random triangle count exactly, while the four-cycle count stays above random.</p>
+<h3><span class="t num">5:34</span>Where it stands</h3>
+<p>The paper is not peer reviewed and has not been revised. OpenAI’s Lean formalization states exactly the main theorem, with H copied from the paper’s table, in 35 files and about 24,000 lines. Finite facts about H are checked by computation inside Lean, but the inequality itself is proved, and, like the paper, Lean shows the host exists without building it. We found no unproved steps, and we have not rebuilt it. The corollaries, including the forcing conjecture, are not formalized. The paper is not among those OSVerify reviewed, and we have seen no expert review. If it holds, randomness is not always the worst case for bipartite patterns: this 35-vertex pattern can be undercut, though, by our estimate, any host the proof guarantees is far too large to write down.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20161%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../160-superexponential-van-der-waerden-numbers/"><span class="dir">Previous · 160</span><span class="pt">Superexponential van der Waerden numbers</span></a>
-  <a class="next" href="../162-counterexamples-rysers-covering-conjecture/"><span class="dir">Next · 162</span><span class="pt">Counterexamples to Ryser’s covering conjecture</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

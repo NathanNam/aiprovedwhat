@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 160: Superexponential van der Waerden numbers | AI Proved What?</title>
-<meta name="description" content="Superexponential van der Waerden numbers. Result 160 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Faster than exponential? Superexponential van der Waerden numbers | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that van der Waerden numbers outgrow every exponential, already with two colours, answering Erdős’s superexponential-growth question, with a Lean formalization of the main theorem. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/160-superexponential-van-der-waerden-numbers/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 160: Superexponential van der Waerden numbers | AI Proved What?">
-<meta property="og:description" content="Superexponential van der Waerden numbers. Result 160 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Faster than exponential?">
+<meta property="og:description" content="An AI preprint claims that van der Waerden numbers outgrow every exponential, already with two colours, answering Erdős’s superexponential-growth question, with a Lean formalization of the main theorem. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/160-superexponential-van-der-waerden-numbers/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/160-superexponential-van-der-waerden-numbers/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,49 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 160 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Superexponential van der Waerden numbers</h1>
+<p class="meta">Episode 160, October 2026</p>
+<h1>Faster than exponential?</h1>
+<p class="subtitle">A preprint claims that van der Waerden numbers outgrow every exponential, already with two colours and uniformly in the number of colours</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 160 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="Nsc7SOJ9EO8" data-title="Episode 160: Faster than exponential?">
+  <a href="https://youtu.be/Nsc7SOJ9EO8">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 160: Faster than exponential? An 11 by 11 grid in four colours, the digit-product colouring of 0 to 120, below the formula W 2 of k to the 1 over k tends to infinity.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:28. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/Nsc7SOJ9EO8?t=0" data-t="0"><span class="t">0:00</span><span>The game</span></a></li>
+  <li><a href="https://youtu.be/Nsc7SOJ9EO8?t=112" data-t="112"><span class="t">1:52</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/Nsc7SOJ9EO8?t=200" data-t="200"><span class="t">3:20</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/Nsc7SOJ9EO8?t=338" data-t="338"><span class="t">5:38</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Resolves Erdős's superexponential-growth question for van der Waerden numbers. If <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>r</mi></msub><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">W_r(k)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose">)</span></span></span></span> is the least interval length forcing a monochromatic <i>k</i>-term progression in every <i>r</i>-coloring, then <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>r</mi></msub><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo><mo>&gt;</mo><msup><mi>k</mi><mrow><mi>c</mi><mi>k</mi><mo stretchy="false">⌊</mo><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mi>r</mi><mo stretchy="false">⌋</mo></mrow></msup></mrow><annotation encoding="application/x-tex">W_r(k)\gt k^{ck\lfloor\log_2 r\rfloor}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.888em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="mopen mtight">⌊</span><span class="mop mtight"><span class="mop mtight"><span class="mtight">l</span><span class="mtight">o</span><span class="mtight" style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1944em;"><span style="top:-2.2341em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2659em;"><span></span></span></span></span></span></span><span class="mspace mtight" style="margin-right:0.1952em;"></span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mclose mtight">⌋</span></span></span></span></span></span></span></span></span></span></span></span> for an absolute <i>c</i> &gt; 0, all <i>r</i> ≥ 2 and sufficiently large <i>k</i>, uniformly in <i>r</i>. In particular, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>W</mi><mi>r</mi></msub><mo stretchy="false">(</mo><mi>k</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mi>k</mi></mrow></msup><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">W_r(k)^{1/k}\to\infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1/</span><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord">∞</span></span></span></span> for each fixed <i>r</i>.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Colour the numbers from 1 to N with r colours and try to avoid k evenly spaced numbers of one colour. Van der Waerden proved in 1927 that a long enough interval always contains such a progression; W<sub>r</sub>(k) is the first length where it is forced. By our exhaustive search, W<sub>2</sub>(3) = 9 (the colouring red, red, blue, blue, red, red, blue, blue of 1 to 8 works), W<sub>2</sub>(4) = 35 and W<sub>3</sub>(3) = 27; none of these values is in the paper. As the paper recounts, the known lower bounds were exponential: Szabó’s W<sub>2</sub>(k) ≥ 2<sup>k</sup>/k<sup>ε</sup>, Kozik and Shabanov’s βr<sup>k−1</sup>, and Berlekamp’s W<sub>2</sub>(p+1) &gt; p·2<sup>p</sup> for primes p. “Recent results distinguish the two questions posed by Erdős”: Fox and Hunter (2026) proved superexponential growth with three colours, and Campos, Fox and Schildkraut (2026) proved W<sub>2</sub>(k) ≥ (1 − o(1))k·2<sup>k−1</sup>, settling whether W<sub>2</sub>(k)/2<sup>k</sup> → ∞; “They credit ChatGPT 5.6 Sol Pro with the coloring and an initial proof.”</p>
+<p>Result 160 is a single OpenAI preprint, <a href="https://github.com/openai/math/blob/main/preprints/Quantitative-Superexponential-Bounds-for-van-der-Waerden-Numbers-September-23-2026/paper.pdf">Quantitative Superexponential Bounds for van der Waerden Numbers</a> (25 pages, dated September 23, 2026). Theorem 1.1: there is an absolute K<sub>0</sub> such that W<sub>r</sub>(k) &gt; k<sup>c·k·⌊log<sub>2</sub> r⌋</sup>, with c = 10<sup>−5</sup>, for every k ≥ K<sub>0</sub> and every r ≥ 2. For two colours that is W<sub>2</sub>(k) &gt; k<sup>k/100,000</sup>, so W<sub>2</sub>(k)<sup>1/k</sup> → ∞: “a quantitative positive resolution of Erdős’s superexponential-growth question, including the two-color case.” One threshold works for every number of colours.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The proven growth is superexponential, but barely: the k-th root of the bound is k<sup>1/100,000</sup>, about 1.0023 at k = 10<sup>100</sup>, and by our arithmetic the bound overtakes 2<sup>k</sup> only when k has more than 30,000 digits, so for k of any practical size the older exponential bounds are larger. K<sub>0</sub> is never computed, there is no matching upper bound (Appendix A is “a coarse version of the classical argument”), and the colouring is shown to exist by probability rather than written down. The paper notes that Fox and Hunter’s bound is stronger when the number of colours is large compared with log k. In the number of colours, for a fixed length k ≥ 3, growth beats every power of r, as was already known and the paper reproves (Theorem 7.2); with the companion paper (result 159) it is at most quasipolynomial. The paper calls Erdős’s problem a question, not a conjecture, and mentions no prize.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, 25 pages, dated September 23, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +87,41 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/160.md">scope notes</a>)</dd>
+    <dd>Exactly the main theorem, with c = 1/100,000. We have not rebuilt it</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/160.md">Lean formalization</a> of exactly the main theorem (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/QuantitativeVanDerWaerden.lean">comparator</a>: c = 1/100,000, every r ≥ 2, colourings with at most r colours), in 115 files and 14,837 lines excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/ProgressionColoring">development</a>); we found no unproved steps, and we have not rebuilt it. The threshold is shown to exist but not computed, and, as the scope note says, the paper’s sharper intermediate estimates are not part of the formalization. The paper is not among those OSVerify reviewed, and we have seen no expert review. We could not check the 2026 papers it cites.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Dials and labels.</strong> Work in the integers modulo q<sup>D</sup>, with q a power of a prime larger than k and D about k<sup>1/10</sup>. Each number gets D dials reading its last digits in base q as a fraction, plus a second set turning a fixed whole number of times faster; along a progression every dial turns at a constant speed. The tiny arcs a number’s dials point to form its label, and labels are coloured red or blue at random, with the Lovász local lemma ruling out bad cases, so that progressions whose labels seldom repeat see both colours often.</li>
+  <li><strong>Repetition, keys and bands.</strong> A progression whose labels keep repeating is nearly periodic. Long periods are balanced by the same random colouring; for short ones, a dilation removes the period, leaving a straight line in the second coordinates. Rare random flips (probability k<sup>−1/20</sup>) share one coin per key, a box of coordinates plus a band of squared distance, in the spirit of Behrend’s construction; a line meets such a band in at most two short pieces, so a key repeats at most four times. Rich progressions would need many rare flips at once, and straight ones have few possible shapes; the union bound forces c below 1/16,000, and 10<sup>−5</sup> is safe.</li>
+  <li><strong>Digit product.</strong> Write numbers in base N and colour each by the list of its digits’ colours. In the place of the step’s lowest nonzero digit, the numbers’ digits run through a cyclic progression, which is never one colour; so 2<sup>m</sup> colours reach length N<sup>m</sup>, and m = ⌊log<sub>2</sub> r⌋ gives the main bound.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our exhaustive search: 6 two-colourings of 1 to 8 with no one-coloured 3-term progression and none of 1 to 9; 28 of 1 to 34 for four terms and none of 1 to 35; 48 three-colourings of 1 to 26 and none of 1 to 27.</li>
+  <li>Our digit-product check: the colouring 00010010111 of the integers modulo 11 has no one-coloured cyclic 4-term progression; lifted to 16 colours on 0 to 14,640, it has none either (brute force).</li>
+  <li>Our arithmetic: k<sup>k/100,000</sup> exceeds 2<sup>k</sup> exactly when log<sub>2</sub> k &gt; 100,000; k<sup>1/100,000</sup> is 1.00014, 1.00101, 1.00231 and 1.02329 at k = 10<sup>6</sup>, 10<sup>44</sup>, 10<sup>100</sup>, 10<sup>1000</sup>.</li>
+  <li>The Lean counts: 115 files and 14,837 lines, our count of the import closure.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Quantitative-Superexponential-Bounds-for-van-der-Waerden-Numbers-September-23-2026/paper.pdf">Quantitative Superexponential Bounds for van der Waerden Numbers (PDF)</a>, 25 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/160.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 160.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -75,18 +129,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Quantitative-Superexponential-Bounds-for-van-der-Waerden-Numbers-September-23-2026/paper.pdf">Quantitative Superexponential Bounds for van der Waerden Numbers</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The game</h3>
+<p>Colour the numbers from one to N red or blue, and try to avoid k evenly spaced numbers of the same colour. For three-term progressions you can get to eight, for example red, red, blue, blue, red, red, blue, blue, but not to nine. In our exhaustive check, six colourings of one to eight work, and none of one to nine. Van der Waerden proved in 1927 that for any number of colours r and any length k, a long enough interval always contains a progression of one colour. The van der Waerden number, W_r(k), is the first length where that is forced. Our search also gives 35 for two colours and length four, and 27 for three colours and length three. How fast does it grow with k? As the paper recounts, the known lower bounds were exponential. Szabó proved 2^k divided by any small power of k, for two colours; Kozik and Shabanov, a constant times r^(k−1); and Berlekamp’s algebraic construction gives more than p times 2^p for lengths one more than a prime p. Erdős asked two questions about two colours: does W_2(k) divided by 2^k tend to infinity? And, stronger, does its k-th root tend to infinity, so that it eventually beats every exponential? The paper cites two 2026 results on these questions. Fox and Hunter proved superexponential growth with three colours, and so, as we read it, with any larger number. Campos, Fox and Schildkraut proved that W_2(k) is at least about k times 2^(k−1), settling the first question; the paper notes that they credit ChatGPT 5.6 Sol Pro with the colouring and an initial proof. The paper presents the full limit, for two colours, as its contribution.</p>
+<h3><span class="t num">1:52</span>The claim</h3>
+<p>Result 160 is a 25-page OpenAI preprint, dated September 23. It claims a threshold K₀ such that, for every k at least K₀ and every number of colours r at least two, W_r(k) is greater than k^(c·k·⌊log₂ r⌋), with c equal to 1/100,000. For two colours, that is k^(k/100,000), so the k-th root grows without bound. The paper calls this a quantitative positive resolution of Erdős’s superexponential-growth question, including the two-colour case. One threshold works for every number of colours. The proven growth is superexponential, but barely. The k-th root of the bound is k^(1/100,000): about 1.002 at k equal to a googol. By our arithmetic, it overtakes 2^k only when k has more than 30,000 digits, so for every k of any practical size, the older exponential bounds are larger. The threshold K₀ is never computed, there is no matching upper bound, and the colouring is shown to exist by probability rather than written down. For a fixed length of three or more, growth in the number of colours is a different story: it beats every power of r, as was already known and the paper reproves, and, with the companion paper, it is at most quasipolynomial.</p>
+<h3><span class="t num">3:20</span>How the proof goes</h3>
+<p>The construction lives in a huge cyclic group, the integers modulo q^D, where q is a power of a prime larger than k, and D is about the tenth root of k. Each number gets D dials that read its last digits in base q as a fraction, plus a second set turning a fixed whole number of times faster, and along any progression every dial turns at a constant speed. Chop the dials into tiny arcs; the arcs a number points to form its label. The labels are coloured red or blue at random, with the Lovász local lemma ruling out the bad cases, so that every progression whose labels seldom repeat sees both colours often. A progression that keeps returning to the same labels must be nearly periodic. Long periods are balanced by the same random colouring; for short ones, a carefully chosen dilation removes the period, leaving a straight line in the second set of coordinates. Now flip colours at random, rarely, with one shared coin for each key: a box of coordinates together with a band of squared distance from the centre, the geometry of Behrend’s construction. A straight line crosses such a band in at most two short pieces, so a key repeats at most four times along a progression. A progression rich in both colours would need many rare flips at once; straight ones have few possible shapes, and each would need many coins to cooperate. Both failure probabilities are below one half, so a good choice exists. Balancing the first against the number of progressions is what forces c to be small: below 1/16,000, so 1/100,000 is safe. To reach more colours, write the numbers in base N and colour each by the list of its digits’ colours. The step of a progression has a lowest nonzero digit, and in that place the numbers’ digits run through a progression in the cyclic group, which is never one colour. So 2^m colours reach length N^m; with m the whole part of log base two of r, that gives the main bound. In our small example, a two-colouring of the integers modulo 11 with no one-coloured four-term progression, lifted this way, gives sixteen colours on 14,641 numbers with none, by brute force.</p>
+<h3><span class="t num">5:38</span>Where it stands</h3>
+<p>The paper is not peer reviewed and has not been revised. OpenAI’s Lean formalization states exactly the main theorem, with c equal to 1/100,000 and every number of colours from two up, in 115 files and about 15,000 lines. We found no unproved steps, and we have not rebuilt it. The threshold is shown to exist but not computed, and the formal proof uses weaker intermediate counts than the paper. The paper is not among those OSVerify reviewed, and we have seen no expert review; we also could not check the 2026 papers it cites. If it holds, two colours already make van der Waerden numbers outgrow every exponential, though the proven margin grows at a glacial rate.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20160%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../159-erdoss-reciprocal-sum-conjecture-quasipolynomial/"><span class="dir">Previous · 159</span><span class="pt">Erdős’s reciprocal-sum conjecture and quasipolynomial Szemerédi bounds</span></a>
-  <a class="next" href="../161-counterexamples-sidorenkos-conjecture-forcing-conjecture/"><span class="dir">Next · 161</span><span class="pt">Counterexamples to Sidorenko’s conjecture and the forcing conjecture</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

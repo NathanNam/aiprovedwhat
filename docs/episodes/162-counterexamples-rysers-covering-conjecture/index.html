@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 162: Counterexamples to Ryser’s covering conjecture | AI Proved What?</title>
-<meta name="description" content="Counterexamples to Ryser’s covering conjecture. Result 162 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Ryser disproved? Counterexamples to Ryser’s covering conjecture and Gyárfás’s tree-cover conjecture | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim intersecting hypergraphs with r parts whose smallest cover needs all r vertices, disproving Ryser’s covering conjecture and Gyárfás’s tree-cover conjecture, with a Lean formalization of both main theorems. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/162-counterexamples-rysers-covering-conjecture/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 162: Counterexamples to Ryser’s covering conjecture | AI Proved What?">
-<meta property="og:description" content="Counterexamples to Ryser’s covering conjecture. Result 162 in OpenAI&#x27;s math release (Combinatorics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Ryser disproved?">
+<meta property="og:description" content="Two AI preprints claim intersecting hypergraphs with r parts whose smallest cover needs all r vertices, disproving Ryser’s covering conjecture and Gyárfás’s tree-cover conjecture, with a Lean formalization of both main theorems. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/162-counterexamples-rysers-covering-conjecture/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/162-counterexamples-rysers-covering-conjecture/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,49 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 162 · <a href="../../subjects/combinatorics/">Combinatorics</a></p>
-<h1 class="result-title">Counterexamples to Ryser’s covering conjecture</h1>
+<p class="meta">Episode 162, October 2026</p>
+<h1>Ryser disproved?</h1>
+<p class="subtitle">Two preprints claim intersecting hypergraphs with r parts that need all r vertices to cover, one more than Ryser’s conjecture allows</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 162 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="MaNZlK2FmK0" data-title="Episode 162: Ryser disproved?">
+  <a href="https://youtu.be/MaNZlK2FmK0">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 162: Ryser disproved? A complete graph on nine vertices with its edges in four colours, from the plane of order three (our drawing).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:31. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/MaNZlK2FmK0?t=0" data-t="0"><span class="t">0:00</span><span>The conjecture</span></a></li>
+  <li><a href="https://youtu.be/MaNZlK2FmK0?t=104" data-t="104"><span class="t">1:44</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/MaNZlK2FmK0?t=193" data-t="193"><span class="t">3:13</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/MaNZlK2FmK0?t=331" data-t="331"><span class="t">5:31</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Disproves Ryser's covering conjecture by constructing intersecting <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(q+1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>-partite, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>q</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(q+1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>-uniform hypergraphs with covering number <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">q+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span>, rather than the predicted bound <i>q</i>, for every sufficiently large prime <i>q</i>. A separate construction over extension fields also disproves Gyárfás's monochromatic tree-cover conjecture.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>An r-partite r-uniform hypergraph has r disjoint parts, and each edge has exactly one vertex in each part (in the video: r teams, and each hyperedge picks one player from every team). A cover is a set of vertices meeting every edge; τ is the size of the smallest one, and ν the largest number of pairwise disjoint edges. Ryser’s covering conjecture “asserts that every such hypergraph satisfies τ(H) ≤ (r−1)ν(H)”. When every two edges meet (the intersecting case, ν = 1), it asks for a cover with r−1 vertices, while any single edge is a cover with r. The affine plane of order q shows why r−1 is natural: with one part per direction, one vertex per line and one edge per point, the hypergraph is intersecting and τ = q = r−1. As the papers recount, the conjecture holds for two parts by Kőnig’s theorem and for three by Aharoni, and its intersecting case through four parts (Gyárfás) and five (Tuza). Gyárfás’s conjecture, that r−1 monochromatic trees cover the vertices of any r-edge-coloured complete graph, is equivalent to the intersecting case, as Erdős, Gyárfás and Pyber record.</p>
+<p>Result 162 rests on two OpenAI preprints. <a href="https://github.com/openai/math/blob/main/preprints/Balanced-Counterexamples-to-Rysers-Conjecture-at-Prime-Orders-September-27-2026/paper.pdf">Balanced counterexamples to Ryser’s conjecture at prime orders</a> (40 pages, dated September 27, 2026), Theorem 1.1: for every prime q beyond some threshold “there is a finite intersecting (q+1)-partite (q+1)-uniform hypergraph H with |V<sub>1</sub>| = ⋯ = |V<sub>q+1</sub>| = q+1, τ(H) = q+1. Every vertex belongs to an edge.” <a href="https://github.com/openai/math/blob/main/preprints/A-Counterexample-to-Rysers-Covering-Conjecture-September-23-2026/paper.pdf">A counterexample to Ryser’s covering conjecture</a> (39 pages, dated September 23, 2026), Theorem 1.1: the same covering number q+1 for q = s<sup>n</sup>, where s ≥ s<sub>0</sub> is a prime with s ≡ 2 (mod 3) and n ≥ n<sub>0</sub>(s) is odd, without equal part sizes. In both, τ = r is one more than predicted and the most an intersecting hypergraph can need. Both papers derive (Corollary 1.2) r-edge-coloured complete graphs that need exactly r monochromatic trees. The catalog entry credits the colouring consequence to the extension-field construction only; both papers prove it.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Neither paper writes a hypergraph down: each shows that a random construction succeeds with positive probability. Neither gives a number for the threshold (“that threshold is not numerical”; “the proof does not give a numerical threshold”), and some constants come from arguments by contradiction. By our rough reading of the first paper’s explicit constants, its route needs primes beyond about 10<sup>1.4×10<sup>11</sup></sup> even with the most favourable values, and the second paper’s route needs far more; that is what the proofs need, not an estimate of the smallest counterexample. Only the ranks q+1 (q a large prime) and s<sup>n</sup>+1 are covered; two or three parts in general, and up to five in the intersecting case, remain theorems. The colouring results are about covering only: the second paper sets aside the tree-partition conjecture of Erdős, Gyárfás and Pyber. The printed dates are labels: the paper dated September 23 cites and uses lemmas from the one dated September 27, and both PDFs were compiled on October 5.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 40 and 39 pages, dated September 27 and 23, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +87,44 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/162.md">scope notes</a>)</dd>
+    <dd>Both main theorems exactly; the colouring corollaries are not formalized. We have not rebuilt it</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 16, 2026.</p>
+<p class="ledger-note">Last checked October 15, 2026. Neither preprint has been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/162.md">Lean formalization</a> with three comparator statements: the prime-order theorem exactly, with parts of exactly q+1 vertices, all used (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/BalancedRyser.lean">comparator</a>); the extension-field theorem exactly, plus infinitely many ranks; and a weaker fixed-prime variant. By our count the proofs take 918 files and 116,039 lines excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/BalancedRyser">prime-order development</a>, <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/Ryser">extension-field development</a>). Lean proves the case of the Szőnyi–Weiner stability theorem that the first paper uses, and, like the papers, shows the hypergraphs exist without building one. We found no unproved steps, and we have not rebuilt it. The colouring corollaries are not formalized, and the repository’s formalization list omits the first paper. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Start from the plane.</strong> In the affine plane of order q every direction is a cover of size q. Both papers relabel so that no q vertices cover, while every two edges still meet.</li>
+  <li><strong>Merge and split (prime orders).</strong> In each direction, two parallel lines merge into one vertex and two others keep only four chosen points each, split into two crosswise pairs: (q−4) + 1 + 4 = q+1 vertices per part. Each neighbouring pair of chosen points lies on the two lines of a merged pair in another direction, so it still shares a vertex.</li>
+  <li><strong>No cover of size q.</strong> Setting aside split lines and one line of each merged pair leaves an ordinary covering of a large core by at most q lines. Random-deletion counting and the Szőnyi–Weiner stability theorem (“the step that requires q to be prime”) force almost all of them through one point, or all parallel; then every unsplit line through that point is forced, and the remaining budget cannot reach the chosen points. Random choices, completed with the local lemma, produce the data for large q.</li>
+  <li><strong>The extension-field route.</strong> In a plane of prime order s, delete one line of each nonzero slope and cube the first coordinate, a bijection when s ≡ 2 (mod 3); for large s and a good random choice, covering what remains with at most s lines forces a whole direction. Copies are planted in a plane of order s<sup>n</sup>, and a sum–product incidence bound, which needs every proper subfield to have order at most q<sup>1/3</sup>, forces n odd.</li>
+  <li><strong>Trees.</strong> Edges of the hypergraph become vertices of a complete graph, and a pair is coloured by a part where the two edges share a vertex; a one-colour connected piece names one vertex, so r trees are needed.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our check of the plane examples: τ = q for orders 2, 3, 4, 5, 7, 8, 9; for orders 2 to 5, exhaustively, every smallest cover is a whole direction (3, 4, 5 and 6 of them). The tree versions need 2 trees for K<sub>4</sub> with 3 colours and 3 for K<sub>9</sub> with 4.</li>
+  <li>Our merge-and-split example at q = 11 (random merged pairs): the split line y = 3, chosen points x = 3, 8, 6, 10, neighbouring pairs joined by merged pairs of slopes 1, 7, 9 and 10.</li>
+  <li>Our gadget example at s = 11 (one random choice): 47 points remain; the cheapest line cover is 8 lines before cubing and 10 after, not yet 11, as expected for a lemma stated for large s.</li>
+  <li>The Lean counts: 918 files and about 116,000 lines, our count of the three import closures.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Balanced-Counterexamples-to-Rysers-Conjecture-at-Prime-Orders-September-27-2026/paper.pdf">Balanced counterexamples to Ryser’s conjecture at prime orders (PDF)</a>, 40 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Counterexample-to-Rysers-Covering-Conjecture-September-23-2026/paper.pdf">A counterexample to Ryser’s covering conjecture (PDF)</a>, 39 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/162.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 162.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -76,18 +133,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-Counterexample-to-Rysers-Covering-Conjecture-September-23-2026/paper.pdf">A counterexample to Ryser's covering conjecture</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The conjecture</h3>
+<p>Split some players into r teams. A hyperedge picks one player from every team, and suppose every two hyperedges share at least one player: the hypergraph is intersecting. A cover is a set of players that touches every hyperedge, and the covering number is the size of the smallest one. Any single hyperedge is itself a cover, so r players always suffice. Ryser’s covering conjecture predicts that r minus one are enough, and in general, that the covering number is at most r minus one times the largest number of disjoint hyperedges. The catch is that a cover may mix players from different teams. Finite planes show why r minus one is natural. Take the plane over the field with three elements: nine points, and lines in four directions. Make each direction a team and each line a player, and let each point be the hyperedge of the four lines through it. Two points always share the line joining them, and the three lines of one direction cover every point, so three players, r minus one, suffice, and fewer will not do. In our check of planes up to order five, every smallest cover is a whole direction. As the papers recount, the conjecture holds for two teams by Kőnig’s theorem and for three by Aharoni, and its intersecting case through five teams, by Gyárfás and Tuza. There is a twin question about colourings. Colour every edge of a complete graph with one of r colours, and cover its vertices with trees that each use a single colour. Gyárfás’s conjecture asks whether r minus one such trees always suffice. Erdős, Gyárfás and Pyber record that this is equivalent to the intersecting case of Ryser’s conjecture.</p>
+<h3><span class="t num">1:44</span>The claim</h3>
+<p>Result 162 rests on two OpenAI preprints. The first, 40 pages, dated September 27, says: for every sufficiently large prime q, there is an intersecting hypergraph with q plus one teams, each with exactly q plus one players, whose covering number is q plus one. The prediction was q. That is one more, and q plus one is the most any intersecting hypergraph with that many teams can need. The second paper, 39 pages, dated September 23, reaches team counts of the form s to the n, plus one, where s is a large prime leaving remainder two on division by three, and n is large and odd; its teams need not be equal. Both papers derive the colouring version: some colourings with r colours need r single-colour trees. If the proofs hold, both conjectures are false. Neither paper writes a counterexample down. Each shows that a random construction succeeds with positive probability, and neither says how large the prime must be; one calls its threshold not numerical. By our rough reading of the constants, the proofs need astronomically large planes. Only these team counts are covered: other counts are not addressed, and two or three teams in general, and up to five in the intersecting case, remain theorems. The colouring consequence concerns covering only; the second paper explicitly sets aside a related conjecture about partitions into trees.</p>
+<h3><span class="t num">3:13</span>How the proof goes</h3>
+<p>Both papers start from the plane example and change the labels, so that no q players cover any more, while every two hyperedges still meet. The prime-order paper does it like this. In each direction, merge two parallel lines into one player, and cut two other lines down to four chosen points each, split into two crosswise pairs. That gives q minus four, plus one, plus four: q plus one players in every direction. Splitting separates neighbouring chosen points, so the points are picked so that each neighbouring pair lies on the two merged lines of some other direction, and still shares a player there. Now suppose q players covered everything. Set aside the split lines and one line of each merged pair, and what is left is an ordinary covering of a large leftover set by at most q lines. Counting under random deletions, plus a stability theorem of Szőnyi and Weiner for planes of prime order, shows that almost all of those lines pass through one point, or are all parallel. Then every unsplit line through that point is forced into the cover, and the few players left over cannot reach all the chosen points on the split lines through it. The data exist because a random choice, completed with the local lemma, succeeds with positive probability once q is large. The other paper starts in a small plane over the field with s elements. Delete one line of each nonzero slope, chosen at random, and cube the first coordinate. When s leaves remainder two on division by three, cubing shuffles the columns without collisions and bends the sloped lines into curves, and the paper proves that, for large s and a good random choice, covering what remains with at most s lines forces a whole direction. In one random example of ours at s = 11, cubing raised the cheapest line cover from eight lines to ten, not yet to eleven. Copies of this gadget are planted in a big plane of order s to the n. An incidence bound from the sum-product method needs the big field to have no large subfield, which is why n is odd. Finally, making each hyperedge a vertex of a complete graph, and colouring each pair by a team where the two share a player, turns the counterexample into a colouring that needs r trees.</p>
+<h3><span class="t num">5:31</span>Where it stands</h3>
+<p>Both papers are preprints, not peer reviewed and not revised since release. OpenAI’s Lean formalization states and proves the prime-order theorem exactly, equal team sizes included, and the extension-field theorem exactly, plus a weaker variant, in about 116,000 lines, by our count. It even proves the case of the Szőnyi and Weiner theorem that the first paper uses. We found no unproved steps, and we have not rebuilt it. Like the papers, Lean proves the hypergraphs exist without writing one down, and the colouring consequence is not formalized. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If the proofs hold, r minus one is not always enough: at infinitely many team counts, an intersecting hypergraph needs all r players. But neither paper draws one, and the smallest team count where it happens is unknown.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20162%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../161-counterexamples-sidorenkos-conjecture-forcing-conjecture/"><span class="dir">Previous · 161</span><span class="pt">Counterexamples to Sidorenko’s conjecture and the forcing conjecture</span></a>
-  <a class="next" href="../164-hindmans-finite-sums-products-conjecture/"><span class="dir">Next · 164</span><span class="pt">Hindman’s finite sums and products conjecture</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/combinatorics/">More in combinatorics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
