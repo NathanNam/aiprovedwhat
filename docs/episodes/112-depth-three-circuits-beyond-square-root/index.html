@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Past the square root? Depth-three circuit lower bounds beyond 2^(c√n) | AI Proved What?</title>
+<meta name="description" content="An AI system claims a polynomial-time language that needs more than 2^(A√n) gates in depth-three OR–AND–OR circuits for every constant A, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/112-depth-three-circuits-beyond-square-root/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Past the square root?">
+<meta property="og:description" content="An AI system claims a polynomial-time language that needs more than 2^(A√n) gates in depth-three OR–AND–OR circuits for every constant A, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/112-depth-three-circuits-beyond-square-root/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/112-depth-three-circuits-beyond-square-root/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 112, October 2026</p>
+<h1>Past the square root?</h1>
+<p class="subtitle">A claimed polynomial-time language that needs more than 2<sup>A√n</sup> gates in depth-three circuits, for every constant A</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 112 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="8F-ilAisguU" data-title="Episode 112: Past the square root?">
+  <a href="https://youtu.be/8F-ilAisguU">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 112: Past the square root? A depth-three circuit: an OR gate on top, three AND gates, six OR gates and seven input literals.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:27. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/8F-ilAisguU?t=0" data-t="0"><span class="t">0:00</span><span>Depth three</span></a></li>
+  <li><a href="https://youtu.be/8F-ilAisguU?t=81" data-t="81"><span class="t">1:21</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/8F-ilAisguU?t=162" data-t="162"><span class="t">2:42</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/8F-ilAisguU?t=296" data-t="296"><span class="t">4:56</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>A depth-three Boolean circuit in the OR–AND–OR form, with unrestricted fan-in, is an OR of CNF formulas. Every Boolean function has a single CNF, so the question is size: parity, for example, needs 2<sup>n−1</sup> clauses in a CNF, each using every variable. Proving that explicit functions need large circuits is the central difficulty of complexity theory, and small depth is one of the few settings with exponential lower bounds.</p>
+<p>Håstad’s switching lemma showed that parity needs 2<sup>c√n</sup> gates in depth three, and Paturi, Pudlák and Zane pinned parity down to about n<sup>1/4</sup>·2<sup>√n</sup>, matching an upper bound. Other bounds, for majority and for a code-membership function, improved the constant in front of √n but never the square root itself; going beyond it was a recognized open problem. Much larger bounds, beyond 2<sup>O(n/log log n)</sup>, would by a classical result of Valiant rule out circuits that have both linear size and logarithmic depth.</p>
+<p>Result 112 is <a href="https://github.com/openai/math/blob/main/preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/main.pdf">one OpenAI preprint</a> (20 pages) dated September 23, 2026. It claims one language, decided by one deterministic Turing machine in polynomial time, whose n-bit membership function needs more than 2<sup>A√n</sup> gates in any OR–AND–OR circuit, for every constant A, at all sufficiently large n. All gates are counted, bottom layer included, any fan-in is allowed, and the language is fixed before A is chosen.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>It does not give a bound of 2<sup>n<sup>1/2+ε</sup></sup> for a fixed ε, the question raised by Håstad, Jukna and Pudlák, and it says nothing about circuits of unbounded depth. The constants are enormous: for A = 1, the smallest test width the proof allows is 36,180.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 20 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>OpenAI published a Lean proof of the full theorem, including the polynomial-time machine; we have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/112.md">Lean formalization</a>, <a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/DepthThree">175 files and 24,309 lines</a> in the theorem’s import closure, including the multitape Turing machine and its running time, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/DepthThree.lean">its comparator statement</a>, which counts every gate and allows free negations and constants; nothing outside Mathlib and Lean’s core, with no unproved steps that we could find. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The language.</strong> The input is read as blocks: data bits x, hash bits u, a monic polynomial P and coefficients β<sub>j</sub> in F<sub>2</sub>[Z]/(P). The data are hashed into the ring with a Hankel matrix, a polynomial with coefficients β<sub>j</sub> is evaluated at the hash, and the input is accepted when the result’s constant coefficient is zero. The machine follows the supplied bits; it never searches for hard choices or tests irreducibility.</li>
+  <li><strong>Counting.</strong> Fix all non-data bits to get a slice with sign g. In a circuit with S gates computing the slice, every middle gate is a CNF H whose accepted inputs are accepted by the slice, so E H = E[gH] is at most the correlation of g with H. If that correlation is tiny for every CNF of width about √n, the at most S middle gates cannot cover the slice’s accepted inputs, at least a quarter of all inputs; wider clauses are deleted at a cost of S·2<sup>−k</sup> per gate.</li>
+  <li><strong>A restriction lemma.</strong> Keep each variable alive with probability p and fix the others at random. A width-k CNF becomes a signed combination of CNFs of a fixed constant width b, and when p·k stays bounded the expected total weight is at most two, however many clauses the CNF has. Counting paths of successive clause violations backwards makes the number of clauses cancel; unlike Håstad’s switching lemma, the tests stay CNFs.</li>
+  <li><strong>Hard slices.</strong> With a fixed irreducible modulus and random hash bits and coefficients, the slice’s restrictions have correlation at most 2<sup>−|T|/8</sup> with every width-b CNF, for most restrictions. Sunflower sparsification (Impagliazzo, Paturi, Zane) and a disjoint refinement (Dell, Husfeldt, Marx, Taslaman, Wahlén) split each narrow CNF into few sparse pieces, and hashing with polynomial interpolation gives enough independence for a moment bound over all of them. With s = 3A and the width k ≈ 3(s + 1)√(n/5), a circuit of at most 2<sup>A√n</sup> gates would accept a vanishing fraction of inputs, a contradiction.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>No clause narrower than n follows from parity for n up to 6, so a CNF for parity needs 2<sup>n−1</sup> full-width clauses.</li>
+  <li>Our implementation of the evaluator, at n = 5,000 (1,000 data bits, r = 100, t = 2), accepted 104 of 200 random inputs, about a hundredth of a second each. The Hankel hash had full rank in 300 of 300 random trials.</li>
+  <li>A toy version of a slice with 14 data bits had correlation at most 1/256 with every subcube; majority reaches 0.21.</li>
+  <li>For A = 1, the smallest constant width the proof allows is b = 36,180 (107,159 for A = 2).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/main.pdf">Beyond the Square-Root Exponent for Depth-Three Boolean Circuits (PDF)</a>, 20 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/112.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 112.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Beyond-the-Square-Root-Exponent-for-Depth-Three-Boolean-Circuits-September-23-2026/main.pdf">Beyond the Square-Root Exponent for Depth-Three Boolean Circuits</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Depth three</h3>
+<p>A Boolean circuit of depth three, in the OR-AND-OR form studied here, with unrestricted fan-in, is an OR of ANDs of ORs: an OR of CNF formulas. Every Boolean function already has a single CNF, so depth three is about size, not possibility. A CNF can be enormous: parity, which asks whether the number of ones is odd, needs 2^(n−1) clauses, each using every variable. Proving that explicit functions need large circuits is the central difficulty of complexity theory, and small depth is one of the few settings with exponential lower bounds. In our check, no clause narrower than n follows from parity, for n up to 6. Håstad’s switching lemma showed that parity needs 2^(c√n) gates in depth three. Paturi, Pudlák and Zane pinned parity down to about n^(1/4)·2^(√n), matching an upper bound, so parity can go no further. Other bounds, for majority and a code-membership function, improved the constant in front of the square root, never the square root itself. Getting past it is a recognized open problem. Much larger depth-three bounds, beyond 2^(O(n/log log n)), would, by a classical result of Valiant, rule out circuits that have both linear size and logarithmic depth.</p>
+<h3><span class="t num">1:21</span>The claim</h3>
+<p>Result 112 is one OpenAI preprint, 20 pages, dated September 23. It claims one language, decided by one deterministic Turing machine in polynomial time, whose n-bit membership function needs more than 2^(A√n) gates in any OR-AND-OR circuit, for every constant A, at all sufficiently large n. All gates are counted, bottom layer included, with any fan-in, and the language is fixed before A is chosen. The claim is weaker than 2^(n^(1/2+ε)), the question raised by Håstad, Jukna and Pudlák. The language reads its input as blocks: data bits, hash bits, a polynomial modulus, and coefficients. It hashes the data into a ring with a Hankel matrix, evaluates a polynomial there, and accepts when the result’s constant coefficient is zero. The machine just follows the supplied bits; it never searches for hard choices. In our check, our implementation of the evaluator handled 5,000-bit inputs in about a hundredth of a second each and accepted about half of random inputs. OpenAI published a Lean formalization, about 175 files and 24,000 lines, including the Turing machine. We have not run the check.</p>
+<h3><span class="t num">2:42</span>How the proof goes</h3>
+<p>Suppose a circuit with S gates computes a slice of the language, with all non-data bits fixed. Each middle gate is a CNF, and every input it accepts is accepted by the top OR. If the slice’s sign has tiny correlation with every such CNF, each middle gate accepts few inputs, and S of them cannot cover the slice’s accepted inputs, about half of all inputs. So the proof needs a slice with small correlation against every CNF of width about √n; wider clauses are deleted at small cost. The main tool is a new restriction lemma. Keep each variable alive with probability p and fix the others at random. Then any width-k CNF becomes a signed combination of CNFs of a fixed constant width b. If p times k stays bounded, the expected total weight is at most two, however many clauses the CNF has. The proof counts paths of successive clause violations backwards, so the number of clauses cancels. Unlike Håstad’s switching lemma, the tests stay CNFs. Next, a hard slice. Choosing the hash bits and the coefficients at random, with a fixed irreducible modulus, gives a slice whose restrictions, with high probability, have tiny correlation with every width-b CNF. Sunflower sparsification and a disjoint refinement split each narrow CNF into few sparse pieces, and the hash with polynomial interpolation gives enough independence for a moment bound over all of them. In our check, a 14-bit toy version of the slice had correlation below 1/250 with every subcube, against about one fifth for majority. Finally, fix A, and let the width k grow like √n. Deleting the clauses wider than k changes each middle gate on at most S·2^(−k) of the inputs. If S were at most 2^(A√n), the middle gates would cover a vanishing fraction of the inputs, but the slice accepts at least a quarter: a contradiction. The constants are enormous: for A equal to one, the smallest test width b the proof allows is about 36,000.</p>
+<h3><span class="t num">4:56</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. The Lean formalization covers the full theorem, including the polynomial-time machine; we have not run it. It is not among the papers OSVerify reviewed, and we have seen no expert review. If it holds, an explicit language beats every constant multiple of √n in the exponent, at depth three; a fixed power beyond one half remains open.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20112%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

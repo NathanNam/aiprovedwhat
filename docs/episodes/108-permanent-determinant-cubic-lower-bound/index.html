@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cubic at last? A cubic lower bound for permanent versus determinant | AI Proved What?</title>
+<meta name="description" content="An AI system claims that expressing the m × m permanent as a determinant, even approximately, needs size of order m³, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/108-permanent-determinant-cubic-lower-bound/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Cubic at last?">
+<meta property="og:description" content="An AI system claims that expressing the m × m permanent as a determinant, even approximately, needs size of order m³, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/108-permanent-determinant-cubic-lower-bound/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/108-permanent-determinant-cubic-lower-bound/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 108, October 2026</p>
+<h1>Cubic at last?</h1>
+<p class="subtitle">A claimed proof that the permanent needs determinants of size of order m³, even approximately</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 108 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="jX2mNRN4cH4" data-title="Episode 108: Cubic at last?">
+  <a href="https://youtu.be/jX2mNRN4cH4">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 108: Cubic at last? A log-log chart where a cubic lower bound overtakes a quadratic one, with m² → m³.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:00. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/jX2mNRN4cH4?t=0" data-t="0"><span class="t">0:00</span><span>Permanent versus determinant</span></a></li>
+  <li><a href="https://youtu.be/jX2mNRN4cH4?t=101" data-t="101"><span class="t">1:41</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/jX2mNRN4cH4?t=174" data-t="174"><span class="t">2:54</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/jX2mNRN4cH4?t=323" data-t="323"><span class="t">5:23</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>The determinant and the permanent of a square matrix are sums of the same products, one entry from each row and each column; the determinant attaches signs, the permanent does not. Determinants are computed quickly by elimination, while computing permanents exactly is #P-hard. Valiant’s algebraic version of P versus NP asks how large a determinant must be to express the m × m permanent; in the standard modern form, every entry of the determinant’s matrix may be any affine-linear form in the permanent’s variables. The smallest such size is the determinantal complexity of the permanent, and Valiant’s conjecture says it grows faster than any polynomial in m.</p>
+<p>Grenet showed that size 2<sup>m</sup> − 1 suffices. Lower bounds were linear in m until Mignon and Ressayre proved m²/2 in 2004 by comparing Hessians: at a singular matrix, the determinant’s Hessian has rank at most twice the matrix size, while the permanent vanishes at a point where its Hessian has full rank m², and substituting affine-linear forms cannot raise a Hessian’s rank. Landsberg, Manivel and Ressayre proved the same m²/2 for border determinantal complexity, where determinants need only approach the permanent as a limit, the setting of geometric complexity theory.</p>
+<p>Result 108 is <a href="https://github.com/openai/math/blob/main/preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026.pdf">one OpenAI preprint</a> (35 pages) dated September 24, 2026. It claims that for m ≥ 1408, every matrix of complex affine-linear forms whose determinant equals the m × m permanent, or tends to it coefficient by coefficient, has size at least m³/(5,529,600 e). The same bound follows for exact representations, and the paper derives cubic lower bounds for algebraic branching programs. The constant is not optimized: the cubic bound beats m²/2 only beyond m ≈ 7.5 million. But the exponent rises from 2 to 3.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>It does not prove Valiant’s conjecture: a superpolynomial lower bound, which would separate the permanent from the determinant in Valiant’s sense, remains open. The bound is over the complex numbers, and it is a polynomial improvement, from m² to m³, with a very small constant.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 35 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>OpenAI published a Lean proof of the exact and border bounds and the smooth-form bound; we have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/108.md">Lean formalization</a> in <a href="https://github.com/openai/math/blob/main/lean/OAI/Algebra/Determinantal">its Determinantal folder</a>, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PermanentCubic.lean">the cubic bounds</a> for exact and border representations and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SmoothInitialForm.lean">the general bound for smooth initial forms</a>: 51 files and 20,739 lines in the theorems’ import closure, nothing outside Mathlib, with no unproved steps that we could find. The algebraic-branching-program consequences are not part of it. By our reading, the polar half follows the paper, but the characteristic-two step uses its own weaker dimension bound in place of the Severi-type theorem, with different intermediate constants that reach the same final bound. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Smooth forms need large determinants.</strong> Let G be a homogeneous polynomial of degree r in d variables whose zero set is smooth. Then d − 2 general first polars, derivatives in fixed directions, meet the hypersurface G = 0 in exactly r(r − 1)<sup>d−2</sup> simple points. These persist for one nearby determinant of size n; lifting them to the left and right kernels of its matrix bounds their number by 2<sup>d−2</sup>·C(2n − 1, d − 1) ≤ (4en/(d − 1))<sup>d−1</sup>. Hence n ≥ (r − 1)(d − 1)/(4e), for exact and border representations alike.</li>
+  <li><strong>A coefficient inside the permanent.</strong> Add s times the identity and t times a diagonal matrix D of parameters to a k × k matrix of variables X, and take the coefficient of s<sup>q</sup>t<sup>q</sup> in the permanent: G<sub>D</sub>(X), homogeneous of degree k − 2q in k² variables. Two counting gates and a cancellation gadget realize it, up to a nonzero constant, as an affine restriction of the permanent of size 11k − 2q.</li>
+  <li><strong>Smoothness from curves in characteristic two.</strong> In characteristic 2, the permanent equals the determinant, and each X defines the plane curve det(sI + tD + uX) = 0. If every derivative of G<sub>D</sub> vanishes at X, the adjugate cuts out a subscheme of length at least C(q + 2, 2) on that curve, which forces a large normalization defect. A Severi-type dimension bound of Christ, He and Tyomkin shows such curves are rare, and a count of matrices per curve shows such matrices are rare too. Specialization carries this to the complex numbers, where a general linear slice of dimension ⌊k²/100⌋ gives a smooth form.</li>
+  <li><strong>The cubic bound.</strong> With q = ⌊(k − 1)/3⌋, the degree minus one is at least k/4 and the number of variables minus one at least k²/200, so the smooth-form bound gives at least k³/(3200e). Taking k = ⌊m/11⌋ ≥ m/12, the permanent of size m ≥ 11k − 2q inherits it: m³/(12³·3200e) = m³/(5,529,600 e).</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Permanent and determinant on 200 random integer matrices of sizes 3 to 5: they differed on 195 and agreed modulo 2 on all 200. For the matrix with rows (1, 2, 0), (3, 1, 4), (0, 5, 2), the permanent is 34 and the determinant −30.</li>
+  <li>The determinant’s Hessian at a random singular matrix had rank 6, 8 and 10 for sizes 3, 4 and 5; the permanent vanishes at the all-ones matrix with corner entry 1 − m, where its Hessian has rank 9 and 16 for m = 3 and 4.</li>
+  <li>G<sub>D</sub> came out homogeneous of degree k − 2q for (k, q) = (3, 1), (4, 1), (5, 1) and (5, 2).</li>
+  <li>c = 1/(5,529,600 e) ≈ 6.65 × 10<sup>−8</sup>; c m³ overtakes m²/2 at m ≈ 7,515,506.</li>
+  <li>For m = 1408 and k = 128: q = 42, degree r = 44, slice dimension d = 163; the construction fits in size 11k − 2q = 1324. The polar count then needs n ≥ 699, while the simple bound (r − 1)(d − 1)/(4e) gives about 641.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026.pdf">A cubic lower bound for border determinantal complexity of the permanent (PDF)</a>, 35 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/108.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 108.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026/A-cubic-lower-bound-for-border-determinantal-complexity-of-the-permanent-September-24-2026.pdf">A cubic lower bound for border determinantal complexity of the permanent</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Permanent versus determinant</h3>
+<p>The determinant and the permanent of a square matrix are built from the same terms: products of one entry from each row and each column. The determinant gives each term a sign; the permanent simply adds them up. That one difference matters. Determinants are computed quickly by elimination, while computing permanents exactly is hard. Valiant’s algebraic version of the question asks how large a determinant must be to express the m by m permanent; in the standard modern form, every entry of its matrix may be any affine-linear form in the permanent’s variables. That size is the determinantal complexity. Valiant’s conjecture, an algebraic cousin of P versus NP, says it grows faster than any polynomial in m. In our check, the two differed on most random integer matrices, and always agreed modulo two. The known bounds are far apart. Grenet showed that a determinant of size 2^m − 1, suffices. Lower bounds were linear in m until Mignon and Ressayre proved m²/2 in 2004, by comparing Hessians: at a singular matrix the determinant’s Hessian has rank at most twice the matrix size, while the permanent has a zero where its Hessian has full rank m², and substituting affine-linear forms cannot raise a Hessian’s rank. Landsberg, Manivel and Ressayre proved the same m²/2 in the border version, where determinants need only approach the permanent as a limit, the setting of geometric complexity theory. In our check, the determinant’s Hessian ranks were 6, 8 and 10 for sizes 3, 4 and 5, and the permanent’s were 9 and 16.</p>
+<h3><span class="t num">1:41</span>The claim</h3>
+<p>Result 108 is one OpenAI preprint, 35 pages, dated September 24. It claims that the border determinantal complexity of the m by m permanent is at least a constant times m³. For m at least 1408, every determinant of complex affine-linear forms that equals the permanent, or approaches it coefficient by coefficient, has size at least m³/(5,529,600 e). The paper also gives cubic bounds for exact representations and for algebraic branching programs. The constant is tiny, and the paper says it is not optimized: the cubic bound overtakes m²/2 only when m exceeds about 7.5 million. But the exponent rises from two to three, after about twenty years at two. A superpolynomial bound, which Valiant’s conjecture predicts, remains open. OpenAI published a Lean formalization of the exact and border bounds, and of the general bound for smooth forms, in about 50 files and 21,000 lines. We have not run the check.</p>
+<h3><span class="t num">2:54</span>How the proof goes</h3>
+<p>The proof has two halves. The first is a general bound. Take a homogeneous polynomial of degree r in d variables whose zero set is smooth. Suitable derivatives in fixed directions, d − 2 of them, called first polars, meet the hypersurface in exactly r(r − 1)^(d − 2) simple points. These points persist for one nearby determinant of size n, and lifting them to the left and right kernels of its matrix bounds their number by at most (4en/(d − 1))^(d − 1). So n is at least (r − 1)(d − 1)/(4e). The second half finds such a smooth polynomial inside the permanent, with degree proportional to k and a number of variables proportional to k². The candidate is a coefficient. Add s times the identity and t times a diagonal matrix of parameters to a k by k matrix of variables, take the permanent, and keep the coefficient of s^q t^q. It has degree k − 2q. Two counting gates and a cancellation gadget realize it, up to a nonzero constant, as an affine restriction of a permanent of size 11k − 2q. In our check, this coefficient came out homogeneous of the predicted degree in every small case. Smoothness comes from geometry in characteristic two, where the permanent equals the determinant. Each matrix X defines a plane curve: the zero set of det(sI + tD + uX). If every derivative of the coefficient vanishes at X, the adjugate cuts out a long subscheme on that curve, and the curve must have a large normalization defect. A Severi-type dimension bound of Christ, He and Tyomkin shows that such curves are rare, and a count of matrices per curve shows such matrices are rare too. Specialization carries this to the complex numbers, and a general linear slice of dimension about k²/100 gives a smooth form. Putting the halves together: the degree minus one is at least k/4, and the number of variables minus one at least k²/200, so the smooth-form bound gives at least k³/(3200e). The permanent of size m inherits it whenever m is at least 11k − 2q; taking k as ⌊m/11⌋, gives the cubic bound.</p>
+<h3><span class="t num">5:23</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. The Lean formalization covers the exact and border bounds and the smooth-form bound, but not the branching-program consequences; we have not run it. It is not among the papers OSVerify reviewed, and we have seen no expert review. If it holds, the permanent needs determinants of size at least a constant times m³, even approximately: a polynomial step, not yet the superpolynomial separation that Valiant’s conjecture predicts.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20108%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One sample is enough? A matroid prophet inequality against an almighty adversary | AI Proved What?</title>
+<meta name="description" content="An AI system claims that one sample per element gives a constant-factor prophet inequality on every matroid, even against an adversary who sees everything, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/111-one-sample-matroid-prophet-inequality/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="One sample is enough?">
+<meta property="og:description" content="An AI system claims that one sample per element gives a constant-factor prophet inequality on every matroid, even against an adversary who sees everything, with a Lean formalization. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/111-one-sample-matroid-prophet-inequality/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/111-one-sample-matroid-prophet-inequality/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 111, October 2026</p>
+<h1>One sample is enough?</h1>
+<p class="subtitle">A claimed matroid prophet inequality with one sample per element, against an adversary who sees everything</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 111 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="oimWkAaTbFI" data-title="Episode 111: One sample is enough?">
+  <a href="https://youtu.be/oimWkAaTbFI">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 111: One sample is enough? Bars for arriving values, a sample marker beside each, a dashed threshold, the gambler’s pick in teal and the prophet’s maximum in orange.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:55. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/oimWkAaTbFI?t=0" data-t="0"><span class="t">0:00</span><span>Prophets and samples</span></a></li>
+  <li><a href="https://youtu.be/oimWkAaTbFI?t=92" data-t="92"><span class="t">1:32</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/oimWkAaTbFI?t=175" data-t="175"><span class="t">2:55</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/oimWkAaTbFI?t=322" data-t="322"><span class="t">5:22</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>A prophet inequality compares a gambler with a prophet. Nonnegative values arrive one at a time; the gambler must accept or reject each on the spot, while the prophet sees them all and takes the best. With independent values from known distributions and a single choice, the gambler can always get half of the prophet’s expected value, and one half is best possible (Krengel and Sucheston, crediting Garling). One rule accepts the first value above half the prophet’s expected maximum.</p>
+<p>Matroids generalize the constraint: the accepted set must stay independent, like edges that never close a cycle in a graph. Kleinberg and Weinberg extended the one-half guarantee to every matroid when the distributions are known and the order reacts only to values already seen. Without the distributions, one sample from each distribution can stand in for knowledge, and for a single choice the largest sample is a good threshold. For general matroids, a one-sample 1/2 appeared in September 2026 for arrival orders fixed in advance; when the order may depend on the values, one sample gave guarantees shrinking like one over log log of the rank, and constants needed many samples per element.</p>
+<p>Result 111 is <a href="https://github.com/openai/math/blob/main/preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/final.pdf">one OpenAI preprint</a> (27 pages) dated September 23, 2026. It claims a single rule, using one sample per element and no description of the distributions, that earns in expectation at least 2<sup>−310</sup> times the prophet’s expected optimum on every finite matroid known in advance. The guarantee holds against an almighty adversary, who chooses the arrival order after seeing every sample, every value and the rule’s entire random seed. The values must be independent and nonnegative with finite expected optimum. The same argument gives a secretary rule that survives adversarial reordering after its observation phase.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>No polynomial-time implementation is claimed, and the constant, about 5 × 10<sup>−94</sup>, is far too small to matter in practice. The point is that it is a constant: it does not depend on the matroid, its size or rank, or the distributions.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 27 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>OpenAI published a Lean proof of the theorem, its fixed-weight version and the secretary consequence; we have not run the check</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/111.md">Lean formalization</a> matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/MatroidProphet.lean">the one-sample theorem</a> and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/MatroidSecretary.lean">the fixed-weight and secretary statements</a>: <a href="https://github.com/openai/math/blob/main/lean/OAI/Probability/MatroidProphet">125 files and 14,585 lines</a> in the import closure of the one-sample and fixed-weight theorems, and 151 files and 17,139 lines with the <a href="https://github.com/openai/math/blob/main/lean/OAI/Probability/MatroidSecretary">secretary consequence</a>, nothing outside Mathlib, with no unproved steps that we could find. The Lean proof reaches 2<sup>−293</sup> and weakens it to the stated 2<sup>−310</sup>. We have not run the check. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Fixed hidden weights.</strong> Start from fixed hidden weights. A random mask, drawn from the seed, reveals some of them before any arrival, and those labels are sacrificed. The target is the expected minimum over all arrival orders, so the adversary may pick a different order for every seed; the fixed-weight version reaches 2<sup>−293</sup>. A coupling transfers this to the sample model: use the samples on the mask and the true values elsewhere; whatever the seed, the glued vector has exactly the law of the values.</li>
+  <li><strong>Two branches.</strong> Weights are rounded down to powers of B = 2<sup>32</sup>. With probability one half, a maximum branch accepts the first unmasked label that outranks every revealed one, by rounded weight and then by label; with probability one quarter the top label is unmasked and the second masked, so this branch averages a quarter of the largest rounded weight even in the worst order for each seed. Otherwise the main branch builds nested paths of flats, sets closed under the matroid’s span, from the revealed weights, group by group from low to high, and accepts greedily within the layers between alternate flats; nesting keeps the union independent in every arrival order.</li>
+  <li><strong>Three losses.</strong> Lighter arrivals may block a heavy group: independent guards enlarge each flat one step early, and exposing them backwards shows that a fixed fraction of the revealed labels stay safe. Those safe labels were revealed, so they are sacrificed: a counting bound on marked pivot patterns, with a union bound, shows that enough rank remains on unsacrificed labels. Enlarging the flats can reduce rank: a telescoping conditional-rank identity charges this only once along each path. After thinning, the remaining rank is a lower bound on the accepted count, for every order at once.</li>
+  <li><strong>The constant.</strong> When no single label dominates, the main branch earns tγ/(16κ) of the rounded optimum, with t = 2<sup>−140</sup>, γ = 2<sup>−16</sup> and κ = 2<sup>100</sup>; otherwise the maximum branch gives more. Mixing the branches and undoing the rounding gives tγ/(32κB) = 2<sup>−293</sup>; the theorem states 2<sup>−310</sup>, with slack.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Known distributions, threshold half the expected maximum, worst arrival order: the gambler kept 0.65, 0.63 and 0.60 of the prophet’s value for exponential, uniform and Pareto families, and 1/(2 − 0.01) ≈ 0.503 on the two-point example where one half is tight.</li>
+  <li>The complete graph with 4 vertices has 38 forests and 16 spanning trees. With edge weights 1, 2, 3, 10, 20 and 30, a naive rule facing light edges first takes 6, against the prophet’s 53.</li>
+  <li>The maximum branch, computed exactly over all masks in the worst order, averaged at least 0.251 times the largest weight on 300 random weight vectors.</li>
+  <li>Gluing samples on the mask to values elsewhere: coordinate means within 0.4% of the values’.</li>
+  <li>2<sup>−310</sup> ≈ 4.79 × 10<sup>−94</sup>; 2<sup>−293</sup> ≈ 6.28 × 10<sup>−89</sup>.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/final.pdf">One Sample Suffices for Matroid Prophet Inequalities against an Almighty Adversary (PDF)</a>, 27 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/111.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 111.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/One-Sample-Suffices-for-Matroid-Prophet-Inequalities-against-an-Almighty-Adversary-September-23-2026/final.pdf">One Sample Suffices for Matroid Prophet Inequalities against an Almighty Adversary</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Prophets and samples</h3>
+<p>A prophet inequality compares a gambler with a prophet. Nonnegative values arrive one at a time, and the gambler must accept or reject each on the spot, while the prophet sees them all and takes the best. With independent values from known distributions and a single choice, the gambler can always get half of the prophet’s expected value, and one half is the best possible: a classical result of Krengel, Sucheston and Garling. One rule accepts the first value above half the prophet’s expected maximum. In our check, that rule kept at least half in every family we tried, even in the worst arrival order, and just over half on the example where one half is tight. Matroids generalize the constraint: the accepted set must stay independent, like edges that never close a cycle in a graph. Kleinberg and Weinberg extended the one-half guarantee to every matroid when the distributions are known and the order reacts only to values already seen. Without them, one sample from each distribution can stand in for knowledge, and for a single choice the largest sample is a good threshold. For general matroids, though, a one-sample constant had appeared only this September, for orders fixed in advance; when the order may depend on the values, one sample gave guarantees shrinking like one over log log of the rank, and constants needed many samples per element. In our check, on the complete graph with 4 vertices, a naive rule facing light edges first earned 6, against the prophet’s 53.</p>
+<h3><span class="t num">1:32</span>The claim</h3>
+<p>Result 111 is one OpenAI preprint, 27 pages, dated September 23. It claims that one sample per element suffices on every finite matroid known in advance. A single rule, which never sees a description of the distributions, earns in expectation at least 2^−310 times the prophet’s expected optimum. The guarantee holds against an almighty adversary, who chooses the arrival order after seeing every sample, every value and the rule’s entire random seed. The values must be independent and nonnegative, with finite expected optimum, and no polynomial-time implementation is claimed. The same argument gives a secretary rule that survives adversarial reordering after its observation phase. The constant, about 5 × 10^−94, is far too small to matter in practice. The point is that it does not depend on the matroid, its size or rank, or the distributions; with one sample and an order that depends on the values, earlier guarantees decayed with the rank. OpenAI published a Lean formalization of the prophet inequality and of the fixed-weight result behind it, about 125 files and 15,000 lines, together with the secretary consequence. We have not run the check.</p>
+<h3><span class="t num">2:55</span>How the proof goes</h3>
+<p>The proof starts from fixed hidden weights. A random mask reveals some of them before any arrival, and those labels are sacrificed: the rule must reject them. The target is the expected minimum over all arrival orders, so the adversary may pick a different order for every seed. A simple coupling transfers this to the sample model: use the samples on the mask and the true values elsewhere; whatever the seed, the glued vector has exactly the law of the values. In our check, the glued coordinates matched the values’ means to within half a percent. Weights are rounded down to powers of 2^32. With probability one half, the rule runs a maximum branch: accept the first unmasked label that outranks every revealed one, by rounded weight and then by label. With probability one quarter the top label is unmasked and the second masked, so even with the worst order for each seed, this branch averages a quarter of the largest rounded weight. In our check, the exact worst-order average was at least a quarter on 300 random weight vectors. Otherwise the main branch builds nested paths of flats, sets closed under the matroid’s span, from the revealed weights, group by group from low to high. Within the layers between alternate flats it accepts greedily, and nesting keeps the union independent in every arrival order. Three losses must be controlled. Lighter arrivals may block a heavy group: independent guards enlarge each flat one step early, and exposing them backwards shows that a fixed fraction of the revealed labels stay safe. But those safe labels were revealed, so they are sacrificed: a counting bound on marked pivot patterns, with a union bound, shows that enough rank remains on unsacrificed labels. And enlarging the flats can reduce rank: a telescoping conditional-rank identity charges this cost only once along each path. After thinning, the remaining rank is a lower bound on the accepted count, simultaneously for every order. Summing over weight levels, when no single label dominates, the main branch earns a fixed fraction of the rounded optimum, built from the constants 2^−140, 2^−16 and 2^100. Mixing the two branches and undoing the rounding gives 2^−293 for fixed weights, so the stated 2^−310 leaves slack.</p>
+<h3><span class="t num">5:22</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. The Lean formalization covers the theorem, its fixed-weight version and the secretary consequence; we have not run it. It is not among the papers OSVerify reviewed, and we have seen no expert review. If it holds, one sample per element is enough for a constant-factor matroid prophet inequality, even against an adversary who sees everything; the constant is just astronomically small.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20111%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

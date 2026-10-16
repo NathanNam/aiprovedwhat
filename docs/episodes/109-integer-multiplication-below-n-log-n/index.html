@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faster than n log n? Integer multiplication below n log n | AI Proved What?</title>
+<meta name="description" content="An AI system claims a multitape Turing machine that multiplies n-bit integers in time n (log n)^(1 − κ) with κ = 2^−182, refuting the n log n optimality conjecture in that model. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/109-integer-multiplication-below-n-log-n/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Faster than n log n?">
+<meta property="og:description" content="An AI system claims a multitape Turing machine that multiplies n-bit integers in time n (log n)^(1 − κ) with κ = 2^−182, refuting the n log n optimality conjecture in that model. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/109-integer-multiplication-below-n-log-n/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/109-integer-multiplication-below-n-log-n/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 109, October 2026</p>
+<h1>Faster than n log n?</h1>
+<p class="subtitle">A claimed multitape Turing machine that multiplies integers in time n (log n)<sup>1 − κ</sup>, with κ = 2<sup>−182</sup></p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 109 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="I-LBQyc8csQ" data-title="Episode 109: Faster than n log n?">
+  <a href="https://youtu.be/I-LBQyc8csQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 109: Faster than n log n? An eight-point butterfly network above a strip of Turing-machine tape.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:53. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/I-LBQyc8csQ?t=0" data-t="0"><span class="t">0:00</span><span>Multiplying numbers</span></a></li>
+  <li><a href="https://youtu.be/I-LBQyc8csQ?t=81" data-t="81"><span class="t">1:21</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/I-LBQyc8csQ?t=150" data-t="150"><span class="t">2:30</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/I-LBQyc8csQ?t=320" data-t="320"><span class="t">5:20</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>Multiplying two n-digit numbers the school way takes about n² digit products. Karatsuba and Ofman (1962) needed only three half-size products instead of four, which gives about n<sup>1.585</sup>, and Toom pushed the exponent below 1 + ε for every fixed ε. The fast Fourier transform changed the scale: in 1971 Schönhage and Strassen multiplied n-bit numbers in time O(n log n log log n) on a multitape Turing machine and proposed n log n as the optimal order of growth. Fürer (2007) shrank the extra factor, and Harvey and van der Hoeven reached O(n log n) (Annals of Mathematics, 2021). Faster bounds were known only in stronger machine models, such as Schönhage’s storage modification machines.</p>
+<p>Result 109 is <a href="https://github.com/openai/math/blob/main/preprints/Integer-multiplication-below-n-log-n-September-23-2026/paper.pdf">one OpenAI preprint</a> (73 pages) dated September 23, 2026. It claims one fixed Turing machine, with a finite alphabet and a fixed number of one-dimensional tapes, that computes the exact product of two n-bit integers for every n in worst-case time O(n (log n)<sup>1 − κ</sup>), with κ = 2<sup>−182</sup>. That would refute the Schönhage–Strassen conjecture in this model: for every fixed machine, the time divided by n log n would tend to zero. The same bound follows for exact division with remainder and for integer square roots, and, through a reduction of Harvey and van der Hoeven, for transposing binary matrices on tapes.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>It is not a practical algorithm. The saving over n log n is a factor (log n)<sup>κ</sup>, which reaches 2 only when log₂ n = 2<sup>2<sup>182</sup></sup>; in the paper’s words, the constants and thresholds are extremely large, and the algorithm is intended to establish a bit-complexity bound. The result concerns the multitape Turing machine; other models have their own, different bounds.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 73 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>No; no Lean formalization was published for this result</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprint has not been revised. OpenAI published no Lean formalization for this result. A <a href="https://github.com/openai/math/blob/main/preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/main.pdf">companion preprint</a> (result 130) uses the paper’s complex network for exact Fourier transforms below n log n operations. The paper is not among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Why n log n.</strong> Splitting the numbers into digits turns the product into a convolution of digit lists, followed by carries, and fast Fourier transforms compute convolutions. A transform has about log n layers, each touching all of the roughly n stored bits; on tapes, data must also be rearranged between layers. Savings are needed both in moving data and in the butterfly arithmetic.</li>
+  <li><strong>Two networks that save a power.</strong> Each network exchanges two banks of values in three stages, y ← y + x, x ← x − y, y ← y + x, giving (−y, x), a swap over the bits, and restores every scratch wire. When each wire carries an array stored in a changing representation, every change costs smaller calls to the same procedure; the representations are chosen so that the total number of smaller calls s is just below W·m, for W wires and m = 10<sup>6</sup>. Since s/W &lt; m, interchanging two u-bit address fields costs O(V u<sup>τ</sup>) with τ = 1 − 2<sup>−50</sup>, against V·u for the standard method; simultaneous butterfly layers save a power in the same way.</li>
+  <li><strong>Triples.</strong> The networks are built on the 161,700 triples of a 100-element set. In the bit network, 100 central wires collect, for each element, the sum of the values on triples containing it; scattering back gives each triple its own value plus those of triples meeting it in exactly one element, modulo 2, and side wires cancel those, as in decoding an index code. Labels from the triples’ indicator vectors make s fall short of W·m by about one part in 67 billion.</li>
+  <li><strong>The exact product.</strong> The rest adapts the pipeline of Harvey and van der Hoeven: a Chinese-remainder map onto prime-length axes, Gaussian resampling to power-of-two lengths, Bluestein’s chirp back to convolution, and a twist into polynomials modulo y<sup>r</sup> + 1, where roots of unity are signed shifts. The fast exchanges handle the data layouts and the butterfly layers speed up the polynomial transforms. Every recovered coefficient is within less than 1/2 of the true integer, so rounding and carries give the exact product. The smallest margin in the final cost table is 2<sup>−181</sup> = 2κ.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Karatsuba’s recursion agrees with Python’s multiplication on 1,000 random pairs of 4,000-bit numbers; at 2<sup>20</sup> digits it needs about 315 times fewer digit products than the school method. For 1234 × 5678: 12 · 56 = 672, 34 · 78 = 2652, (12 + 34)(56 + 78) − 672 − 2652 = 2840, and the product is 7,006,652.</li>
+  <li>A floating-point Fourier multiplication of two random 100,000-bit numbers in 16-bit digits left every coefficient within 0.0034 of an integer; rounding gave the exact product.</li>
+  <li>The three-stage exchange takes (63, 22) to (63, 85), (−22, 85) and (−22, 63).</li>
+  <li>Both triple networks, with the paper’s eight-step schedule and random scratch values, added x to y and restored every scratch wire in 24 of 24 runs on ground sets of 5 to 8 elements.</li>
+  <li>For 100 elements: 161,700 triples, m = 1,000,000, about 1.77 × 10<sup>20</sup> wires in the bit network; the relative deficit (W·m − s)/(W·m) is 339/22,587,335,000,000, about one part in 67 billion.</li>
+  <li>The saving factor (log n)<sup>κ</sup> − 1 is about 5 × 10<sup>−55</sup> for a million bits and below 10<sup>−54</sup> for 10<sup>80</sup> bits.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Integer-multiplication-below-n-log-n-September-23-2026/paper.pdf">Integer multiplication below n log n (PDF)</a>, 73 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/main.pdf">An explicit power saving for the exact discrete Fourier transform (PDF)</a>, the companion preprint.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 109.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Integer-multiplication-below-n-log-n-September-23-2026/paper.pdf">Integer multiplication below n log n</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Multiplying numbers</h3>
+<p>Multiplying two numbers of n digits the school way takes about n² digit products. In 1962, Karatsuba and Ofman did better: split each number into halves, and three half-size products, instead of four, give the whole product. Repeating the split gives about n^1.585. Toom pushed the exponent below one plus any fixed amount. In our check, Karatsuba’s recursion agreed with Python’s own multiplication on a thousand random pairs, and for a million digits it needs about 300 times fewer digit products than the school method. The fast Fourier transform changed the scale. In 1971, Schönhage and Strassen multiplied n-bit numbers in time n log n log log n on a multitape Turing machine, and proposed n log n as the true order of growth. Fürer shrank the extra factor in 2007, and Harvey and van der Hoeven reached n log n itself, in a paper published in 2021. Faster bounds were known only in stronger machine models, such as Schönhage’s storage modification machines. In our check, a floating-point Fourier multiplication of two random 100,000-bit numbers left every coefficient within 0.004 of an integer, and rounding gave the exact product.</p>
+<h3><span class="t num">1:21</span>The claim</h3>
+<p>Result 109 is one OpenAI preprint, 73 pages, dated September 23. It claims one fixed multitape Turing machine that multiplies two n-bit numbers exactly, at every length, in worst-case time of order n (log n)^(1 − κ), where κ = 2^−182. That would refute Schönhage and Strassen’s conjecture that n log n is optimal in this model. The same bound follows for exact division and integer square roots, and, through a reduction of Harvey and van der Hoeven, for transposing binary matrices on tapes. The saving is extraordinarily small. The bound beats n log n by a factor of (log n)^κ, and that factor reaches two only when log n is 2^(2^182). The paper says its constants are extremely large, and that the algorithm is meant to establish a bound. There is no Lean formalization for this result. A companion preprint, result 130, uses one of the same networks for exact Fourier transforms.</p>
+<h3><span class="t num">2:30</span>How the proof goes</h3>
+<p>Why n log n? Split both numbers into digits: the product is a convolution of the digit lists, followed by carries, and fast Fourier transforms compute convolutions. A transform has about log n layers, and each layer touches all of the roughly n stored bits. On a tape, data must also be rearranged between layers, and each pass costs time proportional to the tape’s length. So the paper needs savings in both places: moving data, and the butterfly arithmetic of each layer. The savings come from two fixed linear networks. Each exchanges two banks of values in three stages: add x to y, subtract y from x, and add x to y again. Over the bits, this is the familiar swap of two registers by exclusive or. Now let every wire carry a whole array, stored in a representation that changes along the network. Each change costs smaller calls to the same procedure, and the representations are chosen so that the total number of smaller calls, s, falls just below the number of wires, W, times a parameter m of 1,000,000. When s over W is less than m, the recursion saves a power: interchanging two address fields of u bits costs the volume times u^τ, with τ = 1 − 2^−50. The networks are built from the triples of a 100-element set, about 162,000 of them. In the bit network, 100 central wires collect, for each element, the sum of the values on triples containing it. Scattering back gives each triple its own value plus those of triples meeting it in exactly one element, and side wires cancel those, as in decoding an index code. Scratch wires end with their original contents. Labels from the triples’ indicator vectors make the total cost s fall short of W times m by about one part in 67 billion. In our check, the gate schedule added x to y and restored random scratch values in every small case. The rest adapts the pipeline of Harvey and van der Hoeven. The digit convolution moves onto prime-length axes by the Chinese remainder theorem; Gaussian resampling turns those transforms into ones with power-of-two lengths; Bluestein’s chirp makes them convolutions again; and a twist turns one coordinate into a polynomial ring, where roots of unity are signed shifts. The fast exchanges handle the data layouts, and the simultaneous butterfly layers speed up the polynomial transforms. Precision bounds keep every recovered coefficient within less than one half of the true integer, so rounding and carries give the exact product. In the final cost table, the smallest margin is 2^−181: twice κ.</p>
+<h3><span class="t num">5:20</span>Where it stands</h3>
+<p>The preprint is not peer reviewed and has not been revised. There is no Lean formalization, and the argument rests on many explicit estimates over 70 pages. It is not among the papers OSVerify reviewed, and we have seen no expert review. If it holds, n log n is not the limit for multiplying integers on a multitape Turing machine; the saving is real in principle, and invisible at any size that could ever be written down.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20109%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

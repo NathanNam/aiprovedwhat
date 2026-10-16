@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log squared, everywhere? Randomized k-server with ratio O(log² k) on every metric | AI Proved What?</title>
+<meta name="description" content="An AI system claims a randomized k-server policy with competitive ratio O(log² k) on every metric space, matching the worst-case lower bound, with Lean formalizations. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/110-randomized-k-server-squared-log/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Log squared, everywhere?">
+<meta property="og:description" content="An AI system claims a randomized k-server policy with competitive ratio O(log² k) on every metric space, matching the worst-case lower bound, with Lean formalizations. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/110-randomized-k-server-squared-log/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/110-randomized-k-server-squared-log/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 110, October 2026</p>
+<h1>Log squared, everywhere?</h1>
+<p class="subtitle">A claimed randomized k-server policy with competitive ratio O(log² k) on every metric space</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 110 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="mckoqqUxUbI" data-title="Episode 110: Log squared, everywhere?">
+  <a href="https://youtu.be/mckoqqUxUbI">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 110: Log squared, everywhere? Three servers in a plane moving along dashed paths to circled requests.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:02. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/mckoqqUxUbI?t=0" data-t="0"><span class="t">0:00</span><span>The k-server problem</span></a></li>
+  <li><a href="https://youtu.be/mckoqqUxUbI?t=104" data-t="104"><span class="t">1:44</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/mckoqqUxUbI?t=206" data-t="206"><span class="t">3:26</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/mckoqqUxUbI?t=334" data-t="334"><span class="t">5:34</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>In the k-server problem, k servers stand at points of a metric space. Requests arrive one at a time, each must be served by moving some server to the requested point, and the cost is the total distance moved. An online policy decides without seeing the future and is compared with the offline optimum, which knows every request in advance; the worst-case ratio is the competitive ratio. Manasse, McGeoch and Sleator (1988) showed that no deterministic policy does better than k and conjectured that k is achievable; Koutsoupias and Papadimitriou proved 2k − 1 with the work function algorithm, and a September 2026 preprint by Coester, Koutsoupias and Zbysiński, cited by the paper, claims k.</p>
+<p>Randomization helps when the requests are fixed in advance. For paging, where all distances are equal, the randomized marking algorithm is within twice the harmonic number H<sub>k</sub> ≈ log k, and order log k is optimal. That suggested the randomized k-server conjecture: O(log k) on every metric. In 2023 Bubeck, Coester and Rabani disproved it, with metrics that force order log² k. Upper bounds of order log² k were known on hierarchically separated trees (Bubeck, Cohen, Lee, Lee and Mądry), but on general metrics only with an extra factor depending on the number of points or on the spread of distances.</p>
+<p>Result 110 is two OpenAI preprints, <a href="https://github.com/openai/math/blob/main/preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026.pdf">the existence theorem</a> (71 pages) and <a href="https://github.com/openai/math/blob/main/preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026.pdf">a uniform algorithm</a> (16 pages), both dated September 24, 2026. The first claims an absolute constant C such that, for every k ≥ 2, every metric space with at least k + 1 points and every starting position, one randomized policy has expected cost at most C (log(k + 1))² times the optimum plus an additive term, which is zero when the servers start at distinct points. It covers infinite and unbounded spaces and makes no efficiency claim. The second gives a uniform algorithm on finite rational metrics, with polynomial preprocessing and per-request work polynomial in the input size and the log of the request count, at the price of an additive constant that may be enormous.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>It does not say every metric needs log² k: on paging the optimal order is log k, and order log k is the lower bound that holds on every metric. The claim settles the worst case: at most order log² k on every metric, and that much on some. The constant C is not computed, and the uniform algorithm’s additive constant is not claimed to be small.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 71 and 16 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>OpenAI published Lean proofs of both theorems; we have not run the checks</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 13, 2026. The preprints have not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/110.md">Lean formalization</a> of the existence theorem, <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/KServer">37 files and 37,365 lines</a> matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/KServer.lean">its comparator statement</a>, and of the uniform algorithm, <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/UniformKServer">410 files and 50,260 lines</a> matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/UniformKServer.lean">its comparator</a>, a separate development; nothing outside Mathlib, with no unproved steps that we could find. We have not run the checks. An earlier claim of a polylogarithmic bound on every metric, through Lee’s fusible HSTs, was withdrawn in 2021 after a gap was found; the new paper borrows some of its ideas but proves its own estimates. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A hidden comparator.</strong> First let the policy know the probability law of the requests. Fix one offline optimum for each possible input and use only its conditional distribution given the requests so far, never its realized future. A lazy-simulation lemma turns any such causal trajectory into a policy that moves one server per request and pays no more. At the end, independent episodes remove the additive term, and minimax and compactness arguments give one policy for all inputs on any metric.</li>
+  <li><strong>Partitions and a fixed tree.</strong> Partitions of the metric at geometrically shrinking scales, updated as requests arrive, map each point to a leaf of a fixed tree labelled by its cells. Heavy balls protect concentrated requests and other requests use chronological rosters in tiers. A ball-mass telescope sums the ratios of nested ball masses across scales into a single logarithm, so the comparator’s movement on the tree is at most order log k times its true movement.</li>
+  <li><strong>Allocation on the tree.</strong> From the comparator’s expected server counts m<sub>v</sub> below each vertex, an allocation theorem keeps fractional amounts q<sub>v</sub> ≤ C<sub>0</sub> m<sub>v</sub> that always cover the request and move only order log k times as much as the comparator moves on the tree. Unused mass may park at internal vertices. This is the other logarithm.</li>
+  <li><strong>Back to the metric.</strong> Parked mass is represented by anchor points in the metric, whose travel is paid separately, and balanced rounding turns fractional amounts into exactly k servers with only a constant loss. Altogether the expected cost is at most an absolute constant times (log(k + 1))² times the optimum, plus an additive term.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Points 0, 1 and 100 on a line, servers at 0 and 100, requests alternating 1, 0, 1, 0, …: always moving the nearest server costs 10,000 over 10,000 requests, while the offline optimum pays 99.</li>
+  <li>Paging with k + 1 pages and random requests: randomized marking caused 1.50, 2.29, 2.95 and 3.59 times as many page faults as Belady’s offline optimum for k = 2, 5, 10 and 20, close to H<sub>k</sub> = 1.50, 2.28, 2.93 and 3.60.</li>
+  <li>The lazy-simulation lemma held in 300 of 300 random trajectories, and the ball-mass telescope in 200 of 200 random measures.</li>
+  <li>For k = 10<sup>6</sup>: log(k + 1) ≈ 13.8 and its square ≈ 191, ignoring the unspecified constant.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026.pdf">Squared-logarithmic randomized k-server on arbitrary metrics (PDF)</a>, 71 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026.pdf">Uniform computation of the squared-logarithmic k-server bound (PDF)</a>, 16 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/110.md">The Lean scope note</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 110.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026/Squared-logarithmic-randomized-k-server-on-arbitrary-metrics-September-24-2026.pdf">Squared-logarithmic randomized k-server on arbitrary metrics</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026/Uniform-computation-of-the-squared-logarithmic-k-server-bound-September-24-2026.pdf">Uniform computation of the squared-logarithmic k-server bound</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The k-server problem</h3>
+<p>Imagine k servers, say repair vans, standing at points of a metric space. Requests arrive one at a time; each must be served by moving some server to the requested point, and the cost is the total distance moved. An online policy decides without seeing the future, and it is compared with the offline optimum, which knows every request in advance. The worst-case ratio between the two is the competitive ratio. In 1988, Manasse and coauthors proved that no deterministic policy does better than k, and conjectured that k is achievable; Koutsoupias and Papadimitriou proved 2k − 1, with the work function algorithm, and a preprint from this September, by other authors, claims k itself. In our check, always moving the nearest server cost 10,000 on a simple alternating sequence where the optimum paid 99. Randomness can help, when the requests are fixed in advance. For paging, where all distances are equal, the randomized marking algorithm is within twice the harmonic number of k, which grows like log k, and order log k is optimal. That suggested the randomized k-server conjecture: order log k on every metric. In 2023, Bubeck, Coester and Rabani disproved it, with metrics that force order log² k. Upper bounds lagged behind: order log² k on hierarchically separated trees, by Bubeck, Cohen, Lee, Lee and Mądry, but on general metrics only with an extra factor that depends on the number of points or the spread of distances. In our check, marking caused about the harmonic number of k times as many page faults as the offline optimum on random requests, for k equal to 2, 5, 10 and 20.</p>
+<h3><span class="t num">1:44</span>The claim</h3>
+<p>Result 110 is two OpenAI preprints, of 71 and 16 pages, dated September 24. The first claims that randomized k-server has competitive ratio at most of order log² k on every metric space, for every k ≥ 2. For each metric and starting position, one randomized policy has expected cost at most an absolute constant, times (log(k + 1))², times the optimum, plus an additive term that is zero when the servers start at distinct points. It covers infinite and unbounded spaces, and makes no efficiency claim. The second preprint gives a uniform algorithm on finite rational metrics, with polynomial preprocessing and per-request work polynomial in the input size and the log of the request count, at the price of an additive constant that may be enormous. Together with the lower bound of Bubeck, Coester and Rabani, this would settle the worst-case order: log² k, not log k. For a million servers, and ignoring the unspecified constant, log k is about 14 and its square about 191, against a million for the deterministic bound. An earlier claim of a polylogarithmic bound on every metric, using Lee’s fusible trees, was withdrawn after a gap was found; the new proof borrows some of its ideas but proves its own estimates. OpenAI published Lean formalizations of both theorems: 37 files and about 37,000 lines for the existence theorem, and 410 files and about 50,000 lines for the uniform algorithm. We have not run the checks.</p>
+<h3><span class="t num">3:26</span>How the proof goes</h3>
+<p>The proof first lets the policy know the probability law of the requests. Then it can follow a hidden comparator: fix one offline optimum for each possible input, and use only its conditional distribution given the requests so far, never its realized future. A lazy simulation lemma turns any such causal trajectory into a policy that moves one server per request and pays no more. At the end, minimax and compactness arguments replace the known law by one policy for all inputs. In our check, the lazy policy never paid more than the simulated trajectory, in 300 random trials. Next, partitions of the metric at geometrically shrinking scales, updated as requests arrive, map each point to a leaf of a fixed tree, labelled by its cells. The comparator’s posterior gives expected server counts below every vertex. An allocation theorem keeps fractional server amounts on the tree, at most a constant times those counts and always covering the request, while moving only order log k times as much as the comparator moves on the tree. Unused mass may park at internal vertices. That is the first logarithm. The second logarithm comes from the partitions: the comparator’s movement on the tree must be at most order log k times its true movement. Heavy balls protect concentrated requests, and other requests use chronological rosters in tiers. The key estimate telescopes ratios of ball masses across scales, so the losses add up to a single logarithm instead of one per scale. In our check, this ball-mass telescope held for 200 random measures. Finally, mass parked at a vertex is represented by an anchor point in the metric, and balanced rounding turns fractional amounts into exactly k servers, losing only a constant factor. Independent episodes remove the additive term, and compactness over all finite histories gives one policy on any metric, finite or not. Altogether: an absolute constant times log² k.</p>
+<h3><span class="t num">5:34</span>Where it stands</h3>
+<p>The preprints are not peer reviewed and have not been revised. The Lean formalizations cover both theorems; we have not run them. Neither paper is among those OSVerify reviewed, and we have seen no expert review. If it holds, the worst case of randomized k-server is settled up to constants: at most order log² k on every metric, and that much on some.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20110%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
