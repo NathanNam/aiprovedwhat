@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What does a random landscape look like? Lipschitz heights and the free field | AI Proved What?</title>
+<meta name="description" content="Three AI preprints claim Gaussian free field limits for triangular-lattice Lipschitz heights and an SLE4 interface for real heights, Schramm&#x27;s 2006 questions. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/232-lipschitz-heights-gff/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="What does a random landscape look like?">
+<meta property="og:description" content="Three AI preprints claim Gaussian free field limits for triangular-lattice Lipschitz heights and an SLE4 interface for real heights, Schramm&#x27;s 2006 questions. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/232-lipschitz-heights-gff/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/232-lipschitz-heights-gff/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 232, October 2026</p>
+<h1>What does a random landscape look like?</h1>
+<p class="subtitle">Three preprints claim Gaussian free field limits for triangular-lattice Lipschitz heights, and an SLE<sub>4</sub> interface for real heights</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 232 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="9mYH9o4fnGc" data-title="Episode 232: What does a random landscape look like?">
+  <a href="https://youtu.be/9mYH9o4fnGc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 232: What does a random landscape look like? A random height function on a hexagon, coloured by height.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:40. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/9mYH9o4fnGc?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/9mYH9o4fnGc?t=86" data-t="86"><span class="t">1:26</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/9mYH9o4fnGc?t=148" data-t="148"><span class="t">2:28</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/9mYH9o4fnGc?t=237" data-t="237"><span class="t">3:57</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Put a height on every point of a triangular lattice, with one rule: neighbouring heights differ by at most one. Think of a terrain of terraces whose cliffs are never more than one step high, and pick such a terrain at random. What does it look like from far away? Its contour lines form loops, which ties it to the loop O(2) model of statistical physics. In 2006 Oded Schramm asked two questions about such height models: one with odd integer heights, steps of 0 or 2, and boundary +1 on one arc and −1 on the other; one with real heights, steps at most 1, and boundary ±λ. For each he asked whether the height converges to the Gaussian free field, and whether the interface between positive and negative converges to SLE<sub>4</sub> (for the real heights, at some value of λ). Before this release the variance of the integer heights was known to grow like the logarithm of the size (Glazman, Manolescu, Lammers and others), and the Gaussian limit was a conjecture.</p>
+<p>Result 232 is three OpenAI preprints, 261 pages in their second editions, dated October 6, 2026 (first editions September 25). The first claims that integer heights with zero boundary, weighted by x to the number of height changes, converge to σ(x) times the Gaussian free field, for every fixed x from 1/√2 to 1. The second claims that Schramm’s two-arc odd model converges to its harmonic boundary profile plus a multiple of the free field. The third claims that uniform real heights converge to a Gaussian field for every boundary amplitude up to 1/2, and that at one tuned amplitude, defined only implicitly, the interface converges to SLE<sub>4</sub>. That would resolve Schramm’s real-height question.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>For the integer two-arc model, only the field half is claimed; whether its interface tends to SLE<sub>4</sub> stays open. None of the scaling constants is computed, and the papers do not claim that σ(x) is the same for every x. Nothing is said about the real-height interface at other amplitudes.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, three papers, 261 pages, second editions dated October 6, 2026 (first editions September 25)</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>No (no Lean link; an uncatalogued folder covers some building blocks)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. The preprints were revised once, on October 6; the real-height paper’s interface argument nearly doubled. There is no Lean link for this result; an uncatalogued Lean folder (243 files) formalizes some building blocks of the real-height paper, but no limit statement. Human teams posted proofs of Gaussian limits for the related six-vertex model in 2026. Not among those OSVerify reviewed; we found no expert reaction.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Integer heights.</strong> The height, modulo four, is encoded by two ±1 spins, and a suitable circuit, given what it fixes, splits the system exactly into conditionally independent inside and outside. Reflection positivity makes the correlations a positive mixture of simple kernels, and the six-fold symmetry of the lattice forces one angular term to vanish on average, so every limit has the free field’s spectrum and the moments satisfy Wick’s rule.</li>
+  <li><strong>Real heights.</strong> A reflected Brownian heat bath samples the uniform law; two copies with the same noise pull together at the walls. A cell problem defines a stiffness, which fixes the field. For the interface, the paper adapts Schramm and Sheffield’s method for the discrete free field: the explored curve carries boundary values ± a gap, and matching them to the field’s scale selects the one amplitude where the curve is plain SLE<sub>4</sub>.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours, exact: Schramm’s two-arc model on hexagons of radius 1 to 4 has 2, 176, 1,301,984 and 836,798,460,630 configurations; the variance at the centre is 1.00, 1.36, 1.50, 1.62.</li>
+  <li>Ours, heat-bath simulation up to radius 32: the centre variance grows in line with the log of the size. Integer slopes 0.094, 0.104 and 0.111 sit near 1/π² ≈ 0.101 (one universal constant would fit; the papers do not claim it). For real heights the slope suggests a tuned amplitude of roughly 0.3 to 0.4, inside the claimed range.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/paper.pdf">Gaussian free field limits of weighted integer Lipschitz heights (PDF)</a>, 85 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-October-6-2026/paper.pdf">The Gaussian free field limit of integer Lipschitz heights with two-arc boundary data (PDF)</a>, 64 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/paper.pdf">Uniform real Lipschitz surfaces on the triangular lattice (PDF)</a>, 112 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 232.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/paper.pdf">Gaussian free-field limits of weighted integer Lipschitz heights</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-October-6-2026/paper.pdf">The Gaussian free field limit of integer Lipschitz heights with two-arc boundary data</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/paper.pdf">Uniform real Lipschitz surfaces on the triangular lattice</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Put a height on every point of a triangular lattice, with one rule: neighboring heights differ by at most one. Think of a terrain of terraces whose cliffs are never more than one step high, and pick such a terrain at random. What does it look like from far away? Its contour lines form loops, which ties it to the loop O(2) model of statistical physics. In 2006, Oded Schramm asked two questions about such height models. In one, heights are odd integers, neighbors differ by zero or two, and the boundary is plus one on one arc and minus one on the other. In the other, heights are real numbers, neighbors differ by at most one, and the boundary is plus or minus a constant λ. For each, he asked whether the height converges to the Gaussian free field, the random surface of continuum physics, and whether the interface between positive and negative converges to SLE₄, for real heights at some value of λ. Before this release, the variance of the integer heights was known to grow like the logarithm of the size, by Glazman, Manolescu, Lammers and others, and the Gaussian limit was called a conjecture. Our computer counted the two-arc landscapes exactly on small hexagons: two, then 176, then about 1.3 million, then about 837 billion. The variance at the center creeps up from one to 1.62.</p>
+<h3><span class="t num">1:26</span>The claim</h3>
+<p>Result 232 is three OpenAI preprints, 261 pages in their second editions, dated October 6, 2026; first editions appeared on September 25. The first claims that integer heights with zero boundary, weighted by x to the number of height changes, converge to a multiple of the Gaussian free field, for every fixed x from 1/√2 to one. The second claims that Schramm’s two-arc odd model converges to its harmonic boundary profile plus a multiple of the free field. The third claims that uniform real heights converge to a Gaussian field for every boundary amplitude up to one half, and that at one tuned amplitude, defined only implicitly, the interface converges to SLE₄. That would resolve Schramm’s real-height question, while for the integer model only the field half is claimed; whether its interface tends to SLE₄ stays open. None of the scaling constants is computed.</p>
+<h3><span class="t num">2:28</span>How the proof goes</h3>
+<p>For the integer models, the height, modulo four, is encoded by two plus-or-minus-one spins, and a suitable circuit, given what it fixes, splits the system exactly into conditionally independent inside and outside. The key step is a sum rule. Reflection positivity makes the correlations a positive mixture of simple kernels, and the six-fold symmetry of the lattice forces one angular term to vanish on average. So every limit has the spectrum of the Gaussian free field, and the moments satisfy Wick’s rule. For real heights, a reflected Brownian heat bath samples the uniform law, and two copies driven by the same noise pull together at the walls. A cell problem defines a stiffness, which fixes the field. For the interface, the paper adapts Schramm and Sheffield’s method for the discrete Gaussian free field: the explored curve carries boundary values plus and minus a gap, and matching them to the field’s own scale selects the one amplitude where the curve is plain SLE₄. As an illustration, our computer ran heat-bath simulations up to radius 32. The variance at the center grows in line with the log of the size, as expected for a Gaussian free field limit. The slopes for the integer models sit near 1/π², suggesting one universal constant, which the papers do not claim. For real heights, the slope suggests a tuned amplitude of roughly 0.3 to 0.4, inside the claimed range.</p>
+<h3><span class="t num">3:57</span>Where it stands</h3>
+<p>The preprints are unrefereed and were revised once, on October 6; the real-height paper’s interface argument nearly doubled. There is no Lean link for this result; an uncatalogued Lean folder formalizes some building blocks of the real-height paper, but no limit statement. Human teams posted proofs of Gaussian limits for the related six-vertex model in 2026. Not among those OSVerify reviewed, and we found no expert reaction. If they hold, Schramm’s terraced landscapes are Gaussian free fields from far away, and for real heights, at one tuned boundary height, the boundary between high and low ground is SLE₄.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20232%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
