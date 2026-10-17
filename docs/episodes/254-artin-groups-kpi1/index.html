@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Braids, and every relative of them? Artin groups: K(π,1), parabolics and CAT(0) | AI Proved What?</title>
+<meta name="description" content="Three AI preprints claim the Artin K(π,1) conjecture for finitely generated Artin groups, that parabolic subgroups intersect in parabolic subgroups, and an explicit Artin group that is not CAT(0). An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/254-artin-groups-kpi1/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Braids, and every relative of them?">
+<meta property="og:description" content="Three AI preprints claim the Artin K(π,1) conjecture for finitely generated Artin groups, that parabolic subgroups intersect in parabolic subgroups, and an explicit Artin group that is not CAT(0). An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/254-artin-groups-kpi1/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/254-artin-groups-kpi1/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 254, October 2026</p>
+<h1>Braids, and every relative of them?</h1>
+<p class="subtitle">Three AI preprints claim the Artin K(π,1) conjecture, parabolic intersections, and a non-CAT(0) Artin group</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 254 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="PDRhXsZ7YjM" data-title="Episode 254: Braids, and every relative of them?">
+  <a href="https://youtu.be/PDRhXsZ7YjM">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 254: Braids, and every relative of them? Two three-strand braid diagrams showing the braid relation.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:00. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/PDRhXsZ7YjM?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/PDRhXsZ7YjM?t=89" data-t="89"><span class="t">1:29</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/PDRhXsZ7YjM?t=161" data-t="161"><span class="t">2:41</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/PDRhXsZ7YjM?t=247" data-t="247"><span class="t">4:07</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>When you braid three strands, the moves obey one rule: crossing 1, 2, 1 equals crossing 2, 1, 2. Artin groups generalize this. For each pair of generators, alternating words of some length m are equal: m = 2 means the generators commute, 3 gives the braid rule, and ∞ means no rule at all. Adding the rule that each generator squares to one gives a reflection group. Each Artin group comes with a space built from simple pieces, the Salvetti complex; for three-strand braids it is a hexagon with its sides glued. The K(π,1) conjecture says this space has no higher-dimensional holes beyond those the group itself forces: its universal cover is contractible.</p>
+<p>The braid case goes back to Fadell, Fox and Neuwirth in 1962, and Deligne proved all finite reflection types in 1972. Van der Lek wrote down the general form, crediting Arnold, Pham and Thom. Many families followed: the affine ones in 2021 and dimension three in 2025.</p>
+<p>Result 254 is three OpenAI preprints, of 62, 55 and 29 pages, all dated September 23, 2026:</p>
+<ol>
+  <li>The first claims the K(π,1) conjecture for every Artin group with finitely many generators.</li>
+  <li>The second claims that intersections of parabolic subgroups are again parabolic. It also claims that the word problem is decidable for all these groups.</li>
+  <li>The third claims an explicit Artin group with 116 generators that has no geometric action on any CAT(0) space.</li>
+</ol>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What they don’t claim</h2>
+<ul>
+  <li>Anything about Artin groups with infinitely many generators.</li>
+  <li>Which Artin groups are CAT(0). Many are, including a triangle subgroup inside the counterexample.</li>
+  <li>That 116 generators are needed.</li>
+  <li>How fast the word-problem algorithm runs. The word-problem claim is also missing from the catalog’s summary and from the Lean.</li>
+</ul>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 3 papers, 146 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>All three main theorems, not the word-problem corollary (<a href="https://github.com/openai/math/blob/main/lean/docs/254.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. None of the preprints has been revised.</p>
+<ul>
+  <li>In Lean, all three main theorems are formalized: about 91,000 lines with no unproved steps. The word-problem corollary is not formalized, and the parabolic paper is missing from the repository’s formalization list. We did not build the Lean.</li>
+  <li>OSVerify has not reviewed the papers.</li>
+  <li>Giulio Tiozzo wrote that he got a 12-generator example in 10 minutes using OpenAI’s own model. That example is unpublished and unverified.</li>
+  <li>No expert check has appeared.</li>
+</ul>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>One engine for the first two papers.</strong> The group acts on complexes over a small algebra, and each group element gets a profile by counting generators layer by layer. Harmonic averaging, with weights 2 cos(π/m), turns these profiles into heights on cosets of the spherical subgroups. Two local estimates then let the paper build the space of cosets one vertex at a time without ever creating a hole. The same machine shows that stabilizers are parabolic, and gives a membership test that decides the word problem. The two papers share their method and more than 500 Lean files, so they are not independent confirmations.</li>
+  <li><strong>Angles that do not add up.</strong> In a CAT(0) action, the translation lengths of commuting elements behave like Euclidean vectors. Forty-strand braid blocks squeeze six angles around a triangle subgroup below 60°, so the six flat sectors cannot close up. A winding argument turns this into a contradiction in every dimension.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: in the homology of the four-strand braid group, a class of order 2 appears in degree 2, matching the known answer.</li>
+  <li>Ours: with labels 2, 3, 4 and ∞, every diagram on up to four generators was already covered by the earlier theorems we checked. On five generators, up to 140 of 10,688 were not.</li>
+  <li>Ours: the 116-generator group’s Salvetti complex has about 1.65 trillion cells, in 39 dimensions.</li>
+  <li>Ours: from the paper’s bound, each of the six sector angles is at most 58.1°, so together they total at most 349°. In the triangle subgroup’s own flat picture, by contrast, six 60° corners meet around each point.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/paper.pdf">Harmonic heights and the Artin K(π,1) conjecture (PDF)</a>, 62 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/paper.pdf">Parabolic intersections in Artin groups (PDF)</a>, 55 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/paper.pdf">An Artin group with no geometric CAT(0) action (PDF)</a>, 29 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/254.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 254.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Harmonic-heights-and-the-Artin-K-pi-1-conjecture-September-23-2026/paper.pdf">Harmonic heights and the Artin K(pi,1) conjecture</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-Artin-group-with-no-geometric-CAT-0-action-September-23-2026/paper.pdf">An Artin group with no geometric CAT(0) action</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Parabolic-intersections-in-Artin-groups-September-23-2026/paper.pdf">Parabolic intersections in Artin groups</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Braid three strands, and the moves obey one rule: crossing 1, 2, 1 equals crossing 2, 1, 2. Artin groups generalize this: for each pair of generators, alternating words of some length m are equal; m = 2 means they commute, 3 gives the braid rule, and infinity means no rule at all. Add the rule that each generator squares to one, and you get a reflection group, like the symmetries of a polyhedron or of a tiling. Each Artin group comes with a space built from simple pieces, the Salvetti complex; for 3-strand braids it is a hexagon with its sides glued. Our computer built these and computed their homology; for 4-strand braids a 2-torsion class appears in degree 2, matching the known answer. The K(π,1) conjecture says this space has no higher-dimensional holes beyond those the group itself forces: its universal cover is contractible. For braids this goes back to Fadell, Fox and Neuwirth in 1962, and Deligne proved it for all finite reflection types in 1972; the general form was written down by van der Lek, crediting Arnold, Pham and Thom. Many families followed: the affine ones in 2021, and dimension 3 in 2025. Our census: with labels 2, 3, 4 and ∞, every diagram on up to 4 generators was already covered, but on 5, up to 140 of 10,688 were not covered by the theorems we checked.</p>
+<h3><span class="t num">1:29</span>The claims</h3>
+<p>Result 254 is three OpenAI preprints, of 62, 55 and 29 pages, all dated September 23, 2026. The first claims the K(π,1) conjecture for every Artin group with finitely many generators. The second claims that intersections of parabolic subgroups, the conjugates of subgroups generated by some of the generators, are again parabolic; it also claims the word problem is decidable for all of these groups. The third claims an explicit Artin group with 116 generators that has no geometric action on any CAT(0) space. Not claimed: Artin groups with infinitely many generators; which Artin groups are CAT(0), since many are, including a triangle subgroup inside the counterexample; that 116 generators are needed; or how fast the word-problem algorithm runs. The word-problem claim is not in the catalog’s summary or in the Lean. By our count, that 116-generator group’s Salvetti complex has about 1.65 trillion cells, in 39 dimensions.</p>
+<h3><span class="t num">2:41</span>How the proofs go</h3>
+<p>The first two papers share one new engine. The group acts on complexes over a small algebra, and each group element gets a profile by counting generators layer by layer. Harmonic averaging, with weights 2 cos(π/m), turns these into heights on cosets of the spherical subgroups. Two local estimates, one from a positive definite form and one ruling out an isolated balanced layer, let the paper build the space of cosets one vertex at a time, never creating a hole. The parabolic paper uses the same machine to show that stabilizers are parabolic, which gives the intersection theorem, and a membership test that decides the word problem. These are not independent confirmations: the two proofs share their method, and more than 500 Lean files. The third paper is separate. In a CAT(0) action, translation lengths of commuting elements behave like Euclidean vectors. 40-strand braid blocks squeeze six angles around a triangle subgroup below 60°; our arithmetic gives at most 58.1° each, at most 349° in total, so the six flat sectors cannot close up. A winding argument turns that into a contradiction in every dimension. Our check: in the triangle subgroup’s own flat picture, six 60° corners meet around each point; the braid blocks are what bend it.</p>
+<h3><span class="t num">4:07</span>Where it stands</h3>
+<p>The preprints are unrefereed and unchanged since release. In Lean, all three main theorems are formalized, about 91,000 lines with no unproved steps, though not the word-problem corollary, and the parabolic paper is missing from the repository’s formalization list; we did not build it. OSVerify has not reviewed them. Giulio Tiozzo wrote that, using OpenAI’s own model, he got a 12-generator example in 10 minutes; that is unpublished and unverified, and no expert check has appeared. If they hold, every finitely generated Artin group has a classifying space we can write down, and the groups are tame in that sense; yet one of them, with 116 generators, refuses every non-positively curved geometry.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20254%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
