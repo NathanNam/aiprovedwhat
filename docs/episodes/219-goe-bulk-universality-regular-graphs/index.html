@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 219: GOE bulk universality for regular graphs with weak Anderson disorder | AI Proved What?</title>
-<meta name="description" content="GOE bulk universality for regular graphs with weak Anderson disorder. Result 219 in OpenAI&#x27;s math release (Probability and statistical mechanics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Do eigenvalues repel? Random regular graphs | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim random-matrix (GOE) eigenvalue statistics for random regular graphs of every fixed degree, and under weak disorder. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/219-goe-bulk-universality-regular-graphs/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 219: GOE bulk universality for regular graphs with weak Anderson disorder | AI Proved What?">
-<meta property="og:description" content="GOE bulk universality for regular graphs with weak Anderson disorder. Result 219 in OpenAI&#x27;s math release (Probability and statistical mechanics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Do eigenvalues repel?">
+<meta property="og:description" content="Two AI preprints claim random-matrix (GOE) eigenvalue statistics for random regular graphs of every fixed degree, and under weak disorder. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/219-goe-bulk-universality-regular-graphs/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/219-goe-bulk-universality-regular-graphs/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 219 · <a href="../../subjects/probability-and-statistical-mechanics/">Probability and statistical mechanics</a></p>
-<h1 class="result-title">GOE bulk universality for regular graphs with weak Anderson disorder</h1>
+<p class="meta">Episode 219, October 2026</p>
+<h1>Do eigenvalues repel?</h1>
+<p class="subtitle">Two preprints claim random-matrix eigenvalue statistics for random regular graphs of every fixed degree, and under weak disorder</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 219 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="FS_nR01XulY" data-title="Episode 219: Do eigenvalues repel?">
+  <a href="https://youtu.be/FS_nR01XulY">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 219: Do eigenvalues repel? A spacing histogram following the GOE curve rather than the Poisson curve.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:49. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/FS_nR01XulY?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/FS_nR01XulY?t=68" data-t="68"><span class="t">1:08</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/FS_nR01XulY?t=128" data-t="128"><span class="t">2:08</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/FS_nR01XulY?t=194" data-t="194"><span class="t">3:14</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>For every fixed degree <i>d</i> ≥ 3, the bulk adjacency-eigenvalue point process of a uniform simple random <i>d</i>-regular graph converges to the Gaussian orthogonal ensemble law, including for cubic graphs. The same fixed-energy universality persists under sufficiently weak fixed iid uniform diagonal disorder, throughout compact bands strictly inside the clean spectral edges.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take a random graph in which every vertex has exactly three neighbours. Its adjacency eigenvalues follow the Kesten–McKay density, worked out from walks on an infinite tree. But how are neighbouring eigenvalues spaced? The Petersen graph’s ten eigenvalues sit on just three values, 3, 1 and −2: symmetry piles them up.</p>
+<p>For a random graph, Jakobson, Miller, Rivin and Rudnick predicted in 1999 that the spacings follow random-matrix statistics, the Gaussian orthogonal ensemble: eigenvalues repel. Our computer checks random three- and four-regular graphs with up to 4,000 vertices: the spacing ratio is 0.53, as for GOE matrices, against 0.39 for independent points. Proofs existed only when the degree grows with the size.</p>
+<p>Result 219 bundles two OpenAI preprints, 44 and 60 pages, dated September 23 and October 5, 2026. The first claims that for every fixed degree of at least three, including cubic graphs, and every energy strictly inside the Kesten–McKay band, the local eigenvalue point process of a uniformly random regular graph converges to the GOE one; it says this proves a conjecture stated by Bourgade and Huang in July 2026. The second adds weak random potentials on the vertices and claims the same GOE statistics well inside the band, averaged over the graph and the potential.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The spectral edges, handled for graphs without disorder by Huang, McKenzie and Yau; growing degree; strong disorder; any particular graph. In our simulation, at disorder strength 12 the spacings look like independent points.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two papers (44 and 60 pages), dated September 23 and October 5, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,39 @@
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>Not yet</dd>
+    <dd>Not formalized</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 17, 2026.</p>
+<p class="ledger-note">Last checked October 16, 2026. Neither preprint has been revised since they were added to the repository in its initial commit on October 6, 2026. Neither is formalized in Lean. Their closing sections share about half their text nearly word for word. Neither paper is among those OSVerify reviewed, and we found no expert reaction or earlier proof.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Gaussian eigenvectors.</strong> Sample a random edge and read an eigenvector’s values at its two ends. An entropy count over graphs, plus a strict inequality that needs degree at least three and energy inside the band, shows these values are Gaussian, to polynomial accuracy. The spectral input, rigidity and delocalization at every fixed degree, comes from Huang and Yau.</li>
+  <li><strong>A symmetry that injects noise.</strong> Swapping the ends of a few sampled edges is an exact symmetry of random regular graphs. In the limit, with Gaussian values at the edge ends, it extends to all rotations, and many small rotations act like adding a little GOE noise. So the limiting process equals its own points plus GOE noise, and a known Dyson Brownian motion result identifies it as GOE.</li>
+  <li><strong>With disorder,</strong> small law-preserving shifts of single vertex potentials play the role of the swaps.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: Petersen spectrum 3 (×1), 1 (×5), −2 (×4); spacing ratio 0.530 for random 3-regular graphs (n = 2,000), 0.530 for GOE matrices, 0.386 for independent points; eigenvector fourth moment 2.996 (Gaussian 3).</li>
+  <li>Ours, with disorder (d = 3, n = 2,000): GOE-like up to strength 4, close to independent points from strength 12.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/GOE-bulk-universality-for-fixed-degree-random-regular-graphs-September-23-2026/paper.pdf">GOE bulk universality for fixed-degree random regular graphs (PDF)</a>, 44 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Fixed-energy-universality-for-weak-Anderson-disorder-on-random-regular-graphs-October-5-2026/fixed-energy-universality-weak-anderson-disorder-random-regular-graphs.pdf">Fixed-energy universality for weak Anderson disorder on random regular graphs (PDF)</a>, 60 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 219.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -75,18 +129,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/GOE-bulk-universality-for-fixed-degree-random-regular-graphs-September-23-2026/paper.pdf">GOE bulk universality for fixed-degree random regular graphs</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Take a random graph in which every vertex has exactly three neighbours. Its adjacency matrix has eigenvalues, and their overall density follows the Kesten–McKay law, worked out from walks on an infinite tree. But what about the fine structure: how are neighbouring eigenvalues spaced? Here is a small cubic graph, the Petersen graph. Its ten eigenvalues sit on just three values: three, one, and minus two, with large multiplicities. Symmetry makes them pile up. A random graph is different. In 1999, Jakobson, Miller, Rivin and Rudnick predicted that the spacings follow random-matrix statistics, the Gaussian orthogonal ensemble: eigenvalues repel each other. Our computer checks this on random three- and four-regular graphs with up to 4,000 vertices: the spacing ratio comes out at 0.53, matching GOE matrices and far from the 0.39 of independent points. It is striking at fixed degree, where the graph still looks locally like a tree. Proofs existed only when the degree grows with the size.</p>
+<h3><span class="t num">1:08</span>The claim</h3>
+<p>Result 219 bundles two OpenAI preprints, 44 and 60 pages, dated September 23 and October 5, 2026. The first claims that for every fixed degree of at least three, including cubic graphs, and every energy strictly inside the Kesten–McKay band, the local eigenvalue point process of a uniformly random regular graph converges to the GOE one. It says this proves a conjecture stated by Bourgade and Huang in July 2026. The second adds weak random potentials on the vertices, uniform in a small interval, and claims the same GOE statistics well inside the band, averaged over the graph and the potential. Not claimed: the spectral edges, handled for graphs without disorder by Huang, McKenzie and Yau; growing degree; strong disorder; or any particular graph. Our simulation shows why weak matters: at disorder strength 12, the spacings look like independent points.</p>
+<h3><span class="t num">2:08</span>How the proof goes</h3>
+<p>The proof works through eigenvectors. Sample a random edge and read an eigenvector’s values at its two ends. An entropy count over graphs, plus a strict inequality that needs degree at least three and energy inside the band, shows these values are Gaussian, to polynomial accuracy. Our check: eigenvector entries have fourth moment 2.996, against three for a Gaussian. The spectral input, rigidity and delocalization at every fixed degree, comes from Huang and Yau. Then the key idea. Swapping the ends of a few sampled edges is an exact symmetry of random regular graphs. In the limit, with Gaussian values at the edge ends, that symmetry extends to all rotations, and many small rotations act like adding a little GOE noise. So the limiting process equals its own points plus GOE noise, and a known Dyson Brownian motion result identifies it as GOE. With disorder, small law-preserving shifts of single vertex potentials play the role of the swaps.</p>
+<h3><span class="t num">3:14</span>Where it stands</h3>
+<p>Both preprints are unrefereed and have not been revised. Neither is formalized in Lean. They share about half of their closing sections nearly word for word, the shared endgame. Neither paper is among those OSVerify reviewed, and we found no expert reaction or earlier proof. If they hold, a random cubic graph, which looks locally like a tree, has eigenvalue spacings indistinguishable from those of a random matrix, and weak disorder does not change that.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20219%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../218-ising-conformal-universality-random-bonds/"><span class="dir">Previous · 218</span><span class="pt">Conformal universality for weakly interacting and random-bond Ising models</span></a>
-  <a class="next" href="../220-directional-zero-one-laws-beyond/"><span class="dir">Next · 220</span><span class="pt">Directional zero–one laws beyond iid environments and iid ballisticity</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/probability-and-statistical-mechanics/">More in probability and statistical mechanics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
