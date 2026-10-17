@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cardy without a lattice? Voronoi percolation | AI Proved What?</title>
+<meta name="description" content="Three AI preprints claim Cardy’s formula and near-critical universality for Voronoi percolation. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/224-voronoi-percolation-cardy/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Cardy without a lattice?">
+<meta property="og:description" content="Three AI preprints claim Cardy’s formula and near-critical universality for Voronoi percolation. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/224-voronoi-percolation-cardy/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/224-voronoi-percolation-cardy/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 224, October 2026</p>
+<h1>Cardy without a lattice?</h1>
+<p class="subtitle">Three preprints claim Cardy’s formula and near-critical universality for Voronoi percolation</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 224 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="EAWXMot1hG0" data-title="Episode 224: Cardy without a lattice?">
+  <a href="https://youtu.be/EAWXMot1hG0">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 224: Cardy without a lattice? Random Voronoi cells with a black crossing cluster in red.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:54. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/EAWXMot1hG0?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/EAWXMot1hG0?t=58" data-t="58"><span class="t">0:58</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/EAWXMot1hG0?t=137" data-t="137"><span class="t">2:17</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/EAWXMot1hG0?t=254" data-t="254"><span class="t">4:14</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Scatter random points in the plane, give each point the region closer to it than to any other point, its Voronoi cell, and paint every cell black or white with a fair coin. This is Voronoi percolation: there is no lattice, the geometry itself is random, and fair coins are exactly critical (Bollobás and Riordan). Cardy predicted the chance that black cells connect two opposite arcs of a domain: a formula depending only on the domain’s conformal shape, 0.176 for a 2-by-1 rectangle crossed the long way. Smirnov proved it in 2001 for sites on the triangular lattice. In 2006 Schramm listed Voronoi percolation as an open problem, right after the square-grid bond case of episode 223.</p>
+<p>Result 224 bundles three OpenAI preprints, 179 pages, dated September 23 and October 5, 2026. The first claims Cardy’s formula for Voronoi percolation in every bounded Jordan domain, for the annealed crossing probability, averaged over both the random points and the coin flips; for a fixed rectangle it adds a quenched version, for a typical frozen tessellation with only the coins random. The other two take that as a hypothesis. The second shifts the coin’s bias on the scale set by the expected number of pivotal cells and claims, with each model normalized by its own count, that the joint law of crossing thresholds for polygonal domains with rational corners is the triangular lattice’s, for a typical frozen tessellation. The third claims the expected pivotal count for a unit square grows like a constant times the mesh to the power −3/4.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The full law of the interface, a quenched crossing limit in arbitrary domains, rates of convergence, the value of the pivotal constant, or other tessellations. The second and third papers are conditional on the first.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Released as preprints</dt>
+    <dd>OpenAI, three papers, 179 pages, dated September 23 and October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Not formalized</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 16, 2026. None of the three preprints has changed since they were added to the repository in its initial commit on October 6, 2026; the second depends on the first, and the third on both. None is formalized in Lean; an unlinked file defines the objects and proves that two textbook forms of Cardy’s formula agree (we did not build it). We found no earlier or competing claim and no expert reaction, and none is among those OSVerify reviewed.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>An exact identity.</strong> On any triangulation with fair-coin colors, cut along each color boundary in turn and label the pieces by it. With ω a cube root of unity, certain three-spoke sums over different triangles are exactly orthogonal, each with squared norm 3/4: the chance that a triangle’s three corners are not all one color.</li>
+  <li><strong>Distortion.</strong> Each Delaunay triangle is a distorted equilateral one; split each side into a conformal part and a distortion part. Around a closed color boundary the total displacement sums to zero and the distortion part is small on average. The hard part, about 40 pages, carries this to open pieces of random boundaries: in the limit the distortion sum is a fixed multiple a of the total, with a never identified.</li>
+  <li><strong>The limit.</strong> The paper proves only that 1 − 2 Re a &gt; 0, which is enough for a to drop out of the limiting Cauchy–Riemann equation. The limiting observable is the conformal map onto an equilateral triangle: Carleson’s form of Cardy’s formula.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: 8,000 critical Voronoi samples per shape and size, and as many on the triangular lattice. 2-by-1 rectangle, about 128 cells high: 0.180 ± 0.004 against Cardy’s 0.176; another run of ours came out a little higher, so the agreement is rough.</li>
+  <li>Ours: with the tessellation frozen, the spread between tessellations was about a hundredth or less, within our noise. Voronoi has about 0.89 times the triangular lattice’s pivotal count, but normalized threshold curves coincide.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Cardys-formula-for-critical-Poisson-Voronoi-percolation-September-23-2026/paper.pdf">Cardy’s formula for critical Poisson–Voronoi percolation (PDF)</a>, 75 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/From-critical-crossings-to-quenched-near-critical-universality-in-Voronoi-percolation-October-5-2026/critical-crossings-quenched-near-critical-universality-voronoi-percolation.pdf">From critical crossings to quenched near-critical universality in Voronoi percolation (PDF)</a>, 61 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Pivotal-Amplitude-for-Voronoi-Percolation-from-Cardys-Formula-October-5-2026/voronoi-pivotal-amplitude.pdf">A Pivotal Amplitude for Voronoi Percolation from Cardy’s Formula (PDF)</a>, 43 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 224.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/From-critical-crossings-to-quenched-near-critical-universality-in-Voronoi-percolation-October-5-2026/critical-crossings-quenched-near-critical-universality-voronoi-percolation.pdf">From critical crossings to quenched near-critical universality in Voronoi percolation</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Pivotal-Amplitude-for-Voronoi-Percolation-from-Cardys-Formula-October-5-2026/voronoi-pivotal-amplitude.pdf">A Pivotal Amplitude for Voronoi Percolation from Cardy's Formula</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Cardys-formula-for-critical-Poisson-Voronoi-percolation-September-23-2026/paper.pdf">Cardy’s formula for critical Poisson–Voronoi percolation</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Scatter random points in the plane, give each point the region closer to it than to any other point, its Voronoi cell, and paint every cell black or white with a fair coin. This is Voronoi percolation. Unlike a lattice, the geometry itself is random, with no preferred direction. Fair coins are exactly critical: Bollobás and Riordan showed that one half is the threshold. Now draw a domain, mark four points on its boundary, and ask how likely black cells connect two opposite arcs. Cardy predicted the answer for fine meshes: a formula that depends only on the conformal shape of the domain. For a 2-by-1 rectangle crossed the long way, it gives 0.176. Smirnov proved it in 2001 for site percolation on the triangular lattice. In 2006, Schramm listed Voronoi percolation as an open problem, right after the square-grid bond case from episode 223.</p>
+<h3><span class="t num">0:58</span>The claim</h3>
+<p>Result 224 bundles three OpenAI preprints, 179 pages, dated September 23 and October 5, 2026. The first claims Cardy’s formula for Voronoi percolation in every bounded Jordan domain, for the annealed crossing probability: averaged over both the random points and the coin flips. For a fixed rectangle it adds a quenched version, for a typical frozen tessellation with only the coins random. It does not claim the full law of the interface. The other two papers take that result as a hypothesis. The second looks just off the critical point, shifting the coin’s bias on the scale set by the expected number of pivotal cells, the cells whose flip changes the crossing. With each model normalized by its own pivotal count, it claims that the joint law of crossing thresholds for polygonal domains with rational corners is the same as on the triangular lattice, for a typical frozen tessellation; along the way it derives, conditionally, that on a typical frozen tessellation exploration paths converge to SLE6. The third claims that the expected pivotal count for a unit square grows like a constant times mesh^(−3/4).</p>
+<h3><span class="t num">2:17</span>How the proof goes</h3>
+<p>The first paper starts from an exact identity. On any triangulation with fair-coin colors, cut along each color boundary in turn and label the pieces by that boundary. With ω a cube root of unity, certain three-spoke sums over different triangles are exactly orthogonal, each with squared norm 3/4: the chance that a triangle’s three corners are not all one color. Next, each Delaunay triangle is a distorted equilateral one, and the paper splits each side into a conformal part and a distortion part. Around a closed color boundary the total displacement sums to zero, and the distortion part is small on average. The hard part, about 40 pages, carries this over to open pieces of random boundaries: in the limit, the distortion sum is a fixed multiple a of the total, with a never identified. The paper proves only that one minus twice its real part is positive, which is enough for a to drop out of the limiting Cauchy–Riemann equation. The limiting observable is the conformal map onto an equilateral triangle: Carleson’s form of Cardy’s formula. As an illustration, our computer sampled 8,000 critical Voronoi configurations for each shape and size, and as many on the triangular lattice. For the 2-by-1 rectangle, about 128 cells high and twice that long, Voronoi crossings came out at 0.18 ± 0.004, close to Cardy’s 0.176; another run of ours came out a little higher, so the agreement is rough. With the tessellation frozen, the spread between tessellations was about a hundredth or less, within our noise. Near criticality, Voronoi had about 9/10 as many pivotal cells as the triangular lattice, but once each model is normalized by its own count, the threshold curves lie on top of each other.</p>
+<h3><span class="t num">4:14</span>Where it stands</h3>
+<p>All three preprints are unrefereed and unchanged since release, the second depends on the first, and the third on both. None is formalized in Lean; an unlinked file defines the objects and proves that two textbook forms of Cardy’s formula agree. We found no earlier or competing claim and no expert reaction, and none is among those OSVerify reviewed. If they hold, Voronoi percolation, with no lattice at all, has Cardy’s crossing formula, averaged over its random geometry, and the triangular lattice’s near-critical thresholds for a typical frozen tessellation.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20224%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
