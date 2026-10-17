@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How long is a random curve? Exact Hausdorff gauges for SLE | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim an exact Hausdorff gauge for SLE curves, answering Schramm&#x27;s question and showing his guessed gauge too large. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/230-sle-exact-hausdorff-gauge/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="How long is a random curve?">
+<meta property="og:description" content="Two AI preprints claim an exact Hausdorff gauge for SLE curves, answering Schramm&#x27;s question and showing his guessed gauge too large. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/230-sle-exact-hausdorff-gauge/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/230-sle-exact-hausdorff-gauge/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 230, October 2026</p>
+<h1>How long is a random curve?</h1>
+<p class="subtitle">Two preprints claim an exact Hausdorff gauge for SLE, answering Schramm’s question</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 230 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="W6QezbbBVEU" data-title="Episode 230: How long is a random curve?">
+  <a href="https://youtu.be/W6QezbbBVEU">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 230: How long is a random curve? A simulated SLE curve covered by small circles.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:35. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/W6QezbbBVEU?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/W6QezbbBVEU?t=71" data-t="71"><span class="t">1:11</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/W6QezbbBVEU?t=134" data-t="134"><span class="t">2:14</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/W6QezbbBVEU?t=223" data-t="223"><span class="t">3:43</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Schramm–Loewner evolution (SLE) is a family of random curves in the plane, indexed by a number κ, that describe boundaries in many two-dimensional models at criticality, such as percolation clusters and Ising spin clusters. For κ between 0 and 8, Vincent Beffara proved in 2008 that the curve has dimension d = 1 + κ/8: its length is infinite and its area zero. The natural way to measure it is Hausdorff measure: cover the curve with small pieces, charge each a cost h(r) depending on its size (the gauge), and take the cheapest cover. A gauge is exact if the answer is neither zero nor infinite. The obvious gauge r<sup>d</sup> gives zero (Rezaei, 2018). In 2006 Oded Schramm asked for a σ-finite Hausdorff measure on the SLE path, and expected the gauge r<sup>d</sup> log log(1/r).</p>
+<p>Result 230 is two OpenAI preprints, 86 pages, dated September 25 and 26, 2026. The first claims that for every κ below 8 some exact gauge exists, built from moments of a local mass, with no closed formula. The second claims an explicit one, h(r) = r<sup>d</sup> (log log 1/r)<sup>(2−d)/2</sup>: almost surely every piece of the curve after time zero gets positive, finite measure, and the expected measure in any bounded disk is finite. It also shows Schramm’s guess was too big: with exponent one, every piece of the curve has measure that is not even σ-finite.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>That the new measure equals the curve’s natural length (built by Lawler with Sheffield, Zhou and Rezaei), or that the two papers’ gauges agree; both papers say the relation between the gauges remains open. Only chordal SLE is covered, from one boundary point to another, for fixed κ below 8.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two papers, 86 pages, dated September 25 and 26, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>In part (<a href="https://github.com/openai/math/blob/main/lean/docs/230.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. Neither preprint has been revised since release. In Lean, the one listed comparator checks only the positive lower bound for the explicit gauge; the Lean folders also contain the full theorems with no unproved steps, but they are not catalogued, and we did not build them. On October 10, 2026, Dapeng Zhan posted a short paper (arXiv 2610.15066) that takes the explicit theorem as an input and shows the new measure is a constant times natural length; he says he used GPT 6 to explore proof ideas, and checked the details himself. Neither paper is among those OSVerify reviewed.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Lower bound.</strong> The mass of the curve in a small disk has a tail that falls off like exp(−u<sup>2/(2−d)</sup>). Over about log(1/r) scales, the worst excess you meet grows like (log log 1/r)<sup>(2−d)/2</sup>. Delete the rare overfull squares, and what is left spreads its mass no faster than the gauge.</li>
+  <li><strong>Upper bound.</strong> A matching rare event: a serpentine ribbon where the curve winds back and forth m times, with probability about e<sup>−m²</sup> and extra mass m<sup>2−d</sup>. Choosing m like √(log n) balances the two, and both sides give the same exponent. The hard part is making each step hold uniformly over every rough past of the curve.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: simulated SLE curves (Loewner equation, 20,000 steps) for κ = 2, 4, 6; box-counting slopes 1.22, 1.39, 1.52 against the true 1.25, 1.5, 1.75 (the right order, but low, as box counts over two decades of scale tend to be).</li>
+  <li>Ours: the size of the correction. For κ = 4, measuring in meters, even at the Planck length the factor (log log 1/r)<sup>1/4</sup> is only about 1.45; reaching a factor of two needs 1/r ≈ 10<sup>3.9 million</sup>.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-exact-Hausdorff-gauge-for-SLE-September-25-2026/An-exact-Hausdorff-gauge-for-SLE-September-25-2026.pdf">An exact Hausdorff gauge for SLE: A moment-integral and finite-batch construction (PDF)</a>, 37 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-explicit-exact-Hausdorff-gauge-for-SLE-September-26-2026/An-explicit-exact-Hausdorff-gauge-for-SLE-September-26-2026.pdf">An explicit exact Hausdorff gauge for SLE: A regular formula from quantitative tails and dense visits (PDF)</a>, 49 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/230.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 230.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-exact-Hausdorff-gauge-for-SLE-September-25-2026/An-exact-Hausdorff-gauge-for-SLE-September-25-2026.pdf">An exact Hausdorff gauge for SLE</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-explicit-exact-Hausdorff-gauge-for-SLE-September-26-2026/An-explicit-exact-Hausdorff-gauge-for-SLE-September-26-2026.pdf">An explicit exact Hausdorff gauge for SLE</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>How long is a random fractal curve? Schramm–Loewner evolution, SLE, is a family of random curves in the plane, indexed by a number κ. They describe the boundaries in many two-dimensional models at criticality, such as percolation clusters and Ising spin clusters. For κ between zero and eight, Vincent Beffara proved in 2008 that the curve has dimension one plus κ over eight: more than a line, less than an area. So its ordinary length is infinite, and its area is zero. The natural way to measure such a curve is Hausdorff measure. Cover the curve with small pieces, charge each piece a cost that depends on its size, called the gauge, and take the cheapest cover. A gauge is exact if the answer is neither zero nor infinite. The obvious gauge, r to the power d, gives zero: Rezaei proved this in a paper published in 2018. In 2006, Oded Schramm asked for a Hausdorff measure on the SLE path that is sigma-finite, and he expected the gauge r to the d times log log of one over r, based on experience with similar random paths.</p>
+<h3><span class="t num">1:11</span>The claim</h3>
+<p>Result 230 is two OpenAI preprints, 86 pages, dated September 25 and 26, 2026. The first claims that, for every κ below eight, some exact gauge exists, built from moments of a local mass, with no closed formula. The second claims an explicit one: r to the d, times log log of one over r, raised to the power two minus d, over two. Almost surely, every piece of the curve after time zero gets positive, finite measure, and the expected measure in any bounded disk is finite. It also shows that Schramm’s guess was too big: with exponent one, every piece of the curve has measure that is not even sigma-finite. Not claimed: that the new measure equals the curve’s natural length, built by Lawler with Sheffield, Zhou and Rezaei, or that the two papers’ gauges agree. Both papers say the relation between their gauges remains open. Only chordal SLE is covered, from one boundary point to another.</p>
+<h3><span class="t num">2:14</span>How the proof goes</h3>
+<p>Why log log? The mass of the curve in a small disk has a tail that falls off like e to the minus u to the power two over two minus d. Over about log of one over r scales, the worst excess you meet grows like log log of one over r, to the power two minus d, over two. That gives the lower bound: delete the rare overfull squares, and what is left spreads its mass no faster than the gauge. For the upper bound, the paper builds the matching rare event: a serpentine ribbon, where the curve winds back and forth m times. That costs probability about e to the minus m squared, and gains mass m to the power two minus d. Choosing m like the square root of log n balances the two, and both sides give the same exponent. The hard part is making each step hold uniformly over every rough past of the curve. As an illustration, our computer simulated the curves for κ two, four and six. Box counting gives slopes of about 1.22, 1.39 and 1.52, against the true 1.25, 1.5 and 1.75: the right order, but low, as box counts over two decades of scale tend to be. And the correction is tiny. For κ four, measure in meters: even at the Planck length the factor is only about 1.45. Reaching a factor of two needs one over r of 10^(nearly 4 million). No simulation could ever see it.</p>
+<h3><span class="t num">3:43</span>Where it stands</h3>
+<p>Both preprints are unrefereed and unchanged since release. In Lean, the one listed comparator checks only the positive lower bound for the explicit gauge; the Lean folders also contain the full theorems, sorry-free, but they are not catalogued, and we did not build them. On October 10, Dapeng Zhan posted a short paper that takes the explicit theorem as an input and shows the new measure is a constant times natural length; he says he used GPT 6 to explore proof ideas, and checked the details himself. Neither paper is among those OSVerify reviewed. If they hold, Schramm’s twenty-year-old question has an answer, with a formula, and his guessed exponent of one was too large: for SLE with κ four, it is one quarter.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20230%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
