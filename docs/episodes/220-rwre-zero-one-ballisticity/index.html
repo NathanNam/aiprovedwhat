@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escape, but never speed up? Random walks in random environments | AI Proved What?</title>
+<meta name="description" content="Three AI preprints claim zero-one laws for escape directions and the ballisticity conjecture for random walks in random environments. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/220-rwre-zero-one-ballisticity/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Escape, but never speed up?">
+<meta property="og:description" content="Three AI preprints claim zero-one laws for escape directions and the ballisticity conjecture for random walks in random environments. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/220-rwre-zero-one-ballisticity/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/220-rwre-zero-one-ballisticity/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 220, October 2026</p>
+<h1>Escape, but never speed up?</h1>
+<p class="subtitle">Three preprints claim zero–one laws for escape directions and the ballisticity conjecture for random walks in random environments</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 220 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="8XD3Lr5MJI0" data-title="Episode 220: Escape, but never speed up?">
+  <a href="https://youtu.be/8XD3Lr5MJI0">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 220: Escape, but never speed up? Two speed curves: one steady, one sinking toward zero.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:15. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/8XD3Lr5MJI0?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/8XD3Lr5MJI0?t=67" data-t="67"><span class="t">1:07</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/8XD3Lr5MJI0?t=140" data-t="140"><span class="t">2:20</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/8XD3Lr5MJI0?t=211" data-t="211"><span class="t">3:31</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>At each site of a grid, draw a set of step probabilities, independently from site to site, and let a walker follow them: a random walk in a random environment. In one dimension it can do strange things. Our simulated walk has an average push of +0.38 per step to the right, always escapes to the right, and yet its speed tends to zero: rare stretches of left-pushing sites trap it, and in one dimension it cannot go around them. In two dimensions, with independent sites and sideways steps added, the same two kinds of sites give a steady speed of about 0.16.</p>
+<p>Two old questions follow. Is escape in a fixed direction a zero-or-one event? Zerner and Merkl proved it in two dimensions. And does escaping in a direction force a positive speed in that direction? That is the ballisticity conjecture.</p>
+<p>Result 220 bundles three OpenAI preprints, 127 pages, dated September 23 and October 5, 2026. The first claims the zero–one law in every dimension at least three, for independent environments where every step has positive probability. The second claims the ballisticity conjecture as Fribergh and Kious stated it: in dimension two and up, for independent environments with step probabilities bounded below, almost sure escape in a direction implies a deterministic velocity with a positive component in that direction. In dimension three and up, any positive chance of escape is then enough, and the walk escapes, with probability one, in each direction at an acute angle to its velocity, and in no other. The third paper extends the zero–one law to environments with step probabilities bounded below whose dependence stops at a fixed range.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Sznitman’s condition (T), slowdown estimates, a central limit theorem, or a formula for the velocity. Mixing environments, where Bramson, Zeitouni and Zerner found counterexamples, are excluded.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, three papers, 127 pages, dated September 23 and October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Two of three papers (<a href="https://github.com/openai/math/blob/main/lean/docs/220.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 16, 2026. None of the three preprints has been revised since they were added to the repository in its initial commit on October 6, 2026. The zero–one law and the ballisticity theorem, with its hemisphere corollary, are formalized in Lean against pinned statements: about 117,000 lines in all, with no unproved steps; we did not build them. The finite-range paper is not formalized. None is among those OSVerify reviewed, and we found no expert reaction or earlier proof.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Regeneration.</strong> Times when the walker reaches a new record and never falls back. After such a time it sees only fresh sites, so the future is independent of the past.</li>
+  <li><strong>Zero–one.</strong> Suppose escape both ways had positive probability. Line up paths escaping up and down so they face each other, and count at how many scales they meet. An entropy bound says at most about J/log J of the first J scales; a martingale bound says at least J/log log J. For large J the lower bound overtakes the upper: they cannot both hold.</li>
+  <li><strong>Ballisticity.</strong> Transience gives regeneration pieces of finite length but not finite average duration. The paper reduces speed to one estimate, that environments where climbing is polynomially hard are super-polynomially rare, and proves it by contradiction, comparing two walks in the same environment.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours, 1-d at 10<sup>6</sup> steps: ballistic case 0.107 (theory 7/65); trapped case 0.012 and falling, despite an average push of +0.38; recurrent case 0.</li>
+  <li>Ours, 2-d with the same left/right rates and sideways steps: independent sites 0.158; the same row copied down each column 0.007 and falling. The Lean line count is ours.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-directional-zero-one-law-under-strict-ellipticity-September-23-2026/paper.pdf">A directional zero–one law under strict ellipticity (PDF)</a>, 34 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Directional-transience-implies-ballisticity-September-23-2026/paper.pdf">Directional transience implies ballisticity (PDF)</a>, 58 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-directional-zero-one-law-for-finite-range-dependent-random-environments-October-5-2026/directional-zero-one-finite-range.pdf">A directional zero–one law for finite-range-dependent random environments (PDF)</a>, 35 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/220.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 220.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-directional-zero-one-law-for-finite-range-dependent-random-environments-October-5-2026/directional-zero-one-finite-range.pdf">A directional zero–one law for finite-range-dependent random environments</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-directional-zero-one-law-under-strict-ellipticity-September-23-2026/paper.pdf">A directional zero–one law under strict ellipticity</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Directional-transience-implies-ballisticity-September-23-2026/paper.pdf">Directional transience implies ballisticity</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Scatter a random rule at every site of a grid: at each site, a set of step probabilities, drawn independently from site to site. Then let a walker follow those rules. This is a random walk in a random environment. In one dimension it can do strange things. Our simulation shows a walk whose average push is to the right, +0.38 per step, that always escapes to the right, and yet its speed tends to zero. Rare stretches of left-pushing sites trap it, and in one dimension it cannot go around them. In two dimensions with independent sites, the same two kinds of sites, with sideways steps added, give a steady speed of about 0.16: bad patches can be sidestepped. Two old questions follow. First, in a fixed direction, is escape a zero-or-one event, or can a walk escape one way with some probability and the other way otherwise? This was proved in two dimensions by Zerner and Merkl. Second, does escaping in a direction force a positive speed in that direction? That is the ballisticity conjecture.</p>
+<h3><span class="t num">1:07</span>The claim</h3>
+<p>Result 220 bundles three OpenAI preprints, 127 pages, dated September 23 and October 5, 2026. The first claims the zero-one law in every dimension at least three, for independent environments where every step has positive probability. The second claims the ballisticity conjecture, as Fribergh and Kious stated it: in dimension two and up, for independent environments with step probabilities bounded below, almost sure escape in a direction implies a deterministic velocity with a positive component in that direction. In dimension three and up, combining the two, any positive chance of escape is enough, and the walk escapes, with probability one, in each direction at an acute angle to its velocity, and in no other. The third paper extends the zero-one law to environments with step probabilities bounded below whose dependence stops at a fixed range. Not claimed: Sznitman’s condition (T), slowdown estimates, a central limit theorem, or a formula for the velocity. Mixing environments, where Bramson, Zeitouni and Zerner found counterexamples, are excluded.</p>
+<h3><span class="t num">2:20</span>How the proof goes</h3>
+<p>Both start from regeneration: times when the walker reaches a new record and never falls back. After such a time it sees only fresh, unexplored sites, so the future is independent of the past. For the zero-one law, suppose escape both ways had positive probability. Line up paths escaping up and paths escaping down so they face each other, and count at how many scales they meet. An entropy bound says at most about J/log J of the first J scales; a martingale bound says at least J/log log J. One divides J by log J, the other only by log log J, so for large J the lower bound overtakes the upper: they cannot both hold. For ballisticity, the whole difficulty is that transience gives regeneration pieces of finite length but not finite average duration. The paper reduces speed to one estimate: environments where climbing is polynomially hard must be super-polynomially rare. It proves this by contradiction, comparing two walks in the same environment, and showing that conditioning on bad environments costs so little entropy that the slowdown leads to a contradiction.</p>
+<h3><span class="t num">3:31</span>Where it stands</h3>
+<p>All three preprints are unrefereed and have not been revised. The zero-one law and the ballisticity theorem, with its hemisphere corollary, are formalized in Lean against pinned statements: about 117,000 lines in all, with no unproved steps; we did not build them. The finite-range paper is not formalized. None is among those OSVerify reviewed, and we found no expert reaction or earlier proof. If they hold, a random walk in an independent random environment with step probabilities bounded below, in any dimension above one, cannot creep: if it surely escapes in a direction, it escapes at a positive speed.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20220%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
