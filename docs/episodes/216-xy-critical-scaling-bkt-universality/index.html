@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exactly one quarter? The critical XY model | AI Proved What?</title>
+<meta name="description" content="Six AI preprints claim the critical scaling of the planar XY model: the exponent 1/4, the (log r)^(1/8) correction, and the essential singularity of the correlation length. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/216-xy-critical-scaling-bkt-universality/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Exactly one quarter?">
+<meta property="og:description" content="Six AI preprints claim the critical scaling of the planar XY model: the exponent 1/4, the (log r)^(1/8) correction, and the essential singularity of the correlation length. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/216-xy-critical-scaling-bkt-universality/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/216-xy-critical-scaling-bkt-universality/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 216, October 2026</p>
+<h1>Exactly one quarter?</h1>
+<p class="subtitle">Six preprints claim the critical scaling of the planar XY model: the exponent 1/4, the logarithmic correction, and the essential singularity</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 216 in OpenAI’s catalog: <a href="#papers-in-result">all 6 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="tMQdXMpoEmQ" data-title="Episode 216: Exactly one quarter?">
+  <a href="https://youtu.be/tMQdXMpoEmQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 216: Exactly one quarter? A grid of orange arrows winding around a vortex and an antivortex.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:36. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/tMQdXMpoEmQ?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/tMQdXMpoEmQ?t=80" data-t="80"><span class="t">1:20</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/tMQdXMpoEmQ?t=147" data-t="147"><span class="t">2:27</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/tMQdXMpoEmQ?t=234" data-t="234"><span class="t">3:54</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Put an angle at every point of a square grid, and let neighbours prefer to agree, with strength β. In one dimension the memory is short: our exact calculation gives a correlation length a little under 2β. In two dimensions, Berezinskii, Kosterlitz and Thouless found a sharp transition: below a critical temperature, correlations fade only like a power of the distance; above it, vortices unbind and correlations die exponentially. Fröhlich and Spencer proved in 1981 that the power-law phase exists.</p>
+<p>Physics predicted far more: at the critical point, correlations fall like r<sup>−1/4</sup>(log r)<sup>1/8</sup>; just above it, the correlation length explodes like e to a constant over the square root of the distance to the critical point; and the stiffness jumps from 2/π to zero. In our simulations at the critical point, on grids up to 512 across, the decay looks like a power near −0.21, not −1/4: the logarithm disguises itself.</p>
+<p>Result 216 bundles six OpenAI preprints, 461 pages, dated September 24 and October 5, 2026. For the square-lattice XY model with nearest neighbours, they claim the critical exponent is exactly 1/4; the logarithmic correction, with power 1/8; the essential singularity of the correlation length; the critical spin field as a continuum object with stiffness 2/π; and the magnetization at the centre of a critical square. A 169-page foundation paper claims that integer height models become Gaussian fields up to and including their roughening point, for every finite symmetric range; it says this covers a conjecture of Bauerschmidt, Park and Rodriguez, who had called short-range cases out of reach.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The value of the critical temperature, which no paper computes; the constants in front, which the papers call model-specific; any other lattice for the spin results.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, six papers, 461 pages, dated September 24 and October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Not formalized</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 16, 2026. None of the six preprints has been revised since they were added to the repository in its initial commit on October 6, 2026. None is formalized in Lean, and none is among those OSVerify reviewed; we found no expert reaction or earlier claim. We checked that all 302 pinpoint citations between the papers point to statements that exist, and we checked the constants, but not the analytic estimates, about 400 of the pages.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A squeeze.</strong> Expand each bond in Fourier modes and the angles become integer heights: is a random landscape rough? Its roughness coefficient a sets the spin exponent, 2π/a. Comparisons built on a lattice Gaussian inequality from computer science show a is either zero or at least 8π. At the critical point it cannot be zero, because a known lower bound forbids fast decay; it cannot exceed 8π, because that phase is stable and would extend below the critical point. So a = 8π and the exponent is 1/4.</li>
+  <li><strong>The logarithm.</strong> With a at exactly 8π, vortices are marginal. A renormalization group tracks them scale by scale; their weight, and the stiffness correction it causes, dies like one over the number of scales, and summing that slow decay gives (log r)<sup>1/8</sup>.</li>
+  <li><strong>The singularity.</strong> Just above the critical point, the same flow follows the Kosterlitz equations; their cotangent solution hits a pole after a number of scales proportional to one over the square root of the distance, which gives the essential singularity.</li>
+</ol>
+<p>The other four spin papers build on the exponent paper, which builds on the foundation.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours, exact: the 1D chain’s correlation length 1.24, 2.78, 8.87, 18.95 at β = 1, 2, 5, 10.</li>
+  <li>Ours, simulated on tori (β<sub>c</sub> ≈ 1.1199 is an outside estimate): local decay slope −0.21 at the critical point on a 512 × 512 grid; the stiffness crosses 2/π between β = 1.05 and 1.10 for sizes 16 to 128.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/BKT-universality-for-height-and-planar-spin-fields-September-24-2026/paper.pdf">BKT universality for height and planar spin fields (PDF)</a>, 169 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-critical-correlation-exponent-of-the-planar-XY-model-September-24-2026/paper.pdf">The critical correlation exponent of the planar XY model (PDF)</a>, 50 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Critical-Spin-Field-of-the-Planar-XY-Model-October-5-2026/paper.pdf">The critical spin field of the planar XY model (PDF)</a>, 43 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-critical-logarithmic-correction-for-the-planar-XY-model-October-5-2026/paper.pdf">The critical logarithmic correction for the planar XY model (PDF)</a>, 84 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Essential-Singularity-of-the-Correlation-Length-in-the-Planar-XY-Model-October-5-2026/paper.pdf">Essential singularity of the correlation length in the planar XY model (PDF)</a>, 54 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Critical-Center-Magnetization-in-the-Planar-XY-Model-October-5-2026/paper.pdf">Critical center magnetization in the planar XY model (PDF)</a>, 61 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 216.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 6 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-critical-logarithmic-correction-for-the-planar-XY-model-October-5-2026/paper.pdf">The critical logarithmic correction for the planar XY model</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Critical-Center-Magnetization-in-the-Planar-XY-Model-October-5-2026/paper.pdf">Critical Center Magnetization in the Planar XY Model</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Critical-Spin-Field-of-the-Planar-XY-Model-October-5-2026/paper.pdf">The Critical Spin Field of the Planar XY Model</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Essential-Singularity-of-the-Correlation-Length-in-the-Planar-XY-Model-October-5-2026/paper.pdf">Essential Singularity of the Correlation Length in the Planar XY Model</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-critical-correlation-exponent-of-the-planar-XY-model-September-24-2026/paper.pdf">The critical correlation exponent of the planar XY model</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/BKT-universality-for-height-and-planar-spin-fields-September-24-2026/paper.pdf">BKT universality for height and planar spin fields</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Last episode, a claim that arrows with three or more components always forget their direction. Arrows in the plane, the XY model, behave differently. Put an angle at every point of a square grid, and let neighbours prefer to agree, with strength beta. In one dimension, the memory is short: our exact calculation gives a correlation length of a little under two beta. In two dimensions, Berezinskii, Kosterlitz and Thouless found a sharp transition: below a critical temperature, correlations fade only like a power of the distance; above it, vortices unbind and correlations die exponentially. Fröhlich and Spencer proved in 1981 that the power-law phase exists. Physics predicted far more. At the critical point, correlations should fall like distance to the minus one quarter, times the logarithm to the one eighth. Just above it, the correlation length should explode like e to a constant over the square root of the distance to the critical point. And the stiffness of the spins should jump from 2/π to zero. Our simulations show why this is hard: at the critical point, on grids up to 512 across, the decay looks like a power near −0.21, not minus a quarter. The logarithm disguises itself.</p>
+<h3><span class="t num">1:20</span>The claim</h3>
+<p>Result 216 bundles six OpenAI preprints, 461 pages, dated September 24 and October 5, 2026. For the square-lattice XY model, they claim the critical exponent is exactly one quarter; the logarithmic correction, with power one eighth; the essential singularity of the correlation length; the critical spin field as a continuum object with stiffness 2/π; and the magnetization at the centre of a critical square. A foundation paper, 169 pages, proves that integer height models become Gaussian fields up to and including their roughening point, for every finite symmetric range. It says this covers a conjecture of Bauerschmidt, Park and Rodriguez, who had called short-range cases out of reach. Not claimed: the value of the critical temperature, which no paper computes; the constants in front, which the papers call model-specific; and any other lattice for the spin results. The XY claims are for the square lattice with nearest neighbours.</p>
+<h3><span class="t num">2:27</span>How the proof goes</h3>
+<p>The keystone is a squeeze. Expand each bond in Fourier modes, and the angles become integer heights: the XY question becomes whether a random landscape is rough. Its roughness is measured by a coefficient a, and the spin exponent is 2π/a. Comparisons built on a lattice Gaussian inequality from computer science show a is either zero or at least 8π. At the critical point it cannot be zero, because a known lower bound forbids fast decay. It cannot exceed 8π, because that phase is stable and would extend below the critical point. So a is exactly 8π, and the exponent is 2π/8π: one quarter. With a at exactly 8π, vortices are marginal. A renormalization group tracks them scale by scale; their weight, and the stiffness correction it causes, dies like one over the number of scales, not exponentially, and summing that slow decay produces the logarithm to the one eighth. Just above the critical point, the same flow follows the Kosterlitz equations; their solution, a cotangent, hits a pole after a number of scales proportional to one over the square root of the distance, which gives the essential singularity. Our simulated stiffness crosses 2/π between β = 1.05 and 1.10. The other four spin papers build on the exponent paper, which builds on the foundation.</p>
+<h3><span class="t num">3:54</span>Where it stands</h3>
+<p>All six preprints are unrefereed and have not been revised. None is formalized in Lean. None is among those OSVerify reviewed, and we found no expert reaction or earlier claim. We checked that all 302 pinpoint citations between the papers point to statements that exist, and we checked the constants, but not the analytic estimates, about 400 of the pages. If they hold, the textbook predictions for the planar XY model, the exponent one quarter, the logarithm to the one eighth, and the essential singularity, are now theorems for the nearest-neighbour model on the square lattice.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20216%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
