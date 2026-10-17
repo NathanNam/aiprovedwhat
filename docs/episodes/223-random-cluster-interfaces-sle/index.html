@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Percolation on the square grid? Random-cluster interfaces | AI Proved What?</title>
+<meta name="description" content="Six AI preprints claim SLE and CLE limits for critical random-cluster interfaces on the square lattice, and Cardy’s formula for bond percolation. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/223-random-cluster-interfaces-sle/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Percolation on the square grid?">
+<meta property="og:description" content="Six AI preprints claim SLE and CLE limits for critical random-cluster interfaces on the square lattice, and Cardy’s formula for bond percolation. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/223-random-cluster-interfaces-sle/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/223-random-cluster-interfaces-sle/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 223, October 2026</p>
+<h1>Percolation on the square grid?</h1>
+<p class="subtitle">Six preprints claim SLE and CLE limits for random-cluster interfaces, and Cardy’s formula for square-lattice bond percolation</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 223 in OpenAI’s catalog: <a href="#papers-in-result">all 6 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="m3JWcVU-zfQ" data-title="Episode 223: Percolation on the square grid?">
+  <a href="https://youtu.be/m3JWcVU-zfQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 223: Percolation on the square grid? A sampled critical interface filling a square.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:15. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/m3JWcVU-zfQ?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/m3JWcVU-zfQ?t=77" data-t="77"><span class="t">1:17</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/m3JWcVU-zfQ?t=178" data-t="178"><span class="t">2:58</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/m3JWcVU-zfQ?t=276" data-t="276"><span class="t">4:36</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Keep each edge of the square grid with some probability, and reweight every configuration by q to the power of the number of clusters: the random-cluster model. q = 1 is ordinary bond percolation, q = 2 the cluster picture of the Ising magnet, and q = 3 and 4 Potts models. At the critical point, wire one side of a domain and leave the other free, and a single random curve separates the wired cluster from the rest.</p>
+<p>Schramm showed that a limit which is conformally invariant and Markov must be an SLE curve, and Rohde and Schramm predicted κ = 4π/arccos(−√q/2) for q below four: 6 for percolation, 16/3 for Ising. It was proved at q = 2 and in the spanning-tree limit. Smirnov proved Cardy’s crossing formula in 2001, but only for sites on the triangular lattice; bonds on the square grid stayed open.</p>
+<p>Result 223 bundles six OpenAI preprints, 602 pages, dated September 23 and October 5, 2026. The main paper claims, for every q from 1 to 4, that these interfaces converge to SLE<sub>κ</sub> in every bounded Jordan domain, and that all nested loops in the plane converge to the conformal loop ensemble; at q = 1 it states Cardy’s formula for bond percolation on the square grid, every edge open with probability one half. A September version of the same paper covers q from 1 up to 4; another paper covers q between 0 and 1, in smooth domains only. Three more treat Ising with weakly random bonds, Ising slightly off the critical point, and, in the unit square, the number of steps along the curve, which, rescaled, converges to its natural length.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Anything for q above 4, uniformity in q, loop ensembles below one, or rates of convergence. At q = 4 the proof switches to level lines of the Gaussian free field and rests on a March 2026 preprint by Duminil-Copin, Kozlowski, Lammers and Manolescu.</p>
+</section>
+
+<section aria-labelledby="history">
+<h2 id="history">Bond percolation has a history</h2>
+<p>Tsai, Yam and Zhou posted a preliminary claim in 2011, and Zhou again in 2024, under extra conditions on the domain’s boundary. The September version credits both as overlapping claims; the October version drops that paragraph. Yu Zhang has a preprint claiming the opposite, that Cardy’s formula fails on the square lattice; no version cites it.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Released as preprints</dt>
+    <dd>OpenAI, six papers, 602 pages, dated September 23 and October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Not formalized</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 16, 2026. None of the six preprints has changed since they were added to the repository in its initial commit on October 6, 2026. None is formalized in Lean; an unlinked folder in the repository proves one finite-graph theorem from the below-one paper (we did not build it). None is among those OSVerify reviewed, and we found no expert reaction.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>An observable.</strong> Turn clusters into loops, each weighted by √q, and build a complex observable with four boundary changes whose boundary values can be computed exactly.</li>
+  <li><strong>Holomorphicity.</strong> The central difficulty, for q ≠ 2, is proving that its limit is holomorphic; as Riva and Cardy stressed, local identities do not supply the regularity this needs. The papers use six-vertex transfer operators, a spectral factorization of angular modes, and an estimate across a wall between two reflected copies of the field.</li>
+  <li><strong>Curves and loops.</strong> Squeeze any domain between easier and harder polygons on the same lattice (at q = 1 this is Cardy’s formula); the crossing probability is a martingale under exploration, and two tests identify the driving function as √κ times Brownian motion. Loops follow by peeling the plane with a tree of explorations.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: in a 3-by-3 box at the critical point, all edges open and all closed are equally likely for every q. Interface lengths in boxes up to 512 grow with exponents 1.753, 1.653 and 1.599 for q = 1, 2, 3, near 7/4, 5/3 and 8/5; q = 4 has not settled.</li>
+  <li>Ours: bond-percolation crossings of a 2-by-1 rectangle the long way, 0.172 ± 0.010, against Cardy’s 0.17565. Checks like these go back decades and prove nothing.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Conformal-Limits-of-Critical-Square-Lattice-Random-Cluster-Interfaces-October-5-2026/paper.pdf">Conformal Limits of Critical Square-Lattice Random-Cluster Interfaces (PDF)</a>, 127 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026/paper.pdf">Square-lattice FK interfaces and nested loops for 1 ≤ q &lt; 4 (PDF)</a>, 110 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Self-dual-random-cluster-interfaces-below-one-September-23-2026/paper.pdf">Self-dual random-cluster interfaces below one (PDF)</a>, 207 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Quenched-SLE-Universality-for-Weakly-Disordered-FK-Ising-Interfaces-October-5-2026/quenched-fk-ising.pdf">Quenched SLE Universality for Weakly Disordered FK–Ising Interfaces (PDF)</a>, 49 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Thermal-FK-Ising-interfaces-and-massive-SLE-October-5-2026/paper.pdf">Thermal FK–Ising interfaces and massive SLE (PDF)</a>, 50 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Natural-Occupation-Measures-for-Critical-Square-Lattice-FK-Interfaces-October-5-2026/natural-occupation-measures-critical-square-lattice-fk-interfaces.pdf">Natural Occupation Measures for Critical Square-Lattice FK Interfaces (PDF)</a>, 59 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 223.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 6 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Square-lattice-FK-interfaces-and-nested-loops-for-1-leq-q-lt-4-September-23-2026/paper.pdf">Square-lattice FK interfaces and nested loops for 1 &lt;= q &lt; 4</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Self-dual-random-cluster-interfaces-below-one-September-23-2026/paper.pdf">Self-dual random-cluster interfaces below one</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Quenched-SLE-Universality-for-Weakly-Disordered-FK-Ising-Interfaces-October-5-2026/quenched-fk-ising.pdf">Quenched SLE Universality for Weakly Disordered FK–Ising Interfaces</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Thermal-FK-Ising-interfaces-and-massive-SLE-October-5-2026/paper.pdf">Thermal FK–Ising interfaces and massive SLE</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Natural-Occupation-Measures-for-Critical-Square-Lattice-FK-Interfaces-October-5-2026/natural-occupation-measures-critical-square-lattice-fk-interfaces.pdf">Natural Occupation Measures for Critical Square-Lattice FK Interfaces</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Conformal-Limits-of-Critical-Square-Lattice-Random-Cluster-Interfaces-October-5-2026/paper.pdf">Conformal Limits of Critical Square-Lattice Random-Cluster Interfaces</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Take the square grid, keep each edge with some probability, and reweight every configuration by q to the power of the number of clusters. This is the random-cluster model. q equal to one is ordinary bond percolation; q equal to two is the cluster picture of the Ising magnet; three and four are Potts models. At the critical point, wire one side of a domain and leave the other free, and a single random curve separates the wired cluster from the rest. In a 3-by-3 box at that point, all edges open and all edges closed are exactly equally likely, for every q: self-duality at work. As the mesh shrinks, what does the curve become? Schramm showed that a limit which is conformally invariant and Markov must be an SLE curve, and Rohde and Schramm predicted κ = 4π / arccos(−√q/2): six for percolation, 16/3 for Ising, tending to four as q reaches four. It was proved at q equal to two, by Smirnov and others, and in the spanning-tree limit. For percolation, Smirnov proved Cardy’s crossing formula in 2001, but only for sites on the triangular lattice. Bonds on the ordinary square grid stayed open.</p>
+<h3><span class="t num">1:17</span>The claim</h3>
+<p>Result 223 bundles six OpenAI preprints, 602 pages, dated September 23 and October 5, 2026. The main paper claims, for every q from one to four, that these interfaces converge to SLE_κ in every bounded Jordan domain, and that all the nested loops in the plane converge to the conformal loop ensemble. At q equal to one, it states Cardy’s formula for bond percolation on the square grid, with every edge open with probability one half. A September version of the same paper covers q from one up to four, not including four; another paper covers q between zero and one, in smooth domains only. Three more papers treat the Ising case with weakly random bonds, the Ising case slightly off the critical point, and, in the unit square for q from one to below four, the number of steps along the curve, which, rescaled, converges to its natural length. Not claimed: anything above four, uniformity in q, loops below one, or rates. At q equal to four the proof switches to level lines of the Gaussian free field, and rests on a March 2026 preprint by Duminil-Copin and coauthors. Bond percolation has a history. Tsai, Yam and Zhou posted a preliminary claim in 2011, and Zhou again in 2024, under extra conditions on the domain’s boundary. The September version credits both as overlapping claims; the October version drops that paragraph. And Yu Zhang has a preprint claiming the opposite, that Cardy’s formula fails on the square lattice. No version cites it.</p>
+<h3><span class="t num">2:58</span>How the proof goes</h3>
+<p>The proof turns clusters into loops, each loop weighted by √q, and builds a complex observable with four boundary changes, whose boundary values can be computed exactly. The central difficulty, for q other than two, is proving that its limit is holomorphic; as Riva and Cardy stressed, local identities do not supply the regularity this needs. The papers attack it with six-vertex transfer operators, a spectral factorization of angular modes, and an estimate across a wall between two reflected copies of the field. With that, Cardy’s formula comes out by squeezing any domain between easier and harder polygons on the same lattice; at q equal to one it is a special case of the general four-change formula. The formula survives exploration, so the crossing probability is a martingale, and two tests identify the driving function as √κ times Brownian motion. The loops follow by peeling the plane with a tree of explorations. As an illustration, our computer sampled critical interfaces in boxes up to 512 wide. Their length grows like the box size to the power 1.75, 1.65, and 1.6 for q equal to one, two and three, close to the SLE dimensions 7/4, 5/3 and 8/5; at q equal to four it has not settled. Bond-percolation crossings of a 2-by-1 rectangle, the long way, came out at 0.172, near Cardy’s 0.176. Checks like these go back decades, and prove nothing.</p>
+<h3><span class="t num">4:36</span>Where it stands</h3>
+<p>All six preprints are unrefereed, and none has changed since release. None is formalized in Lean; an unlinked folder proves one finite-graph theorem from the below-one paper. None is among those OSVerify reviewed, and we found no expert reaction. If they hold, the square grid joins the triangular one: the same random curves, and for percolation the same crossing formula, with the Rohde and Schramm prediction settled for q from one up to four, extended to four itself, and below one only in smooth domains.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20223%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
