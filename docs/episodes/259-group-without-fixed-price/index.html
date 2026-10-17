@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 259: A group without fixed price | AI Proved What?</title>
-<meta name="description" content="A group without fixed price. Result 259 in OpenAI&#x27;s math release (Group theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Same group, two prices? A group without fixed price | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims an explicit group with two free measure-preserving actions of different costs, answering Gaboriau’s fixed-price question. An animated explainer, the claims in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/259-group-without-fixed-price/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 259: A group without fixed price | AI Proved What?">
-<meta property="og:description" content="A group without fixed price. Result 259 in OpenAI&#x27;s math release (Group theory): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Same group, two prices?">
+<meta property="og:description" content="An AI preprint claims an explicit group with two free measure-preserving actions of different costs, answering Gaboriau’s fixed-price question. An animated explainer, the claims in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/259-group-without-fixed-price/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/259-group-without-fixed-price/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 259 · <a href="../../subjects/group-theory/">Group theory</a></p>
-<h1 class="result-title">A group without fixed price</h1>
+<p class="meta">Episode 259, October 2026</p>
+<h1>Same group, two prices?</h1>
+<p class="subtitle">An AI preprint claims a group without fixed price, answering a question of Gaboriau</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 259 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="ZGKQVNAitek" data-title="Episode 259: Same group, two prices?">
+  <a href="https://youtu.be/ZGKQVNAitek">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 259: Same group, two prices? A clock dial of twenty dots, six gold and the rest teal, with a hand.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:42. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/ZGKQVNAitek?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/ZGKQVNAitek?t=65" data-t="65"><span class="t">1:05</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/ZGKQVNAitek?t=132" data-t="132"><span class="t">2:12</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/ZGKQVNAitek?t=182" data-t="182"><span class="t">3:02</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Constructs a finitely generated group with two essentially free probability-measure-preserving actions of different costs, answering the general fixed-price problem negatively. Its Bernoulli action has cost bounded away from one, while a sequence of finite height extensions has costs tending to one.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Let a group act on a probability space, shuffling its points while preserving measure. To record which points share an orbit, connect them with measurable edges and pay for the average number of edges per point. The lowest price you can approach is the cost of the action.</p>
+<p>A free action of the integers costs 1: link each point to the next. Every free action of an infinite amenable group costs 1, from the work of Ornstein and Weiss. Gaboriau showed in 2000 that a free group on n generators has cost n for every free action. In these examples the price does not depend on the action, a property called fixed price. Gaboriau asked whether every group has fixed price, and wrote in 2000 that no group without it was known. Later results pointed the same way: groups with property (T) have cost 1, and higher-rank lattices and products of infinite groups have fixed price 1.</p>
+<p>Result 259 is one OpenAI preprint, 27 pages, dated October 5, 2026. It writes down an explicit group: generators a, b₁ through b₉₉, and t, where t commutes with every b and with the word a b₁ a b₂ … a b₉₉ a. The paper claims the Bernoulli action, which labels each group element with an independent random number between 0 and 1, has cost at least 1 plus a fixed positive gap. The same action with a clock of M positions added, for M above 100, has cost at most 1 + 99/M, which tends to 1. So this group does not have fixed price.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>How large the true difference in cost is. The gap the proof guarantees is tiny: with the paper’s constants, our arithmetic gives a proven gap below 2 × 10⁻¹⁹, and the clock needs more than 6 × 10²⁰ positions to provably undercut it. The paper also says nothing about groups with property (T).</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dd>OpenAI, 27 pages, dated October 5, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -61,12 +88,37 @@
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>Not yet</dd>
+    <dd>No</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 17, 2026.</p>
+<p class="ledger-note">Last checked October 17, 2026. The preprint has not been revised. There is no Lean formalization, and OSVerify has not reviewed it. The preprint folder carries an unusual note: the manuscript was developed from an intermediate argument, and the source record does not establish that it was the final revision. We found no specialist comment on this result.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A clock that makes edges cheap.</strong> The long word moves the clock by 100. Paying for a-edges at only 99 clock positions is enough, because those force the rest, one position at a time.</li>
+  <li><strong>The lower bound: counting generators.</strong> A cheap way to connect orbits of the Bernoulli action would give, for large random finite models, generating sets of some explicit groups that are too small. Random permutations and a graph-shortening argument from 1996 show they cannot be.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: we built and checked the forced paths at 101 and 103 clock positions. At 150 positions, one path would need about 10¹⁷ paid a-edges, but cost only counts edges per point.</li>
+  <li>Ours: the usual homology lower bound for cost gives zero for this group, so the proof has to be combinatorial.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-group-without-fixed-price-October-5-2026/unequal-costs-rank-100-amalgam.pdf">A Group Without Fixed Price (PDF)</a>, 27 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 259.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The paper</h2>
 <p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
@@ -74,18 +126,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-group-without-fixed-price-October-5-2026/unequal-costs-rank-100-amalgam.pdf">A group without fixed price</a></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Let a group act on a probability space, shuffling its points while preserving measure. Each point’s orbit is the set of places the group can send it. To record which points share an orbit, connect them with edges, chosen measurably, and pay for the average number of edges per point. The lowest price you can approach is the cost of the action. For a free action of the integers, one edge per point suffices: link each point to the next one in the shuffle, so the cost is one, and Ornstein and Weiss’s work gives cost one for every free action of every infinite amenable group. Gaboriau showed in 2000 that a free group on n generators has cost n for every free action. In these examples, the price does not depend on the action, a property called fixed price. Gaboriau asked whether every group has fixed price; in 2000 he wrote that no group without it was known. 25 years of results pointed the same way: groups with property (T) were shown to have cost one, and lattices in higher rank and products of infinite groups fixed price one.</p>
+<h3><span class="t num">1:05</span>The claim</h3>
+<p>Result 259 is one OpenAI preprint, 27 pages, dated October 5, 2026. It writes down an explicit group: generators a, b₁ through b₉₉, and t, where t commutes with every b and with one long word, a b₁ a b₂ … a b₉₉ a. That is 101 generators and 100 relations. It claims two essentially free actions with different costs. The Bernoulli action, which labels each group element with an independent random number between zero and one, has cost at least one plus a fixed positive gap. The Bernoulli action with a clock of M positions added, for M above 100, has cost at most one plus 99/M, which tends to one. So this group does not have fixed price. The proven gap is tiny. With the paper’s constants, our arithmetic gives a proven gap below 2 × 10⁻¹⁹, and the clock needs more than 6 × 10²⁰ positions to provably undercut it. A strict inequality is all the question asks.</p>
+<h3><span class="t num">2:12</span>How the proof goes</h3>
+<p>The cheap actions come from the clock. The long word moves the clock by 100, so paying for a edges at only 99 clock positions forces the rest, one position at a time, like dominoes. Our computer built and checked these paths at 101 and 103 positions; at 150, one path would need about ten to the seventeen paid a edges, but cost only counts edges per point. The lower bound turns the question into counting generators. A cheap way to connect orbits of the Bernoulli action would give, for large random finite models, generating sets of some explicit groups that are too small. Random permutations and a graph-shortening argument from 1996 show they cannot be. By our reckoning, the usual homology bound is useless here; for this group it gives zero.</p>
+<h3><span class="t num">3:02</span>Where it stands</h3>
+<p>The preprint is unrefereed and unchanged since release. It is not formalized in Lean, and OSVerify has not reviewed it. The folder carries an unusual note: the manuscript was developed from an intermediate argument, and the source record does not establish that it was the final revision. We found no specialist comment on this result. If it holds, cost is not a property of a group alone: the same group can be cheap to wire in one action and strictly more expensive in another, by a margin the proof can only guarantee to be about one part in 10¹⁹.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20259%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../258-gersten-one-relator-hyperbolic/"><span class="dir">Previous · 258</span><span class="pt">Gersten’s conjecture and virtual compact specialness of one-relator groups</span></a>
-  <a class="next" href="../260-spacetime-penrose-inequalities-enclosing-area/"><span class="dir">Next · 260</span><span class="pt">Spacetime Penrose inequalities: enclosing area, charge, rotation, and anti-de Sitter extensions</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/group-theory/">More in group theory</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
