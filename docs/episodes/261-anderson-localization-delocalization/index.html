@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trapped, or free? Localization and delocalization in the Anderson model | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim two-dimensional Anderson localization at every disorder and absolutely continuous spectrum in three dimensions and up at very weak disorder. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/261-anderson-localization-delocalization/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Trapped, or free?">
+<meta property="og:description" content="Two AI preprints claim two-dimensional Anderson localization at every disorder and absolutely continuous spectrum in three dimensions and up at very weak disorder. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/261-anderson-localization-delocalization/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/261-anderson-localization-delocalization/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 261, October 2026</p>
+<h1>Trapped, or free?</h1>
+<p class="subtitle">Two AI preprints claim localization in two dimensions and free states in three and up for the Anderson model</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 261 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="-b7yvHNzf9U" data-title="Episode 261: Trapped, or free?">
+  <a href="https://youtu.be/-b7yvHNzf9U">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 261: Trapped, or free? A square lattice of dots with one bright gold dot whose glow fades quickly into teal neighbours.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:16. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/-b7yvHNzf9U?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/-b7yvHNzf9U?t=81" data-t="81"><span class="t">1:21</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/-b7yvHNzf9U?t=161" data-t="161"><span class="t">2:41</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/-b7yvHNzf9U?t=214" data-t="214"><span class="t">3:34</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>An electron moving through a perfect crystal travels freely. In 1958 Philip Anderson argued that random impurities can trap it: its waves stop spreading and stay localized. The model is a lattice, a hopping term between neighbours, and an independent random energy at every site, uniform between −h and h. In one dimension any disorder traps everything. Physicists predicted in 1979 that in two dimensions every amount of disorder eventually traps, while in three dimensions weak disorder leaves some states free.</p>
+<p>In spectral terms, trapping is usually read as pure-point spectrum, a complete set of eigenfunctions, and freedom as absolutely continuous spectrum. Localization at strong disorder and near band edges was proved in the 1980s and 1990s. But Barry Simon’s 2000 list of problems called proving purely absolutely continuous spectrum on some energy range in three dimensions “the big kahuna”, and two-dimensional localization at weak disorder was also open. Two papers from September 2026 still called these problems open.</p>
+<p>Result 261 is two OpenAI preprints, both dated September 23, 2026. The first, 78 pages, claims that in two dimensions, for every positive disorder strength, the spectrum is almost surely pure point, with eigenvalues dense in the whole spectrum. The second, 93 pages, claims that in every dimension 3 or more, for small enough disorder, the spectrum is almost surely purely absolutely continuous on a fixed interval, with nonzero weight there. At the very bottom of the spectrum, below the band, the same disorder gives pure point, so both kinds coexist.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The two-dimensional paper does not claim dynamical localization or exponential decay of eigenfunctions. The higher-dimensional paper’s interval is a thin sliver just above the bottom of the band, a few hundredths of a percent of it or less. Its disorder threshold is at most about 0.002 from four dimensions up, and no value is given in three. It claims nothing about the mobility edge, diffusion, or the band centre.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two papers, 78 and 93 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Only a long-known fact (<a href="https://github.com/openai/math/blob/main/lean/docs/261.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. Neither preprint has been revised. Lean formalizes only the location of the two-dimensional spectrum, a long-known fact; neither main theorem is formalized. OSVerify has not reviewed them. Jakšić and Last posted a paper on tree models whose appendix shortens the last step of the higher-dimensional argument, leaving the rest unchanged. We found no specialist comment on the two-dimensional paper.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Two dimensions.</strong> The proof plants rare resonant cells inside the true randomness and controls them through a hierarchy of comparisons on finite tori. The planar step is a capacity argument: in the plane, a logarithmic profile costs almost nothing, which forces the transport energy to zero. It ends with a fractional-moment bound and a rank-one perturbation argument of Simon and Wolff.</li>
+  <li><strong>Three dimensions and up.</strong> The proof writes each uniform potential as infinitely many coin flips and reveals them one binary digit at a time. It tracks three controls on the resolvent and sets aside failed local trials as pending sites to be cleared later. It ends with a finite-volume certificate that becomes absolutely continuous spectrum; its threshold uses boxes at least 10⁴⁸¹ sites on a side.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: in three dimensions, a particle released at one site keeps spreading at disorder h = 2 and freezes at h = 12.</li>
+  <li>Ours: our computer cannot see the two-dimensional result. At disorder 1, eigenvectors spread over more sites as the box grows, from about 80 to over 2,300, and the level statistics look like free states. The predicted trapping happens only on scales far beyond any box we can diagonalize.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Pure-Point-Spectrum-for-the-Two-Dimensional-Anderson-Model-at-Every-Positive-Disorder-September-23-2026/paper.pdf">Pure-Point Spectrum for the Two-Dimensional Anderson Model at Every Positive Disorder (PDF)</a>, 78 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Absolutely-Continuous-Spectrum-for-Weak-Disorder-Anderson-Models-in-Dimensions-at-Least-Three-September-23-2026/paper.pdf">Absolutely Continuous Spectrum for Weak-Disorder Anderson Models in Dimensions at Least Three (PDF)</a>, 93 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/261.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 261.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Absolutely-Continuous-Spectrum-for-Weak-Disorder-Anderson-Models-in-Dimensions-at-Least-Three-September-23-2026/paper.pdf">Absolutely Continuous Spectrum for Weak-Disorder Anderson Models in Dimensions at Least Three</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Pure-Point-Spectrum-for-the-Two-Dimensional-Anderson-Model-at-Every-Positive-Disorder-September-23-2026/paper.pdf">Pure-Point Spectrum for the Two-Dimensional Anderson Model at Every Positive Disorder</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>An electron moving through a perfect crystal travels freely. Add random impurities, and in 1958 Philip Anderson argued that it can become trapped: its waves stop spreading and stay localized. The model is simple: a lattice, a hopping term between neighbours, and an independent random energy at every site, here uniform between −h and h. In one dimension, any disorder traps everything. Our computer shows the contrast in three dimensions: a particle released at one site keeps spreading at weak disorder, and freezes at strong disorder. Physicists predicted in 1979 that in two dimensions every amount of disorder eventually traps, while in three dimensions weak disorder leaves some states free. Mathematically, trapping is usually read as pure-point spectrum, a complete set of eigenfunctions, and freedom as absolutely continuous spectrum. Localization at strong disorder and near band edges was proved in the 1980s and 1990s. But Barry Simon’s 2000 list called proving purely absolutely continuous spectrum on some energy range in three dimensions the big kahuna, and two-dimensional localization at weak disorder was also open; two papers from September 2026 still called these problems open.</p>
+<h3><span class="t num">1:21</span>The claims</h3>
+<p>Result 261 is two OpenAI preprints, both dated September 23, 2026. The first, 78 pages, claims that in two dimensions, for every positive disorder strength, the spectrum is almost surely pure point, with eigenvalues dense in the whole spectrum. It does not claim dynamical localization or exponential decay of eigenfunctions. The second, 93 pages, claims that in every dimension 3 or more, for small enough disorder, the spectrum is almost surely purely absolutely continuous on a fixed interval, with nonzero weight there. The interval is a thin sliver just above the bottom of the band, a few hundredths of a percent of it or less; the disorder threshold is at most about 0.002 in 4 dimensions and up, with no value given in three. At the very bottom of the spectrum, below the band, the same disorder gives pure point, so both kinds coexist. Our computer cannot see the two-dimensional result. At disorder 1, eigenvectors spread over more sites as the box grows, from about 80 to over 2,300, and the level statistics look like free states. The predicted trapping happens only on scales far beyond any box we can diagonalize.</p>
+<h3><span class="t num">2:41</span>How the proofs go</h3>
+<p>The two-dimensional proof plants rare resonant cells inside the true randomness and controls them through a hierarchy of comparisons on finite tori. The planar step is a capacity argument: in the plane, a logarithmic profile costs almost nothing, which forces the transport energy to zero. It ends with a fractional-moment bound and a rank-one perturbation argument of Simon and Wolff. The higher-dimensional proof writes each uniform potential as infinitely many coin flips and reveals them one binary digit at a time. It tracks three controls on the resolvent, sets aside failed local trials as pending sites to be cleared later, and ends with a finite-volume certificate that becomes absolutely continuous spectrum. Its threshold uses boxes at least 10⁴⁸¹ sites on a side.</p>
+<h3><span class="t num">3:34</span>Where it stands</h3>
+<p>Both preprints are unrefereed and unchanged since release. Lean formalizes only the location of the two-dimensional spectrum, a long-known fact; neither main theorem is formalized. OSVerify has not reviewed them. Jakšić and Last posted a paper on tree models whose appendix shortens the last step of the higher-dimensional argument, leaving the rest unchanged; we found no specialist comment on the two-dimensional paper. If they hold, Anderson’s picture is right at both ends: in the plane, any disorder traps a quantum particle, and in three dimensions and more, very weak disorder leaves at least some energies free.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20261%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
