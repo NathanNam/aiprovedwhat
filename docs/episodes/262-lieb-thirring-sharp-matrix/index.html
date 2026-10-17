@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One bound state is the best? The 1D Lieb–Thirring conjecture | AI Proved What?</title>
+<meta name="description" content="Three AI preprints claim the sharp one-dimensional Lieb–Thirring inequality for 1/2 &lt; γ &lt; 3/2, its extension to matrix potentials, and all equality cases. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/262-lieb-thirring-sharp-matrix/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="One bound state is the best?">
+<meta property="og:description" content="Three AI preprints claim the sharp one-dimensional Lieb–Thirring inequality for 1/2 &lt; γ &lt; 3/2, its extension to matrix potentials, and all equality cases. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/262-lieb-thirring-sharp-matrix/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/262-lieb-thirring-sharp-matrix/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 262, October 2026</p>
+<h1>One bound state is the best?</h1>
+<p class="subtitle">Three AI preprints claim the one-dimensional Lieb–Thirring conjecture, for scalar and matrix wells</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 262 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="Af1rkw8xqGg" data-title="Episode 262: One bound state is the best?">
+  <a href="https://youtu.be/Af1rkw8xqGg">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 262: One bound state is the best? A teal soliton-shaped well with one dashed gold energy level inside it.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:47. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/Af1rkw8xqGg?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/Af1rkw8xqGg?t=81" data-t="81"><span class="t">1:21</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/Af1rkw8xqGg?t=164" data-t="164"><span class="t">2:44</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/Af1rkw8xqGg?t=189" data-t="189"><span class="t">3:09</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Put a quantum particle on a line, in a potential well. It can sit in a few bound states, each with a negative energy. Lieb and Thirring bounded the sum of the sizes of those energies, each raised to a power γ, by a constant times an integral of the well’s depth to the power γ + 1/2. Their three-dimensional version gave a short proof that ordinary matter is stable.</p>
+<p>What is the best constant? In one dimension, above γ = 3/2, a crowd of states wins; that was known by 1978. For γ between 1/2 and 3/2, Lieb and Thirring conjectured in 1976 that the best well holds a single bound state, a soliton-shaped well. The lower end was proved in 1998, but a 2020 survey by Frank called the middle range open. At γ = 1 the best proved constant was about 1.45 times the classical one, against a conjectured 1.15.</p>
+<p>Result 262 is three OpenAI preprints, 73 pages in all. The first, 21 pages, dated September 23, 2026, claims the conjecture for every γ strictly between 1/2 and 3/2. The case γ = 1 had been posted on September 9 by Larry Read, then with Marvin Schulz, and the OpenAI paper credits it; Read’s own paper says a first version of its proof was developed by an AI model. The second, 24 pages, dated October 5, claims the same constant for wells whose depth is a matrix of any finite size, even when the matrices do not commute. The third, 28 pages, claims that equality holds only for independent soliton wells, one per channel, in one fixed basis.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Anything in higher dimensions, or values of γ outside the open range.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, three papers, 21, 24 and 28 pages, dated September 23 and October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The scalar theorem in full (<a href="https://github.com/openai/math/blob/main/lean/docs/262.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. The preprints have not been revised. In Lean, the scalar theorem is formalized in full: about 13,700 lines with no unproved steps, which we did not build. The matrix and equality papers are not formalized. OSVerify has not reviewed them, and we found no specialist comment.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>A path through matrices.</strong> The key move walks a symmetric matrix from one value to its negative along a differential equation, and a parity count shows such a path exists. Integrating along it gives each bound state exactly its single-state share.</li>
+  <li><strong>Matrix wells.</strong> The new ingredient is a trace inequality comparing two matrix quantities. It lets the scalar argument go through even when the matrices share no common basis.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: with exact soliton wells, the single-state well wins below 3/2, every reflectionless well ties at exactly 3/2, and at γ = 2 wells with many states beat it by about 7%. Of 3,000 random wells, none beat the single-state constant at five sampled values of γ below 3/2.</li>
+  <li>Ours: twisting the basis of a matrix well along the line lowers the ratio, to about 93% at one twist rate and 70% at four times that rate.</li>
+  <li>Ours: a naive optimizer seemed to beat the theorem by 27%, using a spike thinner than its grid. Resolved properly, at γ = 1, it reached 99.8% and never more.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Sharp-One-Dimensional-Lieb-Thirring-Constants-September-23-2026/paper.pdf">Sharp One-Dimensional Lieb–Thirring Constants (PDF)</a>, 21 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Sharp-one-dimensional-Lieb-Thirring-inequalities-for-matrix-potentials-October-5-2026/sharp-matrix-lieb-thirring.pdf">Sharp One-Dimensional Lieb–Thirring Inequalities for Matrix Potentials (PDF)</a>, 24 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Equality-cases-in-the-sharp-one-dimensional-matrix-Lieb-Thirring-inequality-October-5-2026/sharp-one-dimensional-lieb-thirring-inequalities-matrix-potentials.pdf">Equality Cases in the Sharp One-Dimensional Matrix Lieb–Thirring Inequality (PDF)</a>, 28 pages.</li>
+  <li><a href="https://arxiv.org/abs/2609.10478">Read and Schulz, arXiv 2609.10478</a>, the case γ = 1.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/262.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 262.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Equality-cases-in-the-sharp-one-dimensional-matrix-Lieb-Thirring-inequality-October-5-2026/sharp-one-dimensional-lieb-thirring-inequalities-matrix-potentials.pdf">Equality cases in the sharp one-dimensional matrix Lieb–Thirring inequality</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Sharp-one-dimensional-Lieb-Thirring-inequalities-for-matrix-potentials-October-5-2026/sharp-matrix-lieb-thirring.pdf">Sharp one-dimensional Lieb–Thirring inequalities for matrix potentials</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Sharp-One-Dimensional-Lieb-Thirring-Constants-September-23-2026/paper.pdf">Sharp one-dimensional Lieb–Thirring constants</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Put a quantum particle on a line, in a potential well. It can sit in a few bound states, each with a negative energy. Lieb and Thirring bounded the sum of the sizes of those energies, each raised to a power γ, by a constant times an integral of the well’s depth to the power γ + 1/2. Their three-dimensional version gave a short proof that ordinary matter is stable. What is the best constant? In one dimension, above 3/2, a crowd of states wins; that was known by 1978. For gamma between 1/2 and 3/2, Lieb and Thirring conjectured in 1976 that the best well holds a single bound state, a soliton-shaped well. The lower end was proved in 1998, but a 2020 survey by Frank called the middle range open. At γ = 1, the best proved constant was about 1.45 times the classical one, against a conjectured 1.15. Our computer checks the picture with exact soliton wells: below 3/2 the single-state well wins; at exactly 3/2 every reflectionless well ties; at γ = 2, wells with many states beat it by about 7%. Of 3,000 random wells, none beat the single-state constant at five values of γ below 3/2.</p>
+<h3><span class="t num">1:21</span>The claims</h3>
+<p>Result 262 is three OpenAI preprints, 73 pages in all. The first, 21 pages, dated September 23, 2026, claims the conjecture for every γ strictly between 1/2 and 3/2. The case γ = 1 had been posted on September 9 by Larry Read, then with Marvin Schulz, and the OpenAI paper credits it; Read’s own paper says a first version of its proof was developed by an AI model. The second, 24 pages, dated October 5, claims the same constant for wells whose depth is a matrix of any finite size, even when the matrices do not commute. The third, 28 pages, claims that equality holds only for independent soliton wells, one per channel, in one fixed basis. Our check: twisting the basis along the line lowers the ratio, to about 93% at one twist rate and 70% at four times that rate. Not claimed: anything in higher dimensions, or values of γ outside the open range. Numerics can mislead here: our naive optimizer seemed to beat the theorem by 27%, using a spike thinner than its grid. Resolved properly, at γ = 1, it reached 99.8% and never more.</p>
+<h3><span class="t num">2:44</span>How the proofs go</h3>
+<p>The key move walks a symmetric matrix from one value to its negative along a differential equation, and a parity count shows such a path exists; integrating along it gives each bound state exactly its single-state share. For matrix wells the new ingredient is a trace inequality comparing two matrix quantities, which lets the scalar argument go through even when the matrices share no common basis.</p>
+<h3><span class="t num">3:09</span>Where it stands</h3>
+<p>The preprints are unrefereed and unchanged since release. In Lean, the scalar theorem is formalized in full, about 13,700 lines with no unproved steps, which we did not build; the matrix and equality papers are not formalized. OSVerify has not reviewed them, and we found no specialist comment. If they hold, a 50-year-old guess about wells on a line is settled: between 1/2 and 3/2, one bound state is the most efficient way to bind, for scalars and finite matrices alike.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20262%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
