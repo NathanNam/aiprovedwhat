@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 205: Saxl’s conjecture and universal tensor squares | AI Proved What?</title>
-<meta name="description" content="Saxl’s conjecture and universal tensor squares. Result 205 in OpenAI&#x27;s math release (Algebra): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Square the staircase: all? Saxl’s conjecture | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Saxl’s conjecture and the tensor square conjecture for symmetric groups, with Lean formalizations of both. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/205-saxls-conjecture-universal-tensor-squares/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 205: Saxl’s conjecture and universal tensor squares | AI Proved What?">
-<meta property="og:description" content="Saxl’s conjecture and universal tensor squares. Result 205 in OpenAI&#x27;s math release (Algebra): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Square the staircase: all?">
+<meta property="og:description" content="Two AI preprints claim Saxl’s conjecture and the tensor square conjecture for symmetric groups, with Lean formalizations of both. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/205-saxls-conjecture-universal-tensor-squares/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/205-saxls-conjecture-universal-tensor-squares/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,22 +37,50 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 205 · <a href="../../subjects/algebra/">Algebra</a></p>
-<h1 class="result-title">Saxl’s conjecture and universal tensor squares</h1>
+<p class="meta">Episode 205, October 2026</p>
+<h1>Square the staircase: all?</h1>
+<p class="subtitle">Two preprints claim Saxl’s conjecture, that the square of every staircase representation of a symmetric group contains every irreducible, and its general form for every symmetric group except three small ones, with Lean formalizations of both</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 205 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="8a83yPtXopc" data-title="Episode 205: Square the staircase: all?">
+  <a href="https://youtu.be/8a83yPtXopc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 205: Square the staircase: all? The staircase Young diagram with rows 3, 2, 1 and a bar chart of eleven multiplicities.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:57. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/8a83yPtXopc?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/8a83yPtXopc?t=77" data-t="77"><span class="t">1:17</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/8a83yPtXopc?t=130" data-t="130"><span class="t">2:10</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/8a83yPtXopc?t=191" data-t="191"><span class="t">3:11</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves Saxl's conjecture: the tensor square of every staircase representation contains every irreducible complex representation of the corresponding symmetric group. More generally, every <i>S</i><sub><i>n</i></sub> with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo mathvariant="normal">∉</mo><mo stretchy="false">{</mo><mn>2</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mn>9</mn><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">n\notin\{2,4,9\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel"><span class="mord"><span class="mrel">∈</span></span><span class="mord vbox"><span class="thinbox"><span class="llap"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="inner"><span class="mord"><span class="mord">/</span><span class="mspace" style="margin-right:0.0556em;"></span></span></span><span class="fix"></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">{</span><span class="mord">2</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">9</span><span class="mclose">}</span></span></span></span> has an irreducible representation whose tensor square contains all irreducibles.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Shuffle n objects in every possible way: that is the symmetric group. Its irreducible representations are labelled by Young diagrams with n boxes; for six objects there are 11. Multiply one of them by itself, a tensor square, and it breaks into irreducible pieces, counted by Kronecker coefficients. For the staircase with rows 3, 2 and 1, of dimension 16, our computer finds all 11 irreducibles in the square, with multiplicities from 1 to 5.</p>
+<p>In 2012 Jan Saxl guessed that this always happens for staircases. Pak, Panova and Vallejo conjectured more broadly that every symmetric group, except for 2, 4 and 9 objects, has some representation whose square contains everything. Those exceptions are real: for 2 objects no diagram is symmetric, and only symmetric diagrams can work; for 4, the only symmetric diagram’s square misses two irreducibles; for 9, the best candidate misses only the 3-by-3 square. As the papers tell it, many families were known, and the staircase’s cube was known to contain everything, but not its square.</p>
+<p>Result 205 bundles two OpenAI preprints, both dated September 24, 2026. <a href="https://github.com/openai/math/blob/main/preprints/A-Cyclic-Polytabloid-Proof-of-Saxls-Conjecture-September-24-2026/paper.pdf">A Cyclic Polytabloid Proof of Saxl’s Conjecture</a> (17 pages, no computer) claims Saxl’s conjecture: for every staircase, the tensor square contains every irreducible representation. <a href="https://github.com/openai/math/blob/main/preprints/Universal-Tensor-Squares-for-Symmetric-Groups-September-24-2026/main.pdf">Universal Tensor Squares for Symmetric Groups</a> (37 pages) claims the broader conjecture: for every number of objects except 2, 4 and 9, one fixed diagram whose square contains everything.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Any formula for the Kronecker coefficients: only that they are positive. Nor is the diagram unique: in our census up to 28 objects, 7 diagrams work for 21 objects and 14 for 28. Away from the staircase sizes, the second paper adds cells symmetrically to a staircase (for odd n from 45 and even n from 66) and uses a computer search up to 64 objects.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 17 and 37 pages, dated September 24, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -62,12 +88,42 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/205.md">scope notes</a>)</dd>
+    <dd>Both main statements formalized by OpenAI (<a href="https://github.com/openai/math/blob/main/lean/docs/205.md">docs</a>); not rebuilt by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 17, 2026.</p>
+<p class="ledger-note">Last checked October 16, 2026. Neither preprint has been revised since they were added to the repository in its initial commit on October 6, 2026, and neither is among those OSVerify reviewed; we found no expert reaction. Both main statements are formalized in Lean, with machine-checkable statements for <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/Saxl.lean">Saxl’s conjecture</a> (about 7,500 lines with its imports) and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/UniversalTensorSquares.lean">the general theorem</a> (about 217,000 lines), and no unproved steps; we did not rebuild them. An earlier claimed proof of Saxl’s conjecture, posted to arXiv in December 2025, was withdrawn by its author.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>One vector.</strong> The first paper proves something stronger: fill the staircase with positions; in one copy alternate along the rows, in the other along the columns. Their product is a single vector in the square, and every irreducible appears among its shuffles (Theorem 3.1).</li>
+  <li><strong>Two halves.</strong> Shapes below the staircase in the dominance order come from an explicit map onto a permutation module (Proposition 3.2). For the rest, the paper peels a band of width one or two off the triangle, so that the smaller triangle and the band split apart (Proposition 4.2).</li>
+  <li><strong>Two-by-two matrices.</strong> The band becomes a product of 2×2 matrices; in one example the product is 12 times a matrix whose corner is zero, and a change of basis turns that corner into 12 (Example 5.4). So every shape with at most four rows appears in the band (Proposition 5.3), and induction, removing at most four horizontal strips, finishes the proof (Lemma 6.1).</li>
+  <li><strong>Every degree.</strong> The second paper reuses the one-vector statement, adds two tests and a counting argument, partly checked by computer for middle sizes, and exact character arithmetic up to 64 objects.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Exact Kronecker coefficients (ours) from Murnaghan–Nakayama character tables: staircases up to 28 objects contain every irreducible; the staircase (3,2,1) squared has multiplicities 1, 2, 3, 4, 2, 5, 4, 2, 3, 2, 1.</li>
+  <li>Census (ours): for every n up to 28, every symmetric diagram tested against every irreducible; none works only at 2, 4 and 9; 1, 2, 3, 7 and 14 diagrams work at 6, 10, 15, 21 and 28 objects.</li>
+  <li>Example 5.4 of the first paper reproduced (ours). The Lean line counts are ours.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Cyclic-Polytabloid-Proof-of-Saxls-Conjecture-September-24-2026/paper.pdf">A Cyclic Polytabloid Proof of Saxl’s Conjecture (PDF)</a>, 17 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Universal-Tensor-Squares-for-Symmetric-Groups-September-24-2026/main.pdf">Universal Tensor Squares for Symmetric Groups (PDF)</a>, 37 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/205.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 205.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -76,18 +132,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-Cyclic-Polytabloid-Proof-of-Saxls-Conjecture-September-24-2026/paper.pdf">A Cyclic Polytabloid Proof of Saxl's Conjecture</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Shuffle n objects in every possible way: that is the symmetric group. Its irreducible representations are labelled by Young diagrams with n boxes; for six objects there are 11. Now take one of them and multiply it by itself, a tensor square. It breaks into irreducible pieces, and the counts are called Kronecker coefficients. For the staircase with rows three, two and one, of dimension 16, our computer finds all 11 irreducibles in the square, with multiplicities from one to five. In 2012, Jan Saxl guessed that this always happens for staircases: the square of the staircase contains every irreducible. Pak, Panova and Vallejo conjectured more broadly that every symmetric group, except for two, four and nine objects, has some representation whose square contains everything. Those exceptions are real. For two objects, no diagram is symmetric, and only symmetric diagrams can work. For four, the only symmetric diagram’s square misses two irreducibles. For nine, the best candidate misses only the three-by-three square. As the papers tell it, many families were known, and the staircase’s cube was known to contain everything, but not its square.</p>
+<h3><span class="t num">1:17</span>The claim</h3>
+<p>Result 205 bundles two OpenAI preprints, both dated September 24, 2026. The first, 17 pages, claims Saxl’s conjecture: for every staircase, the tensor square contains every irreducible representation. It uses no computer. The second, 37 pages, claims the broader conjecture: for every number of objects except two, four and nine, there is one fixed diagram whose square contains everything. Not claimed: any formula for the Kronecker coefficients, only that they are positive. Nor is the diagram unique: in our census up to 28 objects, 7 diagrams work for 21 objects, and 14 for 28. Away from the staircase sizes, the second paper adds cells symmetrically to a staircase for large numbers, and uses a computer search up to 64.</p>
+<h3><span class="t num">2:10</span>How the proof goes</h3>
+<p>The first paper proves something stronger. Fill the staircase with positions; in one copy, alternate along the rows, in the other along the columns. Their product is a single vector in the square, and every irreducible appears among its shuffles. Shapes below the staircase in the dominance order come from an explicit map onto a permutation module. For the rest, the paper peels a band of width one or two off the triangle, so that the smaller triangle and the band split apart. The band becomes a product of two-by-two matrices. In one example the product comes out as twelve times a matrix whose corner is zero; a change of basis turns that corner into twelve. So every shape with at most four rows appears in the band, and induction, removing at most four horizontal strips, finishes the proof. The second paper reuses this one-vector statement, two tests, and a counting argument, partly checked by computer for middle sizes, and exact character arithmetic up to 64 objects.</p>
+<h3><span class="t num">3:11</span>Where it stands</h3>
+<p>Both preprints are unrefereed and have not been revised, and neither is among those OSVerify reviewed; we found no expert reaction. But both main statements are formalized in Lean: about 7,500 lines for Saxl’s conjecture, and about 217,000 for the general theorem, with no unproved steps. We did not rebuild them. An earlier claimed proof, posted in December 2025, was withdrawn. If it holds, every staircase squared contains every irreducible, and every symmetric group, except for two, four and nine objects, has a representation with this property. The Kronecker coefficients themselves still have no known combinatorial rule.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20205%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../204-tensor-saturation-even-spin-groups/"><span class="dir">Previous · 204</span><span class="pt">Tensor saturation for even spin groups</span></a>
-  <a class="next" href="../206-finite-lattice-representation-undecidability/"><span class="dir">Next · 206</span><span class="pt">Finite lattice representation and undecidability</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebra/">More in algebra</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
