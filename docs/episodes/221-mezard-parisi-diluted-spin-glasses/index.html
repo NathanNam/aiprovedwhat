@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Many states, one exact formula? Diluted spin glasses | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims the Mézard–Parisi formula for diluted spin glasses, settling a 2004 conjecture of Panchenko and Talagrand. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/221-mezard-parisi-diluted-spin-glasses/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Many states, one exact formula?">
+<meta property="og:description" content="An AI preprint claims the Mézard–Parisi formula for diluted spin glasses, settling a 2004 conjecture of Panchenko and Talagrand. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/221-mezard-parisi-diluted-spin-glasses/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/221-mezard-parisi-diluted-spin-glasses/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 221, October 2026</p>
+<h1>Many states, one exact formula?</h1>
+<p class="subtitle">A preprint claims the Mézard–Parisi formula for diluted spin glasses</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 221 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="_tOVFzVixkQ" data-title="Episode 221: Many states, one exact formula?">
+  <a href="https://youtu.be/_tOVFzVixkQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 221: Many states, one exact formula? A triangle of spins with one negative bond, which must break.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:08. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/_tOVFzVixkQ?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/_tOVFzVixkQ?t=73" data-t="73"><span class="t">1:13</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/_tOVFzVixkQ?t=152" data-t="152"><span class="t">2:32</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/_tOVFzVixkQ?t=262" data-t="262"><span class="t">4:22</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take N spins, each up or down, and join random pairs of them by bonds with random signs: a plus bond wants its two spins to agree, a minus bond wants them to disagree. This is the Viana–Bray spin glass. Around a loop with an odd number of minus bonds, some bond must break. In our small example, a frustrated triangle plus one free spin, 12 of the 16 configurations tie for best. With many long loops, at low temperature the system can have many competing states.</p>
+<p>The quantity of interest is the log of the partition function per spin as the system grows (the free energy is its negative divided by the inverse temperature). Mézard and Parisi’s cavity picture (2001, for a fixed-degree version) describes it through a hierarchy: a distribution of local fields, distributions of those distributions, and so on. Extending Franz and Leone, Panchenko and Talagrand proved in 2004 that every finite hierarchy gives an upper bound, and hoped the best of them is exact.</p>
+<p>Result 221 is one OpenAI preprint, 36 pages, dated September 23, 2026. It claims that equality for Panchenko and Talagrand’s class: interactions on an even number of spins, with a factorized form and a sign condition, a Poisson number of interactions whose spins are chosen uniformly with replacement, and only first moments of the couplings and fields. At every temperature and density, the limit exists and equals the infimum of the hierarchical trial functional over all finite depths. This covers the Viana–Bray model, diluted even-spin models with symmetric couplings, soft random SAT with an even number of literals per clause, and their zero-temperature ground-state limits. Only the lower bound is new.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>An odd number of spins per interaction (so not random 3-SAT, which a companion paper treats with a different functional), fixed-degree graphs, which depth is needed, a full-replica-symmetry-breaking functional, or a description of the actual Gibbs states.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 36 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/221.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 16, 2026. The preprint has not been revised since it was added to the repository in its initial commit on October 6, 2026. The main theorem is formalized in Lean against a pinned statement: about 56,000 lines, with no unproved steps; we did not build it. The corollaries are not formalized. 403 of the 405 Lean files are reused by the release’s random 3-SAT result. OpenAI also released a <a href="https://github.com/openai/math/blob/main/reasoning_traces/mezard-parisi-formula.pdf">reasoning summary</a> for this result; it names three works as inspirations that the paper does not cite. Not among those OSVerify reviewed; we found no expert reaction or earlier proof.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The upper bound (old).</strong> Interpolate between the real system and one where each spin sees independent random messages. The error contains x<sup>p</sup> − p x y<sup>p−1</sup> + (p−1) y<sup>p</sup>, nonnegative for even p by convexity; with the sign condition, every finite hierarchy bounds the limit from above. For p = 3 with signed factors it factors as (x − y)²(x + 2y), which can be negative.</li>
+  <li><strong>The lower bound (new).</strong> Build finite artificial hierarchies, let the system grow at each fixed depth, and only then deepen. Small random perturbations give identities for how replicas branch.</li>
+  <li><strong>The key step.</strong> Move every branching depth one level later; induction then makes every multioverlap concentrate on average over branching depths. A randomly chosen site’s hierarchy of messages, copied independently, becomes a trial whose value nearly matches the true increment, so the liminf is at least the infimum.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: exact sums over all 2<sup>N</sup> states of random Viana–Bray samples with mean degree 3, N up to 20 (±1 bonds) and 16 (Gaussian bonds). In all 112 (N, β) cells the sample average stays below the paramagnetic trial value.</li>
+  <li>Ours: the paramagnetic trial stops being the best replica-symmetric one beyond β ≈ 0.66; at β = 1.5 population dynamics gives 1.901 against 1.976. Twenty spins cannot tell which depth is needed. The Lean line count is ours.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/paper.pdf">The Mézard–Parisi formula for diluted spin glasses (PDF)</a>, 36 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/221.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/reasoning_traces/mezard-parisi-formula.pdf">OpenAI’s reasoning summary for this result (PDF)</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 221.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Mezard-Parisi-formula-for-diluted-spin-glasses-September-23-2026/paper.pdf">The Mézard–Parisi formula for diluted spin glasses</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Take N spins, each pointing up or down. Join random pairs by bonds, so that in our example each spin is in about three bonds on average, each bond with a random sign: plus wants its two spins to agree, minus wants them to disagree. This is the Viana–Bray spin glass. Around a loop with an odd number of minus bonds, some bond must break. In our small example, a frustrated triangle plus one free spin, twelve of the sixteen configurations tie for best. With many long loops, at low temperature the system can have many competing states. Physicists want the log of the partition function per spin as the system grows; the free energy is its negative, divided by the inverse temperature. In 2001, Mézard and Parisi’s cavity picture, for a fixed-degree version, described it through a hierarchy: a distribution of local fields, then distributions of those, worked out one step deep; in general, one layer per level of states inside states. Extending Franz and Leone, in 2004 Panchenko and Talagrand proved that every finite hierarchy bounds that log from above, and hoped the best of them is exact.</p>
+<h3><span class="t num">1:13</span>The claim</h3>
+<p>Result 221 is one OpenAI preprint, 36 pages, dated September 23, 2026. It claims that equality, a conjecture since then, for Panchenko and Talagrand’s class of models: interactions joining an even number of spins, with a factorized form and a sign condition. The number of interactions is Poisson, and their spins are chosen uniformly, with replacement. Then, at every temperature and every density, the limit exists and equals the infimum of the hierarchical trial functional over all finite depths. Only first moments of the couplings and fields are needed. This covers the Viana–Bray model, diluted even-spin models with symmetric couplings, and soft random SAT with an even number of literals per clause, and, as the temperature goes to zero, their limiting ground-state energies. Only the lower bound is new; the upper bound is the 2004 one, re-proved under first moments. Not claimed: an odd number of spins per interaction, so not random 3-SAT, which a companion paper treats differently; fixed-degree graphs; which depth is needed; a full-replica-symmetry-breaking functional; or a description of the actual states.</p>
+<h3><span class="t num">2:32</span>How the proof goes</h3>
+<p>The upper bound interpolates between the real system and one where each spin sees independent random messages. The error contains x^p − p·x·y^(p−1) + (p−1)·y^p. For even p, convexity makes this nonnegative, and with the sign condition the error has the right sign. For p = 3 with signed factors, as in the three-spin model, it factors as (x − y)²(x + 2y), which can be negative. The new half is the lower bound. Rather than proving that the real states form a hierarchy, the paper builds finite artificial hierarchies, lets the system grow at each fixed depth, and only then deepens. Small random perturbations give identities for how replicas branch. The key step, also described in a reasoning summary OpenAI released, moves every branching depth one level later; induction then makes every multioverlap, an average of spin products across replicas, concentrate on average over branching depths. A randomly chosen site’s hierarchy of messages, copied independently, becomes a trial whose value nearly matches the true increment, so the liminf is at least the infimum. As an illustration, our computer summed over every configuration of small Viana–Bray samples, with mean degree three, up to twenty spins. Every average stayed below the simplest, paramagnetic, trial value, as the upper bound requires. Beyond inverse temperature about 0.66, population dynamics finds a better replica-symmetric trial: 1.901 against 1.976 at inverse temperature 1.5. Twenty spins can’t tell which depth is needed.</p>
+<h3><span class="t num">4:22</span>Where it stands</h3>
+<p>The preprint is unrefereed and has not been revised. A Lean formalization proves the main theorem, not the corollaries: about 56,000 lines, with no unproved steps; we did not build it. Almost all of its files are reused by the release’s random 3-SAT result. The reasoning summary names three inspirations the paper does not cite. It is not among those OSVerify reviewed, and we found no expert reaction or earlier proof. If it holds, the physicists’ hierarchy of field distributions gives the exact answer for these diluted spin glasses at every temperature, settling the equality Panchenko and Talagrand hoped for in 2004.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20221%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
