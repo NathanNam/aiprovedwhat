@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can coin flips grow a forest? The free uniform spanning forest | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims the free uniform spanning forest is a factor of IID on every infinite connected locally finite graph, by one rule. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/231-free-spanning-forest-factor-iid/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Can coin flips grow a forest?">
+<meta property="og:description" content="An AI preprint claims the free uniform spanning forest is a factor of IID on every infinite connected locally finite graph, by one rule. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/231-free-spanning-forest-factor-iid/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/231-free-spanning-forest-factor-iid/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 231, October 2026</p>
+<h1>Can coin flips grow a forest?</h1>
+<p class="subtitle">A preprint claims the free uniform spanning forest is a factor of IID, by one rule for every graph</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 231 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="4c9oxFjDWMQ" data-title="Episode 231: Can coin flips grow a forest?">
+  <a href="https://youtu.be/4c9oxFjDWMQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 231: Can coin flips grow a forest? A uniform spanning tree of a grid.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:33. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/4c9oxFjDWMQ?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/4c9oxFjDWMQ?t=87" data-t="87"><span class="t">1:27</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/4c9oxFjDWMQ?t=147" data-t="147"><span class="t">2:27</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/4c9oxFjDWMQ?t=230" data-t="230"><span class="t">3:50</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A spanning tree of a network is a set of edges that connects every vertex with no loops. On a 3×3 grid there are 192 of them, and David Wilson’s algorithm, built from random walks that erase their own loops, picks one uniformly at random (our 192,000 runs hit every tree about equally often). On an infinite network there are two natural limits: the free forest uses bigger and bigger finite pieces as they are, and the wired forest first glues each piece’s boundary into one point. On the square grid they agree; on a tree where every vertex has three neighbours the free forest keeps every edge and the wired one keeps each with probability two thirds.</p>
+<p>Can you build the forest from coin flips? A factor of IID is one fixed rule turning independent random labels on the vertices into the forest, treating every vertex alike, with no root. For the wired forest, Wilson’s method rooted at infinity (Benjamini, Lyons, Peres and Schramm, 2001) does it on transient graphs, as Angel, Ray and Spinka proved in 2021. For the free forest, Russell Lyons asked the question for Cayley graphs in 2013, and Ádám Timár wrote in December 2025 that it was open in full generality.</p>
+<p>Result 231 is one OpenAI preprint, 19 pages, dated September 25, 2026. It claims a single rule that works on every infinite, connected, locally finite, simple, unweighted graph at once, turning independent uniform vertex labels into a forest with exactly the law of the free uniform spanning forest; no amenability, transience or degree bound is needed. The same method shows every translation-invariant strongly Rayleigh process on a countable group, including invariant determinantal processes, is a factor of IID under the group’s own translations: the case of a question of Lyons and Thom where the process lives on the group itself.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>A finitary rule, an isomorphism with a Bernoulli shift, weighted graphs, or the fixed-price problem in group theory, for which this is only one of two ingredients Lyons described.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 19 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Yes (<a href="https://github.com/openai/math/blob/main/lean/docs/231.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. The preprint has not been revised since release. In Lean, two comparators cover the main theorems, about 330 files with no unproved steps; we did not build them, and the item is not yet in the formalization list. A companion paper, result 236, uses the same idea for Ising spins on trees. Not among those OSVerify reviewed; we found no public reaction.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Listen, don’t build.</strong> Watch every edge through its own noisy channel, Y<sub>e</sub>(t) = t·X<sub>e</sub> + B<sub>e</sub>(t). Subtract the best guess given everything seen so far; what remains, the innovations, is pure Brownian noise, independent across edges.</li>
+  <li><strong>Spanning trees are calm.</strong> Shift the evidence on every edge by at most some amount, and no edge’s probability moves by more than half that amount. On a four-cycle each edge is in with probability 3/4 and each pair has covariance −1/16, so the absolute row sum is 3/8 = 2·(3/4)·(1/4).</li>
+  <li><strong>Decode backwards.</strong> Because of that bound, the noise decodes uniquely, for every input. Feed in fresh noise made from the vertex labels, decode, and out comes a forest with the right law.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: Wilson’s algorithm on the 3×3 grid (192 trees, χ² = 152 on 191 degrees of freedom); free and wired edge probabilities on square-grid boxes (both squeeze to 1/2) and on the 3-regular tree (1 and 2/3).</li>
+  <li>Ours: a discretized version of the decoder on the four-cycle and on K<sub>4</sub>, reading off each edge’s final probability: uniformly random spanning trees out, within sampling error (χ² = 0.9 and 7.5). For a law that is all edges or none, the response grows with the number of edges and the argument breaks.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-free-uniform-spanning-forest-is-a-factor-of-IID-September-25-2026/The-free-uniform-spanning-forest-is-a-factor-of-IID-September-25-2026.pdf">The free uniform spanning forest is a factor of IID (PDF)</a>, 19 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/231.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 231.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-free-uniform-spanning-forest-is-a-factor-of-IID-September-25-2026/The-free-uniform-spanning-forest-is-a-factor-of-IID-September-25-2026.pdf">The free uniform spanning forest is a factor of IID</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Take a network and pick one of its spanning trees uniformly at random: a set of edges that connects every vertex with no loops. On a 3×3 grid there are 192 of them, and David Wilson’s algorithm, built from random walks that erase their own loops, picks one perfectly at random. Our computer ran it 192,000 times, and every tree came up about equally often. On an infinite network there are two natural limits. The free forest uses bigger and bigger finite pieces as they are; the wired forest first glues each piece’s boundary into one point. On the square grid they agree: our computation shows the chance of keeping a given edge squeezing to one half from both sides. On a tree where every vertex has three neighbors, they differ: the free forest keeps every edge, the wired one keeps two thirds. Can you build the forest from coin flips? A factor of IID is one fixed rule that turns independent random labels on the vertices into the forest, treating every vertex alike, with no root. For the wired forest, Wilson’s method rooted at infinity, from Benjamini, Lyons, Peres and Schramm in 2001, does it on transient graphs, as Angel, Ray and Spinka proved in 2021. For the free forest, Russell Lyons asked the question for Cayley graphs in 2013, and Ádám Timár wrote in December 2025 that it was open in full generality.</p>
+<h3><span class="t num">1:27</span>The claim</h3>
+<p>Result 231 is one OpenAI preprint, 19 pages, dated September 25, 2026. It claims a single rule that works on every infinite, connected, locally finite, simple, unweighted graph at once, and turns independent uniform labels on the vertices into a forest with exactly the law of the free uniform spanning forest. No amenability, no transience, no bound on degrees. The same machine also shows that every translation-invariant strongly Rayleigh process on a countable group, including invariant determinantal processes, is a factor of IID under the group’s own translations. That settles the case of a question by Lyons and Thom where the process lives on the group itself. Not claimed: a finitary rule, an isomorphism with a Bernoulli shift, weighted graphs, or the fixed-price problem in group theory, for which this is only one of two ingredients Lyons described.</p>
+<h3><span class="t num">2:27</span>How the proof goes</h3>
+<p>The idea is not to build the forest, but to listen to it. Watch every edge through its own noisy channel: a signal that grows with time if the edge is in the forest, plus Brownian noise. Subtract the best guess given everything seen so far, and what remains, the innovations, is pure Brownian noise, independent across edges. The key fact is that spanning trees are calm. Shift the evidence on every edge by at most some amount, and no edge’s probability moves by more than half that amount. On a four-cycle, each edge is in with probability three quarters, and each pair of edges has covariance minus one sixteenth; the absolute row sum is three eighths, exactly twice three quarters times one quarter. Because of this bound, the noise can be decoded backwards uniquely, for every input. So feed in fresh noise, made from the vertex labels, decode, and out comes a forest with the right law. As an illustration, our computer ran a discretized version of the decoder on the four-cycle and on the complete graph with four vertices, reading off each edge’s final probability: fresh noise in, uniformly random spanning trees out, within sampling error. Negative dependence is what makes it work: for a law that is all edges or none, the response grows with the number of edges, and the argument breaks.</p>
+<h3><span class="t num">3:50</span>Where it stands</h3>
+<p>The preprint is unrefereed and unchanged since release. In Lean, two comparators cover the main theorems, about 330 files with no unproved steps; we did not build them, and the item is not yet in the formalization list. A companion paper, result 236, uses the same listening idea for Ising spins on trees. Not among those OSVerify reviewed, and we found no public reaction. If it holds, the free uniform spanning forest can be grown from coin flips on every infinite, connected, locally finite graph, by listening to it through noise and decoding the noise back into a forest.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20231%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
