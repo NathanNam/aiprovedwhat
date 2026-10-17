@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When is a random matrix singular? The sharp rate for symmetric sign matrices | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim the exact exponential rate at which a random symmetric matrix of plus and minus ones is singular: one half to the n, as Costello, Tao and Vu conjectured. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/239-symmetric-sign-matrix-singularity/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="When is a random matrix singular?">
+<meta property="og:description" content="Two AI preprints claim the exact exponential rate at which a random symmetric matrix of plus and minus ones is singular: one half to the n, as Costello, Tao and Vu conjectured. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/239-symmetric-sign-matrix-singularity/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/239-symmetric-sign-matrix-singularity/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 239, October 2026</p>
+<h1>When is a random matrix singular?</h1>
+<p class="subtitle">Two preprints claim the sharp exponential rate for symmetric matrices of random signs</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 239 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="jVk3xI3ecwE" data-title="Episode 239: When is a random matrix singular?">
+  <a href="https://youtu.be/jVk3xI3ecwE">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 239: When is a random matrix singular? A symmetric grid of plus and minus signs with two equal rows highlighted.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:14. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/jVk3xI3ecwE?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/jVk3xI3ecwE?t=78" data-t="78"><span class="t">1:18</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/jVk3xI3ecwE?t=145" data-t="145"><span class="t">2:25</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/jVk3xI3ecwE?t=212" data-t="212"><span class="t">3:32</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Fill an n-by-n grid with fair coin flips, +1 or −1, but make it symmetric. How likely is the matrix to be singular? Two given rows are equal when they agree in the other n − 2 columns and their 2-by-2 corner is constant, which has probability exactly 2<sup>−n</sup>; opposite rows cost the same. So the probability is at least about (1/2)<sup>n</sup>, and in 2005 Costello, Tao and Vu conjectured that this is the true exponential rate. The best proven bound was e<sup>−cn</sup> for some small unspecified c (Campos, Jenssen, Michelen and Sahasrabudhe, posted 2021). For matrices with all entries independent, Tikhomirov proved the sharp rate (1/2)<sup>n</sup> (posted 2018), and Jain, Sah and Sawhney did the same for biased signs.</p>
+<p>Result 239 is two OpenAI preprints, 101 pages, dated October 3 and 4, 2026. The first claims that for fair signs P(det A<sub>n</sub> = 0) = (1/2 + o(1))<sup>n</sup>. The second claims that when +1 has a fixed probability p ≠ 1/2, the rate is p² + (1 − p)², the chance that two such signs agree; two agreeing rows attain it.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The sharper expected form, about n²/2<sup>n</sup>, or any explicit error term; uniformity as p varies; other entry distributions. The second paper draws on 23 numbered results from the first.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 2 papers, 101 pages, dated October 3 and 4, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>No</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. The preprints have not been revised since release. There is no Lean formalization for this result, and it is not among those OSVerify reviewed. One community site lists it as an unreviewed partial result, partial because it does not reach the n² form. We found no expert reaction.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Signs to bits.</strong> Flip signs so the first row and column are all ones, and subtract: the rest is −2 times a random symmetric 0/1 matrix one size smaller, singular exactly when the original is.</li>
+  <li><strong>One missing column.</strong> A typical nonsingular 0/1 matrix has some number of columns that would complete it to a singular one, and each costs a factor 2<sup>−N</sup>. So the problem is to show that this number is, on average, smaller than any exponential.</li>
+  <li><strong>Arithmetic.</strong> That count is controlled by the group of integer vectors modulo the matrix, whose structure records the denominators of its inverse. A potential built from that group bounds the count, and growing the matrix one or two rows at a time, the paper shows the potential rarely gets large. The biased paper adds an entropy step, credited to Jain, Sah and Sawhney, which needs p ≠ 1/2.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours, exact: all 2<sup>28</sup> symmetric 7-by-7 sign matrices, 39% singular; the sign-to-bit identity checked exactly for every size up to 7.</li>
+  <li>Ours: 76 million random fair-sign samples up to size 24, each tested exactly. From size 10 up, most singular matrices in our samples have no equal or opposite rows; the share that do bottoms out at 15% near size 18 and then climbs. Our 5-by-5 example has column 4 equal to the sum of the first three.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-sharp-exponential-rate-of-singularity-for-symmetric-Bernoulli-matrices-October-3-2026/symmetric-bernoulli-singularity.pdf">The sharp exponential rate of singularity for symmetric Bernoulli matrices (PDF)</a>, 67 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-sharp-singularity-rate-for-biased-symmetric-sign-matrices-October-4-2026/biased-symmetric-sign-singularity.pdf">The sharp singularity rate for biased symmetric sign matrices (PDF)</a>, 34 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 239.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-sharp-exponential-rate-of-singularity-for-symmetric-Bernoulli-matrices-October-3-2026/symmetric-bernoulli-singularity.pdf">The sharp exponential rate of singularity for symmetric Bernoulli matrices</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-sharp-singularity-rate-for-biased-symmetric-sign-matrices-October-4-2026/biased-symmetric-sign-singularity.pdf">The sharp singularity rate for biased symmetric sign matrices</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Fill a square grid with coin flips, plus one or minus one, but make it symmetric: the entry in row i, column j equals the entry in row j, column i. How likely is the matrix to be singular, with determinant zero, so that its rows are linearly dependent? There is a cheap way. Two given rows are equal when their entries agree in each of the other n − 2 columns, and the 2-by-2 corner where they meet is constant. That has probability exactly 1/2^n. Opposite rows cost the same. So the probability is at least about (1/2)^n, and Costello, Tao and Vu conjectured in 2005 that this is the true exponential rate. Our computer checked all 268 million 7-by-7 sign matrices exactly: 39 percent are singular. Then 76 million random fair-sign samples, each tested exactly, up to size 24. Here is the surprise: from size 10 up, most singular matrices in our samples have no equal or opposite rows at all, like this one, where column 4 is the sum of the first three. The share explained by equal or opposite rows bottoms out at 15 percent near size 18, and only then starts to climb.</p>
+<h3><span class="t num">1:18</span>The claim</h3>
+<p>For symmetric matrices, the best proven bound was e^(−cn), with some small unspecified constant c, by Campos, Jenssen, Michelen and Sahasrabudhe, posted in 2021. For matrices with all entries independent, Tikhomirov proved the sharp rate (1/2)^n, posted in 2018, and Jain, Sah and Sawhney did the same for biased signs. Result 239 is two OpenAI preprints, dated October 3 and 4, 2026. The first claims that for fair signs the probability of singularity is (1/2 + o(1))^n. The second claims that when plus one has a fixed probability p other than one half, the rate is p² + (1 − p)²: the chance that two such signs agree. Two rows that agree attain it. Not claimed: the expected sharper form, about n²/2^n, or any explicit error term; uniformity as p varies; or other entry distributions. The second paper draws on 23 numbered results from the first.</p>
+<h3><span class="t num">2:25</span>How the proof goes</h3>
+<p>First, flip signs so the first row and column are all ones, and subtract. The rest becomes minus two times a random symmetric matrix of zeros and ones, one size smaller, singular exactly when the original is. Here the second row equals the first, so it turns into a row of zeros. We checked this identity exactly for every size up to 7. Next, reduce to one missing column. A typical nonsingular zero-one matrix has some number of columns that would complete it to a singular one, and each costs a factor of 1/2^N. So the whole problem is to show that this number is, on average, smaller than any exponential. That count is controlled by arithmetic: the group of the integers modulo the matrix, whose structure records the denominators of its inverse. A potential built from that group bounds the count, and growing the matrix one or two rows at a time, the paper shows the potential rarely gets large. The biased paper adds an entropy trick, credited to Jain, Sah and Sawhney, which needs p different from one half.</p>
+<h3><span class="t num">3:32</span>Where it stands</h3>
+<p>The preprints are unrefereed and unchanged since release. There is no Lean formalization for this result, and OSVerify has not reviewed it. One community site lists it as an unreviewed partial result, partial because it does not reach the n² form. We found no expert reaction. If they hold, a random symmetric sign matrix is singular with probability (1/2)^n, up to smaller-than-exponential factors, as conjectured 21 years earlier, even though, in our simulations of fair signs from size 10 to 24, most singular matrices fail in some other way.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20239%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
