@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hyperbolic, but never CAT(0)? An answer to Gromov’s question | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims a hyperbolic group with no geometric action on any CAT(0) space, answering Gromov’s question whether every hyperbolic group acts on a negatively curved space. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/257-hyperbolic-group-not-cat0/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Hyperbolic, but never CAT(0)?">
+<meta property="og:description" content="An AI preprint claims a hyperbolic group with no geometric action on any CAT(0) space, answering Gromov’s question whether every hyperbolic group acts on a negatively curved space. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/257-hyperbolic-group-not-cat0/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/257-hyperbolic-group-not-cat0/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 257, October 2026</p>
+<h1>Hyperbolic, but never CAT(0)?</h1>
+<p class="subtitle">An AI preprint claims a hyperbolic group with no geometric CAT(0) action, answering a question of Gromov</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 257 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="5arhQdq9Hac" data-title="Episode 257: Hyperbolic, but never CAT(0)?">
+  <a href="https://youtu.be/5arhQdq9Hac">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 257: Hyperbolic, but never CAT(0)? A unit cube with a zigzag hexagon of its edges and dashed lines from its center.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:25. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/5arhQdq9Hac?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/5arhQdq9Hac?t=97" data-t="97"><span class="t">1:37</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/5arhQdq9Hac?t=143" data-t="143"><span class="t">2:23</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/5arhQdq9Hac?t=226" data-t="226"><span class="t">3:46</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Draw a group as a graph and step back. If every triangle in it is thin, each side staying close to the other two however large the triangle, the group is called hyperbolic. In the flat plane an equilateral triangle of side 16 has a point about 7 units from the other sides; in the hyperbolic plane that distance levels off below 1 (our computation).</p>
+<p>A group is CAT(0) if it acts properly and cocompactly by symmetries on a space whose triangles are at least as thin as flat ones at every scale, not just from far away. Free groups, surface groups of genus two or more, and hyperbolic groups built from cubes have both properties. Gromov, who invented hyperbolic groups, called it “the basic foundational question” whether every hyperbolic group acts this way on a negatively curved space, and said in a 2009 interview that he had tried for about ten years. Brady and Crisp found obstructions in 2007, but only to two-dimensional spaces and only for certain groups. A 2026 preprint by Duchesne and Simon wrote that Gromov’s negatively curved version was expected to fail, but no counterexample was known.</p>
+<p>Result 257 is one OpenAI preprint, 43 pages, dated September 25, 2026. It claims a hyperbolic group, the fundamental group of a finite two-dimensional aspherical complex, that has no geometric action on any proper complete CAT(0) space, in any dimension. So it cannot act that way on a negatively curved space either, which answers Gromov’s question.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>An explicit group: the paper proves that a late enough member of a sequence of random presentations works, and gives no size. Nor anything about Gromov’s random groups, which are CAT(0) at low density, or about actions that are not cocompact or spaces that are not proper.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 43 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The main statement, with two clauses left out (<a href="https://github.com/openai/math/blob/main/lean/docs/257.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. The preprint has not been revised. In Lean, the main statement is formalized: about 57,000 lines with no unproved steps, which we did not build. As the documentation says, the words “two-dimensional” and the locally CAT(0) model clause are not formalized. OSVerify has not reviewed it, and we found no specialist comment on this result.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A template on the Fano plane.</strong> The relations follow a template built on the smallest projective plane, which has 7 points and 7 lines. Four points are doubled; at one of them an incidence is dropped and its twin edge left loose. That gives a graph with 18 vertices and 32 edges. Random tables of labels, among them 90 square tables, supply the relations, and a counting argument shows that, with high probability, the group is hyperbolic and its complex aspherical.</li>
+  <li><strong>Cubes appear by force.</strong> Suppose infinitely many groups in the sequence act on CAT(0) spaces. Normalize each so the average squared generator displacement is 1, average over all random matches, and pass to a limit. In the limit, certain hexagons are forced to have exactly the shape of the six-corner zigzag around a unit cube, all around one common center at distance √3/2.</li>
+  <li><strong>Zero or more, and minus one.</strong> Near that center, the Fano lines force one scalar product to be at least 0. The loose edge forces angles of 54.7°, 70.5° and 54.7°, adding to exactly 180°, and a flat unit square then forces the same product to be −1.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: in the free group, the 160 commuting pairs among short words are all powers of one element.</li>
+  <li>Ours: in ordinary flat space at most 4 of the 7 line directions fit, so flat space fails even sooner; the work in the proof is in handling branching spaces.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-hyperbolic-group-with-no-geometric-CAT0-action-September-25-2026/paper.pdf">A Hyperbolic Group with No Geometric CAT(0) Action (PDF)</a>, 43 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/257.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 257.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-hyperbolic-group-with-no-geometric-CAT0-action-September-25-2026/paper.pdf">A hyperbolic group with no geometric CAT(0) action</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Draw a group as a graph and step back. If every triangle in it is thin, each side staying close to the other two no matter how large the triangle, the group is called hyperbolic. Our computer: in the flat plane an equilateral triangle of side 16 has a point about 7 units from the other sides, while in the hyperbolic plane that distance levels off below 1. A stronger property asks for an actual space. A group is CAT(0) if it acts properly and cocompactly by symmetries on a space whose triangles are at least as thin as flat ones at every scale, not just from far away. Free groups, surface groups of genus two or more, and hyperbolic groups built from cubes have both properties. Gromov, who invented hyperbolic groups, called it the basic foundational question whether every hyperbolic group acts this way on a negatively curved space, and said in a 2009 interview that he had tried for about 10 years. Before this release, the known obstructions, by Brady and Crisp in 2007, ruled out only two-dimensional spaces, for certain groups. A trick that works for other groups, using elements that commute like the two directions of a grid, has nothing to grip here: in a torsion-free hyperbolic group, like this one, commuting elements are powers of one element. Our check found 160 commuting pairs among short words in the free group, all of that kind. A 2026 preprint by Duchesne and Simon wrote that Gromov’s negatively curved version was expected to fail, but no counterexample was known.</p>
+<h3><span class="t num">1:37</span>The claim</h3>
+<p>Result 257 is one OpenAI preprint, 43 pages, dated September 25, 2026. It claims a hyperbolic group, the fundamental group of a finite two-dimensional aspherical complex, that has no geometric action on any proper complete CAT(0) space, in any dimension. So it cannot act that way on a negatively curved space either, which answers Gromov’s question. Not claimed: an explicit group. The paper proves that a late enough member of a sequence of random presentations works, and gives no size. Nor anything about Gromov’s random groups, which are CAT(0) at low density; nor actions that are not cocompact, or spaces that are not proper.</p>
+<h3><span class="t num">2:23</span>How the proof goes</h3>
+<p>The relations follow a template built on the Fano plane, the smallest projective plane: 7 points, 7 lines. 4 points are doubled; at one of them an incidence is dropped and its twin edge left loose, giving a graph with 18 vertices and 32 edges. Random tables of labels, among them 90 square tables, supply the relations, and a counting argument shows that, with high probability, the group is hyperbolic and its complex aspherical. Now suppose infinitely many groups in the sequence act on CAT(0) spaces. Normalize each so the average squared generator displacement is one, average over all random matches, and pass to a limit. In the limit, certain hexagons are forced to have exactly the shape of the six-corner zigzag around a unit cube, all around one common center at distance √3/2. Near that center, the Fano lines force one scalar product to be at least zero. The loose edge forces angles of 54.7, 70.5 and 54.7 degrees, adding to exactly 180, and a flat unit square then forces the same product to be −1. That contradiction ends the proof. Our check: ordinary flat space would fail even sooner, since at most 4 of the 7 line directions fit, so the work is in handling branching spaces.</p>
+<h3><span class="t num">3:46</span>Where it stands</h3>
+<p>The preprint is unrefereed and unchanged since release. In Lean, the main statement is formalized, about 57,000 lines with no unproved steps; the words two-dimensional and the locally CAT(0) model clause are not, as the documentation says, and we did not build it. OSVerify has not reviewed it, and we found no specialist comment on this result. If it holds, hyperbolic groups and negatively curved spaces part ways: Gromov’s hoped-for equivalence fails, by a random group built on the smallest projective plane.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20257%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
