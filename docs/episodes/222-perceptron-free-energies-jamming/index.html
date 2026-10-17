@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How much can one neuron store? Perceptrons and jamming | AI Proved What?</title>
+<meta name="description" content="Four AI preprints claim replica formulas for perceptron free energies and the jamming exponents of the negative perceptron. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/222-perceptron-free-energies-jamming/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="How much can one neuron store?">
+<meta property="og:description" content="Four AI preprints claim replica formulas for perceptron free energies and the jamming exponents of the negative perceptron. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/222-perceptron-free-energies-jamming/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/222-perceptron-free-energies-jamming/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 222, October 2026</p>
+<h1>How much can one neuron store?</h1>
+<p class="subtitle">Four preprints claim replica formulas for perceptron free energies and the jamming exponents of the negative perceptron</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 222 in OpenAI’s catalog: <a href="#papers-in-result">all 4 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="cL_nksIkYKU" data-title="Episode 222: How much can one neuron store?">
+  <a href="https://youtu.be/cL_nksIkYKU">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 222: How much can one neuron store? A line through random points, with the weight vector drawn as an arrow.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:45. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/cL_nksIkYKU?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/cL_nksIkYKU?t=71" data-t="71"><span class="t">1:11</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/cL_nksIkYKU?t=191" data-t="191"><span class="t">3:11</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/cL_nksIkYKU?t=289" data-t="289"><span class="t">4:49</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A perceptron is the simplest artificial neuron: N weights and a list of random patterns, each of which must have a positive dot product with the weights. How many patterns can one set of weights satisfy? For weights on a sphere, two per weight: by Cover’s count, the chance of success at that density is exactly one half for every N. For weights that are only ±1, Krauth and Mézard predicted about 0.833 per weight in 1989. In a tiny case, three weights and three patterns, only one of the eight sign choices works; our exhaustive search up to 22 weights falls from 0.92 toward 0.85. Physicists also study a softer version, where each violated pattern costs a factor e<sup>−β</sup>, and ask for the pressure: the log of the average Boltzmann factor, per weight.</p>
+<p>Result 222 is four OpenAI preprints, 248 pages, dated September 24, 2026. Two claim that pressure exactly, at every density and every positive temperature: for ±1 weights with any bounded reward, and for spherical weights with any bounded continuous reward. Each answer is an infimum over a whole overlap profile, a Parisi-type formula with full replica symmetry breaking; for spherical weights, Györgyi and Reimann predicted it in 2000. A third paper treats patterns from bi-orthogonally invariant random matrices.</p>
+<p>The fourth paper, 133 pages, goes to zero temperature in one model: spherical weights, margin −1, and a quadratic penalty. Taking the system size to infinity, then the temperature to zero, then the density down to its critical value from the overcrowded side, it claims a sharp jamming threshold (with no value), one contact per degree of freedom, and cumulative power laws for small gaps and forces with exponents 0.4126930 &lt; γ &lt; 0.4126934 and 0.4231063 &lt; θ &lt; 0.4231088. Physicists predicted these values for hard spheres in 2014 and for this perceptron in 2016.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The hard capacity itself: the Ising paper says the hard-constraint limit needs extra control of the order of limits. A July 2026 preprint by Shmalo, which says most of its work was done by AI systems, claims to close the remaining gaps in the 0.833 proof by computer. Nor are values of the free energies or of the jamming threshold given. Our evaluation of the Ising paper’s functional at its simplest trial, at zero temperature and outside the theorem, gives a solution entropy that crosses zero at 0.83308.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, four papers, 248 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>In part (<a href="https://github.com/openai/math/blob/main/lean/docs/222.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 16, 2026. None of the four preprints has been revised since they were added to the repository in its initial commit on October 6, 2026. In Lean, the spherical formula is formalized in full (about 71,000 lines); for the Ising paper, only that the formula is finite, for continuous rewards; the bi-orthogonal paper not at all; the jamming paper only in unlisted supporting lemmas. The linked Lean has no unproved steps; we did not build it. The exponent relation γ = 1/(2 + θ) got a physics-level proof by Parisi and Zamponi in June 2026, credited by the jamming paper. None is among those OSVerify reviewed, and we found no expert reaction or earlier proof.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Upper bound.</strong> The free-energy proofs adapt the spin-glass proofs of the Parisi formula. A general reward gives no sign for the usual interpolation, so they use Mourrat’s method: enrich the system with a hierarchy of Gaussian fields, treat the number of patterns as time, and show that if the bound failed, a comparison would have a negative minimum, where overlap identities and Panchenko’s ultrametricity force a contradiction.</li>
+  <li><strong>Lower bound.</strong> Remove two patterns, restore them as independent marks, and add a few weights at a time: the cavity method.</li>
+  <li><strong>Jamming.</strong> The jamming paper proves its own pressure formula for the unbounded penalty, takes the limits in order, and shows the critical profile scales as a power law near jamming. The exponents come from a number a* where an eigenvalue equals its own parameter: γ = 1 − 2a*, and γ = 1/(2 + θ) follows. a* is pinned down by a 681-line Python certificate printed in the paper; our run matches the printed hash and reaches the same 24 checkpoints, which shows the code runs, not that its error analysis is right.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: Cover’s count; exhaustive enumeration of small Ising perceptrons; the Ising functional at constant paths (0.83308, outside the theorem).</li>
+  <li>Ours: gradient-descent minima of the margin −1 model near jamming, up to 800 weights: 1.019, 1.016 and 1.005 contacts per weight; the gap and force slopes have not settled. Local minima at finite size, not the paper’s limit. The Lean line count is ours.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-free-energy-of-the-Ising-random-perceptron-September-24-2026/The-free-energy-of-the-Ising-random-perceptron-September-24-2026.pdf">The free energy of the Ising random perceptron (PDF)</a>, 45 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-free-energy-of-the-spherical-random-perceptron-September-24-2026/The-free-energy-of-the-spherical-random-perceptron-September-24-2026.pdf">The free energy of the spherical random perceptron (PDF)</a>, 30 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-spherical-perceptron-with-bi-orthogonally-invariant-disorder-September-24-2026/The-spherical-perceptron-with-bi-orthogonally-invariant-disorder-September-24-2026.pdf">The spherical perceptron with bi-orthogonally invariant disorder (PDF)</a>, 40 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Microscopic-jamming-in-the-negative-spherical-perceptron-September-24-2026/Microscopic-jamming-in-the-negative-spherical-perceptron-September-24-2026.pdf">Microscopic jamming in the negative spherical perceptron (PDF)</a>, 133 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/222.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 222.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 4 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-free-energy-of-the-Ising-random-perceptron-September-24-2026/The-free-energy-of-the-Ising-random-perceptron-September-24-2026.pdf">The free energy of the Ising random perceptron</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Microscopic-jamming-in-the-negative-spherical-perceptron-September-24-2026/Microscopic-jamming-in-the-negative-spherical-perceptron-September-24-2026.pdf">Microscopic jamming in the negative spherical perceptron</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-spherical-perceptron-with-bi-orthogonally-invariant-disorder-September-24-2026/The-spherical-perceptron-with-bi-orthogonally-invariant-disorder-September-24-2026.pdf">The spherical perceptron with bi-orthogonally invariant disorder</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-free-energy-of-the-spherical-random-perceptron-September-24-2026/The-free-energy-of-the-spherical-random-perceptron-September-24-2026.pdf">The free energy of the spherical random perceptron</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A perceptron is the simplest artificial neuron: N weights, and a list of random patterns, each of which must have a positive dot product with the weights, landing on the positive side of a plane through the origin. How many patterns can one set of weights satisfy? For weights on a sphere, the answer is two per weight: by Cover’s count, the chance of success at that density is exactly one half for every N, and the drop around it sharpens as N grows. For weights that are only plus or minus one, Krauth and Mézard predicted in 1989 about 0.833 per weight. In a tiny case, three weights and three patterns, only one of the eight sign choices satisfies all three. Our computer checked every sign choice for up to 22 weights: the average capacity falls from 0.92 toward 0.85, the right range, but nowhere near settled. Physicists also study a softer version: each violated pattern costs a factor e^(−β), and one asks for the log of the average Boltzmann factor, per weight: the pressure, at every density and temperature.</p>
+<h3><span class="t num">1:11</span>The claim</h3>
+<p>Result 222 bundles four OpenAI preprints, 248 pages, dated September 24, 2026. Two of them claim that pressure exactly, at every density and every positive temperature: for plus-or-minus-one weights with any bounded reward, and for spherical weights with any bounded continuous one. Each answer is an infimum over a whole overlap profile, a Parisi-type formula with full replica symmetry breaking; for spherical weights, Györgyi and Reimann predicted it in 2000. A third paper treats spherical weights with patterns from structured random matrices. Not claimed: the hard capacity itself. The Ising paper says the hard-constraint limit needs extra control of the order of limits. A July 2026 preprint by Shmalo, which says most of its work was done by AI systems, claims to close the remaining gaps in the 0.833 proof by computer. Still, our computer evaluated the Ising paper’s functional at its simplest trial, at zero temperature, outside the theorem: the solution entropy it implies crosses zero at 0.83308, Krauth and Mézard’s number. The fourth paper, 133 pages, goes to zero temperature in one model: spherical weights, margin minus one, and a quadratic penalty for violations. Taking the system size to infinity, then the temperature to zero, then the density down to its critical value from the overcrowded side, it claims a sharp jamming threshold, though no value for it; one contact per degree of freedom; and cumulative power laws for small gaps and small forces, with exponents γ ≈ 0.412693, and θ ≈ 0.42311. Physicists predicted these values for hard spheres in 2014, and for this perceptron in 2016.</p>
+<h3><span class="t num">3:11</span>How the proof goes</h3>
+<p>The free-energy proofs adapt the spin-glass proofs of the Parisi formula, with a twist. A general reward gives no sign for the usual interpolation, so the upper bound uses Mourrat’s method: enrich the system with a hierarchy of Gaussian fields, treat the number of patterns as time, and show that if the bound failed, a comparison would have a negative minimum, where overlap identities and Panchenko’s ultrametricity force a contradiction. For the lower bound, remove two patterns, restore them as independent marks, and add a few weights at a time: the cavity method. The jamming paper proves its own pressure formula for the unbounded penalty, takes the limits in order, and shows the critical profile scales as a power law near jamming. The exponents come from a number a* where an eigenvalue equals its own parameter: γ = 1 − 2a*, and γ = 1/(2 + θ) follows. a* is pinned down by a 681-line Python certificate printed in the paper. Our computer extracted it, matched the paper’s printed hash, and ran it to the same 24 checkpoints. That shows the code runs, not that its error analysis is right. As an illustration, our computer minimized the penalty for up to 800 weights, deleting patterns until the system just jams. Contacts per weight fell from 1.02 to 1.005, close to one. The gap and force curves look roughly like power laws, but at these sizes their slopes have not settled at the predicted values. These are local minima at finite size, not the paper’s limit.</p>
+<h3><span class="t num">4:49</span>Where it stands</h3>
+<p>All four preprints are unrefereed and unrevised. In Lean, the spherical formula is formalized in full, about 71,000 lines; for the Ising paper, only that the formula is finite, for continuous rewards; the structured paper not at all, and the jamming paper only in unlisted supporting lemmas; we did not build any of it. The relation between the two exponents got a physics-level proof in June 2026 by Parisi and Zamponi, which the jamming paper credits. None is among those OSVerify reviewed, and we found no expert reaction or earlier proof. If they hold, the physicists’ replica formulas for the perceptron are exact at every positive temperature, and the jamming exponents of the margin-minus-one perceptron are theorems, pinned to within a few millionths.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20222%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
