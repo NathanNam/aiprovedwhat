@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simple, amenable, finitely presented? An infinite group with all three | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims an infinite group that is finitely presented, simple and amenable, built by rearranging pieces of squares cut along golden-ratio lines. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/253-finitely-presented-simple-amenable-group/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Simple, amenable, finitely presented?">
+<meta property="og:description" content="An AI preprint claims an infinite group that is finitely presented, simple and amenable, built by rearranging pieces of squares cut along golden-ratio lines. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/253-finitely-presented-simple-amenable-group/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/253-finitely-presented-simple-amenable-group/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 253, October 2026</p>
+<h1>Simple, amenable, finitely presented?</h1>
+<p class="subtitle">An AI preprint claims an infinite group with all three properties</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 253 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="ob1ktdL3ztQ" data-title="Episode 253: Simple, amenable, finitely presented?">
+  <a href="https://youtu.be/ob1ktdL3ztQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 253: Simple, amenable, finitely presented? Three unit squares with one golden-ratio piece each, cycled by arrows.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:13. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/ob1ktdL3ztQ?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/ob1ktdL3ztQ?t=72" data-t="72"><span class="t">1:12</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/ob1ktdL3ztQ?t=123" data-t="123"><span class="t">2:03</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/ob1ktdL3ztQ?t=210" data-t="210"><span class="t">3:30</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Three properties of a group:</p>
+<ul>
+  <li><strong>Finitely presented</strong>: finitely many generators and rules.</li>
+  <li><strong>Simple</strong>: no normal subgroups except the trivial ones.</li>
+  <li><strong>Amenable</strong>: there are finite sets that barely move.</li>
+</ul>
+<p>Finite simple groups have all three, but trivially. Infinite examples had only two at a time. Thompson’s group V (1965) is finitely presented and simple, but it contains free groups, so it is not amenable. Groups built from one-dimensional cut-and-shift dynamics are simple (Matui) and amenable (Juschenko and Monod, 2012), but they are never finitely presented. The question of all three at once was on record by 2008, and Juschenko and Monod named it the next problem. In 2021 de Cornulier wrote that, as far as he knew, there was not even a plausible candidate.</p>
+<p>Result 253 is one OpenAI preprint, 58 pages, dated September 23, 2026. It claims an infinite group that is finitely presented, simple and amenable. The group rearranges pieces of several unit squares. The squares are cut along lines whose positions, and two of whose slopes, come from the golden ratio. The group is generated by cycling three identical pieces.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<ul>
+  <li>An explicit list of rules. The relations are all words up to some length that are trivial in the group, and that length is never given. With the Lean version’s 206 squares, the paper’s list of generators alone has about 354 billion entries, by our count.</li>
+  <li>The stronger finiteness condition called type F∞.</li>
+  <li>Anything about other two-dimensional groups in general.</li>
+</ul>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 58 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>Yes, for 206 squares (<a href="https://github.com/openai/math/blob/main/lean/docs/253.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. The preprint has not been revised. In Lean, the whole statement is formalized for 206 squares: infinite, finitely presented, simple and amenable. That is about 85,000 lines with no unproved steps (we did not build it). OSVerify has not reviewed the paper. On October 8, Matthew Zaremsky crossed the question off his list of open problems. We found no detailed public check, and no error has been reported.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Simple.</strong> After cutting, any piece fits into any piece of larger area, so small rearrangements can be built from cycles of three pieces. The alternating group on five letters is perfect. So a normal subgroup containing one nontrivial element contains small copies of it, and moving those copies around produces every generator.</li>
+  <li><strong>Amenable.</strong> For any finitely many moves, the paper builds random partitions of the squares into polygon cells. Each move just slides the cells, and the random law barely notices the slide. In two dimensions independent random choices are not enough, so the paper correlates them.</li>
+  <li><strong>Finitely presented.</strong> The group’s Schur multiplier is finitely generated. The paper builds a finitely presented central cover, using steep lines whose golden-ratio conjugate slope is tiny. Finitely many more relations then kill the central kernel.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: shifting an n×n square changes a fraction 2/n of it (0.031 at n = 64). A ball in a free group always changes by more than its own size.</li>
+  <li>Ours: with independent random bits, a one-step slide becomes undetectable like 1/N in one dimension, but stays near 0.84 in two.</li>
+  <li>Ours: under the Lean’s constants the steep slope is at least about 439,000, and its conjugate is under 0.000002 in size.</li>
+  <li>Ours: a central cover of order 120 becomes the simple group of order 60 by adding one relation.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-Infinite-Finitely-Presented-Simple-Amenable-Group-September-23-2026/paper.pdf">An infinite finitely presented simple amenable group (PDF)</a>, 58 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/253.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 253.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-Infinite-Finitely-Presented-Simple-Amenable-Group-September-23-2026/paper.pdf">An infinite finitely presented simple amenable group</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Three properties of a group. Finitely presented: finitely many generators and rules. Simple: no normal subgroups except the trivial ones, so it cannot be broken into smaller groups. Amenable: it has finite sets that barely move, like a large square on a grid; our computer checked that shifting an n×n square changes a fraction 2/n of it, while a ball in a free group always changes by more than its own size. Finite simple groups have all three, but trivially. Infinite examples had two at a time. Thompson’s group V, from 1965, is finitely presented and simple, but contains free groups, so it is not amenable. Matui showed that groups built from 1-dimensional cut-and-shift dynamics are simple, and in 2012 Juschenko and Monod showed they are amenable; but such groups are never finitely presented. So all three at once was the obvious question: it was on record by 2008, and Juschenko and Monod named it the next problem. In two dimensions, cut-and-shift groups can contain free groups, so amenability can fail; in 2021 de Cornulier wrote that, as far as he knew, there was not even a plausible candidate.</p>
+<h3><span class="t num">1:12</span>The claim</h3>
+<p>Result 253 is one OpenAI preprint, 58 pages, dated September 23, 2026. It claims an infinite, finitely presented, simple, amenable group. The group rearranges pieces of several unit squares, cut along lines whose positions, and two of whose slopes, come from the golden ratio; it is generated by cycling three identical pieces. Not claimed: an explicit list of rules. The relations are all words up to some length that are trivial in the group, and that length is never given. With the Lean version’s choice of 206 squares, the paper’s list of generators alone has about 354 billion entries, by our count. Also not claimed: the stronger finiteness condition called type F∞, or anything about other 2-dimensional groups in general.</p>
+<h3><span class="t num">2:03</span>How the proof goes</h3>
+<p>Simple: after cutting, any piece fits into any piece of larger area, so any small rearrangement can be built from cycles of three pieces. Because the alternating group on 5 letters is perfect, a normal subgroup with one nontrivial element contains small copies of it, and moving those copies around produces every generator. Our computer checked the key identity: a 3-cycle is a commutator of two even permutations of 5 things. Amenable: for any finitely many moves, the paper builds random partitions of the squares into polygon cells that each move just slides, with a law that barely notices the slide. In two dimensions, independent random choices are not enough; our toy: in one dimension their detectability falls like 1/N, in two it stays near 0.84. The paper correlates them. Finitely presented: the paper shows the group’s Schur multiplier is finitely generated, and builds a finitely presented central cover, using steep lines whose golden-ratio conjugate slope is tiny. Under the Lean version’s constants, that slope must be at least about 439,000, and its conjugate under 0.000002 in size. Finitely many more relations then kill the central kernel. Our toy of that last step: a group of order 120 becomes the simple group of order 60 by adding one relation.</p>
+<h3><span class="t num">3:30</span>Where it stands</h3>
+<p>The preprint is unrefereed and unchanged since release. In Lean, the whole statement is formalized for 206 squares: infinite, finitely presented, simple and amenable, about 85,000 lines with no unproved steps; we did not build it. OSVerify has not reviewed it. On October 8 Matthew Zaremsky crossed the question off his list of open problems; we found no detailed public check, and no error has been reported. If it holds, finitely presented, simple and amenable can live together: a golden-ratio jigsaw, 206 boards in the Lean version, with a finite rulebook that no one has written down.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20253%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
