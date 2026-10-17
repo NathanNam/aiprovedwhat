@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One relation, one way to fail? Gersten’s conjecture for one-relator groups | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Gersten’s conjecture: a one-relator group with no Baumslag–Solitar subgroup is hyperbolic, and every hyperbolic one-relator group is virtually compact special. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/258-gersten-one-relator-hyperbolic/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="One relation, one way to fail?">
+<meta property="og:description" content="Two AI preprints claim Gersten’s conjecture: a one-relator group with no Baumslag–Solitar subgroup is hyperbolic, and every hyperbolic one-relator group is virtually compact special. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/258-gersten-one-relator-hyperbolic/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/258-gersten-one-relator-hyperbolic/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 258, October 2026</p>
+<h1>One relation, one way to fail?</h1>
+<p class="subtitle">Two AI preprints claim Gersten’s conjecture and virtual compact specialness for one-relator groups</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 258 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="c0D-TQsoVrU" data-title="Episode 258: One relation, one way to fail?">
+  <a href="https://youtu.be/c0D-TQsoVrU">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 258: One relation, one way to fail? Three boxed relators of lengths 9, 5 and 3, joined by arrows, the middle one highlighted.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:05. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/c0D-TQsoVrU?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/c0D-TQsoVrU?t=80" data-t="80"><span class="t">1:20</span><span>What was known</span></a></li>
+  <li><a href="https://youtu.be/c0D-TQsoVrU?t=130" data-t="130"><span class="t">2:10</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/c0D-TQsoVrU?t=210" data-t="210"><span class="t">3:30</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take a free group and impose one equation. Some of these one-relator groups are tame, like a surface group of genus two, or a free group in which one generator is forced to have finite order. Others are wild. In the Baumslag–Solitar group BS(1,2), where t a t⁻¹ = a², powers of a get squeezed: a¹⁰²⁴ is a word of length only 20, and the sphere of radius 20 holds 441,070 elements (our computation).</p>
+<p>Hyperbolic groups are the negatively curved ones: thin triangles, and loops whose filling area grows only linearly with their length. Baumslag–Solitar subgroups rule that out. Around 1989 Steve Gersten asked whether, for one-relator groups, these subgroups are the only obstruction. The question became known as Gersten’s conjecture. For groups with a finite classifying space the answer is no, by a 2023 example, but for one relation it stayed open, and a 2025 survey listed it as a conjecture. Earlier work settled many cases: Newman and Wise for relators that are proper powers, Louder and Wilton and then Linton for relators far from primitive, and Mutanguha for ascending extensions of free groups. Linton also reduced the whole conjecture to a family of two-generator groups.</p>
+<p>Result 258 is two OpenAI preprints, both dated September 25, 2026. The first, 53 pages, claims Gersten’s conjecture: a finitely generated one-relator group with no Baumslag–Solitar subgroup is hyperbolic. The second, 145 pages, claims that every hyperbolic one-relator group is virtually compact special. A finite-index subgroup then sits inside a right-angled Artin group, so these groups are residually finite and linear over the integers, and with Kielak and Linton’s work they are virtually free-by-cyclic.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>An algorithm that decides hyperbolicity; anything for one-relator groups that do contain Baumslag–Solitar subgroups; or anything for groups with more relations, where the statement can fail. In free-by-cyclic, the free normal subgroup may have infinite rank.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two papers, 53 and 145 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>No</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. Neither preprint has been revised. There is no Lean formalization for this result, and OSVerify has not reviewed it. We found no comment on this result from specialists in one-relator groups. The arguments build heavily on Marco Linton’s earlier reductions.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>The Magnus hierarchy.</strong> Rewrite the group around a letter whose exponent sum is zero, after a trick if there is none, and the relator gets shorter. Baumslag’s group goes from a relator of length 9 to 5 to 3, and at the middle stage a Baumslag–Solitar group appears inside (our computation).</li>
+  <li><strong>Hyperbolicity.</strong> The first paper climbs down Linton’s hierarchy using a new combination theorem for certain extensions. That theorem is proved by contradiction, with measures on infinite words and Brinkmann’s theorem that free-group automorphisms with nothing periodic stretch everything.</li>
+  <li><strong>Specialness.</strong> The second paper builds special quotients of Linton’s two-generator groups and lifts them back with a new filling criterion. It relies on the first paper.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: a commutator loop of size 20 needs 400 cells in the integer grid; a similar loop in BS(1,2) took about 2 million in our reduction, an upper bound.</li>
+  <li>Ours: simple tests leave 55 of the 84 classes of two-generator relators of length 8 undecided.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/paper.pdf">Baumslag–Solitar-Free One-Relator Groups Are Hyperbolic (PDF)</a>, 53 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/paper.pdf">Virtual Compact Specialness of Hyperbolic One-Relator Groups (PDF)</a>, 145 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 258.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Baumslag-Solitar-free-one-relator-groups-are-hyperbolic-September-25-2026/paper.pdf">Baumslag-Solitar-free one-relator groups are hyperbolic</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Virtual-compact-specialness-of-hyperbolic-one-relator-groups-September-25-2026/paper.pdf">Virtual compact specialness of hyperbolic one-relator groups</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Take a free group and impose one equation. Some of these one-relator groups are tame: a surface group of genus two, or a free group in which one generator is forced to have finite order. Others are wild. In the Baumslag–Solitar group, where t a t⁻¹ = a², powers of a get squeezed: our computer found that a¹⁰²⁴ is a word of length only 20, and a sphere of radius 20 already holds 441,000 elements. Hyperbolic groups are the negatively curved ones: thin triangles, and loops whose filling area grows only linearly with their length. Baumslag–Solitar subgroups rule that out. In our count, a commutator loop of size 20 in the integer grid needs 400 cells, and a similar loop in the Baumslag–Solitar group took about 2 million in our reduction. Around 1989, Steve Gersten asked whether, for one-relator groups, these subgroups are the only obstruction: is every one-relator group without Baumslag–Solitar subgroups hyperbolic? It became known as Gersten’s conjecture. For a broad class of well-behaved groups the answer is no, by a 2023 example, but for one relation it stayed open; a 2025 survey listed it as a conjecture.</p>
+<h3><span class="t num">1:20</span>What was known</h3>
+<p>Known cases covered a lot. Relations that are proper powers give hyperbolic groups, by Newman, and Wise showed they are virtually compact special, a strong form of being built from cubes. Louder and Wilton, and then Linton, handled relators that are far from primitive, and Mutanguha settled ascending extensions of free groups. Linton reduced the whole conjecture to a family of two-generator groups. The main tool is the Magnus hierarchy: rewrite the group around a letter whose exponent sum is zero, after a trick if there is none, and the relator gets shorter. Baumslag’s group, whose relator has length 9, goes to 5, then 3, and at the middle stage a Baumslag–Solitar group appears inside. Even our simple tests leave 55 of the 84 kinds of two-generator relator of length 8 undecided.</p>
+<h3><span class="t num">2:10</span>The claims</h3>
+<p>Result 258 is two OpenAI preprints, both dated September 25, 2026. The first, 53 pages, claims Gersten’s conjecture: a finitely generated one-relator group with no Baumslag–Solitar subgroup is hyperbolic. The proof climbs down Linton’s hierarchy using a new combination theorem for certain extensions, proved by contradiction with measures on infinite words and Brinkmann’s theorem that free-group automorphisms with nothing periodic stretch everything. The second, 145 pages, claims that every hyperbolic one-relator group is virtually compact special. A finite-index subgroup then sits inside a right-angled Artin group, so these groups are residually finite and linear over the integers, and with Kielak and Linton’s work they are virtually free-by-cyclic. It builds special quotients of Linton’s two-generator groups and lifts them back with a new filling criterion. It relies on the first paper. Not claimed: an algorithm that decides hyperbolicity, anything for one-relator groups that do contain Baumslag–Solitar subgroups, or anything for groups with more relations, where it can fail. In free-by-cyclic, the free normal subgroup may have infinite rank.</p>
+<h3><span class="t num">3:30</span>Where it stands</h3>
+<p>Both preprints are unrefereed and unchanged since release. Neither is formalized in Lean, and OSVerify has not reviewed them. We found no comment on this result from specialists in one-relator groups. The arguments build heavily on Marco Linton’s earlier reductions. If they hold, a single relation can stop negative curvature in only one way, a Baumslag–Solitar subgroup; and once a one-relator group is negatively curved, it is among the best behaved groups known.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20258%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
