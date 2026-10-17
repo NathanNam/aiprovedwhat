@@ -3,25 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 207: The ℓ¹-Bass conjecture for all discrete groups | AI Proved What?</title>
-<meta name="description" content="The ℓ¹-Bass conjecture for all discrete groups. Result 207 in OpenAI&#x27;s math release (Algebra): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Idempotents: only 0 and 1? The ℓ¹-Bass conjecture | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Bass’s trace conjecture for every group, its ℓ¹ strengthening, and Kaplansky’s idempotent conjecture in characteristic zero, with Lean for the algebraic part. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/207-l1-bass-conjecture-all-discrete/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 207: The ℓ¹-Bass conjecture for all discrete groups | AI Proved What?">
-<meta property="og:description" content="The ℓ¹-Bass conjecture for all discrete groups. Result 207 in OpenAI&#x27;s math release (Algebra): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Idempotents: only 0 and 1?">
+<meta property="og:description" content="Two AI preprints claim Bass’s trace conjecture for every group, its ℓ¹ strengthening, and Kaplansky’s idempotent conjecture in characteristic zero, with Lean for the algebraic part. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/207-l1-bass-conjecture-all-discrete/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/207-l1-bass-conjecture-all-discrete/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body>
@@ -39,35 +37,93 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 207 · <a href="../../subjects/algebra/">Algebra</a></p>
-<h1 class="result-title">The ℓ¹-Bass conjecture for all discrete groups</h1>
+<p class="meta">Episode 207, October 2026</p>
+<h1>Idempotents: only 0 and 1?</h1>
+<p class="subtitle">Two preprints claim Bass’s trace conjecture for every group, its ℓ¹ strengthening, and Kaplansky’s idempotent conjecture in characteristic zero</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 207 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="K0T7NhjFSEA" data-title="Episode 207: Idempotents: only 0 and 1?">
+  <a href="https://youtu.be/K0T7NhjFSEA">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 207: Idempotents: only 0 and 1? Two rows of bars showing the coefficients of an idempotent in the infinite dihedral group.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:59. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/K0T7NhjFSEA?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/K0T7NhjFSEA?t=57" data-t="57"><span class="t">0:57</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/K0T7NhjFSEA?t=127" data-t="127"><span class="t">2:07</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/K0T7NhjFSEA?t=194" data-t="194"><span class="t">3:14</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Proves the <i>ℓ</i><sup>1</sup>-Bass conjecture for every discrete group: Hattori–Stallings traces of idempotent matrices over <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi mathvariant="normal">ℓ</mi><mn>1</mn></msup><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\ell^1(G)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord">ℓ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">G</span><span class="mclose">)</span></span></span></span> are supported on finitely many finite-order conjugacy classes. The algebraic companion proves the integral Bass trace conjecture and Kaplansky's idempotent conjecture for torsion-free groups over every commutative unital characteristic-zero domain.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take a group of symmetries, such as the shifts and flips of the integer line. Its group ring is made of finite formal sums of symmetries. Some elements are idempotent: squaring them changes nothing, and each one splits the ring into pieces. Symmetries of finite order make them easy to find: a flip s has order two, so (1 + s)/2 is idempotent.</p>
+<p>In the 1970s, Hyman Bass proposed a rule: record the trace of such a piece separately for each conjugacy class of the group; it should live only on symmetries of finite order, never on an infinite-order shift. (His 1976 conjecture concerns integer coefficients, where only the identity survives; the complex form allows finite-order classes.) Kaplansky asked: if the group has no finite-order symmetries except the identity, are zero and one the only idempotents, over any field? As the papers tell it, both were known for many classes of groups, Bass’s rule for amenable and linear ones, but not in general.</p>
+<p>Result 207 bundles two OpenAI preprints of 33 pages each. <a href="https://github.com/openai/math/blob/main/preprints/The-Bass-trace-conjecture-for-complex-group-rings-September-24-2026/The-Bass-trace-conjecture-for-complex-group-rings-September-24-2026.pdf">The Bass trace conjecture and the characteristic-zero Kaplansky idempotent conjecture</a> (September 24, 2026) claims Bass’s conjecture for every group over the complex numbers, and, with an older result of Linnell, over the integers. For groups without finite-order elements it gets Kaplansky’s conjecture in characteristic zero: over any commutative domain of characteristic zero, the only idempotents are 0 and 1. <a href="https://github.com/openai/math/blob/main/preprints/The-l1-Bass-Conjecture-for-Discrete-Groups-October-5-2026/l1-bass-conjecture.pdf">The ℓ¹-Bass Conjecture for Discrete Groups</a> (October 5, 2026) claims the stronger version over the ℓ¹ algebra, which allows infinite absolutely convergent sums: the trace lives on finitely many finite-order classes.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Kaplansky’s conjecture in positive characteristic, such as two; or the stronger question for C*-algebras (the Kadison–Kaplansky conjecture), which another paper in the same release claims is false. Our computer builds an idempotent in the shifts-and-flips group with 14 terms, 6 of them shifts; their coefficients cancel class by class, so the trace sits only on the identity and one class of flips.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 33 pages each, dated September 24 and October 5, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
-    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/207.md">scope notes</a>)</dd>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean (partly)</dt>
+    <dd>The complex theorem and the idempotent result (<a href="https://github.com/openai/math/blob/main/lean/docs/207.md">docs</a>); not the ℓ¹ theorem or the integer version</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 17, 2026.</p>
+<p class="ledger-note">Last checked October 16, 2026. Neither preprint has been revised since they were added to the repository in its initial commit on October 6, 2026. The first paper’s complex theorem and its idempotent result are formalized in Lean (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/BassTrace.lean">Bass trace statement</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/BassTorsionFree.lean">torsion-free statement</a>), about 24,000 lines with no unproved steps; we did not rebuild them. The ℓ¹ theorem in the catalog headline is not formalized, and neither is the integer version. Neither paper is among those OSVerify reviewed, and we found no expert reaction.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>High dimension kills the trace.</strong> Fix an infinite-order symmetry g. The trace at g can be written as a quantity on closed chains that wind once around g, in every even dimension, and it stays the same.</li>
+  <li><strong>The first paper.</strong> These chains form a cycle built from one fixed graph of bounded degree (Proposition 7.3), and a Pfaffian cocycle reads off the trace divided by 2<sup>m</sup> (Proposition 8.3). Every invariant cocycle vanishes on such sparse cycles in high enough dimension (Theorem 2.1). For the smallest graphs, of degree two, the paper’s inequality needs dimension about 274, by our count.</li>
+  <li><strong>The ℓ¹ paper.</strong> First make the idempotent decay exponentially, without changing its trace (Proposition 2.2). Then write the trace as an average of curvatures on simplices (Proposition 3.3), and build a connection from averages over many scales, whose curvature shrinks like a small number to the power of the dimension (Theorem 6.1).</li>
+  <li><strong>Finitely many.</strong> One radius is fixed for all conjugacy classes before the dimension grows; only classes that meet that ball can survive, and there are finitely many.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>An exact idempotent in the shifts-and-flips group (ours): 14 terms, 6 of them shifts, cancelling class by class.</li>
+  <li>The dimension threshold 274 for graph degree two, from the first paper’s inequality (3.6) (ours).</li>
+  <li>Further checks (ours, not on screen): 150 rational idempotents of Q[C<sub>n</sub>] for n up to 12; 736 small integer idempotent matrices over Z[C<sub>2</sub>] and Z[C<sub>3</sub>], all with trace at the identity; small-support searches in 8 torsion-free groups that find only 0 and 1. The Lean line counts are ours.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Bass-trace-conjecture-for-complex-group-rings-September-24-2026/The-Bass-trace-conjecture-for-complex-group-rings-September-24-2026.pdf">The Bass trace conjecture and the characteristic-zero Kaplansky idempotent conjecture (PDF)</a>, 33 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-l1-Bass-Conjecture-for-Discrete-Groups-October-5-2026/l1-bass-conjecture.pdf">The ℓ¹-Bass Conjecture for Discrete Groups (PDF)</a>, 33 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/207.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 207.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -76,18 +132,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/The-Bass-trace-conjecture-for-complex-group-rings-September-24-2026/The-Bass-trace-conjecture-for-complex-group-rings-September-24-2026.pdf">The Bass trace conjecture and the characteristic-zero Kaplansky idempotent conjecture</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Take a group of symmetries, such as the shifts and flips of the integer line. Its group ring is made of finite formal sums of symmetries. Some elements of this ring are idempotent: squaring them changes nothing, and each one splits the ring into pieces. Symmetries of finite order make them easy to find. A flip has order two, so averaging it with the identity, one half of one plus the flip, is idempotent. In the 1970s, Hyman Bass proposed a rule. Record the trace of such a piece separately for each conjugacy class of the group; it should live only on symmetries of finite order, never on an infinite-order shift. And Irving Kaplansky asked: if the group has no finite-order symmetries except the identity, are zero and one the only idempotents, over any field? As the papers tell it, both were known for many classes of groups, Bass’s rule for amenable and linear ones, but not in general.</p>
+<h3><span class="t num">0:57</span>The claim</h3>
+<p>Result 207 bundles two OpenAI preprints, of 33 pages each. The first, dated September 24, 2026, claims Bass’s conjecture for every group over the complex numbers, and, with an older result of Linnell, over the integers. For groups without finite-order elements, it gets Kaplansky’s conjecture in characteristic zero: over any commutative domain of characteristic zero, the only idempotents are zero and one. The second, dated October 5, claims the stronger version over the ℓ¹ algebra, which allows infinite absolutely convergent sums: the trace lives on finitely many finite-order classes. Here is a picture. Our computer builds an idempotent in the shifts-and-flips group with 14 terms, 6 of them shifts. Their coefficients cancel class by class, so the trace sits only on the identity and one class of flips. Not claimed: Kaplansky’s conjecture in positive characteristic, such as two, or the stronger question for C* algebras. Another paper in the same release claims the C* version is false.</p>
+<h3><span class="t num">2:07</span>How the proof goes</h3>
+<p>Both proofs rest on one idea: high dimension kills the trace. Fix an infinite-order symmetry g. The trace at g can be written as a quantity on closed chains that wind once around g, in every even dimension, and it stays the same. The first paper turns these chains into a cycle built from one fixed graph of bounded degree, and a Pfaffian cocycle reads off the trace divided by two to the m. Then it shows that every invariant cocycle vanishes on such sparse cycles in high enough dimension. For the smallest graphs, of degree two, the paper’s inequality needs dimension about 274, by our count. The ℓ¹ paper first makes the idempotent decay exponentially, without changing its trace. Then it writes the trace as an average of curvatures on simplices, and builds a connection from averages over many scales, whose curvature shrinks like a small number to the power of the dimension. The key choice is to fix one radius for all conjugacy classes before the dimension grows; only classes that meet that ball can survive, and there are finitely many.</p>
+<h3><span class="t num">3:14</span>Where it stands</h3>
+<p>Both preprints are unrefereed and have not been revised. The first paper’s complex theorem and its idempotent result are formalized in Lean, about 24,000 lines with no unproved steps; we did not rebuild them. The ℓ¹ theorem in the catalog headline is not formalized, and neither is the integer version. Neither paper is among those OSVerify reviewed, and we found no expert reaction. If they hold, Bass’s trace rule holds for every group, and Kaplansky’s idempotent question has the answer yes in characteristic zero, for group rings, though not for their C* algebra cousins, if the release’s other paper is right.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20207%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../206-finite-lattice-representation-undecidability/"><span class="dir">Previous · 206</span><span class="pt">Finite lattice representation and undecidability</span></a>
-  <a class="next" href="../208-finite-symmetric-tensor-categories-verlinde/"><span class="dir">Next · 208</span><span class="pt">Finite symmetric tensor categories and the Verlinde tower</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebra/">More in algebra</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
