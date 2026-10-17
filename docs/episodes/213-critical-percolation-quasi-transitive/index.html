@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Does it percolate? Critical percolation | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim no infinite cluster at the critical point of percolation: on the cubic lattice, and on every symmetric graph with p_c below one. An animated explainer, the claim in plain words, the earlier AI claims they credit, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/213-critical-percolation-quasi-transitive/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Does it percolate?">
+<meta property="og:description" content="Two AI preprints claim no infinite cluster at the critical point of percolation: on the cubic lattice, and on every symmetric graph with p_c below one. An animated explainer, the claim in plain words, the earlier AI claims they credit, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/213-critical-percolation-quasi-transitive/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/213-critical-percolation-quasi-transitive/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 213, October 2026</p>
+<h1>Does it percolate?</h1>
+<p class="subtitle">Two preprints claim no infinite cluster at the critical point: on the cubic lattice, and on every symmetric graph with p<sub>c</sub> below one</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 213 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="PDdnT2Xl0vQ" data-title="Episode 213: Does it percolate?">
+  <a href="https://youtu.be/PDdnT2Xl0vQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 213: Does it percolate? A square grid of random clusters in six colours.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:42. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/PDdnT2Xl0vQ?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/PDdnT2Xl0vQ?t=79" data-t="79"><span class="t">1:19</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/PDdnT2Xl0vQ?t=147" data-t="147"><span class="t">2:27</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/PDdnT2Xl0vQ?t=236" data-t="236"><span class="t">3:56</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Keep each edge of a grid open with probability p, independently. Small p gives small islands; large p gives one infinite cluster. In between is a critical value p<sub>c</sub> where an infinite cluster first appears. The question is what happens exactly at p<sub>c</sub>: is there already an infinite cluster, so that the transition jumps like a cliff, or does it start from zero, like a ramp?</p>
+<p>On a tree everything is exact, and it is a ramp. On the square grid, Harris and Kesten settled it, using a symmetry that makes a crossing exactly fifty-fifty at one half. In high dimensions, the lace expansion settled it. But from three dimensions up to ten, above all the cube lattice, it stayed open for decades. In 1996, Benjamini and Schramm conjectured more: no infinite cluster at p<sub>c</sub> on every symmetric graph, as long as p<sub>c</sub> is below one.</p>
+<p>Result 213 bundles two OpenAI preprints dated September 24, 2026. The first (20 pages) claims no infinite cluster at p<sub>c</sub> on the cubic lattice, for both bond and site percolation. The second (42 pages) claims the bond form of the Benjamini–Schramm conjecture: on every infinite, connected, locally finite, quasi-transitive graph with p<sub>c</sub> below one, there is almost surely no infinite cluster at p<sub>c</sub>. That includes bond percolation on the integer lattice in every dimension from two up.</p>
+<p>They were not first on the cube. In August 2026, Justin Leder of Anthropic posted an AI-generated, Lean-checked proof of the bond case on the integer lattice from dimension two up, and work prompted by Ahmed Bou-Rabee (updated September 5) claimed the site case from dimension three. Both OpenAI papers credit them. The new claim here is the general theorem.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Site percolation on general graphs; any value of p<sub>c</sub>; critical exponents; rates.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two papers (20 and 42 pages), dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Both statements (<a href="https://github.com/openai/math/blob/main/lean/docs/213.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 16, 2026. Neither preprint has been revised since they were added to the repository in its initial commit on October 6, 2026. Both theorems are formalized in Lean with the statements pinned down exactly (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/CriticalPercolation.lean">the general statement</a>): 10,358 lines for the cube and 68,224 for the general theorem, with no unproved steps; we did not build them. The general Lean proof does not assume the theorems the paper cites, so it must prove them, or substitutes, itself. Neither paper is among those OSVerify reviewed, and we found no expert reaction to them.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A finite inequality.</strong> If every relay point reaches a target with high probability, then reaching some relay means you probably reach the target. It is a stronger form of an inequality conjectured by Kozma and Nitzan in 2024.</li>
+  <li><strong>The cube.</strong> If an infinite cluster existed at p<sub>c</sub>, a finite pattern would show it, and finite patterns survive a tiny decrease in p. A thirteen-move relay carries the connection from cube to cube, and a contour count shows it goes on forever: percolation below p<sub>c</sub>, which is impossible.</li>
+  <li><strong>Every symmetric graph.</strong> Sort graphs by how fast their balls grow. Exponential growth was done by Hutchcroft in 2016 and is cited. Faster than any polynomial but slower than exponential: two large clusters would be forced side by side too often. Polynomial growth: the graph hides grid-like coordinates, and a relay along corridors builds an infinite cluster below p<sub>c</sub>.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Our checks: the gluing inequality held on 2,000 random small graphs, every configuration (no violations, sometimes exact equality; with max in place of min it fails 60 times in 200). Exact crossings on small square blocks are exactly 1/2 at p = 1/2.</li>
+  <li>Our simulation on the cubic lattice near p<sub>c</sub> ≈ 0.2488 (an outside estimate): the chance of reaching distance 24 is still about 0.22 and falling slowly. A finite box cannot tell zero from tiny. The Lean line counts are ours.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Critical-bond-and-site-percolation-on-the-cubic-lattice-September-24-2026/paper.pdf">Critical bond and site percolation on the cubic lattice (PDF)</a>, 20 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/No-percolation-at-criticality-on-quasi-transitive-graphs-September-24-2026/paper.pdf">No percolation at criticality on quasi-transitive graphs (PDF)</a>, 42 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/213.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 213.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Critical-bond-and-site-percolation-on-the-cubic-lattice-September-24-2026/paper.pdf">Critical bond and site percolation on the cubic lattice</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/No-percolation-at-criticality-on-quasi-transitive-graphs-September-24-2026/paper.pdf">No percolation at criticality on quasi-transitive graphs</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Keep each edge of a grid open with probability p, independently. Small p gives small islands; large p gives one infinite cluster. In between there is a critical value, p_c, where an infinite cluster first appears. Here is the same random grid at p equal to 0.45, 0.5 and 0.55: scattered clusters, then large ones, then one that takes almost everything. The question is what happens exactly at p_c. Is there already an infinite cluster, so that the transition jumps like a cliff? Or does it start from zero, like a ramp? On a tree of degree three, everything is exact: p_c is one half, and the chance of an infinite cluster rises continuously from zero, at first in a straight line. A ramp. On the square grid, Harris and Kesten settled it, using a symmetry that makes a crossing exactly fifty-fifty at one half; our computer confirms that on small blocks. In high dimensions, the lace expansion settled it. But from three dimensions up to ten, above all the cube lattice, it stayed open for decades. In 1996, Benjamini and Schramm conjectured more: no infinite cluster at p_c on every symmetric graph, as long as p_c is below one.</p>
+<h3><span class="t num">1:19</span>The claim</h3>
+<p>Result 213 bundles two OpenAI preprints, both dated September 24, 2026. The first, 20 pages, claims no infinite cluster at p_c on the cubic lattice, for both bond and site percolation. The second, 42 pages, claims the bond form of the Benjamini–Schramm conjecture: on every infinite, connected, locally finite, quasi-transitive graph with p_c below one, there is almost surely no infinite cluster at p_c. That includes bond percolation on the integer lattice in every dimension from two up. They were not first on the cube. In August, Justin Leder of Anthropic posted an AI-generated, Lean-checked proof of the bond case on the integer lattice from dimension two up, and in early September, work prompted by Ahmed Bou-Rabee claimed the site case from dimension three. Both OpenAI papers credit them. The new claim here is the general theorem. Not claimed: site percolation on general graphs, any value of p_c, critical exponents, or rates.</p>
+<h3><span class="t num">2:27</span>How the proof goes</h3>
+<p>Both proofs use one finite inequality, a stronger form of one conjectured by Kozma and Nitzan in 2024: if every relay point reaches a target with high probability, then reaching some relay means you probably reach the target. Our computer checked it on 2,000 random small graphs by brute force: no violations, and sometimes exact equality. With max in place of min, it fails 60 times in 200. The cube proof argues by contradiction. If an infinite cluster existed at p_c, a finite pattern would show it, and finite patterns survive a tiny decrease in p. A 13-move relay then carries the connection from cube to cube, and a contour count shows it goes on forever. That is percolation below p_c: impossible. The general paper sorts graphs by how fast their balls grow. Exponential growth was already done by Hutchcroft, in 2016, and is cited. Faster than any polynomial but slower than exponential: two large clusters would be forced side by side too often, and that is too unlikely. Polynomial growth: the graph hides grid-like coordinates, and a relay along corridors builds an infinite cluster below p_c. Our simulation on the cubic lattice shows why proof was needed: near p_c, the chance of reaching distance 24 is still about 0.22 and falling slowly. A finite box cannot tell zero from tiny.</p>
+<h3><span class="t num">3:56</span>Where it stands</h3>
+<p>Both preprints are unrefereed and have not been revised. Both theorems are formalized in Lean, with the statements pinned down exactly: about 10,000 lines for the cube and 68,000 for the general theorem, with no unproved steps; we did not build them. The general Lean proof does not assume the theorems the paper cites, so it must prove them, or substitutes, itself. Neither paper is among those OSVerify reviewed, and we found no expert reaction to them. If they hold, critical percolation dies on every symmetric graph with p_c below one, when its edges are random, and the cubic lattice now has three separate claims of the same answer.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20213%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
