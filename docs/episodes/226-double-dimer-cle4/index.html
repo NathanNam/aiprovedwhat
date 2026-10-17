@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two random tilings, one loop soup? Double dimers | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that double-dimer loops in the half-plane converge to CLE4 as curves, not just in their topology. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/226-double-dimer-cle4/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Two random tilings, one loop soup?">
+<meta property="og:description" content="An AI preprint claims that double-dimer loops in the half-plane converge to CLE4 as curves, not just in their topology. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/226-double-dimer-cle4/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/226-double-dimer-cle4/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 226, October 2026</p>
+<h1>Two random tilings, one loop soup?</h1>
+<p class="subtitle">A preprint claims double-dimer loops in the half-plane converge to CLE<sub>4</sub> as curves</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 226 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="HcF7ZWsBcjI" data-title="Episode 226: Two random tilings, one loop soup?">
+  <a href="https://youtu.be/HcF7ZWsBcjI">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 226: Two random tilings, one loop soup? Large double-dimer loops in a square, the biggest in yellow.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:22. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/HcF7ZWsBcjI?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/HcF7ZWsBcjI?t=71" data-t="71"><span class="t">1:11</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/HcF7ZWsBcjI?t=120" data-t="120"><span class="t">2:00</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/HcF7ZWsBcjI?t=222" data-t="222"><span class="t">3:42</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Cover a grid with dominoes; Kasteleyn’s formula counts them exactly, 12,988,816 tilings of an 8-by-8 board. Draw two independent random tilings on the same board and overlay them: where they agree you see a doubled domino, and everywhere else the dominoes join into closed loops that alternate between the two tilings. This is the double-dimer model, a random soup of nested, non-crossing loops.</p>
+<p>A conjecture credited to Kenyon says that, zoomed out, these loops become CLE<sub>4</sub>, the conformal loop ensemble that traces level lines of the Gaussian free field. Kenyon, Dubédat, Basok and Chelkak, and Bai and Wan proved step by step that the loops’ topology converges, as Basok and Izyurov restated for the half-plane: how each loop winds around marked points, and how they nest. But as recently as January 2025, experts wrote that convergence of the loops themselves, as curves, remained open: the model lacks the crossing estimates that usually give compactness.</p>
+<p>Result 226 is one OpenAI preprint, 33 pages, dated September 23, 2026. It claims that missing step in one setting: on the square lattice in the upper half-plane, with the standard Temperleyan boundary, the complete nested loop ensemble converges to nested CLE<sub>4</sub>, matching every macroscopic loop as an unparametrized curve, along the full mesh limit. Which CLE it is comes from the earlier work; what is new is compactness of the loops as curves, and the step from puncture data to curves.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Bounded domains, other graphs or boundary conditions, paths between boundary points, or rates of convergence.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Released as a preprint</dt>
+    <dd>OpenAI, 33 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Not formalized</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. The preprint has not changed since it was added to the repository in its initial commit on October 6, 2026, and there is no Lean for it. Not among those OSVerify reviewed; we found no expert reaction and no competing claim. Release item 223 claims CLE<sub>4</sub> for a different model, the random-cluster model at q = 4, by an unrelated route; neither cites the other.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Exact transfer matrices.</strong> In a finite rectangle, scan column by column: the horizontal dominoes crossing each seam, with alternate rows flipped, behave like particles, and one column step is a free-fermion transfer matrix whose spectrum, and the exact number of tilings, the paper computes. Moving k particles between the two tilings costs a penalty growing like k², so many loop crossings of a strip are extremely unlikely, with no prior crossing bound assumed.</li>
+  <li><strong>Short segments.</strong> A two-particle insertion on a short segment has tiny but signed entries; a positivity argument, with weights that at least halve down each nesting chain, turns the signed sum into a bound on bad crossings.</li>
+  <li><strong>Half-plane and identification.</strong> Wilson’s algorithm, through Temperley’s bijection with spanning trees, carries both estimates to the half-plane. The crossing bounds give compactness; then puncture data pin each limit loop to a CLE<sub>4</sub> loop, ruling out invisible excursions and backtracking.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the paper’s exact tiling formula equals direct counts (for example 192 tilings of the 5-by-5 Temperleyan board, the number of spanning trees of a 3-by-3 grid); our sampler is exactly uniform.</li>
+  <li>Ours: 7,550 overlaid pairs on squares up to 800 wide. Nesting around a point grows at 0.097 per e-fold of scale (CLE<sub>4</sub>: 1/π² ≈ 0.101); loop length grows with diameter to the power 1.47 (3/2 predicted); no sample crossed the middle third more than four times. Finite squares, not the half-plane: illustration only.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/paper.pdf">The Curve Scaling Limit of Half-Plane Double Dimers (PDF)</a>, 33 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 226.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-curve-scaling-limit-of-half-plane-double-dimers-September-23-2026/paper.pdf">The curve scaling limit of half-plane double dimers</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Cover a grid with dominoes, each covering two neighboring squares. Kasteleyn’s formula counts them exactly: an 8-by-8 chessboard has 12,988,816 tilings. Now draw two independent random tilings on the same board and lay one over the other. Where they agree you see a doubled domino; everywhere else the dominoes join into closed loops that alternate between the two tilings. This is the double-dimer model: a random soup of nested, non-crossing loops. A conjecture credited to Kenyon says that, zoomed out, these loops become CLE₄, the conformal loop ensemble that also traces level lines of the Gaussian free field. Step by step, Kenyon, Dubédat, Basok and Chelkak, and Bai and Wan proved that the loops’ topology converges, as Basok and Izyurov restated for the half-plane: how each loop winds around marked points, and how they nest. But as recently as January 2025, experts wrote that convergence of the loops themselves, as curves, remained open: the model lacks the crossing estimates that usually give compactness.</p>
+<h3><span class="t num">1:11</span>The claim</h3>
+<p>Result 226 is one OpenAI preprint, 33 pages, dated September 23, 2026. It claims that missing step in one setting: on the square lattice in the upper half-plane, with the standard Temperleyan boundary, the complete nested loop ensemble converges to nested CLE₄, matching every macroscopic loop as an unparametrized curve, along the full mesh limit. Which CLE it is comes from the earlier work: the paper imports the topological convergence from Basok and Izyurov’s restatement. What is new is compactness of the loops as curves, and the step from puncture data to curves. Not claimed: bounded domains, other graphs or boundary conditions, paths between boundary points, or rates.</p>
+<h3><span class="t num">2:00</span>How the proof goes</h3>
+<p>The new estimates live in a finite rectangle. Scan it column by column: the horizontal dominoes crossing each seam, with alternate rows flipped, behave like particles, and one column step is a free-fermion transfer matrix, whose spectrum the paper computes exactly, along with the exact number of tilings. Moving k particles between the two tilings costs a penalty growing like k², so many loop crossings of a strip are extremely unlikely, with no prior crossing bound assumed. A second estimate inserts a two-particle operator on a short segment. Its entries are tiny but signed, and a positivity argument, with weights that at least halve down each nesting chain, turns the signed sum into a bound on bad crossings. Wilson’s algorithm, through Temperley’s bijection with spanning trees, carries both estimates from rectangles to the half-plane. The crossing bounds give compactness; then puncture data pin each limit loop to a CLE₄ loop, ruling out invisible excursions and backtracking. As an illustration, our computer checked the paper’s exact tiling formula against direct counts, sampled exactly uniform tilings with Wilson’s algorithm, and overlaid 7,550 pairs on squares up to 800 wide. Loops around a point accumulated at 0.097 per e-fold of scale, against CLE₄’s 1/π², about 0.101. Loop length grew with diameter to the power 1.47, against 3/2. And no sample crossed the middle third more than four times, at any size.</p>
+<h3><span class="t num">3:42</span>Where it stands</h3>
+<p>The preprint is unrefereed and unchanged since release. There is no Lean for it. It is not among those OSVerify reviewed, and we found no expert reaction and no competing claim. Another release paper, 223, claims CLE₄ for a different model, the random-cluster model at q equal to four, by an unrelated route; neither cites the other. If it holds, double-dimer loops in the half-plane become CLE₄ as curves, not just in their topology, closing, in the half-plane, the gap the experts named; general domains remain open.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20226%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
