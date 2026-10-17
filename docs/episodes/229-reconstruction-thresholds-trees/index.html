@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When does a tree forget its root? Exact reconstruction thresholds | AI Proved What?</title>
+<meta name="description" content="Three AI preprints claim that the Kesten–Stigum line is the exact reconstruction threshold for three colours and four ferromagnetic colours on trees. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/229-reconstruction-thresholds-trees/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="When does a tree forget its root?">
+<meta property="og:description" content="Three AI preprints claim that the Kesten–Stigum line is the exact reconstruction threshold for three colours and four ferromagnetic colours on trees. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/229-reconstruction-thresholds-trees/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/229-reconstruction-thresholds-trees/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 229, October 2026</p>
+<h1>When does a tree forget its root?</h1>
+<p class="subtitle">Three preprints claim exact reconstruction thresholds for three colours and four ferromagnetic colours on trees</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 229 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="J_cQPw1LgCE" data-title="Episode 229: When does a tree forget its root?">
+  <a href="https://youtu.be/J_cQPw1LgCE">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 229: When does a tree forget its root? A binary tree with a hidden root and coloured leaves.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:47. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/J_cQPw1LgCE?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/J_cQPw1LgCE?t=93" data-t="93"><span class="t">1:33</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/J_cQPw1LgCE?t=158" data-t="158"><span class="t">2:38</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/J_cQPw1LgCE?t=239" data-t="239"><span class="t">3:59</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Play telephone on a family tree. The root gets one of three colours at random; each child copies its parent’s colour, but with noise. Far down the tree you see only the descendants’ colours, and the tree’s shape. Can you guess the root better than chance, by a margin that never fades however deep you look? In a tiny case our computer worked out exactly (two levels, leaves A, A, A, B, a channel that keeps a colour 13 times in 15), the chance the root was A is 733/807, about 91%. The noise is measured by λ, the channel’s second eigenvalue; each generation shrinks the signal by λ and multiplies the witnesses by d, the number of children. Counting colours works exactly when dλ² &gt; 1: the Kesten–Stigum line, from 1966. For two colours nothing does better (at or below the line, nothing works); from five colours up, Allan Sly showed in 2011 that cleverer inference beats the line. Three and four colours were settled only on trees with many children.</p>
+<p>Result 229 is three OpenAI preprints, 93 pages, dated September 25 and October 5, 2026. The first claims that for three colours reconstruction happens exactly when dλ² &gt; 1, on every regular tree with at least two children and every Poisson tree with mean above one, for either sign of λ, with no reconstruction at equality; so random proper three-colourings of a tree with four children per vertex forget the root. It also gives the exact threshold for detecting three hidden communities in a sparse random network, (a − b)² &gt; 3(a + 2b) for a, b &gt; 0 and mean degree above one, relying on earlier transfer and algorithm results. The second claims the same line for four colours in the ferromagnetic case only; the other sign can beat the line at some degrees, as Mossel, Sly and Sohn showed. The third shows that for four ferromagnetic colours on any tree with bounded degree, reconstruction happens exactly when a certain flow capacity of the tree is positive.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Antiferromagnetic four colours, five or more colours, community detection with four groups, rates of decay, or trees with one child per vertex. Parts of the proofs are computer-assisted.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, three papers, 93 pages, dated September 25 and October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>In part (<a href="https://github.com/openai/math/blob/main/lean/docs/229.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. None of the three preprints has been revised since release. In Lean, the listed comparators check only the classical direction above the line, for three colours; the Lean folders also prove the full threshold for positive λ, and both signs on the binary tree, but none of it is catalogued, and the four-colour papers have no Lean. We reran the two small certificate scripts and they pass; we did not run the long ones. None is among those OSVerify reviewed, and we found no expert reaction.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Four colours.</strong> One polynomial of degree six whose average stays non-negative at every step down the tree. That buys a small cubic loss of information each time branches combine, so the information falls at every level, even at equality, where the linear loss is zero. The polynomial inequalities are checked by exact computer arithmetic, printed in the paper.</li>
+  <li><strong>Three colours, positive λ.</strong> Analytic: an entropy bookkeeping that cannot balance at any informative fixed point.</li>
+  <li><strong>Three colours, negative λ.</strong> Computer-assisted throughout; near the colouring case it adds finite experiments built to be more informative than the truth, and shows even those fall below a certified gap.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours, exact: the depth-2 worked example (posterior 733/807, 61/807, 13/807).</li>
+  <li>Ours, simulation: three colours on the binary tree to depth 14 by population dynamics, checked against direct simulation on real trees. Below the line the advantage dies away; well above it levels off; at the line it is still 0.23 at depth 14, and at depth 160 the information is still not gone. Simulation cannot settle the threshold case.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-exact-reconstruction-threshold-for-the-three-state-symmetric-channel-September-25-2026/paper.pdf">The exact reconstruction threshold for the three-state symmetric channel (PDF)</a>, 60 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Reconstruction-Threshold-for-the-Ferromagnetic-Four-State-Potts-Model-October-5-2026/four-state-potts.pdf">The Reconstruction Threshold for the Ferromagnetic Four-State Potts Model (PDF)</a>, 22 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Capacity-Criterion-for-Four-State-Potts-Reconstruction-on-Trees-October-5-2026/four-state-capacity.pdf">A Capacity Criterion for Four-State Potts Reconstruction on Trees (PDF)</a>, 11 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/229.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 229.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Reconstruction-Threshold-for-the-Ferromagnetic-Four-State-Potts-Model-October-5-2026/four-state-potts.pdf">The Reconstruction Threshold for the Ferromagnetic Four-State Potts Model</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Capacity-Criterion-for-Four-State-Potts-Reconstruction-on-Trees-October-5-2026/four-state-capacity.pdf">A Capacity Criterion for Four-State Potts Reconstruction on Trees</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-exact-reconstruction-threshold-for-the-three-state-symmetric-channel-September-25-2026/paper.pdf">The exact reconstruction threshold for the three-state symmetric channel</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Play telephone on a family tree. The root gets one of three colors at random. Each child copies its parent’s color, but with some noise: it keeps the color with a certain probability, and otherwise switches. Far down the tree you see only the descendants’ colors, and the tree’s shape. Can you guess the root’s color better than chance, by a margin that never fades, however deep you look? That is the reconstruction problem. Here is a tiny case our computer worked out exactly. Two levels, four leaves, colored A, A, A and B, with a channel that keeps a color 13 times in 15. The chance the root was A is 733/807, about 91%. The noise is measured by one number, λ, the channel’s second eigenvalue. Each generation shrinks the signal by λ, and multiplies the witnesses by d, the number of children. Simply counting colors works exactly when dλ² exceeds one: the Kesten–Stigum line, from 1966. But is counting the best you can do? For two colors, yes: at or below the line, nothing works. For five or more, no: Allan Sly showed in 2011 that, from five colors up, cleverer inference beats the line. Three and four colors sat in between. Sly proved the line exact for three colors on trees with many children, and a 2025 paper by Mossel, Sly and Sohn settled three colors, and four ferromagnetic colors, at large average degree. Small trees stayed largely open.</p>
+<h3><span class="t num">1:33</span>The claim</h3>
+<p>Result 229 is three OpenAI preprints, 93 pages, dated September 25 and October 5, 2026. The first claims, for three colors, that reconstruction happens exactly when dλ² exceeds one, on every regular tree with at least two children and every Poisson tree with mean above one, for either sign of λ, with no reconstruction at equality. So a random proper three-coloring of a tree with four children per vertex forgets the root. It also gives the exact threshold for finding three hidden communities in a sparse random network, relying on earlier transfer and algorithm results. The second paper claims the same line for four colors, in the ferromagnetic case only, where children tend to copy; the other sign can beat the line at some degrees, as Mossel, Sly and Sohn showed. The third shows that, for four ferromagnetic colors on any tree with bounded degree, reconstruction happens exactly when a certain flow capacity of the tree is positive.</p>
+<h3><span class="t num">2:38</span>How the proof goes</h3>
+<p>Above the line, counting already works. The hard part is the other side, and especially the line itself. For four colors, the proof rests on one polynomial of degree six, whose average stays non-negative at every step down the tree. That buys a small cubic loss of information each time branches combine, so the information falls a little at every level, even at equality, where the linear loss is zero. The polynomial inequalities are checked by exact computer arithmetic, printed in the paper. For three colors and positive λ, the proof is analytic: an entropy bookkeeping that cannot balance at any informative fixed point. For negative λ the argument is computer-assisted throughout; near the coloring case it adds finite experiments built to be more informative than the truth, and shows even those fall below a certified gap. As an illustration, our computer simulated three colors on the binary tree to depth 14, checked against direct simulation on real trees. Below the line, the advantage dies away; well above, it levels off. Exactly at the line it is still 0.23 at depth 14, falling slowly, and at depth 160 the information is still not gone. Simulation could never settle this. That is why the proofs matter.</p>
+<h3><span class="t num">3:59</span>Where it stands</h3>
+<p>All three preprints are unrefereed and unchanged since release, and partly computer-assisted. In Lean, the listed comparators check only the classical direction above the line, for three colors; the Lean folders also prove the full threshold for positive λ, and for both signs on the binary tree, but none of it is catalogued, and the four-color papers have no Lean. We reran the two small certificate scripts, and they pass; we did not run the long ones. Not among those OSVerify reviewed, and we found no expert reaction. If they hold, the sixty-year-old Kesten–Stigum line is exactly where trees forget, for three colors and for four ferromagnetic colors, at every degree from two children up.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20229%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
