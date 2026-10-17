@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Is there a logic for polynomial time? Choiceless polynomial time falls short | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim that choiceless polynomial time with counting cannot express a polynomial-time linear-algebra query over F3, confirming a 1997 Blass–Gurevich–Shelah conjecture, and that witnessed symmetric choice adds power. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/243-choiceless-polynomial-time/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Is there a logic for polynomial time?">
+<meta property="og:description" content="Two AI preprints claim that choiceless polynomial time with counting cannot express a polynomial-time linear-algebra query over F3, confirming a 1997 Blass–Gurevich–Shelah conjecture, and that witnessed symmetric choice adds power. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/243-choiceless-polynomial-time/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/243-choiceless-polynomial-time/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 243, October 2026</p>
+<h1>Is there a logic for polynomial time?</h1>
+<p class="subtitle">Two preprints claim that choiceless polynomial time with counting does not capture polynomial time</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 243 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="jYw15UVbSHs" data-title="Episode 243: Is there a logic for polynomial time?">
+  <a href="https://youtu.be/jYw15UVbSHs">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 243: Is there a logic for polynomial time? Two small charged grids, one consistent and one inconsistent.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:32. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/jYw15UVbSHs?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/jYw15UVbSHs?t=81" data-t="81"><span class="t">1:21</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/jYw15UVbSHs?t=142" data-t="142"><span class="t">2:22</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/jYw15UVbSHs?t=226" data-t="226"><span class="t">3:46</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A computer always stores a graph in some order and algorithms use it; a logic sees only the graph. With an ordering supplied, Immerman and Vardi showed in 1982 that fixed-point logic expresses exactly the polynomial-time properties; without one, Gurevich conjectured that no logic captures polynomial time. The leading remaining candidate is choiceless polynomial time, introduced by Blass, Gurevich and Shelah: a parallel program over sets built from the input that may form “the set of all” and, in its extended version, count, but never “pick one”. Their 1997 preprint conjectured that even with counting it falls short of polynomial time. The best earlier lower bound for a yes-or-no question, by Dawar, Richerby and Rossman, needed a cap on how deeply sets nest.</p>
+<p>Result 243 is two OpenAI preprints, dated September 23 and 24, 2026. The first claims a polynomial-time property of unordered finite structures, consistency of a linear system over 𝔽<sub>3</sub> read off eight relations, that choiceless polynomial time with counting cannot express at any nesting depth of sets, confirming the Blass–Gurevich–Shelah conjecture (Shelah had claimed such a result in 2000, but the problem was still treated as open). The second claims that adding witnessed symmetric choice, an operator of Lichter and Schweitzer, strictly increases expressive power: one sentence with one such choice defines a property no choiceless program can, and tells the same two charged grids apart.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>That no logic captures polynomial time (which would imply P ≠ NP); anything about the classic Cai–Fürer–Immerman graphs; explicit sizes.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 2 papers, 79 pages, dated September 23 and 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Yes, both theorems (<a href="https://github.com/openai/math/blob/main/lean/docs/243.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. The preprints have not been revised since release. In Lean, both theorems are formalized, about 18,000 and 26,000 lines with no unproved steps, each defining choiceless polynomial time from scratch in its own way (we did not build them); the repository’s notes contradict themselves about whether the second result is included. OSVerify has not reviewed them, and we found no expert reaction.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Two charged grids.</strong> On an L × L × L grid, each edge carries states and each vertex carries configurations, with a charge at every vertex: all zero in one structure, a single one in the other. The linear system is consistent for charge zero and inconsistent for a single charge.</li>
+  <li><strong>Short supports at any depth.</strong> A symmetry group of Heisenberg type, whose translations commute only up to a central correction, forces every object a polynomial computation builds to be pinned down, for the key symmetries, by a short list of elements, whatever the nesting depth of its sets. Counting logic with about L<sup>7/4</sup> variables cannot tell the grids apart, and that transfers to every set the program can build.</li>
+  <li><strong>Large L.</strong> So a fixed program gives the same answer on both grids once L is large enough, while the true answers differ. The witnessed-choice sentence instead picks one edge state at a time, each pick certified by exhibiting symmetries.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the smallest grids the paper allows (L = 2) have 55,404 elements; the symmetry group has 3<sup>17</sup> ≈ 129 million elements and 20 orbits, one per block. Reading the system off the relations: consistent for charge zero (rank 55 = 55), inconsistent for each of the 8 single-charge placements (55 vs 56).</li>
+  <li>Ours: from the paper’s inequalities, the proof needs L of at least about 10<sup>47</sup>. Running the witnessed-choice procedure on the L = 2 grids accepted 6 of 6 charge-zero runs and rejected 6 of 6 single-charge runs.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/paper.pdf">Choiceless polynomial time with counting does not capture polynomial time (PDF)</a>, 34 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/paper.pdf">Witnessed symmetric choice is strictly stronger than choiceless polynomial time with counting (PDF)</a>, 45 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/243.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 243.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Choiceless-polynomial-time-with-counting-does-not-capture-polynomial-time-September-23-2026/paper.pdf">Choiceless polynomial time with counting does not capture polynomial time</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Witnessed-symmetric-choice-is-strictly-stronger-than-choiceless-polynomial-time-with-counting-September-24-2026/paper.pdf">Witnessed symmetric choice is strictly stronger than choiceless polynomial time with counting</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A computer always stores a graph in some order, and algorithms use it: start at the first vertex. A logic sees only the graph itself. With an ordering supplied, Immerman and Vardi showed in 1982 that fixed-point logic expresses exactly the polynomial-time properties. Without one, Gurevich conjectured that no logic captures polynomial time. The leading remaining candidate is choiceless polynomial time, introduced by Blass, Gurevich and Shelah: a parallel program over sets built from the input, allowed to form the set of all objects of a kind, and in its extended version to count, but never to pick one. Their 1997 preprint conjectured that even with counting it falls short of polynomial time. The best earlier lower bound for a yes-or-no question, by Dawar, Richerby and Rossman, needed a cap on how deeply sets nest. Choice is the issue because of symmetry. On the smallest grid the paper allows, we count 55,404 elements, and a symmetry group of 3^17, about 129 million elements, mixes the elements attached to each edge, and to each vertex, completely: inside such a block, every element looks like every other, and a choiceless program cannot single one out.</p>
+<h3><span class="t num">1:21</span>The claim</h3>
+<p>Result 243 is two OpenAI preprints, dated September 23 and 24, 2026. The first claims a polynomial-time property of unordered finite structures, consistency of a linear system over the field with three elements, read off eight relations, that choiceless polynomial time with counting cannot express, at any nesting depth of sets. That would confirm the Blass, Gurevich and Shelah conjecture. Shelah had claimed such a result in 2000, but the problem was still treated as open. The second claims that adding witnessed symmetric choice, an operator of Lichter and Schweitzer, strictly increases expressive power: one sentence with one such choice defines a property no choiceless program can, and it tells the same two charged grids apart. Not claimed: that no logic captures polynomial time, which would imply P ≠ NP; anything about the classic Cai, Fürer and Immerman graphs; or explicit sizes.</p>
+<h3><span class="t num">2:22</span>How the proof goes</h3>
+<p>The witnesses are two grids of size L by L by L. Each edge carries states, each vertex carries configurations, and a charge sits at every vertex: all zero in one structure, a single one in the other. Reading the linear system off the relations, our computer found it consistent for charge zero and inconsistent for each of the 8 single-charge placements on the smallest grid. The key is the symmetry group, of Heisenberg type: translations that commute only up to a central correction. Its commutators force every object a polynomial computation builds to be pinned down, for the key symmetries, by a short list of elements, whatever the nesting depth of its sets. Then, with counting logic using about L^(7/4) variables, the two grids look the same, and that transfers to every set the program can build. So a fixed program gives the same answer on both grids once L is large enough, while the true answers differ. How large does the proof need? By our arithmetic from the paper’s inequalities, at least about 10^47. The witnessed-choice sentence, in contrast, picks one edge state at a time, each pick certified by exhibiting symmetries. We ran its procedure on the smallest pair of grids: it accepted all six charge-zero runs and rejected all six with a single charge.</p>
+<h3><span class="t num">3:46</span>Where it stands</h3>
+<p>The preprints are unrefereed and unchanged since release. In Lean, both theorems are formalized, about 18,000 and 26,000 lines with no unproved steps, each defining choiceless polynomial time from scratch in its own way. We did not build them, and the repository’s notes contradict themselves about whether the second result is included. OSVerify has not reviewed them, and we found no expert reaction. If they hold, choiceless polynomial time with counting, long a leading candidate for a logic of polynomial time, does not capture it; witnessed choice is still in the running, and the search for such a logic, or a proof that none exists, goes on.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20243%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
