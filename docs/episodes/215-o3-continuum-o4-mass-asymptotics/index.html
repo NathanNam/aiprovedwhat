@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Do spins forget? Two-dimensional O(n) models | AI Proved What?</title>
+<meta name="description" content="Five AI preprints on two-dimensional O(n) spin models: exponential decay at every temperature for n of three or more, an O(4) mass gap, the O(3) continuum limit, and the exact O(4) mass. An animated explainer, the claims in plain words, the first expert reaction, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/215-o3-continuum-o4-mass-asymptotics/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Do spins forget?">
+<meta property="og:description" content="Five AI preprints on two-dimensional O(n) spin models: exponential decay at every temperature for n of three or more, an O(4) mass gap, the O(3) continuum limit, and the exact O(4) mass. An animated explainer, the claims in plain words, the first expert reaction, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/215-o3-continuum-o4-mass-asymptotics/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/215-o3-continuum-o4-mass-asymptotics/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 215, October 2026</p>
+<h1>Do spins forget?</h1>
+<p class="subtitle">Five preprints on two-dimensional O(n) models: exponential decay at every temperature, the O(3) continuum limit, and the exact O(4) mass</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 215 in OpenAI’s catalog: <a href="#papers-in-result">all 5 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="as6hBfAXdXM" data-title="Episode 215: Do spins forget?">
+  <a href="https://youtu.be/as6hBfAXdXM">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 215: Do spins forget? A grid of teal arrows, aligned on the left and scattered on the right.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:48. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/as6hBfAXdXM?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/as6hBfAXdXM?t=68" data-t="68"><span class="t">1:08</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/as6hBfAXdXM?t=152" data-t="152"><span class="t">2:32</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/as6hBfAXdXM?t=230" data-t="230"><span class="t">3:50</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Put a unit vector in n dimensions at every point of a square grid, and let neighbours prefer to point the same way, with strength β, the inverse temperature. In one dimension the memory is short: our exact calculation for three-component spins gives a correlation length of about β. In two dimensions, for n of two or more, Mermin and Wagner showed there is never long-range order, but correlations could still fade only like a power of the distance.</p>
+<p>For arrows in the plane, n = 2, that really happens: the Kosterlitz–Thouless phase. For n of three or more, Polyakov argued in 1975 that rotations of a sphere, which do not commute, make correlations decay exponentially at every temperature, however cold. A rigorous proof at every temperature, for small n, has been open for fifty years.</p>
+<p>Result 215 bundles five OpenAI preprints, 379 pages, dated September 23 to October 5, 2026. The first, 20 pages, claims that for every n of at least three and every temperature, spin correlations decay exponentially on any finite piece of the grid with free boundary, and in its limits. It does not claim a full transfer gap, or a formula for the correlation length. Four longer papers go further: for n = 4, a full mass gap at every temperature, with bounds of the right order when it is cold; for n = 3, the continuum limit itself, a quantum field theory in one plus one dimensions with a unique vacuum, a positive mass gap, an isolated particle and a nonzero connected four-point function; and for n = 4, the exact leading form of the mass, 32 e<sup>π/4 − 1/2</sup> √β e<sup>−πβ</sup>. Our algebra shows that constant matches the 1990 prediction of Hasenfratz, Maggiore and Niedermayer, converted to the lattice in the standard way. No value is claimed for the O(3) mass.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>A formula for the correlation length in the short paper; any value of the O(3) mass; asymptotic freedom as a theorem; anything for n = 2.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, five papers, 379 pages, dated September 23 to October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Only the short paper’s main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/215.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 16, 2026. None of the five preprints has been revised since they were added to the repository in its initial commit on October 6, 2026. Only the short paper’s main theorem is formalized in Lean (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/ClassicalON.lean">the checked statement</a>): about 13,000 lines with no unproved steps; we did not build it. The other four papers, about 360 pages, are not formalized, and the three later ones rest on the first O(4) paper. None is among those OSVerify reviewed. In <a href="https://www.scientificamerican.com/article/the-most-exciting-claims-from-openais-heap-of-new-proofs/">Scientific American</a> (October 8, 2026), Roland Bauerschmidt said one paper, which the article called the first, “seems very reasonable”, and the article reports him calling the rest of the papers on this problem incomprehensible slop. The article does not say which paper he meant.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Twist a ring.</strong> Pin the spins on two square rings and twist the inner ring by a half turn. Because rotations about two different axes produce a rotation about a third, waves at every scale can absorb the twist, and the cost falls at least as fast as 1/log N for a ring of size N.</li>
+  <li><strong>From twist to decay.</strong> An exact identity turns that cost into the chance that a cluster of equal signs crosses the ring. So crossings die out, and a count over coarse paths gives exponential decay. In our simulation the crossing chance falls to zero for three-component spins and stays at one for planar spins when cold.</li>
+  <li><strong>The longer papers.</strong> Three of them use an exact renormalization group: block spins at every scale, with the coupling drifting as predicted. The exact constant comes from an auxiliary model solved by the Bethe ansatz and matched back to the lattice.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: 32 e<sup>π/4 − 1/2</sup> = 42.569, equal to the 1990 prediction m/Λ<sub>MS</sub> = √(32/(πe)) with the standard lattice conversion; 1D chain correlation lengths (O(3): 0.86, 1.61, 4.48, 9.49 at β = 1, 2, 5, 10).</li>
+  <li>Ours: O(4) correlation lengths by cluster simulation, 4.7, 7.7 and 14.0 at β = 1.8, 2.0 and 2.2, about 10% below the leading formula (5.0, 8.9, 15.9), as expected this far from the limit. The Lean line count is ours.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Exponential-decay-in-two-dimensional-classical-On-models-September-23-2026/paper.pdf">Exponential decay in two-dimensional classical O(n) models (PDF)</a>, 20 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Sharp-mass-bounds-for-the-two-dimensional-O4-model-September-23-2026/paper.pdf">Sharp mass bounds for the two-dimensional O(4) model (PDF)</a>, 102 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-canonical-massive-continuum-limit-of-the-two-dimensional-O3-model-October-4-2026/massive-continuum-o3.pdf">The canonical massive continuum limit of the two-dimensional O(3) model (PDF)</a>, 122 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-Isolated-Particle-Pole-for-the-Two-Dimensional-O3-Spin-Field-October-4-2026/o3-particle-pole.pdf">An isolated particle pole for the two-dimensional O(3) spin field (PDF)</a>, 26 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Exact-mass-asymptotics-for-the-two-dimensional-O4-lattice-model-October-5-2026/exact-mass-o4.pdf">Exact mass asymptotics for the two-dimensional O(4) lattice model (PDF)</a>, 109 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/215.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 215.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 5 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-canonical-massive-continuum-limit-of-the-two-dimensional-O3-model-October-4-2026/massive-continuum-o3.pdf">The canonical massive continuum limit of the two-dimensional O(3) model</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-Isolated-Particle-Pole-for-the-Two-Dimensional-O3-Spin-Field-October-4-2026/o3-particle-pole.pdf">An Isolated Particle Pole for the Two-Dimensional O(3) Spin Field</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Exact-mass-asymptotics-for-the-two-dimensional-O4-lattice-model-October-5-2026/exact-mass-o4.pdf">Exact mass asymptotics for the two-dimensional O(4) lattice model</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Sharp-mass-bounds-for-the-two-dimensional-O4-model-September-23-2026/paper.pdf">Sharp mass bounds for the two-dimensional O(4) model</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Exponential-decay-in-two-dimensional-classical-On-models-September-23-2026/paper.pdf">Exponential decay in two-dimensional classical O(n) models</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Put a tiny arrow, a unit vector in n dimensions, at every point of a square grid, and let neighbours prefer to point the same way, with strength beta, the inverse temperature. How far does an arrow’s direction reach across the grid? In one dimension, the memory is short: our exact calculation for a chain of three-dimensional arrows gives a correlation length of about beta. In two dimensions, for n of two or more, Mermin and Wagner showed there is never long-range order. But that leaves room for correlations that fade only like a power of the distance. For arrows in the plane, n equal to two, that really happens: the Kosterlitz–Thouless phase. For n of three or more, Polyakov argued in 1975 that the answer is different. Rotations of a sphere do not commute, and that makes correlations decay exponentially at every temperature, however cold, with a correlation length growing like e^(2πβ) for n equal to three. Physicists later predicted exact masses. A rigorous proof at every temperature, for small n, has been open for fifty years.</p>
+<h3><span class="t num">1:08</span>The claim</h3>
+<p>Result 215 bundles five OpenAI preprints, 379 pages, dated September 23 to October 5, 2026. The first, 20 pages, claims that for every n of at least three and every temperature, spin correlations decay exponentially on any finite piece of the grid with free boundary, and in its limits. It attributes the prediction to Polyakov and calls the result a resolution of the all-temperature decay conjecture. It does not claim a full transfer gap, or a formula for the correlation length. Four longer papers go further. For n equal to four, a full mass gap at every temperature, with bounds of the right order when it is cold. For n equal to three, the continuum limit itself: a quantum field theory in one plus one dimensions with a unique vacuum, a positive mass gap, an isolated particle, and a nonzero connected four-point function, so it is not a free field. And for n equal to four, the exact leading form of the mass: 32 e^(π/4 − 1/2) √β e^(−πβ). Our algebra shows that constant matches the 1990 prediction of Hasenfratz, Maggiore and Niedermayer, converted to the lattice in the standard way. No value is claimed for the O(3) mass.</p>
+<h3><span class="t num">2:32</span>How the proof goes</h3>
+<p>The short paper’s idea fits on one screen. Pin the spins on two square rings, and twist the inner ring by a half turn. Because rotations about two different axes produce a rotation about a third, waves at every scale can absorb the twist, and the cost falls at least as fast as 1/log N for a ring of size N. An exact identity turns that cost into the chance that a cluster of equal signs crosses the ring. So crossings die out, and a count over coarse paths turns that into exponential decay. Our simulation shows the mechanism: for n equal to three, the crossing chance falls to zero as the ring grows; for n equal to two, when cold, it stays at one. Three of the longer papers use an exact renormalization group: block spins at every scale, with the coupling drifting as predicted. The three later papers rest on the first O(4) paper, which the O(3) construction cites more than 300 times. The exact constant comes from an auxiliary model solved by the Bethe ansatz and matched back to the lattice. As an illustration, our cluster simulations of O(4) reach correlation lengths near 14, about 10% below the leading formula, which is expected so far from the limit.</p>
+<h3><span class="t num">3:50</span>Where it stands</h3>
+<p>All five preprints are unrefereed and have not been revised. Only the short paper’s main theorem is formalized in Lean: about 13,000 lines, with no unproved steps and its statement pinned down; we did not build it. The other four, about 360 pages, are not formalized. None is among those OSVerify reviewed. In Scientific American, Roland Bauerschmidt said one paper, which the article called the first, seems very reasonable, and called the rest of the papers on this problem incomprehensible slop. The article does not say which paper he meant. If the short paper holds, spins with three or more components in two dimensions always forget their direction, at every temperature, as Polyakov predicted. The rest, if it holds, would build the field theory behind it; that part needs careful checking.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20215%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
