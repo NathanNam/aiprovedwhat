@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How many electrons can an atom hold? The ionization conjecture | AI Proved What?</title>
+<meta name="description" content="Three AI preprints claim that a molecule binds only a bounded number of extra electrons in the full Schrödinger model, and Solovej’s generalized ionization conjecture. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/263-ionization-conjecture/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="How many electrons can an atom hold?">
+<meta property="og:description" content="Three AI preprints claim that a molecule binds only a bounded number of extra electrons in the full Schrödinger model, and Solovej’s generalized ionization conjecture. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/263-ionization-conjecture/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/263-ionization-conjecture/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 263, October 2026</p>
+<h1>How many electrons can an atom hold?</h1>
+<p class="subtitle">Three AI preprints claim the ionization conjecture for the full Schrödinger model, and Solovej’s generalized version</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 263 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="hj0V05s7vcc" data-title="Episode 263: How many electrons can an atom hold?">
+  <a href="https://youtu.be/hj0V05s7vcc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 263: How many electrons can an atom hold? A teal sawtooth of ionization energies across the elements, with gold dots at the noble gases.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:50. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/hj0V05s7vcc?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/hj0V05s7vcc?t=75" data-t="75"><span class="t">1:15</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/hj0V05s7vcc?t=164" data-t="164"><span class="t">2:44</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/hj0V05s7vcc?t=188" data-t="188"><span class="t">3:08</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A nucleus of charge Z attracts Z electrons and becomes neutral; in nature, at most one more ever sticks. Hydrogen can hold a second electron, but only because of correlation. Real atoms are remarkably uniform: the tabulated first ionization energies of the first 108 elements stay between about 4 electron volts, for caesium, and about 25, for helium, with no growth as atoms get heavier (our reading of the NIST database).</p>
+<p>Mathematically, this was a famous open problem. Barry Simon’s 2000 list asked to prove that the number of electrons an atom can bind, minus Z, stays bounded. Earlier proofs allowed far more: Lieb in 1984, fewer than 2Z plus the number of nuclei; Nam in 2012, about 1.22 Z. In 2025 Lewin wrote that no proof existed even with a constant like 10¹⁰⁰. Solovej proved the bounded version in 2003 for Hartree–Fock theory, an approximation.</p>
+<p>Result 263 is three OpenAI preprints, 134 pages, dated September 24, 2026. The main paper, 84 pages, claims that in the full nonrelativistic Schrödinger model, with fermions of two spin states and fixed nuclei of charge at least one, a molecule of total nuclear charge Z strictly binds at most Z + C × (number of nuclei) electrons, with C universal. It also claims the first ionization energies of neutral atoms are bounded above and below by universal positive constants. Two companions claim Solovej’s generalized ionization conjecture: the energy to remove m electrons follows the Thomas–Fermi law, a constant times m^(7/3), as m and Z/m grow, and the outer radii follow the matching Thomas–Fermi law.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The sharp bound of one or two extra electrons; any explicit value of C, which comes from an argument by contradiction; bosons, where the statement is false; relativity; or the limit of the first ionization energy.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, three papers, 84, 33 and 17 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>In part: the two asymptotic theorems (<a href="https://github.com/openai/math/blob/main/lean/docs/263.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. The preprints have not been revised. Lean formalizes the two asymptotic theorems, about 95,000 and 77,000 lines with no unproved steps, which we did not build. The headline theorems of the main paper, bounded excess and the ionization-energy bounds, are not formalized. OSVerify has not reviewed them, and we found no specialist comment.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Solovej’s architecture.</strong> Compare the true atom with a screened Thomas–Fermi model at every scale, from the nucleus out, and show that the outermost electrons see an almost neutral core.</li>
+  <li><strong>The full problem.</strong> The new work makes each comparison hold for the full many-body Schrödinger problem, where electrons are correlated, and runs the whole argument by contradiction. That is why C is never computed.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: in a two-electron toy, the state with both electrons alike does not bind hydrogen’s second electron, while letting one electron sit far out does.</li>
+  <li>Ours: the limiting constant the papers define but do not compute is about 1.29 electron volts per unit of m^(7/3). For heavy atoms, removing eight electrons costs about 2.5 times the limiting law, so real atoms are far from that regime.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/paper.pdf">Uniform Excess Charge for Coulomb Molecules and the Outer Radius of Neutral Atoms (PDF)</a>, 84 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026/paper.pdf">Generalized Ionization Energies for Full Coulomb Atoms (PDF)</a>, 33 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Generalized-outer-electron-radii-of-neutral-Coulomb-atoms-September-24-2026/paper.pdf">Generalized Outer-Electron Radii of Neutral Coulomb Atoms (PDF)</a>, 17 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/263.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 263.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-excess-charge-for-Coulomb-molecules-and-the-outer-radius-of-neutral-atoms-September-24-2026/paper.pdf">Uniform excess charge for Coulomb molecules and the outer radius of neutral atoms</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Generalized-ionization-energies-for-full-Coulomb-atoms-September-24-2026/paper.pdf">Generalized ionization energies for full Coulomb atoms</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Generalized-outer-electron-radii-of-neutral-Coulomb-atoms-September-24-2026/paper.pdf">Generalized outer-electron radii of neutral Coulomb atoms</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>How many electrons can an atom hold? A nucleus of charge Z attracts Z electrons and becomes neutral; in nature, at most one more ever sticks. Hydrogen can hold a second electron, but only because of correlation: in our two-electron toy, the state with both electrons alike does not bind, while letting one electron sit far out does. Real atoms are remarkably uniform. Our computer read the tabulated first ionization energies of the first 108 elements from the NIST database: they stay between about 4 electron volts, for caesium, and about 25, for helium, with no growth as atoms get heavier. Mathematically, this was a famous open problem. Barry Simon’s 2000 list asked to prove that the number of electrons an atom can bind, minus Z, stays bounded. Earlier proofs allowed far more: Lieb in 1984, fewer than 2Z plus the number of nuclei; Nam in 2012, about 1.22 Z. In 2025, Lewin wrote that no proof existed even with a constant like 10¹⁰⁰. Solovej proved the bounded version in 2003 for Hartree-Fock theory, an approximation.</p>
+<h3><span class="t num">1:15</span>The claims</h3>
+<p>Result 263 is three OpenAI preprints, 134 pages, dated September 24, 2026. The main paper, 84 pages, claims that for the full nonrelativistic Schrödinger model, with fermions of two spin states and fixed nuclei of charge at least one, a molecule of total nuclear charge Z strictly binds at most Z plus C times the number of nuclei electrons, with C universal. It also claims first ionization energies of neutral atoms are bounded above and below by universal positive constants. Two companions claim Solovej’s generalized ionization conjecture: the energy to remove m electrons follows the Thomas–Fermi law, a constant times m^(7/3), as m and Z/m grow, and the outer radii follow the matching Thomas–Fermi law. Not claimed: the sharp bound of one or two extra electrons; any explicit value of C, which comes from an argument by contradiction; bosons, where the statement is false; relativity; or the limit of the first ionization energy. Our computer evaluates the limiting constant the papers define but do not compute: about 1.29 electron volts per unit of m^(7/3). Real atoms are far from that regime: for heavy atoms, removing eight electrons costs about 2.5 times the limiting law.</p>
+<h3><span class="t num">2:44</span>How the proofs go</h3>
+<p>The architecture follows Solovej’s Hartree-Fock proof: compare the true atom with a screened Thomas–Fermi model at every scale, from the nucleus out, and show the outermost electrons see an almost neutral core. The new work makes each comparison hold for the full many-body Schrödinger problem, where electrons are correlated, and runs the whole argument by contradiction.</p>
+<h3><span class="t num">3:08</span>Where it stands</h3>
+<p>The preprints are unrefereed and unchanged since release. Lean formalizes the two asymptotic theorems, about 95,000 and 77,000 lines with no unproved steps, which we did not build; the headline theorems, bounded excess and the ionization-energy bounds, are not formalized. OSVerify has not reviewed them, and we found no specialist comment. If they hold, in the Schrödinger model a neutral atom can bind only a bounded number of extra electrons, however heavy it is, and its outermost electron is held with a strength that never grows without bound or fades to nothing.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20263%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
