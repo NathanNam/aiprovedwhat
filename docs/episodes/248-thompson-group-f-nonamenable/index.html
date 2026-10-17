@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can Thompson&#x27;s group F be averaged? An AI preprint claims it is nonamenable | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims Geoghegan&#x27;s 1979 conjecture that Thompson&#x27;s group F, the group of dyadic piecewise-linear maps of the interval, is not amenable. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/248-thompson-group-f-nonamenable/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Can this group be averaged?">
+<meta property="og:description" content="An AI preprint claims Geoghegan&#x27;s 1979 conjecture that Thompson&#x27;s group F, the group of dyadic piecewise-linear maps of the interval, is not amenable. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/248-thompson-group-f-nonamenable/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/248-thompson-group-f-nonamenable/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 248, October 2026</p>
+<h1>Can this group be averaged?</h1>
+<p class="subtitle">An AI preprint claims Thompson’s group F is nonamenable</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 248 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="nb5_d2aqrKc" data-title="Episode 248: Can this group be averaged?">
+  <a href="https://youtu.be/nb5_d2aqrKc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 248: Can this group be averaged? The generators x0 and x1 of Thompson's group F drawn as bent lines in the unit square.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:46. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/nb5_d2aqrKc?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/nb5_d2aqrKc?t=91" data-t="91"><span class="t">1:31</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/nb5_d2aqrKc?t=149" data-t="149"><span class="t">2:29</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/nb5_d2aqrKc?t=239" data-t="239"><span class="t">3:59</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A group is amenable if it has finite sets that almost do not move when shifted. In the plane, shifting a large ball by one step changes only its edge. In a free group on two generators, whose picture is a tree, every finite set leaks a fixed fraction however large it is. Thompson’s group F consists of increasing piecewise-linear maps of the unit interval, with breakpoints at dyadic fractions and slopes that are powers of two. Brin and Squier showed in 1985 that F contains no free group on two generators, and it is not built from finite and abelian pieces, so neither standard argument settles it. Geoghegan conjectured in 1979 that F is not amenable. Proofs were claimed in both directions over the years, and several were withdrawn.</p>
+<p>Result 248 is one OpenAI preprint, 13 pages, dated September 23, 2026. It claims to prove Geoghegan’s conjecture. Concretely, there is one fixed finite set of elements such that, for every nonempty finite set of the group, one of them moves a fixed positive fraction of its points outside it.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>An explicit constant. Unwinding the Lean definitions for the paper’s own map, we get tens of billions of intervals and a certified fraction below one in ten billion; any positive fraction is enough. F is also not the first nonamenable group without nonabelian free subgroups: Ol’shanskii found one in 1980, and Monod, and Lodha and Moore, gave piecewise-projective examples, close cousins of F. The paper’s two corollaries rest on other, unrefereed release papers.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 13 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Yes: the whole proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/248.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. The preprint has not been revised. In Lean, the whole proof of the main theorem is formalized, including the infinite-dimensional map: about 9,500 lines with no unproved steps (we did not build it). OSVerify has not reviewed the paper. Sang-hyun Kim and Yash Lodha posted their own human-written exposition of the proof on arXiv on October 13, and no error has been reported. Wikipedia still lists the problem as open, pending independent published sources.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Moving intervals.</strong> Every element of F turns a fine uniform grid into a dyadic partition, and F can carry any two separated dyadic intervals inside the unit interval onto any other two, in the same order, stretching each evenly.</li>
+  <li><strong>Colours.</strong> Each partition gets a colour, a point in the unit ball of an infinite-dimensional Hilbert space: zoom into each of D parent intervals, colour the zoomed partitions recursively, average, and apply a map f that moves every point of the ball by at least 1/2. In finite dimensions no such map exists (Brouwer). In infinite dimensions Benyamini and Sternfeld showed a Lipschitz one does, and the appendix builds one from a curve that comes in from far away and then spirals forever at radius 5/16.</li>
+  <li><strong>The contradiction.</strong> If F had nearly invariant finite sets, the colours on any two separated intervals would have the same average correlation, because one fixed element carries each such pair onto a reference pair. A variance count then makes the average colour almost a fixed point of f, which is impossible.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the average number of edges leaving a ball, per element. Diamond-shaped balls in the plane go from 1.54 at radius 2 to 0.04 at radius 100. Balls in F are still about 1.9 at radius 9, but balls also fail in the amenable lamplighter group, whose real Følner sets go down to 0.17.</li>
+  <li>Ours: closed walks up to 26 steps. The 2n-th root of the return probability is 0.756 for F, 0.753 for the free group and 0.866 for the plane, which is still far below 1. Short walks cannot decide amenability.</li>
+  <li>Ours: the paper’s transport lemma, carrying [1/8, 1/4] and [5/8, 3/4] onto [1/2, 9/16] and [3/4, 7/8]. It gave a valid map for 300 of 300 random pairs.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Thompsons-group-F-is-nonamenable-September-23-2026/paper.pdf">Thompson&#x27;s group F is nonamenable (PDF)</a>, 13 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/248.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://arxiv.org/abs/2610.18360">Kim and Lodha’s human-written exposition</a> (arXiv, October 2026).</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 248.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Thompsons-group-F-is-nonamenable-September-23-2026/paper.pdf">Thompson's group F is nonamenable</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Can you average over a group? On the integers or the plane, yes: take a huge square of points; shifting it one step changes only its edge. A group with such nearly invariant finite sets is called amenable. Our computer measured how many of each element’s 4 edges leave the set, on average: for balls in the plane, which are diamonds, it falls to 0.04 at radius 100. In a free group on two generators, a tree, every set leaks a fixed fraction, however large. Thompson’s group F is made of bent lines: increasing piecewise-linear maps of the unit interval, with breakpoints at dyadic fractions and slopes powers of two. It is generated by two such maps, x₀ and x₁, with two relations, which our computer checked hold exactly. Brin and Squier showed it contains no free group on two generators, so the usual reason for nonamenability fails; but it is not built from finite and abelian pieces either. In 1979 Geoghegan conjectured it is not amenable. Computers could not settle it. Our counts of closed walks, up to 26 steps, track the free group almost exactly; but at that length even the plane, which is amenable, is still far below one, the value amenability needs. Balls in F still have about 1.9 leaving edges per element at radius nine, but in the amenable lamplighter group balls fail too. Over the years, proofs were claimed in both directions; several were withdrawn.</p>
+<h3><span class="t num">1:31</span>The claim</h3>
+<p>Result 248 is one OpenAI preprint, 13 pages, dated September 23, 2026. It claims to prove Geoghegan’s conjecture: Thompson’s group F is not amenable. Concretely, there is one fixed finite set of elements such that, for every nonempty finite set of the group, one of them moves a fixed positive fraction of its points outside it. Not claimed: an explicit constant. Unwinding the Lean definitions for the paper’s own map, we get tens of billions of intervals and a guaranteed fraction below one in ten billion, which is enough, since anything above zero will do. It is also not the first nonamenable group without nonabelian free subgroups: Ol’shanskii found one in 1980, and Monod, and Lodha and Moore, gave piecewise-projective examples, close cousins of F. And the two corollaries rest on other, unrefereed release papers.</p>
+<h3><span class="t num">2:29</span>How the proof goes</h3>
+<p>The proof works with dyadic partitions of the interval. Any element of F turns a fine uniform grid into such a partition. And F can carry any two separated dyadic intervals inside it onto any other two, in the same order, stretching each evenly. Our computer built one example, carrying [1/8, 1/4] onto [1/2, 9/16], and found a valid map for 300 random pairs. Now colour each partition by a point in the unit ball of an infinite-dimensional Hilbert space: zoom into each of D parent intervals, colour the zoomed partitions recursively, average, and apply a map f. The trick is f: it moves every point of the ball by at least 1/2. In finite dimensions that is impossible, by Brouwer’s fixed point theorem; in infinite dimensions Benyamini and Sternfeld showed it can be done with a Lipschitz map, one that stretches distances by at most a fixed factor. The appendix builds one from a curve that comes in from far away and then spirals forever at radius 5/16, without coming back near itself. If F had nearly invariant finite sets, the colours on any two separated intervals would have the same average correlation, because one fixed element of F carries each such pair onto a single reference pair. A variance count then makes the average colour almost a fixed point of f. But f moves everything by a half. So nearly invariant sets cannot exist.</p>
+<h3><span class="t num">3:59</span>Where it stands</h3>
+<p>The preprint is unrefereed and unchanged since release. In Lean, the whole proof of the main theorem is formalized, including the infinite-dimensional map, about 9,500 lines with no unproved steps; we did not build it. OSVerify has not reviewed it. Sang-hyun Kim and Yash Lodha posted their own human-written exposition of the proof on October 13, and no error has been reported; Wikipedia still lists the problem as open, pending independent sources. If it holds, Thompson’s group, after nearly half a century on the fence, cannot be averaged: pushed off by a colouring of intervals and a map that leaves no point where it was.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20248%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
