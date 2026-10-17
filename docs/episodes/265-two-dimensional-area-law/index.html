@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Only the boundary counts? The 2D area law for gapped quantum systems | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim the entanglement area law for unique gapped ground states on the square lattice, and polynomial tensor-network approximations on open squares. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/265-two-dimensional-area-law/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Only the boundary counts?">
+<meta property="og:description" content="Two AI preprints claim the entanglement area law for unique gapped ground states on the square lattice, and polynomial tensor-network approximations on open squares. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/265-two-dimensional-area-law/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/265-two-dimensional-area-law/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 265, October 2026</p>
+<h1>Only the boundary counts?</h1>
+<p class="subtitle">Two AI preprints claim the two-dimensional area law for gapped quantum ground states</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 265 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="UY6Gbdw9sgg" data-title="Episode 265: Only the boundary counts?">
+  <a href="https://youtu.be/UY6Gbdw9sgg">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 265: Only the boundary counts? A grid of spins with a teal region whose boundary edges are drawn in gold.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:46. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/UY6Gbdw9sgg?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/UY6Gbdw9sgg?t=74" data-t="74"><span class="t">1:14</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/UY6Gbdw9sgg?t=142" data-t="142"><span class="t">2:22</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/UY6Gbdw9sgg?t=187" data-t="187"><span class="t">3:07</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A quantum state of many spins can be entangled in proportion to its size. Split a random state of 16 spins in half and the entanglement entropy is about 5, close to the maximum. Ground states of local, gapped Hamiltonians seem to be different: their entanglement grows only with the size of the boundary. That is the area law.</p>
+<p>In one dimension, Hastings proved the area law in 2007. In two dimensions it became one of the main open problems of quantum information; a 2010 review asked whether gapped lattice models always obey it. The best results, by Anshu, Arad and Gosset, needed stronger assumptions, frustration-free models with a local gap, and even then held only for straight cuts, with a slowly growing extra factor.</p>
+<p>Result 265 is two OpenAI preprints, 146 pages, dated September 24, 2026. The first, 90 pages, claims the area law on any finite induced region of the square lattice, holes allowed. For a unique ground state of a finite-range Hamiltonian with a spectral gap for the whole system, the entropy of any subset is at most a constant times its boundary, with no logarithm. No frustration-free or local-gap assumption is needed. The second, 56 pages, claims that on open L × L squares with nearest-neighbour terms, such ground states are approximated by projected entangled-pair states with polynomial bond dimension and error at most 1/L. That is an open-boundary version of a question posed on the torus.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Degenerate ground states, such as topological order on a torus; gapless systems; other lattices or three dimensions; any explicit constant or dependence on the gap; or an efficient algorithm.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two papers, 90 and 56 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>No (only a sub-volume law, unlinked)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. The preprints have not been revised. Lean contains an unlinked development that machine-checks a sub-volume law for boxes in gapped nearest-neighbour grids, with explicit but astronomical constants; neither headline theorem is formalized. OSVerify has not reviewed them. Scott Aaronson listed the area law as one of the main open problems in Hamiltonian complexity without assessing the proof, and a paper by Kuwahara cites it as a proposed proof. We found no comment from specialists such as Arad, Gosset or Hastings.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Sub-volume first.</strong> The proof first shows a weaker, sub-volume law in boxes, then sharpens and upgrades it. The margins are extraordinarily thin: one key exponent is 1 − 10⁻⁵.</li>
+  <li><strong>Two families of tiles.</strong> A final step splits the region into two families of tiles so that the tile entropies cancel, leaving a strip along the boundary.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: on a 4×4 grid of spins in a transverse field, a gapped model that is not frustration-free, the entropy never exceeds about 0.03 per boundary edge over 354 regions. A straight half cut gives 0.12; a checkerboard region with 6 times the boundary gives 0.47. For a random state, both give about 5.</li>
+  <li>Ours: a factor n^(−10⁻⁵) reaches 1/2 only near n = 10³⁰¹⁰³. The paper’s final inequality holds comfortably on our 4×4 grid.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/paper.pdf">A Two-Dimensional Area Law from a Global Spectral Gap (PDF)</a>, 90 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Polynomial-PEPS-approximation-of-gapped-square-grid-ground-states-September-24-2026/paper.pdf">Polynomial PEPS Approximation of Gapped Square-Grid Ground States (PDF)</a>, 56 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 265.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/paper.pdf">A two-dimensional area law from a global spectral gap</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Polynomial-PEPS-approximation-of-gapped-square-grid-ground-states-September-24-2026/paper.pdf">Polynomial PEPS approximation of gapped square-grid ground states</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A quantum state of many spins can be entangled in proportion to its size. Split a random state of 16 spins in half, and the entanglement entropy is about 5, close to the maximum, growing with the volume of each half. Ground states of local, gapped Hamiltonians seem to be different: their entanglement grows only with the size of the boundary. That is the area law. Our computer shows it on a 4×4 grid of spins in a transverse field, a gapped model that is not frustration-free. Over 350 regions, the entropy never exceeds about 0.03 per boundary edge. A straight half cut gives 0.12; a checkerboard region with 6 times the boundary gives 0.47. For a random state, both give about 5. In one dimension, Hastings proved the area law in 2007. In two dimensions it became one of the main open problems of quantum information; a 2010 review asked whether gapped lattice models always obey it. The best results, by Anshu, Arad and Gosset, needed stronger assumptions, frustration-free models with a local gap, and even then held only for straight cuts, with a slowly growing extra factor.</p>
+<h3><span class="t num">1:14</span>The claims</h3>
+<p>Result 265 is two OpenAI preprints, 146 pages, dated September 24, 2026. The first, 90 pages, claims the area law on any finite induced region of the square lattice, holes allowed: for a unique ground state of a finite-range Hamiltonian with a spectral gap for the whole system, the entropy of any subset is at most a constant times its boundary, with no logarithm. Frustration-free or local-gap assumptions are not needed. The second, 56 pages, claims that on open L × L squares with nearest-neighbour terms, such ground states are approximated by projected entangled-pair states with polynomial bond dimension and error at most 1/L. That is an open-boundary version of a question posed on the torus. Not claimed: degenerate ground states, such as topological order on a torus, gapless systems, other lattices or three dimensions, any explicit constant or dependence on the gap, or an efficient algorithm.</p>
+<h3><span class="t num">2:22</span>How the proofs go</h3>
+<p>The proof first shows a weaker, sub-volume law in boxes, then sharpens and upgrades it. The margins are extraordinarily thin: one key exponent is 1 − 10⁻⁵, and our arithmetic shows a factor n^(−10⁻⁵) reaches one half only near n equal to 10³⁰⁰⁰⁰. A final step splits the region into two families of tiles so that the tile entropies cancel, leaving a strip along the boundary; our check on the 4×4 grid holds comfortably. Lean contains an unlinked development that machine-checks a sub-volume law for boxes in gapped nearest-neighbour grids, with explicit but astronomical constants; neither headline theorem is formalized.</p>
+<h3><span class="t num">3:07</span>Where it stands</h3>
+<p>The preprints are unrefereed and unchanged since release. OSVerify has not reviewed them. Scott Aaronson listed the area law as one of the main open problems in Hamiltonian complexity without assessing the proof, and a paper by Kuwahara cites it as a proposed proof. We found no comment from specialists such as Arad, Gosset or Hastings. If they hold, unique ground states of gapped square-lattice systems carry only boundary-sized entanglement, and on open squares are well approximated by compact tensor networks.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20265%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
