@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How much does it wobble? The SK spin glass | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim the low-temperature fluctuations of the Sherrington-Kirkpatrick spin glass: the predicted n^(1/6) scale and a limiting law no one has named. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/217-sherrington-kirkpatrick-fluctuation-law/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="How much does it wobble?">
+<meta property="og:description" content="Two AI preprints claim the low-temperature fluctuations of the Sherrington-Kirkpatrick spin glass: the predicted n^(1/6) scale and a limiting law no one has named. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/217-sherrington-kirkpatrick-fluctuation-law/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/217-sherrington-kirkpatrick-fluctuation-law/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 217, October 2026</p>
+<h1>How much does it wobble?</h1>
+<p class="subtitle">Two preprints claim the low-temperature fluctuations of the Sherrington–Kirkpatrick spin glass: the predicted n<sup>1/6</sup> scale and a limiting law no one has named</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 217 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="9bptrKHKA90" data-title="Episode 217: How much does it wobble?">
+  <a href="https://youtu.be/9bptrKHKA90">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 217: How much does it wobble? A triangle of three spins with one unhappy red bond.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:13. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/9bptrKHKA90?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/9bptrKHKA90?t=76" data-t="76"><span class="t">1:16</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/9bptrKHKA90?t=142" data-t="142"><span class="t">2:22</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/9bptrKHKA90?t=210" data-t="210"><span class="t">3:30</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Take n spins, each plus or minus one, and connect every pair by a random Gaussian coupling, some friendly, some hostile: the Sherrington–Kirkpatrick spin glass. With three spins and our couplings, no arrangement satisfies all three bonds; the triangle is frustrated. The partition function Z sums the Boltzmann weight over all arrangements, and its logarithm, which these papers call the free energy, is the central quantity. Parisi’s formula, proved by Guerra and Talagrand, gives its average to leading order. But each sample of the couplings gives a slightly different value. How much does it wobble?</p>
+<p>At high temperature, Aizenman, Lebowitz and Ruelle proved the wobble stays of order one. Below the critical temperature physicists predicted n<sup>1/6</sup>, but the physics argument relied on a heuristic matching step. Our computer sums all 2<sup>20</sup> arrangements exactly for many samples: at β = 1/2 the variance levels off; at β = 2 it keeps growing, but at these sizes like n<sup>0.7</sup>, nowhere near n<sup>1/3</sup>. Small systems cannot show the true law.</p>
+<p>Result 217 bundles two OpenAI preprints dated September 24, 2026. The first (80 pages) claims that for every fixed β above one the standard deviation of log Z is n<sup>1/6</sup>, up to factors smaller than any fixed power of n. The second (126 pages) claims that the variance divided by n<sup>1/3</sup> converges to a positive constant, and that the standardized fluctuations converge to a single limiting law.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The law is pinned down only by its moments, given by a series over random system sizes; the paper says no identification with a named distribution is made. The constant has no closed form. Both papers build on recent human work: methods of Aronow and Lopatto, whose bounds were posted 16 days earlier, and a theorem of Lopatto on the Parisi measure, revised since the papers were written.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two papers (80 and 126 pages), dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>None listed; an unlisted folder is conditional on the key estimate</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 16, 2026. Neither preprint has been revised since they were added to the repository in its initial commit on October 6, 2026. The release lists no Lean for this result, but its Lean library contains an unlisted folder of about 97,000 lines with no gaps in its proofs. It derives the first paper’s main theorem from the key estimate, taken as an assumption that nothing in the repository proves. Neither paper is among those OSVerify reviewed, and we found no expert reaction or earlier claim.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Stages.</strong> Both proofs reveal the randomness in stages and track how much each stage can move log Z; copies of the system that share early randomness and then branch echo Parisi’s ultrametric tree.</li>
+  <li><strong>The scale.</strong> The key estimate controls exponential moments of the free energy at scales just above n<sup>−1/6</sup>. A rigidity step shows the overlap profile is linear near zero, using Lopatto’s theorem that the Parisi measure covers a whole interval. Adding an independent exponential variable makes the density log-concave, whose tails the variance controls.</li>
+  <li><strong>The law.</strong> The second paper compares systems of size N and 2N at the same scale, with an error small enough to add up over all doublings. Its moment formula uses only finite systems at random sizes, yet the series returns the infinite-size answer; we checked that idea on toy sequences.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours, n = 3 at β = 2 with couplings 2.04, −2.56, 0.42: log Z = 3.47 (with the papers’ 2<sup>−n</sup> normalization); Gibbs weights 0.0035, 0.4850, 0.0000, 0.0115 for each arrangement and its flip.</li>
+  <li>Ours, exact enumeration for n = 4 to 20: variance of log Z at n = 20 is 0.016 (β = 0.5), 0.34 (β = 1) and 4.06 (β = 2); at β = 2 the log–log slope is about 0.7.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-low-temperature-Sherrington-Kirkpatrick-fluctuation-scale-September-24-2026/The-low-temperature-Sherrington-Kirkpatrick-fluctuation-scale-September-24-2026.pdf">The low-temperature Sherrington–Kirkpatrick fluctuation scale (PDF)</a>, 80 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-low-temperature-Sherrington-Kirkpatrick-free-energy-limiting-law-September-24-2026/The-low-temperature-Sherrington-Kirkpatrick-free-energy-limiting-law-September-24-2026.pdf">The low-temperature Sherrington–Kirkpatrick free-energy limiting law (PDF)</a>, 126 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 217.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-low-temperature-Sherrington-Kirkpatrick-free-energy-limiting-law-September-24-2026/The-low-temperature-Sherrington-Kirkpatrick-free-energy-limiting-law-September-24-2026.pdf">The low-temperature Sherrington–Kirkpatrick free-energy limiting law</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-low-temperature-Sherrington-Kirkpatrick-fluctuation-scale-September-24-2026/The-low-temperature-Sherrington-Kirkpatrick-fluctuation-scale-September-24-2026.pdf">The low-temperature Sherrington–Kirkpatrick fluctuation scale</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Take n spins, each plus or minus one, and connect every pair by a random Gaussian coupling, some friendly, some hostile. This is the Sherrington–Kirkpatrick spin glass. With three spins and these couplings, no arrangement satisfies all three bonds: the triangle is frustrated. The partition function Z sums the Boltzmann weight over all arrangements, and its logarithm, which these papers call the free energy, is the central quantity. Parisi’s formula, proved by Guerra and Talagrand, gives its average to leading order. But each sample of the couplings gives a slightly different value. How much does it wobble? At high temperature, Aizenman, Lebowitz and Ruelle proved the wobble stays of order one. Below the critical temperature, β &gt; 1, physicists predicted it grows like n^(1/6), but the physics argument relied on a heuristic matching step. Our computer sums all 2^20 arrangements exactly for many samples: at β = 1/2, the variance levels off; at β = 2, it keeps growing. At these sizes, though, it grows like n^0.7, nowhere near the one third that n^(1/6) implies. Small systems cannot show the true law.</p>
+<h3><span class="t num">1:16</span>The claim</h3>
+<p>Result 217 bundles two OpenAI preprints, both dated September 24, 2026. The first, 80 pages, claims that for every fixed beta above one, the standard deviation of log Z is n^(1/6), up to factors smaller than any power of n. The second, 126 pages, sharpens that: the variance divided by n^(1/3) converges to a positive constant, and the standardized fluctuations converge to a single limiting law. That law is pinned down only by its moments, given by a series over random system sizes. The paper says no identification with a named distribution is made: it is not shown to be Gaussian, Tracy–Widom, or anything else with a name. The constant has no closed form. And both papers build on recent human work: methods of Aronow and Lopatto, whose upper and lower bounds were posted 16 days earlier, and a theorem of Lopatto on the Parisi measure, revised since the papers were written.</p>
+<h3><span class="t num">2:22</span>How the proof goes</h3>
+<p>Both proofs reveal the randomness in stages and track how much each stage can move log Z. Copies of the system that share early randomness and then branch echo Parisi’s ultrametric tree. The key estimate controls the exponential moments of the free energy at scales just above n^(−1/6). A rigidity step shows the overlap profile is linear near zero, using Lopatto’s theorem that the Parisi measure covers a whole interval. Then a trick turns the window into a variance bound: add an independent exponential variable to make the density log-concave, whose tails the variance controls. The second paper compares systems of size N and 2N at the same scale, with an error small enough to add up over all doublings. That turns n^(1/6), up to small powers, into an actual limit. Its moment formula is a surprise: it only ever uses finite systems at random sizes, yet the series returns the infinite-size answer. We checked that idea on toy sequences: the partial sums converge to the limit, as claimed.</p>
+<h3><span class="t num">3:30</span>Where it stands</h3>
+<p>Both preprints are unrefereed and have not been revised. The release lists no Lean for this result, but its Lean library contains an unlisted folder of about 97,000 lines with no gaps in its proofs. It derives the first paper’s main theorem from the key estimate, taken as an assumption that nothing in the repository proves. Neither paper is among those OSVerify reviewed, and we found no expert reaction or earlier claim. If they hold, the spin glass’s free energy wobbles by n^(1/6) at every fixed low temperature, as physicists predicted, with a limiting shape no one has yet named.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20217%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
