@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How many shuffles randomize a deck? The Thorp shuffle in order log N | AI Proved What?</title>
+<meta name="description" content="Twelve AI preprints claim that the Thorp shuffle mixes a deck of 2^d cards in order log N shuffles, the optimal order. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/238-thorp-shuffle-log-mixing/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="How many shuffles randomize a deck?">
+<meta property="og:description" content="Twelve AI preprints claim that the Thorp shuffle mixes a deck of 2^d cards in order log N shuffles, the optimal order. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/238-thorp-shuffle-log-mixing/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/238-thorp-shuffle-log-mixing/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 238, October 2026</p>
+<h1>How many shuffles randomize a deck?</h1>
+<p class="subtitle">Twelve preprints claim the Thorp shuffle mixes a deck of 2<sup>d</sup> cards in order log N shuffles</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 238 in OpenAI’s catalog: <a href="#papers-in-result">all 12 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="uNOpfO54IdI" data-title="Episode 238: How many shuffles randomize a deck?">
+  <a href="https://youtu.be/uNOpfO54IdI">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 238: How many shuffles randomize a deck? Eight cards, A to H, split into two halves and interleaved.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:33. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/uNOpfO54IdI?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/uNOpfO54IdI?t=80" data-t="80"><span class="t">1:20</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/uNOpfO54IdI?t=151" data-t="151"><span class="t">2:31</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/uNOpfO54IdI?t=229" data-t="229"><span class="t">3:49</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Cut a deck into two halves and pair the first card of each half, then the second, and so on. For each pair a fair coin decides which card goes first, and the pairs are stacked in order. That is one Thorp shuffle, studied by Edward Thorp in 1973; Morris, Rogaway and Stegers later used it to encrypt credit card numbers. In binary, a shuffle drops the top bit of a card’s address, shifts the rest left and appends that bit, flipped or not by the coin, so after d shuffles of 2<sup>d</sup> cards any single card is in a perfectly random position. The whole deck takes longer: d shuffles use only d·2<sup>d−1</sup> coins. Diaconis, as Morris reported, called it the longest-standing open card-shuffling problem. Morris proved (log N)<sup>44</sup> in 2005; Montenegro and Tetali brought the exponent to 29, and Morris to 4 for every even deck and to 3 for powers of two. Jonasson’s 2009 course notes recorded the expectation that the answer is of order log N.</p>
+<p>Result 238 is twelve OpenAI preprints, 683 pages, dated September 26, 2026. The main paper claims that for decks of 2<sup>d</sup> cards, after 1600d shuffles the full permutation is close to uniform in total variation, from any starting order, as d grows. With the coin-counting lower bound, about 2d shuffles, the mixing time is of order log N, the optimal order.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The right constant (somewhere between 2 and 1600, or 512 by combining two companion papers), a cutoff (whether the deck randomizes suddenly), or decks whose size is not a power of two, where (log N)<sup>4</sup> remains the best bound.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 12 papers, 683 pages, dated September 26, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Yes, the headline and selected companion statements (<a href="https://github.com/openai/math/blob/main/lean/docs/238.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. The preprints have not been revised since release. In Lean, thirteen comparators cover statements from across the papers, about 270,000 lines with no unproved steps; one states the headline, mixing time of order log N, from first principles (we did not build it). OSVerify has not reviewed the item. We found no expert reaction; one public project treats the bounds as starting points while it chases the cutoff.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Sweeps.</strong> Undo the rotation of the bits: every d shuffles become one sweep of fair switches across each of the d binary directions.</li>
+  <li><strong>One card at a time.</strong> Follow cards one at a time, given the paths of the cards already placed. A switch with both slots free averages the card’s chances, so the process has a memory of only one sweep. After 200 sweeps a random 7/8 of the deck lands almost uniformly.</li>
+  <li><strong>Fourier.</strong> A law that is nearly uniform on eight suitable large sets of cards, each 7/8 of the deck, has small Fourier coefficients in every high-dimensional representation of the permutation group; the sign is handled by the last coin. Eight blocks of 200 sweeps give 1600.</li>
+  <li><strong>Other routes.</strong> The other eleven papers give several more proofs, most of them self-contained, with headline constants from 512 to 16 million sweeps, side routes as large as about 172 billion, and some with no explicit constant.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours, exact: after 3 shuffles of 8 cards the whole deck is at distance 0.898 from random, since 12 coins give only 4,096 outcomes against 40,320 orderings; below 1/4 after 5 shuffles (4 cards: 3). Every ordering first becomes possible after at least 2d − 2 shuffles, for every deck from 8 cards to 2<sup>40</sup>.</li>
+  <li>Ours, exact: for 8 cards, one sweep wipes out 15 of the 21 nontrivial representations of the permutation group; the largest survivor is shrunk to at most 0.354.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Optimal-order-mixing-of-the-Thorp-shuffle-September-26-2026/paper.pdf">Optimal-order mixing of the Thorp shuffle (PDF)</a>, 14 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Random-coordinate-frames-and-partial-permutation-laws-September-26-2026/main.pdf">Random coordinate frames and partial permutation laws (PDF)</a>, 72 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/From-partial-permutation-information-to-Fourier-bounds-September-26-2026/main.pdf">From partial permutation information to Fourier bounds (PDF)</a>, 66 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Conditional-information-under-deterministic-coordinate-sweeps-September-26-2026/main.pdf">Conditional information under deterministic coordinate sweeps (PDF)</a>, 81 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Conditional-permutations-in-a-revealed-switching-environment-September-26-2026/paper.pdf">Conditional permutations in a revealed switching environment (PDF)</a>, 32 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Routing-densities-and-representation-contraction-for-Thorp-sweeps-September-26-2026/paper.pdf">Routing densities and representation contraction for Thorp sweeps (PDF)</a>, 86 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Row-column-symmetry-and-contraction-of-coordinate-sweeps-September-26-2026/paper.pdf">Row–column symmetry and contraction of coordinate sweeps (PDF)</a>, 38 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Random-subspace-tests-and-trace-smoothing-for-coordinate-sweeps-September-26-2026/paper.pdf">Random-subspace tests and trace smoothing for coordinate sweeps (PDF)</a>, 15 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Compatibility-entropy-and-the-spectrum-of-a-Thorp-sweep-September-26-2026/paper.pdf">Compatibility entropy and the spectrum of a Thorp sweep (PDF)</a>, 128 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Signed-tensor-densities-and-diagram-budgets-for-coordinate-sweeps-September-26-2026/paper.pdf">Signed tensor densities and diagram budgets for the Thorp shuffle (PDF)</a>, 109 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Conditional-coordinate-sweeps-and-analytic-transfer-September-26-2026/main.pdf">Conditional coordinate sweeps and analytic transfer (PDF)</a>, 23 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-strict-four-row-permanent-inequality-and-permutation-moments-September-26-2026/main.pdf">A strict four-row permanent inequality and permutation moments (PDF)</a>, 19 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/238.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 238.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 12 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Optimal-order-mixing-of-the-Thorp-shuffle-September-26-2026/paper.pdf">Optimal-order mixing of the Thorp shuffle</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Random-coordinate-frames-and-partial-permutation-laws-September-26-2026/main.pdf">Random coordinate frames and partial permutation laws</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/From-partial-permutation-information-to-Fourier-bounds-September-26-2026/main.pdf">From partial permutation information to Fourier bounds</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Conditional-information-under-deterministic-coordinate-sweeps-September-26-2026/main.pdf">Conditional information under deterministic coordinate sweeps</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Conditional-permutations-in-a-revealed-switching-environment-September-26-2026/paper.pdf">Conditional permutations in a revealed switching environment</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Routing-densities-and-representation-contraction-for-Thorp-sweeps-September-26-2026/paper.pdf">Routing densities and representation contraction for Thorp sweeps</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Row-column-symmetry-and-contraction-of-coordinate-sweeps-September-26-2026/paper.pdf">Row&#8211;column symmetry and contraction of coordinate sweeps</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Random-subspace-tests-and-trace-smoothing-for-coordinate-sweeps-September-26-2026/paper.pdf">Random-subspace tests and trace smoothing for coordinate sweeps</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Compatibility-entropy-and-the-spectrum-of-a-Thorp-sweep-September-26-2026/paper.pdf">Compatibility entropy and the spectrum of a Thorp sweep</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Signed-tensor-densities-and-diagram-budgets-for-coordinate-sweeps-September-26-2026/paper.pdf">Signed tensor densities and diagram budgets for the Thorp shuffle</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Conditional-coordinate-sweeps-and-analytic-transfer-September-26-2026/main.pdf">Conditional coordinate sweeps and analytic transfer</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-strict-four-row-permanent-inequality-and-permutation-moments-September-26-2026/main.pdf">A strict four-row permanent inequality and permutation moments</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Take a deck of eight cards, A to H. Cut it into two halves, and pair the first card of each half, then the second, and so on. For each pair, flip a fair coin to decide which card goes first, and stack the pairs in order. That is one Thorp shuffle, studied by Edward Thorp, of blackjack fame, in 1973. Cryptographers later used it to encrypt short messages like credit card numbers. Write each position in binary. One shuffle drops the top bit of a card’s address, shifts the rest left, and appends that old bit, flipped or not by the pair’s coin. So after three shuffles of eight cards, each card’s address is three fresh coin flips: any single card is in a perfectly random position. How many shuffles until the whole deck, every ordering, is close to random? Not three. Our exact computation for eight cards: after three shuffles the deck is still at distance 0.9 from random, because 12 coin flips give only 4,096 orderings out of 40,320. Counting coins this way, a deck of 2^d cards needs at least about 2d shuffles before every ordering is even possible: at least 2d − 2, for every deck from eight cards up to 2^40. With eight cards, five shuffles bring the distance below one quarter.</p>
+<h3><span class="t num">1:20</span>The claim</h3>
+<p>Diaconis, as Morris reported in 2005, called it the longest-standing open card-shuffling problem. That year Morris proved the first polylogarithmic bound, (log N)^44. Montenegro and Tetali brought it to the 29th power, Morris to the fourth for every even deck, and then, for powers of two, to log cubed. Jonasson’s 2009 course notes recorded the expectation that the true answer is of order log N. Result 238 is 12 OpenAI preprints, dated September 26, 2026. The main paper claims that for decks of 2^d cards, after 1600d shuffles the full permutation is close to uniform in total variation, from any starting order, as d grows. With the coin-counting bound, the mixing time is of order log N, the optimal order. Not claimed: the right constant, which lies somewhere between 2 and 1600, or 512 by combining two companions; whether the deck randomizes suddenly, a cutoff; or decks whose size is not a power of two, where log to the fourth remains the best bound.</p>
+<h3><span class="t num">2:31</span>How the proof goes</h3>
+<p>First, undo the rotation of the bits: every d shuffles become one sweep of fair switches across each of the d binary directions. Then follow cards one at a time, given the paths of the cards already placed. When a card meets a switch with both slots free, its chances average; this gives the process a memory of only one sweep. After 200 sweeps, a random 7/8 of the deck lands almost uniformly. Then representation theory takes over. A law that is nearly uniform on the right large sets of cards, eight of them, each 7/8 of the deck, must have small Fourier coefficients in every high-dimensional representation of the permutation group; the sign is handled by the last coin. Eight such blocks of 200 sweeps give 1600. In our eight-card computation, one sweep wipes out 15 of the 21 nontrivial representations exactly; the largest survivor is shrunk to at most 0.35. The other eleven papers give several more proofs by different routes, most of them self-contained, with headline constants from 512 to 16 million sweeps, side routes as large as 170 billion, and some with no explicit constant at all.</p>
+<h3><span class="t num">3:49</span>Where it stands</h3>
+<p>The preprints are unrefereed and unchanged since release. In Lean, 13 comparators cover statements from across the papers, about 270,000 lines with no unproved steps; one states the headline, mixing time of order log N, from first principles. We did not build it. OSVerify has not reviewed the item. We found no expert reaction; one public project treats the bounds as starting points while it chases the cutoff. If it holds, the whole deck is random after a constant times log N shuffles, the order Jonasson’s notes recorded as expected, and nothing faster is possible. What that constant really is, nobody yet knows.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20238%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
