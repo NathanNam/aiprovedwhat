@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 206: Finite lattice representation and undecidability | AI Proved What?</title>
-<meta name="description" content="Finite lattice representation and undecidability. Result 206 in OpenAI&#x27;s math release (Algebra): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>A lattice no algebra fits? Finite lattice representation | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim the finite lattice representation problem has a negative answer: some finite lattice is no finite algebra’s congruence lattice, and no algorithm can tell which. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/206-finite-lattice-representation-undecidability/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 206: Finite lattice representation and undecidability | AI Proved What?">
-<meta property="og:description" content="Finite lattice representation and undecidability. Result 206 in OpenAI&#x27;s math release (Algebra): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="A lattice no algebra fits?">
+<meta property="og:description" content="Two AI preprints claim the finite lattice representation problem has a negative answer: some finite lattice is no finite algebra’s congruence lattice, and no algorithm can tell which. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/206-finite-lattice-representation-undecidability/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/206-finite-lattice-representation-undecidability/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,35 +37,92 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 206 · <a href="../../subjects/algebra/">Algebra</a></p>
-<h1 class="result-title">Finite lattice representation and undecidability</h1>
+<p class="meta">Episode 206, October 2026</p>
+<h1>A lattice no algebra fits?</h1>
+<p class="subtitle">Two preprints claim that some finite lattice is not the congruence lattice of any finite algebra, and that no algorithm can decide which finite lattices are</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 206 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="Px3PrlrpPAw" data-title="Episode 206: A lattice no algebra fits?">
+  <a href="https://youtu.be/Px3PrlrpPAw">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 206: A lattice no algebra fits? A schematic lattice drawn as a grid of dots, under a red question mark.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:56. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/Px3PrlrpPAw?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/Px3PrlrpPAw?t=72" data-t="72"><span class="t">1:12</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/Px3PrlrpPAw?t=138" data-t="138"><span class="t">2:18</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/Px3PrlrpPAw?t=198" data-t="198"><span class="t">3:18</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Some finite lattices are not congruence lattices of any finite algebra, answering the finite lattice representation problem negatively. Moreover, no algorithm decides whether a finite lattice has such a representation, or whether it is a full subgroup interval of a finite group.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>An algebra, in the most general sense, is a set with some operations on it, any number, of any finite arity. A congruence is a way of gluing elements together that respects all the operations, and the congruences of an algebra, ordered by inclusion, always form a lattice. Three points with no operations at all have five congruences, arranged in a diamond. In 1963 Grätzer and Schmidt showed that every algebraic lattice arises this way, but the algebra may have to be infinite.</p>
+<p>The finite version stayed open: is every finite lattice the congruence lattice of some finite algebra? Pálfy and Pudlák showed in 1980 that this is the same as asking whether every finite lattice appears as an interval of subgroups, between a subgroup H and a finite group G. (Our computer checks one half of this link on 10 small examples: the congruences of G acting on the cosets of H match the interval exactly.) By 2012, every lattice with at most seven elements was known to work, except possibly one.</p>
+<p>Result 206 bundles two OpenAI preprints, both dated September 24, 2026, that answer no. <a href="https://github.com/openai/math/blob/main/preprints/A-Negative-Solution-to-the-Finite-Lattice-Representation-Problem-September-24-2026/paper.pdf">A negative solution to the finite lattice representation problem</a> (87 pages) proves that some finite lattice is not an interval of subgroups in any finite group, and gets the answer through Pálfy and Pudlák. <a href="https://github.com/openai/math/blob/main/preprints/Finite-Congruence-Lattices-Characterization-and-Undecidability-September-24-2026/paper.pdf">Finite congruence lattices: characterization and undecidability</a> (180 pages) builds its own family of counterexamples and claims more: no algorithm can decide, from a lattice’s table, whether it is the congruence lattice of a finite algebra, or a full interval of subgroups. It also settles that last seven-element case: the lattice is the interval between a group of order 6 and a group of 262,080 elements, and our computer rebuilt that interval and found exactly the seven subgroups the paper names.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>A counterexample of known size. Both papers prove one exists; the smallest has more than seven elements, and the longer paper pins down its exact size only through an uncomputed Busy Beaver number. The shorter paper’s lattice is shown not to be a subgroup interval; the congruence-lattice answer follows only through the global Pálfy–Pudlák equivalence.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 87 and 180 pages, dated September 24, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-partial">
+  <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/206.md">scope notes</a>)</dd>
+    <dd>Headline claims not formalized; only the colored-graph test and the coset link (<a href="https://github.com/openai/math/blob/main/lean/docs/206.md">docs</a>)</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 17, 2026.</p>
+<p class="ledger-note">Last checked October 16, 2026. Neither preprint has been revised since they were added to the repository in its initial commit on October 6, 2026. The Lean formalization (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/FiniteCongruenceGraph.lean">the checked statement</a>) covers only the colored-graph test, which the paper calls established background, and the link between cosets and intervals; the counterexamples and the undecidability are not formalized. Neither paper is among those OSVerify reviewed, and we found no expert reaction.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Into finite groups.</strong> Both counterexample proofs translate lattices into finite groups and use the classification of finite simple groups.</li>
+  <li><strong>The shorter paper.</strong> Lattices with long chains of small test pieces force, in any group realizing them, the same simple group at both ends of a long enough chain (Theorem 3.2). A four-dimensional cube of subgroups and a detector then force a gluing of homomorphisms that cannot exist (Theorem 10.10).</li>
+  <li><strong>The longer paper: yes is checkable.</strong> A colored graph whose existence is equivalent to a representation (Theorem 2.2) is a finite certificate for yes; searching graph sizes one by one finds every yes, but may run forever on a no (Corollary 2.3).</li>
+  <li><strong>No is not.</strong> Integer equations are encoded in lattices, with numbers stored as sizes of permutation blocks and products checked with a squaring trick (Lemma 15.2). A decider would bound the smallest solution of every solvable equation, which would solve Hilbert’s tenth problem, known to be unsolvable (Theorem 15.3).</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>The interval between PGL<sub>2</sub>(F<sub>2</sub>) and PGL<sub>2</sub>(F<sub>64</sub>) rebuilt from its 7,303 double cosets (ours): seven subgroups, of orders 6, 18, 42, 60, 126, 504 and 262,080, as the paper names them.</li>
+  <li>The coset link checked on 10 small examples, and the squaring identity of Lemma 15.2 (ours).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Negative-Solution-to-the-Finite-Lattice-Representation-Problem-September-24-2026/paper.pdf">A negative solution to the finite lattice representation problem (PDF)</a>, 87 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Finite-Congruence-Lattices-Characterization-and-Undecidability-September-24-2026/paper.pdf">Finite congruence lattices: characterization and undecidability (PDF)</a>, 180 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/206.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 206.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -75,18 +131,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-Negative-Solution-to-the-Finite-Lattice-Representation-Problem-September-24-2026/paper.pdf">A negative solution to the finite lattice representation problem</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>An algebra, in the most general sense, is a set with some operations on it, any number, of any kind. A congruence is a way of gluing elements together that respects all the operations. The congruences of an algebra, ordered by inclusion, always form a lattice: any two have a smallest common coarsening and a largest common refinement. For example, three points with no operations at all have five congruences, arranged in a diamond. In 1963, Grätzer and Schmidt showed that every reasonable lattice arises this way, but the algebra may have to be infinite. The finite version stayed open: is every finite lattice the congruence lattice of some finite algebra? Pálfy and Pudlák showed in 1980 that this is the same as asking whether every finite lattice appears as an interval of subgroups, between a subgroup H and a finite group G. Our computer checks one half of this link on 10 small examples: the congruences of G acting on the cosets of H match the interval exactly. By 2012, every lattice with at most seven elements was known to work, except possibly one.</p>
+<h3><span class="t num">1:12</span>The claim</h3>
+<p>Result 206 bundles two OpenAI preprints, both dated September 24, 2026, that answer no. The shorter, 87 pages, proves that some finite lattice is not an interval of subgroups in any finite group, and gets the answer through Pálfy and Pudlák. The longer, 180 pages, builds its own family of counterexamples, and claims more: no algorithm can decide, from a lattice’s table, whether it is the congruence lattice of a finite algebra, or a full interval of subgroups. It also settles that last seven-element case: the lattice is the interval between a group of order 6 and a group of 262,080 elements. Our computer rebuilt that interval and found exactly the seven subgroups the paper names. Not claimed: a counterexample of known size. Both papers prove one exists; the smallest one has more than seven elements, and the longer paper pins down its exact size only through an uncomputed Busy Beaver number.</p>
+<h3><span class="t num">2:18</span>How the proof goes</h3>
+<p>Both proofs translate lattices into finite groups and use the classification of finite simple groups. The shorter paper builds lattices with long chains of small test pieces, and shows that in any group realizing them, the simple groups at both ends of a long enough chain must agree. A four-dimensional cube of subgroups and a detector then force a gluing of homomorphisms that cannot exist. The longer paper first gives a finite certificate for yes: a colored graph whose existence is equivalent to a representation. Searching graph sizes one by one finds every yes, but may run forever on a no. Then it encodes integer equations in lattices, with numbers stored as sizes of permutation blocks, and products checked with a squaring trick. If an algorithm could decide representability, it would bound the smallest solution of every solvable equation, which would solve Hilbert’s tenth problem. That problem is known to be unsolvable.</p>
+<h3><span class="t num">3:18</span>Where it stands</h3>
+<p>Both preprints are unrefereed and have not been revised. The Lean formalization covers only the colored-graph test, which the paper calls established background, and the link between cosets and intervals. The counterexamples and the undecidability are not formalized. Neither paper is among those OSVerify reviewed, and we found no expert reaction. If they hold, one of universal algebra’s best-known open questions has the answer no, and no single algorithm can tell which finite lattices are the exceptions.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20206%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../205-saxls-conjecture-universal-tensor-squares/"><span class="dir">Previous · 205</span><span class="pt">Saxl’s conjecture and universal tensor squares</span></a>
-  <a class="next" href="../207-l1-bass-conjecture-all-discrete/"><span class="dir">Next · 207</span><span class="pt">The ℓ¹-Bass conjecture for all discrete groups</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/algebra/">More in algebra</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
