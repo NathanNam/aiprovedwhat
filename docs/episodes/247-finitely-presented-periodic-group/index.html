@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finite rules, finite orders, still infinite? A finitely presented periodic group | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim an infinite, finitely presented group in which every element has finite order, and a residually finite 2-group, answering Kourovka problem 8.52. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/247-finitely-presented-periodic-group/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Finite rules, finite orders, still infinite?">
+<meta property="og:description" content="Two AI preprints claim an infinite, finitely presented group in which every element has finite order, and a residually finite 2-group, answering Kourovka problem 8.52. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/247-finitely-presented-periodic-group/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/247-finitely-presented-periodic-group/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 247, October 2026</p>
+<h1>Finite rules, finite orders, still infinite?</h1>
+<p class="subtitle">Two AI preprints claim an infinite finitely presented periodic group</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 247 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="-tccrTfLKE8" data-title="Episode 247: Finite rules, finite orders, still infinite?">
+  <a href="https://youtu.be/-tccrTfLKE8">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 247: Finite rules, finite orders, still infinite? A binary tree, like the one Grigorchuk's group acts on.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:48. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/-tccrTfLKE8?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/-tccrTfLKE8?t=67" data-t="67"><span class="t">1:07</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/-tccrTfLKE8?t=129" data-t="129"><span class="t">2:09</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/-tccrTfLKE8?t=242" data-t="242"><span class="t">4:02</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A group is periodic if every element, repeated enough times, gives the identity, like the rotations of a cube. In 1902 Burnside asked whether a finitely generated periodic group must be finite. It need not be: Golod found infinite examples in 1964, using an inequality he had proved with Shafarevich, and Grigorchuk found a famous one in 1980, acting on an infinite binary tree. But every known example was built with infinitely many defining rules. Whether finitely many rules can give an infinite periodic group is problem 8.52 in the Kourovka Notebook, listed by Ol’shanskii in 1982. In 2007 Zelmanov guessed that such a group, if it exists, is perhaps not residually finite, meaning not visible through its finite quotients.</p>
+<p>Result 247 is two OpenAI preprints. The first, 48 pages, dated September 23, 2026, claims an infinite, finitely presented, periodic group: the Steinberg group of 12-by-12 formal row operations over one finitely presented ring of characteristic two. The same ring gives a finitely presented nil algebra over the two-element field that is not nilpotent, and the group has property (T). The second, 25 pages, dated October 5, claims the group is residually finite, and that a finite-index subgroup is an infinite finitely presented 2-group, in which every element has order a power of two.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>A common exponent (the orders are unbounded), any field other than the one with two elements, or an explicit list of rules. The presentation is finite but astronomical: in the Lean version, each letter of the ring’s alphabet is a string of at least 40,000 bits. The whole group is not a 2-group, since it maps onto 12-by-12 matrices over the two-element field, which have elements of order 3, 5, 7 and more.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 2 papers, 73 pages, dated September 23 and October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>In part: the first paper’s main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/247.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. Neither preprint has been revised. In Lean, the first paper’s main theorem is formalized: an infinite, finitely presented, periodic 12-by-12 Steinberg group, about 38,000 lines with no unproved steps (we did not build it). Residual finiteness, the 2-group, the nil algebra and property (T) are not formalized. OSVerify has not reviewed the papers, the Kourovka Notebook still lists problem 8.52 as open, and we found no expert reaction.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A ring where every matrix dies.</strong> The ring is built from words and finitely many rules that rewrite them or declare them zero. The rules contain a machine that checks the next level of the construction, made self-referential like the self-simulating tilings of Durand, Romashchenko and Shen. Every long surviving word contains a long run of distinct letters that can be shuffled, and in characteristic two the sum of a matrix product over all orders of its factors is zero once there are enough factors.</li>
+  <li><strong>From the ring to a group.</strong> Every matrix built from row operations over the ring then has finite order. The Steinberg group keeps only the universal rules of row operations, and a method of Krstić and McCool gives finitely many relations. The hard part is the hidden kernel between formal and actual matrices, handled by substituting a cyclic shift whose size is a power of two, together with stability from rank 12.</li>
+  <li><strong>Residually finite, and a 2-group.</strong> The second paper takes an element that every finite truncation of the ring misses. It has order a power of two, and its L-th power is trivial for some odd L, so it is trivial. The 2-group is the subgroup that dies when you reduce to the two-element field.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: Grigorchuk’s group acting on the first 1 to 7 levels of the binary tree has 2<sup>1</sup>, 2<sup>3</sup>, 2<sup>7</sup>, 2<sup>12</sup>, 2<sup>22</sup>, 2<sup>42</sup> and 2<sup>82</sup> elements. Orders of 1,800 random elements are all powers of two, up to 128.</li>
+  <li>Ours: the first paper’s cancellation lemma, tested on random matrices over the two-element field. For 2-by-2, 3-by-3 and 4-by-4 matrices the sum over all orderings vanished in every sample from 4, 6 and 8 factors, against the paper’s bound of more than 4, 9 and 16. The threshold 2d is the Amitsur–Levitzki theorem of 1950.</li>
+  <li>Ours: over truncated free algebras, the elements trivial modulo the small part have orders 1 and 2, then 2 and 4, then 2, 4 and 8 as the depth grows. The others pick up odd factors in their orders.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-infinite-finitely-presented-periodic-group-September-23-2026/paper.pdf">An infinite finitely presented periodic group (PDF)</a>, 48 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-infinite-finitely-presented-residually-finite-2-group-October-5-2026/residually-finite-torsion.pdf">An infinite finitely presented residually finite 2-group (PDF)</a>, 25 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/247.md">The Lean formalization notes</a> (first paper only).</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 247.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-infinite-finitely-presented-residually-finite-2-group-October-5-2026/residually-finite-torsion.pdf">An infinite finitely presented residually finite 2-group</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-infinite-finitely-presented-periodic-group-September-23-2026/paper.pdf">An infinite finitely presented periodic group</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Rotate a cube a quarter turn, four times, and it is back where it started. A group in which every element, repeated enough times, returns to the identity is called periodic. In 1902, William Burnside asked: if such a group is generated by finitely many elements, must it be finite? No. In 1964 Golod found infinite examples, using an inequality he had proved with Shafarevich, and in 1980 Grigorchuk found a famous one, acting on an infinite binary tree. Our computer checked its finite pictures: 2, then 2³, 2⁷, up to 2⁸² elements, and 1,800 random elements whose orders are all powers of two, up to 128. But every known example was built with infinitely many defining rules. Can finitely many rules give an infinite periodic group? Ol’shanskii listed this in the Kourovka Notebook in 1982, and in 2007 Zelmanov guessed that such a group, if it exists, is perhaps not residually finite: not visible through its finite pictures.</p>
+<h3><span class="t num">1:07</span>The claim</h3>
+<p>Result 247 is two OpenAI preprints. The first, 48 pages, dated September 23, 2026, claims an infinite, finitely presented, periodic group: 12-by-12 formal row operations over one strange ring in characteristic two. The same ring gives a finitely presented nil algebra that is not nilpotent. The second, 25 pages, dated October 5, claims this group is residually finite, and that a finite-index subgroup is an infinite finitely presented 2-group. Not claimed: a common exponent, since the orders are unbounded; any field other than the one with two elements; or an explicit list of rules. The presentation is finite but astronomical: in the Lean version, each letter of the ring’s alphabet is a string of at least 40,000 bits. And the whole group is not a 2-group: it maps onto 12-by-12 matrices over the two-element field, which have elements of order 3, 5, 7, and more.</p>
+<h3><span class="t num">2:09</span>How the proof goes</h3>
+<p>The ring is built from words and finitely many rules that rewrite them or declare them zero. The rules contain a machine that checks the next level of the construction, made self-referential like the self-simulating tilings of Durand, Romashchenko and Shen. Every long word that survives contains a long run of distinct letters that can be shuffled. In characteristic two, summing a matrix product over all orders of its factors gives zero once there are enough factors. Our check: with 2-by-2, 3-by-3 and 4-by-4 matrices, the sum vanished in every sample from 4, 6 and 8 factors, sooner than the paper’s bound, as the classical Amitsur–Levitzki theorem predicts. So every matrix over the ring’s small part dies when raised to a high enough power, and every matrix built from row operations has finite order. The group is the Steinberg group, which keeps only the universal rules of row operations; a method of Krstić and McCool gives finitely many relations. The hard part is the hidden kernel between formal and actual matrices. Here the paper substitutes a cyclic shift of size a power of two, whose difference from the identity is nilpotent, and uses stability from rank 12. The second paper adds phases modulo odd numbers: take an element that every finite truncation of the ring misses; it turns out to have order a power of two, and its L-th power is trivial for some odd L, so it is trivial. Finite truncations of the ring then separate all elements. In our toy truncations, the elements that are trivial modulo the small part have orders 2, 4, 8, growing with depth; the others pick up odd factors in their orders. That is why the 2-group is the subgroup that dies when you reduce to the two-element field.</p>
+<h3><span class="t num">4:02</span>Where it stands</h3>
+<p>Both preprints are unrefereed and unchanged since release. In Lean, the first paper’s main theorem is formalized: an infinite, finitely presented, periodic 12-by-12 Steinberg group, about 38,000 lines with no unproved steps; we did not build it. Residual finiteness, the 2-group and the nil algebra are not formalized. OSVerify has not reviewed them, the Kourovka Notebook still lists the problem as open, and we found no expert reaction. If they hold, finitely many rules can describe an infinite group in which everything comes back: an answer to a well-known question, listed in 1982 and going back to Burnside.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20247%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
