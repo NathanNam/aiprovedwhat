@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Every equation solvable? The Kadison–Ringrose conjecture | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims the Kadison–Ringrose conjecture: all bounded Hochschild cohomology of a von Neumann algebra with coefficients in itself vanishes. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/295-kadison-ringrose/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Every equation solvable?">
+<meta property="og:description" content="An AI preprint claims the Kadison–Ringrose conjecture: all bounded Hochschild cohomology of a von Neumann algebra with coefficients in itself vanishes. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/295-kadison-ringrose/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/295-kadison-ringrose/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 295, October 2026</p>
+<h1>Every equation solvable?</h1>
+<p class="subtitle">An AI preprint claims the Kadison–Ringrose cohomology conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 295 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="ao8gm84743c" data-title="Episode 295: Every equation solvable?">
+  <a href="https://youtu.be/ao8gm84743c">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 295: Every equation solvable? A random walk wandering inside a circle.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:30. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/ao8gm84743c?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/ao8gm84743c?t=104" data-t="104"><span class="t">1:44</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/ao8gm84743c?t=162" data-t="162"><span class="t">2:42</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/ao8gm84743c?t=230" data-t="230"><span class="t">3:50</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A von Neumann algebra is an algebra of operators closed under adjoints and weak limits; the type II₁ factors among them carry a trace. Hochschild cohomology asks whether every cocycle, a multilinear map whose coboundary vanishes, is the coboundary of a bounded map. In degree 1 this says every derivation is inner, which Kadison and Sakai proved in 1966. Kadison and Ringrose built the theory in 1971, and the conjecture that all bounded cohomology of a von Neumann algebra with coefficients in itself vanishes bears their names; Sinclair and Smith trace it to 1967. It gave way case by case: type I and hyperfinite algebras by 1972, properly infinite and McDuff ones in 1987, algebras with Cartan subalgebras in 1998, and factors with property Γ in 2003. For the free group factors, Pop and Smith wrote in 2010, “nothing is known about their cohomology.”</p>
+<p>Result 295 is one OpenAI paper, 28 pages, dated September 23, 2026, and published October 6. It claims that for every complex von Neumann algebra and every degree at least 2, every bounded cocycle with coefficients in the algebra is the coboundary of a bounded map with values in the algebra. Together with Kadison and Sakai’s theorem in degree 1, every positive degree would vanish: the Kadison–Ringrose conjecture.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Bounded here means ordinary norm bounded, with no complete boundedness assumed. Not claimed: other coefficient modules, C*-algebras, or one constant for all algebras, though for normal cocycles in the tracial type II₁ case the primitive is no larger than the cocycle. The paper does not use the release’s similarity result from episode 288, and we found no theorem that derives one from the other.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 28 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The main theorem, with the classical inputs (<a href="https://github.com/openai/math/blob/main/lean/docs/295.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper has not been revised. In Lean, the main theorem is formalized and matches the paper, in about 63,000 lines that also cover the classical inputs from the 1970s and 1980s, with no unproved steps in our scan (we did not build it). OSVerify has not reviewed it, and we found no expert comment or reported error.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A walk instead of an average.</strong> There is no invariant average over the unitaries of a free group factor. The paper builds one random walk on the unitary group whose long products, at chosen lengths, have the moments of free Haar unitaries, and averages along it. That gives only a harmonic map, but a new Liouville theorem shows that a bounded harmonic map of this kind is a module map.</li>
+  <li><strong>A circle and a Fourier squeeze.</strong> The Liouville proof runs through a martingale and ultrapowers to a circular element, a scaled sum of free Haar unitaries. It ends with Fourier sums: sine sums never exceed 1.852, the Gibbs constant, while cosine sums grow like log m, squeezing the remaining difference to zero. That step fails without a trace.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: for 2×2 matrices, coboundary ranks 3, 13, 51 and 205 leave no cohomology in degrees 1 to 3; the dual numbers, not an operator algebra, keep one dimension in each degree 1 to 4.</li>
+  <li>Ours: on 3×3 matrices, harmonic maps form a 9-dimensional space (the module maps) when the walk’s steps generate the algebra, and 27 for diagonal steps.</li>
+  <li>Ours: a random-matrix model of the circular element has norm 1.944 and moments 1.00, 1.97, 4.81, 13.11, approaching the Catalan numbers 1, 2, 5, 14.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Vanishing-of-higher-bounded-Hochschild-cohomology-September-23-2026/paper.pdf">Vanishing of Higher Bounded Hochschild Cohomology (PDF)</a>, 28 pages.</li>
+  <li><a href="https://arxiv.org/abs/0907.3244">Pop and Smith on second cohomology for tensor products</a> (arXiv, 2009; JFA 2010).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/295.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 295.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Vanishing-of-higher-bounded-Hochschild-cohomology-September-23-2026/paper.pdf">Vanishing of higher bounded Hochschild cohomology</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A von Neumann algebra is an algebra of operators closed under adjoints and weak limits; the type II₁ factors among them carry a trace. Hochschild cohomology asks whether every cocycle, a multilinear map whose coboundary vanishes, is the coboundary of a bounded map. In degree 1 this says every derivation is inner, which Kadison and Sakai proved in 1966. Our computer checks matrices: for 2×2 matrices, coboundary ranks of 3, 13, 51 and 205 leave no cohomology in degrees 1 to 3, while the dual numbers, which are not an operator algebra, keep one dimension in every positive degree, so vanishing is not automatic. Kadison and Ringrose built the theory in 1971, and the conjecture that all bounded cohomology of a von Neumann algebra with coefficients in itself vanishes bears their names; Sinclair and Smith trace it to 1967. On matrices, averaging over unitaries solves the equations directly, and our computer builds such primitives with errors near 10⁻¹⁵. Infinite algebras gave way case by case: type I and hyperfinite algebras by 1972, properly infinite and McDuff ones in 1987, algebras with Cartan subalgebras in 1998, and factors with property Γ in 2003. What remained were factors like the free group factors, with neither property Γ nor a Cartan subalgebra, and no invariant average over their unitaries. In 2010, Pop and Smith wrote of the free group factors that nothing is known about their cohomology.</p>
+<h3><span class="t num">1:44</span>The claim</h3>
+<p>Result 295 is one OpenAI paper, 28 pages, dated September 23 and published October 6, 2026. It claims that for every complex von Neumann algebra and every degree at least 2, every bounded cocycle with coefficients in the algebra is the coboundary of a bounded map with values in the algebra. Together with Kadison and Sakai’s theorem in degree 1, every positive degree would vanish: the Kadison–Ringrose conjecture. Bounded here means ordinary norm bounded, with no complete boundedness assumed. Not claimed: other coefficient modules, C*-algebras, or one constant for all algebras, though for normal cocycles in the tracial type II₁ case the primitive is no larger than the cocycle. The paper does not use the release’s similarity result from episode 288, and we found no theorem that derives one from the other.</p>
+<h3><span class="t num">2:42</span>How the proof goes</h3>
+<p>With no invariant average, the paper builds one random walk on the unitary group whose long products, at chosen lengths, have the moments of free Haar unitaries, and averages along it. That gives only a harmonic map, but a new Liouville theorem shows that a bounded harmonic map of this kind is a module map. Our computer sees the same on 3×3 matrices: when the walk’s steps generate the algebra, the harmonic maps form a 9-dimensional space, exactly the module maps, while a walk of diagonal steps leaves 27. The Liouville proof runs through a martingale and ultrapowers to a circular element, a scaled sum of free Haar unitaries. Our random matrix model shows its norm climbing toward 2 and the moments of s*s approaching the Catalan numbers 1, 2, 5 and 14. The proof ends with Fourier sums: sine sums never exceed 1.852, the Gibbs constant, while cosine sums grow like log m, squeezing the remaining difference to zero. That step fails without a trace.</p>
+<h3><span class="t num">3:50</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. In Lean, the main theorem is formalized and matches the paper, in about 63,000 lines that also cover the classical inputs from the 1970s and 1980s; our scan finds no unproved steps, but we did not build it. OSVerify has not reviewed it, and we found no expert comment or reported error. If it holds, every bounded cocycle equation on a von Neumann algebra, with coefficients in the algebra, can be solved, the hardest case by a random walk instead of an invariant average.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20295%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
