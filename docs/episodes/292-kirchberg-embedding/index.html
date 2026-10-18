@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Too big for the hotel? Kirchberg’s embedding problem | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims a negative answer to Kirchberg’s embedding problem: an explicit group algebra that no nuclear norm ultrapower, O₂’s included, can contain. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/292-kirchberg-embedding/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Too big for the hotel?">
+<meta property="og:description" content="An AI preprint claims a negative answer to Kirchberg’s embedding problem: an explicit group algebra that no nuclear norm ultrapower, O₂’s included, can contain. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/292-kirchberg-embedding/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/292-kirchberg-embedding/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 292, October 2026</p>
+<h1>Too big for the hotel?</h1>
+<p class="subtitle">An AI preprint claims a negative answer to Kirchberg’s embedding problem</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 292 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="dDPFRHumCKs" data-title="Episode 292: Too big for the hotel?">
+  <a href="https://youtu.be/dDPFRHumCKs">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 292: Too big for the hotel? Guests sent by arrows into rooms 2k and 2k+1, and one guest left outside.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:26. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/dDPFRHumCKs?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/dDPFRHumCKs?t=90" data-t="90"><span class="t">1:30</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/dDPFRHumCKs?t=143" data-t="143"><span class="t">2:23</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/dDPFRHumCKs?t=218" data-t="218"><span class="t">3:38</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The Cuntz algebra O₂ is Hilbert’s hotel turned into algebra: two isometries, each a perfect copy of the whole space, that together tile it, so one copy sends guest k to room 2k and the other to room 2k + 1. In matrices this is impossible: a trace would make 1 equal 2, and in any algebra with a trace the best attempt misses by at least 1/3. Kirchberg proved (announced in 1994, published with Phillips in 2000) that every separable exact C*-algebra sits inside O₂. He then asked whether every separable C*-algebra embeds in the norm ultrapower of O₂: whether O₂ can simulate any separable algebra to any finite accuracy, measured in the operator norm. The question, raised around 2007 and first in print in 2014, is a traceless cousin of Connes’ embedding problem. The 2020 preprint MIP* = RE answered Connes’ problem, but through traces, and O₂ has none.</p>
+<p>Result 292 is one OpenAI paper, 14 pages, dated September 23, 2026, and published October 6. It claims that the full group C*-algebra of the explicit group ℤ[1/2]³ ⋊ (SL₃(ℤ) × ℤ), where (M, k) acts by v ↦ 2<sup>k</sup>Mv, does not embed unitally in any norm ultrapower of any nonzero unital nuclear C*-algebra. Since O₂ is nuclear, Kirchberg’s question would have a negative answer.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Anything about trace-based ultrapowers, the reduced group C*-algebra, or targets that are not nuclear. The same setup appeared in August and September 2026 in work by Sauers and by Eckhardt, both made with AI, and the paper cites them; using it on Kirchberg’s question appears to be new.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 14 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The full theorem, with the O₂ corollary (<a href="https://github.com/openai/math/blob/main/lean/docs/292.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper has not been revised. In Lean, the full theorem with the O₂ corollary is formalized, about 18,500 lines with no unproved steps in our scan (we did not build it). Its property (T) proof rests on an integer certificate, a Gram matrix with 121 rows; we recomputed the residual exactly, 29,562,852,800, matching the Lean value. OSVerify has not reviewed it, and we found no expert comment.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A sharp test.</strong> The integer lattice twisted by 3×3 matrices has property (T): a spectral gap that makes “does this approximate representation contain that one?” a sharp yes or no.</li>
+  <li><strong>Finitely many matches.</strong> A new lemma says that in a nuclear algebra one approximate copy nearly matches only finitely many irreducible finite-dimensional representations.</li>
+  <li><strong>The zoom.</strong> The zoom that doubles every vector forces every match to come from another, so a finite list must repeat. A representation that sees parity would then come back after enough zooms, but after any zoom it no longer sees translations at all. So the embedding cannot exist.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: spectral gaps of finite quotients: 3×3 matrices over the fields with 2, 3 and 5 elements give 3.17, 2.71 and 1.77, while abelian groups (ℤ/n)³ fall to 0.0096 at n = 64. An illustration, not a proof of property (T).</li>
+  <li>Ours: a tuning-fork test reads 0 for a match and 6.3 otherwise; with slight noise a match reads about 0.04.</li>
+  <li>Ours: the residual of the Lean property (T) certificate, recomputed exactly: 29,562,852,800.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-explicit-obstruction-to-nuclear-norm-ultrapower-embeddings-September-23-2026/paper.pdf">An Explicit Obstruction to Nuclear Norm-Ultrapower Embeddings (PDF)</a>, 14 pages.</li>
+  <li><a href="https://arxiv.org/abs/1404.1861">Goldbring and Sinclair, “On Kirchberg’s embedding problem”</a> (arXiv, 2014).</li>
+  <li><a href="https://arxiv.org/abs/2608.28772">Eckhardt’s preprint on the same group</a> (arXiv, August 2026).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/292.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 292.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-explicit-obstruction-to-nuclear-norm-ultrapower-embeddings-September-23-2026/paper.pdf">An explicit obstruction to nuclear norm-ultrapower embeddings</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>The Cuntz algebra O₂ is Hilbert’s hotel turned into algebra: two isometries, each a perfect copy of the whole space, that together tile it, so one copy sends guest k to room 2k, the other to room 2k + 1. In matrices this is impossible: a normalized trace would make 1 equal 2, and a short trace argument shows that, in any algebra with a trace, the best attempt misses by at least 1/3; our computer finds matrices that miss by exactly that. Kirchberg proved, announced in 1994 and published with Phillips in 2000, that every separable exact C*-algebra sits inside O₂. Kirchberg then asked whether every separable C*-algebra embeds in the norm ultrapower of O₂: whether O₂ can simulate any separable algebra to any finite accuracy, measured in the operator norm. The question, raised around 2007 and first in print in 2014, is the traceless cousin of Connes’ embedding problem, which asks a similar question about a different algebra, with closeness measured by a trace. In 2020, the preprint MIP* = RE gave Connes’ embedding problem a widely accepted negative answer. But that argument runs through traces, and O₂ has none. Two authors wrote of Kirchberg’s question, in a paper revised as late as April 2026, that an entirely new approach appears to be necessary.</p>
+<h3><span class="t num">1:30</span>The claim</h3>
+<p>Result 292 is one OpenAI paper, 14 pages, dated September 23 and published October 6, 2026. It claims that the full group C*-algebra of one explicit group does not embed unitally in any norm ultrapower of any nonzero unital nuclear C*-algebra. Since O₂ is nuclear, Kirchberg’s question would have a negative answer. The group combines vectors with dyadic coordinates, the integer 3×3 matrices of determinant one, and a zoom that doubles every vector. The same setup appeared in August and September in work by Sauers and by Eckhardt, both working with AI, and the paper cites them; using it on Kirchberg’s question appears to be new. Not claimed: anything about trace-based ultrapowers, the reduced group algebra, or targets that are not nuclear.</p>
+<h3><span class="t num">2:23</span>How the proof goes</h3>
+<p>The core is property (T) of the integer lattice twisted by these matrices: a spectral gap that makes the question, does an approximate representation contain this one, a sharp yes or no. Our computer shows such gaps on finite quotients: for 3×3 matrices over the fields with 2, 3 and 5 elements they stay well away from zero, at 3.17, 2.71 and 1.77, while gaps for ever larger abelian groups fall below 0.01. A tuning-fork test reads 0 for a match and 6.3 otherwise; with a little noise, a match still reads only about 0.04. A new lemma says that in a nuclear algebra, one approximate copy nearly matches only finitely many irreducible finite-dimensional representations. The zoom forces every match to come from another match, so a finite list must repeat, and one representation that sees parity would come back after enough zooms. Our computer shows why it cannot: after even one zoom, and so after any number, it no longer sees the translations at all, and its overlap with the original is 0. So the embedding cannot exist.</p>
+<h3><span class="t num">3:38</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. In Lean, the full theorem is formalized, with the O₂ corollary, in about 18,500 lines; our scan finds no unproved steps, but we did not build it. Its property (T) proof rests on an integer certificate, a Gram matrix with 121 rows, and our computer recomputes its residual exactly, matching the Lean value to the last digit. OSVerify has not reviewed it, and we found no expert comment. O₂ contains every separable exact algebra. If this result holds, it cannot even approximately contain all separable algebras, and Kirchberg’s question has a negative answer.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20292%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
