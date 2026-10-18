@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Only three in dimension six? Mutually unbiased bases | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim that dimension six has at most three mutually unbiased bases, by a computer-assisted search, and prove at most five exactly. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/266-three-mubs-dimension-six/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Only three in dimension six?">
+<meta property="og:description" content="Two AI preprints claim that dimension six has at most three mutually unbiased bases, by a computer-assisted search, and prove at most five exactly. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/266-three-mubs-dimension-six/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/266-three-mubs-dimension-six/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 266, October 2026</p>
+<h1>Only three in dimension six?</h1>
+<p class="subtitle">Two AI preprints claim Zauner’s conjecture: exactly three mutually unbiased bases in dimension six</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 266 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="28Pt5QXan48" data-title="Episode 266: Only three in dimension six?">
+  <a href="https://youtu.be/28Pt5QXan48">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 266: Only three in dimension six? A 6×6 grid of small circles with arrows showing the phases of the Fourier matrix.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:17. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/28Pt5QXan48?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/28Pt5QXan48?t=71" data-t="71"><span class="t">1:11</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/28Pt5QXan48?t=144" data-t="144"><span class="t">2:24</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/28Pt5QXan48?t=201" data-t="201"><span class="t">3:21</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Two ways of measuring a quantum system are mutually unbiased if, after one gives a definite result, every outcome of the other is equally likely, like position and momentum. For a system with d states, each measurement is an orthonormal basis, and unbiased means every vector of one basis overlaps every vector of the other with squared size exactly 1/d.</p>
+<p>At most d + 1 bases can be pairwise unbiased, and that many exist whenever d is a prime power. Dimension 6, the first that is not a prime power, is different. Three bases are easy there, and Zauner conjectured in the 1990s that three is the maximum. Numerical searches never found a fourth: in our 100 random restarts none succeeded, and 79 stalled at 0.05125, the value Butterley and Hall reported in 2007. Before this release, all that was proved was that the number is 3, 4, 5 or 7.</p>
+<p>Result 266 is two OpenAI preprints, 111 pages, dated September 24, 2026. The main paper, 76 pages, claims that there are no four mutually unbiased bases in dimension 6, so the maximum is exactly three. Its theorem is labelled computer-assisted, and holds under stated conditions on floating-point arithmetic and the compiler, for one documented run. The companion, 35 pages, proves by exact arithmetic a conjecture of Matolcsi, Ruzsa and Weiner: every 6 × 6 complex Hadamard matrix except those equivalent to Tao’s matrix satisfies a certain Fourier-vanishing condition. A second exact certificate rules out seven bases; with Weiner’s earlier theorem, the number is at most five, without relying on floating point.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Anything for dimension 10 or other non-prime powers, a classification of 6 × 6 Hadamard matrices, or anything about Zauner’s other conjecture, on symmetric measurements.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two papers, 76 and 35 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>In part: the companion’s “at most five” (<a href="https://github.com/openai/math/blob/main/lean/docs/266.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. The preprints have not been revised. The main paper’s code and data, which it cites, are not in the public repository. Lean formalizes the companion’s exact results, at most five bases, in about 2.8 million lines with no unproved steps, which we did not build; it explicitly does not establish the bound of three. OSVerify has not reviewed them. An independent rebuild of the computation from the paper’s text, using interval arithmetic and itself produced with an AI model, also found no fourth basis. Apart from one brief enthusiastic blog comment, we found no assessment by specialists.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>An exhaustive search.</strong> The computation splits the space of candidate bases into small regions, from about 152 million pairs of phase bins down to about 250,000 seed balls and then 22,000 smaller ones. In each region, a graph search finds no two orthonormal bases unbiased to each other and to the first two. 163 regions needed refining, and all were excluded.</li>
+  <li><strong>One run.</strong> The run took 75 minutes on October 4, ten days after the paper’s date, with ordinary floating point and hand-proved rounding margins, not interval arithmetic.</li>
+  <li><strong>A small example.</strong> Grassl showed that exactly 48 vectors are unbiased to both the standard basis and the Fourier basis. They form 16 bases, and no two of those are unbiased to each other (our computer confirms this).</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: we build 4 mutually unbiased bases in dimension 3, 5 in dimension 4 and 8 in dimension 7; in dimension 6 the same formula gives only two (other constructions give three).</li>
+  <li>Ours: the Fourier-vanishing condition holds for the Fourier family and other examples, and fails for Tao’s matrix.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026.pdf">The Maximum Number of Mutually Unbiased Bases in Dimension Six (PDF)</a>, 76 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026.pdf">Exact Fourier Certificates for Complex Hadamard Matrices of Order Six (PDF)</a>, 35 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/266.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 266.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026/The-maximum-number-of-mutually-unbiased-bases-in-dimension-six-September-24-2026.pdf">The maximum number of mutually unbiased bases in dimension six</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026/Exact-Fourier-certificates-for-complex-Hadamard-matrices-of-order-six-September-24-2026.pdf">Exact Fourier certificates for complex Hadamard matrices of order six</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Two ways of measuring a quantum system are mutually unbiased if, after one gives a definite result, every outcome of the other is equally likely, like position and momentum. For a system with d states, each measurement is an orthonormal basis, and unbiased means every vector of one basis overlaps every vector of the other with squared size exactly 1/d. How many bases can be pairwise unbiased? At most d + 1, and that many exist whenever d is a prime power. Our computer builds them: four in dimension 3, five in dimension 4, eight in dimension 7. Dimension 6, the first that is not a prime power, is different: the same formula gives only two. Three bases are easy in dimension 6. Zauner conjectured in the 1990s that three is the maximum. Numerical searches never found a fourth: in our 100 random restarts, none succeeded, and 79 stalled at the same value, 0.05125, which Butterley and Hall reported in 2007. Before this release, all that was proved was that the number is 3, 4, 5 or 7.</p>
+<h3><span class="t num">1:11</span>The claims</h3>
+<p>Result 266 is two OpenAI preprints, 111 pages, dated September 24, 2026. The main paper, 76 pages, claims that there are no four mutually unbiased bases in dimension 6, so the maximum is exactly three. Its theorem is labelled computer-assisted, and holds under stated conditions on floating-point arithmetic and the compiler, for one documented run. The companion, 35 pages, proves by exact arithmetic a conjecture of Matolcsi, Ruzsa and Weiner: every 6 × 6 complex Hadamard matrix except those equivalent to Tao’s matrix satisfies a certain Fourier-vanishing condition. Our check confirms the condition on the Fourier family and other examples, and its failure for Tao’s matrix. A second exact certificate rules out seven bases; with Weiner’s earlier theorem, the number is at most five, without relying on floating point. Not claimed: anything for dimension 10 or other non-prime powers, a classification of 6 × 6 Hadamard matrices, or anything about Zauner’s other conjecture, on symmetric measurements.</p>
+<h3><span class="t num">2:24</span>How the proofs go</h3>
+<p>The computation covers every possible configuration exhaustively. It splits the space of candidate bases into small regions, from about 152 million pairs of phase bins down to about 250,000 seed balls and then 22,000 smaller ones, and in each region a graph search finds no two orthonormal bases unbiased to each other and to the first two. 163 regions needed refining, and all were excluded. The run took 75 minutes on October 4, ten days after the paper’s date, with ordinary floating point and hand-proved rounding margins, not interval arithmetic. A small example of the obstruction, due to Grassl: exactly 48 vectors are unbiased to both the standard basis and the Fourier basis. They form 16 bases, and our computer confirms that no two of those are unbiased to each other.</p>
+<h3><span class="t num">3:21</span>Where it stands</h3>
+<p>The preprints are unrefereed and unchanged since release. The main paper’s code and data, which it cites, are not in the public repository. Lean formalizes the companion’s exact results, at most five bases, in about 2.8 million lines with no unproved steps, which we did not build; it explicitly does not establish the bound of three. An independent rebuild of the computation from the paper’s text, using interval arithmetic and itself produced with an AI model, also found no fourth basis. Apart from one brief enthusiastic blog comment, we found no assessment by specialists. If they hold, dimension 6 allows only three mutually unbiased measurements, four short of the d + 1 maximum; but that conclusion currently rests on one computer run whose code has not been published.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20266%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
