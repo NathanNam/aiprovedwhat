@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nearly a fourth power, proved at last? Randomized versus quantum queries | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims total Boolean functions whose randomized query cost is nearly the fourth power of the quantum cost, disproving the cubic conjecture. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/284-quartic-separation/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Nearly a fourth power, proved at last?">
+<meta property="og:description" content="An AI preprint claims total Boolean functions whose randomized query cost is nearly the fourth power of the quantum cost, disproving the cubic conjecture. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/284-quartic-separation/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/284-quartic-separation/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 284, October 2026</p>
+<h1>Nearly a fourth power, proved at last?</h1>
+<p class="subtitle">An AI preprint claims the quartic ceiling between randomized and quantum queries cannot be lowered</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 284 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="lQWg8mDZ8VQ" data-title="Episode 284: Nearly a fourth power, proved at last?">
+  <a href="https://youtu.be/lQWg8mDZ8VQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 284: Nearly a fourth power, proved at last? Teal bars rising past a pink dashed line marked Q cubed toward a gold one marked Q to the fourth.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:27. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/lQWg8mDZ8VQ?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/lQWg8mDZ8VQ?t=66" data-t="66"><span class="t">1:06</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/lQWg8mDZ8VQ?t=116" data-t="116"><span class="t">1:56</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/lQWg8mDZ8VQ?t=175" data-t="175"><span class="t">2:55</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Imagine computing a yes-or-no function of a hidden string of bits, reading one bit per query. To check whether any bit is a one, a deterministic reader needs all n bits, and a randomized reader allowed to err a third of the time still needs about half of them; Grover’s quantum search needs only about √n. For total functions, defined on every input, the savings are limited: in 2020 Aaronson, Ben-David, Kothari, Rao and Tal proved, building on Huang’s sensitivity theorem, that even deterministic query complexity is at most a constant times the fourth power of quantum query complexity. In the same paper they conjectured that the third power is the truth. The best separations had crept up from 2 to 2.5, then 8/3, and to 3 in 2020, leaving a window between 3 and 4.</p>
+<p>Result 284 is one OpenAI preprint, 19 pages, dated October 5, 2026. It claims the fourth-power ceiling cannot be lowered. For each k it builds explicit total functions whose randomized cost is at least the quantum cost to the power 4 − 2/k, up to logarithmic factors: 3 for k = 2, 3.5 for k = 4, and approaching 4. That disproves the cubic conjecture.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>One function reaching the fourth power exactly, explicit constants, or anything new for deterministic or zero-error randomized queries, where quartic gaps up to logarithms were already known. The functions are astronomically large: with about 1,000 columns, the input already has around 10<sup>71</sup> bits.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 19 pages, dated October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>No</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The preprint has not been revised. There is no Lean formalization. Scott Aaronson, a co-author of the cubic conjecture, called it a favorite problem since 1998 and wrote, “this finally closes that story.” OSVerify has not reviewed it, and we found no other comment from specialists.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Columns, puzzles and a certificate.</strong> The construction has many columns, each a bit string plus a block of Forrelation puzzles, which quantum computers answer in a few queries and classical ones only with many. The answers form an address pointing to a cell that holds a certificate. A column wins if its string is all ones, its certificate checks out, and its cell points to a zero in every other column, so at most one column can win.</li>
+  <li><strong>A tournament, then a search.</strong> The quantum algorithm runs a tournament before its final search. Columns are compared in pairs, and the true winner beats everyone, because no rival can point to a zero in a string of all ones. Comparison ideas of this kind appeared weeks earlier, in work by Ambainis, Iraids and Kokainis and by Ben-David and Kothari, both made with help from AI tools.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: Grover’s search on 64 items succeeds with probability 0.9966 after 6 rounds, then falls.</li>
+  <li>Ours: in a simulation of the ideal tournament weighting, the winner was never lost in 2,000 runs, even with coin-flip or rock-paper-scissors matches among the others.</li>
+  <li>Ours: with 1,024 columns, the construction’s input has around 10<sup>71</sup> bits.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Nearly-Quartic-Separation-Between-Randomized-and-Quantum-Query-Complexity-October-5-2026/quartic-query-separation.pdf">A Nearly Quartic Separation Between Randomized and Quantum Query Complexity (PDF)</a>, 19 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 284.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Nearly-Quartic-Separation-Between-Randomized-and-Quantum-Query-Complexity-October-5-2026/quartic-query-separation.pdf">A Nearly Quartic Separation Between Randomized and Quantum Query Complexity</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Imagine computing a yes-or-no function of a hidden string of bits, reading one bit per query. How many queries does it take? To check whether any bit is a one, a deterministic reader needs all n bits, and a randomized reader allowed to err a third of the time still needs about half of them. Grover’s quantum search needs only about the square root of n. Our computer runs it on 64 items: success peaks at 99.7% after 6 rounds, then falls. For total functions, defined on every input, the quantum savings are limited. In 2020, Aaronson, Ben-David, Kothari, Rao and Tal proved, building on Huang’s sensitivity theorem, that even deterministic query complexity is at most a constant times the fourth power of quantum query complexity. In the same paper they conjectured that the third power is the truth. The best separations had crept up from 2, with Grover’s search, to 2.5, then 8/3, and to 3 in 2020, leaving a window between 3 and 4.</p>
+<h3><span class="t num">1:06</span>The claims</h3>
+<p>Result 284 is one OpenAI preprint, 19 pages, dated October 5, 2026. It claims the fourth-power ceiling cannot be lowered. For each k it builds explicit total functions whose randomized cost is at least the quantum cost to the power 4 − 2/k, up to logarithmic factors: 3 for k = 2, 3.5 for k = 4, and approaching 4. That disproves the cubic conjecture. Not claimed: one function reaching the fourth power exactly, explicit constants, or anything new for deterministic or zero-error randomized queries, where quartic gaps up to logarithms were already known. The functions are astronomically large. Our computer finds that with about 1,000 columns, the input already has around 10⁷¹ bits.</p>
+<h3><span class="t num">1:56</span>How the proof goes</h3>
+<p>The construction has many columns, each a bit string plus a block of Forrelation puzzles, which quantum computers answer in a few queries and classical ones only with many. The answers form an address pointing to a cell that holds a certificate. A column wins if its string is all ones, its certificate checks out, and its cell points to a zero in every other column, so at most one column can win. The quantum algorithm runs a tournament before its final search. Columns are compared in pairs, and the true winner beats everyone, because no rival can point to a zero in a string of all ones. In our simulation of the ideal weighting process, the winner was never lost in 2,000 runs, even when the other matches were coin flips or rock-paper-scissors cycles. Comparison ideas of this kind appeared weeks earlier, in work by Ambainis, Iraids and Kokainis and by Ben-David and Kothari, both made with help from AI tools.</p>
+<h3><span class="t num">2:55</span>Where it stands</h3>
+<p>The preprint is unrefereed and unchanged since release, with no Lean formalization. Aaronson, a co-author of the cubic conjecture, called it a favorite problem since 1998 and wrote, “this finally closes that story”. OSVerify has not reviewed it, and we found no other comment from specialists. If it holds, for total functions, quantum queries can shrink to nearly the fourth root of randomized queries, and no further.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20284%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
