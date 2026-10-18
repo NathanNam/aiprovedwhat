@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entangled, but no secret? A state with zero distillable key | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims an entangled state from which no secret key can be distilled, and a counterexample to the PPT-squared conjecture. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/272-entanglement-without-key/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Entangled, but no secret?">
+<meta property="og:description" content="An AI preprint claims an entangled state from which no secret key can be distilled, and a counterexample to the PPT-squared conjecture. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/272-entanglement-without-key/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/272-entanglement-without-key/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 272, October 2026</p>
+<h1>Entangled, but no secret?</h1>
+<p class="subtitle">An AI preprint claims an entangled state with zero distillable key, and a counterexample to the PPT-squared conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 272 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="M6LW3Qp5SDE" data-title="Episode 272: Entangled, but no secret?">
+  <a href="https://youtu.be/M6LW3Qp5SDE">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 272: Entangled, but no secret? Two teal dots joined by a gold wave above a crossed-out key.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:08. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/M6LW3Qp5SDE?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/M6LW3Qp5SDE?t=77" data-t="77"><span class="t">1:17</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/M6LW3Qp5SDE?t=146" data-t="146"><span class="t">2:26</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/M6LW3Qp5SDE?t=202" data-t="202"><span class="t">3:22</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Alice and Bob want a secret key that an eavesdropper, Eve, cannot know. Shared entangled pairs, measured the same way on both sides, give matching random bits that no one else can predict, and every secret key of this kind needs entanglement. The question is whether every entangled state can give some key.</p>
+<p>Some entanglement is hard to see. The standard test flips one side, a partial transpose: for a perfectly entangled pair it gives a negative eigenvalue of −1/2. But in the late 1990s Paweł Horodecki found entangled states that pass this test, and the Horodeckis called them bound entangled, because no pure entanglement can be distilled from them. Surprisingly, in 2003 three Horodeckis and Oppenheim showed that some of these still give secret key. Whether every entangled state gives key went on a 2005 list of open problems as Problem 24, and a 2018 paper still called it widely open. A second question, asked by Christandl in 2012, is whether two channels in a row, each passing the partial transpose test, must always destroy entanglement.</p>
+<p>Result 272 is one OpenAI preprint, 53 pages, dated September 27, 2026. It constructs an explicit entangled state of two ten-level systems that passes the partial transpose test, and from which no secret key can be distilled by a wide class of protocols: local quantum operations on any number of copies, two-way public communication, and an eavesdropper holding a purification and every public message. Any output bit stays at least a fixed distance from an ideal secret bit. The same construction gives counterexamples to the partial-transpose-squared question: two explicit maps on ten levels, each passing the test, whose composition still carries entanglement, and a single channel on 21 levels whose square does. The state is exactly the Choi matrix of that composition, scaled to trace one.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>That bound entanglement never gives key, which is false; protocols outside the admitted class; or the smallest dimension where this happens. In dimension three, Christandl’s conjecture was already proved true.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 53 pages, dated September 27, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>In part: the two counterexamples, not the secret-key theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/272.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. The preprint has not been revised. The two counterexamples, the ten-level pair and the 21-level channel, are formalized in Lean, about 45,000 lines with no unproved steps, which we did not build. The secret-key theorem, the title result, is not in the audited check. The paper ships exact verification programs, which ran and matched on our machine. OSVerify has not reviewed it, and we found no comment from specialists.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Twenty special directions.</strong> The entanglement proof starts from an integer 6×4 matrix pencil with exactly 20 special directions (all real, by our computation). With Galois theory and arithmetic modulo three primes, the paper shows that no quadric passes through ten of them. A product vector in the range would need two quadrics covering all twenty, but two catch at most eighteen, so the state must be entangled. Standard numerical tests miss it: our realignment value is 0.54, below the threshold of 1.</li>
+  <li><strong>The one-fifth wall.</strong> The key side uses a four-effect inequality: being secret needs coherence between the both-zero and both-one outcomes, and for these states, being correct forbids it. The two bounds cross exactly at 1/5, so in the paper’s measure no protocol gets closer than 1/5 to a perfect secret bit.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the partial transpose of a perfectly entangled pair has eigenvalue −1/2.</li>
+  <li>Ours: the paper’s 100×100 Choi matrix rebuilt: rank 80, passes the partial transpose test, trace 130,208,350,782; realignment value 0.54.</li>
+  <li>Ours: the two bounds of the key argument cross exactly at 1/5, with value 2/5.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/paper.pdf">Entanglement with Zero Distillable Secret Key in Local Dimension Ten (PDF)</a>, 53 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/272.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 272.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Entanglement-with-zero-distillable-secret-key-in-local-dimension-ten-September-27-2026/paper.pdf">Entanglement with zero distillable secret key in local dimension ten</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Alice and Bob want a secret key that an eavesdropper, Eve, cannot know. Quantum mechanics offers a way: shared entangled pairs, measured the same way on both sides, give matching random bits that no one else can predict. Every secret key of this kind needs entanglement. The question is whether every entangled state can give some key. Some entanglement is hard to see. The standard test flips one side, a partial transpose: for a perfectly entangled pair, our computer finds a negative eigenvalue of −1/2. But in the late 1990s Paweł Horodecki found entangled states that pass this test, and the Horodeckis called them bound entangled, because no pure entanglement can be distilled from them. Surprisingly, in 2003, three Horodeckis and Oppenheim showed that some of these still give secret key. So maybe every entangled state gives key. In 2005 this went on a list of open problems in quantum information as Problem 24, and a 2018 paper still called it widely open. A second question, asked by Christandl in 2012, is whether two channels in a row, each passing the partial transpose test, must always destroy entanglement.</p>
+<h3><span class="t num">1:17</span>The claims</h3>
+<p>Result 272 is one OpenAI preprint, 53 pages, dated September 27, 2026. It constructs an explicit entangled state of two 10-level systems that passes the partial transpose test, and from which no secret key can be distilled by a wide class of protocols: local quantum operations on any number of copies, two-way public communication, and an eavesdropper holding a purification and every public message. Any output bit stays at least a fixed distance from an ideal secret bit. The same construction answers Christandl’s question with a counterexample: two explicit maps on 10 levels, each passing the test, whose composition still carries entanglement, and a single channel on 21 levels whose square does. The state is exactly the Choi matrix of that composition, scaled to trace one. Not claimed: that bound entanglement never gives key, which is false; protocols outside the admitted class; or the smallest dimension where this happens. In dimension three, Christandl’s conjecture was already proved true.</p>
+<h3><span class="t num">2:26</span>How the proof goes</h3>
+<p>The entanglement proof starts from an integer 6×4 matrix pencil with exactly 20 special directions; our computer finds all 20 are real. The paper shows, with Galois theory and arithmetic modulo three primes, that no quadric passes through 10 of them. A product vector in the range would need two quadrics covering all 20, but two catch at most 18, so the state’s range holds no product vector, and the state must be entangled. Standard numerical tests miss it: our realignment value is 0.54, below the threshold of 1. The key side uses a four-effect inequality: being secret needs coherence between the both-zero and both-one outcomes, and for these states, being correct forbids it. The two bounds cross exactly at 1/5, so in the paper’s measure no protocol gets closer than 1/5 to a perfect secret bit.</p>
+<h3><span class="t num">3:22</span>Where it stands</h3>
+<p>The preprint is unrefereed and unchanged since release. The two counterexamples, the 10-level pair and the 21-level channel, are formalized in Lean, about 45,000 lines with no unproved steps, which we did not build. The secret-key theorem, the title result, is not in the audited check. The paper ships exact verification programs, which ran and matched on our machine. OSVerify has not reviewed it, and we found no comment from specialists. If it holds, entanglement and secret key are different resources: here is an entangled state from which, by these protocols, not even one nearly secret bit can be squeezed.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20272%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
