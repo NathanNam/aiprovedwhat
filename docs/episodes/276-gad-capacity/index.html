@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A noisy qubit’s capacity, proved at last? Generalized amplitude damping | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims the classical capacity of every generalized amplitude-damping qubit channel; a human proof appeared the same day. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/276-gad-capacity/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="A noisy qubit’s capacity, proved at last?">
+<meta property="og:description" content="An AI preprint claims the classical capacity of every generalized amplitude-damping qubit channel; a human proof appeared the same day. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/276-gad-capacity/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/276-gad-capacity/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 276, October 2026</p>
+<h1>A noisy qubit’s capacity, proved at last?</h1>
+<p class="subtitle">An AI preprint claims the classical capacity of generalized amplitude damping</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 276 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="vzA-GfrlWzg" data-title="Episode 276: A noisy qubit’s capacity, proved at last?">
+  <a href="https://youtu.be/vzA-GfrlWzg">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 276: A noisy qubit’s capacity, proved at last? A grey sphere with a smaller gold ellipse shifted upward inside it.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:21. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/vzA-GfrlWzg?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/vzA-GfrlWzg?t=64" data-t="64"><span class="t">1:04</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/vzA-GfrlWzg?t=140" data-t="140"><span class="t">2:20</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/vzA-GfrlWzg?t=165" data-t="165"><span class="t">2:45</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Send bits through a noisy quantum channel. A qubit stored in its excited state tends to decay, and at a finite temperature it also gets kicked up: generalized amplitude damping, described by a damping strength γ and a thermal population ν. The sphere of qubit states shrinks to an ellipsoid and drifts toward the thermal state.</p>
+<p>How many classical bits per use can it carry? Holevo, Schumacher and Westmoreland showed the answer is a limit over many uses, with inputs that may be entangled across uses, and Hastings showed in 2009 that such entangled inputs can help for some channels. For a single use, the best rate was already known as a formula; whether entangled inputs could beat it was open. A 2018 paper called the classical capacity of even plain amplitude damping a major open problem. On September 23, 2026, Tang, Zhu, Bai and Wang settled the plain amplitude-damping case, with help from AI models.</p>
+<p>Result 276 is one OpenAI preprint, 20 pages, dated September 24, 2026. It claims the classical capacity of every generalized amplitude-damping channel: entangled inputs never help, so the capacity is the one-use formula, an optimization over a single variable, attained by pairs of equally likely signal states used independently and decoded jointly. It also claims additivity when combined with any finite-dimensional channel.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The quantum or private capacity, other channels, or a closed formula beyond special cases. And the paper was not alone: on October 6, the day of the release, Kun Fang posted an independent proof of the same result, by a related route through Rényi entropies.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 20 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>In part: the main theorem, not additivity with other channels (<a href="https://github.com/openai/math/blob/main/lean/docs/276.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The preprint has not been revised. The main theorem is formalized in Lean, about 6,200 lines with no unproved steps, including the coding theorem itself, which we did not build; the additivity with other channels is not. OSVerify has not reviewed it, and we found no comment from specialists.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A thermal-block entropy inequality.</strong> The key tool is a new entropy inequality for thermal blocks, extending one that Tang and coauthors used at zero temperature. It bounds the output entropy of many uses from below while tracking excitation populations, which is what keeps the bound tight; a cruder bound that ignores them overshoots the capacity by up to almost 0.6 bits (our computation).</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the formula matches a brute-force optimization to 10 decimal places; with damping 0.3 and thermal population 0.2 the capacity is 0.61 bits per use; at ν = 1/2 it is King’s formula.</li>
+  <li>Ours: over two uses, the best entangled inputs we found do no better than two separate uses.</li>
+  <li>Ours: the capacity over all damping strengths and thermal populations, as a heat map.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Classical-capacity-and-entropy-inequalities-for-generalized-amplitude-damping-September-24-2026/paper.pdf">Classical Capacity and Entropy Inequalities for Generalized Amplitude Damping (PDF)</a>, 20 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/276.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 276.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Classical-capacity-and-entropy-inequalities-for-generalized-amplitude-damping-September-24-2026/paper.pdf">Classical capacity and entropy inequalities for generalized amplitude damping</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Send bits through a noisy quantum channel. A qubit stored in its excited state tends to decay, and at a finite temperature it also gets kicked up: generalized amplitude damping, described by a damping strength γ and a thermal population ν. Our computer shows what it does: the sphere of qubit states shrinks to an ellipsoid and drifts toward the thermal state. How many classical bits per use can it carry? Holevo, Schumacher and Westmoreland showed the answer is a limit over many uses, with inputs that may be entangled across uses, and Hastings showed in 2009 that such entangled inputs can help for some channels. For a single use, the best rate was already known as a formula; whether entangled inputs could beat it was open. A 2018 paper called the classical capacity of even plain amplitude damping a major open problem. On September 23, 2026, Tang, Zhu, Bai and Wang settled the plain amplitude-damping case, with help from AI models.</p>
+<h3><span class="t num">1:04</span>The claims</h3>
+<p>Result 276 is one OpenAI preprint, 20 pages, dated September 24, 2026. It claims the classical capacity of every generalized amplitude-damping channel: entangled inputs never help, so the capacity is the one-use formula, an optimization over a single variable, attained by pairs of equally likely signal states used independently and decoded jointly. It also claims additivity when combined with any finite-dimensional channel. Our computer checks the formula against a brute-force optimization to 10 decimal places: with damping 0.3 and thermal population 0.2, the capacity is 0.61 bits per use. At thermal population 1/2, it reduces to King’s known formula. Over two uses, the best entangled inputs we find do no better than using the channel twice separately. Not claimed: the quantum or private capacity, other channels, or a closed formula beyond special cases. And the paper was not alone: on October 6, the day of the release, Kun Fang posted an independent proof of the same result, by a related route through Rényi entropies.</p>
+<h3><span class="t num">2:20</span>How the proof goes</h3>
+<p>The key tool is a new entropy inequality for thermal blocks, extending one that Tang and coauthors used at zero temperature. It bounds the output entropy of many uses from below while tracking excitation populations, which is what keeps the bound tight. Our computer shows why the populations matter: a cruder bound that ignores them overshoots the capacity by up to almost 0.6 bits.</p>
+<h3><span class="t num">2:45</span>Where it stands</h3>
+<p>The preprint is unrefereed and unchanged since release. The main theorem is formalized in Lean, about 6,200 lines with no unproved steps, including the coding theorem itself, which we did not build; the additivity with other channels is not. OSVerify has not reviewed it, and we found no comment from specialists. If it holds, the classical capacity of this standard noisy qubit channel is known for every damping and temperature, proved twice, independently, and posted the same day.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20276%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
