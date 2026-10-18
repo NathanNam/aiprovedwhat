@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Only the famous ones? Curtis’s conjecture | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims Curtis’s conjecture: the mod-2 Hurewicz image of the sphere is spanned by the Hopf and Kervaire classes. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/316-curtis-conjecture/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Only the famous ones?">
+<meta property="og:description" content="An AI preprint claims Curtis’s conjecture: the mod-2 Hurewicz image of the sphere is spanned by the Hopf and Kervaire classes. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/316-curtis-conjecture/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/316-curtis-conjecture/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 316, October 2026</p>
+<h1>Only the famous ones?</h1>
+<p class="subtitle">An AI preprint claims Curtis’s conjecture on the Hurewicz image of the sphere</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 316 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="C5mJ4I1L5oU" data-title="Episode 316: Only the famous ones?">
+  <a href="https://youtu.be/C5mJ4I1L5oU">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 316: Only the famous ones? A line of faint grey dots with nine bright blue and gold dots lit along it.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:20. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/C5mJ4I1L5oU?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/C5mJ4I1L5oU?t=85" data-t="85"><span class="t">1:25</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/C5mJ4I1L5oU?t=142" data-t="142"><span class="t">2:22</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/C5mJ4I1L5oU?t=209" data-t="209"><span class="t">3:29</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The stable homotopy groups of spheres are famously hard to compute. Each class in them gives a map into an infinite loop space, QS⁰, and so casts a shadow in its mod 2 homology, called its Hurewicz image. That homology is completely known, and it is enormous: our computer counts 426 dimensions in degree 14, and about 77 trillion in degree 126. Which of these shadows are actually cast by maps from spheres?</p>
+<p>Some are. The Hopf invariant one classes eta, nu and sigma, in degrees 1, 3 and 7, cast shadows, and so do the Kervaire invariant one classes, θⱼ, in degrees 2, 6, 14, 30, 62 and perhaps 126. Adams showed in 1960 that the Hopf classes stop at 7; Hill, Hopkins and Ravenel showed that the Kervaire classes stop by 126, and a 2024 preprint by Lin, Wang and Xu claims one in degree 126.</p>
+<p>In 1975 Ed Curtis stated, as a theorem, that these are the only shadows. Two years later Peter May’s survey added a footnote: Wellington had found a gap in Curtis’s proof, and the result might be false. Since then it has been treated as an open problem, now called Curtis’s conjecture, with partial results by Zare and others.</p>
+<p>Result 316 is one OpenAI paper, 37 pages, dated September 25 and made public October 6, 2026. It claims Curtis’s conjecture: in every positive degree, the mod 2 Hurewicz image is spanned by the images of eta, nu, sigma and the Kervaire classes that exist. With Hill, Hopkins and Ravenel’s theorem, that leaves at most 9 degrees, the last being 126; our computer counts 117 of the first 126 degrees where the image must vanish. As a corollary, it claims Eccles’s conjecture for every sphere of positive dimension.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: which Kervaire classes exist, Eccles’s conjecture beyond spheres, or anything at odd primes; that the listed classes do cast shadows comes from earlier work. It is a new argument, not a repair of Curtis’s.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 37 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>No formalization for this item</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper is unrefereed and unchanged since release, and there is no Lean formalization. On October 10, Nick Kuhn, whose lifting theorem the proof uses, wrote on the algebraic topology mailing list, about this paper and one other, “To the extent I have looked, I would not bet any money that either has a correct proof”, and that the punchline follows “a long rambling calculational bit which is precisely where plenty of humans (going back to Ed Curtis) have made errors in the past working in this area”. The message names no error, nobody replied, and we found no competing claim. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Climb until the shadow dies.</strong> Take a class with a nonzero shadow, and push it up a ladder of adjoint maps until its homology image vanishes. At the last rung where it survives, the image must be a square. The mapping cone of the next map turns that square into a nonzero element of an algebraic object, built from Steenrod-algebra modules made of Dickson invariants.</li>
+  <li><strong>Only two ways out.</strong> Ten pages of algebra show that such an element can exist only in two patterns. One forces Hopf invariant one, so Adams’s theorem applies. The other uses Kuhn’s 2018 lifting theorem to cap the Adams filtration at two, and then Browder’s theorem gives Kervaire invariant one. Our computer spot-checks the algebra in small degrees: 492 cases with no violation, and the only ones that pass the key test sit at powers of two, from 2 up to 32, which correspond to the Kervaire degrees 2, 6, 14, 30 and 62. Running the Lambda algebra, Curtis’s own tool, our computer also finds that in each Kervaire stem up to 62 the relevant Ext group is a single class, hⱼ².</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the mod 2 homology of Q₀S⁰ has 426 dimensions in degree 14 and 77,287,125,390,694 in degree 126.</li>
+  <li>Ours: with the theorem and Hill, Hopkins and Ravenel’s result, the image must vanish in 117 of the first 126 degrees.</li>
+  <li>Ours: the paper’s obstruction lemma, checked by brute force in 492 small cases with no violation; the only cases that pass the key test sit at m = 2, 4, 8, 16, 32, which correspond to the Kervaire degrees 2, 6, 14, 30 and 62.</li>
+  <li>Ours: in the Lambda algebra, the Ext group in each Kervaire stem up to 62 is a single class, hⱼ².</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Stable-Hurewicz-Image-of-the-Sphere-at-Two-September-25-2026/paper.pdf">The Stable Hurewicz Image of the Sphere at Two (PDF)</a>, 37 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 316.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Stable-Hurewicz-Image-of-the-Sphere-at-Two-September-25-2026/paper.pdf">The Stable Hurewicz Image of the Sphere at Two</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>The stable homotopy groups of spheres are famously hard to compute. Each class in them gives a map into an infinite loop space, QS⁰, and so casts a shadow in its mod 2 homology, called its Hurewicz image. That homology is completely known, and it is enormous: our computer counts 426 dimensions in degree 14, and about 77 trillion in degree 126. Which of these shadows are actually cast by maps from spheres? Some are. The Hopf invariant one classes eta, nu and sigma, in degrees 1, 3 and 7, cast shadows, and so do the Kervaire invariant one classes, θⱼ, in degrees 2, 6, 14, 30, 62 and perhaps 126. Adams showed in 1960 that the Hopf classes stop at 7; Hill, Hopkins and Ravenel showed that the Kervaire classes stop by 126, and a 2024 preprint by Lin, Wang and Xu claims one in degree 126. In 1975 Ed Curtis stated, as a theorem, that these are the only shadows. Two years later Peter May’s survey added a footnote: Wellington had found a gap in Curtis’s proof, and the result might be false. Since then it has been treated as an open problem, now called Curtis’s conjecture, with partial results by Zare and others.</p>
+<h3><span class="t num">1:25</span>The claim</h3>
+<p>Result 316 is one OpenAI paper, 37 pages, dated September 25 and made public October 6, 2026. It claims Curtis’s conjecture: in every positive degree, the mod 2 Hurewicz image is spanned by the images of eta, nu, sigma and the Kervaire classes that exist. With Hill, Hopkins and Ravenel’s theorem, that leaves at most 9 degrees, the last being 126; our computer counts 117 of the first 126 degrees where the image must vanish. As a corollary, it claims Eccles’s conjecture for every sphere of positive dimension. Not claimed: which Kervaire classes exist, Eccles’s conjecture beyond spheres, or anything at odd primes; that the listed classes do cast shadows comes from earlier work. It is a new argument, not a repair of Curtis’s.</p>
+<h3><span class="t num">2:22</span>How the proof goes</h3>
+<p>Take a class with a nonzero shadow, and push it up a ladder of adjoint maps until its homology image vanishes. At the last rung where it survives, the image must be a square. The mapping cone of the next map turns that square into a nonzero element of an algebraic object, built from Steenrod-algebra modules made of Dickson invariants. Ten pages of algebra show that such an element can exist only in two patterns. One forces Hopf invariant one, so Adams’s theorem applies. The other uses Kuhn’s 2018 lifting theorem to cap the Adams filtration at two, and then Browder’s theorem gives Kervaire invariant one. Our computer spot-checks the algebra in small degrees: 492 cases with no violation, and the only ones that pass the key test sit at powers of two, from 2 up to 32, which correspond to the Kervaire degrees 2, 6, 14, 30 and 62. Running the Lambda algebra, Curtis’s own tool, our computer also finds that in each Kervaire stem up to 62 the relevant Ext group is a single class, hⱼ².</p>
+<h3><span class="t num">3:29</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release, and there is no Lean formalization. On October 10, Nick Kuhn, whose lifting theorem the proof uses, wrote on the algebraic topology mailing list, about this paper and one other, “To the extent I have looked, I would not bet any money that either has a correct proof”, and that the punchline follows “a long rambling calculational bit which is precisely where plenty of humans (going back to Ed Curtis) have made errors in the past working in this area”. The message names no error, nobody replied, and we found no competing claim. If it holds, the only homology shadows that maps from spheres cast in QS⁰, at the prime two, are the famous ones: eta, nu, sigma and the Kervaire classes.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20316%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
