@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Factoring with no gamble, proved at last? Exact quantum factoring on a fixed gate set | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims quantum circuits from one fixed gate set that factor every integer with probability exactly one, in polynomial time. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/279-exact-quantum-factoring/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Factoring with no gamble, proved at last?">
+<meta property="og:description" content="An AI preprint claims quantum circuits from one fixed gate set that factor every integer with probability exactly one, in polynomial time. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/279-exact-quantum-factoring/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/279-exact-quantum-factoring/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 279, October 2026</p>
+<h1>Factoring with no gamble, proved at last?</h1>
+<p class="subtitle">An AI preprint claims exact quantum factoring over one fixed, finite gate set</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 279 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="4GXTy1wFBFY" data-title="Episode 279: Factoring with no gamble, proved at last?">
+  <a href="https://youtu.be/4GXTy1wFBFY">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 279: Factoring with no gamble, proved at last? A circle with an inscribed teal square and a gold arrow rotated from 30 to 90 degrees.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:16. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/4GXTy1wFBFY?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/4GXTy1wFBFY?t=59" data-t="59"><span class="t">0:59</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/4GXTy1wFBFY?t=108" data-t="108"><span class="t">1:48</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/4GXTy1wFBFY?t=163" data-t="163"><span class="t">2:43</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Shor’s algorithm factors integers on a quantum computer in polynomial time, but each run is a gamble: for 21, one run finds the hidden period with probability about 31%. Repeating drives the chance of failure down, but never to zero. Can factoring be done exactly, with probability one, in guaranteed polynomial time? Brassard and Høyer posed this in 1997, and in 2003 Mosca and Zalka called it a challenge that remains. Mosca had sketched a way in 2002, but with gates whose rotation angles are computed during the run. What stayed open was one fixed, finite set of gates. That restriction bites: Hadamard and S alone make only 24 distinct rotations, and these gates offer only 8th roots of unity as phases, so Shor’s fine Fourier phases can be approximated but never made exact.</p>
+<p>Result 279 is one OpenAI preprint, 24 pages, dated September 25, 2026. It claims a uniform family of quantum circuits, built only from NOT, CNOT, Toffoli, Hadamard and S gates and their controlled versions, that outputs the complete prime factorization of every integer from 2 up with probability exactly one, with gate and qubit counts polynomial in the input length, and no measurement until the end.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Practical speed, as the paper says plainly; noise or fault tolerance; or any classical algorithm. At the smallest size the paper allows, our rough count is about 2<sup>137</sup> gates, against about 2<sup>21</sup> for textbook Shor. “Probability one” is for an ideal, noiseless circuit.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 24 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The theorem, constructing the circuit (<a href="https://github.com/openai/math/blob/main/lean/docs/279.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The preprint has not been revised. The theorem is formalized in Lean, about 54,000 lines that construct the circuit itself; our scan finds no unproved steps, but we did not rebuild it. OSVerify has not reviewed it, and we found no comment from specialists.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Throw luck away.</strong> One step of amplitude amplification turns a success probability of exactly 1/4 into exactly 1; with plain sign flips, 3/4 or 1/2 never get there. So every stage is made exactly predictable, and a final top-up sets the total at exactly 1/4.</li>
+  <li><strong>Exact odds, by bookkeeping.</strong> The Fourier transform is replaced by one that runs straight between 1, i, −1 and −i, so every probability is a power-of-two fraction. The order trial is deliberately diluted with coin flips so it succeeds with a small probability fixed by an exact formula (exactly 1 in 4,096 in our toy for 21). The run also factors p − 1 for each prime it finds, computes each step’s exact odds afterwards, and filters them all to the same rate.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: textbook Shor for 21 recovers the order with probability 0.308 per run.</li>
+  <li>Ours: the paper’s four-point transform rebuilt gate by gate at Q = 64; one amplification step takes exactly 1/4 to exactly 1.</li>
+  <li>Ours: a rough count of about 2<sup>137</sup> gates at the smallest allowed size.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Exact-quantum-factoring-over-a-fixed-finite-gate-set-September-25-2026/main.pdf">Exact Quantum Factoring over a Fixed Finite Gate Set (PDF)</a>, 24 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/279.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 279.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Exact-quantum-factoring-over-a-fixed-finite-gate-set-September-25-2026/main.pdf">Exact quantum factoring over a fixed finite gate set</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Shor’s algorithm factors integers on a quantum computer in polynomial time, but each run is a gamble. Our computer simulates it for 21: one run finds the hidden period with probability about 31%. Repeating drives the chance of failure down, but never to zero. Can factoring be done exactly, with probability one, in guaranteed polynomial time? Brassard and Høyer posed this in 1997, and in 2003 Mosca and Zalka called it a challenge that remains. Mosca had sketched a way in 2002, but with gates whose rotation angles are computed during the run. The open question was one fixed, finite set of gates. That restriction bites. Hadamard and the phase gate S alone make only 24 distinct rotations, and these gates offer only 8th roots of unity as phases, so Shor’s fine Fourier phases can be approximated but never made exact.</p>
+<h3><span class="t num">0:59</span>The claims</h3>
+<p>Result 279 is one OpenAI preprint, 24 pages, dated September 25, 2026. It claims a uniform family of quantum circuits, built only from NOT, CNOT, Toffoli, Hadamard and S gates and their controlled versions, that outputs the complete prime factorization of every integer from 2 up with probability exactly one, with gate and qubit counts polynomial in the input length, and no measurement until the end. Not claimed: practical speed, as the paper says plainly; noise or fault tolerance; or any classical algorithm. At the smallest size the paper allows, our rough count is about 2¹³⁷ gates, against about 2²¹ for textbook Shor.</p>
+<h3><span class="t num">1:48</span>How the proof goes</h3>
+<p>The trick is to throw luck away. One step of amplitude amplification turns a success probability of exactly 1/4 into exactly one; our computer confirms it, while with plain sign flips, 3/4 or 1/2 never get there. So every stage is made exactly predictable, and a final top-up sets the total at exactly 1/4. The Fourier transform is replaced by one that runs straight between 1, i, −1 and −i, so every probability is a power-of-two fraction. The order trial is deliberately diluted with coin flips so it succeeds with a small probability fixed by an exact formula: in our toy for 21, exactly 1 in 4,096. The run also factors p − 1 for each prime it finds, computes each step’s exact odds afterwards, and filters them all to the same rate.</p>
+<h3><span class="t num">2:43</span>Where it stands</h3>
+<p>The preprint is unrefereed and unchanged since release. The theorem is formalized in Lean, about 54,000 lines that construct the circuit itself; our scan finds no unproved steps, but we did not rebuild it. OSVerify has not reviewed it, and we found no comment from specialists. If it holds, an ideal quantum computer can factor with no gamble at all, using one fixed set of gates, though this construction’s cost is astronomical.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20279%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
