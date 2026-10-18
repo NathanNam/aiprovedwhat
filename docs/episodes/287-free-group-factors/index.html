@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Every free group, one factor, proved at last? The free group factor problem | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that the free group factors L(F2) and L(F3) are isomorphic, and hence all free group factors are one. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/287-free-group-factors/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Every free group, one factor, proved at last?">
+<meta property="og:description" content="An AI preprint claims that the free group factors L(F2) and L(F3) are isomorphic, and hence all free group factors are one. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/287-free-group-factors/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/287-free-group-factors/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 287, October 2026</p>
+<h1>Every free group, one factor, proved at last?</h1>
+<p class="subtitle">An AI preprint claims L(F₂) ≅ L(F₃): the free group factors are all isomorphic</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 287 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="xU2ySlhH5Ig" data-title="Episode 287: Every free group, one factor, proved at last?">
+  <a href="https://youtu.be/xU2ySlhH5Ig">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 287: Every free group, one factor, proved at last? A teal four-way tree and a gold six-way tree joined by an isomorphism sign.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:56. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/xU2ySlhH5Ig?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/xU2ySlhH5Ig?t=71" data-t="71"><span class="t">1:11</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/xU2ySlhH5Ig?t=128" data-t="128"><span class="t">2:08</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/xU2ySlhH5Ig?t=192" data-t="192"><span class="t">3:12</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A free group on n letters is the group of all words in those letters and their inverses, with no relations at all; in two letters there are 4 reduced words of length 1, 12 of length 2, 36 of length 3, tripling each time. The group’s von Neumann algebra L(F<sub>n</sub>) is a factor for two or more letters, and in the 1940s Murray and von Neumann showed it differs from the simplest, hyperfinite factor. But can L(F<sub>2</sub>) be told apart from L(F<sub>3</sub>)? Kadison listed the question in 1967. In 1994, building on Voiculescu’s free probability, Dykema and Rădulescu, independently, showed a dichotomy: the free group factors are either all isomorphic or all different. Most experts expected different. By Dykema’s formula, L(F<sub>r</sub>) stretched by t is L(F<sub>1+(r−1)/t²</sub>).</p>
+<p>Result 287 is one OpenAI preprint, 23 pages, dated September 23, 2026. It claims the answer is that they are isomorphic. For every n at least 3, L(F<sub>n</sub>) equals L(F<sub>n+1</sub>). So L(F<sub>3</sub>) equals L(F<sub>5</sub>), and stretching both by √2 gives L(F<sub>2</sub>) equals L(F<sub>3</sub>). By the dichotomy, all free group factors, up to L(F<sub>∞</sub>), are one, and stretching by any amount gives it back. The free entropy dimensions, built partly to tell these factors apart, are not invariants: each takes every integer value from 2 up on generators of the same algebra.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>That the groups, or their reduced C*-algebras, are isomorphic; or an explicit formula for the isomorphism, which arises as a limit.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 23 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The headline isomorphisms, by a partly different route (<a href="https://github.com/openai/math/blob/main/lean/docs/287.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The preprint has not been revised. Its headline isomorphisms are formalized in Lean, about 27,000 lines with no unproved steps in our scan, along a partly different route; we did not rebuild it. On October 14, eight days after the public release, Dimitri Shlyakhtenko posted a self-contained proof of a stronger version for the C*-algebras of free semicircular elements, building on OpenAI’s proof. OSVerify has not reviewed it, and no errors have been reported.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Absorbing an extra generator.</strong> Inside L(F<sub>n+1</sub>), the proof deforms the first n generators by a trace-preserving flow, so they stay exactly free, while one very long word in them moves far enough to capture the last generator. The key is spectral: a sum of free prefix words puts no spectral mass exactly at zero.</li>
+  <li><strong>Small steps, a limit, and very long words.</strong> Each step moves the generators only slightly, and the errors shrink fast enough that the limit is an isomorphism. The tools are a trace-preserving flow, a Fox calculus cocycle from the 1950s, and Catalan counting, with no free entropy and no random matrices.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: reduced words in two letters of length 0 to 6: 1, 4, 12, 36, 108, 324, 972.</li>
+  <li>Ours: with Dykema’s formula, L(F<sub>3</sub>) stretched by 1/√2 is L(F<sub>5</sub>), and by √2 it is L(F<sub>2</sub>).</li>
+  <li>Ours, in a random-matrix model: the share of the spectrum within 0.1 of zero settles near 0.20 (the Marchenko–Pastur value) for free prefixes, but passes 0.9 for commuting ones. By our reading of the recipe, accuracy 0.1 needs words about 10<sup>18</sup> letters long.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/An-isomorphism-of-the-free-group-factors-September-23-2026.pdf">An Isomorphism of the Free Group Factors (PDF)</a>, 23 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/287.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 287.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-isomorphism-of-the-free-group-factors-September-23-2026/An-isomorphism-of-the-free-group-factors-September-23-2026.pdf">An isomorphism of the free group factors</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A free group on n letters is the group of all words in those letters and their inverses, with no relations at all. Our computer counts the reduced words in two letters: 4 of length 1, 12 of length 2, 36 of length 3, tripling each time. The group’s von Neumann algebra, L(F_n), is a factor for two or more letters, and in the 1940s Murray and von Neumann showed it differs from the simplest, hyperfinite factor. But can L(F₂) be told apart from L(F₃)? Kadison listed the question in 1967. In 1994, building on Voiculescu’s free probability, Dykema and Rădulescu, independently, showed a dichotomy: the free group factors are either all isomorphic or all different. Most experts expected different. A 2024 paper wrote that it is generally believed they are not isomorphic. These factors can be stretched. By Dykema’s formula, L(F_r) stretched by t is L(F_{1+(r−1)/t²}). Our computer checks two cases: L(F₃) stretched by 1/√2 is L(F₅), and stretched by √2 it is L(F₂).</p>
+<h3><span class="t num">1:11</span>The claims</h3>
+<p>Result 287 is one OpenAI preprint, 23 pages, dated September 23, 2026. It claims the answer is that they are isomorphic. For every n at least three, L(F_n) equals L(F_{n+1}). So L(F₃) equals L(F₅), and stretching both by √2 gives L(F₂) equals L(F₃). By the dichotomy, all free group factors, up to L(F_∞), are one, and stretching by any amount gives it back. It also shows that the free entropy dimensions, built partly to tell these factors apart, are not invariants: each takes every integer value from two up on generators of the same algebra. Not claimed: that the groups, or their reduced C* algebras, are isomorphic; or an explicit formula for the isomorphism, which arises as a limit.</p>
+<h3><span class="t num">2:08</span>How the proof goes</h3>
+<p>The idea is to absorb an extra generator. Inside L(F_{n+1}), the proof deforms the first n generators by a trace-preserving flow, so they stay exactly free, while one very long word in them moves far enough to capture the last generator. The key is spectral: a sum of free prefix words puts no spectral mass exactly at zero. Our computer, using random matrices as stand-ins, compares: with free prefixes, the mass near zero settles at about one fifth, the Marchenko–Pastur value, while with commuting prefixes it climbs past 90%. Each step moves the generators only slightly, and the errors shrink fast enough that the limit is an isomorphism. The words involved are astronomically long: by our reading of the recipe, accuracy 0.1 needs words about 10¹⁸ letters long. The tools are a trace-preserving flow, a Fox calculus cocycle from the 1950s, and Catalan counting, with no free entropy and no random matrices.</p>
+<h3><span class="t num">3:12</span>Where it stands</h3>
+<p>The preprint is unrefereed and unchanged since release. Its headline isomorphisms are formalized in Lean, about 27,000 lines with no unproved steps in our scan, along a partly different route; we did not rebuild it. On October 14, eight days after the public release, Dimitri Shlyakhtenko posted a self-contained proof of a stronger version for the C* algebras of free semicircular elements, building on OpenAI’s proof. OSVerify has not reviewed it, and no errors have been reported. If it holds, then in the world of von Neumann algebras, two free generators and three are the same.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20287%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
