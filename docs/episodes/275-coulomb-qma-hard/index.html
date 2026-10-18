@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A hard chemistry problem, proved at last? QMA-hardness of the Coulomb energy | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim that finding the lowest electronic energy of fixed nuclei, with no basis set, is QMA-hard in the worst case. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/275-coulomb-qma-hard/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="A hard chemistry problem, proved at last?">
+<meta property="og:description" content="Two AI preprints claim that finding the lowest electronic energy of fixed nuclei, with no basis set, is QMA-hard in the worst case. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/275-coulomb-qma-hard/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/275-coulomb-qma-hard/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 275, October 2026</p>
+<h1>A hard chemistry problem, proved at last?</h1>
+<p class="subtitle">Two AI preprints claim QMA-hardness of the electronic ground energy, with no basis set</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 275 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="K6Mk-9A15bM" data-title="Episode 275: A hard chemistry problem, proved at last?">
+  <a href="https://youtu.be/K6Mk-9A15bM">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 275: A hard chemistry problem, proved at last? Nuclei with teal electron clouds inside a dashed box above a gold line.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:42. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/K6Mk-9A15bM?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/K6Mk-9A15bM?t=63" data-t="63"><span class="t">1:03</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/K6Mk-9A15bM?t=133" data-t="133"><span class="t">2:13</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/K6Mk-9A15bM?t=183" data-t="183"><span class="t">3:03</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Chemistry’s central calculation: given fixed atomic nuclei, find the lowest energy of the electrons around them. For hydrogen it is exactly −1/2 hartree, the atomic unit of energy. For many electrons this is expected to be hard. QMA, the quantum version of NP that Kitaev studied, captures such problems, and lattice and spin versions were proved QMA-hard years ago. In 2021, O’Gorman, Irani, Whitfield and Fefferman proved hardness when the electrons are restricted to a given basis of orbitals, and asked whether it stays hard in the full continuum, with only positively charged nuclei. The catch: restricting electrons to a basis can only raise the energy, so a hard problem in a basis says nothing about whether some exotic continuum state sneaks lower.</p>
+<p>Result 275 is two OpenAI preprints, 69 pages, both dated September 24, 2026. They claim that deciding whether this lowest energy is below one threshold or above another is QMA-hard, over all electron states in three dimensions with fixed nuclei, with thresholds at least one hartree apart. One paper uses nuclei with large charges written in binary; the other uses only unit charges, like protons, at rational positions.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>That the problem lies in QMA, so not that it is QMA-complete; anything about real molecules or practical chemistry; or other versions of the question, with a bounded basis error. The hard instances are monsters: in the binary construction a 3×3 grid of spins becomes 66 nuclei and 33 electrons, but each charge has thousands of digits; in the unit construction even toy settings of its formulas give about 10<sup>21</sup> protons for only a few hundred electrons, and a one-hartree gap is tiny beside their total energies.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two papers, 69 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>Both theorems (<a href="https://github.com/openai/math/blob/main/lean/docs/275.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. The preprints have not been revised. Both theorems are formalized in Lean, about 220,000 lines with no unproved steps, which we did not build; Lean even proves the hardness of the starting magnet, though it derives the binary theorem from the unit one. OSVerify has not reviewed them, and we found no comment from specialists.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>A hard magnet made of electrons.</strong> The proof starts from a quantum magnet known to be hard and builds it out of electrons. Each spin is an electron in its own well, and the magnetic coupling comes from an electron briefly hopping to a neighbour and back, Anderson’s superexchange; in the binary paper’s formula, hydrogen’s on-site repulsion is exactly 5/8 hartree. Signed couplings are made positive with mediator spins.</li>
+  <li><strong>The whole continuum.</strong> The last step is the new one: a lower bound over every continuum state, not only those in a basis. The unit paper also designs smooth wells, each with in-plane energy exactly −1/2, and chops a positive charge cloud into single protons.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: hydrogen at −0.4999999 hartree; the splitting between the two lowest levels of H<sub>2</sub><sup>+</sup> shrinks exponentially with proton distance.</li>
+  <li>Ours: the mediator gadget’s error shrinks like 1/√Δ, about nine times inside the paper’s bound.</li>
+  <li>Ours: the sizes of the constructions, from 66 nuclei with charges of thousands of digits to about 10<sup>21</sup> unit nuclei at toy settings.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/QMA-hardness-of-continuum-Coulomb-energy-with-unit-nuclear-charges-September-24-2026/QMA-hardness-of-continuum-Coulomb-energy-with-unit-nuclear-charges-September-24-2026.pdf">QMA-Hardness of Continuum Coulomb Energy with Unit Nuclear Charges (PDF)</a>, 22 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Continuum-Coulomb-hardness-with-binary-nuclear-charges-September-24-2026/Continuum-Coulomb-hardness-with-binary-nuclear-charges-September-24-2026.pdf">Continuum Coulomb Hardness with Binary Nuclear Charges (PDF)</a>, 47 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/275.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 275.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Continuum-Coulomb-hardness-with-binary-nuclear-charges-September-24-2026/Continuum-Coulomb-hardness-with-binary-nuclear-charges-September-24-2026.pdf">Continuum Coulomb hardness with binary nuclear charges</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/QMA-hardness-of-continuum-Coulomb-energy-with-unit-nuclear-charges-September-24-2026/QMA-hardness-of-continuum-Coulomb-energy-with-unit-nuclear-charges-September-24-2026.pdf">QMA-hardness of continuum Coulomb energy with unit nuclear charges</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Chemistry’s central calculation: given fixed atomic nuclei, find the lowest energy of the electrons around them. For hydrogen it is exactly −1/2 hartree, the atomic unit of energy, and our computer reproduces that. For two protons sharing one electron, the bonding state sits lower, and the splitting between the two lowest levels shrinks exponentially with distance. For many electrons this is expected to be hard. QMA, the quantum version of NP that Kitaev studied, captures such problems, and lattice and spin versions were proved QMA-hard years ago. In 2021, O’Gorman, Irani, Whitfield and Fefferman proved hardness when the electrons are restricted to a given basis of orbitals, and asked whether it stays hard in the full continuum, with only positively charged nuclei. The catch: restricting electrons to a basis can only raise the energy, so a hard problem in a basis says nothing about whether some exotic continuum state sneaks lower.</p>
+<h3><span class="t num">1:03</span>The claims</h3>
+<p>Result 275 is two OpenAI preprints, 69 pages, both dated September 24, 2026. They claim that deciding whether this lowest energy is below one threshold or above another is QMA-hard, over all electron states in three dimensions with fixed nuclei, with thresholds at least one hartree apart. One paper uses nuclei with large charges written in binary; the other uses only unit charges, like protons, at rational positions. The hard instances are monsters. In the binary construction, a 3×3 grid of spins becomes 66 nuclei and 33 electrons, but each charge has thousands of digits. In the unit construction, even toy settings of its formulas give about 10²¹ protons, for only a few hundred electrons, and a 1-hartree gap is tiny beside their total energies. Not claimed: that the problem lies in QMA, so not QMA-complete; anything about real molecules or practical chemistry; or other versions of the question, with a bounded basis error.</p>
+<h3><span class="t num">2:13</span>How the proofs go</h3>
+<p>The proof starts from a quantum magnet known to be hard and builds it out of electrons. Each spin is an electron in its own well, and the magnetic coupling comes from an electron briefly hopping to a neighbour and back, Anderson’s superexchange, with hydrogen’s on-site repulsion, exactly 5/8 hartree, in the binary paper’s formula. Signed couplings are made positive with mediator spins; our computer checks that the gadget’s error shrinks like 1/√(energy scale), well inside the paper’s bound. The last step is the new one: a lower bound over every continuum state, not only those in a basis. The unit paper also designs smooth wells, each with in-plane energy exactly −1/2, and chops a positive charge cloud into single protons.</p>
+<h3><span class="t num">3:03</span>Where it stands</h3>
+<p>The preprints are unrefereed and unchanged since release. Both theorems are formalized in Lean, about 220,000 lines with no unproved steps, which we did not build; Lean even proves the hardness of the starting magnet, though it derives the binary theorem from the unit one. OSVerify has not reviewed them, and we found no comment from specialists. If they hold, the many-electron problem is as hard as anything in QMA even when all you are given is a list of nuclei, though the hard cases found are systems no chemist will ever meet.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20275%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
