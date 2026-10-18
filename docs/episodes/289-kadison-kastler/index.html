@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Close means a small turn, proved at last? Kadison–Kastler stability | AI Proved What?</title>
+<meta name="description" content="Three AI preprints claim that close von Neumann algebras are conjugate by a unitary near the identity, with one tolerance for all, and mark where that fails. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/289-kadison-kastler/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Close means a small turn, proved at last?">
+<meta property="og:description" content="Three AI preprints claim that close von Neumann algebras are conjugate by a unitary near the identity, with one tolerance for all, and mark where that fails. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/289-kadison-kastler/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/289-kadison-kastler/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 289, October 2026</p>
+<h1>Close means a small turn, proved at last?</h1>
+<p class="subtitle">Three AI preprints claim strong Kadison–Kastler stability for von Neumann algebras, and mark its limits</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 289 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="OntGiEWL88U" data-title="Episode 289: Close means a small turn, proved at last?">
+  <a href="https://youtu.be/OntGiEWL88U">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 289: Close means a small turn, proved at last? A grey right-angle frame and a teal copy rotated slightly, with a small gold arc between them.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:37. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/OntGiEWL88U?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/OntGiEWL88U?t=75" data-t="75"><span class="t">1:15</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/OntGiEWL88U?t=128" data-t="128"><span class="t">2:08</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/OntGiEWL88U?t=181" data-t="181"><span class="t">3:01</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Two algebras of operators on the same Hilbert space can be compared by how far apart their unit balls are, a distance Kadison and Kastler introduced in 1972. Rotating an algebra slightly moves it only slightly: rotate the diagonal 2×2 matrices by an angle, and the distance grows like the sine of twice the angle, reaching 1 at 45 degrees, while for small angles the best rotation back is about half that distance. Kadison and Kastler proposed that close von Neumann algebras must be a small rotation apart, conjugate by a unitary near the identity. In the late 1970s, Christensen and others proved this for amenable algebras, by averaging and then taking the polar part. Averaging needs amenability, so the general case stayed open; in 2012, Cameron, Christensen and coauthors gave the first non-amenable examples and stated the conjecture in its standard uniform form, one tolerance for all algebras.</p>
+<p>Result 289 is three OpenAI preprints, 89 pages, dated September 23 and October 5, 2026. The first claims that conjecture for all von Neumann algebras: for every ε there is a δ, the same for every pair of unital von Neumann algebras on any Hilbert space, such that algebras closer than δ are conjugate by a unitary within ε of the identity. The other two papers mark its limits. If one algebra only nearly sits inside another, it can embed, yet every embedding unitary may stay a fixed distance from the identity. And arbitrarily close separable C*-algebras, with the same von Neumann closure, need not be conjugate by any unitary at all.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>An explicit tolerance, a bound linear in the distance, or a C*-algebra version.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, three papers, 89 pages, dated September 23 and October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>In part: the main theorem, not the counterexamples (<a href="https://github.com/openai/math/blob/main/lean/docs/289.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The preprints have not been revised. The main theorem is formalized in Lean, about 326,000 lines with no unproved steps in our scan; we did not rebuild it. The two counterexample papers are not formalized. OSVerify has not reviewed them, and we found no comment from specialists.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>One tolerance for every algebra.</strong> For finite factors, the proof places the algebras in a common position and builds nearby unitaries indexed by a group that need not be amenable, then corrects them by averaging over an amenable action on a boundary, using double ergodicity. Matrix-level commutators are controlled with a constant of 600, proved independently of the companion similarity paper. Infinite factors reduce to finite corners through modular theory.</li>
+  <li><strong>Engines of the counterexamples.</strong> Clock and shift matrices commute ever more nearly as they grow, while a winding number stays at 1, so any path to a commuting pair must push the commutator up to 2. Sums of free unitaries stay small, at most about twice the square root of their number, and that lets a slightly tilted copy be detected.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: for the rotated diagonal 2×2 algebra, the distance is sin 2θ, reaching 1 at 45°, and the best rotation back is about half of it for small angles.</li>
+  <li>Ours: averaging and polar decomposition on a small example; the error falls from 0.03 at 10 samples to 0.0007 at 50,000.</li>
+  <li>Ours: along one path from 7×7 clock and shift matrices to a commuting pair, the commutator rises to 2.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Universal-strong-Kadison-Kastler-stability-September-23-2026/paper.pdf">Universal Strong Kadison–Kastler Stability (PDF)</a>, 70 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Near-Inclusions-of-von-Neumann-Algebras-Without-Small-Spatial-Embeddings-October-5-2026/near-inclusions.pdf">Near Inclusions of von Neumann Algebras Without Small Spatial Embeddings (PDF)</a>, 10 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Close-Separable-Cstar-Algebras-Without-Spatial-Conjugacy-October-5-2026/paper.pdf">Close Separable C*-Algebras Without Spatial Conjugacy (PDF)</a>, 9 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/289.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 289.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Universal-strong-Kadison-Kastler-stability-September-23-2026/paper.pdf">Universal strong Kadison–Kastler stability</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Near-Inclusions-of-von-Neumann-Algebras-Without-Small-Spatial-Embeddings-October-5-2026/near-inclusions.pdf">Near Inclusions of von Neumann Algebras Without Small Spatial Embeddings</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Close-Separable-Cstar-Algebras-Without-Spatial-Conjugacy-October-5-2026/paper.pdf">Close Separable C*-Algebras Without Spatial Conjugacy</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Two algebras of operators on the same Hilbert space can be compared by how far apart their unit balls are, a distance Kadison and Kastler introduced in 1972. Rotating an algebra slightly moves it only slightly. Our computer checks the simplest case: rotate the diagonal 2×2 matrices by an angle, and the distance grows like the sine of twice the angle, reaching 1 at 45 degrees, while for small angles the best rotation back is about half that distance. Kadison and Kastler proposed that close von Neumann algebras must be a small rotation apart, conjugate by a unitary near the identity. In the late 1970s, Christensen and others proved this for amenable algebras, by averaging and then taking the polar part. Our computer runs that trick on a small example: as more random unitaries are averaged, the error falls from 0.03 to 0.0007. Averaging needs amenability, so the general case stayed open. In 2012, Cameron, Christensen and coauthors gave the first non-amenable examples and stated the conjecture in its standard uniform form, one tolerance for all algebras.</p>
+<h3><span class="t num">1:15</span>The claims</h3>
+<p>Result 289 is three OpenAI preprints, 89 pages, dated September 23 and October 5, 2026. The first claims that conjecture for all von Neumann algebras: for every ε there is a δ, the same for every pair of unital von Neumann algebras on any Hilbert space, such that algebras closer than δ are conjugate by a unitary within ε of the identity. The other two papers mark its limits. If one algebra only nearly sits inside another, it can embed, yet every embedding unitary may stay a fixed distance from the identity. And arbitrarily close separable C*-algebras, with the same von Neumann closure, need not be conjugate by any unitary at all. Not claimed: an explicit tolerance, a bound linear in the distance, or a C*-algebra version.</p>
+<h3><span class="t num">2:08</span>How the proof goes</h3>
+<p>For finite factors, the proof places the algebras in a common position and builds nearby unitaries indexed by a group that need not be amenable, then corrects them by averaging over an amenable action on a boundary, using double ergodicity. Matrix-level commutators are controlled with a constant of 600, proved independently of the companion similarity paper. Infinite factors reduce to finite corners through modular theory. The counterexamples use other engines. Clock and shift matrices nearly commute: our computer finds their commutator shrinking toward zero as the matrices grow, while a winding number stays at 1, and any path to a commuting pair must push the commutator up to two. Sums of free unitaries stay small, about twice the square root of their number, and that lets a slightly tilted copy be detected.</p>
+<h3><span class="t num">3:01</span>Where it stands</h3>
+<p>The preprints are unrefereed and unchanged since release. The main theorem is formalized in Lean, about 326,000 lines with no unproved steps in our scan; we did not rebuild it. The two counterexample papers are not formalized. OSVerify has not reviewed them, and we found no comment from specialists. If it holds, von Neumann algebras that look alike are alike, up to a small rotation, with one tolerance for all of them, and the companion papers mark where that stops.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20289%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
