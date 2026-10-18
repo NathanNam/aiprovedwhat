@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A condensate, proved at last? Bose–Einstein condensation for hard spheres | AI Proved What?</title>
+<meta name="description" content="Five AI preprints claim Bose–Einstein condensation for the interacting hard-sphere gas at a small positive temperature, and the Bogoliubov quantum-depletion law. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/267-bose-einstein-condensation/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="A condensate, proved at last?">
+<meta property="og:description" content="Five AI preprints claim Bose–Einstein condensation for the interacting hard-sphere gas at a small positive temperature, and the Bogoliubov quantum-depletion law. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/267-bose-einstein-condensation/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/267-bose-einstein-condensation/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 267, October 2026</p>
+<h1>A condensate, proved at last?</h1>
+<p class="subtitle">Five AI preprints claim Bose–Einstein condensation for the interacting hard-sphere gas, and the quantum depletion law</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 267 in OpenAI’s catalog: <a href="#papers-in-result">all 5 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="WjHhsoUIfvg" data-title="Episode 267: A condensate, proved at last?">
+  <a href="https://youtu.be/WjHhsoUIfvg">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 267: A condensate, proved at last? A box of teal particles with a large glowing gold dot at the center.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:22. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/WjHhsoUIfvg?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/WjHhsoUIfvg?t=76" data-t="76"><span class="t">1:16</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/WjHhsoUIfvg?t=169" data-t="169"><span class="t">2:49</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/WjHhsoUIfvg?t=210" data-t="210"><span class="t">3:30</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Cool a gas of bosons enough and a macroscopic fraction of the particles piles into a single quantum state. Bose–Einstein condensation was predicted in 1925 and seen in rubidium in 1995. For an ideal gas with no interactions, Einstein computed it exactly: below a critical temperature, the condensed fraction is 1 − (T/T<sub>c</sub>)<sup>3/2</sup>. Condensation means long-range order: the one-particle density matrix does not decay to zero at large distances.</p>
+<p>For real, interacting particles in continuous space at fixed density, this had never been proved. The only interacting case known in the thermodynamic limit was hard-core bosons on a lattice at half filling. A 2025 survey by Solovej called ground-state condensation one of the major open problems, and a 2005 book by Lieb, Seiringer, Solovej and Yngvason wrote that the problem remained open after more than 75 years.</p>
+<p>Result 267 is five OpenAI preprints, 279 pages, dated September 24 to October 5, 2026. The headline paper claims condensation for the exact canonical Gibbs state of the three-dimensional hard-sphere gas. For each sphere size and small enough density there is a fixed positive temperature, independent of the volume, at which a positive fraction of particles occupies the lowest state in the thermodynamic limit. Companions claim condensation for every ground state of dilute hard spheres, and for bounded repulsive potentials at small temperatures. Two more claim the quantum depletion law at zero temperature: to leading order, the fraction of particles kicked out of the condensate by interactions is 8/(3√π) times √(ρa³), taking the infinite volume first.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The temperature is tiny. Its formula is explicit up to constants the paper never computes; at ρa³ = 10⁻⁶, if that is dilute enough, it is below 10⁻⁷ of the ideal critical temperature (our arithmetic). Not claimed: condensation all the way up to the transition, the shift of the critical temperature, two dimensions, attractive or helium-like interactions, or depletion at positive temperature.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, five papers, 279 pages, dated September 24 to October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>In part: the ground-state theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/267.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. The preprints have not been revised. Lean formalizes only the ground-state theorem, about 72,000 lines with no unproved steps, which we did not build, and explicitly not the positive-temperature result. OSVerify has not reviewed them. One depletion paper relies on a recent preprint by Basti and coauthors that we found no sign has been refereed. We found no comment from specialists such as Seiringer, Solovej or Schlein. Commenting on the whole release, a mathematical physicist wrote that several central problems of their subfield were claimed as solved, and that a first look at the preprints was disappointing: “unreadable”.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Cells and random routes.</strong> The proofs divide space into cells holding many particles. They show that a particle here and a particle far away see the same surroundings, by shifting a chain of particles one cell each along random lattice routes that rarely meet. This forces occupation of the constant orbital.</li>
+  <li><strong>Hard core and depletion.</strong> The hard core is handled by local energy bounds and careful particle insertions. The depletion law comes from a Bogoliubov analysis inside large boxes, with the path comparison controlling differences between boxes.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: in a finite box of ideal bosons at half the critical temperature, the correlation levels off at 0.669, matching that box’s own condensed fraction.</li>
+  <li>Ours: the depletion constant 8/(3√π) = 1.5045, reproduced numerically.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Bose-Einstein-condensation-at-positive-temperature-in-the-dilute-hard-sphere-gas-October-5-2026/positive-temperature-hard-spheres.pdf">Bose–Einstein Condensation at Positive Temperature in the Dilute Hard-Sphere Gas (PDF)</a>, 56 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Ground-state-condensation-in-the-dilute-hard-sphere-gas-September-24-2026/paper.pdf">Ground-State Condensation in the Dilute Hard-Sphere Gas (PDF)</a>, 53 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026/paper.pdf">A Density-Uniform Condensate Bound for Dilute Bose Gases (PDF)</a>, 42 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Quantum-Depletion-and-Momentum-Distribution-in-the-Dilute-Hard-Sphere-Bose-Gas-October-5-2026/Quantum-Depletion-in-the-Dilute-Hard-Sphere-Bose-Gas.pdf">Quantum Depletion and Momentum Distribution in the Dilute Hard-Sphere Bose Gas (PDF)</a>, 79 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Quantum-Depletion-for-Fixed-Bounded-Repulsive-Potentials-October-5-2026/fixed-repulsion-quantum-depletion.pdf">Quantum Depletion for Fixed Bounded Repulsive Potentials (PDF)</a>, 49 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/267.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 267.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 5 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Bose-Einstein-condensation-at-positive-temperature-in-the-dilute-hard-sphere-gas-October-5-2026/positive-temperature-hard-spheres.pdf">Bose–Einstein condensation at positive temperature in the dilute hard-sphere gas</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Quantum-Depletion-and-Momentum-Distribution-in-the-Dilute-Hard-Sphere-Bose-Gas-October-5-2026/Quantum-Depletion-in-the-Dilute-Hard-Sphere-Bose-Gas.pdf">Quantum Depletion and Momentum Distribution in the Dilute Hard-Sphere Bose Gas</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Quantum-Depletion-for-Fixed-Bounded-Repulsive-Potentials-October-5-2026/fixed-repulsion-quantum-depletion.pdf">Quantum Depletion for Fixed Bounded Repulsive Potentials</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-density-uniform-condensate-bound-for-dilute-Bose-gases-September-27-2026/paper.pdf">A density-uniform condensate bound for dilute Bose gases</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Ground-state-condensation-in-the-dilute-hard-sphere-gas-September-24-2026/paper.pdf">Ground-state condensation in the dilute hard-sphere gas</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Cool a gas of bosons enough and a macroscopic fraction of the particles piles into a single quantum state: Bose–Einstein condensation, predicted in 1925 and seen in rubidium in 1995. For an ideal gas with no interactions, Einstein computed it exactly: below a critical temperature, the condensed fraction is one minus the temperature ratio to the 3/2. Condensation means long-range order: the one-particle density matrix does not decay to zero at large distances. Our computer shows it in a finite box of ideal bosons at half the critical temperature: the correlation levels off at 0.669, matching that box’s own condensed fraction. Above the critical temperature it falls to zero. For real, interacting particles in continuous space at fixed density, this had never been proved. The only interacting case known in the thermodynamic limit was hard-core bosons on a lattice at half filling. A 2025 survey by Solovej called ground-state condensation one of the major open problems, and a 2005 book by Lieb, Seiringer, Solovej and Yngvason wrote that the problem remained open after more than 75 years.</p>
+<h3><span class="t num">1:16</span>The claims</h3>
+<p>Result 267 is five OpenAI preprints, 279 pages, dated September 24 to October 5, 2026. The headline paper claims condensation for the exact canonical Gibbs state of the three-dimensional hard-sphere gas: for each sphere size and small enough density there is a fixed positive temperature, independent of the volume, at which a positive fraction of particles occupies the lowest state in the thermodynamic limit. Companions claim condensation for every ground state of dilute hard spheres, and for bounded repulsive potentials at small temperatures. Two more claim the quantum depletion law at zero temperature: the fraction of particles kicked out of the condensate by interactions is, to leading order, 8/(3√π) times the square root of the density times the scattering length cubed, taking the infinite volume first. Our computer reproduces that constant, 1.5045. The temperature is tiny. Its formula is explicit up to constants the paper never computes; with the smallest allowed value, at density times scattering length cubed of 10⁻⁶, and if that is dilute enough, it is less than 10⁻⁷ of the ideal critical temperature. Not claimed: condensation all the way up to the transition, the shift of the critical temperature, two dimensions, attractive or helium-like interactions, or depletion at positive temperature.</p>
+<h3><span class="t num">2:49</span>How the proofs go</h3>
+<p>The proofs divide space into cells holding many particles, and show that a particle here and a particle far away see the same surroundings, by shifting a chain of particles one cell each along random lattice routes that rarely meet; this forces occupation of the constant orbital. The hard core is handled by local energy bounds and careful particle insertions, and the depletion law by a Bogoliubov analysis inside large boxes, with the path comparison controlling differences between boxes. One depletion paper relies on a recent preprint by Basti and coauthors that we found no sign has been refereed.</p>
+<h3><span class="t num">3:30</span>Where it stands</h3>
+<p>The preprints are unrefereed and unchanged since release. Lean formalizes only the ground-state theorem, about 72,000 lines with no unproved steps, which we did not build, and explicitly not the positive-temperature result. OSVerify has not reviewed them. We found no comment from specialists such as Seiringer, Solovej or Schlein; commenting on the whole release, a mathematical physicist wrote that several central problems of their subfield were claimed as solved, and that a first look at the preprints was disappointing: unreadable. If they hold, Bose–Einstein condensation is at last a theorem for a genuinely interacting gas in continuous space at fixed density, at positive temperature, though far below where it actually happens.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20267%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
