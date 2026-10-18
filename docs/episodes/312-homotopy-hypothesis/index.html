@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spaces as algebra? Grothendieck’s homotopy hypothesis | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims Grothendieck’s homotopy hypothesis for every coherator in the Ara–Henry convention, with its core step checked in Lean. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/312-homotopy-hypothesis/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Spaces as algebra?">
+<meta property="og:description" content="An AI preprint claims Grothendieck’s homotopy hypothesis for every coherator in the Ara–Henry convention, with its core step checked in Lean. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/312-homotopy-hypothesis/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/312-homotopy-hypothesis/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 312, October 2026</p>
+<h1>Spaces as algebra?</h1>
+<p class="subtitle">An AI preprint claims Grothendieck’s homotopy hypothesis for every coherator in the Ara–Henry convention</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 312 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="qX48iCgSJP4" data-title="Episode 312: Spaces as algebra?">
+  <a href="https://youtu.be/qX48iCgSJP4">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 312: Spaces as algebra? Two curved arrows between two points with a pink arrow between them, a 2-globe.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:31. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/qX48iCgSJP4?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/qX48iCgSJP4?t=110" data-t="110"><span class="t">1:50</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/qX48iCgSJP4?t=162" data-t="162"><span class="t">2:42</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/qX48iCgSJP4?t=230" data-t="230"><span class="t">3:50</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>In 1983, in Pursuing Stacks, Grothendieck proposed that spaces, up to homotopy, are the same thing as purely algebraic ∞-groupoids: points, paths between points, homotopies between paths, and so on forever, with composition, inverses and every coherence law supplied by operations rather than by geometry. Maltsiniotis later made this precise with coherators, theories built stage by stage by freely adding fillers for parallel pairs of operations. Strict versions are too rigid: by the Eckmann–Hilton argument two compatible operations collapse into one commutative operation, which is why strict groupoids cannot model even the 2-sphere. In 2016 Henry reduced the hypothesis to one gluing step: attach a new cell parallel to an existing one, plus a cell joining them, and show that nothing changes up to homotopy. In 2022 Henry wrote that this sounds like it should be very easy, but is still open at this point. Only dimension 3 was known, for groupoids of one particular kind, through work of Lanari and of Henry and Lanari.</p>
+<p>Result 312 is one OpenAI paper, 26 pages, dated September 24, 2026, and made public October 6. It claims that Henry’s gluing step is a weak equivalence for every coherator in the Ara–Henry convention, where each generating filler’s input has dimension at most its output. Through Henry’s 2016 theorem, this gives a left semi-model structure and a Quillen equivalence with spaces: the homotopy hypothesis for these groupoids.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Coherators without that dimension bound, strict groupoids, higher categories that are not groupoids, other models such as Batanin’s, or a full model structure. The step to spaces depends on Henry’s 98-page 2016 preprint, which, as far as we found, has not appeared in a journal.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 26 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>In part: the core gluing theorem, not the comparison with spaces (<a href="https://github.com/openai/math/blob/main/lean/docs/312.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper has not been revised. In Lean, the core gluing theorem is formalized against a challenge statement whose definitions, in our reading, match the paper’s, with an import closure of 58 files and about 12,700 lines; our scan finds no unproved steps, and we did not build it. The semi-model structure and the comparison with spaces are not formalized; a third party’s claim to have formalized the rest has not been checked. OSVerify has not reviewed it, and we found no specialist assessment. One public doubt was raised: on the algebraic topology mailing list on October 9, Johnathon Taylor, whose own paper the release cites for context, wrote that “there is definitely not elementary expansions in the sense the paper lays out”. They gave no argument, and no one followed up on the mathematics.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>From the top down.</strong> The proof tests weak equivalence by lifting problems with exact boundaries. It first cuts the models off above some dimension q, forcing unique fillers there, then runs a descending induction from q down to 0. At each step, the gluing results already proved in higher dimensions make certain tree and cylinder models contractible, and this lets the paper build a path-object-like construction that interprets every operation of the coherator. A retract argument finishes the step, and the cutoff is removed at the end, because each test only involves finitely many dimensions.</li>
+  <li><strong>What Lean checks.</strong> The core gluing theorem, not the semi-model structure or the comparison with spaces. One footnote misquotes Henry’s definition, without affecting the argument.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: pasting shapes of globes, counted by size, follow the Catalan numbers 1, 1, 2, 5, 14, 42.</li>
+  <li>Ours: in a toy coherator, one-dimensional operations on two composable arrows number 49 when built from two generating fillers and 3,556 when built from three.</li>
+  <li>Ours: linking numbers 1, 2, 3 and 6 for the Hopf map and three variants of it.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Grothendieck-homotopy-hypothesis-via-elementary-expansions-September-24-2026/paper.pdf">The Grothendieck Homotopy Hypothesis via Elementary Expansions (PDF)</a>, 26 pages.</li>
+  <li><a href="https://arxiv.org/abs/1609.04622">Henry’s 2016 reduction</a> (arXiv).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/312.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 312.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Grothendieck-homotopy-hypothesis-via-elementary-expansions-September-24-2026/paper.pdf">The Grothendieck homotopy hypothesis via elementary expansions</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>In 1983, in Pursuing Stacks, Grothendieck proposed that spaces, up to homotopy, are the same thing as purely algebraic ∞-groupoids: points, paths between points, homotopies between paths, and so on forever, with composition, inverses and every coherence law supplied by operations rather than by geometry. Maltsiniotis later made this precise with coherators, theories built stage by stage by freely adding fillers for parallel pairs of operations. The operations act on pasting shapes made of globes, and our computer counts these shapes by size: they follow the Catalan numbers, 1, 1, 2, 5, 14, 42. The operations multiply fast. In a toy coherator, our count of one-dimensional operations on two composable arrows gives 49 built from two generating fillers and 3,556 built from three, and every parallel pair needs a filler at the next stage. Strict versions are too rigid: by the Eckmann–Hilton argument, which our computer checks by brute force on small sets, two compatible operations collapse into one commutative operation. That is why strict groupoids cannot model even the 2-sphere, whose Hopf map has linked circles as fibres; our computer measures linking numbers of 1, 2, 3 and 6 for the Hopf map and three variants of it. In 2016 Henry reduced the hypothesis to one gluing step: attach a new cell parallel to an existing one, plus a cell joining them, and show that nothing changes up to homotopy. In 2022 Henry wrote that this sounds like it should be very easy, but is still open at this point. Only dimension 3 was known, for groupoids of one particular kind, through work of Lanari and of Henry and Lanari.</p>
+<h3><span class="t num">1:50</span>The claim</h3>
+<p>Result 312 is one OpenAI paper, 26 pages, dated September 24 and made public October 6, 2026. It claims that Henry’s gluing step is a weak equivalence for every coherator in the Ara–Henry convention, where each generating filler’s input has dimension at most its output. Through Henry’s 2016 theorem, this gives a left semi-model structure and a Quillen equivalence with spaces: the homotopy hypothesis for these groupoids. Not claimed: coherators without that dimension bound, strict groupoids, higher categories that are not groupoids, other models such as Batanin’s, or a full model structure. The step to spaces depends on Henry’s 98-page 2016 preprint, which, as far as we found, has not appeared in a journal.</p>
+<h3><span class="t num">2:42</span>How the proof goes</h3>
+<p>The proof tests weak equivalence by lifting problems with exact boundaries. It first cuts the models off above some dimension q, forcing unique fillers there, then runs a descending induction from q down to 0. At each step, the gluing results already proved in higher dimensions make certain tree and cylinder models contractible, and this lets the paper build a path-object-like construction that interprets every operation of the coherator. A retract argument finishes the step, and the cutoff is removed at the end, because each test only involves finitely many dimensions. In Lean, the core gluing theorem is formalized against a challenge statement whose definitions, in our reading, match the paper’s, with an import closure of 58 files and about 12,700 lines; our scan finds no unproved steps, and we did not build it. The semi-model structure and the comparison with spaces are not formalized, and a third party’s claim to have formalized the rest has not been checked. One footnote misquotes Henry’s definition, without affecting the argument.</p>
+<h3><span class="t num">3:50</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release, and in the first 12 days we found no specialist assessment. One public doubt was raised: on the algebraic topology mailing list on October 9, Johnathon Taylor, whose own paper the release cites for context, wrote that there are definitely not elementary expansions in the sense the paper lays out. They gave no argument, and no one followed up on the mathematics. If it holds, Grothendieck’s ∞-groupoids, for every coherator in this convention, recover the homotopy theory of spaces, 43 years after Pursuing Stacks.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20312%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
