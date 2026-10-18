@@ -3,18 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 274: Parity is not in QAC⁰ | AI Proved What?</title>
-<meta name="description" content="Parity is not in QAC⁰. Result 274 in OpenAI&#x27;s math release (Mathematical physics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Shallow circuits, no parity, proved at last? Parity is not in QAC⁰ | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Moore’s 1999 conjecture: constant-depth, polynomial-size quantum circuits with giant Toffoli gates cannot compute parity. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/274-parity-not-qac0/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 274: Parity is not in QAC⁰ | AI Proved What?">
-<meta property="og:description" content="Parity is not in QAC⁰. Result 274 in OpenAI&#x27;s math release (Mathematical physics): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Shallow circuits, no parity, proved at last?">
+<meta property="og:description" content="Two AI preprints claim Moore’s 1999 conjecture: constant-depth, polynomial-size quantum circuits with giant Toffoli gates cannot compute parity. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/274-parity-not-qac0/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/274-parity-not-qac0/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -38,35 +37,91 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 274 · <a href="../../subjects/mathematical-physics/">Mathematical physics</a></p>
-<h1 class="result-title">Parity is not in QAC<sup>0</sup></h1>
+<p class="meta">Episode 274, October 2026</p>
+<h1>Shallow circuits, no parity, proved at last?</h1>
+<p class="subtitle">Two AI preprints claim that parity is not in QAC⁰, Moore’s 1999 conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 274 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="FyGgvudMyyg" data-title="Episode 274: Shallow circuits, no parity, proved at last?">
+  <a href="https://youtu.be/FyGgvudMyyg">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 274: Shallow circuits, no parity, proved at last? Quantum circuit wires with one giant Toffoli gate and a crossed-out parity symbol.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:32. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/FyGgvudMyyg?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/FyGgvudMyyg?t=68" data-t="68"><span class="t">1:08</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/FyGgvudMyyg?t=131" data-t="131"><span class="t">2:11</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/FyGgvudMyyg?t=171" data-t="171"><span class="t">2:51</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Resolves Moore's parity conjecture in the measured-output model: constant-depth quantum circuits with arbitrary one-qubit gates, unbounded-arity Toffoli gates and polynomially many total qubits cannot compute parity with any fixed positive worst-case advantage. Ancillas start in zero, one output qubit is measured, and all other registers may be discarded. Xu–Li's reductions give the same bounded-error obstruction for strict majority.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Parity asks whether a string of bits has an odd number of ones, so every bit matters. In the 1980s, Ajtai, Furst, Saxe and Sipser, and then Håstad, proved that classical circuits of constant depth and polynomial size, with NOT gates and unlimited AND and OR gates, cannot compute it.</p>
+<p>Quantum circuits of constant depth and polynomial size, with one-qubit gates and giant Toffoli gates, form the class called QAC⁰. In 1999 Cristopher Moore conjectured that they cannot copy a bit onto many wires, which is equivalent to computing parity: Hadamard gates turn one into the other. With a fan-out gate, parity takes depth 3 for any number of bits; without it, a tree of CNOT gates needs a new layer every time the number of bits doubles. Partial results piled up, with lower bounds for few extra qubits and for depths 2, 3 and 4. In 2024 a claimed proof was withdrawn within a week, and four days after the new papers’ date a human preprint still called the general case open.</p>
+<p>Result 274 is two OpenAI preprints, 48 pages, both dated September 24, 2026, with independent proofs. They claim that for any fixed depth and polynomially many qubits, with extra qubits starting at zero, one qubit measured and everything else discarded, no circuit gets parity right on every input with any fixed advantage over guessing, once the number of bits is large enough. Using reductions by Xu and Li, majority is ruled out too.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Circuits with fan-out gates or intermediate measurements, or with more than polynomially many qubits, where depth 7 circuits are known to approximate parity. The threshold on the number of bits is not explicit.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two papers, 48 pages, dated September 24, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of the main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/274.md">scope notes</a>)</dd>
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>In part: the main theorem, not the majority result (<a href="https://github.com/openai/math/blob/main/lean/docs/274.md">docs</a>)</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 17, 2026.</p>
+<p class="ledger-note">Last checked October 17, 2026. The preprints have not been revised. The first paper’s main theorem is formalized in Lean at full strength, about 3,600 lines with no unproved steps, which we did not build; the majority result is not. OSVerify has not reviewed them. Scott Aaronson called the problem “one of the great questions of quantum complexity theory since 1999”, but we found no technical comment from specialists.</p>
 </section>
 
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Mirrors and mismatches.</strong> The first proof treats every Toffoli as a reflection about a product state. Its key structural theorem bounds how far a shallow stack of such reflections can push a product pattern: many mismatches are astronomically unlikely. Parity needs exactly the opposite, a transition from every input qubit agreeing to every input qubit disagreeing. Where polynomial approximations fail, the proof runs the circuit backwards at a larger scale, through a finite chain of scales.</li>
+  <li><strong>A second, independent proof.</strong> The second paper prunes gates that almost never fire and follows regular trajectories.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: with a fan-out gate, parity in depth 3 for any number of bits; a CNOT tree needs depth ⌈log₂ n⌉.</li>
+  <li>Ours: one Toffoli touching every input has correlation with parity of only 2<sup>1−n</sup>, like a classical AND gate.</li>
+  <li>Ours: the identity behind the first proof (parity as an average transition between opposite product states), checked for 3 to 5 bits.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Product-projection-localization-and-the-QAC0-parity-lower-bound-September-24-2026/paper.pdf">Product-Projection Localization and the QAC⁰ Parity Lower Bound (PDF)</a>, 21 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/paper.pdf">Regular Trajectories, Pruning and Quantum Parity (PDF)</a>, 27 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/274.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 274.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -75,18 +130,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Regular-trajectories-pruning-and-quantum-parity-September-24-2026/paper.pdf">Regular trajectories, pruning and quantum parity</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Parity asks whether a string of bits has an odd number of ones, so every bit matters. In the 1980s, Ajtai, Furst, Saxe and Sipser, and then Håstad, proved that classical circuits of constant depth and polynomial size, with NOT gates and unlimited AND and OR gates, cannot compute it. Quantum circuits of constant depth and polynomial size, with one-qubit gates and giant Toffoli gates, form the class called QAC⁰. In 1999 Cristopher Moore conjectured that they cannot copy a bit onto many wires, which is equivalent to computing parity: Hadamard gates turn one into the other. Our computer shows the difference: with a fan-out gate, parity takes depth 3 for any number of bits; without it, a tree of CNOT gates needs a new layer every time the number of bits doubles. Partial results piled up: lower bounds with few extra qubits, and for depths 2, 3 and 4. In 2024 a claimed proof was withdrawn within a week. Four days after the new papers’ date, a human preprint still called the general case open.</p>
+<h3><span class="t num">1:08</span>The claims</h3>
+<p>Result 274 is two OpenAI preprints, 48 pages, both dated September 24, 2026, with independent proofs. They claim that for any fixed depth and polynomially many qubits, with extra qubits starting at zero, one qubit measured and everything else discarded, no circuit gets parity right on every input with any fixed advantage over guessing, once the number of bits is large enough. Using reductions by Xu and Li, majority is ruled out too. Giant gates alone do not help much. Our computer finds that one Toffoli touching every input has correlation with parity of only 2^(1−n), halving with every extra bit, exactly like a classical AND gate. Not claimed: circuits with fan-out gates or intermediate measurements, or with more than polynomially many qubits, where depth 7 circuits are known to approximate parity. The threshold on the number of bits is not explicit.</p>
+<h3><span class="t num">2:11</span>How the proofs go</h3>
+<p>The first proof treats every Toffoli as a reflection about a product state. Its key structural theorem bounds how far a shallow stack of such reflections can push a product pattern: many mismatches are astronomically unlikely. Parity needs exactly the opposite, a transition from every input qubit agreeing to every input qubit disagreeing, and our computer checks the identity behind this. Where polynomial approximations fail, the proof runs the circuit backwards at a larger scale, through a finite chain of scales. The second proof takes a different route: it prunes gates that almost never fire and follows regular trajectories.</p>
+<h3><span class="t num">2:51</span>Where it stands</h3>
+<p>The preprints are unrefereed and unchanged since release. The first paper’s main theorem is formalized in Lean at full strength, about 3,600 lines with no unproved steps, which we did not build; the majority result is not. OSVerify has not reviewed them. Scott Aaronson called the problem one of the great questions of quantum complexity theory since 1999, but we found no technical comment from specialists. If they hold, Moore was right: quantum circuits of constant depth and polynomial size cannot compute parity on large inputs, or copy one bit onto every wire.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20274%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../273-entropy-photon-number/"><span class="dir">Previous · 273</span><span class="pt">The entropy photon-number inequality</span></a>
-  <a class="next" href="../275-qma-hardness-continuum-coulomb-energy/"><span class="dir">Next · 275</span><span class="pt">QMA-hardness of continuum Coulomb energy</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/mathematical-physics/">More in mathematical physics</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
