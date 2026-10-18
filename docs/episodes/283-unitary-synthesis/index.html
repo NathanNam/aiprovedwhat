@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Any unitary from a table, proved at last? Unitary synthesis from a Boolean oracle | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims one polynomial-size quantum circuit that, with the right Boolean oracle, implements every unitary within a fixed coarse error. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/283-unitary-synthesis/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Any unitary from a table, proved at last?">
+<meta property="og:description" content="An AI preprint claims one polynomial-size quantum circuit that, with the right Boolean oracle, implements every unitary within a fixed coarse error. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/283-unitary-synthesis/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/283-unitary-synthesis/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 283, October 2026</p>
+<h1>Any unitary from a table, proved at last?</h1>
+<p class="subtitle">An AI preprint claims a positive answer to the constant-error unitary synthesis problem</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 283 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="SDuZ3kxLwKY" data-title="Episode 283: Any unitary from a table, proved at last?">
+  <a href="https://youtu.be/SDuZ3kxLwKY">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 283: Any unitary from a table, proved at last? A small gold box marked U pointing at a large grid of teal and grey bits.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:23. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/SDuZ3kxLwKY?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/SDuZ3kxLwKY?t=63" data-t="63"><span class="t">1:03</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/SDuZ3kxLwKY?t=118" data-t="118"><span class="t">1:58</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/SDuZ3kxLwKY?t=165" data-t="165"><span class="t">2:45</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A quantum computer on n qubits can in principle apply any unitary transformation, but counting shows that most of them need exponentially many gates. The obstacle is not storing the description: pinning down a 10-qubit unitary to precision 0.1 takes about 3.5 million bits, which a lookup table addressed by about 22 bits can hold. So Aaronson and Kuperberg asked: is there one polynomial-size quantum circuit that, given the right Boolean lookup table for each target, approximately implements every unitary? Aaronson later named it the unitary synthesis problem, and in 2021 wrote, “my conjecture is that the answer is negative.” For preparing quantum states, one query to a suitable table is enough, and Rosenthal made that efficient in 2023. For unitaries, Lombardi, Ma and Wright proved that one query is not enough, and a recent result needs only a few queries, but each one exponentially long.</p>
+<p>Result 283 is one OpenAI preprint, 21 pages, dated October 5, 2026. It claims a positive answer. For each n, one uniform circuit of polynomial size, built from Hadamard, T, T inverse and CNOT gates and making polynomially many queries of polynomial length to a single Boolean oracle, implements every n-qubit unitary within diamond-norm error 1/2, once the oracle is chosen for that unitary.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Smaller error, an efficient way to build the oracle (whose truth table is exponentially long), or a practical size; the constants are astronomical. For one qubit, error 1/2 lets the gate’s two phases slip about 14.5 degrees either way, ignoring overall phase; the proof actually gets 1/5, about 5.7 degrees.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 21 pages, dated October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>No</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The preprint has not been revised. There is no Lean formalization. Scott Aaronson, who posed the problem with Greg Kuperberg, called it “the opposite of what most of us expected,” while noting that the paper gives no efficient way to construct the oracle. OSVerify has not reviewed it, and we found no published check by specialists.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Peel off a corner, feed it back.</strong> The proof scrambles the target with well-chosen signs and Walsh–Hadamard transforms, so that one corner block becomes a contraction, with norm at most 3/4. Feeding that corner back through a phase gives a smaller unitary, and the original is recovered from it, approximately, by a truncated series.</li>
+  <li><strong>Recurse, and store everything in one table.</strong> Labels made of powers of each coordinate’s index, decoded with Newton’s identities, keep each step sparse enough to run coherently with amplitude amplification, and each level calls the smaller problem only once, so the recursion stays polynomial. Every gate choice is stored in the oracle as a word of Hadamard, T and T inverse gates, phase included.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: describing a 10-qubit unitary to precision 0.1 takes about 3.5 million bits; a table with about 22 address bits holds them.</li>
+  <li>Ours: diamond-norm error 1/2 corresponds to phases slipping about 14.5 degrees, and 1/5 to about 5.7 degrees.</li>
+  <li>Ours: in a toy table of gate words, keeping the stored phases gives error 0.1; dropping them gives error 2.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Polynomial-Time-Unitary-Synthesis-from-a-Boolean-Oracle-October-5-2026/paper.pdf">Polynomial-Time Unitary Synthesis from a Boolean Oracle (PDF)</a>, 21 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 283.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Polynomial-Time-Unitary-Synthesis-from-a-Boolean-Oracle-October-5-2026/paper.pdf">Polynomial-Time Unitary Synthesis from a Boolean Oracle</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A quantum computer on n qubits can in principle apply any unitary transformation, but counting shows that most of them need exponentially many gates. The obstacle is not storing the description. Our computer finds that pinning down a 10-qubit unitary to precision 0.1 takes about 3.5 million bits, which a lookup table addressed by about 22 bits can hold. So Aaronson and Kuperberg asked: is there one polynomial-size quantum circuit that, given the right Boolean lookup table for each target, approximately implements every unitary? Aaronson later named it the unitary synthesis problem, and in 2021 wrote, “my conjecture is that the answer is negative”. For preparing quantum states, one query to a suitable table is enough, and Rosenthal made that efficient in 2023. For unitaries, Lombardi, Ma and Wright proved that one query is not enough, and a recent result needs only a few queries, but each one exponentially long.</p>
+<h3><span class="t num">1:03</span>The claims</h3>
+<p>Result 283 is one OpenAI preprint, 21 pages, dated October 5, 2026. It claims a positive answer. For each n, one uniform circuit of polynomial size, built from Hadamard, T, T inverse and CNOT gates and making polynomially many queries of polynomial length to a single Boolean oracle, implements every n-qubit unitary within diamond-norm error 1/2, once the oracle is chosen for that unitary. What does error 1/2 mean? For one qubit, our computer finds it lets the gate’s two phases slip about 14.5 degrees either way, ignoring overall phase; the proof actually gets 1/5, about 5.7 degrees. Not claimed: smaller error, an efficient way to build the oracle, whose truth table is exponentially long, or a practical size. The constants are astronomical.</p>
+<h3><span class="t num">1:58</span>How the proof goes</h3>
+<p>The proof scrambles the target with well-chosen signs and Walsh–Hadamard transforms, so that one corner block becomes a contraction, with norm at most 3/4. Feeding that corner back through a phase gives a smaller unitary, and the original is recovered from it, approximately, by a truncated series. Labels made of powers of each coordinate’s number, decoded with Newton’s identities, keep each step sparse enough to run coherently with amplitude amplification, and each level calls the smaller problem only once, so the recursion stays polynomial. Every gate choice is stored in the oracle as a word of Hadamard, T and T inverse gates, phase included. In our toy table, dropping the stored phases raises the error from 0.1 to 2.</p>
+<h3><span class="t num">2:45</span>Where it stands</h3>
+<p>The preprint is unrefereed and unchanged since release, with no Lean formalization. Aaronson, who posed the problem with Kuperberg, called it “the opposite of what most of us expected”, while noting that the paper gives no efficient way to construct the oracle. OSVerify has not reviewed it, and we found no published check by specialists. If it holds, a polynomial-size quantum circuit with the right enormous table can carry out any unitary operation to within a fixed, coarse error, though nobody yet knows how to write the table.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20283%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
