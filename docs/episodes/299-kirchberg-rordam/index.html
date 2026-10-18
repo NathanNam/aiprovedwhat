@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No characters, then Z-stable? The Kirchberg–Rørdam question | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims a unital separable C*-algebra absorbs the Jiang–Su algebra exactly when its central sequence algebra has no characters. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/299-kirchberg-rordam/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="No characters, then Z-stable?">
+<meta property="og:description" content="An AI preprint claims a unital separable C*-algebra absorbs the Jiang–Su algebra exactly when its central sequence algebra has no characters. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/299-kirchberg-rordam/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/299-kirchberg-rordam/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 299, October 2026</p>
+<h1>No characters, then Z-stable?</h1>
+<p class="subtitle">An AI preprint claims the Kirchberg–Rørdam character criterion for Jiang–Su stability</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 299 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="awQ_S3pKzuQ" data-title="Episode 299: No characters, then Z-stable?">
+  <a href="https://youtu.be/awQ_S3pKzuQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 299: No characters, then Z-stable? Commutator bars halving along a chain of tensor legs.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:42. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/awQ_S3pKzuQ?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/awQ_S3pKzuQ?t=83" data-t="83"><span class="t">1:23</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/awQ_S3pKzuQ?t=137" data-t="137"><span class="t">2:17</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/awQ_S3pKzuQ?t=182" data-t="182"><span class="t">3:02</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A character of a C*-algebra is a one-dimensional representation, a homomorphism onto the complex numbers; matrix algebras of size two or more have none. Kirchberg’s central sequence algebra collects the sequences that asymptotically commute with the whole algebra, and 𝒵-stability, absorbing the Jiang–Su algebra, is one of the regularity properties from <a href="/episodes/291-toms-winter/">episode 291</a>. In 2014 Kirchberg and Rørdam asked whether a unital separable algebra is 𝒵-stable exactly when its central sequence algebra has no characters; they called one direction, 𝒵-stable implies no characters, trivially true. They showed the question equivalent to one about infinite tensor powers, implicit in work of Dadarlat and Toms, and a problem list still carried it, unsolved, in May 2026.</p>
+<p>Result 299 is one OpenAI paper, 21 pages, dated September 25, 2026, and published October 6. It claims that a nonzero unital separable C*-algebra is 𝒵-stable exactly when its central sequence algebra has no characters, for every free ultrafilter; the new part is the hard direction. Its key step: every nonzero unital algebra without characters receives a unital image of the dimension-drop algebra I(2,3) in some finite maximal tensor power of itself. So the infinite tensor power of such a separable algebra is 𝒵-stable, answering the Dadarlat–Toms form of the question.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>That any finite tensor power is 𝒵-stable, a bound on the power, or anything for non-unital algebras.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 21 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>In part: the main criterion, not the tensor-power result (<a href="https://github.com/openai/math/blob/main/lean/docs/299.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper has not been revised. In Lean, the main criterion is formalized and matches the paper, with its own model of the Jiang–Su algebra, in about 25,000 lines, with no unproved steps in our scan; an outside project re-ran the proof against the formal statement. The tensor-power result is not formalized. OSVerify has not reviewed it, and we found no expert comment.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The target.</strong> The dimension-drop algebra I(2,3) has irreducible representations of sizes 2, 6 and 3, and no characters; Kirchberg and Rørdam had shown that a unital map of it into the central sequence algebra is all that is needed.</li>
+  <li><strong>A cube.</strong> The paper builds the map on a cube of coordinates, sliding a copy of the 2×2 matrices from one tensor leg to the next. The cost is fast-growing exponents: for a comparison constant of 3 the bookkeeping uses 11 copies of an earlier tensor power, and for 10, 10,004.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: −(i/2)[σ<sub>x</sub>, σ<sub>y</sub>]σ<sub>z</sub> = 1, so 2×2 matrices have no character; I(2,3) has irreducible representations of sizes 2, 6 and 3 and no character, while I(1,3) has one.</li>
+  <li>Ours: in ten tensored copies of 2×2 matrices, σ<sub>z</sub> on leg k has commutator 2<sup>1−k</sup> with a fixed element whose weights halve along the legs.</li>
+  <li>Ours: the paper’s cube construction checked at sample points to about 10<sup>−15</sup>.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Kirchberg-Rordam-character-criterion-September-25-2026/paper.pdf">The Kirchberg–Rørdam Character Criterion (PDF)</a>, 21 pages.</li>
+  <li><a href="https://arxiv.org/abs/1409.1395">Kirchberg and Rørdam, “Central sequence C*-algebras and tensorial absorption of the Jiang–Su algebra”</a> (arXiv, 2014).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/299.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 299.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Kirchberg-Rordam-character-criterion-September-25-2026/paper.pdf">The Kirchberg–Rørdam character criterion</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A character of a C*-algebra is a one-dimensional representation, a homomorphism onto the complex numbers. Matrix algebras of size two or more have none: our computer checks that −i/2, times the commutator of two Pauli matrices, times the third, is the identity, so a character would have to send 1 to 0. A direct sum of matrix blocks has exactly one character for each 1×1 block. Kirchberg’s central sequence algebra collects the sequences that asymptotically commute with the whole algebra. Our computer shows them in ten tensored copies of 2×2 matrices: a copy of σ_z placed further along commutes better and better with a fixed element whose weights halve along the legs, while two such sequences need not commute with each other. Absorbing the Jiang–Su algebra, 𝒵-stability, is one of the regularity properties from episode 291. In 2014 Kirchberg and Rørdam asked whether a unital separable algebra is 𝒵-stable exactly when its central sequence algebra has no characters; they called one direction, 𝒵-stable implies no characters, trivially true. They showed the question equivalent to one about infinite tensor powers, implicit in work of Dadarlat and Toms, and a problem list still carried it, unsolved, in May 2026.</p>
+<h3><span class="t num">1:23</span>The claim</h3>
+<p>Result 299 is one OpenAI paper, 21 pages, dated September 25 and published October 6, 2026. It claims that a nonzero unital separable C*-algebra is 𝒵-stable exactly when its central sequence algebra has no characters, for every free ultrafilter. The new part is the hard direction: no characters implies 𝒵-stable. Its key new step: every nonzero unital algebra without characters receives a unital image of the dimension-drop algebra I(2,3) in some finite maximal tensor power of itself. So the infinite tensor power of such a separable algebra is 𝒵-stable, answering the Dadarlat–Toms form of the question. Not claimed: that any finite tensor power is 𝒵-stable, a bound on the power, or anything for non-unital algebras.</p>
+<h3><span class="t num">2:17</span>How the proof goes</h3>
+<p>The dimension-drop algebra I(2,3) has irreducible representations of sizes 2, 6 and 3, and no characters; Kirchberg and Rørdam had shown that a unital map of it into the central sequence algebra is all that is needed. Our computer checks those sizes, and that I(1,3), by contrast, has a character. The paper builds the map on a cube of coordinates, sliding a copy of the 2×2 matrices from one tensor leg to the next; our computer checks that construction at sample points, to about 10⁻¹⁵. The cost is fast-growing exponents: for a comparison constant of 3 the bookkeeping uses 11 copies of an earlier tensor power, and for 10, 10,004.</p>
+<h3><span class="t num">3:02</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. In Lean, the main criterion is formalized and matches the paper, with its own model of the Jiang–Su algebra, in about 25,000 lines; our scan finds no unproved steps, and an outside project re-ran the proof against the formal statement, but the tensor power result is not formalized. We found no expert comment. If it holds, a unital separable algebra absorbs the Jiang–Su algebra exactly when its central sequence algebra has no characters, with no further hypotheses.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20299%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
