@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kohn–Sham can’t fake it, proved at last? A DFT representability counterexample | AI Proved What?</title>
+<meta name="description" content="An AI preprint constructs a three-electron Coulomb molecule whose ground-state density no Kohn–Sham ensemble in the standard potential class can reproduce. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/278-kohn-sham-counterexample/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Kohn–Sham can’t fake it, proved at last?">
+<meta property="og:description" content="An AI preprint constructs a three-electron Coulomb molecule whose ground-state density no Kohn–Sham ensemble in the standard potential class can reproduce. An animated explainer, the claims in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/278-kohn-sham-counterexample/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/278-kohn-sham-counterexample/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 278, October 2026</p>
+<h1>Kohn–Sham can’t fake it, proved at last?</h1>
+<p class="subtitle">An AI preprint claims a Coulomb ground-state density with no Kohn–Sham ensemble representation</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 278 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="9RR1CUbiIb0" data-title="Episode 278: Kohn–Sham can’t fake it, proved at last?">
+  <a href="https://youtu.be/9RR1CUbiIb0">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 278: Kohn–Sham can’t fake it, proved at last? Two nuclei with teal electron clouds and a glowing gold mirror plane between them.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:34. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/9RR1CUbiIb0?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/9RR1CUbiIb0?t=64" data-t="64"><span class="t">1:04</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/9RR1CUbiIb0?t=128" data-t="128"><span class="t">2:08</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/9RR1CUbiIb0?t=186" data-t="186"><span class="t">3:06</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A many-electron wave function has three coordinates per electron, far too many to compute. Density functional theory works with the electron density instead, three coordinates in total; Hohenberg and Kohn showed in 1964 that the ground-state density determines everything. In 1965 Kohn and Sham added the practical trick: replace the interacting electrons by noninteracting ones moving in a single effective potential that reproduces the same density.</p>
+<p>That trick quietly assumes such a potential exists. Mixtures of states, called ensembles, patch some failures. Densities that even ensembles cannot reproduce were known since 1983, but they were prescribed by hand, not computed from Coulomb molecules. For continuous three-dimensional systems, a 2026 paper called the question completely open.</p>
+<p>Result 278 is one OpenAI preprint, 45 pages, dated September 25, 2026. It constructs a molecule with two equal nuclei of positive integer charge and three electrons whose lowest-energy density cannot be reproduced by any ensemble of noninteracting ground states, in any single real, spin-independent potential of the standard class used in the rigorous theory (L<sup>3/2</sup> + L<sup>∞</sup>). The molecule is a mathematical object: the nuclei sit 2 × 10<sup>200</sup> divided by their charge atomic units apart, and the charge is defined by a formula that has never been evaluated, with no upper bound given. The paper credits the physical mechanism to Gori-Giorgi, Gál and Baerends.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>That density functional theory fails in practice, anything about spin-dependent, distributional or nonlocal potentials, or that no potential exists at all: a formal one does, it just falls outside the standard class.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 45 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>No</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The preprint has not been revised. There is no Lean formalization, it is not listed on OSVerify, and we found no comment from specialists.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A faint trace on the mirror plane.</strong> Rescaled, the electron repulsion becomes weak, and the ground state is close to two electrons in a symmetric orbital and one in an antisymmetric orbital, which vanishes on the mirror plane between the nuclei. Far out on that plane, the true density still fades at the same exponential rate, only slightly weaker, because the departing electron polarizes the ion left behind. The only candidate noninteracting state would fade faster there in any admissible potential, so none works.</li>
+  <li><strong>Where it works, and where it fails.</strong> In our one-dimensional toy on a finite grid, the paper’s recipe for the only candidate potential reproduces the interacting density to 12 digits; the obstruction needs a plane reaching to infinity, which the toy lacks. In our model of the paper’s asymptotics, the mismatch distance grows like one over the tiny level splitting: about 1,300 units when the splitting is 0.01.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: in a two-dimensional well, an ensemble reaches a round density that no single real determinant in that well can.</li>
+  <li>Ours: a 1D three-electron toy on a finite grid where the recipe works, and a model of the mismatch distance.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Coulomb-Ground-State-Density-without-Kohn-Sham-Ensemble-Representation-September-25-2026/paper.pdf">A Coulomb Ground-State Density without Kohn–Sham Ensemble Representation (PDF)</a>, 45 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 278.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Coulomb-Ground-State-Density-without-Kohn-Sham-Ensemble-Representation-September-25-2026/paper.pdf">A Coulomb ground-state density without Kohn-Sham ensemble representation</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A many-electron wave function has three coordinates per electron, far too many to compute. Density functional theory works with the electron density instead, three coordinates in total; Hohenberg and Kohn showed in 1964 that the ground-state density determines everything. In 1965 Kohn and Sham added the practical trick: replace the interacting electrons by noninteracting ones moving in a single effective potential that reproduces the same density. That trick quietly assumes such a potential exists. Mixtures of states, called ensembles, patch some failures: in our two-dimensional toy, an ensemble reaches a round, rotation-invariant density that no single real determinant in that well can. Densities that even ensembles cannot reproduce were known since 1983, but they were prescribed by hand, not computed from Coulomb molecules. For continuous three-dimensional systems, a 2026 paper called the question completely open.</p>
+<h3><span class="t num">1:04</span>The claims</h3>
+<p>Result 278 is one OpenAI preprint, 45 pages, dated September 25, 2026. It constructs a molecule with two equal nuclei of positive integer charge and three electrons whose lowest-energy density cannot be reproduced by any ensemble of noninteracting ground states, in any single real, spin-independent potential of the standard class used in the rigorous theory. The molecule is a mathematical object. The nuclei sit 2 × 10²⁰⁰ divided by their charge, atomic units apart, and the charge is defined by a formula that has never been evaluated, with no upper bound given. The paper credits the physical mechanism to Gori-Giorgi, Gál and Baerends. Not claimed: that density functional theory fails in practice, anything about spin-dependent, distributional or nonlocal potentials, or that no potential exists at all: a formal one does, it just falls outside the standard class.</p>
+<h3><span class="t num">2:08</span>How the proof goes</h3>
+<p>Rescaled, the electron repulsion becomes weak, and the ground state is close to two electrons in a symmetric orbital and one in an antisymmetric orbital, which vanishes on the mirror plane between the nuclei. Far out on that plane, the true density still fades at the same exponential rate, only slightly weaker, because the departing electron polarizes the ion left behind. The only candidate noninteracting state would fade faster there in any admissible potential, so none works. The paper’s recipe for the only candidate potential is concrete: in our one-dimensional toy on a finite grid it reproduces the interacting density to 12 digits; the obstruction needs a plane reaching to infinity, which the toy lacks. In our model of the paper’s asymptotics, the mismatch distance grows like 1/(level splitting): about 1,300 units when the splitting is 0.01.</p>
+<h3><span class="t num">3:06</span>Where it stands</h3>
+<p>The preprint is unrefereed and unchanged since release. There is no Lean formalization, OSVerify has not reviewed it, and we found no comment from specialists. If it holds, Kohn and Sham’s stand-in electrons, in the standard class of potentials, cannot mimic every true ground-state density, even with ensembles, though the molecule lies far beyond real chemistry.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20278%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
