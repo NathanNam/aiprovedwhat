@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lost in assembly? The coarse Novikov conjecture | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim bounded-geometry graphs where coarse assembly is not rationally injective, disproving the rational coarse Novikov conjecture. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/307-coarse-assembly/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Lost in assembly?">
+<meta property="og:description" content="Two AI preprints claim bounded-geometry graphs where coarse assembly is not rationally injective, disproving the rational coarse Novikov conjecture. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/307-coarse-assembly/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/307-coarse-assembly/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 307, October 2026</p>
+<h1>Lost in assembly?</h1>
+<p class="subtitle">Two AI preprints claim counterexamples to the rational coarse Novikov conjecture, one checked in Lean</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 307 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="Drtt2GFFk1U" data-title="Episode 307: Lost in assembly?">
+  <a href="https://youtu.be/Drtt2GFFk1U">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 307: Lost in assembly? A hexagonal disc of dots, larger and gold toward the centre, teal at the edge.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:47. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/Drtt2GFFk1U?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/Drtt2GFFk1U?t=95" data-t="95"><span class="t">1:35</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/Drtt2GFFk1U?t=163" data-t="163"><span class="t">2:43</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/Drtt2GFFk1U?t=226" data-t="226"><span class="t">3:46</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>Coarse geometry looks at a space from far away, ignoring everything at small scales. To such a space one attaches its Roe algebra, made of operators that only move things a bounded distance, together with their limits, and the coarse assembly map sends K-homology classes of the space, measured at larger and larger scales, to the K-theory of that algebra: a higher index. The coarse Baum–Connes conjecture says this map is an isomorphism for spaces of bounded geometry. Its injective half is the coarse Novikov conjecture, and Yu proved it for spaces that coarsely embed into Hilbert space. Surjectivity was known to fail around 2000, by work of Higson and of Higson, Lafforgue and Skandalis, for certain expanders, where the projection onto constant functions is a ghost: norm one, but every matrix entry tiny. Injectivity was known to fail only without bounded geometry, and Willett and Yu wrote that a bounded-geometry counterexample would be very interesting.</p>
+<p>Result 307 is two OpenAI papers, 40 pages; the companion is dated September 23 and the main paper October 5, and both were made public October 6, 2026. The main paper claims a coarse disjoint union of finite connected graphs of uniformly bounded degree, with a class of infinite order that the maximal coarse assembly map sends to zero. Since the maximal index carries over to the reduced index, this also breaks the reduced map. The companion builds a different space and claims the reduced failure directly, which would disprove the rational coarse Novikov conjecture for bounded-geometry spaces.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What they don’t claim</h2>
+<p>Anything about groups: the classical Novikov conjecture is untouched, and a separate result, covered in episode 285, claims a torsion-free group for which reduced Baum–Connes fails to be rationally injective. The class is in odd degree, and there is no conflict with Yu’s theorem, because these graphs contain expanders and do not coarsely embed into Hilbert space.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two papers, 40 pages, dated September 23 and October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>In part: the reduced companion, not the maximal result (<a href="https://github.com/openai/math/blob/main/lean/docs/307.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. Neither paper has been revised. In Lean, the companion’s reduced counterexample is formalized: the challenge statement builds Roe algebras, K-theory and the assembly map from scratch in about 6,600 lines, the proof’s own files total about 45,000 lines, our scan finds no unproved steps, and property (T) is proved there by an explicit certificate; we did not build it. The maximal result, the item’s headline, is not formalized. One tracker worried that the formal assembly map might quietly default to zero; the proof shows that fallback never happens. OSVerify has not reviewed it, and we found no specialist comment.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Discs with deep fibres.</strong> The companion uses hexagonal discs whose vertices carry copies of SL₃(ℤ/2ᵏ), deepening toward the centre, with a twist. The class comes from the boundary circles of the discs. It survives at every scale because short loops carry no winding charge, and its index dies because the circles bound in the plain discs, and property (T) averaging carries that across into the graph’s Roe algebra.</li>
+  <li><strong>Twisted tori, in the maximal norm.</strong> The main paper stacks three-dimensional tori with a Heisenberg twist; the class is the top torus minus the bottom torus. It survives because a Chern class becomes divisible by 2ʲ in the middle, and its index dies through a Kazhdan projection and a sliding stack of copies of an operator, all in the maximal norm.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the fibre graph on SL₃(ℤ/2) has 168 vertices, so every entry of the ghost projection is 1/168; twenty averaging steps come within 0.06 of it, while on a 168-cycle the distance is still 0.99.</li>
+  <li>Ours, from the definitions: one component of the companion’s space at the tenth stage has about 8 × 10²³ vertices; the main paper’s first component has about 10¹².</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Failure-of-rational-injectivity-for-maximal-coarse-assembly-October-5-2026/paper.pdf">Failure of Rational Injectivity for Maximal Coarse Assembly (PDF)</a>, 24 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-the-coarse-Novikov-conjecture-September-23-2026/paper.pdf">A Counterexample to the Coarse Novikov Conjecture (PDF)</a>, 16 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/307.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 307.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Failure-of-rational-injectivity-for-maximal-coarse-assembly-October-5-2026/paper.pdf">Failure of rational injectivity for maximal coarse assembly</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-the-coarse-Novikov-conjecture-September-23-2026/paper.pdf">A counterexample to the coarse Novikov conjecture</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Coarse geometry looks at a space from far away, ignoring everything at small scales. To such a space one attaches its Roe algebra, made of operators that only move things a bounded distance, together with their limits, and the coarse assembly map sends K-homology classes of the space, measured at larger and larger scales, to the K-theory of that algebra: a higher index. The coarse Baum–Connes conjecture says this map is an isomorphism for spaces of bounded geometry. Its injective half is the coarse Novikov conjecture, and Yu proved it for spaces that coarsely embed into Hilbert space. Surjectivity was known to fail around 2000, by work of Higson and of Higson, Lafforgue and Skandalis, for certain expanders: graphs of bounded degree with a uniform spectral gap. There the projection onto constant functions is a ghost, with norm one but every matrix entry tiny. Our computer checks the fibre graphs used here: on the special linear group of 3 × 3 matrices mod 2, with 168 vertices, every entry is 1/168, and 20 averaging steps already come within 0.06 of that projection, while on a cycle of the same size the error is still 0.99. Injectivity was known to fail only without bounded geometry, in examples of Yu and of Dranishnikov, Ferry and Weinberger. Willett and Yu wrote that a bounded-geometry counterexample would be very interesting.</p>
+<h3><span class="t num">1:35</span>The claims</h3>
+<p>Result 307 is two OpenAI papers, 40 pages; the companion is dated September 23 and the main paper October 5, and both were made public October 6, 2026. The main paper claims a coarse disjoint union of finite connected graphs of uniformly bounded degree, with a class of infinite order that the maximal coarse assembly map sends to zero: maximal assembly is not even rationally injective. Since the maximal index carries over to the reduced index, this also breaks the reduced map. The companion builds a different space and claims the reduced failure directly, which would disprove the rational coarse Novikov conjecture for bounded-geometry spaces. Not claimed: anything about groups. The classical Novikov conjecture is untouched, and a separate result, in episode 285, claims a torsion-free group for which reduced Baum–Connes fails to be rationally injective. The class is in odd degree, and there is no conflict with Yu’s theorem, because these graphs contain expanders and do not coarsely embed into Hilbert space.</p>
+<h3><span class="t num">2:43</span>How the proof goes</h3>
+<p>The companion uses hexagonal discs whose vertices carry copies of the special linear group mod 2ᵏ, deepening toward the centre, with a twist. The class comes from the boundary circles of the discs. It survives at every scale because short loops carry no winding charge, and its index dies because the circles bound in the plain discs, and property (T) averaging carries that across into the graph’s Roe algebra. By our count from the definitions, one component at the tenth stage already has about 8 × 10²³ vertices. The main paper stacks three-dimensional tori with a Heisenberg twist; the class is the top torus minus the bottom torus. It survives because a Chern class becomes divisible by 2ʲ in the middle, and its index dies through a Kazhdan projection and a sliding stack of copies of an operator, all in the maximal norm. Our computer checks its commutator identity exactly; its first component already has about 10¹² vertices.</p>
+<h3><span class="t num">3:46</span>Where it stands</h3>
+<p>Both papers are unrefereed and unchanged since release. In Lean, the companion’s reduced counterexample is formalized: the challenge statement builds Roe algebras, K-theory and the assembly map from scratch in about 6,600 lines, the proof’s own files total about 45,000 lines, our scan finds no unproved steps, and property (T) is proved there by an explicit certificate; we did not build it. The maximal result, the item’s headline, is not formalized. One tracker worried that the formal assembly map might quietly default to zero; the proof shows that fallback never happens. We found no specialist comment. If they hold, coarse assembly can fail to be injective, even rationally, for spaces of bounded geometry: the coarse Novikov conjecture is false in general, while the cases for groups are untouched, and spaces that coarsely embed into Hilbert space are still covered by Yu’s theorem.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20307%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
