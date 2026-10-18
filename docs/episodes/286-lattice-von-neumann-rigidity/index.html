@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A perfect fingerprint, proved at last? Rigidity of lattice von Neumann algebras | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim that the von Neumann algebras of lattices like SL(3,Z) remember the group, twist and scale: the lattice case of Connes’ rigidity conjecture. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/286-lattice-von-neumann-rigidity/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="A perfect fingerprint, proved at last?">
+<meta property="og:description" content="Two AI preprints claim that the von Neumann algebras of lattices like SL(3,Z) remember the group, twist and scale: the lattice case of Connes’ rigidity conjecture. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/286-lattice-von-neumann-rigidity/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/286-lattice-von-neumann-rigidity/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 286, October 2026</p>
+<h1>A perfect fingerprint, proved at last?</h1>
+<p class="subtitle">Two AI preprints claim that von Neumann algebras of lattices like SL(3,ℤ) remember the group</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 286 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="K-zeq9dEI-E" data-title="Episode 286: A perfect fingerprint, proved at last?">
+  <a href="https://youtu.be/K-zeq9dEI-E">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 286: A perfect fingerprint, proved at last? Two boxes, L of Gamma and its stretched copy, joined by a gold bridge, with t equals 1 below.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:31. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/K-zeq9dEI-E?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/K-zeq9dEI-E?t=64" data-t="64"><span class="t">1:04</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/K-zeq9dEI-E?t=129" data-t="129"><span class="t">2:09</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/K-zeq9dEI-E?t=175" data-t="175"><span class="t">2:55</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Every group has a von Neumann algebra, an algebra of operators that records how the group acts on itself. When every element other than the identity has infinitely many conjugates, this algebra is a factor, with a trace that measures the size of its projections continuously. In SL₃(ℤ), the conjugates of a basic matrix keep multiplying (1, 7, 40, 204, 925 as our search radius grows), while −I in SL₂(ℤ) has no conjugate but itself. Around 1980, Connes asked whether such a factor remembers the group, for rigid groups with Kazhdan’s property (T), like SL₃(ℤ). Amenable groups of this kind give no hope: they all produce the same factor. In August 2026, counterexamples among property (T) groups showed that the answer is no in general, one from OpenAI and one by Zhou with AI help. Lattices like SL₃(ℤ) remained open.</p>
+<p>Result 286 is two OpenAI preprints, 190 pages, dated September 23, 2026. For such groups, commensurable with lattices in products of simple groups with property (T), over the reals, the complex numbers or the p-adic numbers, the first paper classifies every finite-index bimodule into a twisted group factor of any group with infinite conjugacy classes: each one is built from finite-index subgroup isomorphisms and finite-dimensional projective representations. The second paper deduces that these factors remember everything. If a stretched copy of one twisted group factor equals another, the stretch is one, the groups are isomorphic and the twists agree. So SL₃(ℤ) and its relatives would be W*-superrigid, and their factors would have trivial fundamental group.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Lattices in groups without property (T), like SL₂(ℤ); fields of positive characteristic; or property (T) groups in general, where the conjecture is already known to fail.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two papers, 190 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>No (about 2,300 unlinked lines cover some algebra of the obvious bimodules)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The preprints have not been revised. In Lean, only some algebra of the obvious bimodules is formalized, about 2,300 lines not linked to the item. OSVerify has not reviewed them. Cyril Houdayer, who had worked on this problem, wrote of being “genuinely thrilled by the announced solution” and wanting to understand the proof. We found no published check.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Bridges between algebras.</strong> Think of bimodules as bridges, each with a left and a right size. The obvious ones come from matching finite-index subgroups, such as the congruence subgroup of level 3, whose index in SL₃(ℤ) is 5,616, decorated with small projective representations.</li>
+  <li><strong>No other bridges, and whole-number sizes.</strong> The hard part, 165 pages, shows there are no other bridges, using measurements at the boundary of symmetric spaces and Bruhat–Tits buildings, rather than Popa’s deformation and rigidity methods. Then a short argument finishes: if a copy stretched by t equals the original, there is a bridge with sizes t and 1/t. Both must be whole numbers, so t is one.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: conjugates of a basic matrix in SL₃(ℤ) within search radius 0 to 4: 1, 7, 40, 204, 925; −I in SL₂(ℤ) has only itself.</li>
+  <li>Ours: the index of the level-N congruence subgroup in SL₃(ℤ) for N = 2 to 8: 168, 5,616, 43,008, 372,000, 943,488, 5,630,688, 11,010,048.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Arithmeticity-of-twisted-finite-correspondences-for-lattices-over-local-fields-September-23-2026/paper.pdf">Arithmeticity of Twisted Finite Correspondences for Lattices over Local Fields (PDF)</a>, 165 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-arithmetic-category-and-stable-recovery-of-lattice-factors-September-23-2026/paper.pdf">The Arithmetic Category and Stable Recovery of Lattice Factors (PDF)</a>, 25 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 286.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Arithmeticity-of-twisted-finite-correspondences-for-lattices-over-local-fields-September-23-2026/paper.pdf">Arithmeticity of twisted finite correspondences for lattices over local fields</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-arithmetic-category-and-stable-recovery-of-lattice-factors-September-23-2026/paper.pdf">The arithmetic category and stable recovery of lattice factors</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Every group has a von Neumann algebra, an algebra of operators that records how the group acts on itself. When every element other than the identity has infinitely many conjugates, this algebra is a factor, with a trace that measures the size of its projections continuously. Our computer checks SL₃(ℤ): the conjugates of a basic matrix keep multiplying, 1, 7, 40, 204, 925 as the search radius grows, while minus the identity in SL₂(ℤ) has no conjugate but itself. Around 1980, Connes asked whether such a factor remembers the group, for rigid groups with Kazhdan’s property T, like SL₃(ℤ). Amenable groups of this kind give no hope: they all produce the same factor. In August 2026, counterexamples among property T groups showed that the answer is no in general, one from OpenAI and one by Zhou with AI help. Lattices like SL₃(ℤ) remained open.</p>
+<h3><span class="t num">1:04</span>The claims</h3>
+<p>Result 286 is two OpenAI preprints, 190 pages, dated September 23, 2026. For such groups, commensurable with lattices in products of simple groups with property T, over the reals, the complex numbers or the p-adic numbers, the first paper classifies every finite-index bimodule into a twisted group factor of any group with infinite conjugacy classes: each one is built from finite-index subgroup isomorphisms and finite-dimensional projective representations. The second paper deduces that these factors remember everything. If a stretched copy of one twisted group factor equals another, the stretch is one, the groups are isomorphic and the twists agree. So SL₃(ℤ) and its relatives would be W*-superrigid, and their factors would have trivial fundamental group. Not claimed: lattices in groups without property T, like SL₂(ℤ); fields of positive characteristic; or property T groups in general.</p>
+<h3><span class="t num">2:09</span>How the proof goes</h3>
+<p>Think of bimodules as bridges, each with a left and a right size. The obvious ones come from matching finite-index subgroups, such as the congruence subgroup of level 3, which our computer finds has index 5,616 in SL₃(ℤ), decorated with small projective representations. The hard part, 165 pages, shows there are no other bridges, using measurements at the boundary of symmetric spaces and Bruhat–Tits buildings, rather than Popa’s deformation and rigidity methods. Then a short argument finishes: if a copy stretched by t equals the original, there is a bridge with sizes t and 1/t. Both must be whole numbers, so t is one.</p>
+<h3><span class="t num">2:55</span>Where it stands</h3>
+<p>The preprints are unrefereed and unchanged since release. In Lean, only some algebra of the obvious bridges is formalized, about 2,300 lines not linked to the item. OSVerify has not reviewed them. Cyril Houdayer, who had worked on this problem, wrote of being genuinely thrilled by the announced solution and wanting to understand the proof. We found no published check. If it holds, then for SL₃(ℤ) and its relatives, the operator algebra is a perfect fingerprint of the group.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20286%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
