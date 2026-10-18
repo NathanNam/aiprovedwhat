@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A law for magnets, proved at last? Bloch’s law and 3D ferromagnetism | AI Proved What?</title>
+<meta name="description" content="Four AI preprints claim spontaneous magnetization for the quantum Heisenberg ferromagnet and Bloch’s T^(3/2) law with its exact coefficient. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/271-blochs-law/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="A law for magnets, proved at last?">
+<meta property="og:description" content="Four AI preprints claim spontaneous magnetization for the quantum Heisenberg ferromagnet and Bloch’s T^(3/2) law with its exact coefficient. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/271-blochs-law/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/271-blochs-law/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 271, October 2026</p>
+<h1>A law for magnets, proved at last?</h1>
+<p class="subtitle">Four AI preprints claim spontaneous magnetization and Bloch’s law for the quantum Heisenberg ferromagnet</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 271 in OpenAI’s catalog: <a href="#papers-in-result">all 4 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="QHMZxhNE-AI" data-title="Episode 271: A law for magnets, proved at last?">
+  <a href="https://youtu.be/QHMZxhNE-AI">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 271: A law for magnets, proved at last? A block of gold arrows pointing up above a gently falling teal curve.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:09. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/QHMZxhNE-AI?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/QHMZxhNE-AI?t=78" data-t="78"><span class="t">1:18</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/QHMZxhNE-AI?t=170" data-t="170"><span class="t">2:50</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/QHMZxhNE-AI?t=212" data-t="212"><span class="t">3:32</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The simplest quantum model of a magnet is Heisenberg’s ferromagnet: spins on a cubic lattice, each coupled to its neighbours so that they prefer to point the same way. The equations treat every direction alike, so the magnet has to choose one spontaneously. In one and two dimensions this cannot happen at any positive temperature; in three, it should. In 1976 Dyson, Lieb and Simon announced a proof, but it contained an error. Their method works for the antiferromagnet with larger spins, where neighbours point opposite ways, but fails for the ferromagnet. The problem stayed on open-problem lists, Simon’s in 1984 and Lieb’s in 1999, and in 2025 Seiringer called it “the famous open problem”. There is also a textbook formula: in 1930 Bloch predicted that at low temperature spin waves reduce the magnetization below its maximum by an amount growing like T<sup>3/2</sup>.</p>
+<p>Result 271 is four OpenAI preprints, 176 pages, dated September 24 and October 5, 2026. The first claims spontaneous magnetization: for nearest-neighbour Heisenberg ferromagnets in every dimension from three up and every spin, at low enough temperature, there is an equilibrium state magnetized to at least a quarter of the maximum. It uses its own formulation of the problem; a companion proves the averaged two-point version in three dimensions. The second claims Bloch’s law with its exact coefficient in three dimensions, for every spin and any finite-range ferromagnetic couplings that connect the whole lattice, taking the infinite volume first, then zero field, then low temperature. A third derives the next term for nearest neighbours, Dyson’s lattice correction at T<sup>5/2</sup>; in Dyson’s units its coefficient is exactly Dyson’s. A fourth shows that in a large box with no field, the magnetization has a fixed length and a uniformly random direction.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Dyson’s interaction term or anything beyond the first correction, an explicit temperature range, the Curie temperature, or Bloch’s law outside three dimensions. The order of limits matters: on a 3×3×3 cube at temperature 0.1, free spin waves lose almost nothing; in infinite volume they lose about 1% of the maximum (our calculation).</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, four papers, 176 pages, dated September 24 and October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>In part: the magnetization theorem, not Bloch’s law (<a href="https://github.com/openai/math/blob/main/lean/docs/271.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 17, 2026. The preprints have not been revised. The magnetization theorem is formalized in Lean, about 25,000 lines with no unproved steps, which we did not build. The three papers on Bloch’s law, the lattice correction and the spherical law are not formalized, and OSVerify has not reviewed any of them. We found no comment from specialists.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proofs go</h2>
+<ol class="steps">
+  <li><strong>Loops around imaginary time.</strong> The proofs split each spin into slots and write the thermal state as loops winding around a circle of imaginary time. Every loop touching the edge of a box is pinned up, which costs only surface energy. The question becomes whether a loop deep inside reaches the edge, and that is a random walk among sparse obstacles, which escapes in three dimensions.</li>
+  <li><strong>Where Bloch’s coefficient comes from.</strong> A return of the walk after n windings contributes in proportion to n<sup>−3/2</sup>, and summing over windings gives ζ(3/2), the number at the heart of Bloch’s coefficient. The first winding alone gives 38% of it.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: a random walker on the cubic lattice returns home only 34% of the time; the spin-wave sum converges in three dimensions but grows without bound in two.</li>
+  <li>Ours: Bloch’s coefficient ζ(3/2)/(8π<sup>3/2</sup>) = 0.0586 and the lattice correction 3ζ(5/2)/(128π<sup>3/2</sup>) = 0.0056; in Dyson’s units the correction is exactly Dyson’s (3π/4)ζ(5/2).</li>
+  <li>Ours: the free spin-wave loss per site at temperature 0.1 for spin 1/2, from a 3×3×3 cube up to infinite volume.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/paper.pdf">Spontaneous Magnetization in the Quantum Heisenberg Ferromagnet (PDF)</a>, 54 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/bloch-law-heisenberg.pdf">Bloch’s Law for Finite-Range Heisenberg Ferromagnets in Three Dimensions (PDF)</a>, 38 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/first-lattice-correction-bloch-law.pdf">The First Lattice Correction to Bloch’s Law (PDF)</a>, 37 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/spherical-magnetization.pdf">The Spherical Magnetization Law for the Three-Dimensional Quantum Heisenberg Ferromagnet (PDF)</a>, 47 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/271.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 271.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 4 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Blochs-Law-for-Finite-Range-Heisenberg-Ferromagnets-in-Three-Dimensions-October-5-2026/bloch-law-heisenberg.pdf">Bloch's Law for Finite-Range Heisenberg Ferromagnets in Three Dimensions</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-first-lattice-correction-to-Blochs-law-October-5-2026/first-lattice-correction-bloch-law.pdf">The first lattice correction to Bloch's law</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-spherical-magnetization-law-for-the-three-dimensional-quantum-Heisenberg-ferromagnet-October-5-2026/spherical-magnetization.pdf">The spherical magnetization law for the three-dimensional quantum Heisenberg ferromagnet</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Spontaneous-magnetization-in-the-quantum-Heisenberg-ferromagnet-September-24-2026/paper.pdf">Spontaneous magnetization in the quantum Heisenberg ferromagnet</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Cool iron below its Curie point and its atomic spins line up in domains: a magnet. The simplest quantum model is Heisenberg’s ferromagnet: spins on a cubic lattice, each coupled to its neighbours so that they prefer to point the same way. The equations treat every direction alike, so the magnet has to choose one spontaneously. In one and two dimensions this cannot happen at any positive temperature; in three, it should. Proving it has been famously hard. In 1976 Dyson, Lieb and Simon announced a proof, but it contained an error. Their method works for the antiferromagnet with larger spins, where neighbours point opposite ways, but fails for the ferromagnet. The problem stayed on open-problem lists: Simon’s in 1984, Lieb’s in 1999, and in 2025 Seiringer called it the famous open problem. There is also a textbook formula. In 1930 Bloch predicted that at low temperature, spin waves reduce the magnetization below its maximum by an amount growing like temperature to the three halves. Our computer shows why three dimensions matter: a random walker on the cubic lattice returns home only 34% of the time, and the spin-wave sum converges in three dimensions but grows without bound in two.</p>
+<h3><span class="t num">1:18</span>The claims</h3>
+<p>Result 271 is four OpenAI preprints, 176 pages, dated September 24 and October 5, 2026. The first claims spontaneous magnetization: for nearest-neighbour Heisenberg ferromagnets in every dimension from three up and every spin, at low enough temperature there is an equilibrium state magnetized to at least a quarter of the maximum. It uses its own formulation of the problem; a companion proves the averaged two-point version in three dimensions. The second claims Bloch’s law with its exact coefficient in three dimensions, for every spin and any finite-range aligning couplings that connect the whole lattice, taking the infinite volume first, then zero field, then low temperature. A third derives the next term for nearest neighbours, Dyson’s lattice correction at the five halves power; our computer confirms that, in Dyson’s units, its coefficient is exactly Dyson’s. A fourth shows that in a large box with no field, the magnetization has a fixed length and a uniformly random direction. Not claimed: Dyson’s interaction term or anything beyond the first correction, an explicit temperature range, the Curie temperature, or Bloch’s law outside three dimensions. The order of limits matters: on a 3×3×3 cube at temperature 0.1, our free spin waves lose almost nothing; in infinite volume they lose about 1% of the maximum.</p>
+<h3><span class="t num">2:50</span>How the proofs go</h3>
+<p>The proofs split each spin into slots and write the thermal state as loops winding around a circle of imaginary time. Every loop touching the edge of a box is pinned up, which costs only surface energy. The question becomes whether a loop deep inside reaches the edge, and that is a random walk among sparse obstacles, which escapes in three dimensions. For Bloch’s law, a return of the walk after n windings contributes in proportion to n^(−3/2), and summing over windings gives ζ(3/2), the number at the heart of Bloch’s coefficient. Our computer shows the sum filling up: the first winding alone gives 38%.</p>
+<h3><span class="t num">3:32</span>Where it stands</h3>
+<p>The preprints are unrefereed and unchanged since release. The magnetization theorem is formalized in Lean, about 25,000 lines with no unproved steps, which we did not build. The three papers on Bloch’s law, the lattice correction and the spherical law are not formalized, and OSVerify has not reviewed any of them. We found no comment from specialists. If they hold, a 50-year-old open problem is solved in the papers’ own terms, and a 96-year-old textbook law is finally a theorem for this model.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20271%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
