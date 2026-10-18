@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Both finite, still unequal? Voiculescu’s two free entropies | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims a tuple whose two free entropies are both finite yet differ by at least one half, answering the finite-entropy equality question. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/298-free-entropy/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Both finite, still unequal?">
+<meta property="og:description" content="An AI preprint claims a tuple whose two free entropies are both finite yet differ by at least one half, answering the finite-entropy equality question. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/298-free-entropy/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/298-free-entropy/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 298, October 2026</p>
+<h1>Both finite, still unequal?</h1>
+<p class="subtitle">An AI preprint claims Voiculescu’s two free entropies can differ even when both are finite</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 298 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="gaC8AkvyYrM" data-title="Episode 298: Both finite, still unequal?">
+  <a href="https://youtu.be/gaC8AkvyYrM">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 298: Both finite, still unequal? Two points on a line, gold and teal, with a brace marking the gap.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:06. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/gaC8AkvyYrM?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/gaC8AkvyYrM?t=85" data-t="85"><span class="t">1:25</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/gaC8AkvyYrM?t=130" data-t="130"><span class="t">2:10</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/gaC8AkvyYrM?t=202" data-t="202"><span class="t">3:22</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Free probability has its own entropy, and Voiculescu defined it twice. The microstates entropy χ counts matrix approximations: how much volume of large matrix tuples reproduces the joint moments. The nonmicrostates entropy χ* uses free Fisher information, measuring how the tuple spreads under free semicircular noise. For one variable they agree. Biane, Capitaine and Guionnet proved in 2003 that χ never exceeds χ*. Voiculescu’s unification problem asked whether the two always agree, and in 2004 Guionnet conjectured equality whenever χ is finite. The 2020 refutation of Connes’ embedding conjecture already gives tuples, once blurred by a little semicircular noise, with no matrix approximations, where χ is minus infinity while χ* is finite; so a gap was known, but only with χ infinite.</p>
+<p>Result 298 is one OpenAI paper, 15 pages, dated September 25, 2026, and published October 6. It claims a bounded self-adjoint tuple in a tracial von Neumann algebra with both entropies finite and χ at least one half below χ*: a negative answer to the finite-entropy form. The paper’s explicit choice uses 2<sup>64</sup> + 1 variables, and it does not address smaller numbers.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Anything about free entropy dimension, about Connes embedding, or about whether the limsup and liminf versions of χ agree. Because χ is finite, this example does have matrix approximations, unlike the Connes embedding examples.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 15 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/298.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper has not been revised. In Lean, the main theorem is formalized with Voiculescu’s definitions written out and matches the paper, in about 15,600 lines, with no unproved steps in our scan (we did not build it). OSVerify has not reviewed it. The only expert reaction we found is from David Jekel on Bluesky: “still novel and relatively short but also badly written in many ways”, with several citations that should be added, and “This negative answer to the problem is what I expected.”</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Atoms that force blocks.</strong> Take p free semicircular variables and one more variable with p equally spaced atoms, in a separate tensor factor so that it commutes with all of them, and blur everything with a little free semicircular noise. Matrix approximations must be nearly block-diagonal, and a detectable trace of that structure survives added noise.</li>
+  <li><strong>One unit lost, half a unit kept.</strong> A random matrix shows that structure with probability at most e<sup>−4d²</sup>, which costs at least one unit of entropy, while on the free side χ* stays close to the semicircle benchmark; a heat-flow comparison links the two sides and leaves a gap of at least one half.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: for the variance-one uniform law, χ* = 1.41138 and χ = 1.41139, just below the semicircle’s maximum of 1.41894; Weyl’s volume formula for the semicircle gives 1.4188 at matrix size 3,000.</li>
+  <li>Ours: with twelve atoms, matrix models keep about 11 units of extra block energy over a random matrix with the same variances, up to noise time 100.</li>
+  <li>Ours: the paper’s inequalities hold at its parameters; its method’s constants need p of at least about 1.7 × 10<sup>17</sup>, a limit of the method, not of the problem.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-finite-entropy-separation-of-microstates-and-nonmicrostates-free-entropy-September-25-2026/paper.pdf">A Finite-Entropy Separation of Microstates and Nonmicrostates Free Entropy (PDF)</a>, 15 pages.</li>
+  <li><a href="https://arxiv.org/abs/2305.02574">Jekel and Pi on free entropy and Fisher information</a> (arXiv, 2023).</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/298.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 298.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-finite-entropy-separation-of-microstates-and-nonmicrostates-free-entropy-September-25-2026/paper.pdf">A finite-entropy separation of microstates and nonmicrostates free entropy</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Free probability has its own entropy, and Voiculescu defined it twice. The microstates entropy, χ, counts matrix approximations: how much volume of large matrix tuples reproduces the joint moments. The nonmicrostates entropy, χ*, uses free Fisher information, measuring how the tuple spreads under free semicircular noise. For one variable they agree: our computer finds the variance-one uniform law at 1.4114 by both routes, just below the semicircle’s maximum of 1.419. Biane, Capitaine and Guionnet proved in 2003 that χ never exceeds χ*. Our computer’s Weyl volume formula for the semicircle gives 1.4188 at size 3,000, closing in on the limit. Voiculescu’s unification problem asked whether the two always agree, and in 2004 Guionnet conjectured equality whenever χ is finite. The 2020 refutation of Connes’ embedding conjecture already gives tuples, once blurred by a little semicircular noise, with no matrix approximations, where χ is minus infinity while χ* is finite. So a gap was known, but only with χ infinite, and as late as July 2026 David Jekel called the general question unknown outside the single-variable setting.</p>
+<h3><span class="t num">1:25</span>The claim</h3>
+<p>Result 298 is one OpenAI paper, 15 pages, dated September 25 and published October 6, 2026. It claims a bounded self-adjoint tuple in a tracial von Neumann algebra with both entropies finite and χ at least 1/2 below χ*: a negative answer to the finite-entropy form. The paper’s explicit choice uses 2⁶⁴ + 1 variables, and it does not address smaller numbers. Not claimed: anything about free entropy dimension, about Connes embedding, or about whether the limsup and liminf versions of χ agree. Because χ is finite, this example does have matrix approximations, unlike the Connes embedding examples.</p>
+<h3><span class="t num">2:10</span>How the proof goes</h3>
+<p>The construction takes p free semicircular variables and one more variable with p equally spaced atoms, placed in a separate tensor factor so that it commutes with all of them, then blurs everything with a little free semicircular noise. On the matrix side, approximations must be nearly block-diagonal, and a detectable trace of that structure survives added noise. Our computer sees it with 12 atoms: the evolved matrices keep block energy near 12 + t, while a random matrix with the same variances shows only 1 + t, up to t = 100. A random matrix shows that structure with probability at most e^(−4d²), which costs at least 1 unit of entropy, while on the free side, after the extra noise, sparse cumulants keep χ* within 0.0052 of the semicircle benchmark; a heat-flow comparison links the two sides and leaves a gap of at least 1/2. Our computer checks the paper’s inequalities at its parameters; the method’s constants need p of at least about 2 × 10¹⁷, a limit of the method, not of the problem.</p>
+<h3><span class="t num">3:22</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. In Lean, the main theorem is formalized with Voiculescu’s definitions written out and matches the paper, in about 15,600 lines; our scan finds no unproved steps, but we did not build it. The only expert reaction we found is from David Jekel on Bluesky, who called it novel and relatively short but badly written in many ways, with citations missing, and said this negative answer was what Jekel expected. If it holds, Voiculescu’s two free entropies can differ even when both are finite, for at least one tuple of 2⁶⁴ + 1 variables.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20298%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
