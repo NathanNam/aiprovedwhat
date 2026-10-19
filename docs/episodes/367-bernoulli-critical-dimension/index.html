@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Five, six or seven? The critical dimension for one-phase free boundaries | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that minimizing one-phase Bernoulli free boundaries are smooth through dimension six, so the critical dimension is seven. The new step rests on an exact computer certificate; the Lean covers only the known dimension-seven example. An animated explainer, the claim in plain words, and how far it has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/367-bernoulli-critical-dimension/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Five, six or seven?">
+<meta property="og:description" content="An AI preprint claims that minimizing one-phase Bernoulli free boundaries are smooth through dimension six, so the critical dimension is seven. The new step rests on an exact computer certificate; the Lean covers only the known dimension-seven example. An animated explainer, the claim in plain words, and how far it has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/367-bernoulli-critical-dimension/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/367-bernoulli-critical-dimension/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 367, October 2026</p>
+<h1>Five, six or seven?</h1>
+<p class="subtitle">An AI preprint claims the critical dimension for one-phase Bernoulli minimizers is seven, closing dimensions five and six</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 367 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="jNnrILD9szg" data-title="Episode 367: Five, six or seven?">
+  <a href="https://youtu.be/jNnrILD9szg">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 367: Five, six or seven? Boxes for dimensions 3 to 7, with 5 and 6 highlighted.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:56. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/jNnrILD9szg?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/jNnrILD9szg?t=77" data-t="77"><span class="t">1:17</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/jNnrILD9szg?t=133" data-t="133"><span class="t">2:13</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/jNnrILD9szg?t=202" data-t="202"><span class="t">3:22</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Where does a positive quantity stop and zero begin? In the one-phase Bernoulli problem, studied by Alt and Caffarelli in 1981, a function is positive on part of a region and zero on the rest, and it minimizes its gradient energy plus the volume where it is positive. The edge of the positive part is the free boundary. In one dimension our computer finds the trade-off: a ramp up to height one over length l costs one over l plus l, smallest at slope exactly one, which is the free boundary rule: the gradient there equals one.</p>
+<p>Zooming in at a free boundary point gives a cone, and a flat cone is just that ramp in one direction. The question is the first dimension with a minimizing cone that is not flat. Caffarelli, Jerison and Kenig ruled out dimension three in 2004, Jerison and Savin dimension four in 2015, and in 2009 De Silva and Jerison found a nonflat one in dimension seven. Our computer checks the symmetric cones: unstable through dimension six, stable from seven, matching published results. But that covers only symmetric shapes, and a paper in September 2026 still called dimensions five and six open.</p>
+<p>Result 367 is one OpenAI paper, 50 pages, dated September 24 and made public October 6, 2026. It claims that in dimension six or below every nonzero one-homogeneous global minimizer is flat, so with the dimension-seven example, the critical dimension is seven. The consequence: free boundaries of minimizers are smooth through dimension six, have isolated singular points in seven, and above that a singular set of dimension at most n − 7.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Only dimensions five and six are new; the rest is cited. The claim is about minimizers, not every stable solution, and not the two-phase problem. And the new step rests on an exact computer calculation: the paper itself says the match between formulas and code, and the analytic argument, require mathematical review.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 50 pages, dated September 24, 2026; ships checking code (not run by us)</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet; no specialist verdict</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>Only the known dimension-seven cone (De Silva–Jerison 2009); dimensions five and six have no Lean proof (<a href="https://github.com/openai/math/blob/main/lean/docs/367.md">scope notes</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 19, 2026. The paper is unrefereed and unchanged since release. Its Lean link proves only the existence of the dimension-seven cone from 2009, about 13,500 lines, not run by us; the new part has no Lean proof. The paper ships its own checking code, which we did not run. We found no competing claim and no specialist verdict. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>If five or six were the first bad dimension.</strong> Suppose five or six were the first bad dimension. Zooming in anywhere away from the tip drops to a lower dimension, where cones are flat, so the bad cone is smooth except at its tip, and its slice of the sphere is a smooth region. A five-dimensional cone gets a dummy sixth coordinate, so both cases live on the five-sphere, at the cost of two singular poles. Minimality then gives a stability inequality, with a sharp Hardy constant of four.</li>
+  <li><strong>An exact certificate.</strong> From the cone’s normalized Hessian the paper builds a test function and a vector field, and the key is a universal inequality on tensors in five dimensions. It is certified by two tables of rational coefficients, 231 rows and 557 rows, and 1,714 exactly bounded terms. Our computer re-adds the printed totals: an interior margin of about 0.037 and a boundary margin of about 0.22. Integrating over the slice then gives the interior margin times a positive integral, at most zero: a contradiction, so no such cone exists.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: a 1-D ramp to height 1 over length ℓ costs 1/ℓ + ℓ, smallest at slope exactly 1 — the free boundary rule.</li>
+  <li>Ours: axially symmetric cones are unstable through dimension 6 and stable from 7 (margins −0.70 in 6, +0.55 in 7).</li>
+  <li>Ours: the paper's printed totals re-add exactly — 231 and 557 coefficient rows, 1,714 terms, interior margin about 0.037, boundary margin about 0.22.</li>
+  <li>Lean: 91 files and 13,545 lines in the import closure of the dimension-seven comparator (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026.pdf">The critical dimension for one-phase Bernoulli minimizers (PDF)</a>, 50 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/367.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 367.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026/The-critical-dimension-for-one-phase-Bernoulli-minimizers-September-24-2026.pdf">The critical dimension for one-phase Bernoulli minimizers</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Where does a positive quantity stop and zero begin? In the one-phase Bernoulli problem, studied by Alt and Caffarelli in 1981, a function is positive on part of a region and zero on the rest, and it minimizes its gradient energy plus the volume where it is positive. The edge of the positive part is the free boundary. In one dimension our computer finds the trade-off: a ramp up to height one over length l costs one over l plus l, smallest at slope exactly one, which is the free boundary rule: the gradient there equals one. Zooming in at a free boundary point gives a cone, and a flat cone is just that ramp in one direction. The question is the first dimension with a minimizing cone that is not flat. Caffarelli, Jerison and Kenig ruled out dimension three in 2004, Jerison and Savin dimension four in 2015, and in 2009 De Silva and Jerison found a nonflat one in dimension seven. Our computer checks the symmetric cones: unstable through dimension six, stable from seven, matching published results. But that covers only symmetric shapes, and a paper in September 2026 still called dimensions five and six open.</p>
+<h3><span class="t num">1:17</span>The claim</h3>
+<p>Result 367 is one OpenAI paper, 50 pages, dated September 24 and made public October 6, 2026. It claims that in dimension six or below every nonzero one-homogeneous global minimizer is flat, so with the dimension-seven example, the critical dimension is seven. The consequence: free boundaries of minimizers are smooth through dimension six, have isolated singular points in seven, and above that a singular set of dimension at most n − 7. Only dimensions five and six are new; the rest is cited. The claim is about minimizers, not every stable solution, and not the two-phase problem. And the new step rests on an exact computer calculation: the paper itself says the match between formulas and code, and the analytic argument, require mathematical review.</p>
+<h3><span class="t num">2:13</span>How the proof goes</h3>
+<p>Suppose five or six were the first bad dimension. Zooming in anywhere away from the tip drops to a lower dimension, where cones are flat, so the bad cone is smooth except at its tip, and its slice of the sphere is a smooth region. A five-dimensional cone gets a dummy sixth coordinate, so both cases live on the five-sphere, at the cost of two singular poles. Minimality then gives a stability inequality, with a sharp Hardy constant of four. From the cone’s normalized Hessian the paper builds a test function and a vector field, and the key is a universal inequality on tensors in five dimensions. It is certified by two tables of rational coefficients, 231 rows and 557 rows, and 1,714 exactly bounded terms. Our computer re-adds the printed totals: an interior margin of about 0.037 and a boundary margin of about 0.22. Integrating over the slice then gives the interior margin times a positive integral, at most zero: a contradiction, so no such cone exists.</p>
+<h3><span class="t num">3:22</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. Its Lean link proves only the existence of the dimension-seven cone from 2009, about 13,500 lines, not run by us; the new part has no Lean proof. The paper ships its own checking code, which we did not run. We found no competing claim and no specialist verdict. If it holds, a singular minimizing cone first appears in dimension seven, and below that, minimizing free boundaries are smooth.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20367%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
