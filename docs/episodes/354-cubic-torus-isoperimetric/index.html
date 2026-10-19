@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ball, tube or slab? The cubic torus isoperimetric conjecture | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims the isoperimetric conjecture for the cubic flat three-torus, with a full Lean formalization: minimizers are balls, tubes or slabs, switching at 4π/81 and 1/π. A human team submitted the same classification hours earlier. An animated explainer, the claim in plain words, and how far it has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/354-cubic-torus-isoperimetric/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Ball, tube or slab?">
+<meta property="og:description" content="An AI preprint claims the isoperimetric conjecture for the cubic flat three-torus, with a full Lean formalization: minimizers are balls, tubes or slabs, switching at 4π/81 and 1/π. A human team submitted the same classification hours earlier. An animated explainer, the claim in plain words, and how far it has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/354-cubic-torus-isoperimetric/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/354-cubic-torus-isoperimetric/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 354, October 2026</p>
+<h1>Ball, tube or slab?</h1>
+<p class="subtitle">An AI preprint claims the isoperimetric conjecture for the cubic three-torus, fully formalized in Lean</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 354 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="tgCerPaJbbs" data-title="Episode 354: Ball, tube or slab?">
+  <a href="https://youtu.be/tgCerPaJbbs">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 354: Ball, tube or slab? Three grey squares holding a teal ball, a yellow tube and a pink slab.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:51. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/tgCerPaJbbs?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/tgCerPaJbbs?t=75" data-t="75"><span class="t">1:15</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/tgCerPaJbbs?t=125" data-t="125"><span class="t">2:05</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/tgCerPaJbbs?t=182" data-t="182"><span class="t">3:02</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>In a flat cubic three-torus, a cube whose opposite faces are glued together, which shape encloses a given volume with the least surface area? Three candidates come from ordinary space: a round ball, a tube around a shortest closed loop that wraps around the torus, and a slab between two parallel planes. Our computer compares their areas: balls win for small volumes, tubes take over at volume 4π/81, where the ball’s radius is 1/3, and slabs win from volume 1/π, where the tube’s area reaches two. Triply periodic surfaces like the gyroid do worse at half volume.</p>
+<p>In 2004, Hauswirth, Pérez, Romon and Ros conjectured that these three shapes and their complements are the only minimizers. In a survey, Ros called the periodic problem one of the nicest open problems in classical geometry. Known pieces included Hadwiger’s result at half the volume, results near half volume and for small volumes, and Milman’s recent work, which proved that balls win up to a certain volume and made explicit a reduction to the two transition volumes; Milman suggested that 1/π is the hardest case.</p>
+<p>Result 354 is one OpenAI paper, 30 pages, dated September 24 and made public October 6, 2026. It claims the conjecture: the least area is the smallest of the three formulas, and every minimizer is, up to symmetry and a set of measure zero, a ball, a tube, a slab, or the complement of one, with exactly the two neighbouring types minimizing at each transition.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: other flat tori, or a first proof. About five hours before the release, Deng, Li and Liu submitted a paper to arXiv claiming the same classification, stated for the cube, also starting from Milman’s reduction and disclosing use of ChatGPT; neither paper cites the other. The formula and the transition volumes go back to the 2004 paper.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 30 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The full theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/354.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper is unrefereed and unchanged since release. Its main theorem is formalized in full in Lean, about 140,000 lines, not run by us; the Lean relies only on Mathlib, not on the structure theorem the paper cites, and three outside projects re-ran it successfully. The calculation code the paper mentions is not in the release, but outside projects rebuilt its arithmetic and it passed. An AI audit found no gap. We found no specialist comment and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Two volumes left.</strong> Milman’s reduction leaves the two transition volumes. There the paper uses symmetry: a reflection argument and monotonicity turn a minimizer into a staircase inside one cube, leaving only two possible vertex patterns. Slicing identities for flux, projection and coarea rule out the four-vertex pattern at both volumes and the other at 4π/81, and confine it to a window at 1/π.</li>
+  <li><strong>Nesting, calibration, and a thin margin.</strong> The new step, at 1/π, uses that every horizontal slice lies inside the bottom one, and calibrates the bottom slice’s corner, forcing extra length in strip-shaped slices. That gives a lower bound on the excess area, checked at 24 points in rigorous interval arithmetic with interpolation between them. The smallest certified margin is 9 parts in 100,000 of the slab’s area; our computer recomputes all 23 margins in the paper’s table and agrees.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: ball and tube tie at volume 4π/81 (ball radius 1/3, tube radius 2/9); tube and slab tie at 1/π, where the tube's area reaches 2.</li>
+  <li>Ours: at half volume, nodal approximations give Schwarz P about 2.35, gyroid 3.09 and Schwarz D 3.84, against 2 for a slab.</li>
+  <li>Ours: all 23 margins in the paper's certificate table recompute correctly; the smallest is 9/100,000.</li>
+  <li>Lean: 162 files and 140,491 lines in the import closure of the comparator (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Isoperimetric-Conjecture-for-the-Cubic-Flat-Three-Torus-September-24-2026/article.pdf">The Isoperimetric Conjecture for the Cubic Flat Three-Torus (PDF)</a>, 30 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/354.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 354.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Isoperimetric-Conjecture-for-the-Cubic-Flat-Three-Torus-September-24-2026/article.pdf">The Isoperimetric Conjecture for the Cubic Flat Three-Torus</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>In a flat cubic three-torus, a cube whose opposite faces are glued together, which shape encloses a given volume with the least surface area? Three candidates come from ordinary space: a round ball, a tube around a shortest closed loop that wraps around the torus, and a slab between two parallel planes. Our computer compares their areas: balls win for small volumes, tubes take over at volume 4π/81, where the ball’s radius is 1/3, and slabs win from volume 1/π, where the tube’s area reaches two. Triply periodic surfaces like the gyroid do worse at half volume. In 2004, Hauswirth, Pérez, Romon and Ros conjectured that these three shapes and their complements are the only minimizers. In a survey, Ros called the periodic problem one of the nicest open problems in classical geometry. Known pieces included Hadwiger’s result at half the volume, results near half volume and for small volumes, and Milman’s recent work, which proved that balls win up to a certain volume and made explicit a reduction to the two transition volumes; Milman suggested that 1/π is the hardest case.</p>
+<h3><span class="t num">1:15</span>The claim</h3>
+<p>Result 354 is one OpenAI paper, 30 pages, dated September 24 and made public October 6, 2026. It claims the conjecture: the least area is the smallest of the three formulas, and every minimizer is, up to symmetry and a set of measure zero, a ball, a tube, a slab, or the complement of one, with exactly the two neighbouring types minimizing at each transition. Not claimed: other flat tori, or a first proof. About five hours before the release, Deng, Li and Liu submitted a paper to arXiv claiming the same classification, stated for the cube, also starting from Milman’s reduction and disclosing use of ChatGPT; neither paper cites the other. The formula and the transition volumes go back to the 2004 paper.</p>
+<h3><span class="t num">2:05</span>How the proof goes</h3>
+<p>Milman’s reduction leaves the two transition volumes. There the paper uses symmetry: a reflection argument and monotonicity turn a minimizer into a staircase inside one cube, leaving only two possible vertex patterns. Slicing identities for flux, projection and coarea rule out the four-vertex pattern at both volumes and the other at 4π/81, and confine it to a window at 1/π. The new step, at 1/π, uses that every horizontal slice lies inside the bottom one, and calibrates the bottom slice’s corner, forcing extra length in strip-shaped slices. That gives a lower bound on the excess area, checked at 24 points in rigorous interval arithmetic with interpolation between them. The smallest certified margin is 9 parts in 100,000 of the slab’s area; our computer recomputes all 23 margins in the paper’s table and agrees.</p>
+<h3><span class="t num">3:02</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. Its main theorem is formalized in full in Lean, about 140,000 lines, not run by us; the Lean relies only on Mathlib, not on the structure theorem the paper cites, and three outside projects re-ran it successfully. The calculation code the paper mentions is not in the release, but outside projects rebuilt its arithmetic and it passed. An AI audit found no gap. We found no specialist comment and no reported error. If it holds, in the cubic three-torus up to half the volume the best container is a ball, a tube or a slab, switching at 4π/81 and 1/π; beyond half, take the complements.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20354%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
