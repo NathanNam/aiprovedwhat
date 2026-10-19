@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Midpoints aren’t enough? Reflexive spaces and diamonds | AI Proved What?</title>
+<meta name="description" content="AI preprints claim a reflexive Banach space that is asymptotically midpoint uniformly convex but has no asymptotically uniformly convex renorming, with Lean proofs. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/331-midpoint-diamonds/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Midpoints aren’t enough?">
+<meta property="og:description" content="AI preprints claim a reflexive Banach space that is asymptotically midpoint uniformly convex but has no asymptotically uniformly convex renorming, with Lean proofs. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/331-midpoint-diamonds/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/331-midpoint-diamonds/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 331, October 2026</p>
+<h1>Midpoints aren’t enough?</h1>
+<p class="subtitle">Seven AI preprints claim a reflexive space with midpoint but no uniform asymptotic convexity</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 331 in OpenAI’s catalog: <a href="#papers-in-result">all 7 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="vQwZBTApLA0" data-title="Episode 331: Midpoints aren’t enough?">
+  <a href="https://youtu.be/vQwZBTApLA0">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 331: Midpoints aren’t enough? A blue diamond graph, each edge split into three two-edge paths twice, between two yellow endpoints.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:58. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/vQwZBTApLA0?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/vQwZBTApLA0?t=84" data-t="84"><span class="t">1:24</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/vQwZBTApLA0?t=138" data-t="138"><span class="t">2:18</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/vQwZBTApLA0?t=196" data-t="196"><span class="t">3:16</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Stand at a unit vector and step a distance t in some direction far out in the space. Does the length grow? A norm is asymptotically uniformly convex if every far-out step gains a definite amount. A weaker property, asymptotic midpoint uniform convexity, asks only that a step and its opposite gain on average. On a tiny tree from the release’s space, our computer shows the gap: one push gains nothing until t reaches 1, while the opposite push grows like the √(1 + t²).</p>
+<p>Diamond graphs ask a related question: replace each edge by many two-edge paths, again and again, and see how badly the result must be distorted to fit in a space. In 2017, seven authors showed that midpoint convexity forces the distortion of countably branching diamonds to grow without bound, and noted that a 2016 question was still open: can midpoint convexity always be upgraded to the stronger property by changing the norm? In 2025 a book asked, as Problem 39, whether a reflexive space with no such upgrade must always fit the diamonds with bounded distortion, and its authors suspected yes. On September 18, 2026, Baudier answered the upgrade question no, in a non-reflexive space, with a proof that the note says was generated by an OpenAI model.</p>
+<p>Result 331 is seven OpenAI papers, 225 pages in all, dated September 27 and made public October 6, 2026. The headline paper claims a separable reflexive space, built from James’s segment norm on a forest of countably branching trees, that is asymptotically midpoint uniformly convex with an explicit modulus, but has no equivalent asymptotically uniformly convex norm. In the same space, depth-k diamonds need distortion at least √(1 + k/12); a companion paper improves this to √(1 + k/4).</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: the first separation of the two properties, which Baudier had already done; optimal constants; or any upper bound on diamond distortion. Some companion spaces are not reflexive.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 7 papers, 225 pages, dated September 27, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The headline theorem in full, plus the companions’ main statements (<a href="https://github.com/openai/math/blob/main/lean/docs/331.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The papers are unrefereed and unchanged since release. Lean formalizes the headline theorem in full, along with the companions’ main statements, in seven checks and about 49,000 lines, not run by us. Three outside projects re-ran them and they were accepted. We found no public comment from specialists and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Tall trees defeat every AUC norm.</strong> Inside each tree, root paths all have length 1, and stepping to a child is a push in a far-out direction. If some equivalent norm were asymptotically uniformly convex, each step to a far-out child could gain a fixed factor, so a path down a tall enough tree would grow without bound, yet root paths stay bounded. Since the forest has trees of every height, no equivalent norm can be asymptotically uniformly convex.</li>
+  <li><strong>Midpoints force the squared stretch to grow.</strong> The midpoint estimate tests the two pushes together, with a correction placed at the first vertices outside a finite head; the correction cancels when the two sides are averaged. Then, for each diamond edge, its many midpoints force the squared stretch to grow by a fixed amount, 1/12, per level, and summing over k levels gives the bound. Our computer tabulates it: √(1 + k/12) reaches 2 at depth 36, while the companion bound reaches 2 at depth 12.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours, exact on a tiny tree: one push gives length max(1, t), the opposite push √(1 + t²).</li>
+  <li>The bounds: √(1 + k/12) reaches 2 at depth 36; the companion’s √(1 + k/4) reaches 2 at depth 12 (our arithmetic).</li>
+  <li>Ours: the diamond distance facts the proof uses hold for branching 2, 3 and 4 up to depth 5.</li>
+  <li>Lean: 7 checks; 171 files and 49,376 lines in the import closures (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Asymptotic-midpoint-uniform-convexity-and-unbounded-diamond-distortion-in-a-reflexive-tree-space-September-27-2026/manuscript.pdf">Asymptotic midpoint uniform convexity and unbounded diamond distortion in a reflexive tree space (PDF)</a>, 12 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Midpoint-lenses-in-segment-spaces-September-27-2026/manuscript.pdf">Midpoint lenses in segment spaces (PDF)</a>, 74 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Diamond-distortion-from-midpoint-and-tree-energies-September-27-2026/manuscript.pdf">Diamond distortion from midpoint and tree energies (PDF)</a>, 39 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Exact-asymptotic-moduli-in-a-Daugavet-subspace-of-L1-September-27-2026/manuscript.pdf">Exact asymptotic moduli in a Daugavet subspace of L1 (PDF)</a>, 13 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Midpoint-convexity-from-bounded-tree-potentials-and-path-costs-September-27-2026/manuscript.pdf">Midpoint convexity from bounded tree potentials and path costs (PDF)</a>, 53 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Independent-products-in-real-L1-asymptotic-midpoint-convexity-without-AUC-renormings-September-27-2026/manuscript.pdf">Independent products in real L1: asymptotic midpoint convexity without AUC renormings (PDF)</a>, 11 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Midpoint-convexity-from-two-recursive-potentials-September-27-2026/manuscript.pdf">Midpoint convexity from two recursive potentials (PDF)</a>, 23 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/331.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 331.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 7 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Asymptotic-midpoint-uniform-convexity-and-unbounded-diamond-distortion-in-a-reflexive-tree-space-September-27-2026/manuscript.pdf">Asymptotic midpoint uniform convexity and unbounded diamond distortion in a reflexive tree space</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Midpoint-lenses-in-segment-spaces-September-27-2026/manuscript.pdf">Midpoint lenses in segment spaces</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Diamond-distortion-from-midpoint-and-tree-energies-September-27-2026/manuscript.pdf">Distortion of countably branching diamonds from midpoint and tree energies</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Exact-asymptotic-moduli-in-a-Daugavet-subspace-of-L1-September-27-2026/manuscript.pdf">Exact asymptotic moduli in a Daugavet subspace of L1</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Midpoint-convexity-from-bounded-tree-potentials-and-path-costs-September-27-2026/manuscript.pdf">Midpoint convexity from bounded tree potentials and path costs</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Independent-products-in-real-L1-asymptotic-midpoint-convexity-without-AUC-renormings-September-27-2026/manuscript.pdf">Independent products in real L1: asymptotic midpoint convexity without AUC renormings</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Midpoint-convexity-from-two-recursive-potentials-September-27-2026/manuscript.pdf">Midpoint convexity from two recursive potentials</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Stand at a unit vector and step a distance t in some direction far out in the space. Does the length grow? A norm is asymptotically uniformly convex if every far-out step gains a definite amount. A weaker property, asymptotic midpoint uniform convexity, asks only that a step and its opposite gain on average. On a tiny tree from the release’s space, our computer shows the gap: one push gains nothing until t reaches 1, while the opposite push grows like the √(1 + t²). Diamond graphs ask a related question: replace each edge by many two-edge paths, again and again, and see how badly the result must be distorted to fit in a space. In 2017, seven authors showed that midpoint convexity forces the distortion of countably branching diamonds to grow without bound, and noted that a 2016 question was still open: can midpoint convexity always be upgraded to the stronger property by changing the norm? In 2025 a book asked, as Problem 39, whether a reflexive space with no such upgrade must always fit the diamonds with bounded distortion, and its authors suspected yes. On September 18, 2026, Baudier answered the upgrade question no, in a non-reflexive space, with a proof that the note says was generated by an OpenAI model.</p>
+<h3><span class="t num">1:24</span>The claim</h3>
+<p>Result 331 is seven OpenAI papers, 225 pages in all, dated September 27 and made public October 6, 2026. The headline paper claims a separable reflexive space, built from James’s segment norm on a forest of countably branching trees, that is asymptotically midpoint uniformly convex with an explicit modulus, but has no equivalent asymptotically uniformly convex norm. In the same space, depth-k diamonds need distortion at least √(1 + k/12); a companion paper improves this to √(1 + k/4). Not claimed: the first separation of the two properties, which Baudier had already done; optimal constants; or any upper bound on diamond distortion. Some companion spaces are not reflexive.</p>
+<h3><span class="t num">2:18</span>How the proof goes</h3>
+<p>Inside each tree, root paths all have length 1, and stepping to a child is a push in a far-out direction. If some equivalent norm were asymptotically uniformly convex, each step to a far-out child could gain a fixed factor, so a path down a tall enough tree would grow without bound, yet root paths stay bounded. Since the forest has trees of every height, no equivalent norm can be asymptotically uniformly convex. The midpoint estimate tests the two pushes together, with a correction placed at the first vertices outside a finite head; the correction cancels when the two sides are averaged. Then, for each diamond edge, its many midpoints force the squared stretch to grow by a fixed amount, 1/12, per level, and summing over k levels gives the bound. Our computer tabulates it: √(1 + k/12) reaches 2 at depth 36, while the companion bound reaches 2 at depth 12.</p>
+<h3><span class="t num">3:16</span>Where it stands</h3>
+<p>The papers are unrefereed and unchanged since release. Lean formalizes the headline theorem in full, along with the companions’ main statements, in seven checks and about 49,000 lines, not run by us. Three outside projects re-ran them and they were accepted. We found no public comment from specialists and no reported error. If it holds, even a reflexive space can be asymptotically midpoint uniformly convex without admitting any asymptotically uniformly convex norm, while its diamonds still need unbounded distortion, answering Problem 39 in the negative.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20331%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
