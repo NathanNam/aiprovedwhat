@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No conjugate points, yet never nonpositive? A three-manifold example | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims a closed three-manifold with a metric without conjugate points that admits no metric of nonpositive curvature, with the main theorem formalized in Lean. An animated explainer, the claim in plain words, and how far it has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/358-no-conjugate-points/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="No conjugate points, yet never nonpositive?">
+<meta property="og:description" content="An AI preprint claims a closed three-manifold with a metric without conjugate points that admits no metric of nonpositive curvature, with the main theorem formalized in Lean. An animated explainer, the claim in plain words, and how far it has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/358-no-conjugate-points/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/358-no-conjugate-points/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 358, October 2026</p>
+<h1>No conjugate points, yet never nonpositive?</h1>
+<p class="subtitle">An AI preprint claims a three-manifold without conjugate points that admits no nonpositively curved metric</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 358 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="ljoBioZQgk8" data-title="Episode 358: No conjugate points, yet never nonpositive?">
+  <a href="https://youtu.be/ljoBioZQgk8">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 358: No conjugate points, yet never nonpositive? Geodesics from a pole refocusing on a sphere beside lines spreading from a point.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:50. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/ljoBioZQgk8?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/ljoBioZQgk8?t=72" data-t="72"><span class="t">1:12</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/ljoBioZQgk8?t=124" data-t="124"><span class="t">2:04</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/ljoBioZQgk8?t=194" data-t="194"><span class="t">3:14</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A conjugate point is where nearby geodesics leaving a point come back together, at least to first order. On a round sphere of radius one, geodesics from the north pole meet again at the south pole: our computer finds the first refocusing at distance pi, 3.1416. In the flat plane and the hyperbolic plane they never refocus; they spread apart linearly or exponentially. Nonpositive curvature everywhere rules out conjugate points. The question is the converse, for closed manifolds: if some metric has no conjugate points, must the manifold also carry a metric of nonpositive curvature?</p>
+<p>For surfaces the answer is yes. Gulliver showed that a metric without conjugate points can still have some positive curvature, so the question is about the manifold, not the metric. Ivanov and Kapovitch asked it in 2012, guessing no in general but saying it might be true in dimension three, and named graph manifolds as the main test case. A survey by Burns and Matveev first said dimension three was settled, and a year later corrected itself: still open even in dimension three.</p>
+<p>Result 358 is one OpenAI paper, 22 pages, dated September 24 and made public October 6, 2026. It claims a closed, connected, orientable three-manifold that carries a smooth metric without conjugate points but admits no smooth metric of nonpositive curvature. The manifold is two copies of a one-holed torus times a circle, glued along their boundary tori by the matrix (1 1; 1 0).</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The manifold is not new: Leeb showed in 1995 that gluings like this admit no nonpositively curved metric, and the paper says so. The new part is the metric. Not claimed: higher dimensions, or a classification of graph manifolds, and it is not the trace-above-two gluing in Ivanov and Kapovitch’s test question. We found no competing claim.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 22 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/358.md">scope notes</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 19, 2026. The paper is unrefereed and unchanged since release. Its main theorem is formalized in Lean, about 25,000 lines, not run by us. The Lean statement matches the theorem, and the formal proof takes a different route for the curvature obstruction. The stronger group-theoretic result is not formalized. We found no specialist comment and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Why curvature ≤ 0 is impossible.</strong> Why no nonpositive curvature? In such a metric, loops of the shared torus would act, on the universal cover, as translations of a flat plane. Each piece forces two of these translation vectors to be perpendicular, giving u perpendicular to v and u plus v perpendicular to u, so u has length zero, which is impossible. Our computer checks this arithmetic, and that among 232 small integer gluings exactly eight, the signed permutations, pass Leeb’s test.</li>
+  <li><strong>Building the metric.</strong> The metric is built from nonpositively curved pieces made from a hyperbolic punctured torus, joined through a neck. Across the neck, a tiny shear realizes the integer twist, because the torus periods are chosen in a matching ratio. The neck must therefore contain some positive curvature, since this manifold has no nonpositively curved metric. So the hard part is showing that no geodesic picks up a conjugate point: an index-form identity, a classification of how geodesics visit the neck, and a uniform estimate for those that enter and come back, summed over all visits.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: on the unit sphere, nearby geodesics from a point first refocus at distance π ≈ 3.1416; in the flat and hyperbolic planes they never do.</li>
+  <li>Ours: the gluing matrix (1 1; 1 0) has determinant −1 and trace 1; of 232 small integer gluings, exactly 8 (the signed permutations) pass Leeb's test.</li>
+  <li>Ours: with our own cutoff, the paper's neck is concave once its shear parameter δ is about 10⁻⁴; the paper only says δ is sufficiently small.</li>
+  <li>Lean: 19 files and 24,974 lines in the import closure of the comparator (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Three-Manifold-Without-Conjugate-Points-and-Without-a-Nonpositively-Curved-Metric-September-24-2026/paper.pdf">A Three-Manifold Without Conjugate Points and Without a Nonpositively Curved Metric (PDF)</a>, 22 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/358.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 358.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Three-Manifold-Without-Conjugate-Points-and-Without-a-Nonpositively-Curved-Metric-September-24-2026/paper.pdf">A Three-Manifold Without Conjugate Points and Without a Nonpositively Curved Metric</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A conjugate point is where nearby geodesics leaving a point come back together, at least to first order. On a round sphere of radius one, geodesics from the north pole meet again at the south pole: our computer finds the first refocusing at distance pi, 3.1416. In the flat plane and the hyperbolic plane they never refocus; they spread apart linearly or exponentially. Nonpositive curvature everywhere rules out conjugate points. The question is the converse, for closed manifolds: if some metric has no conjugate points, must the manifold also carry a metric of nonpositive curvature? For surfaces the answer is yes. Gulliver showed that a metric without conjugate points can still have some positive curvature, so the question is about the manifold, not the metric. Ivanov and Kapovitch asked it in 2012, guessing no in general but saying it might be true in dimension three, and named graph manifolds as the main test case. A survey by Burns and Matveev first said dimension three was settled, and a year later corrected itself: still open even in dimension three.</p>
+<h3><span class="t num">1:12</span>The claim</h3>
+<p>Result 358 is one OpenAI paper, 22 pages, dated September 24 and made public October 6, 2026. It claims a closed, connected, orientable three-manifold that carries a smooth metric without conjugate points but admits no smooth metric of nonpositive curvature. The manifold is two copies of a one-holed torus times a circle, glued along their boundary tori by the matrix (1 1; 1 0). The manifold is not new: Leeb showed in 1995 that gluings like this admit no nonpositively curved metric, and the paper says so. The new part is the metric. Not claimed: higher dimensions, or a classification of graph manifolds, and it is not the trace-above-two gluing in Ivanov and Kapovitch’s test question. We found no competing claim.</p>
+<h3><span class="t num">2:04</span>How the proof goes</h3>
+<p>Why no nonpositive curvature? In such a metric, loops of the shared torus would act, on the universal cover, as translations of a flat plane. Each piece forces two of these translation vectors to be perpendicular, giving u perpendicular to v and u plus v perpendicular to u, so u has length zero, which is impossible. Our computer checks this arithmetic, and that among 232 small integer gluings exactly eight, the signed permutations, pass Leeb’s test. The metric is built from nonpositively curved pieces made from a hyperbolic punctured torus, joined through a neck. Across the neck, a tiny shear realizes the integer twist, because the torus periods are chosen in a matching ratio. The neck must therefore contain some positive curvature, since this manifold has no nonpositively curved metric. So the hard part is showing that no geodesic picks up a conjugate point: an index-form identity, a classification of how geodesics visit the neck, and a uniform estimate for those that enter and come back, summed over all visits.</p>
+<h3><span class="t num">3:14</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. Its main theorem is formalized in Lean, about 25,000 lines, not run by us. The Lean statement matches the theorem, and the formal proof takes a different route for the curvature obstruction. The stronger group-theoretic result is not formalized. We found no specialist comment and no reported error. If it holds, in dimension three a metric without conjugate points does not force a closed manifold to admit nonpositive curvature.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20358%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
