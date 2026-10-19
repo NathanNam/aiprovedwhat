@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Only three shapes for every edge? The planar Mumford–Shah conjecture | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims the interior part of the planar Mumford–Shah conjecture: optimal edges are regular arcs, crack tips or 120° junctions. An earlier arXiv claim, also AI-assisted, came two days before. An animated explainer, the claim in plain words, and how far it has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/366-mumford-shah-interior/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Only three shapes for every edge?">
+<meta property="og:description" content="An AI preprint claims the interior part of the planar Mumford–Shah conjecture: optimal edges are regular arcs, crack tips or 120° junctions. An earlier arXiv claim, also AI-assisted, came two days before. An animated explainer, the claim in plain words, and how far it has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/366-mumford-shah-interior/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/366-mumford-shah-interior/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 366, October 2026</p>
+<h1>Only three shapes for every edge?</h1>
+<p class="subtitle">An AI preprint claims the interior Mumford–Shah conjecture in the plane, two days after a similar arXiv claim</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 366 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="k77g-ZjG75k" data-title="Episode 366: Only three shapes for every edge?">
+  <a href="https://youtu.be/k77g-ZjG75k">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 366: Only three shapes for every edge? Three circles showing an arc, a crack tip and a 120-degree junction.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:00. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/k77g-ZjG75k?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/k77g-ZjG75k?t=73" data-t="73"><span class="t">1:13</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/k77g-ZjG75k?t=135" data-t="135"><span class="t">2:15</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/k77g-ZjG75k?t=202" data-t="202"><span class="t">3:22</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>How should a computer draw the edges in a picture? In 1989, Mumford and Shah proposed an energy: approximate the picture by a function that is smooth except across a set of edges, and charge for wiggles inside the regions, for the total length of the edges, and for distance from the picture. In a one-dimensional toy, our computer finds the trade-off: smoothing a step of height h costs about 0.23 h², a cut costs one, so a cut wins once the step is taller than about 2.08.</p>
+<p>Their conjecture says the best edges are simple: finitely many curves that run through, stop at a crack tip, or meet three at a time at 120°. Our computer shows why the angle: crossing the diagonals of a unit square costs 2.83, while two junctions at 120° cost 2.73. Near a crack tip the gradient blows up; for the model tip, the area where it exceeds t is exactly 1/(4π t⁴), a borderline rate that De Lellis and Focardi tied to the conjecture. Their 2025 monograph calls it a long-standing open problem, to date still open.</p>
+<p>Result 366 is one OpenAI paper, 20 pages, dated September 24 and made public October 6, 2026. It claims the interior part of the planar conjecture for reduced absolute minimizers with bounded data: near every edge point inside the domain, the edges form one regular arc, a crack tip, or three arcs at 120°, and only finitely many pieces meet any compact interior region. A weak L⁴ bound on the gradient then follows, via known work.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: anything at the boundary of the domain, or finitely many pieces overall. And it was not the first public claim. On September 22, Francesco Deangelis posted on the arXiv a claimed proof of the conjecture, including the same interior structure; his note says he obtained it using OpenAI’s ChatGPT Astra. The OpenAI paper cites it; both slide the floating piece, but they finish differently.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 20 pages, dated September 24, 2026; an earlier claim by Deangelis (arXiv, September 22) is cited</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet; no specialist verdict on either paper</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>None in OpenAI’s catalog; an uncatalogued development in the repository (<a href="https://github.com/openai/math/blob/main/lean/OAI/Analysis/MumfordShah/CompactExclusion.lean">CompactExclusion.lean</a>) proves the paper’s new step, Proposition 5.1; the full theorem is stated in Lean but not proved</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 19, 2026. The paper is unrefereed and unchanged since release, and it leans on the cited theory. The release catalogue lists no Lean, but the repository holds an uncatalogued Lean proof of the new step, about 8,200 lines, not run by us; the full theorem is stated in Lean but not proved. We found no specialist verdict on either paper. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Zooming in, and the floating piece.</strong> Zoom in at an edge point. Decades of work, collected in the De Lellis and Focardi monograph, show the zoomed picture is a line, a half-line or a 120-degree junction, unless a bounded piece of edge floats in a connected background. The paper rules out that last case. It splits the gradient into a field carrying the piece’s jumps and a harmonic part that extends across it, then slides the piece by a small vector t. Lengths and the piece’s own energy do not change; a cross term does, and it is harmonic in t with its minimum at zero, so it must be constant. Our computer shows the reason: a harmonic function’s average on a circle equals its centre value, so if the centre is a minimum, the function is flat on the circle.</li>
+  <li><strong>Deleting the piece.</strong> Varying the jumps along an arc of the piece then forces the whole gradient to vanish. The function is constant everywhere off the edges, so deleting it costs nothing and saves its length, contradicting minimality. Results from earlier work then turn each zoomed picture back into one of the three shapes at small scale.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: in a 1-D toy, smoothing a step of height h costs 0.23 h² and a cut costs 1, so cutting wins above h = 2.08.</li>
+  <li>Ours: crossing the diagonals of a unit square costs 2.83; two 120° junctions cost 2.73.</li>
+  <li>Ours: for the model crack tip, the area where the gradient exceeds t is exactly 1/(4π t⁴).</li>
+  <li>Lean: 24 files and 8,228 lines in the import closure of the uncatalogued proof of the paper’s new step (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026/Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026.pdf">Interior regularity of planar Mumford–Shah minimizers (PDF)</a>, 20 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 366.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026/Interior-regularity-of-planar-Mumford-Shah-minimizers-September-24-2026.pdf">Interior regularity of planar Mumford–Shah minimizers</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>How should a computer draw the edges in a picture? In 1989, Mumford and Shah proposed an energy: approximate the picture by a function that is smooth except across a set of edges, and charge for wiggles inside the regions, for the total length of the edges, and for distance from the picture. In a one-dimensional toy, our computer finds the trade-off: smoothing a step of height h costs about 0.23 h², a cut costs one, so a cut wins once the step is taller than about 2.08. Their conjecture says the best edges are simple: finitely many curves that run through, stop at a crack tip, or meet three at a time at 120°. Our computer shows why the angle: crossing the diagonals of a unit square costs 2.83, while two junctions at 120° cost 2.73. Near a crack tip the gradient blows up; for the model tip, the area where it exceeds t is exactly 1/(4π t⁴), a borderline rate that De Lellis and Focardi tied to the conjecture. Their 2025 monograph calls it a long-standing open problem, to date still open.</p>
+<h3><span class="t num">1:13</span>The claim</h3>
+<p>Result 366 is one OpenAI paper, 20 pages, dated September 24 and made public October 6, 2026. It claims the interior part of the planar conjecture for reduced absolute minimizers with bounded data: near every edge point inside the domain, the edges form one regular arc, a crack tip, or three arcs at 120°, and only finitely many pieces meet any compact interior region. A weak L⁴ bound on the gradient then follows, via known work. Not claimed: anything at the boundary of the domain, or finitely many pieces overall. And it was not the first public claim. On September 22, Francesco Deangelis posted on the arXiv a claimed proof of the conjecture, including the same interior structure; his note says he obtained it using OpenAI’s ChatGPT Astra. The OpenAI paper cites it; both slide the floating piece, but they finish differently.</p>
+<h3><span class="t num">2:15</span>How the proof goes</h3>
+<p>Zoom in at an edge point. Decades of work, collected in the De Lellis and Focardi monograph, show the zoomed picture is a line, a half-line or a 120-degree junction, unless a bounded piece of edge floats in a connected background. The paper rules out that last case. It splits the gradient into a field carrying the piece’s jumps and a harmonic part that extends across it, then slides the piece by a small vector t. Lengths and the piece’s own energy do not change; a cross term does, and it is harmonic in t with its minimum at zero, so it must be constant. Our computer shows the reason: a harmonic function’s average on a circle equals its centre value, so if the centre is a minimum, the function is flat on the circle. Varying the jumps along an arc of the piece then forces the whole gradient to vanish. The function is constant everywhere off the edges, so deleting it costs nothing and saves its length, contradicting minimality. Results from earlier work then turn each zoomed picture back into one of the three shapes at small scale.</p>
+<h3><span class="t num">3:22</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release, and it leans on the cited theory. The release catalogue lists no Lean, but the repository holds an uncatalogued Lean proof of the new step, about 8,200 lines, not run by us; the full theorem is stated in Lean but not proved. We found no specialist verdict on either paper. If it holds, the edges inside an optimal planar picture come in just three shapes, as Mumford and Shah conjectured, now with two AI-generated proofs, dated two days apart.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20366%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
