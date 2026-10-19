@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two dimensions disappear? Gromov&#x27;s Urysohn width bound for scalar curvature | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/348-einstein-four-manifolds/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Only three shapes?">
+<meta property="og:description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/348-einstein-four-manifolds/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/348-einstein-four-manifolds/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 348, October 2026</p>
+<h1>Only three shapes?</h1>
+<p class="subtitle">Three AI preprints claim the nonnegative-curvature Einstein classification in dimension four</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 348 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="hosRIA77xQE" data-title="Episode 348: Only three shapes?">
+  <a href="https://youtu.be/hosRIA77xQE">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 348: Only three shapes? A teal circle, a pink triangle and two yellow circles for the three model spaces.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:42. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/hosRIA77xQE?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/hosRIA77xQE?t=87" data-t="87"><span class="t">1:27</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/hosRIA77xQE?t=155" data-t="155"><span class="t">2:35</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/hosRIA77xQE?t=230" data-t="230"><span class="t">3:50</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>An Einstein manifold is one whose Ricci curvature, the total bending of the planes through each direction, is the same everywhere and in every direction. In four dimensions, with positive curvature of this kind, three classic examples are the round four-sphere, the complex projective plane with its Fubini–Study metric, and a product of two equal round two-spheres. Normalize the Ricci curvature to three, and our computer checks their sectional curvatures, the bending of each two-dimensional plane: exactly one on the sphere, between one half and two on the projective plane, and between zero and three on the product, where mixed planes are flat.</p>
+<p>A well-known conjecture, recorded by DaGang Yang in 2000 and since called folklore, says that if every plane bends positively, only the sphere and the projective plane occur, up to quotients; with nonnegative bending, the product joins them. Partial results needed extra hypotheses: pinched curvature, starting with Berger; a positive intersection form, by Gursky and LeBrun; or extra symmetry. In September 2026, days before this release, Liang Cheng settled the positive case when the Euler characteristic is at most three, and Gursky and Malchiodi under another topological condition, with a key step found with help from ChatGPT. Neither condition covers the topology of the product of two spheres.</p>
+<p>Result 348 is three OpenAI papers, made public October 6, 2026. The first, 59 pages, dated September 23 but citing those September papers, claims the positive case: a closed Einstein four-manifold with positive sectional curvature is, after scaling, the round sphere, the projective plane, or real projective four-space. The second, 48 pages, claims that if the curvature is only nonnegative and some plane is flat, the universal cover is the product of two equal spheres; so with nonnegative curvature, the universal cover is one of the three models. The third, 13 pages, assumes the second and claims a gap: a closed, simply connected four-manifold with nonnegative curvature that is close enough to Einstein, in an integral sense, is diffeomorphic to one of the three.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: Einstein metrics whose curvature changes sign, which exist on many four-manifolds; isometry, or an explicit threshold, in the gap theorem; or the Hopf conjecture about all metrics on the product of two spheres.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 3 papers, dated September 23, October 4 and October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The positive-curvature theorem only (<a href="https://github.com/openai/math/blob/main/lean/docs/348.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. All three papers are unrefereed and unchanged since release. The positive-curvature theorem is formalized in Lean, 402 files and about 208,000 lines, not run by us, one outside project re-ran it successfully and another lists it as certified. The nonnegative classification and the gap theorem, the catalog’s headline, have no Lean, and the gap theorem depends on the zero-plane paper. An AI audit found no gap in the three. We found no specialist comment and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Two Weyl blocks.</strong> The proof splits the curvature into two Weyl blocks. Our computer checks that the smallest sectional curvature is one minus half the sum of how far below zero each block reaches, so positive curvature means that sum stays below two. Curvature integrals give the Euler characteristic and the signature. If both blocks were nonzero, a volume comparison along geodesics, with integrality, would leave only one case with nonzero signature, Euler characteristic five and signature one, which a separate lemma excludes. Our own search finds the same lone survivor.</li>
+  <li><strong>Forcing the model.</strong> Weighted inequalities, certified by exact polynomial computations, then force one Weyl block to vanish, so the manifold is half conformally flat, and a volume bound helps pin down the model. In the zero-plane paper the same argument runs at the boundary, where both blocks become parallel and the manifold splits as a product. The gap theorem runs Ricci flow for a short time and takes limits. For a product of two spheres with radii in ratio ρ, our computer finds the gap theorem’s integral is 16π²(ρ − 1/ρ)².</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: at Ricci curvature 3, sectional curvature is exactly 1 on the round 4-sphere, between 1/2 and 2 on the complex projective plane, and between 0 and 3 on the product of two equal 2-spheres.</li>
+  <li>Ours: Euler characteristic and signature are (2, 0), (3, 1) and (4, 0) for the three models; the product is outside both September 2026 conditions.</li>
+  <li>Ours: the smallest sectional curvature equals 1 − (x + y)/2 in terms of the two Weyl blocks (sampled on 60 random cases).</li>
+  <li>Ours: for S²(r₁) × S²(r₂), the trace-free Ricci integral is 16π²(ρ − 1/ρ)² with ρ = r₂/r₁.</li>
+  <li>Lean: 402 files and 207,815 lines in the import closure of the positive-curvature comparator (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/einstein-boundary.pdf">Zero-Plane Rigidity for Einstein Four-Manifolds (PDF)</a>, 48 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/einstein-gap.pdf">An L2 Einstein Gap for Nonnegatively Curved Four-Manifolds (PDF)</a>, 13 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/paper.pdf">Positively curved Einstein four-manifolds (PDF)</a>, 59 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/348.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 348.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Zero-Plane-Rigidity-for-Einstein-Four-Manifolds-October-4-2026/einstein-boundary.pdf">Zero-Plane Rigidity for Einstein Four-Manifolds</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-L2-Einstein-Gap-for-Nonnegatively-Curved-Four-Manifolds-October-5-2026/einstein-gap.pdf">An L² Einstein Gap for Nonnegatively Curved Four-Manifolds</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Positively-curved-Einstein-four-manifolds-September-23-2026/paper.pdf">Positively curved Einstein four-manifolds</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>An Einstein manifold is one whose Ricci curvature, the total bending of the planes through each direction, is the same everywhere and in every direction. In four dimensions, with positive curvature of this kind, three classic examples are the round four-sphere, the complex projective plane with its Fubini–Study metric, and a product of two equal round two-spheres. Normalize the Ricci curvature to three, and our computer checks their sectional curvatures, the bending of each two-dimensional plane: exactly one on the sphere, between one half and two on the projective plane, and between zero and three on the product, where mixed planes are flat. A well-known conjecture, recorded by DaGang Yang in 2000 and since called folklore, says that if every plane bends positively, only the sphere and the projective plane occur, up to quotients; with nonnegative bending, the product joins them. Partial results needed extra hypotheses: pinched curvature, starting with Berger; a positive intersection form, by Gursky and LeBrun; or extra symmetry. In September 2026, days before this release, Liang Cheng settled the positive case when the Euler characteristic is at most three, and Gursky and Malchiodi under another topological condition, with a key step found with help from ChatGPT. Neither condition covers the topology of the product of two spheres.</p>
+<h3><span class="t num">1:27</span>The claim</h3>
+<p>Result 348 is three OpenAI papers, made public October 6, 2026. The first, 59 pages, dated September 23 but citing those September papers, claims the positive case: a closed Einstein four-manifold with positive sectional curvature is, after scaling, the round sphere, the projective plane, or real projective four-space. The second, 48 pages, claims that if the curvature is only nonnegative and some plane is flat, the universal cover is the product of two equal spheres; so with nonnegative curvature, the universal cover is one of the three models. The third, 13 pages, assumes the second and claims a gap: a closed, simply connected four-manifold with nonnegative curvature that is close enough to Einstein, in an integral sense, is diffeomorphic to one of the three. Not claimed: Einstein metrics whose curvature changes sign, which exist on many four-manifolds; isometry, or an explicit threshold, in the gap theorem; or the Hopf conjecture about all metrics on the product of two spheres.</p>
+<h3><span class="t num">2:35</span>How the proof goes</h3>
+<p>The proof splits the curvature into two Weyl blocks. Our computer checks that the smallest sectional curvature is one minus half the sum of how far below zero each block reaches, so positive curvature means that sum stays below two. Curvature integrals give the Euler characteristic and the signature. If both blocks were nonzero, a volume comparison along geodesics, with integrality, would leave only one case with nonzero signature, Euler characteristic five and signature one, which a separate lemma excludes. Our own search finds the same lone survivor. Weighted inequalities, certified by exact polynomial computations, then force one Weyl block to vanish, so the manifold is half conformally flat, and a volume bound helps pin down the model. In the zero-plane paper the same argument runs at the boundary, where both blocks become parallel and the manifold splits as a product. The gap theorem runs Ricci flow for a short time and takes limits. For a product of two spheres with radii in ratio ρ, our computer finds the gap theorem’s integral is 16π²(ρ − 1/ρ)².</p>
+<h3><span class="t num">3:50</span>Where it stands</h3>
+<p>All three papers are unrefereed and unchanged since release. The positive-curvature theorem is formalized in Lean, 402 files and about 208,000 lines, not run by us, one outside project re-ran it successfully and another lists it as certified. The nonnegative classification and the gap theorem, the catalog’s headline, have no Lean, and the gap theorem depends on the zero-plane paper. An AI audit found no gap in the three. We found no specialist comment and no reported error. If they hold, the only closed four-dimensional Einstein spaces with positive Ricci curvature that bend nonnegatively in every direction are, up to covering, the sphere, the projective plane and the product of two spheres.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20348%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
