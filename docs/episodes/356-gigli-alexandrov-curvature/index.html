@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fat triangles from a tensor? Gigli’s Alexandrov curvature conjecture | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Gigli’s 2019 conjecture: in every dimension two and up, Alexandrov curvature bounds are exactly RCD spaces with Gigli’s distributional sectional curvature bounded below. Lean covers the companion lemma only. An animated explainer, the claim in plain words, and how far it has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/356-gigli-alexandrov-curvature/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Fat triangles from a tensor?">
+<meta property="og:description" content="Two AI preprints claim Gigli’s 2019 conjecture: in every dimension two and up, Alexandrov curvature bounds are exactly RCD spaces with Gigli’s distributional sectional curvature bounded below. Lean covers the companion lemma only. An animated explainer, the claim in plain words, and how far it has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/356-gigli-alexandrov-curvature/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/356-gigli-alexandrov-curvature/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 356, October 2026</p>
+<h1>Fat triangles from a tensor?</h1>
+<p class="subtitle">Two AI preprints claim Gigli’s characterization of Alexandrov curvature</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 356 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="BIKuaAKvqT4" data-title="Episode 356: Fat triangles from a tensor?">
+  <a href="https://youtu.be/BIKuaAKvqT4">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 356: Fat triangles from a tensor? A teal triangle with outward-bulging sides beside a grey flat triangle.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:15. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/BIKuaAKvqT4?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/BIKuaAKvqT4?t=76" data-t="76"><span class="t">1:16</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/BIKuaAKvqT4?t=137" data-t="137"><span class="t">2:17</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/BIKuaAKvqT4?t=217" data-t="217"><span class="t">3:37</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>On a sphere, triangles are fatter than flat ones. Our computer finds that a triangle whose sides are quarter circles has angles adding to 270 degrees, against 180 in the plane and about 133 in the hyperbolic plane. Alexandrov turned this into a definition that needs only distances: a space has curvature at least κ if small triangles are at least as fat as in the model surface of curvature κ. A paper cone passes when its rim is at most 2π long; our random four-point tests find no failures there, and thousands once the rim is longer.</p>
+<p>A second theory, built on optimal transport, captures lower bounds on Ricci curvature, an average of curvatures, through RCD spaces, which carry a calculus of gradients and Hessians. In 2019, Nicola Gigli used that calculus to define a curvature tensor by integration, and conjectured that a lower bound on it is exactly Alexandrov’s condition, for spaces measured by their own volume. Alexandrov spaces were known to be RCD spaces, by work of Petrunin and of Zhang and Zhu. In 2023, Brena and Gigli still called the meaning of the tensor bound unknown.</p>
+<p>Result 356 is two OpenAI papers, dated September 24 and made public October 6, 2026. The main paper, 53 pages, claims Gigli’s conjecture in every dimension two and up: a space is an n-dimensional Alexandrov space with curvature at least κ exactly when, measured by n-dimensional volume, it is an RCD space with Ricci bound (n − 1)κ and full support, and Gigli’s sectional curvature is at least κ for all his test fields. The 11-page companion proves a tool: a weak Hessian bound holds along every shortest path, not just almost every one.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: dimension one, other measures, or upper curvature bounds. For surfaces, the direction from the Ricci condition to fat triangles was already proved by Lytchak and Stadler in 2018, a result the paper does not cite. We found no competing claim.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 53 + 11 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The companion lemma only, not the characterization (<a href="https://github.com/openai/math/blob/main/lean/docs/356.md">scope notes</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. Both papers are unrefereed and unchanged since release. The Lean formalization covers only the companion’s theorem, about 65,000 lines, not run by us, and it follows a different route from the companion’s own proof. The characterization itself has no formal proof. An AI audit found no gap, but did not check the cited theorems or the companion. We found no specialist comment and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Triangles to tensor, and back.</strong> The forward direction starts from triangles. The paper moves mass a short way along pairs of gradient directions and compares how far it travels with how far apart the two endpoints land. At almost every point the space looks Euclidean up close, and expanding the model triangle to fourth order produces κ/6, matching one sixth of the tensor term, so the tensor bound follows. The converse runs a smoothed version of the second-variation formula along shortest paths, using heat flow, and builds frames of test gradients at every time along almost every path. That gives a Hessian comparison for the squared distance.</li>
+  <li><strong>Every shortest path.</strong> The companion upgrades that bound from almost every shortest path to every one. It reweights the measure, which shifts the Ricci bound by the Hessian bound, and concentrates mass from two shrinking balls onto a single geodesic, while the weight grows. Brena and Gigli had suggested this change of measure and named the missing regularity step; the companion supplies it. Along every short geodesic, a function of the distance to a fixed point then obeys the model equation as an inequality, which our computer checks holds exactly in the three model planes. That gives triangle comparison, and the globalization theorem for Alexandrov spaces finishes.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: a triangle with sides of length π/2 has angles summing to 270° on the unit sphere, 180° in the plane and about 133° in the hyperbolic plane.</li>
+  <li>Ours: on paper cones, the four-point test fails in 0 of 20,000 random samples when the rim is at most 2π, and in 3,090 and 5,132 at 2.2π and 3π.</li>
+  <li>Ours: the model equation y″ + κℓ²y = ℓ² holds exactly along geodesics in the three model planes.</li>
+  <li>Lean: 542 files and 65,542 lines in the import closure of the companion's comparator (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Giglis-distributional-curvature-characterization-of-Alexandrov-spaces-September-24-2026/main.pdf">Gigli’s distributional curvature characterization of Alexandrov spaces (PDF)</a>, 53 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Weak-Hessian-bounds-along-every-geodesic-in-RCD-spaces-September-24-2026/weak-hessian-geodesics.pdf">Weak Hessian bounds along every geodesic in RCD spaces (PDF)</a>, 11 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/356.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 356.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Giglis-distributional-curvature-characterization-of-Alexandrov-spaces-September-24-2026/main.pdf">Gigli’s distributional curvature characterization of Alexandrov spaces</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Weak-Hessian-bounds-along-every-geodesic-in-RCD-spaces-September-24-2026/weak-hessian-geodesics.pdf">Weak Hessian bounds along every geodesic in RCD spaces</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>On a sphere, triangles are fatter than flat ones. Our computer finds that a triangle whose sides are quarter circles has angles adding to 270 degrees, against 180 in the plane and about 133 in the hyperbolic plane. Alexandrov turned this into a definition that needs only distances: a space has curvature at least κ if small triangles are at least as fat as in the model surface of curvature κ. A paper cone passes when its rim is at most 2π long; our random four-point tests find no failures there, and thousands once the rim is longer. A second theory, built on optimal transport, captures lower bounds on Ricci curvature, an average of curvatures, through RCD spaces, which carry a calculus of gradients and Hessians. In 2019, Nicola Gigli used that calculus to define a curvature tensor by integration, and conjectured that a lower bound on it is exactly Alexandrov’s condition, for spaces measured by their own volume. Alexandrov spaces were known to be RCD spaces, by work of Petrunin and of Zhang and Zhu. In 2023, Brena and Gigli still called the meaning of the tensor bound unknown.</p>
+<h3><span class="t num">1:16</span>The claim</h3>
+<p>Result 356 is two OpenAI papers, dated September 24 and made public October 6, 2026. The main paper, 53 pages, claims Gigli’s conjecture in every dimension two and up: a space is an n-dimensional Alexandrov space with curvature at least κ exactly when, measured by n-dimensional volume, it is an RCD space with Ricci bound (n − 1)κ and full support, and Gigli’s sectional curvature is at least κ for all his test fields. The 11-page companion proves a tool: a weak Hessian bound holds along every shortest path, not just almost every one. Not claimed: dimension one, other measures, or upper curvature bounds. For surfaces, the direction from the Ricci condition to fat triangles was already proved by Lytchak and Stadler in 2018, a result the paper does not cite. We found no competing claim.</p>
+<h3><span class="t num">2:17</span>How the proof goes</h3>
+<p>The forward direction starts from triangles. The paper moves mass a short way along pairs of gradient directions and compares how far it travels with how far apart the two endpoints land. At almost every point the space looks Euclidean up close, and expanding the model triangle to fourth order produces κ/6, matching one sixth of the tensor term, so the tensor bound follows. The converse runs a smoothed version of the second-variation formula along shortest paths, using heat flow, and builds frames of test gradients at every time along almost every path. That gives a Hessian comparison for the squared distance. The companion upgrades that bound from almost every shortest path to every one. It reweights the measure, which shifts the Ricci bound by the Hessian bound, and concentrates mass from two shrinking balls onto a single geodesic, while the weight grows. Brena and Gigli had suggested this change of measure and named the missing regularity step; the companion supplies it. Along every short geodesic, a function of the distance to a fixed point then obeys the model equation as an inequality, which our computer checks holds exactly in the three model planes. That gives triangle comparison, and the globalization theorem for Alexandrov spaces finishes.</p>
+<h3><span class="t num">3:37</span>Where it stands</h3>
+<p>Both papers are unrefereed and unchanged since release. The Lean formalization covers only the companion’s theorem, about 65,000 lines, not run by us, and it follows a different route from the companion’s own proof. The characterization itself has no formal proof. An AI audit found no gap, but did not check the cited theorems or the companion. We found no specialist comment and no reported error. If it holds, in every dimension two and up, Gigli’s analytic curvature bound and Alexandrov’s fat triangles are the same condition.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20356%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
