@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two dimensions disappear? Gromov&#x27;s Urysohn width bound for scalar curvature | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/347-arnold-counterexamples/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Fewer fixed points?">
+<meta property="og:description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/347-arnold-counterexamples/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/347-arnold-counterexamples/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 347, October 2026</p>
+<h1>Fewer fixed points?</h1>
+<p class="subtitle">Five AI preprints claim counterexamples to strong forms of the Arnold conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 347 in OpenAI’s catalog: <a href="#papers-in-result">all 5 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="J6tbgMj_IW4" data-title="Episode 347: Fewer fixed points?">
+  <a href="https://youtu.be/J6tbgMj_IW4">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 347: Fewer fixed points? A rotating grey sphere with its two yellow fixed poles.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:57. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/J6tbgMj_IW4?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/J6tbgMj_IW4?t=98" data-t="98"><span class="t">1:38</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/J6tbgMj_IW4?t=167" data-t="167"><span class="t">2:47</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/J6tbgMj_IW4?t=247" data-t="247"><span class="t">4:07</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Rotate a sphere about its axis and exactly two points stay put: the poles, the critical points of the height that drives it. In 1965 Arnold began to suspect this is no accident; his later, general form says a Hamiltonian diffeomorphism, the time-one map of an area-preserving flow driven by an energy that may change with time, should have at least as many fixed points as a smooth function must have critical points. On a torus, an upright doughnut’s height has four, and every Morse function needs four; but a degenerate function with a monkey saddle manages with three, which our computer confirms.</p>
+<p>So the conjecture comes in strengths. The homological forms, counting Betti numbers over the rationals, finite fields or the integers, are proved for nondegenerate maps: by Fukaya and Ono and others, by Abouzaid and Blumberg, and by Bai and Xu and by Rezchikov. Stronger forms, for nondegenerate maps, compare with the fewest critical points of a stable Morse function allowed extra variables, or of a Morse function; a degenerate form compares with the fewest critical points of any smooth function. Golovko listed these forms in 2020, calling the Morse-number one still wide open. Positive results covered mainly symplectically aspherical manifolds, not the general case. On September 27, 2026, Hao Jiao posted a smooth Hamiltonian map of the product of two spheres with only two fixed points, found with help from ChatGPT, against the degenerate form there.</p>
+<p>Result 347 is five OpenAI papers, made public October 6, 2026. The first, 12 pages, dated September 23, gives a Hamiltonian map of the quadric threefold with exactly three fixed points, while every smooth function there needs four; one fixed point is degenerate. The second, also dated September 23, gives nondegenerate examples in real dimension twelve that fall below the Morse number by any amount. Three papers dated October 5 break the stable Morse bound on simply connected Kähler manifolds. In dimension 22 the smallest example has stable Morse number 2,048, but the map has only 2,032 fixed points, and in families the gap grows without bound.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: anything against the proved homological bounds, which every example respects; one October paper even meets the integral bound of Bai and Xu exactly. The first counterexample claimed for the degenerate form is not theirs: the quadric paper cites Jiao’s. And only the quadric result is checked in Lean.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 5 papers, dated September 23 and October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The quadric result only (<a href="https://github.com/openai/math/blob/main/lean/docs/347.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. All five papers are unrefereed and unchanged since release. The quadric result is formalized in Lean, 36 files and about 5,800 lines, not run by us; two outside projects re-ran it successfully. The other four have no complete Lean; one uncatalogued folder covers only parts of the twelve-dimensional construction. An AI audit found no gap in those four. We found no specialist comment and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A symmetry trick.</strong> The trick is a symmetry. Take a Hamiltonian symmetry of finite order, and a short flow of an energy that the symmetry leaves unchanged. Composed, a point stays fixed only if the symmetry fixes it and the energy is critical there. Our computer shows this on a sphere: an energy with six critical points, of which only the two on the axis of a half-turn survive. In the quadric, the symmetry fixes a copy of the product of two spheres, and on it the paper writes down a function with exactly three critical points, one degenerate; our computer finds the three. Every function on the whole quadric needs four, because the cube of its basic class is twice a point.</li>
+  <li><strong>Topology the counts can't see.</strong> The nondegenerate examples use topology that ordinary counts cannot see. In the twelve-dimensional one, the fundamental group is a large power of the alternating group on five letters, which needs ever more generators. A related ideal needs only two, and handle moves turn that gap into missing fixed points. The October papers build simply connected Kähler manifolds from blow-ups, with torsion at the primes two and three. A half-turn fixes four copies of a smaller piece, and the counts come out at least sixteen short of the stable Morse number. Our computer matches every printed count.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the quadric paper's function on the product of two spheres has exactly 3 critical points (values 0 and ±2.598), one degenerate; every function on the quadric threefold needs 4.</li>
+  <li>Ours: on a torus, an upright doughnut's height has 4 critical points; sin x sin y sin(x+y) has 3, one a degenerate monkey saddle.</li>
+  <li>Ours: the alternating group A5 has 2,280 ordered generating pairs, so at most 19 copies can share two generators (Hall).</li>
+  <li>Ours: the dimension-22 family has stable Morse number 80 + 1968m and 80 + 1952m fixed points: 2,048 vs 2,032 at m = 1.</li>
+  <li>Lean: 36 files and 5,841 lines in the import closure of the quadric comparator (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/paper.pdf">Three fixed points on the symplectic quadric threefold (PDF)</a>, 12 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/paper.pdf">A nondegenerate counterexample to the Morse-number Arnold bound (PDF)</a>, 21 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/paper.pdf">Hamiltonian Fixed Points Below the Stable Morse Number (PDF)</a>, 19 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/hamiltonian-fixed-points-below-stable-morse-number.pdf">Hamiltonian Fixed Points Below the Stable Morse Number in Dimension Twenty-Two (PDF)</a>, 19 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/sharp-cyclic-integral-floer-bound-below-stable-morse-number.pdf">Sharpness of the Cyclic Integral Floer Bound Below the Stable Morse Number (PDF)</a>, 16 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/347.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 347.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 5 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-in-Dimension-Twenty-Two-October-5-2026/hamiltonian-fixed-points-below-stable-morse-number.pdf">Hamiltonian Fixed Points Below the Stable Morse Number in Dimension Twenty-Two</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Sharpness-of-the-Cyclic-Integral-Floer-Bound-Below-the-Stable-Morse-Number-October-5-2026/sharp-cyclic-integral-floer-bound-below-stable-morse-number.pdf">Sharpness of the Cyclic Integral Floer Bound Below the Stable Morse Number</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Hamiltonian-Fixed-Points-Below-the-Stable-Morse-Number-October-5-2026/paper.pdf">Hamiltonian Fixed Points Below the Stable Morse Number</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-nondegenerate-counterexample-to-the-Morse-number-Arnold-bound-September-23-2026/paper.pdf">A nondegenerate counterexample to the Morse-number Arnold bound</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-degenerate-counterexample-to-the-critical-number-Arnold-bound-September-23-2026/paper.pdf">Three fixed points on the symplectic quadric threefold</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Rotate a sphere about its axis and exactly two points stay put: the poles, the critical points of the height that drives it. In 1965 Arnold began to suspect this is no accident; his later, general form says a Hamiltonian diffeomorphism, the time-one map of an area-preserving flow driven by an energy that may change with time, should have at least as many fixed points as a smooth function must have critical points. On a torus, an upright doughnut’s height has four, and every Morse function needs four; but a degenerate function with a monkey saddle manages with three, which our computer confirms. So the conjecture comes in strengths. The homological forms, counting Betti numbers over the rationals, finite fields or the integers, are proved for nondegenerate maps: by Fukaya and Ono and others, by Abouzaid and Blumberg, and by Bai and Xu and by Rezchikov. Stronger forms, for nondegenerate maps, compare with the fewest critical points of a stable Morse function allowed extra variables, or of a Morse function; a degenerate form compares with the fewest critical points of any smooth function. Golovko listed these forms in 2020, calling the Morse-number one still wide open. Positive results covered mainly symplectically aspherical manifolds, not the general case. On September 27, 2026, Hao Jiao posted a smooth Hamiltonian map of the product of two spheres with only two fixed points, found with help from ChatGPT, against the degenerate form there.</p>
+<h3><span class="t num">1:38</span>The claim</h3>
+<p>Result 347 is five OpenAI papers, made public October 6, 2026. The first, 12 pages, dated September 23, gives a Hamiltonian map of the quadric threefold with exactly three fixed points, while every smooth function there needs four; one fixed point is degenerate. The second, also dated September 23, gives nondegenerate examples in real dimension twelve that fall below the Morse number by any amount. Three papers dated October 5 break the stable Morse bound on simply connected Kähler manifolds. In dimension 22 the smallest example has stable Morse number 2,048, but the map has only 2,032 fixed points, and in families the gap grows without bound. Not claimed: anything against the proved homological bounds, which every example respects; one October paper even meets the integral bound of Bai and Xu exactly. The first counterexample claimed for the degenerate form is not theirs: the quadric paper cites Jiao’s. And only the quadric result is checked in Lean.</p>
+<h3><span class="t num">2:47</span>How the proof goes</h3>
+<p>The trick is a symmetry. Take a Hamiltonian symmetry of finite order, and a short flow of an energy that the symmetry leaves unchanged. Composed, a point stays fixed only if the symmetry fixes it and the energy is critical there. Our computer shows this on a sphere: an energy with six critical points, of which only the two on the axis of a half-turn survive. In the quadric, the symmetry fixes a copy of the product of two spheres, and on it the paper writes down a function with exactly three critical points, one degenerate; our computer finds the three. Every function on the whole quadric needs four, because the cube of its basic class is twice a point. The nondegenerate examples use topology that ordinary counts cannot see. In the twelve-dimensional one, the fundamental group is a large power of the alternating group on five letters, which needs ever more generators. A related ideal needs only two, and handle moves turn that gap into missing fixed points. The October papers build simply connected Kähler manifolds from blow-ups, with torsion at the primes two and three. A half-turn fixes four copies of a smaller piece, and the counts come out at least sixteen short of the stable Morse number. Our computer matches every printed count.</p>
+<h3><span class="t num">4:07</span>Where it stands</h3>
+<p>All five papers are unrefereed and unchanged since release. The quadric result is formalized in Lean, 36 files and about 5,800 lines, not run by us; two outside projects re-ran it successfully. The other four have no complete Lean; one uncatalogued folder covers only parts of the twelve-dimensional construction. An AI audit found no gap in those four. We found no specialist comment and no reported error. If they hold, strong forms of Arnold’s conjecture fail: a Hamiltonian map with a degenerate fixed point can have fewer fixed points than a smooth function must have critical points, and, with every fixed point nondegenerate, fewer than the Morse and stable Morse numbers, while the proved homological bounds still stand.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20347%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
