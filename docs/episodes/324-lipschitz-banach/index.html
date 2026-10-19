@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Same shape, not the same? Lipschitz vs linear | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim separable Banach spaces that are bi-Lipschitz equivalent but not linearly isomorphic, with Lean proofs. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/324-lipschitz-banach/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Same shape, not the same?">
+<meta property="og:description" content="Two AI preprints claim separable Banach spaces that are bi-Lipschitz equivalent but not linearly isomorphic, with Lean proofs. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/324-lipschitz-banach/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/324-lipschitz-banach/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 324, October 2026</p>
+<h1>Same shape, not the same?</h1>
+<p class="subtitle">Two AI preprints claim separable Banach spaces that match distances up to fixed factors but are not linearly the same</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 324 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="U-A0wW_Wz4o" data-title="Episode 324: Same shape, not the same?">
+  <a href="https://youtu.be/U-A0wW_Wz4o">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 324: Same shape, not the same? A row of six blocks with yellow slot dots and curved arrows from block m to block 2m.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:51. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/U-A0wW_Wz4o?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/U-A0wW_Wz4o?t=59" data-t="59"><span class="t">0:59</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/U-A0wW_Wz4o?t=122" data-t="122"><span class="t">2:02</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/U-A0wW_Wz4o?t=194" data-t="194"><span class="t">3:14</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Two Banach spaces are linearly isomorphic when a linear map matches them, stretching or shrinking distances by at most fixed factors. Drop linearity and keep only the distance bounds, and you get a bi-Lipschitz bijection. In the plane this changes nothing, since any two norms there are linearly isomorphic anyway. From the square norm to the round norm the best linear map distorts by the √2, and every nonlinear map our computer tried did worse.</p>
+<p>In 1978 Aharoni and Lindenstrauss found two non-separable spaces that are bi-Lipschitz equivalent but not linearly isomorphic, and wrote that it is of course of interest to find also separable examples. Kalton listed the separable question as Problem 3 in his 2008 survey, and a tool of Godefroy and Kalton showed why the old approach cannot work for separable spaces. Papers still called it open as late as October 5, 2026.</p>
+<p>Result 324 is two OpenAI papers, of 23 and 25 pages, dated September 24 and 26 and made public October 6, 2026. The first claims separable real Banach spaces X and Y and a bijection between them that keeps every distance between 4/21 and 76/25 of the original, yet X and Y are not linearly isomorphic. X contains a copy of c₀ of Hilbert spaces, a sequence of whole Hilbert spaces, with no distortion at all, and Y contains none, not even a distorted one. </p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The second paper gives an independent example: a space with no linear copy of c₀ that is bi-Lipschitz equivalent to itself plus c₀, which also answers Kalton’s Problem 2. Not claimed: anything about the classical spaces ℓ₁, L₁ or C[0,1], a reflexive example, or complex scalars. And the first paper’s Y may still contain ordinary c₀.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 2 papers, 23 and 25 pages, dated September 24 and 26, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>Both main theorems (<a href="https://github.com/openai/math/blob/main/lean/docs/324.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. Both papers are unrefereed and unchanged since release. Unusually, both main theorems are formalized in Lean with statements matching the papers, including the first paper’s exact constants, in about 19,000 lines, not run by us. Two outside projects re-ran the checks and they were accepted. No specialist has published an assessment, and we found no reported error or competing claim. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A Hilbert hotel with slots.</strong> The key map is a Hilbert hotel. Split Hilbert space into finite blocks and mark one slot in each. Move block m’s slot coefficient to block 2m, and put the m-th newcomer into block 2m − 1. Frozen, this fits Hilbert space plus an extra copy of itself onto Hilbert space exactly; in a small finite version, our computer confirms it preserves lengths. Then the slots are allowed to turn, depending on the point, but only extremely slowly, keeping distances within 4%. The blocks grow fast: the eighth already has over 7 billion dimensions.</li>
+  <li><strong>Telling X and Y apart.</strong> A triangular change of variables with an explicit inverse turns this into the bi-Lipschitz bijection between X and Y. To tell them apart, the proof shows a key linear operator is completely continuous. Together with a known completeness property of the space it acts on, this means any copy of c₀ of Hilbert spaces in Y would collapse. The difference is a growth pattern: in c₀, 1,024 basis vectors sum to length 1; in a Hilbert space, 1,024 perpendicular unit vectors sum to 32.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours, sampled: from the square norm to the round norm, the best linear map distorts by √2 ≈ 1.41; the nonlinear maps we tried gave 2.51, 3.49 and 21.4.</li>
+  <li>The paper’s constants: 4/21 and 76/25; slots keep distances within 24/25 to 26/25; block 8 has 7,151,611,609 dimensions (our arithmetic from the paper’s formula).</li>
+  <li>Ours: in c₀, N basis vectors sum to length 1; in a Hilbert space, N perpendicular unit vectors sum to √N (32 for N = 1,024).</li>
+  <li>Lean: 60 + 34 files and 18,725 lines in the two import closures (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Lipschitz-Equivalent-Separable-Banach-Spaces-Need-Not-Be-Linearly-Isomorphic-September-24-2026/paper.pdf">Lipschitz Equivalent Separable Banach Spaces Need Not Be Linearly Isomorphic (PDF)</a>, 23 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Bi-Lipschitz-Absorption-of-c0-Without-a-Linear-Copy-of-c0-September-26-2026/paper.pdf">Bi-Lipschitz Absorption of c0 Without a Linear Copy of c0 (PDF)</a>, 25 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/324.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 324.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Lipschitz-Equivalent-Separable-Banach-Spaces-Need-Not-Be-Linearly-Isomorphic-September-24-2026/paper.pdf">Lipschitz Equivalent Separable Banach Spaces Need Not Be Linearly Isomorphic</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Bi-Lipschitz-Absorption-of-c0-Without-a-Linear-Copy-of-c0-September-26-2026/paper.pdf">Bi-Lipschitz Absorption of c0 Without a Linear Copy of c0</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Two Banach spaces are linearly isomorphic when a linear map matches them, stretching or shrinking distances by at most fixed factors. Drop linearity and keep only the distance bounds, and you get a bi-Lipschitz bijection. In the plane this changes nothing, since any two norms there are linearly isomorphic anyway. From the square norm to the round norm the best linear map distorts by the √2, and every nonlinear map our computer tried did worse. In 1978 Aharoni and Lindenstrauss found two non-separable spaces that are bi-Lipschitz equivalent but not linearly isomorphic, and wrote that it is of course of interest to find also separable examples. Kalton listed the separable question as Problem 3 in his 2008 survey, and a tool of Godefroy and Kalton showed why the old approach cannot work for separable spaces. Papers still called it open as late as October 5, 2026.</p>
+<h3><span class="t num">0:59</span>The claim</h3>
+<p>Result 324 is two OpenAI papers, of 23 and 25 pages, dated September 24 and 26 and made public October 6, 2026. The first claims separable real Banach spaces X and Y and a bijection between them that keeps every distance between 4/21 and 76/25 of the original, yet X and Y are not linearly isomorphic. X contains a copy of c₀ of Hilbert spaces, a sequence of whole Hilbert spaces, with no distortion at all, and Y contains none, not even a distorted one. The second paper gives an independent example: a space with no linear copy of c₀ that is bi-Lipschitz equivalent to itself plus c₀, which also answers Kalton’s Problem 2. Not claimed: anything about the classical spaces ℓ₁, L₁ or C[0,1], a reflexive example, or complex scalars. And the first paper’s Y may still contain ordinary c₀.</p>
+<h3><span class="t num">2:02</span>How the proof goes</h3>
+<p>The key map is a Hilbert hotel. Split Hilbert space into finite blocks and mark one slot in each. Move block m’s slot coefficient to block 2m, and put the m-th newcomer into block 2m − 1. Frozen, this fits Hilbert space plus an extra copy of itself onto Hilbert space exactly; in a small finite version, our computer confirms it preserves lengths. Then the slots are allowed to turn, depending on the point, but only extremely slowly, keeping distances within 4%. The blocks grow fast: the eighth already has over 7 billion dimensions. A triangular change of variables with an explicit inverse turns this into the bi-Lipschitz bijection between X and Y. To tell them apart, the proof shows a key linear operator is completely continuous. Together with a known completeness property of the space it acts on, this means any copy of c₀ of Hilbert spaces in Y would collapse. The difference is a growth pattern: in c₀, 1,024 basis vectors sum to length 1; in a Hilbert space, 1,024 perpendicular unit vectors sum to 32.</p>
+<h3><span class="t num">3:14</span>Where it stands</h3>
+<p>Both papers are unrefereed and unchanged since release. Unusually, both main theorems are formalized in Lean with statements matching the papers, including the first paper’s exact constants, in about 19,000 lines, not run by us. Two outside projects re-ran the checks and they were accepted. No specialist has published an assessment, and we found no reported error or competing claim. If it holds, even the full metric shape of a separable real Banach space, up to bounded distortion, does not determine its linear structure.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20324%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
