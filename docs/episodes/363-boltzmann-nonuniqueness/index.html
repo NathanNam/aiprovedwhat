@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Same gas, two futures? Hard-sphere Boltzmann nonuniqueness | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim one starting gas with two different global solutions of the hard-sphere Boltzmann equation, the headline with exact local conservation of mass, momentum and energy. Lean covers the weaker companion only. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/363-boltzmann-nonuniqueness/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Same gas, two futures?">
+<meta property="og:description" content="Two AI preprints claim one starting gas with two different global solutions of the hard-sphere Boltzmann equation, the headline with exact local conservation of mass, momentum and energy. Lean covers the weaker companion only. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/363-boltzmann-nonuniqueness/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/363-boltzmann-nonuniqueness/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 363, October 2026</p>
+<h1>Same gas, two futures?</h1>
+<p class="subtitle">Two AI preprints claim nonuniqueness for the hard-sphere Boltzmann equation</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 363 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="i_vXPHfYztE" data-title="Episode 363: Same gas, two futures?">
+  <a href="https://youtu.be/i_vXPHfYztE">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 363: Same gas, two futures? A yellow dot from which a teal and a pink path diverge.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:49. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/i_vXPHfYztE?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/i_vXPHfYztE?t=61" data-t="61"><span class="t">1:01</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/i_vXPHfYztE?t=129" data-t="129"><span class="t">2:09</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/i_vXPHfYztE?t=196" data-t="196"><span class="t">3:16</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The Boltzmann equation describes a dilute gas: a density of particles in position and velocity that streams freely and changes through collisions. For hard spheres, each collision swaps the velocity components along the line joining their centres; our computer checks 3,000 exact collisions, and every one conserves momentum and energy. In a random-collision toy, two cold opposing beams relax toward a bell curve: their kurtosis goes from one to about three.</p>
+<p>DiPerna and Lions proved in 1989 that any starting gas with finite mass, energy and entropy has a global solution, of a weak, renormalized kind. Whether such solutions are unique was not known: Silvestre wrote in 2022 that uniqueness within this class is currently unknown, and in August 2026 Gismondi, Golding and Novack conjectured that it fails, for a dense class of starting gases. Weak solutions were also not known to conserve momentum and energy locally.</p>
+<p>Result 363 is two OpenAI papers. The September 23 paper, 65 pages, claims one starting density in a periodic box, with bounded velocities and finite mass, energy and entropy, that has two different global solutions, conserving mass locally and momentum in total, with energy only kept from growing. The October 5 paper, 78 pages, the headline, claims the same for a modified starting density, now with exact local conservation of mass, momentum and energy, and continuity in time for all time. Both were made public on October 6, 2026.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: nonuniqueness for smooth data, or for a whole class of data; the starting density has unbounded peaks at smaller and smaller scales. It does not say whether the DiPerna–Lions solutions conserve locally; it says uniqueness fails even when local conservation is required. And it does not use convex integration, the method behind the 2026 conjecture. We found no competing claim.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 78 + 65 pages, dated October 5 and September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The September paper’s theorem only; the headline local-conservation theorem has no Lean proof (<a href="https://github.com/openai/math/blob/main/lean/docs/363.md">scope notes</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 19, 2026. Both papers are unrefereed and unchanged since release. Lean covers only the September paper’s theorem, about 160,000 lines, not run by us; the headline local-conservation theorem has no Lean proof. We found no specialist comment and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Rings of jets at every scale.</strong> The starting gas is infinitely many shrinking rings of cold, opposing jets in fine stripes. At scale s the density is about 1/s but the mass only about s², so the totals stay finite: with all constants set to one, our computer finds the jets’ total mass is about 0.005 and their entropy about 0.02. One family of approximations stays dormant; the other gets a vanishing seed tuned to touch a ceiling.</li>
+  <li><strong>Branching beats the ceiling.</strong> Zooming in where the seed touches the ceiling gives a linear problem in a two-stream gas, where hot particles keep being produced. Their number grows by more than a factor of three per step, while the ceiling allows growth by at most (1 + a)⁴, which is less than three; our computer rechecks this arithmetic. So the zoomed-in hot gas is real and short-lived, while the dormant solution, zoomed the same way, shows nothing. So the two solutions must differ. The October paper adds a tilted jet axis and a background gas to get bounds for all time, and with them local conservation.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: 3,000 exact hard-sphere collisions all conserve momentum and energy.</li>
+  <li>Ours: in a random-collision toy, two cold beams relax toward a bell curve — kurtosis 1 to about 3.</li>
+  <li>Ours: with all constants set to 1, the jets' total mass is about 0.005 and their entropy about 0.02, though their peak density grows without bound.</li>
+  <li>Lean: 525 files and 159,510 lines in the import closure of the September paper's comparator (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Nonuniqueness-with-local-conservation-for-the-hard-sphere-Boltzmann-equation-October-5-2026/paper.pdf">Nonuniqueness with local conservation for the hard-sphere Boltzmann equation (PDF)</a>, 78 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Nonuniqueness-for-the-periodic-hard-sphere-Boltzmann-equation-September-23-2026/paper.pdf">Nonuniqueness for the periodic hard-sphere Boltzmann equation (PDF)</a>, 65 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/363.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 363.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Nonuniqueness-with-local-conservation-for-the-hard-sphere-Boltzmann-equation-October-5-2026/paper.pdf">Nonuniqueness with local conservation for the hard-sphere Boltzmann equation</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Nonuniqueness-for-the-periodic-hard-sphere-Boltzmann-equation-September-23-2026/paper.pdf">Nonuniqueness for the periodic hard-sphere Boltzmann equation</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>The Boltzmann equation describes a dilute gas: a density of particles in position and velocity that streams freely and changes through collisions. For hard spheres, each collision swaps the velocity components along the line joining their centres; our computer checks 3,000 exact collisions, and every one conserves momentum and energy. In a random-collision toy, two cold opposing beams relax toward a bell curve: their kurtosis goes from one to about three. DiPerna and Lions proved in 1989 that any starting gas with finite mass, energy and entropy has a global solution, of a weak, renormalized kind. Whether such solutions are unique was not known: Silvestre wrote in 2022 that uniqueness within this class is currently unknown, and in August 2026 Gismondi, Golding and Novack conjectured that it fails, for a dense class of starting gases. Weak solutions were also not known to conserve momentum and energy locally.</p>
+<h3><span class="t num">1:01</span>The claim</h3>
+<p>Result 363 is two OpenAI papers. The September 23 paper, 65 pages, claims one starting density in a periodic box, with bounded velocities and finite mass, energy and entropy, that has two different global solutions, conserving mass locally and momentum in total, with energy only kept from growing. The October 5 paper, 78 pages, the headline, claims the same for a modified starting density, now with exact local conservation of mass, momentum and energy, and continuity in time for all time. Both were made public on October 6, 2026. Not claimed: nonuniqueness for smooth data, or for a whole class of data; the starting density has unbounded peaks at smaller and smaller scales. It does not say whether the DiPerna–Lions solutions conserve locally; it says uniqueness fails even when local conservation is required. And it does not use convex integration, the method behind the 2026 conjecture. We found no competing claim.</p>
+<h3><span class="t num">2:09</span>How the proof goes</h3>
+<p>The starting gas is infinitely many shrinking rings of cold, opposing jets in fine stripes. At scale s the density is about 1/s but the mass only about s², so the totals stay finite: with all constants set to one, our computer finds the jets’ total mass is about 0.005 and their entropy about 0.02. One family of approximations stays dormant; the other gets a vanishing seed tuned to touch a ceiling. Zooming in where the seed touches the ceiling gives a linear problem in a two-stream gas, where hot particles keep being produced. Their number grows by more than a factor of three per step, while the ceiling allows growth by at most (1 + a)⁴, which is less than three; our computer rechecks this arithmetic. So the zoomed-in hot gas is real and short-lived, while the dormant solution, zoomed the same way, shows nothing. So the two solutions must differ. The October paper adds a tilted jet axis and a background gas to get bounds for all time, and with them local conservation.</p>
+<h3><span class="t num">3:16</span>Where it stands</h3>
+<p>Both papers are unrefereed and unchanged since release. Lean covers only the September paper’s theorem, about 160,000 lines, not run by us; the headline local-conservation theorem has no Lean proof. We found no specialist comment and no reported error. If they hold, the hard-sphere Boltzmann equation can have two different solutions, each conserving mass, momentum and energy locally, from the same starting gas.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20363%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
