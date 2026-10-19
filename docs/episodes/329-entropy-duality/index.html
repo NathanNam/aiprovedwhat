@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Covering is not self-dual? Pietsch’s entropy duality | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims counterexamples to Pietsch’s duality conjecture for metric entropy, with a Lean proof. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/329-entropy-duality/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Covering is not self-dual?">
+<meta property="og:description" content="An AI preprint claims counterexamples to Pietsch’s duality conjecture for metric entropy, with a Lean proof. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/329-entropy-duality/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/329-entropy-duality/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 329, October 2026</p>
+<h1>Covering is not self-dual?</h1>
+<p class="subtitle">An AI preprint claims counterexamples to Pietsch’s duality conjecture for metric entropy</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 329 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="tgy6RdcmbgQ" data-title="Episode 329: Covering is not self-dual?">
+  <a href="https://youtu.be/tgy6RdcmbgQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 329: Covering is not self-dual? A blue square covered by nine yellow tiles, a double arrow, and a pink diamond.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:45. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/tgy6RdcmbgQ?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/tgy6RdcmbgQ?t=69" data-t="69"><span class="t">1:09</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/tgy6RdcmbgQ?t=117" data-t="117"><span class="t">1:57</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/tgy6RdcmbgQ?t=184" data-t="184"><span class="t">3:04</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>How many translates of a body L does it take to cover a body K? That count, on a logarithmic scale, is the metric entropy of K relative to L. Every symmetric convex body has a polar, its dual shape: the cube’s polar is the diamond, and the round ball is its own. Duality asks whether covering K by L costs about as much as covering the polar of L by the polar of K, with the roles swapped. In the plane, our computer finds that the unit square scaled up 2.5 times needs 9 copies of the unit square, and the dual covering needs 9 too.</p>
+<p>Pietsch conjectured in the early 1970s, in the language of operators, that the two entropies agree up to universal constants, in every dimension. Volume arguments show the covering numbers agree to within a factor exponential in the dimension, so the hard case is small entropy in high dimension. A 2004 paper stated the geometric form as a conjecture and proved it when one body is a Euclidean ball; partial results followed, but the general question stayed open, and two experts voiced cautious doubts.</p>
+<p>Result 329 is one OpenAI paper, 15 pages, dated September 24 and made public October 6, 2026. It claims the conjecture is false: for any proposed constants a and b, there is a dimension and a symmetric convex body K such that covering K by the unit cube costs more than b times the entropy on the dual side, even when the dual covering body is shrunk by the factor a. The covering body can be the cube itself.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: a counterexample in any fixed dimension, since the dimension must grow with the constants; any explicit body, since one step is random; or anything against weaker versions with logarithmic losses. The ellipsoid case stays proved.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 15 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/329.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper is unrefereed and unchanged since release. Lean formalizes the main theorem, in 52 files and about 6,500 lines, not run by us; the corollary is not formalized. Three outside projects re-ran it and it was accepted, and a reviewer of a separate formal-conjectures entry approved that entry’s statement. We found no public comment from specialists and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A matrix: rows apart, columns compressible.</strong> The body is built from a matrix. Its rows, pairwise separated, force many cubes on the primal side. Its columns are profiles of graph distance that decay logarithmically, and a compression argument shows every signed combination of columns can be approximated from a list far shorter than the number of rows, which makes the dual side cheap. Our computer checks the logarithmic profile: at cutoff 8 it falls from 1 through 1/2 at distance 2 to 0.</li>
+  <li><strong>Rows from finite fields.</strong> The rows come from finite fields: symmetric forms over a huge prime field, with random directions defining the partitions. A random choice works: for each pair of rows, deleting a small fraction of directions keeps the two far apart. In a toy over the field of 5 elements, our computer finds 60 of 124 row differences unseparated before deletion and none after, though at this tiny size the deletion is far from small. The sizes are astronomical: with both constants equal to 1, the paper’s parameters need a dimension of about 10^10^10^10^480.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the unit square scaled up 2.5 times needs 9 copies of the unit square; the dual covering with a = 1 also needs 9.</li>
+  <li>Ours: the paper’s logarithmic profile at cutoff 8 is 1, 0.68, 0.5 at distance 2, …, 0.</li>
+  <li>Ours, a toy over the field of 5 elements: 60 of 124 row differences are unseparated before deletion and none after (the deletion is not small at this size).</li>
+  <li>Ours: with a = b = 1, the paper’s parameters need a dimension of about 10^10^10^10^480.</li>
+  <li>Lean: 52 files and 6,520 lines in the import closure (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Counterexamples-to-the-duality-conjecture-for-metric-entropy-September-24-2026/main.pdf">Counterexamples to the duality conjecture for metric entropy (PDF)</a>, 15 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/329.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 329.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Counterexamples-to-the-duality-conjecture-for-metric-entropy-September-24-2026/main.pdf">Counterexamples to the duality conjecture for metric entropy</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>How many translates of a body L does it take to cover a body K? That count, on a logarithmic scale, is the metric entropy of K relative to L. Every symmetric convex body has a polar, its dual shape: the cube’s polar is the diamond, and the round ball is its own. Duality asks whether covering K by L costs about as much as covering the polar of L by the polar of K, with the roles swapped. In the plane, our computer finds that the unit square scaled up 2.5 times needs 9 copies of the unit square, and the dual covering needs 9 too. Pietsch conjectured in the early 1970s, in the language of operators, that the two entropies agree up to universal constants, in every dimension. Volume arguments show the covering numbers agree to within a factor exponential in the dimension, so the hard case is small entropy in high dimension. A 2004 paper stated the geometric form as a conjecture and proved it when one body is a Euclidean ball; partial results followed, but the general question stayed open, and two experts voiced cautious doubts.</p>
+<h3><span class="t num">1:09</span>The claim</h3>
+<p>Result 329 is one OpenAI paper, 15 pages, dated September 24 and made public October 6, 2026. It claims the conjecture is false: for any proposed constants a and b, there is a dimension and a symmetric convex body K such that covering K by the unit cube costs more than b times the entropy on the dual side, even when the dual covering body is shrunk by the factor a. The covering body can be the cube itself. Not claimed: a counterexample in any fixed dimension, since the dimension must grow with the constants; any explicit body, since one step is random; or anything against weaker versions with logarithmic losses. The ellipsoid case stays proved.</p>
+<h3><span class="t num">1:57</span>How the proof goes</h3>
+<p>The body is built from a matrix. Its rows, pairwise separated, force many cubes on the primal side. Its columns are profiles of graph distance that decay logarithmically, and a compression argument shows every signed combination of columns can be approximated from a list far shorter than the number of rows, which makes the dual side cheap. Our computer checks the logarithmic profile: at cutoff 8 it falls from 1 through 1/2 at distance 2 to 0. The rows come from finite fields: symmetric forms over a huge prime field, with random directions defining the partitions. A random choice works: for each pair of rows, deleting a small fraction of directions keeps the two far apart. In a toy over the field of 5 elements, our computer finds 60 of 124 row differences unseparated before deletion and none after, though at this tiny size the deletion is far from small. The sizes are astronomical: with both constants equal to 1, the paper’s parameters need a dimension of about 10^10^10^10^480.</p>
+<h3><span class="t num">3:04</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. Lean formalizes the main theorem, in 52 files and about 6,500 lines, not run by us; the corollary is not formalized. Three outside projects re-ran it and it was accepted, and a reviewer of a separate formal-conjectures entry approved that entry’s statement. We found no public comment from specialists and no reported error. If it holds, metric entropy is not self-dual up to universal constants: in high enough dimension, covering a body and covering its dual can cost wildly different amounts.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20329%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
