@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The sphere knows all? Tingley’s problem | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims every distance-preserving map between the unit spheres of real Banach spaces extends to a linear isometry, with a full Lean proof. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/322-tingley/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="The sphere knows all?">
+<meta property="og:description" content="An AI preprint claims every distance-preserving map between the unit spheres of real Banach spaces extends to a linear isometry, with a full Lean proof. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/322-tingley/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/322-tingley/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 322, October 2026</p>
+<h1>The sphere knows all?</h1>
+<p class="subtitle">An AI preprint claims a solution to Tingley’s problem, with a full Lean proof</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 322 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="viHytP6gNpY" data-title="Episode 322: The sphere knows all?">
+  <a href="https://youtu.be/viHytP6gNpY">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 322: The sphere knows all? A square unit sphere with rays stretched out from it.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:42. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/viHytP6gNpY?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/viHytP6gNpY?t=60" data-t="60"><span class="t">1:00</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/viHytP6gNpY?t=109" data-t="109"><span class="t">1:49</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/viHytP6gNpY?t=170" data-t="170"><span class="t">2:50</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>In a normed plane the unit circle need not be round. With the largest coordinate as the norm, it is a square; with the sum of absolute values, a diamond. Distances are measured straight through the plane. Now take two such spaces and a map from one unit sphere onto the other that keeps every distance. In 1987 Daryl Tingley asked whether such a map must always come from a linear isometry of the whole spaces.</p>
+<p>For whole spaces, the theorem of Mazur and Ulam from 1932 says yes, up to a shift, but a sphere has no inside, so neither that theorem nor its extension to solid shapes reaches it. Special cases followed: polyhedral spaces in finite dimensions, by Kadets and Martín in 2012; operator algebras; and every 2-dimensional space, by Banakh in 2022. Papers from 2023 to August 2026 still called it open; the earlier ones said so for dimension 3 and higher.</p>
+<p>Result 322 is one OpenAI paper, 12 pages, dated September 23 and made public October 6, 2026. It claims the full answer: for any nonzero real Banach spaces, every surjective isometry between their unit spheres extends, by stretching each ray, to a surjective real-linear isometry, and to only one. Any dimension, even infinite; no separability, smoothness or strict convexity needed.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: complex linearity. For complex spaces the extension is only real-linear, and complex conjugation shows that is the best possible. Not claimed either: maps that are not onto. Our computer finds one that keeps every sphere distance, but sends opposite points to points that are not opposite, so no linear map extends it.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 12 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The full theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/322.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper is unrefereed and unchanged since release. Unusually, the Lean formalization states the full theorem, matching the paper, with only the standard axioms: 67 files and about 9,000 lines, not run by us. Two outside projects re-ran the check and it was accepted, and one of them judged the formal statement faithful to the claim. No specialist has published an assessment; one specialist’s site posted a ChatGPT-drafted exposition that reports no error, but says it is not an independent solution and not a human proof review. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>One number: the worst error.</strong> Stretching rays is the only candidate, and it already keeps distances between points at the same radius. So the whole problem is one number: the worst error in distances between different radii. The paper calls it M and supposes it is positive. By enlarging both spaces with an ultrapower, it makes that worst error actually attained.</li>
+  <li><strong>A return map, and chords that can’t exist.</strong> Next, a return map on directions: shoot a ray to the sphere, map it across, shoot back, and pull it home. Darbo’s fixed-point theorem, proved from scratch in the appendix, gives a direction that returns to itself, and with it two perfectly aligned chords. Then convexity of the norm, with the maximality of M, shows those chords cannot exist. So M is zero, and the Mazur–Ulam step makes the map linear. Our computer checks small cases: on a diamond with just 4 points, 24 shuffles keep every distance and only 8 are linear, but add the edge midpoints and every shuffle that keeps distances is linear.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: on the diamond (the unit circle of the sum norm) with its 4 corners, 24 shuffles keep every distance and only 8 are linear; with the 4 edge midpoints added, all 8 distance-keeping shuffles are linear.</li>
+  <li>Ours: with the max norm, f(x₁, x₂) = (x₁, x₂, 1) keeps every sphere distance but is not onto, and f(−x) ≠ −f(x), so no linear map extends it.</li>
+  <li>Lean: 67 files and 9,273 lines in the proof’s import closure (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-positive-solution-to-Tingleys-problem-September-23-2026/paper.pdf">A positive solution to Tingley’s problem (PDF)</a>, 12 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/322.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 322.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-positive-solution-to-Tingleys-problem-September-23-2026/paper.pdf">A positive solution to Tingley’s problem</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>In a normed plane the unit circle need not be round. With the largest coordinate as the norm, it is a square; with the sum of absolute values, a diamond. Distances are measured straight through the plane. Now take two such spaces and a map from one unit sphere onto the other that keeps every distance. In 1987 Daryl Tingley asked whether such a map must always come from a linear isometry of the whole spaces. For whole spaces, the theorem of Mazur and Ulam from 1932 says yes, up to a shift, but a sphere has no inside, so neither that theorem nor its extension to solid shapes reaches it. Special cases followed: polyhedral spaces in finite dimensions, by Kadets and Martín in 2012; operator algebras; and every 2-dimensional space, by Banakh in 2022. Papers from 2023 to August 2026 still called it open; the earlier ones said so for dimension 3 and higher.</p>
+<h3><span class="t num">1:00</span>The claim</h3>
+<p>Result 322 is one OpenAI paper, 12 pages, dated September 23 and made public October 6, 2026. It claims the full answer: for any nonzero real Banach spaces, every surjective isometry between their unit spheres extends, by stretching each ray, to a surjective real-linear isometry, and to only one. Any dimension, even infinite; no separability, smoothness or strict convexity needed. Not claimed: complex linearity. For complex spaces the extension is only real-linear, and complex conjugation shows that is the best possible. Not claimed either: maps that are not onto. Our computer finds one that keeps every sphere distance, but sends opposite points to points that are not opposite, so no linear map extends it.</p>
+<h3><span class="t num">1:49</span>How the proof goes</h3>
+<p>Stretching rays is the only candidate, and it already keeps distances between points at the same radius. So the whole problem is one number: the worst error in distances between different radii. The paper calls it M and supposes it is positive. By enlarging both spaces with an ultrapower, it makes that worst error actually attained. Next, a return map on directions: shoot a ray to the sphere, map it across, shoot back, and pull it home. Darbo’s fixed-point theorem, proved from scratch in the appendix, gives a direction that returns to itself, and with it two perfectly aligned chords. Then convexity of the norm, with the maximality of M, shows those chords cannot exist. So M is zero, and the Mazur–Ulam step makes the map linear. Our computer checks small cases: on a diamond with just 4 points, 24 shuffles keep every distance and only 8 are linear, but add the edge midpoints and every shuffle that keeps distances is linear.</p>
+<h3><span class="t num">2:50</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. Unusually, the Lean formalization states the full theorem, matching the paper, with only the standard axioms: 67 files and about 9,000 lines, not run by us. Two outside projects re-ran the check and it was accepted, and one of them judged the formal statement faithful to the claim. No specialist has published an assessment; one specialist’s site posted a ChatGPT-drafted exposition that reports no error, but says it is not an independent solution and not a human proof review. If it holds, the distances on a unit sphere alone determine a real Banach space up to a linear isometry, in every dimension, and Tingley’s question has the answer yes.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20322%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
