@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two dimensions disappear? Gromov&#x27;s Urysohn width bound for scalar curvature | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/343-ball-packing/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Two tests are enough?">
+<meta property="og:description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/343-ball-packing/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/343-ball-packing/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 343, October 2026</p>
+<h1>Two tests are enough?</h1>
+<p class="subtitle">An AI preprint claims the Siegel–Yao ball-packing conjecture in every dimension from six up</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 343 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="UNHMU_xDRmw" data-title="Episode 343: Two tests are enough?">
+  <a href="https://youtu.be/UNHMU_xDRmw">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 343: Two tests are enough? Five teal balls packed inside a grey ball.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:27. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/UNHMU_xDRmw?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/UNHMU_xDRmw?t=68" data-t="68"><span class="t">1:08</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/UNHMU_xDRmw?t=115" data-t="115"><span class="t">1:55</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/UNHMU_xDRmw?t=162" data-t="162"><span class="t">2:42</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A symplectic ball of capacity R is a round ball in even-dimensional space, measured by the area of its central disc. Can several closed balls be placed disjointly inside a bigger open ball by a map that preserves the symplectic structure? There are two obvious tests. Their volumes must add up to less, and, by Gromov’s work, any two balls must have capacities summing to less than the big one. In dimension 6, for 5 random balls, our computer finds the volume test passes 38 percent of the time, but the pairwise test only about 6 percent.</p>
+<p>In 4 dimensions those two tests are not enough. 5 balls of capacity 0.42 pass both, yet a further obstruction from the conic through five points blocks them, as our computer checks. In 2023 Siegel and Yao conjectured that in dimension 6 and up, the two tests are the whole story. Before, this was known for one ball, for equal balls up to 2ⁿ of them, and for very many equal balls; the general case with unequal capacities in dimension 6 and up was open.</p>
+<p>Result 343 is one OpenAI paper, 43 pages, dated September 23 and made public October 6, 2026. It claims the conjecture: in every dimension of at least 6, closed balls of any capacities fit disjointly into an open ball exactly when the volume test and the pairwise test both pass. One consequence, by our own reading: two or more equal balls can fill nearly all of the big ball exactly when there are at least 2ⁿ of them.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: dimension 4, where the statement is false; explicit embeddings, since the construction is an existence argument; or anything new about the easy direction, which follows from volume and Gromov’s bound.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 43 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The full statement, both directions (<a href="https://github.com/openai/math/blob/main/lean/docs/343.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper is unrefereed and unchanged since release. Lean formalizes the full statement, both directions, in about 200 files and 107,000 lines, not run by us; three outside projects re-ran it and it passed, one also with a second kernel. The Lean appears to follow the paper’s plan, and also proves Gromov’s two-ball bound, which the paper only cites. We found no specialist comment, including from Siegel and Yao, and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Fibre over a curve with a handle.</strong> At most one ball can have capacity at least half the target. The paper degenerates projective space to a model fibered over a curve with a handle, reserving the large ball, if there is one, at the center. In dimension 6, with a large ball, the natural curve has no handle, so the paper uses a plane cubic with two marked points instead; our computer confirms its area integrals exactly for sample sizes.</li>
+  <li><strong>Positive on average, negative at the core.</strong> The volume test only makes the unused area positive on average; near the core it can be negative, as our computer shows for 20 balls of capacity 0.35. A Hamiltonian comparison lemma rearranges the area, the handle stacks the balls in disjoint layers, and a transfer argument carries the packing back to the ball.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: in dimension 6, for five random balls, the volume test passes 38% of the time and the pairwise test only about 6%.</li>
+  <li>Ours: in dimension 4, five balls of capacity 0.42 pass both tests (0.88 and 0.84) but fail the conic bound (2.1, not below 2).</li>
+  <li>Ours: by our reading of the claim, k equal balls fill at best min(1, k/8) of a 6-dimensional ball, against the dimension-4 values 1, 1/2, 3/4, 1, 4/5, 24/25, 63/64, 288/289.</li>
+  <li>Lean: 207 files and 107,119 lines in the import closure of the two comparators (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Symplectic-Ball-Packings-in-Higher-Dimensions-September-23-2026/paper.pdf">Symplectic Ball Packings in Higher Dimensions (PDF)</a>, 43 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/343.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 343.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Symplectic-Ball-Packings-in-Higher-Dimensions-September-23-2026/paper.pdf">Symplectic Ball Packings in Higher Dimensions</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A symplectic ball of capacity R is a round ball in even-dimensional space, measured by the area of its central disc. Can several closed balls be placed disjointly inside a bigger open ball by a map that preserves the symplectic structure? There are two obvious tests. Their volumes must add up to less, and, by Gromov’s work, any two balls must have capacities summing to less than the big one. In dimension 6, for 5 random balls, our computer finds the volume test passes 38 percent of the time, but the pairwise test only about 6 percent. In 4 dimensions those two tests are not enough. 5 balls of capacity 0.42 pass both, yet a further obstruction from the conic through five points blocks them, as our computer checks. In 2023 Siegel and Yao conjectured that in dimension 6 and up, the two tests are the whole story. Before, this was known for one ball, for equal balls up to 2ⁿ of them, and for very many equal balls; the general case with unequal capacities in dimension 6 and up was open.</p>
+<h3><span class="t num">1:08</span>The claim</h3>
+<p>Result 343 is one OpenAI paper, 43 pages, dated September 23 and made public October 6, 2026. It claims the conjecture: in every dimension of at least 6, closed balls of any capacities fit disjointly into an open ball exactly when the volume test and the pairwise test both pass. One consequence, by our own reading: two or more equal balls can fill nearly all of the big ball exactly when there are at least 2ⁿ of them. Not claimed: dimension 4, where the statement is false; explicit embeddings, since the construction is an existence argument; or anything new about the easy direction, which follows from volume and Gromov’s bound.</p>
+<h3><span class="t num">1:55</span>How the proof goes</h3>
+<p>At most one ball can have capacity at least half the target. The paper degenerates projective space to a model fibered over a curve with a handle, reserving the large ball, if there is one, at the center. In dimension 6, with a large ball, the natural curve has no handle, so the paper uses a plane cubic with two marked points instead; our computer confirms its area integrals exactly for sample sizes. The volume test only makes the unused area positive on average; near the core it can be negative, as our computer shows for 20 balls of capacity 0.35. A Hamiltonian comparison lemma rearranges the area, the handle stacks the balls in disjoint layers, and a transfer argument carries the packing back to the ball.</p>
+<h3><span class="t num">2:42</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. Lean formalizes the full statement, both directions, in about 200 files and 107,000 lines, not run by us; three outside projects re-ran it and it passed, one also with a second kernel. The Lean appears to follow the paper’s plan, and also proves Gromov’s two-ball bound, which the paper only cites. We found no specialist comment, including from Siegel and Yao, and no reported error. If it holds, in dimension 6 and up, balls pack into a ball exactly when volume and the two-ball rule allow: a clean answer that fails in dimension 4.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20343%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
