@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Newton to Boltzmann, for longer? Kinetic limits over the Boltzmann lifespan | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim the Boltzmann–Grad limit for stable short-range forces with wells and a singular repulsive core, and Gaussian hard-sphere fluctuations, for as long as the Boltzmann solution stays smooth. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/364-boltzmann-grad-lifespan/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Newton to Boltzmann, for longer?">
+<meta property="og:description" content="Two AI preprints claim the Boltzmann–Grad limit for stable short-range forces with wells and a singular repulsive core, and Gaussian hard-sphere fluctuations, for as long as the Boltzmann solution stays smooth. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/364-boltzmann-grad-lifespan/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/364-boltzmann-grad-lifespan/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 364, October 2026</p>
+<h1>Newton to Boltzmann, for longer?</h1>
+<p class="subtitle">Two AI preprints claim kinetic limits and fluctuations over the Boltzmann lifespan</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 364 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="ZvGF9fPM4Tk" data-title="Episode 364: Newton to Boltzmann, for longer?">
+  <a href="https://youtu.be/ZvGF9fPM4Tk">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 364: Newton to Boltzmann, for longer? A box of small teal particles with a yellow potential-well curve.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:44. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/ZvGF9fPM4Tk?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/ZvGF9fPM4Tk?t=63" data-t="63"><span class="t">1:03</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/ZvGF9fPM4Tk?t=122" data-t="122"><span class="t">2:02</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/ZvGF9fPM4Tk?t=185" data-t="185"><span class="t">3:05</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Boltzmann’s equation describes a dilute gas statistically. Can it be derived from Newton’s laws for a huge number of particles? In the Boltzmann–Grad limit, particles shrink while their number grows so that each still collides at a steady rate: our computer finds their combined collision cross-section stays pi however small the particles get, while the space they fill goes to zero. Our small hard-sphere simulation gives collision rates within about 10% of Boltzmann’s prediction.</p>
+<p>Lanford proved the derivation for hard spheres in 1975, but only for a short time. Deng, Hani and Ma, in 2024, extended it for hard spheres to the whole time the Boltzmann solution stays smooth. They named two next steps, among others, as within reach: short-range forces in place of hard spheres, and the fluctuations around the limit. For short times both were already known, from work including Pulvirenti, Saffirio and Simonella, and Bodineau, Gallagher, Saint-Raymond and Simonella.</p>
+<p>Result 364 is two OpenAI papers, dated September 23 and made public October 6, 2026. The 69-page headline claims the Boltzmann–Grad limit for stable, finite-range radial forces, which may have attractive wells and a singular repulsive core, on any time interval where the Boltzmann equation has a smooth solution with Gaussian tails. The 54-page companion claims that for hard spheres, on the same kind of interval, fluctuations around the limit become Gaussian, following a linear fluctuating Boltzmann equation.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: a convergence rate, hard spheres in the headline, or that the Boltzmann solution stays smooth, which both papers assume. The fluctuation result covers finitely many times and test functions, not whole paths or large deviations, and it imports Deng, Hani and Ma’s estimates. We found no competing claim.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 69 + 54 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>Neither theorem; an uncatalogued file checks preliminary definitions and algebra for the companion</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 19, 2026. Both papers are unrefereed and unchanged since release. Neither theorem has a Lean proof; an uncatalogued file of about 600 lines checks only preliminary definitions and algebra for the fluctuation paper. We found no specialist comment and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Many layers of time.</strong> The headline cuts time into many layers. Stability of the forces gives one energy budget for the whole history, so each particle in a history costs a factor of about CT/√L. Our computer shows that with enough layers this ratio drops below one and the sum converges, while a single layer only works for short times: Lanford’s restriction, in caricature.</li>
+  <li><strong>Clusters, wells and fluctuations.</strong> Recollisions and clusters of interacting particles are handled by keeping clusters whole and by a causal-exposure argument with small trees of events; counting time-ordered labellings, our computer confirms the hook-length formula on all 196 small binary trees. Attractive wells make scattering richer: in our model force, different impact parameters can give the same deflection. For the companion, a random number of particles adds exactly one term to the variance at time zero: our samples give 0.74 against a prediction of 0.75, and 0.51 with a fixed number.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: in the Boltzmann–Grad scaling the total collision cross-section stays π however small the particles get.</li>
+  <li>Ours: a small hard-sphere simulation gives 1.05 and 1.22 collisions per particle per unit time against Boltzmann's 1.13.</li>
+  <li>Ours: in our model force with a well and a repulsive core, different impact parameters can give the same deflection.</li>
+  <li>Ours: a random particle number gives variance 0.74 (prediction 0.75) against 0.51 (prediction 0.5) with a fixed number.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Boltzmann-Grad-limit-for-stable-radial-potentials-on-regular-kinetic-intervals-September-23-2026/paper.pdf">The Boltzmann–Grad limit for stable radial potentials on regular kinetic intervals (PDF)</a>, 69 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Hard-sphere-fluctuations-on-the-regular-Boltzmann-lifespan-September-23-2026/paper.pdf">Hard-sphere fluctuations on the regular Boltzmann lifespan (PDF)</a>, 54 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 364.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Boltzmann-Grad-limit-for-stable-radial-potentials-on-regular-kinetic-intervals-September-23-2026/paper.pdf">The Boltzmann–Grad limit for stable radial potentials on regular kinetic intervals</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Hard-sphere-fluctuations-on-the-regular-Boltzmann-lifespan-September-23-2026/paper.pdf">Hard-sphere fluctuations on the regular Boltzmann lifespan</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Boltzmann’s equation describes a dilute gas statistically. Can it be derived from Newton’s laws for a huge number of particles? In the Boltzmann–Grad limit, particles shrink while their number grows so that each still collides at a steady rate: our computer finds their combined collision cross-section stays pi however small the particles get, while the space they fill goes to zero. Our small hard-sphere simulation gives collision rates within about 10% of Boltzmann’s prediction. Lanford proved the derivation for hard spheres in 1975, but only for a short time. Deng, Hani and Ma, in 2024, extended it for hard spheres to the whole time the Boltzmann solution stays smooth. They named two next steps, among others, as within reach: short-range forces in place of hard spheres, and the fluctuations around the limit. For short times both were already known, from work including Pulvirenti, Saffirio and Simonella, and Bodineau, Gallagher, Saint-Raymond and Simonella.</p>
+<h3><span class="t num">1:03</span>The claim</h3>
+<p>Result 364 is two OpenAI papers, dated September 23 and made public October 6, 2026. The 69-page headline claims the Boltzmann–Grad limit for stable, finite-range radial forces, which may have attractive wells and a singular repulsive core, on any time interval where the Boltzmann equation has a smooth solution with Gaussian tails. The 54-page companion claims that for hard spheres, on the same kind of interval, fluctuations around the limit become Gaussian, following a linear fluctuating Boltzmann equation. Not claimed: a convergence rate, hard spheres in the headline, or that the Boltzmann solution stays smooth, which both papers assume. The fluctuation result covers finitely many times and test functions, not whole paths or large deviations, and it imports Deng, Hani and Ma’s estimates. We found no competing claim.</p>
+<h3><span class="t num">2:02</span>How the proof goes</h3>
+<p>The headline cuts time into many layers. Stability of the forces gives one energy budget for the whole history, so each particle in a history costs a factor of about CT/√L. Our computer shows that with enough layers this ratio drops below one and the sum converges, while a single layer only works for short times: Lanford’s restriction, in caricature. Recollisions and clusters of interacting particles are handled by keeping clusters whole and by a causal-exposure argument with small trees of events; counting time-ordered labellings, our computer confirms the hook-length formula on all 196 small binary trees. Attractive wells make scattering richer: in our model force, different impact parameters can give the same deflection. For the companion, a random number of particles adds exactly one term to the variance at time zero: our samples give 0.74 against a prediction of 0.75, and 0.51 with a fixed number.</p>
+<h3><span class="t num">3:05</span>Where it stands</h3>
+<p>Both papers are unrefereed and unchanged since release. Neither theorem has a Lean proof; an uncatalogued file of about 600 lines checks only preliminary definitions and algebra for the fluctuation paper. We found no specialist comment and no reported error. If they hold, Boltzmann’s equation follows from Newton’s laws for stable short-range forces, even with attractive wells and a singular repulsive core, for as long as it stays smooth, and for hard spheres so do its Gaussian fluctuations, at any finitely many times.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20364%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
