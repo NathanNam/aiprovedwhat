@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>More harmonic than flat space? Counterexamples to Yau’s question | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim complete manifolds with nonnegative Ricci curvature — in 16 dimensions and in 3 — with more harmonic functions of a given integer growth than Euclidean space. Lean covers the 16-dimensional paper only. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/361-harmonic-dimension-counterexample/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="More harmonic than flat space?">
+<meta property="og:description" content="Two AI preprints claim complete manifolds with nonnegative Ricci curvature — in 16 dimensions and in 3 — with more harmonic functions of a given integer growth than Euclidean space. Lean covers the 16-dimensional paper only. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/361-harmonic-dimension-counterexample/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/361-harmonic-dimension-counterexample/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 361, October 2026</p>
+<h1>More harmonic than flat space?</h1>
+<p class="subtitle">Two AI preprints claim counterexamples to integer-degree harmonic dimension comparison</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 361 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="0UwSFc_k8lQ" data-title="Episode 361: More harmonic than flat space?">
+  <a href="https://youtu.be/0UwSFc_k8lQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 361: More harmonic than flat space? A grey bar beside a taller teal bar.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:52. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/0UwSFc_k8lQ?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/0UwSFc_k8lQ?t=65" data-t="65"><span class="t">1:05</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/0UwSFc_k8lQ?t=130" data-t="130"><span class="t">2:10</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/0UwSFc_k8lQ?t=193" data-t="193"><span class="t">3:13</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A harmonic function has zero Laplacian: in flat space, its value at each point is the average over any sphere around it. In ordinary three-space, the harmonic polynomials of degree at most k form a space of dimension (k + 1)²: our computer counts 1, 4, 9, 16 by exact linear algebra. Yau asked whether, on a complete manifold with nonnegative Ricci curvature, the harmonic functions growing at most like the k-th power of distance can ever outnumber those of Euclidean space.</p>
+<p>Li and Tam settled linear growth in 1989, and Colding and Minicozzi proved these spaces are always finite-dimensional. Donnelly beat the Euclidean count in 2001, but at a growth rate strictly between one and two, in dimension five and up. For integer degrees the question stayed open: two preprints from this summer, by Lin, Wang and Xu and by Cai and Lai, each proved the bound in a special case; Cai and Lai described the integer case as still open.</p>
+<p>Result 361 is two independent OpenAI papers, dated September 25 and 26 and made public October 6, 2026. The 35-page paper claims a complete metric with nonnegative Ricci curvature in 16 dimensions with more harmonic functions of growth at most 50,000 than Euclidean space, by about one part in 8,000. The 39-page paper claims, in three dimensions and for every large enough k, metrics with nonnegative Ricci curvature and at least c times (k + 1)² such functions, for any c below 9/4 of the volume ratio.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: one metric for every k; each metric is built for its own k, and the three-dimensional bound needs k beyond an unspecified threshold. Nonnegative Ricci curvature is all they assume; this summer’s special cases also needed nonnegative sectional curvature or conformal flatness, so they are not contradicted. We found no competing claim.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 35 + 39 pages, dated September 25 and 26, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The 16-dimensional paper’s main theorem only; the 3D paper has no Lean proof (<a href="https://github.com/openai/math/blob/main/lean/docs/361.md">scope notes</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 19, 2026. Both papers are unrefereed and unchanged since release. Only the 16-dimensional paper’s main theorem is formalized in Lean, about 37,000 lines, not run by us. The three-dimensional paper, the catalog’s headline, has no Lean proof; an uncatalogued three-dimensional Lean folder states a version but does not prove it. We found no specialist comment and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A shape that keeps changing.</strong> The trick in both papers is that the shape of the space at large distances keeps changing. On a fixed cone with a shrunken cross-section, harmonic functions grow faster, so fewer fit under degree k: our computer counts 81 against Euclidean space’s 121 at k = 10. But if the cross-section keeps changing, a harmonic function only needs its average growth rate to stay below k, and the papers make many modes take turns being slow.</li>
+  <li><strong>Two constructions.</strong> The three-dimensional paper steers eigenvalue crossings on nearly round spheres so that a whole band of modes cycles; each mode’s average rate is about two thirds of the band edge, divided by the cone’s opening, which is where 9/4 of the volume ratio comes from. Our computer reproduces that limit with round-sphere bands. The 16-dimensional paper uses Berger spheres and exact counting; our computer recomputes its selected dimension, a 59-digit number, exactly from the paper’s description.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: harmonic polynomials of degree at most k in ℝ³ number (k + 1)² — 1, 4, 9, 16, … — by exact linear algebra.</li>
+  <li>Ours: on a fixed cone with volume ratio 0.81, only 81 modes grow slower than r¹⁰, against 121 in flat space.</li>
+  <li>Ours: round-sphere bands at volume ratio 0.81 and k = 20,000 give 1.8223 against the limit 9v/4 = 1.8225.</li>
+  <li>Lean: 36 files and 36,732 lines in the import closure of the 16-dimensional paper's comparator (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-integer-degree-harmonic-dimension-comparison-September-25-2026/paper.pdf">A counterexample to integer-degree harmonic dimension comparison (PDF)</a>, 35 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Three-Dimensional-Counterexample-to-Integer-Degree-Harmonic-Dimension-Comparison-September-26-2026/paper.pdf">A Three-Dimensional Counterexample to Integer-Degree Harmonic Dimension Comparison (PDF)</a>, 39 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/361.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 361.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-integer-degree-harmonic-dimension-comparison-September-25-2026/paper.pdf">A counterexample to integer-degree harmonic dimension comparison</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Three-Dimensional-Counterexample-to-Integer-Degree-Harmonic-Dimension-Comparison-September-26-2026/paper.pdf">A Three-Dimensional Counterexample to Integer-Degree Harmonic Dimension Comparison</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A harmonic function has zero Laplacian: in flat space, its value at each point is the average over any sphere around it. In ordinary three-space, the harmonic polynomials of degree at most k form a space of dimension (k + 1)²: our computer counts 1, 4, 9, 16 by exact linear algebra. Yau asked whether, on a complete manifold with nonnegative Ricci curvature, the harmonic functions growing at most like the k-th power of distance can ever outnumber those of Euclidean space. Li and Tam settled linear growth in 1989, and Colding and Minicozzi proved these spaces are always finite-dimensional. Donnelly beat the Euclidean count in 2001, but at a growth rate strictly between one and two, in dimension five and up. For integer degrees the question stayed open: two preprints from this summer, by Lin, Wang and Xu and by Cai and Lai, each proved the bound in a special case; Cai and Lai described the integer case as still open.</p>
+<h3><span class="t num">1:05</span>The claim</h3>
+<p>Result 361 is two independent OpenAI papers, dated September 25 and 26 and made public October 6, 2026. The 35-page paper claims a complete metric with nonnegative Ricci curvature in 16 dimensions with more harmonic functions of growth at most 50,000 than Euclidean space, by about one part in 8,000. The 39-page paper claims, in three dimensions and for every large enough k, metrics with nonnegative Ricci curvature and at least c times (k + 1)² such functions, for any c below 9/4 of the volume ratio. Not claimed: one metric for every k; each metric is built for its own k, and the three-dimensional bound needs k beyond an unspecified threshold. Nonnegative Ricci curvature is all they assume; this summer’s special cases also needed nonnegative sectional curvature or conformal flatness, so they are not contradicted. We found no competing claim.</p>
+<h3><span class="t num">2:10</span>How the proof goes</h3>
+<p>The trick in both papers is that the shape of the space at large distances keeps changing. On a fixed cone with a shrunken cross-section, harmonic functions grow faster, so fewer fit under degree k: our computer counts 81 against Euclidean space’s 121 at k = 10. But if the cross-section keeps changing, a harmonic function only needs its average growth rate to stay below k, and the papers make many modes take turns being slow. The three-dimensional paper steers eigenvalue crossings on nearly round spheres so that a whole band of modes cycles; each mode’s average rate is about two thirds of the band edge, divided by the cone’s opening, which is where 9/4 of the volume ratio comes from. Our computer reproduces that limit with round-sphere bands. The 16-dimensional paper uses Berger spheres and exact counting; our computer recomputes its selected dimension, a 59-digit number, exactly from the paper’s description.</p>
+<h3><span class="t num">3:13</span>Where it stands</h3>
+<p>Both papers are unrefereed and unchanged since release. Only the 16-dimensional paper’s main theorem is formalized in Lean, about 37,000 lines, not run by us. The three-dimensional paper, the catalog’s headline, has no Lean proof; an uncatalogued three-dimensional Lean folder states a version but does not prove it. We found no specialist comment and no reported error. If they hold, flat space does not always have the most harmonic functions of a given integer growth among complete spaces with nonnegative Ricci curvature.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20361%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
