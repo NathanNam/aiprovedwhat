@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two dimensions disappear? Gromov&#x27;s Urysohn width bound for scalar curvature | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/341-hypersymplectic/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Every triple becomes perfect?">
+<meta property="og:description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/341-hypersymplectic/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/341-hypersymplectic/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 341, October 2026</p>
+<h1>Every triple becomes perfect?</h1>
+<p class="subtitle">An AI preprint claims Donaldson’s hypersymplectic deformation conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 341 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="ljlYUIkmCYU" data-title="Episode 341: Every triple becomes perfect?">
+  <a href="https://youtu.be/ljlYUIkmCYU">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 341: Every triple becomes perfect? A row of teal torus fibres, one pinched pink, over a grey line.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:00. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/ljlYUIkmCYU?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/ljlYUIkmCYU?t=77" data-t="77"><span class="t">1:17</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/ljlYUIkmCYU?t=132" data-t="132"><span class="t">2:12</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/ljlYUIkmCYU?t=188" data-t="188"><span class="t">3:08</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A four-dimensional space can carry three closed two-forms at once. If at every point their pairwise wedge products form a positive definite 3 × 3 matrix, the triple is called hypersymplectic. Our computer finds that a random triple at a point passes this test only about 1 time in 90. The ideal case is hyperkähler: the matrix is the identity times a volume form everywhere, and the three forms come from a hyperkähler metric. Can every hypersymplectic triple be deformed into a hyperkähler one?</p>
+<p>In 2006 Donaldson asked whether a compact four-manifold carrying such a triple must admit a hyperkähler structure. In 2017 Fine and Yao stated a stronger version as a conjecture of Donaldson: normalize the triple, then deform it through hypersymplectic triples, keeping all three cohomology classes fixed, to a hyperkähler triple. Their hypersymplectic flow became the main tool, and convergence was known only in very restricted cases, such as symmetric triples on the four-torus. Simply interpolating fails: on the four-torus our computer finds a straight line between two cohomologous symplectic forms that stops being symplectic in the middle.</p>
+<p>Result 341 is one OpenAI paper, 72 pages, first dated September 23; a revision dated October 7 changed only the introduction. It claims the conjecture in full: every normalized hypersymplectic triple on a closed, connected, oriented four-manifold deforms, with all three cohomology classes fixed, to a hyperkähler triple. A corollary: any such manifold is diffeomorphic to a K3 surface or the four-torus. Before, this was known only in special cases: up to homeomorphism for simply connected manifolds, or for triples with a circle symmetry.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: that the hypersymplectic flow converges, since the proof does not use it; a classification of all symplectic Calabi–Yau surfaces; or a machine-checked proof, since this paper has no Lean.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 72 pages, dated September 23, 2026; revised October 7 (introduction only)</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>Not for this paper (its first step is result 342’s theorem, which has Lean)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper is unrefereed. Its first step, tamed implies compatible, is the companion paper’s theorem, which has a Lean proof; the rest has none. The argument leans on deep inputs, including Taubes’s work relating Seiberg–Witten invariants to curves, and Li and Liu’s wall crossing. We found no specialist comment, no reported error, and no review by OSVerify. The conjecture’s name is the paper’s own; Donaldson’s original question asked only about existence. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Taming, then curves.</strong> Two of the forms define an almost complex structure, and the third must tame it, as our computer confirms in 4,000 random cases. Tamers of a fixed structure form a convex set, unlike symplectic forms in a class. The paper first proves that tamed implies compatible, the companion result 342, then gives a curve criterion for when a cohomology class still contains a tamer. Seiberg–Witten theory over the sphere of combinations of the forms produces pseudo-holomorphic curves through every point.</li>
+  <li><strong>A torus fibration, collapsed.</strong> With a carefully chosen lattice class, these curves become the fibers of a torus fibration with nodal fibers. Shrinking the fibers with a semi-flat model, like the collapse our computer checks, where fiber area shrinks while the base grows, the paper builds an auxiliary form, and two applications of Yau’s theorem finish the deformation.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: about 1 in 90 random triples of two-forms at a point is positive (2,225 of 200,000).</li>
+  <li>Ours: a third form completes a positive triple exactly when it tames one of the two signs of the almost complex structure, in 4,000 of 4,000 random cases.</li>
+  <li>Ours: on the four-torus, a straight line between two cohomologous symplectic forms stops being symplectic in the middle (minimum of ω∧ω/2 down to −0.95).</li>
+  <li>Ours: in the semi-flat model, fibre area ε and base area 0.0908/ε: the fibres collapse while the volume stays fixed.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/paper.pdf">Deforming hypersymplectic four-manifolds to hyperkähler triples (PDF)</a>, 72 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 341.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/paper.pdf">Deforming hypersymplectic four-manifolds to hyperkähler triples</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A four-dimensional space can carry three closed two-forms at once. If at every point their pairwise wedge products form a positive definite 3 × 3 matrix, the triple is called hypersymplectic. Our computer finds that a random triple at a point passes this test only about 1 time in 90. The ideal case is hyperkähler: the matrix is the identity times a volume form everywhere, and the three forms come from a hyperkähler metric. Can every hypersymplectic triple be deformed into a hyperkähler one? In 2006 Donaldson asked whether a compact four-manifold carrying such a triple must admit a hyperkähler structure. In 2017 Fine and Yao stated a stronger version as a conjecture of Donaldson: normalize the triple, then deform it through hypersymplectic triples, keeping all three cohomology classes fixed, to a hyperkähler triple. Their hypersymplectic flow became the main tool, and convergence was known only in very restricted cases, such as symmetric triples on the four-torus. Simply interpolating fails: on the four-torus our computer finds a straight line between two cohomologous symplectic forms that stops being symplectic in the middle.</p>
+<h3><span class="t num">1:17</span>The claim</h3>
+<p>Result 341 is one OpenAI paper, 72 pages, first dated September 23; a revision dated October 7 changed only the introduction. It claims the conjecture in full: every normalized hypersymplectic triple on a closed, connected, oriented four-manifold deforms, with all three cohomology classes fixed, to a hyperkähler triple. A corollary: any such manifold is diffeomorphic to a K3 surface or the four-torus. Before, this was known only in special cases: up to homeomorphism for simply connected manifolds, or for triples with a circle symmetry. Not claimed: that the hypersymplectic flow converges, since the proof does not use it; a classification of all symplectic Calabi–Yau surfaces; or a machine-checked proof, since this paper has no Lean.</p>
+<h3><span class="t num">2:12</span>How the proof goes</h3>
+<p>Two of the forms define an almost complex structure, and the third must tame it, as our computer confirms in 4,000 random cases. Tamers of a fixed structure form a convex set, unlike symplectic forms in a class. The paper first proves that tamed implies compatible, the companion result 342, then gives a curve criterion for when a cohomology class still contains a tamer. Seiberg–Witten theory over the sphere of combinations of the forms produces pseudo-holomorphic curves through every point. With a carefully chosen lattice class, these curves become the fibers of a torus fibration with nodal fibers. Shrinking the fibers with a semi-flat model, like the collapse our computer checks, where fiber area shrinks while the base grows, the paper builds an auxiliary form, and two applications of Yau’s theorem finish the deformation.</p>
+<h3><span class="t num">3:08</span>Where it stands</h3>
+<p>The paper is unrefereed. Its first step, tamed implies compatible, is the companion paper’s theorem, which has a Lean proof; the rest has none. The argument leans on deep inputs, including Taubes’s work relating Seiberg–Witten invariants to curves, and Li and Liu’s wall crossing. We found no specialist comment, no reported error, and no review by OSVerify. The conjecture’s name is the paper’s own; Donaldson’s original question asked only about existence. If it holds, every closed, connected four-manifold with a hypersymplectic triple is really a K3 surface or a four-torus, and the triple, once normalized, can be deformed to a hyperkähler one without changing its cohomology classes.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20341%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
