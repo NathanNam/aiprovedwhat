@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curvature pays for topology? Two Gromov scalar-curvature conjectures | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/335-integral-scalar-curvature/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Curvature pays for topology?">
+<meta property="og:description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/335-integral-scalar-curvature/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/335-integral-scalar-curvature/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 335, October 2026</p>
+<h1>Curvature pays for topology?</h1>
+<p class="subtitle">Two AI preprints claim Gromov's integral scalar-curvature bound and the Gromov–Lawson aspherical conjecture in every dimension</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 335 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="jhgVDr408ek" data-title="Episode 335: Curvature pays for topology?">
+  <a href="https://youtu.be/jhgVDr408ek">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 335: Curvature pays for topology? A pink circle marked plus, a white square marked zero and a blue saddle marked minus.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:18. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/jhgVDr408ek?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/jhgVDr408ek?t=76" data-t="76"><span class="t">1:16</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/jhgVDr408ek?t=135" data-t="135"><span class="t">2:15</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/jhgVDr408ek?t=206" data-t="206"><span class="t">3:26</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Scalar curvature is one number at each point of a space, measuring how small balls gain or lose volume compared with flat space. Spheres have positive scalar curvature, flat tori zero, hyperbolic spaces negative. Simplicial volume measures topology instead: the cheapest way to build the space from simplices, counted with signed weights. A torus costs nothing, because wrapping it around itself k times divides the cost by k squared, as our computer checks. Closed hyperbolic spaces cost something positive.</p>
+<p>Two conjectures link the two. In 1983 Gromov and Lawson wrote that it was a possibility that no closed aspherical manifold, one whose universal cover is contractible like a torus’s, can carry positive scalar curvature; Schoen and Yau raised it too. It was known up to dimension 5. In 1986 Gromov proposed an inequality: the negative part of scalar curvature, raised to the power n over two and integrated, is at least a fixed multiple of the simplicial volume. That power is the only one that ignores rescaling, as our computer confirms. Gromov later wrote that there is little evidence for such conjectures.</p>
+<p>Result 335 is two OpenAI papers, made public October 6, 2026. The first, 84 pages and dated October 5, claims Gromov’s inequality in every dimension from 3 up, with a positive constant depending only on the dimension. It relies on the second, 37 pages and dated September 23, which claims that positive scalar curvature makes a closed manifold’s fundamental class vanish rationally in the classifying space of its fundamental group, in every dimension, with no spin assumption. That gives the Gromov–Lawson aspherical conjecture, and a closed aspherical manifold with nonnegative scalar curvature must be flat.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: any value for the constant, which comes out of towers of exponentials; dimension 2, which the first paper’s inequality leaves out; or a machine-checked proof, since neither paper has Lean.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 2 papers (84 and 37 pages), dated October 5 and September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>Not yet</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. Both papers are unrefereed and unchanged since release, and neither has a Lean proof. The curvature obstruction used at the end is applied in dimensions far above 8, even for a 3-dimensional manifold, and there it relies on Schoen and Yau’s 2017 theory of minimal slicings, published but still described by experts as a proposed approach. We found no specialist assessment and no reported error. Jialong Deng noted publicly that this result and the next one generalize two results from their September 2 paper without citing it. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Paper 2: shorten every direction, cheaply.</strong> The second paper argues by contradiction. A rationally essential manifold gives, on a large cover, a map of nonzero degree to a high-dimensional box, with gentle slopes. The proof shortens all q coordinates of the box by adding circle factors and bending graphs. Each update costs some scalar curvature, but the costs mostly telescope: their main parts add up to at most the dimension, so a whole pass costs only about the logarithm of q. Our toy shows 1,000 updates in 3 dimensions summing to just under 3. At the end, a theorem of Cecchini and Schick forbids such a short map of nonzero degree under positive scalar curvature.</li>
+  <li><strong>Paper 1: from curvature to volume.</strong> The first paper uses a conformal change to reduce to scalar curvature exactly minus one, and must show that the simplicial volume is at most a constant times the volume. It detects simplicial volume with a bounded cocycle, builds weighted entropy metrics, estimates a measured degree by slicing with bubble-like hypersurfaces, and finishes by rounding onto cubes. The second paper’s vanishing theorem is the only result from that paper it uses without proof.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: on closed hyperbolic surfaces the integral equals exactly 2π times the simplicial volume, the dimension-two analogue.</li>
+  <li>Ours: in dimension 3, making lengths 4 times larger multiplies the integral of the negative part to the power p by 4, 2, 1, 0.25 and 0.016 for p = 1, 1.25, 1.5, 2, 3: only p = 1.5 = n/2 is unchanged.</li>
+  <li>Ours: wrapping a torus around itself k times gives a fundamental cycle of cost 2/k² (0.5, 0.22, 0.08, 0.02 for k = 2, 3, 5, 10), so its simplicial volume is zero.</li>
+  <li>Ours: in a toy of the second paper’s telescoping, about 1,000 updates in dimension 3 add up to 2.99999, never more than 3.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-integral-scalar-curvature-bound-for-real-simplicial-volume-October-5-2026/v126-proof.pdf">An integral scalar curvature bound for real simplicial volume (PDF)</a>, 84 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Positive-scalar-curvature-forces-rational-inessentiality-September-23-2026/paper.pdf">Positive scalar curvature forces rational inessentiality (PDF)</a>, 37 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 335.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/An-integral-scalar-curvature-bound-for-real-simplicial-volume-October-5-2026/v126-proof.pdf">An integral scalar curvature bound for real simplicial volume</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Positive-scalar-curvature-forces-rational-inessentiality-September-23-2026/paper.pdf">Positive scalar curvature forces rational inessentiality</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Scalar curvature is one number at each point of a space, measuring how small balls gain or lose volume compared with flat space. Spheres have positive scalar curvature, flat tori zero, hyperbolic spaces negative. Simplicial volume measures topology instead: the cheapest way to build the space from simplices, counted with signed weights. A torus costs nothing, because wrapping it around itself k times divides the cost by k squared, as our computer checks. Closed hyperbolic spaces cost something positive. Two conjectures link the two. In 1983 Gromov and Lawson wrote that it was a possibility that no closed aspherical manifold, one whose universal cover is contractible like a torus’s, can carry positive scalar curvature; Schoen and Yau raised it too. It was known up to dimension 5. In 1986 Gromov proposed an inequality: the negative part of scalar curvature, raised to the power n over two and integrated, is at least a fixed multiple of the simplicial volume. That power is the only one that ignores rescaling, as our computer confirms. Gromov later wrote that there is little evidence for such conjectures.</p>
+<h3><span class="t num">1:16</span>The claim</h3>
+<p>Result 335 is two OpenAI papers, made public October 6, 2026. The first, 84 pages and dated October 5, claims Gromov’s inequality in every dimension from 3 up, with a positive constant depending only on the dimension. It relies on the second, 37 pages and dated September 23, which claims that positive scalar curvature makes a closed manifold’s fundamental class vanish rationally in the classifying space of its fundamental group, in every dimension, with no spin assumption. That gives the Gromov–Lawson aspherical conjecture, and a closed aspherical manifold with nonnegative scalar curvature must be flat. Not claimed: any value for the constant, which comes out of towers of exponentials; dimension 2, which the first paper’s inequality leaves out; or a machine-checked proof, since neither paper has Lean.</p>
+<h3><span class="t num">2:15</span>How the proof goes</h3>
+<p>The second paper argues by contradiction. A rationally essential manifold gives, on a large cover, a map of nonzero degree to a high-dimensional box, with gentle slopes. The proof shortens all q coordinates of the box by adding circle factors and bending graphs. Each update costs some scalar curvature, but the costs mostly telescope: their main parts add up to at most the dimension, so a whole pass costs only about the logarithm of q. Our toy shows 1,000 updates in 3 dimensions summing to just under 3. At the end, a theorem of Cecchini and Schick forbids such a short map of nonzero degree under positive scalar curvature. The first paper uses a conformal change to reduce to scalar curvature exactly minus one, and must show that the simplicial volume is at most a constant times the volume. It detects simplicial volume with a bounded cocycle, builds weighted entropy metrics, estimates a measured degree by slicing with bubble-like hypersurfaces, and finishes by rounding onto cubes. The second paper’s vanishing theorem is the only result from that paper it uses without proof.</p>
+<h3><span class="t num">3:26</span>Where it stands</h3>
+<p>Both papers are unrefereed and unchanged since release, and neither has a Lean proof. The curvature obstruction used at the end is applied in dimensions far above 8, even for a 3-dimensional manifold, and there it relies on Schoen and Yau’s 2017 theory of minimal slicings, published but still described by experts as a proposed approach. We found no specialist assessment and no reported error. Jialong Deng noted publicly that this result and the next one generalize two results from their September 2 paper without citing it. If it holds, no closed aspherical manifold in any dimension carries positive scalar curvature, and negative scalar curvature, measured the scale-free way, always pays for simplicial volume.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20335%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
