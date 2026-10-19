@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plasmas never blow up? Global smoothness for relativistic Vlasov–Maxwell | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims large-data global smooth solutions for the three-dimensional, one-species relativistic Vlasov–Maxwell system, with the full theorem formalized in Lean. An animated explainer, the claim in plain words, and how far it has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/362-vlasov-maxwell-global/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Plasmas never blow up?">
+<meta property="og:description" content="An AI preprint claims large-data global smooth solutions for the three-dimensional, one-species relativistic Vlasov–Maxwell system, with the full theorem formalized in Lean. An animated explainer, the claim in plain words, and how far it has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/362-vlasov-maxwell-global/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/362-vlasov-maxwell-global/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 362, October 2026</p>
+<h1>Plasmas never blow up?</h1>
+<p class="subtitle">An AI preprint claims global smoothness for the 3D relativistic Vlasov–Maxwell system</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 362 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="vQioSFY5dmU" data-title="Episode 362: Plasmas never blow up?">
+  <a href="https://youtu.be/vQioSFY5dmU">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 362: Plasmas never blow up? A yellow light-cone triangle over wavy teal and pink particle paths.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:48. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/vQioSFY5dmU?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/vQioSFY5dmU?t=74" data-t="74"><span class="t">1:14</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/vQioSFY5dmU?t=133" data-t="133"><span class="t">2:13</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/vQioSFY5dmU?t=193" data-t="193"><span class="t">3:13</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A plasma is a gas of charged particles moving in the electric and magnetic fields they create. The relativistic Vlasov–Maxwell system describes it: a density of particles in position and momentum, carried along by the fields, and Maxwell’s equations driven by the particles. No particle can outrun light: our computer checks that the speed stays below one, approaching it as momentum grows. The worry is that some particles might reach ever higher momenta in finite time, so that a smooth solution breaks down.</p>
+<p>Glassey and Strauss showed in 1986 that smooth solutions continue as long as the momenta stay bounded. Global weak solutions came from DiPerna and Lions, and from Rein for this relativistic system, and global smooth solutions were known for small data, for reduced dimensions and, from Wang’s recent work, for cylindrically symmetric data. For general large data in three dimensions, Luk and Strain called it a longstanding open problem in 2014, and a paper on several species of particles, posted the day after this one’s date, still called the large-data problem a crucial unsolved problem in the field.</p>
+<p>Result 362 is one OpenAI paper, 49 pages, dated September 23 and made public October 6, 2026. It claims that for one species of particles in three dimensions, any smooth, nonnegative, compactly supported particle density with finite-energy fields whose derivatives are all bounded, and which satisfy Gauss’s laws, gives a unique classical solution that stays smooth on every finite time interval, and so exists for all time. There is no smallness and no symmetry assumption.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: long-time behaviour, since the momenta may still grow with time; several species; or particle densities without compact support. Wang’s symmetric results allow different data, so neither result contains the other. The problem statement itself was given to the model in its prompt, according to OpenAI’s published summary. We found no competing claim.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 49 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The full theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/362.md">scope notes</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 19, 2026. The paper is unrefereed and unchanged since release. Its full theorem is formalized in Lean, about 90,000 lines, not run by us; the Lean appears to prove its own continuation step rather than import it, and its uniqueness statement is slightly narrower. We found no specialist comment and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Looking back along the light cone.</strong> The proof writes the fields as integrals over the backward light cone, controlled by the energy flowing through cones. Direct force bounds lose a square root of the receiving particle’s energy. The paper wins it back with an exact identity that integrates the force along the source particle’s path before taking sizes, a count of direction changes, and a careful selection of which bins need this treatment.</li>
+  <li><strong>Doublings take too long to blow up.</strong> The result bounds how fast the top momentum can grow: each doubling takes at least a constant divided by the logarithm of the momentum, roughly a constant over n for the n-th doubling. Like the harmonic series, those times never add up to a finite total: our computer’s sum reaches 16.5 after a million doublings and keeps growing, while a blow-up would need times with a finite total, such as times that halve at every step. So momenta stay bounded on every finite interval, and the Glassey–Strauss criterion gives global smoothness.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: relativistic speed p/√(1+p²) stays below the speed of light, checked exactly; it is 0.99995 at momentum 100.</li>
+  <li>Ours: summing the paper's lower bounds on doubling times (with c = 1) gives 16.5 after a million doublings, still growing; halving times would total just 1.</li>
+  <li>Ours: the paper's constant choices in its bootstrap check out in exact arithmetic.</li>
+  <li>Lean: 207 files and 89,993 lines in the import closure of the comparator (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/paper.pdf">Global classical solutions of the three-dimensional relativistic Vlasov–Maxwell system (PDF)</a>, 49 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/362.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 362.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Global-classical-solutions-of-the-three-dimensional-relativistic-Vlasov-Maxwell-system-September-23-2026/paper.pdf">Global classical solutions of the three-dimensional relativistic Vlasov–Maxwell system</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A plasma is a gas of charged particles moving in the electric and magnetic fields they create. The relativistic Vlasov–Maxwell system describes it: a density of particles in position and momentum, carried along by the fields, and Maxwell’s equations driven by the particles. No particle can outrun light: our computer checks that the speed stays below one, approaching it as momentum grows. The worry is that some particles might reach ever higher momenta in finite time, so that a smooth solution breaks down. Glassey and Strauss showed in 1986 that smooth solutions continue as long as the momenta stay bounded. Global weak solutions came from DiPerna and Lions, and from Rein for this relativistic system, and global smooth solutions were known for small data, for reduced dimensions and, from Wang’s recent work, for cylindrically symmetric data. For general large data in three dimensions, Luk and Strain called it a longstanding open problem in 2014, and a paper on several species of particles, posted the day after this one’s date, still called the large-data problem a crucial unsolved problem in the field.</p>
+<h3><span class="t num">1:14</span>The claim</h3>
+<p>Result 362 is one OpenAI paper, 49 pages, dated September 23 and made public October 6, 2026. It claims that for one species of particles in three dimensions, any smooth, nonnegative, compactly supported particle density with finite-energy fields whose derivatives are all bounded, and which satisfy Gauss’s laws, gives a unique classical solution that stays smooth on every finite time interval, and so exists for all time. There is no smallness and no symmetry assumption. Not claimed: long-time behaviour, since the momenta may still grow with time; several species; or particle densities without compact support. Wang’s symmetric results allow different data, so neither result contains the other. The problem statement itself was given to the model in its prompt, according to OpenAI’s published summary. We found no competing claim.</p>
+<h3><span class="t num">2:13</span>How the proof goes</h3>
+<p>The proof writes the fields as integrals over the backward light cone, controlled by the energy flowing through cones. Direct force bounds lose a square root of the receiving particle’s energy. The paper wins it back with an exact identity that integrates the force along the source particle’s path before taking sizes, a count of direction changes, and a careful selection of which bins need this treatment. The result bounds how fast the top momentum can grow: each doubling takes at least a constant divided by the logarithm of the momentum, roughly a constant over n for the n-th doubling. Like the harmonic series, those times never add up to a finite total: our computer’s sum reaches 16.5 after a million doublings and keeps growing, while a blow-up would need times with a finite total, such as times that halve at every step. So momenta stay bounded on every finite interval, and the Glassey–Strauss criterion gives global smoothness.</p>
+<h3><span class="t num">3:13</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. Its full theorem is formalized in Lean, about 90,000 lines, not run by us; the Lean appears to prove its own continuation step rather than import it, and its uniqueness statement is slightly narrower. We found no specialist comment and no reported error. If it holds, a smooth, compactly supported relativistic plasma of one species, however large, never develops a singularity in finite time.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20362%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
