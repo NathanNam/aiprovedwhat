@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One small patch sees everything? The anisotropic Calderón problem | AI Proved What?</title>
+<meta name="description" content="Three AI preprints claim that zero-frequency measurements on one boundary patch determine a smooth metric (and a unitary connection) in dimension three and up, and that rough scalar conductivities can be indistinguishable in 3D. Lean covers the rough result only. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/365-calderon-one-patch/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="One small patch sees everything?">
+<meta property="og:description" content="Three AI preprints claim that zero-frequency measurements on one boundary patch determine a smooth metric (and a unitary connection) in dimension three and up, and that rough scalar conductivities can be indistinguishable in 3D. Lean covers the rough result only. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/365-calderon-one-patch/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/365-calderon-one-patch/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 365, October 2026</p>
+<h1>One small patch sees everything?</h1>
+<p class="subtitle">Three AI preprints claim uniqueness for the smooth anisotropic Calderón problem from one boundary patch, and nonuniqueness for rough conductivities</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 365 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="Y8wbrEIkYXY" data-title="Episode 365: One small patch sees everything?">
+  <a href="https://youtu.be/Y8wbrEIkYXY">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 365: One small patch sees everything? An oval body with one highlighted yellow boundary patch and electrodes.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:04. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/Y8wbrEIkYXY?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/Y8wbrEIkYXY?t=67" data-t="67"><span class="t">1:07</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/Y8wbrEIkYXY?t=127" data-t="127"><span class="t">2:07</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/Y8wbrEIkYXY?t=201" data-t="201"><span class="t">3:21</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Can you tell what is inside a body from voltages and currents measured on its surface? Calderón posed the mathematical version in 1980. On a line, a toy version, the answer is no: our computer builds four different layered conductivities on an interval with exactly the same end-to-end response. And a change of coordinates that fixes the boundary never changes the measurements, so for anisotropic materials the inside can at best be recovered up to such a change.</p>
+<p>On a disc the measurements carry one number per mode, but the inside fades fast: our computer finds an inclusion’s effect falling from about 0.3 in the first mode to about 10⁻⁵ by the tenth. For smooth anisotropic metrics in dimension three and up, uniqueness was known only in special cases: real-analytic metrics, by Lee and Uhlmann and by Lassas and Uhlmann, and special geometries or metrics near special ones. Papers this summer still called the smooth problem open, and a 2024 claim to solve it was withdrawn three days later as incorrect.</p>
+<p>Result 365 is three OpenAI papers, made public October 6, 2026. The September 24 paper, 43 pages, claims that for smooth metrics in dimension three and up, zero-frequency measurements on any one boundary patch, with inputs and outputs on that same patch, determine the metric up to a change of coordinates fixed on the patch. The October 5 paper, 50 pages, the headline, claims the same while also recovering a unitary connection on a trivial rank-two bundle, up to gauge.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The September 23 paper gives the contrast: in three dimensions, two different scalar conductivities, bounded above and below but not smooth, with identical full boundary data. Not claimed: stability or a reconstruction method, nonzero frequencies, where smooth counterexamples exist, or inputs and outputs on different patches. Specialists who cite the smooth papers describe them as an announcement.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 50 + 43 + 33 pages, dated October 5, September 24 and September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet; cited by specialists “as an announcement”</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The rough nonuniqueness theorem only; the smooth results have no Lean proof (<a href="https://github.com/openai/math/blob/main/lean/docs/365.md">scope notes</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 19, 2026. All three papers are unrefereed and unchanged since release. Only the nonuniqueness theorem is formalized in Lean, about 75,000 lines, not run by us; the smooth results have no Lean proof. Two groups of specialists cite the smooth results as an announcement, and one notes it is unclear whether it settles the linearized problem. We found no specialist verdict and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Growing the matched region.</strong> For the smooth result, equal patch data first give equal boundary jets. A small cap glued outside the patch makes the two Green kernels agree there, and harmonic functions from sources in the cap label interior points, defining a matched region. At its frontier, harmonic functions are moved across shrinking spheres; the crux is a uniform bound on this transfer: it makes harmonic differences of order r², so the metric mismatch is of order r^(3/2), better than the assumed order r, and the region can grow. Finally a leftover conformal factor is forced to be one, because in dimension three and up such a factor changes which functions are harmonic; our computer shows the same effect on the energy, which vanishes in dimension two.</li>
+  <li><strong>Hiding in rough conductivities.</strong> The nonuniqueness paper builds a block from box-shaped tori, one outer and two inner, and nests copies inside each other forever; our computer checks its printed numbers, like two s cubed equals 0.3 seven, below one, so the nested volume shrinks to zero. The block’s flux rule forces every solution to share one surface average, and a hidden potential then changes the conductivity without changing any measurement.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: four different layered conductivities on an interval give exactly the same end-to-end response.</li>
+  <li>Ours: on a disc, an inclusion's effect on the boundary map falls from 0.29 in the first mode to about 10⁻⁵ by the tenth.</li>
+  <li>Ours: scaling lengths by 2 multiplies the Dirichlet energy by 2^(n−2) — no change in two dimensions.</li>
+  <li>Lean: 595 files and 75,520 lines in the import closure of the rough-conductivity comparator (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Determination-of-a-metric-and-a-unitary-connection-from-one-boundary-patch-October-5-2026/paper.pdf">Determination of a metric and a unitary connection from one boundary patch (PDF)</a>, 50 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/paper.pdf">Smooth Anisotropic Uniqueness in the Calderón Problem from One Boundary Patch (PDF)</a>, 43 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026/paper.pdf">Nonuniqueness for Bounded Measurable Scalar Conductivities in Three Dimensions (PDF)</a>, 33 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/365.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 365.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Determination-of-a-metric-and-a-unitary-connection-from-one-boundary-patch-October-5-2026/paper.pdf">Determination of a metric and a unitary connection from one boundary patch</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Smooth-Anisotropic-Uniqueness-in-the-Calderon-Problem-from-One-Boundary-Patch-September-24-2026/paper.pdf">Smooth anisotropic uniqueness in the Calderón problem from one boundary patch</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Nonuniqueness-for-Bounded-Measurable-Scalar-Conductivities-in-Three-Dimensions-September-23-2026/paper.pdf">Nonuniqueness for bounded measurable scalar conductivities in three dimensions</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Can you tell what is inside a body from voltages and currents measured on its surface? Calderón posed the mathematical version in 1980. On a line, a toy version, the answer is no: our computer builds four different layered conductivities on an interval with exactly the same end-to-end response. And a change of coordinates that fixes the boundary never changes the measurements, so for anisotropic materials the inside can at best be recovered up to such a change. On a disc the measurements carry one number per mode, but the inside fades fast: our computer finds an inclusion’s effect falling from about 0.3 in the first mode to about 10⁻⁵ by the tenth. For smooth anisotropic metrics in dimension three and up, uniqueness was known only in special cases: real-analytic metrics, by Lee and Uhlmann and by Lassas and Uhlmann, and special geometries or metrics near special ones. Papers this summer still called the smooth problem open, and a 2024 claim to solve it was withdrawn three days later as incorrect.</p>
+<h3><span class="t num">1:07</span>The claim</h3>
+<p>Result 365 is three OpenAI papers, made public October 6, 2026. The September 24 paper, 43 pages, claims that for smooth metrics in dimension three and up, zero-frequency measurements on any one boundary patch, with inputs and outputs on that same patch, determine the metric up to a change of coordinates fixed on the patch. The October 5 paper, 50 pages, the headline, claims the same while also recovering a unitary connection on a trivial rank-two bundle, up to gauge. The September 23 paper gives the contrast: in three dimensions, two different scalar conductivities, bounded above and below but not smooth, with identical full boundary data. Not claimed: stability or a reconstruction method, nonzero frequencies, where smooth counterexamples exist, or inputs and outputs on different patches. Specialists who cite the smooth papers describe them as an announcement.</p>
+<h3><span class="t num">2:07</span>How the proof goes</h3>
+<p>For the smooth result, equal patch data first give equal boundary jets. A small cap glued outside the patch makes the two Green kernels agree there, and harmonic functions from sources in the cap label interior points, defining a matched region. At its frontier, harmonic functions are moved across shrinking spheres; the crux is a uniform bound on this transfer: it makes harmonic differences of order r², so the metric mismatch is of order r^(3/2), better than the assumed order r, and the region can grow. Finally a leftover conformal factor is forced to be one, because in dimension three and up such a factor changes which functions are harmonic; our computer shows the same effect on the energy, which vanishes in dimension two. The nonuniqueness paper builds a block from box-shaped tori, one outer and two inner, and nests copies inside each other forever; our computer checks its printed numbers, like two s cubed equals 0.3 seven, below one, so the nested volume shrinks to zero. The block’s flux rule forces every solution to share one surface average, and a hidden potential then changes the conductivity without changing any measurement.</p>
+<h3><span class="t num">3:21</span>Where it stands</h3>
+<p>All three papers are unrefereed and unchanged since release. Only the nonuniqueness theorem is formalized in Lean, about 75,000 lines, not run by us; the smooth results have no Lean proof. Two groups of specialists cite the smooth results as an announcement, and one notes it is unclear whether it settles the linearized problem. We found no specialist verdict and no reported error. If they hold, steady measurements on any small patch of the boundary determine a smooth body’s interior geometry in three or more dimensions, while rough enough conductivities can hide, as the Lean proof confirms in three dimensions.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20365%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
