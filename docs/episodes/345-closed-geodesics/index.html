@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two dimensions disappear? Gromov&#x27;s Urysohn width bound for scalar curvature | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/345-closed-geodesics/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Infinitely many loops?">
+<meta property="og:description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/345-closed-geodesics/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/345-closed-geodesics/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 345, October 2026</p>
+<h1>Infinitely many loops?</h1>
+<p class="subtitle">An AI preprint claims infinitely many closed geodesics on every Riemannian sphere</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 345 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="cc7GOOr1to8" data-title="Episode 345: Infinitely many loops?">
+  <a href="https://youtu.be/cc7GOOr1to8">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 345: Infinitely many loops? A yellow closed geodesic winding around a grey oblate spheroid.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:26. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/cc7GOOr1to8?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/cc7GOOr1to8?t=101" data-t="101"><span class="t">1:41</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/cc7GOOr1to8?t=152" data-t="152"><span class="t">2:32</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/cc7GOOr1to8?t=221" data-t="221"><span class="t">3:41</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A closed geodesic is a path that is locally shortest and comes back to where it started, heading the same way, like a great circle on a round sphere, where every geodesic closes. Squash the sphere into an oblate spheroid with axis ratio 0.8, and most geodesics never close. Each one winds around between 0.8 and 1 turn per up-and-down oscillation, and every fraction in that range gives a closed geodesic. Our computer counts five such fractions with denominator up to ten, and 391 up to eighty. Here is the one at 5/6: six oscillations, five turns. A closed geodesic is prime if it is not another one run several times; the question is whether every metric has infinitely many prime ones with different images.</p>
+<p>Lyusternik and Fet showed in 1951 that every closed Riemannian manifold has at least one. Gromoll and Meyer, with Vigué-Poirrier and Sullivan, gave infinitely many on simply connected manifolds whenever the Betti numbers of the free loop space are unbounded; for spheres they stay bounded, at most one per degree in our mod 2 count from dimension three on, so this route fails. For the two-sphere, Bangert with Franks or Hingston settled it in 1992 and 1993. Katok’s examples show the answer can be no for non-symmetric Finsler metrics: on our wind-blown sphere only the equator closes. For Riemannian spheres of dimension three and up, specialists still called the problem open in 2024. An earlier general proof by Klingenberg was called erroneous, and the paper points to two unsupported steps in a 2018 preprint by Charles.</p>
+<p>Result 345 is one OpenAI paper, 50 pages, dated September 24 and made public October 6, 2026. It claims that every smooth Riemannian metric on a sphere of dimension two or more has infinitely many prime closed geodesics with pairwise different images, degenerate metrics included. Two corollaries follow: the same holds on every manifold finitely covered by a sphere, and on every closed three-manifold. There, the case of infinite fundamental group was already known from Rademacher and Taimanov, and the finite case uses Perelman’s work.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: Finsler metrics, where it can fail; how fast the number grows with length; or that the geodesics are simple, without self-crossings. There is no Lean.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 50 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>No</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper is unrefereed, unchanged since release, and has no Lean. It imports resonance, string topology and, for three-manifolds, Perelman’s theorem, in a field where earlier general proofs failed. On October 15, Chen, Deng and Zhang posted an extension to the other projective spaces and the Cayley plane, crediting this paper’s strategy; they rebuilt the argument, filling step included, rather than checking this one as written. We found no specialist comment and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Suppose there were only finitely many.</strong> The proof is by contradiction. Suppose some metric has only finitely many prime images. Then all their iterates are under uniform local control. Separately, the paper proves a uniform filling theorem for every metric, built from a new cut-and-join identity in string topology and the resonance results of Hingston and Rademacher. On a round sphere our computer shows the pattern behind resonance: the degree of each class grows along a line with length, slope 2/π for the three-sphere, never straying by more than three.</li>
+  <li><strong>Doubling, until a class has no partner.</strong> Next the paper writes down an explicit basis for the reflection-equivariant cohomology of the loop space, in bottom and top classes, and bounds the number of transient classes at every length level by one constant. Running a closed loop twice doubles its length, and the paper shows the count can only grow under doubling; equality forces the odd-stage bottoms and tops to pair up. Windows doubled again and again eventually catch the first appearance of an odd-stage bottom class, which has no partner. That contradiction gives infinitely many images.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: on an oblate spheroid with axis ratio 0.8, geodesics wind between 0.8 and 1 turn per oscillation; closed types with denominator up to 10, 20, 40, 80 number 5, 24, 97, 391.</li>
+  <li>Ours: the closed geodesic with winding 5/6 has length 31.32 and closes after six oscillations and five turns.</li>
+  <li>Ours: mod-2 Betti numbers of the free loop space of the 3-sphere are at most 1 in every degree up to 60; for the product of two 3-spheres they grow (19 in degree 20).</li>
+  <li>Ours: on the round 3-sphere, the degrees of the homology classes lie within 3 of a line of slope 2/π in the length.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/paper.pdf">Infinitely many closed geodesic images on every Riemannian sphere (PDF)</a>, 50 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 345.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Infinitely-many-closed-geodesic-images-on-every-Riemannian-sphere-September-24-2026/paper.pdf">Infinitely many closed geodesic images on every Riemannian sphere</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A closed geodesic is a path that is locally shortest and comes back to where it started, heading the same way, like a great circle on a round sphere, where every geodesic closes. Squash the sphere into an oblate spheroid with axis ratio 0.8, and most geodesics never close. Each one winds around between 0.8 and 1 turn per up-and-down oscillation, and every fraction in that range gives a closed geodesic. Our computer counts five such fractions with denominator up to ten, and 391 up to eighty. Here is the one at 5/6: six oscillations, five turns. A closed geodesic is prime if it is not another one run several times; the question is whether every metric has infinitely many prime ones with different images. Lyusternik and Fet showed in 1951 that every closed Riemannian manifold has at least one. Gromoll and Meyer, with Vigué-Poirrier and Sullivan, gave infinitely many on simply connected manifolds whenever the Betti numbers of the free loop space are unbounded; for spheres they stay bounded, at most one per degree in our mod 2 count from dimension three on, so this route fails. For the two-sphere, Bangert with Franks or Hingston settled it in 1992 and 1993. Katok’s examples show the answer can be no for non-symmetric Finsler metrics: on our wind-blown sphere only the equator closes. For Riemannian spheres of dimension three and up, specialists still called the problem open in 2024. An earlier general proof by Klingenberg was called erroneous, and the paper points to two unsupported steps in a 2018 preprint by Charles.</p>
+<h3><span class="t num">1:41</span>The claim</h3>
+<p>Result 345 is one OpenAI paper, 50 pages, dated September 24 and made public October 6, 2026. It claims that every smooth Riemannian metric on a sphere of dimension two or more has infinitely many prime closed geodesics with pairwise different images, degenerate metrics included. Two corollaries follow: the same holds on every manifold finitely covered by a sphere, and on every closed three-manifold. There, the case of infinite fundamental group was already known from Rademacher and Taimanov, and the finite case uses Perelman’s work. Not claimed: Finsler metrics, where it can fail; how fast the number grows with length; or that the geodesics are simple, without self-crossings. There is no Lean.</p>
+<h3><span class="t num">2:32</span>How the proof goes</h3>
+<p>The proof is by contradiction. Suppose some metric has only finitely many prime images. Then all their iterates are under uniform local control. Separately, the paper proves a uniform filling theorem for every metric, built from a new cut-and-join identity in string topology and the resonance results of Hingston and Rademacher. On a round sphere our computer shows the pattern behind resonance: the degree of each class grows along a line with length, slope 2/π for the three-sphere, never straying by more than three. Next the paper writes down an explicit basis for the reflection-equivariant cohomology of the loop space, in bottom and top classes, and bounds the number of transient classes at every length level by one constant. Running a closed loop twice doubles its length, and the paper shows the count can only grow under doubling; equality forces the odd-stage bottoms and tops to pair up. Windows doubled again and again eventually catch the first appearance of an odd-stage bottom class, which has no partner. That contradiction gives infinitely many images.</p>
+<h3><span class="t num">3:41</span>Where it stands</h3>
+<p>The paper is unrefereed, unchanged since release, and has no Lean. It imports resonance, string topology and, for three-manifolds, Perelman’s theorem, in a field where earlier general proofs failed. On October 15, Chen, Deng and Zhang posted an extension to the other projective spaces and the Cayley plane, crediting this paper’s strategy; they rebuilt the argument, filling step included, rather than checking this one as written. We found no specialist comment and no reported error. If it holds, however you reshape a sphere of dimension two or more with a smooth Riemannian metric, infinitely many different closed geodesics remain.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20345%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
