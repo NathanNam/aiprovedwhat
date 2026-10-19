@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taxicab maps extend? Metric Markov cotype of ℓ₁ | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that ℓ1 has metric Markov cotype two, so Lipschitz maps from Hilbert space into ℓ1 extend with a universal loss. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/332-markov-cotype-l1/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Taxicab maps extend?">
+<meta property="og:description" content="An AI preprint claims that ℓ1 has metric Markov cotype two, so Lipschitz maps from Hilbert space into ℓ1 extend with a universal loss. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/332-markov-cotype-l1/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/332-markov-cotype-l1/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 332, October 2026</p>
+<h1>Taxicab maps extend?</h1>
+<p class="subtitle">An AI preprint claims metric Markov cotype two for ℓ₁, settling Lipschitz extension from Hilbert space into ℓ₁</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 332 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="eBKHpu_ut3Y" data-title="Episode 332: Taxicab maps extend?">
+  <a href="https://youtu.be/eBKHpu_ut3Y">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 332: Taxicab maps extend? A yellow S-shaped curve rising from 0 to 1 against a grey diagonal.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:51. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/eBKHpu_ut3Y?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/eBKHpu_ut3Y?t=64" data-t="64"><span class="t">1:04</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/eBKHpu_ut3Y?t=107" data-t="107"><span class="t">1:47</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/eBKHpu_ut3Y?t=192" data-t="192"><span class="t">3:12</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Given a Lipschitz map on part of a space, can you extend it to the whole space without stretching distances much more? Into the real line, always. From Hilbert space into Hilbert space, also, with no loss. But into ℓ₁, distance measured taxicab style, nobody knew whether the loss could always be kept bounded. Extending one coordinate at a time can lose a lot: on a simplex of 64 points our computer finds a loss of 32, growing with the number of points.</p>
+<p>In 1992 Ball linked extension to how random walks behave in a space. Later work by Mendel and Naor showed that a metric version of Ball’s property, called metric Markov cotype two, for the target, would give extension from Hilbert space with a universal loss. In 2013 they asked whether ℓ₁ has it, noting that a yes would settle a long-standing question attributed to Ball. As late as 2022, a research paper by Naor and Young called the ℓ₁ case a major open problem.</p>
+<p>Result 332 is one OpenAI paper, 9 pages, dated October 5 and made public October 6, 2026. It claims that ℓ₁ has metric Markov cotype two, with constant squared at most 3,024. Combined with Mendel and Naor’s theorem, every Lipschitz map from any subset of a Hilbert space into ℓ₁ extends to the whole space, losing at most a universal factor.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: an explicit extension constant, optimal constants, every subspace of ℓ₁, or Ball’s original linear version of Markov cotype, which ℓ₁ still fails. There is no Lean formalization for this item.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 9 pages, dated October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>No formalization for this item</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper is unrefereed and unchanged since release, and there is no Lean formalization. The extension result rests on Mendel and Naor’s published theorem. We found no public comment from specialists and no reported error; the only engagement so far is AI-assisted write-ups and checks, which are not independent review. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Smooth the points with an S-curve.</strong> Metric Markov cotype lets you move the points: the cost of moving them, plus the time times their leftover one-step jitter, must stay within a fixed multiple of how far the walk spreads the original data. The paper first writes ℓ₁ distances through cuts, so each point becomes a 0-1 vector. It then averages along a walk stopped at a random time, and rounds each coordinate with the S-curve 3r² − 2r³. That curve is the chance that at least two of three coins land heads when each lands heads with chance r, so each new point is the expected median of three independent endpoints of the walk. Our computer confirms this median formula exactly on a test example.</li>
+  <li><strong>A martingale pays for both.</strong> A martingale and a fourth-power potential then pay for both the move and the remaining jitter at a factor of 108; swapping the random stopping time for a fixed time costs another 28. The S-curve’s flatness at 0 and 1 is essential to this argument: our computer finds the key ratio stays below 18 with it and grows without bound without it. On 239 random examples the whole inequality holds with ratio at most 1.21, while leaving the points unmoved reaches 135. A similar S-curve trick appeared four weeks earlier, for a different question, in a paper by Cheng, Wang and Xiang.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: extending coordinate by coordinate on an m-point simplex loses m/2 (32 at m = 64).</li>
+  <li>Ours: the median-of-three formula holds exactly on a test example.</li>
+  <li>Ours: on 239 random examples the inequality holds with ratio at most 1.21 (proved bound 3,024); leaving the points unmoved reaches 135.</li>
+  <li>Ours: the key lemma’s ratio stays below 18 with the S-curve and grows without bound without it.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/l1-markov-cotype.pdf">Metric Markov Cotype Two of ℓ1 (PDF)</a>, 9 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 332.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Metric-Markov-Cotype-Two-of-l1-October-5-2026/l1-markov-cotype.pdf">Metric Markov Cotype Two of <i>ℓ</i><sub>1</sub></a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Given a Lipschitz map on part of a space, can you extend it to the whole space without stretching distances much more? Into the real line, always. From Hilbert space into Hilbert space, also, with no loss. But into ℓ₁, distance measured taxicab style, nobody knew whether the loss could always be kept bounded. Extending one coordinate at a time can lose a lot: on a simplex of 64 points our computer finds a loss of 32, growing with the number of points. In 1992 Ball linked extension to how random walks behave in a space. Later work by Mendel and Naor showed that a metric version of Ball’s property, called metric Markov cotype two, for the target, would give extension from Hilbert space with a universal loss. In 2013 they asked whether ℓ₁ has it, noting that a yes would settle a long-standing question attributed to Ball. As late as 2022, a research paper by Naor and Young called the ℓ₁ case a major open problem.</p>
+<h3><span class="t num">1:04</span>The claim</h3>
+<p>Result 332 is one OpenAI paper, 9 pages, dated October 5 and made public October 6, 2026. It claims that ℓ₁ has metric Markov cotype two, with constant squared at most 3,024. Combined with Mendel and Naor’s theorem, every Lipschitz map from any subset of a Hilbert space into ℓ₁ extends to the whole space, losing at most a universal factor. Not claimed: an explicit extension constant, optimal constants, every subspace of ℓ₁, or Ball’s original linear version of Markov cotype, which ℓ₁ still fails. There is no Lean formalization for this item.</p>
+<h3><span class="t num">1:47</span>How the proof goes</h3>
+<p>Metric Markov cotype lets you move the points: the cost of moving them, plus the time times their leftover one-step jitter, must stay within a fixed multiple of how far the walk spreads the original data. The paper first writes ℓ₁ distances through cuts, so each point becomes a 0-1 vector. It then averages along a walk stopped at a random time, and rounds each coordinate with the S-curve 3r² − 2r³. That curve is the chance that at least two of three coins land heads when each lands heads with chance r, so each new point is the expected median of three independent endpoints of the walk. Our computer confirms this median formula exactly on a test example. A martingale and a fourth-power potential then pay for both the move and the remaining jitter at a factor of 108; swapping the random stopping time for a fixed time costs another 28. The S-curve’s flatness at 0 and 1 is essential to this argument: our computer finds the key ratio stays below 18 with it and grows without bound without it. On 239 random examples the whole inequality holds with ratio at most 1.21, while leaving the points unmoved reaches 135. A similar S-curve trick appeared four weeks earlier, for a different question, in a paper by Cheng, Wang and Xiang.</p>
+<h3><span class="t num">3:12</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release, and there is no Lean formalization. The extension result rests on Mendel and Naor’s published theorem. We found no public comment from specialists and no reported error; the only engagement so far is AI-assisted write-ups and checks, which are not independent review. If it holds, Lipschitz maps from subsets of Hilbert space into ℓ₁ can always be extended with a universal loss, answering Mendel and Naor’s question and the long-standing extension question attributed to Ball.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20332%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
