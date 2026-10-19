@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Walks reveal the shape? Markov type and superreflexivity | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that every Banach space with nontrivial Markov type is superreflexive, answering Naor’s question, with a Lean proof. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/327-markov-type/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Walks reveal the shape?">
+<meta property="og:description" content="An AI preprint claims that every Banach space with nontrivial Markov type is superreflexive, answering Naor’s question, with a Lean proof. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/327-markov-type/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/327-markov-type/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 327, October 2026</p>
+<h1>Walks reveal the shape?</h1>
+<p class="subtitle">An AI preprint claims that nontrivial Markov type forces superreflexivity</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 327 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="uF12jdZVDz0" data-title="Episode 327: Walks reveal the shape?">
+  <a href="https://youtu.be/uF12jdZVDz0">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 327: Walks reveal the shape? A free-group tree branching outward in four directions from a white center.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:33. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/uF12jdZVDz0?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/uF12jdZVDz0?t=64" data-t="64"><span class="t">1:04</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/uF12jdZVDz0?t=101" data-t="101"><span class="t">1:41</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/uF12jdZVDz0?t=178" data-t="178"><span class="t">2:58</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Run a stationary, reversible random walk on a finite graph and watch it through any map into a Banach space. Markov type p says that after t steps the walk has moved, on average, at most a constant times t^(1/p) times a typical single step. In a Hilbert space, Ball showed in 1992 that p can be two: the walk diffuses. In ℓ₁ it cannot: on the Hamming cube our computer finds the ratio for p = 2 growing past 26 at 128 dimensions, while in Hilbert space it never exceeds 1.</p>
+<p>A space is superreflexive when it has an equivalent norm whose unit ball is uniformly round. In 2006 Naor, Peres, Schramm and Sheffield showed that smooth norms give Markov type above 1; with Pisier’s renorming, every superreflexive space has it. In 2012 Naor asked the converse: can a space have Markov type above 1 without such a norm? The question was listed as open, and ordinary Rademacher type is known not to be enough.</p>
+<p>Result 327 is one OpenAI paper, 14 pages, dated September 23 and made public October 6, 2026. It claims that every real Banach space with Markov type p for some p above 1 is superreflexive. Together with the known converse, nontrivial Markov type is exactly superreflexivity.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: any relation between the exponents, any explicit constant beyond the proof’s own, or anything about general metric spaces. The walks the proof builds are finite but astronomically large.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 14 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The full equivalence (<a href="https://github.com/openai/math/blob/main/lean/docs/327.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper is unrefereed and unchanged since release. Lean formalizes the full equivalence, including the classical inputs, in 207 files and about 27,000 lines, not run by us. Three outside projects re-ran it and it was accepted. We found no public comment from specialists and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Partial sums that swing between two levels.</strong> Suppose a space is not superreflexive. Then it contains, almost isometrically, every finite piece of a norm in which merging neighbouring entries never increases the length, like the size of the largest partial sum. In such a norm, a sum whose partial sums swing many times between two levels a distance l apart has length at least l/6, measured in single steps. The proof needs a reversible walk whose labels do exactly that, with l proportional to the number of steps.</li>
+  <li><strong>The free group does it.</strong> The free group supplies it. A random word of length n keeps, on average, at least half its letters after cancellation; our computer gets 64.75 at 128. Commuting letters would only diffuse. Ping-pong maps let the free group act on the line, and our computer confirms the paper’s two lemmas, for one choice of arcs, on 13,120 reduced words. A finite Ramsey argument lets this motion run inside a finite stationary, reversible walk, and a lattice trick turns edge labels into positions. Then, with probability at least 3/20, the walk moves at least n/24 step lengths, which contradicts Markov type p above 1 for large n.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours, exact: on the Hamming cube, the Markov-type ratio for p = 2 grows to 26.6 at 128 dimensions in ℓ₁ and stays at most 1 in Hilbert space.</li>
+  <li>Ours, exact: a random free-group word of length n keeps on average at least n/2 letters (64.75 at n = 128); commuting letters only diffuse.</li>
+  <li>Ours: the paper’s ping-pong lemmas hold on all 13,120 reduced words of length up to 8, for one choice of arcs.</li>
+  <li>The paper’s constants: the walk moves at least n/24 step lengths with probability at least 3/20.</li>
+  <li>Lean: 207 files and 27,054 lines in the import closure (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Nontrivial-Markov-Type-Forces-Superreflexivity-September-23-2026/paper.pdf">Nontrivial Markov Type Forces Superreflexivity (PDF)</a>, 14 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/327.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 327.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Nontrivial-Markov-Type-Forces-Superreflexivity-September-23-2026/paper.pdf">Nontrivial Markov Type Forces Superreflexivity</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Run a stationary, reversible random walk on a finite graph and watch it through any map into a Banach space. Markov type p says that after t steps the walk has moved, on average, at most a constant times t^(1/p) times a typical single step. In a Hilbert space, Ball showed in 1992 that p can be two: the walk diffuses. In ℓ₁ it cannot: on the Hamming cube our computer finds the ratio for p = 2 growing past 26 at 128 dimensions, while in Hilbert space it never exceeds 1. A space is superreflexive when it has an equivalent norm whose unit ball is uniformly round. In 2006 Naor, Peres, Schramm and Sheffield showed that smooth norms give Markov type above 1; with Pisier’s renorming, every superreflexive space has it. In 2012 Naor asked the converse: can a space have Markov type above 1 without such a norm? The question was listed as open, and ordinary Rademacher type is known not to be enough.</p>
+<h3><span class="t num">1:04</span>The claim</h3>
+<p>Result 327 is one OpenAI paper, 14 pages, dated September 23 and made public October 6, 2026. It claims that every real Banach space with Markov type p for some p above 1 is superreflexive. Together with the known converse, nontrivial Markov type is exactly superreflexivity. Not claimed: any relation between the exponents, any explicit constant beyond the proof’s own, or anything about general metric spaces. The walks the proof builds are finite but astronomically large.</p>
+<h3><span class="t num">1:41</span>How the proof goes</h3>
+<p>Suppose a space is not superreflexive. Then it contains, almost isometrically, every finite piece of a norm in which merging neighbouring entries never increases the length, like the size of the largest partial sum. In such a norm, a sum whose partial sums swing many times between two levels a distance l apart has length at least l/6, measured in single steps. The proof needs a reversible walk whose labels do exactly that, with l proportional to the number of steps. The free group supplies it. A random word of length n keeps, on average, at least half its letters after cancellation; our computer gets 64.75 at 128. Commuting letters would only diffuse. Ping-pong maps let the free group act on the line, and our computer confirms the paper’s two lemmas, for one choice of arcs, on 13,120 reduced words. A finite Ramsey argument lets this motion run inside a finite stationary, reversible walk, and a lattice trick turns edge labels into positions. Then, with probability at least 3/20, the walk moves at least n/24 step lengths, which contradicts Markov type p above 1 for large n.</p>
+<h3><span class="t num">2:58</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. Lean formalizes the full equivalence, including the classical inputs, in 207 files and about 27,000 lines, not run by us. Three outside projects re-ran it and it was accepted. We found no public comment from specialists and no reported error. If it holds, how random walks spread inside a Banach space detects exactly whether it can be given a uniformly round norm, answering Naor’s question.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20327%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
