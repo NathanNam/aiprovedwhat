@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Never more than twice? The complete Crouzeix conjecture | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim the complete Crouzeix inequality with constant 2, for matrix-valued polynomials and every Hilbert-space operator, with Lean proofs. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/325-complete-crouzeix/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Never more than twice?">
+<meta property="og:description" content="Two AI preprints claim the complete Crouzeix inequality with constant 2, for matrix-valued polynomials and every Hilbert-space operator, with Lean proofs. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/325-complete-crouzeix/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/325-complete-crouzeix/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 325, October 2026</p>
+<h1>Never more than twice?</h1>
+<p class="subtitle">Two AI preprints claim the complete Crouzeix inequality, with matrix coefficients of any size</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 325 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="b7sJ5olWXmg" data-title="Episode 325: Never more than twice?">
+  <a href="https://youtu.be/b7sJ5olWXmg">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 325: Never more than twice? A teal disk inside a dashed yellow circle twice its radius, with an arrow marking the radius.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:51. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/b7sJ5olWXmg?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/b7sJ5olWXmg?t=70" data-t="70"><span class="t">1:10</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/b7sJ5olWXmg?t=123" data-t="123"><span class="t">2:03</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/b7sJ5olWXmg?t=191" data-t="191"><span class="t">3:11</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The numerical range of a matrix A is the set of all values x*Ax over unit vectors x: a convex region of the complex plane that contains the eigenvalues. Crouzeix’s question is how well this region controls polynomials of A. Take the 2 × 2 matrix with a two in the corner. Its numerical range is the unit disk, the polynomial z is at most one there, yet A itself has norm two. Our computer confirms the ratio is exactly two.</p>
+<p>In 2004 Crouzeix conjectured that two is the worst case for every matrix and every polynomial. Crouzeix proved a bound of 11.08 in 2007, and Crouzeix and Palencia improved it to 1 + √2 in 2017. In July and August 2026, three preprints by human authors gave proofs of the original version, with numbers as coefficients. At least two had help from OpenAI models. The complete version, with matrices as coefficients, was proved only for sizes up to three by three and a few special families, and was described as open in September.</p>
+<p>Result 325 is two OpenAI papers, of 12 and 22 pages, dated September 26 and 23 and made public October 6, 2026. They claim the complete inequality: for every matrix A of any size and every polynomial whose coefficients are matrices of any size, the norm of P of A is at most two times the largest norm of P on the numerical range. The second, longer paper extends it to every bounded operator on any complex Hilbert space, and adds a structural theorem about the best change of metric.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: the first proof of the original scalar conjecture, which the papers credit to the earlier preprints, or that two is the best constant as something new. That was known from the 2 × 2 example. Nothing is claimed for Banach spaces.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 2 papers, 12 and 22 pages, dated September 26 and 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>Both proofs, the structural theorem and the Hilbert-space version (<a href="https://github.com/openai/math/blob/main/lean/docs/325.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The papers are unrefereed and unchanged since release. Both proofs of the matrix inequality, the structural theorem, and the Hilbert space version are formalized in Lean, in five checks and about 39,000 lines, not run by us. Four outside projects re-ran them and report them passing. We found no public comment from specialists, and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A positive kernel from convexity.</strong> The direct proof puts the numerical range inside a smooth convex region and maps the outside of the unit circle onto the outside of that region. Convexity makes a certain kernel positive, and that traps a polynomial’s average size on the boundary between two sums of its coefficients. The resolvent of A, suitably weighted, has positive real part on the circle, because the numerical range lies inside the region.</li>
+  <li><strong>Both orders, then a 2-by-2 trick.</strong> The key step scales P to be at most one on the boundary, takes the top singular vectors of P of A, and tests both orders of multiplication with a test polynomial G, P times G and G times P, which is what matrix coefficients require. A 2 × 2 positivity trick then gives 2γ² ≤ 8, so γ, the norm, is at most two. The step to infinite dimensions, in the second paper, is a finite compression; our computer checks it on examples to about 15 digits. Our random small cases, 600 of them, peak at 1.53, and hill climbing reaches about 1.96, never above two.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours, exact: for A = [[0,2],[0,0]] the numerical range is the unit disk and ‖A‖ = 2, so the ratio is exactly 2.</li>
+  <li>Ours: 600 random 2 × 2 and 3 × 3 cases, with scalar and 2 × 2 matrix coefficients, peak at 1.53; hill climbing reaches 1.95, 1.91, 1.96 and 1.78; none above 2.</li>
+  <li>Ours: the finite compression identity holds on examples with relative error about 5 × 10⁻¹⁶.</li>
+  <li>Lean: five checks, 199 files and 39,133 lines in the import closures (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/paper.pdf">A direct proof of the complete Crouzeix inequality (PDF)</a>, 12 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-complete-Crouzeix-theorem-September-23-2026/paper.pdf">The complete Crouzeix theorem: optimal similarity and a common positive boundary representation (PDF)</a>, 22 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/325.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 325.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-direct-proof-of-the-complete-Crouzeix-inequality-September-26-2026/paper.pdf">A direct proof of the complete Crouzeix inequality</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-complete-Crouzeix-theorem-September-23-2026/paper.pdf">The complete Crouzeix theorem: optimal similarity and a common positive boundary representation</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>The numerical range of a matrix A is the set of all values x*Ax over unit vectors x: a convex region of the complex plane that contains the eigenvalues. Crouzeix’s question is how well this region controls polynomials of A. Take the 2 × 2 matrix with a two in the corner. Its numerical range is the unit disk, the polynomial z is at most one there, yet A itself has norm two. Our computer confirms the ratio is exactly two. In 2004 Crouzeix conjectured that two is the worst case for every matrix and every polynomial. Crouzeix proved a bound of 11.08 in 2007, and Crouzeix and Palencia improved it to 1 + √2 in 2017. In July and August 2026, three preprints by human authors gave proofs of the original version, with numbers as coefficients. At least two had help from OpenAI models. The complete version, with matrices as coefficients, was proved only for sizes up to three by three and a few special families, and was described as open in September.</p>
+<h3><span class="t num">1:10</span>The claim</h3>
+<p>Result 325 is two OpenAI papers, of 12 and 22 pages, dated September 26 and 23 and made public October 6, 2026. They claim the complete inequality: for every matrix A of any size and every polynomial whose coefficients are matrices of any size, the norm of P of A is at most two times the largest norm of P on the numerical range. The second, longer paper extends it to every bounded operator on any complex Hilbert space, and adds a structural theorem about the best change of metric. Not claimed: the first proof of the original scalar conjecture, which the papers credit to the earlier preprints, or that two is the best constant as something new. That was known from the 2 × 2 example. Nothing is claimed for Banach spaces.</p>
+<h3><span class="t num">2:03</span>How the proof goes</h3>
+<p>The direct proof puts the numerical range inside a smooth convex region and maps the outside of the unit circle onto the outside of that region. Convexity makes a certain kernel positive, and that traps a polynomial’s average size on the boundary between two sums of its coefficients. The resolvent of A, suitably weighted, has positive real part on the circle, because the numerical range lies inside the region. The key step scales P to be at most one on the boundary, takes the top singular vectors of P of A, and tests both orders of multiplication with a test polynomial G, P times G and G times P, which is what matrix coefficients require. A 2 × 2 positivity trick then gives 2γ² ≤ 8, so γ, the norm, is at most two. The step to infinite dimensions, in the second paper, is a finite compression; our computer checks it on examples to about 15 digits. Our random small cases, 600 of them, peak at 1.53, and hill climbing reaches about 1.96, never above two.</p>
+<h3><span class="t num">3:11</span>Where it stands</h3>
+<p>The papers are unrefereed and unchanged since release. Both proofs of the matrix inequality, the structural theorem, and the Hilbert space version are formalized in Lean, in five checks and about 39,000 lines, not run by us. Four outside projects re-ran them and report them passing. We found no public comment from specialists, and no reported error. If it holds, the numerical range controls every matrix polynomial of every bounded operator on a Hilbert space within a factor of two, the best possible, whatever the size of its coefficient matrices.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20325%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
