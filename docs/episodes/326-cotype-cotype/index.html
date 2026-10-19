@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pisier’s last question? The cotype–cotype conjecture | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that, for real Banach spaces with the approximation property, finite cotype of a space and its dual is equivalent to K-convexity, with a Lean proof. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/326-cotype-cotype/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Pisier’s last question?">
+<meta property="og:description" content="An AI preprint claims that, for real Banach spaces with the approximation property, finite cotype of a space and its dual is equivalent to K-convexity, with a Lean proof. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/326-cotype-cotype/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/326-cotype-cotype/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 326, October 2026</p>
+<h1>Pisier’s last question?</h1>
+<p class="subtitle">An AI preprint claims the cotype–cotype conjecture for spaces with the approximation property</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 326 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="NdrHFNGzOR4" data-title="Episode 326: Pisier’s last question?">
+  <a href="https://youtu.be/NdrHFNGzOR4">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 326: Pisier’s last question? Three growth curves on axes, a straight line, a square-root curve and a flat line.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:57. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/NdrHFNGzOR4?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/NdrHFNGzOR4?t=77" data-t="77"><span class="t">1:17</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/NdrHFNGzOR4?t=123" data-t="123"><span class="t">2:03</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/NdrHFNGzOR4?t=188" data-t="188"><span class="t">3:08</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Flip a fair sign on each of n unit vectors and add them up. How long is the random sum on average? For the n basis vectors, it depends on the space. In ℓ₁ it is always n; in a Hilbert space, the √n; in ℓ∞, just one. Type says random sums grow more slowly than in ℓ₁; cotype says they still grow, unlike in ℓ∞. A Hilbert space is the best case of both. For 12 vectors, our computer gets 12, about 3.5, and 1.</p>
+<p>A space is K-convex when the projection that keeps only the linear part of functions on the sign cube stays bounded however many signs there are. In ℓ₁ and ℓ∞ it does not: our lower bound already passes 25 at 1,001 signs. Pisier showed that K-convexity is the same as nontrivial type. In 1980 and 1981 Pisier asked, then conjectured for spaces with a basis, that finite cotype of both a space and its dual should force it, and called this the last basic question in the theory of type and cotype. Pisier proved it with a bounded approximation hypothesis and a restriction on the exponents, and showed that without some approximation hypothesis it fails.</p>
+<p>Result 326 is one OpenAI paper, 21 pages, dated September 23 and made public October 6, 2026. It claims the conjecture for real Banach spaces with the approximation property: such a space is K-convex exactly when it and its dual both have finite cotype, with any exponents. The approximation property is weaker than the bounded version, and almost every classical space has it.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: anything without the approximation property, where the converse can fail, complex spaces, or explicit constants; the paper says its constants are existential. The easy direction, from K-convexity to cotype, was already known for all spaces.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 21 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/326.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper is unrefereed and unchanged since release. The main theorem is formalized in Lean, in 125 files and about 12,000 lines, including Pisier’s classical theorem, not run by us. Three outside projects re-ran it and it was accepted, and a reviewer of a separate formal-conjectures entry found that entry’s statement matches the paper. The corollaries are not formalized. We found no public comment from specialists and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Walsh norms: does it decay?</strong> The tool is a Walsh norm: apply a map to a family of vectors indexed by binary strings, and mix them with a Hadamard matrix. For a Hilbert space the Walsh norm of the identity halves every two steps; for ℓ₁ or ℓ∞ it stays at 1 forever. Our computer reproduces both patterns. If a space contained good copies of ℓ₁ in every finite dimension, its Walsh norms could not decay.</li>
+  <li><strong>From slow decay to a contradiction.</strong> Cotype on both sides lets the proof lift vectors to bounded families with prescribed sign-weighted averages. A Fourier lemma on binary matrices then shows these families cannot put all their weight on rank-one patterns, so slow decay would keep Walsh norms large at ever higher dimensions, which a finite-rank map cannot do. That gives uniform decay for every finite-rank map, and the approximation property passes it, through compact maps, to the identity. The constants are huge: even in the best case, the shortest tuple length the paper’s conditions allow is about 2⁷⁴.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours, exact: random sign sums of the n basis vectors have average length n in ℓ₁, √n in ℓ₂ and 1 in ℓ∞ (12, 3.46 and 1 at n = 12).</li>
+  <li>Ours: a lower bound for the Rademacher projection in ℓ₁ and ℓ∞ grows without bound (25.25 at 1,001 signs); in Hilbert space it is 1.</li>
+  <li>Ours: Walsh norms of the identity stay at 1 for ℓ₁ and ℓ∞ and halve every two steps for ℓ₂.</li>
+  <li>Ours: in the best case, the shortest tuple length the paper’s conditions allow is about 2⁷⁴.</li>
+  <li>Lean: 125 files and 11,759 lines in the import closure (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-cotype-cotype-conjecture-under-the-approximation-property-September-23-2026/paper.pdf">The cotype–cotype conjecture under the approximation property (PDF)</a>, 21 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/326.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 326.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-cotype-cotype-conjecture-under-the-approximation-property-September-23-2026/paper.pdf">The cotype–cotype conjecture under the approximation property</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Flip a fair sign on each of n unit vectors and add them up. How long is the random sum on average? For the n basis vectors, it depends on the space. In ℓ₁ it is always n; in a Hilbert space, the √n; in ℓ∞, just one. Type says random sums grow more slowly than in ℓ₁; cotype says they still grow, unlike in ℓ∞. A Hilbert space is the best case of both. For 12 vectors, our computer gets 12, about 3.5, and 1. A space is K-convex when the projection that keeps only the linear part of functions on the sign cube stays bounded however many signs there are. In ℓ₁ and ℓ∞ it does not: our lower bound already passes 25 at 1,001 signs. Pisier showed that K-convexity is the same as nontrivial type. In 1980 and 1981 Pisier asked, then conjectured for spaces with a basis, that finite cotype of both a space and its dual should force it, and called this the last basic question in the theory of type and cotype. Pisier proved it with a bounded approximation hypothesis and a restriction on the exponents, and showed that without some approximation hypothesis it fails.</p>
+<h3><span class="t num">1:17</span>The claim</h3>
+<p>Result 326 is one OpenAI paper, 21 pages, dated September 23 and made public October 6, 2026. It claims the conjecture for real Banach spaces with the approximation property: such a space is K-convex exactly when it and its dual both have finite cotype, with any exponents. The approximation property is weaker than the bounded version, and almost every classical space has it. Not claimed: anything without the approximation property, where the converse can fail, complex spaces, or explicit constants; the paper says its constants are existential. The easy direction, from K-convexity to cotype, was already known for all spaces.</p>
+<h3><span class="t num">2:03</span>How the proof goes</h3>
+<p>The tool is a Walsh norm: apply a map to a family of vectors indexed by binary strings, and mix them with a Hadamard matrix. For a Hilbert space the Walsh norm of the identity halves every two steps; for ℓ₁ or ℓ∞ it stays at 1 forever. Our computer reproduces both patterns. If a space contained good copies of ℓ₁ in every finite dimension, its Walsh norms could not decay. Cotype on both sides lets the proof lift vectors to bounded families with prescribed sign-weighted averages. A Fourier lemma on binary matrices then shows these families cannot put all their weight on rank-one patterns, so slow decay would keep Walsh norms large at ever higher dimensions, which a finite-rank map cannot do. That gives uniform decay for every finite-rank map, and the approximation property passes it, through compact maps, to the identity. The constants are huge: even in the best case, the shortest tuple length the paper’s conditions allow is about 2⁷⁴.</p>
+<h3><span class="t num">3:08</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. The main theorem is formalized in Lean, in 125 files and about 12,000 lines, including Pisier’s classical theorem, not run by us. Three outside projects re-ran it and it was accepted, and a reviewer of a separate formal-conjectures entry found that entry’s statement matches the paper. The corollaries are not formalized. We found no public comment from specialists and no reported error. If it holds, for spaces with the approximation property, finite cotype of a space and its dual is exactly what rules out good copies of ℓ₁ in every finite dimension, settling Pisier’s question in that setting.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20326%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
