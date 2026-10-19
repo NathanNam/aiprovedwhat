@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two dimensions disappear? Gromov&#x27;s Urysohn width bound for scalar curvature | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/344-metric-blaschke/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Only five shapes?">
+<meta property="og:description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/344-metric-blaschke/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/344-metric-blaschke/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 344, October 2026</p>
+<h1>Only five shapes?</h1>
+<p class="subtitle">An AI preprint claims the metric Blaschke conjecture</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 344 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="bR8zQ7cwcE4" data-title="Episode 344: Only five shapes?">
+  <a href="https://youtu.be/bR8zQ7cwcE4">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 344: Only five shapes? Teal geodesics from one point of a grey sphere meeting at the opposite point.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:02. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/bR8zQ7cwcE4?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/bR8zQ7cwcE4?t=86" data-t="86"><span class="t">1:26</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/bR8zQ7cwcE4?t=130" data-t="130"><span class="t">2:10</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/bR8zQ7cwcE4?t=202" data-t="202"><span class="t">3:22</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The injectivity radius of a closed manifold is how far you can travel from any point along geodesics before they stop being shortest paths. It can never exceed the diameter, the largest distance between two points. On a round sphere the two are equal: every geodesic from a point reaches the opposite point together. On flat tori, square or hexagonal, or a product of two equal spheres, our computer finds the injectivity radius falls short, to about 0.71 or 0.87 of the diameter. On an oblate spheroid, geodesics from a point on the equator meet along a whole arc instead of at one point.</p>
+<p>Manifolds whose injectivity radius equals their diameter are named after Blaschke, who raised the question for surfaces in 1921. Besides spheres there are four other kinds of model: real, complex and quaternionic projective spaces, and the Cayley plane. The Blaschke conjecture says these are the only examples, up to scale, in the form stated in Besse’s 1978 book. Surfaces were settled by Green in 1963, and spheres and real projective spaces by about 1980, through Berger, Kazdan, Weinstein and Yang. The complex, quaternionic and Cayley cases stayed open: there were results on their topology and volume, and proofs only under extra curvature assumptions.</p>
+<p>Result 344 is one OpenAI paper, 41 pages, dated September 23 and made public October 6, 2026. It claims the full conjecture: a closed Riemannian manifold whose injectivity radius equals its diameter is, up to scale, one of the five models. The key new step is a sharp lower bound: such a manifold has at least the volume of its model with the same diameter, with equality only for the model.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: anything about manifolds where only some points have this property, or where geodesics all close up but need not stay shortest that long, which are different problems; or a machine-checked proof, since there is no Lean.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 41 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>No</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper is unrefereed and unchanged since release, and has no Lean. It relies on deep earlier theorems, including Szabó’s on harmonic manifolds, Yang’s volume theorem, and Reznikov’s theorem, which it cites only through a later paper. In September 2026, Song posted a proof under an extra hypothesis, which the paper cites. We found no specialist comment and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A sharp volume lower bound.</strong> From the hypothesis and classical theory, every geodesic closes up with the same length. Along each closed geodesic, the paper splits the Jacobi determinant into two blocks and combines a Kazdan-type identity with Jensen’s inequality, integrating over all geodesics. This gives the volume lower bound, and equality forces a harmonic manifold, which by Szabó’s theorem is the model. Our computer reproduces the model volumes from the paper’s density formula; relative to a round sphere of the same dimension and diameter they are 8, 3, 7 and 39 times as large, for four-dimensional real projective space, the complex projective plane, the quaternionic plane and the Cayley plane.</li>
+  <li><strong>Then a matching upper bound.</strong> It then needs a matching upper bound. For complex projective spaces it comes from Yang’s 1991 work; for the two remaining planes, quaternionic and Cayley, from earlier diffeomorphism results and a volume theorem of Reznikov; and for all quaternionic projective spaces, the plane included, from a new 20-page topological argument whose final bound is a Catalan number. The two bounds together force isometry.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: injectivity radius over diameter is 0.71 for the square flat torus and for a product of two equal spheres, 0.87 for the hexagonal torus, and 1 for the round sphere.</li>
+  <li>Ours: on an oblate spheroid (axis ratio 0.8), geodesics from a point on the equator meet along an arc, not at one point.</li>
+  <li>Ours: relative to a round sphere of the same dimension and diameter, the models have 8, 3, 7 and 39 times the volume (four-dimensional real projective space, complex projective plane, quaternionic plane, Cayley plane).</li>
+  <li>Ours: the paper's density formula reproduces 13 model volumes to about 1e-15 (real projective spaces by our extension).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-metric-Blaschke-theorem-September-23-2026/paper.pdf">The metric Blaschke theorem (PDF)</a>, 41 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 344.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-metric-Blaschke-theorem-September-23-2026/paper.pdf">The metric Blaschke theorem</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>The injectivity radius of a closed manifold is how far you can travel from any point along geodesics before they stop being shortest paths. It can never exceed the diameter, the largest distance between two points. On a round sphere the two are equal: every geodesic from a point reaches the opposite point together. On flat tori, square or hexagonal, or a product of two equal spheres, our computer finds the injectivity radius falls short, to about 0.71 or 0.87 of the diameter. On an oblate spheroid, geodesics from a point on the equator meet along a whole arc instead of at one point. Manifolds whose injectivity radius equals their diameter are named after Blaschke, who raised the question for surfaces in 1921. Besides spheres there are four other kinds of model: real, complex and quaternionic projective spaces, and the Cayley plane. The Blaschke conjecture says these are the only examples, up to scale, in the form stated in Besse’s 1978 book. Surfaces were settled by Green in 1963, and spheres and real projective spaces by about 1980, through Berger, Kazdan, Weinstein and Yang. The complex, quaternionic and Cayley cases stayed open: there were results on their topology and volume, and proofs only under extra curvature assumptions.</p>
+<h3><span class="t num">1:26</span>The claim</h3>
+<p>Result 344 is one OpenAI paper, 41 pages, dated September 23 and made public October 6, 2026. It claims the full conjecture: a closed Riemannian manifold whose injectivity radius equals its diameter is, up to scale, one of the five models. The key new step is a sharp lower bound: such a manifold has at least the volume of its model with the same diameter, with equality only for the model. Not claimed: anything about manifolds where only some points have this property, or where geodesics all close up but need not stay shortest that long, which are different problems; or a machine-checked proof, since there is no Lean.</p>
+<h3><span class="t num">2:10</span>How the proof goes</h3>
+<p>From the hypothesis and classical theory, every geodesic closes up with the same length. Along each closed geodesic, the paper splits the Jacobi determinant into two blocks and combines a Kazdan-type identity with Jensen’s inequality, integrating over all geodesics. This gives the volume lower bound, and equality forces a harmonic manifold, which by Szabó’s theorem is the model. Our computer reproduces the model volumes from the paper’s density formula; relative to a round sphere of the same dimension and diameter they are 8, 3, 7 and 39 times as large, for four-dimensional real projective space, the complex projective plane, the quaternionic plane and the Cayley plane. It then needs a matching upper bound. For complex projective spaces it comes from Yang’s 1991 work; for the two remaining planes, quaternionic and Cayley, from earlier diffeomorphism results and a volume theorem of Reznikov; and for all quaternionic projective spaces, the plane included, from a new 20-page topological argument whose final bound is a Catalan number. The two bounds together force isometry.</p>
+<h3><span class="t num">3:22</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release, and has no Lean. It relies on deep earlier theorems, including Szabó’s on harmonic manifolds, Yang’s volume theorem, and Reznikov’s theorem, which it cites only through a later paper. In September 2026, Song posted a proof under an extra hypothesis, which the paper cites. We found no specialist comment and no reported error. If it holds, a closed manifold in which every geodesic stays shortest all the way to the farthest point must be, up to scale, one of the five classical families of symmetric shapes.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20344%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
