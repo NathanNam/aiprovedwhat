@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No bound at all? Kalton’s question on free spaces | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims a uniformly discrete metric space whose Lipschitz-free space has the approximation property but not the bounded one, with a Lean proof. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/330-free-space-bap/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="No bound at all?">
+<meta property="og:description" content="An AI preprint claims a uniformly discrete metric space whose Lipschitz-free space has the approximation property but not the bounded one, with a Lean proof. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/330-free-space-bap/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/330-free-space-bap/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 330, October 2026</p>
+<h1>No bound at all?</h1>
+<p class="subtitle">An AI preprint claims a negative answer to Kalton’s question on Lipschitz-free spaces</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 330 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="eqcweTuRNPM" data-title="Episode 330: No bound at all?">
+  <a href="https://youtu.be/eqcweTuRNPM">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 330: No bound at all? Five coloured circles glued by lines to one white point.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:49. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/eqcweTuRNPM?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/eqcweTuRNPM?t=68" data-t="68"><span class="t">1:08</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/eqcweTuRNPM?t=119" data-t="119"><span class="t">1:59</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/eqcweTuRNPM?t=188" data-t="188"><span class="t">3:08</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Any metric space, with a base point chosen, sits inside a Banach space, its Lipschitz-free space, where the point masses are vectors, the base point becomes zero, and the distance between two points becomes the norm of their difference. For finitely many points, the norm of a combination of masses is the cheapest way to transport the positive masses onto the negative ones, with the base point making up any difference. Our computer checks this on small spaces: the transport cost and the best 1-Lipschitz test agree in all 100 cases.</p>
+<p>A Banach space has the approximation property if finite-rank maps approximate the identity as closely as we like on every compact set, and the bounded approximation property if those maps can share one bound on their norms. In 2004 Kalton proved that free spaces over uniformly discrete spaces, where distances never drop below a fixed gap, have the approximation property, and asked whether they also have the bounded one. Later surveys listed it as an open problem, and a paper this April called it one of the major ones.</p>
+<p>Result 330 is one OpenAI paper, 21 pages, dated September 26 and made public October 6, 2026. It claims a countable metric space, with every distance at least 1, whose real Lipschitz-free space has the approximation property but not the bounded one: the norms of good approximating maps cannot share any finite bound. A corollary gives an equivalent norm on ℓ₁ without the metric approximation property.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: that the approximation property itself is new, since Kalton proved it; that every uniformly discrete space fails, since bounded ones are fine; or an explicit space, since the construction is random and huge. An earlier paper found the same gap for discrete spaces with no guaranteed minimum distance.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 21 pages, dated September 26, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The main theorem and the ℓ₁ corollary (<a href="https://github.com/openai/math/blob/main/lean/docs/330.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper is unrefereed and unchanged since release. Lean formalizes the main theorem and the ℓ₁ corollary, in 34 files and about 4,600 lines, not run by us, using a different graph construction; one short section on Kalton’s nonlinear version is not formalized. Three outside projects re-ran the checks and they were accepted. We found no public comment from specialists and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Glue blocks at one point.</strong> Any bounded block with all distances at least 1 has a free space like ℓ₁, with good maps of norm at most twice its diameter. The trick is to glue infinitely many blocks at one point, block p defeating every map of norm p. For each finite set of blocks the bound is finite, which gives the approximation property, but the bounds grow without limit: 910, 3,920, 10,230, and so on.</li>
+  <li><strong>Inside a block: coloured graphs and anchors.</strong> Inside each block are huge random regular graphs with random colours that look locally like coloured trees, and each vertex is wired to an anchor shared by all vertices with the same capped distances to the colours. An operator of norm at most p that nearly fixes every anchor would give signed measures weighted toward points with similar labels. Tests built from records of the longest matched walks then force an average of at least 11p, while the slightly adjusted operator allows only 2p: a contradiction. Our computer checks the toy versions: a small block keeps every distance at least 1, and a key walk lemma holds in about 24,000 checks.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: on small finite spaces, the free norm as a transport cost equals its dual (best 1-Lipschitz test) in 100 of 100 cases.</li>
+  <li>Ours: the paper’s budgets for the first blocks are 910, 3,920, 10,230, …, finite for each set of blocks but unbounded.</li>
+  <li>The paper’s closing contradiction: an average test of at least 11p against an upper bound of 2p.</li>
+  <li>Ours: a toy block keeps every distance at least 1; the walk lemma holds in 23,920 checks with 0 failures.</li>
+  <li>Lean: 34 files and 4,614 lines in the import closures (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Failure-of-Bounded-Approximation-in-a-Lipschitz-Free-Space-over-a-Uniformly-Discrete-Metric-Space-September-26-2026/main.pdf">A uniformly discrete counterexample to bounded approximation in Lipschitz-free spaces (PDF)</a>, 21 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/330.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 330.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Failure-of-Bounded-Approximation-in-a-Lipschitz-Free-Space-over-a-Uniformly-Discrete-Metric-Space-September-26-2026/main.pdf">A uniformly discrete counterexample to bounded approximation in Lipschitz-free spaces</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Any metric space, with a base point chosen, sits inside a Banach space, its Lipschitz-free space, where the point masses are vectors, the base point becomes zero, and the distance between two points becomes the norm of their difference. For finitely many points, the norm of a combination of masses is the cheapest way to transport the positive masses onto the negative ones, with the base point making up any difference. Our computer checks this on small spaces: the transport cost and the best 1-Lipschitz test agree in all 100 cases. A Banach space has the approximation property if finite-rank maps approximate the identity as closely as we like on every compact set, and the bounded approximation property if those maps can share one bound on their norms. In 2004 Kalton proved that free spaces over uniformly discrete spaces, where distances never drop below a fixed gap, have the approximation property, and asked whether they also have the bounded one. Later surveys listed it as an open problem, and a paper this April called it one of the major ones.</p>
+<h3><span class="t num">1:08</span>The claim</h3>
+<p>Result 330 is one OpenAI paper, 21 pages, dated September 26 and made public October 6, 2026. It claims a countable metric space, with every distance at least 1, whose real Lipschitz-free space has the approximation property but not the bounded one: the norms of good approximating maps cannot share any finite bound. A corollary gives an equivalent norm on ℓ₁ without the metric approximation property. Not claimed: that the approximation property itself is new, since Kalton proved it; that every uniformly discrete space fails, since bounded ones are fine; or an explicit space, since the construction is random and huge. An earlier paper found the same gap for discrete spaces with no guaranteed minimum distance.</p>
+<h3><span class="t num">1:59</span>How the proof goes</h3>
+<p>Any bounded block with all distances at least 1 has a free space like ℓ₁, with good maps of norm at most twice its diameter. The trick is to glue infinitely many blocks at one point, block p defeating every map of norm p. For each finite set of blocks the bound is finite, which gives the approximation property, but the bounds grow without limit: 910, 3,920, 10,230, and so on. Inside each block are huge random regular graphs with random colours that look locally like coloured trees, and each vertex is wired to an anchor shared by all vertices with the same capped distances to the colours. An operator of norm at most p that nearly fixes every anchor would give signed measures weighted toward points with similar labels. Tests built from records of the longest matched walks then force an average of at least 11p, while the slightly adjusted operator allows only 2p: a contradiction. Our computer checks the toy versions: a small block keeps every distance at least 1, and a key walk lemma holds in about 24,000 checks.</p>
+<h3><span class="t num">3:08</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. Lean formalizes the main theorem and the ℓ₁ corollary, in 34 files and about 4,600 lines, not run by us, using a different graph construction; one short section on Kalton’s nonlinear version is not formalized. Three outside projects re-ran the checks and they were accepted. We found no public comment from specialists and no reported error. If it holds, the free space of a uniformly discrete metric space need not have the bounded approximation property, answering Kalton’s question in the negative.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20330%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
