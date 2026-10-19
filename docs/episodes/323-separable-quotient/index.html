@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yes or no, undecidable? The separable quotient problem | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that, relative to a measurable cardinal, ZFC cannot decide whether every Banach space has a separable quotient. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/323-separable-quotient/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Yes or no, undecidable?">
+<meta property="og:description" content="An AI preprint claims that, relative to a measurable cardinal, ZFC cannot decide whether every Banach space has a separable quotient. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/323-separable-quotient/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/323-separable-quotient/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 323, October 2026</p>
+<h1>Yes or no, undecidable?</h1>
+<p class="subtitle">An AI preprint claims the separable quotient problem is independent of ZFC, relative to a measurable cardinal</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 323 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="mY4fZcNXwh8" data-title="Episode 323: Yes or no, undecidable?">
+  <a href="https://youtu.be/mY4fZcNXwh8">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 323: Yes or no, undecidable? Two circles, a pink one with a cross and a teal one with a check mark.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:11. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/mY4fZcNXwh8?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/mY4fZcNXwh8?t=59" data-t="59"><span class="t">0:59</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/mY4fZcNXwh8?t=125" data-t="125"><span class="t">2:05</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/mY4fZcNXwh8?t=210" data-t="210"><span class="t">3:30</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Every infinite-dimensional Banach space contains a separable infinite-dimensional subspace: just take the closed span of a sequence. Quotients are another matter. A quotient squashes a space along a subspace, and to be separable it has to forget almost everything while staying infinite-dimensional. So: does every infinite-dimensional Banach space have a separable infinite-dimensional quotient?</p>
+<p>The question is traditionally attributed to Banach and Mazur, and its earliest known explicit statement is Rosenthal’s, in 1969. Many classes were settled: spaces containing c₀, reflexive spaces, and, in 2008, every dual space. Small spaces were settled too, up to a set-theoretic threshold called the bounding number, which the axioms do not fix. But in 1972 Johnson and Rosenthal wrote that it is an open question, and papers still called it open at the end of September 2026.</p>
+<p>Result 323 is one OpenAI paper, 39 pages, dated September 23 and made public October 6, 2026. It claims the standard axioms of set theory, ZFC, cannot decide the question, assuming a measurable cardinal is consistent. Under the continuum hypothesis, there is a counterexample. If instead the continuum carries a measure on all of its subsets that gives single points zero and is extremely additive, every such space has a separable quotient. Both hold over the real and the complex numbers.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The two sides cost different amounts. The counterexample world needs only that ZFC is consistent; the world where every space has a quotient uses a measurable cardinal, through a theorem of Solovay. Not claimed: an answer in ZFC, or that the large cardinal is really needed. For spaces of the smallest nonseparable size, ℵ₁, it was already known that a yes answer is consistent, with no large cardinal; the new part there is the counterexample.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 39 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The CH half only (<a href="https://github.com/openai/math/blob/main/lean/docs/323.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper is unrefereed and unchanged since release. Lean checks one half: that the continuum hypothesis gives counterexamples over both fields, in 51 files and about 14,000 lines, not run by us. Two outside projects re-ran it and it was accepted. The measure side, the large cardinal and the independence logic are not machine-checked. No set theorist or Banach space specialist has published an assessment, and we found no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>One test, and a random sample.</strong> Both halves use one test: a space has such a quotient exactly when some infinite-dimensional piece of its dual sees the space separably. For the positive half, suppose a counterexample exists. The measure on the continuum lets the proof pick functionals at random, one from each of a sequence of rows of nearly orthogonal vectors; the rows have 16, 256, then 4,096 vectors, so the average contribution shrinks fast. That shows the space looks huge through every separable piece of its dual. Almost surely the next round of random picks forms an unconditional sequence, which a result going back to Hagler and Johnson turns into a separable quotient: a contradiction.</li>
+  <li><strong>A tree of paths in every subspace.</strong> The negative half is 23 pages. It builds a dual space on the first uncountable ordinal, with Gowers–Maurey style paths whose weights code their whole history. Inside every infinite-dimensional subspace, the proof finds vectors that tell a binary tree of paths apart by a fixed amount. Under the continuum hypothesis there are only ℵ₁ paths, so each gets its own coordinate, and a small tilt of the predual makes every infinite-dimensional separable piece of the dual see too much. Our computer checks the coding on a finite tree: in 44,850 pairs of branches, shared weights stop at the fork.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: quotienting ℓ∞³ by one coordinate line gives ℓ∞², exactly.</li>
+  <li>The paper’s rows have 16ⁿ vectors (16, 256, 4,096) and average bound 2/√N (1/2, 1/8, 1/32); our script reproduces the bound.</li>
+  <li>Ours: on a finite tree of depth 12, in 44,850 sampled pairs of branches, shared weights stop at the fork.</li>
+  <li>Lean: 51 files and 14,178 lines in the CH half’s import closure (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Relative-independence-of-the-separable-quotient-problem-September-23-2026/paper.pdf">Relative independence of the separable quotient problem (PDF)</a>, 39 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/323.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 323.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Relative-independence-of-the-separable-quotient-problem-September-23-2026/paper.pdf">Relative independence of the separable quotient problem</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Every infinite-dimensional Banach space contains a separable infinite-dimensional subspace: just take the closed span of a sequence. Quotients are another matter. A quotient squashes a space along a subspace, and to be separable it has to forget almost everything while staying infinite-dimensional. So: does every infinite-dimensional Banach space have a separable infinite-dimensional quotient? The question is traditionally attributed to Banach and Mazur, and its earliest known explicit statement is Rosenthal’s, in 1969. Many classes were settled: spaces containing c₀, reflexive spaces, and, in 2008, every dual space. Small spaces were settled too, up to a set-theoretic threshold called the bounding number, which the axioms do not fix. But in 1972 Johnson and Rosenthal wrote that it is an open question, and papers still called it open at the end of September 2026.</p>
+<h3><span class="t num">0:59</span>The claim</h3>
+<p>Result 323 is one OpenAI paper, 39 pages, dated September 23 and made public October 6, 2026. It claims the standard axioms of set theory, ZFC, cannot decide the question, assuming a measurable cardinal is consistent. Under the continuum hypothesis, there is a counterexample. If instead the continuum carries a measure on all of its subsets that gives single points zero and is extremely additive, every such space has a separable quotient. Both hold over the real and the complex numbers. The two sides cost different amounts. The counterexample world needs only that ZFC is consistent; the world where every space has a quotient uses a measurable cardinal, through a theorem of Solovay. Not claimed: an answer in ZFC, or that the large cardinal is really needed. For spaces of the smallest nonseparable size, ℵ₁, it was already known that a yes answer is consistent, with no large cardinal; the new part there is the counterexample.</p>
+<h3><span class="t num">2:05</span>How the proof goes</h3>
+<p>Both halves use one test: a space has such a quotient exactly when some infinite-dimensional piece of its dual sees the space separably. For the positive half, suppose a counterexample exists. The measure on the continuum lets the proof pick functionals at random, one from each of a sequence of rows of nearly orthogonal vectors; the rows have 16, 256, then 4,096 vectors, so the average contribution shrinks fast. That shows the space looks huge through every separable piece of its dual. Almost surely the next round of random picks forms an unconditional sequence, which a result going back to Hagler and Johnson turns into a separable quotient: a contradiction. The negative half is 23 pages. It builds a dual space on the first uncountable ordinal, with Gowers–Maurey style paths whose weights code their whole history. Inside every infinite-dimensional subspace, the proof finds vectors that tell a binary tree of paths apart by a fixed amount. Under the continuum hypothesis there are only ℵ₁ paths, so each gets its own coordinate, and a small tilt of the predual makes every infinite-dimensional separable piece of the dual see too much. Our computer checks the coding on a finite tree: in 44,850 pairs of branches, shared weights stop at the fork.</p>
+<h3><span class="t num">3:30</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. Lean checks one half: that the continuum hypothesis gives counterexamples over both fields, in 51 files and about 14,000 lines, not run by us. Two outside projects re-ran it and it was accepted. The measure side, the large cardinal and the independence logic are not machine-checked. No set theorist or Banach space specialist has published an assessment, and we found no reported error. If it holds, whether every Banach space has a separable quotient depends on extra axioms about the continuum, and the standard axioms leave it open.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20323%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
