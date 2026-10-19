@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two dimensions disappear? Gromov&#x27;s Urysohn width bound for scalar curvature | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/339-katok-entropy/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Most chaotic only if symmetric?">
+<meta property="og:description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/339-katok-entropy/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/339-katok-entropy/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 339, October 2026</p>
+<h1>Most chaotic only if symmetric?</h1>
+<p class="subtitle">An AI preprint claims Katok’s entropy rigidity conjecture in every dimension from three up</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 339 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="GKnC8u8-VU4" data-title="Episode 339: Most chaotic only if symmetric?">
+  <a href="https://youtu.be/GKnC8u8-VU4">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 339: Most chaotic only if symmetric? Yellow orbit points crowding toward the rim of a grey disc.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:55. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/GKnC8u8-VU4?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/GKnC8u8-VU4?t=98" data-t="98"><span class="t">1:38</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/GKnC8u8-VU4?t=137" data-t="137"><span class="t">2:17</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/GKnC8u8-VU4?t=196" data-t="196"><span class="t">3:16</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>On a negatively curved space, geodesics fan out exponentially, so the geodesic flow is chaotic. Two numbers measure how chaotic. Topological entropy counts the growth of distinct long orbits; Liouville entropy measures the chaos seen from a starting point and direction chosen uniformly at random. The second can never exceed the first. On a genus-2 surface of constant curvature minus one, both equal 1, and our computer counts orbit points growing at that rate. Bend the surface so its curvature varies, and our computer finds the Liouville entropy is about 0.96, below Katok’s bound of 0.975, which the topological entropy can never fall below.</p>
+<p>In 1982 Katok proved that on surfaces the two entropies agree only in constant curvature, and wrote that it looks like a reasonable conjecture that locally symmetric spaces are the only negatively curved cases where the Liouville measure has maximal entropy. In higher dimensions these include complex, quaternionic and Cayley spaces, whose curvature is not constant; at a standard scale our computer reproduces Katok’s table of entropies, from 2 up to 22. Besson, Courtois and Gallot proved a related but different conjecture in 1995. Before this release, the main higher-dimensional result was Humbert’s: rigidity near real and complex hyperbolic metrics. A 1990 preprint by Hamenstädt claimed the three-dimensional case, but was never published.</p>
+<p>Result 339 is one OpenAI paper, 66 pages, dated September 23 and made public October 6, 2026. It claims Katok’s conjecture in every dimension from 3 up: on a closed manifold with strictly negative curvature, the Liouville entropy equals the topological entropy exactly when the metric is locally symmetric, that is, when its universal cover is a rank-one symmetric space at some scale.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: surfaces, which are Katok’s own theorem; manifolds whose curvature is only nonpositive; or a machine-checked proof, since there is no Lean.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 66 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>Not yet</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper is unrefereed, unchanged since release, and has no Lean. Its final step relies on those classical rigidity theorems, and for the Cayley case on a 2024 paper of Ruan. We found no specialist assessment and no reported error. The paper does not cite the 1985 Burns and Katok problem list, or Hamenstädt’s unpublished preprint. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>From equal entropies to formal fields.</strong> Equal entropies mean that the expansion rate equals a constant up to a coboundary, by thermodynamic formalism and Livšic’s theorem; Katok suggested this route in 1985, and our symbolic toy shows the same equality case. The paper then records higher-order jets of the stable and unstable leaves, puts them in exact polynomial normal form, and builds two formal affine fields of covectors.</li>
+  <li><strong>A dichotomy, then classical rigidity.</strong> From these it builds a formal algebra of contact symmetries and proves a dichotomy: a finite-dimensional algebra yields formal stable and unstable fields, while an infinite-dimensional one yields special stable and unstable directions. The infinite case is ruled out with Busemann functions at infinity. In the finite case the stable and unstable splitting is smooth, and classical rigidity theorems of Benoist, Foulon and Labourie, and of Besson, Courtois and Gallot, then give local symmetry.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: on a genus-2 surface of constant curvature −1 both entropies are 1; bent to area 13.21, its Liouville entropy is about 0.961, below Katok’s bound 0.975.</li>
+  <li>Ours: at a standard scale the rank-one symmetric spaces have entropies 2, 4, 10 and 22 (real 3-dim, complex 4-dim, quaternionic 8-dim, Cayley 16-dim), Katok’s table.</li>
+  <li>Ours: orbit points of a genus-2 surface group within distance 9: 2,057, against 2,025 predicted.</li>
+  <li>Ours: in a symbolic toy, Liouville entropy touches topological entropy (log 2) only when the two expansion rates are equal.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Entropy-equality-and-local-symmetry-in-negative-curvature-September-23-2026/paper.pdf">Entropy equality and local symmetry in negative curvature (PDF)</a>, 66 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 339.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Entropy-equality-and-local-symmetry-in-negative-curvature-September-23-2026/paper.pdf">Entropy equality and local symmetry in negative curvature</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>On a negatively curved space, geodesics fan out exponentially, so the geodesic flow is chaotic. Two numbers measure how chaotic. Topological entropy counts the growth of distinct long orbits; Liouville entropy measures the chaos seen from a starting point and direction chosen uniformly at random. The second can never exceed the first. On a genus-2 surface of constant curvature minus one, both equal 1, and our computer counts orbit points growing at that rate. Bend the surface so its curvature varies, and our computer finds the Liouville entropy is about 0.96, below Katok’s bound of 0.975, which the topological entropy can never fall below. In 1982 Katok proved that on surfaces the two entropies agree only in constant curvature, and wrote that it looks like a reasonable conjecture that locally symmetric spaces are the only negatively curved cases where the Liouville measure has maximal entropy. In higher dimensions these include complex, quaternionic and Cayley spaces, whose curvature is not constant; at a standard scale our computer reproduces Katok’s table of entropies, from 2 up to 22. Besson, Courtois and Gallot proved a related but different conjecture in 1995. Before this release, the main higher-dimensional result was Humbert’s: rigidity near real and complex hyperbolic metrics. A 1990 preprint by Hamenstädt claimed the three-dimensional case, but was never published.</p>
+<h3><span class="t num">1:38</span>The claim</h3>
+<p>Result 339 is one OpenAI paper, 66 pages, dated September 23 and made public October 6, 2026. It claims Katok’s conjecture in every dimension from 3 up: on a closed manifold with strictly negative curvature, the Liouville entropy equals the topological entropy exactly when the metric is locally symmetric, that is, when its universal cover is a rank-one symmetric space at some scale. Not claimed: surfaces, which are Katok’s own theorem; manifolds whose curvature is only nonpositive; or a machine-checked proof, since there is no Lean.</p>
+<h3><span class="t num">2:17</span>How the proof goes</h3>
+<p>Equal entropies mean that the expansion rate equals a constant up to a coboundary, by thermodynamic formalism and Livšic’s theorem; Katok suggested this route in 1985, and our symbolic toy shows the same equality case. The paper then records higher-order jets of the stable and unstable leaves, puts them in exact polynomial normal form, and builds two formal affine fields of covectors. From these it builds a formal algebra of contact symmetries and proves a dichotomy: a finite-dimensional algebra yields formal stable and unstable fields, while an infinite-dimensional one yields special stable and unstable directions. The infinite case is ruled out with Busemann functions at infinity. In the finite case the stable and unstable splitting is smooth, and classical rigidity theorems of Benoist, Foulon and Labourie, and of Besson, Courtois and Gallot, then give local symmetry.</p>
+<h3><span class="t num">3:16</span>Where it stands</h3>
+<p>The paper is unrefereed, unchanged since release, and has no Lean. Its final step relies on those classical rigidity theorems, and for the Cayley case on a 2024 paper of Ruan. We found no specialist assessment and no reported error. The paper does not cite the 1985 Burns and Katok problem list, or Hamenstädt’s unpublished preprint. If it holds, among closed negatively curved manifolds of dimension 3 and up, the uniform measure is the most chaotic only for the locally symmetric ones, as Katok guessed.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20339%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
