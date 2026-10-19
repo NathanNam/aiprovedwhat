@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two dimensions disappear? Gromov&#x27;s Urysohn width bound for scalar curvature | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/346-varifold-singular-set/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Smooth almost everywhere?">
+<meta property="og:description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/346-varifold-singular-set/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/346-varifold-singular-set/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 346, October 2026</p>
+<h1>Smooth almost everywhere?</h1>
+<p class="subtitle">Two AI preprints claim the singular-set conjectures for stationary varifolds</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 346 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="gY2kGh-OWUg" data-title="Episode 346: Smooth almost everywhere?">
+  <a href="https://youtu.be/gY2kGh-OWUg">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 346: Smooth almost everywhere? Two teal planes crossing along a yellow singular line.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:37. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/gY2kGh-OWUg?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/gY2kGh-OWUg?t=88" data-t="88"><span class="t">1:28</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/gY2kGh-OWUg?t=155" data-t="155"><span class="t">2:35</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/gY2kGh-OWUg?t=232" data-t="232"><span class="t">3:52</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A varifold is a generalized surface: it can branch, cross itself, and count some sheets more than once. It is stationary if no small push changes its area to first order, a weaker condition than being stable or area-minimizing. Three rays meeting at 120 degrees are stationary; our computer checks this, and that an unbalanced junction fails. Two planes crossing along a line are stationary too, and so is a Y-shaped junction times a line; for these two-dimensional examples the singular points form a line, one dimension lower. In 1972, Allard showed that the smooth points of a stationary integral varifold are open and dense.</p>
+<p>The question is how big the singular set can be. Points whose tangent cones include no plane were already known to form a set of dimension at most m − 1, and points of density one are smooth by Allard. The hard points are where the varifold looks like one plane counted several times. Is the singular set at least of zero m-dimensional size? De Lellis called this perhaps the hardest open problem in the area, and Brena, Decio and De Lellis recorded both measure zero and dimension at most m − 1 as conjectures, posted in 2025. There were partial results, and the one-dimensional case was classical. For area-minimizing currents, Almgren had proved the stronger bound m − 2.</p>
+<p>Result 346 is two OpenAI papers. The first, 77 pages, dated September 23, claims the measure-zero conjecture: in any open subset of Euclidean space, in every dimension and codimension, a stationary integral varifold is smooth except on a set of zero m-dimensional measure, and the same holds on round spheres. The second, 35 pages, dated October 5 and building on the first, claims the dimension bound: in Euclidean space the singular set has Hausdorff dimension at most m − 1, which is stronger. Both were made public October 6, 2026. The bound is sharp, because two crossing planes reach it.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: general curved ambient spaces, where examples by De Lellis, Hirsch, Lihn and Spolaor show the geometry matters; varifolds with nonzero but bounded mean curvature, where the statement can fail; explicit constants; or a machine-checked proof. The only related Lean file formalizes one final covering step, with everything hard assumed.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 2 papers (77 and 35 pages), dated September 23 and October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>No (one uncatalogued file covers only a final covering step)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. Both papers are unrefereed and unchanged since release, and neither theorem is formalized in Lean. The second depends on the first, so it is no independent check. An AI audit of the first paper found no gap, but said it only skimmed the core of the signed-excess proof. De Lellis, who co-wrote the paper recording both conjectures, is a member of the group that advised OpenAI on the release; we found no statement from him on these papers, no specialist comment and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Keep the sign.</strong> The first paper’s engine is a signed excess estimate. Near a plane counted several times, compare the extra area with the tilt. For a single tilted sheet, our computer finds that twice the extra area minus the tilt is tiny and positive, about a quarter of the slope to the fourth power, while a hole makes it large and negative. Keeping that sign, the paper shows that twice the extra area minus the tilt is at most the excess times a factor smaller than any power of one over its logarithm, by induction on the number of sheets.</li>
+  <li><strong>From fits to regularity.</strong> It then fits smooth minimal graphs at every scale. A failed fit would force separated sheets with fewer layers, which are rare near a typical point, so failures fill a vanishing share. The fits glue into a smooth center, and a frequency argument forces the varifold onto it, so almost every point is regular. The second paper assumes the singular set has dimension above m − 1, picks an exponent s in between, and keeps a whole measure of bad points while blowing up at prescribed scales. They survive because the integral of t to the power s − m converges exactly when s exceeds m − 1, and a measure-valued dimension reduction then gives a contradiction.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: three rays at 120 degrees have first variation about 1e-12 (stationary); an unbalanced junction at 100, 130, 130 degrees does not.</li>
+  <li>Ours: densities of cones: a plane 1, a Y-junction times a line 1.5, the tetrahedral cone 1.824520, two crossing planes 2.</li>
+  <li>Ours: box-counting dimensions: Cantor set 0.631, segment 1, Sierpinski triangle 1.585, Sierpinski carpet 1.893, filled square 2.</li>
+  <li>Ours: for a single sheet tilted with slope s, twice the extra area minus the tilt is about s⁴/4 (2.475e-5 at s = 0.1); a hole makes it negative.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/varifold-singular-dimension.pdf">A Codimension-One Bound for the Singular Set of a Stationary Integral Varifold (PDF)</a>, 35 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/paper.pdf">Almost-everywhere regularity of stationary integral varifolds (PDF)</a>, 77 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 346.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Codimension-One-Bound-for-the-Singular-Set-of-a-Stationary-Integral-Varifold-October-5-2026/varifold-singular-dimension.pdf">A Codimension-One Bound for the Singular Set of a Stationary Integral Varifold</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Almost-everywhere-regularity-of-stationary-integral-varifolds-September-23-2026/paper.pdf">Almost-everywhere regularity of stationary integral varifolds</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A varifold is a generalized surface: it can branch, cross itself, and count some sheets more than once. It is stationary if no small push changes its area to first order, a weaker condition than being stable or area-minimizing. Three rays meeting at 120 degrees are stationary; our computer checks this, and that an unbalanced junction fails. Two planes crossing along a line are stationary too, and so is a Y-shaped junction times a line; for these two-dimensional examples the singular points form a line, one dimension lower. In 1972, Allard showed that the smooth points of a stationary integral varifold are open and dense. The question is how big the singular set can be. Points whose tangent cones include no plane were already known to form a set of dimension at most m − 1, and points of density one are smooth by Allard. The hard points are where the varifold looks like one plane counted several times. Is the singular set at least of zero m-dimensional size? De Lellis called this perhaps the hardest open problem in the area, and Brena, Decio and De Lellis recorded both measure zero and dimension at most m − 1 as conjectures, posted in 2025. There were partial results, and the one-dimensional case was classical. For area-minimizing currents, Almgren had proved the stronger bound m − 2.</p>
+<h3><span class="t num">1:28</span>The claim</h3>
+<p>Result 346 is two OpenAI papers. The first, 77 pages, dated September 23, claims the measure-zero conjecture: in any open subset of Euclidean space, in every dimension and codimension, a stationary integral varifold is smooth except on a set of zero m-dimensional measure, and the same holds on round spheres. The second, 35 pages, dated October 5 and building on the first, claims the dimension bound: in Euclidean space the singular set has Hausdorff dimension at most m − 1, which is stronger. Both were made public October 6, 2026. The bound is sharp, because two crossing planes reach it. Not claimed: general curved ambient spaces, where examples by De Lellis, Hirsch, Lihn and Spolaor show the geometry matters; varifolds with nonzero but bounded mean curvature, where the statement can fail; explicit constants; or a machine-checked proof. The only related Lean file formalizes one final covering step, with everything hard assumed.</p>
+<h3><span class="t num">2:35</span>How the proof goes</h3>
+<p>The first paper’s engine is a signed excess estimate. Near a plane counted several times, compare the extra area with the tilt. For a single tilted sheet, our computer finds that twice the extra area minus the tilt is tiny and positive, about a quarter of the slope to the fourth power, while a hole makes it large and negative. Keeping that sign, the paper shows that twice the extra area minus the tilt is at most the excess times a factor smaller than any power of one over its logarithm, by induction on the number of sheets. It then fits smooth minimal graphs at every scale. A failed fit would force separated sheets with fewer layers, which are rare near a typical point, so failures fill a vanishing share. The fits glue into a smooth center, and a frequency argument forces the varifold onto it, so almost every point is regular. The second paper assumes the singular set has dimension above m − 1, picks an exponent s in between, and keeps a whole measure of bad points while blowing up at prescribed scales. They survive because the integral of t to the power s − m converges exactly when s exceeds m − 1, and a measure-valued dimension reduction then gives a contradiction.</p>
+<h3><span class="t num">3:52</span>Where it stands</h3>
+<p>Both papers are unrefereed and unchanged since release, and neither theorem is formalized in Lean. The second depends on the first, so it is no independent check. An AI audit of the first paper found no gap, but said it only skimmed the core of the signed-excess proof. De Lellis, who co-wrote the paper recording both conjectures, is a member of the group that advised OpenAI on the release; we found no statement from him on these papers, no specialist comment and no reported error. If they hold, every stationary integral varifold in Euclidean space is smooth except on a set at least one dimension smaller than itself.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20346%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
