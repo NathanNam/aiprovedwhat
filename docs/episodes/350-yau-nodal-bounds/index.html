@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two dimensions disappear? Gromov&#x27;s Urysohn width bound for scalar curvature | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/350-yau-nodal-bounds/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Square-root law?">
+<meta property="og:description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/350-yau-nodal-bounds/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/350-yau-nodal-bounds/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 350, October 2026</p>
+<h1>Square-root law?</h1>
+<p class="subtitle">Three AI preprints claim Yau’s nodal bound on surfaces, and counterexamples in higher dimensions</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 350 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="uCKWm6iC6-I" data-title="Episode 350: Square-root law?">
+  <a href="https://youtu.be/uCKWm6iC6-I">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 350: Square-root law? The teal nodal grid of sin 3x sin 4y inside a grey square.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:09. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/uCKWm6iC6-I?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/uCKWm6iC6-I?t=77" data-t="77"><span class="t">1:17</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/uCKWm6iC6-I?t=143" data-t="143"><span class="t">2:23</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/uCKWm6iC6-I?t=204" data-t="204"><span class="t">3:24</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Vibrate a surface at one of its resonant frequencies and some points stay still: the nodal set, where an eigenfunction of the Laplacian vanishes. On a flat torus of side 2π, our computer finds that the nodal length of sine m x times sine n y is exactly 4π(m + n), so its ratio to the square root of the eigenvalue always lies between 4π and 4π√2. On the round sphere, the same ratio for the standard spherical harmonics runs from about four to about 2π. Higher frequencies make longer nodal sets, growing like the square root of the eigenvalue.</p>
+<p>Yau conjectured that this is always the rate: on a closed smooth manifold with a fixed metric, the size of the nodal set lies between two constants times the square root of the eigenvalue. Donnelly and Fefferman proved both bounds for real-analytic metrics in 1988. For smooth metrics, Logunov proved the lower bound in every dimension, after Brüning on surfaces, but the upper bound stayed open. On surfaces the best known was a power just below 3/4, by Logunov and Malinnikova, and in higher dimensions only Logunov’s unspecified power above one half.</p>
+<p>Result 350 is three OpenAI papers, all dated September 23 and made public October 6, 2026. The first, 26 pages, claims the upper bound on every smooth closed surface, which together with the known lower bound completes Yau’s conjecture there. The second, 60 pages, claims it fails in dimensions three and four: arbitrarily close to the round three-sphere there is a fixed smooth metric with a sequence of eigenfunctions whose nodal areas outgrow any constant times the square root of the eigenvalue, and likewise on a sphere times a torus. The third, 34 pages, claims a fixed metric in dimension five, on a four-sphere times a circle, where nodal measure beats the square root by a fixed positive power.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: failure for round or real-analytic metrics, where the known theorems stand; any rate in dimensions three and four; or a sizable power, since the exponent is never computed, and the one its proof gives is, by our reading of the constants, below 2 in 10 million.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 3 papers, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>All three main statements except the dimension-5 power law (<a href="https://github.com/openai/math/blob/main/lean/docs/350.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. All three papers are unrefereed and unchanged since release. The surface theorem and the dimension three and four counterexamples are formalized in Lean, about 32,000 and 75,000 lines; the dimension-five Lean covers only the square-root statement, not the power law. Two outside projects re-ran all three successfully; we ran none of it. An AI audit found no gap in the surface paper. We found no specialist comment and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Surfaces: average the growth.</strong> On surfaces, the proof chops the surface into squares the size of a wavelength. A local theorem of Roy-Fortin bounds the nodal length in each square by how fast the eigenfunction grows there, so it is enough to bound the average growth. The paper shows that, where growth is large, subtracting an affine tilt halves the scale-adjusted growth on average at each subdivision, by an argument special to two dimensions.</li>
+  <li><strong>Higher dimensions: ripples that add up.</strong> For the counterexamples, start from an explicit wave on the round sphere whose nodal set is a fan of half great spheres; our computer checks that its size grows at the square-root rate, with ratio tending to 4π. Then corrugate the wave’s envelope in two directions: a ripple can be tiny in height while its slope stays large, so nodal sheets pile up. Change the metric so the corrugated wave becomes an exact eigenfunction, make the eigenvalue simple so the wave survives small changes, and nest infinitely many such steps into one smooth metric.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: on the flat torus of side 2π, sin(mx) sin(ny) has nodal length exactly 4π(m + n); its ratio to √λ lies between 4π and 4π√2.</li>
+  <li>Ours: for the standard spherical harmonics on the round sphere, the ratio runs from about 4 (zonal) to about 2π (sectoral).</li>
+  <li>Ours: the round wave Re(x₁ + ix₂)^N on the 3-sphere has nodal area growing at the square-root rate, with ratio tending to 4π.</li>
+  <li>Ours: from the dimension-5 paper's stated constants, the exponent its proof gives is below 1.73 × 10⁻⁷.</li>
+  <li>Lean: 59 files / 32,394 lines (surfaces), 347 / 75,288 for the two dimension-3/4 theorems, 1,068 / 74,773 (dimension 5, square-root statement); counted by us, not run by us.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Sharp-nodal-length-on-smooth-surfaces-September-23-2026/paper.pdf">Sharp nodal length on smooth surfaces (PDF)</a>, 26 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Smooth-counterexamples-to-Yaus-nodal-upper-bound-in-dimensions-three-and-four-September-23-2026/paper.pdf">Smooth counterexamples to Yau&#x27;s nodal upper bound in dimensions three and four (PDF)</a>, 60 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Power-law-violations-of-Yaus-nodal-upper-bound-September-23-2026/paper.pdf">Power-law violations of Yau&#x27;s nodal upper bound (PDF)</a>, 34 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/350.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 350.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Sharp-nodal-length-on-smooth-surfaces-September-23-2026/paper.pdf">Sharp nodal length on smooth surfaces</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Smooth-counterexamples-to-Yaus-nodal-upper-bound-in-dimensions-three-and-four-September-23-2026/paper.pdf">Smooth counterexamples to Yau's nodal upper bound in dimensions three and four</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Power-law-violations-of-Yaus-nodal-upper-bound-September-23-2026/paper.pdf">Power-law violations of Yau's nodal upper bound</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Vibrate a surface at one of its resonant frequencies and some points stay still: the nodal set, where an eigenfunction of the Laplacian vanishes. On a flat torus of side 2π, our computer finds that the nodal length of sine m x times sine n y is exactly 4π(m + n), so its ratio to the square root of the eigenvalue always lies between 4π and 4π√2. On the round sphere, the same ratio for the standard spherical harmonics runs from about four to about 2π. Higher frequencies make longer nodal sets, growing like the square root of the eigenvalue. Yau conjectured that this is always the rate: on a closed smooth manifold with a fixed metric, the size of the nodal set lies between two constants times the square root of the eigenvalue. Donnelly and Fefferman proved both bounds for real-analytic metrics in 1988. For smooth metrics, Logunov proved the lower bound in every dimension, after Brüning on surfaces, but the upper bound stayed open. On surfaces the best known was a power just below 3/4, by Logunov and Malinnikova, and in higher dimensions only Logunov’s unspecified power above one half.</p>
+<h3><span class="t num">1:17</span>The claim</h3>
+<p>Result 350 is three OpenAI papers, all dated September 23 and made public October 6, 2026. The first, 26 pages, claims the upper bound on every smooth closed surface, which together with the known lower bound completes Yau’s conjecture there. The second, 60 pages, claims it fails in dimensions three and four: arbitrarily close to the round three-sphere there is a fixed smooth metric with a sequence of eigenfunctions whose nodal areas outgrow any constant times the square root of the eigenvalue, and likewise on a sphere times a torus. The third, 34 pages, claims a fixed metric in dimension five, on a four-sphere times a circle, where nodal measure beats the square root by a fixed positive power. Not claimed: failure for round or real-analytic metrics, where the known theorems stand; any rate in dimensions three and four; or a sizable power, since the exponent is never computed, and the one its proof gives is, by our reading of the constants, below 2 in 10 million.</p>
+<h3><span class="t num">2:23</span>How the proof goes</h3>
+<p>On surfaces, the proof chops the surface into squares the size of a wavelength. A local theorem of Roy-Fortin bounds the nodal length in each square by how fast the eigenfunction grows there, so it is enough to bound the average growth. The paper shows that, where growth is large, subtracting an affine tilt halves the scale-adjusted growth on average at each subdivision, by an argument special to two dimensions. For the counterexamples, start from an explicit wave on the round sphere whose nodal set is a fan of half great spheres; our computer checks that its size grows at the square-root rate, with ratio tending to 4π. Then corrugate the wave’s envelope in two directions: a ripple can be tiny in height while its slope stays large, so nodal sheets pile up. Change the metric so the corrugated wave becomes an exact eigenfunction, make the eigenvalue simple so the wave survives small changes, and nest infinitely many such steps into one smooth metric.</p>
+<h3><span class="t num">3:24</span>Where it stands</h3>
+<p>All three papers are unrefereed and unchanged since release. The surface theorem and the dimension three and four counterexamples are formalized in Lean, about 32,000 and 75,000 lines; the dimension-five Lean covers only the square-root statement, not the power law. Two outside projects re-ran all three successfully; we ran none of it. An AI audit found no gap in the surface paper. We found no specialist comment and no reported error. If they hold, Yau’s square-root law for nodal sets is true on every smooth closed surface, but fails for some smooth metrics in every dimension from three up.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20350%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
