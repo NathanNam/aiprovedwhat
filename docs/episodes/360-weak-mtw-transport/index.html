@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curvature keeps transport tame? Villani’s MTW conjecture | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Villani’s conjecture — weak MTW curvature makes every injectivity domain convex — and uniform Hölder continuity of optimal transport between densities bounded above and below, both formalized in Lean. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/360-weak-mtw-transport/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Curvature keeps transport tame?">
+<meta property="og:description" content="Two AI preprints claim Villani’s conjecture — weak MTW curvature makes every injectivity domain convex — and uniform Hölder continuity of optimal transport between densities bounded above and below, both formalized in Lean. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/360-weak-mtw-transport/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/360-weak-mtw-transport/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 360, October 2026</p>
+<h1>Curvature keeps transport tame?</h1>
+<p class="subtitle">Two AI preprints claim Villani’s MTW conjecture and Hölder optimal transport</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 360 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="DzsanqKdgP8" data-title="Episode 360: Curvature keeps transport tame?">
+  <a href="https://youtu.be/DzsanqKdgP8">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 360: Curvature keeps transport tame? Teal points matched by arrows to yellow points on a line.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:08. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/DzsanqKdgP8?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/DzsanqKdgP8?t=81" data-t="81"><span class="t">1:21</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/DzsanqKdgP8?t=145" data-t="145"><span class="t">2:25</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/DzsanqKdgP8?t=209" data-t="209"><span class="t">3:29</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Optimal transport asks for the cheapest way to move one distribution of mass onto another, here with cost the squared distance. On a line the answer is simply sorting: our computer checks all 5,040 matchings of seven points, and the sorted one is always cheapest. On a curved manifold the optimal map can jump, and whether it must be continuous depends on a fourth-order curvature condition of Ma, Trudinger and Wang, called MTW. Our computer finds that the MTW quantity is zero for the flat cost and positive on the round sphere for perpendicular directions.</p>
+<p>A second ingredient is the injectivity domain: at each point, the set of initial velocities whose geodesics are still shortest a little past time one. On the round sphere it is a disc of radius pi; on flat tori, a square or a hexagon; all convex. A conjecture named after Villani, from a 2011 survey, says the weak form of MTW forces every injectivity domain to be convex. Figalli, Gallouët and Rifford proved it in 2014 when geodesics stop being shortest before reaching a conjugate point, and Figalli, Rifford and Villani showed that on surfaces, continuous transport is equivalent to weak MTW plus convex domains.</p>
+<p>Result 360 is two OpenAI papers, dated September 25 and made public October 6, 2026. The first, 24 pages, claims the conjecture on every closed connected manifold of dimension two or more: weak MTW makes every injectivity domain convex, with no assumption about conjugate points. The second, 41 pages, builds on the first: for densities between two fixed bounds, the optimal map and its inverse are Hölder continuous, with one exponent and one constant for the whole class.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: smoothness, or an explicit exponent, which comes from a contradiction argument. Weak MTW is itself restrictive, forcing nonnegative sectional curvature, so this is not continuity on every manifold. A one-line remark in the second paper combines it with Figalli, Rifford and Villani to get the equivalence of transport continuity and weak MTW; that remark is not formalized. We found no competing claim.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 24 + 41 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>Both main theorems (<a href="https://github.com/openai/math/blob/main/lean/docs/360.md">scope notes</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 19, 2026. Both papers are unrefereed and unchanged since release. Both main theorems are formalized in Lean, about 19,000 and 74,000 lines, not run by us; the transport Lean re-proves what it needs rather than importing the convexity Lean. We found no specialist comment and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>No hidden conjugate points.</strong> Weak MTW makes the cost’s Hessian concave along a line of velocities, tested in perpendicular directions. The new step rules out a hidden conjugate velocity on a segment of velocities whose geodesics are all shortest: it would have to degenerate along the segment, and then a blow-down estimate contradicts an exact radial identity. With that, the map from potential gradients to points is continued from small times to every time before one, a covering argument shows it cannot fold, and convexity follows from a potential built from just two targets.</li>
+  <li><strong>Hölder by contradiction.</strong> For the transport paper, convex sections turn a power bound on oscillation into a Hölder bound, with exponent half the power, capped at one half. The power itself is found by contradiction: a determinant gain proportional to a free parameter is capped by a comparison of Jacobians that uses weak MTW, so the parameter cannot be large. Our computer checks the paper’s projection and Schur-complement algebra exactly in 200 random cases.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: on a line, optimal transport is sorting — checked against all 5,040 matchings of 7 points, three times, exactly.</li>
+  <li>Ours: the MTW quantity is 0 for the flat cost and, on the unit sphere for a perpendicular pair, starts at 1 and grows with the velocity.</li>
+  <li>Ours: the transport paper's projection and Schur-complement algebra holds exactly in 200 random cases each.</li>
+  <li>Lean: 210 files / 19,463 lines and 645 files / 74,032 lines in the two comparators' import closures, which share no files (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Global-Support-and-Convex-Injectivity-Domains-under-Weak-MTW-September-25-2026/paper.pdf">Global Support and Convex Injectivity Domains under Weak MTW (PDF)</a>, 24 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026/paper.pdf">Uniform Bi-Hölder Transport from Weak MTW (PDF)</a>, 41 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/360.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 360.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Global-Support-and-Convex-Injectivity-Domains-under-Weak-MTW-September-25-2026/paper.pdf">Global Support and Convex Injectivity Domains under Weak MTW</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Uniform-Bi-Holder-Transport-from-Weak-MTW-September-25-2026/paper.pdf">Uniform Bi-Holder Transport from Weak MTW</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Optimal transport asks for the cheapest way to move one distribution of mass onto another, here with cost the squared distance. On a line the answer is simply sorting: our computer checks all 5,040 matchings of seven points, and the sorted one is always cheapest. On a curved manifold the optimal map can jump, and whether it must be continuous depends on a fourth-order curvature condition of Ma, Trudinger and Wang, called MTW. Our computer finds that the MTW quantity is zero for the flat cost and positive on the round sphere for perpendicular directions. A second ingredient is the injectivity domain: at each point, the set of initial velocities whose geodesics are still shortest a little past time one. On the round sphere it is a disc of radius pi; on flat tori, a square or a hexagon; all convex. A conjecture named after Villani, from a 2011 survey, says the weak form of MTW forces every injectivity domain to be convex. Figalli, Gallouët and Rifford proved it in 2014 when geodesics stop being shortest before reaching a conjugate point, and Figalli, Rifford and Villani showed that on surfaces, continuous transport is equivalent to weak MTW plus convex domains.</p>
+<h3><span class="t num">1:21</span>The claim</h3>
+<p>Result 360 is two OpenAI papers, dated September 25 and made public October 6, 2026. The first, 24 pages, claims the conjecture on every closed connected manifold of dimension two or more: weak MTW makes every injectivity domain convex, with no assumption about conjugate points. The second, 41 pages, builds on the first: for densities between two fixed bounds, the optimal map and its inverse are Hölder continuous, with one exponent and one constant for the whole class. Not claimed: smoothness, or an explicit exponent, which comes from a contradiction argument. Weak MTW is itself restrictive, forcing nonnegative sectional curvature, so this is not continuity on every manifold. A one-line remark in the second paper combines it with Figalli, Rifford and Villani to get the equivalence of transport continuity and weak MTW; that remark is not formalized. We found no competing claim.</p>
+<h3><span class="t num">2:25</span>How the proof goes</h3>
+<p>Weak MTW makes the cost’s Hessian concave along a line of velocities, tested in perpendicular directions. The new step rules out a hidden conjugate velocity on a segment of velocities whose geodesics are all shortest: it would have to degenerate along the segment, and then a blow-down estimate contradicts an exact radial identity. With that, the map from potential gradients to points is continued from small times to every time before one, a covering argument shows it cannot fold, and convexity follows from a potential built from just two targets. For the transport paper, convex sections turn a power bound on oscillation into a Hölder bound, with exponent half the power, capped at one half. The power itself is found by contradiction: a determinant gain proportional to a free parameter is capped by a comparison of Jacobians that uses weak MTW, so the parameter cannot be large. Our computer checks the paper’s projection and Schur-complement algebra exactly in 200 random cases.</p>
+<h3><span class="t num">3:29</span>Where it stands</h3>
+<p>Both papers are unrefereed and unchanged since release. Both main theorems are formalized in Lean, about 19,000 and 74,000 lines, not run by us; the transport Lean re-proves what it needs rather than importing the convexity Lean. We found no specialist comment and no reported error. If they hold, on closed manifolds of dimension two or more, weak MTW alone makes injectivity domains convex and optimal transport between densities bounded above and below Hölder continuous.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20360%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
