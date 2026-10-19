@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smooth any 3-D deformation? The three-dimensional Ball–Evans problem | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim that every finite-energy one-to-one deformation between bounded 3-D domains is a limit of smooth one-to-one maps onto the same target, for every finite p. No Lean, no code. An animated explainer, the claim in plain words, and how far it has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/368-ball-evans-3d/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Smooth any 3-D deformation?">
+<meta property="og:description" content="Two AI preprints claim that every finite-energy one-to-one deformation between bounded 3-D domains is a limit of smooth one-to-one maps onto the same target, for every finite p. No Lean, no code. An animated explainer, the claim in plain words, and how far it has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/368-ball-evans-3d/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/368-ball-evans-3d/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 368, October 2026</p>
+<h1>Smooth any 3-D deformation?</h1>
+<p class="subtitle">Two AI preprints claim the three-dimensional Ball–Evans approximation problem for Sobolev homeomorphisms</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 368 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="3220HUj7Gjw" data-title="Episode 368: Smooth any 3-D deformation?">
+  <a href="https://youtu.be/3220HUj7Gjw">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 368: Smooth any 3-D deformation? A polar grid and its radially stretched image.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:01. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/3220HUj7Gjw?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/3220HUj7Gjw?t=72" data-t="72"><span class="t">1:12</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/3220HUj7Gjw?t=133" data-t="133"><span class="t">2:13</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/3220HUj7Gjw?t=204" data-t="204"><span class="t">3:24</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>In the mathematics of elastic solids, a deformation is a one-to-one map, and its energy depends on how much it stretches. Mathematicians measure that with Sobolev classes, W¹ᵖ: the p-th power of the stretching must have a finite total. Such a map can still be wild. Our computer checks a deformation of a ball that stretches infinitely at its centre, yet has finite energy for every p below six.</p>
+<p>In 2001, John Ball asked, crediting Lawrence Evans: can every such deformation be approximated, in this energy, by one-to-one maps that are piecewise affine? Later work asked for smooth ones too. The obvious tools fail. Our computer interpolates a twist on a triangle mesh and finds ten triangles flipped inside out at every mesh size, and averaging two one-to-one maps, z and minus z, gives zero. In the plane the answer is yes, from Iwaniec, Kovalev and Onninen, and from Hencl and Pratelli. In four or more dimensions it fails for small p. A 2025 survey by Hencl calls any positive result in higher dimensions, especially three, the main open problem in the area.</p>
+<p>Result 368 is two OpenAI papers, both dated September 24 and made public October 6, 2026: 62 pages for p from one to two, and 130 pages for p above two. Together they claim that for any bounded domains in three dimensions and any finite p from one up, every W¹ᵖ homeomorphism from one onto the other is a limit, in W¹ᵖ, of smooth one-to-one maps onto exactly the same target, with no assumptions on the boundary, the inverse or the Jacobian.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: convergence of the inverses or of elastic energies, matching boundary values, or anything in four dimensions and up. Ball’s original question asked for piecewise affine maps, and neither paper states that as a theorem. And smoothing piecewise affine one-to-one maps, in three and four dimensions, had already been done, by Campbell, D’Onofrio and Vítek in 2025.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 62 + 130 pages, both dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet; no specialist verdict</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>No Lean proof; the release folders contain no code</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 19, 2026. Both papers are unrefereed and unchanged since release. Neither has a Lean proof, and the release folders contain no code. Two trackers rate the result as major; a third calls it partial, since Ball asked in every dimension. None has checked it, and we found no competing claim and no specialist verdict. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Two stages, and the case p = 2.</strong> Both papers first build a locally bi-Lipschitz one-to-one map onto the target that is close in energy, then smooth it; a degree argument keeps each smooth map one-to-one and onto. For p up to two, the paper charges each crossing of test curves, and at p = 2 test surfaces, with a target mesh to a length or area budget, turns those budgets into an actual map, and rebuilds the derivative piece by piece. At p = 2, filling a face from its edges breaks down: our computer shows the cost growing without bound as the face’s core shrinks, so the paper needs a sharp disk estimate instead.</li>
+  <li><strong>Above p = 2: walls, guards and small spheres.</strong> For p above two, the paper builds an exact carrier map and a convex quantizer, then places walls pinned by guards. A misplaced wall costs something on many small spheres, and the sphere estimate works only when p is above two, where its factor shrinks with the sphere: at radius 1/1000, our computer finds one tenth at p = 3, while the same formula gives one at p = 2 and ten at p = 3/2. Finally, uniform convexity turns nearly sharp energy bounds into convergence of the derivatives.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the map x|x|^(−1/2) stretches infinitely at the centre of a ball, yet has finite W¹ᵖ energy for every p below 6.</li>
+  <li>Ours: interpolating a twist with Jacobian exactly 1 on a triangle mesh flips 10 triangles at every mesh size.</li>
+  <li>Ours: filling a face from its edges at p = 2 costs ln(1/α) — 2.30, 4.61, 9.21 as the core shrinks 10, 100, 10⁴ times.</li>
+  <li>Ours: the factor R^(1−2/p) at R = 1/1000 is 10, 1, 0.25 and 0.1 for p = 3/2, 2, 5/2, 3; the papers' sphere estimate is stated for p above 2.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/main.pdf">Strong diffeomorphic approximation in three dimensions for 1≤p≤2 (PDF)</a>, 62 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/main.pdf">Strong diffeomorphic approximation in three dimensions for p&gt;2 (PDF)</a>, 130 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 368.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-1-le-p-le-2-September-24-2026/main.pdf">Strong diffeomorphic approximation in three dimensions for 1≤p≤2</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Strong-diffeomorphic-approximation-in-three-dimensions-for-p-gt-2-September-24-2026/main.pdf">Strong diffeomorphic approximation in three dimensions for p&gt;2</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>In the mathematics of elastic solids, a deformation is a one-to-one map, and its energy depends on how much it stretches. Mathematicians measure that with Sobolev classes, W¹ᵖ: the p-th power of the stretching must have a finite total. Such a map can still be wild. Our computer checks a deformation of a ball that stretches infinitely at its centre, yet has finite energy for every p below six. In 2001, John Ball asked, crediting Lawrence Evans: can every such deformation be approximated, in this energy, by one-to-one maps that are piecewise affine? Later work asked for smooth ones too. The obvious tools fail. Our computer interpolates a twist on a triangle mesh and finds ten triangles flipped inside out at every mesh size, and averaging two one-to-one maps, z and minus z, gives zero. In the plane the answer is yes, from Iwaniec, Kovalev and Onninen, and from Hencl and Pratelli. In four or more dimensions it fails for small p. A 2025 survey by Hencl calls any positive result in higher dimensions, especially three, the main open problem in the area.</p>
+<h3><span class="t num">1:12</span>The claim</h3>
+<p>Result 368 is two OpenAI papers, both dated September 24 and made public October 6, 2026: 62 pages for p from one to two, and 130 pages for p above two. Together they claim that for any bounded domains in three dimensions and any finite p from one up, every W¹ᵖ homeomorphism from one onto the other is a limit, in W¹ᵖ, of smooth one-to-one maps onto exactly the same target, with no assumptions on the boundary, the inverse or the Jacobian. Not claimed: convergence of the inverses or of elastic energies, matching boundary values, or anything in four dimensions and up. Ball’s original question asked for piecewise affine maps, and neither paper states that as a theorem. And smoothing piecewise affine one-to-one maps, in three and four dimensions, had already been done, by Campbell, D’Onofrio and Vítek in 2025.</p>
+<h3><span class="t num">2:13</span>How the proof goes</h3>
+<p>Both papers first build a locally bi-Lipschitz one-to-one map onto the target that is close in energy, then smooth it; a degree argument keeps each smooth map one-to-one and onto. For p up to two, the paper charges each crossing of test curves, and at p = 2 test surfaces, with a target mesh to a length or area budget, turns those budgets into an actual map, and rebuilds the derivative piece by piece. At p = 2, filling a face from its edges breaks down: our computer shows the cost growing without bound as the face’s core shrinks, so the paper needs a sharp disk estimate instead. For p above two, the paper builds an exact carrier map and a convex quantizer, then places walls pinned by guards. A misplaced wall costs something on many small spheres, and the sphere estimate works only when p is above two, where its factor shrinks with the sphere: at radius 1/1000, our computer finds one tenth at p = 3, while the same formula gives one at p = 2 and ten at p = 3/2. Finally, uniform convexity turns nearly sharp energy bounds into convergence of the derivatives.</p>
+<h3><span class="t num">3:24</span>Where it stands</h3>
+<p>Both papers are unrefereed and unchanged since release. Neither has a Lean proof, and the release folders contain no code. Two trackers rate the result as major; a third calls it partial, since Ball asked in every dimension. None has checked it, and we found no competing claim and no specialist verdict. If they hold, every finite-energy deformation between bounded three-dimensional shapes can be approximated by smooth one-to-one deformations onto the same shape: the three-dimensional Ball-Evans problem, settled.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20368%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
