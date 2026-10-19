@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two dimensions disappear? Gromov&#x27;s Urysohn width bound for scalar curvature | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/336-urysohn-width/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Two dimensions disappear?">
+<meta property="og:description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/336-urysohn-width/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/336-urysohn-width/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 336, October 2026</p>
+<h1>Two dimensions disappear?</h1>
+<p class="subtitle">Three AI preprints claim that scalar curvature at least one makes every complete manifold two dimensions smaller from afar</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 336 in OpenAI’s catalog: <a href="#papers-in-result">all 3 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="1_S7PckBxEc" data-title="Episode 336: Two dimensions disappear?">
+  <a href="https://youtu.be/1_S7PckBxEc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 336: Two dimensions disappear? A teal tube squashed by grey arrows onto a yellow line.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:01. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/1_S7PckBxEc?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/1_S7PckBxEc?t=85" data-t="85"><span class="t">1:25</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/1_S7PckBxEc?t=163" data-t="163"><span class="t">2:43</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/1_S7PckBxEc?t=245" data-t="245"><span class="t">4:05</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Urysohn width measures how many dimensions a space really has when seen from a distance. Squash the space continuously, as well as possible, onto a lower-dimensional skeleton, a simplicial complex, and measure how far across the largest set is that lands on a single point, counting the whole set even if it falls into separate parts. A long thin tube, a sphere times a line, squashes onto its axis with small sets, while flat space cannot be squashed without huge ones. Our computer checks the usual heuristic for a drop of two: a round sphere factor can carry scalar curvature one with sets about 4.5 across, but a circle factor carries no curvature at all.</p>
+<p>In 1986 Gromov wrote that it was unknown whether every complete manifold with scalar curvature at least one squashes onto a complex two dimensions lower, with sets whose size is bounded by a constant depending only on the dimension. In 1996 he called a version of this hard and proven only in dimension 3. In February 2026, Kumar and Sen wrote that it was only known in dimension 3, and that even the weaker version, squashing just one dimension lower, remained unknown. Gromov also argued that it would rule out positive scalar curvature on closed aspherical manifolds, the subject of result 335.</p>
+<p>Result 336 is three OpenAI papers, made public October 6, 2026. The foundation, 99 pages and dated September 23, claims Gromov’s conjectured bound in every dimension from 4 up: a continuous map to a complex of dimension n − 2 whose whole fibers have diameter bounded by a constant depending only on the dimension. It also claims that universal covers of closed manifolds with positive scalar curvature have continuous macroscopic dimension at most n − 2, and a second route to the aspherical conjecture from dimension 4 up. Two shorter papers, dated October 5, weaken the curvature hypothesis to a spectral one: minus four times the Laplacian, plus scalar curvature, at least one. One, 27 pages, builds on the foundation from dimension 4 up; the other, 21 pages, is independent of the foundation, in dimension 3, with an explicit constant of 500.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: any value of the constant from dimension 4 up; Lipschitz maps or the stronger Lipschitz version of macroscopic dimension; bounds on the fibers’ volume; or a machine-checked proof, since none of the papers has Lean.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 3 papers (99, 27 and 21 pages), dated September 23 and October 5, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>Not yet</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. All three papers are unrefereed and unchanged since release, and none has Lean. The spectral paper for dimension 4 and up depends on the foundation, and the aspherical consequence uses an argument from Gromov’s 2017 problem list. Unlike result 335, these papers do not rely on Schoen and Yau’s 2017 theory; the singular points are handled by the foundation paper’s own new analysis. We found no specialist assessment and no reported error. Jialong Deng noted publicly that results 335 and 336 generalize two results from their September 2 paper without citing it. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Walls around every ball.</strong> The foundation paper picks a net of balls and must separate each inner ball from the outside of a larger ball by a wall, so that no n − 1 walls ever meet; the walls then give the map. To make room it stretches the metric near every ball, paying from a reserve of curvature. The payments telescope: however many stretches overlap, their total stays below the dimension, as our toy shows with 10,000 stretches in dimension 4. It then cuts along weighted minimizing walls, keeps every piece, adds circle factors, and shields and smooths away the walls’ singular points over about 30 pages.</li>
+  <li><strong>Why two dimensions drop.</strong> Why do no n − 1 walls meet? Their intersection would be a complete one-dimensional piece, a line or a circle that unrolls into one, carrying positive curvature of this kind, and on an infinitely long line that inequality blows up within a fixed length, like a tangent curve running off to infinity. In the spectral papers, scalar curvature may be very negative in places: on a rippled tube our computer finds scalar curvature down to −99 while the spectral quantity stays above 1.75. The three-dimensional paper uses stable spheres or projective planes and soap-bubble surfaces, and its constant adds up to about 457, under 500.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: a round sphere factor normalized to scalar curvature 1 has diameter 4.44, while a circle factor carries no scalar curvature: the usual heuristic for a drop of two dimensions.</li>
+  <li>Ours: on a rippled tube, scalar curvature dips to −99 while the spectral quantity −4Δ + Scal stays at least 1.75.</li>
+  <li>Ours: in a toy of the stretching rounds in dimension 4, the total payment after 10, 100, 1,000 and 10,000 stretches is 2.22, 3.88, 3.99 and 3.999, always below 4.</li>
+  <li>Ours: the three-dimensional paper’s constant chain, 2π, 4π, 220, then 456.6, stays under its stated 500.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Positive-scalar-curvature-and-uniform-codimension-two-width-September-23-2026/paper.pdf">Positive scalar curvature and uniform codimension-two width (PDF)</a>, 99 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Spectral-scalar-curvature-and-uniform-Urysohn-width-October-5-2026/main.pdf">Spectral scalar curvature and uniform Urysohn width (PDF)</a>, 27 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Spectral-scalar-curvature-and-Urysohn-width-in-dimension-three-October-5-2026/spectral-urysohn-three-manifolds.pdf">Spectral scalar curvature and Urysohn width in dimension three (PDF)</a>, 21 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 336.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 3 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Spectral-scalar-curvature-and-uniform-Urysohn-width-October-5-2026/main.pdf">Spectral scalar curvature and uniform Urysohn width</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Spectral-scalar-curvature-and-Urysohn-width-in-dimension-three-October-5-2026/spectral-urysohn-three-manifolds.pdf">Spectral scalar curvature and Urysohn width in dimension three</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Positive-scalar-curvature-and-uniform-codimension-two-width-September-23-2026/paper.pdf">Positive scalar curvature and uniform codimension-two width</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Urysohn width measures how many dimensions a space really has when seen from a distance. Squash the space continuously, as well as possible, onto a lower-dimensional skeleton, a simplicial complex, and measure how far across the largest set is that lands on a single point, counting the whole set even if it falls into separate parts. A long thin tube, a sphere times a line, squashes onto its axis with small sets, while flat space cannot be squashed without huge ones. Our computer checks the usual heuristic for a drop of two: a round sphere factor can carry scalar curvature one with sets about 4.5 across, but a circle factor carries no curvature at all. In 1986 Gromov wrote that it was unknown whether every complete manifold with scalar curvature at least one squashes onto a complex two dimensions lower, with sets whose size is bounded by a constant depending only on the dimension. In 1996 he called a version of this hard and proven only in dimension 3. In February 2026, Kumar and Sen wrote that it was only known in dimension 3, and that even the weaker version, squashing just one dimension lower, remained unknown. Gromov also argued that it would rule out positive scalar curvature on closed aspherical manifolds, the subject of result 335.</p>
+<h3><span class="t num">1:25</span>The claim</h3>
+<p>Result 336 is three OpenAI papers, made public October 6, 2026. The foundation, 99 pages and dated September 23, claims Gromov’s conjectured bound in every dimension from 4 up: a continuous map to a complex of dimension n − 2 whose whole fibers have diameter bounded by a constant depending only on the dimension. It also claims that universal covers of closed manifolds with positive scalar curvature have continuous macroscopic dimension at most n − 2, and a second route to the aspherical conjecture from dimension 4 up. Two shorter papers, dated October 5, weaken the curvature hypothesis to a spectral one: minus four times the Laplacian, plus scalar curvature, at least one. One, 27 pages, builds on the foundation from dimension 4 up; the other, 21 pages, is independent of the foundation, in dimension 3, with an explicit constant of 500. Not claimed: any value of the constant from dimension 4 up; Lipschitz maps or the stronger Lipschitz version of macroscopic dimension; bounds on the fibers’ volume; or a machine-checked proof, since none of the papers has Lean.</p>
+<h3><span class="t num">2:43</span>How the proof goes</h3>
+<p>The foundation paper picks a net of balls and must separate each inner ball from the outside of a larger ball by a wall, so that no n − 1 walls ever meet; the walls then give the map. To make room it stretches the metric near every ball, paying from a reserve of curvature. The payments telescope: however many stretches overlap, their total stays below the dimension, as our toy shows with 10,000 stretches in dimension 4. It then cuts along weighted minimizing walls, keeps every piece, adds circle factors, and shields and smooths away the walls’ singular points over about 30 pages. Why do no n − 1 walls meet? Their intersection would be a complete one-dimensional piece, a line or a circle that unrolls into one, carrying positive curvature of this kind, and on an infinitely long line that inequality blows up within a fixed length, like a tangent curve running off to infinity. In the spectral papers, scalar curvature may be very negative in places: on a rippled tube our computer finds scalar curvature down to −99 while the spectral quantity stays above 1.75. The three-dimensional paper uses stable spheres or projective planes and soap-bubble surfaces, and its constant adds up to about 457, under 500.</p>
+<h3><span class="t num">4:05</span>Where it stands</h3>
+<p>All three papers are unrefereed and unchanged since release, and none has Lean. The spectral paper for dimension 4 and up depends on the foundation, and the aspherical consequence uses an argument from Gromov’s 2017 problem list. Unlike result 335, these papers do not rely on Schoen and Yau’s 2017 theory; the singular points are handled by the foundation paper’s own new analysis. We found no specialist assessment and no reported error. Jialong Deng noted publicly that results 335 and 336 generalize two results from their September 2 paper without citing it. If it holds, scalar curvature of at least one makes every complete manifold, seen from a distance, at least two dimensions smaller, with a size bound that depends only on the dimension.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20336%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
