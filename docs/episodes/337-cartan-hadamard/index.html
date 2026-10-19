@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two dimensions disappear? Gromov&#x27;s Urysohn width bound for scalar curvature | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/337-cartan-hadamard/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="The ball wins everywhere?">
+<meta property="og:description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/337-cartan-hadamard/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/337-cartan-hadamard/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 337, October 2026</p>
+<h1>The ball wins everywhere?</h1>
+<p class="subtitle">Two AI preprints claim the Cartan–Hadamard isoperimetric conjecture in every dimension, with part of the claim in Lean</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 337 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="aQytIDhDpYQ" data-title="Episode 337: The ball wins everywhere?">
+  <a href="https://youtu.be/aQytIDhDpYQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 337: The ball wins everywhere? A yellow round disk beside a grey wobbly region.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:28. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/aQytIDhDpYQ?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/aQytIDhDpYQ?t=85" data-t="85"><span class="t">1:25</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/aQytIDhDpYQ?t=153" data-t="153"><span class="t">2:33</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/aQytIDhDpYQ?t=216" data-t="216"><span class="t">3:36</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>On a flat plane, among all regions of a given area, the round disk has the shortest boundary. The Cartan–Hadamard conjecture says the same bound holds in every complete, simply connected space whose curvature is nowhere positive: curving like a saddle can only make boundaries longer, never shorter. Our computer checks this on a saddle surface, where boundary squared over 4π times area grows from about 1.06 to 2.7, while on a sphere, which curves the other way, it drops below 1. The generalized version asks for more: if the curvature is at most some negative number, every region should have at least the boundary of the equal-volume round ball in the curved model space.</p>
+<p>The conjecture is usually credited to Aubin in the mid-1970s, and to Gromov and to Burago and Zalgaller. Weil proved the flat case for surfaces in 1926, and Bol the curved case in 1941. Croke did the flat case in dimension 4 in 1984, and Kleiner dimension 3, curved case included, in 1992. A claimed proof in all dimensions by Ghomi and Spruck in 2019 ran into a gap, and its published version proves only a conditional result. In September 2026, days before the release papers’ date, Chen, Ghomi and Wang posted a proof of the flat case in dimensions 3 through 9.</p>
+<p>Result 337 is two OpenAI papers, both dated September 23 and made public October 6, 2026. The first, 42 pages, claims the generalized inequality in every dimension: any region of finite volume has at least the boundary of the equal-volume ball in the model space. Its own argument covers dimension 4 and up; dimensions 2 and 3 are quoted from Weil, Bol and Kleiner. It also claims that a bounded region with exactly the flat bound must be, inside, a perfectly flat round ball. The second, 46 pages, works in spaces of nonpositive curvature that may be singular: every closed surface of dimension 2 or more, counted with integer multiplicity, bounds a filling no larger than the round ball allows, with the best possible constant. That gives the flat inequality again in dimensions 3 and up.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: that the whole space must be flat when equality holds; an equality statement for negative curvature; or Gromov’s stronger filling conjecture for such spaces, which also prescribes the shape of the filling.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, 2 papers (42 and 46 pages), dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The second paper’s filling theorem and its constant; not the first paper (<a href="https://github.com/openai/math/blob/main/lean/docs/337.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. Both papers are unrefereed and unchanged since release. Lean covers only the second paper: its main filling theorem and the optimality of the constant, in about 440 files and 66,000 lines, not run by us, though much of the optimality part repeats the main part. The step from fillings to regions in a manifold, and the whole first paper, are not formalized. Three outside projects re-ran the check and it passed, two of them also with a second kernel. We found no specialist assessment and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Paper 1: a map to the sphere.</strong> The first paper maps the space into a round sphere with a stereographic map adapted to the curvature, and balances it so the image is centered. In dimension 4 and up, that gives a sharp Sobolev inequality on every hypersurface; our computer checks that round spheres give equality and stretched capsules do not. Testing it with a constant function turns into a differential inequality for the least boundary area inside a large ball, a setup credited to Kleiner, and integrating it gives exactly the model bound; our computer confirms that its equality case traces the model profile to 12 digits.</li>
+  <li><strong>Paper 2: chords that cannot be both short and long.</strong> The second paper takes an extremal cycle that would beat the bound. In dimension 2 a radial first-variation argument rules it out. Above 2, an almost sharp Sobolev inequality produces a function whose weighted chords have mean square below 2, while curvature comparison forces at least 2. Round spheres attain the constant: for two-dimensional spheres it is 1 over 6√π.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: on a saddle surface, boundary squared over 4π times area is 1.06, 1.21, 1.66 and 2.73 for growing disks; on sphere caps it falls to 0.98, 0.77, 0.29 and 0.005.</li>
+  <li>Ours: the equality case of the first paper’s profile inequality traces the model profile to about 12 digits.</li>
+  <li>Ours: the filling constant for two-dimensional cycles is 1/(6√π) ≈ 0.0940, attained exactly by round spheres.</li>
+  <li>Lean: 442 files and 65,872 lines in the import closure of the two comparators, 330 files and 50,219 lines for the main theorem alone (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026/paper.pdf">Generalized Cartan–Hadamard isoperimetry and Euclidean equality rigidity (PDF)</a>, 42 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Sharp-integral-fillings-in-CAT(0)-spaces-September-23-2026/paper.pdf">Sharp integral fillings in CAT(0) spaces (PDF)</a>, 46 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/337.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 337.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Generalized-Cartan-Hadamard-isoperimetry-and-Euclidean-equality-rigidity-September-23-2026/paper.pdf">Generalized Cartan–Hadamard isoperimetry and Euclidean equality rigidity</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Sharp-integral-fillings-in-CAT(0">Sharp integral fillings in CAT(0) spaces</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>On a flat plane, among all regions of a given area, the round disk has the shortest boundary. The Cartan–Hadamard conjecture says the same bound holds in every complete, simply connected space whose curvature is nowhere positive: curving like a saddle can only make boundaries longer, never shorter. Our computer checks this on a saddle surface, where boundary squared over 4π times area grows from about 1.06 to 2.7, while on a sphere, which curves the other way, it drops below 1. The generalized version asks for more: if the curvature is at most some negative number, every region should have at least the boundary of the equal-volume round ball in the curved model space. The conjecture is usually credited to Aubin in the mid-1970s, and to Gromov and to Burago and Zalgaller. Weil proved the flat case for surfaces in 1926, and Bol the curved case in 1941. Croke did the flat case in dimension 4 in 1984, and Kleiner dimension 3, curved case included, in 1992. A claimed proof in all dimensions by Ghomi and Spruck in 2019 ran into a gap, and its published version proves only a conditional result. In September 2026, days before the release papers’ date, Chen, Ghomi and Wang posted a proof of the flat case in dimensions 3 through 9.</p>
+<h3><span class="t num">1:25</span>The claim</h3>
+<p>Result 337 is two OpenAI papers, both dated September 23 and made public October 6, 2026. The first, 42 pages, claims the generalized inequality in every dimension: any region of finite volume has at least the boundary of the equal-volume ball in the model space. Its own argument covers dimension 4 and up; dimensions 2 and 3 are quoted from Weil, Bol and Kleiner. It also claims that a bounded region with exactly the flat bound must be, inside, a perfectly flat round ball. The second, 46 pages, works in spaces of nonpositive curvature that may be singular: every closed surface of dimension 2 or more, counted with integer multiplicity, bounds a filling no larger than the round ball allows, with the best possible constant. That gives the flat inequality again in dimensions 3 and up. Not claimed: that the whole space must be flat when equality holds; an equality statement for negative curvature; or Gromov’s stronger filling conjecture for such spaces, which also prescribes the shape of the filling.</p>
+<h3><span class="t num">2:33</span>How the proof goes</h3>
+<p>The first paper maps the space into a round sphere with a stereographic map adapted to the curvature, and balances it so the image is centered. In dimension 4 and up, that gives a sharp Sobolev inequality on every hypersurface; our computer checks that round spheres give equality and stretched capsules do not. Testing it with a constant function turns into a differential inequality for the least boundary area inside a large ball, a setup credited to Kleiner, and integrating it gives exactly the model bound; our computer confirms that its equality case traces the model profile to 12 digits. The second paper takes an extremal cycle that would beat the bound. In dimension 2 a radial first-variation argument rules it out. Above 2, an almost sharp Sobolev inequality produces a function whose weighted chords have mean square below 2, while curvature comparison forces at least 2. Round spheres attain the constant: for two-dimensional spheres it is 1 over 6√π.</p>
+<h3><span class="t num">3:36</span>Where it stands</h3>
+<p>Both papers are unrefereed and unchanged since release. Lean covers only the second paper: its main filling theorem and the optimality of the constant, in about 440 files and 66,000 lines, not run by us, though much of the optimality part repeats the main part. The step from fillings to regions in a manifold, and the whole first paper, are not formalized. Three outside projects re-ran the check and it passed, two of them also with a second kernel. We found no specialist assessment and no reported error. If it holds, in every dimension a complete, simply connected space that curves only like a saddle can never enclose volume more efficiently than the round ball in the model space set by its curvature bound.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20337%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

@@ -11,7 +11,7 @@
 <meta property="og:title" content="AI Proved What? New AI mathematics, explained and checked">
 <meta property="og:description" content="Short animated explainers of mathematics that AI systems claim to have proved, with a running record of how far each proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/">
-<meta property="og:image" content="https://aiprovedwhat.com/episodes/336-urysohn-width/thumbnail.jpg">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/337-cartan-hadamard/thumbnail.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <meta name="generator" content="tools/site/build.py">
@@ -39,39 +39,48 @@
 </header>
 <main id="main">
 
-<h1>An AI system claims Gromov’s conjectured bound that every complete manifold with scalar curvature at least one maps continuously to a complex two dimensions lower with fibers of uniformly bounded diameter, in every dimension from four up, with spectral versions in dimension three and up.</h1>
+<h1>An AI system claims the generalized Cartan–Hadamard isoperimetric inequality in every dimension, with Euclidean equality rigidity, and sharp fillings for integral cycles in CAT(0) spaces.</h1>
 <p class="lede">What does that even mean, and has anyone checked? Each episode takes one claim like this, builds the intuition with animation, and keeps a running record of how far the proof has been verified.</p>
 
 <div class="player">
-  <a href="episodes/336-urysohn-width/">
-    <img src="episodes/336-urysohn-width/thumbnail.jpg" width="1280" height="720" alt="Episode 336: Two dimensions disappear? A teal tube squashed by grey arrows onto a yellow line.">
+  <a href="episodes/337-cartan-hadamard/">
+    <img src="episodes/337-cartan-hadamard/thumbnail.jpg" width="1280" height="720" alt="Episode 337: The ball wins everywhere? A yellow round disk beside a grey wobbly region.">
     <span class="play" aria-hidden="true"></span>
   </a>
 </div>
-<p class="player-caption">Episode 336: <a href="episodes/336-urysohn-width/">Two dimensions disappear?</a>, about 5 minutes.</p>
+<p class="player-caption">Episode 337: <a href="episodes/337-cartan-hadamard/">The ball wins everywhere?</a>, about 4 minutes.</p>
 
 <section class="measure" aria-labelledby="record">
 <h2 id="record">Where this claim stands</h2>
 <dl class="ledger ledger-auto">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, September 23 and October 5, 2026</dd>
+    <dd>OpenAI, September 23, 2026</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row">
+  <div class="ledger-row is-partial">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>Not yet</dd>
+    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/337.md">scope notes</a>)</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 19, 2026. The claim has not been withdrawn. Three preprints (99, 27 and 21 pages); no Lean; not yet peer reviewed.</p>
+<p class="ledger-note">Last checked October 19, 2026. The claim has not been withdrawn. Two preprints (42 and 46 pages); the filling paper’s main theorem and constant are formalized in Lean and three outside re-runs passed; the first paper has no Lean; not yet peer reviewed.</p>
 </section>
 
 <section aria-labelledby="episodes">
 <h2 id="episodes">Recent episodes</h2>
 <ul class="thumbs">
+  <li>
+    <a href="episodes/337-cartan-hadamard/">
+      <img src="episodes/337-cartan-hadamard/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
+      <span class="thumb-kicker num">Episode 337 · 4:28</span>
+      <span class="thumb-title">The ball wins everywhere?</span>
+      <span class="thumb-sub">Two AI preprints claim the Cartan–Hadamard isoperimetric conjecture in every dimension, with part of the claim in Lean</span>
+      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of part of the claim"><span class="box on"></span><span class="box"></span><span class="box part"></span></span>
+    </a>
+  </li>
   <li>
     <a href="episodes/336-urysohn-width/">
       <img src="episodes/336-urysohn-width/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
@@ -135,15 +144,6 @@
       <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
     </a>
   </li>
-  <li>
-    <a href="episodes/329-entropy-duality/">
-      <img src="episodes/329-entropy-duality/thumbnail.jpg" width="1280" height="720" alt="" loading="lazy">
-      <span class="thumb-kicker num">Episode 329 · 3:45</span>
-      <span class="thumb-title">Covering is not self-dual?</span>
-      <span class="thumb-sub">An AI preprint claims counterexamples to Pietsch’s duality conjecture for metric entropy</span>
-      <span class="mini" role="img" aria-label="Posted as a preprint; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
-    </a>
-  </li>
 </ul>
 </section>
 
@@ -165,7 +165,7 @@
   <li><a href="subjects/operator-algebras/"><span class="tile-name">Operator algebras</span><span class="tile-count num">19 of 19 explained</span></a></li>
   <li><a href="subjects/topology/"><span class="tile-name">Topology</span><span class="tile-count num">18 of 18 explained</span></a></li>
   <li><a href="subjects/functional-analysis/"><span class="tile-name">Functional analysis</span><span class="tile-count num">11 of 11 explained</span></a></li>
-  <li><a href="subjects/differential-geometry/"><span class="tile-name">Differential geometry</span><span class="tile-count num">4 of 29 explained</span></a></li>
+  <li><a href="subjects/differential-geometry/"><span class="tile-name">Differential geometry</span><span class="tile-count num">5 of 29 explained</span></a></li>
   <li><a href="subjects/partial-differential-equations/"><span class="tile-name">Partial differential equations</span><span class="tile-count num">0 of 16 explained</span></a></li>
 </ul>
 </section>
@@ -175,7 +175,7 @@
 <dl class="stats">
   <div>
     <dt>Explained</dt>
-    <dd><span class="stat num">331</span> of 372 results <span class="stat-note">(719 papers in all)</span></dd>
+    <dd><span class="stat num">332</span> of 372 results <span class="stat-note">(719 papers in all)</span></dd>
   </div>
   <div>
     <dt>Lean proof published by OpenAI</dt>
