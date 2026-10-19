@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two dimensions disappear? Gromov&#x27;s Urysohn width bound for scalar curvature | AI Proved What?</title>
+<meta name="description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/349-solomon-yau/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="The next smallest?">
+<meta property="og:description" content="Two AI preprints claim Gromov&#x27;s 1986 integral scalar-curvature bound for simplicial volume and the Gromov–Lawson aspherical conjecture in every dimension. An animated explainer, the claims in plain words, and how far they have been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/349-solomon-yau/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/349-solomon-yau/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 349, October 2026</p>
+<h1>The next smallest?</h1>
+<p class="subtitle">An AI preprint claims the Solomon–Yau least-volume conjecture in every dimension</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 349 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="jUeYlIp8xPw" data-title="Episode 349: The next smallest?">
+  <a href="https://youtu.be/jUeYlIp8xPw">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 349: The next smallest? A sphere with a teal equator next to a yellow Clifford torus.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:28. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/jUeYlIp8xPw?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/jUeYlIp8xPw?t=91" data-t="91"><span class="t">1:31</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/jUeYlIp8xPw?t=149" data-t="149"><span class="t">2:29</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/jUeYlIp8xPw?t=224" data-t="224"><span class="t">3:44</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A minimal hypersurface of a round sphere has zero mean curvature: every small piece balances its bending, like a soap film. The simplest is an equator, a great sphere. Next come Clifford products, one round sphere times another, with radii squared k/m and (m − k)/m, where our computer checks that the mean curvature vanishes. In the three-sphere this is the Clifford torus, with area 2π², against 4π for the equator. In every dimension the smallest of these products is the balanced one, which our computer confirms up to dimension 200; its volume over the equator’s is π/2 for surfaces, about 1.54 one dimension up, and exactly 3/2 in dimension four.</p>
+<p>The question is whether the Clifford products are the next step up: does every closed minimal hypersurface other than an equator have at least the smallest Clifford volume? It is Problem 31 in Yau’s 1992 problem list, where Yau notes that Bruce Solomon thought so, and it is also called the Solomon–Yau conjecture. For surfaces in the three-sphere, Marques and Neves proved it in 2012, in their work on the Willmore conjecture. In higher dimensions only special cases were known: rotationally symmetric or antipodally symmetric hypersurfaces, and non-embedded ones, whose volume is at least twice the equator’s, already above the Clifford value. In 2025 Perdomo wrote that it had been fully verified only for surfaces.</p>
+<p>Result 349 is one OpenAI paper, 32 pages, dated September 23 and made public October 6, 2026. It claims the conjecture in every dimension m from two up: a closed connected minimal immersion into the unit sphere whose image is not an equator has volume at least that of the smallest minimal Clifford product, counting covering multiplicity. Along the way it proves an average-curvature inequality conjectured by Perdomo, and that Morse index m + 3 forces a Clifford product; a preprint by Anass Nifa, which the paper cites, also gives proofs of those two steps.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: that only Clifford products reach the bound, since the paper states no equality case; the separate eigenvalue and Chern conjectures; or a machine-checked proof. Surfaces in the three-sphere were already known; the new part is dimension three and up.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 32 pages, dated September 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>No</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper is unrefereed, unchanged since release, and has no Lean. It relies on deep machinery, min-max theory and the varifold theory of Allard and White, and an AI audit that found no gap did not re-check those. Its title date is September 23, but it cites Nifa’s preprint, which reached Zenodo on September 27. On October 14, Jingwen Chen used the result in a new paper. We found no specialist comment and no reported error. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Narrowing down a counterexample.</strong> First, a counterexample would have to be embedded, since non-embedded hypersurfaces are already too large. Comparing a two-point curvature maximum with a solution of a Poisson equation gives the inequality: the average squared curvature is at least m. Balancing arguments then show that only Clifford products have Morse index exactly m + 3, and our computer checks that every minimal Clifford product up to dimension 10 does, against index one for the equator. So a counterexample has index at least m + 4.</li>
+  <li><strong>Min-max below the candidate.</strong> Next comes min-max. A family built from Lorentz boosts applied to the signed distance from the cone over a candidate hypersurface, sliced by the unit sphere, sweeps out the sphere; on the Clifford torus our computer checks that the unboosted slices’ area peaks only at the center. The extra unstable direction pushes the family’s maximum below the candidate’s volume, and Marques and Neves min-max theory then yields a smaller minimal hypersurface. An induction on dimension, using cones of low density, keeps everything smooth, even in dimension seven and above. A least counterexample would have a smaller one, a contradiction.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the Clifford torus has area 2π² ≈ 19.74, against 4π ≈ 12.57 for the equatorial sphere.</li>
+  <li>Ours: the smallest minimal Clifford product is the balanced one; its volume over the equator's is π/2, 1.540 and exactly 3/2 in dimensions 2, 3 and 4, tending to √2.</li>
+  <li>Ours: every minimal Clifford product up to dimension 10 has Morse index exactly m + 3; the equator has index 1.</li>
+  <li>Ours: the unboosted slices of the Clifford torus have area 2π²(1 − 2b²), largest at the centre.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/paper.pdf">The Solomon–Yau least-volume theorem (PDF)</a>, 32 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 349.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Solomon-Yau-least-volume-theorem-September-23-2026/paper.pdf">The Solomon–Yau least-volume theorem</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A minimal hypersurface of a round sphere has zero mean curvature: every small piece balances its bending, like a soap film. The simplest is an equator, a great sphere. Next come Clifford products, one round sphere times another, with radii squared k/m and (m − k)/m, where our computer checks that the mean curvature vanishes. In the three-sphere this is the Clifford torus, with area 2π², against 4π for the equator. In every dimension the smallest of these products is the balanced one, which our computer confirms up to dimension 200; its volume over the equator’s is π/2 for surfaces, about 1.54 one dimension up, and exactly 3/2 in dimension four. The question is whether the Clifford products are the next step up: does every closed minimal hypersurface other than an equator have at least the smallest Clifford volume? It is Problem 31 in Yau’s 1992 problem list, where Yau notes that Bruce Solomon thought so, and it is also called the Solomon–Yau conjecture. For surfaces in the three-sphere, Marques and Neves proved it in 2012, in their work on the Willmore conjecture. In higher dimensions only special cases were known: rotationally symmetric or antipodally symmetric hypersurfaces, and non-embedded ones, whose volume is at least twice the equator’s, already above the Clifford value. In 2025 Perdomo wrote that it had been fully verified only for surfaces.</p>
+<h3><span class="t num">1:31</span>The claim</h3>
+<p>Result 349 is one OpenAI paper, 32 pages, dated September 23 and made public October 6, 2026. It claims the conjecture in every dimension m from two up: a closed connected minimal immersion into the unit sphere whose image is not an equator has volume at least that of the smallest minimal Clifford product, counting covering multiplicity. Along the way it proves an average-curvature inequality conjectured by Perdomo, and that Morse index m + 3 forces a Clifford product; a preprint by Anass Nifa, which the paper cites, also gives proofs of those two steps. Not claimed: that only Clifford products reach the bound, since the paper states no equality case; the separate eigenvalue and Chern conjectures; or a machine-checked proof. Surfaces in the three-sphere were already known; the new part is dimension three and up.</p>
+<h3><span class="t num">2:29</span>How the proof goes</h3>
+<p>First, a counterexample would have to be embedded, since non-embedded hypersurfaces are already too large. Comparing a two-point curvature maximum with a solution of a Poisson equation gives the inequality: the average squared curvature is at least m. Balancing arguments then show that only Clifford products have Morse index exactly m + 3, and our computer checks that every minimal Clifford product up to dimension 10 does, against index one for the equator. So a counterexample has index at least m + 4. Next comes min-max. A family built from Lorentz boosts applied to the signed distance from the cone over a candidate hypersurface, sliced by the unit sphere, sweeps out the sphere; on the Clifford torus our computer checks that the unboosted slices’ area peaks only at the center. The extra unstable direction pushes the family’s maximum below the candidate’s volume, and Marques and Neves min-max theory then yields a smaller minimal hypersurface. An induction on dimension, using cones of low density, keeps everything smooth, even in dimension seven and above. A least counterexample would have a smaller one, a contradiction.</p>
+<h3><span class="t num">3:44</span>Where it stands</h3>
+<p>The paper is unrefereed, unchanged since release, and has no Lean. It relies on deep machinery, min-max theory and the varifold theory of Allard and White, and an AI audit that found no gap did not re-check those. Its title date is September 23, but it cites Nifa’s preprint, which reached Zenodo on September 27. On October 14, Jingwen Chen used the result in a new paper. We found no specialist comment and no reported error. If it holds, in every dimension, no closed minimal hypersurface of a round sphere other than an equator is smaller than the smallest Clifford product.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20349%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
