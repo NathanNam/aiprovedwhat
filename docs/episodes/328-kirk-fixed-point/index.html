@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Always a fixed point? Kirk’s reflexive fixed-point problem | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that every nonexpansive selfmap of a closed bounded convex set in a reflexive Banach space has a fixed point, with a Lean proof. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/328-kirk-fixed-point/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Always a fixed point?">
+<meta property="og:description" content="An AI preprint claims that every nonexpansive selfmap of a closed bounded convex set in a reflexive Banach space has a fixed point, with a Lean proof. An animated explainer, the claim in plain words, and how far the proof has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/328-kirk-fixed-point/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/328-kirk-fixed-point/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 328, October 2026</p>
+<h1>Always a fixed point?</h1>
+<p class="subtitle">An AI preprint claims a positive answer to Kirk’s fixed-point problem for reflexive spaces</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 328 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="eTdJslPL8FE" data-title="Episode 328: Always a fixed point?">
+  <a href="https://youtu.be/eTdJslPL8FE">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 328: Always a fixed point? A square with a spiral path of averaged iterates converging to a yellow fixed centre.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:50. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/eTdJslPL8FE?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/eTdJslPL8FE?t=66" data-t="66"><span class="t">1:06</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/eTdJslPL8FE?t=112" data-t="112"><span class="t">1:52</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/eTdJslPL8FE?t=186" data-t="186"><span class="t">3:06</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A map is nonexpansive if it never pulls two points farther apart. Rotate a square by a quarter turn: plain iteration cycles forever, but averaging each step with where you were spirals in to the fixed centre. Whether a map counts as nonexpansive depends on the norm: our computer finds one map of the unit square that never stretches distances in the max norm but doubles some in the sum norm.</p>
+<p>In 1965 Browder, Göhde and Kirk showed that every nonexpansive map of a closed, bounded, convex set into itself has a fixed point if the space is uniformly convex, or is reflexive and the set has normal structure. In 1981 Alspach found a map on a weakly compact convex set in L₁ with no fixed point at all; our computer checks, on 300 random pairs, that it preserves distances exactly, and that the first 8 points of one orbit are all at distance 1 from each other. Kirk asked whether every reflexive space has the property, in lectures in 1995, and a paper posted on October 7, 2026, still called it open.</p>
+<p>Result 328 is one OpenAI paper, 19 pages, dated September 24 and made public October 6, 2026. It claims that every nonexpansive selfmap of a nonempty, closed, bounded, convex subset of a real reflexive Banach space has a fixed point, in the space’s own norm, with no extra geometric hypothesis.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: the converse, that every space with the property is reflexive, which is false, since a renormed ℓ₁ has it; anything about non-reflexive spaces; or a way to find the fixed point. An earlier claimed proof, from 2019, was reviewed as quite doubtful; the paper cites it and says its argument is different.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 19 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The main theorem (<a href="https://github.com/openai/math/blob/main/lean/docs/328.md">docs</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 18, 2026. The paper is unrefereed and unchanged since release. Lean formalizes the main theorem, in 86 files and about 11,500 lines, not run by us; the corollary is not formalized. Three outside projects re-ran it and it was accepted. No specialist has publicly assessed the proof; one mathematician’s site posted a ChatGPT-drafted reconstruction that claims no independent verification. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A minimal set, and points on its rim.</strong> Suppose a map has no fixed point. Shrink to a minimal invariant set of diameter 1. There, approximate fixed points drift to the rim, ever closer to distance 1 from every point of the set. Averaged steps called resolvents, each the fixed point of a contraction, give approximate fixed points with error at most 1/n; on the c₀ shift our computer finds exactly 1/n, while no true fixed point exists. A compactness argument then produces an anchor point that is approached by averages of ever better approximate fixed points.</li>
+  <li><strong>A tree, and a contradiction.</strong> From the anchor the proof grows an infinite tree of approximate fixed points, with a functional at each node that sees its point far from everything predicted. Switching the leaves one by one gives, at each depth, a vector that the functionals along one path detect. Reflexivity, through the weak compactness of the whole unit ball, turns these into one vector for an infinite branch, while those functionals tend to zero: a contradiction. This last step has no counterpart for Alspach’s map: there the set is weakly compact, but the whole ball is not. Our computer checks the tree bookkeeping on 200 random trees.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: a quarter turn of the square; plain iteration cycles, while averaging each step with the previous point spirals in to the centre.</li>
+  <li>Ours: one map of the unit square has stretch factor 1 in the max norm and 2 in the sum norm.</li>
+  <li>Ours, exact: Alspach’s L₁ map preserves distances on 300 random pairs, and the first 8 points of the orbit of 1 are pairwise at distance 1.</li>
+  <li>Ours: on the c₀ shift, the paper’s resolvents have error exactly 1/n; the paper’s tree bookkeeping holds on 200 random trees.</li>
+  <li>Lean: 86 files and 11,540 lines in the import closure (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Fixed-Points-of-Nonexpansive-Maps-in-Reflexive-Banach-Spaces-September-24-2026/paper.pdf">Fixed Points of Nonexpansive Maps in Reflexive Banach Spaces (PDF)</a>, 19 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/328.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 328.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Fixed-Points-of-Nonexpansive-Maps-in-Reflexive-Banach-Spaces-September-24-2026/paper.pdf">Fixed Points of Nonexpansive Maps in Reflexive Banach Spaces</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A map is nonexpansive if it never pulls two points farther apart. Rotate a square by a quarter turn: plain iteration cycles forever, but averaging each step with where you were spirals in to the fixed centre. Whether a map counts as nonexpansive depends on the norm: our computer finds one map of the unit square that never stretches distances in the max norm but doubles some in the sum norm. In 1965 Browder, Göhde and Kirk showed that every nonexpansive map of a closed, bounded, convex set into itself has a fixed point if the space is uniformly convex, or is reflexive and the set has normal structure. In 1981 Alspach found a map on a weakly compact convex set in L₁ with no fixed point at all; our computer checks, on 300 random pairs, that it preserves distances exactly, and that the first 8 points of one orbit are all at distance 1 from each other. Kirk asked whether every reflexive space has the property, in lectures in 1995, and a paper posted on October 7, 2026, still called it open.</p>
+<h3><span class="t num">1:06</span>The claim</h3>
+<p>Result 328 is one OpenAI paper, 19 pages, dated September 24 and made public October 6, 2026. It claims that every nonexpansive selfmap of a nonempty, closed, bounded, convex subset of a real reflexive Banach space has a fixed point, in the space’s own norm, with no extra geometric hypothesis. Not claimed: the converse, that every space with the property is reflexive, which is false, since a renormed ℓ₁ has it; anything about non-reflexive spaces; or a way to find the fixed point. An earlier claimed proof, from 2019, was reviewed as quite doubtful; the paper cites it and says its argument is different.</p>
+<h3><span class="t num">1:52</span>How the proof goes</h3>
+<p>Suppose a map has no fixed point. Shrink to a minimal invariant set of diameter 1. There, approximate fixed points drift to the rim, ever closer to distance 1 from every point of the set. Averaged steps called resolvents, each the fixed point of a contraction, give approximate fixed points with error at most 1/n; on the c₀ shift our computer finds exactly 1/n, while no true fixed point exists. A compactness argument then produces an anchor point that is approached by averages of ever better approximate fixed points. From the anchor the proof grows an infinite tree of approximate fixed points, with a functional at each node that sees its point far from everything predicted. Switching the leaves one by one gives, at each depth, a vector that the functionals along one path detect. Reflexivity, through the weak compactness of the whole unit ball, turns these into one vector for an infinite branch, while those functionals tend to zero: a contradiction. This last step has no counterpart for Alspach’s map: there the set is weakly compact, but the whole ball is not. Our computer checks the tree bookkeeping on 200 random trees.</p>
+<h3><span class="t num">3:06</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. Lean formalizes the main theorem, in 86 files and about 11,500 lines, not run by us; the corollary is not formalized. Three outside projects re-ran it and it was accepted. No specialist has publicly assessed the proof; one mathematician’s site posted a ChatGPT-drafted reconstruction that claims no independent verification. If it holds, every nonexpansive map of a closed, bounded, convex set in a reflexive Banach space has a fixed point, answering Kirk’s question for the space’s original norm, the half that was still open.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20328%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
