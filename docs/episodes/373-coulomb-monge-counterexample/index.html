@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Electrons that must flip a coin? No Monge map for three-electron Coulomb transport | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims a smooth density in three dimensions for which the optimal three-electron Coulomb arrangement cannot be deterministic, though deterministic ones come arbitrarily close. The 3-D theorem has a Lean proof. An animated explainer, the claim in plain words, and how far it has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/373-coulomb-monge-counterexample/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Electrons that must flip a coin?">
+<meta property="og:description" content="An AI preprint claims a smooth density in three dimensions for which the optimal three-electron Coulomb arrangement cannot be deterministic, though deterministic ones come arbitrarily close. The 3-D theorem has a Lean proof. An animated explainer, the claim in plain words, and how far it has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/373-coulomb-monge-counterexample/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/373-coulomb-monge-counterexample/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 373, October 2026</p>
+<h1>Electrons that must flip a coin?</h1>
+<p class="subtitle">An AI preprint claims the three-marginal Coulomb transport problem need not have an optimal map</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 373 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="lKKtb2ySVoc" data-title="Episode 373: Electrons that must flip a coin?">
+  <a href="https://youtu.be/lKKtb2ySVoc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 373: Electrons that must flip a coin? A central dot with four outer dots on two crossing axes.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:55. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/lKKtb2ySVoc?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/lKKtb2ySVoc?t=66" data-t="66"><span class="t">1:06</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/lKKtb2ySVoc?t=120" data-t="120"><span class="t">2:00</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/lKKtb2ySVoc?t=195" data-t="195"><span class="t">3:15</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>When electrons repel each other very strongly, chemistry asks a transport question: given the density of three electrons, how should their positions be correlated to make the average Coulomb repulsion as small as possible? Each electron must follow the same density, a third of the total, and the cost is one over distance, summed over pairs. The Monge ansatz assumes the best arrangement is deterministic: where one electron sits fixes where the other two sit. On a line our computer works it out for a uniform density: the electrons stay a third of the mass apart, and every such co-motion triple costs exactly 15/2.</p>
+<p>In one dimension, maps were proved optimal in 2015. In higher dimensions, with three or more electrons, the question stayed open: a 2017 paper called it still an open question, and a January 2026 paper wrote that it is not known, except in one dimension. Some particular maps were shown to fail, and examples where no map is optimal were found for other costs, but not for the Coulomb cost itself.</p>
+<p>Result 373 is one OpenAI paper, 14 pages, dated September 25 and made public October 6, 2026. It claims a smooth, compactly supported density in three dimensions for which the three-electron Coulomb problem has an optimal arrangement, but no deterministic one: every pair of measure-preserving maps costs strictly more. Yet maps can come arbitrarily close, so the two best values agree. The paper extends this to every inverse power of distance in dimension two and up.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: real atoms or ground states; this is one constructed density, and the strictly correlated energy is the same with or without maps. It is the first Coulomb example, as far as we found, where no map at all is optimal; the closest ones for other costs came in 2019.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 14 pages, dated September 25, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet; no specialist verdict</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The three-dimensional Coulomb theorem and the equality of best values; the extension to other powers is not formalized (<a href="https://github.com/openai/math/blob/main/lean/docs/373.md">scope notes</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 19, 2026. The paper is unrefereed and unchanged since release. The three-dimensional Coulomb theorem and the equality of the best values have a Lean proof, about 8,500 lines, not run by us; the extension to other powers is not formalized. The paper does not cite an earlier, similarly titled counterexample for a different cost, and we found no specialist verdict. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Five blobs and two kinds of optimal triple.</strong> The density is five tiny blobs: a centre holding a third of the mass, and four blobs on two perpendicular axes holding a sixth each. A straight triple, centre plus two opposite blobs, costs one plus one plus a half, 5/2, with no net force on the middle electron; a bent triple costs about 2.71. Local calculus, after subtracting a large quadratic, gives two families of candidate triples, one per axis; our computer finds the quadratic must be strong enough: above about 2.65 is needed, and even ten fails. A five-part potential then forces every optimal arrangement onto those two families.</li>
+  <li><strong>Why a map cannot do it.</strong> A map would have to pick one family for each central point, sending a third of the mass into a target that holds only a sixth. Our computer tries several selection rules: each one overloads its target by exactly a factor of two. So the optimum must flip a coin between the two axes. Splitting the centre and the outer blobs into ever finer cells gives maps whose cost approaches the minimum; in our toy the gap falls from 6 × 10⁻⁵ to the level of our rounding error, but the limit is the coin flip, not a map.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: for a uniform density on a line, every co-motion triple of three electrons costs exactly 15/2.</li>
+  <li>Ours: a straight triple through the centre costs 5/2 with no net force on the middle electron; the bent one costs 2 + 1/√2 ≈ 2.71.</li>
+  <li>Ours: every deterministic selection rule we tried sends twice as much mass as its target can hold.</li>
+  <li>Lean: 73 files and 8,472 lines in the closure of the proof (97 files, 10,668 lines in the full module; counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-the-Monge-ansatz-for-the-three-marginal-Coulomb-cost-September-25-2026/paper.pdf">A counterexample to the Monge ansatz for the three-marginal Coulomb cost (PDF)</a>, 14 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/373.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 373.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-counterexample-to-the-Monge-ansatz-for-the-three-marginal-Coulomb-cost-September-25-2026/paper.pdf">A counterexample to the Monge ansatz for the three-marginal Coulomb cost</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>When electrons repel each other very strongly, chemistry asks a transport question: given the density of three electrons, how should their positions be correlated to make the average Coulomb repulsion as small as possible? Each electron must follow the same density, a third of the total, and the cost is one over distance, summed over pairs. The Monge ansatz assumes the best arrangement is deterministic: where one electron sits fixes where the other two sit. On a line our computer works it out for a uniform density: the electrons stay a third of the mass apart, and every such co-motion triple costs exactly 15/2. In one dimension, maps were proved optimal in 2015. In higher dimensions, with three or more electrons, the question stayed open: a 2017 paper called it still an open question, and a January 2026 paper wrote that it is not known, except in one dimension. Some particular maps were shown to fail, and examples where no map is optimal were found for other costs, but not for the Coulomb cost itself.</p>
+<h3><span class="t num">1:06</span>The claim</h3>
+<p>Result 373 is one OpenAI paper, 14 pages, dated September 25 and made public October 6, 2026. It claims a smooth, compactly supported density in three dimensions for which the three-electron Coulomb problem has an optimal arrangement, but no deterministic one: every pair of measure-preserving maps costs strictly more. Yet maps can come arbitrarily close, so the two best values agree. The paper extends this to every inverse power of distance in dimension two and up. Not claimed: real atoms or ground states; this is one constructed density, and the strictly correlated energy is the same with or without maps. It is the first Coulomb example, as far as we found, where no map at all is optimal; the closest ones for other costs came in 2019.</p>
+<h3><span class="t num">2:00</span>How the proof goes</h3>
+<p>The density is five tiny blobs: a centre holding a third of the mass, and four blobs on two perpendicular axes holding a sixth each. A straight triple, centre plus two opposite blobs, costs one plus one plus a half, 5/2, with no net force on the middle electron; a bent triple costs about 2.71. Local calculus, after subtracting a large quadratic, gives two families of candidate triples, one per axis; our computer finds the quadratic must be strong enough: above about 2.65 is needed, and even ten fails. A five-part potential then forces every optimal arrangement onto those two families. A map would have to pick one family for each central point, sending a third of the mass into a target that holds only a sixth. Our computer tries several selection rules: each one overloads its target by exactly a factor of two. So the optimum must flip a coin between the two axes. Splitting the centre and the outer blobs into ever finer cells gives maps whose cost approaches the minimum; in our toy the gap falls from 6 × 10⁻⁵ to the level of our rounding error, but the limit is the coin flip, not a map.</p>
+<h3><span class="t num">3:15</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. The three-dimensional Coulomb theorem and the equality of the best values have a Lean proof, about 8,500 lines, not run by us; the extension to other powers is not formalized. The paper does not cite an earlier, similarly titled counterexample for a different cost, and we found no specialist verdict. If it holds, for three strongly correlated electrons in three dimensions, the best arrangement can require genuine randomness: one electron’s position need not determine the others.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20373%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
