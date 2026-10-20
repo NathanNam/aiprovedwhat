@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A fluid that computes? Universal computation in forced Navier–Stokes flows | AI Proved What?</title>
+<meta name="description" content="Nine AI preprints claim that a viscous fluid on the flat three-dimensional torus, driven by a force compiled from any Turing machine, moves a particle into a fixed region exactly when the machine halts. Part of the Lean is catalogued; the headline theorem is proved in uncatalogued Lean. An animated explainer, the claim in plain words, and how far it has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/376-navier-stokes-computation/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="A fluid that computes?">
+<meta property="og:description" content="Nine AI preprints claim that a viscous fluid on the flat three-dimensional torus, driven by a force compiled from any Turing machine, moves a particle into a fixed region exactly when the machine halts. Part of the Lean is catalogued; the headline theorem is proved in uncatalogued Lean. An animated explainer, the claim in plain words, and how far it has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/376-navier-stokes-computation/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/376-navier-stokes-computation/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 376, October 2026</p>
+<h1>A fluid that computes?</h1>
+<p class="subtitle">Nine AI preprints claim universal computation in forced Navier–Stokes flows on a fixed flat domain</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 376 in OpenAI’s catalog: <a href="#papers-in-result">all 9 papers</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="vDcy8cJ6XLM" data-title="Episode 376: A fluid that computes?">
+  <a href="https://youtu.be/vDcy8cJ6XLM">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 376: A fluid that computes? A Turing tape above a sheared square and a detector strip.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:26. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/vDcy8cJ6XLM?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/vDcy8cJ6XLM?t=74" data-t="74"><span class="t">1:14</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/vDcy8cJ6XLM?t=148" data-t="148"><span class="t">2:28</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/vDcy8cJ6XLM?t=221" data-t="221"><span class="t">3:41</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Can a fluid compute? In 1991 Cris Moore wrote that no one knows whether hydrodynamics, the Navier-Stokes equation for example, is capable of computation. Computing here means: any Turing machine and its input can be encoded into the setup so that some feature of the flow reveals whether the machine ever halts, a question that is undecidable in general. Our computer runs small machines: the two-state busy beaver halts after six steps, a four-state one after 107, while a machine that walks right forever never halts, and no finite run can certify that.</p>
+<p>Ideal fluids came first: in 2021 Cardona, Miranda, Peralta-Salas and Presas built a steady, Turing-complete flow of an ideal fluid on a specially shaped three-sphere. For viscous flow, a July 2025 paper by Dyhr, González-Prieto, Miranda and Peralta-Salas built unforced, stationary, Turing-complete Navier-Stokes flows on specially deformed spaces, writing that the Navier-Stokes case had remained open until then. The open questions in that literature concerned flows without external forcing.</p>
+<p>Result 376 is nine OpenAI papers, 260 pages, dated September 27 and made public October 6, 2026, with one revised the next day. The headline: on the flat three-dimensional torus, at any fixed positive computable viscosity, an algorithm turns any Turing machine and input into a smooth, divergence-free force. The flow that starts at rest under that force is unique, and a particle starting at a fixed point enters a fixed region exactly when the machine halts. So predicting that particle is undecidable.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The companion papers vary the setup: a force that becomes constant in time, one that is periodic from the very start, one that dies off faster than any power of time in ordinary space, or detection through the velocity itself. Not claimed: anything about unforced or natural flows, or robustness, since everything rests on exact positions. The force is tailored to each machine, and the papers say that making a chosen velocity a forced solution is elementary; the work is in the compiler and in tracking the particle at every moment.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, nine papers, 260 pages, dated September 27, 2026; one revised a day after release</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet; no specialist verdict</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>Five theorems from four of the nine papers (<a href="https://github.com/openai/math/blob/main/lean/docs/376.md">scope notes</a>); the headline theorem in an uncatalogued file (<a href="https://github.com/openai/math/blob/main/lean/OAI/MathematicalPhysics/NavierStokes/ForcedComputation/Programs/InitializedMain.lean">InitializedMain.lean</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 19, 2026. The papers are unrefereed; one was revised a day after release, in supporting estimates rather than in its theorems. The catalogued Lean covers four of the nine papers, five theorems in about 52,000 lines; the headline theorem is proved in an uncatalogued Lean file of about 11,000 lines, and a larger uncatalogued hub covers more. We ran none of it. One comparator writes construction-specific definitions into its statement. We found no specialist verdict. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A reversible machine, coded as a point.</strong> First the machine is made reversible with a seven-row recorder, in the style of Bennett. Our computer runs it on the two-state busy beaver: 84 microsteps, each one undoable, matching the paper’s step count. Then the tape is coded in base B as a point in a square, and each machine step becomes an exact affine move: a head move stretches one direction and squeezes the other. Our computer checks all six steps exactly, and shows how fragile the coding is: in our base-five version, tapes that differ only twenty cells from the head have codes about 4 × 10⁻¹⁵ apart.</li>
+  <li><strong>Shear flows that are exact solutions.</strong> Each rule gets its own height: lift, apply four shears that compose to the stretch, translate, and lower. Our computer checks exactly that four shears give the stretch, with no point straying from the rectangle’s center by more than twice its half-width. Shears carry no self-advection, nor do the lifts and slides, so the force defined as the time derivative minus viscosity times the Laplacian makes them exact Navier-Stokes solutions, and an energy argument gives uniqueness. Codes that never halt stay to the left, and the halting square sits inside the detector.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: busy beavers halt after 6 steps (2 states), 21 (3 states) and 107 (4 states); the papers' reversible recorder runs the 2-state one in 84 microsteps, each undoable.</li>
+  <li>Ours: in a base-5 coding every machine step of the 2-state busy beaver is an exact affine map; tapes differing 20 cells from the head have codes about 4 × 10⁻¹⁵ apart.</li>
+  <li>Ours: four shears compose exactly to the stretch diag(2, 1/2), as in the headline paper's Lemma 3.1.</li>
+  <li>Lean: 286 files and 51,806 lines across the five catalogued closures; 73 files and 11,351 lines for the uncatalogued headline (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Finite-Instructions-and-Solenoidal-Shear-Flows-September-27-2026/manuscript.pdf">Finite Instructions and Solenoidal Shear Flows (PDF)</a>, 14 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Fixed-Particle-Test-for-Computation-in-a-Forced-Viscous-Flow-September-27-2026/manuscript.pdf">A Fixed-Particle Test for Computation in a Forced Viscous Flow (PDF)</a>, 13 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/manuscript.pdf">Universal Computation with Eventually Stationary Navier–Stokes Forcing (PDF)</a>, 14 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Geometric-Programs-for-Solenoidal-Forcing-September-27-2026/manuscript.pdf">Geometric Programs for Solenoidal Forcing (PDF)</a>, 29 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Prefix-Instructions-and-Incompressible-Flows-September-27-2026/manuscript.pdf">Prefix Instructions and Incompressible Flows (PDF)</a>, 53 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Computation-under-Rapidly-Vanishing-Navier-Stokes-Forcing-September-27-2026/manuscript.pdf">Computation under Rapidly Vanishing Navier–Stokes Forcing (PDF)</a>, 19 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Velocity-Field-Detection-of-Computation-in-Forced-Navier-Stokes-Flows-September-27-2026/manuscript.pdf">Velocity-Field Detection of Computation in Forced Navier–Stokes Flows (PDF)</a>, 18 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Scalar-Potentials-and-Slow-Clocks-for-Forced-Fluid-Computation-September-27-2026/manuscript.pdf">Scalar Potentials and Slow Clocks for Forced Fluid Computation (PDF)</a>, 22 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/manuscript.pdf">Incompressible Box Transport and Finite Computation (PDF)</a>, 78 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/376.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 376.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 9 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Finite-Instructions-and-Solenoidal-Shear-Flows-September-27-2026/manuscript.pdf">Finite Instructions and Solenoidal Shear Flows</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/A-Fixed-Particle-Test-for-Computation-in-a-Forced-Viscous-Flow-September-27-2026/manuscript.pdf">A Fixed Particle Test for Computation in a Forced Viscous Flow</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Universal-Computation-with-Eventually-Stationary-Navier-Stokes-Forcing-September-27-2026/manuscript.pdf">Universal Computation with Eventually Stationary Navier–Stokes Forcing</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Geometric-Programs-for-Solenoidal-Forcing-September-27-2026/manuscript.pdf">Geometric Programs for Solenoidal Forcing</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Prefix-Instructions-and-Incompressible-Flows-September-27-2026/manuscript.pdf">Prefix Instructions and Incompressible Flows</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Computation-under-Rapidly-Vanishing-Navier-Stokes-Forcing-September-27-2026/manuscript.pdf">Computation under Rapidly Vanishing Navier–Stokes Forcing</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Velocity-Field-Detection-of-Computation-in-Forced-Navier-Stokes-Flows-September-27-2026/manuscript.pdf">Velocity-Field Detection of Computation in Forced Navier–Stokes Flows</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Scalar-Potentials-and-Slow-Clocks-for-Forced-Fluid-Computation-September-27-2026/manuscript.pdf">Scalar Potentials and Slow Clocks for Forced Fluid Computation</a> <span class="ptag">companion</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/manuscript.pdf">Incompressible Box Transport and Finite Computation</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Can a fluid compute? In 1991 Cris Moore wrote that no one knows whether hydrodynamics, the Navier-Stokes equation for example, is capable of computation. Computing here means: any Turing machine and its input can be encoded into the setup so that some feature of the flow reveals whether the machine ever halts, a question that is undecidable in general. Our computer runs small machines: the two-state busy beaver halts after six steps, a four-state one after 107, while a machine that walks right forever never halts, and no finite run can certify that. Ideal fluids came first: in 2021 Cardona, Miranda, Peralta-Salas and Presas built a steady, Turing-complete flow of an ideal fluid on a specially shaped three-sphere. For viscous flow, a July 2025 paper by Dyhr, González-Prieto, Miranda and Peralta-Salas built unforced, stationary, Turing-complete Navier-Stokes flows on specially deformed spaces, writing that the Navier-Stokes case had remained open until then. The open questions in that literature concerned flows without external forcing.</p>
+<h3><span class="t num">1:14</span>The claim</h3>
+<p>Result 376 is nine OpenAI papers, 260 pages, dated September 27 and made public October 6, 2026, with one revised the next day. The headline: on the flat three-dimensional torus, at any fixed positive computable viscosity, an algorithm turns any Turing machine and input into a smooth, divergence-free force. The flow that starts at rest under that force is unique, and a particle starting at a fixed point enters a fixed region exactly when the machine halts. So predicting that particle is undecidable. The companion papers vary the setup: a force that becomes constant in time, one that is periodic from the very start, one that dies off faster than any power of time in ordinary space, or detection through the velocity itself. Not claimed: anything about unforced or natural flows, or robustness, since everything rests on exact positions. The force is tailored to each machine, and the papers say that making a chosen velocity a forced solution is elementary; the work is in the compiler and in tracking the particle at every moment.</p>
+<h3><span class="t num">2:28</span>How the proof goes</h3>
+<p>First the machine is made reversible with a seven-row recorder, in the style of Bennett. Our computer runs it on the two-state busy beaver: 84 microsteps, each one undoable, matching the paper’s step count. Then the tape is coded in base B as a point in a square, and each machine step becomes an exact affine move: a head move stretches one direction and squeezes the other. Our computer checks all six steps exactly, and shows how fragile the coding is: in our base-five version, tapes that differ only twenty cells from the head have codes about 4 × 10⁻¹⁵ apart. Each rule gets its own height: lift, apply four shears that compose to the stretch, translate, and lower. Our computer checks exactly that four shears give the stretch, with no point straying from the rectangle’s center by more than twice its half-width. Shears carry no self-advection, nor do the lifts and slides, so the force defined as the time derivative minus viscosity times the Laplacian makes them exact Navier-Stokes solutions, and an energy argument gives uniqueness. Codes that never halt stay to the left, and the halting square sits inside the detector.</p>
+<h3><span class="t num">3:41</span>Where it stands</h3>
+<p>The papers are unrefereed; one was revised a day after release, in supporting estimates rather than in its theorems. The catalogued Lean covers four of the nine papers, five theorems in about 52,000 lines; the headline theorem is proved in an uncatalogued Lean file of about 11,000 lines, and a larger uncatalogued hub covers more. We ran none of it. One comparator writes construction-specific definitions into its statement. We found no specialist verdict. If they hold, a viscous fluid driven by a suitably programmed force can carry out any computation, so some questions about such forced flows are undecidable.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20376%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
