@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feel the inside from the surface? Global uniqueness for 3-D isotropic elasticity | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that complete static surface measurements determine both Lamé moduli of a smooth isotropic elastic body in three dimensions. Four days later, a second independent proof appeared on arXiv. The theorem has a Lean proof. An animated explainer, the claim in plain words, and how far it has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/372-isotropic-elasticity-uniqueness/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Feel the inside from the surface?">
+<meta property="og:description" content="An AI preprint claims that complete static surface measurements determine both Lamé moduli of a smooth isotropic elastic body in three dimensions. Four days later, a second independent proof appeared on arXiv. The theorem has a Lean proof. An animated explainer, the claim in plain words, and how far it has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/372-isotropic-elasticity-uniqueness/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/372-isotropic-elasticity-uniqueness/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 372, October 2026</p>
+<h1>Feel the inside from the surface?</h1>
+<p class="subtitle">An AI preprint claims global uniqueness for the smooth isotropic elasticity inverse problem in three dimensions</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 372 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="aV1h4XKBaEA" data-title="Episode 372: Feel the inside from the surface?">
+  <a href="https://youtu.be/aV1h4XKBaEA">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 372: Feel the inside from the surface? An oval body with layered colours inside and arrows pressing on its surface.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">3:56. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/aV1h4XKBaEA?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/aV1h4XKBaEA?t=77" data-t="77"><span class="t">1:17</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/aV1h4XKBaEA?t=139" data-t="139"><span class="t">2:19</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/aV1h4XKBaEA?t=203" data-t="203"><span class="t">3:23</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Push on the surface of a solid body and measure how hard it pushes back. Do those measurements, taken all over the surface, tell you how stiff the material is everywhere inside? For an isotropic material, stiffness at each point is two numbers, the Lamé moduli lambda and mu, and the physical conditions are that mu and three lambda plus two mu are positive: resistance to shearing and to squeezing. Lambda itself can be negative; our computer finds that an auxetic foam has negative lambda and still qualifies. In a one-dimensional bar the data reveal only an average stiffness, but in a layered toy our computer finds that sideways variation tells a soft top from a stiff top.</p>
+<p>In 1994 Nakamura and Uhlmann claimed global uniqueness in three dimensions; their 2003 erratum reduced the claim to materials whose mu varies slowly, matching a result of Eskin and Ralston. Since then the general case has been called open: in 2013, a significant unsolved problem; in 2022, an open problem. In two dimensions, Imanuvilov and Yamamoto settled it, and analytic or piecewise constant materials in three dimensions were handled by 2022.</p>
+<p>Result 372 is one OpenAI paper, 24 pages, dated September 24 and made public October 6, 2026. It claims that on every bounded connected smooth domain in three dimensions, for smooth moduli with mu and three lambda plus two mu positive, if two materials give the same full static map from surface displacements to surface forces, then both moduli agree everywhere. No analyticity, no closeness to constants and no knowledge near the surface is assumed.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: a way to reconstruct the moduli, a stability estimate, data on only part of the surface, or materials that are not isotropic. Four days after the release, Diao and Durdiev posted a 78-page proof of the same theorem, independent by their account, with a preliminary draft saved, by their records, two days before the release; they used ChatGPT for exploratory discussions, and they cite the OpenAI paper.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 24 pages, dated September 24, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet; no specialist verdict</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>The theorem, re-proving the cited boundary and Carleman inputs (<a href="https://github.com/openai/math/blob/main/lean/docs/372.md">scope notes</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 19, 2026. The paper is unrefereed and unchanged since release, though it cites lecture notes dated October 2. The theorem has a Lean proof, about 32,000 lines, not run by us, which re-proves the boundary and Carleman inputs the paper cites. We found no specialist verdict. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Glue, then probe with lopsided waves.</strong> Known results give the moduli and all their derivatives at the surface, so the two materials can be extended to agree outside, and solutions in one body can be glued to solutions in the other. A Carleman estimate then produces exact solutions that oscillate in one direction and grow exponentially in another, built from complex directions whose square is zero. As tau grows they become wildly lopsided: our computer finds a ratio of about half a billion between two points two units apart, at tau equal to ten.</li>
+  <li><strong>Forcing the comparison to be trivial.</strong> Comparing these solutions between the two bodies, and taking limits, gives a comparison matrix that is the identity outside and depends holomorphically on the complex direction. Geometry of those null directions forces the matrix to be the identity everywhere. That first recovers the ratio lambda plus mu over lambda plus two mu, which our computer confirms is a function of Poisson’s ratio alone; an ordinary differential equation argument then recovers mu, and with it lambda.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: an auxetic foam has negative λ but positive μ and 3λ + 2μ, so it is inside the theorem's class.</li>
+  <li>Ours: in a layered toy, static data at k = 0 cannot tell a soft top from a stiff top, but with sideways variation the push-back per unit k tends to 2 versus 6.</li>
+  <li>Ours: (λ+μ)/(λ+2μ) = 1/(2(1−ν)), so the first quantity the proof recovers is Poisson's ratio.</li>
+  <li>Lean: 42 files and 31,645 lines in the import closure of the comparator's solution (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem-September-24-2026/article.pdf">Global Uniqueness for the Smooth Isotropic Elasticity Inverse Problem (PDF)</a>, 24 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/372.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 372.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Global-Uniqueness-for-the-Smooth-Isotropic-Elasticity-Inverse-Problem-September-24-2026/article.pdf">Global Uniqueness for the Smooth Isotropic Elasticity Inverse Problem</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Push on the surface of a solid body and measure how hard it pushes back. Do those measurements, taken all over the surface, tell you how stiff the material is everywhere inside? For an isotropic material, stiffness at each point is two numbers, the Lamé moduli lambda and mu, and the physical conditions are that mu and three lambda plus two mu are positive: resistance to shearing and to squeezing. Lambda itself can be negative; our computer finds that an auxetic foam has negative lambda and still qualifies. In a one-dimensional bar the data reveal only an average stiffness, but in a layered toy our computer finds that sideways variation tells a soft top from a stiff top. In 1994 Nakamura and Uhlmann claimed global uniqueness in three dimensions; their 2003 erratum reduced the claim to materials whose mu varies slowly, matching a result of Eskin and Ralston. Since then the general case has been called open: in 2013, a significant unsolved problem; in 2022, an open problem. In two dimensions, Imanuvilov and Yamamoto settled it, and analytic or piecewise constant materials in three dimensions were handled by 2022.</p>
+<h3><span class="t num">1:17</span>The claim</h3>
+<p>Result 372 is one OpenAI paper, 24 pages, dated September 24 and made public October 6, 2026. It claims that on every bounded connected smooth domain in three dimensions, for smooth moduli with mu and three lambda plus two mu positive, if two materials give the same full static map from surface displacements to surface forces, then both moduli agree everywhere. No analyticity, no closeness to constants and no knowledge near the surface is assumed. Not claimed: a way to reconstruct the moduli, a stability estimate, data on only part of the surface, or materials that are not isotropic. Four days after the release, Diao and Durdiev posted a 78-page proof of the same theorem, independent by their account, with a preliminary draft saved, by their records, two days before the release; they used ChatGPT for exploratory discussions, and they cite the OpenAI paper.</p>
+<h3><span class="t num">2:19</span>How the proof goes</h3>
+<p>Known results give the moduli and all their derivatives at the surface, so the two materials can be extended to agree outside, and solutions in one body can be glued to solutions in the other. A Carleman estimate then produces exact solutions that oscillate in one direction and grow exponentially in another, built from complex directions whose square is zero. As tau grows they become wildly lopsided: our computer finds a ratio of about half a billion between two points two units apart, at tau equal to ten. Comparing these solutions between the two bodies, and taking limits, gives a comparison matrix that is the identity outside and depends holomorphically on the complex direction. Geometry of those null directions forces the matrix to be the identity everywhere. That first recovers the ratio lambda plus mu over lambda plus two mu, which our computer confirms is a function of Poisson’s ratio alone; an ordinary differential equation argument then recovers mu, and with it lambda.</p>
+<h3><span class="t num">3:23</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release, though it cites lecture notes dated October 2. The theorem has a Lean proof, about 32,000 lines, not run by us, which re-proves the boundary and Carleman inputs the paper cites. We found no specialist verdict. If it holds, complete static measurements on the surface of a smooth isotropic elastic body determine its stiffness everywhere inside, in three dimensions.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20372%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
