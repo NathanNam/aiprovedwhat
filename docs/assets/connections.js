@@ -71,10 +71,13 @@
     topList();
     resize();
     window.addEventListener("resize", resize);
-    if (location.hash && /^#\d{3}$/.test(location.hash)) {
+    function fromHash() {
+      if (!/^#\d{3}$/.test(location.hash)) return;
       var want = location.hash.slice(1) + ".";
-      for (i = 0; i < N; i++) if (kind[i] === 0 && nodes[i][3].indexOf(want) === 0) { select(i, true); break; }
+      for (var j = 0; j < N; j++) if (kind[j] === 0 && nodes[j][3].indexOf(want) === 0) { select(j, true); break; }
     }
+    fromHash();
+    window.addEventListener("hashchange", fromHash);
   }
 
   function applyFilters() {
@@ -343,6 +346,8 @@
     if (kind[i] >= 2 && !visible[i]) { minIn.value = 1; showW.checked = true; showA.checked = true; applyFilters(); }
     draw();
     describe(i, c);
+    var tag = kind[i] === 0 ? "#" + nodes[i][3].slice(0, 3) : "";
+    if (history.replaceState && location.hash !== tag) history.replaceState(null, "", tag || location.pathname);
   }
   function go(i, text) {
     return '<button type="button" class="cx-go" data-i="' + i + '">' + esc(text) + "</button>";
@@ -402,7 +407,7 @@
     } else {
       var ws = uniq(c.W).sort(function (a, b) { return nodes[b][6] - nodes[a][6]; }), rs2 = uniq(c.R);
       h += "<h2>" + esc(n[3]) + "</h2>";
-      h += '<p class="meta">' + ws.length + " cited work" + (ws.length > 1 ? "s" : "") + " · cited in " + rs2.length + " result" + (rs2.length > 1 ? "s" : "") + " · names are matched by surname and first initial, so two people can share a dot</p>";
+      h += '<p class="meta">' + ws.length + " cited work" + (ws.length > 1 ? "s" : "") + " · cited in " + rs2.length + " result" + (rs2.length > 1 ? "s" : "") + " · names are matched with OpenAlex where possible, so a few people may still share or split a dot</p>";
       h += "<h3>Cited works</h3><ul>" + ws.slice(0, 25).map(function (w) { return "<li>" + go(w, nodes[w][3]) + ' <span class="meta">' + (nodes[w][4] || "") + "</span></li>"; }).join("") + (ws.length > 25 ? '<li class="meta">and ' + (ws.length - 25) + " more</li>" : "") + "</ul>";
       h += "<h3>Results that cite them</h3><ul>" + rs2.sort(function (a, b) { return nodes[a][3] < nodes[b][3] ? -1 : 1; }).map(function (r) { return "<li>" + go(r, nodes[r][3]) + "</li>"; }).join("") + "</ul>";
     }
