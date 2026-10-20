@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stable blowup for waves that spread? A defocusing Schrödinger equation in 12-D | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims that on the 12-dimensional torus, a defocusing Schrödinger equation with a large odd power blows up for a whole open set of starting data, four days after a related human-and-AI arXiv construction. Both main claims have a Lean proof. An animated explainer, the claim in plain words, and how far it has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/371-defocusing-nls-blowup/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Stable blowup for waves that spread?">
+<meta property="og:description" content="An AI preprint claims that on the 12-dimensional torus, a defocusing Schrödinger equation with a large odd power blows up for a whole open set of starting data, four days after a related human-and-AI arXiv construction. Both main claims have a Lean proof. An animated explainer, the claim in plain words, and how far it has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/371-defocusing-nls-blowup/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/371-defocusing-nls-blowup/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 371, October 2026</p>
+<h1>Stable blowup for waves that spread?</h1>
+<p class="subtitle">An AI preprint claims an open set of finite-time blowups for a defocusing Schrödinger equation on the 12-dimensional torus</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 371 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="JZT-BbL_-A8" data-title="Episode 371: Stable blowup for waves that spread?">
+  <a href="https://youtu.be/JZT-BbL_-A8">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 371: Stable blowup for waves that spread? Three spikes, each narrower and taller than the last.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:29. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/JZT-BbL_-A8?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/JZT-BbL_-A8?t=70" data-t="70"><span class="t">1:10</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/JZT-BbL_-A8?t=157" data-t="157"><span class="t">2:37</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/JZT-BbL_-A8?t=228" data-t="228"><span class="t">3:48</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The nonlinear Schrödinger equation describes waves that interact with themselves. In the defocusing version the interaction pushes the wave apart, so the natural expectation is that solutions spread out and stay smooth forever. Our computer runs a one-dimensional toy: a defocusing pulse falls from height two to about 0.56, while the focusing pulse holds together. Later papers report that Bourgain conjectured in 2000 that, even for powers above the energy-critical level, defocusing solutions exist for all time and spread out.</p>
+<p>In 2019, Merle, Raphaël, Rodnianski and Szeftel showed otherwise: in certain high dimensions and powers, solutions built from imploding compressible fluids blow up in finite time. Cao-Labora, Gómez-Serrano, Shi and Staffilani extended this to non-radial and periodic settings in 2024. But those blowups came from a thin family of starting data, and the first group wrote that counting the unstable directions remained to be addressed. Could blowup happen for a whole open set of data?</p>
+<p>Result 371 is one OpenAI paper, 56 pages, dated September 24 and made public October 6, 2026. It claims that on the twelve-dimensional torus, for some odd power that can be taken as large as you like, a nonempty open set of starting data with many derivatives blows up in finite time. The blowup is self-similar: the spike narrows like the square root of the remaining time while its height grows. At power 101, our computer finds the height grows only about ten percent while the width shrinks a hundredfold. A corollary: random starting data, as smooth as you like, blow up with positive probability, giving a negative answer to a version, not the exact wording, of an open problem of Deng, Nahmod and Yue.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>It was not the first self-similar blowup of this kind. On September 20, four days before the paper’s printed date, Buck, Carballeira, Gómez-Serrano and Shi posted one in three, four and five dimensions, for a thin family of data, and disclosed using OpenAI models. The OpenAI paper cites it and says earlier constructions are not inputs to its proofs. What is new here is the open set, the first self-similar blowup of this kind on a torus, and the random-data corollary. Not claimed: a specific power, every large power, or blowup with probability one.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 56 pages, dated September 24, 2026; ships exact-arithmetic certificates (not run by us)</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet; no specialist verdict</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>Both main claims, for arbitrarily large odd powers (<a href="https://github.com/openai/math/blob/main/lean/docs/371.md">scope notes</a>)</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 19, 2026. The paper is unrefereed and unchanged since release, though it cites a source accessed in October. Both main claims have a Lean proof, about 180,000 lines, not run by us, and the paper also ships exact-arithmetic certificates that we did not run. One tracker calls the random-data result only a variant of the Deng, Nahmod and Yue problem, and we found no specialist verdict. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The spike’s shape, and its few unstable directions.</strong> As the power grows, the spike’s profile approaches a flat core of radius about 3.3, glued to an outer part given by a classical special function. Exact rational certificates show the two pieces can be glued, with a certified mismatch below 2.5 × 10⁻¹¹ at the printed matching point. The same certificates count the modes that fail to decay in that limit: two, one and zero for angular degrees zero, one and higher, and degree one comes in twelve directions. So, after a long analysis at large finite powers, the only directions that do not decay are the fourteen symmetries: one phase, twelve translations and one blowup time.</li>
+  <li><strong>From decay to an open set.</strong> Everything else decays, first in all of space and then on ever larger periodic boxes. A nonlinear stable graph, plus shifting the blowup point, time and phase, plus a topological degree argument, then fills an open set of data. Random Gaussian data give every open set positive probability, and our computer illustrates that the paper’s condition on alpha is exactly the threshold for that random data to have finite size in twelve dimensions.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: in a 1-D toy, a defocusing pulse falls from height 2 to 0.56 by time 2, while a focusing one holds together (no blowup in the toy).</li>
+  <li>Ours: at power 101, the self-similar spike's width shrinks a hundredfold while its height grows only about 10%.</li>
+  <li>Ours: one phase, twelve translations and one blowup time make the 14 symmetry directions; α > k + 6 is exactly the threshold for the random data to have finite size in 12 dimensions.</li>
+  <li>Lean: 2,415 files and 180,149 lines in the import closure of the comparator's solution (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Stable-Self-Similar-Blowup-for-a-Supercritical-Defocusing-Schrodinger-Equation-on-the-Torus-September-24-2026/paper.pdf">Stable self-similar blowup for a supercritical defocusing Schrödinger equation on the torus (PDF)</a>, 56 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/lean/docs/371.md">The Lean formalization notes</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 371.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Stable-Self-Similar-Blowup-for-a-Supercritical-Defocusing-Schrodinger-Equation-on-the-Torus-September-24-2026/paper.pdf">Stable self-similar blowup for a supercritical defocusing Schrödinger equation on the torus</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>The nonlinear Schrödinger equation describes waves that interact with themselves. In the defocusing version the interaction pushes the wave apart, so the natural expectation is that solutions spread out and stay smooth forever. Our computer runs a one-dimensional toy: a defocusing pulse falls from height two to about 0.56, while the focusing pulse holds together. Later papers report that Bourgain conjectured in 2000 that, even for powers above the energy-critical level, defocusing solutions exist for all time and spread out. In 2019, Merle, Raphaël, Rodnianski and Szeftel showed otherwise: in certain high dimensions and powers, solutions built from imploding compressible fluids blow up in finite time. Cao-Labora, Gómez-Serrano, Shi and Staffilani extended this to non-radial and periodic settings in 2024. But those blowups came from a thin family of starting data, and the first group wrote that counting the unstable directions remained to be addressed. Could blowup happen for a whole open set of data?</p>
+<h3><span class="t num">1:10</span>The claim</h3>
+<p>Result 371 is one OpenAI paper, 56 pages, dated September 24 and made public October 6, 2026. It claims that on the twelve-dimensional torus, for some odd power that can be taken as large as you like, a nonempty open set of starting data with many derivatives blows up in finite time. The blowup is self-similar: the spike narrows like the square root of the remaining time while its height grows. At power 101, our computer finds the height grows only about ten percent while the width shrinks a hundredfold. A corollary: random starting data, as smooth as you like, blow up with positive probability, giving a negative answer to a version, not the exact wording, of an open problem of Deng, Nahmod and Yue. It was not the first self-similar blowup of this kind. On September 20, four days before the paper’s printed date, Buck, Carballeira, Gómez-Serrano and Shi posted one in three, four and five dimensions, for a thin family of data, and disclosed using OpenAI models. The OpenAI paper cites it and says earlier constructions are not inputs to its proofs. What is new here is the open set, the first self-similar blowup of this kind on a torus, and the random-data corollary. Not claimed: a specific power, every large power, or blowup with probability one.</p>
+<h3><span class="t num">2:37</span>How the proof goes</h3>
+<p>As the power grows, the spike’s profile approaches a flat core of radius about 3.3, glued to an outer part given by a classical special function. Exact rational certificates show the two pieces can be glued, with a certified mismatch below 2.5 × 10⁻¹¹ at the printed matching point. The same certificates count the modes that fail to decay in that limit: two, one and zero for angular degrees zero, one and higher, and degree one comes in twelve directions. So, after a long analysis at large finite powers, the only directions that do not decay are the fourteen symmetries: one phase, twelve translations and one blowup time. Everything else decays, first in all of space and then on ever larger periodic boxes. A nonlinear stable graph, plus shifting the blowup point, time and phase, plus a topological degree argument, then fills an open set of data. Random Gaussian data give every open set positive probability, and our computer illustrates that the paper’s condition on alpha is exactly the threshold for that random data to have finite size in twelve dimensions.</p>
+<h3><span class="t num">3:48</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release, though it cites a source accessed in October. Both main claims have a Lean proof, about 180,000 lines, not run by us, and the paper also ships exact-arithmetic certificates that we did not run. One tracker calls the random-data result only a variant of the Deng, Nahmod and Yue problem, and we found no specialist verdict. If it holds, for this twelve-dimensional defocusing equation at large powers, finite-time blowup is not a knife-edge accident: it happens for a whole open set of starting data.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20371%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
