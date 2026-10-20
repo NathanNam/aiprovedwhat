@@ -281,7 +281,7 @@ p { margin: 0 0 1rem; }
 }
 
 @media (max-width: 30rem) {
-  .ledger-row { grid-template-columns: 1fr; }
+  .ledger-row { grid-template-columns: minmax(0, 1fr); }
   .ledger dd { text-align: left; padding-left: 1.45em; }
 }
 
@@ -1010,6 +1010,8 @@ details.legend .r-papers { color: var(--dim); }
 .cx-panel ul { margin: 0; padding-left: 1.1rem; font-size: 0.92rem; }
 .cx-panel li { margin: 0.15rem 0; }
 .cx-go {
+  vertical-align: top;
+  max-width: 100%;
   font: inherit;
   color: var(--blue);
   background: none;
@@ -1036,3 +1038,68 @@ details.legend .r-papers { color: var(--dim); }
 .cx-list li { margin: 0.2rem 0; }
 .cx-authors { margin: 0; font-size: 0.92rem; line-height: 1.75; }
 .cx-ext { font-size: 0.8rem; margin-left: 0.3rem; }
+
+/* ---------- phones ---------- */
+
+@media (max-width: 30rem) {
+  /* Menu: one full-width row under the wordmark, wrapping only on the narrowest phones. */
+  .site-nav { width: 100%; }
+  .site-nav ul { justify-content: space-between; gap: 0.3rem 0.6rem; font-size: 0.86rem; }
+  .site-nav a { display: inline-block; padding: 0.3rem 0; }
+
+  /* The home headline is a whole claim: smaller on phones so the video shows on the first screen. */
+  .claim-head { font-size: 1.65rem; line-height: 1.18; }
+
+  /* Long Lean links in the status box wrap instead of pushing the page sideways. */
+  .ledger dd a { white-space: normal; overflow-wrap: anywhere; }
+  /* Checkboxes big enough to tap. */
+  input[type=checkbox] { width: 1.15rem; height: 1.15rem; }
+
+  /* Connections: compact key and controls, a square map, subjects listed under it. */
+  .cx-key { display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem 0.8rem; font-size: 0.78rem; line-height: 1.35; margin-bottom: 0.9rem; }
+  .cx-key span { align-items: flex-start; }
+  .cx-key .cx-dot { margin-top: 0.3em; }
+  .cx-bar { gap: 0.5rem 1rem; font-size: 0.85rem; }
+  .cx-search { flex-basis: 100%; }
+  .cx-min { flex: 1 1 100%; flex-wrap: wrap; gap: 0.1rem 0.4rem; }
+  .cx-min input { flex: 1 1 100%; width: 100%; }
+  #cx-map { height: min(68vh, 108vw); min-height: 18rem; }
+  .cx-hint { position: static; font-size: 0.75rem; padding: 0.35rem 0.6rem 0.5rem; }
+  .cx-reset { top: 0.4rem; right: 0.4rem; }
+  .cx-panel { padding: 0.9rem 0.9rem; }
+  .cx-panel h2 { font-size: 1.08rem; }
+  .cx-list ol { padding-left: 1.4rem; }
+  .cx-top { padding-left: 1.4rem; }
+}
+.cx-subjects { display: none; }
+@media (max-width: 40rem) {
+  .cx-subjects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.9rem;
+    list-style: none;
+    margin: 0.6rem 0 0;
+    padding: 0;
+    font-size: 0.8rem;
+    color: var(--soft);
+  }
+  .cx-subjects li { display: inline-flex; align-items: center; gap: 0.35rem; }
+}
+/* Bigger tap targets for the checkboxes and slider. */
+.cx-layers input, #cx-q ~ * input[type=checkbox] { width: 1.1rem; height: 1.1rem; }
+.cx-layers label { min-height: 2rem; }
+.cx-min input { height: 2rem; }
+.cx-reset {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  font: inherit;
+  font-size: 0.8rem;
+  color: var(--soft);
+  background: rgba(21, 26, 35, 0.9);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 0.35rem 0.7rem;
+  cursor: pointer;
+}
+.cx-reset:hover { color: var(--paper); }

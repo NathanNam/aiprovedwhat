@@ -23,6 +23,7 @@
   var view = { s: 1, ox: 0, oy: 0 }, W = 0, H = 0, dpr = 1, fitS = 1;
   var sel = -1, hl = null, hlEdges = null, hover = -1, minCite = 1, frame = 0;
   var grid = new Map(), CELL = 0.01;
+  var narrow = false, coarse = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
 
   function subjectColour(i) {
     var n = subjects.length, h = ((i * 7) % n) * 360 / n;
@@ -59,6 +60,13 @@
       if (wMaxCite[w] > wMaxCite[a]) wMaxCite[a] = wMaxCite[w];
     }
     visible = new Uint8Array(N);
+    var counts = subjects.map(function () { return 0; });
+    for (i = 0; i < N; i++) if (kind[i] === 0) counts[nodes[i][4]]++;
+    document.querySelector(".cx-stage").insertAdjacentHTML("afterend", '<ul class="cx-subjects" aria-label="Subject colours">' +
+      subjects.map(function (s, k) { return '<li><span class="cx-sw" style="background:' + subjColor[k] + '"></span>' + esc(s) + " (" + counts[k] + ")</li>"; }).join("") + "</ul>");
+    document.querySelector(".cx-stage").insertAdjacentHTML("beforeend", '<button type="button" class="cx-reset">Reset view</button>');
+    document.querySelector(".cx-reset").addEventListener("click", function () { clearSel(); tip.hidden = true; reset(); });
+    if (coarse) document.querySelector(".cx-hint").textContent = "Pinch to zoom, drag to move, tap a dot to see its connections. Double-tap to reset.";
     applyFilters();
     topList();
     resize();
@@ -83,7 +91,8 @@
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     W = canvas.clientWidth; H = canvas.clientHeight;
     canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
-    fitS = Math.min(W * 0.62, H * 0.86) / 2;
+    narrow = W < 640;
+    fitS = narrow ? Math.min(W, H) * 0.47 : Math.min(W * 0.62, H * 0.86) / 2;
     if (!view.set) reset(); else draw();
   }
   function reset() { view = { s: fitS, ox: W / 2, oy: H / 2, set: true }; draw(); }
@@ -95,7 +104,7 @@
     frame = requestAnimationFrame(paint);
   }
   function radius(i) {
-    var z = Math.min(3, Math.sqrt(view.s / fitS)), k = kind[i];
+    var z = Math.min(3, Math.sqrt(view.s / fitS)) * Math.max(0.55, Math.min(1, fitS / 380)), k = kind[i];
     if (k === 0) return 4.2 * Math.max(1, z * 0.8);
     if (k === 1) return 2.3 * z;
     if (k === 2) return (1.05 + 0.55 * Math.sqrt(Math.min(nodes[i][6], 40) - 1)) * z;
@@ -177,12 +186,13 @@
     // subject names around the outside
     var zoomed = view.s / fitS;
     var mids = {};
-    for (var i = 0; i < N; i++) if (kind[i] === 0) {
+    if (narrow && zoomed < 1.6) mids = null;
+    for (var i = 0; i < N; i++) if (kind[i] === 0 && mids) {
       var s = nodes[i][4], m = mids[s] || (mids[s] = { x: 0, y: 0, n: 0 });
       m.x += X[i]; m.y += Y[i]; m.n++;
     }
     ctx.fillStyle = C.soft;
-    Object.keys(mids).forEach(function (s) {
+    if (mids) Object.keys(mids).forEach(function (s) {
       var m = mids[s], ang = Math.atan2(m.y / m.n, m.x / m.n), r = 1.05;
       var x = Math.cos(ang) * r * view.s + view.ox, y = Math.sin(ang) * r * view.s + view.oy;
       if (x < 0 || y < 0 || x > W || y > H) return;
@@ -203,7 +213,7 @@
 
   // ---------- hit testing and pointer handling
   function nearest(px, py) {
-    var wx = (px - view.ox) / view.s, wy = (py - view.oy) / view.s, rad = 9 / view.s;
+    var wx = (px - view.ox) / view.s, wy = (py - view.oy) / view.s, rad = (coarse ? 16 : 9) / view.s;
     var best = -1, bd = Infinity, c = Math.ceil(rad / CELL);
     var gx = Math.floor(wx / CELL), gy = Math.floor(wy / CELL);
     for (var dx = -c; dx <= c; dx++) for (var dy = -c; dy <= c; dy++) {
@@ -220,7 +230,7 @@
     }
     return best;
   }
-  var pointers = new Map(), down = null, pinch = null;
+  var pointers = new Map(), down = null, pinch = null, lastTap = null;
   canvas.addEventListener("pointerdown", function (ev) {
     canvas.setPointerCapture(ev.pointerId);
     pointers.set(ev.pointerId, { x: ev.offsetX, y: ev.offsetY });
@@ -253,9 +263,17 @@
     pointers.delete(ev.pointerId);
     canvas.classList.remove("dragging");
     if (pointers.size < 2) pinch = null;
+    if (down && !down.moved && ev.type === "pointerup" && ev.pointerType !== "mouse") {
+      var now = Date.now();
+      if (lastTap && now - lastTap.t < 320 && Math.abs(ev.offsetX - lastTap.x) + Math.abs(ev.offsetY - lastTap.y) < 30) {
+        lastTap = null; down = null; clearSel(); tip.hidden = true; reset(); return;
+      }
+      lastTap = { t: now, x: ev.offsetX, y: ev.offsetY };
+    }
     if (down && !down.moved && ev.type === "pointerup") {
       var h = nearest(ev.offsetX, ev.offsetY);
-      if (h >= 0) select(h, false); else clearSel();
+      if (h >= 0) { select(h, false); if (ev.pointerType !== "mouse") showTip(h, ev.offsetX, ev.offsetY, true); }
+      else { clearSel(); tip.hidden = true; }
     }
     if (pointers.size === 0) down = null;
   }
@@ -274,11 +292,11 @@
     view.ox = cx - wx * s; view.oy = cy - wy * s; view.s = s;
     draw();
   }
-  function showTip(i, x, y) {
+  function showTip(i, x, y, tapped) {
     var t = nodes[i][3];
     if (t.length > 150) t = t.slice(0, 147) + "…";
     var extra = kind[i] === 2 ? (nodes[i][4] ? " (" + nodes[i][4] + ")" : "") + " · cited by " + nodes[i][6] + " paper" + (nodes[i][6] > 1 ? "s" : "") : kind[i] === 0 ? " · " + subjects[nodes[i][4]] : "";
-    tip.textContent = KIND[kind[i]] + ": " + t + extra;
+    tip.textContent = KIND[kind[i]] + ": " + t + extra + (tapped ? " · details below the map" : "");
     tip.hidden = false;
     var left = Math.min(x + 14, W - tip.offsetWidth - 8), top = y + 14;
     if (top + tip.offsetHeight > H - 4) top = y - tip.offsetHeight - 10;
