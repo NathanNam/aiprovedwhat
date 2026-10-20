@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connections | AI Proved What?</title>
+<meta name="description" content="A map of OpenAI&#x27;s 372 math results, their 719 papers, and the 11,321 earlier works and 8,847 authors they cite.">
+<link rel="canonical" href="https://aiprovedwhat.com/connections/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Connections | AI Proved What?">
+<meta property="og:description" content="A map of OpenAI&#x27;s 372 math results, their 719 papers, and the 11,321 earlier works and 8,847 authors they cite.">
+<meta property="og:url" content="https://aiprovedwhat.com/connections/">
+<meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0e1117">
+<meta name="generator" content="tools/site/build.py">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../episodes/">Results</a></li>
+      <li><a href="../subjects/">Subjects</a></li>
+      <li><a href="../connections/" aria-current="page">Connections</a></li>
+      <li><a href="../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<h1>Connections</h1>
+<p class="lede">How the 372 results, OpenAI’s 719 papers and the earlier work they cite fit together. The papers list 17,640 references to about 11,321 distinct works by about 8,847 authors.</p>
+<div class="cx-key" aria-label="How to read the map">
+  <span><i class="cx-dot cx-r"></i>Results, outer ring, coloured by subject</span>
+  <span><i class="cx-dot cx-p"></i>OpenAI papers</span>
+  <span><i class="cx-dot cx-w"></i>Cited works: cited once near the rim, shared ones toward the centre</span>
+  <span><i class="cx-dot cx-a"></i>Authors of cited works</span>
+</div>
+<div class="cx-bar">
+  <label class="cx-search" for="cx-q"><span class="visually-hidden">Find a result, paper, work or author</span>
+    <input id="cx-q" type="search" placeholder="Find a result, paper, work or author" autocomplete="off" aria-controls="cx-hits">
+  </label>
+  <fieldset class="cx-layers"><legend class="visually-hidden">Show</legend>
+    <label><input type="checkbox" id="cx-l2" checked> Cited works</label>
+    <label><input type="checkbox" id="cx-l3" checked> Authors</label>
+    <label><input type="checkbox" id="cx-le" checked> Lines</label>
+  </fieldset>
+  <label class="cx-min" for="cx-min">Works cited by at least <output id="cx-min-out">1</output> paper(s)
+    <input id="cx-min" type="range" min="1" max="10" step="1" value="1">
+  </label>
+</div>
+<ul id="cx-hits" class="cx-hits" hidden></ul>
+<div class="cx-stage">
+  <canvas id="cx-map" role="img" aria-label="Map of results, papers, cited works and authors"></canvas>
+  <p id="cx-tip" class="cx-tip" hidden></p>
+  <p class="cx-hint">Scroll or pinch to zoom, drag to move, click a dot to see its connections. Double-click to reset.</p>
+</div>
+<section id="cx-panel" class="cx-panel" aria-live="polite">
+  <p class="meta">Click a dot or search to see how one result, paper, work or author connects to the rest.</p>
+</section>
+<section class="cx-facts" aria-labelledby="cx-facts-h">
+<h2 id="cx-facts-h">In numbers</h2>
+<ul class="cx-nums">
+  <li><b class="num">17,640</b> references in OpenAI’s papers (median 21 per paper)</li>
+  <li><b class="num">11,321</b> distinct cited works, 2,984 of them cited by two or more papers</li>
+  <li><b class="num">8,847</b> distinct cited authors</li>
+  <li><b class="num">335</b> OpenAI papers cite another paper in the release (509 links)</li>
+</ul>
+<ol id="cx-top" class="cx-top"></ol>
+<p class="meta">How this was made: references are read from each paper’s own TeX source (its .bib file or inline bibliography) in OpenAI’s repository, as of October 19, 2026. Works are matched by DOI, then arXiv ID, then title, so the same work can appear twice when papers cite it differently; authors are matched by surname and first initial. Treat the counts as close, not exact. <a href="../data/connections.json">The data</a> is free to reuse under CC BY 4.0.</p>
+</section>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../assets/site.js" defer></script>
+<script src="../assets/connections.js" defer></script>
+</body>
+</html>
