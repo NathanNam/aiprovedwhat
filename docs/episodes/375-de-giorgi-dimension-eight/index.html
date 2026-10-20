@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Only flat walls in eight dimensions? De Giorgi’s conjecture at its endpoint | AI Proved What?</title>
+<meta name="description" content="An AI preprint claims De Giorgi&#x27;s conjecture in dimension eight: monotone Allen–Cahn solutions are single flat walls, with no limit condition, and stable solutions in seven dimensions are flat. No catalogued Lean. An animated explainer, the claim in plain words, and how far it has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/375-de-giorgi-dimension-eight/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Only flat walls in eight dimensions?">
+<meta property="og:description" content="An AI preprint claims De Giorgi&#x27;s conjecture in dimension eight: monotone Allen–Cahn solutions are single flat walls, with no limit condition, and stable solutions in seven dimensions are flat. No catalogued Lean. An animated explainer, the claim in plain words, and how far it has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/375-de-giorgi-dimension-eight/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/375-de-giorgi-dimension-eight/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 375, October 2026</p>
+<h1>Only flat walls in eight dimensions?</h1>
+<p class="subtitle">An AI preprint claims De Giorgi’s conjecture in dimension eight and the classification of stable solutions in seven</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 375 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="AZMaj6sOpGc" data-title="Episode 375: Only flat walls in eight dimensions?">
+  <a href="https://youtu.be/AZMaj6sOpGc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 375: Only flat walls in eight dimensions? A tanh profile across a flat phase wall.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">4:12. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/AZMaj6sOpGc?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/AZMaj6sOpGc?t=86" data-t="86"><span class="t">1:26</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/AZMaj6sOpGc?t=155" data-t="155"><span class="t">2:35</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/AZMaj6sOpGc?t=215" data-t="215"><span class="t">3:35</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The Allen-Cahn equation, Laplacian of u equals u cubed minus u, models a mixture separating into two phases, with u near plus one in one phase and minus one in the other. A single flat wall between them has a fixed profile: our computer checks that the hyperbolic tangent of x over root two solves it, with wall energy 2√2/3 per unit area. In 1978 De Giorgi asked: if a solution with values between minus one and one increases in one direction, must it be a single flat wall? He conjectured yes, at least up to dimension eight.</p>
+<p>It was proved in dimension two by Ghoussoub and Gui, in three by Ambrosio and Cabré, and up to eight by Savin under an extra limit condition; in nine and up it is false, by del Pino, Kowalczyk and Wei. Eight is where minimal surfaces change: our computer runs the classic test, and cones over products of spheres first pass the stability test in eight dimensions, with 25/4 at least six, while in seven, four is less than five; graphs built over such cones give the counterexamples in nine. Before September 2026, dimensions four to eight were open without Savin’s condition; that month two teams independently posted proofs of the stable case in three dimensions, and with it of De Giorgi’s conjecture in four.</p>
+<p>Result 375 is one OpenAI paper, 97 pages, dated September 26 and made public October 6, 2026. It claims that every solution in eight dimensions with values between minus one and one that increases in one direction is a single flat wall: De Giorgi’s conjecture at its dimension-eight endpoint, with no limit condition. A stronger theorem says every stable solution in seven dimensions is constant or a flat wall, with no assumption on energy growth, and a third covers stable solutions with finite energy density in dimensions four to seven.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Lower dimensions follow by adding unused variables, a step the paper does not state. The claim is for this standard cubic equation only, and one step builds on an unrefereed 2025 preprint by Florit-Simon and Serra. The third theorem has a concurrent proof: on the day of the release, one of the September teams posted the same rigidity for all dimensions up to seven and more general equations, disclosing OpenAI models as assistive tools.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 97 pages, dated September 26, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet; no specialist verdict</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>None in OpenAI’s catalog; an uncatalogued folder in the repository (<a href="https://github.com/openai/math/tree/main/lean/OAI/Analysis/AllenCahn">AllenCahn</a>) states the three theorems and proves supporting lemmas only</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 19, 2026. The paper is unrefereed and unchanged since release. There is no catalogued Lean proof; an uncatalogued Lean folder, about 14,000 lines, states the three theorems and proves supporting lemmas, but not the theorems themselves, and we did not run it. We found no specialist verdict. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>From eight dimensions down to seven.</strong> Part one follows a classical route. A solution that increases in one direction is stable, and its two limits at the ends are stable solutions in seven dimensions. The new seven-dimensional theorem makes each of those limits a constant or a flat wall, so the solution minimizes energy. Zooming out then gives a minimizing cone in eight dimensions, tilted one way, which must be a flat plane, and a known density theorem from 2017 finishes the job.</li>
+  <li><strong>The new part: stable solutions in seven dimensions.</strong> The new mathematics is the seven-dimensional stable theorem. With bounded energy density, stacked sheets would give two clashing estimates of the gap between them. Without that bound, the paper builds a penalized reach, a fourth-moment growth bound and a radial test function whose numerical budget leaves a strict margin. Our computer checks every printed inequality in that budget: all hold, some by less than a millionth. An appendix explains where the argument stops working in dimension nine.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the wall profile tanh(x/√2) solves the equation, with wall energy 2√2/3 per unit area (the paper's constant, recomputed).</li>
+  <li>Ours: cones over products of spheres first pass the stability test in eight dimensions (25/4 ≥ 6), not in seven (4 < 5).</li>
+  <li>Ours: every printed inequality in the paper's numerical budget holds; C(1.001) = 0.0832726206 against the printed bound .083272621.</li>
+  <li>Lean: the uncatalogued AllenCahn folder has 53 files and 14,131 lines (counted by us; not run by us); it proves supporting lemmas, not the theorems.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/article.pdf">A positive resolution of De Giorgi’s conjecture in dimension eight (PDF)</a>, 97 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 375.</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/De-Giorgis-conjecture-in-dimension-eight-September-26-2026/article.pdf">A positive resolution of De Giorgi's conjecture in dimension eight</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>The Allen-Cahn equation, Laplacian of u equals u cubed minus u, models a mixture separating into two phases, with u near plus one in one phase and minus one in the other. A single flat wall between them has a fixed profile: our computer checks that the hyperbolic tangent of x over root two solves it, with wall energy 2√2/3 per unit area. In 1978 De Giorgi asked: if a solution with values between minus one and one increases in one direction, must it be a single flat wall? He conjectured yes, at least up to dimension eight. It was proved in dimension two by Ghoussoub and Gui, in three by Ambrosio and Cabré, and up to eight by Savin under an extra limit condition; in nine and up it is false, by del Pino, Kowalczyk and Wei. Eight is where minimal surfaces change: our computer runs the classic test, and cones over products of spheres first pass the stability test in eight dimensions, with 25/4 at least six, while in seven, four is less than five; graphs built over such cones give the counterexamples in nine. Before September 2026, dimensions four to eight were open without Savin’s condition; that month two teams independently posted proofs of the stable case in three dimensions, and with it of De Giorgi’s conjecture in four.</p>
+<h3><span class="t num">1:26</span>The claim</h3>
+<p>Result 375 is one OpenAI paper, 97 pages, dated September 26 and made public October 6, 2026. It claims that every solution in eight dimensions with values between minus one and one that increases in one direction is a single flat wall: De Giorgi’s conjecture at its dimension-eight endpoint, with no limit condition. A stronger theorem says every stable solution in seven dimensions is constant or a flat wall, with no assumption on energy growth, and a third covers stable solutions with finite energy density in dimensions four to seven. Lower dimensions follow by adding unused variables, a step the paper does not state. The claim is for this standard cubic equation only, and one step builds on an unrefereed 2025 preprint by Florit-Simon and Serra. The third theorem has a concurrent proof: on the day of the release, one of the September teams posted the same rigidity for all dimensions up to seven and more general equations, disclosing OpenAI models as assistive tools.</p>
+<h3><span class="t num">2:35</span>How the proof goes</h3>
+<p>Part one follows a classical route. A solution that increases in one direction is stable, and its two limits at the ends are stable solutions in seven dimensions. The new seven-dimensional theorem makes each of those limits a constant or a flat wall, so the solution minimizes energy. Zooming out then gives a minimizing cone in eight dimensions, tilted one way, which must be a flat plane, and a known density theorem from 2017 finishes the job. The new mathematics is the seven-dimensional stable theorem. With bounded energy density, stacked sheets would give two clashing estimates of the gap between them. Without that bound, the paper builds a penalized reach, a fourth-moment growth bound and a radial test function whose numerical budget leaves a strict margin. Our computer checks every printed inequality in that budget: all hold, some by less than a millionth. An appendix explains where the argument stops working in dimension nine.</p>
+<h3><span class="t num">3:35</span>Where it stands</h3>
+<p>The paper is unrefereed and unchanged since release. There is no catalogued Lean proof; an uncatalogued Lean folder, about 14,000 lines, states the three theorems and proves supporting lemmas, but not the theorems themselves, and we did not run it. We found no specialist verdict. If it holds, a solution of the Allen-Cahn equation in eight dimensions that increases in one direction is a single flat wall, and so, by adding variables, in every dimension up to eight, as De Giorgi conjectured.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20375%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
