@@ -1042,9 +1042,10 @@ details.legend .r-papers { color: var(--dim); }
 /* ---------- phones ---------- */
 
 @media (max-width: 30rem) {
-  /* Menu: one full-width row under the wordmark, wrapping only on the narrowest phones. */
+  /* Menu: full width under the wordmark. Seven items wrap onto two rows on phones, so pack them
+     left with even spacing (space-between would stretch the short second row edge to edge). */
   .site-nav { width: 100%; }
-  .site-nav ul { justify-content: space-between; gap: 0.3rem 0.6rem; font-size: 0.86rem; }
+  .site-nav ul { justify-content: flex-start; gap: 0.3rem 1.1rem; font-size: 0.86rem; }
   .site-nav a { display: inline-block; padding: 0.3rem 0; }
 
   /* The home headline is a whole claim: smaller on phones so the video shows on the first screen. */
