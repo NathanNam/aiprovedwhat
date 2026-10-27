@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Local smoothing in every dimension? OpenAI’s wave equation claim | AI Proved What?</title>
+<meta name="description" content="An OpenAI preprint claims Sogge’s local smoothing conjecture for the wave equation in every dimension, and from it Bochner–Riesz, restriction and Kakeya consequences. An animated explainer, the claim in plain words, and how far it has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/079-local-smoothing-every-dimension/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Local smoothing in every dimension?">
+<meta property="og:description" content="An OpenAI preprint claims Sogge’s local smoothing conjecture for the wave equation in every dimension, and from it Bochner–Riesz, restriction and Kakeya consequences. An animated explainer, the claim in plain words, and how far it has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/079-local-smoothing-every-dimension/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/079-local-smoothing-every-dimension/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Specials</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 079, October 2026 (every-dimension version)</p>
+<h1>Local smoothing in every dimension?</h1>
+<p class="subtitle">An AI preprint claims Sogge’s conjecture for the wave equation in all dimensions, and a chain of consequences</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 079 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>. <a href="../../connections/#079">See its connections</a> to other results and the work it cites.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="wS_FHwBOp8A" data-title="Episode 079: Local smoothing in every dimension?">
+  <a href="https://youtu.be/wS_FHwBOp8A">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 079: Local smoothing in every dimension? Sogge thresholds for dimensions 2 to 5 and a focusing wave.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:28. English captions available. The video loads from YouTube when you press play.</p>
+<!-- versions:start -->
+<section class="versions" aria-labelledby="versions-h">
+<h2 id="versions-h">Versions of this episode</h2>
+<ol>
+  <li class="cur">Current (October 26, 2026): every dimension, from OpenAI’s October 25 paper · shown above</li>
+  <li>Picture-first remake (October 26, 2026): three dimensions only, the September 24 paper · <a href="https://www.youtube.com/watch?v=sk-CZgzbJks">Watch the previous version</a> <span class="meta">(Unlisted on YouTube)</span></li>
+  <li>Original: three dimensions only, the September 24 paper · <a href="https://www.youtube.com/watch?v=r62e_v2a3hA">Watch the previous version</a> <span class="meta">(Unlisted on YouTube)</span></li>
+</ol>
+</section>
+<!-- versions:end -->
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/wS_FHwBOp8A?t=0" data-t="0"><span class="t">0:00</span><span>Waves that focus</span></a></li>
+  <li><a href="https://youtu.be/wS_FHwBOp8A?t=117" data-t="117"><span class="t">1:57</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/wS_FHwBOp8A?t=238" data-t="238"><span class="t">3:58</span><span>A conserved current</span></a></li>
+  <li><a href="https://youtu.be/wS_FHwBOp8A?t=365" data-t="365"><span class="t">6:05</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A wave can focus. Start with a thin spherical shell that moves inward, as in this slice of our three-dimensional example: at time 1.5 it collapses to a point, and then it spreads out again. At that instant, its size in Lᵖ can be far larger than at the start. The paper credits Peral, Miyachi, and Seeger, Sogge and Stein for the sharp cost at one fixed time: in n dimensions, (n − 1)(1/2 − 1/p) derivatives of the initial data.</p>
+<p>In 1991, Sogge asked how many derivatives are needed for the norm averaged over a time interval. His conjecture: any amount above the larger of zero and (n − 1)/2 − n/p. The critical exponent is 2n/(n − 1): four in the plane, three in space, 5/2 in five dimensions. There, averaging should remove the whole fixed-time cost, except an arbitrarily small part. In our computation with one focusing wave, in three and in five dimensions, the time-averaged ratio at the critical exponent grows only like a small root of the logarithm of the frequency, while at p equal to four it grows like the power the conjecture says is needed.</p>
+<p>Result 079 now centers on one OpenAI preprint, 59 pages, dated October 25 and added to the release on October 26. Its main theorem: in every dimension n at least two, for every p from two to infinity and every positive ε, the half-wave evolution over times between one and two is bounded from data with that threshold plus ε derivatives in Lᵖ. That is Sogge’s conjecture in every dimension. Behind it is a sharper estimate at the critical exponent: on one frequency annulus near N, the loss is only the power 2/p_c of the logarithm of N.</p>
+<p>Through known implications, the paper derives a long list. The Bochner–Riesz conjecture in every dimension. For p from two to infinity, maximal bounds for these means, and the conjectured bounds for Stein’s square function. Fourier restriction throughout the interior of the conjectured range for the sphere, the compact paraboloid and the truncated cone, and local smoothing for Schrödinger waves. Finally, the Kakeya and Nikodym maximal conjectures; in particular, every Euclidean Kakeya set, a set containing a unit segment in every direction, has full Hausdorff dimension.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim, and how it differs from the 3D version</h2>
+<p>Here is how it differs from the earlier preprint for this result. The September preprint, still listed beside it, 165 pages, claimed only three dimensions, with an arbitrarily small loss at p equal to three. The new paper claims every dimension, gives a logarithmic loss at the critical exponent, and uses a different proof; it does not cite the September preprint. What is not claimed: the lossless estimate. In fact, a focusing wave shows that some logarithmic loss is needed at the critical exponent, and the best power is left between 1/p_c and 2/p_c. Wave equations on curved manifolds are not claimed either.</p>
+<p>Related results in the same release, by our reading (these are unreviewed claims, and the overlap is not a confirmation): the new statements would imply the claims of results <a href="/074/">074</a> (the Kakeya maximal conjecture in three dimensions; full Hausdorff dimension of four-dimensional Kakeya sets) and <a href="/078/">078</a> (the three-dimensional Bochner–Riesz conjecture), and only the sphere and compact paraboloid cases of result <a href="/077/">077</a>, which claims diagonal Fourier extension for every compact positively curved surface in three-dimensional space.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 59 pages, dated October 25, 2026; added to the release October 26</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Expert review</dt>
+    <dd>None named in a primary source that we know of</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>Six target statements (<a href="https://github.com/openai/math/blob/main/lean/docs/079.md">scope</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/LocalSmoothing.lean">comparator</a>); not run by us</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 26, 2026. The preprint is not peer reviewed, and no expert review is named in the paper, the catalog or OpenAI’s <a href="https://github.com/openai/math/blob/main/history.md">release notes</a>, which say: “We are releasing the model output directly, as we did in our October 6 release.” OSVerify has not reviewed it. OpenAI’s Lean formalization (not run by us) has six target statements: local smoothing in every dimension with every positive loss, uniform Bochner–Riesz bounds, spherical extension, the Kakeya maximal bound with an ε loss, full Hausdorff dimension of Kakeya sets, and Stein’s square function. The maximal Bochner–Riesz bounds, the cone, paraboloid and Schrödinger estimates, and the paper’s logarithmic powers are not among them (the Lean development proves the annular estimate with a larger logarithmic power). By our count its import closure is 2,261 files and 190,467 lines, excluding Mathlib, and our text search found no sorry or added axioms. The earlier three-dimensional preprint (September 24, 165 pages) is still listed under this result.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A filter and a conserved current.</strong> The proof is built around that one estimate at the critical exponent, first on a spatial torus, with directions in one small cap. The first idea is a filter. Translating a sum of plane waves by an imaginary amount along a light ray multiplies each mode by a Gaussian in its direction. From the continued wave, the paper builds a positive semidefinite tensor whose columns have zero divergence, in space-time together with auxiliary variables, including two extra time coordinates. Its time component still detects the original wave on the cap. The waves are summed before the square is taken, so the interference that makes a focus is kept.</li>
+  <li><strong>A determinant equation on each fiber.</strong> On each spatial fiber, the paper then solves a quaternionic determinant equation, with this density on the right side. A background term supplies one direction of curvature. Then density at least m on a small ball forces the solution to be deep at its center, by at least about the squared radius times m to the power 1/(n − 1). Integrating depth against density detects m to the power n/(n − 1), and since the density is a square of the wave, the exponent becomes 2n/(n − 1): the critical exponent. A correction, as in the classical Aubin–Mabuchi energy, leads to an energy whose Laplacian in the three time variables is at most an exponentially decaying potential times the energy.</li>
+  <li><strong>Two circles, two logarithms.</strong> The last step compares circles in the plane of the two auxiliary times. A radial harmonic function in the plane is affine in the logarithm of its radius, so carrying the bound out from a small circle to radius one, and back again at the initial time, loses one logarithm each way. Two logarithms, then a pth root, give the power 2/p_c. Finally the paper sums the caps, removes the period, interpolates, and sums the frequency annuli. For the consequences it credits known reductions, among them those of Sogge, of Beltran, Hickman and Sogge, of Tao, of Hörmander, and of Bourgain.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: one radial focusing wave in three dimensions (a slice at four times); its peak at the focus is about 216 times its starting peak.</li>
+  <li>Ours: the same kind of wave in three and in five dimensions, computed in closed form for frequency scales 8 to 256. At one fixed time the ratio at the critical exponent grows like N to the 1/3 and N to the 0.4; averaged over 1 ≤ t ≤ 2, its p_c-th power grows by about 2.08 per doubling (a logarithm); at p = 4 the averaged ratio grows with slopes 0.25 and 0.75, the conjectured losses.</li>
+  <li>The threshold lines s₊(p) for dimensions 2, 3 and 5, and the bars of earlier progress, are drawn from the exponents the paper states.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf">Local smoothing for the Euclidean wave equation (October 25, 2026) (PDF)</a>, 59 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/paper.pdf">Critical local smoothing for the three-dimensional wave equation (September 24, 2026; the earlier three-dimensional preprint) (PDF)</a>, 165 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 079.</li>
+  <li><a href="https://github.com/openai/math/blob/main/history.md">OpenAI’s release notes</a> (October 26, 2026).</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The 2 papers in this result</h2>
+<p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf">Local smoothing for the Euclidean wave equation</a> <span class="ptag ptag-main">main paper</span></li>
+  <li><a href="https://github.com/openai/math/blob/main/preprints/Critical-local-smoothing-for-the-three-dimensional-wave-equation-September-24-2026/paper.pdf">Critical local smoothing for the three-dimensional wave equation</a> <span class="ptag">companion</span></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>Waves that focus</h3>
+<p>A wave can focus. Start with a thin spherical shell that moves inward, as in this slice of our three-dimensional example: at time 1.5 it collapses to a point, and then it spreads out again. At that instant, its size in Lᵖ can be far larger than at the start. The paper credits Peral, Miyachi, and Seeger, Sogge and Stein for the sharp cost at one fixed time: in n dimensions, (n − 1)(1/2 − 1/p) derivatives of the initial data. In 1991, Sogge asked how many derivatives are needed for the norm averaged over a time interval. His conjecture: any amount above the larger of zero and (n − 1)/2 − n/p. The critical exponent is 2n/(n − 1): four in the plane, three in space, 5/2 in five dimensions. There, averaging should remove the whole fixed-time cost, except an arbitrarily small part. In our computation with one focusing wave, in three and in five dimensions, the time-averaged ratio at the critical exponent grows only like a small root of the logarithm of the frequency, while at p equal to four it grows like the power the conjecture says is needed. The paper recounts the history. The question grew out of Bourgain’s theorem on circular maximal averages, and Sogge proved a positive gain for every p above two in the plane. Wolff obtained every gain below 1/p for p above 74 in the plane, and Łaba and Wolff extended the argument to higher dimensions. Bourgain and Demeter’s decoupling theorem gives the gain for p at least 2(n + 1)/(n − 1), in every dimension. In the plane, Guth, Wang and Zhang reached the critical exponent four. In three dimensions, Gao, Liu, Miao and Xi, and then Gan, He, Li and Wu, came closer at p equal to three.</p>
+<h3><span class="t num">1:57</span>The claim</h3>
+<p>Result 079 now centers on one OpenAI preprint, 59 pages, dated October 25 and added to the release on October 26. Its main theorem: in every dimension n at least two, for every p from two to infinity and every positive ε, the half-wave evolution over times between one and two is bounded from data with that threshold plus ε derivatives in Lᵖ. That is Sogge’s conjecture in every dimension. Behind it is a sharper estimate at the critical exponent: on one frequency annulus near N, the loss is only the power 2/p_c of the logarithm of N. Here is how it differs from the earlier preprint for this result. The September preprint, still listed beside it, 165 pages, claimed only three dimensions, with an arbitrarily small loss at p equal to three. The new paper claims every dimension, gives a logarithmic loss at the critical exponent, and uses a different proof; it does not cite the September preprint. What is not claimed: the lossless estimate. In fact, a focusing wave shows that some logarithmic loss is needed at the critical exponent, and the best power is left between 1/p_c and 2/p_c. Wave equations on curved manifolds are not claimed either. Through known implications, the paper derives a long list. The Bochner–Riesz conjecture in every dimension. For p from two to infinity, maximal bounds for these means, and the conjectured bounds for Stein’s square function. Fourier restriction throughout the interior of the conjectured range for the sphere, the compact paraboloid and the truncated cone, and local smoothing for Schrödinger waves. Finally, the Kakeya and Nikodym maximal conjectures; in particular, every Euclidean Kakeya set, a set containing a unit segment in every direction, has full Hausdorff dimension.</p>
+<h3><span class="t num">3:58</span>A conserved current</h3>
+<p>The proof is built around that one estimate at the critical exponent, first on a spatial torus, with directions in one small cap. The first idea is a filter. Translating a sum of plane waves by an imaginary amount along a light ray multiplies each mode by a Gaussian in its direction. From the continued wave, the paper builds a positive semidefinite tensor whose columns have zero divergence, in space-time together with auxiliary variables, including two extra time coordinates. Its time component still detects the original wave on the cap. The waves are summed before the square is taken, so the interference that makes a focus is kept. On each spatial fiber, the paper then solves a quaternionic determinant equation, with this density on the right side. A background term supplies one direction of curvature. Then density at least m on a small ball forces the solution to be deep at its center, by at least about the squared radius times m to the power 1/(n − 1). Integrating depth against density detects m to the power n/(n − 1), and since the density is a square of the wave, the exponent becomes 2n/(n − 1): the critical exponent. A correction, as in the classical Aubin–Mabuchi energy, leads to an energy whose Laplacian in the three time variables is at most an exponentially decaying potential times the energy. The last step compares circles in the plane of the two auxiliary times. A radial harmonic function in the plane is affine in the logarithm of its radius, so carrying the bound out from a small circle to radius one, and back again at the initial time, loses one logarithm each way. Two logarithms, then a pth root, give the power 2/p_c. Finally the paper sums the caps, removes the period, interpolates, and sums the frequency annuli. For the consequences it credits known reductions, among them those of Sogge, of Beltran, Hickman and Sogge, of Tao, of Hörmander, and of Bourgain.</p>
+<h3><span class="t num">6:05</span>Where it stands</h3>
+<p>The preprint is not peer reviewed, and we know of no named expert review. OpenAI’s release note says it is releasing the model output directly. It is not among the papers OSVerify has reviewed. OpenAI also published a Lean formalization with six target statements: local smoothing in every dimension with every positive loss, uniform Bochner–Riesz bounds, spherical extension, the Kakeya maximal bound with an ε loss, full Hausdorff dimension, and Stein’s square function. We read those statements and scanned the source; it was not run by us. The maximal Bochner–Riesz bounds, the paraboloid, cone and Schrödinger estimates, and the paper’s logarithmic powers are not among them. By our reading, the new statements would imply the claims of our episodes 074 and 078, and only the sphere and paraboloid cases of 077, which claims every compact positively curved surface in three-dimensional space. That is our reading of unreviewed claims from the same release, not a confirmation of any of them. If it holds, Sogge’s local smoothing conjecture is settled in every dimension, and with it a whole chain of problems in Fourier analysis, down to the dimension of Kakeya sets.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20079%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
