@@ -44,6 +44,9 @@
 <p class="meta">Episode 265, October 2026</p>
 <h1>Only the boundary counts?</h1>
 <p class="subtitle">Two AI preprints claim the two-dimensional area law for gapped quantum ground states</p>
+<!-- revision:start -->
+<div class="banner banner-lean" role="note"><p><b>Record updated, October 27, 2026.</b> Axiom published a Lean formalization of the area-law paper (<a href="https://github.com/AxiomMath/AreaLaw2D">AxiomMath/AreaLaw2D</a>, created October 16, 2026). It says it proves Theorem 1.1 and Corollary 1.2 and every proposition the paper exports, with only Lean’s three standard axioms; the proofs were produced by Axiom’s agent tooling and OpenAI Codex, directed by Ruiz Chen. This is Axiom’s work, not OpenAI’s, and we have not built it. The PEPS paper is not formalized. <span class="tag ">Record updated</span></p></div>
+<!-- revision:end -->
 <!-- papers-note:start -->
 <p class="papers-note">Covers result 265 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>. <a href="../../connections/#265">See its connections</a> to other results and the work it cites.</p>
 <!-- papers-note:end -->
@@ -105,12 +108,12 @@
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>No (only a sub-volume law, unlinked)</dd>
+    <dd>By Axiom, not OpenAI, since October 16, 2026: the area law (Theorem 1.1) and Corollary 1.2, in <a href="https://github.com/AxiomMath/AreaLaw2D">AxiomMath/AreaLaw2D</a> (we have not built it); not the PEPS paper</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 19, 2026. The preprints have not been revised. Lean contains an unlinked development that machine-checks a sub-volume law for boxes in gapped nearest-neighbour grids, with explicit but astronomical constants; neither headline theorem is formalized. OSVerify has not reviewed them. Scott Aaronson listed the area law as one of the main open problems in Hamiltonian complexity without assessing the proof, and a paper by Kuwahara cites it as a proposed proof. We found no comment from specialists such as Arad, Gosset or Hastings.</p>
+<p class="ledger-note">Last checked October 19, 2026. The preprints have not been revised. OpenAI links no Lean formalization; its Lean files contain an unlinked development that machine-checks a sub-volume law for boxes in gapped nearest-neighbour grids, with explicit but astronomical constants, and formalizes neither headline theorem. OSVerify has not reviewed them. Scott Aaronson listed the area law as one of the main open problems in Hamiltonian complexity without assessing the proof, and a paper by Kuwahara cites it as a proposed proof. We found no comment from specialists such as Arad, Gosset or Hastings. Update (October 27, 2026): <a href="https://github.com/AxiomMath/AreaLaw2D">AxiomMath/AreaLaw2D</a>, a Lean formalization of the area-law paper created on GitHub on October 16, 2026, says it proves Theorem 1.1 and Corollary 1.2 and every proposition the paper exports, with no <code>sorry</code> outside its comparator challenge file and only Lean’s three standard axioms; it includes a comparator configuration for Theorem 1.1 and says the run accepted the proof. Its README says the proofs were produced by Axiom’s agent tooling and OpenAI Codex, directed by Ruiz Chen, who froze and audited the statement layer, and that parts are ported from <a href="https://github.com/LionSR/TNLean">LionSR/TNLean</a>, whose own formalization of the paper covers Sections 2 to 4 and much of Section 11. This is Axiom’s work, not OpenAI’s, and we have not built it. The PEPS paper is not formalized. The video’s line that neither headline theorem is formalized is now out of date for the area law.</p>
 </section>
 
 <section aria-labelledby="proof">
@@ -134,6 +137,7 @@
 <ul class="sources">
   <li><a href="https://github.com/openai/math/blob/main/preprints/A-two-dimensional-area-law-from-a-global-spectral-gap-September-24-2026/paper.pdf">A Two-Dimensional Area Law from a Global Spectral Gap (PDF)</a>, 90 pages.</li>
   <li><a href="https://github.com/openai/math/blob/main/preprints/Polynomial-PEPS-approximation-of-gapped-square-grid-ground-states-September-24-2026/paper.pdf">Polynomial PEPS Approximation of Gapped Square-Grid Ground States (PDF)</a>, 56 pages.</li>
+  <li><a href="https://github.com/AxiomMath/AreaLaw2D">AxiomMath/AreaLaw2D</a>, Axiom’s Lean formalization of the area-law paper (October 16, 2026), and <a href="https://github.com/LionSR/TNLean">LionSR/TNLean</a>, the tensor-network library it ports from.</li>
   <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 265.</li>
 </ul>
 </section>
