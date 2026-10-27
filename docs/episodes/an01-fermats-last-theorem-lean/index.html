@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fermat’s Last Theorem, in Lean? Anthropic’s formalization | AI Proved What?</title>
+<meta name="description" content="Anthropic published a Lean proof of Fermat’s Last Theorem written by Claude agents in 11 days: about 13 million lines, following Darmon, Diamond and Taylor. What was claimed, what is not, the caveats in the sources, and where it stands. Made with Claude; held to the same standards. Lean by Anthropic, not run by us; not peer reviewed.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/an01-fermats-last-theorem-lean/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Fermat’s Last Theorem, in Lean?">
+<meta property="og:description" content="Anthropic published a Lean proof of Fermat’s Last Theorem written by Claude agents in 11 days: about 13 million lines, following Darmon, Diamond and Taylor. What was claimed, what is not, the caveats in the sources, and where it stands. Made with Claude; held to the same standards. Lean by Anthropic, not run by us; not peer reviewed.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/an01-fermats-last-theorem-lean/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/an01-fermats-last-theorem-lean/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Specials</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">AN01 (outside OpenAI’s math catalogue), October 2026</p>
+<h1>Fermat’s Last Theorem, in Lean?</h1>
+<p class="subtitle">Anthropic’s formalization of Fermat’s Last Theorem</p>
+<p><strong>Disclosure.</strong> AI Proved What? is made with Claude, Anthropic’s AI. This is Anthropic’s own result: we hold it to the same standards as every other lab’s, using only public sources. AI Proved What? is independent and not affiliated with Anthropic beyond using its product Claude.</p>
+
+<div class="player" data-youtube="GNLlEQ4nXfs" data-title="AN01: Fermat’s Last Theorem, in Lean?">
+  <a href="https://youtu.be/GNLlEQ4nXfs">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play AN01: Fermat’s Last Theorem, in Lean? The equation and the route of the proof: Frey curve, Mazur, Wiles, Ribet, level 2.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:21. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/GNLlEQ4nXfs?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/GNLlEQ4nXfs?t=101" data-t="101"><span class="t">1:41</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/GNLlEQ4nXfs?t=269" data-t="269"><span class="t">4:29</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/GNLlEQ4nXfs?t=387" data-t="387"><span class="t">6:27</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Episode AN01 covers a release by Anthropic on September 4, 2026: a blog post, a public Lean repository with a written walk-through of the proof’s route, and a companion document with excerpts of Claude’s reasoning. Anthropic calls it the first complete computer-checked proof of Fermat’s Last Theorem. In Anthropic’s account, a team of Claude agents worked largely autonomously for 11 days, from August 7 to August 17. The proof has 29,511 theorems and about 13 million lines of Lean, about 10.5 million without generated boilerplate; our estimate from a sample of 440 files is 13 to 15 million. Anthropic calls it the largest Lean proof ever constructed, and adds in a footnote that it is likely much longer than it needs to be. The post says the run used about 6 billion output tokens from an internal research model, that the proof uses just Lean’s three standard axioms, and that a comparator confirmed its statement matches Mathlib’s own statement of the theorem.</p>
+<p>Who did what. Tianyi Peng, an Anthropic researcher whose group at Columbia University builds tools for AI formalization, set up the test. The post says human mathematical input was limited to occasional high-level instructions from him, such as: Jacobian as a scheme sounds high priority. The companion document says humans wrote no mathematics and no Lean beyond the one-line statement of the goal theorem. The agents worked through Prove2Me, a platform from Peng’s group that keeps a shared graph of theorem statements for agents to claim. The proof builds on Lean’s community library, Mathlib, and adapts pieces from two human projects, credited file by file: Buzzard’s Imperial project and flt-regular. The companion document says the opening reduction follows the Imperial project’s blueprint, and the repository’s notice counts 106 files with material from the two.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>What is not claimed. This is not new mathematics: the post says that what is new is the verification. Buzzard writes that, mathematically, the work tells us essentially nothing, since the proof was already accepted and the formalization follows the early literature; what it does show, he writes, is what is now possible in autoformalization. It is not the modern proof that Buzzard’s project is formalizing. The named deep theorems are proved only in the special cases the argument needs; the walk-through says, for example, that Ribet’s theorem is not proved for a general representation. And the companion document says the code is not yet in a form Mathlib would accept.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Announced; code public</dt>
+    <dd><a href="https://www.anthropic.com/research/formalizing-fermats-last-theorem">Anthropic’s post</a> and the <a href="https://github.com/anthropics/fermats-last-theorem">repository</a>, September 4, 2026 (first commit dated September 3; the Lean files have not changed since)</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Outside check: Kevin Buzzard</dt>
+    <dd><a href="https://xenaproject.wordpress.com/2026/09/04/flt-anthropic-has-beaten-me-to-it/">His blog</a>, September 4: “I’ve compiled the code base and run comparator on it — it checks out.” In comments there (September 5) he adds that he spent many hours looking over the code and inspected the 100 or so lines that are not definitions or proofs (“Obviously this is not a perfect approach”). Anthropic’s post quotes him and thanks him “for reviewing the proof and for his comments”</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No. The repository’s metadata calls its review “self-assessed”</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Lean proof, by Anthropic</dt>
+    <dd>The claim itself: Lean’s three standard axioms (propext, Classical.choice, Quot.sound), comparator against Mathlib’s statement, a second kernel (nanoda, with Anthropic’s published speed patches), as the README reports. Not built or run by us</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 27, 2026. Where it stands. The post and the repository went public on September 4; the repository’s first commit is dated the day before, and its Lean files have not changed since. Outside check: Kevin Buzzard. On his blog that day he wrote: “I’ve compiled the code base and run comparator on it — it checks out”. In comments there, he adds that he spent many hours looking over the code and inspected the hundred or so lines that are not definitions or proofs. Anthropic quotes him calling it an extraordinary autoformalization achievement. The repository’s own metadata calls its review self-assessed, and nothing is peer reviewed. The Lean is the claim itself, by Anthropic; we did not build or run it. Its README says one build took 5.5 hours at 96 jobs, and the comparator about 15 hours more.</p>
+<p>The caveats, from the sources themselves. Claude’s own assessment, in the companion document, says roughly two in five theorem statements in the proof files repeat, word for word, a statement made in another file. The README says no tool can check that each intermediate theorem means what its name suggests. And on October 16, a guest post on Buzzard’s blog, by seven mathematicians and formalizers, including Buzzard, said that although the accomplishment is impressive, this code probably has little ongoing value. For comparison, on stated facts only: Axiom’s classification release, in episode AX01, reported 43.1 million lines in 24 days, and both repositories call their review self-assessed. If it holds, Fermat’s Last Theorem, as proved by Wiles and Taylor, has a complete computer check in Lean, long and machine-written, with intermediate statements that, as its README says, no tool can check for meaning.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The question.</strong> Here is the history as Anthropic’s post tells it. Around 1637, Fermat wrote the claim in the margin of a book. In June 1993, Andrew Wiles presented a proof in three lectures. A reviewer’s question exposed a gap, which Wiles fixed with his former student Richard Taylor, and the proof was published in May 1995. Darmon, Diamond and Taylor later wrote an exposition, which the post calls a simplified version of Wiles’s proof. Checking such a proof by computer means writing every step in a proof assistant such as Lean. In 2024, Kevin Buzzard at Imperial College London started a multi-year community project to do this. Its own README says it follows a more modern route and is funded until 2029. A separate project, flt-regular, had already formalized the theorem for regular primes.</li>
+  <li><strong>The route.</strong> How the proof goes, as the walk-through lays it out. It is a proof by contradiction. Exponents three and four come from Mathlib. Five is settled by a descent; seven, eleven and thirteen by Kummer’s theorem for regular primes, ported from flt-regular. For a prime p from seventeen up, a counterexample gives a Frey curve: y squared equals x, times x minus a to the p, times x plus b to the p. Step one, Mazur: the curve’s mod p representation is irreducible. Step two, Wiles: the curve is modular, through the Langlands–Tunnell theorem at the prime three, a switch between three and five, and modularity lifting, R = T. Step three, Ribet: level lowering takes the representation down to level two. And at level two there are no cusp forms of weight two, which the repository proves from Mathlib. As background, by the standard genus formula, which our script checks, the modular curve of level two has genus zero. That is the contradiction.</li>
+  <li><strong>The run.</strong> How the run went, in Anthropic’s account. Early attempts failed: agents lost track of the project’s state and stopped collaborating effectively, and the post says those efforts still make up about 7% of the non-boilerplate lines. On Prove2Me, agents usually checked one another’s statements first, which the companion document says caught several false statements early. On August 17, the final theorem read proved on the platform; one agent added, modulo re-check. The re-check was needed, because the platform checks each statement’s proof separately. The team then built everything as one Lean project, whose build fails unless the final theorem rests on exactly the three standard axioms. The comparator replayed the whole proof through Lean’s kernel, and nanoda, a second, independent kernel, run with small speed patches that Anthropic published, accepted every declaration.</li>
+</ol>
+<p>Not in the video: the post also reports a small side experiment in which agents on three personal Claude Max plans formalized Vinogradov’s three primes theorem in three days, collaborating through Prove2Me.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: 52 Pythagorean triples with c ≤ 100; no solutions of aⁿ + bⁿ = cⁿ for n = 3 to 10 with c ≤ 300 (an illustration, not a proof); the near misses 6³ + 8³ = 9³ − 1 and 9³ + 10³ = 12³ + 1.</li>
+  <li>Ours: the modular curve X₀(2) has genus 0 by the standard formula, so there are no weight-2 cusp forms of level 2 (the repository proves this from Mathlib by its own route).</li>
+  <li>Ours: an estimate of the repository’s Lean line count from a random sample of 440 files: 14.1 million (95% interval 12.9 to 15.3 million). Anthropic says about 13 million; Buzzard’s blog says over 13.4 million.</li>
+  <li>From the repository tree: 29,511 statement files, 29,511 proof files and 1,450 definition modules.</li>
+  <li>From the sources: 11 days (August 7 to 17, 2026); about six billion output tokens; about 7% of non-boilerplate lines from failed early attempts; 106 files with material from the Imperial FLT project and flt-regular.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://www.anthropic.com/research/formalizing-fermats-last-theorem">Anthropic: “Formalizing Fermat’s Last Theorem”</a> (September 4, 2026).</li>
+  <li><a href="https://github.com/anthropics/fermats-last-theorem">The Lean repository</a> (Apache-2.0; not run by us) and its walk-through, <a href="https://github.com/anthropics/fermats-last-theorem/blob/main/PROOF-PATH.md">PROOF-PATH.md</a>.</li>
+  <li><a href="https://www-cdn.anthropic.com/9e431dff043da6538d99d6c2d231b670aa3da263.pdf">Anthropic’s companion document</a>: a timeline and excerpts of Claude’s reasoning.</li>
+  <li><a href="https://xenaproject.wordpress.com/2026/09/04/flt-anthropic-has-beaten-me-to-it/">Kevin Buzzard: “FLT: Anthropic has beaten me to it”</a> (September 4, 2026), and the <a href="https://xenaproject.wordpress.com/2026/10/16/how-to-formalize-all-of-mathematics/">guest post “How to Formalize All of Mathematics”</a> (October 16, 2026).</li>
+  <li>The human projects it builds on: <a href="https://github.com/ImperialCollegeLondon/FLT">the Imperial College London FLT project</a>, led by Kevin Buzzard, and <a href="https://github.com/leanprover-community/flt-regular">flt-regular</a>; the platform <a href="https://doi.org/10.48550/arXiv.2608.28433">Prove2Me</a>.</li>
+  <li>For comparison: episode AX01, on Axiom’s Lean formalization of the classification of finite simple groups.</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Anthropic beyond using its product Claude.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is AN01. Before we start: AI Proved What? is made with Claude, Anthropic’s AI. This is Anthropic’s own result: we hold it to the same standards as every other lab’s, using only public sources. Fermat’s Last Theorem says that for any whole number n of at least three, there are no positive whole numbers a, b and c with a to the n plus b to the n equal to c to the n. For n equal to two there are many solutions, like three squared plus four squared equals five squared; our search finds 52 with c up to 100. For cubes, there are only near misses: six cubed plus eight cubed is nine cubed minus one, and nine cubed plus ten cubed is twelve cubed plus one. Our search finds no solutions for exponents three to ten with c up to 300. That is an illustration, not a proof. Here is the history as Anthropic’s post tells it. Around 1637, Fermat wrote the claim in the margin of a book. In June 1993, Andrew Wiles presented a proof in three lectures. A reviewer’s question exposed a gap, which Wiles fixed with his former student Richard Taylor, and the proof was published in May 1995. Darmon, Diamond and Taylor later wrote an exposition, which the post calls a simplified version of Wiles’s proof. Checking such a proof by computer means writing every step in a proof assistant such as Lean. In 2024, Kevin Buzzard at Imperial College London started a multi-year community project to do this. Its own README says it follows a more modern route and is funded until 2029. A separate project, flt-regular, had already formalized the theorem for regular primes.</p>
+<h3><span class="t num">1:41</span>The claim</h3>
+<p>Episode AN01 covers a release by Anthropic on September 4, 2026: a blog post, a public Lean repository with a written walk-through of the proof’s route, and a companion document with excerpts of Claude’s reasoning. Anthropic calls it the first complete computer-checked proof of Fermat’s Last Theorem. In Anthropic’s account, a team of Claude agents worked largely autonomously for 11 days, from August 7 to August 17. The proof has 29,511 theorems and about 13 million lines of Lean, about 10.5 million without generated boilerplate; our estimate from a sample of 440 files is 13 to 15 million. Anthropic calls it the largest Lean proof ever constructed, and adds in a footnote that it is likely much longer than it needs to be. The post says the run used about 6 billion output tokens from an internal research model, that the proof uses just Lean’s three standard axioms, and that a comparator confirmed its statement matches Mathlib’s own statement of the theorem. Who did what. Tianyi Peng, an Anthropic researcher whose group at Columbia University builds tools for AI formalization, set up the test. The post says human mathematical input was limited to occasional high-level instructions from him, such as: Jacobian as a scheme sounds high priority. The companion document says humans wrote no mathematics and no Lean beyond the one-line statement of the goal theorem. The agents worked through Prove2Me, a platform from Peng’s group that keeps a shared graph of theorem statements for agents to claim. The proof builds on Lean’s community library, Mathlib, and adapts pieces from two human projects, credited file by file: Buzzard’s Imperial project and flt-regular. The companion document says the opening reduction follows the Imperial project’s blueprint, and the repository’s notice counts 106 files with material from the two. What is not claimed. This is not new mathematics: the post says that what is new is the verification. Buzzard writes that, mathematically, the work tells us essentially nothing, since the proof was already accepted and the formalization follows the early literature; what it does show, he writes, is what is now possible in autoformalization. It is not the modern proof that Buzzard’s project is formalizing. The named deep theorems are proved only in the special cases the argument needs; the walk-through says, for example, that Ribet’s theorem is not proved for a general representation. And the companion document says the code is not yet in a form Mathlib would accept.</p>
+<h3><span class="t num">4:29</span>How the proof goes</h3>
+<p>How the proof goes, as the walk-through lays it out. It is a proof by contradiction. Exponents three and four come from Mathlib. Five is settled by a descent; seven, eleven and thirteen by Kummer’s theorem for regular primes, ported from flt-regular. For a prime p from seventeen up, a counterexample gives a Frey curve: y squared equals x, times x minus a to the p, times x plus b to the p. Step one, Mazur: the curve’s mod p representation is irreducible. Step two, Wiles: the curve is modular, through the Langlands–Tunnell theorem at the prime three, a switch between three and five, and modularity lifting, R = T. Step three, Ribet: level lowering takes the representation down to level two. And at level two there are no cusp forms of weight two, which the repository proves from Mathlib. As background, by the standard genus formula, which our script checks, the modular curve of level two has genus zero. That is the contradiction. How the run went, in Anthropic’s account. Early attempts failed: agents lost track of the project’s state and stopped collaborating effectively, and the post says those efforts still make up about 7% of the non-boilerplate lines. On Prove2Me, agents usually checked one another’s statements first, which the companion document says caught several false statements early. On August 17, the final theorem read proved on the platform; one agent added, modulo re-check. The re-check was needed, because the platform checks each statement’s proof separately. The team then built everything as one Lean project, whose build fails unless the final theorem rests on exactly the three standard axioms. The comparator replayed the whole proof through Lean’s kernel, and nanoda, a second, independent kernel, run with small speed patches that Anthropic published, accepted every declaration.</p>
+<h3><span class="t num">6:27</span>Where it stands</h3>
+<p>Where it stands. The post and the repository went public on September 4; the repository’s first commit is dated the day before, and its Lean files have not changed since. Outside check: Kevin Buzzard. On his blog that day he wrote: “I’ve compiled the code base and run comparator on it — it checks out”. In comments there, he adds that he spent many hours looking over the code and inspected the hundred or so lines that are not definitions or proofs. Anthropic quotes him calling it an extraordinary autoformalization achievement. The repository’s own metadata calls its review self-assessed, and nothing is peer reviewed. The Lean is the claim itself, by Anthropic; we did not build or run it. Its README says one build took 5.5 hours at 96 jobs, and the comparator about 15 hours more. The caveats, from the sources themselves. Claude’s own assessment, in the companion document, says roughly two in five theorem statements in the proof files repeat, word for word, a statement made in another file. The README says no tool can check that each intermediate theorem means what its name suggests. And on October 16, a guest post on Buzzard’s blog, by seven mathematicians and formalizers, including Buzzard, said that although the accomplishment is impressive, this code probably has little ongoing value. For comparison, on stated facts only: Axiom’s classification release, in episode AX01, reported 43.1 million lines in 24 days, and both repositories call their review self-assessed. If it holds, Fermat’s Last Theorem, as proved by Wiles and Taylor, has a complete computer check in Lean, long and machine-written, with intermediate statements that, as its README says, no tool can check for meaning.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=AN01%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

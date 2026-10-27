@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Specials | AI Proved What?</title>
-<meta name="description" content="Claims OpenAI announced outside its math catalogue, with how far each has been checked.">
+<title>Beyond OpenAI’s catalogue | AI Proved What?</title>
+<meta name="description" content="Claims beyond OpenAI&#x27;s math catalogue, from OpenAI and other labs, with how far each has been checked.">
 <link rel="canonical" href="https://aiprovedwhat.com/specials/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Specials | AI Proved What?">
-<meta property="og:description" content="Claims OpenAI announced outside its math catalogue, with how far each has been checked.">
+<meta property="og:title" content="Beyond OpenAI’s catalogue | AI Proved What?">
+<meta property="og:description" content="Claims beyond OpenAI&#x27;s math catalogue, from OpenAI and other labs, with how far each has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/specials/">
 <meta property="og:image" content="https://aiprovedwhat.com/assets/icon-512.png">
 <meta name="twitter:card" content="summary">
@@ -43,10 +43,25 @@
   </nav>
 </header>
 <main id="main">
-<h1>Specials</h1>
-<p class="lede">Claims OpenAI announced outside its math catalogue, with the same four-step record. They are kept out of the catalogue counts. Specials are found by watching OpenAI’s announcements and added by hand.</p>
+<h1>Beyond OpenAI’s catalogue</h1>
+<p class="lede">Claims outside OpenAI’s math catalogue: one-off announcements by OpenAI and results from other labs (Axiom Math, PSI (Physical Superintelligence), Anthropic), with the same four-step record. They are kept out of the catalogue counts and added by hand from each lab’s announcements and repositories.</p>
+<section class="compare" aria-labelledby="cmp-ax01-an01">
+<h2 id="cmp-ax01-an01">Two large Lean formalizations, side by side</h2>
+<div class="compare-scroll"><table>
+<thead><tr><td></td><th scope="col"><a href="../episodes/ax01-classification-finite-simple-groups-lean/">AX01</a><br><span class="meta">Axiom Math</span></th><th scope="col"><a href="../episodes/an01-fermats-last-theorem-lean/">AN01</a><br><span class="meta">Anthropic</span></th></tr></thead>
+<tbody>
+<tr><th scope="row">Theorem</th><td>Classification of finite simple groups</td><td>Fermat’s Last Theorem</td></tr>
+<tr><th scope="row">Lines of Lean</th><td>about 43.1 million (Axiom’s post)</td><td>about 13 million (Anthropic’s post; our sample estimate 13 to 15 million)</td></tr>
+<tr><th scope="row">Time taken</th><td>24 days (Axiom’s post)</td><td>11 days, August 7 to 17 (the post also says “a little under two weeks”)</td></tr>
+<tr><th scope="row">Errata and outside checks</th><td>34 noteworthy deviations from the published record, described in Axiom’s post; the errata list itself is not yet published</td><td>Kevin Buzzard compiled it and ran comparator: “it checks out” (his blog, September 4)</td></tr>
+<tr><th scope="row">Review status in the metadata</th><td>“self-assessed”</td><td>“self-assessed”</td></tr>
+<tr><th scope="row">Announced</th><td>October 26, 2026</td><td>September 4, 2026</td></tr>
+</tbody>
+</table></div>
+<p class="meta">Figures as each lab reports them, checked in our AX01 and AN01 episodes. The two projects differ in scope and method; the numbers are not a ranking.</p>
+</section>
 <section class="special" id="s01" aria-labelledby="s01-h">
-<p class="thumb-kicker">Special S01 · announced September 8, 2026 · Mathematical physics <span class="tag sp">Special</span></p>
+<p class="thumb-kicker">Special S01 · OpenAI, outside its catalogue · announced September 8, 2026 · Mathematical physics</p>
 <h2 id="s01-h">Finite-time blowup for Navier–Stokes and Euler</h2>
 <p>Two papers and Lean proofs claim Navier–Stokes breakdown alternatives (C) and (D), with a smooth force, and blowup for the unforced Euler equations.</p>
 <dl class="ledger ledger-auto">
@@ -70,7 +85,182 @@
 <p><a href="../episodes/s01-navier-stokes-euler-blowup/">Watch the episode and read the record</a> · <a href="../connections/#S01">See its connections</a></p>
 
 </section>
-<p class="attribution">Last checked October 26, 2026.</p>
+<section class="special" id="an01" aria-labelledby="an01-h">
+<p class="thumb-kicker">AN01 · Anthropic · announced September 4, 2026 · Number theory</p>
+<h2 id="an01-h">Fermat’s Last Theorem, formalized in Lean</h2>
+<p>Anthropic’s Lean proof of Fermat’s Last Theorem, written by Claude agents in 11 days: about 13 million lines, following Darmon, Diamond and Taylor.</p>
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>Anthropic’s post and the repository anthropics/fermats-last-theorem, September 4, 2026</dd>
+  </div>
+  <div class="ledger-row is-review">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>Kevin Buzzard, outside check of the Lean code (<a href="https://xenaproject.wordpress.com/2026/09/04/flt-anthropic-has-beaten-me-to-it/">Kevin Buzzard’s blog, September 4, 2026</a>)</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Anthropic’s Lean proof of the claim itself: three standard axioms, checked with comparator and a second kernel, as its README reports; not built or run by us (<a href="https://github.com/anthropics/fermats-last-theorem">repository</a>)</dd>
+  </div>
+</dl>
+<p><a href="../episodes/an01-fermats-last-theorem-lean/">Watch the episode and read the record</a> · <a href="../connections/#AN01">See its connections</a></p>
+
+</section>
+<section class="special" id="ax01" aria-labelledby="ax01-h">
+<p class="thumb-kicker">AX01 · Axiom Math · announced October 26, 2026 · Group theory</p>
+<h2 id="ax01-h">The classification of finite simple groups, formalized in Lean</h2>
+<p>Axiom Math’s Lean formalization of the classification of finite simple groups, about 43.1 million lines in 24 days, with a new written proof of the Unbalanced Group Theorem.</p>
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>Axiom’s blog post, October 26, 2026; repository AxiomMath/CFSG (first commit October 27, UTC); “The Unbalanced Group Theorem” on Hexagon, version 1, October 27</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None independent in our sources; Axiom names Richard Lyons, Dan Nakano and Ronald Solomon as external advisors, and its metadata calls the review “self-assessed”</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Axiom’s Lean proof of the claim itself: sorry-free, three standard axioms, per its README; not built or run by us (<a href="https://github.com/AxiomMath/CFSG">repository</a>)</dd>
+  </div>
+</dl>
+<p><a href="../episodes/ax01-classification-finite-simple-groups-lean/">Watch the episode and read the record</a> · <a href="../connections/#AX01">See its connections</a></p>
+
+</section>
+<section class="special" id="psi01" aria-labelledby="psi01-h">
+<p class="thumb-kicker">PSI01 · PSI · announced October 23, 2026 · Mathematical physics</p>
+<h2 id="psi01-h">Three copies of the Werner state: the sharp curve in dimensions three and four and a bound in every dimension</h2>
+<p>Open Quantum Problems 2: Undistillability implies PPT? By Ian MacCormack, Ning Bao.</p>
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>PSI GitHub repository, released October 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None independent. Co-author Ning Bao reviewed and edited as a paid contractor to PSI; the paper thanks an unnamed referee for a report on an earlier version, which the first author obtained.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-partial">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Qutrit case only: Theorems 1.1 and 1.2 at d = 3 (endpoint from PSI&#x27;s own exact certificate), Proposition 4.2(a), Corollary 5.3 for k = 3; 48 Comparator statements. Theorem 1.3 (37/80) is not formalized. Not run by us. (<a href="https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp02-three-copy-werner/lean">repository</a>)</dd>
+  </div>
+</dl>
+<p><a href="../episodes/psi01-05-open-quantum-problems/#psi01">Watch the episode and read the record</a> · <a href="../connections/#PSI01">See its connections</a></p>
+
+</section>
+<section class="special" id="psi02" aria-labelledby="psi02-h">
+<p class="thumb-kicker">PSI02 · PSI · announced October 23, 2026 · Mathematical physics</p>
+<h2 id="psi02-h">The vacuum Bell correlation of the massive free scalar field attains the classical bound for bounded regions beyond a finite separation</h2>
+<p>Open Quantum Problems 12: Bell inequalities for long range vacuum correlations By David Turturean.</p>
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>PSI GitHub repository, released October 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None independent. Ning Bao (not an author) wrote a referee report on an earlier draft as a paid contractor to PSI.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Theorem 1.1 and Corollary 1.2 of the full manuscript as stated, the CHSH form, a direction-uniform version, vacuum existence and noncommutativity; 6 Comparator statements. Not run by us. (<a href="https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp12-vacuum-bell-correlations/lean">repository</a>)</dd>
+  </div>
+</dl>
+<p><a href="../episodes/psi01-05-open-quantum-problems/#psi02">Watch the episode and read the record</a> · <a href="../connections/#PSI02">See its connections</a></p>
+
+</section>
+<section class="special" id="psi03" aria-labelledby="psi03-h">
+<p class="thumb-kicker">PSI03 · PSI · announced October 23, 2026 · Mathematical physics</p>
+<h2 id="psi03-h">The optimal CGLMP measurements on maximally entangled states</h2>
+<p>Open Quantum Problems 27: The power of CGLMP inequalities By David Turturean, Ning Bao.</p>
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>PSI GitHub repository, released October 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None independent. The paper thanks Ian MacCormack (PSI) for reviewing earlier drafts and Jim Halverson for coordinating the review (reviewers not named); co-author Ning Bao commented as a paid contractor to PSI.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Projective bound and equality case (Theorems 1 and 3), attainment, witness tolerance; also statements not claimed by the current paper (tensor-CHSH noise and statistical-strength comparisons at d = 2^m, m ≥ 955 and m ≥ 41; Part A facet statements), from an earlier manuscript; 16 Comparator statements. Not run by us. (<a href="https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp27-cglmp-inequalities/lean">repository</a>)</dd>
+  </div>
+</dl>
+<p><a href="../episodes/psi01-05-open-quantum-problems/#psi03">Watch the episode and read the record</a> · <a href="../connections/#PSI03">See its connections</a></p>
+
+</section>
+<section class="special" id="psi04" aria-labelledby="psi04-h">
+<p class="thumb-kicker">PSI04 · PSI · announced October 23, 2026 · Mathematical physics</p>
+<h2 id="psi04-h">Entanglement Breaking after 2(d−1) PPT Maps</h2>
+<p>Open Quantum Problems 38: The PPT squared conjecture By David Turturean, Ning Bao.</p>
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>PSI GitHub repository, released October 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None independent. The paper thanks Adam Levine for reviewing an earlier draft of the proof and Jim Halverson for coordinating the expert review (reviewers not named); co-author Ning Bao verified the result as a paid contractor to PSI.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Theorem 1 (both sentences), N ≥ 2(d − 1) maps, and an interleaved version; 13 Comparator statements. Not run by us. (<a href="https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/ppt-composition-bound/lean">repository</a>)</dd>
+  </div>
+</dl>
+<p><a href="../episodes/psi01-05-open-quantum-problems/#psi04">Watch the episode and read the record</a> · <a href="../connections/#PSI04">See its connections</a></p>
+
+</section>
+<section class="special" id="psi05" aria-labelledby="psi05-h">
+<p class="thumb-kicker">PSI05 · PSI · announced October 23, 2026 · Mathematical physics</p>
+<h2 id="psi05-h">An extensibly causal quantum process with no purification</h2>
+<p>Open Quantum Problems 43: Are all extensibly causal processes purifiable? By David Turturean, Ning Bao.</p>
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>PSI GitHub repository, released October 23, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None independent. Co-author Ning Bao wrote a referee report (including improvements suggested by an AI review) as a paid contractor to PSI; the paper thanks Jim Halverson for coordinating the expert review (reviewers not named).</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>The counterexample, its Pauli form, the dimension dichotomy, purifiable ⇒ causally separable, ordered ⇒ purifiable and more; 11 Comparator statements. Not run by us. (<a href="https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp43-extensible-causality/lean">repository</a>)</dd>
+  </div>
+</dl>
+<p><a href="../episodes/psi01-05-open-quantum-problems/#psi05">Watch the episode and read the record</a> · <a href="../connections/#PSI05">See its connections</a></p>
+
+</section>
+<p class="attribution">Last checked October 27, 2026.</p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
@@ -80,6 +270,7 @@
     <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
   </ul>
   <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
   <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
 </footer>
 </div>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Every finite simple group, checked in Lean? Axiom’s formalization of the classification | AI Proved What?</title>
+<meta name="description" content="Axiom Math announced a complete Lean proof of the Classification of Finite Simple Groups, following the first-generation proof: about 43.1 million lines, written in 24 days by AI agents directed by people. What was claimed, what is new mathematics, what is not claimed, and where it stands. Lean by Axiom, not run by us; not peer reviewed.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/ax01-classification-finite-simple-groups-lean/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Every finite simple group, checked in Lean?">
+<meta property="og:description" content="Axiom Math announced a complete Lean proof of the Classification of Finite Simple Groups, following the first-generation proof: about 43.1 million lines, written in 24 days by AI agents directed by people. What was claimed, what is new mathematics, what is not claimed, and where it stands. Lean by Axiom, not run by us; not peer reviewed.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/ax01-classification-finite-simple-groups-lean/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/ax01-classification-finite-simple-groups-lean/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Specials</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">AX01 (outside OpenAI’s math catalogue), October 2026</p>
+<h1>Every finite simple group, checked in Lean?</h1>
+<p class="subtitle">Axiom Math’s formalization of the classification of finite simple groups</p>
+
+<div class="player" data-youtube="wenkYQoIC4Y" data-title="AX01: Every finite simple group, checked in Lean?">
+  <a href="https://youtu.be/wenkYQoIC4Y">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play AX01: Every finite simple group, checked in Lean? Tiles for the classification’s list, with the Monster highlighted.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">9:05. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/wenkYQoIC4Y?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/wenkYQoIC4Y?t=110" data-t="110"><span class="t">1:50</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/wenkYQoIC4Y?t=255" data-t="255"><span class="t">4:15</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/wenkYQoIC4Y?t=442" data-t="442"><span class="t">7:22</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>This is AX01, our first episode outside OpenAI’s work. Take a cube. There are 24 ways to rotate it so that it looks exactly as before: any of its six faces on top, in any of four orientations. Doing two rotations gives another one, and every rotation can be undone. That is a group. By the Jordan–Hölder theorem, every finite group breaks into simple pieces, the same ones however it is broken up, and these atoms are the finite simple groups. The classification of finite simple groups gives the complete list: cyclic groups of prime order, alternating groups on at least five symbols, sixteen infinite families of Lie type built over finite fields, and exactly 26 sporadic groups. The largest sporadic group, the Monster, has about 8 × 10^53 elements.</p>
+<p>Episode AX01 covers a release by the company Axiom Math, announced on October 26, 2026: a blog post, an interactive proof map, a public Lean repository, and a 35-page paper. The claim is the first complete computer-checked proof of the classification, following the first-generation proof. About 43.1 million lines of Lean came out of the project, built in 24 days by swarms of dozens of AI agents, which Axiom’s engineers and mathematicians directed, on top of earlier Lean work; the core contributors named are Dean Cureton, Vasily Ilin, Bhavik Mehta and Niels Voss. The final theorem uses a statement written by the TauCeti project: every finite simple group is isomorphic to one of the explicitly constructed groups on the list. A second theorem adds, for the project’s own copy of the list, that a group is on it exactly when it is finite and simple, and that every family on it is realized.</p>
+<p>The Monster is included. On October 10, a message in the project’s channel read: we proved Monster is simple. The agents also formalized its existence, through the Griess algebra, of dimension 196,884, which Robert Griess used to construct the Monster in 1980, and a theorem identifying any group of Monster type with the Monster. Axiom stresses that these are three distinct results: constructing a group, proving it simple, and recognizing it from its structure each need their own argument. The proof map adds that the simplicity proof depends on a large collection of computational certificates: expensive finite calculations, split off so that they can be checked separately.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>What is not claimed. The classification is a known theorem, so this is a computer check of a human proof, not a new classification. It is not the second-generation proof, which Axiom notes is still incomplete. The formal proof does not follow the published record everywhere: Axiom reports 34 noteworthy deviations, and the largest was resolved with a new theorem, which we come to next. And Lean checks the deductions, but people still have to check that the formal statement, and the groups on its list, say what the classification says. Axiom writes that humans inspect that statement and its definitions.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Announced; code public</dt>
+    <dd><a href="https://axiommath.ai/research/the-enormous-theorem-formalized/">Axiom’s blog post</a>, October 26, 2026; the <a href="https://github.com/AxiomMath/CFSG">repository</a>’s first commit is dated October 27 (UTC); <a href="https://hexagonmath.org/2610.00575?version=1">the UGT paper</a> on Hexagon, version 1, October 27</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Independent expert review</dt>
+    <dd>None in our sources. Axiom says group theorists including Richard Lyons and Ronald Solomon “were consulted”, and names Lyons, Dan Nakano and Solomon as external advisors; the repository’s metadata calls its review “self-assessed”</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Lean proof, by Axiom</dt>
+    <dd>The claim itself. Axiom’s README: sorry-free, axioms propext, Classical.choice and Quot.sound, no native_decide. Not built or run by us</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 27, 2026. Where it stands. The release was announced on October 26; the repository’s first public commit is dated the 27th, and the paper went up on the Hexagon preprint server that day, as version one. Expert review: Axiom says group theorists who did the original work, including Richard Lyons and Ronald Solomon, were consulted, and it names Lyons, Dan Nakano and Solomon as external advisors. The repository’s own metadata calls its review self-assessed. None of our sources reports an independent review, and nothing is peer reviewed. The Lean is the claim itself. Axiom’s README says it is sorry-free, uses only Lean’s three standard axioms and no native_decide, and that open changes to Lean’s build tool brought the build under 24 hours. We did not build or run it, and we read only 17 of its 229,000 Lean files.</p>
+<p>Six OpenAI preprints in our catalogue rely on the classification: five say so in their text, and the Quillen paper in episode 310 relies on it through the reductions it cites, as that episode notes. They are covered in episodes 018, 203, 206 and 310; the paper in episode 202 says it does not use the classification. In our search, OpenAI’s Lean files never mention it, and Axiom’s proof formalizes none of those papers. If it holds, the classification has a complete computer-checked proof, following the first-generation proof with its gaps repaired, once people confirm that the formal statement says what the classification says.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>History.</strong> Here is the history as Axiom tells it. In 1963, Feit and Thompson proved that every nonabelian finite simple group has even order, in 255 pages. In 1972, Gorenstein laid out a sixteen-step program, and in 1983 he announced the classification complete. That was premature. The quasithin case waited until Aschbacher and Stephen Smith published 1,221 pages in 2004, completing what is now called the first-generation proof: roughly 15,000 pages, in more than 500 articles, by about 100 mathematicians. A second-generation proof by Gorenstein, Lyons and Solomon, later joined by Inna Capdeboscq, reorganizes the argument; it is not finished. And in 2005, Aschbacher wrote that it is impossible to write out a very long and complicated argument without error.</li>
+  <li><strong>Agents and people.</strong> How the work went, in Axiom’s account. On October 1, the team opened a Slack channel. A proof map assembled from the published literature, together with earlier Lean work, divided the job into 108 milestones and about 380 smaller tasks. On October 2, the first swarm went live. Agents claimed milestones through GitHub issues; lead agents broke up hard arguments and reviewed the statements; others wrote Lean. Human mathematicians investigated the obstructions, and engineers kept the system running. Some milestones hid enormous prerequisites that agents had assumed rather than proved, so tens of thousands of lines were deleted. The recurring question was whether an added assumption only deferred work, or changed the theorem. On October 13 only one milestone closed, and the team replanned around smaller, precisely stated theorems.</li>
+  <li><strong>What the machines found.</strong> What the machines found. Most reports were innocuous: typos, errors in tables, dropped hypotheses, steps that are clear from context. Axiom counts 34 noteworthy deviations from the published record. The errata list itself is not public yet: the errata page says Axiom is working with group theorists to compile it, and will publish it there. The blog post describes examples. In Aschbacher and Smith’s quasithin volumes, a lemma asserted that two quantities were equal. The agents found a counterexample in the group SL₂(5), where one quantity was one but the equality required two. The lemma was corrected to an inequality, and later arguments that had relied on the equality were repaired.</li>
+  <li><strong>The Unbalanced Group Theorem.</strong> The most substantial case is the Unbalanced Group Theorem. It says, under the classification’s inductive hypotheses, that if an involution’s centralizer has a nontrivial normal subgroup of odd order, the simple group is of Lie type in odd characteristic, or an alternating group of degree 4a + 3. In A₇, the involution swapping one with two and three with four fixes five, six and seven, and the three-cycle on those points is normal in its centralizer; our computer checks this. Axiom followed John Walter’s 1986 memoir and found counterexamples to a closure assertion in it. Start with PSL₂(49), which is in Walter’s family. Its field involution fixes a copy of PGL₂(7), whose simple part, PSL₂(7), is excluded from the family, because seven is a Mersenne prime. Our count finds 336 fixed elements, the order of PGL₂(7). The paper stresses that this leaves a gap in one step; it is not a counterexample to the theorem. The replacement argument, built on Solomon’s 1976 theory of maximal 2-components, includes a new result that Axiom says was proved by AxiomProver: Theorem 2.3, preservation of simple tops. It is combined with work of Gilman and Solomon, Foote, and Harris. Afterwards Axiom found a shorter route that avoids Theorem 2.3, in Remark 9.5.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the cube’s rotation group, generated from two quarter turns, has 24 elements.</li>
+  <li>Ours: in A₇ the involution (12)(34) has a centralizer of order 24, and ⟨(567)⟩ (order 3) is normal in it (the UGT paper’s Example 1.5).</li>
+  <li>Ours: the field involution fixes 336, 720 and 4,896 elements of PSL₂(49), PSL₂(81) and PSL₂(289): the orders of PGL₂(7), PGL₂(9) and PGL₂(17), as the paper’s Proposition 1.7 says.</li>
+  <li>Ours: the Monster’s order as defined in the repository’s Lean file multiplies out to about 8.08 × 10⁵³.</li>
+  <li>From Axiom’s proof-map metadata: 43,068,312 lines of Lean, 2,053,885 declarations behind the final theorem; the public repository has 229,089 Lean files. We read 16 of them.</li>
+  <li>Ours: none of the 163,097 Lean files in OpenAI’s math repository mentions the classification.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://axiommath.ai/research/the-enormous-theorem-formalized/">Axiom: “Formalizing the Enormous Theorem”</a> (October 26, 2026).</li>
+  <li><a href="https://cfsg.axiommath.ai/">The proof map</a> and <a href="https://cfsg.axiommath.ai/errata">the errata page</a> (the list was not yet published on October 27).</li>
+  <li><a href="https://hexagonmath.org/2610.00575?version=1">“The Unbalanced Group Theorem”</a>, Axiom Math, Hexagon 2610.00575, version 1, 35 pages.</li>
+  <li><a href="https://github.com/AxiomMath/CFSG">The Lean repository</a> (Apache-2.0; not run by us).</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Axiom Math.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is AX01, our first episode outside OpenAI’s work. Take a cube. There are 24 ways to rotate it so that it looks exactly as before: any of its six faces on top, in any of four orientations. Doing two rotations gives another one, and every rotation can be undone. That is a group. By the Jordan–Hölder theorem, every finite group breaks into simple pieces, the same ones however it is broken up, and these atoms are the finite simple groups. The classification of finite simple groups gives the complete list: cyclic groups of prime order, alternating groups on at least five symbols, sixteen infinite families of Lie type built over finite fields, and exactly 26 sporadic groups. The largest sporadic group, the Monster, has about 8 × 10^53 elements. Here is the history as Axiom tells it. In 1963, Feit and Thompson proved that every nonabelian finite simple group has even order, in 255 pages. In 1972, Gorenstein laid out a sixteen-step program, and in 1983 he announced the classification complete. That was premature. The quasithin case waited until Aschbacher and Stephen Smith published 1,221 pages in 2004, completing what is now called the first-generation proof: roughly 15,000 pages, in more than 500 articles, by about 100 mathematicians. A second-generation proof by Gorenstein, Lyons and Solomon, later joined by Inna Capdeboscq, reorganizes the argument; it is not finished. And in 2005, Aschbacher wrote that it is impossible to write out a very long and complicated argument without error.</p>
+<h3><span class="t num">1:50</span>The claim</h3>
+<p>Episode AX01 covers a release by the company Axiom Math, announced on October 26, 2026: a blog post, an interactive proof map, a public Lean repository, and a 35-page paper. The claim is the first complete computer-checked proof of the classification, following the first-generation proof. About 43.1 million lines of Lean came out of the project, built in 24 days by swarms of dozens of AI agents, which Axiom’s engineers and mathematicians directed, on top of earlier Lean work; the core contributors named are Dean Cureton, Vasily Ilin, Bhavik Mehta and Niels Voss. The final theorem uses a statement written by the TauCeti project: every finite simple group is isomorphic to one of the explicitly constructed groups on the list. A second theorem adds, for the project’s own copy of the list, that a group is on it exactly when it is finite and simple, and that every family on it is realized. The Monster is included. On October 10, a message in the project’s channel read: we proved Monster is simple. The agents also formalized its existence, through the Griess algebra, of dimension 196,884, which Robert Griess used to construct the Monster in 1980, and a theorem identifying any group of Monster type with the Monster. Axiom stresses that these are three distinct results: constructing a group, proving it simple, and recognizing it from its structure each need their own argument. The proof map adds that the simplicity proof depends on a large collection of computational certificates: expensive finite calculations, split off so that they can be checked separately. What is not claimed. The classification is a known theorem, so this is a computer check of a human proof, not a new classification. It is not the second-generation proof, which Axiom notes is still incomplete. The formal proof does not follow the published record everywhere: Axiom reports 34 noteworthy deviations, and the largest was resolved with a new theorem, which we come to next. And Lean checks the deductions, but people still have to check that the formal statement, and the groups on its list, say what the classification says. Axiom writes that humans inspect that statement and its definitions.</p>
+<h3><span class="t num">4:15</span>How the proof goes</h3>
+<p>How the work went, in Axiom’s account. On October 1, the team opened a Slack channel. A proof map assembled from the published literature, together with earlier Lean work, divided the job into 108 milestones and about 380 smaller tasks. On October 2, the first swarm went live. Agents claimed milestones through GitHub issues; lead agents broke up hard arguments and reviewed the statements; others wrote Lean. Human mathematicians investigated the obstructions, and engineers kept the system running. Some milestones hid enormous prerequisites that agents had assumed rather than proved, so tens of thousands of lines were deleted. The recurring question was whether an added assumption only deferred work, or changed the theorem. On October 13 only one milestone closed, and the team replanned around smaller, precisely stated theorems. What the machines found. Most reports were innocuous: typos, errors in tables, dropped hypotheses, steps that are clear from context. Axiom counts 34 noteworthy deviations from the published record. The errata list itself is not public yet: the errata page says Axiom is working with group theorists to compile it, and will publish it there. The blog post describes examples. In Aschbacher and Smith’s quasithin volumes, a lemma asserted that two quantities were equal. The agents found a counterexample in the group SL₂(5), where one quantity was one but the equality required two. The lemma was corrected to an inequality, and later arguments that had relied on the equality were repaired. The most substantial case is the Unbalanced Group Theorem. It says, under the classification’s inductive hypotheses, that if an involution’s centralizer has a nontrivial normal subgroup of odd order, the simple group is of Lie type in odd characteristic, or an alternating group of degree 4a + 3. In A₇, the involution swapping one with two and three with four fixes five, six and seven, and the three-cycle on those points is normal in its centralizer; our computer checks this. Axiom followed John Walter’s 1986 memoir and found counterexamples to a closure assertion in it. Start with PSL₂(49), which is in Walter’s family. Its field involution fixes a copy of PGL₂(7), whose simple part, PSL₂(7), is excluded from the family, because seven is a Mersenne prime. Our count finds 336 fixed elements, the order of PGL₂(7). The paper stresses that this leaves a gap in one step; it is not a counterexample to the theorem. The replacement argument, built on Solomon’s 1976 theory of maximal 2-components, includes a new result that Axiom says was proved by AxiomProver: Theorem 2.3, preservation of simple tops. It is combined with work of Gilman and Solomon, Foote, and Harris. Afterwards Axiom found a shorter route that avoids Theorem 2.3, in Remark 9.5.</p>
+<h3><span class="t num">7:22</span>Where it stands</h3>
+<p>Where it stands. The release was announced on October 26; the repository’s first public commit is dated the 27th, and the paper went up on the Hexagon preprint server that day, as version one. Expert review: Axiom says group theorists who did the original work, including Richard Lyons and Ronald Solomon, were consulted, and it names Lyons, Dan Nakano and Solomon as external advisors. The repository’s own metadata calls its review self-assessed. None of our sources reports an independent review, and nothing is peer reviewed. The Lean is the claim itself. Axiom’s README says it is sorry-free, uses only Lean’s three standard axioms and no native_decide, and that open changes to Lean’s build tool brought the build under 24 hours. We did not build or run it, and we read only 17 of its 229,000 Lean files. Six OpenAI preprints in our catalogue rely on the classification: five say so in their text, and the Quillen paper in episode 310 relies on it through the reductions it cites, as that episode notes. They are covered in episodes 018, 203, 206 and 310; the paper in episode 202 says it does not use the classification. In our search, OpenAI’s Lean files never mention it, and Axiom’s proof formalizes none of those papers. If it holds, the classification has a complete computer-checked proof, following the first-generation proof with its gaps repaired, once people confirm that the formal statement says what the classification says.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=AX01%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

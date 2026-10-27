@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Connections | AI Proved What?</title>
-<meta name="description" content="A map of OpenAI&#x27;s 373 math results, their 721 papers, and the 11,096 earlier works and 9,185 authors they cite.">
+<meta name="description" content="A map of OpenAI&#x27;s 373 math results, their 721 papers, and the 11,096 earlier works and 9,186 authors they cite.">
 <link rel="canonical" href="https://aiprovedwhat.com/connections/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AI Proved What?">
 <meta property="og:title" content="Connections | AI Proved What?">
-<meta property="og:description" content="A map of OpenAI&#x27;s 373 math results, their 721 papers, and the 11,096 earlier works and 9,185 authors they cite.">
+<meta property="og:description" content="A map of OpenAI&#x27;s 373 math results, their 721 papers, and the 11,096 earlier works and 9,186 authors they cite.">
 <meta property="og:url" content="https://aiprovedwhat.com/connections/">
 <meta property="og:image" content="https://aiprovedwhat.com/assets/share-card.jpg">
 <meta property="og:image:width" content="1200">
@@ -48,13 +48,13 @@
 </header>
 <main id="main">
 <h1>Connections</h1>
-<p class="lede">How the 373 results, OpenAI’s 721 papers and the earlier work they cite fit together. The papers list 17,796 references to about 11,096 distinct works by about 9,185 authors.</p>
+<p class="lede">How the 373 results, OpenAI’s 721 papers and the earlier work they cite fit together. The papers list 17,796 references to about 11,096 distinct works by about 9,186 authors.</p>
 <div class="cx-key" aria-label="How to read the map">
   <span><i class="cx-dot cx-r"></i>Results, outer ring, coloured by subject</span>
   <span><i class="cx-dot cx-p"></i>OpenAI papers</span>
   <span><i class="cx-dot cx-w"></i>Cited works: cited once near the rim, shared ones toward the centre</span>
   <span><i class="cx-dot cx-a"></i>Authors of cited works</span>
-  <span><i class="cx-dot cx-s"></i>Specials, outside the catalogue (own arc, dashed)</span>
+  <span><i class="cx-dot cx-s"></i>Beyond OpenAI’s catalogue: one-off OpenAI announcements and other labs (own arc, dashed, tinted by lab)</span>
   <span><i class="cx-line"></i>Our own reading: one result implies or shares a problem with another</span>
 </div>
 <div class="cx-bar">
@@ -65,14 +65,14 @@
     <label><input type="checkbox" id="cx-l2" checked> Cited works</label>
     <label><input type="checkbox" id="cx-l3" checked> Authors</label>
     <label><input type="checkbox" id="cx-le" checked> Lines</label>
-    <label><input type="checkbox" id="cx-sp" checked> Specials</label>
+    <label><input type="checkbox" id="cx-sp" checked> Beyond OpenAI</label>
   </fieldset>
   <label class="cx-show" for="cx-show">Show
     <select id="cx-show">
       <option value="">Everything</option>
       <option value="lean">Results with a Lean proof</option>
       <option value="review">Under expert review</option>
-      <option value="special">Specials</option>
+      <option value="special">Beyond OpenAI’s catalogue</option>
       <option value="revised">Revised results</option>
       <option value="coming">Episode coming</option>
     </select>
@@ -94,15 +94,15 @@
 <h2 id="cx-facts-h">In numbers</h2>
 <ul class="cx-nums">
   <li><b class="num">17,796</b> references in OpenAI’s papers (median 21 per paper)</li>
-  <li><b class="num">11,096</b> distinct cited works, 3,109 of them cited by two or more papers</li>
-  <li><b class="num">9,185</b> distinct cited authors</li>
-  <li><b class="num">337</b> OpenAI papers cite another paper in the release (513 links)</li>
-  <li><b class="num">4</b> links between results that are not citations, our own reading (implies, same equations)</li>
+  <li><b class="num">11,096</b> distinct cited works, 3,124 of them cited by two or more papers</li>
+  <li><b class="num">9,186</b> distinct cited authors</li>
+  <li><b class="num">337</b> OpenAI papers cite another paper in the release (514 links)</li>
+  <li><b class="num">9</b> links between results that are not citations, our own reading (implies, same equations)</li>
 </ul>
-<h3 class="cx-top-h">Specials, counted separately</h3>
+<h3 class="cx-top-h">Beyond OpenAI’s catalogue, counted separately</h3>
 <ul class="cx-nums">
-  <li><b class="num">1</b> special on the map with 2 papers, not counted above</li>
-  <li><b class="num">51</b> references in their papers, read from the PDFs’ reference lists: 46 distinct works, 3 of them also cited in the catalogue</li>
+  <li><b class="num">8</b> results beyond OpenAI’s catalogue on the map (OpenAI, outside its catalogue 1, Anthropic 1, Axiom Math 1, PSI 5), with 8 papers, not counted above</li>
+  <li><b class="num">208</b> references in their papers, read from the PDFs’ reference lists: 198 distinct works, 21 of them also cited in the catalogue</li>
 </ul>
 <ol id="cx-top" class="cx-top"></ol>
 <p class="meta">How this was made: references are read from each paper’s own TeX source (its .bib file or inline bibliography) in OpenAI’s repository, as of October 26, 2026. Works and authors are matched with <a href="https://openalex.org/">OpenAlex</a> by DOI or arXiv ID where it knows them (about four in five works), which merges a work cited in different ways and a person listed under different spellings; the rest are matched by title, and by surname and first initial. Treat the counts as close, not exact. <a href="../data/connections.json">The data</a> is free to reuse under CC BY 4.0.</p>
@@ -116,6 +116,7 @@
     <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
   </ul>
   <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
   <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
 </footer>
 </div>

@@ -22,7 +22,10 @@
   var showS = document.getElementById("cx-sp"), showSel = document.getElementById("cx-show");
 
   var C = { paper: "#ece9e1", soft: "#cdcac2", dim: "#9aa0aa", blue: "#58c4dd", gold: "#ffd84d", red: "#fc6255", green: "#83c167", bg: "#0a0d12" };
-  var meta = {}, rels = [], spSubj = null, special, numOf, match = null;
+  var meta = {}, rels = [], spSubj = null, special, numOf, match = null, labs = {};
+  // Tints for results outside OpenAI's catalogue, by lab.
+  var LAB = { openai: "#fc6255", axiom: "#c58af9", psi: "#f4a261", anthropic: "#e8a0bf" };
+  function labOf(i) { var m = meta[numOf[i]]; return m && m.lab ? m.lab : "openai"; }
   var KIND = ["Result", "Paper", "Cited work", "Author"];
   var N, kind, X, Y, nodes, subjects, subjColor = [], links, adj, wMaxCite, visible;
   var view = { s: 1, ox: 0, oy: 0 }, W = 0, H = 0, dpr = 1, fitS = 1;
@@ -49,7 +52,7 @@
 
   function init(data) {
     nodes = data.nodes; subjects = data.subjects; links = data.links;
-    meta = data.meta || {}; rels = data.relations || [];
+    meta = data.meta || {}; rels = data.relations || []; labs = data.labs || {};
     spSubj = data.specials_subject === undefined ? null : data.specials_subject;
     N = nodes.length;
     kind = new Uint8Array(N); X = new Float32Array(N); Y = new Float32Array(N);
@@ -83,7 +86,7 @@
     for (i = 0; i < N; i++) if (kind[i] === 0) { if (special[i]) nSp++; else counts[nodes[i][4]]++; }
     document.querySelector(".cx-stage").insertAdjacentHTML("afterend", '<ul class="cx-subjects" aria-label="Subject colours">' +
       subjects.map(function (s, k) { return '<li><span class="cx-sw" style="background:' + subjColor[k] + '"></span>' + esc(s) + " (" + counts[k] + ")</li>"; }).join("") +
-      (nSp ? '<li><span class="cx-sw" style="background:transparent;border:2px dashed ' + C.red + '"></span>Specials, outside the catalogue (' + nSp + ")</li>" : "") + "</ul>");
+      "</ul>" + (nSp ? '<ul class="cx-labs" aria-label="Beyond OpenAI’s catalogue, by lab">' + spLegend() + "</ul>" : ""));
     document.querySelector(".cx-stage").insertAdjacentHTML("beforeend", '<button type="button" class="cx-reset">Reset view</button>');
     document.querySelector(".cx-reset").addEventListener("click", function () { clearSel(); tip.hidden = true; reset(); });
     if (coarse) document.querySelector(".cx-hint").textContent = "Pinch to zoom, drag to move, tap a dot to see its connections. Double-tap to reset.";
@@ -92,7 +95,7 @@
     resize();
     window.addEventListener("resize", resize);
     function fromHash() {
-      if (!/^#(\d{3}|S\d\d)$/.test(location.hash)) return;
+      if (!/^#(\d{3}|[A-Z]{1,3}\d\d)$/.test(location.hash)) return;
       var want = location.hash.slice(1) + ".";
       for (var j = 0; j < N; j++) if (kind[j] === 0 && nodes[j][3].indexOf(want) === 0) { select(j, true); break; }
     }
@@ -100,6 +103,14 @@
     window.addEventListener("hashchange", fromHash);
   }
 
+  function spLegend() {
+    var n = {};
+    for (var i = 0; i < N; i++) if (kind[i] === 0 && special[i]) { var l = labOf(i); n[l] = (n[l] || 0) + 1; }
+    return Object.keys(n).map(function (l) {
+      var name = l === "openai" ? "OpenAI, outside its catalogue" : (labs[l] || l);
+      return '<li><span class="cx-sw" style="background:' + (LAB[l] || C.red) + ';outline:1px dashed ' + C.red + ';outline-offset:2px"></span>Beyond OpenAI: ' + esc(name) + " (" + n[l] + ")</li>";
+    }).join("");
+  }
   function applyFilters() {
     minCite = +minIn.value; minOut.textContent = minCite;
     for (var i = 0; i < N; i++) {
@@ -158,7 +169,7 @@
   }
   function colour(i) {
     var k = kind[i];
-    return k === 0 ? subjColor[nodes[i][4]] : k === 1 ? C.paper : k === 2 ? C.blue : C.red;
+    return k === 0 ? (special[i] ? (LAB[labOf(i)] || C.red) : subjColor[nodes[i][4]]) : k === 1 ? C.paper : k === 2 ? C.blue : C.red;
   }
 
   function paint() {
@@ -279,7 +290,7 @@
       if (+s === spSubj) {
         if (!showS.checked) return;
         x = Math.cos(ang) * 1.13 * view.s + view.ox; y = Math.sin(ang) * 1.13 * view.s + view.oy;
-        ctx.fillText("Specials (" + m.n + ")", x, y); return;
+        ctx.fillText("Beyond OpenAI (" + m.n + ")", x, y); return;
       }
       ctx.fillText(subjects[s] + " (" + m.n + ")", x, y);
     });
@@ -290,7 +301,7 @@
       if (!(zoomed > 2.4 || (hl && hl.has(i)))) continue;
       var ang2 = Math.atan2(Y[i], X[i]), x2 = sx(i) + Math.cos(ang2) * 12, y2 = sy(i) + Math.sin(ang2) * 12;
       if (x2 < 0 || y2 < 0 || x2 > W || y2 > H) continue;
-      ctx.fillText(nodes[i][3].slice(0, 3), x2, y2);
+      ctx.fillText(numOf[i], x2, y2);
     }
   }
 
@@ -378,7 +389,7 @@
   function showTip(i, x, y, tapped) {
     var t = nodes[i][3];
     if (t.length > 150) t = t.slice(0, 147) + "…";
-    var extra = kind[i] === 2 ? (nodes[i][4] ? " (" + nodes[i][4] + ")" : "") + " · cited by " + nodes[i][6] + " paper" + (nodes[i][6] > 1 ? "s" : "") : kind[i] === 0 ? " · " + (special[i] ? "Special, outside the catalogue" : subjects[nodes[i][4]]) : "";
+    var extra = kind[i] === 2 ? (nodes[i][4] ? " (" + nodes[i][4] + ")" : "") + " · cited by " + nodes[i][6] + " paper" + (nodes[i][6] > 1 ? "s" : "") : kind[i] === 0 ? " · " + (special[i] ? "Beyond OpenAI: " + ((meta[numOf[i]] || {}).lab_label || "") : subjects[nodes[i][4]]) : "";
     tip.textContent = KIND[kind[i]] + ": " + t + extra + (tapped ? " · details below the map" : "");
     tip.hidden = false;
     var left = Math.min(x + 14, W - tip.offsetWidth - 8), top = y + 14;
@@ -456,10 +467,13 @@
   function relHtml(i) {
     var out = rels.filter(function (r) { return r.a === i || r.b === i; }).map(function (r) {
       var other = r.a === i ? r.b : r.a;
-      var verb = r.a === i ? r.type : (r.type === "implies" ? "implied by" : r.type === "implies part of" ? "partly implied by" : r.type);
-      return "<li>" + esc(verb.charAt(0).toUpperCase() + verb.slice(1)) + " " + go(other, nodes[other][3]) + '<br><span class="meta">' + esc(r.note) + "</span></li>";
+      var REV = { "implies": "implied by", "implies part of": "partly implied by", "relies on": "relied on by", "cites": "cited by" };
+      var verb = r.a === i ? r.type : (REV[r.type] || r.type);
+      var cites = (r.cites || []).map(function (u, k) { return '<a class="cx-ext" href="' + esc(u) + '" rel="noopener">source line' + (r.cites.length > 1 ? " " + (k + 1) : "") + "</a>"; }).join(" ");
+      return "<li>" + esc(verb.charAt(0).toUpperCase() + verb.slice(1)) + " " + go(other, nodes[other][3]) +
+        (r.label ? '<br><span class="meta">' + esc(r.label) + "</span>" : "") + '<br><span class="meta">' + esc(r.note) + "</span>" + (cites ? " " + cites : "") + "</li>";
     });
-    return out.length ? '<div class="cx-rel"><h3>Linked results</h3><p class="meta">Our own reading, not OpenAI’s data and not a citation.</p><ul>' + out.join("") + "</ul></div>" : "";
+    return out.length ? '<div class="cx-rel"><h3>Linked results</h3><p class="meta">Our own reading of the papers, not the labs’ data.</p><ul>' + out.join("") + "</ul></div>" : "";
   }
   function recordHtml(i, m) {
     var h = '<p class="meta">';
@@ -480,6 +494,7 @@
       }
       h += "</div>";
     });
+    (m.links || []).forEach(function (l) { h += '<p class="meta"><a class="cx-ext" href="' + esc(l.url) + '" rel="noopener">' + esc(l.label) + "</a> (the lab’s own page; not imported here)</p>"; });
     if (m.versions) h += '<p class="meta">Earlier versions of the episode: ' + m.versions.map(function (v) { return '<a href="' + esc(v[1]) + '">' + esc(v[0]) + "</a>"; }).join(", ") + " (Unlisted on YouTube)</p>";
     return h + relHtml(i);
   }
@@ -497,11 +512,11 @@
       var near = Array.from(share.entries()).filter(function (a) { return a[1] >= 2; }).sort(function (a, b) { return b[1] - a[1]; }).slice(0, 8);
       var m = meta[numOf[i]] || {};
       h += '<h2><a href="../' + esc(m.page || "episodes/" + n[5] + "/") + '">' + esc(n[3]) + "</a></h2>";
-      h += '<p class="meta"><span class="cx-sw" style="background:' + subjColor[n[4]] + '"></span>' + esc(special[i] ? "Special, announced outside OpenAI’s catalogue" : subjects[n[4]]) + " · " + c.P.length + " paper" + (c.P.length > 1 ? "s" : "") + (special[i] && !works.length ? "" : " · cites " + fmt(works.length) + " works by about " + fmt(authors.size) + " authors") + "</p>";
+      h += '<p class="meta"><span class="cx-sw" style="background:' + colour(i) + '"></span>' + esc(special[i] ? "Beyond OpenAI’s catalogue: " + (m.lab_label || "") + (m.draft ? " (draft, preview only)" : "") : subjects[n[4]]) + (c.P.length ? " · " + c.P.length + " paper" + (c.P.length > 1 ? "s" : "") : "") + (special[i] && !works.length ? "" : " · cites " + fmt(works.length) + " works by about " + fmt(authors.size) + " authors") + "</p>";
       h += recordHtml(i, m);
-      h += "<h3>Papers</h3><ul>" + c.P.map(function (p) { return "<li>" + go(p, nodes[p][3]) + "</li>"; }).join("") + "</ul>";
+      if (c.P.length) h += "<h3>Papers</h3><ul>" + c.P.map(function (p) { return "<li>" + go(p, nodes[p][3]) + "</li>"; }).join("") + "</ul>";
       if (special[i] && !works.length) {
-        h += '<p class="meta">Its papers are public only as PDFs, so their reference lists are not on the map yet.</p>';
+        h += '<p class="meta">' + esc(m.refs_note || "Its papers are public only as PDFs, so their reference lists are not on the map yet.") + "</p>";
         h += '<p class="meta"><button type="button" class="cx-go" data-clear="1">Clear selection</button></p>';
         panel.innerHTML = h; return;
       }

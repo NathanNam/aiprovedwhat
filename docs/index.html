@@ -51,11 +51,11 @@
 <section class="news" aria-labelledby="new">
 <h2 id="new">What’s new</h2>
 <ul>
+  <li><time datetime="2026-10-27">Oct 27</time> <b>Beyond OpenAI’s catalogue:</b> <a href="episodes/ax01-classification-finite-simple-groups-lean/">AX01</a> (Axiom Math, CFSG in Lean), <a href="episodes/psi01-05-open-quantum-problems/#psi01">PSI01–05</a> (PSI, Open Quantum Problems) and <a href="episodes/an01-fermats-last-theorem-lean/">AN01</a> (Anthropic, Fermat’s Last Theorem in Lean). AI Proved What? is made with Claude, Anthropic’s AI, and holds Anthropic’s results to the same standards. <span class="tag sp">Beyond OpenAI</span></li>
   <li><time datetime="2026-10-26">Oct 26</time> <b>New episode for <a href="episodes/079-local-smoothing-every-dimension/">079</a>:</b> local smoothing in every dimension. The three-dimensional episode stays listed under Versions. <span class="tag rev">Episode out</span></li>
   <li><time datetime="2026-10-26">Oct 26</time> <b>New result <a href="episodes/378-exponential-time-hypothesis-false/">378</a>:</b> OpenAI claims the Exponential Time Hypothesis is false, with a Lean proof. It says a working group of computer scientists led by Russell Impagliazzo, Ramamohan Paturi and Ryan Williams will examine the proof. <span class="tag rev">Episode out</span></li>
   <li><time datetime="2026-10-26">Oct 26</time> <b>Result <a href="episodes/079-local-smoothing-every-dimension/">079</a> extended</b> to every dimension, with a Lean proof. By our reading it now implies the claims of <a href="episodes/074-kakeya-three-four-dimensions/">074</a> and <a href="episodes/078-three-dimensional-bochner-riesz-conjecture/">078</a> and the sphere and paraboloid cases of <a href="episodes/077-fourier-restriction-positively-curved-surfaces/">077</a>. Its new episode is out. <span class="tag rev">Revised</span></li>
   <li><time datetime="2026-10-26">Oct 26</time> <b>Lean proof added</b> for <a href="episodes/032-rational-hodge-conjecture-cm-abelian/">032</a>, the rational Hodge conjecture for CM abelian varieties. Its scope notes leave out the consequences for the Tate and Hodge standard conjectures. <span class="tag lean">Lean</span></li>
-  <li><time datetime="2026-10-26">Oct 26</time> <b>Code restored</b> for <a href="episodes/266-three-mubs-dimension-six/">266</a>: OpenAI restored the C++ source and saved numerical records for the computation that excludes a fourth mutually unbiased basis in dimension six, with a Python checker.</li>
 </ul>
 <p class="more"><a href="updates/">All updates</a> · <a href="updates/feed.xml">RSS</a></p>
 </section>
@@ -80,7 +80,7 @@
   </div>
   <div class="ledger-row is-review">
     <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
-    <dd>An independent working group of computer scientists led by Russell Impagliazzo, Ramamohan Paturi and Ryan Williams, as announced by OpenAI (<a href="https://github.com/openai/math/blob/main/history.md">source</a>)</dd>
+    <dd>An independent working group of computer scientists led by Russell Impagliazzo, Ramamohan Paturi and Ryan Williams (<a href="https://github.com/openai/math/blob/main/history.md">OpenAI’s history.md, October 26, 2026</a>)</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -220,17 +220,59 @@
 </section>
 
 <section aria-labelledby="specials">
-<h2 id="specials">Specials: announced outside the math release</h2>
-<p class="lede">Claims OpenAI announced separately from its math catalogue. Same record, kept apart from the counts above.</p>
+<h2 id="specials">Beyond OpenAI’s catalogue</h2>
+<p class="lede">One-off announcements by OpenAI, and results from other labs. Same record, kept apart from the counts above.</p>
 <div class="special-cards">
   <a class="special-card" href="episodes/s01-navier-stokes-euler-blowup/">
-    <span class="k">Special S01 · Announced September 8, 2026</span>
+    <span class="k">Special S01 · OpenAI, outside its catalogue · Announced September 8, 2026</span>
     <span class="special-title">Navier–Stokes and Euler: blowup in finite time</span>
     <span class="special-text">Two papers and Lean proofs claim Navier–Stokes breakdown alternatives (C) and (D), with a smooth force, and blowup for the unforced Euler equations.</span>
     <span class="mini" role="img" aria-label="Posted as a preprint; no named review group; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box"></span><span class="box on"></span></span>
   </a>
+  <a class="special-card" href="episodes/an01-fermats-last-theorem-lean/">
+    <span class="k">AN01 · Anthropic · Announced September 4, 2026</span>
+    <span class="special-title">Fermat’s Last Theorem, formalized in Lean</span>
+    <span class="special-text">Anthropic’s Lean proof of Fermat’s Last Theorem, written by Claude agents in 11 days: about 13 million lines, following Darmon, Diamond and Taylor.</span>
+    <span class="mini" role="img" aria-label="Posted as a preprint; under review by a named group; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box review"></span><span class="box"></span><span class="box on"></span></span>
+  </a>
+  <a class="special-card" href="episodes/ax01-classification-finite-simple-groups-lean/">
+    <span class="k">AX01 · Axiom Math · Announced October 26, 2026</span>
+    <span class="special-title">The classification of finite simple groups, in Lean</span>
+    <span class="special-text">Axiom Math’s Lean formalization of the classification of finite simple groups, about 43.1 million lines in 24 days, with a new written proof of the Unbalanced Group Theorem.</span>
+    <span class="mini" role="img" aria-label="Posted as a preprint; no named review group; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box"></span><span class="box on"></span></span>
+  </a>
+  <a class="special-card" href="episodes/psi01-05-open-quantum-problems/#psi01">
+    <span class="k">PSI01 · PSI · Announced October 23, 2026</span>
+    <span class="special-title">Three copies of the Werner state: the sharp curve in dimensions three and four and a bound in every dimension</span>
+    <span class="special-text">Open Quantum Problems 2: Undistillability implies PPT? By Ian MacCormack, Ning Bao.</span>
+    <span class="mini" role="img" aria-label="Posted as a preprint; no named review group; not yet peer reviewed; OpenAI published a Lean proof of part of the claim"><span class="box on"></span><span class="box"></span><span class="box"></span><span class="box part"></span></span>
+  </a>
+  <a class="special-card" href="episodes/psi01-05-open-quantum-problems/#psi02">
+    <span class="k">PSI02 · PSI · Announced October 23, 2026</span>
+    <span class="special-title">The vacuum Bell correlation of the massive free scalar field attains the classical bound for bounded regions beyond a finite separation</span>
+    <span class="special-text">Open Quantum Problems 12: Bell inequalities for long range vacuum correlations By David Turturean.</span>
+    <span class="mini" role="img" aria-label="Posted as a preprint; no named review group; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box"></span><span class="box on"></span></span>
+  </a>
+  <a class="special-card" href="episodes/psi01-05-open-quantum-problems/#psi03">
+    <span class="k">PSI03 · PSI · Announced October 23, 2026</span>
+    <span class="special-title">The optimal CGLMP measurements on maximally entangled states</span>
+    <span class="special-text">Open Quantum Problems 27: The power of CGLMP inequalities By David Turturean, Ning Bao.</span>
+    <span class="mini" role="img" aria-label="Posted as a preprint; no named review group; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box"></span><span class="box on"></span></span>
+  </a>
+  <a class="special-card" href="episodes/psi01-05-open-quantum-problems/#psi04">
+    <span class="k">PSI04 · PSI · Announced October 23, 2026</span>
+    <span class="special-title">Entanglement Breaking after 2(d−1) PPT Maps</span>
+    <span class="special-text">Open Quantum Problems 38: The PPT squared conjecture By David Turturean, Ning Bao.</span>
+    <span class="mini" role="img" aria-label="Posted as a preprint; no named review group; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box"></span><span class="box on"></span></span>
+  </a>
+  <a class="special-card" href="episodes/psi01-05-open-quantum-problems/#psi05">
+    <span class="k">PSI05 · PSI · Announced October 23, 2026</span>
+    <span class="special-title">An extensibly causal quantum process with no purification</span>
+    <span class="special-text">Open Quantum Problems 43: Are all extensibly causal processes purifiable? By David Turturean, Ning Bao.</span>
+    <span class="mini" role="img" aria-label="Posted as a preprint; no named review group; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box"></span><span class="box"></span><span class="box on"></span></span>
+  </a>
 </div>
-<p class="more"><a href="specials/">All specials</a></p>
+<p class="more"><a href="specials/">All of them</a></p>
 </section>
 
 <section class="measure" aria-labelledby="how">
@@ -267,6 +309,7 @@
     <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
   </ul>
   <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
   <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
 </footer>
 </div>
