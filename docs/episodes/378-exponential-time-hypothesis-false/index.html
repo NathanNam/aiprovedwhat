@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Exponential Time Hypothesis is false? A subexponential 3-SAT claim | AI Proved What?</title>
+<meta name="description" content="An OpenAI preprint claims a deterministic algorithm that counts k-SAT solutions in subexponential time and polynomial space, which would refute the Exponential Time Hypothesis. A working group will examine it, OpenAI says; a weaker bound is in Lean. An animated explainer, the claim in plain words, and how far it has been checked.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/378-exponential-time-hypothesis-false/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="The Exponential Time Hypothesis is false?">
+<meta property="og:description" content="An OpenAI preprint claims a deterministic algorithm that counts k-SAT solutions in subexponential time and polynomial space, which would refute the Exponential Time Hypothesis. A working group will examine it, OpenAI says; a weaker bound is in Lean. An animated explainer, the claim in plain words, and how far it has been checked.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/378-exponential-time-hypothesis-false/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/378-exponential-time-hypothesis-false/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Specials</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Episode 378, October 2026</p>
+<h1>The Exponential Time Hypothesis is false?</h1>
+<p class="subtitle">An AI preprint claims to count k-SAT solutions in subexponential time</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 378 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>. <a href="../../connections/#378">See its connections</a> to other results and the work it cites.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="R7hVK8wAmGc" data-title="Episode 378: The Exponential Time Hypothesis is false?">
+  <a href="https://youtu.be/R7hVK8wAmGc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 378: The Exponential Time Hypothesis is false? The exponent divided by n falling below a fixed rate.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:43. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/R7hVK8wAmGc?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/R7hVK8wAmGc?t=63" data-t="63"><span class="t">1:03</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/R7hVK8wAmGc?t=168" data-t="168"><span class="t">2:48</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/R7hVK8wAmGc?t=290" data-t="290"><span class="t">4:50</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>A 3-SAT formula is a list of rules about on-off switches. Each rule, called a clause, names up to three switches and asks that at least one of them be set a certain way. Our small example has four switches and four clauses, and of the 16 ways to set the switches, nine satisfy every clause, as our computer checks. Each extra switch doubles the number of settings, so trying them all takes about 2^n steps for n switches.</p>
+<p>Cleverer algorithms, as the paper recounts, are still exponential. Schöning’s random walk from 1999 takes about (4/3)^n, and the best bounds it cites for 3-SAT are close to 1.3^n. The Exponential Time Hypothesis, which the paper cites to a 2001 paper by Impagliazzo and Paturi, says that 3-SAT needs 2^(δn) time in the worst case, for some fixed positive δ. It and its strong version became standard assumptions, behind lower bounds for problems from finding cliques to comparing strings.</p>
+<p>Result 378, added on October 26, is one OpenAI paper, 67 pages, dated October 17 and revised October 25, 2026, titled The Exponential Time Hypothesis is False. It claims that for every fixed clause width k, two or more, a deterministic algorithm counts exactly how many settings satisfy a k-SAT formula with n variables and m clauses. It uses polynomial space, and time polynomial in n plus m, times 2 to the power C·n log log n / √(log n), where the constant depends on k.</p>
+<p>Divided by n, that exponent shrinks to zero, slowly, so it eventually drops below every fixed δ. The paper says this refutes the hypothesis, and also its strong, gap, nondeterministic and counting versions. From its sharper bound for sparse formulas, it then derives a circuit lower bound: a language in E^NP that needs more than a constant times n√(log n) gates, for infinitely many input lengths.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Not claimed: that P equals NP, since the time bound is still far above polynomial; or that every NP problem gets faster, because, as the paper notes, bounds like this do not carry over through general polynomial-time reductions. The constants are not explicit, and the paper makes no claim about practical speed. By our computation, the explicit parameters in its overview only start to work once n has more than three billion digits; smaller inputs fall back to exhaustive search. And the circuit bound is not a superpolynomial lower bound for NP.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 67 pages, dated October 17, revised October 25, 2026; added to the repository October 26</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>Per OpenAI: an independent working group led by Russell Impagliazzo, Ramamohan Paturi and Ryan Williams “will examine and explain the proof”</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dd>A weaker bound, exponent n(log log n)²/√log n (<a href="https://github.com/openai/math/blob/main/lean/docs/378.md">scope</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SubexponentialSAT.lean">comparator</a>); not run by us</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 26, 2026. On expert review, OpenAI’s <a href="https://github.com/openai/math/blob/main/history.md">release notes</a> say: “An independent working group of computer scientists led by Russell Impagliazzo, Ramamohan Paturi, and Ryan Williams will examine and explain the proof. At the group’s request, we are making the materials public immediately so others can examine them as well.” The paper is not peer reviewed, and we found no public expert assessment yet. OpenAI’s Lean proof (not run by us) covers the paper’s weaker bound with log log n squared in the exponent, still subexponential time in polynomial space; the sharper bounds of its Theorem 1.1, the fixed-density case and the circuit lower bound are not formalized. By our count the Lean development takes 3,091 files and 547,460 lines, excluding Mathlib, much of it a verified machine implementation. OSVerify has not reviewed it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>An exact formula, and groups that multiply.</strong> The proof starts from an exact formula. Each clause becomes a polynomial that is one when the clause is satisfied and zero when it is not, and the count is the sum, over all settings, of the product of these polynomials. If the variables split into groups that no clause crosses, the count is just the product of the group counts: our 12-variable example needs 48 settings instead of 4,096. Real formulas do not split like that. So the paper’s overview first reduces to formulas in which every variable appears at most three times, using sparsification, then Tovey’s copying trick; our computer confirms that the copying steps keep the count.</li>
+  <li><strong>Bend, split, and come back.</strong> Then it bends the formula. Inside every clause, each variable is replaced by a linear form whose coefficients are polynomials in a new parameter T. At T equals zero nothing changes, so the bent sum at zero is still the count. At the points one up to Q, each clause reads only its assigned group plus a few shared integer measurements, and fixing those measurements splits the sum into a product of group sums again. The algorithm computes enough Taylor coefficients at each point and interpolates back to zero, as in our small check.</li>
+  <li><strong>Low degree from a binomial window.</strong> This only pays off if the forms have low degree, and the new construction provides that: a matrix built from commuting swap permutations and a polynomial that matches plus or minus one on a short window of a binomial distribution. The few directions outside the window become the shared measurements; our computer verifies the construction at toy size. Balancing groups, measurements and Taylor data makes all three costs subexponential. The main text then replaces clauses by short parity tests built from expander codes and uses polynomials of Beigel and Tarui, which gives a slightly weaker bound. For the sharper stated bound, an appendix swaps the core step for a different method and finishes with tensor contraction.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: our 4-variable, 4-clause formula has 9 satisfying settings of 16, by brute force and by the sum of products of clause polynomials.</li>
+  <li>Ours: a 12-variable formula made of 3 groups that never mix has 648 = 9·9·8 solutions, found from 48 local settings instead of 4,096.</li>
+  <li>Ours: OR gates and Tovey cycles keep the count in 4 random trials; a degree-30 polynomial is recovered from 4 Taylor coefficients at each of 8 points.</li>
+  <li>Ours: the paper’s matrix M₀ = V₀ f(W₀) built at toy size (1,024 coordinates) fixes 918 basis directions; the other 106 are measured, and rank(I − M₀) = 106.</li>
+  <li>Ours: the explicit parameters in the paper’s overview pass their own checks only once n has more than 3.28 billion digits; the chart of the exponent divided by n sets the unknown constant to 1 and shows its shape only.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf">The Exponential Time Hypothesis is False (PDF)</a>, 67 pages.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 378.</li>
+  <li><a href="https://github.com/openai/math/blob/main/history.md">OpenAI’s release notes</a> (October 26, 2026).</li>
+</ul>
+</section>
+
+<!-- papers-list:start -->
+<section aria-labelledby="papers-in-result">
+<h2 id="papers-in-result">The paper</h2>
+<p class="papers-intro">OpenAI groups related papers into one result; this one has a single paper.</p>
+<ul class="sources papers">
+  <li><a href="https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf">The Exponential Time Hypothesis is False</a></li>
+</ul>
+</section>
+<!-- papers-list:end -->
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A 3-SAT formula is a list of rules about on-off switches. Each rule, called a clause, names up to three switches and asks that at least one of them be set a certain way. Our small example has four switches and four clauses, and of the 16 ways to set the switches, nine satisfy every clause, as our computer checks. Each extra switch doubles the number of settings, so trying them all takes about 2^n steps for n switches. Cleverer algorithms, as the paper recounts, are still exponential. Schöning’s random walk from 1999 takes about (4/3)^n, and the best bounds it cites for 3-SAT are close to 1.3^n. The Exponential Time Hypothesis, which the paper cites to a 2001 paper by Impagliazzo and Paturi, says that 3-SAT needs 2^(δn) time in the worst case, for some fixed positive δ. It and its strong version became standard assumptions, behind lower bounds for problems from finding cliques to comparing strings.</p>
+<h3><span class="t num">1:03</span>The claim</h3>
+<p>Result 378, added on October 26, is one OpenAI paper, 67 pages, dated October 17 and revised October 25, 2026, titled The Exponential Time Hypothesis is False. It claims that for every fixed clause width k, two or more, a deterministic algorithm counts exactly how many settings satisfy a k-SAT formula with n variables and m clauses. It uses polynomial space, and time polynomial in n plus m, times 2 to the power C·n log log n / √(log n), where the constant depends on k. Divided by n, that exponent shrinks to zero, slowly, so it eventually drops below every fixed δ. The paper says this refutes the hypothesis, and also its strong, gap, nondeterministic and counting versions. From its sharper bound for sparse formulas, it then derives a circuit lower bound: a language in E^NP that needs more than a constant times n√(log n) gates, for infinitely many input lengths. Not claimed: that P equals NP, since the time bound is still far above polynomial; or that every NP problem gets faster, because, as the paper notes, bounds like this do not carry over through general polynomial-time reductions. The constants are not explicit, and the paper makes no claim about practical speed. By our computation, the explicit parameters in its overview only start to work once n has more than three billion digits; smaller inputs fall back to exhaustive search. And the circuit bound is not a superpolynomial lower bound for NP.</p>
+<h3><span class="t num">2:48</span>How the proof goes</h3>
+<p>The proof starts from an exact formula. Each clause becomes a polynomial that is one when the clause is satisfied and zero when it is not, and the count is the sum, over all settings, of the product of these polynomials. If the variables split into groups that no clause crosses, the count is just the product of the group counts: our 12-variable example needs 48 settings instead of 4,096. Real formulas do not split like that. So the paper’s overview first reduces to formulas in which every variable appears at most three times, using sparsification, then Tovey’s copying trick; our computer confirms that the copying steps keep the count. Then it bends the formula. Inside every clause, each variable is replaced by a linear form whose coefficients are polynomials in a new parameter T. At T equals zero nothing changes, so the bent sum at zero is still the count. At the points one up to Q, each clause reads only its assigned group plus a few shared integer measurements, and fixing those measurements splits the sum into a product of group sums again. The algorithm computes enough Taylor coefficients at each point and interpolates back to zero, as in our small check. This only pays off if the forms have low degree, and the new construction provides that: a matrix built from commuting swap permutations and a polynomial that matches plus or minus one on a short window of a binomial distribution. The few directions outside the window become the shared measurements; our computer verifies the construction at toy size. Balancing groups, measurements and Taylor data makes all three costs subexponential. The main text then replaces clauses by short parity tests built from expander codes and uses polynomials of Beigel and Tarui, which gives a slightly weaker bound. For the sharper stated bound, an appendix swaps the core step for a different method and finishes with tensor contraction.</p>
+<h3><span class="t num">4:50</span>Where it stands</h3>
+<p>The paper is a preprint, not peer reviewed. On expert review, OpenAI’s release notes say that an independent working group of computer scientists, led by Russell Impagliazzo, Ramamohan Paturi and Ryan Williams, will examine and explain the proof, and that at the group’s request the materials were made public immediately, so others can examine them as well. OpenAI also published a Lean proof, not run by us, of a slightly weaker bound, with (log log n)² in the exponent; that is still subexponential time, in polynomial space. If it holds, the Exponential Time Hypothesis is false, and the lower bounds that rest on it or on its strong version lose that basis, though some also follow from weaker hypotheses that may still hold.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20378%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

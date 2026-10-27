@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navier–Stokes blowup? OpenAI’s claimed Clay (C) and (D), with a force, and Euler blowup | AI Proved What?</title>
+<meta name="description" content="Two OpenAI preprints claim finite-time blowup for the three-dimensional Navier–Stokes equations driven by a smooth force (Clay’s breakdown statements (C) and (D)) and for the unforced Euler equations from smooth, compactly supported data. Lean published by OpenAI, not run by us; not peer reviewed. An animated explainer, the claim in plain words, and what it does not claim.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/s01-navier-stokes-euler-blowup/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Navier–Stokes blowup?">
+<meta property="og:description" content="Two OpenAI preprints claim finite-time blowup for the three-dimensional Navier–Stokes equations driven by a smooth force (Clay’s breakdown statements (C) and (D)) and for the unforced Euler equations from smooth, compactly supported data. Lean published by OpenAI, not run by us; not peer reviewed. An animated explainer, the claim in plain words, and what it does not claim.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/s01-navier-stokes-euler-blowup/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/s01-navier-stokes-euler-blowup/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Specials</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Special S01 (outside OpenAI’s math catalogue), October 2026</p>
+<h1>Navier–Stokes blowup?</h1>
+<p class="subtitle">Two OpenAI preprints claim Clay’s breakdown statements (C) and (D), with a force, and unforced Euler blowup</p>
+
+<div class="player" data-youtube="TzNSkDU60qA" data-title="Special S01: Navier–Stokes blowup?">
+  <a href="https://youtu.be/TzNSkDU60qA">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Special S01: Navier–Stokes blowup? A collapsing vortex with pulse rings and a speed curve that shoots up.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:42. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/TzNSkDU60qA?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/TzNSkDU60qA?t=97" data-t="97"><span class="t">1:37</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/TzNSkDU60qA?t=206" data-t="206"><span class="t">3:26</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/TzNSkDU60qA?t=340" data-t="340"><span class="t">5:40</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>This is a Special, outside OpenAI’s math catalogue. The Clay Institute’s official problem statement for the Navier-Stokes equations, written by Charles Fefferman, asks for a proof of one of four statements. Two say that smooth solutions last forever: with no external force, every smooth, divergence-free, rapidly decaying starting velocity in all of space, statement A, or every smooth periodic one, statement B, has a smooth solution for all time, with bounded energy in space. The other two say that smoothness can break down. Statement C, in all of space, and statement D, on the periodic torus, ask for smooth data, and a smooth force that dies off, for which no smooth solution exists, and in space, none with bounded energy.</p>
+<p>Special S01 covers two OpenAI preprints, 166 and 57 pages, posted on September 8, 2026, with a Lean repository. The Navier-Stokes paper claims: for every positive viscosity there is a smooth force, supported in a bounded region of space and time, such that fluid starting at rest stays smooth and inside a fixed region, with bounded kinetic energy, while its largest speed becomes unbounded as time approaches one. So no smooth solution with that force and bounded energy lasts forever: that is Clay’s statement C. Shrinking the construction into a cube and repeating it gives statement D on the torus.</p>
+<p>The Euler paper claims: some smooth, compactly supported, divergence-free starting velocity, with no force and no viscosity, has a smooth solution for only a finite time. As that time approaches, the velocity gradient becomes unbounded, and the time integral of the largest vorticity diverges, exactly as Beale, Kato and Majda require.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>What is not claimed: nothing in the direction of regularity. Statements A and B take the force to be zero, and these papers say nothing about them. The Navier-Stokes blowup is forced: the fluid starts at rest and is driven entirely by the force. The paper notes that any flow can be made a solution by defining the force as whatever is left over; the challenge is a blowing-up flow whose leftover force stays smooth. Euler is not one of Clay’s prize problems, Fefferman notes. And Clay’s prize rules require, among other things, publication in a qualifying outlet, at least two years since publication, and general acceptance in the global mathematics community.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, on its own site (not arXiv): 166 and 57 pages, September 8, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>No named reviewer in any source we read</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Lean published by OpenAI</dt>
+    <dd><a href="https://github.com/openai/NavierStokesAndEuler/tree/main/ComparatorChallenges">Comparator challenges</a> for Clay’s (C) and (D) and two Euler statements; not run by us</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 26, 2026. Both papers are preprints, posted by OpenAI on its own site. They are not peer reviewed, and we found no named expert reviewing them. OpenAI also published Lean. Its Comparator challenges state Clay’s C and D, adapted from Google DeepMind’s Formal Conjectures, plus two Euler blowup statements, one with compact support and a finite lifespan. The solutions, with everything they import, run to about 380,000 lines for Navier-Stokes and 210,000 for Euler, with no sorry. The Lean metadata calls its review self-assessed and credits an AI agent for the formalization. We did not build or run any of it.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>A collapsing vortex.</strong> The Navier-Stokes proof builds the flow first. Its heart is a slender spinning vortex that collapses onto one point at time one. Writing τ for the time left, the core’s radius shrinks like the square root of τ, its height a little more slowly, and its swirl and axial speeds grow like τ^(−1/2−h), for a fixed h below 1/100. Fluid spirals inward and is carried away along the axis. Even so, the energy in the core goes to zero. Our computer plots these power laws with a sample h.</li>
+  <li><strong>Pulses that carry the missing momentum.</strong> Joining this core to an outer flow leaves an imbalance in a ring around it, which would need a force that blows up. The fix is a sequence of oscillating pulses, complete rings around the axis, each seeded by an exponentially small force. The background shear amplifies each pulse, then viscosity damps it; our computer evaluates the paper’s envelope formula with sample constants. Two families of pulses, mixed with positive weights, carry averaged momentum fluxes that cancel the singular part of the imbalance. Repeated correction cycles each improve what is left, an outer swirl obeying the heat equation needs no force, and the force extends smoothly through time one. Rescaling space and velocity covers every viscosity.</li>
+  <li><strong>Euler: a cascade of wave packets.</strong> The Euler proof is a cascade. Start with a smooth flow, odd about the origin, with a shear there. Add a tiny, localized, high-frequency wave packet. The shear amplifies it; in the paper’s model equations, by at least the exponential of a constant over the square root of a small parameter, and our computer integrates those equations. When the packet’s gradient reaches its target, it is a new, far stronger shear in a new direction, and it becomes the parent of the next packet. The target times pile up before a finite time, and the changes to the starting velocity add up, in every Sobolev norm, to a smooth, compactly supported datum. If its solution lasted past that time, stability would make it follow every stage, whose gradients grow without bound. The paper notes that Córdoba and Martínez-Zoroa also used one layer to amplify a finer one, for forced Euler.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the paper’s stated power laws with h = 0.005: from τ = 1 to 10⁻⁶ the speed grows about 1,072 times while the core energy falls about 813 times.</li>
+  <li>Ours: the paper’s pulse-envelope formula with sample constants grows about 123 times to its midpoint, then decays about 308 times.</li>
+  <li>Ours: the Euler paper’s model amplification equations give growth 6.0, 21.9, 80.9, 1,108, 15,217 and 209,130 for 1/√β = 2, 3, 4, 6, 8, 10, above the paper’s cosh(τ/√2) bound.</li>
+  <li>Lean: the Navier–Stokes solution imports 609 files and 382,514 lines; the Euler solution 1,829 files and 210,326 lines (counted by us; not run by us).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf">Finite time blowup for Navier–Stokes (PDF)</a>, 166 pages.</li>
+  <li><a href="https://cdn.openai.com/pdf/315b36cd-ec98-4023-8342-93345194ece1/euler.pdf">Finite time blowup for the Euler equation (PDF)</a>, 57 pages.</li>
+  <li><a href="https://github.com/openai/NavierStokesAndEuler">The Lean repository</a> (Apache-2.0; not run by us).</li>
+  <li><a href="https://www.claymath.org/wp-content/uploads/2022/06/navierstokes.pdf">Clay’s official problem statement</a> (Fefferman).</li>
+</ul>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is a Special, outside OpenAI’s math catalogue. The Clay Institute’s official problem statement for the Navier-Stokes equations, written by Charles Fefferman, asks for a proof of one of four statements. Two say that smooth solutions last forever: with no external force, every smooth, divergence-free, rapidly decaying starting velocity in all of space, statement A, or every smooth periodic one, statement B, has a smooth solution for all time, with bounded energy in space. The other two say that smoothness can break down. Statement C, in all of space, and statement D, on the periodic torus, ask for smooth data, and a smooth force that dies off, for which no smooth solution exists, and in space, none with bounded energy. The papers recall what was known. In 1934 Leray built weak solutions that exist for all time; whether smooth data stay smooth was left open. Caffarelli, Kohn and Nirenberg showed that the singular set of a suitable weak solution is tiny. Tao proved blowup for an averaged version of the equation. For Euler’s equations, with no viscosity, the Beale–Kato–Majda criterion says a smooth solution continues while the time integral of the largest vorticity stays finite. Elgindi proved blowup for velocities that are only C^(1,α), not smooth, and Chen and Hou proved blowup from smooth data in a cylinder with a wall, combining analysis with rigorous numerics. Fefferman adds that Euler’s equations are open too, but not on the prize list.</p>
+<h3><span class="t num">1:37</span>The claim</h3>
+<p>Special S01 covers two OpenAI preprints, 166 and 57 pages, posted on September 8, 2026, with a Lean repository. The Navier-Stokes paper claims: for every positive viscosity there is a smooth force, supported in a bounded region of space and time, such that fluid starting at rest stays smooth and inside a fixed region, with bounded kinetic energy, while its largest speed becomes unbounded as time approaches one. So no smooth solution with that force and bounded energy lasts forever: that is Clay’s statement C. Shrinking the construction into a cube and repeating it gives statement D on the torus. The Euler paper claims: some smooth, compactly supported, divergence-free starting velocity, with no force and no viscosity, has a smooth solution for only a finite time. As that time approaches, the velocity gradient becomes unbounded, and the time integral of the largest vorticity diverges, exactly as Beale, Kato and Majda require. What is not claimed: nothing in the direction of regularity. Statements A and B take the force to be zero, and these papers say nothing about them. The Navier-Stokes blowup is forced: the fluid starts at rest and is driven entirely by the force. The paper notes that any flow can be made a solution by defining the force as whatever is left over; the challenge is a blowing-up flow whose leftover force stays smooth. Euler is not one of Clay’s prize problems, Fefferman notes. And Clay’s prize rules require, among other things, publication in a qualifying outlet, at least two years since publication, and general acceptance in the global mathematics community.</p>
+<h3><span class="t num">3:26</span>How the proof goes</h3>
+<p>The Navier-Stokes proof builds the flow first. Its heart is a slender spinning vortex that collapses onto one point at time one. Writing τ for the time left, the core’s radius shrinks like the square root of τ, its height a little more slowly, and its swirl and axial speeds grow like τ^(−1/2−h), for a fixed h below 1/100. Fluid spirals inward and is carried away along the axis. Even so, the energy in the core goes to zero. Our computer plots these power laws with a sample h. Joining this core to an outer flow leaves an imbalance in a ring around it, which would need a force that blows up. The fix is a sequence of oscillating pulses, complete rings around the axis, each seeded by an exponentially small force. The background shear amplifies each pulse, then viscosity damps it; our computer evaluates the paper’s envelope formula with sample constants. Two families of pulses, mixed with positive weights, carry averaged momentum fluxes that cancel the singular part of the imbalance. Repeated correction cycles each improve what is left, an outer swirl obeying the heat equation needs no force, and the force extends smoothly through time one. Rescaling space and velocity covers every viscosity. The Euler proof is a cascade. Start with a smooth flow, odd about the origin, with a shear there. Add a tiny, localized, high-frequency wave packet. The shear amplifies it; in the paper’s model equations, by at least the exponential of a constant over the square root of a small parameter, and our computer integrates those equations. When the packet’s gradient reaches its target, it is a new, far stronger shear in a new direction, and it becomes the parent of the next packet. The target times pile up before a finite time, and the changes to the starting velocity add up, in every Sobolev norm, to a smooth, compactly supported datum. If its solution lasted past that time, stability would make it follow every stage, whose gradients grow without bound. The paper notes that Córdoba and Martínez-Zoroa also used one layer to amplify a finer one, for forced Euler.</p>
+<h3><span class="t num">5:40</span>Where it stands</h3>
+<p>Both papers are preprints, posted by OpenAI on its own site. They are not peer reviewed, and we found no named expert reviewing them. OpenAI also published Lean. Its Comparator challenges state Clay’s C and D, adapted from Google DeepMind’s Formal Conjectures, plus two Euler blowup statements, one with compact support and a finite lifespan. The solutions, with everything they import, run to about 380,000 lines for Navier-Stokes and 210,000 for Euler, with no sorry. The Lean metadata calls its review self-assessed and credits an AI agent for the formalization. We did not build or run any of it. If they hold, a smooth force can drive a finite-energy Navier-Stokes flow from rest to blowup in finite time, establishing Clay’s statements C and D, and some smooth Euler flows blow up on their own; the unforced Navier-Stokes question stays open.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Special%20S01%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

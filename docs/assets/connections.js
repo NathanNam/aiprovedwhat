@@ -4,7 +4,10 @@
    Node rows: [kind, x, y, label, ...]; kind 0 result [.., subject, slug],
    1 paper [.., subject, url], 2 work [.., year, link, citedBy], 3 author.
    Links are flat triples [a, b, type]: 0 result-paper, 1 paper-work,
-   2 paper cites another OpenAI paper, 3 work-author. */
+   2 paper cites another OpenAI paper, 3 work-author, 4 our own relation
+   between results (data.relations). data.meta[num] carries each result's
+   page, episode, record, revisions and earlier versions; Specials sit on
+   their own arc (subject index data.specials_subject). */
 (function () {
   "use strict";
   var canvas = document.getElementById("cx-map");
@@ -16,8 +19,10 @@
   var hits = document.getElementById("cx-hits");
   var minIn = document.getElementById("cx-min"), minOut = document.getElementById("cx-min-out");
   var showW = document.getElementById("cx-l2"), showA = document.getElementById("cx-l3"), showE = document.getElementById("cx-le");
+  var showS = document.getElementById("cx-sp"), showSel = document.getElementById("cx-show");
 
-  var C = { paper: "#ece9e1", soft: "#cdcac2", dim: "#9aa0aa", blue: "#58c4dd", gold: "#ffd84d", red: "#fc6255", bg: "#0a0d12" };
+  var C = { paper: "#ece9e1", soft: "#cdcac2", dim: "#9aa0aa", blue: "#58c4dd", gold: "#ffd84d", red: "#fc6255", green: "#83c167", bg: "#0a0d12" };
+  var meta = {}, rels = [], spSubj = null, special, numOf, match = null;
   var KIND = ["Result", "Paper", "Cited work", "Author"];
   var N, kind, X, Y, nodes, subjects, subjColor = [], links, adj, wMaxCite, visible;
   var view = { s: 1, ox: 0, oy: 0 }, W = 0, H = 0, dpr = 1, fitS = 1;
@@ -26,6 +31,7 @@
   var narrow = false, coarse = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
 
   function subjectColour(i) {
+    if (i === spSubj) return C.red;
     var n = subjects.length, h = ((i * 7) % n) * 360 / n;
     return "hsl(" + h.toFixed(0) + ",72%,64%)";
   }
@@ -43,6 +49,8 @@
 
   function init(data) {
     nodes = data.nodes; subjects = data.subjects; links = data.links;
+    meta = data.meta || {}; rels = data.relations || [];
+    spSubj = data.specials_subject === undefined ? null : data.specials_subject;
     N = nodes.length;
     kind = new Uint8Array(N); X = new Float32Array(N); Y = new Float32Array(N);
     for (var i = 0; i < N; i++) {
@@ -51,8 +59,18 @@
       var b = grid.get(key); if (b) b.push(i); else grid.set(key, [i]);
     }
     for (var s = 0; s < subjects.length; s++) subjColor.push(subjectColour(s));
+    if (spSubj !== null) subjColor[spSubj] = C.red;
     adj = []; for (i = 0; i < N; i++) adj.push([]);
     for (var e = 0; e < links.length; e += 3) { adj[links[e]].push(e); adj[links[e + 1]].push(e); }
+    // Special results and their papers; each result's number, for the record filter.
+    special = new Uint8Array(N); numOf = new Array(N);
+    for (i = 0; i < N; i++) if (kind[i] === 0) {
+      numOf[i] = nodes[i][3].split(".")[0];
+      if (spSubj !== null && nodes[i][4] === spSubj) {
+        special[i] = 1;
+        adj[i].forEach(function (e) { if (links[e + 2] === 0) special[links[e] === i ? links[e + 1] : links[e]] = 1; });
+      }
+    }
     wMaxCite = new Uint16Array(N);
     for (i = 0; i < N; i++) if (kind[i] === 2) wMaxCite[i] = nodes[i][6];
     for (e = 0; e < links.length; e += 3) if (links[e + 2] === 3) {
@@ -61,9 +79,11 @@
     }
     visible = new Uint8Array(N);
     var counts = subjects.map(function () { return 0; });
-    for (i = 0; i < N; i++) if (kind[i] === 0) counts[nodes[i][4]]++;
+    var nSp = 0;
+    for (i = 0; i < N; i++) if (kind[i] === 0) { if (special[i]) nSp++; else counts[nodes[i][4]]++; }
     document.querySelector(".cx-stage").insertAdjacentHTML("afterend", '<ul class="cx-subjects" aria-label="Subject colours">' +
-      subjects.map(function (s, k) { return '<li><span class="cx-sw" style="background:' + subjColor[k] + '"></span>' + esc(s) + " (" + counts[k] + ")</li>"; }).join("") + "</ul>");
+      subjects.map(function (s, k) { return '<li><span class="cx-sw" style="background:' + subjColor[k] + '"></span>' + esc(s) + " (" + counts[k] + ")</li>"; }).join("") +
+      (nSp ? '<li><span class="cx-sw" style="background:transparent;border:2px dashed ' + C.red + '"></span>Specials, outside the catalogue (' + nSp + ")</li>" : "") + "</ul>");
     document.querySelector(".cx-stage").insertAdjacentHTML("beforeend", '<button type="button" class="cx-reset">Reset view</button>');
     document.querySelector(".cx-reset").addEventListener("click", function () { clearSel(); tip.hidden = true; reset(); });
     if (coarse) document.querySelector(".cx-hint").textContent = "Pinch to zoom, drag to move, tap a dot to see its connections. Double-tap to reset.";
@@ -72,7 +92,7 @@
     resize();
     window.addEventListener("resize", resize);
     function fromHash() {
-      if (!/^#\d{3}$/.test(location.hash)) return;
+      if (!/^#(\d{3}|S\d\d)$/.test(location.hash)) return;
       var want = location.hash.slice(1) + ".";
       for (var j = 0; j < N; j++) if (kind[j] === 0 && nodes[j][3].indexOf(want) === 0) { select(j, true); break; }
     }
@@ -84,11 +104,34 @@
     minCite = +minIn.value; minOut.textContent = minCite;
     for (var i = 0; i < N; i++) {
       var k = kind[i];
-      visible[i] = k < 2 ? 1 : k === 2 ? (showW.checked && nodes[i][6] >= minCite ? 1 : 0) : (showA.checked && wMaxCite[i] >= minCite ? 1 : 0);
+      visible[i] = k < 2 ? (special[i] && !showS.checked ? 0 : 1) : k === 2 ? (showW.checked && nodes[i][6] >= minCite ? 1 : 0) : (showA.checked && wMaxCite[i] >= minCite ? 1 : 0);
     }
+    recordFilter();
     draw();
   }
-  [minIn, showW, showA, showE].forEach(function (el) { el.addEventListener("input", applyFilters); el.addEventListener("change", applyFilters); });
+  // "Show": keep results matching a record filter bright, with their papers, the works
+  // those papers cite and the authors of those works; dim everything else.
+  function wants(i) {
+    var m = meta[numOf[i]] || {}, f = showSel.value;
+    if (f === "lean") return m.lean === "main" || m.lean === "partial";
+    if (f === "review") return !!m.review;
+    if (f === "special") return !!m.special;
+    if (f === "revised") return !!m.rev;
+    if (f === "coming") return !m.ep;
+    return true;
+  }
+  function recordFilter() {
+    if (!showSel.value) { match = null; return; }
+    match = new Uint8Array(N);
+    for (var i = 0; i < N; i++) if (kind[i] === 0 && wants(i)) {
+      match[i] = 1;
+      nb(i, 0).forEach(function (p) {
+        match[p[0]] = 1;
+        nb(p[0], 1).forEach(function (w) { match[w[0]] = 1; nb(w[0], 3).forEach(function (a) { match[a[0]] = 1; }); });
+      });
+    }
+  }
+  [minIn, showW, showA, showE, showS, showSel].forEach(function (el) { el.addEventListener("input", applyFilters); el.addEventListener("change", applyFilters); });
 
   function resize() {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -122,25 +165,32 @@
     frame = 0;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.fillStyle = C.bg; ctx.fillRect(0, 0, W, H);
-    var dimAll = hl !== null;
+    var dimAll = hl !== null, filt = match && !dimAll;
+    specialsArc();
     // lines
     if (showE.checked) {
-      var styles = ["rgba(236,233,225,0.45)", "rgba(88,196,221,0.05)", "rgba(255,216,77,0.55)", "rgba(252,98,85,0.045)"];
-      if (dimAll) styles = ["rgba(236,233,225,0.12)", "rgba(88,196,221,0.015)", "rgba(255,216,77,0.12)", "rgba(252,98,85,0.012)"];
-      for (var t = 0; t < 4; t++) {
-        ctx.beginPath();
-        for (var e = 0; e < links.length; e += 3) {
-          if (links[e + 2] !== t) continue;
-          var a = links[e], b = links[e + 1];
-          if (!visible[a] || !visible[b]) continue;
-          ctx.moveTo(sx(a), sy(a)); ctx.lineTo(sx(b), sy(b));
+      var styles = ["rgba(236,233,225,0.45)", "rgba(88,196,221,0.05)", "rgba(255,216,77,0.55)", "rgba(252,98,85,0.045)", "rgba(131,193,103,0.85)"];
+      if (dimAll || filt) styles = ["rgba(236,233,225,0.12)", "rgba(88,196,221,0.015)", "rgba(255,216,77,0.12)", "rgba(252,98,85,0.012)", "rgba(131,193,103,0.25)"];
+      for (var pass = 0; pass < (filt ? 2 : 1); pass++) {
+        if (pass === 1) styles = ["rgba(236,233,225,0.55)", "rgba(88,196,221,0.12)", "rgba(255,216,77,0.7)", "rgba(252,98,85,0.08)", "rgba(131,193,103,0.9)"];
+        for (var t = 0; t < 5; t++) {
+          ctx.beginPath();
+          for (var e = 0; e < links.length; e += 3) {
+            if (links[e + 2] !== t) continue;
+            var a = links[e], b = links[e + 1];
+            if (!visible[a] || !visible[b]) continue;
+            if (pass === 1 && !(match[a] && match[b])) continue;
+            ctx.moveTo(sx(a), sy(a)); ctx.lineTo(sx(b), sy(b));
+          }
+          ctx.setLineDash(t === 4 ? [5, 4] : []);
+          ctx.strokeStyle = styles[t]; ctx.lineWidth = t === 4 ? 1.6 : t === 2 ? 0.8 : 0.6; ctx.stroke();
         }
-        ctx.strokeStyle = styles[t]; ctx.lineWidth = t === 2 ? 0.8 : 0.6; ctx.stroke();
       }
+      ctx.setLineDash([]);
     }
     if (dimAll) {
-      var hs = ["rgba(236,233,225,0.8)", "rgba(88,196,221,0.45)", "rgba(255,216,77,0.9)", "rgba(252,98,85,0.35)"];
-      for (t = 0; t < 4; t++) {
+      var hs = ["rgba(236,233,225,0.8)", "rgba(88,196,221,0.45)", "rgba(255,216,77,0.9)", "rgba(252,98,85,0.35)", "rgba(131,193,103,1)"];
+      for (t = 0; t < 5; t++) {
         ctx.beginPath();
         hlEdges.forEach(function (e) {
           if (links[e + 2] !== t) return;
@@ -148,16 +198,20 @@
           if (!visible[a] || !visible[b]) return;
           ctx.moveTo(sx(a), sy(a)); ctx.lineTo(sx(b), sy(b));
         });
-        ctx.strokeStyle = hs[t]; ctx.lineWidth = t === 2 ? 1.4 : 0.9; ctx.stroke();
+        ctx.setLineDash(t === 4 ? [5, 4] : []);
+        ctx.strokeStyle = hs[t]; ctx.lineWidth = t === 4 ? 2 : t === 2 ? 1.4 : 0.9; ctx.stroke();
       }
+      ctx.setLineDash([]);
     }
     // dots, back to front: authors, works, papers, results
     var order = [3, 2, 1, 0];
     for (var o = 0; o < 4; o++) {
       var k = order[o];
-      ctx.globalAlpha = dimAll ? (k < 2 ? 0.35 : 0.18) : (k === 3 ? 0.55 : k === 2 ? 0.7 : 1);
+      var base = dimAll ? (k < 2 ? 0.35 : 0.18) : (k === 3 ? 0.55 : k === 2 ? 0.7 : 1);
+      ctx.globalAlpha = base;
       for (var i = 0; i < N; i++) {
         if (kind[i] !== k || !visible[i]) continue;
+        if (filt) ctx.globalAlpha = match[i] ? base : base * 0.12;
         var x = sx(i), y = sy(i);
         if (x < -10 || y < -10 || x > W + 10 || y > H + 10) continue;
         var r = radius(i);
@@ -183,6 +237,27 @@
     labels();
   }
 
+  // The Specials arc: a dashed red outline just outside the special results.
+  function specialsArc() {
+    if (spSubj === null || !showS.checked) return;
+    var a0 = null, a1 = null;
+    for (var i = 0; i < N; i++) if (kind[i] === 0 && special[i]) {
+      var a = Math.atan2(Y[i], X[i]);
+      if (a0 === null || a < a0) a0 = a;
+      if (a1 === null || a > a1) a1 = a;
+    }
+    if (a0 === null) return;
+    var pad = 0.06, r1 = 1.025 * view.s, r0 = 0.9 * view.s, b0 = a0 - pad, b1 = a1 + pad;
+    ctx.save();
+    ctx.setLineDash([4, 3]); ctx.strokeStyle = C.red; ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.arc(view.ox, view.oy, r1, b0, b1);
+    ctx.lineTo(view.ox + Math.cos(b1) * r0, view.oy + Math.sin(b1) * r0);
+    ctx.arc(view.ox, view.oy, r0, b1, b0, true);
+    ctx.closePath(); ctx.stroke();
+    ctx.restore();
+  }
+
   function labels() {
     ctx.font = "12px 'STIX Two Text', 'Times New Roman', serif";
     ctx.textBaseline = "middle";
@@ -201,6 +276,11 @@
       if (x < 0 || y < 0 || x > W || y > H) return;
       ctx.fillStyle = subjColor[s];
       ctx.textAlign = Math.cos(ang) > 0.25 ? "left" : Math.cos(ang) < -0.25 ? "right" : "center";
+      if (+s === spSubj) {
+        if (!showS.checked) return;
+        x = Math.cos(ang) * 1.13 * view.s + view.ox; y = Math.sin(ang) * 1.13 * view.s + view.oy;
+        ctx.fillText("Specials (" + m.n + ")", x, y); return;
+      }
       ctx.fillText(subjects[s] + " (" + m.n + ")", x, y);
     });
     // result numbers once zoomed in, or for the highlighted results
@@ -298,7 +378,7 @@
   function showTip(i, x, y, tapped) {
     var t = nodes[i][3];
     if (t.length > 150) t = t.slice(0, 147) + "…";
-    var extra = kind[i] === 2 ? (nodes[i][4] ? " (" + nodes[i][4] + ")" : "") + " · cited by " + nodes[i][6] + " paper" + (nodes[i][6] > 1 ? "s" : "") : kind[i] === 0 ? " · " + subjects[nodes[i][4]] : "";
+    var extra = kind[i] === 2 ? (nodes[i][4] ? " (" + nodes[i][4] + ")" : "") + " · cited by " + nodes[i][6] + " paper" + (nodes[i][6] > 1 ? "s" : "") : kind[i] === 0 ? " · " + (special[i] ? "Special, outside the catalogue" : subjects[nodes[i][4]]) : "";
     tip.textContent = KIND[kind[i]] + ": " + t + extra + (tapped ? " · details below the map" : "");
     tip.hidden = false;
     var left = Math.min(x + 14, W - tip.offsetWidth - 8), top = y + 14;
@@ -373,6 +453,36 @@
       authors.map(function (a) { return go(a[0], nodes[a[0]][3]) + (a[1] > 1 ? ' <span class="meta">(' + a[1] + ")</span>" : ""); }).join(", ") + "</p></details>";
     return h;
   }
+  function relHtml(i) {
+    var out = rels.filter(function (r) { return r.a === i || r.b === i; }).map(function (r) {
+      var other = r.a === i ? r.b : r.a;
+      var verb = r.a === i ? r.type : (r.type === "implies" ? "implied by" : r.type === "implies part of" ? "partly implied by" : r.type);
+      return "<li>" + esc(verb.charAt(0).toUpperCase() + verb.slice(1)) + " " + go(other, nodes[other][3]) + '<br><span class="meta">' + esc(r.note) + "</span></li>";
+    });
+    return out.length ? '<div class="cx-rel"><h3>Linked results</h3><p class="meta">Our own reading, not OpenAI’s data and not a citation.</p><ul>' + out.join("") + "</ul></div>" : "";
+  }
+  function recordHtml(i, m) {
+    var h = '<p class="meta">';
+    h += m.ep ? '<a href="../' + esc(m.page) + '">Episode</a>' : '<a href="../' + esc(m.page) + '">Episode coming</a>';
+    h += m.lean === "main" ? " · Lean proof of the main theorem" : m.lean === "partial" ? " · Lean proof of part of the claim" : "";
+    if (m.review) h += " · Under expert review: " + esc(m.review);
+    h += "</p>";
+    (m.rev || []).forEach(function (r) {
+      var txt = r.kind === "extended" ? "Revised " + r.date + (r.short ? ": " + r.short : "") + (r.new_episode ? ". A new episode is coming." : ".")
+        : r.kind === "implied-by" ? "Note " + r.date + ": by our reading, result " + r.by + "’s extension implies " + (r.partial ? "part of this claim." : "this claim.")
+        : "Record updated " + r.date + (r.short ? ": " + r.short : "") + ".";
+      h += '<div class="cx-note"><p>' + esc(txt) + "</p>";
+      if (r.kind === "extended" && m.diff) {
+        var d = m.diff;
+        h += '<p class="meta">References: ' + d.before + " works before, " + d.after + " now (" + d.added.length + " added, " + d.dropped.length + " dropped since the previous build).</p>";
+        if (d.added.length) h += '<details class="cx-list"><summary>Works added (' + d.added.length + ")</summary><ul>" + d.added.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul></details>";
+        if (d.dropped.length) h += '<details class="cx-list"><summary>Works dropped (' + d.dropped.length + ")</summary><ul>" + d.dropped.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul></details>";
+      }
+      h += "</div>";
+    });
+    if (m.versions) h += '<p class="meta">Earlier versions of the episode: ' + m.versions.map(function (v) { return '<a href="' + esc(v[1]) + '">' + esc(v[0]) + "</a>"; }).join(", ") + " (Unlisted on YouTube)</p>";
+    return h + relHtml(i);
+  }
   function describe(i, c) {
     var k = kind[i], n = nodes[i], h = "";
     if (k === 0) {
@@ -385,9 +495,16 @@
         rs.forEach(function (r) { share.set(r, (share.get(r) || 0) + 1); });
       });
       var near = Array.from(share.entries()).filter(function (a) { return a[1] >= 2; }).sort(function (a, b) { return b[1] - a[1]; }).slice(0, 8);
-      h += '<h2><a href="../episodes/' + esc(n[5]) + '/">' + esc(n[3]) + "</a></h2>";
-      h += '<p class="meta"><span class="cx-sw" style="background:' + subjColor[n[4]] + '"></span>' + esc(subjects[n[4]]) + " · " + c.P.length + " paper" + (c.P.length > 1 ? "s" : "") + " · cites " + fmt(works.length) + " works by about " + fmt(authors.size) + " authors</p>";
+      var m = meta[numOf[i]] || {};
+      h += '<h2><a href="../' + esc(m.page || "episodes/" + n[5] + "/") + '">' + esc(n[3]) + "</a></h2>";
+      h += '<p class="meta"><span class="cx-sw" style="background:' + subjColor[n[4]] + '"></span>' + esc(special[i] ? "Special, announced outside OpenAI’s catalogue" : subjects[n[4]]) + " · " + c.P.length + " paper" + (c.P.length > 1 ? "s" : "") + (special[i] && !works.length ? "" : " · cites " + fmt(works.length) + " works by about " + fmt(authors.size) + " authors") + "</p>";
+      h += recordHtml(i, m);
       h += "<h3>Papers</h3><ul>" + c.P.map(function (p) { return "<li>" + go(p, nodes[p][3]) + "</li>"; }).join("") + "</ul>";
+      if (special[i] && !works.length) {
+        h += '<p class="meta">Its papers are public only as PDFs, so their reference lists are not on the map yet.</p>';
+        h += '<p class="meta"><button type="button" class="cx-go" data-clear="1">Clear selection</button></p>';
+        panel.innerHTML = h; return;
+      }
       if (!near.length) h += '<h3>Results that cite the same works</h3><p class="meta">No other result shares two or more of its references.</p>';
       if (near.length) h += "<h3>Results that cite the most of the same works</h3><ul>" + near.map(function (r) { return "<li>" + go(r[0], nodes[r[0]][3]) + ' <span class="meta">' + r[1] + " shared</span></li>"; }).join("") + "</ul>";
       h += citedLists(works);

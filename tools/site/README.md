@@ -173,3 +173,31 @@ python3 tools/site/screenshots.py /home/claude/work/site-shots --sweep
 the search and filters on the results page, and with `--sweep` checks every
 page for sideways scrolling at 390px. It uses Playwright with the Chromium at
 `/opt/pw-browsers/chromium`.
+
+## The next version (tools/site_next, October 2026)
+
+Same builder plus What's new, /updates/ and its RSS feed, Specials, a four-step record
+(preprint, under expert review, peer reviewed, Lean), revised banners, "Versions of this episode"
+lists and Specials/relations on the Connections map.
+
+Where it writes: installed as `tools/site/` it builds `docs/` in place as before. As `tools/site_next/`
+it mirrors `docs/` into a preview folder (default: the session scratchpad `apw-next/`) and builds
+there; it refuses `docs/` unless given `--out docs --write-docs`. `--preview-episode NNN=VIDEOID`
+(preview only) shows a finished, unpublished episode by running its `production/page.py` in a sandbox.
+
+Hand-maintained inputs (all small JSON files here):
+
+| File | What it holds |
+| --- | --- |
+| `updates.json` | What's new, /updates/ and feed.xml entries, newest first, each with a source |
+| `specials.json` | Claims announced outside the catalogue (S01, S02), with record and sources |
+| `specials/<id>_refs.json` | A Special's reference lists, read from its PDFs by `specials_refs.py` |
+| `revisions.json` | Revised / implied-by / record-updated banners per result |
+| `status_overrides.json` | Record steps the catalogue lacks: named expert review (quoted), preprint text |
+| `relations.json` | Our own links between results (implies, same equations), drawn on the map |
+| `connections.baseline.json` | The connections.json a revised result's references are compared against |
+
+`static/` is copied over the output (`assets/connections.js`); `static/assets/next.css` is appended to
+`assets/site.css` between marker comments. `share_card.js [OUT] [SITE_DIR] [BASE_URL]` renders the card
+from `SITE_DIR/data/connections.json`. `check_links.py` also requires the addresses printed in YouTube
+descriptions (`REQUIRED`).
