@@ -12,6 +12,10 @@
 <meta property="og:description" content="An AI system claims the Kakeya maximal conjecture in three dimensions and full Hausdorff dimension for Kakeya sets in four. An animated explainer, the claims in plain words, and how far the proofs have been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/074-kakeya-three-four-dimensions/">
 <meta property="og:image" content="https://aiprovedwhat.com/episodes/074-kakeya-three-four-dimensions/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="074: Needles in every direction? Thirty-two thin blue triangles slid along a common base so that they overlap in an hourglass shape, three yellow segments riding inside them, and the formula Hausdorff dimension of K equals 4.">
+<meta name="twitter:image:alt" content="074: Needles in every direction? Thirty-two thin blue triangles slid along a common base so that they overlap in an hourglass shape, three yellow segments riding inside them, and the formula Hausdorff dimension of K equals 4.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
@@ -33,7 +37,7 @@
       <li><a href="../../episodes/">Results</a></li>
       <li><a href="../../subjects/">Subjects</a></li>
       <li><a href="../../updates/">Updates</a></li>
-      <li><a href="../../specials/">Specials</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
       <li><a href="../../connections/">Connections</a></li>
       <li><a href="../../about/">About</a></li>
       <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
@@ -100,9 +104,9 @@
     <dd>OpenAI, dated September 23 and 24, 2026, released October 6</dd>
   </div>
 <!-- review-step:start -->
-  <div class="ledger-row">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
-    <dd>Not yet</dd>
+    <dd>Reviewed by OSVerify, 1 of its 2 papers: 0 major / 2 minor; not a certification (<a href="https://osverify.github.io/cases/kakeya-4d.html">case study</a>)</dd>
   </div>
 <!-- review-step:end -->
   <div class="ledger-row">
@@ -114,7 +118,7 @@
     <dd>Through result 079, since October 26, 2026: OpenAI’s Lean formalization for 079 states both theorems as special cases of every-dimension statements (<a href="https://github.com/openai/math/blob/main/lean/docs/079.md">scope notes</a>; we have not run it). This result’s own proofs are not formalized</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 19, 2026. Neither preprint has been revised. Under this result, OpenAI published no Lean proof of either theorem; <a href="https://github.com/openai/math/blob/main/lean/OAI/Analysis/Kakeya/FixedScale.lean">one uncatalogued Lean file</a> states the three-dimensional maximal conjecture and proves groundwork at a fixed scale. <a href="https://osverify.github.io/cases/kakeya-4d.html">OSVerify reviewed the four-dimensional paper</a> and reported no major issues and two minor ones: a citation to Lemma 2.3 of the three-dimensional paper that should be Lemma 3.3, and a sentence that gives the Jacobian of the inverse of a coordinate map, although the displayed estimate is correct. Both are fixable, and OSVerify says they do not show the theorem is false. We have seen no expert review of the three-dimensional paper, which supplies one lemma the four-dimensional proof uses. That paper notes that <a href="https://github.com/openai/math/blob/main/preprints/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026.pdf">result 077</a> claims the same maximal estimate through Fourier restriction. Update (October 26, 2026): OpenAI extended <a href="/079/">result 079</a> with <a href="https://github.com/openai/math/blob/main/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf">a new preprint</a>, <i>Local smoothing for the Euclidean wave equation</i>, dated October 25, 2026, which states the Kakeya maximal conjecture in every dimension and that every Kakeya set has full Hausdorff dimension. By our reading this implies both claims here, by a different proof; the new paper cites this result’s two papers as separate results. This is one unreviewed claim implying another from the same release, not a confirmation, and this result’s own papers are unchanged. OpenAI’s <a href="https://github.com/openai/math/blob/main/lean/docs/079.md">Lean formalization for 079</a>, which we have not run, states both in every dimension n ≥ 2: the Kakeya maximal bound from L<sup>n</sup> of space to L<sup>n</sup> of the sphere with loss δ<sup>−ε</sup>, and Hausdorff dimension n for every set with a unit segment in each direction. The video’s lines that there is no Lean proof of either theorem, and that the maximal conjecture from four dimensions up and the set conjecture from five up remain open, are now out of date.</p>
+<p class="ledger-note"><!-- last-checked:start -->Last checked October 27, 2026.<!-- last-checked:end --> Neither preprint has been revised. Under this result, OpenAI published no Lean proof of either theorem; <a href="https://github.com/openai/math/blob/main/lean/OAI/Analysis/Kakeya/FixedScale.lean">one uncatalogued Lean file</a> states the three-dimensional maximal conjecture and proves groundwork at a fixed scale. <a href="https://osverify.github.io/cases/kakeya-4d.html">OSVerify reviewed the four-dimensional paper</a> and reported no major issues and two minor ones: a citation to Lemma 2.3 of the three-dimensional paper that should be Lemma 3.3, and a sentence that gives the Jacobian of the inverse of a coordinate map, although the displayed estimate is correct. Both are fixable, and OSVerify says they do not show the theorem is false. We have seen no expert review of the three-dimensional paper, which supplies one lemma the four-dimensional proof uses. That paper notes that <a href="https://github.com/openai/math/blob/main/preprints/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026/Elliptic-capacity-propagation-and-Fourier-restriction-to-the-sphere-September-24-2026.pdf">result 077</a> claims the same maximal estimate through Fourier restriction. Update (October 26, 2026): OpenAI extended <a href="/079/">result 079</a> with <a href="https://github.com/openai/math/blob/main/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf">a new preprint</a>, <i>Local smoothing for the Euclidean wave equation</i>, dated October 25, 2026, which states the Kakeya maximal conjecture in every dimension and that every Kakeya set has full Hausdorff dimension. By our reading this implies both claims here, by a different proof; the new paper cites this result’s two papers as separate results. This is one unreviewed claim implying another from the same release, not a confirmation, and this result’s own papers are unchanged. OpenAI’s <a href="https://github.com/openai/math/blob/main/lean/docs/079.md">Lean formalization for 079</a>, which we have not run, states both in every dimension n ≥ 2: the Kakeya maximal bound from L<sup>n</sup> of space to L<sup>n</sup> of the sphere with loss δ<sup>−ε</sup>, and Hausdorff dimension n for every set with a unit segment in each direction. The video’s lines that there is no Lean proof of either theorem, and that the maximal conjecture from four dimensions up and the set conjecture from five up remain open, are now out of date.</p>
 </section>
 
 <section aria-labelledby="proof">

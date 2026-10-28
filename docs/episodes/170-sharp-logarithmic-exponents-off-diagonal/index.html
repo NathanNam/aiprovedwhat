@@ -12,6 +12,10 @@
 <meta property="og:description" content="Two AI preprints claim that for every fixed s from 5 up, the Ramsey number r(s,t) is t^(s−1) over (log t)^(s−2+o(1)), the same power of log t as in the 1980 upper bound. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/170-sharp-logarithmic-exponents-off-diagonal/">
 <meta property="og:image" content="https://aiprovedwhat.com/episodes/170-sharp-logarithmic-exponents-off-diagonal/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="170: Ramsey numbers: log power settled? Five points with the sides of a pentagon in one colour and its diagonals in the other, so no triangle has a single colour (our drawing).">
+<meta name="twitter:image:alt" content="170: Ramsey numbers: log power settled? Five points with the sides of a pentagon in one colour and its diagonals in the other, so no triangle has a single colour (our drawing).">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
@@ -33,7 +37,7 @@
       <li><a href="../../episodes/">Results</a></li>
       <li><a href="../../subjects/">Subjects</a></li>
       <li><a href="../../updates/">Updates</a></li>
-      <li><a href="../../specials/">Specials</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
       <li><a href="../../connections/">Connections</a></li>
       <li><a href="../../about/">About</a></li>
       <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
@@ -110,7 +114,7 @@
     <dd>Both main theorems, formalized by OpenAI; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 19, 2026. Neither preprint has been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/170.md">Lean formalization</a> whose comparator statements, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/RamseyFive.lean">one for s = 5</a> and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SharpLogRamsey.lean">one for every s ≥ 6</a>, state both bounds and the limits as in the papers; the upper bound is formalized from scratch. By our count the proofs take 482 files and 73,678 lines (s = 5, <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/RamseyFive">the development</a>) and 408 files and 63,795 lines (s ≥ 6), excluding Mathlib; the s = 5 proof reuses 32 files from the s ≥ 6 library, with no unproved steps by our search; we have not rebuilt them. One construction lemma in the s ≥ 6 development is stated for every dimension from 3 up; read at face value, it would also bear on r(4,t), which no one claims, so we have flagged it for expert review rather than draw any conclusion. The key earlier construction comes from Bradač’s June 2026 arXiv preprint, and the papers re-prove what they use from it. The papers are not among those OSVerify reviewed, and we have seen no expert review.</p>
+<p class="ledger-note"><!-- last-checked:start -->Last checked October 27, 2026.<!-- last-checked:end --> Neither preprint has been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/170.md">Lean formalization</a> whose comparator statements, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/RamseyFive.lean">one for s = 5</a> and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SharpLogRamsey.lean">one for every s ≥ 6</a>, state both bounds and the limits as in the papers; the upper bound is formalized from scratch. By our count the proofs take 482 files and 73,678 lines (s = 5, <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/RamseyFive">the development</a>) and 408 files and 63,795 lines (s ≥ 6), excluding Mathlib; the s = 5 proof reuses 32 files from the s ≥ 6 library, with no unproved steps by our search; we have not rebuilt them. One construction lemma in the s ≥ 6 development is stated for every dimension from 3 up; read at face value, it would also bear on r(4,t), which no one claims, so we have flagged it for expert review rather than draw any conclusion. The key earlier construction comes from Bradač’s June 2026 arXiv preprint, and the papers re-prove what they use from it. The papers are not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
 <section aria-labelledby="proof">

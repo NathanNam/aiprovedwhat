@@ -7,9 +7,14 @@ one mathematical result that an AI system claims to have proved, and keeps a
 record of how far the proof has been checked. The videos live on the
 [AI Proved What? YouTube channel](https://www.youtube.com/@AIProvedWhat).
 
+It covers every result in OpenAI's math catalogue (373 results in 721 papers as of
+October 27, 2026; the site's `docs/data/results.json` has the current figures), and,
+under **Beyond OpenAI's catalogue**, one-off OpenAI announcements and results from
+other labs: Axiom Math, PSI and Anthropic.
+
 ## What it looks like
 
-![The home page: the latest claim as the headline ("An AI system claims that in every dimension three and up, infinity-harmonic functions have Hölder continuous gradients…"), then the episode video](docs/assets/readme/home.png)
+![The home page: the newest episode's claim as the headline, then its video (screenshot from an earlier day; the headline changes with each new episode)](docs/assets/readme/home.png)
 
 Each episode is a short, picture-first animation: one diagram per idea, built up
 step by step, with the exact claim on screen and every illustrative picture
@@ -21,8 +26,9 @@ labelled "(schematic)".
 |---|---|
 | ![Episode 377's page: title, one-line summary, links to the paper and its connections, and the video](docs/assets/readme/episode.png) | ![The connections page: results linked to each other and to the work they cite](docs/assets/readme/connections.png) |
 
-Every episode page also keeps a running record of where the claim stands:
-preprint, peer review, Lean verification, and when it was last checked.
+Every episode page also keeps a running four-step record of where the claim
+stands: posted as a preprint, under expert review (a named independent group such
+as OSVerify), peer reviewed, and checked in Lean, with the date it was last checked.
 Screenshots live in `docs/assets/readme/`.
 
 ## What's committed, and what stays local
@@ -94,4 +100,6 @@ Install the Python packages with `pip install -r tools/requirements.txt`.
 - Source papers and tools: see `NOTICE.md`.
 
 AI Proved What? is independent and not affiliated with OpenAI or any other
-organization whose work it covers.
+organization whose work it covers. It is made with Claude, Anthropic's AI;
+Anthropic's own results (AN) are held to the same standards as every other lab's,
+using only public sources.

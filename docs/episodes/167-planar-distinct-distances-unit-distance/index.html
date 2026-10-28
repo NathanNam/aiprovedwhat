@@ -12,6 +12,10 @@
 <meta property="og:description" content="Two AI preprints claim that almost every point of a planar set sees at least n^(1−ε) distances, resolving the weak pinned Erdős conjecture, and that n points have at most C n^β unit distances for some β below 4/3, with Lean formalizations. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/167-planar-distinct-distances-unit-distance/">
 <meta property="og:image" content="https://aiprovedwhat.com/episodes/167-planar-distinct-distances-unit-distance/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="167: Erdős distances, pinned down? A 7 by 7 grid of points with one circle around its centre point for each of the nine distances it sees (our drawing).">
+<meta name="twitter:image:alt" content="167: Erdős distances, pinned down? A 7 by 7 grid of points with one circle around its centre point for each of the nine distances it sees (our drawing).">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
@@ -33,7 +37,7 @@
       <li><a href="../../episodes/">Results</a></li>
       <li><a href="../../subjects/">Subjects</a></li>
       <li><a href="../../updates/">Updates</a></li>
-      <li><a href="../../specials/">Specials</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
       <li><a href="../../connections/">Connections</a></li>
       <li><a href="../../about/">About</a></li>
       <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
@@ -54,7 +58,7 @@
     <span class="play" aria-hidden="true"></span>
   </a>
 </div>
-<p class="player-caption">6:53. English captions available. The video loads from YouTube when you press play.</p>
+<p class="player-caption">6:52. English captions available. The video loads from YouTube when you press play.</p>
 <!-- versions:start -->
 <section class="versions" aria-labelledby="versions-h">
 <h2 id="versions-h">Versions of this episode</h2>
@@ -96,9 +100,9 @@
     <dd>OpenAI, 27 and 53 pages, both dated September 23, 2026</dd>
   </div>
 <!-- review-step:start -->
-  <div class="ledger-row">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
-    <dd>Not yet</dd>
+    <dd>Reviewed by OSVerify, 1 of its 2 papers: 1 major / 0 minor; not a certification (<a href="https://osverify.github.io/cases/planar-unit-distances.html">case study</a>)</dd>
   </div>
 <!-- review-step:end -->
   <div class="ledger-row">
@@ -110,7 +114,7 @@
     <dd>Both main theorems formalized by OpenAI; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 19, 2026. Neither preprint has been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/167.md">Lean formalization</a> with comparator statements matching both main theorems exactly (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PinnedDistances.lean">pinned</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PlanarUnitDistances.lean">unit distances</a>). By our count the proofs take 47 files and 15,657 lines and 40 files and 28,113 lines, excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/PinnedDistances">pinned development</a>, <a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/UnitDistances">unit-distance development</a>), with no unproved steps by our search; we have not rebuilt them. The almost-every-point corollary is proved in a further file, Pins.lean, that the catalog does not link. The Lean scope note says the unit-distance theorem “is not included” and then describes its formalization, and the repository’s formalization list omits the unit-distance paper. OSVerify, a Stanford review project, <a href="https://osverify.github.io/cases/planar-unit-distances.html">refereed the unit-distance paper</a> and reported one major issue. The last sentence of Section 8.2 (p.46) says that a point generic over the coefficient field stays generic after the other grid points are adjoined; the grid lemma gives independence only over the base field, and OSVerify gives a counterexample over a larger field. It does not say the main theorem is false: the later arguments use only the correct, weaker form, and it proposes restricting the claim to the base field. An expert comment on its page says the issue and the fix are both correct, calling the sentence “false as stated, but this error is fixable.” No response from the authors is posted. A Lean proof that checks would settle the theorem whatever the paper’s write-up, but we have not run it. We have seen no other expert review.</p>
+<p class="ledger-note"><!-- last-checked:start -->Last checked October 27, 2026.<!-- last-checked:end --> Neither preprint has been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/167.md">Lean formalization</a> with comparator statements matching both main theorems exactly (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PinnedDistances.lean">pinned</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/PlanarUnitDistances.lean">unit distances</a>). By our count the proofs take 47 files and 15,657 lines and 40 files and 28,113 lines, excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/PinnedDistances">pinned development</a>, <a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/UnitDistances">unit-distance development</a>), with no unproved steps by our search; we have not rebuilt them. The almost-every-point corollary is proved in a further file, Pins.lean, that the catalog does not link. The Lean scope note says the unit-distance theorem “is not included” and then describes its formalization, and the repository’s formalization list omits the unit-distance paper. OSVerify, a Stanford review project, <a href="https://osverify.github.io/cases/planar-unit-distances.html">refereed the unit-distance paper</a> and reported one major issue. The last sentence of Section 8.2 (p.46) says that a point generic over the coefficient field stays generic after the other grid points are adjoined; the grid lemma gives independence only over the base field, and OSVerify gives a counterexample over a larger field. It does not say the main theorem is false: the later arguments use only the correct, weaker form, and it proposes restricting the claim to the base field. An expert comment on its page says the issue and the fix are both correct, calling the sentence “false as stated, but this error is fixable.” No response from the authors is posted. A Lean proof that checks would settle the theorem whatever the paper’s write-up, but we have not run it. We have seen no other expert review.</p>
 </section>
 
 <section aria-labelledby="proof">

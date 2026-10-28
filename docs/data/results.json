@@ -4,15 +4,15 @@
  "license": "Titles, summaries and paper titles come from OpenAI's catalog and are used under the Apache License 2.0. Everything else is AI Proved What? data under CC BY 4.0.",
  "fields": {
   "papers": "The papers OpenAI groups into this result, in OpenAI's order. role is 'main' for the first-listed paper and 'companion' for the others.",
-  "lean.status": "main: OpenAI published a Lean proof of the main theorem; partial: OpenAI published a Lean proof of part of the claim; none: no Lean proof published. Classified from OpenAI's scope notes.",
+  "lean.status": "main: a published Lean proof of the main theorem; partial: of part of the claim; none: no Lean proof published. By OpenAI unless lean.by names another lab (265: Axiom); lean.via names the result whose Lean proof covers it (074, 077, 078 through 079). Classified from OpenAI's scope notes, or the other lab's repository.",
   "peer_review": "Whether the claim has been peer reviewed.",
   "kind": "'catalogue' for a result in OpenAI's math catalogue. Claims OpenAI announced outside the catalogue are listed separately under 'specials' with kind 'special' and are not counted in 'count'.",
-  "record": "The four-step record. stage: 'preprint' (the paper is public) or 'announced' (announced, paper not public). preprint: who posted it and when. expert_review: null, or the named group checking the claim (by, quote, source, since), quoted from OpenAI's own text. peer_review: 'not yet' until refereed. lean: as lean.status.",
+  "record": "The four-step record. expert_review.kind is 'reviewed' when a named independent group has published its review (OSVerify, with verdict and case links) and 'announced' when a named group is said to be checking it (378). stage: 'preprint' (the paper is public) or 'announced' (announced, paper not public). preprint: who posted it and when. expert_review: null, or the named group checking the claim (by, quote, source, since), quoted from OpenAI's own text. peer_review: 'not yet' until refereed. lean: as lean.status.",
   "revisions": "Changes OpenAI made after the episode was out, or notes about another result's change that affects this one: date, kind (extended, implied-by, lean-added, files-restored, follow-up), note, new_episode (a new episode is planned), by (the result that changed), sources.",
   "versions": "Videos of this episode, newest first: the current one (current: true, Public) and earlier ones (Unlisted on YouTube) with label, date (from our run log, null if not logged), unlisted (date it was unlisted) and url. Empty if the episode was never remade.",
   "episode": "null when the result has no episode yet (shown as 'Episode coming')."
  },
- "last_checked": "2026-10-26",
+ "last_checked": "2026-10-27",
  "count": 373,
  "paper_count": 721,
  "results": [
@@ -43,7 +43,7 @@
     "title": "Many rulers, one fraction",
     "page": "/episodes/001-milne-rationality/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/001-milne-rationality/",
    "kind": "catalogue",
    "record": {
@@ -113,13 +113,30 @@
     "title": "Hidden in the counts",
     "page": "/episodes/002-bsd-formula/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/002-bsd-formula/",
    "kind": "catalogue",
    "record": {
     "stage": "preprint",
     "preprint": "OpenAI, October 2026",
-    "expert_review": null,
+    "expert_review": {
+     "kind": "reviewed",
+     "by": "OSVerify",
+     "verdict": "0 major / 1 minor",
+     "papers_reviewed": 1,
+     "papers_total": 3,
+     "cases": [
+      {
+       "title": "Exact Birch–Swinnerton-Dyer formula from low Selmer corank",
+       "url": "https://osverify.github.io/cases/exact-bsd-low-selmer-corank.html",
+       "verdict": "0 major / 1 minor"
+      }
+     ],
+     "source": "https://osverify.github.io/case-studies.html",
+     "source_label": "OSVerify case studies",
+     "since": "2026-10-10",
+     "checked": "2026-10-27"
+    },
     "peer_review": "not yet",
     "lean": "none",
     "lean_by": null
@@ -183,7 +200,7 @@
     "title": "A wall at 7/8",
     "page": "/episodes/003-quasi-riemann-hypothesis/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/003-quasi-riemann-hypothesis/",
    "kind": "catalogue",
    "record": {
@@ -258,7 +275,7 @@
     "title": "No algorithm for fractions",
     "page": "/episodes/004-hilberts-tenth-problem-q/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/004-hilberts-tenth-problem-q/",
    "kind": "catalogue",
    "record": {
@@ -316,7 +333,7 @@
     "title": "Not a fraction",
     "page": "/episodes/005-irrationality-catalans-constant/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/005-irrationality-catalans-constant/",
    "kind": "catalogue",
    "record": {
@@ -380,7 +397,7 @@
     "title": "Half and half",
     "page": "/episodes/006-goldfelds-conjecture-densities-mean-analytic/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/006-goldfelds-conjecture-densities-mean-analytic/",
    "kind": "catalogue",
    "record": {
@@ -438,7 +455,7 @@
     "title": "Even or odd",
     "page": "/episodes/007-ordinary-two-point-correlations-corrected/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/007-ordinary-two-point-correlations-corrected/",
    "kind": "catalogue",
    "record": {
@@ -496,7 +513,7 @@
     "title": "One per odd weight",
     "page": "/episodes/008-deligne-drinfeld-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/008-deligne-drinfeld-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -566,7 +583,7 @@
     "title": "The whole field from a shadow",
     "page": "/episodes/009-function-field-reconstruction-milnor-k/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/009-function-field-reconstruction-milnor-k/",
    "kind": "catalogue",
    "record": {
@@ -636,7 +653,7 @@
     "title": "Even the prime 2",
     "page": "/episodes/010-unrestricted-pro-modularity-prime-two/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/010-unrestricted-pro-modularity-prime-two/",
    "kind": "catalogue",
    "record": {
@@ -706,7 +723,7 @@
     "title": "How does p − 1 break?",
     "page": "/episodes/011-prime-factor-statistics/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/011-prime-factor-statistics/",
    "kind": "catalogue",
    "record": {
@@ -764,7 +781,7 @@
     "title": "n or n + 1: who wins?",
     "page": "/episodes/012-independent-largest-prime-factors-consecutive/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/012-independent-largest-prime-factors-consecutive/",
    "kind": "catalogue",
    "record": {
@@ -822,7 +839,7 @@
     "title": "Split the primes?",
     "page": "/episodes/013-ostmanns-inverse-goldbach-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/013-ostmanns-inverse-goldbach-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -922,7 +939,7 @@
     "title": "Ramanujan’s bound, up to E₈",
     "page": "/episodes/014-restricted-geometric-langlands-global-arthur/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/014-restricted-geometric-langlands-global-arthur/",
    "kind": "catalogue",
    "record": {
@@ -992,7 +1009,7 @@
     "title": "Loops that fill space",
     "page": "/episodes/015-torus-packet-equidistribution-prime-quartic/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/015-torus-packet-equidistribution-prime-quartic/",
    "kind": "catalogue",
    "record": {
@@ -1068,7 +1085,7 @@
     "title": "Only two points",
     "page": "/episodes/016-zilber-pink-abelian-varieties-siegel/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/016-zilber-pink-abelian-varieties-siegel/",
    "kind": "catalogue",
    "record": {
@@ -1126,7 +1143,7 @@
     "title": "Only so lucky",
     "page": "/episodes/017-irrationality-exponent-pi-2/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/017-irrationality-exponent-pi-2/",
    "kind": "catalogue",
    "record": {
@@ -1190,7 +1207,7 @@
     "title": "A hidden clock",
     "page": "/episodes/018-margulis-platonov-conjecture-global-fields/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/018-margulis-platonov-conjecture-global-fields/",
    "kind": "catalogue",
    "record": {
@@ -1254,7 +1271,7 @@
     "title": "Points from symmetries",
     "page": "/episodes/019-local-p-adic-section-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/019-local-p-adic-section-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -1312,7 +1329,7 @@
     "title": "Squarefree, 3 in 4",
     "page": "/episodes/020-squarefree-quartics-power-free-polynomial/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/020-squarefree-quartics-power-free-polynomial/",
    "kind": "catalogue",
    "record": {
@@ -1370,7 +1387,7 @@
     "title": "How long a run?",
     "page": "/episodes/021-quadratic-bound-jacobsthals-function/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/021-quadratic-bound-jacobsthals-function/",
    "kind": "catalogue",
    "record": {
@@ -1428,7 +1445,7 @@
     "title": "Any shift will do",
     "page": "/episodes/022-weak-inhomogeneous-duffin-schaeffer-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/022-weak-inhomogeneous-duffin-schaeffer-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -1486,7 +1503,7 @@
     "title": "Still biased?",
     "page": "/episodes/023-pattersons-first-moment-cubic-gauss/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/023-pattersons-first-moment-cubic-gauss/",
    "kind": "catalogue",
    "record": {
@@ -1544,7 +1561,7 @@
     "title": "Double x, double V?",
     "page": "/episodes/024-asymptotic-formula-number-totients/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/024-asymptotic-formula-number-totients/",
    "kind": "catalogue",
    "record": {
@@ -1602,7 +1619,7 @@
     "title": "How few fractions?",
     "page": "/episodes/025-short-egyptian-fractions/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/025-short-egyptian-fractions/",
    "kind": "catalogue",
    "record": {
@@ -1660,7 +1677,7 @@
     "title": "Long gaps, how often?",
     "page": "/episodes/026-positive-lower-density-large-prime/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/026-positive-lower-density-large-prime/",
    "kind": "catalogue",
    "record": {
@@ -1718,7 +1735,7 @@
     "title": "Integral points, everywhere?",
     "page": "/episodes/027-potential-integral-density-curve-character/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/027-potential-integral-density-curve-character/",
    "kind": "catalogue",
    "record": {
@@ -1776,7 +1793,7 @@
     "title": "Walk to infinity?",
     "page": "/episodes/028-uniformly-bounded-components-gaussian-prime/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/028-uniformly-bounded-components-gaussian-prime/",
    "kind": "catalogue",
    "record": {
@@ -1840,7 +1857,7 @@
     "title": "Which of 2, 3, 5?",
     "page": "/episodes/029-primitive-roots-every-admissible-integer/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/029-primitive-roots-every-admissible-integer/",
    "kind": "catalogue",
    "record": {
@@ -1909,7 +1926,7 @@
     "title": "Every curve modular?",
     "page": "/episodes/030-modularity-elliptic-curves-imaginary-quadratic/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/030-modularity-elliptic-curves-imaginary-quadratic/",
    "kind": "catalogue",
    "record": {
@@ -1967,7 +1984,7 @@
     "title": "Groups remember fields?",
     "page": "/episodes/031-uchidas-conjecture-open-homomorphisms-galois/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/031-uchidas-conjecture-open-homomorphisms-galois/",
    "kind": "catalogue",
    "record": {
@@ -2049,7 +2066,7 @@
     "title": "Every Hodge class algebraic?",
     "page": "/episodes/032-rational-hodge-conjecture-cm-abelian/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/032-rational-hodge-conjecture-cm-abelian/",
    "kind": "catalogue",
    "record": {
@@ -2142,7 +2159,7 @@
     "title": "Do the forms add up?",
     "page": "/episodes/033-iitaka-subadditivity-variation-logarithmic-additivity/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/033-iitaka-subadditivity-variation-logarithmic-additivity/",
    "kind": "catalogue",
    "record": {
@@ -2278,7 +2295,7 @@
     "title": "Always semiample?",
     "page": "/episodes/034-log-abundance-compact-kahler-spaces/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/034-log-abundance-compact-kahler-spaces/",
    "kind": "catalogue",
    "record": {
@@ -2342,7 +2359,7 @@
     "title": "Abundance mod p?",
     "page": "/episodes/035-log-canonical-threefold-abundance-numerical/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/035-log-canonical-threefold-abundance-numerical/",
    "kind": "catalogue",
    "record": {
@@ -2418,7 +2435,7 @@
     "title": "Semiample, numerically?",
     "page": "/episodes/036-numerical-semiampleness-generalized-minimal-models/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/036-numerical-semiampleness-generalized-minimal-models/",
    "kind": "catalogue",
    "record": {
@@ -2482,7 +2499,7 @@
     "title": "The mildest singularity?",
     "page": "/episodes/037-ordinary-double-point-volume-gap/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/037-ordinary-double-point-volume-gap/",
    "kind": "catalogue",
    "record": {
@@ -2540,7 +2557,7 @@
     "title": "Sections everywhere?",
     "page": "/episodes/038-fujitas-freeness-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/038-fujitas-freeness-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -2616,7 +2633,7 @@
     "title": "Nagata was right?",
     "page": "/episodes/039-nagatas-conjecture-maximal-seshadri-constants/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/039-nagatas-conjecture-maximal-seshadri-constants/",
    "kind": "catalogue",
    "record": {
@@ -2674,7 +2691,7 @@
     "title": "All points alike?",
     "page": "/episodes/040-blochs-conjecture-complex-surfaces/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/040-blochs-conjecture-complex-surfaces/",
    "kind": "catalogue",
    "record": {
@@ -2738,13 +2755,30 @@
     "title": "Fibered by tori?",
     "page": "/episodes/041-hyperkahler-syz-projective-space-bases/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/041-hyperkahler-syz-projective-space-bases/",
    "kind": "catalogue",
    "record": {
     "stage": "preprint",
     "preprint": "OpenAI, October 2026",
-    "expert_review": null,
+    "expert_review": {
+     "kind": "reviewed",
+     "by": "OSVerify",
+     "verdict": "0 major / 1 minor",
+     "papers_reviewed": 1,
+     "papers_total": 2,
+     "cases": [
+      {
+       "title": "The strong hyperkähler SYZ conjecture",
+       "url": "https://osverify.github.io/cases/hyperkahler-syz.html",
+       "verdict": "0 major / 1 minor"
+      }
+     ],
+     "source": "https://osverify.github.io/case-studies.html",
+     "source_label": "OSVerify case studies",
+     "since": "2026-10-10",
+     "checked": "2026-10-27"
+    },
     "peer_review": "not yet",
     "lean": "none",
     "lean_by": null
@@ -2796,7 +2830,7 @@
     "title": "Every K3 flexible?",
     "page": "/episodes/042-oka-classification-minimal-compact-complex/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/042-oka-classification-minimal-compact-complex/",
    "kind": "catalogue",
    "record": {
@@ -2854,7 +2888,7 @@
     "title": "P = W, every rank?",
     "page": "/episodes/043-p-w-fixed-determinant-sln/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/043-p-w-fixed-determinant-sln/",
    "kind": "catalogue",
    "record": {
@@ -2912,7 +2946,7 @@
     "title": "Cohomology from a point?",
     "page": "/episodes/044-equivariant-cohomological-hikita-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/044-equivariant-cohomological-hikita-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -2976,7 +3010,7 @@
     "title": "Shafarevich refuted?",
     "page": "/episodes/046-shafarevich-counterexamples-dimension-two-large/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/046-shafarevich-counterexamples-dimension-two-large/",
    "kind": "catalogue",
    "record": {
@@ -3034,7 +3068,7 @@
     "title": "Cancel a line?",
     "page": "/episodes/047-zariski-cancellation-affine-fibrations-complex/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/047-zariski-cancellation-affine-fibrations-complex/",
    "kind": "catalogue",
    "record": {
@@ -3092,7 +3126,7 @@
     "title": "Free, yet singular?",
     "page": "/episodes/048-characteristic-zero-counterexample-lipman-zariski/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/048-characteristic-zero-counterexample-lipman-zariski/",
    "kind": "catalogue",
    "record": {
@@ -3156,7 +3190,7 @@
     "title": "One variable too few?",
     "page": "/episodes/049-stable-coordinate-counterexample-four-variables/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/049-stable-coordinate-counterexample-four-variables/",
    "kind": "catalogue",
    "record": {
@@ -3214,7 +3248,7 @@
     "title": "Ample, not positive?",
     "page": "/episodes/050-counterexample-griffiths-positivity-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/050-counterexample-griffiths-positivity-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -3272,7 +3306,7 @@
     "title": "Hyperbolic, so ample?",
     "page": "/episodes/051-kobayashis-canonical-ampleness-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/051-kobayashis-canonical-ampleness-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -3336,7 +3370,7 @@
     "title": "Split tangent, split space?",
     "page": "/episodes/052-tangent-splittings-product-decompositions/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/052-tangent-splittings-product-decompositions/",
    "kind": "catalogue",
    "record": {
@@ -3394,7 +3428,7 @@
     "title": "A relation Pixton missed?",
     "page": "/episodes/053-counterexample-pixton-completeness-chow/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/053-counterexample-pixton-completeness-chow/",
    "kind": "catalogue",
    "record": {
@@ -3452,7 +3486,7 @@
     "title": "K3 inside, still irrational?",
     "page": "/episodes/054-irrational-cubic-fourfolds-hodge-theoretic/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/054-irrational-cubic-fourfolds-hodge-theoretic/",
    "kind": "catalogue",
    "record": {
@@ -3516,7 +3550,7 @@
     "title": "A fifth of a turn?",
     "page": "/episodes/055-gepner-symmetry-large-volume-stability/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/055-gepner-symmetry-large-volume-stability/",
    "kind": "catalogue",
    "record": {
@@ -3598,7 +3632,7 @@
     "title": "Can flips go on forever?",
     "page": "/episodes/056-termination-projective-kahler-fourfold-minimal/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/056-termination-projective-kahler-fourfold-minimal/",
    "kind": "catalogue",
    "record": {
@@ -3668,7 +3702,7 @@
     "title": "Special means abelian?",
     "page": "/episodes/057-fundamental-groups-special-complex-varieties/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/057-fundamental-groups-special-complex-varieties/",
    "kind": "catalogue",
    "record": {
@@ -3732,7 +3766,7 @@
     "title": "Three building blocks?",
     "page": "/episodes/058-semialgebraic-universal-covers-bounded-domains/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/058-semialgebraic-universal-covers-bounded-domains/",
    "kind": "catalogue",
    "record": {
@@ -3796,7 +3830,7 @@
     "title": "Same knot, other degree?",
     "page": "/episodes/059-counterexamples-zariskis-multiplicity-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/059-counterexamples-zariskis-multiplicity-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -3854,7 +3888,7 @@
     "title": "A hidden shell?",
     "page": "/episodes/060-global-spherical-shell-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/060-global-spherical-shell-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -3912,7 +3946,7 @@
     "title": "Only Wolf spaces?",
     "page": "/episodes/062-projective-contact-classification-lebrun-salamon/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/062-projective-contact-classification-lebrun-salamon/",
    "kind": "catalogue",
    "record": {
@@ -3970,7 +4004,7 @@
     "title": "How many divisors?",
     "page": "/episodes/063-generalized-mukai-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/063-generalized-mukai-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -4028,7 +4062,7 @@
     "title": "Same number, same shape?",
     "page": "/episodes/064-topological-triviality-mu-constant-surface/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/064-topological-triviality-mu-constant-surface/",
    "kind": "catalogue",
    "record": {
@@ -4092,7 +4126,7 @@
     "title": "Virasoro everywhere?",
     "page": "/episodes/065-virasoro-constraints-complete-intersections-projective/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/065-virasoro-constraints-complete-intersections-projective/",
    "kind": "catalogue",
    "record": {
@@ -4156,7 +4190,7 @@
     "title": "A bounded index?",
     "page": "/episodes/066-bounded-klt-complements-fano-contractions/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/066-bounded-klt-complements-fano-contractions/",
    "kind": "catalogue",
    "record": {
@@ -4214,7 +4248,7 @@
     "title": "Nef means symmetric?",
     "page": "/episodes/067-campana-peternell-conjecture-dimension-six/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/067-campana-peternell-conjecture-dimension-six/",
    "kind": "catalogue",
    "record": {
@@ -4308,7 +4342,7 @@
     "title": "A section, eventually?",
     "page": "/episodes/068-anticanonical-nonvanishing-every-dimension/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/068-anticanonical-nonvanishing-every-dimension/",
    "kind": "catalogue",
    "record": {
@@ -4366,13 +4400,30 @@
     "title": "Langlands, quantized?",
     "page": "/episodes/069-global-quantum-geometric-langlands-irrational/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/069-global-quantum-geometric-langlands-irrational/",
    "kind": "catalogue",
    "record": {
     "stage": "preprint",
     "preprint": "OpenAI, October 2026",
-    "expert_review": null,
+    "expert_review": {
+     "kind": "reviewed",
+     "by": "OSVerify",
+     "verdict": "2 major / 1 minor",
+     "papers_reviewed": 1,
+     "papers_total": 1,
+     "cases": [
+      {
+       "title": "Global quantum geometric Langlands at irrational level",
+       "url": "https://osverify.github.io/cases/quantum-langlands.html",
+       "verdict": "2 major / 1 minor"
+      }
+     ],
+     "source": "https://osverify.github.io/case-studies.html",
+     "source_label": "OSVerify case studies",
+     "since": "2026-10-10",
+     "checked": "2026-10-27"
+    },
     "peer_review": "not yet",
     "lean": "none",
     "lean_by": null
@@ -4430,7 +4481,7 @@
     "title": "Every hole made round?",
     "page": "/episodes/071-koebes-circle-domain-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/071-koebes-circle-domain-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -4494,7 +4545,7 @@
     "title": "Four thirds to four?",
     "page": "/episodes/072-brennans-conjecture-integral-means-spectrum/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/072-brennans-conjecture-integral-means-spectrum/",
    "kind": "catalogue",
    "record": {
@@ -4552,7 +4603,7 @@
     "title": "Enough distances?",
     "page": "/episodes/073-falconer-distance-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/073-falconer-distance-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -4617,13 +4668,30 @@
     "title": "Needles in every direction?",
     "page": "/episodes/074-kakeya-three-four-dimensions/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/074-kakeya-three-four-dimensions/",
    "kind": "catalogue",
    "record": {
     "stage": "preprint",
     "preprint": "OpenAI, October 2026",
-    "expert_review": null,
+    "expert_review": {
+     "kind": "reviewed",
+     "by": "OSVerify",
+     "verdict": "0 major / 2 minor",
+     "papers_reviewed": 1,
+     "papers_total": 2,
+     "cases": [
+      {
+       "title": "Every Four-Dimensional Kakeya Set Has Full Hausdorff Dimension",
+       "url": "https://osverify.github.io/cases/kakeya-4d.html",
+       "verdict": "0 major / 2 minor"
+      }
+     ],
+     "source": "https://osverify.github.io/case-studies.html",
+     "source_label": "OSVerify case studies",
+     "since": "2026-10-10",
+     "checked": "2026-10-27"
+    },
     "peer_review": "not yet",
     "lean": "main",
     "lean_by": null
@@ -4686,7 +4754,7 @@
     "title": "Enough to converge?",
     "page": "/episodes/075-fourier-convergence-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/075-fourier-convergence-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -4756,7 +4824,7 @@
     "title": "Flat with signs only?",
     "page": "/episodes/076-real-ultraflat-littlewood-polynomials-unbounded/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/076-real-ultraflat-littlewood-polynomials-unbounded/",
    "kind": "catalogue",
    "record": {
@@ -4821,7 +4889,7 @@
     "title": "Restriction, settled?",
     "page": "/episodes/077-fourier-restriction-positively-curved-surfaces/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/077-fourier-restriction-positively-curved-surfaces/",
    "kind": "catalogue",
    "record": {
@@ -4892,7 +4960,7 @@
     "title": "Any smoothing enough?",
     "page": "/episodes/078-three-dimensional-bochner-riesz-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/078-three-dimensional-bochner-riesz-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -4967,7 +5035,7 @@
     "title": "Local smoothing in every dimension?",
     "page": "/episodes/079-local-smoothing-every-dimension/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/079-local-smoothing-every-dimension/",
    "kind": "catalogue",
    "record": {
@@ -5057,7 +5125,7 @@
     "title": "Exactly enough?",
     "page": "/episodes/080-schrodinger-convergence-sobolev-endpoint/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/080-schrodinger-convergence-sobolev-endpoint/",
    "kind": "catalogue",
    "record": {
@@ -5115,7 +5183,7 @@
     "title": "One operator enough?",
     "page": "/episodes/081-riesz-transforms-rectifiability-higher-codimension/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/081-riesz-transforms-rectifiability-higher-codimension/",
    "kind": "catalogue",
    "record": {
@@ -5185,7 +5253,7 @@
     "title": "Triangle, tamed?",
     "page": "/episodes/082-triangular-hilbert-transform-symmetric-point/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/082-triangular-hilbert-transform-symmetric-point/",
    "kind": "catalogue",
    "record": {
@@ -5243,7 +5311,7 @@
     "title": "Lines that turn?",
     "page": "/episodes/083-hilbert-transform-lipschitz-directions/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/083-hilbert-transform-lipschitz-directions/",
    "kind": "catalogue",
    "record": {
@@ -5307,7 +5375,7 @@
     "title": "No room for halves?",
     "page": "/episodes/084-erdos-similarity-geometric-sequences/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/084-erdos-similarity-geometric-sequences/",
    "kind": "catalogue",
    "record": {
@@ -5365,7 +5433,7 @@
     "title": "How much steeper?",
     "page": "/episodes/085-endpoint-sobolev-regularity-centered-disk/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/085-endpoint-sobolev-regularity-centered-disk/",
    "kind": "catalogue",
    "record": {
@@ -5423,13 +5491,30 @@
     "title": "Three shifts, one bound?",
     "page": "/episodes/086-l3-bound-trilinear-hilbert-transform/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/086-l3-bound-trilinear-hilbert-transform/",
    "kind": "catalogue",
    "record": {
     "stage": "preprint",
     "preprint": "OpenAI, October 2026",
-    "expert_review": null,
+    "expert_review": {
+     "kind": "reviewed",
+     "by": "OSVerify",
+     "verdict": "1 major / 2 minor",
+     "papers_reviewed": 1,
+     "papers_total": 1,
+     "cases": [
+      {
+       "title": "An L³ bound for the trilinear Hilbert transform",
+       "url": "https://osverify.github.io/cases/trilinear-hilbert.html",
+       "verdict": "1 major / 2 minor"
+      }
+     ],
+     "source": "https://osverify.github.io/case-studies.html",
+     "source_label": "OSVerify case studies",
+     "since": "2026-10-10",
+     "checked": "2026-10-27"
+    },
     "peer_review": "not yet",
     "lean": "none",
     "lean_by": null
@@ -5493,7 +5578,7 @@
     "title": "Mahler, solved?",
     "page": "/episodes/087-mahler-conjectures-functional-inequalities-polar/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/087-mahler-conjectures-functional-inequalities-polar/",
    "kind": "catalogue",
    "record": {
@@ -5557,7 +5642,7 @@
     "title": "Smallest shadows?",
     "page": "/episodes/088-sharp-projection-body-inequalities-counterexample/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/088-sharp-projection-body-inequalities-counterexample/",
    "kind": "catalogue",
    "record": {
@@ -5621,7 +5706,7 @@
     "title": "Cut to size?",
     "page": "/episodes/089-bounded-distortion-l1-embeddings-planar/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/089-bounded-distortion-l1-embeddings-planar/",
    "kind": "catalogue",
    "record": {
@@ -5697,7 +5782,7 @@
     "title": "Triangles win?",
     "page": "/episodes/090-triangular-lattice-optimality-long-range/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/090-triangular-lattice-optimality-long-range/",
    "kind": "catalogue",
    "record": {
@@ -5755,7 +5840,7 @@
     "title": "Blend by multiplying?",
     "page": "/episodes/091-logarithmic-lp-brunn-minkowski-inequalities/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/091-logarithmic-lp-brunn-minkowski-inequalities/",
    "kind": "catalogue",
    "record": {
@@ -5819,7 +5904,7 @@
     "title": "How much overlap?",
     "page": "/episodes/092-optimal-order-convex-body-covering/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/092-optimal-order-convex-body-covering/",
    "kind": "catalogue",
    "record": {
@@ -5877,7 +5962,7 @@
     "title": "Tails are enough?",
     "page": "/episodes/093-dimension-free-logarithmic-sobolev-inequality/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/093-dimension-free-logarithmic-sobolev-inequality/",
    "kind": "catalogue",
    "record": {
@@ -5935,7 +6020,7 @@
     "title": "Squeezed into less?",
     "page": "/episodes/094-subpolynomial-dimension-reduction-lp/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/094-subpolynomial-dimension-reduction-lp/",
    "kind": "catalogue",
    "record": {
@@ -6005,7 +6090,7 @@
     "title": "No lift at all?",
     "page": "/episodes/095-hyperbolicity-cones-without-semidefinite-lifts/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/095-hyperbolicity-cones-without-semidefinite-lifts/",
    "kind": "catalogue",
    "record": {
@@ -6063,7 +6148,7 @@
     "title": "Three blades win?",
     "page": "/episodes/096-gaussian-propeller-conjecture-every-dimension/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/096-gaussian-propeller-conjecture-every-dimension/",
    "kind": "catalogue",
    "record": {
@@ -6121,7 +6206,7 @@
     "title": "Root d is enough?",
     "page": "/episodes/097-euclidean-steinitz-bergstrom-bound/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/097-euclidean-steinitz-bergstrom-bound/",
    "kind": "catalogue",
    "record": {
@@ -6179,7 +6264,7 @@
     "title": "Doubling is not enough?",
     "page": "/episodes/098-compact-counterexamples-bi-lipschitz-dimension/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/098-compact-counterexamples-bi-lipschitz-dimension/",
    "kind": "catalogue",
    "record": {
@@ -6249,7 +6334,7 @@
     "title": "Sharp at last?",
     "page": "/episodes/099-sharp-exponential-scale-edit-distance/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/099-sharp-exponential-scale-edit-distance/",
    "kind": "catalogue",
    "record": {
@@ -6325,7 +6410,7 @@
     "title": "Below half?",
     "page": "/episodes/100-cylinder-coverings-below-half-area/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/100-cylinder-coverings-below-half-area/",
    "kind": "catalogue",
    "record": {
@@ -6383,7 +6468,7 @@
     "title": "Simplex wins?",
     "page": "/episodes/101-sharp-simplex-conjecture-isotropic-constants/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/101-sharp-simplex-conjecture-isotropic-constants/",
    "kind": "catalogue",
    "record": {
@@ -6465,7 +6550,7 @@
     "title": "Unique Games, solved?",
     "page": "/episodes/102-unique-games-conjecture-optimal-approximation/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/102-unique-games-conjecture-optimal-approximation/",
    "kind": "catalogue",
    "record": {
@@ -6523,7 +6608,7 @@
     "title": "Coins don’t help?",
     "page": "/episodes/103-exact-derandomization-logarithmic-space/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/103-exact-derandomization-logarithmic-space/",
    "kind": "catalogue",
    "record": {
@@ -6599,7 +6684,7 @@
     "title": "Who wins in the long run?",
     "page": "/episodes/104-quasipolynomial-mean-payoff-games/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/104-quasipolynomial-mean-payoff-games/",
    "kind": "catalogue",
    "record": {
@@ -6657,7 +6742,7 @@
     "title": "Satisfiable yet hard?",
     "page": "/episodes/105-two-to-one-games-perfect-completeness/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/105-two-to-one-games-perfect-completeness/",
    "kind": "catalogue",
    "record": {
@@ -6715,7 +6800,7 @@
     "title": "Three colors, no help?",
     "page": "/episodes/106-coloring-three-colorable-graphs/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/106-coloring-three-colorable-graphs/",
    "kind": "catalogue",
    "record": {
@@ -6785,7 +6870,7 @@
     "title": "Two and a quarter?",
     "page": "/episodes/107-matrix-multiplication-exponent-nine-fourths/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/107-matrix-multiplication-exponent-nine-fourths/",
    "kind": "catalogue",
    "record": {
@@ -6843,7 +6928,7 @@
     "title": "Cubic at last?",
     "page": "/episodes/108-permanent-determinant-cubic-lower-bound/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/108-permanent-determinant-cubic-lower-bound/",
    "kind": "catalogue",
    "record": {
@@ -6901,7 +6986,7 @@
     "title": "Faster than n log n?",
     "page": "/episodes/109-integer-multiplication-below-n-log-n/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/109-integer-multiplication-below-n-log-n/",
    "kind": "catalogue",
    "record": {
@@ -6965,7 +7050,7 @@
     "title": "Log squared, everywhere?",
     "page": "/episodes/110-randomized-k-server-squared-log/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/110-randomized-k-server-squared-log/",
    "kind": "catalogue",
    "record": {
@@ -7023,7 +7108,7 @@
     "title": "One sample is enough?",
     "page": "/episodes/111-one-sample-matroid-prophet-inequality/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/111-one-sample-matroid-prophet-inequality/",
    "kind": "catalogue",
    "record": {
@@ -7081,7 +7166,7 @@
     "title": "Past the square root?",
     "page": "/episodes/112-depth-three-circuits-beyond-square-root/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/112-depth-three-circuits-beyond-square-root/",
    "kind": "catalogue",
    "record": {
@@ -7145,7 +7230,7 @@
     "title": "Counting any graph?",
     "page": "/episodes/113-counting-perfect-matchings-fpras/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/113-counting-perfect-matchings-fpras/",
    "kind": "catalogue",
    "record": {
@@ -7209,7 +7294,7 @@
     "title": "Counting common bases?",
     "page": "/episodes/114-common-matroid-bases-fpras/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/114-common-matroid-bases-fpras/",
    "kind": "catalogue",
    "record": {
@@ -7273,7 +7358,7 @@
     "title": "Any margins?",
     "page": "/episodes/115-contingency-tables-arbitrary-margins/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/115-contingency-tables-arbitrary-margins/",
    "kind": "catalogue",
    "record": {
@@ -7343,7 +7428,7 @@
     "title": "One point for all?",
     "page": "/episodes/116-noncommutative-identity-testing-hitting-points/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/116-noncommutative-identity-testing-hitting-points/",
    "kind": "catalogue",
    "record": {
@@ -7407,7 +7492,7 @@
     "title": "Hard to approximate?",
     "page": "/episodes/117-uniform-sparsest-cut-hardness-gaps/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/117-uniform-sparsest-cut-hardness-gaps/",
    "kind": "catalogue",
    "record": {
@@ -7465,7 +7550,7 @@
     "title": "One more bin?",
     "page": "/episodes/118-bin-packing-configuration-gap/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/118-bin-packing-configuration-gap/",
    "kind": "catalogue",
    "record": {
@@ -7529,7 +7614,7 @@
     "title": "The best bit?",
     "page": "/episodes/119-courtade-kumar-hellinger-conjectures/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/119-courtade-kumar-hellinger-conjectures/",
    "kind": "catalogue",
    "record": {
@@ -7587,7 +7672,7 @@
     "title": "Almost-linear matching?",
     "page": "/episodes/120-almost-linear-general-matching/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/120-almost-linear-general-matching/",
    "kind": "catalogue",
    "record": {
@@ -7645,7 +7730,7 @@
     "title": "Almost-linear edit distance?",
     "page": "/episodes/121-edit-distance-approximation-scheme/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/121-edit-distance-approximation-scheme/",
    "kind": "catalogue",
    "record": {
@@ -7715,7 +7800,7 @@
     "title": "Polynomially many traces?",
     "page": "/episodes/122-trace-reconstruction-bounds/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/122-trace-reconstruction-bounds/",
    "kind": "catalogue",
    "record": {
@@ -7773,7 +7858,7 @@
     "title": "Three machines, polynomial?",
     "page": "/episodes/124-three-machine-scheduling/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/124-three-machine-scheduling/",
    "kind": "catalogue",
    "record": {
@@ -7837,7 +7922,7 @@
     "title": "k-median at 1 + 2/e?",
     "page": "/episodes/125-k-median-approximation-threshold/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/125-k-median-approximation-threshold/",
    "kind": "catalogue",
    "record": {
@@ -7895,7 +7980,7 @@
     "title": "No small SDP for matching?",
     "page": "/episodes/126-matching-psd-rank/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/126-matching-psd-rank/",
    "kind": "catalogue",
    "record": {
@@ -7953,7 +8038,7 @@
     "title": "How sensitive can it be?",
     "page": "/episodes/127-ptf-average-sensitivity/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/127-ptf-average-sensitivity/",
    "kind": "catalogue",
    "record": {
@@ -8011,7 +8096,7 @@
     "title": "Factor two, at last?",
     "page": "/episodes/128-superstring-factor-two/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/128-superstring-factor-two/",
    "kind": "catalogue",
    "record": {
@@ -8075,7 +8160,7 @@
     "title": "Sakoda–Sipser, settled?",
     "page": "/episodes/129-two-way-automata-state-costs/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/129-two-way-automata-state-costs/",
    "kind": "catalogue",
    "record": {
@@ -8139,7 +8224,7 @@
     "title": "Faster than the FFT?",
     "page": "/episodes/130-fourier-below-n-log-n/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/130-fourier-below-n-log-n/",
    "kind": "catalogue",
    "record": {
@@ -8197,7 +8282,7 @@
     "title": "Switch chain mixes fast?",
     "page": "/episodes/131-switch-chain-mixing/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/131-switch-chain-mixing/",
    "kind": "catalogue",
    "record": {
@@ -8255,7 +8340,7 @@
     "title": "Beats sensitivity squared?",
     "page": "/episodes/132-sensitivity-block-sensitivity/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/132-sensitivity-block-sensitivity/",
    "kind": "catalogue",
    "record": {
@@ -8331,7 +8416,7 @@
     "title": "How hard is WL?",
     "page": "/episodes/133-weisfeiler-leman-complexity/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/133-weisfeiler-leman-complexity/",
    "kind": "catalogue",
    "record": {
@@ -8401,7 +8486,7 @@
     "title": "Three stars suffice?",
     "page": "/episodes/134-generalized-star-height/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/134-generalized-star-height/",
    "kind": "catalogue",
    "record": {
@@ -8459,7 +8544,7 @@
     "title": "Depth five, sharply?",
     "page": "/episodes/135-depth-five-imm/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/135-depth-five-imm/",
    "kind": "catalogue",
    "record": {
@@ -8517,7 +8602,7 @@
     "title": "PCP for PPAD?",
     "page": "/episodes/136-pcp-for-ppad/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/136-pcp-for-ppad/",
    "kind": "catalogue",
    "record": {
@@ -8575,7 +8660,7 @@
     "title": "Below the square root?",
     "page": "/episodes/137-one-tape-two-fifths/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/137-one-tape-two-fifths/",
    "kind": "catalogue",
    "record": {
@@ -8639,7 +8724,7 @@
     "title": "Subset Sum in 2^0.49n?",
     "page": "/episodes/138-subset-sum-049/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/138-subset-sum-049/",
    "kind": "catalogue",
    "record": {
@@ -8697,7 +8782,7 @@
     "title": "Sampling with almost no queries?",
     "page": "/episodes/139-log-concave-queries/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/139-log-concave-queries/",
    "kind": "catalogue",
    "record": {
@@ -8785,7 +8870,7 @@
     "title": "Exact equations, limited memory",
     "page": "/episodes/140-memory-regression/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/140-memory-regression/",
    "kind": "catalogue",
    "record": {
@@ -8843,7 +8928,7 @@
     "title": "Real solutions at level 26?",
     "page": "/episodes/141-etr-counting-hierarchy/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/141-etr-counting-hierarchy/",
    "kind": "catalogue",
    "record": {
@@ -8901,7 +8986,7 @@
     "title": "Factoring with no coin flips?",
     "page": "/episodes/142-deterministic-factoring/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/142-deterministic-factoring/",
    "kind": "catalogue",
    "record": {
@@ -8965,7 +9050,7 @@
     "title": "A ceiling on limit cycles?",
     "page": "/episodes/143-hilbert-sixteenth-uniform/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/143-hilbert-sixteenth-uniform/",
    "kind": "catalogue",
    "record": {
@@ -9023,7 +9108,7 @@
     "title": "One signal, every pattern?",
     "page": "/episodes/144-simple-lebesgue-spectrum/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/144-simple-lebesgue-spectrum/",
    "kind": "catalogue",
    "record": {
@@ -9081,7 +9166,7 @@
     "title": "Two is enough?",
     "page": "/episodes/145-rokhlin-multiple-mixing/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/145-rokhlin-multiple-mixing/",
    "kind": "catalogue",
    "record": {
@@ -9139,7 +9224,7 @@
     "title": "Chaos with positive area?",
     "page": "/episodes/146-standard-map-entropy/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/146-standard-map-entropy/",
    "kind": "catalogue",
    "record": {
@@ -9203,7 +9288,7 @@
     "title": "Only the ellipse?",
     "page": "/episodes/147-near-boundary-birkhoff/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/147-near-boundary-birkhoff/",
    "kind": "catalogue",
    "record": {
@@ -9261,7 +9346,7 @@
     "title": "Lost only to coincidences?",
     "page": "/episodes/148-entropy-rate-dimension/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/148-entropy-rate-dimension/",
    "kind": "catalogue",
    "record": {
@@ -9325,7 +9410,7 @@
     "title": "One trap for every start?",
     "page": "/episodes/149-mass-action-permanence/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/149-mass-action-permanence/",
    "kind": "catalogue",
    "record": {
@@ -9389,7 +9474,7 @@
     "title": "No hidden rhythm?",
     "page": "/episodes/150-triangle-weak-mixing/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/150-triangle-weak-mixing/",
    "kind": "catalogue",
    "record": {
@@ -9447,7 +9532,7 @@
     "title": "Wrapping without chaos?",
     "page": "/episodes/151-entropy-conjecture-c1/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/151-entropy-conjecture-c1/",
    "kind": "catalogue",
    "record": {
@@ -9505,7 +9590,7 @@
     "title": "No smooth volume model?",
     "page": "/episodes/152-smooth-volume-model/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/152-smooth-volume-model/",
    "kind": "catalogue",
    "record": {
@@ -9563,7 +9648,7 @@
     "title": "Singular beyond Pisot?",
     "page": "/episodes/153-bernoulli-convolutions/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/153-bernoulli-convolutions/",
    "kind": "catalogue",
    "record": {
@@ -9639,7 +9724,7 @@
     "title": "Mixing is enough?",
     "page": "/episodes/154-pointwise-multiple-ergodic-mixing/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/154-pointwise-multiple-ergodic-mixing/",
    "kind": "catalogue",
    "record": {
@@ -9697,7 +9782,7 @@
     "title": "No periodic tiling in 3D?",
     "page": "/episodes/155-periodic-tiling-dimension-three/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/155-periodic-tiling-dimension-three/",
    "kind": "catalogue",
    "record": {
@@ -9763,7 +9848,7 @@
     "title": "Borsuk fails in nine?",
     "page": "/episodes/156-borsuk-dimension-nine/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/156-borsuk-dimension-nine/",
    "kind": "catalogue",
    "record": {
@@ -9841,7 +9926,7 @@
     "title": "Hadwiger disproved?",
     "page": "/episodes/157-hadwiger-counterexample/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/157-hadwiger-counterexample/",
    "kind": "catalogue",
    "record": {
@@ -9907,7 +9992,7 @@
     "title": "Five colours never suffice?",
     "page": "/episodes/158-plane-not-five-colorable/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/158-plane-not-five-colorable/",
    "kind": "catalogue",
    "record": {
@@ -9973,7 +10058,7 @@
     "title": "Erdős was right?",
     "page": "/episodes/159-erdos-reciprocal-sum-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/159-erdos-reciprocal-sum-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -10039,7 +10124,7 @@
     "title": "Faster than exponential?",
     "page": "/episodes/160-superexponential-van-der-waerden-numbers/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/160-superexponential-van-der-waerden-numbers/",
    "kind": "catalogue",
    "record": {
@@ -10105,7 +10190,7 @@
     "title": "Sidorenko disproved?",
     "page": "/episodes/161-counterexamples-sidorenkos-conjecture-forcing-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/161-counterexamples-sidorenkos-conjecture-forcing-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -10177,7 +10262,7 @@
     "title": "Ryser disproved?",
     "page": "/episodes/162-counterexamples-rysers-covering-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/162-counterexamples-rysers-covering-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -10243,7 +10328,7 @@
     "title": "Hindman proved?",
     "page": "/episodes/164-hindmans-finite-sums-products-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/164-hindmans-finite-sums-products-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -10315,7 +10400,7 @@
     "title": "Brickyard solved?",
     "page": "/episodes/165-harary-hill-zarankiewicz-crossing-number/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/165-harary-hill-zarankiewicz-crossing-number/",
    "kind": "catalogue",
    "record": {
@@ -10381,7 +10466,7 @@
     "title": "Erdős distances in 3D and up?",
     "page": "/episodes/166-higher-dimensional-erdos-distinct-distances/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/166-higher-dimensional-erdos-distinct-distances/",
    "kind": "catalogue",
    "record": {
@@ -10453,13 +10538,30 @@
     "title": "Erdős distances, pinned down?",
     "page": "/episodes/167-planar-distinct-distances-unit-distance/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/167-planar-distinct-distances-unit-distance/",
    "kind": "catalogue",
    "record": {
     "stage": "preprint",
     "preprint": "OpenAI, October 2026",
-    "expert_review": null,
+    "expert_review": {
+     "kind": "reviewed",
+     "by": "OSVerify",
+     "verdict": "1 major / 0 minor",
+     "papers_reviewed": 1,
+     "papers_total": 2,
+     "cases": [
+      {
+       "title": "A power saving for planar unit distances",
+       "url": "https://osverify.github.io/cases/planar-unit-distances.html",
+       "verdict": "1 major / 0 minor"
+      }
+     ],
+     "source": "https://osverify.github.io/case-studies.html",
+     "source_label": "OSVerify case studies",
+     "since": "2026-10-10",
+     "checked": "2026-10-27"
+    },
     "peer_review": "not yet",
     "lean": "main",
     "lean_by": null
@@ -10519,7 +10621,7 @@
     "title": "Shape is enough?",
     "page": "/episodes/168-combinatorial-invariance-kazhdan-lusztig-polynomials/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/168-combinatorial-invariance-kazhdan-lusztig-polynomials/",
    "kind": "catalogue",
    "record": {
@@ -10585,7 +10687,7 @@
     "title": "No minus signs?",
     "page": "/episodes/169-shareshian-wachs-elementary-positivity/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/169-shareshian-wachs-elementary-positivity/",
    "kind": "catalogue",
    "record": {
@@ -10657,7 +10759,7 @@
     "title": "Ramsey numbers: log power settled?",
     "page": "/episodes/170-sharp-logarithmic-exponents-off-diagonal/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/170-sharp-logarithmic-exponents-off-diagonal/",
    "kind": "catalogue",
    "record": {
@@ -10723,7 +10825,7 @@
     "title": "Hypercube Ramsey: linear at last?",
     "page": "/episodes/171-hypercube-ramsey-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/171-hypercube-ramsey-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -10789,7 +10891,7 @@
     "title": "Euclidean Ramsey: classified?",
     "page": "/episodes/172-classification-finite-euclidean-ramsey-configurations/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/172-classification-finite-euclidean-ramsey-configurations/",
    "kind": "catalogue",
    "record": {
@@ -10855,7 +10957,7 @@
     "title": "Seymour’s conjecture: two steps keep up?",
     "page": "/episodes/173-seymours-second-neighborhood-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/173-seymours-second-neighborhood-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -10927,7 +11029,7 @@
     "title": "Strong thin trees: always C/k?",
     "page": "/episodes/174-deterministic-construction-strong-thin-spanning/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/174-deterministic-construction-strong-thin-spanning/",
    "kind": "catalogue",
    "record": {
@@ -11005,7 +11107,7 @@
     "title": "Talagrand, up to a constant?",
     "page": "/episodes/175-talagrands-expectation-thresholds-discrete-convexity/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/175-talagrands-expectation-thresholds-discrete-convexity/",
    "kind": "catalogue",
    "record": {
@@ -11071,7 +11173,7 @@
     "title": "Kahn–Kalai, the second one?",
     "page": "/episodes/176-second-kahn-kalai-conjecture-edge/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/176-second-kahn-kalai-conjecture-edge/",
    "kind": "catalogue",
    "record": {
@@ -11137,7 +11239,7 @@
     "title": "Expanders in every dimension?",
     "page": "/episodes/177-bounded-degree-coboundary-expanders/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/177-bounded-degree-coboundary-expanders/",
    "kind": "catalogue",
    "record": {
@@ -11203,7 +11305,7 @@
     "title": "Ramanujan graphs, made to order?",
     "page": "/episodes/178-deterministic-nonbipartite-ramanujan-graphs-every/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/178-deterministic-nonbipartite-ramanujan-graphs-every/",
    "kind": "catalogue",
    "record": {
@@ -11269,7 +11371,7 @@
     "title": "Only orders 1 and 4?",
     "page": "/episodes/179-circulant-hadamard-barker-sequence-conjectures/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/179-circulant-hadamard-barker-sequence-conjectures/",
    "kind": "catalogue",
    "record": {
@@ -11335,7 +11437,7 @@
     "title": "A tour of every corner?",
     "page": "/episodes/180-barnettes-hamiltonian-cycle-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/180-barnettes-hamiltonian-cycle-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -11401,7 +11503,7 @@
     "title": "C times n pieces?",
     "page": "/episodes/181-erdos-gallai-cycle-decomposition-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/181-erdos-gallai-cycle-decomposition-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -11479,7 +11581,7 @@
     "title": "No square gaps?",
     "page": "/episodes/182-power-savings-intersective-polynomial-differences/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/182-power-savings-intersective-polynomial-differences/",
    "kind": "catalogue",
    "record": {
@@ -11545,7 +11647,7 @@
     "title": "Below 4/3?",
     "page": "/episodes/183-power-savings-planar-halving-lines/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/183-power-savings-planar-halving-lines/",
    "kind": "catalogue",
    "record": {
@@ -11617,7 +11719,7 @@
     "title": "Forbid a clique, gain a log?",
     "page": "/episodes/184-correspondence-coloring-fixed-forbidden-subgraph/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/184-correspondence-coloring-fixed-forbidden-subgraph/",
    "kind": "catalogue",
    "record": {
@@ -11683,7 +11785,7 @@
     "title": "No fair split at infinity?",
     "page": "/episodes/185-counterexamples-infinite-matroid-intersection-packing/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/185-counterexamples-infinite-matroid-intersection-packing/",
    "kind": "catalogue",
    "record": {
@@ -11755,7 +11857,7 @@
     "title": "How fast must it switch?",
     "page": "/episodes/186-uniform-influence-sharp-thresholds-graph/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/186-uniform-influence-sharp-thresholds-graph/",
    "kind": "catalogue",
    "record": {
@@ -11821,7 +11923,7 @@
     "title": "Snaky in 21 moves?",
     "page": "/episodes/187-snaky-21-maker-moves/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/187-snaky-21-maker-moves/",
    "kind": "catalogue",
    "record": {
@@ -11887,7 +11989,7 @@
     "title": "What’s left over?",
     "page": "/episodes/188-sharp-terminal-leave-random-triangle/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/188-sharp-terminal-leave-random-triangle/",
    "kind": "catalogue",
    "record": {
@@ -11953,7 +12055,7 @@
     "title": "Red cycle or blue clique?",
     "page": "/episodes/189-cycle-clique-ramsey-numbers/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/189-cycle-clique-ramsey-numbers/",
    "kind": "catalogue",
    "record": {
@@ -12019,7 +12121,7 @@
     "title": "No polynomial bound?",
     "page": "/episodes/190-polynomial-removal-fails-ordered-binary/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/190-polynomial-removal-fails-ordered-binary/",
    "kind": "catalogue",
    "record": {
@@ -12085,7 +12187,7 @@
     "title": "Bigger than 1/n²?",
     "page": "/episodes/191-power-improvement-heilbronn-triangle-lower/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/191-power-improvement-heilbronn-triangle-lower/",
    "kind": "catalogue",
    "record": {
@@ -12151,7 +12253,7 @@
     "title": "Beyond the square root?",
     "page": "/episodes/192-boolean-functions-violate-square-root/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/192-boolean-functions-violate-square-root/",
    "kind": "catalogue",
    "record": {
@@ -12217,7 +12319,7 @@
     "title": "Always positive?",
     "page": "/episodes/193-serres-intersection-multiplicity-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/193-serres-intersection-multiplicity-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -12283,7 +12385,7 @@
     "title": "Never smoother?",
     "page": "/episodes/194-lechs-multiplicity-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/194-lechs-multiplicity-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -12349,7 +12451,7 @@
     "title": "No finite repair?",
     "page": "/episodes/195-counterexample-small-cohen-macaulay-module/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/195-counterexample-small-cohen-macaulay-module/",
    "kind": "catalogue",
    "record": {
@@ -12415,7 +12517,7 @@
     "title": "Torsion-free, yet zero?",
     "page": "/episodes/196-counterexample-kaplanskys-zero-divisor-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/196-counterexample-kaplanskys-zero-divisor-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -12491,7 +12593,7 @@
     "title": "One-sided inverse?",
     "page": "/episodes/197-torsion-free-group-algebra-not/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/197-torsion-free-group-algebra-not/",
    "kind": "catalogue",
    "record": {
@@ -12549,7 +12651,7 @@
     "title": "No ceiling?",
     "page": "/episodes/198-counterexample-finitistic-dimension-finiteness/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/198-counterexample-finitistic-dimension-finiteness/",
    "kind": "catalogue",
    "record": {
@@ -12613,7 +12715,7 @@
     "title": "No gluing, not projective?",
     "page": "/episodes/199-counterexamples-auslander-reiten-tachikawa-related/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/199-counterexamples-auslander-reiten-tachikawa-related/",
    "kind": "catalogue",
    "record": {
@@ -12677,7 +12779,7 @@
     "title": "Count like monomials?",
     "page": "/episodes/200-eisenbud-green-harris-lex-plus/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/200-eisenbud-green-harris-lex-plus/",
    "kind": "catalogue",
    "record": {
@@ -12735,7 +12837,7 @@
     "title": "Every element tame, yet infinite?",
     "page": "/episodes/201-counterexample-kuroshs-division-ring-problem/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/201-counterexample-kuroshs-division-ring-problem/",
    "kind": "catalogue",
    "record": {
@@ -12793,7 +12895,7 @@
     "title": "Global = local?",
     "page": "/episodes/202-blockwise-alperin-weight-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/202-blockwise-alperin-weight-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -12857,7 +12959,7 @@
     "title": "Fix the defect group: finite?",
     "page": "/episodes/203-donovans-conjecture-fields-complete-mixed/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/203-donovans-conjecture-fields-complete-mixed/",
    "kind": "catalogue",
    "record": {
@@ -12915,7 +13017,7 @@
     "title": "Only after stretching?",
     "page": "/episodes/204-tensor-saturation-even-spin-groups/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/204-tensor-saturation-even-spin-groups/",
    "kind": "catalogue",
    "record": {
@@ -12979,7 +13081,7 @@
     "title": "Square the staircase: all?",
     "page": "/episodes/205-saxls-conjecture-universal-tensor-squares/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/205-saxls-conjecture-universal-tensor-squares/",
    "kind": "catalogue",
    "record": {
@@ -13043,7 +13145,7 @@
     "title": "A lattice no algebra fits?",
     "page": "/episodes/206-finite-lattice-representation-undecidability/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/206-finite-lattice-representation-undecidability/",
    "kind": "catalogue",
    "record": {
@@ -13107,7 +13209,7 @@
     "title": "Idempotents: only 0 and 1?",
     "page": "/episodes/207-l1-bass-conjecture-all-discrete/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/207-l1-bass-conjecture-all-discrete/",
    "kind": "catalogue",
    "record": {
@@ -13165,7 +13267,7 @@
     "title": "Every category finds a floor?",
     "page": "/episodes/208-finite-symmetric-tensor-categories-verlinde/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/208-finite-symmetric-tensor-categories-verlinde/",
    "kind": "catalogue",
    "record": {
@@ -13229,7 +13331,7 @@
     "title": "Dead over F, alive on A?",
     "page": "/episodes/209-integral-counterexamples-gerstens-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/209-integral-counterexamples-gerstens-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -13293,7 +13395,7 @@
     "title": "Does one stack fit in the other?",
     "page": "/episodes/210-foulkes-conjecture-sixth-powers-quadratic/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/210-foulkes-conjecture-sixth-powers-quadratic/",
    "kind": "catalogue",
    "record": {
@@ -13387,7 +13489,7 @@
     "title": "Sphere or tree?",
     "page": "/episodes/211-geometric-phase-diagram-diffusion-spectra/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/211-geometric-phase-diagram-diffusion-spectra/",
    "kind": "catalogue",
    "record": {
@@ -13451,7 +13553,7 @@
     "title": "A random straight line?",
     "page": "/episodes/212-planar-first-passage-geometry-absence/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/212-planar-first-passage-geometry-absence/",
    "kind": "catalogue",
    "record": {
@@ -13515,7 +13617,7 @@
     "title": "Does it percolate?",
     "page": "/episodes/213-critical-percolation-quasi-transitive/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/213-critical-percolation-quasi-transitive/",
    "kind": "catalogue",
    "record": {
@@ -13573,7 +13675,7 @@
     "title": "One ocean, or many?",
     "page": "/episodes/214-percolation-nonuniqueness-operator-bound/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/214-percolation-nonuniqueness-operator-bound/",
    "kind": "catalogue",
    "record": {
@@ -13655,7 +13757,7 @@
     "title": "Do spins forget?",
     "page": "/episodes/215-o3-continuum-o4-mass-asymptotics/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/215-o3-continuum-o4-mass-asymptotics/",
    "kind": "catalogue",
    "record": {
@@ -13743,7 +13845,7 @@
     "title": "Exactly one quarter?",
     "page": "/episodes/216-xy-critical-scaling-bkt-universality/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/216-xy-critical-scaling-bkt-universality/",
    "kind": "catalogue",
    "record": {
@@ -13807,7 +13909,7 @@
     "title": "How much does it wobble?",
     "page": "/episodes/217-sherrington-kirkpatrick-fluctuation-law/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/217-sherrington-kirkpatrick-fluctuation-law/",
    "kind": "catalogue",
    "record": {
@@ -13895,7 +13997,7 @@
     "title": "Same curve, new rules?",
     "page": "/episodes/218-ising-conformal-universality-random-bonds/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/218-ising-conformal-universality-random-bonds/",
    "kind": "catalogue",
    "record": {
@@ -13959,7 +14061,7 @@
     "title": "Do eigenvalues repel?",
     "page": "/episodes/219-goe-bulk-universality-regular-graphs/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/219-goe-bulk-universality-regular-graphs/",
    "kind": "catalogue",
    "record": {
@@ -14029,7 +14131,7 @@
     "title": "Escape, but never speed up?",
     "page": "/episodes/220-rwre-zero-one-ballisticity/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/220-rwre-zero-one-ballisticity/",
    "kind": "catalogue",
    "record": {
@@ -14087,7 +14189,7 @@
     "title": "Many states, one exact formula?",
     "page": "/episodes/221-mezard-parisi-diluted-spin-glasses/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/221-mezard-parisi-diluted-spin-glasses/",
    "kind": "catalogue",
    "record": {
@@ -14163,7 +14265,7 @@
     "title": "How much can one neuron store?",
     "page": "/episodes/222-perceptron-free-energies-jamming/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/222-perceptron-free-energies-jamming/",
    "kind": "catalogue",
    "record": {
@@ -14251,7 +14353,7 @@
     "title": "Percolation on the square grid?",
     "page": "/episodes/223-random-cluster-interfaces-sle/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/223-random-cluster-interfaces-sle/",
    "kind": "catalogue",
    "record": {
@@ -14321,7 +14423,7 @@
     "title": "Cardy without a lattice?",
     "page": "/episodes/224-voronoi-percolation-cardy/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/224-voronoi-percolation-cardy/",
    "kind": "catalogue",
    "record": {
@@ -14379,7 +14481,7 @@
     "title": "How rough is square ice?",
     "page": "/episodes/225-six-vertex-gaussian-free-field/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/225-six-vertex-gaussian-free-field/",
    "kind": "catalogue",
    "record": {
@@ -14437,7 +14539,7 @@
     "title": "Two random tilings, one loop soup?",
     "page": "/episodes/226-double-dimer-cle4/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/226-double-dimer-cle4/",
    "kind": "catalogue",
    "record": {
@@ -14537,7 +14639,7 @@
     "title": "How fast does a spin glass mix?",
     "page": "/episodes/227-sk-glauber-dynamics/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/227-sk-glauber-dynamics/",
    "kind": "catalogue",
    "record": {
@@ -14601,7 +14703,7 @@
     "title": "Can one kind of particle provably change phase?",
     "page": "/episodes/228-continuum-phase-transition-pair-potential/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/228-continuum-phase-transition-pair-potential/",
    "kind": "catalogue",
    "record": {
@@ -14671,7 +14773,7 @@
     "title": "When does a tree forget its root?",
     "page": "/episodes/229-reconstruction-thresholds-trees/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/229-reconstruction-thresholds-trees/",
    "kind": "catalogue",
    "record": {
@@ -14735,7 +14837,7 @@
     "title": "How long is a random curve?",
     "page": "/episodes/230-sle-exact-hausdorff-gauge/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/230-sle-exact-hausdorff-gauge/",
    "kind": "catalogue",
    "record": {
@@ -14793,7 +14895,7 @@
     "title": "Can coin flips grow a forest?",
     "page": "/episodes/231-free-spanning-forest-factor-iid/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/231-free-spanning-forest-factor-iid/",
    "kind": "catalogue",
    "record": {
@@ -14863,7 +14965,7 @@
     "title": "What does a random landscape look like?",
     "page": "/episodes/232-lipschitz-heights-gff/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/232-lipschitz-heights-gff/",
    "kind": "catalogue",
    "record": {
@@ -14921,7 +15023,7 @@
     "title": "Two magnets, one free field?",
     "page": "/episodes/233-ashkin-teller-current-limit/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/233-ashkin-teller-current-limit/",
    "kind": "catalogue",
    "record": {
@@ -14979,7 +15081,7 @@
     "title": "Only the eigenvalues matter?",
     "page": "/episodes/234-orthogonal-ising-spin-glass-pressure/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/234-orthogonal-ising-spin-glass-pressure/",
    "kind": "catalogue",
    "record": {
@@ -15055,7 +15157,7 @@
     "title": "When does random 3-SAT break?",
     "page": "/episodes/235-random-sat-thresholds/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/235-random-sat-thresholds/",
    "kind": "catalogue",
    "record": {
@@ -15113,7 +15215,7 @@
     "title": "Coin flips up to the knife edge?",
     "page": "/episodes/236-free-ising-tree-factor-threshold/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/236-free-ising-tree-factor-threshold/",
    "kind": "catalogue",
    "record": {
@@ -15243,13 +15345,40 @@
     "title": "How far does a walk that never crosses itself go?",
     "page": "/episodes/237-honeycomb-saw-three-quarter/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/237-honeycomb-saw-three-quarter/",
    "kind": "catalogue",
    "record": {
     "stage": "preprint",
     "preprint": "OpenAI, October 2026",
-    "expert_review": null,
+    "expert_review": {
+     "kind": "reviewed",
+     "by": "OSVerify",
+     "verdict": "1 major / 2 minor",
+     "papers_reviewed": 3,
+     "papers_total": 13,
+     "cases": [
+      {
+       "title": "Cap-selected amplitudes and triangle chords for honeycomb walks",
+       "url": "https://osverify.github.io/cases/cap-selected-amplitudes-and-triangle-chords-for-honeycomb-walks.html",
+       "verdict": "0 major / 1 minor"
+      },
+      {
+       "title": "Cylinder loop weights and planar nesting",
+       "url": "https://osverify.github.io/cases/cylinder-loop-weights-and-planar-nesting.html",
+       "verdict": "1 major / 0 minor"
+      },
+      {
+       "title": "Renewal and changes of law for critical honeycomb walks",
+       "url": "https://osverify.github.io/cases/renewal-and-changes-of-law-for-critical-honeycomb-walks.html",
+       "verdict": "0 major / 1 minor"
+      }
+     ],
+     "source": "https://osverify.github.io/case-studies.html",
+     "source_label": "OSVerify case studies",
+     "since": "2026-10-10",
+     "checked": "2026-10-27"
+    },
     "peer_review": "not yet",
     "lean": "partial",
     "lean_by": null
@@ -15367,7 +15496,7 @@
     "title": "How many shuffles randomize a deck?",
     "page": "/episodes/238-thorp-shuffle-log-mixing/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/238-thorp-shuffle-log-mixing/",
    "kind": "catalogue",
    "record": {
@@ -15431,7 +15560,7 @@
     "title": "When is a random matrix singular?",
     "page": "/episodes/239-symmetric-sign-matrix-singularity/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/239-symmetric-sign-matrix-singularity/",
    "kind": "catalogue",
    "record": {
@@ -15495,7 +15624,7 @@
     "title": "One model per size, eventually?",
     "page": "/episodes/240-eventual-categoricity-aec/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/240-eventual-categoricity-aec/",
    "kind": "catalogue",
    "record": {
@@ -15553,7 +15682,7 @@
     "title": "Can the Turing degrees be relabeled?",
     "page": "/episodes/241-turing-degrees-rigidity/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/241-turing-degrees-rigidity/",
    "kind": "catalogue",
    "record": {
@@ -15611,7 +15740,7 @@
     "title": "One solution per member, exactly?",
     "page": "/episodes/242-single-fold-diophantine/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/242-single-fold-diophantine/",
    "kind": "catalogue",
    "record": {
@@ -15675,7 +15804,7 @@
     "title": "Is there a logic for polynomial time?",
     "page": "/episodes/243-choiceless-polynomial-time/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/243-choiceless-polynomial-time/",
    "kind": "catalogue",
    "record": {
@@ -15733,7 +15862,7 @@
     "title": "No more pieces than points, yet no choice?",
     "page": "/episodes/244-partition-principle-not-choice/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/244-partition-principle-not-choice/",
    "kind": "catalogue",
    "record": {
@@ -15791,7 +15920,7 @@
     "title": "If every program can finish, must it?",
     "page": "/episodes/245-wn-implies-sn-pure-type-systems/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/245-wn-implies-sn-pure-type-systems/",
    "kind": "catalogue",
    "record": {
@@ -15849,7 +15978,7 @@
     "title": "Boundary a sphere, so the group is 3D hyperbolic?",
     "page": "/episodes/246-cannon-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/246-cannon-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -15913,7 +16042,7 @@
     "title": "Finite rules, finite orders, still infinite?",
     "page": "/episodes/247-finitely-presented-periodic-group/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/247-finitely-presented-periodic-group/",
    "kind": "catalogue",
    "record": {
@@ -15971,7 +16100,7 @@
     "title": "Can this group be averaged?",
     "page": "/episodes/248-thompson-group-f-nonamenable/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/248-thompson-group-f-nonamenable/",
    "kind": "catalogue",
    "record": {
@@ -16029,7 +16158,7 @@
     "title": "Dimension two, or three?",
     "page": "/episodes/249-eilenberg-ganea-counterexample/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/249-eilenberg-ganea-counterexample/",
    "kind": "catalogue",
    "record": {
@@ -16099,7 +16228,7 @@
     "title": "Decidable means simple inside?",
     "page": "/episodes/250-boone-higman-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/250-boone-higman-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -16163,7 +16292,7 @@
     "title": "Average it, straighten it?",
     "page": "/episodes/251-dixmier-unitarizability-ulam/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/251-dixmier-unitarizability-ulam/",
    "kind": "catalogue",
    "record": {
@@ -16221,7 +16350,7 @@
     "title": "Curved, yet hidden from finite shadows?",
     "page": "/episodes/252-non-residually-finite-hyperbolic-group/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/252-non-residually-finite-hyperbolic-group/",
    "kind": "catalogue",
    "record": {
@@ -16279,7 +16408,7 @@
     "title": "Simple, amenable, finitely presented?",
     "page": "/episodes/253-finitely-presented-simple-amenable-group/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/253-finitely-presented-simple-amenable-group/",
    "kind": "catalogue",
    "record": {
@@ -16349,7 +16478,7 @@
     "title": "Braids, and every relative of them?",
     "page": "/episodes/254-artin-groups-kpi1/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/254-artin-groups-kpi1/",
    "kind": "catalogue",
    "record": {
@@ -16407,7 +16536,7 @@
     "title": "Seen from far away, still polycyclic?",
     "page": "/episodes/255-virtually-polycyclic-qi-recognition/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/255-virtually-polycyclic-qi-recognition/",
    "kind": "catalogue",
    "record": {
@@ -16471,7 +16600,7 @@
     "title": "Can one equation kill a group?",
     "page": "/episodes/256-kervaire-howie-conjectures/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/256-kervaire-howie-conjectures/",
    "kind": "catalogue",
    "record": {
@@ -16529,7 +16658,7 @@
     "title": "Hyperbolic, but never CAT(0)?",
     "page": "/episodes/257-hyperbolic-group-not-cat0/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/257-hyperbolic-group-not-cat0/",
    "kind": "catalogue",
    "record": {
@@ -16593,7 +16722,7 @@
     "title": "One relation, one way to fail?",
     "page": "/episodes/258-gersten-one-relator-hyperbolic/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/258-gersten-one-relator-hyperbolic/",
    "kind": "catalogue",
    "record": {
@@ -16651,7 +16780,7 @@
     "title": "Same group, two prices?",
     "page": "/episodes/259-group-without-fixed-price/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/259-group-without-fixed-price/",
    "kind": "catalogue",
    "record": {
@@ -16781,7 +16910,7 @@
     "title": "How heavy must a black hole be?",
     "page": "/episodes/260-spacetime-penrose-inequality/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/260-spacetime-penrose-inequality/",
    "kind": "catalogue",
    "record": {
@@ -16845,7 +16974,7 @@
     "title": "Trapped, or free?",
     "page": "/episodes/261-anderson-localization-delocalization/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/261-anderson-localization-delocalization/",
    "kind": "catalogue",
    "record": {
@@ -16915,7 +17044,7 @@
     "title": "One bound state is the best?",
     "page": "/episodes/262-lieb-thirring-sharp-matrix/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/262-lieb-thirring-sharp-matrix/",
    "kind": "catalogue",
    "record": {
@@ -16985,7 +17114,7 @@
     "title": "How many electrons can an atom hold?",
     "page": "/episodes/263-ionization-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/263-ionization-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -17055,7 +17184,7 @@
     "title": "Is the future determined?",
     "page": "/episodes/264-strong-cosmic-censorship-kerr/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/264-strong-cosmic-censorship-kerr/",
    "kind": "catalogue",
    "record": {
@@ -17120,7 +17249,7 @@
     "title": "Only the boundary counts?",
     "page": "/episodes/265-two-dimensional-area-law/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/265-two-dimensional-area-law/",
    "kind": "catalogue",
    "record": {
@@ -17195,7 +17324,7 @@
     "title": "Only three in dimension six?",
     "page": "/episodes/266-three-mubs-dimension-six/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/266-three-mubs-dimension-six/",
    "kind": "catalogue",
    "record": {
@@ -17287,7 +17416,7 @@
     "title": "A condensate, proved at last?",
     "page": "/episodes/267-bose-einstein-condensation/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/267-bose-einstein-condensation/",
    "kind": "catalogue",
    "record": {
@@ -17351,7 +17480,7 @@
     "title": "A gap for spin one, proved at last?",
     "page": "/episodes/268-haldane-gap-spin-one/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/268-haldane-gap-spin-one/",
    "kind": "catalogue",
    "record": {
@@ -17415,7 +17544,7 @@
     "title": "Electrons that won’t squeeze, proved at last?",
     "page": "/episodes/269-laughlin-gap/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/269-laughlin-gap/",
    "kind": "catalogue",
    "record": {
@@ -17479,7 +17608,7 @@
     "title": "One bound state, always, proved at last?",
     "page": "/episodes/270-bfss-bound-states/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/270-bfss-bound-states/",
    "kind": "catalogue",
    "record": {
@@ -17555,7 +17684,7 @@
     "title": "A law for magnets, proved at last?",
     "page": "/episodes/271-blochs-law/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/271-blochs-law/",
    "kind": "catalogue",
    "record": {
@@ -17613,7 +17742,7 @@
     "title": "Entangled, but no secret?",
     "page": "/episodes/272-entanglement-without-key/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/272-entanglement-without-key/",
    "kind": "catalogue",
    "record": {
@@ -17671,7 +17800,7 @@
     "title": "Light that mixes gently, proved at last?",
     "page": "/episodes/273-entropy-photon-number/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/273-entropy-photon-number/",
    "kind": "catalogue",
    "record": {
@@ -17735,7 +17864,7 @@
     "title": "Shallow circuits, no parity, proved at last?",
     "page": "/episodes/274-parity-not-qac0/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/274-parity-not-qac0/",
    "kind": "catalogue",
    "record": {
@@ -17799,7 +17928,7 @@
     "title": "A hard chemistry problem, proved at last?",
     "page": "/episodes/275-coulomb-qma-hard/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/275-coulomb-qma-hard/",
    "kind": "catalogue",
    "record": {
@@ -17857,7 +17986,7 @@
     "title": "A noisy qubit’s capacity, proved at last?",
     "page": "/episodes/276-gad-capacity/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/276-gad-capacity/",
    "kind": "catalogue",
    "record": {
@@ -17915,7 +18044,7 @@
     "title": "No lucky streaks, proved at last?",
     "page": "/episodes/277-threshold-entangled-games/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/277-threshold-entangled-games/",
    "kind": "catalogue",
    "record": {
@@ -17973,7 +18102,7 @@
     "title": "Kohn–Sham can’t fake it, proved at last?",
     "page": "/episodes/278-kohn-sham-counterexample/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/278-kohn-sham-counterexample/",
    "kind": "catalogue",
    "record": {
@@ -18031,7 +18160,7 @@
     "title": "Factoring with no gamble, proved at last?",
     "page": "/episodes/279-exact-quantum-factoring/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/279-exact-quantum-factoring/",
    "kind": "catalogue",
    "record": {
@@ -18089,7 +18218,7 @@
     "title": "Two languages agree, proved at last?",
     "page": "/episodes/280-voa-conformal-nets/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/280-voa-conformal-nets/",
    "kind": "catalogue",
    "record": {
@@ -18153,7 +18282,7 @@
     "title": "QAOA reaches the optimum, proved at last?",
     "page": "/episodes/281-qaoa-sk-optimum/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/281-qaoa-sk-optimum/",
    "kind": "catalogue",
    "record": {
@@ -18211,7 +18340,7 @@
     "title": "Scale implies conformal, proved at last?",
     "page": "/episodes/282-scale-to-conformal/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/282-scale-to-conformal/",
    "kind": "catalogue",
    "record": {
@@ -18269,7 +18398,7 @@
     "title": "Any unitary from a table, proved at last?",
     "page": "/episodes/283-unitary-synthesis/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/283-unitary-synthesis/",
    "kind": "catalogue",
    "record": {
@@ -18327,7 +18456,7 @@
     "title": "Nearly a fourth power, proved at last?",
     "page": "/episodes/284-quartic-separation/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/284-quartic-separation/",
    "kind": "catalogue",
    "record": {
@@ -18397,7 +18526,7 @@
     "title": "The bridge breaks, proved at last?",
     "page": "/episodes/285-baum-connes-kadison-kaplansky/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/285-baum-connes-kadison-kaplansky/",
    "kind": "catalogue",
    "record": {
@@ -18461,7 +18590,7 @@
     "title": "A perfect fingerprint, proved at last?",
     "page": "/episodes/286-lattice-von-neumann-rigidity/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/286-lattice-von-neumann-rigidity/",
    "kind": "catalogue",
    "record": {
@@ -18519,7 +18648,7 @@
     "title": "Every free group, one factor, proved at last?",
     "page": "/episodes/287-free-group-factors/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/287-free-group-factors/",
    "kind": "catalogue",
    "record": {
@@ -18577,7 +18706,7 @@
     "title": "Kadison’s question answered, proved at last?",
     "page": "/episodes/288-kadison-similarity/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/288-kadison-similarity/",
    "kind": "catalogue",
    "record": {
@@ -18647,7 +18776,7 @@
     "title": "Close means a small turn, proved at last?",
     "page": "/episodes/289-kadison-kastler/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/289-kadison-kastler/",
    "kind": "catalogue",
    "record": {
@@ -18711,7 +18840,7 @@
     "title": "The relative case, proved at last?",
     "page": "/episodes/290-bicentralizer/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/290-bicentralizer/",
    "kind": "catalogue",
    "record": {
@@ -18787,7 +18916,7 @@
     "title": "One week, two proofs?",
     "page": "/episodes/291-toms-winter/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/291-toms-winter/",
    "kind": "catalogue",
    "record": {
@@ -18845,7 +18974,7 @@
     "title": "Too big for the hotel?",
     "page": "/episodes/292-kirchberg-embedding/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/292-kirchberg-embedding/",
    "kind": "catalogue",
    "record": {
@@ -18909,7 +19038,7 @@
     "title": "No room they all respect?",
     "page": "/episodes/293-hyperinvariant-subspaces/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/293-hyperinvariant-subspaces/",
    "kind": "catalogue",
    "record": {
@@ -18967,7 +19096,7 @@
     "title": "The parts fall short?",
     "page": "/episodes/294-kaplansky-quasitrace/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/294-kaplansky-quasitrace/",
    "kind": "catalogue",
    "record": {
@@ -19025,7 +19154,7 @@
     "title": "Every equation solvable?",
     "page": "/episodes/295-kadison-ringrose/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/295-kadison-ringrose/",
    "kind": "catalogue",
    "record": {
@@ -19083,7 +19212,7 @@
     "title": "One operator for all?",
     "page": "/episodes/296-generator-problem/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/296-generator-problem/",
    "kind": "catalogue",
    "record": {
@@ -19141,7 +19270,7 @@
     "title": "One irrep, not compact?",
     "page": "/episodes/297-naimark-zfc/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/297-naimark-zfc/",
    "kind": "catalogue",
    "record": {
@@ -19199,7 +19328,7 @@
     "title": "Both finite, still unequal?",
     "page": "/episodes/298-free-entropy/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/298-free-entropy/",
    "kind": "catalogue",
    "record": {
@@ -19257,7 +19386,7 @@
     "title": "No characters, then Z-stable?",
     "page": "/episodes/299-kirchberg-rordam/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/299-kirchberg-rordam/",
    "kind": "catalogue",
    "record": {
@@ -19321,7 +19450,7 @@
     "title": "Every MASA, quadratically?",
     "page": "/episodes/300-quadratic-paving/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/300-quadratic-paving/",
    "kind": "catalogue",
    "record": {
@@ -19379,7 +19508,7 @@
     "title": "The cone decides?",
     "page": "/episodes/301-trace-cones/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/301-trace-cones/",
    "kind": "catalogue",
    "record": {
@@ -19443,7 +19572,7 @@
     "title": "Exactly one half?",
     "page": "/episodes/302-mean-dimension/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/302-mean-dimension/",
    "kind": "catalogue",
    "record": {
@@ -19501,7 +19630,7 @@
     "title": "Infinite enough?",
     "page": "/episodes/303-pure-infiniteness/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/303-pure-infiniteness/",
    "kind": "catalogue",
    "record": {
@@ -19559,7 +19688,7 @@
     "title": "Always Lie?",
     "page": "/episodes/304-hilbert-smith/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/304-hilbert-smith/",
    "kind": "catalogue",
    "record": {
@@ -19629,7 +19758,7 @@
     "title": "Free groups not good?",
     "page": "/episodes/305-disk-embedding/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/305-disk-embedding/",
    "kind": "catalogue",
    "record": {
@@ -19687,13 +19816,30 @@
     "title": "Never the same twice?",
     "page": "/episodes/306-cosmetic-surgery/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/306-cosmetic-surgery/",
    "kind": "catalogue",
    "record": {
     "stage": "preprint",
     "preprint": "OpenAI, October 2026",
-    "expert_review": null,
+    "expert_review": {
+     "kind": "reviewed",
+     "by": "OSVerify",
+     "verdict": "0 major / 3 minor",
+     "papers_reviewed": 1,
+     "papers_total": 1,
+     "cases": [
+      {
+       "title": "Purely cosmetic surgery on knots in the three-sphere",
+       "url": "https://osverify.github.io/cases/cosmetic-surgery.html",
+       "verdict": "0 major / 3 minor"
+      }
+     ],
+     "source": "https://osverify.github.io/case-studies.html",
+     "source_label": "OSVerify case studies",
+     "since": "2026-10-10",
+     "checked": "2026-10-27"
+    },
     "peer_review": "not yet",
     "lean": "none",
     "lean_by": null
@@ -19751,7 +19897,7 @@
     "title": "Lost in assembly?",
     "page": "/episodes/307-coarse-assembly/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/307-coarse-assembly/",
    "kind": "catalogue",
    "record": {
@@ -19815,7 +19961,7 @@
     "title": "V(4), at last?",
     "page": "/episodes/308-smith-toda/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/308-smith-toda/",
    "kind": "catalogue",
    "record": {
@@ -19873,7 +20019,7 @@
     "title": "Stem 322 survives?",
     "page": "/episodes/309-kervaire-three/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/309-kervaire-three/",
    "kind": "catalogue",
    "record": {
@@ -19931,7 +20077,7 @@
     "title": "Always a hole?",
     "page": "/episodes/310-quillen/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/310-quillen/",
    "kind": "catalogue",
    "record": {
@@ -19989,7 +20135,7 @@
     "title": "Exactly n + 2?",
     "page": "/episodes/311-hovey-strickland/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/311-hovey-strickland/",
    "kind": "catalogue",
    "record": {
@@ -20055,7 +20201,7 @@
     "title": "Spaces as algebra?",
     "page": "/episodes/312-homotopy-hypothesis/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/312-homotopy-hypothesis/",
    "kind": "catalogue",
    "record": {
@@ -20113,7 +20259,7 @@
     "title": "Finitely generated?",
     "page": "/episodes/313-finite-generation/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/313-finite-generation/",
    "kind": "catalogue",
    "record": {
@@ -20171,7 +20317,7 @@
     "title": "Heights lost?",
     "page": "/episodes/314-cyclic-length/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/314-cyclic-length/",
    "kind": "catalogue",
    "record": {
@@ -20229,7 +20375,7 @@
     "title": "Never negative?",
     "page": "/episodes/315-singer-four/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/315-singer-four/",
    "kind": "catalogue",
    "record": {
@@ -20287,7 +20433,7 @@
     "title": "Only the famous ones?",
     "page": "/episodes/316-curtis-conjecture/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/316-curtis-conjecture/",
    "kind": "catalogue",
    "record": {
@@ -20345,7 +20491,7 @@
     "title": "Every dimension?",
     "page": "/episodes/317-thomason-model-structures/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/317-thomason-model-structures/",
    "kind": "catalogue",
    "record": {
@@ -20427,7 +20573,7 @@
     "title": "Does it split?",
     "page": "/episodes/318-chromatic-splitting/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/318-chromatic-splitting/",
    "kind": "catalogue",
    "record": {
@@ -20485,7 +20631,7 @@
     "title": "Finitely built?",
     "page": "/episodes/319-hahn-wilson/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/319-hahn-wilson/",
    "kind": "catalogue",
    "record": {
@@ -20543,7 +20689,7 @@
     "title": "Same group, not the same?",
     "page": "/episodes/320-borel-four/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/320-borel-four/",
    "kind": "catalogue",
    "record": {
@@ -20601,7 +20747,7 @@
     "title": "Looks 2D, isn’t?",
     "page": "/episodes/321-wall-d2/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/321-wall-d2/",
    "kind": "catalogue",
    "record": {
@@ -20659,7 +20805,7 @@
     "title": "The sphere knows all?",
     "page": "/episodes/322-tingley/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/322-tingley/",
    "kind": "catalogue",
    "record": {
@@ -20717,7 +20863,7 @@
     "title": "Yes or no, undecidable?",
     "page": "/episodes/323-separable-quotient/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/323-separable-quotient/",
    "kind": "catalogue",
    "record": {
@@ -20781,7 +20927,7 @@
     "title": "Same shape, not the same?",
     "page": "/episodes/324-lipschitz-banach/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/324-lipschitz-banach/",
    "kind": "catalogue",
    "record": {
@@ -20845,7 +20991,7 @@
     "title": "Never more than twice?",
     "page": "/episodes/325-complete-crouzeix/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/325-complete-crouzeix/",
    "kind": "catalogue",
    "record": {
@@ -20903,7 +21049,7 @@
     "title": "Pisier’s last question?",
     "page": "/episodes/326-cotype-cotype/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/326-cotype-cotype/",
    "kind": "catalogue",
    "record": {
@@ -20961,7 +21107,7 @@
     "title": "Walks reveal the shape?",
     "page": "/episodes/327-markov-type/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/327-markov-type/",
    "kind": "catalogue",
    "record": {
@@ -21019,7 +21165,7 @@
     "title": "Always a fixed point?",
     "page": "/episodes/328-kirk-fixed-point/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/328-kirk-fixed-point/",
    "kind": "catalogue",
    "record": {
@@ -21077,7 +21223,7 @@
     "title": "Covering is not self-dual?",
     "page": "/episodes/329-entropy-duality/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/329-entropy-duality/",
    "kind": "catalogue",
    "record": {
@@ -21135,7 +21281,7 @@
     "title": "No bound at all?",
     "page": "/episodes/330-free-space-bap/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/330-free-space-bap/",
    "kind": "catalogue",
    "record": {
@@ -21229,7 +21375,7 @@
     "title": "Midpoints aren’t enough?",
     "page": "/episodes/331-midpoint-diamonds/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/331-midpoint-diamonds/",
    "kind": "catalogue",
    "record": {
@@ -21287,7 +21433,7 @@
     "title": "Taxicab maps extend?",
     "page": "/episodes/332-markov-cotype-l1/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/332-markov-cotype-l1/",
    "kind": "catalogue",
    "record": {
@@ -21345,7 +21491,7 @@
     "title": "Every surface fits in 4D?",
     "page": "/episodes/333-surfaces-r4/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/333-surfaces-r4/",
    "kind": "catalogue",
    "record": {
@@ -21403,7 +21549,7 @@
     "title": "Not even a piece fits in 3D?",
     "page": "/episodes/334-no-local-r3/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/334-no-local-r3/",
    "kind": "catalogue",
    "record": {
@@ -21467,7 +21613,7 @@
     "title": "Curvature pays for topology?",
     "page": "/episodes/335-integral-scalar-curvature/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/335-integral-scalar-curvature/",
    "kind": "catalogue",
    "record": {
@@ -21537,7 +21683,7 @@
     "title": "Two dimensions disappear?",
     "page": "/episodes/336-urysohn-width/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/336-urysohn-width/",
    "kind": "catalogue",
    "record": {
@@ -21601,7 +21747,7 @@
     "title": "The ball wins everywhere?",
     "page": "/episodes/337-cartan-hadamard/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/337-cartan-hadamard/",
    "kind": "catalogue",
    "record": {
@@ -21659,7 +21805,7 @@
     "title": "Yau’s question settled?",
     "page": "/episodes/338-yau-uniformization/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/338-yau-uniformization/",
    "kind": "catalogue",
    "record": {
@@ -21717,7 +21863,7 @@
     "title": "Most chaotic only if symmetric?",
     "page": "/episodes/339-katok-entropy/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/339-katok-entropy/",
    "kind": "catalogue",
    "record": {
@@ -21775,13 +21921,30 @@
     "title": "Arnold’s guess fails?",
     "page": "/episodes/340-nearby-lagrangian/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/340-nearby-lagrangian/",
    "kind": "catalogue",
    "record": {
     "stage": "preprint",
     "preprint": "OpenAI, October 2026",
-    "expert_review": null,
+    "expert_review": {
+     "kind": "reviewed",
+     "by": "OSVerify",
+     "verdict": "0 major / 1 minor",
+     "papers_reviewed": 1,
+     "papers_total": 1,
+     "cases": [
+      {
+       "title": "A counterexample to the nearby Lagrangian conjecture",
+       "url": "https://osverify.github.io/cases/nearby-lagrangian.html",
+       "verdict": "0 major / 1 minor"
+      }
+     ],
+     "source": "https://osverify.github.io/case-studies.html",
+     "source_label": "OSVerify case studies",
+     "since": "2026-10-10",
+     "checked": "2026-10-27"
+    },
     "peer_review": "not yet",
     "lean": "none",
     "lean_by": null
@@ -21833,7 +21996,7 @@
     "title": "Every triple becomes perfect?",
     "page": "/episodes/341-hypersymplectic/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/341-hypersymplectic/",
    "kind": "catalogue",
    "record": {
@@ -21891,7 +22054,7 @@
     "title": "Tamed means compatible?",
     "page": "/episodes/342-tamed-compatible/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/342-tamed-compatible/",
    "kind": "catalogue",
    "record": {
@@ -21949,7 +22112,7 @@
     "title": "Two tests are enough?",
     "page": "/episodes/343-ball-packing/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/343-ball-packing/",
    "kind": "catalogue",
    "record": {
@@ -22007,7 +22170,7 @@
     "title": "Only five shapes?",
     "page": "/episodes/344-metric-blaschke/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/344-metric-blaschke/",
    "kind": "catalogue",
    "record": {
@@ -22065,7 +22228,7 @@
     "title": "Infinitely many loops?",
     "page": "/episodes/345-closed-geodesics/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/345-closed-geodesics/",
    "kind": "catalogue",
    "record": {
@@ -22129,7 +22292,7 @@
     "title": "Smooth almost everywhere?",
     "page": "/episodes/346-varifold-singular-set/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/346-varifold-singular-set/",
    "kind": "catalogue",
    "record": {
@@ -22211,7 +22374,7 @@
     "title": "Fewer fixed points?",
     "page": "/episodes/347-arnold-counterexamples/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/347-arnold-counterexamples/",
    "kind": "catalogue",
    "record": {
@@ -22281,7 +22444,7 @@
     "title": "Only three shapes?",
     "page": "/episodes/348-einstein-four-manifolds/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/348-einstein-four-manifolds/",
    "kind": "catalogue",
    "record": {
@@ -22339,7 +22502,7 @@
     "title": "The next smallest?",
     "page": "/episodes/349-solomon-yau/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/349-solomon-yau/",
    "kind": "catalogue",
    "record": {
@@ -22409,7 +22572,7 @@
     "title": "Square-root law?",
     "page": "/episodes/350-yau-nodal-bounds/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/350-yau-nodal-bounds/",
    "kind": "catalogue",
    "record": {
@@ -22479,7 +22642,7 @@
     "title": "Is scalar enough?",
     "page": "/episodes/351-scalar-curvature-ricci-flow/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/351-scalar-curvature-ricci-flow/",
    "kind": "catalogue",
    "record": {
@@ -22537,7 +22700,7 @@
     "title": "Calabi flow breaks?",
     "page": "/episodes/352-calabi-flow-singularity/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/352-calabi-flow-singularity/",
    "kind": "catalogue",
    "record": {
@@ -22601,7 +22764,7 @@
     "title": "Nine, then ten?",
     "page": "/episodes/353-affine-bernstein/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/353-affine-bernstein/",
    "kind": "catalogue",
    "record": {
@@ -22659,7 +22822,7 @@
     "title": "Ball, tube or slab?",
     "page": "/episodes/354-cubic-torus-isoperimetric/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/354-cubic-torus-isoperimetric/",
    "kind": "catalogue",
    "record": {
@@ -22717,7 +22880,7 @@
     "title": "Zoom in: one picture?",
     "page": "/episodes/355-tangent-flow-uniqueness/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/355-tangent-flow-uniqueness/",
    "kind": "catalogue",
    "record": {
@@ -22781,7 +22944,7 @@
     "title": "Fat triangles from a tensor?",
     "page": "/episodes/356-gigli-alexandrov-curvature/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/356-gigli-alexandrov-curvature/",
    "kind": "catalogue",
    "record": {
@@ -22839,7 +23002,7 @@
     "title": "Honest coordinates?",
     "page": "/episodes/357-rcd-bilipschitz-charts/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/357-rcd-bilipschitz-charts/",
    "kind": "catalogue",
    "record": {
@@ -22897,7 +23060,7 @@
     "title": "No conjugate points, yet never nonpositive?",
     "page": "/episodes/358-no-conjugate-points/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/358-no-conjugate-points/",
    "kind": "catalogue",
    "record": {
@@ -22961,7 +23124,7 @@
     "title": "Pinched negative, no bounded domain?",
     "page": "/episodes/359-kahler-no-bounded-coordinates/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/359-kahler-no-bounded-coordinates/",
    "kind": "catalogue",
    "record": {
@@ -23025,7 +23188,7 @@
     "title": "Curvature keeps transport tame?",
     "page": "/episodes/360-weak-mtw-transport/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/360-weak-mtw-transport/",
    "kind": "catalogue",
    "record": {
@@ -23089,7 +23252,7 @@
     "title": "More harmonic than flat space?",
     "page": "/episodes/361-harmonic-dimension-counterexample/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/361-harmonic-dimension-counterexample/",
    "kind": "catalogue",
    "record": {
@@ -23147,7 +23310,7 @@
     "title": "Plasmas never blow up?",
     "page": "/episodes/362-vlasov-maxwell-global/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/362-vlasov-maxwell-global/",
    "kind": "catalogue",
    "record": {
@@ -23211,7 +23374,7 @@
     "title": "Same gas, two futures?",
     "page": "/episodes/363-boltzmann-nonuniqueness/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/363-boltzmann-nonuniqueness/",
    "kind": "catalogue",
    "record": {
@@ -23275,7 +23438,7 @@
     "title": "Newton to Boltzmann, for longer?",
     "page": "/episodes/364-boltzmann-grad-lifespan/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/364-boltzmann-grad-lifespan/",
    "kind": "catalogue",
    "record": {
@@ -23345,7 +23508,7 @@
     "title": "One small patch sees everything?",
     "page": "/episodes/365-calderon-one-patch/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/365-calderon-one-patch/",
    "kind": "catalogue",
    "record": {
@@ -23403,7 +23566,7 @@
     "title": "Only three shapes for every edge?",
     "page": "/episodes/366-mumford-shah-interior/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/366-mumford-shah-interior/",
    "kind": "catalogue",
    "record": {
@@ -23461,7 +23624,7 @@
     "title": "Five, six or seven?",
     "page": "/episodes/367-bernoulli-critical-dimension/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/367-bernoulli-critical-dimension/",
    "kind": "catalogue",
    "record": {
@@ -23525,7 +23688,7 @@
     "title": "Smooth any 3-D deformation?",
     "page": "/episodes/368-ball-evans-3d/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/368-ball-evans-3d/",
    "kind": "catalogue",
    "record": {
@@ -23583,7 +23746,7 @@
     "title": "Hot spots on the edge?",
     "page": "/episodes/369-hot-spots-simply-connected/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/369-hot-spots-simply-connected/",
    "kind": "catalogue",
    "record": {
@@ -23641,7 +23804,7 @@
     "title": "No solutions below the curve?",
     "page": "/episodes/370-henon-lane-emden/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/370-henon-lane-emden/",
    "kind": "catalogue",
    "record": {
@@ -23699,7 +23862,7 @@
     "title": "Stable blowup for waves that spread?",
     "page": "/episodes/371-defocusing-nls-blowup/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/371-defocusing-nls-blowup/",
    "kind": "catalogue",
    "record": {
@@ -23757,7 +23920,7 @@
     "title": "Feel the inside from the surface?",
     "page": "/episodes/372-isotropic-elasticity-uniqueness/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/372-isotropic-elasticity-uniqueness/",
    "kind": "catalogue",
    "record": {
@@ -23815,7 +23978,7 @@
     "title": "Electrons that must flip a coin?",
     "page": "/episodes/373-coulomb-monge-counterexample/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/373-coulomb-monge-counterexample/",
    "kind": "catalogue",
    "record": {
@@ -23873,7 +24036,7 @@
     "title": "One third, not one half?",
     "page": "/episodes/374-brenier-one-third-stability/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/374-brenier-one-third-stability/",
    "kind": "catalogue",
    "record": {
@@ -23931,7 +24094,7 @@
     "title": "Only flat walls in eight dimensions?",
     "page": "/episodes/375-de-giorgi-dimension-eight/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/375-de-giorgi-dimension-eight/",
    "kind": "catalogue",
    "record": {
@@ -24037,7 +24200,7 @@
     "title": "A fluid that computes?",
     "page": "/episodes/376-navier-stokes-computation/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/376-navier-stokes-computation/",
    "kind": "catalogue",
    "record": {
@@ -24095,7 +24258,7 @@
     "title": "Continuous gradients in every dimension?",
     "page": "/episodes/377-infinity-harmonic-c1alpha/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/377-infinity-harmonic-c1alpha/",
    "kind": "catalogue",
    "record": {
@@ -24153,18 +24316,19 @@
     "title": "The Exponential Time Hypothesis is false?",
     "page": "/episodes/378-exponential-time-hypothesis-false/"
    },
-   "last_checked": "2026-10-26",
+   "last_checked": "2026-10-27",
    "url": "https://aiprovedwhat.com/episodes/378-exponential-time-hypothesis-false/",
    "kind": "catalogue",
    "record": {
     "stage": "preprint",
     "preprint": "OpenAI, dated October 25, 2026, added to the catalogue October 26",
     "expert_review": {
-     "by": "An independent working group of computer scientists led by Russell Impagliazzo, Ramamohan Paturi and Ryan Williams",
+     "by": "OpenAI says a named working group will examine it (led by Russell Impagliazzo, Ramamohan Paturi and Ryan Williams)",
      "quote": "An independent working group of computer scientists led by Russell Impagliazzo, Ramamohan Paturi, and Ryan Williams will examine and explain the proof. At the group’s request, we are making the materials public immediately so others can examine them as well.",
      "source": "https://github.com/openai/math/blob/main/history.md",
      "source_label": "OpenAI’s history.md, October 26, 2026",
-     "since": "2026-10-26"
+     "since": "2026-10-26",
+     "kind": "announced"
     },
     "peer_review": "not yet",
     "lean": "partial",
@@ -24217,7 +24381,11 @@
     }
    ],
    "url": "https://aiprovedwhat.com/episodes/s01-navier-stokes-euler-blowup/",
-   "episode": true,
+   "episode": {
+    "video_id": "TzNSkDU60qA",
+    "length": "6:42",
+    "page": "/episodes/s01-navier-stokes-euler-blowup/"
+   },
    "sources": [
     "https://github.com/openai/NavierStokesAndEuler",
     "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
@@ -24247,7 +24415,11 @@
    },
    "papers": [],
    "url": "https://aiprovedwhat.com/episodes/an01-fermats-last-theorem-lean/",
-   "episode": true,
+   "episode": {
+    "video_id": "GNLlEQ4nXfs",
+    "length": "8:21",
+    "page": "/episodes/an01-fermats-last-theorem-lean/"
+   },
    "sources": [
     "https://www.anthropic.com/research/formalizing-fermats-last-theorem",
     "https://github.com/anthropics/fermats-last-theorem",
@@ -24274,7 +24446,11 @@
     }
    ],
    "url": "https://aiprovedwhat.com/episodes/ax01-classification-finite-simple-groups-lean/",
-   "episode": true,
+   "episode": {
+    "video_id": "wenkYQoIC4Y",
+    "length": "9:05",
+    "page": "/episodes/ax01-classification-finite-simple-groups-lean/"
+   },
    "sources": [
     "https://github.com/AxiomMath/CFSG",
     "https://hexagonmath.org/2610.00575?version=1",
@@ -24301,7 +24477,11 @@
     }
    ],
    "url": "https://aiprovedwhat.com/episodes/psi01-05-open-quantum-problems/#psi01",
-   "episode": true,
+   "episode": {
+    "video_id": "hMgeDAvz7iM",
+    "length": "8:57",
+    "page": "/episodes/psi01-05-open-quantum-problems/"
+   },
    "sources": [
     "https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp02-three-copy-werner",
     "https://psi.inc/research/oqp-batch-2026/",
@@ -24328,7 +24508,11 @@
     }
    ],
    "url": "https://aiprovedwhat.com/episodes/psi01-05-open-quantum-problems/#psi02",
-   "episode": true,
+   "episode": {
+    "video_id": "hMgeDAvz7iM",
+    "length": "8:57",
+    "page": "/episodes/psi01-05-open-quantum-problems/"
+   },
    "sources": [
     "https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp12-vacuum-bell-correlations",
     "https://psi.inc/research/oqp-batch-2026/",
@@ -24355,7 +24539,11 @@
     }
    ],
    "url": "https://aiprovedwhat.com/episodes/psi01-05-open-quantum-problems/#psi03",
-   "episode": true,
+   "episode": {
+    "video_id": "hMgeDAvz7iM",
+    "length": "8:57",
+    "page": "/episodes/psi01-05-open-quantum-problems/"
+   },
    "sources": [
     "https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp27-cglmp-inequalities",
     "https://psi.inc/research/oqp-batch-2026/",
@@ -24382,7 +24570,11 @@
     }
    ],
    "url": "https://aiprovedwhat.com/episodes/psi01-05-open-quantum-problems/#psi04",
-   "episode": true,
+   "episode": {
+    "video_id": "hMgeDAvz7iM",
+    "length": "8:57",
+    "page": "/episodes/psi01-05-open-quantum-problems/"
+   },
    "sources": [
     "https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/ppt-composition-bound",
     "https://psi.inc/research/oqp-batch-2026/",
@@ -24410,7 +24602,11 @@
     }
    ],
    "url": "https://aiprovedwhat.com/episodes/psi01-05-open-quantum-problems/#psi05",
-   "episode": true,
+   "episode": {
+    "video_id": "hMgeDAvz7iM",
+    "length": "8:57",
+    "page": "/episodes/psi01-05-open-quantum-problems/"
+   },
    "sources": [
     "https://github.com/physical-superintelligence/oqp-batch-2026/tree/main/oqp43-extensible-causality",
     "https://psi.inc/research/oqp-batch-2026/",
@@ -24437,7 +24633,11 @@
     }
    ],
    "url": "https://aiprovedwhat.com/episodes/ax02-dedekind-zeta-zero-free-region/",
-   "episode": true,
+   "episode": {
+    "video_id": "QMaOACMd9HQ",
+    "length": "8:32",
+    "page": "/episodes/ax02-dedekind-zeta-zero-free-region/"
+   },
    "sources": [
     "https://hexagonmath.org/2610.00200",
     "https://github.com/AxiomMath/DedekindZetaZeroFree"
@@ -24463,7 +24663,11 @@
     }
    ],
    "url": "https://aiprovedwhat.com/episodes/ax03-huang-jiang-oblomkov-conjecture/",
-   "episode": true,
+   "episode": {
+    "video_id": "AQvuYbdDOJ0",
+    "length": "8:03",
+    "page": "/episodes/ax03-huang-jiang-oblomkov-conjecture/"
+   },
    "sources": [
     "https://arxiv.org/abs/2609.20567",
     "https://github.com/AxiomMath/HJO"
@@ -24489,7 +24693,11 @@
     }
    ],
    "url": "https://aiprovedwhat.com/episodes/ax04-collatz-positive-density/",
-   "episode": true,
+   "episode": {
+    "video_id": "5f2DUvadZq0",
+    "length": "7:15",
+    "page": "/episodes/ax04-collatz-positive-density/"
+   },
    "sources": [
     "https://hexagonmath.org/2610.00249",
     "https://github.com/AxiomMath/CollatzPositiveDensity"
@@ -24519,7 +24727,11 @@
     }
    ],
    "url": "https://aiprovedwhat.com/episodes/an02-simple-zeros-riemann-zeta/",
-   "episode": true,
+   "episode": {
+    "video_id": "ORJH7M2w1-M",
+    "length": "8:11",
+    "page": "/episodes/an02-simple-zeros-riemann-zeta/"
+   },
    "sources": [
     "https://www.anthropic.com/research/riemann-zeta",
     "https://arxiv.org/abs/2608.13637",

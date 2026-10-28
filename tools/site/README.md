@@ -34,8 +34,8 @@ navigation and two marked blocks (below).
 
 ## Results and papers
 
-OpenAI groups its papers into results (719 papers in 372 results as of
-October 2026). The site labels the first paper OpenAI lists for a result as
+OpenAI groups its papers into results (721 papers in 373 results as of
+October 26, 2026; `docs/data/results.json` has the current figures). The site labels the first paper OpenAI lists for a result as
 the **main paper** and the others as **companions**; it uses no other roles.
 The counts on the home and results pages come from the data.
 
@@ -193,11 +193,17 @@ Hand-maintained inputs (all small JSON files here):
 | `specials.json` | Claims announced outside the catalogue (S01, S02), with record and sources |
 | `specials/<id>_refs.json` | A Special's reference lists, read from its PDFs by `specials_refs.py` |
 | `revisions.json` | Revised / implied-by / record-updated banners per result |
-| `status_overrides.json` | Record steps the catalogue lacks: named expert review (quoted), preprint text |
+| `status_overrides.json` | Record steps the catalogue lacks: expert review (OSVerify's published reviews, kind "reviewed"; or a group OpenAI says is checking, kind "announced", quoted), preprint text |
 | `relations.json` | Our own links between results (implies, same equations), drawn on the map |
+| `sources.json` | The labs covered (OpenAI, Axiom Math, PSI, Anthropic): names, repos, ID prefixes, announcement pages |
+| `version_notes.json` | Labels for episode versions the default names don't fit (e.g. a fix release) |
 | `connections.baseline.json` | The connections.json a revised result's references are compared against |
 
 `static/` is copied over the output (`assets/connections.js`); `static/assets/next.css` is appended to
 `assets/site.css` between marker comments. `share_card.js [OUT] [SITE_DIR] [BASE_URL]` renders the card
 from `SITE_DIR/data/connections.json`. `check_links.py` also requires the addresses printed in YouTube
 descriptions (`REQUIRED`).
+
+The four-step record on every page: posted as a preprint, under expert review, peer reviewed, checked in Lean.
+Every 'Last checked' date comes from the latest daily-check entry in `pipeline/UP_TO_DATE.md`
+(hand-made pages carry it between `<!-- last-checked:start/end -->` markers).

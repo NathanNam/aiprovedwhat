@@ -12,6 +12,10 @@
 <meta property="og:description" content="Anthropic published a Lean proof of Fermat’s Last Theorem written by Claude agents in 11 days: about 13 million lines, following Darmon, Diamond and Taylor. What was claimed, what is not, the caveats in the sources, and where it stands. Made with Claude; held to the same standards. Lean by Anthropic, not run by us; not peer reviewed.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/an01-fermats-last-theorem-lean/">
 <meta property="og:image" content="https://aiprovedwhat.com/episodes/an01-fermats-last-theorem-lean/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="AN01: Fermat’s Last Theorem, in Lean? The equation and the route of the proof: Frey curve, Mazur, Wiles, Ribet, level 2.">
+<meta name="twitter:image:alt" content="AN01: Fermat’s Last Theorem, in Lean? The equation and the route of the proof: Frey curve, Mazur, Wiles, Ribet, level 2.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
@@ -33,7 +37,7 @@
       <li><a href="../../episodes/">Results</a></li>
       <li><a href="../../subjects/">Subjects</a></li>
       <li><a href="../../updates/">Updates</a></li>
-      <li><a href="../../specials/">Specials</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
       <li><a href="../../connections/">Connections</a></li>
       <li><a href="../../about/">About</a></li>
       <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
@@ -96,7 +100,7 @@
     <dd>The claim itself: Lean’s three standard axioms (propext, Classical.choice, Quot.sound), comparator against Mathlib’s statement, a second kernel (nanoda, with Anthropic’s published speed patches), as the README reports. Not built or run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 27, 2026. Where it stands. The post and the repository went public on September 4; the repository’s first commit is dated the day before, and its Lean files have not changed since. Outside check: Kevin Buzzard. On his blog that day he wrote: “I’ve compiled the code base and run comparator on it — it checks out”. In comments there, he adds that he spent many hours looking over the code and inspected the hundred or so lines that are not definitions or proofs. Anthropic quotes him calling it an extraordinary autoformalization achievement. The repository’s own metadata calls its review self-assessed, and nothing is peer reviewed. The Lean is the claim itself, by Anthropic; we did not build or run it. Its README says one build took 5.5 hours at 96 jobs, and the comparator about 15 hours more.</p>
+<p class="ledger-note"><!-- last-checked:start -->Last checked October 27, 2026.<!-- last-checked:end --> Where it stands. The post and the repository went public on September 4; the repository’s first commit is dated the day before, and its Lean files have not changed since. Outside check: Kevin Buzzard. On his blog that day he wrote: “I’ve compiled the code base and run comparator on it — it checks out”. In comments there, he adds that he spent many hours looking over the code and inspected the hundred or so lines that are not definitions or proofs. Anthropic quotes him calling it an extraordinary autoformalization achievement. The repository’s own metadata calls its review self-assessed, and nothing is peer reviewed. The Lean is the claim itself, by Anthropic; we did not build or run it. Its README says one build took 5.5 hours at 96 jobs, and the comparator about 15 hours more.</p>
 <p>The caveats, from the sources themselves. Claude’s own assessment, in the companion document, says roughly two in five theorem statements in the proof files repeat, word for word, a statement made in another file. The README says no tool can check that each intermediate theorem means what its name suggests. And on October 16, a guest post on Buzzard’s blog, by seven mathematicians and formalizers, including Buzzard, said that although the accomplishment is impressive, this code probably has little ongoing value. For comparison, on stated facts only: Axiom’s classification release, in episode AX01, reported 43.1 million lines in 24 days, and both repositories call their review self-assessed. If it holds, Fermat’s Last Theorem, as proved by Wiles and Taylor, has a complete computer check in Lean, long and machine-written, with intermediate statements that, as its README says, no tool can check for meaning.</p>
 </section>
 

@@ -12,6 +12,10 @@
 <meta property="og:description" content="An AI system claims that the trilinear Hilbert transform with slopes 1, 2, 3 is bounded from L3 × L3 × L3 to L1, a case of the trilinear Hilbert transform conjecture; OSVerify refereed the paper. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/086-l3-bound-trilinear-hilbert-transform/">
 <meta property="og:image" content="https://aiprovedwhat.com/episodes/086-l3-bound-trilinear-hilbert-transform/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="086: Three shifts, one bound? Four colored points on a line, a point x and its shifts x minus t, x minus 2t and x minus 3t joined by arcs, above an orange quadratic wave, and the bound: the L1 norm of T of f1, f2, f3 is at most C times the product of their L3 norms.">
+<meta name="twitter:image:alt" content="086: Three shifts, one bound? Four colored points on a line, a point x and its shifts x minus t, x minus 2t and x minus 3t joined by arcs, above an orange quadratic wave, and the bound: the L1 norm of T of f1, f2, f3 is at most C times the product of their L3 norms.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
@@ -33,7 +37,7 @@
       <li><a href="../../episodes/">Results</a></li>
       <li><a href="../../subjects/">Subjects</a></li>
       <li><a href="../../updates/">Updates</a></li>
-      <li><a href="../../specials/">Specials</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
       <li><a href="../../connections/">Connections</a></li>
       <li><a href="../../about/">About</a></li>
       <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
@@ -96,9 +100,9 @@
     <dd>OpenAI, dated October 5, 2026, released October 6</dd>
   </div>
 <!-- review-step:start -->
-  <div class="ledger-row">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
-    <dd>Not yet</dd>
+    <dd>Reviewed by OSVerify: 1 major / 2 minor; not a certification (<a href="https://osverify.github.io/cases/trilinear-hilbert.html">case study</a>)</dd>
   </div>
 <!-- review-step:end -->
   <div class="ledger-row">
@@ -110,7 +114,7 @@
     <dd>No Lean formalization published</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 19, 2026. The preprint has not been revised, and OpenAI published no Lean formalization of this result. <a href="https://osverify.github.io/cases/trilinear-hilbert.html">OSVerify refereed the paper</a> (the October 5 version) and reported one major issue and two minor ones, each with a proposed repair. The major one: Lemma 8.6, a counting lemma for bad-density chains, states its nesting hypothesis only before the last position, but the proof uses it at the last one too; the proposed repair leaves the lemma’s bound unchanged, and where the lemma is applied both inclusions are available. The minor ones: an identity in the proof of Lemma 5.3 omits a conditional-expectation term for general inputs, and a convention in Section 9.1 is stated in the wrong order. The report says its findings “do not necessarily establish that the paper’s main theorem is false.” We have seen no other expert review.</p>
+<p class="ledger-note"><!-- last-checked:start -->Last checked October 27, 2026.<!-- last-checked:end --> The preprint has not been revised, and OpenAI published no Lean formalization of this result. <a href="https://osverify.github.io/cases/trilinear-hilbert.html">OSVerify refereed the paper</a> (the October 5 version) and reported one major issue and two minor ones, each with a proposed repair. The major one: Lemma 8.6, a counting lemma for bad-density chains, states its nesting hypothesis only before the last position, but the proof uses it at the last one too; the proposed repair leaves the lemma’s bound unchanged, and where the lemma is applied both inclusions are available. The minor ones: an identity in the proof of Lemma 5.3 omits a conditional-expectation term for general inputs, and a convention in Section 9.1 is stated in the wrong order. The report says its findings “do not necessarily establish that the paper’s main theorem is false.” We have seen no other expert review.</p>
 </section>
 
 <section aria-labelledby="proof">

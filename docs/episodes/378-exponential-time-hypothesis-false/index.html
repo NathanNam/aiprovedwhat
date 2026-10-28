@@ -12,6 +12,10 @@
 <meta property="og:description" content="An OpenAI preprint claims a deterministic algorithm that counts k-SAT solutions in subexponential time and polynomial space, which would refute the Exponential Time Hypothesis. A working group will examine it, OpenAI says; a weaker bound is in Lean. An animated explainer, the claim in plain words, and how far it has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/378-exponential-time-hypothesis-false/">
 <meta property="og:image" content="https://aiprovedwhat.com/episodes/378-exponential-time-hypothesis-false/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="378: The Exponential Time Hypothesis is false? The exponent divided by n falling below a fixed rate.">
+<meta name="twitter:image:alt" content="378: The Exponential Time Hypothesis is false? The exponent divided by n falling below a fixed rate.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
@@ -33,7 +37,7 @@
       <li><a href="../../episodes/">Results</a></li>
       <li><a href="../../subjects/">Subjects</a></li>
       <li><a href="../../updates/">Updates</a></li>
-      <li><a href="../../specials/">Specials</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
       <li><a href="../../connections/">Connections</a></li>
       <li><a href="../../about/">About</a></li>
       <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
@@ -54,7 +58,7 @@
     <span class="play" aria-hidden="true"></span>
   </a>
 </div>
-<p class="player-caption">5:43. English captions available. The video loads from YouTube when you press play.</p>
+<p class="player-caption">5:42. English captions available. The video loads from YouTube when you press play.</p>
 <!-- versions:start -->
 <section class="versions" aria-labelledby="versions-h">
 <h2 id="versions-h">Versions of this episode</h2>
@@ -105,11 +109,11 @@
     <dd>Not yet</dd>
   </div>
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean</dt>
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
     <dd>A weaker bound, exponent n(log log n)²/√log n (<a href="https://github.com/openai/math/blob/main/lean/docs/378.md">scope</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/SubexponentialSAT.lean">comparator</a>); not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 26, 2026. On expert review, OpenAI’s <a href="https://github.com/openai/math/blob/main/history.md">release notes</a> say: “An independent working group of computer scientists led by Russell Impagliazzo, Ramamohan Paturi, and Ryan Williams will examine and explain the proof. At the group’s request, we are making the materials public immediately so others can examine them as well.” The paper is not peer reviewed, and we found no public expert assessment yet. OpenAI’s Lean proof (not run by us) covers the paper’s weaker bound with log log n squared in the exponent, still subexponential time in polynomial space; the sharper bounds of its Theorem 1.1, the fixed-density case and the circuit lower bound are not formalized. By our count the Lean development takes 3,091 files and 547,460 lines, excluding Mathlib, much of it a verified machine implementation. OSVerify has not reviewed it.</p>
+<p class="ledger-note"><!-- last-checked:start -->Last checked October 27, 2026.<!-- last-checked:end --> On expert review, OpenAI’s <a href="https://github.com/openai/math/blob/main/history.md">release notes</a> say: “An independent working group of computer scientists led by Russell Impagliazzo, Ramamohan Paturi, and Ryan Williams will examine and explain the proof. At the group’s request, we are making the materials public immediately so others can examine them as well.” The paper is not peer reviewed, and we found no public expert assessment yet. OpenAI’s Lean proof (not run by us) covers the paper’s weaker bound with log log n squared in the exponent, still subexponential time in polynomial space; the sharper bounds of its Theorem 1.1, the fixed-density case and the circuit lower bound are not formalized. By our count the Lean development takes 3,091 files and 547,460 lines, excluding Mathlib, much of it a verified machine implementation. OSVerify has not reviewed it.</p>
 </section>
 
 <section aria-labelledby="proof">

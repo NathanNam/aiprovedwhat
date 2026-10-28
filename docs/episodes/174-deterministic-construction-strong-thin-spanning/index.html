@@ -12,6 +12,10 @@
 <meta property="og:description" content="Two AI preprints claim that every k-edge-connected multigraph has a spanning tree taking at most a constant over k share of every cut, and that such a tree can be found in polynomial time. An animated explainer, the claim in plain words, and how far the proof has been checked.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/174-deterministic-construction-strong-thin-spanning/">
 <meta property="og:image" content="https://aiprovedwhat.com/episodes/174-deterministic-construction-strong-thin-spanning/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="174: Strong thin trees: always C/k? A multigraph with doubled sides and three diagonals, a spanning path in pink, and its worst cut, with dots coloured by side and crossing links in yellow (our drawing).">
+<meta name="twitter:image:alt" content="174: Strong thin trees: always C/k? A multigraph with doubled sides and three diagonals, a spanning path in pink, and its worst cut, with dots coloured by side and crossing links in yellow (our drawing).">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
@@ -33,7 +37,7 @@
       <li><a href="../../episodes/">Results</a></li>
       <li><a href="../../subjects/">Subjects</a></li>
       <li><a href="../../updates/">Updates</a></li>
-      <li><a href="../../specials/">Specials</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
       <li><a href="../../connections/">Connections</a></li>
       <li><a href="../../about/">About</a></li>
       <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
@@ -110,7 +114,7 @@
     <dd>Both main theorems, formalized by OpenAI; not run by us</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked October 19, 2026. Neither preprint has been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/174.md">Lean formalization</a> with two comparator statements: <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/StrongThinTree.lean">the existence theorem</a>, matching the first paper, and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/AlgorithmicThinTrees.lean">the algorithmic theorem</a>, stated for one fixed multi-stack machine over bits that halts within a·(input length + 1)<sup>degree</sup> steps on every valid input, explicit or binary, with a C/k-thin spanning tree on its output stack. By our count the proofs take 72 files and 17,363 lines (existence) and 736 files and 101,101 lines (algorithm, including the existence proof and a 553-file matrix-signing library), excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/ThinTrees">the development</a>), with no unproved steps by our search; we have not rebuilt them. The thin-and-cheap rounding is not formalized. The signing step builds on a September 2026 preprint by Ezeunala and Jiang. The papers are not among those OSVerify reviewed, and we have seen no expert review.</p>
+<p class="ledger-note"><!-- last-checked:start -->Last checked October 27, 2026.<!-- last-checked:end --> Neither preprint has been revised since it was added to the repository in its initial commit on October 6, 2026. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/174.md">Lean formalization</a> with two comparator statements: <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/StrongThinTree.lean">the existence theorem</a>, matching the first paper, and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/AlgorithmicThinTrees.lean">the algorithmic theorem</a>, stated for one fixed multi-stack machine over bits that halts within a·(input length + 1)<sup>degree</sup> steps on every valid input, explicit or binary, with a C/k-thin spanning tree on its output stack. By our count the proofs take 72 files and 17,363 lines (existence) and 736 files and 101,101 lines (algorithm, including the existence proof and a 553-file matrix-signing library), excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/ThinTrees">the development</a>), with no unproved steps by our search; we have not rebuilt them. The thin-and-cheap rounding is not formalized. The signing step builds on a September 2026 preprint by Ezeunala and Jiang. The papers are not among those OSVerify reviewed, and we have seen no expert review.</p>
 </section>
 
 <section aria-labelledby="proof">
