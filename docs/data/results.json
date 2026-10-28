@@ -7,7 +7,7 @@
   "lean.status": "main: a published Lean proof of the main theorem; partial: of part of the claim; none: no Lean proof published. By OpenAI unless lean.by names another lab (265: Axiom); lean.via names the result whose Lean proof covers it (074, 077, 078 through 079). Classified from OpenAI's scope notes, or the other lab's repository.",
   "peer_review": "Whether the claim has been peer reviewed.",
   "kind": "'catalogue' for a result in OpenAI's math catalogue. One-off OpenAI announcements and results from other labs (Axiom Math, PSI (Physical Superintelligence), Anthropic) are listed separately under 'specials' with kind 'special', each with its source lab, and are not counted in 'count'.",
-  "record": "The four-step record. expert_review.kind is 'reviewed' when a named independent group has published its review (OSVerify, with verdict and case links) and 'announced' when a named group is said to be checking it (378). stage: 'preprint' (the paper is public) or 'announced' (announced, paper not public). preprint: who posted it and when. expert_review: null, or the named group checking the claim (by, quote, source, since), quoted from OpenAI's own text. peer_review: 'not yet' until refereed. lean: as lean.status.",
+  "record": "The four-step record. expert_review.kind is 'reviewed' when a named independent group has published its review (OSVerify, with verdict and case links) and 'announced' when a named group is said to be checking it (378). stage: 'preprint' (the paper is public) or 'announced' (announced, paper not public). preprint: who posted it and when. expert_review: null, or {kind, by, source, source_label} plus, for kind 'reviewed', verdict (major / minor issues), papers_reviewed, papers_total, cases (title, url, verdict per reviewed paper) and checked (the date we last checked the reviewer's site); for kind 'announced', quote (the announcing text, quoted exactly) and since. peer_review: 'not yet' until refereed. lean: as lean.status.",
   "revisions": "Changes OpenAI made after the episode was out, or notes about another result's change that affects this one: date, kind (extended, implied-by, lean-added, files-restored, follow-up), note, new_episode (a new episode is planned), by (the result that changed), sources.",
   "versions": "Videos of this episode, newest first: the current one (current: true, Public) and earlier ones (Unlisted on YouTube) with label, date (from our run log, null if not logged), unlisted (date it was unlisted) and url. Empty if the episode was never remade.",
   "episode": "null when the result has no episode yet (shown as 'Episode coming')."
@@ -24359,7 +24359,8 @@
     "preprint": "OpenAI, September 8, 2026: two PDFs (166 and 57 pages)",
     "expert_review": null,
     "peer_review": "not yet",
-    "lean": "main"
+    "lean": "main",
+    "lean_by": null
    },
    "papers": [
     {
@@ -24401,10 +24402,12 @@
      "source_label": "Kevin Buzzard’s blog, September 4, 2026",
      "since": "2026-09-04",
      "kind": "reviewed",
-     "verdict": "“it checks out” (his blog)"
+     "verdict": "“it checks out” (his blog)",
+     "short_by": "Kevin Buzzard’s outside check of AN01’s Lean code"
     },
     "peer_review": "not yet",
-    "lean": "main"
+    "lean": "main",
+    "lean_by": "Anthropic"
    },
    "papers": [],
    "url": "https://aiprovedwhat.com/episodes/an01-fermats-last-theorem-lean/",
@@ -24430,7 +24433,8 @@
     "preprint": "Axiom’s blog post, October 26, 2026; repository AxiomMath/CFSG (first commit October 27, UTC); “The Unbalanced Group Theorem” on Hexagon, version 1, October 27",
     "expert_review": null,
     "peer_review": "not yet",
-    "lean": "main"
+    "lean": "main",
+    "lean_by": "Axiom Math"
    },
    "papers": [
     {
@@ -24461,7 +24465,8 @@
     "preprint": "PSI GitHub repository, released October 23, 2026",
     "expert_review": null,
     "peer_review": "not yet",
-    "lean": "partial"
+    "lean": "partial",
+    "lean_by": "PSI"
    },
    "papers": [
     {
@@ -24492,7 +24497,8 @@
     "preprint": "PSI GitHub repository, released October 23, 2026",
     "expert_review": null,
     "peer_review": "not yet",
-    "lean": "main"
+    "lean": "main",
+    "lean_by": "PSI"
    },
    "papers": [
     {
@@ -24523,7 +24529,8 @@
     "preprint": "PSI GitHub repository, released October 23, 2026",
     "expert_review": null,
     "peer_review": "not yet",
-    "lean": "main"
+    "lean": "main",
+    "lean_by": "PSI"
    },
    "papers": [
     {
@@ -24554,7 +24561,8 @@
     "preprint": "PSI GitHub repository, released October 23, 2026",
     "expert_review": null,
     "peer_review": "not yet",
-    "lean": "main"
+    "lean": "main",
+    "lean_by": "PSI"
    },
    "papers": [
     {
@@ -24586,7 +24594,8 @@
     "preprint": "PSI GitHub repository, released October 23, 2026",
     "expert_review": null,
     "peer_review": "not yet",
-    "lean": "main"
+    "lean": "main",
+    "lean_by": "PSI"
    },
    "papers": [
     {
@@ -24617,7 +24626,8 @@
     "preprint": "Hexagon 2610.00200: version 1 October 12, 2026; version 2 October 14 (“A mix of human-written and AI-generated”)",
     "expert_review": null,
     "peer_review": "not yet",
-    "lean": "main"
+    "lean": "main",
+    "lean_by": "Axiom Math"
    },
    "papers": [
     {
@@ -24647,7 +24657,8 @@
     "preprint": "arXiv 2609.20567: version 1 September 17, 2026; version 2 October 7",
     "expert_review": null,
     "peer_review": "not yet",
-    "lean": "main"
+    "lean": "main",
+    "lean_by": "Axiom Math"
    },
    "papers": [
     {
@@ -24677,7 +24688,8 @@
     "preprint": "Hexagon 2610.00249: version 1 October 14, 2026; version 2 October 21 (“A mix of human-written and AI-generated”)",
     "expert_review": null,
     "peer_review": "not yet",
-    "lean": "main"
+    "lean": "main",
+    "lean_by": "Axiom Math"
    },
    "papers": [
     {
@@ -24707,7 +24719,8 @@
     "preprint": "arXiv 2608.13637 (Alpöge and Furman, August 13, 2026; v2 August 19) and 2609.02882 (Lamzouri, September 2; v2 September 8); Anthropic’s post, August 10",
     "expert_review": null,
     "peer_review": "not yet",
-    "lean": "main"
+    "lean": "main",
+    "lean_by": "Anthropic and Axiom"
    },
    "papers": [
     {
