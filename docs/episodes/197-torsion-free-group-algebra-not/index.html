@@ -96,6 +96,7 @@
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
 <dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
     <dd>OpenAI: September 23 (two), September 26 and October 4, 2026; none revised</dd>
@@ -110,13 +111,9 @@
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Checked in Lean: three of the four</dt>
-    <dd>Characteristic two, odd characteristic and determinant papers, in their main statements; not run by us</dd>
-  </div>
-  <div class="ledger-row">
-    <dt><span class="box" aria-hidden="true"></span>The torsion-free paper in Lean</dt>
-    <dd>Not formalized</dd>
+  <div class="ledger-row is-partial">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Three of the four: Characteristic two, odd characteristic and determinant papers, in their main statements; not run by us. The torsion-free paper: not formalized</dd>
   </div>
 </dl>
 <p class="ledger-note"><!-- last-checked:start -->Last checked October 27, 2026.<!-- last-checked:end --> None of the four preprints has been revised since the repository’s initial commit on October 6, 2026. Three are formalized in Lean in their main statements (<a href="https://github.com/openai/math/blob/main/lean/docs/197.md">scope note</a>; one <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/KaplanskyFinitelyPresented.lean">comparator statement</a>): the characteristic-two, odd-characteristic and determinant papers, with no sorry, admit, axiom or native_decide in code by our search, 246 files and about 29,700 lines excluding Mathlib (<a href="https://github.com/openai/math/blob/main/lean/OAI/RingTheory/DirectFiniteness">source</a>). The determinant statement leaves out the paper’s spectral-integral conclusion, and nonsoficity is in no formal statement. The torsion-free headline paper is not formalized. By our reading of the Lean files, in place of Linnik’s theorem the Lean proof bounds the needed prime with the Mersenne prime 2<sup>21701</sup> − 1 (we reran the Lucas–Lehmer test). We did not run the check. None of the four is among those OSVerify reviewed, and we found no expert reaction.</p>

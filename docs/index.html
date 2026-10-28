@@ -51,11 +51,11 @@
 <section class="news" aria-labelledby="new">
 <h2 id="new">What’s new</h2>
 <ul>
+  <li><time datetime="2026-10-27">Oct 27</time> <b>Expert review:</b> 9 results reviewed by OSVerify (<a href="episodes/002-bsd-formula/">002</a>, <a href="episodes/041-hyperkahler-syz-projective-space-bases/">041</a>, <a href="episodes/069-global-quantum-geometric-langlands-irrational/">069</a>, <a href="episodes/074-kakeya-three-four-dimensions/">074</a>, <a href="episodes/086-l3-bound-trilinear-hilbert-transform/">086</a>, <a href="episodes/167-planar-distinct-distances-unit-distance/">167</a>, <a href="episodes/237-honeycomb-saw-three-quarter/">237</a>, <a href="episodes/306-cosmetic-surgery/">306</a>, <a href="episodes/340-nearby-lagrangian/">340</a>), plus <a href="episodes/378-exponential-time-hypothesis-false/">378</a> announced. <span class="tag rev">Review</span></li>
   <li><time datetime="2026-10-27">Oct 27</time> <b>Beyond OpenAI’s catalogue, four more:</b> <a href="episodes/ax02-dedekind-zeta-zero-free-region/">AX02</a> (Dedekind zeta, 31/32), <a href="episodes/ax03-huang-jiang-oblomkov-conjecture/">AX03</a> (Huang–Jiang–Oblomkov), <a href="episodes/ax04-collatz-positive-density/">AX04</a> (Collatz density, not a proof of Collatz) and <a href="episodes/an02-simple-zeros-riemann-zeta/">AN02</a> (zeta zeros, first found by Claude; we are made with Claude). <span class="tag sp">Beyond OpenAI</span></li>
   <li><time datetime="2026-10-27">Oct 27</time> <b>Lean proof for <a href="episodes/265-two-dimensional-area-law/">265</a>, published by Axiom</b> (not OpenAI): <a href="https://github.com/AxiomMath/AreaLaw2D">AxiomMath/AreaLaw2D</a> says it proves the area-law paper’s Theorem 1.1 and Corollary 1.2. Not run by us; the PEPS paper is not formalized. <span class="tag lean">Lean</span></li>
   <li><time datetime="2026-10-27">Oct 27</time> <b>Beyond OpenAI’s catalogue:</b> <a href="episodes/ax01-classification-finite-simple-groups-lean/">AX01</a> (Axiom Math, CFSG in Lean), <a href="episodes/psi01-05-open-quantum-problems/#psi01">PSI01–05</a> (PSI, Open Quantum Problems) and <a href="episodes/an01-fermats-last-theorem-lean/">AN01</a> (Anthropic, Fermat’s Last Theorem in Lean). AI Proved What? is made with Claude, Anthropic’s AI, and holds Anthropic’s results to the same standards. <span class="tag sp">Beyond OpenAI</span></li>
   <li><time datetime="2026-10-27">Oct 27</time> <b><a href="episodes/151-entropy-conjecture-c1/">151</a>: Andrey Gogolev’s expository note</b> “A counterexample to the Shub entropy conjecture” (dated October 11, 2026) gives an elementary account of a construction based on this result’s paper. It is an exposition, not a review of the paper. <span class="tag ">Note</span></li>
-  <li><time datetime="2026-10-26">Oct 26</time> <b>New episode for <a href="episodes/079-local-smoothing-every-dimension/">079</a>:</b> local smoothing in every dimension. The three-dimensional episode stays listed under Versions. <span class="tag rev">Episode out</span></li>
 </ul>
 <p class="more"><a href="updates/">All updates</a> · <a href="updates/feed.xml">RSS</a></p>
 </section>
@@ -287,7 +287,7 @@
     <span class="k">AN01 · Anthropic · Announced September 4, 2026</span>
     <span class="special-title">Fermat’s Last Theorem, formalized in Lean</span>
     <span class="special-text">Anthropic’s Lean proof of Fermat’s Last Theorem, written by Claude agents in 11 days: about 13 million lines, following Darmon, Diamond and Taylor.</span>
-    <span class="mini" role="img" aria-label="Posted as a preprint; a named group is said to be checking it; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box review"></span><span class="box"></span><span class="box on"></span></span>
+    <span class="mini" role="img" aria-label="Posted as a preprint; reviewed by Kevin Buzzard, outside check of the Lean code; not yet peer reviewed; OpenAI published a Lean proof of the main theorem"><span class="box on"></span><span class="box on"></span><span class="box"></span><span class="box on"></span></span>
   </a>
   <a class="special-card" href="episodes/an02-simple-zeros-riemann-zeta/">
     <span class="k">AN02 · Anthropic · Announced August 10, 2026</span>
@@ -309,7 +309,7 @@
   </div>
   <div class="ledger-row is-review">
     <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
-    <dd>A named group is checking it</dd>
+    <dd>A named independent group has reviewed it, or is said to be checking it</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -320,8 +320,8 @@
     <dd>Verified step by step by computer</dd>
   </div>
 </dl>
-<p><strong>Posted as a preprint</strong> means the lab has released a written proof anyone can read. That’s where a claim starts, not where it ends. A claim announced before its paper is public reads <strong>Announced, paper not public</strong> instead. <strong>Under expert review</strong> means a named group of experts has said it is checking the proof, and a blue box marks it; we quote who said so. <strong>Peer reviewed</strong> means independent mathematicians have refereed it, usually for a journal. <strong>Checked in Lean</strong> means the main result has been verified by Lean, a computer program that accepts a proof only when every step is justified.</p>
-<p>When a published Lean proof (OpenAI’s or another lab’s) covers only part of a claim, the box stays empty and the record says so. In lists, a half-filled box <span class="box part" aria-hidden="true"></span> marks these.</p>
+<p><strong>Posted as a preprint</strong> means the lab has released a written proof anyone can read. That’s where a claim starts, not where it ends. A claim announced before its paper is public reads <strong>Announced, paper not public</strong> instead. <strong>Under expert review</strong> is filled when a named independent group has published a review of the proof (so far OSVerify, a Stanford verification project; a review is not a certification), shown as a blue box when a lab names a group that will review it (we quote who said so), and left empty otherwise. <strong>Peer reviewed</strong> means independent mathematicians have refereed it, usually for a journal. <strong>Checked in Lean</strong> means the main result has been verified by Lean, a computer program that accepts a proof only when every step is justified.</p>
+<p>When a published Lean proof (OpenAI’s or another lab’s) covers only part of a claim, a half-filled box <span class="box part" aria-hidden="true"></span> marks it, on episode pages and in lists, and the record says what is covered.</p>
 <p>If a claim is withdrawn, its box turns red and the episode stays up, clearly marked. Mistakes are part of the story.</p>
 </section>
 </main>

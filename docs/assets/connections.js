@@ -479,6 +479,7 @@
     var h = '<p class="meta">';
     h += m.ep ? '<a href="../' + esc(m.page) + '">Episode</a>' : '<a href="../' + esc(m.page) + '">Episode coming</a>';
     h += m.lean === "main" ? " · Lean proof of the main theorem" : m.lean === "partial" ? " · Lean proof of part of the claim" : "";
+    if (m.lean_by && m.lean !== "none") h += ", by " + esc(m.lean_by) + " (not OpenAI)";
     if (m.review) h += " · Under expert review: " + esc(m.review);
     h += "</p>";
     (m.rev || []).forEach(function (r) {

@@ -1,12 +1,12 @@
 {
- "about": "Every result family in OpenAI's math release (github.com/openai/math), with how far each claim has been checked. Built by tools/site/build.py.",
+ "about": "Every result family in OpenAI's math release (github.com/openai/math), with how far each claim has been checked, plus results beyond it under 'specials'. Built by tools/site/build.py.",
  "source": "https://github.com/openai/math",
  "license": "Titles, summaries and paper titles come from OpenAI's catalog and are used under the Apache License 2.0. Everything else is AI Proved What? data under CC BY 4.0.",
  "fields": {
   "papers": "The papers OpenAI groups into this result, in OpenAI's order. role is 'main' for the first-listed paper and 'companion' for the others.",
   "lean.status": "main: a published Lean proof of the main theorem; partial: of part of the claim; none: no Lean proof published. By OpenAI unless lean.by names another lab (265: Axiom); lean.via names the result whose Lean proof covers it (074, 077, 078 through 079). Classified from OpenAI's scope notes, or the other lab's repository.",
   "peer_review": "Whether the claim has been peer reviewed.",
-  "kind": "'catalogue' for a result in OpenAI's math catalogue. Claims OpenAI announced outside the catalogue are listed separately under 'specials' with kind 'special' and are not counted in 'count'.",
+  "kind": "'catalogue' for a result in OpenAI's math catalogue. One-off OpenAI announcements and results from other labs (Axiom Math, PSI (Physical Superintelligence), Anthropic) are listed separately under 'specials' with kind 'special', each with its source lab, and are not counted in 'count'.",
   "record": "The four-step record. expert_review.kind is 'reviewed' when a named independent group has published its review (OSVerify, with verdict and case links) and 'announced' when a named group is said to be checking it (378). stage: 'preprint' (the paper is public) or 'announced' (announced, paper not public). preprint: who posted it and when. expert_review: null, or the named group checking the claim (by, quote, source, since), quoted from OpenAI's own text. peer_review: 'not yet' until refereed. lean: as lean.status.",
   "revisions": "Changes OpenAI made after the episode was out, or notes about another result's change that affects this one: date, kind (extended, implied-by, lean-added, files-restored, follow-up), note, new_episode (a new episode is planned), by (the result that changed), sources.",
   "versions": "Videos of this episode, newest first: the current one (current: true, Public) and earlier ones (Unlisted on YouTube) with label, date (from our run log, null if not logged), unlisted (date it was unlisted) and url. Empty if the episode was never remade.",
@@ -134,7 +134,6 @@
      ],
      "source": "https://osverify.github.io/case-studies.html",
      "source_label": "OSVerify case studies",
-     "since": "2026-10-10",
      "checked": "2026-10-27"
     },
     "peer_review": "not yet",
@@ -2776,7 +2775,6 @@
      ],
      "source": "https://osverify.github.io/case-studies.html",
      "source_label": "OSVerify case studies",
-     "since": "2026-10-10",
      "checked": "2026-10-27"
     },
     "peer_review": "not yet",
@@ -4421,7 +4419,6 @@
      ],
      "source": "https://osverify.github.io/case-studies.html",
      "source_label": "OSVerify case studies",
-     "since": "2026-10-10",
      "checked": "2026-10-27"
     },
     "peer_review": "not yet",
@@ -4689,7 +4686,6 @@
      ],
      "source": "https://osverify.github.io/case-studies.html",
      "source_label": "OSVerify case studies",
-     "since": "2026-10-10",
      "checked": "2026-10-27"
     },
     "peer_review": "not yet",
@@ -5512,7 +5508,6 @@
      ],
      "source": "https://osverify.github.io/case-studies.html",
      "source_label": "OSVerify case studies",
-     "since": "2026-10-10",
      "checked": "2026-10-27"
     },
     "peer_review": "not yet",
@@ -10559,7 +10554,6 @@
      ],
      "source": "https://osverify.github.io/case-studies.html",
      "source_label": "OSVerify case studies",
-     "since": "2026-10-10",
      "checked": "2026-10-27"
     },
     "peer_review": "not yet",
@@ -15376,7 +15370,6 @@
      ],
      "source": "https://osverify.github.io/case-studies.html",
      "source_label": "OSVerify case studies",
-     "since": "2026-10-10",
      "checked": "2026-10-27"
     },
     "peer_review": "not yet",
@@ -19837,7 +19830,6 @@
      ],
      "source": "https://osverify.github.io/case-studies.html",
      "source_label": "OSVerify case studies",
-     "since": "2026-10-10",
      "checked": "2026-10-27"
     },
     "peer_review": "not yet",
@@ -21942,7 +21934,6 @@
      ],
      "source": "https://osverify.github.io/case-studies.html",
      "source_label": "OSVerify case studies",
-     "since": "2026-10-10",
      "checked": "2026-10-27"
     },
     "peer_review": "not yet",
@@ -24408,7 +24399,9 @@
      "quote": "I've compiled the code base and run comparator on it — it checks out",
      "source": "https://xenaproject.wordpress.com/2026/09/04/flt-anthropic-has-beaten-me-to-it/",
      "source_label": "Kevin Buzzard’s blog, September 4, 2026",
-     "since": "2026-09-04"
+     "since": "2026-09-04",
+     "kind": "reviewed",
+     "verdict": "“it checks out” (his blog)"
     },
     "peer_review": "not yet",
     "lean": "main"
