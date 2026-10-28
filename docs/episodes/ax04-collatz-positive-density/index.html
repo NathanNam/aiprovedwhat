@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collatz: at least 1 in 2^2^2^163 numbers reach 1 fast? Axiom’s AI refines Mazur’s theorem | AI Proved What?</title>
+<meta name="description" content="Kenny Lau, with AxiomProver, proves an explicit version of Lech Mazur’s positive-proportion theorem for the Collatz map: at least ⌊N/2^2^2^163⌋ odd n below N reach 1 within 10.46 log n steps. Not a proof of the Collatz conjecture; the guarantee is 0 for every N below the constant. What is claimed, what is not, how the proof goes, and where it stands. Lean by Axiom, not run by us; not peer reviewed.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/ax04-collatz-positive-density/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Collatz: at least 1 in 2^2^2^163 numbers reach 1 fast?">
+<meta property="og:description" content="Kenny Lau, with AxiomProver, proves an explicit version of Lech Mazur’s positive-proportion theorem for the Collatz map: at least ⌊N/2^2^2^163⌋ odd n below N reach 1 within 10.46 log n steps. Not a proof of the Collatz conjecture; the guarantee is 0 for every N below the constant. What is claimed, what is not, how the proof goes, and where it stands. Lean by Axiom, not run by us; not peer reviewed.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/ax04-collatz-positive-density/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/ax04-collatz-positive-density/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Specials</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">AX04 (outside OpenAI’s math catalogue), October 2026</p>
+<h1>Collatz: at least 1 in 2^2^2^163 numbers reach 1 fast?</h1>
+<p class="subtitle">Kenny Lau, with AxiomProver, makes Lech Mazur’s positive-proportion theorem explicit. Not a proof of the Collatz conjecture.</p>
+
+<div class="player" data-youtube="5f2DUvadZq0" data-title="AX04: Collatz, an explicit positive density">
+  <a href="https://youtu.be/5f2DUvadZq0">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play AX04: an explicit positive density for Collatz. The constant 2^2^2^163 and the orbit of 17.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:15. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/5f2DUvadZq0?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/5f2DUvadZq0?t=84" data-t="84"><span class="t">1:24</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/5f2DUvadZq0?t=248" data-t="248"><span class="t">4:08</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/5f2DUvadZq0?t=339" data-t="339"><span class="t">5:39</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>This is AX04. Take a positive whole number. If it is even, halve it; if it is odd, triple it and add one. Starting from 17, the paper’s example goes to 52, 26, 13, forty, and on down to one, in twelve steps. The Collatz conjecture says that every starting number reaches one. First, what this episode is not about: it is not a proof of the Collatz conjecture, and neither paper claims one. It is a theorem about a proportion of starting numbers, with a constant so small that it takes a tower of powers to write down.</p>
+<p>This episode covers a preprint on the Hexagon server by Kenny Lau, of Axiom Math: Explicit positive lower density for the Collatz Conjecture, 71 pages, version two of October 21. Its Corollary 1.2: let D_A be 2^2^2^163. Then, for every N, at least the floor of N over D_A odd starting values below N reach one within 10.46 log n ordinary steps, and within 3.4881 log n accelerated steps, which jump from odd number to odd number. Theorem 1.3 does the same for any target t not divisible by three, with a smaller constant. The abstract says AxiomProver was used to obtain and formalize this result in Lean. The paper’s AI declaration says AxiomProver autonomously produced the mathematics and formalized it, and that Lau is accountable for the introduction and wrote the summary in Section 2.</p>
+<p>The paper calls itself a quantitative refinement of Mazur’s construction. It says Mazur’s constants are not explicitly specified, and bounds them by a tower of seven twos topped by 173; Mazur’s own abstract says his constants are specified by finite arithmetic expressions. Axiom’s tower has three twos. Now, how small is one over D_A? Our arithmetic. 2^163 has 50 digits. Two to that power has about 3.5 × 10^48 digits; printed at a billion digits a second, that takes about 10^32 years. D_A is two to the power of that. So for every N below D_A, which means every N anyone could write out in digits, the guarantee is zero. The paper says so: below D_A times t, the count is zero. Our computer count, and a count is not a proof: about 54% of the numbers below a million reach one within the step budget.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>What is not claimed. Not the Collatz conjecture. Not that every number reaches one within 10.46 log n steps: in our count, 27 takes 111 steps, against a budget of 34. Not a usable proportion: Mazur’s paper says no practical numerical range is claimed for his constants, and this tower is far beyond any range we can test. And not a first: the positive proportion is Mazur’s theorem; this is a quantitative refinement, with its own Lean proof. The paper’s Corollary 1.6 is only conditional: if almost all numbers reach one, then all do; Mazur’s companion paper already has a criterion of the same kind.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Preprint on Hexagon</dt>
+    <dd><a href="https://hexagonmath.org/2610.00249v1">Version 1</a>, October 14, 2026 (constant 2^2^2^87640); <a href="https://hexagonmath.org/2610.00249v2">version 2</a>, October 21, 2026 (2^2^2^163). Hexagon’s declarations: “A mix of human-written and AI-generated”; “Some parts of this contribution, but not all, have been checked and understood by a human.”</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Independent expert review</dt>
+    <dd>None named in our sources.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Lean proof, by Axiom</dt>
+    <dd><a href="https://github.com/AxiomMath/CollatzPositiveDensity">AxiomMath/CollatzPositiveDensity</a>: metadata says the Lean files were generated by AxiomProver apart from the human-written challenge file; scope Theorem 1.3, Remark 1.4 and Corollary 1.2 (not Corollary 1.6); sorry count 0; only Lean’s three standard axioms; review “author-verified” (Kenny Lau); README “locally verified with the comparator”; GitHub build check passed on all 8 commits. Not built or run by us.</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 27, 2026. Where it stands. Axiom’s repository was created on October 9; the paper followed on October 14, version two on October 21, and the last commit on October 23. The top of the tower fell from 140,214, to 87,640, to 163. Hexagon’s declaration says the text is a mix of human-written and AI-generated, and that some parts, but not all, have been checked and understood by a human. No source names an independent expert review, and it is not peer reviewed. The Lean metadata says that, apart from the human-written challenge file, AxiomProver generated the Lean files. It covers Theorem 1.3, its remark and Corollary 1.2, with no sorry and only Lean’s three standard axioms; its review is author-verified, by Lau. The README says it was locally verified with the comparator, and GitHub’s build check passed on all eight commits. Our keyword scan of its 1,050 Lean files finds sorry only in the four challenge statements. We did not build or run it.</p>
+<p>OpenAI’s math catalogue has no Collatz result. If it holds, for every N, at least the floor of N over D_A numbers below N reach one within 10.46 log n steps: Mazur’s theorem, refined to a tower of three twos by AxiomProver with Kenny Lau, with a Lean proof we did not run, a constant far too large to test, and the conjecture itself still open.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>History.</strong> History, as the papers tell it. Krasikov and Lagarias proved that, for large X, at least X^0.84 numbers below X reach one. Tao proved that, for any function that tends to infinity, almost every orbit, in the sense of logarithmic density, eventually falls below it; Mazur’s paper notes that this alone does not give convergence to one. Then, on September 6, twenty 26, Lech Mazur announced a positive proportion: for every large enough X, at least cX numbers below X reach one within 10.46 log n steps. His paper’s disclosure says that generative AI, OpenAI’s GPT models through Codex, contributed substantially, and that the theorem comes with a Lean formalization.</li>
+  <li><strong>Walking backwards.</strong> How the proof goes, in the paper’s outline. Walk backwards. An odd number n has odd predecessors, (2^a·n − 1)/3, whenever that is a whole number: for seven they are nine, 37, 149, and so on. A path back from the target is a word of exponents. The word four, three, two, one leads from one back to eleven. Each word gets a weight, three to its length over two to its total, which is roughly the target divided by the source. Now treat each letter as random, equal to a with chance 2^−a. The average letter is two, so each odd step multiplies a number by about three quarters, and the model predicts about 10.428 log n steps.</li>
+  <li><strong>Mixing and the seed.</strong> The key tool is a mixing lemma, in the sense of Tao: the spread of these words over residues modulo three to a large power is, on average, close to its spread at a much smaller power. With it, the proof grows a family of words, generation by generation, and shows that the errors from generation 9,853 onward add up to less than six sevenths. The method needs a seed in one residue class modulo 3^d0, where d0 is 5·2^160. The seed reaches the target in one odd step, but the paper bounds it by 2^(5·3^d0) times t, which is below D_A times t. The count shrinks as the seed grows, so the tower comes from the seed.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the orbit of 17 takes 12 steps (budget ⌊10.46 ln 17⌋ = 29); 27 takes 111 steps (budget 34).</li>
+  <li>Ours: the predecessors of 7 are 9, 37, 149, 597, 2389; the word (4, 3, 2, 1) leads from 1 back to 11, and 2^10/3^4 ≈ 12.642.</li>
+  <li>Ours: 1/ln(4/3) ≈ 3.476 and 3/ln(4/3) ≈ 10.428, the random model’s step counts.</li>
+  <li>Ours: 2^163 = 11692013098647223345629478661730264157247460343808 (50 digits); 2^(2^163) has about 3.5 × 10^48 digits; printing them at a billion digits a second would take about 10^32 years; D_A is 2 to that power, so ⌊N/D_A⌋ = 0 for every N below D_A.</li>
+  <li>Ours (a count, not a proof): the share of positive n below 10^2, 10^3, 10^4, 10^5, 10^6 that reach 1 within ⌊10.46 ln n⌋ steps is 83.8%, 64.4%, 56.3%, 55.3%, 54.2%.</li>
+  <li>Ours: the paper’s integer comparisons 3^200 &lt; 2^317 and 4 + (317/200)·d0 &lt; 2^163 for d0 = 5·2^160 hold; d0·log₂3 ≈ 0.99·2^163.</li>
+  <li>Ours (keyword scan, not an audit): Axiom’s repository has 1,050 Lean files (149,926 lines); sorry appears only in the 4 challenge statements.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://hexagonmath.org/2610.00249">“Explicit positive lower density for the Collatz Conjecture”</a>, Kenny Lau, Hexagon 2610.00249 (version 2, October 21, 2026, 71 pages; CC BY 4.0).</li>
+  <li><a href="https://github.com/AxiomMath/CollatzPositiveDensity">The Lean repository</a> (Apache-2.0; not run by us).</li>
+  <li>Lech Mazur, <a href="https://proofatlas.ai/papers/positive-density-log-time-collatz/Mazur_Explicit_Positive_Density_Collatz_Convergence_in_Logarithmic_Time_v2.pdf">“Explicit positive-density Collatz convergence in logarithmic time”</a> (version 2.1, September 6, 2026) and <a href="https://proofatlas.ai/papers/positive-lower-density-collatz-predecessors/paper-v1.pdf">“Positive lower density of Collatz predecessors”</a> (version 1.0, September 6, 2026); <a href="https://x.com/LechMazur/status/2096464472973975782">announcement</a>, September 6, 2026.</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Axiom Math, OpenAI or Lech Mazur.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is AX04. Take a positive whole number. If it is even, halve it; if it is odd, triple it and add one. Starting from 17, the paper’s example goes to 52, 26, 13, forty, and on down to one, in twelve steps. The Collatz conjecture says that every starting number reaches one. First, what this episode is not about: it is not a proof of the Collatz conjecture, and neither paper claims one. It is a theorem about a proportion of starting numbers, with a constant so small that it takes a tower of powers to write down. History, as the papers tell it. Krasikov and Lagarias proved that, for large X, at least X^0.84 numbers below X reach one. Tao proved that, for any function that tends to infinity, almost every orbit, in the sense of logarithmic density, eventually falls below it; Mazur’s paper notes that this alone does not give convergence to one. Then, on September 6, twenty 26, Lech Mazur announced a positive proportion: for every large enough X, at least cX numbers below X reach one within 10.46 log n steps. His paper’s disclosure says that generative AI, OpenAI’s GPT models through Codex, contributed substantially, and that the theorem comes with a Lean formalization.</p>
+<h3><span class="t num">1:24</span>The claim</h3>
+<p>This episode covers a preprint on the Hexagon server by Kenny Lau, of Axiom Math: Explicit positive lower density for the Collatz Conjecture, 71 pages, version two of October 21. Its Corollary 1.2: let D_A be 2^2^2^163. Then, for every N, at least the floor of N over D_A odd starting values below N reach one within 10.46 log n ordinary steps, and within 3.4881 log n accelerated steps, which jump from odd number to odd number. Theorem 1.3 does the same for any target t not divisible by three, with a smaller constant. The abstract says AxiomProver was used to obtain and formalize this result in Lean. The paper’s AI declaration says AxiomProver autonomously produced the mathematics and formalized it, and that Lau is accountable for the introduction and wrote the summary in Section 2. The paper calls itself a quantitative refinement of Mazur’s construction. It says Mazur’s constants are not explicitly specified, and bounds them by a tower of seven twos topped by 173; Mazur’s own abstract says his constants are specified by finite arithmetic expressions. Axiom’s tower has three twos. Now, how small is one over D_A? Our arithmetic. 2^163 has 50 digits. Two to that power has about 3.5 × 10^48 digits; printed at a billion digits a second, that takes about 10^32 years. D_A is two to the power of that. So for every N below D_A, which means every N anyone could write out in digits, the guarantee is zero. The paper says so: below D_A times t, the count is zero. Our computer count, and a count is not a proof: about 54% of the numbers below a million reach one within the step budget. What is not claimed. Not the Collatz conjecture. Not that every number reaches one within 10.46 log n steps: in our count, 27 takes 111 steps, against a budget of 34. Not a usable proportion: Mazur’s paper says no practical numerical range is claimed for his constants, and this tower is far beyond any range we can test. And not a first: the positive proportion is Mazur’s theorem; this is a quantitative refinement, with its own Lean proof. The paper’s Corollary 1.6 is only conditional: if almost all numbers reach one, then all do; Mazur’s companion paper already has a criterion of the same kind.</p>
+<h3><span class="t num">4:08</span>How the proof goes</h3>
+<p>How the proof goes, in the paper’s outline. Walk backwards. An odd number n has odd predecessors, (2^a·n − 1)/3, whenever that is a whole number: for seven they are nine, 37, 149, and so on. A path back from the target is a word of exponents. The word four, three, two, one leads from one back to eleven. Each word gets a weight, three to its length over two to its total, which is roughly the target divided by the source. Now treat each letter as random, equal to a with chance 2^−a. The average letter is two, so each odd step multiplies a number by about three quarters, and the model predicts about 10.428 log n steps. The key tool is a mixing lemma, in the sense of Tao: the spread of these words over residues modulo three to a large power is, on average, close to its spread at a much smaller power. With it, the proof grows a family of words, generation by generation, and shows that the errors from generation 9,853 onward add up to less than six sevenths. The method needs a seed in one residue class modulo 3^d0, where d0 is 5·2^160. The seed reaches the target in one odd step, but the paper bounds it by 2^(5·3^d0) times t, which is below D_A times t. The count shrinks as the seed grows, so the tower comes from the seed.</p>
+<h3><span class="t num">5:39</span>Where it stands</h3>
+<p>Where it stands. Axiom’s repository was created on October 9; the paper followed on October 14, version two on October 21, and the last commit on October 23. The top of the tower fell from 140,214, to 87,640, to 163. Hexagon’s declaration says the text is a mix of human-written and AI-generated, and that some parts, but not all, have been checked and understood by a human. No source names an independent expert review, and it is not peer reviewed. The Lean metadata says that, apart from the human-written challenge file, AxiomProver generated the Lean files. It covers Theorem 1.3, its remark and Corollary 1.2, with no sorry and only Lean’s three standard axioms; its review is author-verified, by Lau. The README says it was locally verified with the comparator, and GitHub’s build check passed on all eight commits. Our keyword scan of its 1,050 Lean files finds sorry only in the four challenge statements. We did not build or run it. OpenAI’s math catalogue has no Collatz result. If it holds, for every N, at least the floor of N over D_A numbers below N reach one within 10.46 log n steps: Mazur’s theorem, refined to a tower of three twos by AxiomProver with Kenny Lau, with a Lean proof we did not run, a constant far too large to test, and the conjecture itself still open.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=AX04%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

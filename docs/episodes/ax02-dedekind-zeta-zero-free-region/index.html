@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No zeros past 31/32, for every number field? Axiom builds on OpenAI’s quasi-Riemann hypothesis | AI Proved What?</title>
+<meta name="description" content="Cureton and Thorner, with AxiomProver, claim that no Dedekind zeta function vanishes for Re s &gt; 31/32, following the strategy of OpenAI’s primitive-root preprint and building on its quasi-Riemann hypothesis work. What is claimed, how it relates to OpenAI’s results 003 and 029, what is not claimed, and where it stands. Lean by Axiom, not run by us; not peer reviewed.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/ax02-dedekind-zeta-zero-free-region/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="No zeros past 31/32, for every number field?">
+<meta property="og:description" content="Cureton and Thorner, with AxiomProver, claim that no Dedekind zeta function vanishes for Re s &gt; 31/32, following the strategy of OpenAI’s primitive-root preprint and building on its quasi-Riemann hypothesis work. What is claimed, how it relates to OpenAI’s results 003 and 029, what is not claimed, and where it stands. Lean by Axiom, not run by us; not peer reviewed.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/ax02-dedekind-zeta-zero-free-region/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/ax02-dedekind-zeta-zero-free-region/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Specials</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">AX02 (outside OpenAI’s math catalogue), October 2026</p>
+<h1>No zeros past 31/32, for every number field?</h1>
+<p class="subtitle">Cureton and Thorner, with AxiomProver, build on OpenAI’s quasi-Riemann hypothesis</p>
+
+<div class="player" data-youtube="QMaOACMd9HQ" data-title="AX02: No zeros past 31/32, for every number field?">
+  <a href="https://youtu.be/QMaOACMd9HQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play AX02: No zeros past 31/32, for every number field? The critical strip with walls at 7/8 and 31/32.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:32. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/QMaOACMd9HQ?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/QMaOACMd9HQ?t=119" data-t="119"><span class="t">1:59</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/QMaOACMd9HQ?t=273" data-t="273"><span class="t">4:33</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/QMaOACMd9HQ?t=408" data-t="408"><span class="t">6:48</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>This is AX02. In episode 003, OpenAI claimed that the Riemann zeta function has no zeros to the right of 7/8. Today: a paper that carries a weaker wall to every number field. A number field extends the rational numbers by a root of a polynomial. The Gaussian integers, a + bi, are the integers of one: the rationals with i adjoined. There, five splits as (2 + i)(2 − i), while three stays prime. Every number field K has a Dedekind zeta function: a sum over its ideals of one over the ideal’s norm to the power s, or a product over prime ideals. For the rational numbers, it is Riemann’s zeta. For the Gaussian integers, it is Riemann’s zeta times a Dirichlet L-function; our computer checks that at s = 2, both sides give 1.5067. Its zeros govern how prime ideals spread out.</p>
+<p>Episode AX02 covers a preprint on the Hexagon server, A quasi-Riemann hypothesis for Dedekind zeta functions, by Dean Cureton and Jesse Thorner, listed as investigators. Theorem 1.1: if K is any number field, then its zeta function has no zeros with real part greater than 31/32; the point one, a pole, is excluded. Corollary 1.2: the same holds for the L-function of every finite-order Hecke character over K, wherever it is holomorphic. The abstract says these results were proved and formalized in Lean using AxiomProver. The repository’s README says the investigators directed the research and made the mathematical judgments, and that AxiomProver generated the proofs and the Lean formalization. The paper adds that the investigators take full responsibility for correctness. Version one, posted on October 12, claimed only 1 − 1/6000. Version two, on October 14, reaches 31/32.</p>
+<p>So this is one AI lab’s result, built directly on another’s. The abstract opens with recent work on Artin’s primitive root conjecture, OpenAI’s preprint from episode 029, then says: following their strategy. The paper cites both of OpenAI’s zero-free preprints from episode 003, and says of the primitive root preprint: building on that paper, we prove the following result. It also warns that each use of OpenAI’s cyclotomic proofs must be justified again, for any field containing the twelfth roots of unity. The Lean builds on OpenAI’s too. The repository’s metadata lists adapted source from OpenAI’s math repository, for analytic number theory. In our count, 69 of its Lean files name that repository, two of them as reference only, and most of the paths they cite are in the folder of OpenAI’s own 7/8 Lean proof.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>What is not claimed. Not the Riemann hypothesis: 31/32 is far from 1/2. Not a second proof of episode 003’s result: for the rational numbers, 31/32 is a weaker wall than 7/8, so it cannot confirm it. The paper says the refinement that reaches 7/8 is less suited to this work. Not a new primitive root theorem: it takes episode 029’s zero-free method, not its count of primes. And nothing is claimed on the boundary itself.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Preprint on Hexagon</dt>
+    <dd><a href="https://hexagonmath.org/2610.00200v1">Version 1</a>, October 12, 2026 (claimed 1 − 1/6000); <a href="https://hexagonmath.org/2610.00200">version 2</a>, October 14, 2026 (31/32). Hexagon’s declarations: “A mix of human-written and AI-generated”; “Some parts of this contribution, but not all, have been checked and understood by a human.”</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Independent expert review</dt>
+    <dd>None named in our sources. The paper thanks Ken Ono “for his helpful comments”.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Lean proof, by Axiom</dt>
+    <dd><a href="https://github.com/AxiomMath/DedekindZetaZeroFree">AxiomMath/DedekindZetaZeroFree</a>: README says only Lean’s three standard axioms; comparator configuration names both theorems; metadata review “agent-reviewed”, which it says “does not establish line-by-line correspondence between the informal and formal proofs”. Its README and metadata point to version 1, whose Theorem 1.1 states the older 1 − 1/6000; the formal statement has 31/32, as in version 2. Not built or run by us.</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 27, 2026. Where it stands. The paper is a Hexagon preprint. Its declaration says the text is a mix of human-written and AI-generated, and that some parts, but not all, have been checked and understood by a human. The paper thanks Ken Ono for helpful comments; no source we found names an independent expert review, and it is not peer reviewed. The repository was created on October 12. On the 13th, one commit changed its target from 5999/6000 to 31/32, and another added the Hecke corollary; GitHub’s build check passed on the final commit. The README says the proof uses only Lean’s three standard axioms, and a comparator configuration names the two theorems. The metadata calls the review agent-reviewed, and says this does not establish a line-by-line match with the paper. Our keyword scan of its 5,528 Lean files finds sorry only in the challenge statements, as intended. We did not build or run it.</p>
+<p>What this changes in our record. Episode 003 still rests on OpenAI’s 7/8, with OpenAI’s own Lean; its wall for the rational numbers is weaker, so it is a follow-up, not a second check. Episode 029 still has no Lean proof from OpenAI, and its primitive root theorem is not formalized here. If it holds, no number field’s zeta function vanishes to the right of 31/32: OpenAI’s method, carried to every number field by Cureton and Thorner with AxiomProver, with a Lean proof we did not run, still waiting for an independent human referee. See our episodes <a href="https://aiprovedwhat.com/episodes/003-quasi-riemann-hypothesis/">003</a> and <a href="https://aiprovedwhat.com/episodes/029-primitive-roots-every-admissible-integer/">029</a>.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>History.</strong> History, as the paper tells it. In 1896, Hadamard and de la Vallée Poussin proved that zeta has no zeros with real part one or more, which gives the prime number theorem; Landau carried this to every Dedekind zeta function. A fixed wall theta, below one, with no zeros to its right, would give an error term of about x to the theta. The Riemann hypothesis says theta can be 1/2. The classical zero-free regions, of Vinogradov and Korobov, and for number fields of Sokolovskiĭ in 1968, hug the line real part one ever closer as the height grows. OpenAI’s preprints in episode 003 claimed fixed walls at 7/8 and 11/12, for zeta, and also Dirichlet L-functions and Hecke L-functions over ℚ(√−3); this paper calls that a monumental advance. And OpenAI’s primitive root preprint, our episode 029, claimed a wall at 1 − 10⁻⁶, for finite-order Hecke L-functions over cyclotomic fields that contain the twelfth roots of unity.</li>
+  <li><strong>The reciprocal.</strong> How the proof goes, in the paper’s account. First, fix a field F containing the twelfth roots of unity. Build a smoothed integral, f(Z), with one over the zeta function of F inside it. Its Mellin transform is exactly that reciprocal, times factors that never vanish. Now suppose f(Z) grows no faster than Z to the power 287/800, up to any small extra power. With a shift of 61/100 built into f, the transform continues to every s with real part above 61/100 plus 287/800, which is 31/32. So one over zeta has no pole there, and zeta has no zero. The saving is exactly 1/32; our computer checks the fractions.</li>
+  <li><strong>One average, two ways.</strong> The bound comes from estimating one weighted average in two ways, as in OpenAI’s primitive root paper. Cubic theta functions, from Kubota and Patterson, turn sextic twists into a family that a quadratic large sieve controls; that gives an upper bound. Poisson summation finds a main term proportional to f, and zero detection controls the other terms. The paper lists six ingredients, from ideal generators to zero detection, and checks each one for any such field. The hardest part, says the abstract, was formalizing Kazhdan and Patterson’s metaplectic forms, to cover every number field. New scales, a sharper zero detector and larger Euler domains, the paper says, improve the width from 1/6000 to 1/32.</li>
+  <li><strong>Descent.</strong> Last comes descent. Given any K, adjoin the twelfth roots of unity to get F. The extension is abelian, of degree at most four, and the zeta function of F is the zeta function of K times Hecke L-functions with no poles. So a zero for K would be a zero for F, which the main step forbids. For the rational numbers, F is the twelfth cyclotomic field, and its zeta function is Riemann’s zeta times three Dirichlet L-functions, of conductors 3, 4 and 12; our computer checks that factorization prime by prime. The Hecke corollary follows from a cyclic extension.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: 61/100 + 287/800 = 31/32 and 39/100 − 287/800 = 1/32 (the paper’s equations 2.3–2.4); version 1’s 8/15 + 933/2000 = 1 − 1/6000.</li>
+  <li>Ours: the zeta function of the Gaussian integers at s = 2, as a lattice sum and as ζ(2) times Catalan’s constant: both 1.5067.</li>
+  <li>Ours: 78,438 prime ideals of ℤ[i] with norm up to 10⁶, against li(10⁶) − li(2) ≈ 78,627.</li>
+  <li>Ours: the first zeros of ζ(s)L(s, χ₋₄) on Re s = 1/2 are at heights 6.02 (the L-function) and 14.13 (ζ).</li>
+  <li>Ours: ζ of ℚ(ζ₁₂) is ζ(s) times the L-functions of the characters mod 12 of conductors 3, 4 and 12; the Euler factors agree for every prime 5 ≤ p &lt; 5000.</li>
+  <li>Ours (keyword scan, not an audit): Axiom’s repository has 5,528 Lean files (1,658 vendored); sorry appears only in the two intended challenge statements; 69 files name openai/math, 2 of them as “Reference only; no source code copied”; 13 of the 15 OpenAI file paths they cite are in lean/OAI/NumberTheory/DirichletL, the folder of OpenAI’s 7/8 Lean proof.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://hexagonmath.org/2610.00200">“A quasi-Riemann hypothesis for Dedekind zeta functions”</a>, Dean Cureton and Jesse Thorner, Hexagon 2610.00200 (version 2, October 14, 2026, 36 pages; CC BY 4.0).</li>
+  <li><a href="https://github.com/AxiomMath/DedekindZetaZeroFree">The Lean repository</a> (Apache-2.0; not run by us).</li>
+  <li>OpenAI’s preprints it builds on, in <a href="https://github.com/openai/math">openai/math</a>: The Quasi-Riemann Hypothesis (7/8, September 30, 2026; 11/12, October 5) and Primitive roots for every admissible integer base (October 4).</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Axiom Math or OpenAI.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is AX02. In episode 003, OpenAI claimed that the Riemann zeta function has no zeros to the right of 7/8. Today: a paper that carries a weaker wall to every number field. A number field extends the rational numbers by a root of a polynomial. The Gaussian integers, a + bi, are the integers of one: the rationals with i adjoined. There, five splits as (2 + i)(2 − i), while three stays prime. Every number field K has a Dedekind zeta function: a sum over its ideals of one over the ideal’s norm to the power s, or a product over prime ideals. For the rational numbers, it is Riemann’s zeta. For the Gaussian integers, it is Riemann’s zeta times a Dirichlet L-function; our computer checks that at s = 2, both sides give 1.5067. Its zeros govern how prime ideals spread out. History, as the paper tells it. In 1896, Hadamard and de la Vallée Poussin proved that zeta has no zeros with real part one or more, which gives the prime number theorem; Landau carried this to every Dedekind zeta function. A fixed wall theta, below one, with no zeros to its right, would give an error term of about x to the theta. The Riemann hypothesis says theta can be 1/2. The classical zero-free regions, of Vinogradov and Korobov, and for number fields of Sokolovskiĭ in 1968, hug the line real part one ever closer as the height grows. OpenAI’s preprints in episode 003 claimed fixed walls at 7/8 and 11/12, for zeta, and also Dirichlet L-functions and Hecke L-functions over ℚ(√−3); this paper calls that a monumental advance. And OpenAI’s primitive root preprint, our episode 029, claimed a wall at 1 − 10⁻⁶, for finite-order Hecke L-functions over cyclotomic fields that contain the twelfth roots of unity.</p>
+<h3><span class="t num">1:59</span>The claim</h3>
+<p>Episode AX02 covers a preprint on the Hexagon server, A quasi-Riemann hypothesis for Dedekind zeta functions, by Dean Cureton and Jesse Thorner, listed as investigators. Theorem 1.1: if K is any number field, then its zeta function has no zeros with real part greater than 31/32; the point one, a pole, is excluded. Corollary 1.2: the same holds for the L-function of every finite-order Hecke character over K, wherever it is holomorphic. The abstract says these results were proved and formalized in Lean using AxiomProver. The repository’s README says the investigators directed the research and made the mathematical judgments, and that AxiomProver generated the proofs and the Lean formalization. The paper adds that the investigators take full responsibility for correctness. Version one, posted on October 12, claimed only 1 − 1/6000. Version two, on October 14, reaches 31/32. So this is one AI lab’s result, built directly on another’s. The abstract opens with recent work on Artin’s primitive root conjecture, OpenAI’s preprint from episode 029, then says: following their strategy. The paper cites both of OpenAI’s zero-free preprints from episode 003, and says of the primitive root preprint: building on that paper, we prove the following result. It also warns that each use of OpenAI’s cyclotomic proofs must be justified again, for any field containing the twelfth roots of unity. The Lean builds on OpenAI’s too. The repository’s metadata lists adapted source from OpenAI’s math repository, for analytic number theory. In our count, 69 of its Lean files name that repository, two of them as reference only, and most of the paths they cite are in the folder of OpenAI’s own 7/8 Lean proof. What is not claimed. Not the Riemann hypothesis: 31/32 is far from 1/2. Not a second proof of episode 003’s result: for the rational numbers, 31/32 is a weaker wall than 7/8, so it cannot confirm it. The paper says the refinement that reaches 7/8 is less suited to this work. Not a new primitive root theorem: it takes episode 029’s zero-free method, not its count of primes. And nothing is claimed on the boundary itself.</p>
+<h3><span class="t num">4:33</span>How the proof goes</h3>
+<p>How the proof goes, in the paper’s account. First, fix a field F containing the twelfth roots of unity. Build a smoothed integral, f(Z), with one over the zeta function of F inside it. Its Mellin transform is exactly that reciprocal, times factors that never vanish. Now suppose f(Z) grows no faster than Z to the power 287/800, up to any small extra power. With a shift of 61/100 built into f, the transform continues to every s with real part above 61/100 plus 287/800, which is 31/32. So one over zeta has no pole there, and zeta has no zero. The saving is exactly 1/32; our computer checks the fractions. The bound comes from estimating one weighted average in two ways, as in OpenAI’s primitive root paper. Cubic theta functions, from Kubota and Patterson, turn sextic twists into a family that a quadratic large sieve controls; that gives an upper bound. Poisson summation finds a main term proportional to f, and zero detection controls the other terms. The paper lists six ingredients, from ideal generators to zero detection, and checks each one for any such field. The hardest part, says the abstract, was formalizing Kazhdan and Patterson’s metaplectic forms, to cover every number field. New scales, a sharper zero detector and larger Euler domains, the paper says, improve the width from 1/6000 to 1/32. Last comes descent. Given any K, adjoin the twelfth roots of unity to get F. The extension is abelian, of degree at most four, and the zeta function of F is the zeta function of K times Hecke L-functions with no poles. So a zero for K would be a zero for F, which the main step forbids. For the rational numbers, F is the twelfth cyclotomic field, and its zeta function is Riemann’s zeta times three Dirichlet L-functions, of conductors 3, 4 and 12; our computer checks that factorization prime by prime. The Hecke corollary follows from a cyclic extension.</p>
+<h3><span class="t num">6:48</span>Where it stands</h3>
+<p>Where it stands. The paper is a Hexagon preprint. Its declaration says the text is a mix of human-written and AI-generated, and that some parts, but not all, have been checked and understood by a human. The paper thanks Ken Ono for helpful comments; no source we found names an independent expert review, and it is not peer reviewed. The repository was created on October 12. On the 13th, one commit changed its target from 5999/6000 to 31/32, and another added the Hecke corollary; GitHub’s build check passed on the final commit. The README says the proof uses only Lean’s three standard axioms, and a comparator configuration names the two theorems. The metadata calls the review agent-reviewed, and says this does not establish a line-by-line match with the paper. Our keyword scan of its 5,528 Lean files finds sorry only in the challenge statements, as intended. We did not build or run it. What this changes in our record. Episode 003 still rests on OpenAI’s 7/8, with OpenAI’s own Lean; its wall for the rational numbers is weaker, so it is a follow-up, not a second check. Episode 029 still has no Lean proof from OpenAI, and its primitive root theorem is not formalized here. If it holds, no number field’s zeta function vanishes to the right of 31/32: OpenAI’s method, carried to every number field by Cureton and Thorner with AxiomProver, with a Lean proof we did not run, still waiting for an independent human referee.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=AX02%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

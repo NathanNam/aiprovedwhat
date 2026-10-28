@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rogers–Ramanujan for every a, b? Axiom’s proof of the Huang–Jiang–Oblomkov conjecture | AI Proved What?</title>
+<meta name="description" content="A preprint by Huang, Lau and Ono, written with Axiom’s AxiomProver, claims the Huang–Jiang–Oblomkov conjecture for every coprime pair (a, b): a family of Rogers–Ramanujan-type identities coming from counts of commuting nilpotent matrices. What is claimed, what was known, how the proof goes, and where it stands. Lean by Axiom, not run by us; not peer reviewed.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/ax03-huang-jiang-oblomkov-conjecture/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Rogers–Ramanujan for every a, b?">
+<meta property="og:description" content="A preprint by Huang, Lau and Ono, written with Axiom’s AxiomProver, claims the Huang–Jiang–Oblomkov conjecture for every coprime pair (a, b): a family of Rogers–Ramanujan-type identities coming from counts of commuting nilpotent matrices. What is claimed, what was known, how the proof goes, and where it stands. Lean by Axiom, not run by us; not peer reviewed.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/ax03-huang-jiang-oblomkov-conjecture/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/ax03-huang-jiang-oblomkov-conjecture/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Specials</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">AX03 (outside OpenAI’s math catalogue), October 2026</p>
+<h1>Rogers–Ramanujan for every a, b?</h1>
+<p class="subtitle">Axiom’s proof of the Huang–Jiang–Oblomkov conjecture</p>
+
+<div class="player" data-youtube="AQvuYbdDOJ0" data-title="AX03: Rogers–Ramanujan for every a, b?">
+  <a href="https://youtu.be/AQvuYbdDOJ0">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play AX03: Rogers–Ramanujan for every a, b? A map of coprime pairs (a, b) and the identity Z = P.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:03. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/AQvuYbdDOJ0?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/AQvuYbdDOJ0?t=126" data-t="126"><span class="t">2:06</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/AQvuYbdDOJ0?t=233" data-t="233"><span class="t">3:53</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/AQvuYbdDOJ0?t=406" data-t="406"><span class="t">6:46</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>This is AX03, about a paper from Axiom Math and Emory University. Write the number six as a sum of parts that differ by at least two: six, five plus one, four plus two. That makes three ways. Now write six using only parts that leave remainder one or four when divided by five: six, four plus one plus one, and six ones. Again, three. Our computer finds the two counts equal for every number up to 40, and the first Rogers–Ramanujan identity says they are always equal. In formulas, a sum of q^(n²) over a product equals an infinite product over the residues one and four, modulo five. The paper cites Rogers’s memoir of 1894. Gordon’s partition theorem and Andrews’s identities extend the modulus five to every odd modulus. A quadratic sum equal to a product with congruence conditions: that is the shape this paper generalizes.</p>
+<p>Where could such identities come from? Huang, Jiang and Oblomkov proposed a geometric source. Take two n × n matrices, A and B, over a finite field with q elements. Ask that both are nilpotent, meaning some power is zero, that they commute, and that A^a = B^b, for coprime numbers a and b. Over the field with two elements, with a equal to three and b equal to four, our count finds one such pair of 1 × 1 matrices, ten pairs of 2 × 2 matrices, and 400 of 3 × 3. What organizes these counts are the gaps: the numbers you cannot write as a sum of threes and fours. Here they are one, two and five. The counts are assembled, by a theorem of Huang, Jiang and Oblomkov, into a q-series, Z, with one summation variable for each gap, and the conjecture says Z equals an explicit infinite product, P, whose exponents repeat modulo a plus b. For a equal to two, the gaps form a chain, and the conjecture is exactly one family of the Andrews–Gordon identities. For three and four, they do not, and the product has modulus seven.</p>
+<p>Episode AX03 covers one preprint on the arXiv, 38 pages, titled Rogers–Ramanujan identities from the geometry of X^a = Y^b. Its authors are Yifeng Huang of Emory University, and Kenny Lau and Ken Ono of Axiom Math. Version one is dated September 17, 2026, and version two October 7. The paper says that apart from a equal to two, little was known: four cases with a equal to three, in an earlier paper by the same authors with Peter Paule, and then all of a equal to three, by Lau and Ono. Nothing was known for a above three. The claim is that the conjecture holds for every coprime pair, with a less than b. The main theorem is a stronger finite identity. Take the finite sum at rank N, and it equals a product of N simple factors times the generating function for balanced cylindric partitions: a rows of numbers that wrap around a cylinder, with every entry at most N. Letting N grow gives the conjecture. Our computer compares Z and P coefficient by coefficient for ten pairs, including four and five up to q^22, and they agree. That is an illustration, not a proof.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>What is not claimed. The link between the matrix counts and the q-series is a theorem of Huang, Jiang and Oblomkov that this paper quotes, and the Lean statement is about the q-series and the product, not about matrices. The paper does not say that an AI found the proof on its own; it says the authors set the direction. A positivity result it derives, toward a conjecture of Corteel and Warnaar, covers only these balanced profiles. And the cases with a equal to two or three were known before.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Preprint</dt>
+    <dd><a href="https://arxiv.org/abs/2609.20567">arXiv 2609.20567</a>: version 1, September 17, 2026; version 2, October 7, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Independent expert review</dt>
+    <dd>None named in our sources (the paper thanks colleagues for discussions)</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Lean proof, by Axiom</dt>
+    <dd>Formalized with AxiomProver. The <a href="https://github.com/AxiomMath/HJO">repository</a>’s README says this version was run against the Lean comparator on October 7, 2026, which reported “Your solution is okay!”. Not built or run by us</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 27, 2026. Where it stands, as of October 27. It is a preprint, at version two. Expert review: none of our sources names an independent reviewer; the paper thanks colleagues for discussions. It has not been peer reviewed. The Lean is by Axiom. Its README says this version was run against the Lean comparator on October 7, which reported: your solution is okay. Its automated GitHub build is also marked as passing. The comparator allows only Lean’s three standard axioms. Our text scan of its 860 Lean files finds sorry only in the challenge file, where it marks the statements, and no new axioms and no native_decide. One caution: the conjecture’s statement is defined in Axiom’s own q-series library, so readers must check that definition too. We did not build or run any of it.</p>
+<p>If it holds, every coprime pair a and b gives an identity of Rogers–Ramanujan type, and, through Huang, Jiang and Oblomkov’s theorem, the normalized counts of commuting nilpotent matrices with A^a = B^b add up to an explicit infinite product, with the first Rogers–Ramanujan identity as the simplest case.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>Two branches, one equation.</strong> How the proof goes, in the paper’s account. Two generating series are shown to satisfy the same q-difference equation, whose coefficients count rational Dyck paths, lattice paths that stay above a diagonal, weighted by their area. A solution that starts with one is unique. The first branch starts from the HJO sums. Expanding their Gaussian factors as words of filters on the gaps turns them into Dyck paths that return to the diagonal at prescribed points. Then the compositional rational shuffle theorem, from work of Bergeron, Garsia, Leven and Xin, and of Mellit, together with a multiplicativity theorem for slope operators, gives the equation. The second branch starts from the cylindric partitions. A bijection matches them with collections of disjoint cycles in a weighted graph, and a finite determinant, expanded by Cramer’s rule, gives the same equation. Uniqueness makes the two series equal. Finally, Huang’s bound on the quadratic form lets N go to infinity, and the known product for unbounded cylindric partitions, from Borodin and from Foda and Welsh, finishes the conjecture. The authors credit Ole Warnaar with the observation that the HJO series could be framed with cylindric partitions. Our brute-force count matches the finite identity, up to a fixed power of q, in eight small cases.</li>
+  <li><strong>The build-up.</strong> The build-up, as the repositories record it. In August, the paper for a equal to three came with a Lean repository that assumed eight facts from the literature, including Warnaar’s identities; its latest automated build, on August 26, is marked as failed. The four small cases came with a repository whose HJO statements assumed Warnaar’s theorem. The new paper says the a = 3 method of Lau and Ono does not easily extend to general a. For the full conjecture, the first version of the HJO repository, on September 10, assumed eight results from the literature. Four days later, two remained: a commutation theorem for slope operators, and the shuffle identity. Version one of the paper said the Lean was conditional on those two. On October 7, a commit titled HJO is proved unconditionally was merged. The Lean had grown from about 21,000 lines to about 308,000, by our count.</li>
+  <li><strong>The AI’s role.</strong> What did the AI do? The paper says it was written using human-AI collaboration with AxiomProver, through literature search, significant numerical experimentation, and the proposal and rejection of many candidate strategies. At every stage, it says, the authors set the direction and made the mathematical judgments, and they take full responsibility for the correctness of the results. The formalization was done with AxiomProver, against a challenge file that the paper says was written by humans.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: partitions of 6 into parts differing by at least 2 (6, 5+1, 4+2) and into parts congruent to 1 or 4 mod 5 (6, 4+1+1, 1+1+1+1+1+1): three each; the two counts agree for every n up to 40.</li>
+  <li>Ours: pairs of commuting nilpotent matrices over the field with two elements with A³ = B⁴: 1, 10 and 400 pairs of size 1, 2 and 3 (brute force).</li>
+  <li>Ours: Z(q) = P(q) coefficient by coefficient for ten pairs: (2,3) through q^40, (2,5) through q^20, (2,7) through q^16, (3,4) through q^30, (3,5) through q^20, (3,7) through q^14, (3,8) through q^12, (4,5) through q^22, (4,7) through q^10, (5,6) through q^6. An illustration, not a proof.</li>
+  <li>Ours: the finite identity (Theorem 1.1) by brute-force counts of cylindric partitions in 8 small cases; the paper’s (4,5) example F₂(1) = 196 reproduced.</li>
+  <li>Ours: Lean lines in the HJO repository: 2026-09-10: 20,971 lines in 46 files, 8 literature results assumed; 2026-09-14: 33,743 lines in 95 files, 2 literature results assumed; 2026-10-07: 308,118 lines in 860 files, 0 literature results assumed. Our text scan of the last version: sorry only in the challenge file, no axiom declarations, no native_decide.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://arxiv.org/abs/2609.20567">Yifeng Huang, Kenny Lau, Ken Ono, “Rogers–Ramanujan identities from the geometry of X^a = Y^b”</a>, arXiv 2609.20567 (v2, October 7, 2026), 38 pages.</li>
+  <li><a href="https://arxiv.org/abs/2608.05480">Kenny Lau, Ken Ono, “Modularity of Point Counts for the Curves X^a = Y^b: New Rogers–Ramanujan Identities”</a>, arXiv 2608.05480 (the a = 3 case).</li>
+  <li><a href="https://arxiv.org/abs/2608.15219">Yifeng Huang, Kenny Lau, Ken Ono, Peter Paule, “Algebraic geometric framework of Rogers–Ramanujan identities”</a>, arXiv 2608.15219 (four small cases).</li>
+  <li>Lean repositories (not run by us): <a href="https://github.com/AxiomMath/HJO">AxiomMath/HJO</a>, <a href="https://github.com/AxiomMath/RR_a3">AxiomMath/RR_a3</a>, <a href="https://github.com/AxiomMath/HJOa3Small">AxiomMath/HJOa3Small</a>.</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Axiom Math.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is AX03, about a paper from Axiom Math and Emory University. Write the number six as a sum of parts that differ by at least two: six, five plus one, four plus two. That makes three ways. Now write six using only parts that leave remainder one or four when divided by five: six, four plus one plus one, and six ones. Again, three. Our computer finds the two counts equal for every number up to 40, and the first Rogers–Ramanujan identity says they are always equal. In formulas, a sum of q^(n²) over a product equals an infinite product over the residues one and four, modulo five. The paper cites Rogers’s memoir of 1894. Gordon’s partition theorem and Andrews’s identities extend the modulus five to every odd modulus. A quadratic sum equal to a product with congruence conditions: that is the shape this paper generalizes. Where could such identities come from? Huang, Jiang and Oblomkov proposed a geometric source. Take two n × n matrices, A and B, over a finite field with q elements. Ask that both are nilpotent, meaning some power is zero, that they commute, and that A^a = B^b, for coprime numbers a and b. Over the field with two elements, with a equal to three and b equal to four, our count finds one such pair of 1 × 1 matrices, ten pairs of 2 × 2 matrices, and 400 of 3 × 3. What organizes these counts are the gaps: the numbers you cannot write as a sum of threes and fours. Here they are one, two and five. The counts are assembled, by a theorem of Huang, Jiang and Oblomkov, into a q-series, Z, with one summation variable for each gap, and the conjecture says Z equals an explicit infinite product, P, whose exponents repeat modulo a plus b. For a equal to two, the gaps form a chain, and the conjecture is exactly one family of the Andrews–Gordon identities. For three and four, they do not, and the product has modulus seven.</p>
+<h3><span class="t num">2:06</span>The claim</h3>
+<p>Episode AX03 covers one preprint on the arXiv, 38 pages, titled Rogers–Ramanujan identities from the geometry of X^a = Y^b. Its authors are Yifeng Huang of Emory University, and Kenny Lau and Ken Ono of Axiom Math. Version one is dated September 17, 2026, and version two October 7. The paper says that apart from a equal to two, little was known: four cases with a equal to three, in an earlier paper by the same authors with Peter Paule, and then all of a equal to three, by Lau and Ono. Nothing was known for a above three. The claim is that the conjecture holds for every coprime pair, with a less than b. The main theorem is a stronger finite identity. Take the finite sum at rank N, and it equals a product of N simple factors times the generating function for balanced cylindric partitions: a rows of numbers that wrap around a cylinder, with every entry at most N. Letting N grow gives the conjecture. Our computer compares Z and P coefficient by coefficient for ten pairs, including four and five up to q^22, and they agree. That is an illustration, not a proof. What is not claimed. The link between the matrix counts and the q-series is a theorem of Huang, Jiang and Oblomkov that this paper quotes, and the Lean statement is about the q-series and the product, not about matrices. The paper does not say that an AI found the proof on its own; it says the authors set the direction. A positivity result it derives, toward a conjecture of Corteel and Warnaar, covers only these balanced profiles. And the cases with a equal to two or three were known before.</p>
+<h3><span class="t num">3:53</span>How the proof goes</h3>
+<p>How the proof goes, in the paper’s account. Two generating series are shown to satisfy the same q-difference equation, whose coefficients count rational Dyck paths, lattice paths that stay above a diagonal, weighted by their area. A solution that starts with one is unique. The first branch starts from the HJO sums. Expanding their Gaussian factors as words of filters on the gaps turns them into Dyck paths that return to the diagonal at prescribed points. Then the compositional rational shuffle theorem, from work of Bergeron, Garsia, Leven and Xin, and of Mellit, together with a multiplicativity theorem for slope operators, gives the equation. The second branch starts from the cylindric partitions. A bijection matches them with collections of disjoint cycles in a weighted graph, and a finite determinant, expanded by Cramer’s rule, gives the same equation. Uniqueness makes the two series equal. Finally, Huang’s bound on the quadratic form lets N go to infinity, and the known product for unbounded cylindric partitions, from Borodin and from Foda and Welsh, finishes the conjecture. The authors credit Ole Warnaar with the observation that the HJO series could be framed with cylindric partitions. Our brute-force count matches the finite identity, up to a fixed power of q, in eight small cases. The build-up, as the repositories record it. In August, the paper for a equal to three came with a Lean repository that assumed eight facts from the literature, including Warnaar’s identities; its latest automated build, on August 26, is marked as failed. The four small cases came with a repository whose HJO statements assumed Warnaar’s theorem. The new paper says the a = 3 method of Lau and Ono does not easily extend to general a. For the full conjecture, the first version of the HJO repository, on September 10, assumed eight results from the literature. Four days later, two remained: a commutation theorem for slope operators, and the shuffle identity. Version one of the paper said the Lean was conditional on those two. On October 7, a commit titled HJO is proved unconditionally was merged. The Lean had grown from about 21,000 lines to about 308,000, by our count. What did the AI do? The paper says it was written using human-AI collaboration with AxiomProver, through literature search, significant numerical experimentation, and the proposal and rejection of many candidate strategies. At every stage, it says, the authors set the direction and made the mathematical judgments, and they take full responsibility for the correctness of the results. The formalization was done with AxiomProver, against a challenge file that the paper says was written by humans.</p>
+<h3><span class="t num">6:46</span>Where it stands</h3>
+<p>Where it stands, as of October 27. It is a preprint, at version two. Expert review: none of our sources names an independent reviewer; the paper thanks colleagues for discussions. It has not been peer reviewed. The Lean is by Axiom. Its README says this version was run against the Lean comparator on October 7, which reported: your solution is okay. Its automated GitHub build is also marked as passing. The comparator allows only Lean’s three standard axioms. Our text scan of its 860 Lean files finds sorry only in the challenge file, where it marks the statements, and no new axioms and no native_decide. One caution: the conjecture’s statement is defined in Axiom’s own q-series library, so readers must check that definition too. We did not build or run any of it. If it holds, every coprime pair a and b gives an identity of Rogers–Ramanujan type, and, through Huang, Jiang and Oblomkov’s theorem, the normalized counts of commuting nilpotent matrices with A^a = B^b add up to an explicit infinite product, with the first Rogers–Ramanujan identity as the simplest case.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=AX03%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

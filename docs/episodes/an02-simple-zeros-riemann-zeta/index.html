@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two thirds of the zeta zeros, simple and on the line? | AI Proved What?</title>
+<meta name="description" content="An internal Claude model first proved that more than two thirds of the zeros of the Riemann zeta function are simple and on the critical line (67.25%), unconditionally; its two listed authors, mathematicians at Anthropic, checked it (no independent review named), Youness Lamzouri gave a second proof, and Anthropic and Axiom formalized it in Lean. Made with Claude; held to the same standards. Not peer reviewed; Lean not run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/an02-simple-zeros-riemann-zeta/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Two thirds of the zeta zeros, simple and on the line?">
+<meta property="og:description" content="An internal Claude model first proved that more than two thirds of the zeros of the Riemann zeta function are simple and on the critical line (67.25%), unconditionally; its two listed authors, mathematicians at Anthropic, checked it (no independent review named), Youness Lamzouri gave a second proof, and Anthropic and Axiom formalized it in Lean. Made with Claude; held to the same standards. Not peer reviewed; Lean not run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/an02-simple-zeros-riemann-zeta/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/an02-simple-zeros-riemann-zeta/thumbnail.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Specials</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">AN02 (outside OpenAI’s math catalogue), October 2026</p>
+<h1>Two thirds of the zeta zeros, simple and on the line?</h1>
+<p class="subtitle">A result first found by Claude, checked by its two authors at Anthropic (not independently reviewed), proved again by Lamzouri, and formalized in Lean</p>
+<p><strong>Disclosure.</strong> AI Proved What? is made with Claude, Anthropic’s AI. This is Anthropic’s own result: we hold it to the same standards as every other lab’s, using only public sources. AI Proved What? is independent and not affiliated with Anthropic beyond using its product Claude, and not affiliated with Axiom.</p>
+
+<div class="player" data-youtube="ORJH7M2w1-M" data-title="AN02: Two thirds of the zeta zeros, simple and on the line?">
+  <a href="https://youtu.be/ORJH7M2w1-M">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play AN02: Two thirds of the zeta zeros, simple and on the line? The critical strip with the first zeros on the line and the bound 67.25%.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:11. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/ORJH7M2w1-M?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/ORJH7M2w1-M?t=102" data-t="102"><span class="t">1:42</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/ORJH7M2w1-M?t=243" data-t="243"><span class="t">4:03</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/ORJH7M2w1-M?t=371" data-t="371"><span class="t">6:11</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Episode AN02 covers a result in three public documents. On August 10, 2026, Anthropic posted that an unreleased research version of Claude had improved a lower bound for the share of zeros on the line. On August 13, a preprint followed on arXiv, listing Levent Alpöge and Ralph Furman as authors. Its first page says: the mathematical argument in this paper was discovered and written by Claude, an AI developed by Anthropic. The listed authors verified the proof and take responsibility for its content. The theorem: unconditionally, as the height grows, at least two thirds of the zeros, counted with multiplicity, are simple and on the line, and at least five sixths are distinct. With Montgomery and Taylor’s window, the constants become 67.25% and 83.62%; the first is the number Montgomery and Taylor had reached assuming the Riemann hypothesis.</p>
+<p>The third document is Lamzouri’s. On September 2, Youness Lamzouri, of the University of Lorraine, posted what he calls a new, conceptually simpler proof of the same two bounds. A revision on September 8 added two estimates of his own: at least 88.76% of the zeros are simple or on the line. His abstract says the first proof was produced by an internal research version of Claude developed by Anthropic and subsequently verified by two mathematicians at Anthropic, Levent Alpöge and Ralph Furman, and that his additional estimates are neither stated nor proved in the Claude paper. He calls it a breakthrough result, and says the argument produced by Claude is technically intricate, and its main mechanism is not immediately transparent.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>What is not claimed. Not the Riemann hypothesis: Claude’s paper says the remaining third of the zeros are not shown to be off the line, merely not reached. Not that every zero is simple. These are limits as the height grows, not statements about any one zero. Anthropic’s post says: we don’t expect that the techniques Claude used will lead to proving the Riemann hypothesis. The paper says the Riemann hypothesis itself is out of reach of the mechanism, and puts the ceiling for certificates of this type near 68.2%, a bound worked out by Eric Easley and Stephen McAleer.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Preprints on arXiv</dt>
+    <dd><a href="https://arxiv.org/abs/2608.13637">Alpöge and Furman, arXiv 2608.13637</a>: August 13, 2026 (v2 August 19); <a href="https://arxiv.org/abs/2609.02882">Lamzouri, arXiv 2609.02882</a>: September 2, 2026 (v2 September 8); <a href="https://www.anthropic.com/research/riemann-zeta">Anthropic’s post</a>: August 10, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Journal publication</dt>
+    <dd>None yet. Anthropic’s repository metadata says “journal peer review is pending”; neither arXiv record has a journal reference</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Independent expert review</dt>
+    <dd>None named in our sources. The proof was checked by Levent Alpöge and Ralph Furman, mathematicians at Anthropic (the listed authors): they “read the argument in detail”, checked it, condensed it to the form in which it appears, and “take responsibility for any errors that remain” (the paper). Brian Conrey and Daniel Goldston are thanked “for carefully reading the manuscript and for their comments” (the paper); Anthropic’s post says they “examined the paper on short notice”. No source says they verified or endorsed it. Anthropic’s Lean metadata says the paper was “reviewed and endorsed by a human analytic number theorist”, not named; the paper thanks “colleagues at Anthropic who carried out additional independent reviews”, not named</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>A second proof</dt>
+    <dd>Youness Lamzouri (Université de Lorraine), by a different route, with two further estimates of his own</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Lean, by Anthropic and by Axiom</dt>
+    <dd><a href="https://github.com/anthropics/formal-math/tree/main/zeta23">Anthropic’s</a> formalizes the Alpöge–Furman paper (17 comparator statements; “All Lean code was written by Claude”; review “author-verified”). <a href="https://github.com/AxiomMath/ZetaZerosV2">Axiom’s</a> formalizes Lamzouri’s proof (12 statements; certificates by AxiomProver per Lamzouri’s appendix; its “locally verified with the comparator” sentence dates from September 8, and its CI does not run the comparator; conditional on two inputs until October 3, now depending on <a href="https://github.com/AxiomMath/PrimeNumberTheoremAnd">Axiom’s fork of PrimeNumberTheoremAnd</a>). Both report the comparator. Not built or run by us</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked October 27, 2026. Where it stands. Alpöge and Furman’s preprint is from August 13, revised on the 19th; Lamzouri’s is from September 2, revised on the 8th. Neither preprint has been published in a journal; Anthropic’s repository metadata says journal peer review is pending. No independent expert review is named in our sources. The paper says the proof was verified by Alpöge and Furman, the listed authors, who are mathematicians at Anthropic; the appendix says they read it in detail and condensed it to its present form. The paper thanks Brian Conrey and Daniel Goldston for reading the manuscript. Lamzouri’s paper is a second proof, by a different route, from a mathematician at the University of Lorraine. Anthropic’s Lean repository formalizes Claude’s paper; its metadata says Claude wrote all the Lean, Eric Easley orchestrated, and Ralph Furman checked the statements against the paper. Axiom’s repository formalizes Lamzouri’s proof; his appendix says AxiomProver generated the September version of those Lean certificates autonomously. Both say they pass the comparator. We did not build or run either.</p>
+<p>The caveats. Lamzouri’s appendix describes Axiom’s certificate for the main theorem as resting on two assumed inputs; Axiom removed them on October 3, and the proof now depends on Axiom’s temporary fork of the PrimeNumberTheoremAnd project. The sources state the previous record differently: 40.75% in Lamzouri’s paper, five twelfths in Claude’s, and 41.6% in Anthropic’s post. If it holds, more than two thirds of the zeros of the Riemann zeta function are simple and on the critical line, unconditionally: found first by Claude, checked by its two authors at Anthropic, proved again by Lamzouri, and formalized in Lean. The Riemann hypothesis remains open.</p>
+<p>Also in the sources: Anthropic’s 95-page account of how the argument was found says that its mathematics “has not been independently verified”, a caveat that “concerns this volume only, not the accompanying paper”. Lamzouri’s appendix describes Axiom’s certificate as it stood on September 8, before the October 3 change.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The question.</strong> Here is the history as Youness Lamzouri’s paper cites it. Hardy proved in 1914 that infinitely many zeros lie on the line, and Selberg in 1942 that a positive proportion do. Levinson got more than one third, and Conrey, in 1989, more than two fifths that are simple and on the line. In 2020, Pratt, Robles, Zaharescu and Zeindler reached 40.75%. A second line of work assumed the Riemann hypothesis. Montgomery used the pair correlation of zeros to show that at least two thirds would then be simple, and Montgomery and Taylor raised that to 67.25%. Recently Aryan proved an unconditional pair correlation formula for one kernel, and then Baluyot, Goldston, Suriajaya and Turnage-Butterbaugh, made Montgomery’s pair correlation theorem work without the hypothesis.</li>
+  <li><strong>Claude’s route.</strong> How the proof goes, in Claude’s paper. Weil’s explicit formula pairs test functions through the zeros; the Riemann hypothesis is equivalent to that pairing being positive. The paper restricts it to a family of test functions spaced along the strip, about as many as there are zeros, and gets a large symmetric matrix. Each zero on the line adds a positive piece of rank one. Each pair of zeros off the line adds a block with one positive and one negative direction. Two quantities are computed: the trace, close to the number of zeros, and the sum of the squared entries, through Montgomery’s second moment, in the unconditional form of Aryan and of Baluyot and coauthors. A rank–trace inequality, which the paper calls the matrix form of m² ≥ 2m − 1, turns them into a lower bound: 2 − 4/3, or two thirds, with a flat window.</li>
+  <li><strong>Lamzouri’s route.</strong> Lamzouri’s route drops the matrix. He proves one Hilbert space inequality for any finite set of points that is symmetric under complex conjugation: the number of simple real points is at least twice the total, minus a double sum of a squared kernel. The rescaled zeros form such a set, and the double sum is again a pair correlation sum. He notes that both proofs lead to the same extremal problem of Montgomery and Taylor, which is why the constants agree.</li>
+  <li><strong>How it was found.</strong> How it was found, in Anthropic’s account. Jarred Sumner, an Anthropic staff member and not a mathematician, asked Claude to take a real stab at the Riemann hypothesis. At first, the post says, Claude generated and tried 650 ideas, none of which worked. Asked to try again, it coordinated about 60 Claude subagents, which ran 2,400 shell commands; the two sessions used 31 million output tokens. The post says Sumner’s input was mostly encouragement, such as keep going; the paper’s first page says he posed the problem and guided the investigation. The paper’s appendix says the argument first gave one half, then two thirds, and its acknowledgments call Sumner in every meaningful sense the paper’s human co-author.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the constants agree across the three sources’ formulas: C₀ = 3/2 − (1/√2)·cot(1/√2) = 0.6725007037, C₁ = (C₀ + 1)/2 = 0.8362503518, C₂ = 0.8876200082; every threshold quoted (67.25%, 83.62%, 88.76%) is below its constant.</li>
+  <li>Ours: the first 30 zeros of the zeta function (mpmath) all have real part 1/2, at heights 14.13, 21.02, 25.01, …, and each is simple (an illustration, not a proof).</li>
+  <li>Ours: a text scan of each Lean proof’s import closure (Mathlib excluded): Anthropic’s 190 files, Axiom’s 178 files (85 from the PrimeNumberTheoremAnd fork); no sorry. We did not build or run either.</li>
+  <li>From the sources: the flat window gives 2 − 4/3 = 2/3 (Claude’s paper); 650 ideas, about 60 subagents, 2,400 shell commands and 31 million output tokens (Anthropic’s post); the previous record stated as 0.407511 (Lamzouri), 5/12 (Claude’s paper) and 41.6% (Anthropic’s post, for zeros on the line).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://arxiv.org/abs/2608.13637">Levent Alpöge and Ralph Furman, “More than two thirds of the zeta zeros are simple and on the critical line”</a>, arXiv 2608.13637 (“The mathematical argument in this paper was discovered and written by Claude”).</li>
+  <li><a href="https://arxiv.org/abs/2609.02882">Youness Lamzouri, “A new proof that more than 2/3 of the zeros of the Riemann zeta function are simple and on the critical line”</a>, arXiv 2609.02882.</li>
+  <li><a href="https://www.anthropic.com/research/riemann-zeta">Anthropic’s post</a> (August 10, 2026), with <a href="https://www-cdn.anthropic.com/23455459f8832d06bb175cc0f88d019aed962ef8.pdf">the informal note</a> and <a href="https://www-cdn.anthropic.com/d7f3ecf1d01392d887f8bc974ca187e2a121b1ed.pdf">Claude’s account of how the argument was found</a>.</li>
+  <li>Lean: <a href="https://github.com/anthropics/formal-math/tree/main/zeta23">anthropics/formal-math, zeta23</a> (Apache-2.0), <a href="https://github.com/AxiomMath/ZetaZerosV2">AxiomMath/ZetaZerosV2</a> and <a href="https://github.com/AxiomMath/ZetaZeros">ZetaZeros</a> (Apache-2.0), <a href="https://github.com/AxiomMath/PrimeNumberTheoremAnd">AxiomMath/PrimeNumberTheoremAnd</a>. Not run by us.</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Anthropic beyond using its product Claude, and not affiliated with Axiom.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is AN02. Before we start: AI Proved What? is made with Claude, Anthropic’s AI. This is Anthropic’s own result: we hold it to the same standards as every other lab’s, using only public sources. The Riemann zeta function has infinitely many zeros in a vertical strip, between real parts 0 and 1. The Riemann hypothesis says they all lie on the middle line, real part 1/2. Our script computes the first 30, which are known to lie on the line, at heights 14.13, 21.02, 25.01, and up. That is an illustration, not a proof. A zero is simple if it has multiplicity one, the way x vanishes at 0; x² has a double zero. The question: what share of all the zeros can be proved to be both simple and on the line? Here is the history as Youness Lamzouri’s paper cites it. Hardy proved in 1914 that infinitely many zeros lie on the line, and Selberg in 1942 that a positive proportion do. Levinson got more than one third, and Conrey, in 1989, more than two fifths that are simple and on the line. In 2020, Pratt, Robles, Zaharescu and Zeindler reached 40.75%. A second line of work assumed the Riemann hypothesis. Montgomery used the pair correlation of zeros to show that at least two thirds would then be simple, and Montgomery and Taylor raised that to 67.25%. Recently Aryan proved an unconditional pair correlation formula for one kernel, and then Baluyot, Goldston, Suriajaya and Turnage-Butterbaugh, made Montgomery’s pair correlation theorem work without the hypothesis.</p>
+<h3><span class="t num">1:42</span>The claim</h3>
+<p>Episode AN02 covers a result in three public documents. On August 10, 2026, Anthropic posted that an unreleased research version of Claude had improved a lower bound for the share of zeros on the line. On August 13, a preprint followed on arXiv, listing Levent Alpöge and Ralph Furman as authors. Its first page says: the mathematical argument in this paper was discovered and written by Claude, an AI developed by Anthropic. The listed authors verified the proof and take responsibility for its content. The theorem: unconditionally, as the height grows, at least two thirds of the zeros, counted with multiplicity, are simple and on the line, and at least five sixths are distinct. With Montgomery and Taylor’s window, the constants become 67.25% and 83.62%; the first is the number Montgomery and Taylor had reached assuming the Riemann hypothesis. The third document is Lamzouri’s. On September 2, Youness Lamzouri, of the University of Lorraine, posted what he calls a new, conceptually simpler proof of the same two bounds. A revision on September 8 added two estimates of his own: at least 88.76% of the zeros are simple or on the line. His abstract says the first proof was produced by an internal research version of Claude developed by Anthropic and subsequently verified by two mathematicians at Anthropic, Levent Alpöge and Ralph Furman, and that his additional estimates are neither stated nor proved in the Claude paper. He calls it a breakthrough result, and says the argument produced by Claude is technically intricate, and its main mechanism is not immediately transparent. What is not claimed. Not the Riemann hypothesis: Claude’s paper says the remaining third of the zeros are not shown to be off the line, merely not reached. Not that every zero is simple. These are limits as the height grows, not statements about any one zero. Anthropic’s post says: we don’t expect that the techniques Claude used will lead to proving the Riemann hypothesis. The paper says the Riemann hypothesis itself is out of reach of the mechanism, and puts the ceiling for certificates of this type near 68.2%, a bound worked out by Eric Easley and Stephen McAleer.</p>
+<h3><span class="t num">4:03</span>How the proof goes</h3>
+<p>How the proof goes, in Claude’s paper. Weil’s explicit formula pairs test functions through the zeros; the Riemann hypothesis is equivalent to that pairing being positive. The paper restricts it to a family of test functions spaced along the strip, about as many as there are zeros, and gets a large symmetric matrix. Each zero on the line adds a positive piece of rank one. Each pair of zeros off the line adds a block with one positive and one negative direction. Two quantities are computed: the trace, close to the number of zeros, and the sum of the squared entries, through Montgomery’s second moment, in the unconditional form of Aryan and of Baluyot and coauthors. A rank–trace inequality, which the paper calls the matrix form of m² ≥ 2m − 1, turns them into a lower bound: 2 − 4/3, or two thirds, with a flat window. Lamzouri’s route drops the matrix. He proves one Hilbert space inequality for any finite set of points that is symmetric under complex conjugation: the number of simple real points is at least twice the total, minus a double sum of a squared kernel. The rescaled zeros form such a set, and the double sum is again a pair correlation sum. He notes that both proofs lead to the same extremal problem of Montgomery and Taylor, which is why the constants agree. How it was found, in Anthropic’s account. Jarred Sumner, an Anthropic staff member and not a mathematician, asked Claude to take a real stab at the Riemann hypothesis. At first, the post says, Claude generated and tried 650 ideas, none of which worked. Asked to try again, it coordinated about 60 Claude subagents, which ran 2,400 shell commands; the two sessions used 31 million output tokens. The post says Sumner’s input was mostly encouragement, such as keep going; the paper’s first page says he posed the problem and guided the investigation. The paper’s appendix says the argument first gave one half, then two thirds, and its acknowledgments call Sumner in every meaningful sense the paper’s human co-author.</p>
+<h3><span class="t num">6:11</span>Where it stands</h3>
+<p>Where it stands. Alpöge and Furman’s preprint is from August 13, revised on the 19th; Lamzouri’s is from September 2, revised on the 8th. Neither preprint has been published in a journal; Anthropic’s repository metadata says journal peer review is pending. No independent expert review is named in our sources. The paper says the proof was verified by Alpöge and Furman, the listed authors, who are mathematicians at Anthropic; the appendix says they read it in detail and condensed it to its present form. The paper thanks Brian Conrey and Daniel Goldston for reading the manuscript. Lamzouri’s paper is a second proof, by a different route, from a mathematician at the University of Lorraine. Anthropic’s Lean repository formalizes Claude’s paper; its metadata says Claude wrote all the Lean, Eric Easley orchestrated, and Ralph Furman checked the statements against the paper. Axiom’s repository formalizes Lamzouri’s proof; his appendix says AxiomProver generated the September version of those Lean certificates autonomously. Both say they pass the comparator. We did not build or run either. The caveats. Lamzouri’s appendix describes Axiom’s certificate for the main theorem as resting on two assumed inputs; Axiom removed them on October 3, and the proof now depends on Axiom’s temporary fork of the PrimeNumberTheoremAnd project. The sources state the previous record differently: 40.75% in Lamzouri’s paper, five twelfths in Claude’s, and 41.6% in Anthropic’s post. If it holds, more than two thirds of the zeros of the Riemann zeta function are simple and on the critical line, unconditionally: found first by Claude, checked by its two authors at Anthropic, proved again by Lamzouri, and formalized in Lean. The Riemann hypothesis remains open.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=AN02%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

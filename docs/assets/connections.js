@@ -437,7 +437,7 @@
     if (kind[i] >= 2 && !visible[i]) { minIn.value = 1; showW.checked = true; showA.checked = true; applyFilters(); }
     draw();
     describe(i, c);
-    var tag = kind[i] === 0 ? "#" + nodes[i][3].slice(0, 3) : "";
+    var tag = kind[i] === 0 ? "#" + numOf[i] : "";
     if (history.replaceState && location.hash !== tag) history.replaceState(null, "", tag || location.pathname);
   }
   function go(i, text) {
@@ -467,7 +467,7 @@
   function relHtml(i) {
     var out = rels.filter(function (r) { return r.a === i || r.b === i; }).map(function (r) {
       var other = r.a === i ? r.b : r.a;
-      var REV = { "implies": "implied by", "implies part of": "partly implied by", "relies on": "relied on by", "cites": "cited by" };
+      var REV = { "implies": "implied by", "implies part of": "partly implied by", "relies on": "relied on by", "cites": "cited by", "builds on": "built on by" };
       var verb = r.a === i ? r.type : (REV[r.type] || r.type);
       var cites = (r.cites || []).map(function (u, k) { return '<a class="cx-ext" href="' + esc(u) + '" rel="noopener">source line' + (r.cites.length > 1 ? " " + (k + 1) : "") + "</a>"; }).join(" ");
       return "<li>" + esc(verb.charAt(0).toUpperCase() + verb.slice(1)) + " " + go(other, nodes[other][3]) +
