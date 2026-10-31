@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faster random clocks, farther away? The Lyons–White conjecture, proved with AxiomProver | AI Proved What?</title>
+<meta name="description" content="Colin Defant and Ken Ono (Axiom Math), with AxiomProver, prove that speeding up symmetric clocks never moves a random walk on a dihedral group farther from uniform when distance uses an even power, and that every other power above 1 fails on some dihedral group. What is claimed, what is not, how the proof goes, and where it stands. Lean by Axiom, not run by us; not peer reviewed.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/ax05-lyons-white-conjecture/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Faster random clocks, farther away? The Lyons–White conjecture">
+<meta property="og:description" content="Colin Defant and Ken Ono (Axiom Math), with AxiomProver, prove that speeding up symmetric clocks never moves a random walk on a dihedral group farther from uniform when distance uses an even power, and that every other power above 1 fails on some dihedral group. What is claimed, what is not, how the proof goes, and where it stands. Lean by Axiom, not run by us; not peer reviewed.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/ax05-lyons-white-conjecture/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/ax05-lyons-white-conjecture/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="001: Many rulers. One fraction?">
+<meta name="twitter:image:alt" content="001: Many rulers. One fraction?">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">AX05 (outside OpenAI’s math catalogue), October 2026</p>
+<h1>Faster random clocks, farther away? The Lyons–White conjecture</h1>
+<p class="subtitle">Colin Defant and Ken Ono, of Axiom Math, with AxiomProver: on dihedral groups, even powers never get worse; every other power above 1 can.</p>
+
+<div class="player" data-youtube="MlwCT6iqVOs" data-title="AX05: the Lyons–White conjecture">
+  <a href="https://youtu.be/MlwCT6iqVOs">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play AX05: the Lyons–White conjecture. A labelled pentagon and the p axis, with the even numbers marked.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">5:28. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/MlwCT6iqVOs?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/MlwCT6iqVOs?t=88" data-t="88"><span class="t">1:28</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/MlwCT6iqVOs?t=174" data-t="174"><span class="t">2:54</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/MlwCT6iqVOs?t=253" data-t="253"><span class="t">4:13</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>This is AX05. Take a regular pentagon with labelled corners. Its rotations and reflections form the dihedral group D_5, so the pentagon can sit in ten states. Give each move a random clock, running at the same rate as its inverse’s; when a clock rings, the machine makes that move. Over time, every state becomes equally likely. To measure how far the walk is from that balance, take each state’s gap from 1/10, raise it to a power p, add them up, and take the p-th root. Now speed up some clocks. Can the walk end up farther from balance?</p>
+<p>The paper is Proof of the Lyons–White Conjecture, by Colin Defant and Ken Ono, both of Axiom Math: thirteen pages on the arXiv, version one of August 27, 2026. A group and a power p are called rate-monotonic if raising symmetric clock rates never increases the distance, at any fixed time. Theorem A: D_n with p = 2m is rate-monotonic, for all positive integers m and n. Theorem B extends this to inversion extensions of finite abelian groups, including dicyclic and generalized quaternion groups. Theorem C: for every real p greater than one that is not an even integer, some dihedral group is not rate-monotonic. The appendix says the proofs were generated through human-AI collaboration, with AxiomProver.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>What is not claimed. Not that every walk misbehaves at 4.001: only some dihedral group, some rates and some time. Not p = 1 in Theorem C; for that case the paper cites Lyons and White’s own example on D_5. Not every finite group: Lyons and White found examples at exactly four on the symmetric group S_5. And not the paper’s broader conjecture, for groups with an abelian subgroup of index two, which is left open. The word conjecture is the paper’s; Lyons and White reported what their searches found.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Preprint on arXiv</dt>
+    <dd><a href="https://arxiv.org/abs/2608.27708v1">Version 1</a>, August 27, 2026 (the only version), 13 pages. Both authors give Axiom Math as their address.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Independent expert review</dt>
+    <dd>None named in our sources.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No journal publication found.</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Lean proof, by Axiom</dt>
+    <dd><a href="https://github.com/AxiomMath/LyonsWhite">AxiomMath/LyonsWhite</a>, published August 27, 2026 in one commit (<a href="https://github.com/AxiomMath/EvenExponentDihedralMonotonicity">an earlier repository</a>, August 17, covers Theorem A alone). Axiom’s blog: “AxiomProver generated Lean/Mathlib formalizations of the central results.” The challenge file, “written by humans”, states Theorems A, B and C (C for p &gt; 1); the comparator allows only Lean’s three standard axioms; README “locally verified with the comparator”; GitHub build check passed (a build, not a comparator run). The paper says the formalization “assumes standard facts from analysis and group theory”; our keyword scan finds no added axioms. Not built or run by us.</dd>
+  </div>
+</dl>
+<p class="ledger-note"><!-- last-checked:start -->Last checked October 30, 2026.<!-- last-checked:end --> Where it stands. The arXiv has one version; we found no journal publication and no independent expert review. Both authors work at Axiom Math, which published the blog post. That post says AxiomProver generated the Lean, which appeared the same day as the paper, in one commit; an earlier repository, from August 17, covers Theorem A alone. The challenge file, described as written by humans, states Theorems A, B and C, with C for p greater than one, and the comparator allows only Lean’s three standard axioms. The README says it was locally verified with the comparator, and GitHub’s build check passed. Our keyword scan of its 81 Lean files finds sorry only in the three challenge statements. We did not build or run it.</p>
+<p>This result is outside OpenAI’s math catalogue. If it holds, faster symmetric clocks never leave a dihedral walk farther from balance when distance uses an even power, and every other real power above one fails on some dihedral group: the puzzle Lyons and White found at four and six, answered by Defant and Ono with AxiomProver, with a Lean proof we did not run.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>History.</strong> Russell Lyons and Graham White studied this in a paper first posted in 2021. They proved that faster clocks never hurt when p is two or infinity, on every finite group. On dihedral groups, their computer searches found walks where faster is farther, for p from one to just below two, between two and four, and from 4.001 to 5.995; but none at exactly four, in groups up to D_131, and none at six. They wrote that they had no explanation for four or six. Our own example, from a computer search: on the pentagon, raise one reflection’s clock from two to twelve. With p = 1, the faster walk is up to about seven percent farther from balance, around time one; with p = 4, it is nearer at every time we computed.</li>
+  <li><strong>Even powers.</strong> How the proof goes, in the authors’ account. For even powers, the rotations supply frequencies, and Fourier analysis reduces the key calculations to two by two matrices, whose positivity bounds one set of Fourier coefficients by another. Then the even power does the work: a sum of 2m-th powers is a sum of squares of m-th powers, so Parseval’s identity applies, and the products can be bounded term by term. For a reflection’s clock, differentiating the distance with Duhamel’s formula shows it never grows; rotations are handled more directly. The paper points to a close analogue in the Hardy–Littlewood majorant problem.</li>
+  <li><strong>Other powers.</strong> For a p that is not even, the paper builds the bad walk from a negative Fourier coefficient. With p between 2m and 2m + 2, and K equal to 2m + 3, a cosine integral obeys a recurrence with factors (p − 2l)/(p + 2l), and only the last factor is negative. At 4.001, the factors are positive, tiny, then negative; at exactly four, in our arithmetic, one factor is zero. A small two-frequency perturbation, adjusted and scaled into a genuine walk, then drifts farther when a reflection’s clock speeds up.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: on the pentagon (D_5, 10 states), slower rates 2, 2, 1 on the reflections r³b, r²b, rb and 1.4 on the rotations r², r³; the faster walk raises r³b to 12. With p = 1 the faster walk is up to 6.9% farther from uniform (near t = 1; farther for t from 0.83 to 2.2); with p = 2 and p = 4 it is nearer at every time we computed (t from 0.05 to 3). Found by a computer search and rounded.</li>
+  <li>Ours (a sample, not a proof): 238 random walks on D_3 to D_9 with one inverse pair sped up; for p = 2, 4, 6 the largest relative increase was at rounding level (below 10⁻¹⁰).</li>
+  <li>Ours: the Lemma 3.1 cosine sum for p = 3 (K = 5) at n = 11 is -0.135; the recurrence factors are 1/5 and −1/7. At p = 4.001 (K = 7) they are 0.333, 0.000125 and -0.200; at p = 4 the same three factors are 1/3, 0 and −1/5.</li>
+  <li>Ours (keyword scan, not an audit): Axiom’s repository has 81 Lean files (16,030 lines); sorry appears only in the 3 challenge statements.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://arxiv.org/abs/2608.27708">“Proof of the Lyons–White Conjecture”</a>, Colin Defant and Ken Ono, arXiv 2608.27708 (version 1, August 27, 2026, 13 pages).</li>
+  <li><a href="https://axiommath.ai/research/faster-is-not-nearer/">“Faster Is Not Nearer”</a>, Axiom Math blog post by Colin Defant, October 5, 2026.</li>
+  <li><a href="https://github.com/AxiomMath/LyonsWhite">The Lean repository</a> (file headers say Apache 2.0; the repository has no license file; not run by us), and the earlier <a href="https://github.com/AxiomMath/EvenExponentDihedralMonotonicity">EvenExponentDihedralMonotonicity</a> (Theorem A).</li>
+  <li>Russell Lyons and Graham White, <a href="https://arxiv.org/abs/2109.10386">“Monotonicity for continuous-time random walks”</a>, arXiv 2109.10386 (first posted September 21, 2021); <a href="https://doi.org/10.1214/22-AOP1615">Annals of Probability 51 (2023)</a>.</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Axiom Math, OpenAI, Russell Lyons or Graham White.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is AX05. Take a regular pentagon with labelled corners. Its rotations and reflections form the dihedral group D_5, so the pentagon can sit in ten states. Give each move a random clock, running at the same rate as its inverse’s; when a clock rings, the machine makes that move. Over time, every state becomes equally likely. To measure how far the walk is from that balance, take each state’s gap from 1/10, raise it to a power p, add them up, and take the p-th root. Now speed up some clocks. Can the walk end up farther from balance? Russell Lyons and Graham White studied this in a paper first posted in 2021. They proved that faster clocks never hurt when p is two or infinity, on every finite group. On dihedral groups, their computer searches found walks where faster is farther, for p from one to just below two, between two and four, and from 4.001 to 5.995; but none at exactly four, in groups up to D_131, and none at six. They wrote that they had no explanation for four or six. Our own example, from a computer search: on the pentagon, raise one reflection’s clock from two to twelve. With p = 1, the faster walk is up to about seven percent farther from balance, around time one; with p = 4, it is nearer at every time we computed.</p>
+<h3><span class="t num">1:28</span>The claim</h3>
+<p>The paper is Proof of the Lyons–White Conjecture, by Colin Defant and Ken Ono, both of Axiom Math: thirteen pages on the arXiv, version one of August 27, 2026. A group and a power p are called rate-monotonic if raising symmetric clock rates never increases the distance, at any fixed time. Theorem A: D_n with p = 2m is rate-monotonic, for all positive integers m and n. Theorem B extends this to inversion extensions of finite abelian groups, including dicyclic and generalized quaternion groups. Theorem C: for every real p greater than one that is not an even integer, some dihedral group is not rate-monotonic. The appendix says the proofs were generated through human-AI collaboration, with AxiomProver. What is not claimed. Not that every walk misbehaves at 4.001: only some dihedral group, some rates and some time. Not p = 1 in Theorem C; for that case the paper cites Lyons and White’s own example on D_5. Not every finite group: Lyons and White found examples at exactly four on the symmetric group S_5. And not the paper’s broader conjecture, for groups with an abelian subgroup of index two, which is left open. The word conjecture is the paper’s; Lyons and White reported what their searches found.</p>
+<h3><span class="t num">2:54</span>How the proof goes</h3>
+<p>How the proof goes, in the authors’ account. For even powers, the rotations supply frequencies, and Fourier analysis reduces the key calculations to two by two matrices, whose positivity bounds one set of Fourier coefficients by another. Then the even power does the work: a sum of 2m-th powers is a sum of squares of m-th powers, so Parseval’s identity applies, and the products can be bounded term by term. For a reflection’s clock, differentiating the distance with Duhamel’s formula shows it never grows; rotations are handled more directly. The paper points to a close analogue in the Hardy–Littlewood majorant problem. For a p that is not even, the paper builds the bad walk from a negative Fourier coefficient. With p between 2m and 2m + 2, and K equal to 2m + 3, a cosine integral obeys a recurrence with factors (p − 2l)/(p + 2l), and only the last factor is negative. At 4.001, the factors are positive, tiny, then negative; at exactly four, in our arithmetic, one factor is zero. A small two-frequency perturbation, adjusted and scaled into a genuine walk, then drifts farther when a reflection’s clock speeds up.</p>
+<h3><span class="t num">4:13</span>Where it stands</h3>
+<p>Where it stands. The arXiv has one version; we found no journal publication and no independent expert review. Both authors work at Axiom Math, which published the blog post. That post says AxiomProver generated the Lean, which appeared the same day as the paper, in one commit; an earlier repository, from August 17, covers Theorem A alone. The challenge file, described as written by humans, states Theorems A, B and C, with C for p greater than one, and the comparator allows only Lean’s three standard axioms. The README says it was locally verified with the comparator, and GitHub’s build check passed. Our keyword scan of its 81 Lean files finds sorry only in the three challenge statements. We did not build or run it. This result is outside OpenAI’s math catalogue. If it holds, faster symmetric clocks never leave a dihedral walk farther from balance when distance uses an even power, and every other real power above one fails on some dihedral group: the puzzle Lyons and White found at four and six, answered by Defant and Ono with AxiomProver, with a Lean proof we did not run.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=AX05%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

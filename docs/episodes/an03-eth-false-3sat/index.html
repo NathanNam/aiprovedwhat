@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ETH false, a second time? Claude’s 2^o(n) algorithm for 3-SAT | AI Proved What?</title>
+<meta name="description" content="Anthropic’s paper, credited to Claude, claims a deterministic 3-SAT algorithm in 2^o(n) time, refuting the Exponential Time Hypothesis, the same day OpenAI released the same claim (episode 378). Made with Claude; held to the same standards. Not peer reviewed; no independent review named; purely asymptotic; Lean not run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/an03-eth-false-3sat/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="ETH false, a second time? Claude’s 2^o(n) algorithm for 3-SAT">
+<meta property="og:description" content="Anthropic’s paper, credited to Claude, claims a deterministic 3-SAT algorithm in 2^o(n) time, refuting the Exponential Time Hypothesis, the same day OpenAI released the same claim (episode 378). Made with Claude; held to the same standards. Not peer reviewed; no independent review named; purely asymptotic; Lean not run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/an03-eth-false-3sat/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/an03-eth-false-3sat/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="001: Many rulers. One fraction?">
+<meta name="twitter:image:alt" content="001: Many rulers. One fraction?">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">AN03 (outside OpenAI’s math catalogue), October 2026</p>
+<h1>ETH false, a second time? Claude’s 2<sup>o(n)</sup> algorithm for 3-SAT</h1>
+<p class="subtitle">A paper credited to Claude (Anthropic) claims the same refutation of the Exponential Time Hypothesis that OpenAI released the same day (<a href="/episodes/378-exponential-time-hypothesis-false/">episode 378</a>). Not peer reviewed; no independent review named; Lean not run by us</p>
+<p><strong>Disclosure.</strong> AI Proved What? is made with Claude, Anthropic’s AI. This is Anthropic’s own result: we hold it to the same standards as every other lab’s, using only public sources. AI Proved What? is independent and not affiliated with Anthropic beyond using its product Claude, or with OpenAI.</p>
+
+<div class="player" data-youtube="WWwLWiIdBMw" data-title="AN03: ETH false, a second time?">
+  <a href="https://youtu.be/WWwLWiIdBMw">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play AN03: ETH false, a second time? The rate of Claude’s 3-SAT algorithm falling toward zero, level by level.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:03. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/WWwLWiIdBMw?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/WWwLWiIdBMw?t=79" data-t="79"><span class="t">1:19</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/WWwLWiIdBMw?t=232" data-t="232"><span class="t">3:52</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/WWwLWiIdBMw?t=346" data-t="346"><span class="t">5:46</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The paper’s author line reads Claude, Anthropic. It has 49 pages, is dated October 26, 2026, and was posted on GitHub that evening, Pacific time, with a Lean proof. The paper says the core algorithm was found on October 16 by an internal Claude research model, with 14 million output tokens and no human input, and that Anthropic researchers then worked with Claude on the presentation. The main theorem: a deterministic algorithm counts the satisfying assignments of a k-SAT formula in time 2 to the power C·min{k²n log log n/√(log n), km/√(log m)}. The constant does not depend on k. Divided by n, for each fixed k, the exponent goes to zero, so the paper concludes that the hypothesis, and its strong version, are false.</p>
+</section>
+
+<section aria-labelledby="compare">
+<h2 id="compare">Beside OpenAI’s paper (episode 378)</h2>
+<p>Beside OpenAI’s paper from episode 378, dated October 17 and revised October 25: both claim a deterministic algorithm that counts solutions, with the same growth in n, n log log n/√(log n). OpenAI’s holds for each fixed k, with a constant that depends on k, and in polynomial space. Anthropic’s makes the dependence on k explicit, adds a bound in the number of clauses, and states no space bound. For circuits, OpenAI derives a lower bound of order n√(log n) for a language in E^NP; Anthropic derives that this class has no circuits of linear size, which OpenAI’s bound implies. Anthropic’s paper says that, independently and concurrently, an internal model at OpenAI claims to have proven a similar result. OpenAI’s paper does not mention Anthropic; its last revision is dated the day before. We make no judgement on priority: these dates are each lab’s own, and OpenAI’s paper gives no date of discovery.</p>
+<p>Our reading of the two overviews, not a comparison of the full proofs: both reach their sharpest bounds by recursive contraction of tensor networks (OpenAI in its Appendix D), but the step that removes the bits crossing between groups looks different: Anthropic’s paper rewrites two crossing equality tests with the eight-square identity and merges rows or columns; OpenAI’s main text deforms the clause polynomials and interpolates. We make no judgement on priority: the dates above are as each source gives them, and Anthropic’s paper says the core algorithm was found on October 16.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>What is not claimed. The paper calls its result purely asymptotic. For formulas with five clauses per variable, its bound cannot beat the 2^n of trying every setting unless n is more than 10^10,000; the bound in n alone, not unless n is beyond 10^(10^8). The paper says its result says nothing about solving formulas in practice. It does not bear on P versus NP directly. It does not refute the Orthogonal Vectors hypothesis. And the proof does not give the value of the constant.</p>
+<p>The paper also says its “general approach seems unlikely to yield any general improvement unless n &gt; 10<sup>7</sup>, however it is instantiated”, and that its result “does not bear on the P vs NP question directly, nor does it yield any practical algorithms for NP-complete problems”.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Paper public</dt>
+    <dd><a href="https://github.com/anthropics/formal-math/blob/main/eth/paper.pdf">On GitHub</a> (anthropics/formal-math, folder eth; added October 26, 2026, 20:07 Pacific time); dated October 26, 2026; 49 pages. Not on arXiv; the README says “Hexagon link to appear”. We found no Anthropic blog post</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer review</dt>
+    <dd>None yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Independent expert review</dt>
+    <dd>None named in our sources. The <a href="https://ethdiscussion.blog/2026/10/26/eth-refutation-examination-and-discussion/">open letter</a> of Russell Impagliazzo, Ramamohan Paturi and Ryan Williams concerns OpenAI’s claim (“OpenAI has informed us that it has obtained a claimed refutation of the Exponential Time Hypothesis”); it says “Our involvement should not be taken as certification of the claim”, and its list of resources ends with “Anthropic: Refutation of ETH”, linking this paper’s folder. <a href="https://blog.computationalcomplexity.org/2026/10/the-exponential-time-refutation.html">Lance Fortnow</a> (October 28): “Later Anthropic released their own paper. … I have not verified the proof myself, but it is safe to assume now that the exponential-time hypothesis is toast.”</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Lean, by Anthropic</dt>
+    <dd><a href="https://github.com/anthropics/formal-math/blob/main/eth/MainResults.lean">MainResults.lean</a> states ETHIsFalse and the full Main Theorem on Mathlib’s Turing machines; the comparator checks both against Challenge.lean, with the nanoda kernel; the README reports only Lean’s standard axioms, and the repository’s CI check passed on the commit. The paper: “The Lean development was written by AI models and reviewed by other instances of the same models; at the time of writing no person is known to have checked it; its constant is not explicit.” Two steps (writing the formula as the machine’s input, and simulating the machine on a word RAM) are outside the Lean proof. Not built or run by us. A commenter on the working group’s blog reports replaying both labs’ Lean with the comparator (<a href="https://ethdiscussion.blog/2026/10/26/eth-refutation-examination-and-discussion/">Carlos Toledo, October 28</a>; not checked by us)</dd>
+  </div>
+</dl>
+<p class="ledger-note"><!-- last-checked:start -->Last checked October 30, 2026.<!-- last-checked:end --> Where it stands. The paper is on GitHub, not on arXiv. It is not peer reviewed, and no independent expert review of it is named in our sources. Impagliazzo, Paturi and Ryan Williams wrote an open letter about OpenAI’s claim, saying: our involvement should not be taken as certification of the claim. The letter’s resources include Anthropic’s paper. Lance Fortnow wrote on his blog, mainly about OpenAI’s paper: I have not verified the proof myself, but it is safe to assume now that the exponential-time hypothesis is toast. The Lean proof, not run by us, states that the hypothesis is false and the full main theorem; OpenAI’s Lean covers a slightly weaker bound. But the paper says the Lean was written by AI models and reviewed by other instances of the same models, and that no person is known to have checked it. It names no person who checked the printed proof either.</p>
+<p>If it holds, the Exponential Time Hypothesis is false, in two papers from two labs released the same day, and results that rest only on it lose that support. By the paper’s own account, nothing changes for formulas of any size met in practice.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes</h2>
+<ol class="steps">
+  <li><strong>The question.</strong> Trying every setting takes 2^n steps. The best earlier algorithms the paper cites take about 1.3^n. They lower the rate, the number multiplying n in the exponent of two, but keep it above zero. The Exponential Time Hypothesis, of Impagliazzo and Paturi, says that some positive rate is unavoidable for 3-SAT, and many lower bounds were proved assuming it. Episode 378 covered OpenAI’s paper claiming the hypothesis is false. This is a second paper, from Anthropic, claiming the same.</li>
+  <li><strong>Cuts.</strong> How the proof goes, in the paper’s overview. The count is a sum, over all settings, of a product of local factors on the graph. With few bits crossing a cut, one can try every value of those bits and solve the two halves separately. But for formulas such as random ones, every cut into two parts of comparable size is crossed by a number of bits proportional to n. Cutting alone improves only the constant.</li>
+  <li><strong>The new step.</strong> The new step rewrites edges. Place the nodes on a grid. In each rectangle of four nodes, the two diagonals test that strings of three bits agree. The eight-square identity, two centuries old by the paper’s account, rewrites twice that pair of tests as a parity check on the four corners times a sum of two sign terms. Our computer confirms it at all 4,096 settings. Then the algorithm merges whole rows, or whole columns. Merged by rows, one term costs 3 bits and the other 6; the diagonals cost 6. With the terms grouped as the paper does, rows plus columns cost 11 bits per block, against 12, so the cheaper side carries at most 11/12.</li>
+  <li><strong>The recursion.</strong> Each level of the recursion does this, regroups the nodes into balanced groups, and calls the level below. In the paper’s recurrence, the exponent per bit on the edges is 1.03 at level 1, as the paper says; our computer gets below one half at level 10, and below one tenth at level 28. So every positive rate is beaten at some fixed level. The sharper main theorem needs further ideas, in the appendices. Our reading of the two papers: both reach their sharpest bounds by recursive tensor network contraction, OpenAI’s in its Appendix D, but the step that removes crossing bits looks different, a sign identity here, deformation and interpolation in OpenAI’s. We have not compared the full proofs.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the paper’s Figure 1 formula (5 clauses on 7 variables): 56 of 128 settings satisfy; chaining each variable’s occurrences gives 8 edge bits, as in the figure.</li>
+  <li>Ours: the eight-square identity, with the paper’s sign function σ, holds at all 4096 settings of x, y, u, v (σ is not symmetric: σ(p, q) ≠ σ(q, p) for 42 of 64 pairs).</li>
+  <li>Ours, from the paper’s recurrence (9): the rate is 1.026 at level 1, below 1/2 from level 10, below 0.1 from level 28; it stays below the paper’s bound 1.12·(11/12)^ℓ.</li>
+  <li>From the paper: earlier bounds O(1.328^n) deterministic [Liu18] and O(1.308^n) randomized (rates 0.41 and 0.39, ours); the bound beats 2^n only for n above 10^10,000 when m = 5n, and for the bound in n alone only above 10^(10^8).</li>
+  <li>Ours: a text scan of the eth folder: 1050 Lean files (151,900 lines) besides two scripts; sorry only in Challenge.lean; no axiom declarations. We did not build or run the Lean.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://github.com/anthropics/formal-math/blob/main/eth/paper.pdf">Claude (Anthropic), “A 2^o(n) Time Algorithm for 3-SAT”</a>, dated October 26, 2026, 49 pages; <a href="https://github.com/anthropics/formal-math/tree/main/eth">the folder with the Lean proof</a> (Apache-2.0; commit 16a5ce4).</li>
+  <li>OpenAI, “The Exponential Time Hypothesis is False” (<a href="https://github.com/openai/math">openai/math</a>, result 378; dated October 17, revised October 25, 2026); our <a href="/episodes/378-exponential-time-hypothesis-false/">episode 378</a>.</li>
+  <li><a href="https://ethdiscussion.blog/2026/10/26/eth-refutation-examination-and-discussion/">Impagliazzo, Paturi and Williams, open letter and discussion blog</a>; <a href="https://blog.computationalcomplexity.org/2026/10/the-exponential-time-refutation.html">Lance Fortnow, “The Exponential Time Refutation”</a> (October 28, 2026).</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Anthropic beyond using its product Claude, or with OpenAI.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is AN03. Before we start: AI Proved What? is made with Claude, Anthropic’s AI. This is Anthropic’s own result: we hold it to the same standards as every other lab’s, using only public sources. A 3-SAT formula is a list of clauses, each an OR of up to three variables or their negations. Here is the small formula from the paper’s first figure: five clauses on seven variables. Of its 128 settings, our computer finds 56 that satisfy every clause. The paper draws it as a graph: one node per clause, and edges that carry one bit for each shared variable; dropping one redundant comparison leaves 8 bits in all. Trying every setting takes 2^n steps. The best earlier algorithms the paper cites take about 1.3^n. They lower the rate, the number multiplying n in the exponent of two, but keep it above zero. The Exponential Time Hypothesis, of Impagliazzo and Paturi, says that some positive rate is unavoidable for 3-SAT, and many lower bounds were proved assuming it. Episode 378 covered OpenAI’s paper claiming the hypothesis is false. This is a second paper, from Anthropic, claiming the same.</p>
+<h3><span class="t num">1:19</span>The claim</h3>
+<p>The paper’s author line reads Claude, Anthropic. It has 49 pages, is dated October 26, 2026, and was posted on GitHub that evening, Pacific time, with a Lean proof. The paper says the core algorithm was found on October 16 by an internal Claude research model, with 14 million output tokens and no human input, and that Anthropic researchers then worked with Claude on the presentation. The main theorem: a deterministic algorithm counts the satisfying assignments of a k-SAT formula in time 2 to the power C·min{k²n log log n/√(log n), km/√(log m)}. The constant does not depend on k. Divided by n, for each fixed k, the exponent goes to zero, so the paper concludes that the hypothesis, and its strong version, are false. Beside OpenAI’s paper from episode 378, dated October 17 and revised October 25: both claim a deterministic algorithm that counts solutions, with the same growth in n, n log log n/√(log n). OpenAI’s holds for each fixed k, with a constant that depends on k, and in polynomial space. Anthropic’s makes the dependence on k explicit, adds a bound in the number of clauses, and states no space bound. For circuits, OpenAI derives a lower bound of order n√(log n) for a language in E^NP; Anthropic derives that this class has no circuits of linear size, which OpenAI’s bound implies. Anthropic’s paper says that, independently and concurrently, an internal model at OpenAI claims to have proven a similar result. OpenAI’s paper does not mention Anthropic; its last revision is dated the day before. We make no judgement on priority: these dates are each lab’s own, and OpenAI’s paper gives no date of discovery. What is not claimed. The paper calls its result purely asymptotic. For formulas with five clauses per variable, its bound cannot beat the 2^n of trying every setting unless n is more than 10^10,000; the bound in n alone, not unless n is beyond 10^(10^8). The paper says its result says nothing about solving formulas in practice. It does not bear on P versus NP directly. It does not refute the Orthogonal Vectors hypothesis. And the proof does not give the value of the constant.</p>
+<h3><span class="t num">3:52</span>How the proof goes</h3>
+<p>How the proof goes, in the paper’s overview. The count is a sum, over all settings, of a product of local factors on the graph. With few bits crossing a cut, one can try every value of those bits and solve the two halves separately. But for formulas such as random ones, every cut into two parts of comparable size is crossed by a number of bits proportional to n. Cutting alone improves only the constant. The new step rewrites edges. Place the nodes on a grid. In each rectangle of four nodes, the two diagonals test that strings of three bits agree. The eight-square identity, two centuries old by the paper’s account, rewrites twice that pair of tests as a parity check on the four corners times a sum of two sign terms. Our computer confirms it at all 4,096 settings. Then the algorithm merges whole rows, or whole columns. Merged by rows, one term costs 3 bits and the other 6; the diagonals cost 6. With the terms grouped as the paper does, rows plus columns cost 11 bits per block, against 12, so the cheaper side carries at most 11/12. Each level of the recursion does this, regroups the nodes into balanced groups, and calls the level below. In the paper’s recurrence, the exponent per bit on the edges is 1.03 at level 1, as the paper says; our computer gets below one half at level 10, and below one tenth at level 28. So every positive rate is beaten at some fixed level. The sharper main theorem needs further ideas, in the appendices. Our reading of the two papers: both reach their sharpest bounds by recursive tensor network contraction, OpenAI’s in its Appendix D, but the step that removes crossing bits looks different, a sign identity here, deformation and interpolation in OpenAI’s. We have not compared the full proofs.</p>
+<h3><span class="t num">5:46</span>Where it stands</h3>
+<p>Where it stands. The paper is on GitHub, not on arXiv. It is not peer reviewed, and no independent expert review of it is named in our sources. Impagliazzo, Paturi and Ryan Williams wrote an open letter about OpenAI’s claim, saying: our involvement should not be taken as certification of the claim. The letter’s resources include Anthropic’s paper. Lance Fortnow wrote on his blog, mainly about OpenAI’s paper: I have not verified the proof myself, but it is safe to assume now that the exponential-time hypothesis is toast. The Lean proof, not run by us, states that the hypothesis is false and the full main theorem; OpenAI’s Lean covers a slightly weaker bound. But the paper says the Lean was written by AI models and reviewed by other instances of the same models, and that no person is known to have checked it. It names no person who checked the printed proof either. If it holds, the Exponential Time Hypothesis is false, in two papers from two labs released the same day, and results that rest only on it lose that support. By the paper’s own account, nothing changes for formulas of any size met in practice.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=AN03%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

@@ -14,8 +14,8 @@
 <meta property="og:image" content="https://aiprovedwhat.com/assets/share-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 12 results beyond OpenAI’s catalogue on their own arc.">
-<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 12 results beyond OpenAI’s catalogue on their own arc.">
+<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 14 results beyond OpenAI’s catalogue on their own arc.">
+<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 14 results beyond OpenAI’s catalogue on their own arc.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <meta name="generator" content="tools/site/build.py">
@@ -63,6 +63,21 @@
 </tbody>
 </table></div>
 <p class="meta">Figures as each lab reports them, checked in our AX01 and AN01 episodes. The two projects differ in scope and method; the numbers are not a ranking.</p>
+</section>
+<section class="compare" aria-labelledby="cmp-378-an03">
+<h2 id="cmp-378-an03">Two claims that ETH is false, side by side</h2>
+<div class="compare-scroll"><table>
+<thead><tr><td></td><th scope="col"><a href="../episodes/378-exponential-time-hypothesis-false/">378</a><br><span class="meta">OpenAI, in its catalogue</span></th><th scope="col"><a href="../episodes/an03-eth-false-3sat/">AN03</a><br><span class="meta">Anthropic</span></th></tr></thead>
+<tbody>
+<tr><th scope="row">Dated</th><td>October 17, revised October 25, 2026</td><td>October 26, 2026 (core algorithm “found on October 16”, the paper)</td></tr>
+<tr><th scope="row">Bound</th><td>(n+m)^{O_k(1)} 2^{O_k(n log log n/√log n)}, each fixed k ≥ 2</td><td>2^{O(min{k² n log log n/√log n, km/√log m})}, absolute constant</td></tr>
+<tr><th scope="row">Space</th><td>polynomial</td><td>not stated</td></tr>
+<tr><th scope="row">Circuits</th><td>a language in E^NP needs more than c·n√log n gates on infinitely many lengths</td><td>E^NP has no circuits of linear size</td></tr>
+<tr><th scope="row">Lean</th><td>a slightly weaker bound, n(log log n)²/√log n</td><td>ETH false and the full main theorem</td></tr>
+<tr><th scope="row">Expert review</th><td>working group of Impagliazzo, Paturi and Williams announced (“should not be taken as certification”)</td><td>none named</td></tr>
+</tbody>
+</table></div>
+<p class="meta">From both papers, checked in our 378 and AN03 episodes. Not a ranking, and no judgement on priority.</p>
 </section>
 <section class="special" id="s01" aria-labelledby="s01-h">
 <p class="thumb-kicker">Special S01 · OpenAI, outside its catalogue · announced September 8, 2026 · Mathematical physics</p>
@@ -339,6 +354,31 @@
 <p><a href="../episodes/ax04-collatz-positive-density/">Watch the episode and read the record</a> · <a href="../connections/#AX04">See its connections</a></p>
 
 </section>
+<section class="special" id="ax05" aria-labelledby="ax05-h">
+<p class="thumb-kicker">AX05 · Axiom Math · announced August 27, 2026 · Probability</p>
+<h2 id="ax05-h">The Lyons–White conjecture: rate-monotonicity of random walks on dihedral groups</h2>
+<p>Colin Defant and Ken Ono (Axiom Math), with AxiomProver, prove that on every dihedral group raising symmetric clock rates never increases the ℓ^p distance to uniform when p is an even integer, and that every other p > 1 fails on some dihedral group.</p>
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>arXiv 2608.27708: version 1 August 27, 2026 (the only version); both authors at Axiom Math</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None named in our sources</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Axiom’s Lean proof (the blog says AxiomProver generated it): human-written challenge file with Theorems A, B and C (C for p &gt; 1), only Lean’s three standard axioms permitted, README “locally verified with the comparator”; not built or run by us (<a href="https://github.com/AxiomMath/LyonsWhite">repository</a>)</dd>
+  </div>
+</dl>
+<p><a href="../episodes/ax05-lyons-white-conjecture/">Watch the episode and read the record</a> · <a href="../connections/#AX05">See its connections</a></p>
+
+</section>
 <section class="special" id="an02" aria-labelledby="an02-h">
 <p class="thumb-kicker">AN02 · Anthropic · announced August 10, 2026 · Number theory</p>
 <h2 id="an02-h">More than two thirds of the zeta zeros are simple and on the critical line</h2>
@@ -364,7 +404,32 @@
 <p><a href="../episodes/an02-simple-zeros-riemann-zeta/">Watch the episode and read the record</a> · <a href="../connections/#AN02">See its connections</a></p>
 
 </section>
-<p class="attribution">Last checked October 27, 2026.</p>
+<section class="special" id="an03" aria-labelledby="an03-h">
+<p class="thumb-kicker">AN03 · Anthropic · announced October 26, 2026 · Computer science</p>
+<h2 id="an03-h">A 2^o(n) time algorithm for 3-SAT</h2>
+<p>A paper credited to Claude (Anthropic) claims a deterministic 2^o(n) algorithm for 3-SAT, refuting the Exponential Time Hypothesis, released the same day as OpenAI’s paper with the same claim (result 378). Purely asymptotic; Lean by Anthropic.</p>
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>On GitHub (anthropics/formal-math, folder eth), dated October 26, 2026; not on arXiv; Hexagon link “to appear”</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None named in our sources; the paper names no person who checked the printed proof. The Impagliazzo–Paturi–Williams letter concerns OpenAI’s claim and lists this paper among its resources</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Lean by Anthropic: ETHIsFalse and the full Main Theorem, checked by Comparator with nanoda in CI; written and reviewed by AI models, no person known to have checked it (the paper); not built or run by us (<a href="https://github.com/anthropics/formal-math/tree/main/eth">repository</a>)</dd>
+  </div>
+</dl>
+<p><a href="../episodes/an03-eth-false-3sat/">Watch the episode and read the record</a> · <a href="../connections/#AN03">See its connections</a></p>
+
+</section>
+<p class="attribution">Last checked October 30, 2026.</p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
