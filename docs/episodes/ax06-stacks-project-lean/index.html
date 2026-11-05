@@ -14,8 +14,8 @@
 <meta property="og:image" content="https://aiprovedwhat.com/episodes/ax06-stacks-project-lean/thumbnail.jpg">
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="720">
-<meta property="og:image:alt" content="001: Many rulers. One fraction?">
-<meta name="twitter:image:alt" content="001: Many rulers. One fraction?">
+<meta property="og:image:alt" content="AX06: the Stacks Project in Lean. A stack of pages with the tag 09CF, and a bar that is 97% orange for the AI-written tier.">
+<meta name="twitter:image:alt" content="AX06: the Stacks Project in Lean. A stack of pages with the tag 09CF, and a bar that is 97% orange for the AI-written tier.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
@@ -86,7 +86,7 @@
 <!-- ledger-boxes: drawn by tools/site/build.py from the record -->
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Released by Axiom</dt>
-    <dd><a href="https://axiommath.ai/research/the-stacks-project-formalized/">Blog post</a>, <a href="https://stacks.axiommath.ai/">website</a> and <a href="https://github.com/AxiomMath/Stacks">repository</a>, November 4, 2026 (the repository’s single commit, “Publication of Files”, is dated November 4 UTC). The <a href="https://github.com/AxiomMath/Stacks/blob/f8e70c5dd04bfabcb423d5e325461f527c85a5d6/formalization.yaml">metadata</a> says the development took place in a repository internal to Axiom Math.</dd>
+    <dd><a href="https://axiommath.ai/research/the-stacks-project-formalized/">Blog post</a>, <a href="https://stacks.axiommath.ai/">website</a> and <a href="https://github.com/AxiomMath/Stacks">repository</a>, November 4, 2026 (the repository’s first commit, “Publication of Files”, is dated November 4 UTC; a <a href="https://github.com/AxiomMath/Stacks/commit/012108f">second commit</a>, dated November 5 UTC, fixed two files “so that lake build succeeds”). The <a href="https://github.com/AxiomMath/Stacks/blob/f8e70c5dd04bfabcb423d5e325461f527c85a5d6/formalization.yaml">metadata</a> says the development took place in a repository internal to Axiom Math.</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Human review of StacksFrontier</dt>
@@ -105,7 +105,8 @@
     <dd>Lean v4.34.0-rc2 on Mathlib 16edf57; no sorry and only Lean’s three standard axioms, per the README and metadata; about 63,000 modules (README). Not built or run by us.</dd>
   </div>
 </dl>
-<p class="ledger-note"><!-- last-checked:start -->Last checked November 4, 2026.<!-- last-checked:end --> Where it stands. The repository holds a single commit, called Publication of Files; the metadata says the development took place in a repository internal to Axiom. There are no continuous-integration runs and no comparator file, so no published check shows the library building, or pins down which statements a check would cover. The README says the library has about 63,000 modules, and that a full build takes a long time and a lot of memory. We found no independent build, review or expert reaction; the release is barely a day old. Nothing here is peer reviewed, and we did not build or run it.</p>
+<p class="ledger-note"><!-- last-checked:start -->Last checked November 4, 2026.<!-- last-checked:end --> Where it stands. The repository’s first commit, called Publication of Files, did not build as published: by its message, a second commit, dated November 5 UTC, fixed two files so that lake build succeeds; the metadata says the development took place in a repository internal to Axiom. There are no continuous-integration runs and no comparator file, so no published check shows the library building, or pins down which statements a check would cover. The README says the library has about 63,000 modules, and that a full build takes a long time and a lot of memory. We found no independent build, review or expert reaction; the release is barely a day old. Nothing here is peer reviewed, and we did not build or run it.</p>
+<p><strong>Correction (November 4, 2026).</strong> The video says the repository holds a single commit. A <a href="https://github.com/AxiomMath/Stacks/commit/012108f">second commit</a>, 012108f, dated November 5, 2026 at 04:42 UTC (November 4, 20:42 Pacific), “Fix Germ.lean and DenseOpen.lean so that lake build succeeds”, changes two StacksFrontier files; by its message, Lean’s kernel rejected an equation lemma Lean generates in Germ.lean, so the first commit, f8e70c5, did not build. There are still no GitHub Actions runs and no comparator file. The numbers on this page come from the site’s data for the first commit. Not built or run by us.</p>
 <p>This is outside OpenAI’s math catalogue, and it pairs with AX01, Axiom’s Lean proof of the classification of finite simple groups. If it holds, nearly every formalizable tag of the Stacks Project, as of April 2026, is now Lean code that the kernel accepts, with counterexamples to some printed statements; whether the AI-written tier, 97% of the formalized tags, says what the book says has so far been checked by AI, and, Axiom says, not yet by people. See <a href="../ax01-classification-finite-simple-groups-lean/">AX01</a>.</p>
 </section>
 
