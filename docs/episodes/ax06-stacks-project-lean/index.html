@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Stacks Project, all in Lean? Axiom’s AI formalization, mostly not yet human-reviewed | AI Proved What?</title>
+<meta name="description" content="Axiom Math says it has formalized every tag of the Stacks Project with formalizable content in Lean: about 15.75 million lines, 16,219 of 16,249 formalizable tags complete by its own data, about 97% of the formalized tags written by AI agents and not yet human-reviewed. Known mathematics, no new theorems; counterexamples to some printed statements are Axiom’s claims. No independent check yet; not built or run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/ax06-stacks-project-lean/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="The Stacks Project, all in Lean?">
+<meta property="og:description" content="Axiom Math says it has formalized every tag of the Stacks Project with formalizable content in Lean: about 15.75 million lines, 16,219 of 16,249 formalizable tags complete by its own data, about 97% of the formalized tags written by AI agents and not yet human-reviewed. Known mathematics, no new theorems; counterexamples to some printed statements are Axiom’s claims. No independent check yet; not built or run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/ax06-stacks-project-lean/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/ax06-stacks-project-lean/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="001: Many rulers. One fraction?">
+<meta name="twitter:image:alt" content="001: Many rulers. One fraction?">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">AX06 (outside OpenAI’s math catalogue), November 2026</p>
+<h1>The Stacks Project, all in Lean?</h1>
+<p class="subtitle">Axiom Math says it has formalized every tag of the Stacks Project with formalizable content. About 97% of the formalized tags were written by AI agents and have not yet had human review, by Axiom’s own metadata.</p>
+
+<div class="player" data-youtube="DAWl7hrCrSs" data-title="AX06: the Stacks Project in Lean">
+  <a href="https://youtu.be/DAWl7hrCrSs">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play AX06: the Stacks Project in Lean. A stack of pages with the tag 09CF, and a bar that is 97% orange for the AI-written tier.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:26. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/DAWl7hrCrSs?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/DAWl7hrCrSs?t=66" data-t="66"><span class="t">1:06</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/DAWl7hrCrSs?t=177" data-t="177"><span class="t">2:57</span><span>How the work went</span></a></li>
+  <li><a href="https://youtu.be/DAWl7hrCrSs?t=311" data-t="311"><span class="t">5:11</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>This is AX06. The circle x² + y² = 1 passes through the point (3/5, 4/5), because 3² + 4² = 5². Algebraic geometry studies shapes like this, cut out by equations, over every kind of number system at once. Its modern foundations are vast. Since 2005, Johan de Jong has gathered them in the Stacks Project: a free online reference of roughly 7,500 pages, in Axiom’s count, written with hundreds of contributors. Every result has a permanent four-character tag. Tag 09CF, for example, is a lemma about polynomial rings.</p>
+<p>To formalize a text is to write each definition, statement and proof in a language like Lean, whose kernel checks every step of every proof. Lean’s community library, Mathlib, already covered part of the Stacks Project. But the kernel only checks that a proof proves its statement. Whether the statement says what the book says is a separate question, and it takes a reader. Keep that in mind for this episode.</p>
+<p>On November 4, 2026, the company Axiom Math released a blog post, a website and a public Lean repository. The README says: we have formalized every tag of the Stacks Project with formalizable content. These are statements and proofs, built on Mathlib, with no sorry and only Lean’s three standard axioms, according to the repository. Axiom’s post calls it the largest integrated, reusable library of formalized mathematics ever built. By the site’s own data, that is about 15.75 million lines of Lean, in nearly 63,000 files. It is a formalization of known mathematics: apart from corrections to the text, no new theorems are claimed. The library has two tiers. StacksCore is human-reviewed. StacksFrontier holds formalizations written by AI agents, and by our tally of the site’s data, about 97% of the formalized tags live only there.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>What the numbers say, and what is not claimed. By Axiom’s own data, 16,219 of the 16,249 formalizable tags are counted as complete, including some where the Lean shows the printed statement fails: 14,842 in this library, and 1,377 already in Mathlib. 30 are not: 15 partial, 9 conditional, and 6 flagged as needing correction. 347 tags, mostly remarks and examples, were judged to have nothing to formalize, and the exercises are out of scope. The text followed is the Stacks Project as of April 16, 2026. And for the AI-written tier, the repository’s metadata says each statement was checked against its tag, but it has not yet had human review. The review status is self-assessed.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Released by Axiom</dt>
+    <dd><a href="https://axiommath.ai/research/the-stacks-project-formalized/">Blog post</a>, <a href="https://stacks.axiommath.ai/">website</a> and <a href="https://github.com/AxiomMath/Stacks">repository</a>, November 4, 2026 (the repository’s single commit, “Publication of Files”, is dated November 4 UTC). The <a href="https://github.com/AxiomMath/Stacks/blob/f8e70c5dd04bfabcb423d5e325461f527c85a5d6/formalization.yaml">metadata</a> says the development took place in a repository internal to Axiom Math.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Human review of StacksFrontier</dt>
+    <dd>Not yet, per Axiom’s metadata: each StacksFrontier statement “was checked against its Stacks tag, but it has not yet had human review”; review status “self-assessed”. By our tally of the site’s data, about 97% of the formalized tags live only in StacksFrontier.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Independent check</dt>
+    <dd>None found as of November 4, 2026: no GitHub Actions runs, no comparator file, no outside build, review or expert reaction.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No (there is no paper).</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Lean library, by Axiom</dt>
+    <dd>Lean v4.34.0-rc2 on Mathlib 16edf57; no sorry and only Lean’s three standard axioms, per the README and metadata; about 63,000 modules (README). Not built or run by us.</dd>
+  </div>
+</dl>
+<p class="ledger-note"><!-- last-checked:start -->Last checked November 4, 2026.<!-- last-checked:end --> Where it stands. The repository holds a single commit, called Publication of Files; the metadata says the development took place in a repository internal to Axiom. There are no continuous-integration runs and no comparator file, so no published check shows the library building, or pins down which statements a check would cover. The README says the library has about 63,000 modules, and that a full build takes a long time and a lot of memory. We found no independent build, review or expert reaction; the release is barely a day old. Nothing here is peer reviewed, and we did not build or run it.</p>
+<p>This is outside OpenAI’s math catalogue, and it pairs with AX01, Axiom’s Lean proof of the classification of finite simple groups. If it holds, nearly every formalizable tag of the Stacks Project, as of April 2026, is now Lean code that the kernel accepts, with counterexamples to some printed statements; whether the AI-written tier, 97% of the formalized tags, says what the book says has so far been checked by AI, and, Axiom says, not yet by people. See <a href="../ax01-classification-finite-simple-groups-lean/">AX01</a>.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the work went</h2>
+<ol class="steps">
+  <li><strong>The agents.</strong> How the work went, in Axiom’s account. A hierarchical system of AI agents, designed by Axiom’s mathematicians and engineers, worked in parallel across the dependency graph: translating statements, searching Mathlib, building proofs. The repository’s metadata names AxiomProver for the autonomous part, and says the foundational definitions and StacksCore were formalized and reviewed by hand. To keep statements faithful to the text, the post describes multi-agent auditing, semantic cross-checks against the source, the requirement that each result fit the results that depend on it, and targeted audits of foundational definitions and landmark theorems. So for most of the library, matching the Lean to the book was done by AI.</li>
+  <li><strong>The repairs.</strong> Axiom also says the work surfaced dozens of statements in the Stacks Project that needed local refinement: missing hypotheses, edge cases, claims too general as stated. It publishes no list and no count. One example, from a Lean file in the repository. Tag 09CF says that on a polynomial ring you may prescribe a biderivation’s values on the variables freely. Take two variables, x and y, and let them act on a module one way from the left and another way from the right. Ask for D(x) = 0 and D(y) = 1. The product rule then gives D(xy) = 1, but D(yx) = 0, although xy = yx. Our own two-line computation agrees. The repository also calls tag 08JQ, on base change for algebraic spaces, and tag 0DS4, on dimensions of fibres for algebraic stacks, partly false as printed.</li>
+  <li><strong>The Stacks Project’s side.</strong> These are Axiom’s claims. No Stacks maintainer has confirmed them, and on November 4 the three live Stacks pages were unchanged. On October 21, de Jong asked people, for now, not to send AI-written comments or pull requests, and wrote: I intend to continue updating and fixing the Stacks project by hand. Axiom’s post says it respects that, and keeps its counterexamples and refinements in its own repository.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>From the site’s own data (generated 2026-11-04, commit f8e70c5): 17,269 Stacks tags; 16,249 formalizable; 16,219 counted as complete (14,842 in this library, 1,377 already in Mathlib); 15 partial, 9 conditional and 6 “needs correction”; 347 judged not applicable. The site’s “complete” includes tags where the Lean shows the printed statement fails.</li>
+  <li>From the site’s own data: 15,751,904 lines of Lean in 62,975 files, 663,090 declarations. Axiom’s post says “some 16 million lines”.</li>
+  <li>Ours: of the 14,849 tags the site marks formalized, 14,423 (97.1%) have every declaration in a StacksFrontier module; 109 touch StacksCore; the rest touch Mathlib.</li>
+  <li>Ours: the 09CF counterexample in Axiom’s Lean file, checked by hand with the product rule D(pq) = p·D(q) + D(p)·q: with x, y acting by 1, 0 on the left and 0, 0 on the right, D(x) = 0 and D(y) = 1 give D(xy) = 1 but D(yx) = 0.</li>
+  <li>The Stacks text Axiom followed is commit a5811b23 of April 16, 2026 (its metadata). On November 4, 2026 the live Stacks pages for 09CF, 08JQ and 0DS4 still printed the original statements.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://axiommath.ai/research/the-stacks-project-formalized/">“The Stacks Project, formalized in Lean”</a>, Axiom Math blog post, November 4, 2026.</li>
+  <li><a href="https://stacks.axiommath.ai/">stacks.axiommath.ai</a>, Axiom’s website for the library (tags side by side with Lean code).</li>
+  <li><a href="https://github.com/AxiomMath/Stacks">AxiomMath/Stacks</a>, the Lean repository (Apache 2.0; not built or run by us), with its <a href="https://github.com/AxiomMath/Stacks/blob/f8e70c5dd04bfabcb423d5e325461f527c85a5d6/formalization.yaml">formalization.yaml</a>.</li>
+  <li>Axiom’s Lean files for <a href="https://github.com/AxiomMath/Stacks/blob/main/StacksFrontier/Cotangent/BiderivationErratum.lean">09CF</a>, <a href="https://github.com/AxiomMath/Stacks/blob/main/StacksFrontier/AlgebraicGeometry/Spaces/Perfect/CohomologyBaseChangeSheafHomErratum.lean">08JQ</a> and <a href="https://github.com/AxiomMath/Stacks/blob/main/StacksFrontier/AlgebraicGeometry/Stacks/DimensionSchemeTheoreticImageRefutation.lean">0DS4</a>; the Stacks Project’s pages for <a href="https://stacks.math.columbia.edu/tag/09CF">09CF</a>, <a href="https://stacks.math.columbia.edu/tag/08JQ">08JQ</a> and <a href="https://stacks.math.columbia.edu/tag/0DS4">0DS4</a>.</li>
+  <li>Johan de Jong, <a href="https://www.math.columbia.edu/~dejong/wordpress/?p=5033">“No AI for now”</a>, Stacks Project blog, October 21, 2026.</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Axiom Math, OpenAI, the Stacks Project or Johan de Jong.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is AX06. The circle x² + y² = 1 passes through the point (3/5, 4/5), because 3² + 4² = 5². Algebraic geometry studies shapes like this, cut out by equations, over every kind of number system at once. Its modern foundations are vast. Since 2005, Johan de Jong has gathered them in the Stacks Project: a free online reference of roughly 7,500 pages, in Axiom’s count, written with hundreds of contributors. Every result has a permanent four-character tag. Tag 09CF, for example, is a lemma about polynomial rings. To formalize a text is to write each definition, statement and proof in a language like Lean, whose kernel checks every step of every proof. Lean’s community library, Mathlib, already covered part of the Stacks Project. But the kernel only checks that a proof proves its statement. Whether the statement says what the book says is a separate question, and it takes a reader. Keep that in mind for this episode.</p>
+<h3><span class="t num">1:06</span>The claim</h3>
+<p>On November 4, 2026, the company Axiom Math released a blog post, a website and a public Lean repository. The README says: we have formalized every tag of the Stacks Project with formalizable content. These are statements and proofs, built on Mathlib, with no sorry and only Lean’s three standard axioms, according to the repository. Axiom’s post calls it the largest integrated, reusable library of formalized mathematics ever built. By the site’s own data, that is about 15.75 million lines of Lean, in nearly 63,000 files. It is a formalization of known mathematics: apart from corrections to the text, no new theorems are claimed. The library has two tiers. StacksCore is human-reviewed. StacksFrontier holds formalizations written by AI agents, and by our tally of the site’s data, about 97% of the formalized tags live only there. What the numbers say, and what is not claimed. By Axiom’s own data, 16,219 of the 16,249 formalizable tags are counted as complete, including some where the Lean shows the printed statement fails: 14,842 in this library, and 1,377 already in Mathlib. 30 are not: 15 partial, 9 conditional, and 6 flagged as needing correction. 347 tags, mostly remarks and examples, were judged to have nothing to formalize, and the exercises are out of scope. The text followed is the Stacks Project as of April 16, 2026. And for the AI-written tier, the repository’s metadata says each statement was checked against its tag, but it has not yet had human review. The review status is self-assessed.</p>
+<h3><span class="t num">2:57</span>How the work went</h3>
+<p>How the work went, in Axiom’s account. A hierarchical system of AI agents, designed by Axiom’s mathematicians and engineers, worked in parallel across the dependency graph: translating statements, searching Mathlib, building proofs. The repository’s metadata names AxiomProver for the autonomous part, and says the foundational definitions and StacksCore were formalized and reviewed by hand. To keep statements faithful to the text, the post describes multi-agent auditing, semantic cross-checks against the source, the requirement that each result fit the results that depend on it, and targeted audits of foundational definitions and landmark theorems. So for most of the library, matching the Lean to the book was done by AI. Axiom also says the work surfaced dozens of statements in the Stacks Project that needed local refinement: missing hypotheses, edge cases, claims too general as stated. It publishes no list and no count. One example, from a Lean file in the repository. Tag 09CF says that on a polynomial ring you may prescribe a biderivation’s values on the variables freely. Take two variables, x and y, and let them act on a module one way from the left and another way from the right. Ask for D(x) = 0 and D(y) = 1. The product rule then gives D(xy) = 1, but D(yx) = 0, although xy = yx. Our own two-line computation agrees. The repository also calls tag 08JQ, on base change for algebraic spaces, and tag 0DS4, on dimensions of fibres for algebraic stacks, partly false as printed. These are Axiom’s claims. No Stacks maintainer has confirmed them, and on November 4 the three live Stacks pages were unchanged. On October 21, de Jong asked people, for now, not to send AI-written comments or pull requests, and wrote: I intend to continue updating and fixing the Stacks project by hand. Axiom’s post says it respects that, and keeps its counterexamples and refinements in its own repository.</p>
+<h3><span class="t num">5:11</span>Where it stands</h3>
+<p>Where it stands. The repository holds a single commit, called Publication of Files; the metadata says the development took place in a repository internal to Axiom. There are no continuous-integration runs and no comparator file, so no published check shows the library building, or pins down which statements a check would cover. The README says the library has about 63,000 modules, and that a full build takes a long time and a lot of memory. We found no independent build, review or expert reaction; the release is barely a day old. Nothing here is peer reviewed, and we did not build or run it. This is outside OpenAI’s math catalogue, and it pairs with AX01, Axiom’s Lean proof of the classification of finite simple groups. If it holds, nearly every formalizable tag of the Stacks Project, as of April 2026, is now Lean code that the kernel accepts, with counterexamples to some printed statements; whether the AI-written tier, 97% of the formalized tags, says what the book says has so far been checked by AI, and, Axiom says, not yet by people.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=AX06%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
