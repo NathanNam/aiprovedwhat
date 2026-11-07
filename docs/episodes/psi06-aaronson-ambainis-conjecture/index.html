@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aaronson–Ambainis conjecture proved? PSI’s AI proof in Lean, not yet checked outside | AI Proved What?</title>
+<meta name="description" content="PSI says a non-public Anthropic model found a proof of the Aaronson–Ambainis conjecture (open since 2008): some bit has influence at least (ε/d)^7. A 60-page paper by David Turturean and a Lean proof of the influence bound, replayed by three kernels in PSI’s private staging runs. Not on arXiv, not peer reviewed, no outside statement yet; the quantum consequences are not in Lean. Not built or run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/psi06-aaronson-ambainis-conjecture/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Aaronson–Ambainis conjecture proved?">
+<meta property="og:description" content="PSI says a non-public Anthropic model found a proof of the Aaronson–Ambainis conjecture (open since 2008): some bit has influence at least (ε/d)^7. A 60-page paper by David Turturean and a Lean proof of the influence bound, replayed by three kernels in PSI’s private staging runs. Not on arXiv, not peer reviewed, no outside statement yet; the quantum consequences are not in Lean. Not built or run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/psi06-aaronson-ambainis-conjecture/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/psi06-aaronson-ambainis-conjecture/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="PSI06: the Aaronson–Ambainis conjecture. PSI’s four-bit example as two cubes, with bit 4’s edges in yellow, and the bound Inf ≥ (ε/d) to the 7th.">
+<meta name="twitter:image:alt" content="PSI06: the Aaronson–Ambainis conjecture. PSI’s four-bit example as two cubes, with bit 4’s edges in yellow, and the bound Inf ≥ (ε/d) to the 7th.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">PSI06 (outside OpenAI’s math catalogue), November 2026</p>
+<h1>The Aaronson–Ambainis conjecture, proved?</h1>
+<p class="subtitle">PSI says a non-public Anthropic model found a proof, with a 60-page paper and a Lean proof of the influence bound. Not yet on arXiv, peer reviewed or checked by anyone outside PSI.</p>
+<!-- disclosure:start -->
+<div class="banner banner-disclosure" role="note"><p>The paper says its mathematical statements were produced by AI models (“a non-public Anthropic model”). AI Proved What? is made with Claude, Anthropic’s AI, and holds results made with Anthropic models to the same standards.</p></div>
+<!-- disclosure:end -->
+
+<div class="player" data-youtube="t9nfx9D6P0g" data-title="PSI06: the Aaronson–Ambainis conjecture">
+  <a href="https://youtu.be/t9nfx9D6P0g">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play PSI06: the Aaronson–Ambainis conjecture. PSI’s four-bit example as two cubes, with bit 4’s edges in yellow, and the bound Inf ≥ (ε/d) to the 7th.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:03. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/t9nfx9D6P0g?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/t9nfx9D6P0g?t=117" data-t="117"><span class="t">1:57</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/t9nfx9D6P0g?t=240" data-t="240"><span class="t">4:00</span><span>What Lean checked</span></a></li>
+  <li><a href="https://youtu.be/t9nfx9D6P0g?t=338" data-t="338"><span class="t">5:38</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>This is PSI06. Some quantum algorithms need exponentially fewer looks at their input than any ordinary algorithm. Shor’s factoring algorithm is one, and it works because its input hides a repeating pattern: structure. The looks are called queries. Beals, Buhrman, Cleve, Mosca and de Wolf showed that after T queries, a quantum algorithm’s chance of saying yes is a polynomial in the input bits, of degree at most 2T, with values between zero and one. Here is PSI’s own example: a polynomial of degree two on 4 bits. Each corner of these two cubes is one of the 16 inputs, shaded by its value. The influence of a bit is the change in value when that bit is flipped, squared and averaged over all inputs. By our count, bit 4’s influence is a quarter; the other three have 0.02, 0.02 and 0.01.</p>
+<p>Is there always an influential bit? The question goes back to a 2008 lecture by Scott Aaronson. With Andris Ambainis, in a paper first posted in 2009, he stated it as a conjecture. If a polynomial of degree at most d stays between zero and one on every input, and its variance is at least ε, then some bit has influence at least (ε/d) to a fixed power, however many bits there are. They showed this would let an ordinary algorithm imitate any quantum one on most inputs, with only polynomially more queries. So exponential speedups would need structure. Earlier bounds for general polynomials shrank exponentially with the degree. In 2019, Nathan Keller and Ohad Klein posted a claimed proof, then withdrew it, writing: our proof contains a serious flaw. In August 2026, a Stanford group proved its prediction in a special case: quantum algorithms that query in a fixed number of parallel rounds.</p>
+<p>On November 6, 2026, the company PSI, Physical Superintelligence, announced: the Aaronson–Ambainis conjecture is now a theorem. With the post came a public repository, holding a 60-page paper by David Turturean and a Lean proof. In Aaronson and Ambainis’s own terms, the main result says some bit has influence at least a constant c, times ε^(5/2)/d⁶. And that is at least (ε/d)⁷. The constant is 8√15/(125π⁴): about 0.0025. Through the known reduction, the paper says, a quantum algorithm making T queries can be imitated on most inputs by an ordinary one making at most (4T)⁸ queries, times factors for the allowed error and for the fraction of inputs allowed to fail. Who did the work? The paper says its mathematical statements were produced by AI models: instances of a non-public Anthropic model, in a research harness that Turturean built at PSI. He prompted the first draft, reviewed and edited it, and is responsible for its correctness. We cannot check which model was used. AI Proved What? is itself made with Claude, Anthropic’s AI.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Released by PSI</dt>
+    <dd><a href="https://psi.inc/research/aaronson-ambainis/">Blog post</a>, November 6, 2026; <a href="https://github.com/physical-superintelligence/aaronson-ambainis">repository</a> with one commit (2a6ceae, “Initial commit”, November 6 UTC) holding the <a href="https://github.com/physical-superintelligence/aaronson-ambainis/blob/2a6ceaef872a/paper/aaronson_ambainis_paper.pdf">60-page paper</a> by David Turturean and the Lean proof.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>On arXiv, peer reviewed</dt>
+    <dd>No arXiv or ECCC posting found as of November 6, 2026; not peer reviewed.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Independent review</dt>
+    <dd>None yet. Jim Halverson audited the proof and Phiala Shanahan commented on the Lean; both are PSI advisors. The Stanford group (Guy Blanc, Jordan Docter, Carmen Strassle, Li-Yang Tan) is quoted on PSI’s page and, PSI says, is writing a shorter exposition; we found no statement under their own names, and none from Scott Aaronson or Andris Ambainis.</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Independent check of the Lean</dt>
+    <dd>None found: PSI ran the recorded build, replay and comparator checks itself, on rented machines and in private GitHub repositories, on October 22 and November 6, 2026 (<a href="https://github.com/physical-superintelligence/aaronson-ambainis/blob/2a6ceaef872a/verification/comparator/README.md">copied logs</a>; PSI’s notes: “None has been repeated by another party”); the public repository shows <a href="https://github.com/physical-superintelligence/aaronson-ambainis/actions">0 Actions runs</a> as of November 6, 2026.</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Lean proof, by PSI</dt>
+    <dd>Lean 4.33.0, Mathlib v4.33.0. The statement <a href="https://github.com/physical-superintelligence/aaronson-ambainis/blob/2a6ceaef872a/AaronsonAmbainis/Conjecture.lean">PrintedConjecture</a> imports only Mathlib, with the bound (ε/d)<sup>7</sup>; no placeholder and no added axiom, per the README. Covers the influence bound (Theorem 1.1, Corollary 1.2), not the quantum consequences (paper Section 1.3) or the survey, overview and remarks (Sections 1.4, 1.5, 9). Not built or run by us.</dd>
+  </div>
+</dl>
+<p class="ledger-note"><!-- last-checked:start -->Last checked November 6, 2026.<!-- last-checked:end --> Where it stands. The paper is not on arXiv, as of November 6, and has not been peer reviewed. Jim Halverson audited the proof, and Phiala Shanahan commented on the Lean; both are PSI advisors, so not independent of PSI. PSI quotes the Stanford group, Guy Blanc, Jordan Docter, Carmen Strassle and Li-Yang Tan: this is a huge result. PSI says they are writing a shorter exposition of the proof; we found no statement under their own names yet. The paper thanks Scott Aaronson for referring PSI to them. We found no public statement from Aaronson or Ambainis. The Lean proof is PSI’s; we did not build or run it.</p>
+<p>This is outside OpenAI’s math catalogue, and PSI’s second entry, after PSI01–05. If it holds, a question open since 2008 is settled: bounded polynomials of low degree have influential bits, so exponential quantum speedups in the query model need structure. The proof comes with machine checks that anyone can repeat, though no outsider has published a run yet. What remains is for outside experts to confirm that the short Lean statement says what Aaronson and Ambainis meant, and to read the paper’s parts that Lean does not cover. See <a href="../psi01-05-open-quantum-problems/">PSI01–05</a>.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the proof goes, and what Lean checked</h2>
+<ol class="steps">
+  <li><strong>The outline.</strong> The proof, which the paper calls elementary, follows a plan of Shachar Lovett and Jiapeng Zhang. Slice the function at every level. At every input, give each bit a weight, so that flipping any group of bits changes the value by at most the group’s total weight. Their plan left one inequality as a conjecture. The new proof puts an all-pairs inequality in its place, proved with a one-to-one pairing of inputs that comes from a determinant. That pairing refines David Reimer’s Butterfly Lemma. By the paper’s timeline, the first complete proof came on the third day of the run, with exponent 22 in place of 7, and was checked in Lean. Later work in the run brought it to 11, then 7, each checked in Lean.</li>
+  <li><strong>The statement.</strong> Now the Lean proof. The statement it proves is called PrintedConjecture. It imports only Mathlib, Lean’s community library, and is written with ordinary polynomials and finite sums, with the bound (ε/d)⁷. The README says a reader needs to read only this definition to check what the theorem proves. There are four public theorems; one assumes an unformalized result of Agarwal and Ben-David, only to improve the constant. The repository says there is no placeholder and no added axiom, only Lean’s three standard ones. Our own count: 95 Lean files, about 9,600 lines. PSI reports 761 declarations.</li>
+  <li><strong>The checks.</strong> Then the checks, as PSI records them. Every declaration was replayed by Lean’s own kernel checker, and again by lean4lean, an independent implementation of Lean’s type checker. A tool called comparator matched the four theorems against the plain statements, with a third kernel, nanoda, written in Rust. Controls are included: a false file that an ordinary build accepts but both replays reject, and four wrong comparator solutions, all rejected. But PSI ran all these checks itself, on rented machines and in private GitHub repositories, first on October 22 and again on November 6. Only copied logs are public, and the public repository shows zero runs so far. And the checks cover the influence bound only. The quantum consequences, in Section 1.3 of the paper, have no Lean counterpart, and neither do its survey, overview and closing remarks.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>PSI’s example f(x) = 0.1 + 0.5x4 + 0.2x1x2 + 0.1x3 (from its post). Ours: values 0.1 to 0.9; influences (squared change, averaged over the 16 inputs) 0.02, 0.02, 0.01, 0.25; variance 0.0725.</li>
+  <li>The constant c = 8√15/(125π⁴) = 0.002545, “about 0.0025” (post); the paper’s Theorem 1.1 uses √15/(500π⁴) ≈ 7.95e-05 on the cube with values ±1, which is c/32.</li>
+  <li>Exponents during the run (paper, Appendix A): 22, then 11, then 7, each checked in Lean. Query bound (paper, Section 1): (4T)⁸ε⁻¹⁴δ⁻⁸.</li>
+  <li>Ours: 95 Lean files, 9,625 lines in the repository at commit 2a6ceae. PSI’s count: 761 declarations (648 theorems, 113 definitions) in 84 modules.</li>
+  <li>Keller and Klein’s 2019 claimed proof (arXiv:1911.03748) was withdrawn on December 2, 2019: “Unfortunately, our proof contains a serious flaw.”</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://psi.inc/research/aaronson-ambainis/">“A proof of the Aaronson-Ambainis conjecture”</a>, PSI blog post, November 6, 2026.</li>
+  <li><a href="https://github.com/physical-superintelligence/aaronson-ambainis/blob/2a6ceaef872a/paper/aaronson_ambainis_paper.pdf">“A proof of the Aaronson–Ambainis conjecture”</a>, David Turturean, 60 pages (PSI’s repository; not on arXiv).</li>
+  <li><a href="https://github.com/physical-superintelligence/aaronson-ambainis">physical-superintelligence/aaronson-ambainis</a>, the Lean repository (Apache 2.0 for the code; not built or run by us), with <a href="https://github.com/physical-superintelligence/aaronson-ambainis/blob/2a6ceaef872a/AaronsonAmbainis/Conjecture.lean">Conjecture.lean</a> and the <a href="https://github.com/physical-superintelligence/aaronson-ambainis/blob/2a6ceaef872a/verification/comparator/README.md">verification records</a>.</li>
+  <li>S. Aaronson and A. Ambainis, <a href="https://arxiv.org/abs/0911.0996">“The need for structure in quantum speedups”</a>, arXiv:0911.0996; Theory of Computing 10 (2014).</li>
+  <li>N. Keller and O. Klein, <a href="https://arxiv.org/abs/1911.03748">“Quantum speedups need structure”</a>, arXiv:1911.03748 (withdrawn).</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with PSI, Anthropic (beyond using Claude) or OpenAI, or with the researchers named. It is made with Claude, Anthropic’s AI, and holds results made with Anthropic models to the same standards.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is PSI06. Some quantum algorithms need exponentially fewer looks at their input than any ordinary algorithm. Shor’s factoring algorithm is one, and it works because its input hides a repeating pattern: structure. The looks are called queries. Beals, Buhrman, Cleve, Mosca and de Wolf showed that after T queries, a quantum algorithm’s chance of saying yes is a polynomial in the input bits, of degree at most 2T, with values between zero and one. Here is PSI’s own example: a polynomial of degree two on 4 bits. Each corner of these two cubes is one of the 16 inputs, shaded by its value. The influence of a bit is the change in value when that bit is flipped, squared and averaged over all inputs. By our count, bit 4’s influence is a quarter; the other three have 0.02, 0.02 and 0.01. Is there always an influential bit? The question goes back to a 2008 lecture by Scott Aaronson. With Andris Ambainis, in a paper first posted in 2009, he stated it as a conjecture. If a polynomial of degree at most d stays between zero and one on every input, and its variance is at least ε, then some bit has influence at least (ε/d) to a fixed power, however many bits there are. They showed this would let an ordinary algorithm imitate any quantum one on most inputs, with only polynomially more queries. So exponential speedups would need structure. Earlier bounds for general polynomials shrank exponentially with the degree. In 2019, Nathan Keller and Ohad Klein posted a claimed proof, then withdrew it, writing: our proof contains a serious flaw. In August 2026, a Stanford group proved its prediction in a special case: quantum algorithms that query in a fixed number of parallel rounds.</p>
+<h3><span class="t num">1:57</span>The claim</h3>
+<p>On November 6, 2026, the company PSI, Physical Superintelligence, announced: the Aaronson–Ambainis conjecture is now a theorem. With the post came a public repository, holding a 60-page paper by David Turturean and a Lean proof. In Aaronson and Ambainis’s own terms, the main result says some bit has influence at least a constant c, times ε^(5/2)/d⁶. And that is at least (ε/d)⁷. The constant is 8√15/(125π⁴): about 0.0025. Through the known reduction, the paper says, a quantum algorithm making T queries can be imitated on most inputs by an ordinary one making at most (4T)⁸ queries, times factors for the allowed error and for the fraction of inputs allowed to fail. Who did the work? The paper says its mathematical statements were produced by AI models: instances of a non-public Anthropic model, in a research harness that Turturean built at PSI. He prompted the first draft, reviewed and edited it, and is responsible for its correctness. We cannot check which model was used. AI Proved What? is itself made with Claude, Anthropic’s AI. The proof, which the paper calls elementary, follows a plan of Shachar Lovett and Jiapeng Zhang. Slice the function at every level. At every input, give each bit a weight, so that flipping any group of bits changes the value by at most the group’s total weight. Their plan left one inequality as a conjecture. The new proof puts an all-pairs inequality in its place, proved with a one-to-one pairing of inputs that comes from a determinant. That pairing refines David Reimer’s Butterfly Lemma. By the paper’s timeline, the first complete proof came on the third day of the run, with exponent 22 in place of 7, and was checked in Lean. Later work in the run brought it to 11, then 7, each checked in Lean.</p>
+<h3><span class="t num">4:00</span>What Lean checked</h3>
+<p>Now the Lean proof. The statement it proves is called PrintedConjecture. It imports only Mathlib, Lean’s community library, and is written with ordinary polynomials and finite sums, with the bound (ε/d)⁷. The README says a reader needs to read only this definition to check what the theorem proves. There are four public theorems; one assumes an unformalized result of Agarwal and Ben-David, only to improve the constant. The repository says there is no placeholder and no added axiom, only Lean’s three standard ones. Our own count: 95 Lean files, about 9,600 lines. PSI reports 761 declarations. Then the checks, as PSI records them. Every declaration was replayed by Lean’s own kernel checker, and again by lean4lean, an independent implementation of Lean’s type checker. A tool called comparator matched the four theorems against the plain statements, with a third kernel, nanoda, written in Rust. Controls are included: a false file that an ordinary build accepts but both replays reject, and four wrong comparator solutions, all rejected. But PSI ran all these checks itself, on rented machines and in private GitHub repositories, first on October 22 and again on November 6. Only copied logs are public, and the public repository shows zero runs so far. And the checks cover the influence bound only. The quantum consequences, in Section 1.3 of the paper, have no Lean counterpart, and neither do its survey, overview and closing remarks.</p>
+<h3><span class="t num">5:38</span>Where it stands</h3>
+<p>Where it stands. The paper is not on arXiv, as of November 6, and has not been peer reviewed. Jim Halverson audited the proof, and Phiala Shanahan commented on the Lean; both are PSI advisors, so not independent of PSI. PSI quotes the Stanford group, Guy Blanc, Jordan Docter, Carmen Strassle and Li-Yang Tan: this is a huge result. PSI says they are writing a shorter exposition of the proof; we found no statement under their own names yet. The paper thanks Scott Aaronson for referring PSI to them. We found no public statement from Aaronson or Ambainis. The Lean proof is PSI’s; we did not build or run it. This is outside OpenAI’s math catalogue, and PSI’s second entry, after PSI01–05. If it holds, a question open since 2008 is settled: bounded polynomials of low degree have influential bits, so exponential quantum speedups in the query model need structure. The proof comes with machine checks that anyone can repeat, though no outsider has published a run yet. What remains is for outside experts to confirm that the short Lean statement says what Aaronson and Ambainis meant, and to read the paper’s parts that Lean does not cover.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=PSI06%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

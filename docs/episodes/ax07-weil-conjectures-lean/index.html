@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Weil conjectures, all in Lean? Axiom’s AI-written formalization, not yet human-reviewed | AI Proved What?</title>
+<meta name="description" content="Axiom Math says all four Weil conjectures are proved in Lean: about 980 modules written by AI agents and, per its README, not yet reviewed by humans; the decisive weight estimate comes from its unreviewed StacksFrontier tier (AX06). It proves verbatim an outside LeanEval statement (without the Betti numbers). Known mathematics, not a new theorem. No CI, no comparator run, no independent check yet; not built or run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/ax07-weil-conjectures-lean/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="The Weil conjectures, all in Lean?">
+<meta property="og:description" content="Axiom Math says all four Weil conjectures are proved in Lean: about 980 modules written by AI agents and, per its README, not yet reviewed by humans; the decisive weight estimate comes from its unreviewed StacksFrontier tier (AX06). It proves verbatim an outside LeanEval statement (without the Betti numbers). Known mathematics, not a new theorem. No CI, no comparator run, no independent check yet; not built or run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/ax07-weil-conjectures-lean/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/ax07-weil-conjectures-lean/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="AX07: the Weil conjectures in Lean. A circle with two yellow points (the eigenvalues of our example curve), and a three-block tower with an orange piece in the middle block for the imported weight estimate.">
+<meta name="twitter:image:alt" content="AX07: the Weil conjectures in Lean. A circle with two yellow points (the eigenvalues of our example curve), and a three-block tower with an orange piece in the middle block for the imported weight estimate.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">AX07 (outside OpenAI’s math catalogue), November 2026</p>
+<h1>The Weil conjectures, all in Lean?</h1>
+<p class="subtitle">Axiom Math says all four Weil conjectures are proved in Lean. Its README says the code was written by AI agents and has not yet been reviewed by humans, and the decisive step comes from the unreviewed tier of its Stacks Project library.</p>
+
+<div class="player" data-youtube="TVOjZcB_BQM" data-title="AX07: the Weil conjectures in Lean">
+  <a href="https://youtu.be/TVOjZcB_BQM">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play AX07: the Weil conjectures in Lean. A circle with two yellow points (the eigenvalues of our example curve), and a three-block tower with an orange piece in the middle block for the imported weight estimate.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:27. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/TVOjZcB_BQM?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/TVOjZcB_BQM?t=127" data-t="127"><span class="t">2:07</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/TVOjZcB_BQM?t=221" data-t="221"><span class="t">3:41</span><span>What it rests on</span></a></li>
+  <li><a href="https://youtu.be/TVOjZcB_BQM?t=303" data-t="303"><span class="t">5:03</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>This is AX07. Take the curve y² = x³ + x + 1, and let x and y run over the integers modulo 5. Eight pairs fit, and with one point at infinity that makes nine points. Over the field with 25 elements the same equation has 27 points, and over the field with 125 elements, 108. In 1949, André Weil proposed that such counts, for any smooth projective variety over a finite field, follow a strict pattern. Put all of them into one generating function, the zeta function. For this curve it collapses to a fraction: (1 + 3T + 5T²)/((1 − T)(1 − 5T)).</p>
+<p>The numerator hides two numbers, α and β, with α + β = −3 and αβ = 5. Both have absolute value exactly √5: they sit on one circle. That is the Riemann hypothesis for curves over finite fields, and it bounds the count. Nine lies within 2√5 of 5 + 1. For a curve of genus g, the bound is 2g√q. Hasse proved it for elliptic curves in the 1930s, and Weil for all smooth projective curves in the 1940s. The curve’s numbers are our own computation.</p>
+<p>Weil’s conjectures have four parts. The zeta function is rational. It satisfies a functional equation. Its zeros obey a Riemann hypothesis. And the degrees of its factors are the Betti numbers of a matching complex variety, counts of its features in each dimension. Dwork proved rationality first, published in 1960. Grothendieck, with Artin and Verdier, built étale cohomology, which explained rationality, the functional equation and the Betti numbers. Deligne’s proof of the Riemann hypothesis was published in 1974, and a broader theory of weights, Weil II, in 1980. So this is known mathematics. The new question is whether a computer can check all of it.</p>
+<p>On November 6, 2026, Axiom Math published a blog post and a public Lean repository. The README says all four Weil conjectures are proved, with no sorry, no native_decide and no added axiom. It follows the 1988 book by Freitag and Kiehl, and builds on Mathlib and on Axiom’s Stacks Project library from AX06. The library has about 980 modules; by our count, about 213,000 lines. Rationality is stated for any scheme of finite type, the Riemann hypothesis for smooth proper varieties, and the Betti numbers under good reduction from the complex numbers. This formalizes known mathematics. It is not a new theorem, and by the post’s own account it does not reproduce Deligne’s 1974 proof line by line.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>One strength stands out. In August, LeanEval, an outside benchmark of formalization problems, added a statement of the Weil conjectures submitted by Junyan Xu, written with Mathlib definitions only. Axiom’s README says the repository proves that statement word for word, and our own text comparison agrees the statement matches. So a reader can check the target without first trusting Axiom’s own definitions. Two limits. The benchmark statement leaves out the Betti numbers. And we found no comparator run, the tool that mechanically confirms a proof proves exactly the benchmark’s theorem with only allowed axioms, and no entry for it among the benchmark’s results.</p>
+<p>No new theorem: this is known mathematics, formalized, and by Axiom’s own account not Deligne’s 1974 proof line by line. The post also says the Ramanujan bound is not part of this formalization.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Released by Axiom</dt>
+    <dd><a href="https://axiommath.ai/research/the-weil-conjectures-formalized-in-lean/">Blog post</a> and <a href="https://github.com/AxiomMath/Weil">repository</a>, November 6, 2026: three commits by Tony Yue Yu within 22 minutes (November 6 UTC), the last <a href="https://github.com/AxiomMath/Weil/tree/27cdb2049be6">27cdb20</a>. The post says the repository’s scope and review status were checked on November 5.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Human review</dt>
+    <dd>Not yet. The <a href="https://github.com/AxiomMath/Weil/blob/27cdb2049be6/README.md">README</a>: about 980 modules “written by AI agents”; “the code has not yet been reviewed by humans”. The decisive weight estimate comes from StacksFrontier, which Axiom’s <a href="https://github.com/AxiomMath/Stacks/blob/012108f61d7f92a6ffc35ec3f263b6da5d438125/formalization.yaml">metadata</a> says “has not yet had human review” (see <a href="../ax06-stacks-project-lean/">AX06</a>). The blog post lists nine people and does not mention AI.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Independent check</dt>
+    <dd>None found as of November 6, 2026: no GitHub Actions runs, no comparator file, no comparator run or results entry for the <a href="https://github.com/leanprover/lean-eval/blob/main/LeanEval/AlgebraicGeometry/WeilConjectures.lean">LeanEval statement</a>, no outside build, review or expert reaction.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No (there is no paper).</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Lean library, by Axiom</dt>
+    <dd>Lean v4.34.0-rc2, Mathlib 16edf57, on Axiom’s Stacks library pinned at <a href="https://github.com/AxiomMath/Stacks/tree/012108f61d7f92a6ffc35ec3f263b6da5d438125">012108f</a> (Axiom’s Stacks repository <a href="https://github.com/AxiomMath/Stacks/commit/5ed82d14634e8d9576bb844c7bd4e3da66d450e7">moved to Lean v4.35.0</a> on November 6); no sorry, no native_decide and no added axiom, per the README (our text grep of the 980 files agrees). Not built or run by us.</dd>
+  </div>
+</dl>
+<p class="ledger-note"><!-- last-checked:start -->Last checked November 6, 2026.<!-- last-checked:end --> Where it stands. The repository holds three commits, all by Tony Yue Yu, made within 22 minutes on November 6, universal time. There are no continuous-integration runs and no comparator file. It is built on Lean v4.34.0-rc2, and on the pinned Stacks commit, while Axiom’s Stacks repository moved to Lean v4.35.0 the same day. The README says the first build takes a long time and a lot of memory. We found no independent build or review of it. A separate group’s Lean formalization of the Weil conjectures, mostly written by AI agents too, is also public; it says a full comparator run has not completed yet. Nothing here is peer reviewed, and we did not build or run either.</p>
+<p>This is outside OpenAI’s math catalogue. It is the sequel to AX06, Axiom’s Stacks Project formalization, and pairs with AX01, its Lean proof of the classification of finite simple groups. If it holds, all four Weil conjectures are now Lean theorems that later proofs can use, and three of them in a form fixed by an outside benchmark. But the decisive estimate sits in Axiom’s AI-written Stacks tier, and neither the Weil code nor that Stacks tier, Axiom says, has yet been reviewed by people. See <a href="../ax06-stacks-project-lean/">AX06</a> and <a href="../ax01-classification-finite-simple-groups-lean/">AX01</a>.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">What it rests on</h2>
+<ol class="steps">
+  <li><strong>The dependency.</strong> What it rests on. Picture a tower. At the bottom, Mathlib. Above it, Axiom’s Stacks library, pinned to one exact commit: the November 5 build fix we noted after AX06. On top, the Weil library. The hardest step, Deligne’s weight estimate, is not proved in the Weil repository. It is imported, as the theorem weightBound, for Stacks tag 03VH. On the Stacks Project’s own page, that tag’s proof is a citation of Deligne’s paper. Axiom’s post puts it this way: in Lean, citing that tag is not enough. So Axiom proved it in StacksFrontier, along Laumon’s later Fourier-transform route. And StacksFrontier is the tier that, by Axiom’s own metadata, has not yet had human review.</li>
+  <li><strong>Who wrote it.</strong> Who wrote it? The blog post lists nine people, led by Tony Yue Yu, with Ken Ono among the contributors. It never mentions AI. The README says the library’s roughly 980 modules were written by AI agents. Every proof is kernel-checked, it says, but the code has not yet been reviewed by humans. The two documents describe the same work differently, and only the README states the review status. About 1,800 tags in the code link declarations to items of the book, by our count, which gives a reader a map from book to Lean.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the curve y² = x³ + x + 1 has 9, 27 and 108 points over F_5, F_25 and F_125 (brute force); its zeta function is (1 + 3T + 5T²)/((1 − T)(1 − 5T)); α, β = (−3 ± i√11)/2, so |α| = |β| = √5, and |9 − 6| = 3 ≤ 2√5 ≈ 4.47.</li>
+  <li>Ours: the repository at 27cdb20 has 980 Lean files, 213,159 lines and 1,838 @[weil] tags; our text grep finds no sorry, admit, native_decide or axiom declaration. The Weil library uses the Stacks theorem LAdicSheaf.weightBound and does not reprove it.</li>
+  <li>The LeanEval problem weil_conjectures (submitted by Junyan Xu, added 2026-08-03) and Axiom’s theorem have the same statement, word for word up to spacing (our comparison). Its docstring says it does not include the Betti numbers.</li>
+  <li>Stacks tag 03VH (Theorem 64.27.4, Deligne, Weil II): the Stacks Project’s proof is a citation of Weil II; Axiom’s Lean proof is in StacksFrontier, in WeilIIWeightBound.lean at the pinned commit 012108f.</li>
+  <li>From Axiom’s post: Weil 1949; Hasse in the 1930s for elliptic curves; Weil in the 1940s for curves; Dwork, published 1960; Deligne, 1974 (Weil I) and 1980 (Weil II); Freitag and Kiehl, 1988.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://axiommath.ai/research/the-weil-conjectures-formalized-in-lean/">“The Weil conjectures formalized in Lean”</a>, Axiom Math blog post, November 6, 2026.</li>
+  <li><a href="https://github.com/AxiomMath/Weil">AxiomMath/Weil</a>, the Lean repository (Apache 2.0; not built or run by us), its <a href="https://github.com/AxiomMath/Weil/blob/27cdb2049be6/README.md">README</a> and the <a href="https://github.com/AxiomMath/Weil/blob/27cdb2049be6/Weil/LeanEval/WeilConjectures.lean">LeanEval theorem file</a>.</li>
+  <li>The LeanEval problem <a href="https://lean-lang.org/eval/problems/weil_conjectures/">weil_conjectures</a> (<a href="https://github.com/leanprover/lean-eval/blob/main/LeanEval/AlgebraicGeometry/WeilConjectures.lean">statement</a>, submitted by Junyan Xu).</li>
+  <li><a href="https://github.com/AxiomMath/Stacks/tree/012108f61d7f92a6ffc35ec3f263b6da5d438125">AxiomMath/Stacks at 012108f</a>: <a href="https://github.com/AxiomMath/Stacks/blob/012108f61d7f92a6ffc35ec3f263b6da5d438125/StacksFrontier/AlgebraicGeometry/EtaleCohomology/Trace/WeilIIWeightBound.lean">WeilIIWeightBound.lean</a> and <a href="https://github.com/AxiomMath/Stacks/blob/012108f61d7f92a6ffc35ec3f263b6da5d438125/formalization.yaml">formalization.yaml</a>; the Stacks Project’s page for <a href="https://stacks.math.columbia.edu/tag/03VH">tag 03VH</a>.</li>
+  <li>A separate project: <a href="https://github.com/formal-arithmetic-geometry/weil-conjectures">formal-arithmetic-geometry/weil-conjectures</a> (not built or run by us).</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Axiom Math, OpenAI, LeanEval or the Stacks Project.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is AX07. Take the curve y² = x³ + x + 1, and let x and y run over the integers modulo 5. Eight pairs fit, and with one point at infinity that makes nine points. Over the field with 25 elements the same equation has 27 points, and over the field with 125 elements, 108. In 1949, André Weil proposed that such counts, for any smooth projective variety over a finite field, follow a strict pattern. Put all of them into one generating function, the zeta function. For this curve it collapses to a fraction: (1 + 3T + 5T²)/((1 − T)(1 − 5T)). The numerator hides two numbers, α and β, with α + β = −3 and αβ = 5. Both have absolute value exactly √5: they sit on one circle. That is the Riemann hypothesis for curves over finite fields, and it bounds the count. Nine lies within 2√5 of 5 + 1. For a curve of genus g, the bound is 2g√q. Hasse proved it for elliptic curves in the 1930s, and Weil for all smooth projective curves in the 1940s. The curve’s numbers are our own computation. Weil’s conjectures have four parts. The zeta function is rational. It satisfies a functional equation. Its zeros obey a Riemann hypothesis. And the degrees of its factors are the Betti numbers of a matching complex variety, counts of its features in each dimension. Dwork proved rationality first, published in 1960. Grothendieck, with Artin and Verdier, built étale cohomology, which explained rationality, the functional equation and the Betti numbers. Deligne’s proof of the Riemann hypothesis was published in 1974, and a broader theory of weights, Weil II, in 1980. So this is known mathematics. The new question is whether a computer can check all of it.</p>
+<h3><span class="t num">2:07</span>The claim</h3>
+<p>On November 6, 2026, Axiom Math published a blog post and a public Lean repository. The README says all four Weil conjectures are proved, with no sorry, no native_decide and no added axiom. It follows the 1988 book by Freitag and Kiehl, and builds on Mathlib and on Axiom’s Stacks Project library from AX06. The library has about 980 modules; by our count, about 213,000 lines. Rationality is stated for any scheme of finite type, the Riemann hypothesis for smooth proper varieties, and the Betti numbers under good reduction from the complex numbers. This formalizes known mathematics. It is not a new theorem, and by the post’s own account it does not reproduce Deligne’s 1974 proof line by line. One strength stands out. In August, LeanEval, an outside benchmark of formalization problems, added a statement of the Weil conjectures submitted by Junyan Xu, written with Mathlib definitions only. Axiom’s README says the repository proves that statement word for word, and our own text comparison agrees the statement matches. So a reader can check the target without first trusting Axiom’s own definitions. Two limits. The benchmark statement leaves out the Betti numbers. And we found no comparator run, the tool that mechanically confirms a proof proves exactly the benchmark’s theorem with only allowed axioms, and no entry for it among the benchmark’s results.</p>
+<h3><span class="t num">3:41</span>What it rests on</h3>
+<p>What it rests on. Picture a tower. At the bottom, Mathlib. Above it, Axiom’s Stacks library, pinned to one exact commit: the November 5 build fix we noted after AX06. On top, the Weil library. The hardest step, Deligne’s weight estimate, is not proved in the Weil repository. It is imported, as the theorem weightBound, for Stacks tag 03VH. On the Stacks Project’s own page, that tag’s proof is a citation of Deligne’s paper. Axiom’s post puts it this way: in Lean, citing that tag is not enough. So Axiom proved it in StacksFrontier, along Laumon’s later Fourier-transform route. And StacksFrontier is the tier that, by Axiom’s own metadata, has not yet had human review. Who wrote it? The blog post lists nine people, led by Tony Yue Yu, with Ken Ono among the contributors. It never mentions AI. The README says the library’s roughly 980 modules were written by AI agents. Every proof is kernel-checked, it says, but the code has not yet been reviewed by humans. The two documents describe the same work differently, and only the README states the review status. About 1,800 tags in the code link declarations to items of the book, by our count, which gives a reader a map from book to Lean.</p>
+<h3><span class="t num">5:03</span>Where it stands</h3>
+<p>Where it stands. The repository holds three commits, all by Tony Yue Yu, made within 22 minutes on November 6, universal time. There are no continuous-integration runs and no comparator file. It is built on Lean v4.34.0-rc2, and on the pinned Stacks commit, while Axiom’s Stacks repository moved to Lean v4.35.0 the same day. The README says the first build takes a long time and a lot of memory. We found no independent build or review of it. A separate group’s Lean formalization of the Weil conjectures, mostly written by AI agents too, is also public; it says a full comparator run has not completed yet. Nothing here is peer reviewed, and we did not build or run either. This is outside OpenAI’s math catalogue. It is the sequel to AX06, Axiom’s Stacks Project formalization, and pairs with AX01, its Lean proof of the classification of finite simple groups. If it holds, all four Weil conjectures are now Lean theorems that later proofs can use, and three of them in a form fixed by an outside benchmark. But the decisive estimate sits in Axiom’s AI-written Stacks tier, and neither the Weil code nor that Stacks tier, Axiom says, has yet been reviewed by people.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=AX07%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
