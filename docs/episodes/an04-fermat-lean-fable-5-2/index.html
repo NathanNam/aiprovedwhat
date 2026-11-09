@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fermat’s Last Theorem in Lean in 30 hours? Anthropic’s Fable 5.2 claim, no code yet | AI Proved What?</title>
+<meta name="description" content="Anthropic says about 1,000 Fable 5.2 agents formalized Fermat’s Last Theorem in Lean in about 30 hours, a rerun of its September formalization (AN01). Its companion documents say the agents started from 60 statements, definitions and 47 proved lemmas from the September run. No Lean code is public and no outside check is named. Known mathematics; not built or run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/an04-fermat-lean-fable-5-2/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Fermat in Lean in 30 hours?">
+<meta property="og:description" content="Anthropic says about 1,000 Fable 5.2 agents formalized Fermat’s Last Theorem in Lean in about 30 hours, a rerun of its September formalization (AN01). Its companion documents say the agents started from 60 statements, definitions and 47 proved lemmas from the September run. No Lean code is public and no outside check is named. Known mathematics; not built or run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/an04-fermat-lean-fable-5-2/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/an04-fermat-lean-fable-5-2/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="AN04: Fermat in Lean in 30 hours? A grid of 1,000 orange dots for the agents, a long blue bar (11 days) and a short orange bar (30 hours) drawn to scale, and an empty page with a question mark for the code that is not public.">
+<meta name="twitter:image:alt" content="AN04: Fermat in Lean in 30 hours? A grid of 1,000 orange dots for the agents, a long blue bar (11 days) and a short orange bar (30 hours) drawn to scale, and an empty page with a question mark for the code that is not public.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">AN04 (outside OpenAI’s math catalogue), November 2026</p>
+<h1>Fermat’s Last Theorem in Lean in 30 hours?</h1>
+<p class="subtitle">Anthropic says about 1,000 Fable 5.2 agents redid its September Lean formalization of Fermat’s Last Theorem in about 30 hours. No code from the run is public yet, and no outside check is named.</p>
+<!-- disclosure:start -->
+<div class="banner banner-disclosure" role="note"><p>Anthropic makes Claude, which helps make this series. This is Anthropic’s own claim: it is held to the same standards as every other lab’s, using only public sources.</p></div>
+<!-- disclosure:end -->
+
+<div class="player" data-youtube="bRlIYqhCR7k" data-title="AN04: Fermat in Lean in 30 hours?">
+  <a href="https://youtu.be/bRlIYqhCR7k">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play AN04: Fermat in Lean in 30 hours? A grid of 1,000 orange dots for the agents, a long blue bar (11 days) and a short orange bar (30 hours) drawn to scale, and an empty page with a question mark for the code that is not public.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">6:22. English captions available. The video loads from YouTube when you press play.</p>
+
+<p class="ledger-note"><b>Disclosure:</b> Anthropic makes Claude, which helps make this series. This is Anthropic’s own claim: we hold it to the same standards as every other lab’s, using only public sources.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/bRlIYqhCR7k?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/bRlIYqhCR7k?t=77" data-t="77"><span class="t">1:17</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/bRlIYqhCR7k?t=165" data-t="165"><span class="t">2:45</span><span>How the run went</span></a></li>
+  <li><a href="https://youtu.be/bRlIYqhCR7k?t=276" data-t="276"><span class="t">4:36</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>This is AN04. Before we start: Anthropic makes Claude, which helps make this series. This is Anthropic’s own claim: we hold it to the same standards as every other lab’s, using only public sources. Fermat’s Last Theorem says that for any whole number n of at least three, no positive whole numbers a, b and c satisfy aⁿ + bⁿ = cⁿ. Cubes come close: 6³ + 8³ is 9³ − 1, and 9³ + 10³ is 12³ + 1. Close, but never equal. Andrew Wiles, with a final step completed with Richard Taylor, proved the theorem in 1995. So this is known mathematics, and no new theorem is claimed.</p>
+<p>In episode AN01, we covered Anthropic’s first Lean formalization, released on September 4. Dozens of agents running an unreleased research model worked for 11 days on Prove2Me, a purpose-built platform, with occasional instructions from a researcher, Tianyi Peng. They wrote about 13 million lines of Lean, using about 6 billion output tokens. That code is public. A comparator matched its statement to Mathlib’s, and Kevin Buzzard compiled it and ran the check himself.</p>
+<p>On November 9, 2026, Anthropic announced two new models, Claude Fable 5.2 and Claude Mythos 5.2. One paragraph returns to Fermat. It says a team of 1,000 Fable 5.2 agents fully formalized the theorem in just 30 hours, with “minimal human intervention”. It says they started from minimal prompts, built their own coordination, and used “no mathematical references”, only a list of intermediate statements to score progress. Compared with the first formalization, it says, they needed one-third as many action tokens and produced a proof seven times shorter.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What the companion documents add</h2>
+<p>Two companion documents, also from Anthropic, add detail. A blog post on claude.dev, by five authors including Peng, calls it a toy experiment, run on an early version of Fable 5.2, which reproduced the proof in 28.7 hours. The system card calls the model an earlier snapshot. And the starting point was larger than the announcement’s one line suggests: 60 statements to prove, each with a one-line description, a one-sentence sketch of the classical route, the definitions those statements use, 47 proved lemmas from the September formalization, and Lean’s Mathlib library. The blog calls the tokens output tokens, and says there was no other guidance on how to prove the theorem or organize the work.</p>
+<p>No new theorem: this formalizes known mathematics (Wiles, 1995, with Taylor), and the blog calls it a toy experiment that reproduced the proof.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Announced by Anthropic</dt>
+    <dd>In its <a href="https://www.anthropic.com/claude-fable-and-mythos-5-2">Claude Fable 5.2 and Mythos 5.2 announcement</a>, November 9, 2026, with a <a href="https://claude.dev/blog/safely-scaling-multi-agent-teams-with-fable-5-2/">claude.dev blog post</a> (five authors) and the <a href="https://www.anthropic.com/document/claude-fable-5-2-mythos-5-2-system-card">system card</a> (section 8.12.3).</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Lean code public</dt>
+    <dd>No, as of November 9, 2026. None of the three documents links a repository; the September repository, <a href="https://github.com/anthropics/fermats-last-theorem">anthropics/fermats-last-theorem</a>, has not changed since September 24; we found no new Anthropic repository for this run.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Independent check</dt>
+    <dd>None named, and no expert reaction found. The announcement’s footnote 4 says the external organizations it names (its pre-release safety evaluators) did not review the post or the system card. The system card says Anthropic’s own grader accepted the proof using only Lean’s standard axioms.</dd>
+  </div>
+<!-- review-step:start -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>Not yet</dd>
+  </div>
+<!-- review-step:end -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No (there is no paper).</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Lean proof to inspect</dt>
+    <dd>None yet: the top-level statement, the axioms and the “seven times shorter” claim cannot be checked. Not built or run by us.</dd>
+  </div>
+</dl>
+<p class="ledger-note"><!-- last-checked:start -->Last checked November 9, 2026.<!-- last-checked:end --> Where it stands. As of November 9, no Lean code from this run is public. The announcement links no repository, the September repository has not changed since September 24, and we found no new Anthropic repository for it. So no one outside can yet check the top-level statement, the axioms, or the proof seven times shorter; the documents do not say whether length means lines, or whether the 47 supplied lemmas count. The system card says Anthropic’s grader accepted the proof using only Lean’s standard axioms. But Lean’s kernel checks proofs, not whether a statement says what Fermat said. We found no outside expert reaction yet. A footnote says the outside safety evaluators did not review the post or the system card; they tested safety, not mathematics, and no outside mathematician is named either. Nothing is peer reviewed, and none of it was built or run by us.</p>
+<p>How the two efforts differ, on stated facts. AN01: an internal research model, dozens of agents on a purpose-built platform, a researcher’s occasional guidance, 11 days, public code with an outside check. AN04: an early version of a released model, 1,000 agents with general tools, starting from the first formalization’s definitions and lemmas, under 30 hours, and no code yet. Both formalize known mathematics, and this one is benchmarked only against Anthropic’s own earlier run and its everyday model. If the code is published and holds up, agents will have redone in 30 hours, starting from the September run’s definitions and lemmas, what first took 11 days. Until then, it is Anthropic’s claim, with detailed accounts but no code. See <a href="../an01-fermats-last-theorem-lean/">AN01</a>.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How the run went</h2>
+<ol class="steps">
+  <li><strong>The run.</strong> How the run went, in the blog’s account. One lead agent and 999 helpers, each in its own sandbox with no internet, shared only a Git repository and a database. In its first 10 minutes, the lead set up 5 tables and dealt out the 60 statements, 16 or 17 helpers to each. Three were proved by minute 27. Most helpers judged 47 others infeasible in the time available, so the lead moved nearly everyone onto the remaining 10, which were proved within about 70 minutes, and then back onto the hard ones. The hardest, the Langlands–Tunnell theorem, drew about 750 helpers and a tree of 2,418 tasks, up to 10 levels deep. It was proved at hour 28.4, and the final theorem at hour 28.7. By the blog’s count, fifty-four of the 60 statements were proved: five alternatives were no longer needed, and one was dropped.</li>
+  <li><strong>The people and the comparison.</strong> Minimal human intervention, concretely. People built the harness, wrote the prompt and chose the 60 statements. The harness sent the lead 19 automatic reminders of the time left, each urging it to keep going. The system card’s runs had an 18-hour budget; at hour 18, Anthropic resumed both teams from their last save with 12 more hours. The blog says no researcher steered the work during the run. The comparison is Anthropic’s own. In what it calls the same 1,000-agent setup, Opus 5.5, which Anthropic recommends for everyday work, a tier below Fable, had 26% at hour 18 and 27% at hour 30, against 86% and then a complete proof for Fable. Each model had a single run, and progress is a weighted share of the 60 statements, scored by Anthropic’s own grader.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: 6³ + 8³ = 728 = 9³ − 1 and 9³ + 10³ = 1729 = 12³ + 1; a small search finds no solution of aⁿ + bⁿ = cⁿ for n = 3 to 10 with c ≤ 300 (an illustration, not a proof).</li>
+  <li>Ours: 11 days = 264 hours, so the bars in the video are drawn at 264 : 30; 999 helpers over 60 statements is 16.65 each (“16–17”, blog); 60 − 3 − 47 = 10.</li>
+  <li>Announcement chart (single run per model, weighted share of 60 statements): Fable 5.2 0.86 at hour 18 and 1.00 by hour 30; Opus 5.5 0.26 at hour 18 and 0.27 at hour 30.</li>
+  <li>Blog: 1 lead and 999 helpers; 19 automatic reminders; restart near hour 18 with 12 more hours; Langlands–Tunnell at hour 28.4 (2,418 tasks, up to 10 levels, about 750 helpers), the final theorem at hour 28.7; 54 of 60 statements proved (five alternatives no longer needed, one dropped).</li>
+  <li>The token and length ratios (one-third, one-seventh) are Anthropic’s; neither document gives a unit or an absolute figure, and with no code public we could not measure them.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2">“Introducing Claude Fable 5.2 and Claude Mythos 5.2”</a>, Anthropic, November 9, 2026 (section “Mathematical formalization” and its chart).</li>
+  <li><a href="https://claude.dev/blog/safely-scaling-multi-agent-teams-with-fable-5-2/">“Safely scaling multi-agent teams with Claude Fable 5.2”</a>, Barry Zhang, Tianyi Peng, Elle Najt, Keller Scholl and Lance Martin, claude.dev blog, November 9, 2026.</li>
+  <li><a href="https://www.anthropic.com/document/claude-fable-5-2-mythos-5-2-system-card">Claude Fable 5.2 and Claude Mythos 5.2 System Card</a>, section 8.12.3, “Large agent teams”.</li>
+  <li>The September formalization: <a href="https://www.anthropic.com/research/formalizing-fermats-last-theorem">Anthropic’s post</a> and <a href="https://github.com/anthropics/fermats-last-theorem">repository</a>, covered in <a href="../an01-fermats-last-theorem-lean/">AN01</a>.</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Anthropic beyond using its product Claude, or with OpenAI.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is AN04. Before we start: Anthropic makes Claude, which helps make this series. This is Anthropic’s own claim: we hold it to the same standards as every other lab’s, using only public sources. Fermat’s Last Theorem says that for any whole number n of at least three, no positive whole numbers a, b and c satisfy aⁿ + bⁿ = cⁿ. Cubes come close: 6³ + 8³ is 9³ − 1, and 9³ + 10³ is 12³ + 1. Close, but never equal. Andrew Wiles, with a final step completed with Richard Taylor, proved the theorem in 1995. So this is known mathematics, and no new theorem is claimed. In episode AN01, we covered Anthropic’s first Lean formalization, released on September 4. Dozens of agents running an unreleased research model worked for 11 days on Prove2Me, a purpose-built platform, with occasional instructions from a researcher, Tianyi Peng. They wrote about 13 million lines of Lean, using about 6 billion output tokens. That code is public. A comparator matched its statement to Mathlib’s, and Kevin Buzzard compiled it and ran the check himself.</p>
+<h3><span class="t num">1:17</span>The claim</h3>
+<p>On November 9, 2026, Anthropic announced two new models, Claude Fable 5.2 and Claude Mythos 5.2. One paragraph returns to Fermat. It says a team of 1,000 Fable 5.2 agents fully formalized the theorem in just 30 hours, with “minimal human intervention”. It says they started from minimal prompts, built their own coordination, and used “no mathematical references”, only a list of intermediate statements to score progress. Compared with the first formalization, it says, they needed one-third as many action tokens and produced a proof seven times shorter. Two companion documents, also from Anthropic, add detail. A blog post on claude.dev, by five authors including Peng, calls it a toy experiment, run on an early version of Fable 5.2, which reproduced the proof in 28.7 hours. The system card calls the model an earlier snapshot. And the starting point was larger than the announcement’s one line suggests: 60 statements to prove, each with a one-line description, a one-sentence sketch of the classical route, the definitions those statements use, 47 proved lemmas from the September formalization, and Lean’s Mathlib library. The blog calls the tokens output tokens, and says there was no other guidance on how to prove the theorem or organize the work.</p>
+<h3><span class="t num">2:45</span>How the run went</h3>
+<p>How the run went, in the blog’s account. One lead agent and 999 helpers, each in its own sandbox with no internet, shared only a Git repository and a database. In its first 10 minutes, the lead set up 5 tables and dealt out the 60 statements, 16 or 17 helpers to each. Three were proved by minute 27. Most helpers judged 47 others infeasible in the time available, so the lead moved nearly everyone onto the remaining 10, which were proved within about 70 minutes, and then back onto the hard ones. The hardest, the Langlands–Tunnell theorem, drew about 750 helpers and a tree of 2,418 tasks, up to 10 levels deep. It was proved at hour 28.4, and the final theorem at hour 28.7. By the blog’s count, fifty-four of the 60 statements were proved: five alternatives were no longer needed, and one was dropped. Minimal human intervention, concretely. People built the harness, wrote the prompt and chose the 60 statements. The harness sent the lead 19 automatic reminders of the time left, each urging it to keep going. The system card’s runs had an 18-hour budget; at hour 18, Anthropic resumed both teams from their last save with 12 more hours. The blog says no researcher steered the work during the run. The comparison is Anthropic’s own. In what it calls the same 1,000-agent setup, Opus 5.5, which Anthropic recommends for everyday work, a tier below Fable, had 26% at hour 18 and 27% at hour 30, against 86% and then a complete proof for Fable. Each model had a single run, and progress is a weighted share of the 60 statements, scored by Anthropic’s own grader.</p>
+<h3><span class="t num">4:36</span>Where it stands</h3>
+<p>Where it stands. As of November 9, no Lean code from this run is public. The announcement links no repository, the September repository has not changed since September 24, and we found no new Anthropic repository for it. So no one outside can yet check the top-level statement, the axioms, or the proof seven times shorter; the documents do not say whether length means lines, or whether the 47 supplied lemmas count. The system card says Anthropic’s grader accepted the proof using only Lean’s standard axioms. But Lean’s kernel checks proofs, not whether a statement says what Fermat said. We found no outside expert reaction yet. A footnote says the outside safety evaluators did not review the post or the system card; they tested safety, not mathematics, and no outside mathematician is named either. Nothing is peer reviewed, and none of it was built or run by us. How the two efforts differ, on stated facts. AN01: an internal research model, dozens of agents on a purpose-built platform, a researcher’s occasional guidance, 11 days, public code with an outside check. AN04: an early version of a released model, 1,000 agents with general tools, starting from the first formalization’s definitions and lemmas, under 30 hours, and no code yet. Both formalize known mathematics, and this one is benchmarked only against Anthropic’s own earlier run and its everyday model. If the code is published and holds up, agents will have redone in 30 hours, starting from the September run’s definitions and lemmas, what first took 11 days. Until then, it is Anthropic’s claim, with detailed accounts but no code.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=AN04%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

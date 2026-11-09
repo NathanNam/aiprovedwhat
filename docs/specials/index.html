@@ -14,8 +14,8 @@
 <meta property="og:image" content="https://aiprovedwhat.com/assets/share-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 17 results beyond OpenAI’s catalogue on their own arc.">
-<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 17 results beyond OpenAI’s catalogue on their own arc.">
+<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 18 results beyond OpenAI’s catalogue on their own arc.">
+<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 18 results beyond OpenAI’s catalogue on their own arc.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <meta name="generator" content="tools/site/build.py">
@@ -108,6 +108,23 @@
 </tbody>
 </table></div>
 <p class="meta">Figures as Axiom reports them, checked in our AX06 and AX07 episodes. Not a ranking.</p>
+</section>
+<section class="compare" aria-labelledby="cmp-an01-an04">
+<h2 id="cmp-an01-an04">Anthropic’s two Lean formalizations of Fermat’s Last Theorem</h2>
+<div class="compare-scroll"><table>
+<thead><tr><td></td><th scope="col"><a href="../episodes/an01-fermats-last-theorem-lean/">AN01</a><br><span class="meta">Anthropic</span></th><th scope="col"><a href="../episodes/an04-fermat-lean-fable-5-2/">AN04</a><br><span class="meta">Anthropic</span></th></tr></thead>
+<tbody>
+<tr><th scope="row">Model</th><td>an internal research model “roughly comparable to Claude Fable 5.1”</td><td>“an early version of Claude Fable 5.2” (blog); “an earlier snapshot” (system card)</td></tr>
+<tr><th scope="row">Team and tools</th><td>dozens of agents on Prove2Me, a purpose-built platform</td><td>1 lead and 999 helpers, each in a sandbox; a shared Git repository and database</td></tr>
+<tr><th scope="row">People</th><td>occasional high-level instructions from Tianyi Peng</td><td>the prompt, the 60 statements with definitions and 47 lemmas, 19 automatic reminders, 12 hours added at hour 18; no researcher steering during the run (blog)</td></tr>
+<tr><th scope="row">Started from</th><td>Mathlib; adapted files from the Imperial FLT project and flt-regular</td><td>Mathlib; AN01’s definitions and 47 of its proved lemmas; a one-sentence route sketch</td></tr>
+<tr><th scope="row">Time</th><td>11 days, August 7 to 17</td><td>28.7 hours (a 30-hour budget, restarted at hour 18)</td></tr>
+<tr><th scope="row">Size and tokens</th><td>about 13 million lines; about 6 billion output tokens</td><td>“one-seventh the length” and “one-third as many output tokens” (no units or figures given)</td></tr>
+<tr><th scope="row">Code and checks</th><td>public; comparator against Mathlib’s statement; Kevin Buzzard ran it (“it checks out”)</td><td>not public; Anthropic’s grader only; no outside check named</td></tr>
+<tr><th scope="row">Announced</th><td>September 4, 2026</td><td>November 9, 2026</td></tr>
+</tbody>
+</table></div>
+<p class="meta">Figures as Anthropic reports them, checked in our AN01 and AN04 episodes. AN04 reproduces AN01’s result from AN01’s own definitions and lemmas; the numbers are not a ranking.</p>
 </section>
 <section class="special" id="s01" aria-labelledby="s01-h">
 <p class="thumb-kicker">Special S01 · OpenAI, outside its catalogue · announced September 8, 2026 · Mathematical physics</p>
@@ -466,7 +483,7 @@
 <dl class="ledger ledger-auto">
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>On GitHub (anthropics/formal-math, folder eth), dated October 26, 2026; not on arXiv; Hexagon link “to appear”</dd>
+    <dd>On GitHub (anthropics/formal-math, folder eth), dated October 26, 2026; not on arXiv; on Hexagon as 2610.00577v1, posted October 26, 2026, 22:12 Pacific time (noted November 9)</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
@@ -534,7 +551,57 @@
 <p><a href="../episodes/psi06-aaronson-ambainis-conjecture/">Watch the episode and read the record</a> · <a href="../connections/#PSI06">See its connections</a></p>
 
 </section>
-<p class="attribution">Last checked November 6, 2026.</p>
+<section class="special" id="an04" aria-labelledby="an04-h">
+<p class="thumb-kicker">AN04 · Anthropic · announced November 9, 2026 · Number theory</p>
+<h2 id="an04-h">Fermat’s Last Theorem in Lean in 30 hours (claimed)</h2>
+<p>Anthropic says about 1,000 Fable 5.2 agents redid its September Lean formalization of Fermat’s Last Theorem (AN01) in about 30 hours, with one-third the tokens and a proof seven times shorter. Its blog and system card say the agents started from 60 statements, definitions and 47 proved lemmas from the September run. No Lean code is public and no outside check is named. Known mathematics, not a new theorem.</p>
+<dl class="ledger ledger-auto">
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Announced, paper not public</dt>
+    <dd>No paper yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None found as of November 9, 2026; no outside check is named. The announcement’s footnote 4 says the external organizations it names (its pre-release safety evaluators) did not review the post or the system card.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Not yet</dd>
+  </div>
+</dl>
+<p><a href="../episodes/an04-fermat-lean-fable-5-2/">Watch the episode and read the record</a></p>
+
+</section>
+<section class="special" id="an05" aria-labelledby="an05-h">
+<p class="thumb-kicker">AN05 · Anthropic · announced November 7, 2026 · Mathematical physics</p>
+<h2 id="an05-h">The spinless modular bootstrap at large central charge</h2>
+<p>A Hexagon preprint contributed by Anthropic (author line “Claude (Anthropic)”, no named human author) claims the exact best slope Λ_V = 12π²/(π² + 4 arcsinh²1) ≈ 9.1266 of the spinless modular bootstrap bound Δ₁ ≤ c/Λ at large central charge, previously known only to lie between 8.503 and 12. Optimality proved by hand, attainment computer-assisted, finer details conjectured. Mathematical physics, at the edge of the series’ scope.</p>
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>Hexagon preprint hexagon:2611.00174v1, November 7, 2026; contributed by Anthropic, no human author claimed; not on arXiv</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None found as of November 9, 2026. Per the provenance note, Claude wrote the paper “following brief guidance from a physicist, who also checked every main result”; the physicist is not named</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Not yet</dd>
+  </div>
+</dl>
+<p><a href="../episodes/an05-modular-bootstrap-large-c/">Watch the episode and read the record</a> · <a href="../connections/#AN05">See its connections</a></p>
+
+</section>
+<p class="attribution">Last checked November 9, 2026.</p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
