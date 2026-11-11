@@ -14,8 +14,8 @@
 <meta property="og:image" content="https://aiprovedwhat.com/assets/share-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 18 results beyond OpenAI’s catalogue on their own arc.">
-<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 18 results beyond OpenAI’s catalogue on their own arc.">
+<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 19 results beyond OpenAI’s catalogue on their own arc.">
+<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 19 results beyond OpenAI’s catalogue on their own arc.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <meta name="generator" content="tools/site/build.py">
@@ -49,8 +49,18 @@
 <main id="main">
 <h1>Updates</h1>
 <p class="lede">What changed in OpenAI’s math release and in the claims we follow: new results, revised and withdrawn papers, new Lean proofs, and claims announced outside the catalogue. Newest first, back to the first release.</p>
-<p><a href="feed.xml">Follow with RSS</a>. Last updated November 9, 2026.</p>
+<p><a href="feed.xml">Follow with RSS</a>. Last updated November 10, 2026.</p>
 <ol class="updates">
+  <li id="2026-11-10-ax06-resolve-warnings">
+    <p class="u-date"><time datetime="2026-11-10">November 10, 2026</time></p>
+    <p><b><a href="../episodes/ax06-stacks-project-lean/">AX06</a>:</b> a commit to Axiom’s Stacks Project repository on November 10, 2026 (“chore: resolve all warnings”, #16) makes small edits to proofs across thousands of Lean files (111,608 lines added, 104,048 removed, by GitHub’s count). The README and the metadata, with its tag counts and review status, are unchanged. Not built or run by us. <span class="tag lean">Lean</span></p>
+    <p class="meta"><a href="https://github.com/AxiomMath/Stacks/commit/cdf36f8e4c159ecbcfe91d439909ded51b77f0c1">Source</a> · <a href="../connections/#AX06">See its connections</a></p>
+  </li>
+  <li id="2026-11-10-beyond-openai-ax08">
+    <p class="u-date"><time datetime="2026-11-10">November 10, 2026</time></p>
+    <p><b>Beyond OpenAI’s catalogue:</b> <a href="../episodes/ax08-cluster-algebras-lean/">AX08</a>, Axiom Math’s Lean library for the first seven chapters of a cluster algebra textbook (November 10, 2026). The Laurent phenomenon and the finite type classification are in, positivity is not, and cited results and some exercises enter as stated hypotheses. Axiom’s project site says AI agents wrote it; the blog post does not mention AI. Unlike <a href="../episodes/ax07-weil-conjectures-lean/">AX07</a>, it has a CI build and a comparator file, but no published comparator log or independent check yet. Known mathematics, not a new theorem; not built or run by us. Disclosure: Anthropic makes Claude, which helps make this series. See also <a href="../episodes/ax06-stacks-project-lean/">AX06</a> and <a href="../episodes/ax01-classification-finite-simple-groups-lean/">AX01</a>. <span class="tag sp">Beyond OpenAI</span></p>
+    <p class="meta"><a href="https://axiommath.ai/research/cluster-algebras-formalized-in-lean/">Source</a> · <a href="../connections/#AX08">See its connections</a></p>
+  </li>
   <li id="2026-11-09-beyond-openai-an04">
     <p class="u-date"><time datetime="2026-11-09">November 9, 2026</time></p>
     <p><b>Beyond OpenAI’s catalogue:</b> <a href="../episodes/an04-fermat-lean-fable-5-2/">AN04</a>, Anthropic’s claim (November 9, 2026) that about 1,000 Fable 5.2 agents redid its September Lean formalization of Fermat’s Last Theorem (<a href="../episodes/an01-fermats-last-theorem-lean/">AN01</a>) in about 30 hours. Its blog and system card say the agents started from 60 statements, definitions and 47 proved lemmas from the September run. No Lean code is public and no outside check is named, so nothing can be checked yet. Known mathematics; not built or run by us. Disclosure: Anthropic makes Claude, which helps make this series. <span class="tag sp">Beyond OpenAI</span></p>
@@ -60,6 +70,11 @@
     <p class="u-date"><time datetime="2026-11-09">November 9, 2026</time></p>
     <p><b>Beyond OpenAI’s catalogue:</b> <a href="../episodes/an05-modular-bootstrap-large-c/">AN05</a>, “The spinless modular bootstrap at large central charge”, a Hexagon preprint contributed by Anthropic (November 7, 2026) that claims the exact best slope, about 9.1266, of a bound on the lightest state of a 2D conformal field theory at large c, previously known to lie between 8.503 and 12. Mathematical physics; optimality proved by hand, attainment computer-assisted, finer details conjectured. No named human author; one unnamed physicist checked the main results; not peer reviewed; no Lean. Disclosure: Anthropic makes Claude, which helps make this series. See also <a href="../episodes/an03-eth-false-3sat/">AN03</a>. <span class="tag sp">Beyond OpenAI</span></p>
     <p class="meta"><a href="https://hexagonmath.org/2611.00174v1">Source</a> · <a href="../connections/#AN05">See its connections</a></p>
+  </li>
+  <li id="2026-11-09-ax01-certified-main-result">
+    <p class="u-date"><time datetime="2026-11-09">November 9, 2026</time></p>
+    <p><b><a href="../episodes/ax01-classification-finite-simple-groups-lean/">AX01</a>:</b> a large clean-up commit to Axiom’s CFSG repository (November 9, 2026, “Improve code quality and reduce memory usage”) adds <code>CFSG.Certified.classification_finite_simple_groups</code>, the theorem the comparator solution already calls, to the main results in its formalization.yaml (sorry count 0, Lean’s three standard axioms), and removes the top-level CertifiedResults, CertifiedMilestones, CertifiedYardstones and YardstoneContract files. The README, the comparator files and the top-level CFSG.lean are unchanged. Not built or run by us. <span class="tag lean">Lean</span> <span class="meta">(noted November 10, 2026)</span></p>
+    <p class="meta"><a href="https://github.com/AxiomMath/CFSG/commit/5437cdc31389dd9aeaa5c2a9465a4e164f8dea33">Source</a> · <a href="../connections/#AX01">See its connections</a></p>
   </li>
   <li id="2026-11-06-beyond-openai-ax07">
     <p class="u-date"><time datetime="2026-11-06">November 6, 2026</time></p>

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cluster algebras, all in Lean? Axiom’s AI-written textbook library, assumptions and all | AI Proved What?</title>
+<meta name="description" content="Axiom Math’s Lean library for the first seven chapters of Fomin, Williams and Zelevinsky’s Introduction to Cluster Algebras: the Laurent phenomenon and the finite type classification are in, positivity is not. Written by AI agents per Axiom’s site; cited results and some exercises are assumed as hypotheses. A comparator file and one CI build; no independent check yet. Known mathematics, not a new theorem; not built or run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/ax08-cluster-algebras-lean/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Cluster algebras, all in Lean?">
+<meta property="og:description" content="Axiom Math’s Lean library for the first seven chapters of Fomin, Williams and Zelevinsky’s Introduction to Cluster Algebras: the Laurent phenomenon and the finite type classification are in, positivity is not. Written by AI agents per Axiom’s site; cited results and some exercises are assumed as hypotheses. A comparator file and one CI build; no independent check yet. Known mathematics, not a new theorem; not built or run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/ax08-cluster-algebras-lean/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/ax08-cluster-algebras-lean/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="AX08: cluster algebras in Lean. A pentagon of five numbered circles, 1, 1, 2, 3, 2, the recurrence of our example, and the E8 Dynkin diagram below it.">
+<meta name="twitter:image:alt" content="AX08: cluster algebras in Lean. A pentagon of five numbered circles, 1, 1, 2, 3, 2, the recurrence of our example, and the E8 Dynkin diagram below it.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">AX08 (outside OpenAI’s math catalogue), November 2026</p>
+<h1>Cluster algebras, all in Lean?</h1>
+<p class="subtitle">Axiom Math has formalized the first seven chapters of a cluster algebra textbook in Lean. The Laurent phenomenon and the finite type classification are in, positivity is not, and the results rest on assumptions the library states openly. Axiom’s site says AI agents wrote it.</p>
+
+<p><strong>Disclosure.</strong> Axiom’s project site says Claude, Anthropic’s model, did the formalizing. Anthropic makes Claude, which helps make this series. We hold this release to the same standards as every other, using only public sources.</p>
+
+<div class="player" data-youtube="UBZKkY_1mdM" data-title="AX08: cluster algebras in Lean">
+  <a href="https://youtu.be/UBZKkY_1mdM">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play AX08: cluster algebras in Lean. A pentagon of five numbered circles, 1, 1, 2, 3, 2, the recurrence of our example, and the E8 Dynkin diagram below it.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:24. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/UBZKkY_1mdM?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/UBZKkY_1mdM?t=156" data-t="156"><span class="t">2:36</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/UBZKkY_1mdM?t=263" data-t="263"><span class="t">4:23</span><span>The checks</span></a></li>
+  <li><a href="https://youtu.be/UBZKkY_1mdM?t=376" data-t="376"><span class="t">6:16</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>This is AX08. Start with two numbers and one rule: the next number is the last one plus one, divided by the one before it. Begin with one and one. One plus one, over one, is two. Two plus one, over one, is three. Three plus one, over two, is two. Then one, and one again. We are back where we started: the sequence repeats every five steps, around a pentagon. Now use letters, x1 and x2, instead of numbers. Each new term is a fraction, and two things stand out. Every bottom is just a product of x1 and x2, never a sum. And every number on top is positive. This is our own computation, and both facts are tiny cases of general theorems.</p>
+<p>This rule comes from one of the smallest cluster algebras, introduced by Sergey Fomin and Andrei Zelevinsky in 2002. You keep a handful of variables, called a cluster, and a diagram of arrows between them, called a quiver. One move, called mutation, swaps one variable for a new one. The new variable times the old one equals the product of the variables with arrows coming in, plus the product of those with arrows going out. Then the arrows change: every path through the mutated node gets a shortcut, the arrows touching that node turn around, and any pair of opposite arrows cancels. Here are three nodes in a row. Mutate the middle one: x2 is replaced by (x1 + x3)/x2, and the line becomes a triangle. All the variables you can reach this way generate the cluster algebra.</p>
+<p>Three theorems sit at the heart of the subject. First, the Laurent phenomenon, proved by Fomin and Zelevinsky: however long you keep mutating, every variable is a fraction whose bottom is only a product of the starting variables. It explains a puzzle from the 1980s: why the Somos-4 sequence, 1, 1, 1, 1, 2, 3, 7, 23, and on, stays whole. Its twelfth term is 188,807 divided by 23, which is exactly 8,209. Second, positivity: the numbers on top are never negative. Lee and Schiffler proved that for a broad class in 2015, and Gross, Hacking, Keel and Kontsevich more generally in 2018. Third, the finite type classification: the cluster algebras with finitely many variables match the Dynkin diagrams, four families and five exceptions. The largest exception, E8, has 128 variables in 25,080 clusters. All of this is known mathematics.</p>
+<p>On November 10, 2026, Axiom Math announced a Lean library for the first seven chapters of the textbook Introduction to Cluster Algebras, by Fomin, Lauren Williams and Zelevinsky. The repository was created a week earlier, with a single commit. By our count it has about 330,000 lines of Lean, more than 90,000 of them certificate data for the type E computations, and our text search finds no sorry and no axiom in the library itself. Axiom’s project site counts 1,429 items from the book: 1,348 formalized, 31 assumed, and 50 excluded. The Laurent phenomenon is in, with Somos-4, and so is the classification, with the E8 counts checked by Lean’s kernel. Positivity is not: the post says it is outside the scope. This is known mathematics, formalized. There is no new theorem.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>The fine print is in the assumptions. Lean checks that a conclusion follows from the hypotheses written into the theorem, nothing more. Here, results the book cites from elsewhere, such as the Cartan–Killing classification from Lie theory, and some exercises the book leaves to the reader, are not proved. They are passed in as hypotheses, so each statement shows what it rests on, and the post says so openly. But they reach far. The Lean version of the Laurent phenomenon takes four of them, including the exercise that mutating twice at the same node changes nothing. So the Somos-4 theorem rests on the same four. The classification takes thirteen hypothesis inputs, with the Cartan–Killing classification first. These are established results, proved on paper; they are just not proved in Lean here.</p>
+<p>No new theorem: this is known mathematics, formalized. Positivity (Lee–Schiffler 2015; Gross–Hacking–Keel–Kontsevich 2018) is outside the library’s scope, by Axiom’s own account, and so are the physics applications.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Released by Axiom</dt>
+    <dd><a href="https://github.com/AxiomMath/ClusterAlgebras">Repository</a> created November 3, 2026, with one commit, <a href="https://github.com/AxiomMath/ClusterAlgebras/tree/39b9ed03deb3e29effe1ec7fc026847e4593fadf">39b9ed0</a> (“Publication of Files”, by Kenny Lau); <a href="https://axiommath.ai/research/cluster-algebras-formalized-in-lean/">blog post</a> and <a href="https://clusteralgebras.axiommath.ai/">project site</a> on November 10. The development history is not public.</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Machine checks</dt>
+    <dd>One <a href="https://github.com/AxiomMath/ClusterAlgebras/actions/runs/41687034062">GitHub CI run</a> on the publication commit built the library successfully (a 89-minute job, 9,548 build jobs); it did not run the comparator. A <a href="https://github.com/AxiomMath/ClusterAlgebras/blob/39b9ed03deb3e29effe1ec7fc026847e4593fadf/Challenge/Basic.lean">challenge file</a> restates 11 headline statements in a file that imports only Mathlib (with its own definitions written out), and a <a href="https://github.com/AxiomMath/ClusterAlgebras/blob/39b9ed03deb3e29effe1ec7fc026847e4593fadf/Comparator/comparator.json">comparator configuration</a> allows only Lean’s three standard axioms. The <a href="https://github.com/AxiomMath/ClusterAlgebras/blob/39b9ed03deb3e29effe1ec7fc026847e4593fadf/README.md">README</a> says the comparator accepted the library locally (Lean’s kernel and nanoda); no log is published. The Laurent phenomenon is not one of the 11.</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Human review of the Lean</dt>
+    <dd>Not described. Axiom’s <a href="https://clusteralgebras.axiommath.ai/">project site</a>: “AI agents (Anthropic’s Claude) … formalized the blueprint entry by entry”; mathematicians decided the scope, the assumptions and the treatment of exercises. The site’s data label every declaration “reviewed” (rather than “draft, awaiting review”) without saying who reviewed it or how. The blog post lists 32 people and does not mention AI; the README says nothing about authorship.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Independent check</dt>
+    <dd>None found as of November 10, 2026: no outside build, review, published comparator log or expert reaction.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No (there is no paper).</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Lean library, by Axiom</dt>
+    <dd>Lean v4.35.0 on Mathlib’s v4.35.0 release (56a0058), Mathlib only (no Stacks or Weil dependency); no sorry and no axiom declarations (our text grep). Cited results and some exercises are <a href="https://github.com/AxiomMath/ClusterAlgebras/blob/39b9ed03deb3e29effe1ec7fc026847e4593fadf/ClusterAlgebras/External.lean">assumed as hypotheses</a>: the <a href="https://github.com/AxiomMath/ClusterAlgebras/blob/39b9ed03deb3e29effe1ec7fc026847e4593fadf/ClusterAlgebras/LaurentPhenomenon/Laurent.lean">Laurent phenomenon</a> takes 4, the finite type classification 13. Not built or run by us.</dd>
+  </div>
+</dl>
+<p class="ledger-note"><!-- last-checked:start -->Last checked November 10, 2026.<!-- last-checked:end --> Where it stands. Released: the repository on November 3, the post on November 10. Machine checks: a successful CI build, a comparator file, and a local comparator run that the README reports but does not publish. Human review of the Lean code: not described, beyond a reviewed field in the site’s data. Independent check: we found no outside build, review or expert reaction yet. Peer review: none, as there is no paper. And every Lean theorem holds only under its stated hypotheses. Not built or run by us.</p>
+<p>This is outside OpenAI’s math catalogue. It follows AX01, Axiom’s Lean proof of the classification of finite simple groups, AX06, the Stacks Project, and AX07, the Weil conjectures. If it holds, the foundations of cluster algebras are now Lean theorems that others can build on, under the hypotheses they state. Positivity is not formalized in this library; the post lists it as work for the future. See <a href="../ax07-weil-conjectures-lean/">AX07</a>, <a href="../ax06-stacks-project-lean/">AX06</a> and <a href="../ax01-classification-finite-simple-groups-lean/">AX01</a>.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">The checks</h2>
+<ol class="steps">
+  <li><strong>Comparator and CI.</strong> Here this release goes further than the Weil library in AX07. A challenge file restates eleven headline results, depending only on Mathlib, with its own definitions written out and sorry as each proof. Lean’s comparator tool can then confirm that the library proves exactly those statements, using only Lean’s three standard axioms. The README says the comparator accepted the library locally, with Lean’s kernel and a second checker called nanoda. We found no published log of that run. There is also continuous integration: one GitHub run, on the publication commit, built the library successfully in about an hour and a half. That run did not run the comparator. And the eleven include the classification, with its hypotheses, but not the Laurent phenomenon.</li>
+  <li><strong>Who wrote it.</strong> Who wrote it? The blog post lists 32 people, with Colin Defant and Alex Sorokin as core contributors and Ken Ono among the others. Like the Weil post, it does not mention AI, and the README says nothing about authorship. Axiom’s project site does: AI agents, Anthropic’s Claude, working with Axiom’s own tooling, formalized the blueprint entry by entry, while mathematicians decided the scope, the assumptions and how exercises were treated. The site’s data put every declaration in a tree labelled reviewed, rather than draft, awaiting review. It does not say who reviewed the Lean code, or how. The three documents describe the same work differently.</li>
+  <li><strong>What it sits on.</strong> What it sits on. The library depends on Mathlib alone, at its Lean v4.35.0 release. It does not use Axiom’s Stacks library from AX06, or the Weil library from AX07. About 2,300 tags link Lean declarations to numbered items of the book, so a reader can trace each result back to the text.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: x_(n+1) = (x_n + 1)/x_(n−1) from 1, 1 gives 1, 1, 2, 3, 2, 1, 1 (period 5); with letters, x3 = (x2 + 1)/x1, x4 = (x1 + x2 + 1)/(x1x2), x5 = (x1 + 1)/x2, then x1, x2 again: monomial denominators, positive coefficients (sympy). The library proves the same 5-periodicity (RankTwo/A11.lean).</li>
+  <li>Ours: the quiver 1 → 2 → 3 mutated at 2 becomes 1 → 3, 3 → 2, 2 → 1, and x2·x2′ = x1 + x3.</li>
+  <li>From Axiom’s post: Somos-4 1, 1, 1, 1, 2, 3, 7, 23, 59, 314, 1529, 8209, with 59·1529 + 314² = 188,807 = 23·8209 (we recomputed); E8: 128 cluster variables and 25,080 clusters (the Lean statement; we rechecked with the classical formulas).</li>
+  <li>Ours: the repository at 39b9ed0 has 505 Lean files and 330,722 lines, 92,738 of them type E certificate data, and 2,289 @[cluster_algebras] tags; our text grep finds no sorry, admit, native_decide or axiom declaration in the library (the challenge file has 11 sorry by design).</li>
+  <li>Axiom’s project site: 1,429 blueprint items, 1,348 formalized, 31 assumed, 50 excluded; 2,289 Lean declarations.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://axiommath.ai/research/cluster-algebras-formalized-in-lean/">“Cluster Algebras, Formalized in Lean”</a>, Axiom Math blog post, November 10, 2026.</li>
+  <li><a href="https://github.com/AxiomMath/ClusterAlgebras">AxiomMath/ClusterAlgebras</a>, the Lean repository (Apache 2.0; not built or run by us): its <a href="https://github.com/AxiomMath/ClusterAlgebras/blob/39b9ed03deb3e29effe1ec7fc026847e4593fadf/README.md">README</a>, <a href="https://github.com/AxiomMath/ClusterAlgebras/blob/39b9ed03deb3e29effe1ec7fc026847e4593fadf/Challenge/Basic.lean">challenge file</a>, <a href="https://github.com/AxiomMath/ClusterAlgebras/blob/39b9ed03deb3e29effe1ec7fc026847e4593fadf/Comparator/comparator.json">comparator configuration</a> and <a href="https://github.com/AxiomMath/ClusterAlgebras/blob/39b9ed03deb3e29effe1ec7fc026847e4593fadf/ClusterAlgebras/External.lean">assumed results</a>.</li>
+  <li>Axiom’s <a href="https://clusteralgebras.axiommath.ai/">project site</a> (blueprint, dependency graph, mutation playground).</li>
+  <li>S. Fomin, L. Williams, A. Zelevinsky, <a href="https://arxiv.org/abs/1608.05735">Introduction to Cluster Algebras, Chapters 1–3</a> (arXiv), and the later chapters linked from the post.</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Axiom Math, OpenAI, Anthropic, or the book’s authors.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is AX08. Start with two numbers and one rule: the next number is the last one plus one, divided by the one before it. Begin with one and one. One plus one, over one, is two. Two plus one, over one, is three. Three plus one, over two, is two. Then one, and one again. We are back where we started: the sequence repeats every five steps, around a pentagon. Now use letters, x1 and x2, instead of numbers. Each new term is a fraction, and two things stand out. Every bottom is just a product of x1 and x2, never a sum. And every number on top is positive. This is our own computation, and both facts are tiny cases of general theorems. This rule comes from one of the smallest cluster algebras, introduced by Sergey Fomin and Andrei Zelevinsky in 2002. You keep a handful of variables, called a cluster, and a diagram of arrows between them, called a quiver. One move, called mutation, swaps one variable for a new one. The new variable times the old one equals the product of the variables with arrows coming in, plus the product of those with arrows going out. Then the arrows change: every path through the mutated node gets a shortcut, the arrows touching that node turn around, and any pair of opposite arrows cancels. Here are three nodes in a row. Mutate the middle one: x2 is replaced by (x1 + x3)/x2, and the line becomes a triangle. All the variables you can reach this way generate the cluster algebra. Three theorems sit at the heart of the subject. First, the Laurent phenomenon, proved by Fomin and Zelevinsky: however long you keep mutating, every variable is a fraction whose bottom is only a product of the starting variables. It explains a puzzle from the 1980s: why the Somos-4 sequence, 1, 1, 1, 1, 2, 3, 7, 23, and on, stays whole. Its twelfth term is 188,807 divided by 23, which is exactly 8,209. Second, positivity: the numbers on top are never negative. Lee and Schiffler proved that for a broad class in 2015, and Gross, Hacking, Keel and Kontsevich more generally in 2018. Third, the finite type classification: the cluster algebras with finitely many variables match the Dynkin diagrams, four families and five exceptions. The largest exception, E8, has 128 variables in 25,080 clusters. All of this is known mathematics.</p>
+<h3><span class="t num">2:36</span>The claim</h3>
+<p>On November 10, 2026, Axiom Math announced a Lean library for the first seven chapters of the textbook Introduction to Cluster Algebras, by Fomin, Lauren Williams and Zelevinsky. The repository was created a week earlier, with a single commit. By our count it has about 330,000 lines of Lean, more than 90,000 of them certificate data for the type E computations, and our text search finds no sorry and no axiom in the library itself. Axiom’s project site counts 1,429 items from the book: 1,348 formalized, 31 assumed, and 50 excluded. The Laurent phenomenon is in, with Somos-4, and so is the classification, with the E8 counts checked by Lean’s kernel. Positivity is not: the post says it is outside the scope. This is known mathematics, formalized. There is no new theorem. The fine print is in the assumptions. Lean checks that a conclusion follows from the hypotheses written into the theorem, nothing more. Here, results the book cites from elsewhere, such as the Cartan–Killing classification from Lie theory, and some exercises the book leaves to the reader, are not proved. They are passed in as hypotheses, so each statement shows what it rests on, and the post says so openly. But they reach far. The Lean version of the Laurent phenomenon takes four of them, including the exercise that mutating twice at the same node changes nothing. So the Somos-4 theorem rests on the same four. The classification takes thirteen hypothesis inputs, with the Cartan–Killing classification first. These are established results, proved on paper; they are just not proved in Lean here.</p>
+<h3><span class="t num">4:23</span>The checks</h3>
+<p>Here this release goes further than the Weil library in AX07. A challenge file restates eleven headline results, depending only on Mathlib, with its own definitions written out and sorry as each proof. Lean’s comparator tool can then confirm that the library proves exactly those statements, using only Lean’s three standard axioms. The README says the comparator accepted the library locally, with Lean’s kernel and a second checker called nanoda. We found no published log of that run. There is also continuous integration: one GitHub run, on the publication commit, built the library successfully in about an hour and a half. That run did not run the comparator. And the eleven include the classification, with its hypotheses, but not the Laurent phenomenon. Who wrote it? The blog post lists 32 people, with Colin Defant and Alex Sorokin as core contributors and Ken Ono among the others. Like the Weil post, it does not mention AI, and the README says nothing about authorship. Axiom’s project site does: AI agents, Anthropic’s Claude, working with Axiom’s own tooling, formalized the blueprint entry by entry, while mathematicians decided the scope, the assumptions and how exercises were treated. The site’s data put every declaration in a tree labelled reviewed, rather than draft, awaiting review. It does not say who reviewed the Lean code, or how. The three documents describe the same work differently. What it sits on. The library depends on Mathlib alone, at its Lean v4.35.0 release. It does not use Axiom’s Stacks library from AX06, or the Weil library from AX07. About 2,300 tags link Lean declarations to numbered items of the book, so a reader can trace each result back to the text.</p>
+<h3><span class="t num">6:16</span>Where it stands</h3>
+<p>Where it stands. Released: the repository on November 3, the post on November 10. Machine checks: a successful CI build, a comparator file, and a local comparator run that the README reports but does not publish. Human review of the Lean code: not described, beyond a reviewed field in the site’s data. Independent check: we found no outside build, review or expert reaction yet. Peer review: none, as there is no paper. And every Lean theorem holds only under its stated hypotheses. Not built or run by us. This is outside OpenAI’s math catalogue. It follows AX01, Axiom’s Lean proof of the classification of finite simple groups, AX06, the Stacks Project, and AX07, the Weil conjectures. If it holds, the foundations of cluster algebras are now Lean theorems that others can build on, under the hypotheses they state. Positivity is not formalized in this library; the post lists it as work for the future.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=AX08%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

@@ -14,8 +14,8 @@
 <meta property="og:image" content="https://aiprovedwhat.com/assets/share-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 18 results beyond OpenAI’s catalogue on their own arc.">
-<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 18 results beyond OpenAI’s catalogue on their own arc.">
+<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 19 results beyond OpenAI’s catalogue on their own arc.">
+<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 19 results beyond OpenAI’s catalogue on their own arc.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <meta name="generator" content="tools/site/build.py">
@@ -125,6 +125,22 @@
 </tbody>
 </table></div>
 <p class="meta">Figures as Anthropic reports them, checked in our AN01 and AN04 episodes. AN04 reproduces AN01’s result from AN01’s own definitions and lemmas; the numbers are not a ranking.</p>
+</section>
+<section class="compare" aria-labelledby="cmp-ax07-ax08">
+<h2 id="cmp-ax07-ax08">Axiom’s Weil and cluster algebra libraries, side by side</h2>
+<div class="compare-scroll"><table>
+<thead><tr><td></td><th scope="col"><a href="../episodes/ax07-weil-conjectures-lean/">AX07</a><br><span class="meta">Axiom Math</span></th><th scope="col"><a href="../episodes/ax08-cluster-algebras-lean/">AX08</a><br><span class="meta">Axiom Math</span></th></tr></thead>
+<tbody>
+<tr><th scope="row">What</th><td>The four Weil conjectures, following Freitag–Kiehl (1988)</td><td>Chapters 1–7 of Fomin–Williams–Zelevinsky, Introduction to Cluster Algebras</td></tr>
+<tr><th scope="row">Size</th><td>213,159 lines (our count)</td><td>330,722 lines in 505 files (our count), 92,738 of them type E certificate data</td></tr>
+<tr><th scope="row">Written by</th><td>“about 980 modules written by AI agents” (README)</td><td>“AI agents (Anthropic’s Claude)” (project site); the post and README do not mention AI</td></tr>
+<tr><th scope="row">Human review</th><td>“the code has not yet been reviewed by humans” (README)</td><td>not described; site data label every declaration “reviewed”, reviewer not stated</td></tr>
+<tr><th scope="row">Machine checks</th><td>no CI, no comparator file</td><td>one CI build; comparator file for 11 statements, local run per README, no published log</td></tr>
+<tr><th scope="row">Depends on</th><td>Mathlib and AX06’s Stacks library</td><td>Mathlib only</td></tr>
+<tr><th scope="row">Announced</th><td>November 6, 2026</td><td>November 10, 2026 (repository created November 3)</td></tr>
+</tbody>
+</table></div>
+<p class="meta">Figures as Axiom reports them, checked in our AX07 and AX08 episodes. Not a ranking.</p>
 </section>
 <section class="special" id="s01" aria-labelledby="s01-h">
 <p class="thumb-kicker">Special S01 · OpenAI, outside its catalogue · announced September 8, 2026 · Mathematical physics</p>
@@ -601,7 +617,32 @@
 <p><a href="../episodes/an05-modular-bootstrap-large-c/">Watch the episode and read the record</a> · <a href="../connections/#AN05">See its connections</a></p>
 
 </section>
-<p class="attribution">Last checked November 9, 2026.</p>
+<section class="special" id="ax08" aria-labelledby="ax08-h">
+<p class="thumb-kicker">AX08 · Axiom Math · announced November 10, 2026 · Combinatorics and algebra</p>
+<h2 id="ax08-h">Cluster algebras, formalized in Lean</h2>
+<p>Axiom Math’s Lean library for the first seven chapters of Fomin, Williams and Zelevinsky’s <i>Introduction to Cluster Algebras</i>: the Laurent phenomenon, Somos-4 and the finite type classification (with the E8 counts checked by Lean’s kernel) are in; positivity is not. Cited results and some exercises enter as stated hypotheses. Axiom’s project site says AI agents (Anthropic’s Claude) wrote it; the blog post does not mention AI. A comparator file for 11 headline statements and one CI build; no independent check yet. Known mathematics, not a new theorem.</p>
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Released by Axiom</dt>
+    <dd>Axiom’s blog post, repository and project site, November 2026; no paper</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None found; Axiom’s project site says AI agents (Anthropic’s Claude) formalized the blueprint entry by entry, with mathematicians deciding scope, assumptions and the treatment of exercises; its data label every declaration “reviewed” without saying who reviewed it; the blog post lists 32 people and does not mention AI; the README says nothing about authorship</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Axiom’s Lean library: no sorry and no axiom declarations (our grep); 17 assumed statements enter as hypotheses (the Laurent phenomenon takes 4, the classification 13 hypothesis inputs); comparator file for 11 statements, local run reported in the README, no published log; one CI build (success), which does not run the comparator; Lean v4.35.0, Mathlib only; not built or run by us (<a href="https://github.com/AxiomMath/ClusterAlgebras">repository</a>)</dd>
+  </div>
+</dl>
+<p><a href="../episodes/ax08-cluster-algebras-lean/">Watch the episode and read the record</a> · <a href="../connections/#AX08">See its connections</a></p>
+
+</section>
+<p class="attribution">Last checked November 10, 2026.</p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
