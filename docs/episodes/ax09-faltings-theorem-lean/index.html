@@ -100,7 +100,7 @@
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Independent check</dt>
-    <dd>Partial, none complete, as of November 14, 2026: <a href="https://github.com/AxiomMath/Mordell/issues/1">issue #1</a> (November 13) reports a cold build of 179 modules (169 Stacks, 10 Mordell) without a Lean error before it was stopped, and asks for build files; a <a href="https://github.com/Deicyde/diophantine-z-q/pull/1">downstream project</a> reports a clean build of the 12,769 modules it uses, in about five and a half hours. No expert reaction found.</dd>
+    <dd>Partial, none complete, as of November 14, 2026: <a href="https://github.com/AxiomMath/Mordell/issues/1">issue #1</a> (November 13 UTC) reports a cold build of 179 modules (169 Stacks, 10 Mordell) without a Lean error before it was stopped, and asks for build files; a <a href="https://github.com/Deicyde/diophantine-z-q/pull/1">downstream project</a> reports a from-scratch build of the 12,769 modules it uses, in about five and a half hours. No expert reaction found.</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -108,7 +108,7 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Statement matches an outside benchmark</dt>
-    <dd>The README says the library proves the <a href="https://lean-lang.org/eval/problems/faltings/">LeanEval problem “faltings”</a> (<a href="https://github.com/leanprover/lean-eval/blob/main/LeanEval/AlgebraicGeometry/Faltings.lean">statement</a> by Junyan Xu, August 2026, from Mathlib alone) verbatim; our text comparison finds all 31 pieces of it in <a href="https://github.com/AxiomMath/Mordell/blob/82a30cb7857f6e3cfdb1be91f5533c0ccb57d493/Mordell/LeanEval/Faltings.lean">Axiom’s file</a>, in order. The leaderboard lists no solution yet (data of November 14).</dd>
+    <dd>The README says the library proves the <a href="https://lean-lang.org/eval/problems/faltings/">LeanEval problem “faltings”</a> (<a href="https://github.com/leanprover/lean-eval/blob/2f9397a184120ded9e6a6bfda828a222ccd9f211/LeanEval/AlgebraicGeometry/Faltings.lean">statement</a> by Junyan Xu, August 2026, from Mathlib alone) verbatim; our text comparison finds all 31 pieces of it in <a href="https://github.com/AxiomMath/Mordell/blob/82a30cb7857f6e3cfdb1be91f5533c0ccb57d493/Mordell/LeanEval/Faltings.lean">Axiom’s file</a>, in order. The leaderboard lists no solution yet (data of November 14).</dd>
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Lean library, by Axiom</dt>
@@ -124,7 +124,7 @@
 <ol class="steps">
   <li><strong>What has been checked?</strong> The repository has no continuous integration runs, no comparator file and no published build log. The axiom list in the README is Axiom’s own output. Any other checks so far come from outside. Right after the post, a GitHub user opened an issue: their cold build compiled 179 modules without a Lean error before they stopped it, and they asked Axiom for build files to check the rest. Another project reports a from-scratch build of the parts it uses, 12,769 modules, in about five and a half hours. Neither is a full independent check of the main theorem yet.</li>
   <li><strong>Who wrote it?</strong> The README says the library’s roughly 430 modules were written by AI agents, and that the code has not yet been reviewed by humans. It does not name the AI model. The blog post is signed simply Axiom: it names no contributors, and it does not mention AI at all. The single commit is by Ashvin Swaminathan. As with AX07, the two documents describe the same work differently.</li>
-  <li><strong>What it sits on.</strong> What it sits on matters even more here. The library uses Mathlib, on Lean v4.35.0, and Axiom’s Stacks library from AX06, pinned to a commit made 52 minutes before this one. The post says the Stacks modules it builds on hold roughly 6.4 million lines, against about 110,000 for the proof itself. By our count, all 336 Stacks modules it imports directly come from StacksFrontier, the part that Axiom’s own metadata says has not yet had human review. About 500 tags link Lean declarations to items of Bombieri’s paper and its background.</li>
+  <li><strong>What it sits on.</strong> It matters even more here. The library uses Mathlib, on Lean v4.35.0, and Axiom’s Stacks library from AX06, pinned to a commit made 52 minutes before this one. The post says the Stacks modules it builds on hold roughly 6.4 million lines, against about 110,000 for the proof itself. By our count, all 336 Stacks modules it imports directly come from StacksFrontier, the part that Axiom’s own metadata says has not yet had human review. About 500 tags link Lean declarations to items of Bombieri’s paper and its background.</li>
 </ol>
 </section>
 
@@ -143,7 +143,7 @@
 <ul class="sources">
   <li><a href="https://axiommath.ai/research/faltings-theorem-formalized/">“Faltings’ Theorem Formalized”</a>, Axiom Math blog post, November 12, 2026.</li>
   <li><a href="https://github.com/AxiomMath/Mordell">AxiomMath/Mordell</a>, the Lean repository (Apache 2.0; not built or run by us): its <a href="https://github.com/AxiomMath/Mordell/blob/82a30cb7857f6e3cfdb1be91f5533c0ccb57d493/README.md">README</a>, <a href="https://github.com/AxiomMath/Mordell/blob/82a30cb7857f6e3cfdb1be91f5533c0ccb57d493/Mordell/MordellConjecture/Curve.lean">main theorem</a> and <a href="https://github.com/AxiomMath/Mordell/blob/82a30cb7857f6e3cfdb1be91f5533c0ccb57d493/Mordell/LeanEval/Faltings.lean">LeanEval statement</a>.</li>
-  <li>The <a href="https://lean-lang.org/eval/problems/faltings/">LeanEval problem “faltings”</a> (<a href="https://github.com/leanprover/lean-eval/blob/main/LeanEval/AlgebraicGeometry/Faltings.lean">source</a>), and <a href="https://github.com/AxiomMath/Mordell/issues/1">issue #1</a> on the repository.</li>
+  <li>The <a href="https://lean-lang.org/eval/problems/faltings/">LeanEval problem “faltings”</a> (<a href="https://github.com/leanprover/lean-eval/blob/2f9397a184120ded9e6a6bfda828a222ccd9f211/LeanEval/AlgebraicGeometry/Faltings.lean">source</a>), and <a href="https://github.com/AxiomMath/Mordell/issues/1">issue #1</a> on the repository.</li>
   <li>Axiom’s <a href="https://github.com/AxiomMath/Stacks/blob/c496df0d9beea9deaeabcea8492605f9a0a2313b/formalization.yaml">Stacks metadata</a> at the pinned commit (StacksCore and StacksFrontier).</li>
   <li>E. Bombieri, <a href="https://eudml.org/doc/84090">The Mordell conjecture revisited</a>, Ann. Scuola Norm. Sup. Pisa (4) 17 (1990), the proof Axiom followed.</li>
   <li>M. Stoll, <a href="https://www.mathe2.uni-bayreuth.de/stoll/talks/MIT-2024-print.pdf">Formalizing Mordell?</a>, talk slides, MIT, July 12, 2024.</li>
