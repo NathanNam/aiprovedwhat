@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Faltings’ theorem, all in Lean? Axiom’s AI-written proof, not yet reviewed by people | AI Proved What?</title>
+<meta name="description" content="Axiom Math’s Lean formalization of Faltings’ theorem (the Mordell conjecture), following Bombieri’s 1990 simplification of Vojta’s proof: its statement matches an outside benchmark problem, but the code was written by AI agents and has not yet been reviewed by people, and it rests on Axiom’s AI-written Stacks library. No CI or comparator run; partial outside builds. A known theorem, not new mathematics; not built or run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/ax09-faltings-theorem-lean/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Faltings’ theorem, all in Lean?">
+<meta property="og:description" content="Axiom Math’s Lean formalization of Faltings’ theorem (the Mordell conjecture), following Bombieri’s 1990 simplification of Vojta’s proof: its statement matches an outside benchmark problem, but the code was written by AI agents and has not yet been reviewed by people, and it rests on Axiom’s AI-written Stacks library. No CI or comparator run; partial outside builds. A known theorem, not new mathematics; not built or run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/ax09-faltings-theorem-lean/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/ax09-faltings-theorem-lean/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="AX09: Faltings’ theorem in Lean. The curve y squared equals x to the fifth minus x plus one, with its rational points marked, the point at x = 7/9 highlighted.">
+<meta name="twitter:image:alt" content="AX09: Faltings’ theorem in Lean. The curve y squared equals x to the fifth minus x plus one, with its rational points marked, the point at x = 7/9 highlighted.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">AX09 (outside OpenAI’s math catalogue), November 2026</p>
+<h1>Faltings’ theorem, all in Lean?</h1>
+<p class="subtitle">Axiom Math says it has the first complete, machine-verified proof of Faltings’ theorem: curves of genus two or more have only finitely many rational points. The statement matches an outside benchmark problem. The code was written by AI agents, has not yet been reviewed by people, and rests on Axiom’s AI-written Stacks library.</p>
+
+<div class="player" data-youtube="KwXkRQpWMWc" data-title="AX09: Faltings’ theorem in Lean">
+  <a href="https://youtu.be/KwXkRQpWMWc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play AX09: Faltings’ theorem in Lean. The curve y squared equals x to the fifth minus x plus one, with its rational points marked, the point at x = 7/9 highlighted.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">7:23. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/KwXkRQpWMWc?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/KwXkRQpWMWc?t=165" data-t="165"><span class="t">2:45</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/KwXkRQpWMWc?t=274" data-t="274"><span class="t">4:34</span><span>The checks</span></a></li>
+  <li><a href="https://youtu.be/KwXkRQpWMWc?t=383" data-t="383"><span class="t">6:23</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>This is AX09. Here is a curve: y² = x⁵ − x + 1. We want points where x and y are both fractions. Some are easy. When x is zero, one, or minus one, y is plus or minus one. When x is eight, the right side is 32,761, which is 181². And one surprise: x equals 7/9, with y equals 173/243. That makes ten points. Our own search through more than 2 million fractions finds nothing else. So is the list complete? A famous theorem says the list must be finite. It does not say where it ends.</p>
+<p>Why finite? The answer is one number, the genus. Let x and y be complex numbers, and the curve becomes a surface. The genus counts its holes. Genus zero, like the circle, can have infinitely many rational points: one for every Pythagorean triple, such as (3/5, 4/5). Genus one, like y² = x³ − 2. Start at the point (3, 5). The tangent line there meets the curve again, at a new rational point, 129/100. Repeat, and the points never run out, but they get complicated fast: for P, 2P, 3P and 4P, the numerators have 1, 3, 6, then 10 digits, and 38 by 8P. Our curve has genus two. In 1922, Louis Mordell asked whether every curve of genus two or more has only finitely many rational points. In 1983, Gerd Faltings proved it, for curves over any number field, and won the Fields Medal. For example, for each n from four on, xⁿ + yⁿ = 1 has only finitely many solutions in fractions.</p>
+<p>Axiom did not follow Faltings’ original proof. It followed a second route: Paul Vojta’s proof from around 1990, soon made much more elementary by Enrico Bombieri. The curve sits inside a larger object, its Jacobian, where the rational points form a lattice and a height measures their length. Group the points by direction, into finitely many narrow cones. Inside one cone, two forces act. Mumford’s gap principle pushes points apart: each large point is at least about twice as long as the one before. Vojta’s inequality pulls them together: beyond a certain size, one point cannot be too much longer than another. Points that must keep doubling, but cannot grow too far apart, can only be finitely many. A separate count handles the small ones. The proof says the list is finite, and can even bound its length. In general, it does not tell you how to find every point.</p>
+<p>On November 12, 2026, Axiom Math announced what it calls the first complete, machine-verified proof of Faltings’ theorem. The repository, AxiomMath/Mordell, had been created two days earlier, with a single commit. Its main Lean theorem is the full statement: a smooth, projective, geometrically integral curve over a number field, of genus at least two, has finitely many rational points. By our count, the library has 432 Lean files and about 124,000 lines, about 111,000 of them not blank, which is close to the post’s roughly 110,000. Our text search finds no sorry and no axiom declaration. The README says Lean’s kernel checks every proof, using only Lean’s three standard axioms. This is a known theorem, formalized. There is no new mathematics.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Is the statement right? That is the first thing to check in any formalization. Here there is outside help. Junyan Xu wrote this theorem as a problem for the LeanEval benchmark, published in August, using Mathlib alone, with its own definitions of places and genus. Axiom’s README says that exact statement is proved, word for word, and our own text comparison finds every piece of it in Axiom’s file, in order, and a GitHub user reports that the statements print the same in both settings. That makes the statement much harder to get subtly wrong. The benchmark’s leaderboard, though, lists no solution yet. And what is not claimed: no new theorem, not Faltings’ original proof, and no way to list all the points. It is not in Mathlib either. In 2024, the number theorist Michael Stoll set the goal of getting a proof of the Mordell conjecture into Mathlib, by this same route. This library lives outside it.</p>
+<p>No new theorem: Faltings proved it in 1983, and Bombieri’s simpler version of Vojta’s proof dates from 1990. The library does not give a way to find all the rational points of a curve, and it is not part of Mathlib.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Released by Axiom</dt>
+    <dd><a href="https://github.com/AxiomMath/Mordell">Repository</a> created November 10, 2026 (Pacific; November 11 UTC), with one commit, <a href="https://github.com/AxiomMath/Mordell/tree/82a30cb7857f6e3cfdb1be91f5533c0ccb57d493">82a30cb</a> (“The Mordell conjecture in Lean”, by Ashvin A. Swaminathan); <a href="https://axiommath.ai/research/faltings-theorem-formalized/">blog post</a> on November 12, signed “Axiom”. The development history is not public.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Published machine checks</dt>
+    <dd>None from Axiom: no GitHub CI runs, no comparator file, no build log. The <a href="https://github.com/AxiomMath/Mordell/blob/82a30cb7857f6e3cfdb1be91f5533c0ccb57d493/README.md">README</a> says Lean’s kernel checks every proof and shows Axiom’s own <code>#print axioms</code> output (only <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>).</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Human review of the Lean</dt>
+    <dd>Not yet. The <a href="https://github.com/AxiomMath/Mordell/blob/82a30cb7857f6e3cfdb1be91f5533c0ccb57d493/README.md">README</a>: “about 430 modules written by AI agents”; “the code has not yet been reviewed by humans”. It does not name the AI model. The blog post names no people and does not mention AI. The 336 Stacks modules it imports directly are all from StacksFrontier, which Axiom’s <a href="https://github.com/AxiomMath/Stacks/blob/c496df0d9beea9deaeabcea8492605f9a0a2313b/formalization.yaml">Stacks metadata</a> says “has not yet had human review”.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Independent check</dt>
+    <dd>Partial, none complete, as of November 14, 2026: <a href="https://github.com/AxiomMath/Mordell/issues/1">issue #1</a> (November 13) reports a cold build of 179 modules (169 Stacks, 10 Mordell) without a Lean error before it was stopped, and asks for build files; a <a href="https://github.com/Deicyde/diophantine-z-q/pull/1">downstream project</a> reports a clean build of the 12,769 modules it uses, in about five and a half hours. No expert reaction found.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No (there is no paper).</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Statement matches an outside benchmark</dt>
+    <dd>The README says the library proves the <a href="https://lean-lang.org/eval/problems/faltings/">LeanEval problem “faltings”</a> (<a href="https://github.com/leanprover/lean-eval/blob/main/LeanEval/AlgebraicGeometry/Faltings.lean">statement</a> by Junyan Xu, August 2026, from Mathlib alone) verbatim; our text comparison finds all 31 pieces of it in <a href="https://github.com/AxiomMath/Mordell/blob/82a30cb7857f6e3cfdb1be91f5533c0ccb57d493/Mordell/LeanEval/Faltings.lean">Axiom’s file</a>, in order. The leaderboard lists no solution yet (data of November 14).</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Lean library, by Axiom</dt>
+    <dd>Lean v4.35.0, Mathlib 56a0058 and Axiom’s Stacks library at c496df0 (<a href="https://github.com/AxiomMath/Mordell/blob/82a30cb7857f6e3cfdb1be91f5533c0ccb57d493/lakefile.toml">lakefile</a>); no sorry and no axiom declarations (our text grep). Not built or run by us.</dd>
+  </div>
+</dl>
+<p class="ledger-note"><!-- last-checked:start -->Last checked November 14, 2026.<!-- last-checked:end --> Where it stands. Released: the repository, created November 10, Pacific time, and the post on November 12. Machine checks: none published by Axiom, no CI and no comparator run. Human review of the Lean code: not yet, the README says. Independent check: partial outside builds, none complete. Peer review: none, as there is no paper. The statement matches an outside benchmark problem, by our text comparison. Not built or run by us.</p>
+<p>This is outside OpenAI’s math catalogue. It follows AX01, AX06, the Stacks Project, AX07, the Weil conjectures, and AX08, cluster algebras. If it holds, one of the landmark theorems of twentieth-century number theory is now checked by Lean’s kernel, from a statement written by someone outside Axiom, on top of millions of lines of Axiom’s Stacks code, mostly written by AI, that people have not yet reviewed. See <a href="../ax08-cluster-algebras-lean/">AX08</a>, <a href="../ax07-weil-conjectures-lean/">AX07</a>, <a href="../ax06-stacks-project-lean/">AX06</a> and <a href="../ax01-classification-finite-simple-groups-lean/">AX01</a>.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">The checks</h2>
+<ol class="steps">
+  <li><strong>What has been checked?</strong> The repository has no continuous integration runs, no comparator file and no published build log. The axiom list in the README is Axiom’s own output. Any other checks so far come from outside. Right after the post, a GitHub user opened an issue: their cold build compiled 179 modules without a Lean error before they stopped it, and they asked Axiom for build files to check the rest. Another project reports a from-scratch build of the parts it uses, 12,769 modules, in about five and a half hours. Neither is a full independent check of the main theorem yet.</li>
+  <li><strong>Who wrote it?</strong> The README says the library’s roughly 430 modules were written by AI agents, and that the code has not yet been reviewed by humans. It does not name the AI model. The blog post is signed simply Axiom: it names no contributors, and it does not mention AI at all. The single commit is by Ashvin Swaminathan. As with AX07, the two documents describe the same work differently.</li>
+  <li><strong>What it sits on.</strong> What it sits on matters even more here. The library uses Mathlib, on Lean v4.35.0, and Axiom’s Stacks library from AX06, pinned to a commit made 52 minutes before this one. The post says the Stacks modules it builds on hold roughly 6.4 million lines, against about 110,000 for the proof itself. By our count, all 336 Stacks modules it imports directly come from StacksFrontier, the part that Axiom’s own metadata says has not yet had human review. About 500 tags link Lean declarations to items of Bombieri’s paper and its background.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: y² = x⁵ − x + 1 (genus 2) has the points x = −1, 0, 1 (y = ±1), x = 8 (32,761 = 181²) and x = 7/9 (y = ±173/243): ten points, plus one at infinity. Our search through 2,158,483 fractions (denominators up to 289, numerators up to 100,000) finds nothing else; we do not claim the list is complete.</li>
+  <li>From Axiom’s post: the circle’s (3/5, 4/5); on y² = x³ − 2 the tangent at (3, 5) meets the curve again at (129/100, 383/1000). Ours: the numerators of x(nP) have 1, 3, 6, 10, 15, 21, 29, 38 digits for n = 1 to 8 (the post: 38 digits by 8P).</li>
+  <li>Ours: the repository at 82a30cb has 432 Lean files and 124,110 lines (110,808 not blank; the post says roughly 110,000), 506 @[faltings] tags, and 336 directly imported Stacks modules, all StacksFrontier; our text grep finds no sorry, admit, native_decide or axiom declaration.</li>
+  <li>From Axiom’s post: roughly 6,400,000 lines of Stacks library modules underneath; the Stacks commit it pins (c496df0) was made 52 minutes before the Mordell commit.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://axiommath.ai/research/faltings-theorem-formalized/">“Faltings’ Theorem Formalized”</a>, Axiom Math blog post, November 12, 2026.</li>
+  <li><a href="https://github.com/AxiomMath/Mordell">AxiomMath/Mordell</a>, the Lean repository (Apache 2.0; not built or run by us): its <a href="https://github.com/AxiomMath/Mordell/blob/82a30cb7857f6e3cfdb1be91f5533c0ccb57d493/README.md">README</a>, <a href="https://github.com/AxiomMath/Mordell/blob/82a30cb7857f6e3cfdb1be91f5533c0ccb57d493/Mordell/MordellConjecture/Curve.lean">main theorem</a> and <a href="https://github.com/AxiomMath/Mordell/blob/82a30cb7857f6e3cfdb1be91f5533c0ccb57d493/Mordell/LeanEval/Faltings.lean">LeanEval statement</a>.</li>
+  <li>The <a href="https://lean-lang.org/eval/problems/faltings/">LeanEval problem “faltings”</a> (<a href="https://github.com/leanprover/lean-eval/blob/main/LeanEval/AlgebraicGeometry/Faltings.lean">source</a>), and <a href="https://github.com/AxiomMath/Mordell/issues/1">issue #1</a> on the repository.</li>
+  <li>Axiom’s <a href="https://github.com/AxiomMath/Stacks/blob/c496df0d9beea9deaeabcea8492605f9a0a2313b/formalization.yaml">Stacks metadata</a> at the pinned commit (StacksCore and StacksFrontier).</li>
+  <li>E. Bombieri, <a href="https://eudml.org/doc/84090">The Mordell conjecture revisited</a>, Ann. Scuola Norm. Sup. Pisa (4) 17 (1990), the proof Axiom followed.</li>
+  <li>M. Stoll, <a href="https://www.mathe2.uni-bayreuth.de/stoll/talks/MIT-2024-print.pdf">Formalizing Mordell?</a>, talk slides, MIT, July 12, 2024.</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Axiom Math, OpenAI, Anthropic, or LeanEval.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is AX09. Here is a curve: y² = x⁵ − x + 1. We want points where x and y are both fractions. Some are easy. When x is zero, one, or minus one, y is plus or minus one. When x is eight, the right side is 32,761, which is 181². And one surprise: x equals 7/9, with y equals 173/243. That makes ten points. Our own search through more than 2 million fractions finds nothing else. So is the list complete? A famous theorem says the list must be finite. It does not say where it ends. Why finite? The answer is one number, the genus. Let x and y be complex numbers, and the curve becomes a surface. The genus counts its holes. Genus zero, like the circle, can have infinitely many rational points: one for every Pythagorean triple, such as (3/5, 4/5). Genus one, like y² = x³ − 2. Start at the point (3, 5). The tangent line there meets the curve again, at a new rational point, 129/100. Repeat, and the points never run out, but they get complicated fast: for P, 2P, 3P and 4P, the numerators have 1, 3, 6, then 10 digits, and 38 by 8P. Our curve has genus two. In 1922, Louis Mordell asked whether every curve of genus two or more has only finitely many rational points. In 1983, Gerd Faltings proved it, for curves over any number field, and won the Fields Medal. For example, for each n from four on, xⁿ + yⁿ = 1 has only finitely many solutions in fractions. Axiom did not follow Faltings’ original proof. It followed a second route: Paul Vojta’s proof from around 1990, soon made much more elementary by Enrico Bombieri. The curve sits inside a larger object, its Jacobian, where the rational points form a lattice and a height measures their length. Group the points by direction, into finitely many narrow cones. Inside one cone, two forces act. Mumford’s gap principle pushes points apart: each large point is at least about twice as long as the one before. Vojta’s inequality pulls them together: beyond a certain size, one point cannot be too much longer than another. Points that must keep doubling, but cannot grow too far apart, can only be finitely many. A separate count handles the small ones. The proof says the list is finite, and can even bound its length. In general, it does not tell you how to find every point.</p>
+<h3><span class="t num">2:45</span>The claim</h3>
+<p>On November 12, 2026, Axiom Math announced what it calls the first complete, machine-verified proof of Faltings’ theorem. The repository, AxiomMath/Mordell, had been created two days earlier, with a single commit. Its main Lean theorem is the full statement: a smooth, projective, geometrically integral curve over a number field, of genus at least two, has finitely many rational points. By our count, the library has 432 Lean files and about 124,000 lines, about 111,000 of them not blank, which is close to the post’s roughly 110,000. Our text search finds no sorry and no axiom declaration. The README says Lean’s kernel checks every proof, using only Lean’s three standard axioms. This is a known theorem, formalized. There is no new mathematics. Is the statement right? That is the first thing to check in any formalization. Here there is outside help. Junyan Xu wrote this theorem as a problem for the LeanEval benchmark, published in August, using Mathlib alone, with its own definitions of places and genus. Axiom’s README says that exact statement is proved, word for word, and our own text comparison finds every piece of it in Axiom’s file, in order, and a GitHub user reports that the statements print the same in both settings. That makes the statement much harder to get subtly wrong. The benchmark’s leaderboard, though, lists no solution yet. And what is not claimed: no new theorem, not Faltings’ original proof, and no way to list all the points. It is not in Mathlib either. In 2024, the number theorist Michael Stoll set the goal of getting a proof of the Mordell conjecture into Mathlib, by this same route. This library lives outside it.</p>
+<h3><span class="t num">4:34</span>The checks</h3>
+<p>What has been checked so far? The repository has no continuous integration runs, no comparator file and no published build log. The axiom list in the README is Axiom’s own output. Any other checks so far come from outside. Right after the post, a GitHub user opened an issue: their cold build compiled 179 modules without a Lean error before they stopped it, and they asked Axiom for build files to check the rest. Another project reports a from-scratch build of the parts it uses, 12,769 modules, in about five and a half hours. Neither is a full independent check of the main theorem yet. Who wrote it? The README says the library’s roughly 430 modules were written by AI agents, and that the code has not yet been reviewed by humans. It does not name the AI model. The blog post is signed simply Axiom: it names no contributors, and it does not mention AI at all. The single commit is by Ashvin Swaminathan. As with AX07, the two documents describe the same work differently. What it sits on matters even more here. The library uses Mathlib, on Lean v4.35.0, and Axiom’s Stacks library from AX06, pinned to a commit made 52 minutes before this one. The post says the Stacks modules it builds on hold roughly 6.4 million lines, against about 110,000 for the proof itself. By our count, all 336 Stacks modules it imports directly come from StacksFrontier, the part that Axiom’s own metadata says has not yet had human review. About 500 tags link Lean declarations to items of Bombieri’s paper and its background.</p>
+<h3><span class="t num">6:23</span>Where it stands</h3>
+<p>Where it stands. Released: the repository, created November 10, Pacific time, and the post on November 12. Machine checks: none published by Axiom, no CI and no comparator run. Human review of the Lean code: not yet, the README says. Independent check: partial outside builds, none complete. Peer review: none, as there is no paper. The statement matches an outside benchmark problem, by our text comparison. Not built or run by us. This is outside OpenAI’s math catalogue. It follows AX01, AX06, the Stacks Project, AX07, the Weil conjectures, and AX08, cluster algebras. If it holds, one of the landmark theorems of twentieth-century number theory is now checked by Lean’s kernel, from a statement written by someone outside Axiom, on top of millions of lines of Axiom’s Stacks code, mostly written by AI, that people have not yet reviewed.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=AX09%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

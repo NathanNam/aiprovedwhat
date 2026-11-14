@@ -14,8 +14,8 @@
 <meta property="og:image" content="https://aiprovedwhat.com/assets/share-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 19 results beyond OpenAI’s catalogue on their own arc.">
-<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 19 results beyond OpenAI’s catalogue on their own arc.">
+<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 20 results beyond OpenAI’s catalogue on their own arc.">
+<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 20 results beyond OpenAI’s catalogue on their own arc.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <meta name="generator" content="tools/site/build.py">
@@ -141,6 +141,23 @@
 </tbody>
 </table></div>
 <p class="meta">Figures as Axiom reports them, checked in our AX07 and AX08 episodes. Not a ranking.</p>
+</section>
+<section class="compare" aria-labelledby="cmp-ax07-ax09">
+<h2 id="cmp-ax07-ax09">Axiom’s Weil and Faltings formalizations, side by side</h2>
+<div class="compare-scroll"><table>
+<thead><tr><td></td><th scope="col"><a href="../episodes/ax07-weil-conjectures-lean/">AX07</a><br><span class="meta">Axiom Math</span></th><th scope="col"><a href="../episodes/ax09-faltings-theorem-lean/">AX09</a><br><span class="meta">Axiom Math</span></th></tr></thead>
+<tbody>
+<tr><th scope="row">What</th><td>The four Weil conjectures, following Freitag–Kiehl (1988)</td><td>Faltings’ theorem (Mordell conjecture), following Bombieri (1990)</td></tr>
+<tr><th scope="row">Size</th><td>213,159 lines (our count)</td><td>124,110 lines in 432 files (our count); the post says roughly 110,000</td></tr>
+<tr><th scope="row">Written by</th><td>“about 980 modules written by AI agents” (README)</td><td>“about 430 modules written by AI agents” (README); the post does not mention AI</td></tr>
+<tr><th scope="row">Human review</th><td>“not yet been reviewed by humans” (README)</td><td>“not yet been reviewed by humans” (README)</td></tr>
+<tr><th scope="row">Statement check</th><td>LeanEval statement, our text comparison identical</td><td>LeanEval statement, all 31 pieces in order (our text comparison)</td></tr>
+<tr><th scope="row">Machine checks</th><td>no CI, no comparator file</td><td>no CI, no comparator file; partial outside builds</td></tr>
+<tr><th scope="row">Depends on</th><td>Mathlib and AX06’s Stacks library</td><td>Mathlib and AX06’s Stacks library (StacksFrontier only)</td></tr>
+<tr><th scope="row">Announced</th><td>November 6, 2026</td><td>November 12, 2026 (repository November 10)</td></tr>
+</tbody>
+</table></div>
+<p class="meta">Figures as Axiom reports them, checked in our AX07 and AX09 episodes. Not a ranking.</p>
 </section>
 <section class="special" id="s01" aria-labelledby="s01-h">
 <p class="thumb-kicker">Special S01 · OpenAI, outside its catalogue · announced September 8, 2026 · Mathematical physics</p>
@@ -642,7 +659,32 @@
 <p><a href="../episodes/ax08-cluster-algebras-lean/">Watch the episode and read the record</a> · <a href="../connections/#AX08">See its connections</a></p>
 
 </section>
-<p class="attribution">Last checked November 10, 2026.</p>
+<section class="special" id="ax09" aria-labelledby="ax09-h">
+<p class="thumb-kicker">AX09 · Axiom Math · announced November 12, 2026 · Number theory</p>
+<h2 id="ax09-h">Faltings’ theorem (the Mordell conjecture), formalized in Lean</h2>
+<p>Axiom Math’s Lean proof of Faltings’ theorem (curves of genus at least two over a number field have finitely many rational points), following Bombieri’s 1990 simplification of Vojta’s proof. The statement matches the LeanEval benchmark problem written by Junyan Xu (our text comparison). The README says about 430 modules were written by AI agents and not yet reviewed by humans; the code rests on Axiom’s AI-written StacksFrontier library (AX06). No CI or comparator run; partial outside builds. A known theorem, not new mathematics.</p>
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Released by Axiom</dt>
+    <dd>Axiom’s blog post and repository, November 2026; no paper</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None found; the README says the code was written by AI agents and “has not yet been reviewed by humans”; the blog post names no people and does not mention AI; an outside GitHub issue reports a partial build (179 modules, no error) and asks for build files</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Axiom’s Lean library: the full theorem over number fields, and the LeanEval statement verbatim (README; our text comparison agrees); no sorry and no axiom declarations (our grep); no CI, no comparator file; Lean v4.35.0, Mathlib and Axiom’s Stacks library (all 336 direct Stacks imports from StacksFrontier, not yet human-reviewed); not built or run by us (<a href="https://github.com/AxiomMath/Mordell">repository</a>)</dd>
+  </div>
+</dl>
+<p><a href="../episodes/ax09-faltings-theorem-lean/">Watch the episode and read the record</a> · <a href="../connections/#AX09">See its connections</a></p>
+
+</section>
+<p class="attribution">Last checked November 14, 2026.</p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
