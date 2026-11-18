@@ -14,8 +14,8 @@
 <meta property="og:image" content="https://aiprovedwhat.com/assets/share-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 20 results beyond OpenAI’s catalogue on their own arc.">
-<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 20 results beyond OpenAI’s catalogue on their own arc.">
+<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 21 results beyond OpenAI’s catalogue on their own arc.">
+<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 21 results beyond OpenAI’s catalogue on their own arc.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <meta name="generator" content="tools/site/build.py">
@@ -158,6 +158,23 @@
 </tbody>
 </table></div>
 <p class="meta">Figures as Axiom reports them, checked in our AX07 and AX09 episodes. Not a ranking.</p>
+</section>
+<section class="compare" aria-labelledby="cmp-ax09-ax10">
+<h2 id="cmp-ax09-ax10">Axiom’s Faltings and minimal model program formalizations, side by side</h2>
+<div class="compare-scroll"><table>
+<thead><tr><td></td><th scope="col"><a href="../episodes/ax09-faltings-theorem-lean/">AX09</a><br><span class="meta">Axiom Math</span></th><th scope="col"><a href="../episodes/ax10-minimal-model-program-lean/">AX10</a><br><span class="meta">Axiom Math</span></th></tr></thead>
+<tbody>
+<tr><th scope="row">What</th><td>Faltings’ theorem (Mordell conjecture), a known theorem (1983), following Bombieri (1990)</td><td>The projective fourfold termination theorem of OpenAI’s result 056 (2026 preprint), plus classical background</td></tr>
+<tr><th scope="row">Size</th><td>124,110 lines in 432 files (our count)</td><td>2,054,277 lines in 2,269 files (our count); the post says 2.1 million</td></tr>
+<tr><th scope="row">Written by</th><td>“about 430 modules written by AI agents” (README)</td><td>“about 2,270 modules written by AI agents” (README)</td></tr>
+<tr><th scope="row">Human review</th><td>“not yet been reviewed by humans” (README)</td><td>“not yet been reviewed by humans” (README)</td></tr>
+<tr><th scope="row">Statement check</th><td>LeanEval statement, all 31 pieces in order (our text comparison)</td><td>No outside benchmark; matches the paper’s Theorem 1.2 by our reading</td></tr>
+<tr><th scope="row">Machine checks</th><td>no CI, no comparator file; partial outside builds</td><td>no CI, no comparator file; no outside build yet</td></tr>
+<tr><th scope="row">Depends on</th><td>Mathlib and AX06’s Stacks library at c496df0 (StacksFrontier only)</td><td>Mathlib and AX06’s Stacks library at the same commit (StacksFrontier only)</td></tr>
+<tr><th scope="row">Announced</th><td>November 12, 2026 (repository November 10)</td><td>November 17, 2026 (repository November 16)</td></tr>
+</tbody>
+</table></div>
+<p class="meta">Figures as Axiom reports them, checked in our AX09 and AX10 episodes. Not a ranking.</p>
 </section>
 <section class="special" id="s01" aria-labelledby="s01-h">
 <p class="thumb-kicker">Special S01 · OpenAI, outside its catalogue · announced September 8, 2026 · Mathematical physics</p>
@@ -684,7 +701,32 @@
 <p><a href="../episodes/ax09-faltings-theorem-lean/">Watch the episode and read the record</a> · <a href="../connections/#AX09">See its connections</a></p>
 
 </section>
-<p class="attribution">Last checked November 14, 2026.</p>
+<section class="special" id="ax10" aria-labelledby="ax10-h">
+<p class="thumb-kicker">AX10 · Axiom Math · announced November 17, 2026 · Algebraic geometry</p>
+<h2 id="ax10-h">The minimal model program in dimension at most four, formalized in Lean (OpenAI’s result 056)</h2>
+<p>Axiom Math’s Lean library for the minimal model program in dimension at most four. Its Lean theorems formalize the main theorem of OpenAI’s projective fourfold paper (result 056): every program for a projective log canonical fourfold with rational boundary, over an algebraically closed field of characteristic zero, has finitely many birational steps, and a maximal one ends at a nef adjoint or a Mori fibre space. By our reading the Lean statement matches the paper’s Theorem 1.2. The README says about 2,270 modules were written by AI agents and not yet reviewed by humans; the code rests on Axiom’s AI-written StacksFrontier library (AX06). No CI or comparator run. No new mathematics beyond result 056; the four Kähler papers are not covered.</p>
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Released by Axiom</dt>
+    <dd>Axiom’s blog post and repository, November 2026; no paper (OpenAI’s projective paper is an unrefereed preprint)</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None found; the README says the code was written by AI agents and “has not yet been reviewed by humans”; neither the README nor the post names the AI model; no issues or outside builds as of November 17, 2026</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Axiom’s Lean library: the projective fourfold theorem of result 056 (continuation, termination for every program, endpoints of maximal programs) and a dimension-three theorem for ℚ-factorial dlt pairs over ℂ (README); by our reading the main statement matches the paper’s Theorem 1.2 (definitions underneath not checked); no sorry and no axiom declarations (our grep); no CI, no comparator file; Lean v4.35.0, Mathlib and Axiom’s Stacks library (all 1,536 direct Stacks imports from StacksFrontier, not yet human-reviewed); not built or run by us (<a href="https://github.com/AxiomMath/MMP">repository</a>)</dd>
+  </div>
+</dl>
+<p><a href="../episodes/ax10-minimal-model-program-lean/">Watch the episode and read the record</a> · <a href="../connections/#AX10">See its connections</a></p>
+
+</section>
+<p class="attribution">Last checked November 18, 2026.</p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

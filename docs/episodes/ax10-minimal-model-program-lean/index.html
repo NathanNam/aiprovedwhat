@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The minimal model program in Lean? Axiom formalizes OpenAI’s fourfold proof, not yet reviewed | AI Proved What?</title>
+<meta name="description" content="Axiom Math’s Lean library for the minimal model program in dimension at most four: its theorems formalize the termination theorem of OpenAI’s projective fourfold paper (result 056), and by our reading it matches the paper’s statement. The code was written by AI agents and has not yet been reviewed by people, and it rests on Axiom’s AI-written Stacks library. No CI or comparator run. No new mathematics beyond result 056; the Kähler papers are not covered; not built or run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/ax10-minimal-model-program-lean/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="The minimal model program in Lean?">
+<meta property="og:description" content="Axiom Math’s Lean library for the minimal model program in dimension at most four: its theorems formalize the termination theorem of OpenAI’s projective fourfold paper (result 056), and by our reading it matches the paper’s statement. The code was written by AI agents and has not yet been reviewed by people, and it rests on Axiom’s AI-written Stacks library. No CI or comparator run. No new mathematics beyond result 056; the Kähler papers are not covered; not built or run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/ax10-minimal-model-program-lean/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/ax10-minimal-model-program-lean/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="AX10: the minimal model program in Lean. A schematic of the plane blown up at a point: the new curve E, with self-intersection minus one, crossing three separated lines.">
+<meta name="twitter:image:alt" content="AX10: the minimal model program in Lean. A schematic of the plane blown up at a point: the new curve E, with self-intersection minus one, crossing three separated lines.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">AX10 (Specials; returns to result <a href="../056-termination-projective-kahler-fourfold-minimal/">056</a>), November 2026</p>
+<h1>The minimal model program in Lean?</h1>
+<p class="subtitle">Axiom Math says it has formalized in Lean the main theorem of OpenAI’s projective fourfold paper (result 056): every program of the minimal model program for a projective log canonical fourfold with rational boundary stops. By our reading the statement matches the paper’s. The code was written by AI agents, has not yet been reviewed by people, and rests on Axiom’s AI-written Stacks library.</p>
+
+<div class="player" data-youtube="Zwlc0wRghNw" data-title="AX10: the minimal model program in Lean">
+  <a href="https://youtu.be/Zwlc0wRghNw">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play AX10: the minimal model program in Lean. A schematic of the plane blown up at a point: the new curve E, with self-intersection minus one, crossing three separated lines.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:00. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/Zwlc0wRghNw?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/Zwlc0wRghNw?t=180" data-t="180"><span class="t">3:00</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/Zwlc0wRghNw?t=299" data-t="299"><span class="t">4:59</span><span>The checks</span></a></li>
+  <li><a href="https://youtu.be/Zwlc0wRghNw?t=416" data-t="416"><span class="t">6:56</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>This is AX10. Take the projective plane, and blow up a point: replace it with a whole line of directions, a new curve called E. E meets itself minus one times, and the canonical class K, which comes from differential forms on the surface, also meets E minus one times. A curve like that can be blown back down. That is Castelnuovo’s contraction theorem, more than a century old. Each contraction lowers the Picard number, a count of independent curve classes, here from two to one, so contractions cannot go on forever. Back on the plane, every line meets K minus three times, and the only contraction left sends the whole plane to a point. That is a Mori fibre space, one possible ending. But there was a second choice. The lines through the point form a family F, with F² = 0, and K·F = −2. Contracting that family maps the surface onto a projective line, and stops at once. Both choices finish in finitely many steps.</p>
+<p>The minimal model program does this in every dimension. At each stage, pick a K-negative extremal ray of curves, and contract it. If the contraction collapses a divisor, the Picard number drops, and the program goes on. If it collapses everything onto something smaller, the program stops at a Mori fibre space. It also stops where K is nef, never negative on any curve. But if the contraction collapses something smaller than a divisor, the result is so singular that K no longer meets curves in numbers, so the program performs a flip: cut out the bad curves, and glue in new ones, on which K is positive. A flip leaves the Picard number unchanged. So why should flips ever stop? In dimension three, Shigefumi Mori proved that flips exist, and Shokurov’s counting device, the difficulty, showed that they stop. In 2006, Birkar, Cascini, Hacon and McKernan proved that klt flips exist in every dimension, and that one carefully chosen kind of program terminates in key cases. Termination for every choice stayed open in general, with only special cases known in dimension four.</p>
+<p>That is where result 056 comes in, our episode 056. One OpenAI preprint, 44 pages, dated September 24, claims the projective case in dimension four, for log canonical pairs with rational boundary, over any algebraically closed field of characteristic zero. Its theorem has three parts. Every negative extremal ray can be contracted, and, when needed, the next model exists. Every program, for every sequence of choices, has finitely many birational steps. And every maximal program ends at a nef adjoint or a Mori fibre space. Four more preprints in the same result treat compact Kähler fourfolds. None of the five has been peer reviewed, and OpenAI’s release included no Lean proof for this result.</p>
+<p>On November 17, 2026, Axiom Math announced what it calls a complete Lean formalization of the minimal model program in dimensions 2, 3, and 4. The repository, AxiomMath/MMP, was created the day before, with a single commit. Its main theorem gives the last two parts of the paper’s theorem: every maximal program for such a fourfold has finitely many birational steps, and ends at a nef adjoint or a Mori fibre space. Companion theorems give the rest. By our count, the library has 2,269 Lean files and about 2.05 million lines, close to the post’s 2.1 million. Our text search finds no sorry and no axiom declaration, and the README says Lean’s kernel checks every proof, using only the three standard axioms.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>Is the statement right? There is no outside benchmark this time, so we compared the Lean statement, and the definition of a program it uses, with the paper’s Definition 1.1 and Theorem 1.2, by reading. Every hypothesis has a counterpart: an algebraically closed field of characteristic zero, dimension four, a projective log canonical pair with an effective rational boundary, and no Q-factoriality or pseudo-effectivity assumed. So do the steps, and both conclusions. What we could not check is the layer underneath: what the definitions of curves, cones, nef and log canonical really say. That is where a formalization can quietly go wrong. Then the scope. The post says dimensions 2, 3, and 4, but the README’s lower-dimensional theorem is narrower: Q-factorial dlt pairs over the complex numbers. And what is not claimed: no new mathematics beyond result 056, nothing about the four Kähler papers, and nothing about real coefficients, positive characteristic, or dimension five and up.</p>
+<p>The main theorem is a termination statement: it does not include abundance (that the nef endpoint is semiample). The four Kähler papers of result 056 are not formalized, and OpenAI itself still publishes no Lean proof for this result.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Released by Axiom</dt>
+    <dd><a href="https://github.com/AxiomMath/MMP">Repository</a> created November 16, 2026, with one commit, <a href="https://github.com/AxiomMath/MMP/tree/1f9ade367087ec711a2ce1382bad279a5a0284c3">1f9ade3</a> (“The minimal model program in Lean”, by Ashvin A. Swaminathan); <a href="https://axiommath.ai/research/the-minimal-model-program-formalized/">blog post</a> on November 17, signed “Axiom”. The development history is not public.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Published machine checks</dt>
+    <dd>None from Axiom: no GitHub CI runs, no comparator file, no build log. The <a href="https://github.com/AxiomMath/MMP/blob/1f9ade367087ec711a2ce1382bad279a5a0284c3/README.md">README</a> says Lean’s kernel checks every proof and shows Axiom’s own <code>#print axioms</code> output (only <code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>).</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Human review of the Lean</dt>
+    <dd>Not yet. The <a href="https://github.com/AxiomMath/MMP/blob/1f9ade367087ec711a2ce1382bad279a5a0284c3/README.md">README</a>: “about 2,270 modules written by AI agents”; “the code has not yet been reviewed by humans”. Neither the README nor the post names the AI model. The 1,536 Stacks modules it imports directly are all from StacksFrontier, which Axiom’s <a href="https://github.com/AxiomMath/Stacks/blob/c496df0d9beea9deaeabcea8492605f9a0a2313b/formalization.yaml">Stacks metadata</a> says “has not yet had human review”.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Independent check</dt>
+    <dd>None so far, as of November 17, 2026: no issues, pull requests or forks on the repository, and no outside build or expert reaction found.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No. There is no paper for the Lean, and OpenAI’s <a href="https://github.com/openai/math/blob/main/preprints/Termination-for-projective-log-canonical-fourfolds-with-rational-boundary-September-24-2026/paper.pdf">projective paper</a> (result 056) is an unrefereed preprint.</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Statement matches the paper’s Theorem 1.2</dt>
+    <dd>By our reading of the text: the <a href="https://github.com/AxiomMath/MMP/blob/1f9ade367087ec711a2ce1382bad279a5a0284c3/MMP/AlgebraicGeometry/MMP/Fourfold/AlgClosed/ProgramEndpoints.lean">main theorem</a> and its <a href="https://github.com/AxiomMath/MMP/blob/1f9ade367087ec711a2ce1382bad279a5a0284c3/MMP/AlgebraicGeometry/MMP/Fourfold/Program.lean">definition of a program</a> have a counterpart for every hypothesis and conclusion of the paper’s Definition 1.1 and Theorem 1.2. We did not check the definitions underneath (curves, cones, nef, log canonical).</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Lean library, by Axiom</dt>
+    <dd>Lean v4.35.0, Mathlib 56a0058 and Axiom’s Stacks library at c496df0, the same commit as <a href="../ax09-faltings-theorem-lean/">AX09</a> (<a href="https://github.com/AxiomMath/MMP/blob/1f9ade367087ec711a2ce1382bad279a5a0284c3/lakefile.toml">lakefile</a>); no sorry and no axiom declarations (our text grep). Not built or run by us.</dd>
+  </div>
+</dl>
+<p class="ledger-note"><!-- last-checked:start -->Last checked November 17, 2026.<!-- last-checked:end --> Where it stands. Released: the repository on November 16, and the post on November 17. Machine checks: only Axiom’s own axiom printout, no CI and no comparator run. Human review of the Lean code: not yet, the README says. Independent check: none so far. Peer review: none, for the Lean or for OpenAI’s paper. The statement matches the paper’s main theorem, by our reading. Not built or run by us.</p>
+<p>This is a Specials episode. It follows AX06, the Stacks Project, and AX09, Faltings’ theorem, and it returns to result 056. Here, a proof from OpenAI’s catalogue that came with no Lean now has a Lean formalization from another company, by that company’s account. If it holds, the projective fourfold case of termination of flips is checked by Lean’s kernel, from Axiom’s own statement and definitions, written by AI, and not yet reviewed by people. See <a href="../056-termination-projective-kahler-fourfold-minimal/">056</a>, <a href="../ax09-faltings-theorem-lean/">AX09</a> and <a href="../ax06-stacks-project-lean/">AX06</a>; also <a href="../ax08-cluster-algebras-lean/">AX08</a> and <a href="../ax07-weil-conjectures-lean/">AX07</a>.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">The checks</h2>
+<ol class="steps">
+  <li><strong>What has been checked?</strong> The repository has no continuous integration runs, no comparator file, no published build log, and, one day in, no issues and no reported outside builds. The axiom list in the README is Axiom’s own output. We did not build or run it, and we found no expert reaction yet. What would a kernel check settle, once someone outside Axiom completes a build? The proof came from OpenAI’s AI, in an unreviewed preprint. Axiom’s agents wrote the Lean. The kernel would confirm that the conclusion follows from the hypotheses, as the library defines them. It would not confirm that those definitions mean what the paper means. That part still needs people.</li>
+  <li><strong>Who wrote it?</strong> The README says the library’s roughly 2,270 modules were written by AI agents, and that the code has not yet been reviewed by humans. Neither the README nor the post names the AI model. The post, signed Axiom, credits the mathematics to generations of geometers, and presents the four-dimensional step as OpenAI’s. The single commit is by Ashvin Swaminathan, as in AX09. So both layers, the proof and the Lean, come from AI, and neither has a published human review yet.</li>
+  <li><strong>What it sits on.</strong> The library uses Mathlib, on Lean v4.35.0, and Axiom’s Stacks library from AX06, pinned to the same commit as the Faltings library. By our count, it imports 1,536 Stacks modules directly, all from StacksFrontier, the part that Axiom’s own metadata says has not yet had human review. And 275 of its tag labels name items of OpenAI’s paper: its programs, the echoes, the junctions, the difficulty, and the unit drop. So the Lean follows the paper’s own route, at least by its labels.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: on the plane blown up at a point, the new curve E has E·E = −1 and K·E = −1 (genus 0); contracting it lowers the Picard number from 2 to 1. On the plane, K·L = −3 for a line. The lines through the point form F = H − E with F·F = 0 and K·F = −2; the cone of curves is spanned by E and F (a standard fact). Blowing up three points and contracting them back gives Picard numbers 4, 3, 2, 1.</li>
+  <li>From OpenAI’s projective paper (result 056): 44 pages, dated September 24, 2026; Theorem 1.2 has three parts (continuation, termination for every program, endpoints of maximal programs).</li>
+  <li>Ours: the repository at 1f9ade3 has 2,269 Lean files and 2,054,277 lines (1,897,270 not blank; the post says 2.1 million), 3,822 @[mmp] tags with 3,015 labels, 275 of which name items of OpenAI’s paper, and 1,536 directly imported Stacks modules, all StacksFrontier; our text grep finds no sorry, admit, native_decide or axiom declaration.</li>
+  <li>Ours: earlier Axiom libraries on this channel: Weil (AX07) 213,159 lines, cluster algebras (AX08) 330,722, Faltings (AX09) 124,110; this one is about 17 times the Faltings library.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li><a href="https://axiommath.ai/research/the-minimal-model-program-formalized/">“The Minimal Model Program, Formalized in Lean”</a>, Axiom Math blog post, November 17, 2026.</li>
+  <li><a href="https://github.com/AxiomMath/MMP">AxiomMath/MMP</a>, the Lean repository (Apache 2.0; not built or run by us): its <a href="https://github.com/AxiomMath/MMP/blob/1f9ade367087ec711a2ce1382bad279a5a0284c3/README.md">README</a>, <a href="https://github.com/AxiomMath/MMP/blob/1f9ade367087ec711a2ce1382bad279a5a0284c3/MMP/AlgebraicGeometry/MMP/Fourfold/AlgClosed/ProgramEndpoints.lean">main theorem</a>, <a href="https://github.com/AxiomMath/MMP/blob/1f9ade367087ec711a2ce1382bad279a5a0284c3/MMP/AlgebraicGeometry/MMP/Fourfold/Program.lean">programs and permitted steps</a> and <a href="https://github.com/AxiomMath/MMP/blob/1f9ade367087ec711a2ce1382bad279a5a0284c3/MMP/AlgebraicGeometry/MMP/Threefold/LogMMP.lean">dimension-three theorem</a>.</li>
+  <li>OpenAI, <a href="https://github.com/openai/math/blob/main/preprints/Termination-for-projective-log-canonical-fourfolds-with-rational-boundary-September-24-2026/paper.pdf">Termination for projective log canonical fourfolds with rational boundary</a>, preprint, September 24, 2026 (result 056; our <a href="../056-termination-projective-kahler-fourfold-minimal/">episode 056</a>).</li>
+  <li>Axiom’s <a href="https://github.com/AxiomMath/Stacks/blob/c496df0d9beea9deaeabcea8492605f9a0a2313b/formalization.yaml">Stacks metadata</a> at the pinned commit (StacksCore and StacksFrontier).</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Axiom Math, OpenAI, or Anthropic.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is AX10. Take the projective plane, and blow up a point: replace it with a whole line of directions, a new curve called E. E meets itself minus one times, and the canonical class K, which comes from differential forms on the surface, also meets E minus one times. A curve like that can be blown back down. That is Castelnuovo’s contraction theorem, more than a century old. Each contraction lowers the Picard number, a count of independent curve classes, here from two to one, so contractions cannot go on forever. Back on the plane, every line meets K minus three times, and the only contraction left sends the whole plane to a point. That is a Mori fibre space, one possible ending. But there was a second choice. The lines through the point form a family F, with F² = 0, and K·F = −2. Contracting that family maps the surface onto a projective line, and stops at once. Both choices finish in finitely many steps. The minimal model program does this in every dimension. At each stage, pick a K-negative extremal ray of curves, and contract it. If the contraction collapses a divisor, the Picard number drops, and the program goes on. If it collapses everything onto something smaller, the program stops at a Mori fibre space. It also stops where K is nef, never negative on any curve. But if the contraction collapses something smaller than a divisor, the result is so singular that K no longer meets curves in numbers, so the program performs a flip: cut out the bad curves, and glue in new ones, on which K is positive. A flip leaves the Picard number unchanged. So why should flips ever stop? In dimension three, Shigefumi Mori proved that flips exist, and Shokurov’s counting device, the difficulty, showed that they stop. In 2006, Birkar, Cascini, Hacon and McKernan proved that klt flips exist in every dimension, and that one carefully chosen kind of program terminates in key cases. Termination for every choice stayed open in general, with only special cases known in dimension four. That is where result 056 comes in, our episode 056. One OpenAI preprint, 44 pages, dated September 24, claims the projective case in dimension four, for log canonical pairs with rational boundary, over any algebraically closed field of characteristic zero. Its theorem has three parts. Every negative extremal ray can be contracted, and, when needed, the next model exists. Every program, for every sequence of choices, has finitely many birational steps. And every maximal program ends at a nef adjoint or a Mori fibre space. Four more preprints in the same result treat compact Kähler fourfolds. None of the five has been peer reviewed, and OpenAI’s release included no Lean proof for this result.</p>
+<h3><span class="t num">3:00</span>The claim</h3>
+<p>On November 17, 2026, Axiom Math announced what it calls a complete Lean formalization of the minimal model program in dimensions 2, 3, and 4. The repository, AxiomMath/MMP, was created the day before, with a single commit. Its main theorem gives the last two parts of the paper’s theorem: every maximal program for such a fourfold has finitely many birational steps, and ends at a nef adjoint or a Mori fibre space. Companion theorems give the rest. By our count, the library has 2,269 Lean files and about 2.05 million lines, close to the post’s 2.1 million. Our text search finds no sorry and no axiom declaration, and the README says Lean’s kernel checks every proof, using only the three standard axioms. Is the statement right? There is no outside benchmark this time, so we compared the Lean statement, and the definition of a program it uses, with the paper’s Definition 1.1 and Theorem 1.2, by reading. Every hypothesis has a counterpart: an algebraically closed field of characteristic zero, dimension four, a projective log canonical pair with an effective rational boundary, and no Q-factoriality or pseudo-effectivity assumed. So do the steps, and both conclusions. What we could not check is the layer underneath: what the definitions of curves, cones, nef and log canonical really say. That is where a formalization can quietly go wrong. Then the scope. The post says dimensions 2, 3, and 4, but the README’s lower-dimensional theorem is narrower: Q-factorial dlt pairs over the complex numbers. And what is not claimed: no new mathematics beyond result 056, nothing about the four Kähler papers, and nothing about real coefficients, positive characteristic, or dimension five and up.</p>
+<h3><span class="t num">4:59</span>The checks</h3>
+<p>What has been checked so far? The repository has no continuous integration runs, no comparator file, no published build log, and, one day in, no issues and no reported outside builds. The axiom list in the README is Axiom’s own output. We did not build or run it, and we found no expert reaction yet. What would a kernel check settle, once someone outside Axiom completes a build? The proof came from OpenAI’s AI, in an unreviewed preprint. Axiom’s agents wrote the Lean. The kernel would confirm that the conclusion follows from the hypotheses, as the library defines them. It would not confirm that those definitions mean what the paper means. That part still needs people. Who wrote it? The README says the library’s roughly 2,270 modules were written by AI agents, and that the code has not yet been reviewed by humans. Neither the README nor the post names the AI model. The post, signed Axiom, credits the mathematics to generations of geometers, and presents the four-dimensional step as OpenAI’s. The single commit is by Ashvin Swaminathan, as in AX09. So both layers, the proof and the Lean, come from AI, and neither has a published human review yet. What it sits on. The library uses Mathlib, on Lean v4.35.0, and Axiom’s Stacks library from AX06, pinned to the same commit as the Faltings library. By our count, it imports 1,536 Stacks modules directly, all from StacksFrontier, the part that Axiom’s own metadata says has not yet had human review. And 275 of its tag labels name items of OpenAI’s paper: its programs, the echoes, the junctions, the difficulty, and the unit drop. So the Lean follows the paper’s own route, at least by its labels.</p>
+<h3><span class="t num">6:56</span>Where it stands</h3>
+<p>Where it stands. Released: the repository on November 16, and the post on November 17. Machine checks: only Axiom’s own axiom printout, no CI and no comparator run. Human review of the Lean code: not yet, the README says. Independent check: none so far. Peer review: none, for the Lean or for OpenAI’s paper. The statement matches the paper’s main theorem, by our reading. Not built or run by us. This is a Specials episode. It follows AX06, the Stacks Project, and AX09, Faltings’ theorem, and it returns to result 056. Here, a proof from OpenAI’s catalogue that came with no Lean now has a Lean formalization from another company, by that company’s account. If it holds, the projective fourfold case of termination of flips is checked by Lean’s kernel, from Axiom’s own statement and definitions, written by AI, and not yet reviewed by people.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=AX10%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
