@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Riemann hypothesis in Lean? An Anthropic mathematician’s claim with Claude, not yet checked | AI Proved What?</title>
+<meta name="description" content="Levent Alpöge, a mathematician at Anthropic, says that working with Claude he found a proof of the Riemann hypothesis and of GRH for Dirichlet L-functions, formalized in Lean without assumptions. There is no paper, only a 17.4-million-line Lean archive. By our reading the Lean statements say RH (Mathlib’s definition) and Dirichlet GRH; no full check is published yet. Not built or run by us. Anthropic makes Claude, which helps make this series.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/an06-riemann-hypothesis-lean/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="The Riemann hypothesis in Lean?">
+<meta property="og:description" content="Levent Alpöge, a mathematician at Anthropic, says that working with Claude he found a proof of the Riemann hypothesis and of GRH for Dirichlet L-functions, formalized in Lean without assumptions. There is no paper, only a 17.4-million-line Lean archive. By our reading the Lean statements say RH (Mathlib’s definition) and Dirichlet GRH; no full check is published yet. Not built or run by us. Anthropic makes Claude, which helps make this series.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/an06-riemann-hypothesis-lean/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/an06-riemann-hypothesis-lean/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="AN06: the Riemann hypothesis in Lean? The critical strip with the first ten zeros of the zeta function on the line real part one half (our computation).">
+<meta name="twitter:image:alt" content="AN06: the Riemann hypothesis in Lean? The critical strip with the first ten zeros of the zeta function on the line real part one half (our computation).">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">AN06 (Specials; see also <a href="../an02-simple-zeros-riemann-zeta/">AN02</a> and <a href="../003-quasi-riemann-hypothesis/">003</a>), November 2026</p>
+<h1>The Riemann hypothesis in Lean?</h1>
+<p class="subtitle">Levent Alpöge, a mathematician at Anthropic, says that working with Claude he found a proof of the Riemann hypothesis, and of the Generalized Riemann Hypothesis for Dirichlet L-functions, formalized in Lean. There is no paper. By our reading the Lean statements say what he claims; no full independent check is published yet.</p>
+
+<div class="player" data-youtube="Yj5RRdW73XQ" data-title="AN06: the Riemann hypothesis in Lean?">
+  <a href="https://youtu.be/Yj5RRdW73XQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play AN06: the Riemann hypothesis in Lean? The critical strip with the first ten zeros of the zeta function on the line real part one half (our computation).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:54. English captions available. The video loads from YouTube when you press play.</p>
+
+<p><strong>Disclosure.</strong> Anthropic makes Claude, which helps make this series. This claim comes from a mathematician at Anthropic, working with Claude: we hold it to the same standards as any lab’s, using only public sources. AI Proved What? is independent and not affiliated with Anthropic beyond using its product Claude.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/Yj5RRdW73XQ?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/Yj5RRdW73XQ?t=154" data-t="154"><span class="t">2:34</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/Yj5RRdW73XQ?t=318" data-t="318"><span class="t">5:18</span><span>How it was made</span></a></li>
+  <li><a href="https://youtu.be/Yj5RRdW73XQ?t=447" data-t="447"><span class="t">7:27</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>This is AN06. Before we start: Anthropic makes Claude, which helps make this series. This claim comes from a mathematician at Anthropic, working with Claude, so we hold it to the same standards as any other, using only public sources. Add one, plus one over two to the s, plus one over three to the s, and so on. That is the Riemann zeta function. Euler saw that the same sum is a product over the primes, so it carries information about them. Riemann, in 1859, extended it to almost every complex number. It is zero at minus two, minus four, minus six, the trivial zeros. All its other zeros lie in a strip between real parts zero and one, and Riemann guessed that they all lie exactly on the middle line, real part 1/2. That is the Riemann hypothesis. Our short script finds the first zeros at heights 14.1347, 21.02, and 25.01, and all ten below 50 sit on the line. Computers have checked trillions more, but there are infinitely many.</p>
+<p>Why it matters: the primes. Up to 10 million there are 664,579 primes. Gauss’s estimate, the logarithmic integral, overshoots by about 339. The Riemann hypothesis is equivalent to saying that this error never grows much faster than the square root of x. In one explicit form, for x above 2,657, the error stays below the square root of x, times log x, over eight pi. In our table that holds from 10,000 on. A table proves nothing, but it shows what the hypothesis controls: how evenly the primes are spread.</p>
+<p>The Generalized Riemann Hypothesis asks the same of a whole family. Give the whole numbers weights that repeat with some period and respect multiplication, like one, zero, minus one, zero, for period four, and build the same kind of sum. Weights like these are called characters. These are Dirichlet L-functions, one for every such character and every period. They count primes in arithmetic progressions, such as primes that leave remainder one, or three, when divided by four. Up to 10 million, those two kinds split almost evenly. The hypothesis for these functions says their zeros in the strip are on the same line. For period four, our script finds the first at height 6.02, on the line. Wider versions go further, to the zeta functions of number fields and beyond.</p>
+<p>On November 20, 2026, Levent Alpöge, a mathematician at Anthropic, posted a four-page note on his own website. He says he believes that, working with Claude, he discovered a proof of the Riemann hypothesis; that the method extends to the Generalized Riemann Hypothesis; and that he expects the Extended Riemann Hypothesis too, with more time. He says he and Claude formalized the arguments in Lean, without assumptions. There is no paper: he writes that he decided to only present Lean, and that he intends to write the argument properly. The note links a Lean archive of about 239 megabytes. By our count, it holds 175,187 Lean files and about 17.4 million lines, roughly eight and a half times the library in AX10. It has no README and not a single comment.</p>
+<p>Is the statement right? This part can be checked by reading. The headline theorem’s type is RiemannHypothesis, as defined in Mathlib, not in the archive. It says: for every complex number s, if zeta of s is zero, s is not a trivial zero, and s is not one, then the real part of s is 1/2. That is equivalent to the textbook statement. Four companion theorems have their statements in a 16-line file that imports only Mathlib, so nothing else in the archive can change what they mean. One says that no Dirichlet L-function vanishes to the right of the line, for every period and every character, apart from the trivial character at s equals one. The others say every zero in the strip is on the line. So, by our reading, these theorems say the Riemann hypothesis, and the Generalized Riemann Hypothesis for Dirichlet L-functions, with no extra hypotheses. Our text search finds no sorry, no axiom, and no native_decide. A few custom shortcuts skip checks while proofs are elaborated, but Lean’s kernel still checks each finished proof. A text search cannot rule everything out: that takes a full build, and the list of axioms the theorems use.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t claim</h2>
+<p>What is not claimed. There is no paper and no human-readable proof. The Lean covers Dirichlet L-functions only: not the zeta functions of number fields or Hecke L-functions, a case often called the Extended Riemann Hypothesis, which he expects with more time. Nothing is claimed about the zeros being simple. He does not say the argument is short or final; he expects it to be massively simplified. There is no announcement from Anthropic itself. And the 250,000 pages in some reports are not the Lean: a footnote says a write-up he chose not to post, which Claude called the GRH book, passed that length.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Released</dt>
+    <dd>Alpöge’s <a href="https://alpo.ge/remark.pdf">four-page note</a> (PDF dated November 20, 2026, 04:52 PST), on his own website, and the Lean archive it links (<a href="https://alpo.ge/lean.tar.gz.part01">lean.tar.gz.part01</a> to part14, 239,275,554 bytes). No paper, no repository history, no README.</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Statement: RH and GRH for Dirichlet L-functions</dt>
+    <dd>By our reading of the text: <code>theorem riemannHypothesis : RiemannHypothesis</code> uses <a href="https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/NumberTheory/LSeries/RiemannZeta.lean">Mathlib’s own definition</a>; four companion statements sit in <code>src/Statements.lean</code> (16 lines, imports only Mathlib). No extra hypotheses. Not Dedekind or Hecke L-functions (the Extended RH).</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Text scan</dt>
+    <dd>Our search of all 175,187 files: no <code>sorry</code>, <code>admit</code>, <code>axiom</code>, <code>native_decide</code>, <code>implemented_by</code>, <code>extern</code>, <code>unsafe</code> or <code>opaque</code>. A text scan cannot rule out everything (custom elaborators and build-time commands exist; the kernel still re-checks each declaration).</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Full build</dt>
+    <dd><a href="https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/">Scientific American</a> reports that Andrew Sutherland (MIT) independently compiled it; no log published. A public rebuild (<a href="https://github.com/Hertaspace/alpoge-rh-lean-verification">Hertaspace</a>) was at step 48,175 of 183,903 at 21:15 UTC on November 20.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Axiom list for the main theorems</dt>
+    <dd>Not published.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Independent kernel check</dt>
+    <dd>A Comparator setup (<a href="https://github.com/Deicyde/riemann-hypothesis">Deicyde</a>: the five statements in a file importing only Mathlib; independent kernels) is ready; no result yet.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Human-readable proof; expert review</dt>
+    <dd>None yet. The note says he intends to write the argument properly. <a href="https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/">Terence Tao</a> calls his own look a “very initial analysis”.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No.</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked November 20, 2026, afternoon Pacific. Not built or run by us. Also on November 20, Ravi Vakil’s <a href="https://math216.wordpress.com/">blog</a> posted a separate, all-human proposed proof of GRH, a 940-page draft by Alessandro Masullo; it has not been checked either.</p>
+<p>This is a Specials episode. In AN02, Alpöge and Ralph Furman checked, and took responsibility for, a result that Claude found and wrote: more than two thirds of the zeta zeros are simple and on the line. Episode 003 covered OpenAI’s claimed zero-free region past 7/8. Now, he says, all of them are on the line. If it holds, and the kernel accepts it with only the standard axioms, Lean will have checked a proof of the Riemann hypothesis, and of GRH for Dirichlet L-functions, against Mathlib’s definitions, before any human-readable proof exists. Until then, it is a claim. Once more: Anthropic makes Claude, which helps make this series. See <a href="../an02-simple-zeros-riemann-zeta/">AN02</a> and <a href="../003-quasi-riemann-hypothesis/">003</a>; for other large Lean claims, <a href="../an04-fermat-lean-fable-5-2/">AN04</a> and <a href="../ax10-minimal-model-program-lean/">AX10</a>.</p>
+</section>
+
+<section aria-labelledby="proof">
+<h2 id="proof">How it was made</h2>
+<ol class="steps">
+  <li><strong>How it was found.</strong> He says he had planned for this problem since his student days. He set the two of them on a course combining two ideas from a toy setting, and guided them to the analogous situation; then, he writes, Claude far outpaced him near the finish line. His one example: Stepanov’s proof method for the Riemann hypothesis over function fields uses multiplicity, which is hard to find over the whole numbers. They chained theta lifts, each one mimicking multiplicity, and for a weighted prime count up to X, Claude suggested a chain of length the square root of X. A timeline that, he says, Claude provided runs from October 6 to November 16, marked GRH. He says he is paraphrasing the parts where Claude is the expert. Scientific American notes that the note came a day after Anthropic’s stock market debut; the note says a cynical view of the timing is false. (The note’s account; we cannot check it.)</li>
+  <li><strong>Who wrote the Lean, and who is checking.</strong> The note says Claude and he did. The archive carries no names and no dates: every timestamp is zeroed. Its many short, machine-like names suggest generated code, but that is our impression, not evidence. Is it sound? That is the kernel’s job. Scientific American reports that Andrew Sutherland of MIT independently compiled it; no log or axiom list has been published. Two public projects are checking it. One is rebuilding all of it, nearly 184,000 build steps on 256 cores, about a quarter done by the afternoon of November 20. Another has set up Lean’s comparator, which matches the theorems against statements written separately, including an independent kernel. Terence Tao writes that, from very initial analysis, it appears to use the full power of the modern Langlands program. The same day, Ravi Vakil posted a separate, all-human proposed proof of GRH in a wider form, for all number fields, a 940-page draft by Alessandro Masullo. It has not been checked either, beyond a private review by Brian Conrad.</li>
+</ol>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the first ten zeros of ζ(s) above the real axis, all below height 50, lie on Re s = 1/2: 14.1347, 21.0220, 25.0109, 30.4249, 32.9351, 37.5862, 40.9187, 43.3271, 48.0052, 49.7738 (Hardy’s Z with Euler–Maclaurin, checked against mpmath).</li>
+  <li>Ours: π(x) against li(x): x = 10^2: 25 vs 30.1; x = 10^3: 168 vs 177.6; x = 10^4: 1,229 vs 1,246.1; x = 10^5: 9,592 vs 9,629.8; x = 10^6: 78,498 vs 78,627.5; x = 10^7: 664,579 vs 664,918.4. Schoenfeld’s bound √x·log x/(8π), equivalent to RH, holds in the table from 10^4 on.</li>
+  <li>Ours: the character mod 4: primes up to 10^7 split 332,180 (1 mod 4) and 332,398 (3 mod 4); the first zeros of its L-function lie on the line at heights 6.02, 10.24, 12.99, 16.34, 18.29, 21.45, 23.28.</li>
+  <li>Ours: the archive has 175,187 Lean files, 17,374,215 lines (15,531,759 not blank), about 8.5 times AX10’s library; Lean v4.33.1, Mathlib 0df444a; no comments at all.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li>Levent Alpöge, <a href="https://alpo.ge/remark.pdf">note</a> (four pages, November 20, 2026), and the Lean archive it links (<a href="https://alpo.ge/lean.tar.gz.part01">part01</a> to part14; no license stated; not built or run by us).</li>
+  <li>Mathlib’s <a href="https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/NumberTheory/LSeries/RiemannZeta.lean">RiemannHypothesis</a> at the pinned commit 0df444a.</li>
+  <li><a href="https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/">Scientific American</a>, November 20, 2026.</li>
+  <li>Terence Tao, <a href="https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/">blog post</a>, November 20, 2026.</li>
+  <li>Public check projects: <a href="https://github.com/Hertaspace/alpoge-rh-lean-verification">Hertaspace/alpoge-rh-lean-verification</a> (full rebuild) and <a href="https://github.com/Deicyde/riemann-hypothesis">Deicyde/riemann-hypothesis</a> (Comparator setup).</li>
+  <li>Ravi Vakil, <a href="https://math216.wordpress.com/">blog</a>, November 20, 2026 (Masullo’s separate draft).</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Anthropic beyond using its product Claude, or with OpenAI.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is AN06. Before we start: Anthropic makes Claude, which helps make this series. This claim comes from a mathematician at Anthropic, working with Claude, so we hold it to the same standards as any other, using only public sources. Add one, plus one over two to the s, plus one over three to the s, and so on. That is the Riemann zeta function. Euler saw that the same sum is a product over the primes, so it carries information about them. Riemann, in 1859, extended it to almost every complex number. It is zero at minus two, minus four, minus six, the trivial zeros. All its other zeros lie in a strip between real parts zero and one, and Riemann guessed that they all lie exactly on the middle line, real part 1/2. That is the Riemann hypothesis. Our short script finds the first zeros at heights 14.1347, 21.02, and 25.01, and all ten below 50 sit on the line. Computers have checked trillions more, but there are infinitely many. Why it matters: the primes. Up to 10 million there are 664,579 primes. Gauss’s estimate, the logarithmic integral, overshoots by about 339. The Riemann hypothesis is equivalent to saying that this error never grows much faster than the square root of x. In one explicit form, for x above 2,657, the error stays below the square root of x, times log x, over eight pi. In our table that holds from 10,000 on. A table proves nothing, but it shows what the hypothesis controls: how evenly the primes are spread. The Generalized Riemann Hypothesis asks the same of a whole family. Give the whole numbers weights that repeat with some period and respect multiplication, like one, zero, minus one, zero, for period four, and build the same kind of sum. Weights like these are called characters. These are Dirichlet L-functions, one for every such character and every period. They count primes in arithmetic progressions, such as primes that leave remainder one, or three, when divided by four. Up to 10 million, those two kinds split almost evenly. The hypothesis for these functions says their zeros in the strip are on the same line. For period four, our script finds the first at height 6.02, on the line. Wider versions go further, to the zeta functions of number fields and beyond.</p>
+<h3><span class="t num">2:34</span>The claim</h3>
+<p>On November 20, 2026, Levent Alpöge, a mathematician at Anthropic, posted a four-page note on his own website. He says he believes that, working with Claude, he discovered a proof of the Riemann hypothesis; that the method extends to the Generalized Riemann Hypothesis; and that he expects the Extended Riemann Hypothesis too, with more time. He says he and Claude formalized the arguments in Lean, without assumptions. There is no paper: he writes that he decided to only present Lean, and that he intends to write the argument properly. The note links a Lean archive of about 239 megabytes. By our count, it holds 175,187 Lean files and about 17.4 million lines, roughly eight and a half times the library in AX10. It has no README and not a single comment. Is the statement right? This part can be checked by reading. The headline theorem’s type is RiemannHypothesis, as defined in Mathlib, not in the archive. It says: for every complex number s, if zeta of s is zero, s is not a trivial zero, and s is not one, then the real part of s is 1/2. That is equivalent to the textbook statement. Four companion theorems have their statements in a 16-line file that imports only Mathlib, so nothing else in the archive can change what they mean. One says that no Dirichlet L-function vanishes to the right of the line, for every period and every character, apart from the trivial character at s equals one. The others say every zero in the strip is on the line. So, by our reading, these theorems say the Riemann hypothesis, and the Generalized Riemann Hypothesis for Dirichlet L-functions, with no extra hypotheses. Our text search finds no sorry, no axiom, and no native_decide. A few custom shortcuts skip checks while proofs are elaborated, but Lean’s kernel still checks each finished proof. A text search cannot rule everything out: that takes a full build, and the list of axioms the theorems use. What is not claimed. There is no paper and no human-readable proof. The Lean covers Dirichlet L-functions only: not the zeta functions of number fields or Hecke L-functions, a case often called the Extended Riemann Hypothesis, which he expects with more time. Nothing is claimed about the zeros being simple. He does not say the argument is short or final; he expects it to be massively simplified. There is no announcement from Anthropic itself. And the 250,000 pages in some reports are not the Lean: a footnote says a write-up he chose not to post, which Claude called the GRH book, passed that length.</p>
+<h3><span class="t num">5:18</span>How it was made</h3>
+<p>How it was found, in the note’s own account, which we cannot check. He says he had planned for this problem since his student days. He set the two of them on a course combining two ideas from a toy setting, and guided them to the analogous situation; then, he writes, Claude far outpaced him near the finish line. His one example: Stepanov’s proof method for the Riemann hypothesis over function fields uses multiplicity, which is hard to find over the whole numbers. They chained theta lifts, each one mimicking multiplicity, and for a weighted prime count up to X, Claude suggested a chain of length the square root of X. A timeline that, he says, Claude provided runs from October 6 to November 16, marked GRH. He says he is paraphrasing the parts where Claude is the expert. Scientific American notes that the note came a day after Anthropic’s stock market debut; the note says a cynical view of the timing is false. Who wrote the Lean? The note says Claude and he did. The archive carries no names and no dates: every timestamp is zeroed. Its many short, machine-like names suggest generated code, but that is our impression, not evidence. Is it sound? That is the kernel’s job. Scientific American reports that Andrew Sutherland of MIT independently compiled it; no log or axiom list has been published. Two public projects are checking it. One is rebuilding all of it, nearly 184,000 build steps on 256 cores, about a quarter done by the afternoon of November 20. Another has set up Lean’s comparator, which matches the theorems against statements written separately, including an independent kernel. Terence Tao writes that, from very initial analysis, it appears to use the full power of the modern Langlands program. The same day, Ravi Vakil posted a separate, all-human proposed proof of GRH in a wider form, for all number fields, a 940-page draft by Alessandro Masullo. It has not been checked either, beyond a private review by Brian Conrad.</p>
+<h3><span class="t num">7:27</span>Where it stands</h3>
+<p>Where it stands, on the afternoon of November 20. Released: the note and the Lean archive. The statement: by our reading, the Riemann hypothesis in Mathlib’s own words, and GRH for Dirichlet L-functions. Text scan: no sorry and no axioms, by our search. Build: one reported compile, with no published log, and public rebuilds under way. The axiom list for the main theorems: not published. An independent kernel check: set up, not finished. A human-readable proof: none. Expert review of the mathematics: none yet. Peer review: none. Not built or run by us. This is a Specials episode. In AN02, Alpöge and Ralph Furman checked, and took responsibility for, a result that Claude found and wrote: more than two thirds of the zeta zeros are simple and on the line. Episode 003 covered OpenAI’s claimed zero-free region past 7/8. Now, he says, all of them are on the line. If it holds, and the kernel accepts it with only the standard axioms, Lean will have checked a proof of the Riemann hypothesis, and of GRH for Dirichlet L-functions, against Mathlib’s definitions, before any human-readable proof exists. Until then, it is a claim. Once more: Anthropic makes Claude, which helps make this series.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=AN06%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
