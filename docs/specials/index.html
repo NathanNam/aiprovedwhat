@@ -185,11 +185,11 @@
 <tr><th scope="row">Who and how</th><td>first found by Claude; checked and written up by Levent Alpöge and Ralph Furman; reproved by Youness Lamzouri</td><td>Alpöge “working with Claude” (his note); Claude credited with key steps near the end</td></tr>
 <tr><th scope="row">Paper</th><td>arXiv preprints (Alpöge–Furman; Lamzouri)</td><td>none; a four-page note, Lean only</td></tr>
 <tr><th scope="row">Lean</th><td>by Anthropic and by Axiom, with comparator statements</td><td>a 17.4-million-line archive; main theorem is Mathlib’s RiemannHypothesis (our reading)</td></tr>
-<tr><th scope="row">Outside checks</th><td>the comparator reported by both; Lamzouri’s independent proof</td><td>one reported compile (no log); public rebuild and Comparator under way</td></tr>
+<tr><th scope="row">Outside checks</th><td>the comparator reported by both; Lamzouri’s independent proof</td><td>full build, standard axioms only, independent kernels and comparator (November 21); Lean community statement</td></tr>
 <tr><th scope="row">Announced</th><td>August 10, 2026</td><td>November 20, 2026</td></tr>
 </tbody>
 </table></div>
-<p class="meta">Figures as the sources report them, checked in our AN02 and AN06 episodes. AN06 is a claim not yet independently checked; not a ranking. Anthropic makes Claude, which helps make this series.</p>
+<p class="meta">Figures as the sources report them, checked in our AN02 and AN06 episodes. AN06 is checked in Lean but has no paper or peer review yet; not a ranking. Anthropic makes Claude, which helps make this series.</p>
 </section>
 <section class="special" id="s01" aria-labelledby="s01-h">
 <p class="thumb-kicker">Special S01 · OpenAI, outside its catalogue · announced September 8, 2026 · Mathematical physics</p>
@@ -766,16 +766,16 @@
 <section class="special" id="an06" aria-labelledby="an06-h">
 <p class="thumb-kicker">AN06 · Anthropic · announced November 20, 2026 · Number theory</p>
 <h2 id="an06-h">The Riemann hypothesis and GRH for Dirichlet L-functions, claimed in Lean (Alpöge, with Claude)</h2>
-<p>Levent Alpöge, a mathematician at Anthropic, says that working with Claude he found a proof of the Riemann hypothesis and of the Generalized Riemann Hypothesis for Dirichlet L-functions, formalized in Lean “without assumptions” (note, November 20, 2026). There is no paper, only a Lean archive of 175,187 files (about 17.4 million lines; our count). By our reading the main theorem is Mathlib’s own RiemannHypothesis and the companion statements are GRH for Dirichlet L-functions; not the Extended RH. No published axiom list or independent kernel check yet; not built or run by us.</p>
+<p>Levent Alpöge, a mathematician at Anthropic, says that working with Claude he found a proof of the Riemann hypothesis and of the Generalized Riemann Hypothesis for Dirichlet L-functions, formalized in Lean “without assumptions” (note, November 20, 2026). There is no paper, only a Lean archive of 175,187 files (about 17.4 million lines; our count). By our reading the main theorem is Mathlib’s own RiemannHypothesis and the companion statements are GRH for Dirichlet L-functions; not the Extended RH. On November 21 Andrew Sutherland (MIT) published a full build with only Lean’s three standard axioms, independent kernels accepted the proof, and the Lean and Mathlib communities said they have “full confidence” it is correct. No human-readable proof or peer review yet; not built or run by us.</p>
 <p class="meta">Anthropic makes Claude, which helps make this series.</p>
 <dl class="ledger ledger-auto">
   <div class="ledger-row">
-    <dt><span class="box" aria-hidden="true"></span>Announced; no paper, Lean only</dt>
+    <dt><span class="box" aria-hidden="true"></span>Announced; checked in Lean, no paper</dt>
     <dd>No paper yet</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
-    <dd>None yet as of November 20, 2026. Scientific American reports that Andrew Sutherland (MIT) independently compiled the Lean (no log published); Terence Tao calls his own look a “very initial analysis”; a public full rebuild (Hertaspace) and a Comparator setup (Deicyde) under way, no result yet</dd>
+    <dd>Lean checks, as of November 21, 2026: Andrew Sutherland (MIT; checks run with Claude Code) published a full build, the axiom list and independent kernel checks (nanoda, con-leche, lean4lean), all passing; the Lean and Mathlib communities, endorsed by the Lean FRO and the Mathlib Initiative, say they have “full confidence” the proof is correct. No human review of the argument yet: no paper; Terence Tao calls his own look a “very initial analysis”</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -783,13 +783,13 @@
   </div>
   <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>Lean archive (Lean v4.33.1, Mathlib 0df444a; 175,187 files, 17,374,215 lines, our count): main theorem uses Mathlib’s RiemannHypothesis; four companion statements (GRH for Dirichlet L-functions) in a 16-line file importing only Mathlib; by our reading they say what is claimed; no sorry/axiom/native_decide by our text search; no published axiom list or kernel replay; not built or run by us (<a href="https://alpo.ge/remark.pdf">note linking the archive</a>)</dd>
+    <dd>Lean archive (Lean v4.33.1, Mathlib 0df444a; 175,187 files, 17,374,215 lines, our count): main theorem uses Mathlib’s RiemannHypothesis; four companion statements (GRH for Dirichlet L-functions) in a 16-line file importing only Mathlib; by our reading they say what is claimed; no sorry/axiom/native_decide by our text search; Sutherland’s #print axioms: only propext, Classical.choice, Quot.sound; kernel replay and independent kernels accept it; comparator confirms the statement (November 21); not built or run by us (<a href="https://alpo.ge/remark.pdf">note linking the archive</a>)</dd>
   </div>
 </dl>
 <p><a href="../episodes/an06-riemann-hypothesis-lean/">Watch the episode and read the record</a></p>
 
 </section>
-<p class="attribution">Last checked November 20, 2026.</p>
+<p class="attribution">Last checked November 21, 2026.</p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

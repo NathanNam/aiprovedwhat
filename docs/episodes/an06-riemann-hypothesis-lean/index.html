@@ -47,7 +47,7 @@
 <main id="main">
 <p class="meta">AN06 (Specials; see also <a href="../an02-simple-zeros-riemann-zeta/">AN02</a> and <a href="../003-quasi-riemann-hypothesis/">003</a>), November 2026</p>
 <h1>The Riemann hypothesis in Lean?</h1>
-<p class="subtitle">Levent Alpöge, a mathematician at Anthropic, says that working with Claude he found a proof of the Riemann hypothesis, and of the Generalized Riemann Hypothesis for Dirichlet L-functions, formalized in Lean. There is no paper. By our reading the Lean statements say what he claims; no full independent check is published yet.</p>
+<p class="subtitle">Levent Alpöge, a mathematician at Anthropic, says that working with Claude he found a proof of the Riemann hypothesis, and of the Generalized Riemann Hypothesis for Dirichlet L-functions, formalized in Lean. There is no paper. The Lean statements say what he claims, and on November 21 independent checkers and the Lean community confirmed that Lean accepts the proof; a human-readable proof is still to come.</p>
 
 <div class="player" data-youtube="Yj5RRdW73XQ" data-title="AN06: the Riemann hypothesis in Lean?">
   <a href="https://youtu.be/Yj5RRdW73XQ">
@@ -100,17 +100,17 @@
     <dt><span class="box" aria-hidden="true"></span>Text scan</dt>
     <dd>Our search of all 175,187 files: no <code>sorry</code>, <code>admit</code>, <code>axiom</code>, <code>native_decide</code>, <code>implemented_by</code>, <code>extern</code>, <code>unsafe</code> or <code>opaque</code>. A text scan cannot rule out everything (custom elaborators and build-time commands exist; the kernel still re-checks each declaration).</dd>
   </div>
-  <div class="ledger-row">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Full build</dt>
-    <dd><a href="https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/">Scientific American</a> reports that Andrew Sutherland (MIT) independently compiled it; no log published. A public rebuild (<a href="https://github.com/Hertaspace/alpoge-rh-lean-verification">Hertaspace</a>) was at step 48,175 of 183,903 at 21:15 UTC on November 20.</dd>
+    <dd>Andrew Sutherland (MIT) published his <a href="https://math.mit.edu/~drew/grh/">check log</a>: all 175,187 modules compiled with zero errors (Lean and Mathlib v4.33.1). His checks were run with Claude Code; his build was not sandboxed. The <a href="https://leanprover-community.github.io/blog/posts/riemann-hypothesis/">Lean community</a> says dozens of people reproduced the build. Hertaspace’s public rebuild is still running.</dd>
   </div>
-  <div class="ledger-row">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Axiom list for the main theorems</dt>
-    <dd>Not published.</dd>
+    <dd>Only Lean’s three standard axioms (<code>propext</code>, <code>Classical.choice</code>, <code>Quot.sound</code>) for all five theorems, by Sutherland’s <code>#print axioms</code>.</dd>
   </div>
-  <div class="ledger-row">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Independent kernel check</dt>
-    <dd>A Comparator setup (<a href="https://github.com/Deicyde/riemann-hypothesis">Deicyde</a>: the five statements in a file importing only Mathlib; independent kernels) is ready; no result yet.</dd>
+    <dd>On an exported copy of the proof, Lean’s kernel replay, nanoda, con-leche and lean4lean all accept it (<a href="https://math.mit.edu/~drew/grh/">Sutherland</a>); comparator and <code>con-leche --compare</code> confirm the theorem is exactly Mathlib’s statement. On November 21 the <a href="https://leanprover-community.github.io/blog/posts/riemann-hypothesis/">Lean and Mathlib communities</a>, endorsed by the Lean FRO and the Mathlib Initiative, said they have “full confidence” the proof is correct. These are Kevin Buzzard’s <a href="https://xenaproject.wordpress.com/2026/11/12/and-the-proof-is-checked-in-lean/">criteria</a>. It all rests on Mathlib’s definitions and the kernels.</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Human-readable proof; expert review</dt>
@@ -121,7 +121,7 @@
     <dd>No.</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked November 20, 2026, afternoon Pacific. Not built or run by us. Also on November 20, Ravi Vakil’s <a href="https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/">blog</a> posted a separate, all-human proposed proof of GRH, a 940-page draft by Alessandro Masullo; it has not been checked either.</p>
+<p class="ledger-note">Last checked November 21, 2026 (checks added that day; the video, made November 20, predates them). Not built or run by us. Also on November 20, Ravi Vakil’s <a href="https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/">blog</a> posted a separate, all-human proposed proof of GRH, a 940-page draft by Alessandro Masullo; it has not been checked either.</p>
 <p>This is a Specials episode. In AN02, Alpöge and Ralph Furman checked, and took responsibility for, a result that Claude found and wrote: more than two thirds of the zeta zeros are simple and on the line. Episode 003 covered OpenAI’s claimed zero-free region past 7/8. Now, he says, all of them are on the line. If it holds, and the kernel accepts it with only the standard axioms, Lean will have checked a proof of the Riemann hypothesis, and of GRH for Dirichlet L-functions, against Mathlib’s definitions, before any human-readable proof exists. Until then, it is a claim. Once more: Anthropic makes Claude, which helps make this series. See <a href="../an02-simple-zeros-riemann-zeta/">AN02</a> and <a href="../003-quasi-riemann-hypothesis/">003</a>; for other large Lean claims, <a href="../an04-fermat-lean-fable-5-2/">AN04</a> and <a href="../ax10-minimal-model-program-lean/">AX10</a>.</p>
 </section>
 
@@ -148,7 +148,8 @@
 <ul class="sources">
   <li>Levent Alpöge, <a href="https://alpo.ge/remark.pdf">note</a> (four pages, November 20, 2026), and the Lean archive it links (<a href="https://alpo.ge/lean.tar.gz.part01">part01</a> to part14; no license stated; not built or run by us).</li>
   <li>Mathlib’s <a href="https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/NumberTheory/LSeries/RiemannZeta.lean">RiemannHypothesis</a> at the pinned commit 0df444a.</li>
-  <li><a href="https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/">Scientific American</a>, November 20, 2026.</li>
+  <li><a href="https://www.scientificamerican.com/article/anthropic-mathematician-claims-to-prove-riemann-hypothesis-most-famous-problem-in-all-of-math/">Scientific American</a> (Joseph Howlett), November 20, 2026, and <a href="https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/">Scientific American</a> (Clara Moskowitz), November 20, updated November 21.</li>
+  <li><a href="https://leanprover-community.github.io/blog/posts/riemann-hypothesis/">Lean verification of the Riemann Hypothesis</a>, joint statement by the Lean and Mathlib communities, November 21, 2026; Andrew Sutherland’s <a href="https://math.mit.edu/~drew/grh/">check log</a>; Kevin Buzzard’s <a href="https://xenaproject.wordpress.com/2026/11/12/and-the-proof-is-checked-in-lean/">criteria</a> (November 12).</li>
   <li>Terence Tao, <a href="https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/">blog post</a>, November 20, 2026.</li>
   <li>Public check projects: <a href="https://github.com/Hertaspace/alpoge-rh-lean-verification">Hertaspace/alpoge-rh-lean-verification</a> (full rebuild) and <a href="https://github.com/Deicyde/riemann-hypothesis">Deicyde/riemann-hypothesis</a> (Comparator setup).</li>
   <li>Ravi Vakil, <a href="https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/">blog</a>, November 20, 2026 (Masullo’s separate draft).</li>
