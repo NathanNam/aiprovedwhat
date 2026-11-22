@@ -775,7 +775,7 @@
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
-    <dd>Lean checks, as of November 21, 2026: Andrew Sutherland (MIT; checks run with Claude Code) published a full build, the axiom list and independent kernel checks (nanoda, con-leche, lean4lean), all passing; the Lean and Mathlib communities, endorsed by the Lean FRO and the Mathlib Initiative, say they have “full confidence” the proof is correct. No human review of the argument yet: no paper; Terence Tao calls his own look a “very initial analysis”</dd>
+    <dd>Lean checks, as of November 21, 2026: Andrew Sutherland (MIT; checks run with Claude Code) published a full build, the axiom list and independent kernel checks (nanoda, con-leche, lean4lean), all passing; the Lean and Mathlib communities, endorsed by the Lean FRO and the Mathlib Initiative, say they have “full confidence” the proof is correct. No human review of the argument yet: no paper; Terence Tao writes that digesting the proof’s strategy will take some time</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
@@ -787,6 +787,32 @@
   </div>
 </dl>
 <p><a href="../episodes/an06-riemann-hypothesis-lean/">Watch the episode and read the record</a></p>
+
+</section>
+<section class="special" id="an07" aria-labelledby="an07-h">
+<p class="thumb-kicker">AN07 · Anthropic · announced November 20, 2026 · Number theory</p>
+<h2 id="an07-h">The Riemann hypothesis in Lean, checked: what the kernels confirm (follow-up to AN06)</h2>
+<p>The follow-up to AN06. Levent Alpöge’s Lean proof of the Riemann hypothesis and of GRH for Dirichlet L-functions, made working with Claude, has been checked by people outside Anthropic. Andrew Sutherland (MIT; checks run with Claude Code) reports all 175,187 modules compiling with zero errors, only Lean’s three standard axioms, the exported proof accepted by the independent kernels nanoda and con-leche, and the statements matched exactly to Mathlib’s; the Lean and Mathlib communities say they have “full confidence” it is correct. That means the formal statements follow from the standard axioms according to those kernels, relying on Mathlib’s definitions. No paper, human-readable proof or peer review yet; not built or run by us.</p>
+<p class="meta">Anthropic makes Claude, which helps make this series.</p>
+<dl class="ledger ledger-auto">
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Announced; checked in Lean, no paper</dt>
+    <dd>No paper yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>Lean checks as of November 22, 2026, 04:35 UTC: Andrew Sutherland (MIT; checks run with Claude Code): full build, zero errors; #print axioms only propext, Classical.choice, Quot.sound; nanoda, con-leche and Lean’s default and paranoid kernels accept the exported proof; a comparator run from the exports passes; lean4lean and Lean’s kernel replay every module; con-leche --compare matches the five statements; a sandboxed rebuild on a separate machine reproduces the export byte for byte; his end-to-end comparator run was still running. Hertaspace’s rebuild and axiom check pass. The Lean and Mathlib communities (endorsed by the Lean FRO and the Mathlib Initiative): “full confidence”. No human review of the argument yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Same archive as AN06 (Lean v4.33.1, Mathlib v4.33.1; 175,187 modules, 17,374,215 lines, our count). Checked by others, not by us: statements = Mathlib’s RiemannHypothesis and GRH for Dirichlet L-functions (comparator and con-leche --compare); standard axioms only; independent kernels accept. Not built or run by us (<a href="https://math.mit.edu/~drew/grh/">repository</a>)</dd>
+  </div>
+</dl>
+<p><a href="../episodes/an07-riemann-hypothesis-lean-checked/">Watch the episode and read the record</a></p>
 
 </section>
 <p class="attribution">Last checked November 21, 2026.</p>

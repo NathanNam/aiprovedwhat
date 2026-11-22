@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Riemann hypothesis in Lean, checked: what the kernels confirm, and what they don’t | AI Proved What?</title>
+<meta name="description" content="The follow-up to AN06. Levent Alpöge’s Lean proof of the Riemann hypothesis, made working with Claude, has been checked by people outside Anthropic: Andrew Sutherland’s checks and a joint statement of the Lean and Mathlib communities. What a Lean check confirms, and what is still open: no paper, no peer review. Not built or run by us. Anthropic makes Claude, which helps make this series.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/an07-riemann-hypothesis-lean-checked/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="The Riemann hypothesis in Lean, checked">
+<meta property="og:description" content="The follow-up to AN06. Levent Alpöge’s Lean proof of the Riemann hypothesis, made working with Claude, has been checked by people outside Anthropic: Andrew Sutherland’s checks and a joint statement of the Lean and Mathlib communities. What a Lean check confirms, and what is still open: no paper, no peer review. Not built or run by us. Anthropic makes Claude, which helps make this series.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/an07-riemann-hypothesis-lean-checked/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/an07-riemann-hypothesis-lean-checked/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="AN07: the Riemann hypothesis in Lean, checked. The Lean proof, with check marks from four proof checkers: Lean’s kernel, nanoda, con-leche and lean4lean (schematic).">
+<meta name="twitter:image:alt" content="AN07: the Riemann hypothesis in Lean, checked. The Lean proof, with check marks from four proof checkers: Lean’s kernel, nanoda, con-leche and lean4lean (schematic).">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">AN07 (Specials; the follow-up to <a href="../an06-riemann-hypothesis-lean/">AN06</a>; see also <a href="../an02-simple-zeros-riemann-zeta/">AN02</a> and <a href="../003-quasi-riemann-hypothesis/">003</a>), November 2026</p>
+<h1>The Riemann hypothesis in Lean, checked</h1>
+<p class="subtitle">Levent Alpöge’s Lean proof of the Riemann hypothesis, made working with Claude, has been checked by people outside Anthropic: independent kernels accept it, and the Lean and Mathlib communities say they have full confidence it is correct. What that confirms, and what is still open: there is no paper, no peer review, and no human account yet of why it works.</p>
+
+<div class="player" data-youtube="NpHmXDlpWW4" data-title="AN07: the Riemann hypothesis in Lean, checked">
+  <a href="https://youtu.be/NpHmXDlpWW4">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play AN07: the Riemann hypothesis in Lean, checked. The Lean proof, with check marks from four proof checkers: Lean’s kernel, nanoda, con-leche and lean4lean (schematic).">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:03. English captions available. The video loads from YouTube when you press play.</p>
+
+<p><strong>Disclosure.</strong> Anthropic makes Claude, which helps make this series. The proof was made by a mathematician at Anthropic, working with Claude, and Andrew Sutherland’s checks were run with Claude Code: we hold it to the same standards as any lab’s, using only public sources. AI Proved What? is independent and not affiliated with Anthropic beyond using its product Claude.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/NpHmXDlpWW4?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/NpHmXDlpWW4?t=123" data-t="123"><span class="t">2:03</span><span>The checks</span></a></li>
+  <li><a href="https://youtu.be/NpHmXDlpWW4?t=297" data-t="297"><span class="t">4:57</span><span>What it does not mean</span></a></li>
+  <li><a href="https://youtu.be/NpHmXDlpWW4?t=398" data-t="398"><span class="t">6:38</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="claim">
+<h2 id="claim">What was checked</h2>
+<p>This is AN07. Before we start: Anthropic makes Claude, which helps make this series. In AN06, we looked at a claim by Levent Alpöge, a mathematician at Anthropic: working with Claude, he found a proof of the Riemann hypothesis, written in Lean, with no paper. We said it was not yet independently checked. Since then, people outside Anthropic have checked it. Andrew Sutherland of MIT posted a page of checks, which he ran with Claude Code. And on November 21, the Lean and Mathlib communities issued a joint statement: they have full confidence that the proof is correct. So what exactly was checked, and what is still open?</p>
+<p>Eight days before the claim, Kevin Buzzard of Imperial College London wrote down what to ask of Lean code made by AI. Four questions. One: does the Lean statement match the theorem in words? Two: does the code compile? Three: does it prove that statement as stated? Millions of lines could hide a trick that changes what a symbol means, or adds an axiom; a tool called the comparator checks for that. Four: does it exploit a bug in Lean’s own kernel? For that, other kernels, written independently, check the proof again. The joint statement says all four are now satisfied.</p>
+<p>Why the first question matters, in an example of our own. Mathlib’s statement says: if zeta of s is zero, s is not a trivial zero, and s is not one, then the real part of s is 1/2. Drop the middle condition, and the statement is false: zeta of −2 is zero, and −2 is not 1/2. Our script confirms that zero. So no correct proof of that version can exist. Weaken it instead, and ask only about real parts above one, and it is true, but old: there, Euler’s product keeps zeta away from zero. The right statement sits in between, and it is part of Mathlib, which the joint statement says experts in Lean and number theory carefully vetted. That is the statement both tools matched.</p>
+<p>Here are Sutherland’s checks, as his page stood at 12:55 UTC on November 21. All 175,187 modules compile, with zero errors. The Mathlib files his build compiled match the official cache byte for byte. For the five headline theorems, Lean’s axiom report lists only the three standard axioms. Lean’s own kernel re-checked every module. Then the whole proof was exported, about 62 gigabytes of plain data, and two independently written kernels read all of it. nanoda, written in Rust, accepted it after 28 minutes on 80 threads. con-leche accepted all 1.47 million declarations. A third kernel, lean4lean, accepted every compiled module. And con-leche’s compare mode confirmed that the five theorems are exactly the statements in a file that imports only Mathlib.</p>
+<p>Why does this work? Lean has two parts. The front end, the elaborator, reads the 17 million lines, runs tactics and custom code, and builds proof terms. It is large, and code can steer it. The kernel is small. It only checks that each proof term follows the rules, step by step. Exporting writes those terms to a file that cannot run anything, so the checks happen out of reach of any code in the archive. Different people, in different languages, wrote those kernels; to fool them all, one trick would have to work on each. And the three axioms are standard. Two statements that imply each other are equal. Things declared related become equal once you glue them together. And if something exists, you may pick one. Nothing else was assumed.</p>
+<p>The joint statement, endorsed by the Lean FRO and the Mathlib Initiative, goes further. It says dozens of people compiled the code and reproduced the same exported proof; the notes in the community’s own check repository, updated that day, record one reproduction of that export so far. It also says that checkers including con-leche and con-ron, which come with formal proofs, relative to set theory, that they cannot accept a false proof, checked the export. It speaks of 17 million lines; our own count was 17.4 million. Sutherland also combined the proof with an independent Lean library on Robin’s criterion. Its statement mentions no zeta function at all: for every n above 5,040, the sum of the divisors of n is less than e to the gamma, times n, times log log n. Robin showed in 1984 that this is equivalent to the Riemann hypothesis. Our script finds the inequality failing 27 times from 2 to 5,040, last at 5,040 itself, and never from there to a million. A table proves nothing; the Lean theorem covers every n.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What it doesn’t mean</h2>
+<p>So what does checked mean? Sutherland’s page says it precisely: the formal statements, written against Mathlib’s definitions, follow from the three standard axioms, according to the kernels used. So it relies on those kernels, and on Mathlib’s definitions meaning what they are meant to mean. His build ran on cloud machines without a sandbox, and the export came from that build; his page says he has not compared it with an export from a sandboxed build. At his last update, two runs were still going: the comparator, end to end, and Lean’s own kernels on the export. His page, and the community’s notes, record con-ron declining one feature of this proof, not rejecting it; we have not seen a log of con-ron accepting it. A second public rebuild, also run with Claude, was almost done that afternoon: its first pass stopped on machine limits, and its second has had no failures so far. And the scope has not changed: GRH here means Dirichlet L-functions, not number fields or Hecke L-functions.</p>
+<p>What remains is the mathematics as people read it. There is still no human-readable proof, no paper, and no peer review. A kernel says that each step follows. It does not explain why the argument works, or which ideas are new. The joint statement looks forward to work that will help explain the new ideas in this proof. Terence Tao, on the day of the claim, wrote that the digestion process will take some time. And Buzzard warns that a checked Lean proof does not mean that a write-up that comes with it is right. Here, there is no write-up yet. Alpöge says he intends to write the argument properly.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Statement: RH and GRH for Dirichlet L-functions</dt>
+    <dd><code>theorem riemannHypothesis : RiemannHypothesis</code> uses <a href="https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/NumberTheory/LSeries/RiemannZeta.lean">Mathlib’s own definition</a>; with four companion theorems (GRH for Dirichlet L-functions). Comparator and <code>con-leche --compare</code> both confirm the theorems proved are exactly the statements in a file that imports only Mathlib (<a href="https://math.mit.edu/~drew/grh/">Sutherland</a>; <a href="https://leanprover-community.github.io/blog/posts/riemann-hypothesis/">joint statement</a>).</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Build</dt>
+    <dd>All 175,187 modules compile with zero errors (Lean and Mathlib v4.33.1), with the Mathlib files byte for byte the official cache (<a href="https://math.mit.edu/~drew/grh/">Sutherland</a>, checks run with Claude Code). The joint statement says dozens of people reproduced the same exported proof; the notes in the community’s <a href="https://github.com/leanprover-community/riemann-hypothesis/blob/main/verification/NOTES.md">check repository</a> (updated 14:04 UTC, November 21) record one reproduction of the export so far. Since the video: an independent sandboxed rebuild on a separate machine reproduced the export byte for byte (Sutherland, November 21, 19:32 UTC), and <a href="https://github.com/Hertaspace/alpoge-rh-lean-verification">Hertaspace’s</a> rebuild passed, its compiled main module identical to the MIT run.</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Axioms</dt>
+    <dd>Only <code>propext</code>, <code>Classical.choice</code> and <code>Quot.sound</code>, for all five theorems (<code>#print axioms</code>; Sutherland, and since the video Hertaspace).</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Independent kernels</dt>
+    <dd>On the exported proof (about 62 GB): nanoda (Rust) and con-leche (1,468,418 declarations) accept it. Lean’s kernel replayed every compiled module; lean4lean accepts every compiled module (five after raising its step limit). Since the video: Lean’s default kernel accepts the export, and a comparator run from the exports passes with Lean’s paranoid kernel, nanoda and Lean’s default kernel (04:16 UTC, November 22).</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Lean and Mathlib communities</dt>
+    <dd>A <a href="https://leanprover-community.github.io/blog/posts/riemann-hypothesis/">joint statement</a> (November 21), endorsed by the Lean FRO and the Mathlib Initiative: “full confidence” that the proof is correct; Kevin Buzzard’s <a href="https://xenaproject.wordpress.com/2026/11/12/and-the-proof-is-checked-in-lean/">four criteria</a> all satisfied.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Remaining runs</dt>
+    <dd>At Sutherland’s 04:35 UTC update on November 22, his end-to-end comparator run was still running. <a href="https://github.com/Hertaspace/alpoge-rh-lean-verification">Hertaspace’s</a> comparator, clean-room statement check and independent kernels were still running (its status updates are co-authored by Claude).</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Human-readable proof; expert understanding</dt>
+    <dd>None yet. The note says he intends to write the argument properly; the joint statement looks forward to work that will “help explain the new ideas in this proof”.</dd>
+  </div>
+<!-- review-step:start -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>Not yet</dd>
+  </div>
+<!-- review-step:end -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No.</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked November 22, 2026, 04:35 UTC (the video was made the afternoon of November 21, before the later checks). Not built or run by us. The joint statement also lists con-ron among the checkers of the export; Sutherland’s page and the community repository’s notes record con-ron declining (exit 2, not a rejection) one feature of the proof, a mutual inductive type with a reflexive member, and we have not seen a log of con-ron accepting it.</p>
+<p>This is a Specials episode, the follow-up to AN06. In AN02, Alpöge and Ralph Furman checked, and took responsibility for, a result that Claude found and wrote: more than two thirds of the zeta zeros are simple and on the line. Episode 003 covered OpenAI’s claimed zero-free region past 7/8. Now, as the checkers report it, the Riemann hypothesis, as Mathlib states it, has a proof that independent Lean kernels accept, before any human-readable proof exists. Explaining it is the next job. Once more: Anthropic makes Claude, which helps make this series. See <a href="../an06-riemann-hypothesis-lean/">AN06</a>, <a href="../an02-simple-zeros-riemann-zeta/">AN02</a> and <a href="../003-quasi-riemann-hypothesis/">003</a>.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: ζ(−2) = 0 (so the statement without “not a trivial zero” is false); ζ(2) = 1.6449 = π²/6; on Re s = σ &gt; 1, |ζ(s)| ≥ ζ(2σ)/ζ(σ) &gt; 0 (sampled at σ = 1.1, 1.5, 2).</li>
+  <li>Ours: Robin’s inequality σ(n) &lt; e^γ·n·log log n fails for exactly 27 n from 2 to 5,040 (2, 3, 4, 5, 6, 8, 9, 10, 12, 16, 18, 20, 24, 30, 36, 48, 60, 72, 84, 120, 180, 240, 360, 720, 840, 2,520, 5,040); σ(5,040) = 19,344 against 19,237.1; it never fails from 5,041 to 10^6; closest at 10,080 (39,312 against 39,877.5, 98.6%). Lagarias’s inequality holds for every n up to 10^5.</li>
+  <li>Ours (AN06): the archive has 175,187 Lean files and 17,374,215 lines; the joint statement rounds this to 17 million.</li>
+  <li>From Sutherland’s page (12:55 UTC, November 21): 175,187 modules; exported proof 61,570,595,788 bytes; nanoda 27 min 42 s on 80 threads; con-leche 1,468,418 declarations; 8,322 Mathlib .olean files identical to the official cache.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li>Lean and Mathlib communities, <a href="https://leanprover-community.github.io/blog/posts/riemann-hypothesis/">Lean verification of the Riemann Hypothesis</a>, joint statement, November 21, 2026.</li>
+  <li>Andrew Sutherland (MIT), <a href="https://math.mit.edu/~drew/grh/">verification files</a> (checks run with Claude Code; the episode uses the 12:55 UTC, November 21 version), including the combination with <a href="https://github.com/kimihiro64/Robin1984">kimihiro64/Robin1984</a>.</li>
+  <li>Kevin Buzzard, <a href="https://xenaproject.wordpress.com/2026/11/12/and-the-proof-is-checked-in-lean/">And the proof is checked in Lean</a> (Xena blog, November 12, 2026): the four questions.</li>
+  <li><a href="https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/">Scientific American</a> (Clara Moskowitz), November 20, updated November 21, 2026.</li>
+  <li>Levent Alpöge, <a href="https://alpo.ge/remark.pdf">note</a> (November 20, 2026); Mathlib’s <a href="https://github.com/leanprover-community/mathlib4/blob/0df444a360eaa60ab8c11dca51a86af692955474/Mathlib/NumberTheory/LSeries/RiemannZeta.lean">RiemannHypothesis</a>.</li>
+  <li>Public check projects: <a href="https://github.com/Hertaspace/alpoge-rh-lean-verification">Hertaspace/alpoge-rh-lean-verification</a> and <a href="https://github.com/leanprover-community/riemann-hypothesis">leanprover-community/riemann-hypothesis</a> (formerly Deicyde/riemann-hypothesis).</li>
+  <li>Terence Tao, <a href="https://terrytao.wordpress.com/2026/11/20/unforced-euler-singularity-unforced-navier-stokes-singularity-and-the-generalized-riemann-hypothesis/">blog post</a>, November 20, 2026.</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Anthropic beyond using its product Claude, or with OpenAI.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is AN07. Before we start: Anthropic makes Claude, which helps make this series. In AN06, we looked at a claim by Levent Alpöge, a mathematician at Anthropic: working with Claude, he found a proof of the Riemann hypothesis, written in Lean, with no paper. We said it was not yet independently checked. Since then, people outside Anthropic have checked it. Andrew Sutherland of MIT posted a page of checks, which he ran with Claude Code. And on November 21, the Lean and Mathlib communities issued a joint statement: they have full confidence that the proof is correct. So what exactly was checked, and what is still open? Eight days before the claim, Kevin Buzzard of Imperial College London wrote down what to ask of Lean code made by AI. Four questions. One: does the Lean statement match the theorem in words? Two: does the code compile? Three: does it prove that statement as stated? Millions of lines could hide a trick that changes what a symbol means, or adds an axiom; a tool called the comparator checks for that. Four: does it exploit a bug in Lean’s own kernel? For that, other kernels, written independently, check the proof again. The joint statement says all four are now satisfied. Why the first question matters, in an example of our own. Mathlib’s statement says: if zeta of s is zero, s is not a trivial zero, and s is not one, then the real part of s is 1/2. Drop the middle condition, and the statement is false: zeta of −2 is zero, and −2 is not 1/2. Our script confirms that zero. So no correct proof of that version can exist. Weaken it instead, and ask only about real parts above one, and it is true, but old: there, Euler’s product keeps zeta away from zero. The right statement sits in between, and it is part of Mathlib, which the joint statement says experts in Lean and number theory carefully vetted. That is the statement both tools matched.</p>
+<h3><span class="t num">2:03</span>The checks</h3>
+<p>Here are Sutherland’s checks, as his page stood at 12:55 UTC on November 21. All 175,187 modules compile, with zero errors. The Mathlib files his build compiled match the official cache byte for byte. For the five headline theorems, Lean’s axiom report lists only the three standard axioms. Lean’s own kernel re-checked every module. Then the whole proof was exported, about 62 gigabytes of plain data, and two independently written kernels read all of it. nanoda, written in Rust, accepted it after 28 minutes on 80 threads. con-leche accepted all 1.47 million declarations. A third kernel, lean4lean, accepted every compiled module. And con-leche’s compare mode confirmed that the five theorems are exactly the statements in a file that imports only Mathlib. Why does this work? Lean has two parts. The front end, the elaborator, reads the 17 million lines, runs tactics and custom code, and builds proof terms. It is large, and code can steer it. The kernel is small. It only checks that each proof term follows the rules, step by step. Exporting writes those terms to a file that cannot run anything, so the checks happen out of reach of any code in the archive. Different people, in different languages, wrote those kernels; to fool them all, one trick would have to work on each. And the three axioms are standard. Two statements that imply each other are equal. Things declared related become equal once you glue them together. And if something exists, you may pick one. Nothing else was assumed. The joint statement, endorsed by the Lean FRO and the Mathlib Initiative, goes further. It says dozens of people compiled the code and reproduced the same exported proof; the notes in the community’s own check repository, updated that day, record one reproduction of that export so far. It also says that checkers including con-leche and con-ron, which come with formal proofs, relative to set theory, that they cannot accept a false proof, checked the export. It speaks of 17 million lines; our own count was 17.4 million. Sutherland also combined the proof with an independent Lean library on Robin’s criterion. Its statement mentions no zeta function at all: for every n above 5,040, the sum of the divisors of n is less than e to the gamma, times n, times log log n. Robin showed in 1984 that this is equivalent to the Riemann hypothesis. Our script finds the inequality failing 27 times from 2 to 5,040, last at 5,040 itself, and never from there to a million. A table proves nothing; the Lean theorem covers every n.</p>
+<h3><span class="t num">4:57</span>What it does not mean</h3>
+<p>So what does checked mean? Sutherland’s page says it precisely: the formal statements, written against Mathlib’s definitions, follow from the three standard axioms, according to the kernels used. So it relies on those kernels, and on Mathlib’s definitions meaning what they are meant to mean. His build ran on cloud machines without a sandbox, and the export came from that build; his page says he has not compared it with an export from a sandboxed build. At his last update, two runs were still going: the comparator, end to end, and Lean’s own kernels on the export. His page, and the community’s notes, record con-ron declining one feature of this proof, not rejecting it; we have not seen a log of con-ron accepting it. A second public rebuild, also run with Claude, was almost done that afternoon: its first pass stopped on machine limits, and its second has had no failures so far. And the scope has not changed: GRH here means Dirichlet L-functions, not number fields or Hecke L-functions. What remains is the mathematics as people read it. There is still no human-readable proof, no paper, and no peer review. A kernel says that each step follows. It does not explain why the argument works, or which ideas are new. The joint statement looks forward to work that will help explain the new ideas in this proof. Terence Tao, on the day of the claim, wrote that the digestion process will take some time. And Buzzard warns that a checked Lean proof does not mean that a write-up that comes with it is right. Here, there is no write-up yet. Alpöge says he intends to write the argument properly.</p>
+<h3><span class="t num">6:38</span>Where it stands</h3>
+<p>Where it stands, on the afternoon of November 21. The statement: Mathlib’s Riemann hypothesis, and GRH for Dirichlet L-functions, matched by two tools. The build: zero errors, for Sutherland and, the joint statement says, for dozens of others. The axioms: only the three standard ones. Independent kernels: two accept the full export, and Lean’s own kernel re-checked every module. The Lean community: full confidence. Still open: the full comparator run on Sutherland’s page, a comparison with a sandboxed build, a human-readable proof, expert understanding of the argument, and peer review. Not built or run by us. This is a Specials episode, the follow-up to AN06. In AN02, Alpöge and Ralph Furman checked, and took responsibility for, a result that Claude found and wrote: more than two thirds of the zeta zeros are simple and on the line. Episode 003 covered OpenAI’s claimed zero-free region past 7/8. Now, as the checkers report it, the Riemann hypothesis, as Mathlib states it, has a proof that independent Lean kernels accept, before any human-readable proof exists. Explaining it is the next job. Once more: Anthropic makes Claude, which helps make this series.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=AN07%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
