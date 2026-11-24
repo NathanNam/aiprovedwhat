@@ -49,8 +49,13 @@
 <main id="main">
 <h1>Updates</h1>
 <p class="lede">What changed in OpenAI’s math release and in the claims we follow: new results, revised and withdrawn papers, new Lean proofs, and claims announced outside the catalogue. Newest first, back to the first release.</p>
-<p><a href="feed.xml">Follow with RSS</a>. Last updated November 21, 2026.</p>
+<p><a href="feed.xml">Follow with RSS</a>. Last updated November 23, 2026.</p>
 <ol class="updates">
+  <li id="2026-11-23-anthropic-vp-vnp-claim">
+    <p class="u-date"><time datetime="2026-11-23">November 23, 2026</time></p>
+    <p><b>VP vs VNP:</b> on November 23, 2026, Anthropic posted a paper and a Lean formalization claiming that VP ≠ VNP over every field, which would settle Valiant’s 1979 conjecture, the algebraic analogue of P vs NP. The claim: circuits for the Hamiltonian cycle polynomial, and for the permanent outside characteristic 2, need more than m^(c (log m)^(1/3)) gates for all large m, also for circuits that only approximate. The README says the result “was discovered by an internal research Claude model”, that the 70-page paper and the Lean (by our count 324 files, about 73,000 lines) were written by AI models, and that “no human mathematician has checked the proof”. Anthropic’s own CI, including a comparator run with the independent nanoda kernel, passed; there is no outside check or expert review yet. It does not settle P vs NP or say anything about Boolean circuits. Related: <a href="../episodes/an03-eth-false-3sat/">AN03</a>, Anthropic’s earlier complexity claim in the same repository. Our Specials episode is in the works; not built or run by us. Anthropic makes Claude, which helps make this series. <span class="tag note">Note</span></p>
+    <p class="meta"><a href="https://github.com/anthropics/formal-math/tree/main/vp-vnp">Source</a> · <a href="../connections/#AN03">See its connections</a></p>
+  </li>
   <li id="2026-11-21-beyond-openai-an07">
     <p class="u-date"><time datetime="2026-11-21">November 21, 2026</time></p>
     <p><b>Specials:</b> <a href="../episodes/an07-riemann-hypothesis-lean-checked/">AN07</a>, the follow-up to <a href="../episodes/an06-riemann-hypothesis-lean/">AN06</a>, explains what it means that Levent Alpöge’s Lean proof of the Riemann hypothesis, made working with Claude, has been checked: Kevin Buzzard’s four questions, why the statement must match (with an example of ours), Andrew Sutherland’s checks (zero build errors, only the three standard axioms, independent kernels accepting the exported proof; his checks were run with Claude Code), and the Lean and Mathlib communities’ “full confidence”. It also covers what is still open: the check relies on the kernels and Mathlib’s definitions, and there is no paper, human-readable proof or peer review yet. Not built or run by us. Anthropic makes Claude, which helps make this series. <span class="tag sp">Beyond OpenAI</span></p>
