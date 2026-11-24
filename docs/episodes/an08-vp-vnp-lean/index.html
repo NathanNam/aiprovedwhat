@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VP ≠ VNP over every field? Claude’s claimed proof of Valiant’s conjecture, in Lean | AI Proved What?</title>
+<meta name="description" content="Anthropic’s paper, credited to Claude, claims superpolynomial lower bounds for arithmetic circuits computing the permanent and the Hamiltonian cycle polynomial, so VP ≠ VNP over every field. Its Lean proof passes Anthropic’s own checks; no human mathematician has checked it. Not P vs NP. Not built or run by us. Anthropic makes Claude, which helps make this series.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/an08-vp-vnp-lean/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="VP ≠ VNP over every field?">
+<meta property="og:description" content="Anthropic’s paper, credited to Claude, claims superpolynomial lower bounds for arithmetic circuits computing the permanent and the Hamiltonian cycle polynomial, so VP ≠ VNP over every field. Its Lean proof passes Anthropic’s own checks; no human mathematician has checked it. Not P vs NP. Not built or run by us. Anthropic makes Claude, which helps make this series.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/an08-vp-vnp-lean/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/an08-vp-vnp-lean/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="AN08: VP ≠ VNP over every field? Our chart, with an illustrative constant: the claimed lower bound m to the power (log m) to the one third, against the lines of m squared, m cubed and m to the fourth, and the exponential 2 to the m.">
+<meta name="twitter:image:alt" content="AN08: VP ≠ VNP over every field? Our chart, with an illustrative constant: the claimed lower bound m to the power (log m) to the one third, against the lines of m squared, m cubed and m to the fourth, and the exponential 2 to the m.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">AN08 (Specials; Beyond OpenAI; see also <a href="../an03-eth-false-3sat/">AN03</a> and <a href="../108-permanent-determinant-cubic-lower-bound/">108</a>), November 2026</p>
+<h1>VP ≠ VNP over every field?</h1>
+<p class="subtitle">A paper credited to Claude (Anthropic) claims that arithmetic circuits for the permanent and the Hamiltonian cycle polynomial need more than m^(c·(log m)^(1/3)) gates, which would prove Valiant’s conjecture over every field. Its Lean proof passes Anthropic’s own checks; no human mathematician has checked it, and it does not settle P vs NP.</p>
+
+<div class="player" data-youtube="A-DaWQ531Lg" data-title="AN08: VP ≠ VNP over every field?">
+  <a href="https://youtu.be/A-DaWQ531Lg">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play AN08: VP ≠ VNP over every field? Our chart, with an illustrative constant: the claimed lower bound m to the power (log m) to the one third, against the lines of m squared, m cubed and m to the fourth, and the exponential 2 to the m.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:37. English captions available. The video loads from YouTube when you press play.</p>
+
+<p><strong>Disclosure.</strong> Anthropic makes Claude, which helps make this series. This claim is Anthropic’s own, credited to an internal research Claude model: we hold it to the same standards as any lab’s, using only public sources. AI Proved What? is independent and not affiliated with Anthropic beyond using its product Claude.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/A-DaWQ531Lg?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/A-DaWQ531Lg?t=160" data-t="160"><span class="t">2:40</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/A-DaWQ531Lg?t=283" data-t="283"><span class="t">4:43</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/A-DaWQ531Lg?t=418" data-t="418"><span class="t">6:58</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="question">
+<h2 id="question">The question</h2>
+<p>This is AN08. Before we start: Anthropic makes Claude, which helps make this series. This claim is Anthropic’s own: we hold it to the same standards as any lab’s, using only public sources. On November 23, 2026, Anthropic posted a paper and a Lean proof on GitHub, called VP ≠ VNP over every field. The author line reads Claude, Anthropic. The README says the result was discovered by an internal research Claude model, that the paper and the Lean were both written by AI models, and that no human mathematician has checked the proof. It claims to settle Leslie Valiant’s conjecture from 1979, the algebraic cousin of P versus NP. It does not settle P versus NP itself. So what is the question?</p>
+<p>An arithmetic circuit builds a polynomial from its variables using only addition and multiplication. Write it as a list of gates, each one a variable, a constant, or the sum or the product of two earlier gates. Our example: x, y, x plus y, and that times itself. Four gates, and the last one is x plus y, squared. Multiplying it out first and adding up the pieces, our way, takes nine gates. The size of a circuit is its number of gates, and the question is how few gates can do the job. A circuit must produce the polynomial itself, not just the right values on zeros and ones. That is what separates it from the Boolean circuits of P versus NP.</p>
+<p>Two polynomials sit at the center. For a 2 by 2 matrix, the determinant is ad − bc, and the permanent is ad + bc. For 3 by 3, both have the same six terms, and the determinant puts minus signs on three of them. Gaussian elimination computes determinants fast: for a 20 by 20 matrix of numbers, about 5,000 operations in our count. Nothing like it is known for the permanent. Multiplying out all its terms would take about 49 quintillion operations; Ryser’s formula cuts that to a few hundred million, but it still grows like 2^m. In 1979, Valiant defined two classes. VP holds families of polynomials, of polynomial degree, with circuits of polynomial size. VNP holds sums, over all strings of bits, of such polynomials. The permanent is complete for VNP, except in characteristic two, where it equals the determinant. The Hamiltonian cycle polynomial, a sum over the permutations that form one single cycle, is complete over every field. Valiant conjectured that neither has circuits of polynomial size.</p>
+</section>
+
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The claim. The paper has 70 pages. Its main theorem: there is an absolute constant c above zero such that, over every field, for all large enough m, every circuit for the Hamiltonian cycle polynomial of an m by m matrix, and every circuit for the permanent outside characteristic two, needs more than m^(c·(log m)^(1/3)) gates. The threshold for large enough depends only on the characteristic, and the paper gives no value for it. That bound grows faster than any fixed power of m, so neither family is in VP: VP is not VNP, over every field. A second theorem says the same for circuits that only approximate, in a limit, so VNP is not even in the closure of VP. A Lean file states all of this from Mathlib alone: circuits, both polynomials, both classes, and the four main statements.</p>
+<p>In the paper’s notation (Theorem 1.1, p. 2): there is an absolute constant c &gt; 0 such that for every p, zero or prime, there is m₀ such that over every field of characteristic p and for every m ≥ m₀, every circuit for HC_m, and every circuit for PERM_m if p ≠ 2, has more than m^(c (log m)^(1/3)) gates, with log = log₂. Equivalently 2^Ω((log m)^(4/3)). Corollary 1.2: VP ⊊ VNP over every field. Theorem 1.4: the same for approximating circuits (Definition 1.3, over Laurent series), so VNP ⊄ VP-bar. Statement.lean states four propositions (MainTheorem, MainTheoremApprox, Separation, SeparationClosure); Challenge.lean and Solution.lean add a fifth theorem, the bound for the real permanent (Theorem L.1). A lower bound “for an explicit polynomial” matters: counting arguments have long shown that most polynomials need large circuits, but not for any specific one like these.</p>
+</section>
+
+<section aria-labelledby="new">
+<h2 id="new">What would be new, and what is not claimed</h2>
+<p>What would be new. For general circuits, with no limit on depth, the paper says the best earlier lower bound for an explicit polynomial was that of Strassen, and of Baur and Strassen, of order n log d. For the permanent, that is about m² log m. Stronger bounds were known only for restricted circuits. For example, Limaye, Srinivasan and Tavenas proved superpolynomial bounds, first published in 2021, for circuits of any constant depth, and Forbes extended them to all fields. This claim covers every circuit. But look how slowly it grows. In our chart, with an illustrative constant of one, it passes m² at m equal to 256, but m³ only beyond about 134 million. The constant the proof gives is far smaller: at most 1/2,560,000. The best known upper bounds grow exponentially; in the paper’s words, there is still plenty of room to tighten the bounds. What is not claimed: not P versus NP, and nothing about Boolean circuits. Nor that the exponent 1/3 is optimal.</p>
+</section>
+
+<section aria-labelledby="how">
+<h2 id="how">How the proof goes</h2>
+<p>How the proof goes, by the paper’s overview. It turns circuits into geometry. A circuit with L gates splits the polynomial’s table of coefficients into pieces of rank at most L. Functions called spectral points, after Strassen’s work on tensors, turn ranks into distances, so a small circuit forces an inequality between certain distances. Then the proof splits into two cases, by a property of the field: a flat case, where Euclidean geometry is available, and a contracting case. The paper proves that at least one case holds, but not which, even for the real numbers. In the flat case, it places the points of a network of wires in Euclidean space, and that gives the bound for a polynomial that the permanent can express. The contracting case is indirect. A small circuit for the permanent would speed up a whole class of computations; a diagonal argument then gives a value V equal to 1 + V, which is impossible. The flat case gives the weaker bound, the one in the theorem. The permanent enters only by substitution, through Valiant’s completeness. No such reduction is known for the determinant, and that, the paper says, is where the proof would fail for it.</p>
+<p>Two details from the paper: the spectral points it uses are known to exist only by Zorn’s lemma (p. 3), and it says it does not know which of the two hypotheses holds, even over the real numbers, nor that they are mutually exclusive (p. 6). The flat case gives 2^(c (log m)^(4/3)); the contracting case gives the stronger 2^(c (log m)²/log log m), with constants depending on an integer for which the proof gives no value, which is why Theorem 1.1 has no value for m₀ (p. 8).</p>
+</section>
+
+<section aria-labelledby="lean">
+<h2 id="lean">The Lean development, and what we compared</h2>
+<p>The Lean development has 324 files and about 73,000 lines, in our text count. Our text search finds sorry only in the challenge file, which states the theorems without proofs for comparison, and no axiom declarations. Anthropic’s automated check on the merge commit passed: a full build, then the comparator, which matched the five theorems to the challenge file, with Lean’s own kernel and the independent kernel nanoda both accepting. We read its log; we did not build or run anything. We also compared the statement file with the paper, by reading. Circuits count variables and constants as gates, as the paper does. The polynomials and the bound match. VP and VNP match Valiant’s definitions as the paper states them. Approximation uses Laurent series constants, as in the paper’s definition. We did not read the 73,000 lines. And the README warns that no machine checks that the statement file says what is claimed; the paper says that was judged only by AI readers.</p>
+<p>Our reading of <a href="https://github.com/anthropics/formal-math/blob/main/vp-vnp/Statement.lean">Statement.lean</a> against the paper (not a machine check): <code>Computes</code> is the paper’s circuit model (§1.3), counting variables and constants as gates; <code>perm</code> is written as Σ Π x(σ(i), i), the paper’s sum with σ replaced by its inverse, as Appendix Q notes; <code>hc</code> sums over permutations that are a single cycle on all points; <code>Beyond</code> uses log₂; <code>MainTheorem</code> has one constant c for all characteristics and m₀ depending only on the characteristic, as in Theorem 1.1; <code>VP</code> bounds variables, degree and circuit size by n^a + a; <code>VNP</code> sums g over all bit vectors with g in VP (the number of bits is bounded through g’s variable count); <code>Approximates</code> uses Laurent series constants, as in Definition 1.3. We did not read the 72,932 lines of proof, and we took Mathlib’s definitions at their standard meaning.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Public</dt>
+    <dd>On GitHub, <a href="https://github.com/anthropics/formal-math/tree/main/vp-vnp">anthropics/formal-math, folder vp-vnp</a> (<a href="https://github.com/anthropics/formal-math/pull/51">pull request #51</a>, merged November 23, 2026, 13:43 PT; merge commit 11b6c7e), and on Hexagon as <a href="https://hexagonmath.org/2611.00954v1">2611.00954v1</a> (November 23; “Contributed by Anthropic”). Not on arXiv. We found no announcement on anthropic.com.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No.</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Anthropic’s own Lean checks</dt>
+    <dd>The repository’s <a href="https://github.com/anthropics/formal-math/actions/runs/45272623486">CI run on the merge commit</a> passed: a build from scratch (sorry warnings only from <a href="https://github.com/anthropics/formal-math/blob/main/vp-vnp/Challenge.lean">Challenge.lean</a>), then Comparator in a sandbox, with only propext, Quot.sound and Classical.choice permitted; its log reads “nanoda kernel accepts the solution”, “Lean default kernel accepts the solution” and “Your solution is okay!” (22:05 UTC). We read the log; we did not build or run anything.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Written proofs complete on paper</dt>
+    <dd>No, by the paper’s own account: four printed proofs that describe machines and programs “can be verified only in the Lean development”, so “the contracting case, and with it every main result, rests on Lean at these points” (p. 17). Remark N.6, the consequence for determinantal complexity, is the one numbered statement not formalized.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked by a human</dt>
+    <dd>No, by Anthropic’s account: the <a href="https://github.com/anthropics/formal-math/blob/main/vp-vnp/README.md">README</a> says the paper and the Lean were “written by AI models, and no human mathematician has checked the proof”; Appendix Q says whether the statements say what is meant “was judged only by AI readers”. Hexagon’s listing labels the text “A mix of human-written and AI-generated text” and “Human understanding: some parts”, and its provenance note says Anthropic researchers worked with Claude to improve the presentation.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Expert review; outside rerun</dt>
+    <dd>None found as of November 23, 2026, about 17:00 PT (we looked at Scott Aaronson’s and the Computational Complexity blogs, Gil Kalai’s blog and the Lean Zulip public archive).</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked November 23, 2026, about 17:00 PT. Not built or run by us.</p>
+<p>This is a Specials episode. AN03 covered Anthropic’s earlier claim from the same repository, that the Exponential Time Hypothesis is false: also credited to an internal Claude model, also checked by Anthropic’s own pipeline, with no human checker named. Episode 108 covered OpenAI’s cubic bound for the permanent against the determinant, which this paper cites; its approximate theorem would imply much more there, though that step is not in Lean. If it holds, Valiant’s conjecture is true over every field, general arithmetic circuits have their first superpolynomial lower bound for an explicit polynomial, and P versus NP is still open. Once more: Anthropic makes Claude, which helps make this series. See <a href="../an03-eth-false-3sat/">AN03</a> and <a href="../108-permanent-determinant-cubic-lower-bound/">108</a>.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: (x+y)² as a circuit of 4 gates (x, y, x+y, its square) and, multiplied out, 9 gates; gates counted as in the Lean file’s Computes (variables and constants count).</li>
+  <li>Ours: for a 2 by 2 matrix det = ad − bc, perm = ad + bc; for 3 by 3 the same 6 terms, 3 with minus signs in the determinant. Examples: [[1,2],[3,4]] has det -2 and perm 10; [[1,2,3],[4,5,6],[7,8,9]] has det 0 and perm 450.</li>
+  <li>Ours, a random 20 by 20 integer matrix: Gaussian elimination (exact fractions, with division) took 5,150 arithmetic operations; multiplying out all 20! terms would take about 4.9 × 10^19; an upper count for Ryser’s formula is 420,478,574 (an exact count of the plain formula, 210,763,774).</li>
+  <li>Ours: the Hamiltonian cycle polynomial has (m − 1)! terms (checked by brute force for m = 2 to 8: 1, 2, 6, 24, 120, 720, 5040).</li>
+  <li>Ours, illustrative c = 1 only (the paper gives no value of m0): log₂ of m^((log₂ m)^(1/3)) is (log₂ m)^(4/3), which passes 2·log₂ m at m = 256 and 3·log₂ m at m = 2^27 = 134,217,728. The constant the proof gives is at most 1/1600² = 1/2,560,000 (the flat-case bound of Theorem E.11, p. 37, and the proof of Theorem L.1, p. 60); with it, the bound passes m² only when log₂ m exceeds about 1.3 × 10^20.</li>
+  <li>Ours, text only: 324 Lean files, 72,932 lines; sorry only in Challenge.lean; no axiom declarations or native_decide; imports from outside the folder only Mathlib (commit 0df444a360ea, the v4.33.1 tag); Lean v4.33.1.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li>Claude (Anthropic), <a href="https://github.com/anthropics/formal-math/blob/main/vp-vnp/paper.pdf">VP ≠ VNP over every field</a>, 70 pages, and its Lean 4 development, <a href="https://github.com/anthropics/formal-math/tree/main/vp-vnp">github.com/anthropics/formal-math/tree/main/vp-vnp</a> (Apache License 2.0; <a href="https://github.com/anthropics/formal-math/blob/main/vp-vnp/README.md">README</a>; <a href="https://github.com/anthropics/formal-math/blob/main/vp-vnp/Statement.lean">Statement.lean</a>).</li>
+  <li>The same paper on Hexagon: <a href="https://hexagonmath.org/2611.00954v1">hexagon:2611.00954v1</a> (November 23, 2026; CC BY 4.0).</li>
+  <li>Anthropic’s <a href="https://github.com/anthropics/formal-math/pull/51">pull request #51</a> and the <a href="https://github.com/anthropics/formal-math/actions/runs/45272623486">CI run on the merge commit</a>.</li>
+  <li>Background the paper cites: L. G. Valiant, Completeness classes in algebra (STOC 1979); W. Baur and V. Strassen, The complexity of partial derivatives (1983); N. Limaye, S. Srinivasan and S. Tavenas, Superpolynomial lower bounds against low-depth algebraic circuits (FOCS 2021; J. ACM 2025); M. A. Forbes, Low-depth algebraic circuit lower bounds over any field (CCC 2024).</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Anthropic beyond using its product Claude, or with OpenAI.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is AN08. Before we start: Anthropic makes Claude, which helps make this series. This claim is Anthropic’s own: we hold it to the same standards as any lab’s, using only public sources. On November 23, 2026, Anthropic posted a paper and a Lean proof on GitHub, called VP ≠ VNP over every field. The author line reads Claude, Anthropic. The README says the result was discovered by an internal research Claude model, that the paper and the Lean were both written by AI models, and that no human mathematician has checked the proof. It claims to settle Leslie Valiant’s conjecture from 1979, the algebraic cousin of P versus NP. It does not settle P versus NP itself. So what is the question? An arithmetic circuit builds a polynomial from its variables using only addition and multiplication. Write it as a list of gates, each one a variable, a constant, or the sum or the product of two earlier gates. Our example: x, y, x plus y, and that times itself. Four gates, and the last one is x plus y, squared. Multiplying it out first and adding up the pieces, our way, takes nine gates. The size of a circuit is its number of gates, and the question is how few gates can do the job. A circuit must produce the polynomial itself, not just the right values on zeros and ones. That is what separates it from the Boolean circuits of P versus NP. Two polynomials sit at the center. For a 2 by 2 matrix, the determinant is ad − bc, and the permanent is ad + bc. For 3 by 3, both have the same six terms, and the determinant puts minus signs on three of them. Gaussian elimination computes determinants fast: for a 20 by 20 matrix of numbers, about 5,000 operations in our count. Nothing like it is known for the permanent. Multiplying out all its terms would take about 49 quintillion operations; Ryser’s formula cuts that to a few hundred million, but it still grows like 2^m. In 1979, Valiant defined two classes. VP holds families of polynomials, of polynomial degree, with circuits of polynomial size. VNP holds sums, over all strings of bits, of such polynomials. The permanent is complete for VNP, except in characteristic two, where it equals the determinant. The Hamiltonian cycle polynomial, a sum over the permutations that form one single cycle, is complete over every field. Valiant conjectured that neither has circuits of polynomial size.</p>
+<h3><span class="t num">2:40</span>The claim</h3>
+<p>The claim. The paper has 70 pages. Its main theorem: there is an absolute constant c above zero such that, over every field, for all large enough m, every circuit for the Hamiltonian cycle polynomial of an m by m matrix, and every circuit for the permanent outside characteristic two, needs more than m^(c·(log m)^(1/3)) gates. The threshold for large enough depends only on the characteristic, and the paper gives no value for it. That bound grows faster than any fixed power of m, so neither family is in VP: VP is not VNP, over every field. A second theorem says the same for circuits that only approximate, in a limit, so VNP is not even in the closure of VP. A Lean file states all of this from Mathlib alone: circuits, both polynomials, both classes, and the four main statements. What would be new. For general circuits, with no limit on depth, the paper says the best earlier lower bound for an explicit polynomial was that of Strassen, and of Baur and Strassen, of order n log d. For the permanent, that is about m² log m. Stronger bounds were known only for restricted circuits. For example, Limaye, Srinivasan and Tavenas proved superpolynomial bounds, first published in 2021, for circuits of any constant depth, and Forbes extended them to all fields. This claim covers every circuit. But look how slowly it grows. In our chart, with an illustrative constant of one, it passes m² at m equal to 256, but m³ only beyond about 134 million. The constant the proof gives is far smaller: at most 1/2,560,000. The best known upper bounds grow exponentially; in the paper’s words, there is still plenty of room to tighten the bounds. What is not claimed: not P versus NP, and nothing about Boolean circuits. Nor that the exponent 1/3 is optimal.</p>
+<h3><span class="t num">4:43</span>How the proof goes</h3>
+<p>How the proof goes, by the paper’s overview. It turns circuits into geometry. A circuit with L gates splits the polynomial’s table of coefficients into pieces of rank at most L. Functions called spectral points, after Strassen’s work on tensors, turn ranks into distances, so a small circuit forces an inequality between certain distances. Then the proof splits into two cases, by a property of the field: a flat case, where Euclidean geometry is available, and a contracting case. The paper proves that at least one case holds, but not which, even for the real numbers. In the flat case, it places the points of a network of wires in Euclidean space, and that gives the bound for a polynomial that the permanent can express. The contracting case is indirect. A small circuit for the permanent would speed up a whole class of computations; a diagonal argument then gives a value V equal to 1 + V, which is impossible. The flat case gives the weaker bound, the one in the theorem. The permanent enters only by substitution, through Valiant’s completeness. No such reduction is known for the determinant, and that, the paper says, is where the proof would fail for it. The Lean development has 324 files and about 73,000 lines, in our text count. Our text search finds sorry only in the challenge file, which states the theorems without proofs for comparison, and no axiom declarations. Anthropic’s automated check on the merge commit passed: a full build, then the comparator, which matched the five theorems to the challenge file, with Lean’s own kernel and the independent kernel nanoda both accepting. We read its log; we did not build or run anything. We also compared the statement file with the paper, by reading. Circuits count variables and constants as gates, as the paper does. The polynomials and the bound match. VP and VNP match Valiant’s definitions as the paper states them. Approximation uses Laurent series constants, as in the paper’s definition. We did not read the 73,000 lines. And the README warns that no machine checks that the statement file says what is claimed; the paper says that was judged only by AI readers.</p>
+<h3><span class="t num">6:58</span>Where it stands</h3>
+<p>Where it stands, on the evening of November 23. The paper is on GitHub and on the Hexagon repository, not on arXiv, and it is not peer reviewed. Anthropic’s own checks pass: build, comparator, two kernels, and only the three standard axioms allowed. The paper says its written proofs rest on Lean at four points, where it describes machines and programs. One numbered remark, about determinants, is not in Lean. No human mathematician has checked the proof, by Anthropic’s account. Hexagon’s listing, submitted on behalf of Anthropic, labels the text a mix of human-written and AI-generated, unlike the README. We found no announcement on Anthropic’s website, no named expert review, and no outside rerun of the checks yet. Not built or run by us. This is a Specials episode. AN03 covered Anthropic’s earlier claim from the same repository, that the Exponential Time Hypothesis is false: also credited to an internal Claude model, also checked by Anthropic’s own pipeline, with no human checker named. Episode 108 covered OpenAI’s cubic bound for the permanent against the determinant, which this paper cites; its approximate theorem would imply much more there, though that step is not in Lean. If it holds, Valiant’s conjecture is true over every field, general arithmetic circuits have their first superpolynomial lower bound for an explicit polynomial, and P versus NP is still open. Once more: Anthropic makes Claude, which helps make this series.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=AN08%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

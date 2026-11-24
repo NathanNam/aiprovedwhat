@@ -14,8 +14,8 @@
 <meta property="og:image" content="https://aiprovedwhat.com/assets/share-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 22 results beyond OpenAI’s catalogue on their own arc.">
-<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 22 results beyond OpenAI’s catalogue on their own arc.">
+<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 23 results beyond OpenAI’s catalogue on their own arc.">
+<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 373 math results, their 721 papers and the 11,096 earlier works they cite, with 23 results beyond OpenAI’s catalogue on their own arc.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <meta name="generator" content="tools/site/build.py">
@@ -190,6 +190,22 @@
 </tbody>
 </table></div>
 <p class="meta">Figures as the sources report them, checked in our AN02 and AN06 episodes. AN06 is checked in Lean but has no paper or peer review yet; not a ranking. Anthropic makes Claude, which helps make this series.</p>
+</section>
+<section class="compare" aria-labelledby="cmp-an03-an08">
+<h2 id="cmp-an03-an08">Two complexity claims from Anthropic’s formal-math repository, side by side</h2>
+<div class="compare-scroll"><table>
+<thead><tr><td></td><th scope="col"><a href="../episodes/an03-eth-false-3sat/">AN03</a><br><span class="meta">Anthropic</span></th><th scope="col"><a href="../episodes/an08-vp-vnp-lean/">AN08</a><br><span class="meta">Anthropic</span></th></tr></thead>
+<tbody>
+<tr><th scope="row">Claim</th><td>the Exponential Time Hypothesis is false (a 2^o(n) algorithm for 3-SAT)</td><td>VP ≠ VNP over every field (Valiant’s conjecture)</td></tr>
+<tr><th scope="row">Paper</th><td>49 pages, dated October 26, 2026</td><td>70 pages, merged November 23, 2026</td></tr>
+<tr><th scope="row">Provenance (the paper or README)</th><td>core algorithm “found on October 16” by an internal Claude research model, 14M output tokens, no human input</td><td>“discovered by an internal research Claude model”; paper and Lean “written by AI models”; no date or token count given</td></tr>
+<tr><th scope="row">Lean</th><td>ETH false and the full main theorem; 1,050 files, 151,900 lines (our count)</td><td>the main theorems, VP ⊊ VNP and VNP ⊄ VP-bar; 324 files, 72,932 lines (our count)</td></tr>
+<tr><th scope="row">Checks</th><td>Comparator with nanoda in Anthropic’s CI (passed)</td><td>Comparator with nanoda and Lean’s kernel in Anthropic’s CI (passed)</td></tr>
+<tr><th scope="row">Human check</th><td>none known (the paper)</td><td>none (README; Appendix Q)</td></tr>
+<tr><th scope="row">Not claimed</th><td>anything for formulas met in practice; P vs NP</td><td>P vs NP; Boolean circuits</td></tr>
+</tbody>
+</table></div>
+<p class="meta">From both papers and READMEs, checked in our AN03 and AN08 episodes. Not a ranking. Anthropic makes Claude, which helps make this series.</p>
 </section>
 <section class="special" id="s01" aria-labelledby="s01-h">
 <p class="thumb-kicker">Special S01 · OpenAI, outside its catalogue · announced September 8, 2026 · Mathematical physics</p>
@@ -815,7 +831,33 @@
 <p><a href="../episodes/an07-riemann-hypothesis-lean-checked/">Watch the episode and read the record</a></p>
 
 </section>
-<p class="attribution">Last checked November 21, 2026.</p>
+<section class="special" id="an08" aria-labelledby="an08-h">
+<p class="thumb-kicker">AN08 · Anthropic · announced November 23, 2026 · Theoretical computer science</p>
+<h2 id="an08-h">VP ≠ VNP over every field</h2>
+<p>A paper credited to Claude (Anthropic) claims that, over every field, arithmetic circuits for the Hamiltonian cycle polynomial, and for the permanent outside characteristic 2, need more than m^(c·(log m)^(1/3)) gates for all large m, so VP ≠ VNP: Valiant’s conjecture of 1979. Lean by Anthropic, passing its own CI; no human mathematician has checked the proof (README). Not P vs NP.</p>
+<p class="meta">Anthropic makes Claude, which helps make this series.</p>
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>On GitHub (anthropics/formal-math, folder vp-vnp), merged November 23, 2026, 13:43 Pacific time; on Hexagon as 2611.00954v1 (November 23, 2026); not on arXiv</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None found as of November 23, 2026, about 17:00 PT. The README says no human mathematician has checked the proof; Appendix Q says whether the statements say what is meant “was judged only by AI readers”. Hexagon labels the text “A mix of human-written and AI-generated text”</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Lean by Anthropic: MainTheorem, MainTheoremApprox, Separation (VP ⊊ VNP), SeparationClosure and the real permanent bound, stated from Mathlib alone; Anthropic’s CI on the merge commit passed (build, Comparator, nanoda and Lean’s kernel, standard axioms only). The paper’s printed proofs rest on Lean at four points; Remark N.6 not formalized. 324 files, 72,932 lines (our count). Not built or run by us (<a href="https://github.com/anthropics/formal-math/tree/main/vp-vnp">repository</a>)</dd>
+  </div>
+</dl>
+<p><a href="../episodes/an08-vp-vnp-lean/">Watch the episode and read the record</a> · <a href="../connections/#AN08">See its connections</a></p>
+
+</section>
+<p class="attribution">Last checked November 23, 2026.</p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
