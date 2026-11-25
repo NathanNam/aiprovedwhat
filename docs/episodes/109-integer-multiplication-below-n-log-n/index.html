@@ -48,6 +48,9 @@
 <p class="meta">Episode 109, October 2026</p>
 <h1>Faster than n log n?</h1>
 <p class="subtitle">A claimed multitape Turing machine that multiplies integers in time n (log n)<sup>1 − κ</sup>, with κ = 2<sup>−182</sup></p>
+<!-- revision:start -->
+<div class="banner banner-rev" role="note"><p><b>Revised by OpenAI on November 24, 2026.</b> A new paper in result <a href="../../episodes/379-separation-vp-vnp-every-field/">379</a>, “The logarithmic exponent of integer multiplication on tapes”, claims time n(1 + log n)<sup>1/2 + o(1)</sup> on one fixed multitape machine and, under variable-count Weak ETH, a matching lower bound of order n√(log n). OpenAI also added this result’s first <a href="https://github.com/openai/math/blob/main/lean/docs/109.md">Lean formalization</a>, covering the original n(log n)<sup>1−κ</sup> bound and both new bounds; we have not run it. <span class="tag rev">Revised</span></p></div>
+<!-- revision:end -->
 <!-- papers-note:start -->
 <p class="papers-note">Covers result 109 in OpenAI’s catalog: <a href="#papers-in-result">its one paper</a>. <a href="../../connections/#109">See its connections</a> to other results and the work it cites.</p>
 <!-- papers-note:end -->
@@ -109,12 +112,13 @@
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
     <dd>Not yet</dd>
   </div>
-  <div class="ledger-row">
+  <div class="ledger-row is-done">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>No; no Lean formalization was published for this result</dd>
+    <dd>Not when the episode was made; OpenAI added a Lean formalization on November 24, 2026 (see below); we have not run it</dd>
   </div>
 </dl>
 <p class="ledger-note"><!-- last-checked:start -->Last checked November 24, 2026.<!-- last-checked:end --> The preprint has not been revised. OpenAI published no Lean formalization for this result. A <a href="https://github.com/openai/math/blob/main/preprints/An-explicit-power-saving-for-the-exact-discrete-Fourier-transform-September-25-2026/main.pdf">companion preprint</a> (result 130) uses the paper’s complex network for exact Fourier transforms below n log n operations. The paper is not among those OSVerify reviewed. On October 20, 2026, David Harvey, co-author of the 2021 O(n log n) algorithm the paper builds on, posted <a href="https://web.maths.unsw.edu.au/~davidharvey/research/subnlogn.pdf">a note</a> explaining its core construction; he writes that he has not checked most of the details but thinks the claimed bound is plausible.</p>
+<p class="ledger-note"><b>Later, November 24, 2026:</b> OpenAI added a <a href="https://github.com/openai/math/blob/main/lean/docs/109.md">Lean formalization</a> whose comparator states this paper’s bound, O(n (log n)<sup>1 − κ</sup>) with κ = 2<sup>−182</sup>, on one fixed multitape machine, and a new paper, <a href="https://github.com/openai/math/blob/main/preprints/The-logarithmic-exponent-of-integer-multiplication-on-tapes-November-24-2026/paper.pdf">“The logarithmic exponent of integer multiplication on tapes”</a> (part of result 379). It claims time n(1 + log n)<sup>1/2 + o(1)</sup> on one fixed machine visiting O(n) tape cells and, assuming variable-count Weak ETH (a weak form of the Exponential Time Hypothesis, which the paper says the subexponential 3-SAT algorithms of <a href="../an03-eth-false-3sat/">AN03</a> and <a href="../378-exponential-time-hypothesis-false/">378</a> do not contradict), a lower bound of order n√(log n), so 1/2 is the optimal exponent. By OpenAI’s scope note, Lean covers both bounds, not the paper’s division and square-root results. Not peer reviewed; not built or run by us.</p>
 </section>
 
 <section aria-labelledby="proof">

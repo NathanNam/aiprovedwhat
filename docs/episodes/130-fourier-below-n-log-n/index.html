@@ -48,6 +48,9 @@
 <p class="meta">Episode 130, October 2026</p>
 <h1>Faster than the FFT?</h1>
 <p class="subtitle">Claimed exact discrete Fourier transforms below n log n operations, in exact complex arithmetic</p>
+<!-- revision:start -->
+<div class="banner banner-rev" role="note"><p><b>Revised by OpenAI on November 24, 2026.</b> A new paper in result <a href="../../episodes/379-separation-vp-vnp-every-field/">379</a>, “The logarithmic exponent of finite Fourier transforms”, claims that finite abelian Fourier transforms of order N need, and can be done with, N(log N)<sup>1/2 + o(1)</sup> binary linear gates over every suitable field: an upper bound far below this result’s and a matching lower bound. OpenAI’s <a href="https://github.com/openai/math/blob/main/lean/docs/130.md">scope notes</a> now list both bounds; we have not run them. <span class="tag rev">Revised</span></p></div>
+<!-- revision:end -->
 <!-- papers-note:start -->
 <p class="papers-note">Covers result 130 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>. <a href="../../connections/#130">See its connections</a> to other results and the work it cites.</p>
 <!-- papers-note:end -->
@@ -115,6 +118,7 @@
   </div>
 </dl>
 <p class="ledger-note"><!-- last-checked:start -->Last checked November 24, 2026.<!-- last-checked:end --> The preprints have not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/130.md">Lean formalization</a> of the existence theorem (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/ExactFourier.lean">comparator</a>) and of the uniform transform and convolution with their running time (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/UniformFourier.lean">comparator</a>), in <a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/FourierCircuit">139 files and 34,377 lines</a> with their imports (including <a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/FourierTransform">the uniform modules</a>), not counting Mathlib, with no unproved steps that we could find. The uniform formalization uses its own smaller network with a larger saving, which implies the paper’s exponent. We have not run the check. Neither paper is among those OSVerify reviewed, and we have seen no expert review.</p>
+<p class="ledger-note"><b>Later, November 24, 2026:</b> OpenAI added <a href="https://github.com/openai/math/blob/main/preprints/The-logarithmic-exponent-of-finite-Fourier-transforms-November-24-2026/paper.pdf">“The logarithmic exponent of finite Fourier transforms”</a> (part of result 379). It claims that the minimum number of binary linear gates (each a weighted sum of two wires) for a finite abelian Fourier transform of order N is N(log N)<sup>1/2 + o(1)</sup>, over every field in which N is invertible and which has the needed roots of unity: an upper bound far below this episode’s, and a matching lower bound of order N√(log N). <a href="https://github.com/openai/math/blob/main/lean/docs/130.md">OpenAI’s scope note</a> for this result now lists both bounds, alongside the two statements above. Not peer reviewed; not built or run by us.</p>
 </section>
 
 <section aria-labelledby="proof">

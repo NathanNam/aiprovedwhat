@@ -48,6 +48,9 @@
 <p class="meta">Episode 104, October 2026</p>
 <h1>Who wins in the long run?</h1>
 <p class="subtitle">Claimed quasipolynomial algorithms for mean-payoff games, turn-based stochastic games and mean-payoff parity games</p>
+<!-- revision:start -->
+<div class="banner banner-note" role="note"><p><b>Note, November 24, 2026.</b> OpenAI’s new result <a href="../../episodes/380-strongly-polynomial-time-linear-programming/">380</a>, “Strongly polynomial linear programming”, claims values and optimal policies for deterministic mean-payoff games in strongly polynomial time, and for turn-based stochastic ones in polynomial bit time with binary rational data; it cites this result’s preprints as the earlier quasipolynomial bounds. By our reading this would imply this result’s ordinary and stochastic claims (the parity variant not compared). Its Lean covers linear programming, not the games. <span class="tag ">Note</span></p></div>
+<!-- revision:end -->
 <!-- papers-note:start -->
 <p class="papers-note">Covers result 104 in OpenAI’s catalog: <a href="#papers-in-result">all 4 papers</a>. <a href="../../connections/#104">See its connections</a> to other results and the work it cites.</p>
 <!-- papers-note:end -->
@@ -116,6 +119,7 @@
   </div>
 </dl>
 <p class="ledger-note"><!-- last-checked:start -->Last checked November 24, 2026.<!-- last-checked:end --> The preprints have not been revised. OpenAI published a <a href="https://github.com/openai/math/blob/main/lean/docs/104.md">Lean formalization</a> of the randomized algorithm’s winning-set theorem, <a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/MeanPayoff">72 files</a> and <a href="https://github.com/openai/math/blob/main/lean/OAI/Computability/RandomMean">17 more</a>, about 27,000 lines, matched against <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/RandomizedMeanPayoff.lean">its comparator statement</a>: a Turing machine reading random bits that halts within 2<sup>C(log₂(L+2))²</sup> steps on every tape and is correct on at least 7/8 of them. It also formalizes <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/TruffetCounterexample.lean">a small counterexample</a> from the randomized paper’s appendix to one variable-selection step of the claimed strongly polynomial tropical algorithm in Truffet’s arXiv version 4, within a model of that step; the appendix makes no claim about other versions. The deterministic, stochastic and parity results are not formalized, and we found no unproved steps in what is. We have not run the checks. None of the papers is among those OSVerify reviewed, and we have seen no expert review.</p>
+<p class="ledger-note"><b>Later, November 24, 2026:</b> OpenAI’s new result 380, <a href="https://github.com/openai/math/blob/main/preprints/Strongly-polynomial-linear-programming-November-24-2026/paper.pdf">“Strongly polynomial linear programming”</a>, claims much more for these games: values and optimal policies in strongly polynomial time for deterministic mean-payoff games, and in polynomial bit time for turn-based stochastic ones with binary rational data. It cites these preprints as the earlier quasipolynomial bounds. By <a href="https://github.com/openai/math/blob/main/lean/docs/380.md">OpenAI’s scope note</a>, its Lean proof covers linear programming and the polytope result, not the games. Not peer reviewed; not built or run by us.</p>
 </section>
 
 <section aria-labelledby="proof">

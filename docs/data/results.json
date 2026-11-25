@@ -13,8 +13,8 @@
   "episode": "null when the result has no episode yet (shown as 'Episode coming')."
  },
  "last_checked": "2026-11-24",
- "count": 374,
- "paper_count": 722,
+ "count": 375,
+ "paper_count": 730,
  "results": [
   {
    "num": "001",
@@ -6690,7 +6690,20 @@
     "lean": "partial",
     "lean_by": null
    },
-   "revisions": [],
+   "revisions": [
+    {
+     "date": "2026-11-24",
+     "kind": "implied-by",
+     "by": "380",
+     "short": "OpenAI's 380 claims strongly polynomial games",
+     "sources": [
+      "https://github.com/openai/math/blob/main/history.md",
+      "https://github.com/openai/math/blob/main/preprints/Strongly-polynomial-linear-programming-November-24-2026/paper.pdf",
+      "https://github.com/openai/math/blob/main/lean/docs/380.md"
+     ],
+     "note": "Note, November 24, 2026. OpenAI’s new result 380, “Strongly polynomial linear programming”, claims values and optimal policies for deterministic mean-payoff games in strongly polynomial time, and for turn-based stochastic ones in polynomial bit time with binary rational data; it cites this result’s preprints as the earlier quasipolynomial bounds. By our reading this would imply this result’s ordinary and stochastic claims (the parity variant not compared). Its Lean covers linear programming, not the games."
+    }
+   ],
    "versions": [
     {
      "video_id": "7_HlnvIerd4",
@@ -6876,7 +6889,21 @@
     "lean": "main",
     "lean_by": null
    },
-   "revisions": [],
+   "revisions": [
+    {
+     "date": "2026-11-24",
+     "kind": "extended",
+     "new_episode": false,
+     "short": "matching lower bound claimed: ω = 9/4",
+     "sources": [
+      "https://github.com/openai/math/blob/main/history.md",
+      "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
+      "https://github.com/openai/math/blob/main/lean/docs/107.md",
+      "https://arxiv.org/abs/2611.09716"
+     ],
+     "note": "Revised by OpenAI on November 24, 2026. A new paper in result 379, “The matrix multiplication exponent is nine fourths”, claims the matching lower bound: a formal circuit multiplying two n × n matrices needs at least n9/4/2 multiplication or division gates, so ω = 9/4 exactly over every field. OpenAI’s scope notes now state ω = 9/4 and dual exponent 1/2 over every field (the gate count itself is not formalized); we have not run it. Separately, an exposition of the 9/4 upper bound over every field by Doğan, Lysikov, Sakabe and Walter appeared on November 6 (arXiv:2611.09716)."
+    }
+   ],
    "versions": [
     {
      "video_id": "U56i4DjgPf8",
@@ -6947,6 +6974,19 @@
      ],
      "banner": false,
      "note": "Note, November 23, 2026. OpenAI’s new result 379 claims the superpolynomial bound that was open when this episode was made: its Corollary 1.2 gives border determinantal complexity at least exp(c(log m)^(5/4)) for the permanent outside characteristic two, and it cites this result’s cubic bound as a previous advance. By our reading this would imply the cubic bound for all large enough m (not the explicit threshold m ≥ 1408). Its Lean proof covers the exact separation of VP and VNP, not the determinant bound."
+    },
+    {
+     "date": "2026-11-24",
+     "kind": "implied-by",
+     "by": "379",
+     "short": "379's new paper: exp(c(log N)²/(log log N)²)",
+     "sources": [
+      "https://github.com/openai/math/blob/main/history.md",
+      "https://github.com/openai/math/blob/main/preprints/Circuit-lower-bounds-for-Hamiltonian-cycle-and-the-permanent-November-24-2026/paper.pdf",
+      "https://github.com/openai/math/blob/main/lean/docs/379.md"
+     ],
+     "banner": false,
+     "note": "Note, November 24, 2026. OpenAI says new papers in result 379 subsume its November 23 paper. “Circuit lower bounds for Hamiltonian cycle and the permanent” claims exp(c(log N)²/(log log N)²) gates for the permanent outside characteristic two and says this gives the same superpolynomial lower bound on the matrix order of determinants, up to the constant; it cites this cubic bound. Lean covers superpolynomial exact circuit bounds, not this rate."
     }
    ],
    "versions": [
@@ -6985,8 +7025,8 @@
     }
    ],
    "lean": {
-    "status": "none",
-    "doc_url": null
+    "status": "main",
+    "doc_url": "https://github.com/openai/math/blob/main/lean/docs/109.md"
    },
    "peer_review": "not yet",
    "episode": {
@@ -7003,10 +7043,23 @@
     "preprint": "OpenAI, October 2026",
     "expert_review": null,
     "peer_review": "not yet",
-    "lean": "none",
+    "lean": "main",
     "lean_by": null
    },
-   "revisions": [],
+   "revisions": [
+    {
+     "date": "2026-11-24",
+     "kind": "extended",
+     "new_episode": false,
+     "short": "exponent 1/2 claimed; Lean added",
+     "sources": [
+      "https://github.com/openai/math/blob/main/history.md",
+      "https://github.com/openai/math/blob/main/preprints/The-logarithmic-exponent-of-integer-multiplication-on-tapes-November-24-2026/paper.pdf",
+      "https://github.com/openai/math/blob/main/lean/docs/109.md"
+     ],
+     "note": "Revised by OpenAI on November 24, 2026. A new paper in result 379, “The logarithmic exponent of integer multiplication on tapes”, claims time n(1 + log n)1/2 + o(1) on one fixed multitape machine and, under variable-count Weak ETH, a matching lower bound of order n√(log n). OpenAI also added this result’s first Lean formalization, covering the original n(log n)1−κ bound and both new bounds; we have not run it."
+    }
+   ],
    "versions": [
     {
      "video_id": "A_iiKRbwE58",
@@ -8244,7 +8297,20 @@
     "lean": "main",
     "lean_by": null
    },
-   "revisions": [],
+   "revisions": [
+    {
+     "date": "2026-11-24",
+     "kind": "extended",
+     "new_episode": false,
+     "short": "exponent 1/2 claimed, with lower bound",
+     "sources": [
+      "https://github.com/openai/math/blob/main/history.md",
+      "https://github.com/openai/math/blob/main/preprints/The-logarithmic-exponent-of-finite-Fourier-transforms-November-24-2026/paper.pdf",
+      "https://github.com/openai/math/blob/main/lean/docs/130.md"
+     ],
+     "note": "Revised by OpenAI on November 24, 2026. A new paper in result 379, “The logarithmic exponent of finite Fourier transforms”, claims that finite abelian Fourier transforms of order N need, and can be done with, N(log N)1/2 + o(1) binary linear gates over every suitable field: an upper bound far below this result’s and a matching lower bound. OpenAI’s scope notes now list both bounds; we have not run them."
+    }
+   ],
    "versions": [
     {
      "video_id": "EzTK3kc7lfw",
@@ -24363,17 +24429,53 @@
   {
    "num": "379",
    "slug": "379-separation-vp-vnp-every-field",
-   "title": "Separation of VP and VNP over every field",
-   "title_html": "Separation of VP and VNP over every field",
-   "summary_html": "An explicit VNP family requires border arithmetic circuits of size at least <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>exp</mi><mo>⁡</mo><mo stretchy=\"false\">(</mo><mi mathvariant=\"normal\">Ω</mi><mo stretchy=\"false\">(</mo><mo stretchy=\"false\">(</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><msup><mo stretchy=\"false\">)</mo><mrow><mn>5</mn><mi mathvariant=\"normal\">/</mi><mn>4</mn></mrow></msup><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">\\exp(\\Omega((\\log n)^{5/4}))</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1.138em;vertical-align:-0.25em;\"></span><span class=\"mop\">exp</span><span class=\"mopen\">(</span><span class=\"mord\">Ω</span><span class=\"mopen\">((</span><span class=\"mop\">lo<span style=\"margin-right:0.01389em;\">g</span></span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord mathnormal\">n</span><span class=\"mclose\"><span class=\"mclose\">)</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.888em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">5/4</span></span></span></span></span></span></span></span></span><span class=\"mclose\">))</span></span></span></span> over every field. The same bound holds for the directed Hamiltonian cycle polynomial over every field and for the permanent outside characteristic two.",
+   "title": "Euclidean tensor geometry and its applications to complexity and combinatorics",
+   "title_html": "Euclidean tensor geometry and its applications to complexity and combinatorics",
+   "summary_html": "Euclidean tensor prices yield strict separations of the arithmetic hierarchy, circuit lower bounds for Hamiltonian cycle over every field and for the permanent outside characteristic two, and an exponential bound for sunflower-free families with a fixed number of petals. The square matrix multiplication exponent is <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>9</mn><mi mathvariant=\"normal\">/</mi><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">9/4</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mord\">9/4</span></span></span></span> over every field. The logarithmic exponent of finite abelian Fourier transforms is <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mi mathvariant=\"normal\">/</mi><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">1/2</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mord\">1/2</span></span></span></span>. Integer multiplication on tapes takes <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo stretchy=\"false\">(</mo><mn>1</mn><mo>+</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><msup><mo stretchy=\"false\">)</mo><mrow><mn>1</mn><mi mathvariant=\"normal\">/</mi><mn>2</mn><mo>+</mo><mi>o</mi><mo stretchy=\"false\">(</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow></msup></mrow><annotation encoding=\"application/x-tex\">n(1+\\log n)^{1/2+o(1)}</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mord mathnormal\">n</span><span class=\"mopen\">(</span><span class=\"mord\">1</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">+</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:1.138em;vertical-align:-0.25em;\"></span><span class=\"mop\">lo<span style=\"margin-right:0.01389em;\">g</span></span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord mathnormal\">n</span><span class=\"mclose\"><span class=\"mclose\">)</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.888em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mtight\">1/2</span><span class=\"mbin mtight\">+</span><span class=\"mord mathnormal mtight\">o</span><span class=\"mopen mtight\">(</span><span class=\"mord mtight\">1</span><span class=\"mclose mtight\">)</span></span></span></span></span></span></span></span></span></span></span></span> time on one fixed machine, and variable-count Weak ETH gives the matching logarithmic exponent.",
    "subject": "Theoretical computer science",
    "subject_slug": "theoretical-computer-science",
    "papers": [
     {
-     "title": "VP and VNP are different",
-     "title_html": "VP and VNP are different",
-     "url": "https://github.com/openai/math/blob/main/preprints/VP-and-VNP-are-different-November-23-2026/paper.pdf",
+     "title": "Euclidean geometry in the asymptotic spectrum of tensors",
+     "title_html": "Euclidean geometry in the asymptotic spectrum of tensors",
+     "url": "https://github.com/openai/math/blob/main/preprints/Euclidean-geometry-in-the-asymptotic-spectrum-of-tensors-November-24-2026/paper.pdf",
      "role": "main"
+    },
+    {
+     "title": "Paths, trees and grids separate Valiant’s hierarchy",
+     "title_html": "Paths, trees and grids separate Valiant’s hierarchy",
+     "url": "https://github.com/openai/math/blob/main/preprints/Paths-trees-and-grids-separate-Valiants-hierarchy-November-24-2026/paper.pdf",
+     "role": "companion"
+    },
+    {
+     "title": "Circuit lower bounds for Hamiltonian cycle and the permanent",
+     "title_html": "Circuit lower bounds for Hamiltonian cycle and the permanent",
+     "url": "https://github.com/openai/math/blob/main/preprints/Circuit-lower-bounds-for-Hamiltonian-cycle-and-the-permanent-November-24-2026/paper.pdf",
+     "role": "companion"
+    },
+    {
+     "title": "The logarithmic exponent of finite Fourier transforms",
+     "title_html": "The logarithmic exponent of finite Fourier transforms",
+     "url": "https://github.com/openai/math/blob/main/preprints/The-logarithmic-exponent-of-finite-Fourier-transforms-November-24-2026/paper.pdf",
+     "role": "companion"
+    },
+    {
+     "title": "The logarithmic exponent of integer multiplication on tapes",
+     "title_html": "The logarithmic exponent of integer multiplication on tapes",
+     "url": "https://github.com/openai/math/blob/main/preprints/The-logarithmic-exponent-of-integer-multiplication-on-tapes-November-24-2026/paper.pdf",
+     "role": "companion"
+    },
+    {
+     "title": "The matrix multiplication exponent is nine fourths",
+     "title_html": "The matrix multiplication exponent is nine fourths",
+     "url": "https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
+     "role": "companion"
+    },
+    {
+     "title": "An exponential bound for sunflowers",
+     "title_html": "An exponential bound for sunflowers",
+     "url": "https://github.com/openai/math/blob/main/preprints/An-exponential-bound-for-sunflowers-November-24-2026/paper.pdf",
+     "role": "companion"
     }
    ],
    "lean": {
@@ -24384,6 +24486,48 @@
    "episode": null,
    "last_checked": "2026-11-24",
    "url": "https://aiprovedwhat.com/episodes/379-separation-vp-vnp-every-field/",
+   "kind": "catalogue",
+   "record": {
+    "stage": "preprint",
+    "preprint": "OpenAI, October 2026",
+    "expert_review": null,
+    "peer_review": "not yet",
+    "lean": "partial",
+    "lean_by": null
+   },
+   "revisions": [],
+   "versions": []
+  },
+  {
+   "num": "380",
+   "slug": "380-strongly-polynomial-time-linear-programming",
+   "title": "Strongly polynomial-time linear programming",
+   "title_html": "Strongly polynomial-time linear programming",
+   "summary_html": "A deterministic algorithm solves linear programs with arbitrary real coefficients in a number of steps polynomial in the numbers of variables and constraints, answering Smale’s ninth problem. Bounded simple rational polytopes can have graph diameter superpolynomial in their facet count, refuting the polynomial Hirsch conjecture. For any prescribed subpolynomial bound on face dimension, the examples can be chosen so that even moves across such faces require superpolynomially many steps.",
+   "subject": "Theoretical computer science",
+   "subject_slug": "theoretical-computer-science",
+   "papers": [
+    {
+     "title": "Strongly polynomial linear programming",
+     "title_html": "Strongly polynomial linear programming",
+     "url": "https://github.com/openai/math/blob/main/preprints/Strongly-polynomial-linear-programming-November-24-2026/paper.pdf",
+     "role": "main"
+    },
+    {
+     "title": "Superpolynomial graph diameter of simple polytopes",
+     "title_html": "Superpolynomial graph diameter of simple polytopes",
+     "url": "https://github.com/openai/math/blob/main/preprints/Superpolynomial-graph-diameter-of-simple-polytopes-November-24-2026/paper.pdf",
+     "role": "companion"
+    }
+   ],
+   "lean": {
+    "status": "partial",
+    "doc_url": "https://github.com/openai/math/blob/main/lean/docs/380.md"
+   },
+   "peer_review": "not yet",
+   "episode": null,
+   "last_checked": "2026-11-24",
+   "url": "https://aiprovedwhat.com/episodes/380-strongly-polynomial-time-linear-programming/",
    "kind": "catalogue",
    "record": {
     "stage": "preprint",
