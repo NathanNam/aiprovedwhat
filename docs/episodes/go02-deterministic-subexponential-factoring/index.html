@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Factoring with no coin flips, below exponential time? Google’s Cogentic claim | AI Proved What?</title>
+<meta name="description" content="A paper from Google’s Cogentic agent claims deterministic factoring in exp(3 (ln N)^(3/4)) time and deterministic quadratic nonresidues in L[1/2] time, with no unproven hypothesis. Lean claimed, not released; no human check named. Not built or run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/go02-deterministic-subexponential-factoring/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Factoring with no coin flips, below exponential time?">
+<meta property="og:description" content="A paper from Google’s Cogentic agent claims deterministic factoring in exp(3 (ln N)^(3/4)) time and deterministic quadratic nonresidues in L[1/2] time, with no unproven hypothesis. Lean claimed, not released; no human check named. Not built or run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/go02-deterministic-subexponential-factoring/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/go02-deterministic-subexponential-factoring/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="GO02: Factoring with no coin flips? The formula e to the 3 (ln N) to the 3/4, a crossed-out coin, and our bars for a 617-digit number: about 10^301 operations for the new formula, 10^308 for trial division, 10^123 for Harvey’s fifth root.">
+<meta name="twitter:image:alt" content="GO02: Factoring with no coin flips? The formula e to the 3 (ln N) to the 3/4, a crossed-out coin, and our bars for a 617-digit number: about 10^301 operations for the new formula, 10^308 for trial division, 10^123 for Harvey’s fifth root.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">GO02 (Specials; Google Cogentic; see also <a href="../go01-integer-factorization-l-one-third/">GO01</a>, <a href="../142-deterministic-factoring/">142</a> and <a href="../003-quasi-riemann-hypothesis/">3</a>), November 2026</p>
+<h1>Factoring with no coin flips, below exponential time?</h1>
+<p class="subtitle">A 59-page paper from Google’s Cogentic agent claims that every composite number can be factored deterministically, with no unproven hypothesis, in exp(3 (ln N)^(3/4)) bit operations, and that a non-square modulo any prime can be found deterministically in L[1/2] time. The Lean proof it mentions has not been released, and no human check is named.</p>
+
+<div class="player" data-youtube="1oqyYTTNRO0" data-title="GO02: Factoring with no coin flips?">
+  <a href="https://youtu.be/1oqyYTTNRO0">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play GO02: Factoring with no coin flips? The formula e to the 3 (ln N) to the 3/4, a crossed-out coin, and our bars for a 617-digit number: about 10^301 operations for the new formula, 10^308 for trial division, 10^123 for Harvey’s fifth root.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">9:39. English captions available. The video loads from YouTube when you press play.</p>
+
+<p><strong>Disclosure.</strong> Anthropic makes Claude, which helps make this series. This page mentions an earlier claim whose ideas and Lean code were generated by Claude (Rudich and Rousseau). AI Proved What? is independent and not affiliated with Anthropic beyond using its product Claude, or with Google.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/1oqyYTTNRO0?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/1oqyYTTNRO0?t=169" data-t="169"><span class="t">2:49</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/1oqyYTTNRO0?t=327" data-t="327"><span class="t">5:27</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/1oqyYTTNRO0?t=482" data-t="482"><span class="t">8:02</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="question">
+<h2 id="question">The question</h2>
+<p>This is GO02, the second of our Specials on papers from Google’s Cogentic. On November 25, 2026, Google Research added six math papers to its public GitHub repository. Each README says that the paper and a Lean formalization were entirely obtained by Cogentic, an agent system built on Gemini 4, with no human interaction other than the initial prompt. The Lean files have not been released. Google is not affiliated with this series. GO01 covered the first paper, a factoring method that flips coins. This paper claims factoring with no coin flips at all, in less than exponential time, and a fast way, with no coins, to find a number that is not a square modulo a prime. So what is the question?</p>
+<p>Every whole number splits into primes, and checking a split is easy. Finding one is hard. With coin flips allowed, factoring has had a proven time below exponential since Dixon, in 1981; Lenstra and Pomerance sharpened it in 1992. Without coins, the picture is much worse. Trial division can take up to the square root of N steps. Pollard and Strassen, in the 1970s, brought that down to the fourth root, and David Harvey, in 2021, to the fifth root; later work shaved off only factors smaller than any power of N. All of these are still exponential in the number of digits. And even assuming the generalized Riemann hypothesis, the paper says, no deterministic method below exponential time was known.</p>
+<p>The paper’s route starts from a classic trick. Take 77, 7 × 11. 30 is a multiple of 6 and of 10, one less than each prime. Raise 2 to the 15th power, half of 30, modulo 77: you get 43. 43 is one more than a multiple of 7, but one less than a multiple of 11. So the greatest common divisor of 42 and 77 is 7: a factor. It works because 2 is a square modulo 7 but not modulo 11. Try 4, a square modulo both, and you get 1: no split. So the method needs two things: a multiple of every p − 1, and a witness that is a square for one factor but not another, like 2 here. For a single prime, the witness is a non-square, a quadratic nonresidue. Half of the numbers from 1 to p − 1 are nonresidues, so coin flips find one quickly, and for every prime below a million, the smallest is at most 43. But without coins or unproven hypotheses, the best proven bound comes from Burgess, in 1957: a scan up to about p^0.15. Assuming the generalized Riemann hypothesis, a scan up to 2 (log p)² is enough, by Ankeny and Bach.</p>
+</section>
+
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The claim. The paper has 59 pages and no author line; a footnote credits Cogentic. It states three theorems, counted in bit operations on a multitape Turing machine, with no randomness, no unproven hypotheses about smooth numbers, and no Riemann hypothesis. Theorem 1.3 is the slow part: given an odd composite N that is not a perfect power, find a multiple M of every p − 1, or a factor, in about e^(3 (log N)^(3/4)). Theorem 1.2 is the fast part: given N and any such M, split N in time just above L[1/2], times the length of M; and for any odd prime p, find a quadratic nonresidue in time just above L[1/2]. Theorem 1.1 chains the two: every composite number is factored, with no coins, in about e^(3 (log N)^(3/4)). Every constant is effective, the paper says, though none is given as a number. If it holds, it beats every published deterministic factoring bound by far, with or without the Riemann hypothesis, and, apart from an unreviewed claim we come back to, it is the first proven nonresidue search below a power of p.</p>
+<p>In the paper’s words (p. 4). Theorem 1.1: an explicit deterministic algorithm A_factor that, for every composite N ≥ 4, outputs a divisor 1 &lt; d &lt; N within C_fac·exp(3 (ln N)^(3/4)) bit operations, which is L_N[3/4, o(1)]. Theorem 1.2: (a) for a composite N ≥ 4 that is not a perfect power and an even M̃ with p − 1 dividing M̃ for every prime p dividing N, a divisor within C₁·exp(C_split (ln N)^(1/2) ln ln(N + 16))·(ln M̃)(ln N)²; (b) for an odd prime p, a z in 1, …, p − 1 with Legendre symbol −1 within C₂·exp(C_split (ln p)^(1/2) ln ln(p + 16)). Theorem 1.3: for an odd composite non-perfect-power N ≥ 9, either a divisor or such an M̃ with ln M̃ ≤ exp((ln N)^0.65), within C_exp·exp(3 (ln N)^(3/4)). Model: elementary bit operations with schoolbook arithmetic, valid on a multitape Turing machine and a word-RAM; “zero randomness, zero unproven smoothness hypotheses, and zero Riemann-hypothesis assumptions”, with effective constants (no numerical value is given for C_split, C_fac or C_exp).</p>
+</section>
+
+<section aria-labelledby="new">
+<h2 id="new">What would be new, and what is not claimed</h2>
+<p>How fast is that? Take a 617-digit number, the size of an RSA-2048 key, and, as an illustration only, drop the hidden constants. The new formula gives about 10^301 operations. Trial division, 10^308. Harvey’s fifth root, 10^123. The coin-flipping bound of Lenstra and Pomerance, 10^44, and the number field sieve, the practical method, about 10^35. By these formulas, the new bound beats trial division only beyond about 563 digits, and Harvey’s fifth root beyond about 22,000 digits. In the algorithm itself, by our reading, the first step is trial division up to a limit past the square root of N for every number below about 8,400 digits. So for those, trial division finds the factor. For nonresidues, with an illustrative constant of 1, the new bound overtakes Burgess only beyond about 1,200 digits, though the algorithm as written simply scans upward for every prime below about 28,000 digits. And the proof’s main argument for splitting applies only to N above a threshold of at least e^(2^80). What is not claimed: a practical algorithm, anything faster than coin-flipping methods, any threat to RSA, or the size beyond which the bounds take hold.</p>
+</section>
+
+<section aria-labelledby="how">
+<h2 id="how">How the proof goes</h2>
+<p>How the proof goes, by the paper’s overview. Part one finds the witness. The classic idea is Vinogradov’s trick: if every number up to some Y is a square modulo q, so is every product of such numbers. But numbers with one large prime factor can be non-squares, and past a point they outweigh the rest. That is where the old bound stalls. The paper does not try to bound the smallest nonresidue among ordinary whole numbers. Instead, it takes −1 and K small primes, with K on the order of the square root of log q, and works in the quadratic number fields made from square roots of their products: 2^K − 1 fields, and the fields made from pairs. The algorithm tests the images of units and of short elements in all these fields. If every one were a square, the paper shows, the square pattern extends consistently, so a Walsh–Hadamard transform of certain counts is never negative. That boosts the smooth numbers by a factor of 2^K, more than a new sixteenth-moment Burgess bound for quadratic fields allows. So some tested element must be a witness, or N splits on the way.</p>
+<p>Part two finds the multiple of every p − 1. It builds pairs of polynomials that share a root modulo N, as in the number field sieve. For each prime ell near a bound B, it searches small changes to the pair until the relations among small primes are complete; everything cancels except a power of ell that equals one modulo N. Its proof that most such primes have a good pair uses Landau and Page’s theorem and Montgomery’s zero-density estimates, and avoids Siegel’s theorem, whose constants cannot be computed. Then a counting argument: these primes generate a subgroup of small index modulo every prime factor, so multiplying in all small prime powers gives M. The search tries about e^(4 log 2 · (log N)^(3/4)), pairs, and 4 log 2 is 2.77, below 3. We checked that arithmetic and the counting lemma, and read the theorems, the overview and the final assembly. We did not check the other lemmas, which fill most of the 59 pages. The README says a Lean formalization, from Mathlib alone, is complete and will be released. Cogentic’s paper on arXiv describes an orchestrator, parallel provers and adversarial verifiers; its earlier results were verified by domain experts, by the authors’ account. For this paper, no human check is named.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Public</dt>
+    <dd>On GitHub, <a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers/deterministic_factoring_l34">google-research/google-research, cogentic_research_papers/deterministic_factoring_l34</a>, added by <a href="https://github.com/google-research/google-research/commit/4a7bc8ab0bc770e71a259b7966c500496b99010a">commit 4a7bc8a</a> (“Add six Cogentic research papers”, November 25, 2026, 10:11 UTC). Not on arXiv. No later commit to the folder as of 16:00 UTC.</dd>
+  </div>
+<!-- review-step:start -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>Not yet</dd>
+  </div>
+<!-- review-step:end -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Lean released</dt>
+    <dd>No. The <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/deterministic_factoring_l34/README.md">README</a> says a “complete, unconditional, Mathlib-only Lean 4 (v4.33.0) formalization of the entire proof has also been completed and will be released in a companion submission”; the commit message says the same for all six papers. Nothing to read or run yet.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked by a human</dt>
+    <dd>None named. The README says the paper and the Lean “were entirely obtained by Cogentic”, using Gemini 4, with “no human interaction other than the initial prompt”. The <a href="https://arxiv.org/abs/2609.40324">Cogentic paper</a> says its earlier results were independently verified by domain experts; it does not mention this paper.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Announcement; expert reaction</dt>
+    <dd>No post on research.google, blog.google or deepmind.google found; the Cogentic project page was last updated September 30. No named expert reaction found (blogs of Scott Aaronson, Terence Tao, Gil Kalai, Computational Complexity and Gödel’s Lost Letter checked about 16:00 UTC). A <a href="https://news.ycombinator.com/item?id=50642086">Hacker News thread</a> discussed the six papers; one commenter asked whether anyone had found the Lean formalizations.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Account of earlier work complete</dt>
+    <dd>Not quite (our reading of its 59 references). It does not cite Isaac Rudich and Louis-Martin Rousseau’s <a href="https://hexagonmath.org/2610.00600v1">“Deterministic Factoring in Time N^o(1)”</a> (Hexagon 2610.00600v1, October 29, 2026; <a href="https://github.com/IsaacRudich/SubexponentialDeterministicFactoring">Lean repository</a>, whose README says the ideas and the Lean code were generated by Claude), which claims one machine factoring in C_k·2^(n/k) steps for every k, a much weaker bound than exp(3 (ln N)^(3/4)); nor OpenAI’s result 3 (<a href="../003-quasi-riemann-hypothesis/">episode 3</a>), whose Corollary 1.2 claims a least quadratic nonresidue below C (log p)^A, far below this paper’s L[1/2]. Both are unreviewed. Anthropic makes Claude, which helps make this series.</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked November 25, 2026, about 08:00 PT. Not built or run by us.</p>
+<p>This is a Specials episode, the second of six on Cogentic’s papers. GO01, from the same day, claims coin-flipping factoring in L[1/3], with a constant of 1 hundred five. Episode 142 covered OpenAI’s claimed deterministic factoring of polynomials, a different problem with the same aim: no coin flips. If it holds, factoring needs neither coins nor the Riemann hypothesis to run below exponential time; but at every size in use today, by our reading, the algorithm as written still finds the factor by plain trial division, and the coin-flipping and practical methods remain far faster. See <a href="../go01-integer-factorization-l-one-third/">GO01</a>, <a href="../142-deterministic-factoring/">142</a> and <a href="../003-quasi-riemann-hypothesis/">3</a>.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: 77 = 7 × 11; 2^30 ≡ 3^30 ≡ 1 (mod 77), so M = 30 (a multiple of 6 and 10; found by brute force, not by the paper’s method); 2^15 ≡ 43 (mod 77), 43 ≡ 1 (mod 7) and ≡ −1 (mod 11), gcd(42, 77) = 7; 4^15 ≡ 1 (mod 77), no split. The squares mod 11 are 1, 3, 4, 5, 9.</li>
+  <li>Ours: for all 78,497 odd primes below 10^6, the least quadratic nonresidue averages 3.646 and is at most 43 (at p = 366,791).</li>
+  <li>Ours, illustration only (constants and lower-order terms dropped), operations for a 617-digit number as powers of ten: exp(3 (ln N)^(3/4)) 301.3; trial division N^(1/2) 308.3; Pollard–Strassen N^(1/4) 154.1; Harvey N^(1/5) 123.3; Lenstra–Pomerance L[1/2, 1] 44.1; number field sieve L[1/3, 1.923] 35.2.</li>
+  <li>Ours: the formula exp(3 (ln N)^(3/4)) is below N^(1/2), N^(1/4), N^(1/5) once (ln N)^(1/4) exceeds 6, 12, 15: beyond about 563, 9,006 and 21,986 digits.</li>
+  <li>Ours, nonresidues: a scan to p^(1/(4√e)) = p^0.1516 (Burgess) at 617 digits is about 10^93; exp((ln p)^(1/2) ln ln p) with an illustrative constant 1 (the paper gives none) is about 10^119; the second is smaller beyond about 1,181 digits. Under GRH, 2 (ln p)² is about 4.0 million at that size.</li>
+  <li>Our reading of the algorithm (not a claim of the paper): Step 1 of A_exp (p. 56) trial-divides N up to min(K_idx, N − 1), with K_idx = B·2^⌈(k_N+1)⌈log₂(6L₀)⌉/e(N;9,25)⌉ (p. 39). By our computation K_idx ≥ √N for every bit length below 28,071 bits (about 8,450 digits; the condition is not monotone: it fails from there, holds again roughly between 31,500 and 32,755 bits, and fails above), so for those numbers this trial division finds a factor. The guard d ≥ 10 of Step 2 first holds at about 3,109 bits (936 digits); below that Step 2 does nothing and Step 3 falls back to trial division.</li>
+  <li>From the paper: the proof of Theorem 1.2(a) uses its main argument for N ≥ N_thr = max(2^64, exp(2^(2 m_thr))) with m_thr ≥ 40 (pp. 27–28), so N_thr ≥ e^(2^80), a number with more than 5.3e+23 digits; smaller N are covered by the constant. Theorem 1.2(b) uses its main branch only when ln p ≥ 2^16 (p. 29), about 28,462 digits; otherwise the algorithm scans 2, 3, … The cost of Theorem 1.3: 16·B·L₀^8·U^4·A^2 = exp((4 ln 2 + o(1)) (ln N)^(3/4)) calls, and 4 ln 2 = 2.7726 &lt; 3 because e^3 &gt; 16 (p. 56).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li>Cogentic (Google Research), <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/deterministic_factoring_l34/paper.pdf">Unconditional Deterministic Subexponential Integer Factoring and Quadratic Nonresidue Construction</a>, 59 pages (CC-BY-4.0; <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/deterministic_factoring_l34/README.md">README</a>; <a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers">all Cogentic papers</a>).</li>
+  <li>Y. Cai, V. Gupta, Y. Jiang, C. Liaw, A. Mehta, G. Velegkas and D. Wang, <a href="https://arxiv.org/abs/2609.40324">Cogentic: Multi-Agent Orchestration for Automated Proof Discovery</a>, arXiv:2609.40324 (2026).</li>
+  <li>Background the paper cites: H. W. Lenstra Jr. and C. Pomerance, A rigorous time bound for factoring integers (J. AMS 1992); J. M. Pollard (1974) and V. Strassen (1976/77); D. Harvey, An exponent one-fifth algorithm for deterministic integer factorisation (Math. Comp. 2021); D. A. Burgess, The distribution of quadratic residues and non-residues (Mathematika 1957); N. C. Ankeny, The least quadratic non residue (Ann. Math. 1952); E. Bach, Explicit bounds for primality testing and related problems (Math. Comp. 1990); G. L. Miller, Riemann’s hypothesis and tests for primality (1976).</li>
+  <li>Not cited by the paper: I. Rudich and L.-M. Rousseau, <a href="https://hexagonmath.org/2610.00600v1">Deterministic Factoring in Time N^o(1)</a> (Hexagon, October 2026; <a href="https://github.com/IsaacRudich/SubexponentialDeterministicFactoring">Lean</a>).</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Google, or with Anthropic beyond using its product Claude.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is GO02, the second of our Specials on papers from Google’s Cogentic. On November 25, 2026, Google Research added six math papers to its public GitHub repository. Each README says that the paper and a Lean formalization were entirely obtained by Cogentic, an agent system built on Gemini 4, with no human interaction other than the initial prompt. The Lean files have not been released. Google is not affiliated with this series. GO01 covered the first paper, a factoring method that flips coins. This paper claims factoring with no coin flips at all, in less than exponential time, and a fast way, with no coins, to find a number that is not a square modulo a prime. So what is the question? Every whole number splits into primes, and checking a split is easy. Finding one is hard. With coin flips allowed, factoring has had a proven time below exponential since Dixon, in 1981; Lenstra and Pomerance sharpened it in 1992. Without coins, the picture is much worse. Trial division can take up to the square root of N steps. Pollard and Strassen, in the 1970s, brought that down to the fourth root, and David Harvey, in 2021, to the fifth root; later work shaved off only factors smaller than any power of N. All of these are still exponential in the number of digits. And even assuming the generalized Riemann hypothesis, the paper says, no deterministic method below exponential time was known. The paper’s route starts from a classic trick. Take 77, 7 × 11. 30 is a multiple of 6 and of 10, one less than each prime. Raise 2 to the 15th power, half of 30, modulo 77: you get 43. 43 is one more than a multiple of 7, but one less than a multiple of 11. So the greatest common divisor of 42 and 77 is 7: a factor. It works because 2 is a square modulo 7 but not modulo 11. Try 4, a square modulo both, and you get 1: no split. So the method needs two things: a multiple of every p − 1, and a witness that is a square for one factor but not another, like 2 here. For a single prime, the witness is a non-square, a quadratic nonresidue. Half of the numbers from 1 to p − 1 are nonresidues, so coin flips find one quickly, and for every prime below a million, the smallest is at most 43. But without coins or unproven hypotheses, the best proven bound comes from Burgess, in 1957: a scan up to about p^0.15. Assuming the generalized Riemann hypothesis, a scan up to 2 (log p)² is enough, by Ankeny and Bach.</p>
+<h3><span class="t num">2:49</span>The claim</h3>
+<p>The claim. The paper has 59 pages and no author line; a footnote credits Cogentic. It states three theorems, counted in bit operations on a multitape Turing machine, with no randomness, no unproven hypotheses about smooth numbers, and no Riemann hypothesis. Theorem 1.3 is the slow part: given an odd composite N that is not a perfect power, find a multiple M of every p − 1, or a factor, in about e^(3 (log N)^(3/4)). Theorem 1.2 is the fast part: given N and any such M, split N in time just above L[1/2], times the length of M; and for any odd prime p, find a quadratic nonresidue in time just above L[1/2]. Theorem 1.1 chains the two: every composite number is factored, with no coins, in about e^(3 (log N)^(3/4)). Every constant is effective, the paper says, though none is given as a number. If it holds, it beats every published deterministic factoring bound by far, with or without the Riemann hypothesis, and, apart from an unreviewed claim we come back to, it is the first proven nonresidue search below a power of p. How fast is that? Take a 617-digit number, the size of an RSA-2048 key, and, as an illustration only, drop the hidden constants. The new formula gives about 10^301 operations. Trial division, 10^308. Harvey’s fifth root, 10^123. The coin-flipping bound of Lenstra and Pomerance, 10^44, and the number field sieve, the practical method, about 10^35. By these formulas, the new bound beats trial division only beyond about 563 digits, and Harvey’s fifth root beyond about 22,000 digits. In the algorithm itself, by our reading, the first step is trial division up to a limit past the square root of N for every number below about 8,400 digits. So for those, trial division finds the factor. For nonresidues, with an illustrative constant of 1, the new bound overtakes Burgess only beyond about 1,200 digits, though the algorithm as written simply scans upward for every prime below about 28,000 digits. And the proof’s main argument for splitting applies only to N above a threshold of at least e^(2^80). What is not claimed: a practical algorithm, anything faster than coin-flipping methods, any threat to RSA, or the size beyond which the bounds take hold.</p>
+<h3><span class="t num">5:27</span>How the proof goes</h3>
+<p>How the proof goes, by the paper’s overview. Part one finds the witness. The classic idea is Vinogradov’s trick: if every number up to some Y is a square modulo q, so is every product of such numbers. But numbers with one large prime factor can be non-squares, and past a point they outweigh the rest. That is where the old bound stalls. The paper does not try to bound the smallest nonresidue among ordinary whole numbers. Instead, it takes −1 and K small primes, with K on the order of the square root of log q, and works in the quadratic number fields made from square roots of their products: 2^K − 1 fields, and the fields made from pairs. The algorithm tests the images of units and of short elements in all these fields. If every one were a square, the paper shows, the square pattern extends consistently, so a Walsh–Hadamard transform of certain counts is never negative. That boosts the smooth numbers by a factor of 2^K, more than a new sixteenth-moment Burgess bound for quadratic fields allows. So some tested element must be a witness, or N splits on the way. Part two finds the multiple of every p − 1. It builds pairs of polynomials that share a root modulo N, as in the number field sieve. For each prime ell near a bound B, it searches small changes to the pair until the relations among small primes are complete; everything cancels except a power of ell that equals one modulo N. Its proof that most such primes have a good pair uses Landau and Page’s theorem and Montgomery’s zero-density estimates, and avoids Siegel’s theorem, whose constants cannot be computed. Then a counting argument: these primes generate a subgroup of small index modulo every prime factor, so multiplying in all small prime powers gives M. The search tries about e^(4 log 2 · (log N)^(3/4)), pairs, and 4 log 2 is 2.77, below 3. We checked that arithmetic and the counting lemma, and read the theorems, the overview and the final assembly. We did not check the other lemmas, which fill most of the 59 pages. The README says a Lean formalization, from Mathlib alone, is complete and will be released. Cogentic’s paper on arXiv describes an orchestrator, parallel provers and adversarial verifiers; its earlier results were verified by domain experts, by the authors’ account. For this paper, no human check is named.</p>
+<h3><span class="t num">8:02</span>Where it stands</h3>
+<p>Where it stands, on the morning of November 25, Pacific time. The paper is on GitHub, not on arXiv, and it is not peer reviewed. The Lean formalization is claimed, but not released. The README names no human who checked the proof. We found no announcement on Google’s blogs and no named expert reaction yet; on Hacker News, one commenter asked whether anyone had found the Lean files. The paper’s account of earlier work misses two unreviewed claims. In October, Rudich and Rousseau posted a proof, generated by Claude and checked in Lean by their account, of deterministic factoring in N^o(1), a much weaker bound than this one. Anthropic makes Claude, which helps make this series. And OpenAI’s result 3 claims a smallest nonresidue below a power of log p, far beyond this paper’s bound. Not built or run by us. This is a Specials episode, the second of six on Cogentic’s papers. GO01, from the same day, claims coin-flipping factoring in L[1/3], with a constant of 1 hundred five. Episode 142 covered OpenAI’s claimed deterministic factoring of polynomials, a different problem with the same aim: no coin flips. If it holds, factoring needs neither coins nor the Riemann hypothesis to run below exponential time; but at every size in use today, by our reading, the algorithm as written still finds the factor by plain trial division, and the coin-flipping and practical methods remain far faster.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=GO02%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Past the square-root barrier for log-rank? Google’s Cogentic claim | AI Proved What?</title>
+<meta name="description" content="A paper from Google’s Cogentic agent claims a deterministic protocol of C′ r^(1/2 − ε) bits for every Boolean matrix of rank r, with ε = 0.000005: the first gain on √r for the log-rank conjecture, if it holds. Lean claimed, not released; no human check named. Not built or run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/go04-log-rank-square-root-barrier/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Past the square-root barrier for log-rank?">
+<meta property="og:description" content="A paper from Google’s Cogentic agent claims a deterministic protocol of C′ r^(1/2 − ε) bits for every Boolean matrix of rank r, with ε = 0.000005: the first gain on √r for the log-rank conjecture, if it holds. Lean claimed, not released; no human check named. Not built or run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/go04-log-rank-square-root-barrier/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/go04-log-rank-square-root-barrier/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="GO04: Log-rank, past the square root? The exponent r to the 1/2 minus 0.000005 above our example table: set disjointness on {1, 2, 3}, an 8 by 8 table of 0s and 1s with its largest monochromatic rectangle, a 4 by 4 block of zeros, outlined.">
+<meta name="twitter:image:alt" content="GO04: Log-rank, past the square root? The exponent r to the 1/2 minus 0.000005 above our example table: set disjointness on {1, 2, 3}, an 8 by 8 table of 0s and 1s with its largest monochromatic rectangle, a 4 by 4 block of zeros, outlined.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">GO04 (Specials; Google Cogentic; see also <a href="../go01-integer-factorization-l-one-third/">GO01</a>, <a href="../go02-deterministic-subexponential-factoring/">GO02</a>, <a href="../go03-discrete-log-small-characteristic/">GO03</a> and <a href="../112-depth-three-circuits-beyond-square-root/">112</a>), November 2026</p>
+<h1>Past the square-root barrier for log-rank?</h1>
+<p class="subtitle">A 37-page paper from Google’s Cogentic agent claims that every table of zeros and ones of rank r has a two-party protocol of C′ r^(1/2 − ε) bits, with ε = 0.000005: the first gain on the square root of the rank since 2014, if it holds, though it shows only at ranks with millions of digits. The Lean proof it mentions has not been released, and no human check is named.</p>
+
+<div class="player" data-youtube="CK0knMke-3A" data-title="GO04: Past the square-root barrier for log-rank?">
+  <a href="https://youtu.be/CK0knMke-3A">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play GO04: Log-rank, past the square root? The exponent r to the 1/2 minus 0.000005 above our example table: set disjointness on {1, 2, 3}, an 8 by 8 table of 0s and 1s with its largest monochromatic rectangle, a 4 by 4 block of zeros, outlined.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">9:06. English captions available. The video loads from YouTube when you press play.</p>
+
+<p>AI Proved What? is independent and not affiliated with Google.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/CK0knMke-3A?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/CK0knMke-3A?t=154" data-t="154"><span class="t">2:34</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/CK0knMke-3A?t=284" data-t="284"><span class="t">4:44</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/CK0knMke-3A?t=453" data-t="453"><span class="t">7:33</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="question">
+<h2 id="question">The question</h2>
+<p>This is GO04, the fourth of our Specials on papers from Google’s Cogentic. On November 25, 2026, Google Research added six math papers to its public GitHub repository. Each README says that the paper and a Lean formalization were entirely obtained by Cogentic, an agent system built on Gemini 4, with no human interaction other than the initial prompt. The Lean files have not been released. Google is not affiliated with this series. The first three papers we covered were about factoring and discrete logarithms. This one is about a famous open problem on communication, the log-rank conjecture, and it claims to break a barrier that has stood since 2014: the square root of the rank. So what is the question?</p>
+<p>Two people, Alice and Bob, each hold half of the input. Picture a table of zeros and ones. Alice knows a row, Bob knows a column, and they want the entry where the two meet, sending each other as few bits as possible. Here is our example. Alice and Bob each hold a subset of {1, 2, 3}, and they ask: are the two subsets disjoint? That is an 8 × 8 table. Alice can simply send her subset, 3 bits, and Bob answers with one more: 4 bits. Any such conversation cuts the table into blocks, a set of rows times a set of columns, where the answer is the same everywhere: a monochromatic rectangle. In our table, the largest one covers a quarter of it: for example, the subsets that contain 1, against each other. A short conversation means few rectangles, and so at least one large one.</p>
+<p>Linear algebra gives a floor. The bits needed are at least the logarithm, base 2, of the rank of the table. Our table has rank 8, so at least 3 bits, and 4 are enough. In 1988, Lovász and Saks conjectured that this floor is nearly the truth: the bits needed are at most a fixed power of the logarithm of the rank. That is the log-rank conjecture. Göös, Pitassi and Watson showed that the power must be at least about 2. But the best proven upper bounds are far weaker. Nisan and Wigderson showed that it is enough to find one large monochromatic rectangle in every table. Using that, Shachar Lovett proved in 2014 a bound of about the square root of the rank, times its logarithm, and in 2023 Sudakov and Tomon removed the logarithm. For a rank of 10^100, the logarithm squared is about 100,000 bits; the square root means 10^50. That is the gap.</p>
+</section>
+
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The claim. The paper has 37 pages and no author line; a footnote credits Cogentic. Its main theorem fixes three constants: epsilon is 5 millionths, C is 2^38, and C′ is 750 times C. Then, for every table of zeros and ones with real rank r, two things hold. First, some monochromatic rectangle covers at least a fraction 2^(−C r^(1/2 − ε)) of the table. Second, when r is at least two, the deterministic communication cost is at most C′ r^(1/2 − ε) bits. That is the square root, with the exponent lowered by 5 millionths. The exponent 1/2, the paper says, is a natural barrier for geometric and discrepancy methods, and its theorem breaks it by an explicit constant. If it holds, it is the first improvement in the power of the rank since 2014. It is still exponentially far from the conjecture, which asks for a power of log r.</p>
+<p>In the paper’s words (Theorem 1.1, p. 2): let ε := 5 × 10^−6, C := 2^38 and C′ := 750 C. For every pair of finite nonempty sets X, Y and every Boolean matrix M ∈ {0, 1}^(X×Y) of real rank r = rank_ℝ(M) ≥ 1: (1) there is an M-monochromatic rectangle A × B ⊆ X × Y with |A|·|B| / (|X|·|Y|) ≥ 2^(−C r^(1/2−ε)); (2) whenever r ≥ 2, log₂ χ(M) ≤ D^cc(M) ≤ C′ r^(1/2−ε). Here D^cc is the deterministic two-party communication complexity in Yao’s model and χ(M) the least number of monochromatic rectangles partitioning X × Y. For r ≥ R₀ := ⌈e^(4×10^6)⌉ the proof gives density at least exp(−4 r^(1/2−ε)); for smaller r “the constant C = 2^38 absorbs the threshold via Gaussian hyperplane rounding”.</p>
+</section>
+
+<section aria-labelledby="new">
+<h2 id="new">What would be new, and what is not claimed</h2>
+<p>How much is 5 millionths? Here is our arithmetic, as an illustration. The gain over the square root is a factor of r^ε. For a rank of 10^100, that factor is 1.001: about a tenth of a percent. Meanwhile C′ is about 200 trillion. So, if Sudakov and Tomon’s bound is written with a constant of one, the new bound is smaller only when r has more than about 2.86 million digits. It even loses to the trivial bound, r + 1 bits, until r passes about 10^28.6; a table of that rank has more than 10^57 entries. And the paper’s main argument runs only for ranks above R₀ = e^(4,000,000), a number with 1.74 million digits. Below that, the constant C simply absorbs a square-root bound, without the logarithm, which the paper proves again with a variant of Lovett’s method. Not claimed: any gain for tables of a size anyone could write down, or anything near a power of log r. The theorem is about how the cost grows, nothing more.</p>
+</section>
+
+<section aria-labelledby="how">
+<h2 id="how">How the proof goes</h2>
+<p>How the proof goes, following the paper. First, why the square root. Write each row as a vector, and each column as a vector, so that every entry is an inner product. Lovett’s method cuts with a random direction: keep the rows whose vectors point far along it, and the columns whose vectors point far the other way. For a zero entry, the two vectors are at right angles, so the two cuts are independent. For a one entry, the vectors lean toward each other, and the cuts rarely keep both. So each round halves the share of ones, at a price set by the square root of the rank. The paper explains why this price cannot drop for such straight-line methods: tilting the rows along a straight line costs information that grows with the square of the tilt, but moves the answer only in proportion to it, so the gain per unit of cost is at most 1/√r. And it gives a table of real numbers, built from sign vectors, on which this square-root trade-off is exactly tight. So any better argument must use, the paper argues, that every entry, written as plus or minus one, squares to exactly one, not just that it is bounded.</p>
+<p>The new route. Suppose a table has no large monochromatic rectangle. The paper reweights its rows and columns until the table, in plus and minus ones, has a positive bias and is stable: no small reweighting raises its centered part by much. The core, Theorem 3.1, says that above R₀ no such sign table of rank at most r + 1 exists, under two further technical conditions. The key is the identity: each entry squared is one. Squaring the table’s singular value expansion writes each singular vector, times the top one, as a quadratic form in all of them, with third moments as coefficients. That allows a degree-two tilt, a hyperbolic cosine instead of a straight line, where both the gain and the cost grow with the square of the tilt, so the old trade-off no longer binds. Sections 4 to 6 tame the singular vectors, extract heavy quadratic slices, and rule them out with Gaussian hypercontractivity. Finally, an explicit version of Nisan and Wigderson’s reduction turns large rectangles into short conversations; that is where 750 comes from. We checked the arithmetic of the small-rank case, of the deduction from Theorem 3.1, and of that reduction. We did not check Sections 2 to 6 beyond that, including the lemmas those steps use: the core of the proof and most of its 37 pages. The README says a Lean formalization, from Mathlib alone, is complete and will be released. Cogentic’s paper on arXiv describes an orchestrator, parallel provers and adversarial verifiers; its earlier results were verified by domain experts, by the authors’ account. For this paper, no human check is named.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Public</dt>
+    <dd>On GitHub, <a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers/logrank_conjecture">google-research/google-research, cogentic_research_papers/logrank_conjecture</a>, added by <a href="https://github.com/google-research/google-research/commit/4a7bc8ab0bc770e71a259b7966c500496b99010a">commit 4a7bc8a</a> (“Add six Cogentic research papers”, November 25, 2026, 10:11 UTC). Not on arXiv. No later commit to the folder as of 17:12 UTC.</dd>
+  </div>
+<!-- review-step:start -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>Not yet</dd>
+  </div>
+<!-- review-step:end -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Lean released</dt>
+    <dd>No. The <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/logrank_conjecture/README.md">README</a> says a “complete, unconditional, Mathlib-only Lean 4 (v4.33.0) formalization of the entire proof has also been completed and will be released in a companion submission”; the commit message says the same for all six papers. Nothing to read or run yet.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked by a human</dt>
+    <dd>None named. The README says the paper and the Lean “were entirely obtained by Cogentic”, using Gemini 4, with “no human interaction other than the initial prompt”. The <a href="https://arxiv.org/abs/2609.40324">Cogentic paper</a> says its earlier results were independently verified by domain experts; it does not mention this paper.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Announcement; expert reaction</dt>
+    <dd>No post on research.google, blog.google or deepmind.google found; the Cogentic project page was last updated September 30. No named expert reaction found (Shtetl-Optimized, Computational Complexity, Gil Kalai and Terence Tao checked). In the <a href="https://news.ycombinator.com/item?id=50642086">Hacker News thread</a> on the six papers, one commenter summarized this one as “New: O(r^0.499995) - Previous: O(r^0.5)”. Reddit, Bluesky, X and the Lean Zulip could not be read.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>References in order</dt>
+    <dd>Mostly (our check of its 19 references). Three have wrong titles or venues: Ben-Sasson, Lovett and Zewi’s paper is “An Additive Combinatorics Approach Relating Rank to Communication Complexity” (FOCS 2012; J. ACM 2014), not Computational Complexity / STOC; Gavinsky and Lovett appeared at ICALP 2014, not in Information Processing Letters; the 1993 journal version of Lovász and Saks is titled “Communication complexity and combinatorial lattice theory”. It states Ben-Sasson, Lovett and Zewi’s O(r/log r) without its assumption, the polynomial Freiman–Ruzsa conjecture, which <a href="https://arxiv.org/abs/2311.05762">Gowers, Green, Manners and Tao</a> proved in 2023. We found no earlier improvement on O(√r) that it misses, and no result on the log-rank conjecture or communication complexity in OpenAI’s catalogue.</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked November 25, 2026, about 09:10 PT. Not built or run by us.</p>
+<p>This is a Specials episode, the fourth of six on Cogentic’s November 25 papers. GO01 and GO02 covered claims about factoring, and GO03 about discrete logarithms. Episode 112 covered an OpenAI claim that also crosses a square-root barrier, for depth-three circuits, a different problem. If this one holds, the square root of the rank is not the last word on the log-rank conjecture; but the step is 5 millionths in the exponent, it shows only at ranks with millions of digits, and the conjecture itself remains as open as before. See <a href="../go01-integer-factorization-l-one-third/">GO01</a>, <a href="../go02-deterministic-subexponential-factoring/">GO02</a>, <a href="../go03-discrete-log-small-characteristic/">GO03</a> and <a href="../112-depth-three-circuits-beyond-square-root/">112</a>.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: set disjointness on {1, 2, 3} (Alice and Bob each hold a subset; the entry is 1 if they are disjoint) is an 8 × 8 table with 27 ones and rank 8 over the reals (exact elimination). Sending Alice’s subset (3 bits) and Bob’s answer (1 bit) takes 4 bits, and log₂ 8 = 3. By brute force over all row sets, the largest monochromatic rectangle has 16 of 64 cells (the four subsets containing 1, against each other: all zeros); the largest all-ones rectangle has 8 cells.</li>
+  <li>Ours, constants dropped: for r = 10^100, log₂ r ≈ 333 bits; (log₂ r)² ≈ 110,352 bits; √r = 10^50 bits; the trivial bound r + 1 ≈ 10^100 bits. Göös, Pitassi and Watson’s lower bound has exponent about 2 on log r; Kushilevitz’s earlier one log₃ 6 = 1.6309.</li>
+  <li>Ours: the new bound divided by √r is C′ r^(−ε), with C′ = 750 · 2^38 ≈ 2.062e+14. The factor r^ε is 1.00115 at r = 10^100, 1.0116 at r = 10^1000, and 10^5 at r = 10^(10^6). C′ r^(1/2 − ε) is below √r only when log₁₀ r exceeds 2,862,840 (about 2.86 million digits); for the rectangle exponent, C r^(1/2 − ε) is below √r beyond 2,287,828 digits. C′ r^(1/2 − ε) is below the trivial r + 1 only for r above about 10^28.63; a table of that rank has at least r² ≈ 10^57 entries.</li>
+  <li>From the paper: the main argument runs for r ≥ R₀ = ⌈e^(4 × 10^6)⌉, a number with 1,737,178 digits (ours), and gives density exp(−4 r^(1/2 − ε)) = 2^(−5.77 r^(1/2 − ε)) there. Below R₀ it uses Gaussian hyperplane rounding (Lemma 3.2): density at least (9/16) e^(−240√r) above 2^(−(241/ln 2)√r), and (241/ln 2) r^ε ≈ 347.7 r^ε is below 2^38 because r^ε below e^20 is below 2^29 (p. 14). By our arithmetic, 2^38 r^(1/2−ε) drops below (241/ln 2)√r only at about 1,779,590 digits, just above R₀.</li>
+  <li>From the paper (Proposition A.3, pp. 35–36), checked by us: (3/4)^(1/4) = 0.9306 is below 27/29 = 0.9310, so the per-level costs 10 C₀ k^(1/2 − ε₀) sum to at most 145 C₀ r^(1/2 − ε₀); with 2C₀ for the base, log₂ of the leaf count is below 150 C₀ r^(1/2 − ε₀), and balancing the protocol tree costs a factor 5: 750 C₀ r^(1/2 − ε₀).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li>Cogentic (Google Research), <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/logrank_conjecture/paper.pdf">Breaking the Square-Root Barrier for the Log-Rank Conjecture</a>, 37 pages (CC-BY-4.0; <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/logrank_conjecture/README.md">README</a>; <a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers">all Cogentic papers</a>).</li>
+  <li>Y. Cai, V. Gupta, Y. Jiang, C. Liaw, A. Mehta, G. Velegkas and D. Wang, <a href="https://arxiv.org/abs/2609.40324">Cogentic: Multi-Agent Orchestration for Automated Proof Discovery</a>, arXiv:2609.40324 (2026).</li>
+  <li>Background: L. Lovász and M. Saks, Lattices, Möbius functions and communication complexity (FOCS 1988; J. Comput. Syst. Sci. 1993); N. Nisan and A. Wigderson, On rank vs. communication complexity (FOCS 1994; Combinatorica 1995); S. Lovett, <a href="https://arxiv.org/abs/1306.1877">Communication is bounded by root of rank</a> (STOC 2014; J. ACM 2016); B. Sudakov and I. Tomon, <a href="https://arxiv.org/abs/2311.18524">Matrix discrepancy and the log-rank conjecture</a> (Math. Programming); M. Göös, T. Pitassi and T. Watson, Deterministic communication vs. partition number (FOCS 2015; SIAM J. Comput. 2018).</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Google.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is GO04, the fourth of our Specials on papers from Google’s Cogentic. On November 25, 2026, Google Research added six math papers to its public GitHub repository. Each README says that the paper and a Lean formalization were entirely obtained by Cogentic, an agent system built on Gemini 4, with no human interaction other than the initial prompt. The Lean files have not been released. Google is not affiliated with this series. The first three papers we covered were about factoring and discrete logarithms. This one is about a famous open problem on communication, the log-rank conjecture, and it claims to break a barrier that has stood since 2014: the square root of the rank. So what is the question? Two people, Alice and Bob, each hold half of the input. Picture a table of zeros and ones. Alice knows a row, Bob knows a column, and they want the entry where the two meet, sending each other as few bits as possible. Here is our example. Alice and Bob each hold a subset of {1, 2, 3}, and they ask: are the two subsets disjoint? That is an 8 × 8 table. Alice can simply send her subset, 3 bits, and Bob answers with one more: 4 bits. Any such conversation cuts the table into blocks, a set of rows times a set of columns, where the answer is the same everywhere: a monochromatic rectangle. In our table, the largest one covers a quarter of it: for example, the subsets that contain 1, against each other. A short conversation means few rectangles, and so at least one large one. Linear algebra gives a floor. The bits needed are at least the logarithm, base 2, of the rank of the table. Our table has rank 8, so at least 3 bits, and 4 are enough. In 1988, Lovász and Saks conjectured that this floor is nearly the truth: the bits needed are at most a fixed power of the logarithm of the rank. That is the log-rank conjecture. Göös, Pitassi and Watson showed that the power must be at least about 2. But the best proven upper bounds are far weaker. Nisan and Wigderson showed that it is enough to find one large monochromatic rectangle in every table. Using that, Shachar Lovett proved in 2014 a bound of about the square root of the rank, times its logarithm, and in 2023 Sudakov and Tomon removed the logarithm. For a rank of 10^100, the logarithm squared is about 100,000 bits; the square root means 10^50. That is the gap.</p>
+<h3><span class="t num">2:34</span>The claim</h3>
+<p>The claim. The paper has 37 pages and no author line; a footnote credits Cogentic. Its main theorem fixes three constants: epsilon is 5 millionths, C is 2^38, and C′ is 750 times C. Then, for every table of zeros and ones with real rank r, two things hold. First, some monochromatic rectangle covers at least a fraction 2^(−C r^(1/2 − ε)) of the table. Second, when r is at least two, the deterministic communication cost is at most C′ r^(1/2 − ε) bits. That is the square root, with the exponent lowered by 5 millionths. The exponent 1/2, the paper says, is a natural barrier for geometric and discrepancy methods, and its theorem breaks it by an explicit constant. If it holds, it is the first improvement in the power of the rank since 2014. It is still exponentially far from the conjecture, which asks for a power of log r. How much is 5 millionths? Here is our arithmetic, as an illustration. The gain over the square root is a factor of r^ε. For a rank of 10^100, that factor is 1.001: about a tenth of a percent. Meanwhile C′ is about 200 trillion. So, if Sudakov and Tomon’s bound is written with a constant of one, the new bound is smaller only when r has more than about 2.86 million digits. It even loses to the trivial bound, r + 1 bits, until r passes about 10^28.6; a table of that rank has more than 10^57 entries. And the paper’s main argument runs only for ranks above R₀ = e^(4,000,000), a number with 1.74 million digits. Below that, the constant C simply absorbs a square-root bound, without the logarithm, which the paper proves again with a variant of Lovett’s method. Not claimed: any gain for tables of a size anyone could write down, or anything near a power of log r. The theorem is about how the cost grows, nothing more.</p>
+<h3><span class="t num">4:44</span>How the proof goes</h3>
+<p>How the proof goes, following the paper. First, why the square root. Write each row as a vector, and each column as a vector, so that every entry is an inner product. Lovett’s method cuts with a random direction: keep the rows whose vectors point far along it, and the columns whose vectors point far the other way. For a zero entry, the two vectors are at right angles, so the two cuts are independent. For a one entry, the vectors lean toward each other, and the cuts rarely keep both. So each round halves the share of ones, at a price set by the square root of the rank. The paper explains why this price cannot drop for such straight-line methods: tilting the rows along a straight line costs information that grows with the square of the tilt, but moves the answer only in proportion to it, so the gain per unit of cost is at most 1/√r. And it gives a table of real numbers, built from sign vectors, on which this square-root trade-off is exactly tight. So any better argument must use, the paper argues, that every entry, written as plus or minus one, squares to exactly one, not just that it is bounded. The new route. Suppose a table has no large monochromatic rectangle. The paper reweights its rows and columns until the table, in plus and minus ones, has a positive bias and is stable: no small reweighting raises its centered part by much. The core, Theorem 3.1, says that above R₀ no such sign table of rank at most r + 1 exists, under two further technical conditions. The key is the identity: each entry squared is one. Squaring the table’s singular value expansion writes each singular vector, times the top one, as a quadratic form in all of them, with third moments as coefficients. That allows a degree-two tilt, a hyperbolic cosine instead of a straight line, where both the gain and the cost grow with the square of the tilt, so the old trade-off no longer binds. Sections 4 to 6 tame the singular vectors, extract heavy quadratic slices, and rule them out with Gaussian hypercontractivity. Finally, an explicit version of Nisan and Wigderson’s reduction turns large rectangles into short conversations; that is where 750 comes from. We checked the arithmetic of the small-rank case, of the deduction from Theorem 3.1, and of that reduction. We did not check Sections 2 to 6 beyond that, including the lemmas those steps use: the core of the proof and most of its 37 pages. The README says a Lean formalization, from Mathlib alone, is complete and will be released. Cogentic’s paper on arXiv describes an orchestrator, parallel provers and adversarial verifiers; its earlier results were verified by domain experts, by the authors’ account. For this paper, no human check is named.</p>
+<h3><span class="t num">7:33</span>Where it stands</h3>
+<p>Where it stands, on the morning of November 25, Pacific time. The paper is on GitHub, not on arXiv, and it is not peer reviewed. The Lean formalization is claimed, but not released. The README names no human who checked the proof. We found no announcement on Google’s blogs and no named expert reaction yet; on Hacker News, one commenter summed it up as r^0.499995, against r^0.5. The paper cites the main earlier results, but by our check it garbles the titles or venues of three of its nineteen references, and it states one earlier bound without the conjecture that bound assumed, since proved. We found no earlier improvement on the square root that it misses, and nothing on the log-rank conjecture in OpenAI’s catalogue of results. Not built or run by us. This is a Specials episode, the fourth of six on Cogentic’s November 25 papers. GO01 and GO02 covered claims about factoring, and GO03 about discrete logarithms. Episode 112 covered an OpenAI claim that also crosses a square-root barrier, for depth-three circuits, a different problem. If this one holds, the square root of the rank is not the last word on the log-rank conjecture; but the step is 5 millionths in the exponent, it shows only at ranks with millions of digits, and the conjecture itself remains as open as before.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=GO04%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

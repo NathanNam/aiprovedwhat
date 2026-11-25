@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1/5-approximate Nash equilibria in polynomial time? Google’s Cogentic claim | AI Proved What?</title>
+<meta name="description" content="A paper from Google’s Cogentic agent claims a deterministic polynomial-time algorithm giving a 1/5-approximate Nash equilibrium in every two-player game, below the published 1/3, but with astronomically large constants. Lean claimed, not released; no human check named. Not built or run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/go06-nash-equilibrium-one-fifth/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="1/5-approximate Nash equilibria in polynomial time?">
+<meta property="og:description" content="A paper from Google’s Cogentic agent claims a deterministic polynomial-time algorithm giving a 1/5-approximate Nash equilibrium in every two-player game, below the published 1/3, but with astronomically large constants. Lean claimed, not released; no human check named. Not built or run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/go06-nash-equilibrium-one-fifth/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/go06-nash-equilibrium-one-fifth/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="GO06: Nash equilibria, 1/3 to 1/5 in polynomial time? Next to the fractions, our example: the square of all mixed strategy pairs of a lopsided matching-pennies game, shaded where the maximum regret is at most 1/2, 1/3 and 1/5, with the equilibrium as a dot.">
+<meta name="twitter:image:alt" content="GO06: Nash equilibria, 1/3 to 1/5 in polynomial time? Next to the fractions, our example: the square of all mixed strategy pairs of a lopsided matching-pennies game, shaded where the maximum regret is at most 1/2, 1/3 and 1/5, with the equilibrium as a dot.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">GO06 (Specials; Google Cogentic; see also <a href="../go01-integer-factorization-l-one-third/">GO01</a>, <a href="../go02-deterministic-subexponential-factoring/">GO02</a>, <a href="../go03-discrete-log-small-characteristic/">GO03</a>, <a href="../go04-log-rank-square-root-barrier/">GO04</a>, <a href="../go05-edge-reconstruction-linear-density/">GO05</a> and <a href="../136-pcp-for-ppad/">136</a>), November 2026</p>
+<h1>1/5-approximate Nash equilibria in polynomial time?</h1>
+<p class="subtitle">A 41-page paper from Google’s Cogentic agent claims a deterministic polynomial-time algorithm that, for every two-player game, finds strategies where neither player could gain more than 1/5 by switching alone: below the published 1/3, if it holds, though its constants are astronomically large. The Lean proof it mentions has not been released, and no human check is named.</p>
+
+<div class="player" data-youtube="IcKMc2ACNDM" data-title="GO06: 1/5-approximate Nash equilibria in polynomial time?">
+  <a href="https://youtu.be/IcKMc2ACNDM">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play GO06: Nash equilibria, 1/3 to 1/5 in polynomial time? Next to the fractions, our example: the square of all mixed strategy pairs of a lopsided matching-pennies game, shaded where the maximum regret is at most 1/2, 1/3 and 1/5, with the equilibrium as a dot.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">10:19. English captions available. The video loads from YouTube when you press play.</p>
+
+<p>AI Proved What? is independent and not affiliated with Google.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/IcKMc2ACNDM?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/IcKMc2ACNDM?t=210" data-t="210"><span class="t">3:30</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/IcKMc2ACNDM?t=345" data-t="345"><span class="t">5:45</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/IcKMc2ACNDM?t=508" data-t="508"><span class="t">8:28</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="question">
+<h2 id="question">The question</h2>
+<p>This is GO06, the last of our six Specials on papers from Google’s Cogentic. On November 25, 2026, Google Research added six math papers to its public GitHub repository. Each README says that the paper and a Lean formalization were entirely obtained by Cogentic, an agent system built on Gemini 4, with no human interaction other than the initial prompt. The Lean files have not been released. Google is not affiliated with this series. The first five papers we covered were about factoring, discrete logarithms, communication and graphs. This one is about game theory: how close to a Nash equilibrium a fast algorithm can always get. The best published guarantee is 1/3 plus a sliver, from 2022. This paper claims 1/5. So what is the question?</p>
+<p>Two players each choose a move at the same time. Here is our example, a lopsided game of matching pennies. Row picks Top or Bottom, and Column picks Left or Right. Row wants to match: matching on Top pays Row one, but matching on Bottom pays only a half. Column wants to differ, and wins one when it does. Every payoff lies between zero and one, and players may also pick at random. A Nash equilibrium is a pair of strategies where neither player can gain by switching alone. Here there is exactly one: Row plays Top half the time, and Column plays Left 1/3 of the time. For any other pair, a player’s regret is how much they could gain by switching alone to their best reply. An epsilon-approximate equilibrium keeps both regrets at most epsilon. If both play 50-50, Column has no regret, and Row could gain 1/8 by always playing Top: a 1/8-approximate equilibrium. Now picture every possible pair as a point in a square. Regret at most 1/2 covers about 3/4 of it; at most 1/3, about half; at most 1/5, about a fifth. The smaller epsilon is, the closer to a true equilibrium.</p>
+<p>Nash proved in 1950 that every such game has an equilibrium. Finding one is another matter. For two players, Chen and Deng showed in 2006 that finding an exact equilibrium is complete for the class PPAD, so no fast algorithm is expected. Approximate ones are easier. In 2003, Lipton, Markakis and Mehta showed that for any fixed epsilon, an epsilon-approximate equilibrium can be found in quasi-polynomial time, by trying small, uniform mixtures. In 2016, Rubinstein showed that, under a hardness assumption for PPAD, some small fixed epsilon needs about that much time. So which epsilons allow polynomial time? The simplest answer, 1/2, came in 2006 from Daskalakis, Mehta and Papadimitriou. Then came 0.38, 0.36, and Tsaknakis and Spirakis’s 0.339, all in 2007. Fifteen years later, in 2022, Deligkas, Fasoulakis and Markakis reached 1/3 plus any small delta. Then, this October, two preprints claimed to go below 1/3 for all games: one by just 7.5 × 10^−45, and one, by Dongchen Li and Hanyu Li, found with OpenAI’s Codex, to about 0.31. Neither is peer reviewed. Each guarantee must hold for every game, with any number of moves.</p>
+</section>
+
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The claim. The paper has 41 pages and no author line; a footnote credits Cogentic. Its main theorem: an explicit, deterministic algorithm, called MaximinKiteNE, takes any two-player game with rational payoffs between zero and one, of any size, runs in time polynomial in the length of the input, and outputs a pair of mixed strategies, with rational probabilities, whose larger regret is at most 1/5. Exactly 1/5, with no extra delta. If it holds, it beats 1/3 by more than 0.13, far below October’s preprints, which the paper does not mention. The README adds that this yields a polynomial-time approximation scheme at threshold 1/5. That phrase needs care. Usually, such a scheme means a polynomial-time algorithm for every epsilon, however small. That is not claimed, and under Rubinstein’s assumption it cannot exist. The paper defines its own version, 1/5 plus any delta, which follows at once from 1/5.</p>
+<p>In the paper’s words (Theorem 1.1, p. 2): there is an explicit deterministic algorithm MaximinKiteNE that, given any integers m, n ≥ 1 and any rational bimatrix game G = (R, C) with R, C ∈ ([0, 1] ∩ ℚ)^(m×n) of total binary encoding length L, runs in time poly(L) and outputs a rational mixed strategy profile (x_out, y_out) of binary encoding length poly(L) satisfying f(x_out, y_out) ≤ 1/5, where f is the larger of the two players’ regrets (best-response payoff minus actual payoff). Corollary 1.2 restates it as a “polynomial-time approximation scheme at threshold r = 1/5”: a (1/5 + δ)-approximate equilibrium for every δ &gt; 0.</p>
+</section>
+
+<section aria-labelledby="new">
+<h2 id="new">How big is polynomial here, and what is not claimed</h2>
+<p>How big is polynomial here? Our arithmetic, from the paper’s own constants. The algorithm keeps K₁ running averages, 3 × 2^56: about 200 quadrillion. And its loop is only guaranteed to stop within T₁ steps, a number with about 3.9 × 10^17 digits; written out, those digits alone would fill hundreds of petabytes. Both are fixed numbers that do not depend on the game, so, as the paper says, the time is still polynomial in the size of the game. The paper says so openly: these constants are astronomically large, not optimized for practical computation. Why so big? One error term in the final error sum shrinks a little more slowly than 1/√K. By our estimate, to fit the paper’s own error margin, K must be at least about 3.6 quadrillion, and the time scales of the averages grow like 64^K. So this is a theorem, if it holds, about what polynomial time can do, not a program anyone could run to its guaranteed end. Not claimed: well-supported equilibria, where every strategy played must be nearly best; games with three or more players; or any new hardness result.</p>
+</section>
+
+<section aria-labelledby="how">
+<h2 id="how">How the proof goes</h2>
+<p>How the proof goes, following the paper. Step one: compute each player’s security value, what they can guarantee alone, with two linear programs. If both are at most 1/5, the minimax pair is already good enough. In our game they are 1/3 and 1/2, so the algorithm goes on. Step two is the kite. Plot a pair’s two regrets as a point. The square of 1/5-approximate equilibria sits inside a kite that reaches out to 1/4 on each axis. Any pair whose regrets land in the kite can be fixed without solving anything: shift some weight to the best reply of the player with too much regret. In our example, the classic one-half recipe has Row pick Top, Column reply Right, and Row reply Bottom, then mix half and half. That lands at regrets 1/4 and zero, the tip of the kite. Shifting 1/5 of Row’s weight to Bottom gives exactly 1/5 and 1/5. For a given row strategy, one linear program decides whether any column strategy lands in the kite. If none does, its dual returns a witness: a row strategy that gains against every column in a weighted sense, and that avoids every outcome, column by column, where the payoffs add up on average to 7/4 or more.</p>
+<p>Step three, the loop. The algorithm moves toward these witnesses, keeping K₁ running averages at once, whose speeds differ by factors of 64, and every query is anchored a quarter of the way to Row’s safest strategy. If the loop never stopped, the witnesses, stretched into continuous time, would satisfy a system of integral inequalities of Volterra type. Fourier analysis, through Plancherel’s theorem, controls how averages at different speeds interact, and the paper reduces the system to one point in a small box where an explicit function of three variables, H, would have to be at least −2^−14. The last step certifies, with exact fractions, cell by cell, that H is at most −1/3000 everywhere in that box. That is a contradiction, so the loop must stop, and when it stops, it holds a 1/5-approximate equilibrium. What we checked: the two linear-programming lemmas, read line by line; the kite arithmetic, on a grid of exact fractions; and the error sum that fixes the constants. We did not check Sections 3 to 5 or the certificate tables: the core of the proof. The README says a Lean formalization, from Mathlib alone, is complete and will be released. Cogentic’s paper on arXiv describes an orchestrator, parallel provers and adversarial verifiers; its earlier results were verified by domain experts, by the authors’ account. For this paper, no human check is named.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Public</dt>
+    <dd>On GitHub, <a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers/bimatrix_nash_equilibrium">google-research/google-research, cogentic_research_papers/bimatrix_nash_equilibrium</a>, added by <a href="https://github.com/google-research/google-research/commit/4a7bc8ab0bc770e71a259b7966c500496b99010a">commit 4a7bc8a</a> (“Add six Cogentic research papers”, November 25, 2026, 10:11 UTC). Not on arXiv. No later commit to the folder as of 17:49 UTC (09:49 PT).</dd>
+  </div>
+<!-- review-step:start -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>Not yet</dd>
+  </div>
+<!-- review-step:end -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Lean released</dt>
+    <dd>No. The <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/bimatrix_nash_equilibrium/README.md">README</a> says a “complete, unconditional, Mathlib-only Lean 4 (v4.35.0) formalization of the entire proof has also been completed and will be released in a companion submission”; the commit message says the same for all six papers. Nothing to read or run yet.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked by a human</dt>
+    <dd>None named. The README says the paper and the Lean “were entirely obtained by Cogentic”, using Gemini 4, with “no human interaction other than the initial prompt”. The <a href="https://arxiv.org/abs/2609.40324">Cogentic paper</a> says its earlier results were independently verified by domain experts; it does not mention this paper.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Announcement; expert reaction</dt>
+    <dd>No post on research.google, blog.google or deepmind.google found. No named expert reaction found. In the <a href="https://news.ycombinator.com/item?id=50642086">Hacker News thread</a> on the six papers, one commenter listed this one as “New: polynomial time for epsilon = 1/5”, against 1/3 + delta before; news write-ups quote no expert. X, Reddit, Bluesky and the Lean Zulip could not be read.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>References in order</dt>
+    <dd>Partly (our check of its 12 references). Table 1 credits the 0.382 bound to Daskalakis, Mehta and Papadimitriou’s “A note on approximate Nash equilibria” (TCS 2009), which gives 1/2; the 0.38 result is in their <a href="https://people.csail.mit.edu/costis/papers/ec283-daskalakis.pdf">“Progress in approximate Nash equilibria”</a> (EC 2007). It calls 1/3 + δ “the previous polynomial-time barrier” without mentioning two October 2026 preprints that claim to go below it: <a href="https://doi.org/10.5281/zenodo.23077766">Gondauri</a> (1/3 − 7.5 × 10^−45) and <a href="https://arxiv.org/abs/2610.05317">Li and Li</a> (about 0.30954 + δ, found with OpenAI’s Codex); neither is peer reviewed. Nothing on approximate Nash equilibria is in OpenAI’s catalogue.</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked November 25, 2026, 17:49 UTC (09:49 PT). Not built or run by us.</p>
+<p>This is a Specials episode, the last of six on Cogentic’s November 25 papers. GO01 to GO05 covered factoring, discrete logarithms, communication and graph reconstruction. Li and Li’s Codex preprint is not an OpenAI catalogue result, and we have not covered it. Episode 136 covered an OpenAI claim from the hardness side: a PCP theorem for PPAD, the class that finding Nash equilibria belongs to. Cogentic also posted two earlier game-theory papers, in October and November, which we have not covered. If this one holds, polynomial time reaches 1/5-approximate equilibria; but only with constants, as written, far beyond any real computer, and how far below 1/5 polynomial time can go is still open. See <a href="../go01-integer-factorization-l-one-third/">GO01</a>, <a href="../go02-deterministic-subexponential-factoring/">GO02</a>, <a href="../go03-discrete-log-small-characteristic/">GO03</a>, <a href="../go04-log-rank-square-root-barrier/">GO04</a>, <a href="../go05-edge-reconstruction-linear-density/">GO05</a> and <a href="../136-pcp-for-ppad/">136</a>.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: lopsided matching pennies. Row chooses Top or Bottom, Column chooses Left or Right; payoffs (Row, Column) are (1, 0) for Top–Left, (0, 1) for Top–Right and Bottom–Left, and (1/2, 0) for Bottom–Right. Its only equilibrium: Row plays Top with probability 1/2, Column plays Left with probability 1/3. If both play 50-50, Row’s regret is 1/8 (Top pays 1/2, the mix pays 3/8) and Column’s is 0.</li>
+  <li>Ours: on a grid of 401 × 401 mixed pairs, the maximum regret is at most 1/2 on 74.3% of the square, at most 1/3 on 48.3%, and at most 1/5 on 22.0%.</li>
+  <li>Ours: the Daskalakis–Mehta–Papadimitriou recipe (Row picks Top; Column’s best reply is Right; Row’s best reply to Right is Bottom; Row mixes Top and Bottom half and half) gives regrets (1/4, 0), the tip of the paper’s 1/5-kite, whose corners are (0, 0), (1/4, 0), (1/5, 1/5) and (0, 1/4). The paper’s mixing step (Lemma 2.3(a)) moves θ = 1 − (1/5)/(1/4) = 1/5 of Row’s weight to its best reply, Bottom: Row plays Top 2/5, and the regrets become exactly (1/5, 1/5). The security values are 1/3 (Row) and 1/2 (Column), so the paper’s first step would not stop on this game.</li>
+  <li>From the paper (p. 10), sized by us: K₁ = 3 · 2^56 = 216,172,782,113,783,808 running averages; the iteration cap T₁ = 40 · 2^54 · 64^(K₁−1) + 1 has about 3.9045e+17 digits. Theorem 5.5’s error sum with these constants is 8.95e-06, below 2^−14 ≈ 6.1 × 10^−5. Keeping the paper’s other parameters, its term 600 √((1 + ln K)/K) fits that margin only for K ≥ about 3.64e+15 (our estimate); against the bare requirement E &lt; 1/3000 it would be about 1.1e+14.</li>
+  <li>Checked by us: Lemma 2.3(a)’s inequality (1 − θ) r₂ + θ = (s r₂ + r₁ − s)/r₁ ≤ s on a grid of exact fractions; the welfare cap 2 − r/(1 − r) = 7/4 at r = 1/5; λ ∈ [1/5, 4/5] gives a = λ/(1 − λ) ∈ [1/4, 4]; T₁ = ⌈40 S₁/ε₀⌉ + 1; Theorem 5.5’s bound E below 2^−14 below 1/3000. Not checked: Lemmas 3.1–3.3, Proposition 4.1, Lemmas 5.1–5.4 and the certificate tables of Appendix A.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li>Cogentic (Google Research), <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/bimatrix_nash_equilibrium/paper.pdf">An Exact Polynomial-Time Algorithm for 1/5-Approximate Nash Equilibria in Bimatrix Games</a>, 41 pages (CC-BY-4.0; <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/bimatrix_nash_equilibrium/README.md">README</a>; <a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers">all Cogentic papers</a>).</li>
+  <li>Y. Cai, V. Gupta, Y. Jiang, C. Liaw, A. Mehta, G. Velegkas and D. Wang, <a href="https://arxiv.org/abs/2609.40324">Cogentic: Multi-Agent Orchestration for Automated Proof Discovery</a>, arXiv:2609.40324 (2026).</li>
+  <li>Background: C. Daskalakis, A. Mehta and C. Papadimitriou, A note on approximate Nash equilibria (WINE 2006; Theoret. Comput. Sci. 2009) and <a href="https://people.csail.mit.edu/costis/papers/ec283-daskalakis.pdf">Progress in approximate Nash equilibria</a> (EC 2007); H. Bosse, J. Byrka and E. Markakis (WINE 2007; TCS 2010); H. Tsaknakis and P. Spirakis (WINE 2007; Internet Math. 2008); A. Deligkas, M. Fasoulakis and E. Markakis, <a href="https://arxiv.org/abs/2204.11525">A polynomial-time algorithm for 1/3-approximate Nash equilibria in bimatrix games</a> (ESA 2022; ACM TALG 2023); R. Lipton, E. Markakis and A. Mehta (EC 2003); X. Chen and X. Deng, Settling the complexity of two-player Nash equilibrium (FOCS 2006); A. Rubinstein, <a href="https://arxiv.org/abs/1606.04550">Settling the complexity of computing approximate two-player Nash equilibria</a> (FOCS 2016).</li>
+  <li>October 2026 preprints (not peer reviewed): D. Gondauri, <a href="https://doi.org/10.5281/zenodo.23077766">A Deterministic Polynomial-Time Approximation Below One Third for Bimatrix Games</a> (Zenodo); D. Li and H. Li, <a href="https://arxiv.org/abs/2610.05317">A Simple Algorithm Breaking the 1/3 Barrier for Approximate Nash Equilibria in Bimatrix Games</a>, arXiv:2610.05317.</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Google.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is GO06, the last of our six Specials on papers from Google’s Cogentic. On November 25, 2026, Google Research added six math papers to its public GitHub repository. Each README says that the paper and a Lean formalization were entirely obtained by Cogentic, an agent system built on Gemini 4, with no human interaction other than the initial prompt. The Lean files have not been released. Google is not affiliated with this series. The first five papers we covered were about factoring, discrete logarithms, communication and graphs. This one is about game theory: how close to a Nash equilibrium a fast algorithm can always get. The best published guarantee is 1/3 plus a sliver, from 2022. This paper claims 1/5. So what is the question? Two players each choose a move at the same time. Here is our example, a lopsided game of matching pennies. Row picks Top or Bottom, and Column picks Left or Right. Row wants to match: matching on Top pays Row one, but matching on Bottom pays only a half. Column wants to differ, and wins one when it does. Every payoff lies between zero and one, and players may also pick at random. A Nash equilibrium is a pair of strategies where neither player can gain by switching alone. Here there is exactly one: Row plays Top half the time, and Column plays Left 1/3 of the time. For any other pair, a player’s regret is how much they could gain by switching alone to their best reply. An epsilon-approximate equilibrium keeps both regrets at most epsilon. If both play 50-50, Column has no regret, and Row could gain 1/8 by always playing Top: a 1/8-approximate equilibrium. Now picture every possible pair as a point in a square. Regret at most 1/2 covers about 3/4 of it; at most 1/3, about half; at most 1/5, about a fifth. The smaller epsilon is, the closer to a true equilibrium. Nash proved in 1950 that every such game has an equilibrium. Finding one is another matter. For two players, Chen and Deng showed in 2006 that finding an exact equilibrium is complete for the class PPAD, so no fast algorithm is expected. Approximate ones are easier. In 2003, Lipton, Markakis and Mehta showed that for any fixed epsilon, an epsilon-approximate equilibrium can be found in quasi-polynomial time, by trying small, uniform mixtures. In 2016, Rubinstein showed that, under a hardness assumption for PPAD, some small fixed epsilon needs about that much time. So which epsilons allow polynomial time? The simplest answer, 1/2, came in 2006 from Daskalakis, Mehta and Papadimitriou. Then came 0.38, 0.36, and Tsaknakis and Spirakis’s 0.339, all in 2007. Fifteen years later, in 2022, Deligkas, Fasoulakis and Markakis reached 1/3 plus any small delta. Then, this October, two preprints claimed to go below 1/3 for all games: one by just 7.5 × 10^−45, and one, by Dongchen Li and Hanyu Li, found with OpenAI’s Codex, to about 0.31. Neither is peer reviewed. Each guarantee must hold for every game, with any number of moves.</p>
+<h3><span class="t num">3:30</span>The claim</h3>
+<p>The claim. The paper has 41 pages and no author line; a footnote credits Cogentic. Its main theorem: an explicit, deterministic algorithm, called MaximinKiteNE, takes any two-player game with rational payoffs between zero and one, of any size, runs in time polynomial in the length of the input, and outputs a pair of mixed strategies, with rational probabilities, whose larger regret is at most 1/5. Exactly 1/5, with no extra delta. If it holds, it beats 1/3 by more than 0.13, far below October’s preprints, which the paper does not mention. The README adds that this yields a polynomial-time approximation scheme at threshold 1/5. That phrase needs care. Usually, such a scheme means a polynomial-time algorithm for every epsilon, however small. That is not claimed, and under Rubinstein’s assumption it cannot exist. The paper defines its own version, 1/5 plus any delta, which follows at once from 1/5. How big is polynomial here? Our arithmetic, from the paper’s own constants. The algorithm keeps K₁ running averages, 3 × 2^56: about 200 quadrillion. And its loop is only guaranteed to stop within T₁ steps, a number with about 3.9 × 10^17 digits; written out, those digits alone would fill hundreds of petabytes. Both are fixed numbers that do not depend on the game, so, as the paper says, the time is still polynomial in the size of the game. The paper says so openly: these constants are astronomically large, not optimized for practical computation. Why so big? One error term in the final error sum shrinks a little more slowly than 1/√K. By our estimate, to fit the paper’s own error margin, K must be at least about 3.6 quadrillion, and the time scales of the averages grow like 64^K. So this is a theorem, if it holds, about what polynomial time can do, not a program anyone could run to its guaranteed end. Not claimed: well-supported equilibria, where every strategy played must be nearly best; games with three or more players; or any new hardness result.</p>
+<h3><span class="t num">5:45</span>How the proof goes</h3>
+<p>How the proof goes, following the paper. Step one: compute each player’s security value, what they can guarantee alone, with two linear programs. If both are at most 1/5, the minimax pair is already good enough. In our game they are 1/3 and 1/2, so the algorithm goes on. Step two is the kite. Plot a pair’s two regrets as a point. The square of 1/5-approximate equilibria sits inside a kite that reaches out to 1/4 on each axis. Any pair whose regrets land in the kite can be fixed without solving anything: shift some weight to the best reply of the player with too much regret. In our example, the classic one-half recipe has Row pick Top, Column reply Right, and Row reply Bottom, then mix half and half. That lands at regrets 1/4 and zero, the tip of the kite. Shifting 1/5 of Row’s weight to Bottom gives exactly 1/5 and 1/5. For a given row strategy, one linear program decides whether any column strategy lands in the kite. If none does, its dual returns a witness: a row strategy that gains against every column in a weighted sense, and that avoids every outcome, column by column, where the payoffs add up on average to 7/4 or more. Step three, the loop. The algorithm moves toward these witnesses, keeping K₁ running averages at once, whose speeds differ by factors of 64, and every query is anchored a quarter of the way to Row’s safest strategy. If the loop never stopped, the witnesses, stretched into continuous time, would satisfy a system of integral inequalities of Volterra type. Fourier analysis, through Plancherel’s theorem, controls how averages at different speeds interact, and the paper reduces the system to one point in a small box where an explicit function of three variables, H, would have to be at least −2^−14. The last step certifies, with exact fractions, cell by cell, that H is at most −1/3000 everywhere in that box. That is a contradiction, so the loop must stop, and when it stops, it holds a 1/5-approximate equilibrium. What we checked: the two linear-programming lemmas, read line by line; the kite arithmetic, on a grid of exact fractions; and the error sum that fixes the constants. We did not check Sections 3 to 5 or the certificate tables: the core of the proof. The README says a Lean formalization, from Mathlib alone, is complete and will be released. Cogentic’s paper on arXiv describes an orchestrator, parallel provers and adversarial verifiers; its earlier results were verified by domain experts, by the authors’ account. For this paper, no human check is named.</p>
+<h3><span class="t num">8:28</span>Where it stands</h3>
+<p>Where it stands, on November 25, Pacific time. The paper is on GitHub, not on arXiv, and it is not peer reviewed. The Lean formalization is claimed, but not released. The README names no human who checked the proof. We found no announcement on Google’s blogs and no named expert reaction yet. On Hacker News, one commenter listed it as polynomial time for epsilon 1/5, against 1/3 plus delta. The paper’s 12 references cover the main published results, but by our check it credits the 0.38 bound to the authors’ earlier note instead of their 2007 paper, and it calls 1/3 plus delta the previous barrier without mentioning October’s two preprints below 1/3. Nothing on approximate Nash algorithms is in OpenAI’s catalogue; its only related result is on the hardness side. Not built or run by us. This is a Specials episode, the last of six on Cogentic’s November 25 papers. GO01 to GO05 covered factoring, discrete logarithms, communication and graph reconstruction. Li and Li’s Codex preprint is not an OpenAI catalogue result, and we have not covered it. Episode 136 covered an OpenAI claim from the hardness side: a PCP theorem for PPAD, the class that finding Nash equilibria belongs to. Cogentic also posted two earlier game-theory papers, in October and November, which we have not covered. If this one holds, polynomial time reaches 1/5-approximate equilibria; but only with constants, as written, far beyond any real computer, and how far below 1/5 polynomial time can go is still open.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=GO06%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

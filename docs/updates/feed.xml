@@ -6,7 +6,56 @@
   <atom:link href="https://aiprovedwhat.com/updates/feed.xml" rel="self" type="application/rss+xml"/>
   <description>What changed in OpenAI’s math release and the claims AI Proved What? follows.</description>
   <language>en</language>
-  <lastBuildDate>Tue, 24 Nov 2026 20:30:00 -0800</lastBuildDate>
+  <lastBuildDate>Wed, 25 Nov 2026 13:00:00 -0800</lastBuildDate>
+  <item>
+    <title>New episode: N√(log N), not N log N? (379)</title>
+    <link>https://aiprovedwhat.com/updates/#2026-11-25-379fm-episode</link>
+    <guid isPermaLink="false">aiprovedwhat-update-2026-11-25-379fm-episode</guid>
+    <pubDate>Wed, 25 Nov 2026 13:00:00 -0800</pubDate>
+    <description>&lt;b&gt;New companion episode for &lt;a href="https://aiprovedwhat.com/episodes/379-separation-vp-vnp-every-field/"&gt;379&lt;/a&gt;:&lt;/b&gt; OpenAI’s two “logarithmic exponent” papers: finite abelian Fourier transforms need N(log N)^(1/2+o(1)) binary linear gates, with an unconditional lower bound of order N√(log N), far below &lt;a href="https://aiprovedwhat.com/episodes/130-fourier-below-n-log-n/"&gt;130&lt;/a&gt;; and one multitape machine multiplies n-bit numbers in n(log n)^(1/2+o(1)) time, far below &lt;a href="https://aiprovedwhat.com/episodes/109-integer-multiplication-below-n-log-n/"&gt;109&lt;/a&gt;, with a matching lower bound if variable-count Weak ETH holds. The 8-point FFT counted (24 gates), the rectangle test and the sign predictor behind the square root, the dependence on the family’s unreviewed main paper, and what the Lean covers (both main bounds of each; not the polynomial-multiplication lower bound, division or square root). Not built or run by us. &lt;a href="https://aiprovedwhat.com/episodes/379-fourier-multiplication-log-exponent/"&gt;Watch the episode&lt;/a&gt;. &lt;span class="tag rev"&gt;Episode out&lt;/span&gt; &lt;a href="https://youtu.be/KPOGHF9ifFw"&gt;Source&lt;/a&gt;.</description>
+  </item>
+  <item>
+    <title>Specials: GO01, factoring in proven time L[1/3, 105]?</title>
+    <link>https://aiprovedwhat.com/updates/#2026-11-25-beyond-openai-go01</link>
+    <guid isPermaLink="false">aiprovedwhat-update-2026-11-25-beyond-openai-go01</guid>
+    <pubDate>Wed, 25 Nov 2026 13:00:00 -0800</pubDate>
+    <description>&lt;b&gt;Specials:&lt;/b&gt; &lt;a href="https://aiprovedwhat.com/episodes/go01-integer-factorization-l-one-third/"&gt;GO01&lt;/a&gt;, the first of six papers attributed to Google’s Cogentic agent (Gemini 4), claims an algorithm that provably factors every whole number in expected time L_N[1/3, 105], with no unproven hypotheses: the number field sieve’s exponent, with a far larger constant. The episode explains trial division and congruences of squares with examples of ours, the L scale and the history (Lenstra–Pomerance’s proven L[1/2, 1], the sieve’s heuristic L[1/3, 1.92], and Lee–Venkatesan’s 2018 partial result, which the paper does not cite), why 105 is no threat to RSA (our worked numbers; the machine itself uses trial division below 2^10000), the paper’s four-step proof outline, and what is still open: the Lean is claimed but not released, and no human check is named. Not built or run by us. &lt;span class="tag sp"&gt;Beyond OpenAI&lt;/span&gt; &lt;a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers/integer_factorization"&gt;Source&lt;/a&gt;.</description>
+  </item>
+  <item>
+    <title>Specials: GO02, factoring with no coin flips, below exponential time?</title>
+    <link>https://aiprovedwhat.com/updates/#2026-11-25-beyond-openai-go02</link>
+    <guid isPermaLink="false">aiprovedwhat-update-2026-11-25-beyond-openai-go02</guid>
+    <pubDate>Wed, 25 Nov 2026 13:00:00 -0800</pubDate>
+    <description>&lt;b&gt;Specials:&lt;/b&gt; &lt;a href="https://aiprovedwhat.com/episodes/go02-deterministic-subexponential-factoring/"&gt;GO02&lt;/a&gt; explains a paper from Google’s Cogentic agent claiming deterministic factoring in exp(3 (ln N)^(3/4)) time and deterministic quadratic nonresidues in L[1/2] time, with no unproven hypothesis: Miller’s split on 77 (ours), the old exponential bounds, why the bound is no threat to RSA (by our reading the algorithm trial-divides every number below about 9,800 digits), the paper’s two-part proof outline, and what is open: the Lean proof is claimed but not released, no human check is named, and the paper does not cite two earlier unreviewed claims. Not built or run by us. Anthropic makes Claude, which helps make this series. &lt;span class="tag sp"&gt;Beyond OpenAI&lt;/span&gt; &lt;a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers/deterministic_factoring_l34"&gt;Source&lt;/a&gt;.</description>
+  </item>
+  <item>
+    <title>Specials: GO03, discrete logarithms below quasi-polynomial time?</title>
+    <link>https://aiprovedwhat.com/updates/#2026-11-25-beyond-openai-go03</link>
+    <guid isPermaLink="false">aiprovedwhat-update-2026-11-25-beyond-openai-go03</guid>
+    <pubDate>Wed, 25 Nov 2026 13:00:00 -0800</pubDate>
+    <description>&lt;b&gt;Specials:&lt;/b&gt; &lt;a href="https://aiprovedwhat.com/episodes/go03-discrete-log-small-characteristic/"&gt;GO03&lt;/a&gt;, the third of six papers attributed to Google’s Cogentic agent (Gemini 4), claims a proven algorithm for discrete logarithms in finite fields of fixed small characteristic in expected time exp((2 + o(1))(ln n)²/ln ln ln n), a divisor of ln ln ln n beyond the quasi-polynomial bound Kleinjung and Wesolowski proved in 2019. The episode explains discrete logarithms with a 16-element field of ours, the history since 2013, how slowly ln ln ln n grows, and a catch we found in the paper’s own definitions: its new method runs only when n is at least 2^(2^25088) (p = 2), so for every field anyone could write down it tries exponents one by one. Lean claimed, not released; no human check named. Not built or run by us. &lt;span class="tag sp"&gt;Beyond OpenAI&lt;/span&gt; &lt;a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers/discrete_logarithm"&gt;Source&lt;/a&gt;.</description>
+  </item>
+  <item>
+    <title>Specials: GO04, past the square-root barrier for log-rank?</title>
+    <link>https://aiprovedwhat.com/updates/#2026-11-25-beyond-openai-go04</link>
+    <guid isPermaLink="false">aiprovedwhat-update-2026-11-25-beyond-openai-go04</guid>
+    <pubDate>Wed, 25 Nov 2026 13:00:00 -0800</pubDate>
+    <description>&lt;b&gt;Specials:&lt;/b&gt; &lt;a href="https://aiprovedwhat.com/episodes/go04-log-rank-square-root-barrier/"&gt;GO04&lt;/a&gt; explains a paper from Google’s Cogentic agent claiming C′ r^(1/2 − 0.000005) bits of communication for every Boolean matrix of rank r, the first gain on √r for the log-rank conjecture if it holds: the communication game on our 8 × 8 example, the bounds since 1988, why the gain shows only at ranks with millions of digits (C′ ≈ 2 × 10^14), the paper’s proof outline (S² = 1 and a degree-2 tilt), and what is open: the Lean proof is claimed but not released and no human check is named. Not built or run by us. &lt;span class="tag sp"&gt;Beyond OpenAI&lt;/span&gt; &lt;a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers/logrank_conjecture"&gt;Source&lt;/a&gt;.</description>
+  </item>
+  <item>
+    <title>Specials: GO05, rebuild a graph from its cards?</title>
+    <link>https://aiprovedwhat.com/updates/#2026-11-25-beyond-openai-go05</link>
+    <guid isPermaLink="false">aiprovedwhat-update-2026-11-25-beyond-openai-go05</guid>
+    <pubDate>Wed, 25 Nov 2026 13:00:00 -0800</pubDate>
+    <description>&lt;b&gt;Specials:&lt;/b&gt; &lt;a href="https://aiprovedwhat.com/episodes/go05-edge-reconstruction-linear-density/"&gt;GO05&lt;/a&gt;, the fifth of six papers attributed to Google’s Cogentic agent (Gemini 4), claims Harary’s edge reconstruction conjecture for every graph with at least 1000 times as many edges as vertices, replacing Müller’s n log n bound from 1977. The episode explains edge decks with small examples of ours (including a check of all 1,253 graphs with up to 7 vertices), the history from Kelly–Ulam to Müller, and the catch: by Müller’s bound, which the paper itself uses as its first step, the theorem is new only for graphs with more than about 10³⁰¹ vertices. Lean claimed, not released; no human check named. Not built or run by us. &lt;span class="tag sp"&gt;Beyond OpenAI&lt;/span&gt; &lt;a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers/edge_reconstruction"&gt;Source&lt;/a&gt;.</description>
+  </item>
+  <item>
+    <title>Specials: GO06, 1/5-approximate Nash equilibria in polynomial time?</title>
+    <link>https://aiprovedwhat.com/updates/#2026-11-25-beyond-openai-go06</link>
+    <guid isPermaLink="false">aiprovedwhat-update-2026-11-25-beyond-openai-go06</guid>
+    <pubDate>Wed, 25 Nov 2026 13:00:00 -0800</pubDate>
+    <description>&lt;b&gt;Specials:&lt;/b&gt; &lt;a href="https://aiprovedwhat.com/episodes/go06-nash-equilibrium-one-fifth/"&gt;GO06&lt;/a&gt; explains a paper from Google’s Cogentic agent claiming a polynomial-time algorithm for 1/5-approximate Nash equilibria in every two-player game, below the published 1/3: regret and approximate equilibria on our 2 × 2 example, the guarantees since 2006 (and October 2026’s preprints, which the paper does not cite), why “polynomial” here means constants with about 3.9 × 10^17 digits, the paper’s proof outline (the kite, a linear-programming dual witness, a Volterra contradiction), and what is open: the Lean proof is claimed but not released and no human check is named. Not built or run by us. &lt;span class="tag sp"&gt;Beyond OpenAI&lt;/span&gt; &lt;a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers/bimatrix_nash_equilibrium"&gt;Source&lt;/a&gt;.</description>
+  </item>
   <item>
     <title>New episode: The sunflower conjecture, proved? (379)</title>
     <link>https://aiprovedwhat.com/updates/#2026-11-24-379sf-episode</link>

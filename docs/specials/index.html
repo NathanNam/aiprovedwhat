@@ -14,8 +14,8 @@
 <meta property="og:image" content="https://aiprovedwhat.com/assets/share-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 375 math results, their 730 papers and the 11,380 earlier works they cite, with 23 results beyond OpenAI’s catalogue on their own arc.">
-<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 375 math results, their 730 papers and the 11,380 earlier works they cite, with 23 results beyond OpenAI’s catalogue on their own arc.">
+<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 375 math results, their 730 papers and the 11,380 earlier works they cite, with 29 results beyond OpenAI’s catalogue on their own arc.">
+<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 375 math results, their 730 papers and the 11,380 earlier works they cite, with 29 results beyond OpenAI’s catalogue on their own arc.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <meta name="generator" content="tools/site/build.py">
@@ -48,7 +48,7 @@
 </header>
 <main id="main">
 <h1>Beyond OpenAI’s catalogue</h1>
-<p class="lede">Claims outside OpenAI’s math catalogue: one-off announcements by OpenAI and results from other labs (Axiom Math, PSI (Physical Superintelligence), Anthropic), with the same four-step record. They are kept out of the catalogue counts and added by hand from each lab’s announcements and repositories.</p>
+<p class="lede">Claims outside OpenAI’s math catalogue: one-off announcements by OpenAI and results from other labs (Axiom Math, PSI (Physical Superintelligence), Anthropic, Google Research (Cogentic)), with the same four-step record. They are kept out of the catalogue counts and added by hand from each lab’s announcements and repositories.</p>
 <section class="compare" aria-labelledby="cmp-ax01-an01">
 <h2 id="cmp-ax01-an01">Axiom and Anthropic: two large Lean formalizations, side by side</h2>
 <div class="compare-scroll"><table>
@@ -872,7 +872,167 @@
 <p><a href="../episodes/an08-vp-vnp-lean/">Watch the episode and read the record</a> · <a href="../connections/#AN08">See its connections</a></p>
 
 </section>
-<p class="attribution">Last checked November 23, 2026.</p>
+<div class="special-group" id="go01-06-cogentic-2026-11-25">
+<h2 id="go01-06-cogentic-2026-11-25-h">Google Cogentic: six papers of November 25, 2026</h2>
+<p>Six papers attributed to Google’s Cogentic agent (Gemini 4), each with a Lean 4 formalization claimed but not yet released, added to google-research/google-research on November 25, 2026; one episode each. <a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers">The repository folder</a>.</p>
+</div>
+<section class="special" id="go01" aria-labelledby="go01-h">
+<p class="thumb-kicker">GO01 · Google · announced November 25, 2026 · Theoretical computer science</p>
+<h2 id="go01-h">Unconditional Integer Factorization in Time L_N[1/3, O(1)]</h2>
+<p>A paper attributed to Google’s Cogentic agent (Gemini 4) claims a Las Vegas Turing machine that outputs the complete, AKS-certified prime factorization of every integer N in expected time L_N[1/3, 105] and memory L_N[1/3, 40], with no unproven hypotheses: the number field sieve’s exponent, proven, but with a constant far above the sieve’s 1.92, so no threat to RSA. Lean claimed, not released; no human check named.</p>
+
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>On GitHub (google-research/google-research, cogentic_research_papers/integer_factorization), commit 4a7bc8ab0bc7, November 25, 2026; not on arXiv</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None from a named expert found as of November 25, 2026, morning PT; news write-ups only. The README says the paper and its Lean “were entirely obtained by Cogentic”, with “no human interaction other than the initial prompt”; no human check is named</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Claimed, not released: the README says a complete, Mathlib-only Lean 4 (v4.35.0) formalization “has also been completed and will be released in a companion submission”. Nothing public as of 15:31 UTC, November 25</dd>
+  </div>
+</dl>
+<p><a href="../episodes/go01-integer-factorization-l-one-third/">Watch the episode and read the record</a> · <a href="../connections/#GO01">See its connections</a></p>
+
+</section>
+<section class="special" id="go02" aria-labelledby="go02-h">
+<p class="thumb-kicker">GO02 · Google · announced November 25, 2026 · Theoretical computer science</p>
+<h2 id="go02-h">Unconditional Deterministic Subexponential Integer Factoring and Quadratic Nonresidue Construction</h2>
+<p>A 59-page paper from Google’s Cogentic agent (Gemini 4) claims deterministic factoring of every composite N in O(exp(3 (ln N)^(3/4))) bit operations, and deterministic quadratic nonresidues modulo any prime p in L_p[1/2] time, with no randomness and no unproven hypothesis. The README says a Lean 4 formalization exists; it has not been released. No human check is named. Not faster than randomized methods; no threat to RSA.</p>
+
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>On GitHub (google-research/google-research, cogentic_research_papers/deterministic_factoring_l34), commit 4a7bc8a, November 25, 2026, 10:11 UTC; not on arXiv</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None found as of November 25, 2026, about 08:00 PT. The README says the paper and the Lean were “entirely obtained by Cogentic” with “no human interaction other than the initial prompt”; it names no human check. Hacker News discussion only</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Claimed in the README (“Mathlib-only Lean 4 (v4.33.0) formalization of the entire proof … will be released in a companion submission”); not released as of November 25, 2026</dd>
+  </div>
+</dl>
+<p><a href="../episodes/go02-deterministic-subexponential-factoring/">Watch the episode and read the record</a> · <a href="../connections/#GO02">See its connections</a></p>
+
+</section>
+<section class="special" id="go03" aria-labelledby="go03-h">
+<p class="thumb-kicker">GO03 · Google · announced November 25, 2026 · Theoretical computer science</p>
+<h2 id="go03-h">Discrete Logarithms in Finite Fields of Fixed Characteristic in Sub-Quasi-Polynomial Time</h2>
+<p>A paper attributed to Google’s Cogentic agent (Gemini 4) claims a zero-error Las Vegas algorithm for discrete logarithms in finite fields of fixed characteristic in expected time exp((2 + o(1))(ln n)²/ln ln ln n) = (pn)^o(log n), with no unproven hypotheses: a divisor of ln ln ln n beyond Kleinjung and Wesolowski’s proven quasi-polynomial bound. As defined, its new method runs only for n of at least 2^(2^25088) (p = 2; our arithmetic), so nothing changes in practice. Lean claimed, not released; no human check named.</p>
+
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>On GitHub (google-research/google-research, cogentic_research_papers/discrete_logarithm), commit 4a7bc8ab0bc7, November 25, 2026; not on arXiv</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None from a named expert found as of November 25, 2026, morning PT; news write-ups and a Hacker News thread only. The README says the paper and its Lean “were entirely obtained by Cogentic”, with “no human interaction other than the initial prompt”; no human check is named</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Claimed, not released: the README says a complete, Mathlib-only Lean 4 (v4.35.0) formalization “has also been completed and will be released in a companion submission”. Nothing public as of 16:07 UTC, November 25</dd>
+  </div>
+</dl>
+<p><a href="../episodes/go03-discrete-log-small-characteristic/">Watch the episode and read the record</a> · <a href="../connections/#GO03">See its connections</a></p>
+
+</section>
+<section class="special" id="go04" aria-labelledby="go04-h">
+<p class="thumb-kicker">GO04 · Google · announced November 25, 2026 · Theoretical computer science</p>
+<h2 id="go04-h">Breaking the Square-Root Barrier for the Log-Rank Conjecture</h2>
+<p>A 37-page paper from Google’s Cogentic agent (Gemini 4) claims that every Boolean matrix of real rank r has a deterministic two-party protocol of C′ r^(1/2 − ε) bits, with ε = 5 × 10^−6 and C′ = 750 · 2^38: the first gain on the square root of the rank (Lovett 2014; Sudakov and Tomon 2023), if it holds. With these constants it beats √r only at ranks with millions of digits. The README says a Lean 4 formalization exists; it has not been released. No human check is named.</p>
+
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>On GitHub (google-research/google-research, cogentic_research_papers/logrank_conjecture), commit 4a7bc8a, November 25, 2026, 10:11 UTC; not on arXiv</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None found as of November 25, 2026, about 09:10 PT. The README says the paper and the Lean were “entirely obtained by Cogentic” with “no human interaction other than the initial prompt”; it names no human check. News write-ups and a Hacker News thread only</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Claimed in the README (“Mathlib-only Lean 4 (v4.33.0) formalization of the entire proof … will be released in a companion submission”); not released as of November 25, 2026</dd>
+  </div>
+</dl>
+<p><a href="../episodes/go04-log-rank-square-root-barrier/">Watch the episode and read the record</a> · <a href="../connections/#GO04">See its connections</a></p>
+
+</section>
+<section class="special" id="go05" aria-labelledby="go05-h">
+<p class="thumb-kicker">GO05 · Google · announced November 25, 2026 · Combinatorics</p>
+<h2 id="go05-h">Unconditional Edge Reconstruction of Simple Graphs of Linear Density</h2>
+<p>A paper attributed to Google’s Cogentic agent (Gemini 4) claims Harary’s 1964 edge reconstruction conjecture for every finite simple graph with at least 1000 times as many edges as vertices (and every graph of minimum degree at least 2000), replacing Müller’s 1977 bound of about n log₂ n edges. By Müller’s bound, which the paper uses as its first step, it is new only for graphs with more than about 10³⁰¹ vertices (our arithmetic). Lean claimed, not released; no human check named.</p>
+
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>On GitHub (google-research/google-research, cogentic_research_papers/edge_reconstruction), commit 4a7bc8ab0bc7, November 25, 2026; not on arXiv</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None from a named expert found as of November 25, 2026, morning PT; news write-ups and a Hacker News thread only. The README says the paper and its Lean “were entirely obtained by Cogentic”, with “no human interaction other than the initial prompt”; no human check is named</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Claimed, not released: the README says a complete, unconditional, Mathlib-only Lean 4 (v4.33.0) formalization “has also been completed and will be released in a companion submission”. Nothing public as of 17:04 UTC, November 25</dd>
+  </div>
+</dl>
+<p><a href="../episodes/go05-edge-reconstruction-linear-density/">Watch the episode and read the record</a> · <a href="../connections/#GO05">See its connections</a></p>
+
+</section>
+<section class="special" id="go06" aria-labelledby="go06-h">
+<p class="thumb-kicker">GO06 · Google · announced November 25, 2026 · Theoretical computer science</p>
+<h2 id="go06-h">An Exact Polynomial-Time Algorithm for 1/5-Approximate Nash Equilibria in Bimatrix Games</h2>
+<p>A 41-page paper from Google’s Cogentic agent (Gemini 4) claims a deterministic polynomial-time algorithm, MaximinKiteNE, that finds a 1/5-approximate Nash equilibrium (neither player can gain more than 1/5 by switching alone) in every two-player game with payoffs in [0, 1]: below the published 1/3 + δ (Deligkas, Fasoulakis and Markakis, 2022) and October 2026’s preprints, if it holds. Its fixed constants are astronomically large (an iteration cap with about 3.9 × 10^17 digits). The README says a Lean 4 formalization exists; it has not been released. No human check is named.</p>
+
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>On GitHub (google-research/google-research, cogentic_research_papers/bimatrix_nash_equilibrium), commit 4a7bc8a, November 25, 2026, 10:11 UTC; not on arXiv</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None found as of November 25, 2026, 09:49 PT. The README says the paper and the Lean were “entirely obtained by Cogentic” with “no human interaction other than the initial prompt”; it names no human check. News write-ups and one Hacker News comment only</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Claimed in the README (“Mathlib-only Lean 4 (v4.35.0) formalization of the entire proof … will be released in a companion submission”); not released as of November 25, 2026</dd>
+  </div>
+</dl>
+<p><a href="../episodes/go06-nash-equilibrium-one-fifth/">Watch the episode and read the record</a> · <a href="../connections/#GO06">See its connections</a></p>
+
+</section>
+<p class="attribution">Last checked November 25, 2026.</p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>N√(log N), not N log N? OpenAI’s claimed exponents for Fourier transforms and multiplication | AI Proved What?</title>
+<meta name="description" content="Two OpenAI preprints in result 379 claim that a finite abelian Fourier transform of order N needs N(log N)^(1/2+o(1)) binary linear gates, with an unconditional lower bound of order N√(log N), and that one multitape machine multiplies n-bit numbers in n(log n)^(1/2+o(1)) time, optimal if Weak ETH holds. The lower bounds rest on a new, unreviewed tensor-geometry paper. Lean covers both main bounds of each. Not built or run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/379-fourier-multiplication-log-exponent/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="N√(log N), not N log N?">
+<meta property="og:description" content="Two OpenAI preprints in result 379 claim that a finite abelian Fourier transform of order N needs N(log N)^(1/2+o(1)) binary linear gates, with an unconditional lower bound of order N√(log N), and that one multitape machine multiplies n-bit numbers in n(log n)^(1/2+o(1)) time, optimal if Weak ETH holds. The lower bounds rest on a new, unreviewed tensor-geometry paper. Lean covers both main bounds of each. Not built or run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/379-fourier-multiplication-log-exponent/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/379-fourier-multiplication-log-exponent/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="379 (Fourier transforms and multiplication): the textbook 8-point FFT butterfly network and the claimed cost, N times the square root of log N, not N log N.">
+<meta name="twitter:image:alt" content="379 (Fourier transforms and multiplication): the textbook 8-point FFT butterfly network and the claimed cost, N times the square root of log N, not N log N.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Result 379, November 2026: a companion episode on two of the result’s seven papers (see also <a href="https://aiprovedwhat.com/379">result 379</a>; sequel to <a href="../130-fourier-below-n-log-n/">130</a> and <a href="../109-integer-multiplication-below-n-log-n/">109</a>)</p>
+<h1>N√(log N), not N log N?</h1>
+<p class="subtitle">Two OpenAI preprints claim matching bounds: a finite abelian Fourier transform needs N(log N)^(1/2 + o(1)) binary linear gates, and one multitape machine multiplies n-bit numbers in n(log n)^(1/2 + o(1)) time, optimal if Weak ETH holds. The lower bounds rest on a new tensor-geometry paper.</p>
+<!-- companion-of:start -->
+<p class="papers-note">A companion episode of result <a href="../379-separation-vp-vnp-every-field/">379</a> in OpenAI’s catalog, on two of its 7 papers: <a href="https://github.com/openai/math/blob/main/preprints/The-logarithmic-exponent-of-finite-Fourier-transforms-November-24-2026/paper.pdf">The logarithmic exponent of finite Fourier transforms</a> and <a href="https://github.com/openai/math/blob/main/preprints/The-logarithmic-exponent-of-integer-multiplication-on-tapes-November-24-2026/paper.pdf">The logarithmic exponent of integer multiplication on tapes</a>. Main episode: <a href="../379-separation-vp-vnp-every-field/">VP ≠ VNP and Valiant’s whole hierarchy?</a>. Other companion episodes: <a href="../379-matrix-multiplication-nine-fourths/">Exactly two and a quarter?</a>; <a href="../379-sunflower-conjecture/">The sunflower conjecture, proved?</a>. <a href="../../connections/#379">See the result’s connections</a>.</p>
+<!-- companion-of:end -->
+
+<div class="player" data-youtube="KPOGHF9ifFw" data-title="Episode 379: N√(log N), not N log N?">
+  <a href="https://youtu.be/KPOGHF9ifFw">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 379 (Fourier transforms and multiplication): the textbook 8-point FFT butterfly network and the claimed cost, N times the square root of log N, not N log N.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">9:34. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/KPOGHF9ifFw?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/KPOGHF9ifFw?t=123" data-t="123"><span class="t">2:03</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/KPOGHF9ifFw?t=281" data-t="281"><span class="t">4:41</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/KPOGHF9ifFw?t=511" data-t="511"><span class="t">8:31</span><span>Where they stand</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="question">
+<h2 id="question">The question</h2>
+<p>A Fourier transform turns a list of N samples into N frequencies, each one a weighted sum of all the samples. Computed one sum at a time, that takes about N² operations. In 1965, Cooley and Tukey published a fast Fourier transform: split the list in half, transform the halves, and combine them with butterflies. For 8 samples, that is 3 stages of 4 butterflies. Count each weighted sum of two values as one gate, and you get 24 gates: N·log₂ N, as our script checks against the 8-point transform. How much of that log N per sample is really needed, if a circuit may use any coefficients and reuse anything it has computed?</p>
+<p>The same question for multiplying whole numbers. The school method for two 8-digit numbers takes 64 digit products. In 1962, Karatsuba and Ofman needed three half-size products instead of four: 27 for 8 digits, by our script. Fourier methods followed, and Harvey and van der Hoeven reached n log n, in a paper published in 2021. All of this on a multitape Turing machine: a fixed program with tape heads that move one cell per step, so moving digits around costs time too.</p>
+<p>Two of our episodes covered OpenAI claims from September that beat n log n: episode 109 for multiplication, with log n raised to 1 − 2^−182, and episode 130 for Fourier transforms, with an exponent about 1 − 10^−13. Lower bounds were even further away. Morgenstern proved about ½ N log N, but only when no coefficient is larger than one, and the other bounds the paper lists also need restrictions. With arbitrary coefficients, the sources we checked call any superlinear lower bound for an explicit matrix a central open problem. For multiplication, the paper lists only bounds for restricted models, or under conjectures.</p>
+<p>The surveys: S. V. Lokam, Complexity lower bounds using linear algebra (2009), and M. Kumar and B. L. Volk, <a href="https://arxiv.org/abs/1904.01182">Lower bounds for matrix factorization</a> (2019), which calls a superlinear lower bound for an explicit family of matrices a central open problem. That background is ours, not the paper’s.</p>
+</section>
+
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>Result 379, added on November 24, 2026, is a family of seven OpenAI papers. This episode covers two. The first, The logarithmic exponent of finite Fourier transforms, 41 pages, opens: The minimum number of binary linear gates for a finite abelian Fourier transform of order N is N(log N)^(1/2 + o(1)). Its Theorem 1.1: at least c·N√(log N) gates, and for every ε, at most C_ε·N(log N)^(1/2 + ε). Each gate forms a·u + b·v, with any coefficients. This holds for every finite abelian group, over every field in which N is invertible and which has the needed roots of unity, and per transform when one circuit handles many inputs, even mixing them. Polynomial multiplication gets the same exponent.</p>
+<p>In the paper’s words (Theorem 1.1): for finite abelian groups G₁, …, G_J of common order N ≥ 2, with N invertible in K and K containing a primitive root of unity of order exp(G_j), and T the direct sum of their forward or inverse transforms, “c JN√(log N) ≤ C_K(T) ≤ C_ε JN(1 + log N)^(1/2+ε)” for an absolute c > 0. “Theorem 1.1 leaves open an upper bound with ε = 0.” Its Theorem 1.2 extends the lower bound to systems with feedback, a low-rank error and a sparse error, and to their limits.</p>
+<p>The second, The logarithmic exponent of integer multiplication on tapes, 43 pages. One fixed multitape machine multiplies two n-bit numbers exactly in time n(log n)^(1/2 + o(1)), visiting only a linear number of tape cells. The lower bound, at least c·n√(log n), is conditional. It assumes variable-count Weak ETH: no fixed delta lets a deterministic algorithm decide 3-SAT on v variables in time 2^(v^(1 − δ)). Time 2^(v/log v) is still allowed, and so, the paper notes, are the recently claimed subexponential 3-SAT algorithms. Under that hypothesis, the best exponent is exactly 1/2. Division and square roots get the same bounds.</p>
+<p>In the second paper’s words: Theorem 1.1, “There is a deterministic multitape Turing machine that computes the full product of two n-bit integers in worst-case time at most n(1 + log n)^(1/2+o(1)), visiting O(n) tape cells.” Theorem 1.2, under variable-count Weak ETH, every exact deterministic multitape multiplier needs at least c·n√(log n) steps on some pair of n-bit operands, for each sufficiently large n. “Whether O(n√(log n)) time is attainable remains open.” The paper says the subexponential 3-SAT algorithms of Anthropic’s Claude (our <a href="../an03-eth-false-3sat/">AN03</a>) and of OpenAI (our <a href="../378-exponential-time-hypothesis-false/">378</a>) refute the original Exponential Time Hypothesis and are compatible with this weaker one; both are unreviewed claims. Anthropic makes Claude, which helps make this series.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What is new, and what they don’t claim</h2>
+<p>What is new: both exponents drop from nearly one to 1/2 + any ε, with lower bounds that match up to that epsilon. If the Fourier lower bound holds, it would be, by our reading of those sources, the first superlinear lower bound for an explicit matrix in this unrestricted model. Not claimed: the case ε = 0, which both papers leave open, any constants, or practical speed. The Fourier count charges only for gates, not for preparing coefficients. And both lower bounds rest on the family’s main paper, Euclidean geometry in the asymptotic spectrum of tensors, 86 pages; the multiplication bound also on the family’s circuit paper for Hamiltonian cycle. All are just as new and unreviewed.</p>
+<p>Compared with our earlier episodes: <a href="../130-fourier-below-n-log-n/">130</a> claimed Fourier circuits below N log N along a subsequence and an explicit algorithm with exponent 1 − 2.1 × 10⁻¹³ that also charged for indexing and preparing coefficients; <a href="../109-integer-multiplication-below-n-log-n/">109</a> claimed exponent 1 − 2⁻¹⁸² on one fixed tape machine. The new upper bounds reuse result 109’s tape network; the tape paper also uses the Fourier paper’s algorithm.</p>
+</section>
+
+<section aria-labelledby="how">
+<h2 id="how">How the proofs go</h2>
+<p>How the proofs go, by the papers’ account. The Fourier lower bound starts with a test that sees rank and sparsity at once. Put a matrix’s row label at the two left corners of a rectangle and its column label at the two right corners, and price it with the main paper’s Euclidean prices, where sharing a label costs distance. Flatten the rectangle, and the price reads the log of the rank. Make it thin, and it reads the log of the number of nonzero entries. At width one and height L, a character table costs (L + √(1 + L²))·log N, the most any matrix can. A permutation matrix, also of full rank, costs only (L + 1)·log N. With N 2^16 and L = 1/4: 20.49 against 20, by our arithmetic. Then a circuit is unrolled along about √(log N) time steps. Cutting the long paths costs one unit of rank per gate, and the short paths left reach few inputs. The test then forces at least c·N√(log N) gates.</p>
+<p>The upper bound starts with the Walsh Hadamard transform, the plus and minus one transform on binary digits. Written as a product of m commuting operators, it acts at each frequency by a sign, set by the parity of how many operators give minus one. That parity is a polynomial of degree m. The trick: run many independent inputs together, each with its own known shift, all shifts used equally often. At each frequency the shifted count is binomial, almost always near the middle, and there a polynomial of degree about √(m log m) gives the parity exactly. With three operators, the paper’s linear predictor is exact on 6 of every 8 shifts, as our script confirms. The rare exceptions are repaired exactly through a few combinations sent to the frequency side. Recursion then gives the exponent 1/2 + ε, and small field extensions reach other groups and fields.</p>
+<p>On tapes, the hard part is movement. Transposing an array, rows into columns, brings far-apart digits together, and doing it one address digit at a time costs a full pass each. The multiplication paper applies the same parity trick to these swaps on many streams at once, then runs short Fourier transforms of coprime lengths, precise enough that rounding gives the exact product. The lower bound runs backwards. Cut a run on an N × N bit array into epochs of N steps, and the tapes into blocks of N cells, and a fast run becomes a small network. If expander graphs could be placed with short edges in the main paper’s geometry, 3-SAT would get a power saving, against Weak ETH. Without that, there is a placement with short network edges but rows far from columns, so transposition needs about N²√(log N) steps. A reduction by Harvey and van der Hoeven carries this to multiplication.</p>
+</section>
+
+<section aria-labelledby="lean">
+<h2 id="lean">The Lean proofs</h2>
+<p>OpenAI’s Lean proofs, not run by us, cover both Fourier bounds, including the batched and robust versions, but not the polynomial multiplication lower bound. For tapes, they cover the upper bound, the Weak ETH lower bound and the optimal exponent 1/2; by our reading, the Lean lower bound is stated more broadly than the paper’s theorem, also for randomized machines that may get up to 1% of the low bits wrong. Division and square roots are not formalized. The imports are large: about 8,100 files and a million lines for Fourier, and about 5,600 files for the Weak ETH bound. Our text search finds no sorry or axiom. The pull request says the Lean and LaTeX builds were not run, and no build log is published.</p>
+<p>From the <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/ExactFourier.lean">Fourier comparator</a>, which imports only Mathlib: a gate evaluates to <code>g.leftCoeff * v g.left + g.rightCoeff * v g.right</code>, <code>complexity</code> is the least number of such gates, and the theorem states <code>lower ≤ complexity (fourierMatrix G K)</code> and <code>(complexity (fourierMatrix G K) : ℝ) ≤ upper</code>, where lower is c·N·√(log₂ N) and upper is C·N·(1 + log₂ N)^(1/2 + ε) (our notation for the Lean expressions), for every admissible group and field, and the same for the inverse transform. The <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/MultitapeWeakETH.lean">Weak ETH comparator</a> states its lower bound for machines with private random choices that succeed with probability at least 2^(−n/100), allowing n/100 wrong low bits; by our reading this is broader than the paper’s Theorem 1.2, and we found no manuscript stating it that way. The configurations permit only the axioms propext, Quot.sound and Classical.choice and do not enable the nanoda kernel. We did not read the proofs.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where they stand</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, <a href="https://github.com/openai/math/tree/main/preprints/The-logarithmic-exponent-of-finite-Fourier-transforms-November-24-2026">41 pages</a> and <a href="https://github.com/openai/math/tree/main/preprints/The-logarithmic-exponent-of-integer-multiplication-on-tapes-November-24-2026">43 pages</a>, in github.com/openai/math: <a href="https://github.com/openai/math/commit/92b516ef8e2abf66c3db7aa31438d3010bc7956f">commit 92b516ef8</a>, merged November 24, 2026, 16:18 PT (<a href="https://github.com/openai/math/pull/6">pull request #6</a>), two of the seven papers in result 379.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Key tools reviewed</dt>
+    <dd>No. Both lower bounds use the Euclidean tensor prices of the family’s main paper, <a href="https://github.com/openai/math/blob/main/preprints/Euclidean-geometry-in-the-asymptotic-spectrum-of-tensors-November-24-2026/paper.pdf">Euclidean geometry in the asymptotic spectrum of tensors</a> (86 pages); the tape lower bound also uses <a href="https://github.com/openai/math/blob/main/preprints/Circuit-lower-bounds-for-Hamiltonian-cycle-and-the-permanent-November-24-2026/paper.pdf">Circuit lower bounds for Hamiltonian cycle and the permanent</a>. Both were added the same day.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Tape lower bound unconditional</dt>
+    <dd>No. It assumes variable-count Weak ETH. The Fourier lower bound has no such assumption.</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean (mostly)</dt>
+    <dd>Both Fourier bounds, with the batched and robust versions, but not the polynomial-multiplication lower bound; the tape upper bound, the Weak ETH lower bound and the optimal exponent, but not division or square root (<a href="https://github.com/openai/math/blob/main/lean/docs/379.md">scope note</a>; comparators <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/ExactFourier.lean">ExactFourier</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/NearSquareRootMultiplication.lean">NearSquareRootMultiplication</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/MultitapeWeakETH.lean">MultitapeWeakETH</a>). Not run by us. The pull request says: “Lean and LaTeX builds were not run for this PR.” No build log or comparator run is published.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Expert reaction</dt>
+    <dd>None found as of November 25, 2026, about 07:00 PT: nothing on either paper on Scott Aaronson’s, Gil Kalai’s, Emanuele Viola’s or the Computational Complexity blog (their November 23–24 posts are about VP ≠ VNP and other results), and Hacker News had threads on the release, matrix multiplication, VP ≠ VNP, linear programming and sunflowers, but none on these two papers. We did not search the Lean Zulip. OSVerify has not reviewed them.</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked November 25, 2026, about 07:00 PT. The repository’s <a href="https://github.com/openai/math/blob/main/README.md">README</a> says its manuscripts were “produced by an unnamed internal OpenAI model” and are “best understood as a form of raw research data, rather than polished academic papers.” Not built or run by us.</p>
+<p>If they hold, the cost of a Fourier transform in linear gates is pinned down, up to a factor of (log N)^ε, at about N√(log N), not N log N. If Weak ETH is true, the same goes for multiplying on tapes. Whether the exponent 1/2 itself is attained, with ε = 0, is still open.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the textbook radix-2 FFT for 8 samples has 3 stages of 4 butterflies, each butterfly two binary linear gates (u + wv and u − wv), so 24 gates = N log₂ N; our script builds this circuit and checks it against the 8-point DFT matrix (also for N = 2, 4, 16 and 1024). For comparison, N√(log₂ N) is 13.86 at N = 8 (constants ignored; the theorem is asymptotic), and N log N is √(log₂ N) times larger than N√(log₂ N): 3.16 at N = 2¹⁰, 4.47 at 2²⁰, 8 at 2⁶⁴.</li>
+  <li>Ours: the school method for two 8-digit numbers takes 64 digit products; Karatsuba’s recursion takes 3³ = 27 (checked by a counting implementation on random inputs; for 1,024 digits 59,049 vs 1,048,576).</li>
+  <li>Ours, from the Fourier paper’s Theorem 2.2: at width 1 and height L the character table’s rectangle price is (L + √(1 + L²))·log N and a permutation matrix’s is (L + 1)·log N; for N = 2¹⁶ and L = 1/4 that is 20.492 vs 20 (gap 0.492, close to L²·log N/2 = 0.5). At L = 1/√(log N) the gap is 1/(1 + √(1 + 1/log N)), about one half for every N.</li>
+  <li>Ours: the paper’s predictor for three binary operators, (−1)^|β|·(2c − 3), gives the right sign on 6 of the 8 shifts β for every sign pattern k (exceptions 000 and 111 at k = 000, 001 and 110 at k = 001, as the paper says).</li>
+  <li>Ours, from the paper’s window formulas (Section 4): the predictor degree is at most 80, 1,096 and 12,962 for m = 100, 10,000 and 1,000,000 operators; the exact binomial mass outside the window is far below the paper’s bound 1/(2m³).</li>
+  <li>Ours, text only: Lean import closures (OpenAI files) of the solution modules: Fourier 8,115 files, 1,010,494 lines; tape upper bound 3,225 files, 425,187 lines; Weak ETH lower bound 5,571 files, 801,040 lines (including the upper-bound code). Outside libraries (Mathlib d13f23b and others) not scanned; Lean v4.34.1; no sorry, axiom, native_decide or unsafe outside comments (‘admit’ appears only as a variable name; one ‘opaque’ definition that carries its own proof).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li>OpenAI, <a href="https://github.com/openai/math/blob/main/preprints/The-logarithmic-exponent-of-finite-Fourier-transforms-November-24-2026/paper.pdf">The logarithmic exponent of finite Fourier transforms</a> (PDF), 41 pages, November 24, 2026 edition (<a href="https://github.com/openai/math/tree/main/preprints/The-logarithmic-exponent-of-finite-Fourier-transforms-November-24-2026">folder with LaTeX sources</a>).</li>
+  <li>OpenAI, <a href="https://github.com/openai/math/blob/main/preprints/The-logarithmic-exponent-of-integer-multiplication-on-tapes-November-24-2026/paper.pdf">The logarithmic exponent of integer multiplication on tapes</a> (PDF), 43 pages, November 24, 2026 edition (<a href="https://github.com/openai/math/tree/main/preprints/The-logarithmic-exponent-of-integer-multiplication-on-tapes-November-24-2026">folder with LaTeX sources</a>).</li>
+  <li>OpenAI, <a href="https://github.com/openai/math/blob/main/preprints/Euclidean-geometry-in-the-asymptotic-spectrum-of-tensors-November-24-2026/paper.pdf">Euclidean geometry in the asymptotic spectrum of tensors</a> (PDF), 86 pages, and <a href="https://github.com/openai/math/blob/main/preprints/Circuit-lower-bounds-for-Hamiltonian-cycle-and-the-permanent-November-24-2026/paper.pdf">Circuit lower bounds for Hamiltonian cycle and the permanent</a> (PDF), the companion papers the lower bounds rest on.</li>
+  <li>The Lean <a href="https://github.com/openai/math/blob/main/lean/docs/379.md">scope note</a> and comparators <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/ExactFourier.lean">ExactFourier.lean</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/NearSquareRootMultiplication.lean">NearSquareRootMultiplication.lean</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/MultitapeWeakETH.lean">MultitapeWeakETH.lean</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where these are two of the papers of result 379; OpenAI’s <a href="https://github.com/openai/math/blob/main/history.md">release notes</a> (November 24, 2026).</li>
+  <li>Background the papers cite: J. W. Cooley and J. W. Tukey (1965); J. Morgenstern, Note on a lower bound of the linear complexity of the fast Fourier transform (1973); A. Karatsuba and Yu. Ofman (1962); A. Schönhage and V. Strassen (1971); D. Harvey and J. van der Hoeven, Integer multiplication in time O(n log n) (Annals of Mathematics, 2021), and their reduction from matrix transposition to multiplication.</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with OpenAI, or with Anthropic beyond using its product Claude.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A Fourier transform turns a list of N samples into N frequencies, each one a weighted sum of all the samples. Computed one sum at a time, that takes about N² operations. In 1965, Cooley and Tukey published a fast Fourier transform: split the list in half, transform the halves, and combine them with butterflies. For 8 samples, that is 3 stages of 4 butterflies. Count each weighted sum of two values as one gate, and you get 24 gates: N·log₂ N, as our script checks against the 8-point transform. How much of that log N per sample is really needed, if a circuit may use any coefficients and reuse anything it has computed? The same question for multiplying whole numbers. The school method for two 8-digit numbers takes 64 digit products. In 1962, Karatsuba and Ofman needed three half-size products instead of four: 27 for 8 digits, by our script. Fourier methods followed, and Harvey and van der Hoeven reached n log n, in a paper published in 2021. All of this on a multitape Turing machine: a fixed program with tape heads that move one cell per step, so moving digits around costs time too. Two of our episodes covered OpenAI claims from September that beat n log n: episode 109 for multiplication, with log n raised to 1 − 2^−182, and episode 130 for Fourier transforms, with an exponent about 1 − 10^−13. Lower bounds were even further away. Morgenstern proved about ½ N log N, but only when no coefficient is larger than one, and the other bounds the paper lists also need restrictions. With arbitrary coefficients, the sources we checked call any superlinear lower bound for an explicit matrix a central open problem. For multiplication, the paper lists only bounds for restricted models, or under conjectures.</p>
+<h3><span class="t num">2:03</span>The claims</h3>
+<p>Result 379, added on November 24, 2026, is a family of seven OpenAI papers. This episode covers two. The first, The logarithmic exponent of finite Fourier transforms, 41 pages, opens: The minimum number of binary linear gates for a finite abelian Fourier transform of order N is N(log N)^(1/2 + o(1)). Its Theorem 1.1: at least c·N√(log N) gates, and for every ε, at most C_ε·N(log N)^(1/2 + ε). Each gate forms a·u + b·v, with any coefficients. This holds for every finite abelian group, over every field in which N is invertible and which has the needed roots of unity, and per transform when one circuit handles many inputs, even mixing them. Polynomial multiplication gets the same exponent. The second, The logarithmic exponent of integer multiplication on tapes, 43 pages. One fixed multitape machine multiplies two n-bit numbers exactly in time n(log n)^(1/2 + o(1)), visiting only a linear number of tape cells. The lower bound, at least c·n√(log n), is conditional. It assumes variable-count Weak ETH: no fixed delta lets a deterministic algorithm decide 3-SAT on v variables in time 2^(v^(1 − δ)). Time 2^(v/log v) is still allowed, and so, the paper notes, are the recently claimed subexponential 3-SAT algorithms. Under that hypothesis, the best exponent is exactly 1/2. Division and square roots get the same bounds. What is new: both exponents drop from nearly one to 1/2 + any ε, with lower bounds that match up to that epsilon. If the Fourier lower bound holds, it would be, by our reading of those sources, the first superlinear lower bound for an explicit matrix in this unrestricted model. Not claimed: the case ε = 0, which both papers leave open, any constants, or practical speed. The Fourier count charges only for gates, not for preparing coefficients. And both lower bounds rest on the family’s main paper, Euclidean geometry in the asymptotic spectrum of tensors, 86 pages; the multiplication bound also on the family’s circuit paper for Hamiltonian cycle. All are just as new and unreviewed.</p>
+<h3><span class="t num">4:41</span>How the proofs go</h3>
+<p>How the proofs go, by the papers’ account. The Fourier lower bound starts with a test that sees rank and sparsity at once. Put a matrix’s row label at the two left corners of a rectangle and its column label at the two right corners, and price it with the main paper’s Euclidean prices, where sharing a label costs distance. Flatten the rectangle, and the price reads the log of the rank. Make it thin, and it reads the log of the number of nonzero entries. At width one and height L, a character table costs (L + √(1 + L²))·log N, the most any matrix can. A permutation matrix, also of full rank, costs only (L + 1)·log N. With N 2^16 and L = 1/4: 20.49 against 20, by our arithmetic. Then a circuit is unrolled along about √(log N) time steps. Cutting the long paths costs one unit of rank per gate, and the short paths left reach few inputs. The test then forces at least c·N√(log N) gates. The upper bound starts with the Walsh Hadamard transform, the plus and minus one transform on binary digits. Written as a product of m commuting operators, it acts at each frequency by a sign, set by the parity of how many operators give minus one. That parity is a polynomial of degree m. The trick: run many independent inputs together, each with its own known shift, all shifts used equally often. At each frequency the shifted count is binomial, almost always near the middle, and there a polynomial of degree about √(m log m) gives the parity exactly. With three operators, the paper’s linear predictor is exact on 6 of every 8 shifts, as our script confirms. The rare exceptions are repaired exactly through a few combinations sent to the frequency side. Recursion then gives the exponent 1/2 + ε, and small field extensions reach other groups and fields. On tapes, the hard part is movement. Transposing an array, rows into columns, brings far-apart digits together, and doing it one address digit at a time costs a full pass each. The multiplication paper applies the same parity trick to these swaps on many streams at once, then runs short Fourier transforms of coprime lengths, precise enough that rounding gives the exact product. The lower bound runs backwards. Cut a run on an N × N bit array into epochs of N steps, and the tapes into blocks of N cells, and a fast run becomes a small network. If expander graphs could be placed with short edges in the main paper’s geometry, 3-SAT would get a power saving, against Weak ETH. Without that, there is a placement with short network edges but rows far from columns, so transposition needs about N²√(log N) steps. A reduction by Harvey and van der Hoeven carries this to multiplication. OpenAI’s Lean proofs, not run by us, cover both Fourier bounds, including the batched and robust versions, but not the polynomial multiplication lower bound. For tapes, they cover the upper bound, the Weak ETH lower bound and the optimal exponent 1/2; by our reading, the Lean lower bound is stated more broadly than the paper’s theorem, also for randomized machines that may get up to 1% of the low bits wrong. Division and square roots are not formalized. The imports are large: about 8,100 files and a million lines for Fourier, and about 5,600 files for the Weak ETH bound. Our text search finds no sorry or axiom. The pull request says the Lean and LaTeX builds were not run, and no build log is published.</p>
+<h3><span class="t num">8:31</span>Where they stand</h3>
+<p>Where it stands, on the morning of November 25. Both papers are preprints in OpenAI’s repository, not peer reviewed, and the repository calls its manuscripts raw research data from an unnamed internal model. Their lower bounds rest on the family’s main paper, also unreviewed, and the multiplication bound also on an unproved hypothesis. We found no expert reaction to either paper: nothing on the blogs of Scott Aaronson, Gil Kalai or Lance Fortnow, no Hacker News thread about them, and no OSVerify review. Not built or run by us. If they hold, the cost of a Fourier transform in linear gates is pinned down, up to a factor of (log N)^ε, at about N√(log N), not N log N. If Weak ETH is true, the same goes for multiplying on tapes. Whether the exponent 1/2 itself is attained, with ε = 0, is still open.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20379fm%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

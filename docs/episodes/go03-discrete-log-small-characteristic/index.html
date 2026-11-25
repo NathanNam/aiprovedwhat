@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Discrete logarithms below quasi-polynomial time? Google’s Cogentic claim, and its gigantic threshold | AI Proved What?</title>
+<meta name="description" content="A paper attributed to Google’s Cogentic agent (Gemini 4) claims a zero-error algorithm for discrete logarithms in finite fields of fixed characteristic in expected time exp((2 + o(1))(ln n)²/ln ln ln n), below the proven quasi-polynomial bound of 2019; as defined, its new method runs only for astronomically large fields. Lean claimed, not released; no human check named. Not built or run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/go03-discrete-log-small-characteristic/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Discrete logarithms below quasi-polynomial time?">
+<meta property="og:description" content="A paper attributed to Google’s Cogentic agent (Gemini 4) claims a zero-error algorithm for discrete logarithms in finite fields of fixed characteristic in expected time exp((2 + o(1))(ln n)²/ln ln ln n), below the proven quasi-polynomial bound of 2019; as defined, its new method runs only for astronomically large fields. Lean claimed, not released; no human check named. Not built or run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/go03-discrete-log-small-characteristic/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/go03-discrete-log-small-characteristic/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="GO03: Discrete logarithms below quasi-polynomial time? The divisor ln ln ln n over our schematic descent: halving the degree takes 20 levels, dividing by 16 takes 5.">
+<meta name="twitter:image:alt" content="GO03: Discrete logarithms below quasi-polynomial time? The divisor ln ln ln n over our schematic descent: halving the degree takes 20 levels, dividing by 16 takes 5.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">GO03 (Specials; Beyond OpenAI; the third of six Cogentic papers; see also <a href="../go01-integer-factorization-l-one-third/">GO01</a> and <a href="../go02-deterministic-subexponential-factoring/">GO02</a>), November 2026</p>
+<h1>Discrete logarithms below quasi-polynomial time?</h1>
+<p class="subtitle">A paper attributed to Google’s Cogentic agent claims a proven algorithm for discrete logarithms in finite fields of fixed small characteristic that beats the quasi-polynomial bound proven in 2019, by a divisor of ln ln ln n in the exponent. As the paper defines it, the new method only runs on fields too large ever to write down. Its Lean proof is claimed but not released, and no human check is named.</p>
+
+<div class="player" data-youtube="yjXzVloJjkQ" data-title="GO03: Discrete logarithms below quasi-polynomial time?">
+  <a href="https://youtu.be/yjXzVloJjkQ">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play GO03: Discrete logarithms below quasi-polynomial time? The divisor ln ln ln n over our schematic descent: halving the degree takes 20 levels, dividing by 16 takes 5.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:56. English captions available. The video loads from YouTube when you press play.</p>
+
+<p><strong>Note.</strong> AI Proved What? is independent and not affiliated with Google. Everything here comes from public sources.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/yjXzVloJjkQ?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/yjXzVloJjkQ?t=167" data-t="167"><span class="t">2:47</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/yjXzVloJjkQ?t=314" data-t="314"><span class="t">5:14</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/yjXzVloJjkQ?t=465" data-t="465"><span class="t">7:45</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="question">
+<h2 id="question">The question</h2>
+<p>This is GO03, the third of our Specials on papers from Google’s Cogentic. On November 25, 2026, Google Research added six research papers to its public GitHub repository. Each README says that the paper and a Lean formalization were entirely obtained by Cogentic, an agent system built on Gemini 4, with no human interaction other than the initial prompt. The Lean files have not been released. Google is not affiliated with this series. This episode takes the third paper in our series, on discrete logarithms in finite fields of small characteristic. It claims a proven algorithm faster than the quasi-polynomial bound, the level where the best methods for these fields have stood for over a decade. So what is the question?</p>
+<p>A finite field is a finite set of elements you can add, subtract, multiply and divide. The field with 16 elements can be written as strings of 4 bits: polynomials in X with coefficients 0 or 1, reduced modulo X⁴ + X + 1. Take g equal to X, and keep multiplying by it. The powers run through all 15 nonzero elements before coming back to 1. Going forward is easy. The discrete logarithm problem goes backward: given h, find the exponent x with gˣ = h. For h = 1101, trying the powers in order finds x = 13, on the 14th try. With n bits instead of 4, a search like that can need about 2ⁿ tries. Some cryptography was once built on fields like these, relying on this problem being hard.</p>
+<p>Fields built from a small prime, like these built from bits, are called fields of small characteristic, and they fell first. In 2013, Joux and others found much faster methods, and Barbulescu, Gaudry, Joux and Thomé gave an algorithm that runs in quasi-polynomial time, about the input size raised to a power that grows like its logarithm, but only under heuristic assumptions. Granger, Kleinjung and Zumbrägel then proved such a bound for infinitely many fields. In 2019, Kleinjung and Wesolowski proved it for every field of fixed characteristic: time (pn)^(2 log₂ n + O(1)); Lido later gave a second proof. In practice, a record computation in the field with 2^30,750 elements, completed in 2019, took about 2,900 core years. As the paper tells it, both proofs, and the heuristic descents behind them, stay at the same level: e^(c (log n)²). For prime fields and elliptic curves in general, nothing this fast is known.</p>
+</section>
+
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The claim. The paper has 36 pages and no author line; a footnote credits Cogentic. Its main theorem: one fixed Turing machine, reading fair coin flips, takes a field with pⁿ elements, written as polynomials, and two nonzero elements g and h. With probability one it halts. It either returns an exponent x with gˣ = h, checked, or returns an exponent E with g^E = 1 but h^E ≠ 1, which proves that no such x exists. It never needs to factor pⁿ − 1. For each fixed p, as n grows, its expected time is at most e^((2 + o(1)) (log n)² / log log log n). The best proven bound before had (log n)² with no such divisor. Since log log log n grows without limit, the paper calls this sub-quasi-polynomial: (pn)^o(log n). It assumes no unproven hypothesis, and it also states an explicit bound for every large enough n, with one absolute constant left unspecified.</p>
+<p>In the paper’s words (Definition 1.1, Theorem 1.2, pp. 2–3): a single uniform classical multitape Turing machine without advice, with a read-once tape of uniform random bits, takes (p, n, f, g, h), where f is a monic irreducible polynomial of degree n over F_p presenting F_(pⁿ) = F_p[X]/(f), and halts with probability 1, returning either (LOG, x) with gˣ = h or (NOT_IN_SUBGROUP, E) with g^E = 1 and h^E ≠ 1, each verified; it needs no factorization of pⁿ − 1 and relies on no unproven hypotheses. For n ≥ 16 with ℓ₃ ≥ 10 and B ≥ 4, the worst-case expected bit complexity is at most exp((2/ln B + 60/(s ln p))(ln n)² + C₀ (ln n)(ln ln n)) for an absolute constant C₀ (1.1). For fixed p this gives exp((2 + o(1))(ln n)²/ln ln ln n) = (pn)^o(log n); the paper also states a version for slowly growing p.</p>
+</section>
+
+<section aria-labelledby="new">
+<h2 id="new">How much faster, and when</h2>
+<p>How much faster? The divisor, log log log n, grows unimaginably slowly. For n equal to a billion it is about 1.1; for n with a hundred digits, about 1.7. It reaches 2 only when n has about 700 digits. And the algorithm, as the paper defines it, uses its new method only when n is enormous. In step one, unless two of its parameters are large enough, it simply tries x = 0, 1, 2, and so on. By our arithmetic from the paper’s definitions, for p = 2, that covers every n below 2^(2^25,088): such an n would have more than 10^7,551 digits. So, as defined, for any field anyone could write down, it tries exponents one by one; for the record field, that could mean more than 10^9,256 tries. Even at that threshold, the leading coefficient of its explicit bound is about 1.88, against about 2.89 in Kleinjung and Wesolowski’s bound, ignoring lower order terms. What is not claimed: a practical algorithm, any threat to keys in use, or anything about prime fields or elliptic curves over them. Small-characteristic fields were already considered unsafe for cryptography.</p>
+</section>
+
+<section aria-labelledby="how">
+<h2 id="how">How the proof goes</h2>
+<p>How the proof goes, by the paper’s overview. Like Lido’s proof, it presents the field through an elliptic curve. A special point is chosen so that raising to the q-th power, an operation of huge degree in the field, matches adding a fixed point on the curve, which has low degree. Then comes a descent: write a piece of high degree as a product of pieces of lower degree, then do the same to each of those, down to a base whose logarithms are known. Earlier proven descents cut the degree roughly in half at each step, so the depth is about log n, and each step branches into a number of pieces that is a power of n. The tree has n to the order of log n nodes. The new paper cuts the degree by a factor B that grows with n, so the tree is shallower. For a degree of about a million, halving takes 20 levels; dividing by 16 takes 5. The obstacle: each step needs a random polynomial to split into linear factors, and for the obvious larger polynomials, the chance is about one over a factorial, hopeless. The paper’s fix is sparse, linearized polynomials over a slowly growing middle field, whose roots form a shifted vector space, an affine space. Their Galois group, the symmetry group of the roots, is then trapped inside an affine group far smaller than that factorial, beside a small symmetric group from a leftover factor.</p>
+<p>The paper proves the groups are exactly these, so that the Hasse–Weil bound, a count of points on curves, guarantees enough good random choices at every step. The base is every point of the curve over a moderate field extension, with logarithms computed directly, and the final linear algebra never factors the group order. We read the theorem, the overview, the algorithm and the final proof, and redid the threshold arithmetic and the conversion between the paper’s two forms of the bound. We did not check Sections 3 to 5, where the group theory and the geometry are, nor the proofs of the lemmas in Section 6. The README says a complete Lean formalization, from Mathlib alone, has been completed and will be released. Without it, there is nothing for us to read. The Cogentic paper on arXiv describes the system: an orchestrator assigns directions to parallel provers, adversarial verifiers check each draft, and checked lemmas go into a shared ledger. Its earlier results were verified by domain experts, by the authors’ account, in other fields. For this paper, no human check is named.</p>
+<p>Some scales from the paper’s Table 1 (p. 6), for fixed p: the middle field F_(q₀), q₀ = p^s with ln q₀ ≍ (ln ln ln n)²; the degree reduction per step B ≍ (ln ln n)/(ln ln ln n)²; the elliptic base field F_q with q = n^(2+o(1)); the joint monodromy group AGL_N(F_(q₀)) × S_(N_R), with N_R below 4 (log₂ n)^(1/8); branching about n^(2+o(1)) and depth about ln n/ln B. The paper says the leading 2 comes from needing q ≥ n^(2+o(1)) for an elliptic curve with a rational point of order n.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Public</dt>
+    <dd>On GitHub, in <a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers/discrete_logarithm">google-research/google-research, cogentic_research_papers/discrete_logarithm</a>, added by <a href="https://github.com/google-research/google-research/commit/4a7bc8ab0bc7">commit 4a7bc8ab0bc7</a> (“Add six Cogentic research papers”, November 25, 2026, 10:11 UTC). Not on arXiv. The README ends “This is not an official Google product.” We found no announcement on Google’s research or DeepMind blogs.</dd>
+  </div>
+<!-- review-step:start -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>Not yet</dd>
+  </div>
+<!-- review-step:end -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Lean released</dt>
+    <dd>No. The <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/discrete_logarithm/README.md">README</a> says a complete, Mathlib-only Lean 4 (v4.35.0) formalization of the entire proof “has also been completed and will be released in a companion submission”; the commit message says the same for all six papers. Nothing was public when we checked (16:07 UTC, November 25; no later commit to the folder).</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked by a human</dt>
+    <dd>None named. The README says the paper and its Lean “were entirely obtained by Cogentic”, using Gemini 4, with “no human interaction other than the initial prompt”. Cogentic’s <a href="https://arxiv.org/abs/2609.40324">arXiv paper</a> says its earlier results were “independently verified by domain experts”; no such check is claimed for this paper.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Expert reaction</dt>
+    <dd>None from a named expert found as of the morning of November 25, 2026 (Pacific); news write-ups and a <a href="https://news.ycombinator.com/item?id=50642086">Hacker News thread</a> only.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Faster on fields in use</dt>
+    <dd>No. By our arithmetic from the paper’s own definitions (Theorem 1.2(2), Section 6.2 step 1), the algorithm uses its new descent only when ℓ₃ ≥ 10 and B ≥ 4, which for p = 2 means n ≥ 2^(2^25,088); for every smaller n it tries x = 0, 1, 2, … one by one.</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked November 25, 2026, morning Pacific time. Not built or run by us.</p>
+<p>This is a Specials episode, the third of six on the papers Cogentic posted that day. GO01 and GO02, from the same day, claim proven factoring bounds; each gets its own episode. If it holds, discrete logarithms in fields of fixed small characteristic can be computed in proven time below the old quasi-polynomial bound, the first claimed step below that level since 2013. But the gain shows only for fields far beyond anything that could ever be written down, and for the keys people actually use, nothing changes. See <a href="../go01-integer-factorization-l-one-third/">GO01</a> and <a href="../go02-deterministic-subexponential-factoring/">GO02</a>.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: in the field with 16 elements, F₂[X]/(X⁴ + X + 1), the powers of g = X are 0001, 0010, 0100, 1000, 0011, 0110, 1100, 1011, 0101, 1010, 0111, 1110, 1111, 1101, 1001; h = 1101 (X³ + X² + 1) is g^13, found on try 14.</li>
+  <li>Ours: ln ln ln n is about 1.11 for n = 10⁹, 1.69 for n = 10¹⁰⁰ and 2.05 for n = 10¹⁰⁰⁰; it reaches 2 at n ≈ 10^703 and 3 at n ≈ 10^(2.3e+08).</li>
+  <li>Ours, from the paper’s definitions (ℓ₁ = ⌊log₂ n⌋, ℓ₂ = ⌊log₂ ℓ₁⌋, ℓ₃ = ⌊log₂ ℓ₂⌋, ℓ_p = ⌈log₂ p⌉, s = max(3, ⌈ℓ₃²/ℓ_p⌉), B = ⌊ℓ₂/(32 s ℓ_p)⌋): ℓ₃ ≥ 10 needs ℓ₂ ≥ 1,024 (the proof says so, p. 33); B ≥ 4 then needs ℓ₂ ≥ 25,088 for p = 2 (ℓ₃ = 14, s = 196), and no prime does better. So the descent starts at n = 2^(2^25,088), a number with about 10^7551.7 digits.</li>
+  <li>Ours: the record field F_(2^30750) would be handled by step 1, trying up to 2^30750 − 2 ≈ 10^9256.67 exponents.</li>
+  <li>Ours, lower-order terms ignored: at that threshold the explicit bound (1.1) has leading coefficient 2/ln 4 + 60/(196 ln 2) = 1.443 + 0.442 = 1.884 times (ln n)², against 2/ln 2 = 2.885 for Kleinjung and Wesolowski’s (pn)^(2 log₂ n + O(1)) with p fixed; (ln n)² itself is about 10^15104 there.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li>Cogentic (Google Research), <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/discrete_logarithm/paper.pdf">Discrete Logarithms in Finite Fields of Fixed Characteristic in Sub-Quasi-Polynomial Time</a>, 36 pages, CC-BY-4.0; <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/discrete_logarithm/README.md">README</a>; <a href="https://github.com/google-research/google-research/commit/4a7bc8ab0bc7">commit 4a7bc8ab0bc7</a>.</li>
+  <li>Y. Cai, V. Gupta, Y. Jiang, C. Liaw, A. Mehta, G. Velegkas and D. Wang, <a href="https://arxiv.org/abs/2609.40324">Cogentic: Multi-Agent Orchestration for Automated Proof Discovery</a>, arXiv:2609.40324 (2026).</li>
+  <li>Earlier work the paper cites: R. Barbulescu, P. Gaudry, A. Joux and E. Thomé, <a href="https://arxiv.org/abs/1306.4244">A heuristic quasi-polynomial algorithm for discrete logarithm in finite fields of small characteristic</a> (EUROCRYPT 2014); R. Granger, T. Kleinjung and J. Zumbrägel, <a href="https://arxiv.org/abs/1507.01495">On the discrete logarithm problem in finite fields of fixed characteristic</a> (Trans. Amer. Math. Soc. 2018); T. Kleinjung and B. Wesolowski, <a href="https://arxiv.org/abs/1906.10668">Discrete logarithms in quasi-polynomial time in finite fields of fixed characteristic</a> (J. Amer. Math. Soc. 2022); G. Lido, <a href="https://arxiv.org/abs/2206.10327">A provably quasi-polynomial algorithm for the discrete logarithm problem in finite fields of small characteristic</a> (Finite Fields Appl. 2026).</li>
+  <li>Background: R. Granger, T. Kleinjung, A. K. Lenstra, B. Wesolowski and J. Zumbrägel, <a href="https://arxiv.org/abs/2008.02717">Computation of a 30750-bit binary field discrete logarithm</a> (Math. Comp. 2021).</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Google, OpenAI or Anthropic.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is GO03, the third of our Specials on papers from Google’s Cogentic. On November 25, 2026, Google Research added six research papers to its public GitHub repository. Each README says that the paper and a Lean formalization were entirely obtained by Cogentic, an agent system built on Gemini 4, with no human interaction other than the initial prompt. The Lean files have not been released. Google is not affiliated with this series. This episode takes the third paper in our series, on discrete logarithms in finite fields of small characteristic. It claims a proven algorithm faster than the quasi-polynomial bound, the level where the best methods for these fields have stood for over a decade. So what is the question? A finite field is a finite set of elements you can add, subtract, multiply and divide. The field with 16 elements can be written as strings of 4 bits: polynomials in X with coefficients 0 or 1, reduced modulo X⁴ + X + 1. Take g equal to X, and keep multiplying by it. The powers run through all 15 nonzero elements before coming back to 1. Going forward is easy. The discrete logarithm problem goes backward: given h, find the exponent x with gˣ = h. For h = 1101, trying the powers in order finds x = 13, on the 14th try. With n bits instead of 4, a search like that can need about 2ⁿ tries. Some cryptography was once built on fields like these, relying on this problem being hard. Fields built from a small prime, like these built from bits, are called fields of small characteristic, and they fell first. In 2013, Joux and others found much faster methods, and Barbulescu, Gaudry, Joux and Thomé gave an algorithm that runs in quasi-polynomial time, about the input size raised to a power that grows like its logarithm, but only under heuristic assumptions. Granger, Kleinjung and Zumbrägel then proved such a bound for infinitely many fields. In 2019, Kleinjung and Wesolowski proved it for every field of fixed characteristic: time (pn)^(2 log₂ n + O(1)); Lido later gave a second proof. In practice, a record computation in the field with 2^30,750 elements, completed in 2019, took about 2,900 core years. As the paper tells it, both proofs, and the heuristic descents behind them, stay at the same level: e^(c (log n)²). For prime fields and elliptic curves in general, nothing this fast is known.</p>
+<h3><span class="t num">2:47</span>The claim</h3>
+<p>The claim. The paper has 36 pages and no author line; a footnote credits Cogentic. Its main theorem: one fixed Turing machine, reading fair coin flips, takes a field with pⁿ elements, written as polynomials, and two nonzero elements g and h. With probability one it halts. It either returns an exponent x with gˣ = h, checked, or returns an exponent E with g^E = 1 but h^E ≠ 1, which proves that no such x exists. It never needs to factor pⁿ − 1. For each fixed p, as n grows, its expected time is at most e^((2 + o(1)) (log n)² / log log log n). The best proven bound before had (log n)² with no such divisor. Since log log log n grows without limit, the paper calls this sub-quasi-polynomial: (pn)^o(log n). It assumes no unproven hypothesis, and it also states an explicit bound for every large enough n, with one absolute constant left unspecified. How much faster? The divisor, log log log n, grows unimaginably slowly. For n equal to a billion it is about 1.1; for n with a hundred digits, about 1.7. It reaches 2 only when n has about 700 digits. And the algorithm, as the paper defines it, uses its new method only when n is enormous. In step one, unless two of its parameters are large enough, it simply tries x = 0, 1, 2, and so on. By our arithmetic from the paper’s definitions, for p = 2, that covers every n below 2^(2^25,088): such an n would have more than 10^7,551 digits. So, as defined, for any field anyone could write down, it tries exponents one by one; for the record field, that could mean more than 10^9,256 tries. Even at that threshold, the leading coefficient of its explicit bound is about 1.88, against about 2.89 in Kleinjung and Wesolowski’s bound, ignoring lower order terms. What is not claimed: a practical algorithm, any threat to keys in use, or anything about prime fields or elliptic curves over them. Small-characteristic fields were already considered unsafe for cryptography.</p>
+<h3><span class="t num">5:14</span>How the proof goes</h3>
+<p>How the proof goes, by the paper’s overview. Like Lido’s proof, it presents the field through an elliptic curve. A special point is chosen so that raising to the q-th power, an operation of huge degree in the field, matches adding a fixed point on the curve, which has low degree. Then comes a descent: write a piece of high degree as a product of pieces of lower degree, then do the same to each of those, down to a base whose logarithms are known. Earlier proven descents cut the degree roughly in half at each step, so the depth is about log n, and each step branches into a number of pieces that is a power of n. The tree has n to the order of log n nodes. The new paper cuts the degree by a factor B that grows with n, so the tree is shallower. For a degree of about a million, halving takes 20 levels; dividing by 16 takes 5. The obstacle: each step needs a random polynomial to split into linear factors, and for the obvious larger polynomials, the chance is about one over a factorial, hopeless. The paper’s fix is sparse, linearized polynomials over a slowly growing middle field, whose roots form a shifted vector space, an affine space. Their Galois group, the symmetry group of the roots, is then trapped inside an affine group far smaller than that factorial, beside a small symmetric group from a leftover factor. The paper proves the groups are exactly these, so that the Hasse–Weil bound, a count of points on curves, guarantees enough good random choices at every step. The base is every point of the curve over a moderate field extension, with logarithms computed directly, and the final linear algebra never factors the group order. We read the theorem, the overview, the algorithm and the final proof, and redid the threshold arithmetic and the conversion between the paper’s two forms of the bound. We did not check Sections 3 to 5, where the group theory and the geometry are, nor the proofs of the lemmas in Section 6. The README says a complete Lean formalization, from Mathlib alone, has been completed and will be released. Without it, there is nothing for us to read. The Cogentic paper on arXiv describes the system: an orchestrator assigns directions to parallel provers, adversarial verifiers check each draft, and checked lemmas go into a shared ledger. Its earlier results were verified by domain experts, by the authors’ account, in other fields. For this paper, no human check is named.</p>
+<h3><span class="t num">7:45</span>Where it stands</h3>
+<p>Where it stands, on the morning of November 25, Pacific time. The paper is on GitHub, not on arXiv, and it is not peer reviewed. The Lean formalization is claimed, but not released. The README names no human who checked the proof. We found no announcement on Google’s blogs, only news write-ups and forum threads, and no named expert reaction yet. As defined, the new method runs only on fields far too large to write down. Not built or run by us. This is a Specials episode, the third of six on the papers Cogentic posted that day. GO01 and GO02, from the same day, claim proven factoring bounds; each gets its own episode. If it holds, discrete logarithms in fields of fixed small characteristic can be computed in proven time below the old quasi-polynomial bound, the first claimed step below that level since 2013. But the gain shows only for fields far beyond anything that could ever be written down, and for the keys people actually use, nothing changes.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=GO03%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

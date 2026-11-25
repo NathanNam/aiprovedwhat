@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Factoring in proven time L[1/3, 105]? Google’s Cogentic claim, and why 105 is no threat to RSA | AI Proved What?</title>
+<meta name="description" content="A paper attributed to Google’s Cogentic agent (Gemini 4) claims a Las Vegas algorithm that factors every integer in expected time L_N[1/3, 105] with no unproven hypotheses: the number field sieve’s exponent, proven, but with a constant far too large to matter in practice. Lean claimed, not released; no human check named. Not built or run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/go01-integer-factorization-l-one-third/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Factoring in proven time L[1/3, 105]?">
+<meta property="og:description" content="A paper attributed to Google’s Cogentic agent (Gemini 4) claims a Las Vegas algorithm that factors every integer in expected time L_N[1/3, 105] with no unproven hypotheses: the number field sieve’s exponent, proven, but with a constant far too large to matter in practice. Lean claimed, not released; no human check named. Not built or run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/go01-integer-factorization-l-one-third/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/go01-integer-factorization-l-one-third/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="GO01: Factoring in proven time L[1/3, 105]? Our bars for a 617-digit number, with lower-order terms dropped: the number field sieve’s formula about 10^35 operations, Lenstra and Pomerance’s 10^44, trial division 10^308, the new bound 10^1921.">
+<meta name="twitter:image:alt" content="GO01: Factoring in proven time L[1/3, 105]? Our bars for a 617-digit number, with lower-order terms dropped: the number field sieve’s formula about 10^35 operations, Lenstra and Pomerance’s 10^44, trial division 10^308, the new bound 10^1921.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">GO01 (Specials; Beyond OpenAI; the first of six Cogentic papers; see also <a href="../279-exact-quantum-factoring/">279</a>), November 2026</p>
+<h1>Factoring in proven time L[1/3, 105]?</h1>
+<p class="subtitle">A paper attributed to Google’s Cogentic agent claims an algorithm that provably factors every whole number in expected time L_N[1/3, 105], with no unproven hypotheses: the number field sieve’s exponent, with a constant so large that it is no threat to RSA. Its Lean proof is claimed but not released, and no human check is named.</p>
+
+<div class="player" data-youtube="f9wqP1sae9w" data-title="GO01: Factoring in proven time L[1/3, 105]?">
+  <a href="https://youtu.be/f9wqP1sae9w">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play GO01: Factoring in proven time L[1/3, 105]? Our bars for a 617-digit number, with lower-order terms dropped: the number field sieve’s formula about 10^35 operations, Lenstra and Pomerance’s 10^44, trial division 10^308, the new bound 10^1921.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:11. English captions available. The video loads from YouTube when you press play.</p>
+
+<p><strong>Note.</strong> AI Proved What? is independent and not affiliated with Google. Everything here comes from public sources.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/f9wqP1sae9w?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/f9wqP1sae9w?t=158" data-t="158"><span class="t">2:38</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/f9wqP1sae9w?t=291" data-t="291"><span class="t">4:51</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/f9wqP1sae9w?t=425" data-t="425"><span class="t">7:05</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="question">
+<h2 id="question">The question</h2>
+<p>This is GO01, the first of our Specials on papers from Google’s Cogentic. On November 25, 2026, Google Research added six math papers to its public GitHub repository. Each README says that the paper and a Lean formalization were entirely obtained by Cogentic, an agent system built on Gemini 4, with no human interaction other than the initial prompt. The Lean files have not been released. Google is not affiliated with this series. This episode takes the first paper, on factoring whole numbers. It claims a proven running time of the same shape as the fastest method used in practice, the number field sieve, whose speed has only ever rested on unproven assumptions. So what is the question?</p>
+<p>Multiplying two primes is easy. Undoing it is hard. Trial division tries one divisor after another. Going through the odd numbers from 3, it splits 8,051 on its 41st try, at 83. For a number with 617 digits, the size of an RSA-2048 key, it could need about 10^308 tries. Faster methods use squares. 8,051 is 90² − 7², so those two squares leave the same remainder, and the greatest common divisor of 90 − 7 and 8,051 is 83: a factor. Sieve methods build such pairs of squares. They collect many numbers made only of small primes, called smooth numbers, and combine them with linear algebra over zeros and ones.</p>
+<p>Factoring times are measured on a scale written L of N, with two numbers in brackets: alpha and a constant c. Alpha 0 is polynomial in the number of digits; alpha 1 is exponential, like trial division. As the paper recounts it, Dixon’s random squares method of 1981 gave the first proven bound in between. In 1992, Lenstra and Pomerance proved L[1/2, 1], for an algorithm that flips coins but is never wrong. The number field sieve, from the early nineties, runs in L[1/3, about 1.92], but only under unproven assumptions about smooth numbers and more. It is what factors record numbers, which reached 270 digits this autumn. One thing the paper does not cite: in 2018, Lee and Venkatesan proved that a randomized sieve finds two squares with equal remainders in that same time. That those squares give a factor, they showed only under a conjecture, for special products of two primes.</p>
+</section>
+
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The claim. The paper has 54 pages and no author line; a footnote credits Cogentic. Its main theorem: one fixed multitape Turing machine, reading fair coin flips, takes any whole number N of at least 2. With probability one it halts, and every time it halts it outputs the exact prime factorization, each prime certified by the AKS primality test and the product checked against N. Its expected number of bit operations is at most L[1/3, 105], as N grows; its memory is at most L[1/3, 40], whatever the coins do. The coins affect only the running time, never the answer. Unconditional means no unproven hypothesis, not even the generalized Riemann hypothesis; and, the paper says, every constant in the proof can be computed. If it holds, this is the first proven bound with exponent 1/3 for complete factoring; the best before was L[1/2, 1], from 1992.</p>
+<p>In the paper’s notation (Theorem 1.1, p. 2): L_x[α, c] = exp(c (ln x)^α (ln ln x)^(1−α)), and T(N) ≤ L_N[α, c] means that the lim sup of ln T(N) / ((ln N)^α (ln ln N)^(1−α)) is at most c. There is a single uniform probabilistic multitape Turing machine M, reading a tape of fair coin flips, that for every N ≥ 2 halts with probability 1, outputs the exact factorization N = p₁^e₁ ⋯ p_k^e_k with each p_i certified by the Agrawal–Kayal–Saxena test and the product checked, has expected bit-operation count at most L_N[1/3, 105], and uses at most L_N[1/3, 40] tape cells for every coin sequence. “All implied constants and finite thresholds in the proof are effectively computable” (Remark 1.2 adds: Siegel’s ineffective theorem is not used). The proof’s own accounting ends at L[1/3, 104] for time and L[1/3, 38] for space (pp. 47–49).</p>
+</section>
+
+<section aria-labelledby="new">
+<h2 id="new">Why 105 matters, and what is not claimed</h2>
+<p>Now the constant. 105 sits in an exponent, so it matters enormously. Take a 617-digit number and, as an illustration only, drop the hidden lower order terms. The sieve’s formula gives about 10^35 operations, Lenstra and Pomerance about 10^44, trial division 10^308, and the new bound about 10^1921. By these formulas, it beats trial division only beyond about 13,700 digits, and Lenstra and Pomerance only beyond about 18 trillion digits. Its constant is larger than the sieve’s, so it never catches the sieve’s formula. And the machine itself factors every number below 2^10,000, about 3,000 digits, by trial division, and above that it may fall back on it, up to a threshold the paper never computes. RSA keys of the usual sizes, up to 4,096 bits, are far below that. The paper says it chose transparent constants rather than optimizing them. What is not claimed: a practical algorithm, anything faster than the sieve, any threat to RSA, or the size beyond which the bound takes hold.</p>
+</section>
+
+<section aria-labelledby="how">
+<h2 id="how">How the proof goes</h2>
+<p>How the proof goes, by the paper’s overview. It follows the sieve’s plan: square random numbers modulo N, write each result in terms of smooth numbers, and combine the relations into a square. The paper names four obstacles that kept this heuristic, and four mechanisms that work together to overcome them. First, a custom weight for counting smooth numbers in arithmetic progressions avoids possible Siegel zeros, using only tools with computable constants. Second, the polynomials are drawn at random from a discrete Laplace distribution, sampled exactly with lattice reduction, so their values behave independently enough to analyse. Third, each squared remainder is written as a ratio of two numbers at most half the square root of N, each a product of medium primes, and each medium prime is pushed down a ladder of smaller and smaller primes to the smooth base. Fourth, quadratic characters, with Stark’s lemma and an effective Chebotarev theorem, certify true squares; 3-adic Newton steps compute their square roots; and hiding the random numbers until the end makes the final split succeed with probability at least 1/2.</p>
+<p>Those two numbers, and the smaller leftovers of the descent, are factored by calling the algorithm on itself. That recursion sets the constant: 21.15 for the trials, plus 104 × 2^(−1/3), at most 82.56, gives at most 103.71, below 104, below 105. We checked that arithmetic, and read the theorem, the overview and the final assembly of the algorithm. We did not check the lemmas, which fill most of the 54 pages. The README says a complete Lean formalization, from Mathlib alone, has been completed and will be released. Without it, there is nothing for us to read. The Cogentic paper on arXiv describes the system: an orchestrator assigns directions to parallel provers, adversarial verifiers check each draft, and checked lemmas go into a shared ledger. Its earlier results were verified by domain experts, by the authors’ account, in other fields. For this paper, no human check is named.</p>
+<p>Some scales from the paper’s Table 1 (p. 6): polynomial degree d ≈ ½ (ln N / ln ln N)^(1/3) (odd); medium primes near Q₀ ≈ L(2/3, 1/3); factor base B ≈ L(1/3, 18); a descent ladder of at most 1.2 ln ln N rungs, each child jumping at least two rungs; about L(1/3, 18) relations; at most L(1/3, 21.1) trials per outer phase. The 3-adic square roots rely on the polynomials being irreducible of odd degree modulo 3.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Public</dt>
+    <dd>On GitHub, in <a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers/integer_factorization">google-research/google-research, cogentic_research_papers/integer_factorization</a>, added by <a href="https://github.com/google-research/google-research/commit/4a7bc8ab0bc7">commit 4a7bc8ab0bc7</a> (“Add six Cogentic research papers”, November 25, 2026, 10:11 UTC). Not on arXiv. The README ends “This is not an official Google product.” We found no announcement on Google’s research or DeepMind blogs, or on the Cogentic project page.</dd>
+  </div>
+<!-- review-step:start -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>Not yet</dd>
+  </div>
+<!-- review-step:end -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Lean released</dt>
+    <dd>No. The <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/integer_factorization/README.md">README</a> says a complete, Mathlib-only Lean 4 (v4.35.0) formalization of the entire proof “has also been completed and will be released in a companion submission”; the commit message says the same for all six papers. Nothing was public when we checked (15:31 UTC, November 25; no later commit to the folder).</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked by a human</dt>
+    <dd>None named. The README says the paper and its Lean “were entirely obtained by Cogentic”, using Gemini 4, with “no human interaction other than the initial prompt”. Cogentic’s <a href="https://arxiv.org/abs/2609.40324">arXiv paper</a> says its earlier results were “independently verified by domain experts”; no such check is claimed for this paper.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Expert reaction</dt>
+    <dd>None from a named expert found as of the morning of November 25, 2026 (Pacific); only news write-ups.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Account of prior work</dt>
+    <dd>Our reading: the paper does not cite Lee and Venkatesan, <a href="https://arxiv.org/abs/1805.08873">Rigorous analysis of a randomised number field sieve</a> (J. Number Theory 187, 2018), who proved that a randomised sieve finds a congruence of squares in expected time L[1/3, (64/9)^(1/3) + o(1)] for every n, and that it yields a factor only under a conjecture, for n = pq with p ≡ q ≡ 3 mod 4.</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked November 25, 2026, morning Pacific time. Not built or run by us.</p>
+<p>This is a Specials episode, the first of six on the papers Cogentic posted that day. GO02, from the same day, claims deterministic factoring in subexponential time; it gets its own episode. Episode 279 covered OpenAI’s claimed exact quantum factoring. If it holds, every whole number can be factored in proven time L[1/3], with no unproven hypothesis, but with a constant so large that the number field sieve, and the real cost of running it, still decide how safe RSA keys are. See <a href="../279-exact-quantum-factoring/">279</a>.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: trial division of 8,051 by the odd numbers 3, 5, 7, … divides on try 41, at 83 (8,051 = 83 × 97). 8,051 = 90² − 7², so 90² and 7² leave the same remainder, and gcd(90 − 7, 8,051) = 83. 99² − 8,051 = 1,750 = 2·5³·7 is smooth; 100² − 8,051 = 1,949 is prime.</li>
+  <li>Ours, illustration only, with the hidden lower-order terms dropped, for a 617-digit number (2^2048): the number field sieve’s formula L[1/3, 1.923] about 10^35 operations; Lenstra–Pomerance L[1/2, 1] about 10^44; trial division up to √N about 10^308; the new bound L[1/3, 105] about 10^1921, and its memory bound L[1/3, 40] about 10^732.</li>
+  <li>Ours, same convention: L[1/3, 105] falls below √N only beyond about 13,690 digits, and below L[1/2, 1] only beyond about 1.8e+13 digits; with the same shape and a larger constant, it never falls below the sieve’s formula.</li>
+  <li>From the paper (Definition 6.1, step 1): numbers up to 2^10000, which has 3,011 digits, are factored by trial division. RSA moduli of the usual sizes (2048 bits, 617 digits; 4096 bits, 1,234 digits) are far below that.</li>
+  <li>From the paper (p. 5), rechecked by us: 104 × 2^(−1/3) = 82.5449 ≤ 82.56, and 21.15 + 82.56 = 103.71 &lt; 104 &lt; 105. (Ours: the smallest constant c with 21.15 + c·2^(−1/3) ≤ c is about 102.5.)</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li>Cogentic (Google Research), <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/integer_factorization/paper.pdf">Unconditional Integer Factorization in Time L_N[1/3, O(1)]</a>, 54 pages, CC-BY-4.0; <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/integer_factorization/README.md">README</a>; <a href="https://github.com/google-research/google-research/commit/4a7bc8ab0bc7">commit 4a7bc8ab0bc7</a>.</li>
+  <li>Y. Cai, V. Gupta, Y. Jiang, C. Liaw, A. Mehta, G. Velegkas and D. Wang, <a href="https://arxiv.org/abs/2609.40324">Cogentic: Multi-Agent Orchestration for Automated Proof Discovery</a>, arXiv:2609.40324 (2026).</li>
+  <li>Background the paper cites: J. D. Dixon, Asymptotically fast factorization of integers (Math. Comp. 1981); H. W. Lenstra, Jr. and C. Pomerance, A rigorous time bound for factoring integers (J. Amer. Math. Soc. 1992); J. P. Buhler, H. W. Lenstra, Jr. and C. Pomerance, Factoring integers with the number field sieve (1993); M. Agrawal, N. Kayal and N. Saxena, PRIMES is in P (Ann. of Math. 2004).</li>
+  <li>Not cited by the paper: J. Lee and R. Venkatesan, <a href="https://arxiv.org/abs/1805.08873">Rigorous analysis of a randomised number field sieve</a> (J. Number Theory 187, 2018).</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Google, OpenAI or Anthropic.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is GO01, the first of our Specials on papers from Google’s Cogentic. On November 25, 2026, Google Research added six math papers to its public GitHub repository. Each README says that the paper and a Lean formalization were entirely obtained by Cogentic, an agent system built on Gemini 4, with no human interaction other than the initial prompt. The Lean files have not been released. Google is not affiliated with this series. This episode takes the first paper, on factoring whole numbers. It claims a proven running time of the same shape as the fastest method used in practice, the number field sieve, whose speed has only ever rested on unproven assumptions. So what is the question? Multiplying two primes is easy. Undoing it is hard. Trial division tries one divisor after another. Going through the odd numbers from 3, it splits 8,051 on its 41st try, at 83. For a number with 617 digits, the size of an RSA-2048 key, it could need about 10^308 tries. Faster methods use squares. 8,051 is 90² − 7², so those two squares leave the same remainder, and the greatest common divisor of 90 − 7 and 8,051 is 83: a factor. Sieve methods build such pairs of squares. They collect many numbers made only of small primes, called smooth numbers, and combine them with linear algebra over zeros and ones. Factoring times are measured on a scale written L of N, with two numbers in brackets: alpha and a constant c. Alpha 0 is polynomial in the number of digits; alpha 1 is exponential, like trial division. As the paper recounts it, Dixon’s random squares method of 1981 gave the first proven bound in between. In 1992, Lenstra and Pomerance proved L[1/2, 1], for an algorithm that flips coins but is never wrong. The number field sieve, from the early nineties, runs in L[1/3, about 1.92], but only under unproven assumptions about smooth numbers and more. It is what factors record numbers, which reached 270 digits this autumn. One thing the paper does not cite: in 2018, Lee and Venkatesan proved that a randomized sieve finds two squares with equal remainders in that same time. That those squares give a factor, they showed only under a conjecture, for special products of two primes.</p>
+<h3><span class="t num">2:38</span>The claim</h3>
+<p>The claim. The paper has 54 pages and no author line; a footnote credits Cogentic. Its main theorem: one fixed multitape Turing machine, reading fair coin flips, takes any whole number N of at least 2. With probability one it halts, and every time it halts it outputs the exact prime factorization, each prime certified by the AKS primality test and the product checked against N. Its expected number of bit operations is at most L[1/3, 105], as N grows; its memory is at most L[1/3, 40], whatever the coins do. The coins affect only the running time, never the answer. Unconditional means no unproven hypothesis, not even the generalized Riemann hypothesis; and, the paper says, every constant in the proof can be computed. If it holds, this is the first proven bound with exponent 1/3 for complete factoring; the best before was L[1/2, 1], from 1992. Now the constant. 105 sits in an exponent, so it matters enormously. Take a 617-digit number and, as an illustration only, drop the hidden lower order terms. The sieve’s formula gives about 10^35 operations, Lenstra and Pomerance about 10^44, trial division 10^308, and the new bound about 10^1921. By these formulas, it beats trial division only beyond about 13,700 digits, and Lenstra and Pomerance only beyond about 18 trillion digits. Its constant is larger than the sieve’s, so it never catches the sieve’s formula. And the machine itself factors every number below 2^10,000, about 3,000 digits, by trial division, and above that it may fall back on it, up to a threshold the paper never computes. RSA keys of the usual sizes, up to 4,096 bits, are far below that. The paper says it chose transparent constants rather than optimizing them. What is not claimed: a practical algorithm, anything faster than the sieve, any threat to RSA, or the size beyond which the bound takes hold.</p>
+<h3><span class="t num">4:51</span>How the proof goes</h3>
+<p>How the proof goes, by the paper’s overview. It follows the sieve’s plan: square random numbers modulo N, write each result in terms of smooth numbers, and combine the relations into a square. The paper names four obstacles that kept this heuristic, and four mechanisms that work together to overcome them. First, a custom weight for counting smooth numbers in arithmetic progressions avoids possible Siegel zeros, using only tools with computable constants. Second, the polynomials are drawn at random from a discrete Laplace distribution, sampled exactly with lattice reduction, so their values behave independently enough to analyse. Third, each squared remainder is written as a ratio of two numbers at most half the square root of N, each a product of medium primes, and each medium prime is pushed down a ladder of smaller and smaller primes to the smooth base. Fourth, quadratic characters, with Stark’s lemma and an effective Chebotarev theorem, certify true squares; 3-adic Newton steps compute their square roots; and hiding the random numbers until the end makes the final split succeed with probability at least 1/2. Those two numbers, and the smaller leftovers of the descent, are factored by calling the algorithm on itself. That recursion sets the constant: 21.15 for the trials, plus 104 × 2^(−1/3), at most 82.56, gives at most 103.71, below 104, below 105. We checked that arithmetic, and read the theorem, the overview and the final assembly of the algorithm. We did not check the lemmas, which fill most of the 54 pages. The README says a complete Lean formalization, from Mathlib alone, has been completed and will be released. Without it, there is nothing for us to read. The Cogentic paper on arXiv describes the system: an orchestrator assigns directions to parallel provers, adversarial verifiers check each draft, and checked lemmas go into a shared ledger. Its earlier results were verified by domain experts, by the authors’ account, in other fields. For this paper, no human check is named.</p>
+<h3><span class="t num">7:05</span>Where it stands</h3>
+<p>Where it stands, on the morning of November 25, Pacific time. The paper is on GitHub, not on arXiv, and it is not peer reviewed. The Lean formalization is claimed, but not released. The README names no human who checked the proof. We found no announcement on Google’s blogs, only news write-ups and forum threads, and no named expert reaction yet. Its account of earlier work leaves out Lee and Venkatesan. Not built or run by us. This is a Specials episode, the first of six on the papers Cogentic posted that day. GO02, from the same day, claims deterministic factoring in subexponential time; it gets its own episode. Episode 279 covered OpenAI’s claimed exact quantum factoring. If it holds, every whole number can be factored in proven time L[1/3], with no unproven hypothesis, but with a constant so large that the number field sieve, and the real cost of running it, still decide how safe RSA keys are.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=GO01%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>

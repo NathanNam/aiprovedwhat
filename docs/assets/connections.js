@@ -24,7 +24,7 @@
   var C = { paper: "#ece9e1", soft: "#cdcac2", dim: "#9aa0aa", blue: "#58c4dd", gold: "#ffd84d", red: "#fc6255", green: "#83c167", bg: "#0a0d12" };
   var meta = {}, rels = [], spSubj = null, special, numOf, match = null, labs = {};
   // Tints for results outside OpenAI's catalogue, by lab.
-  var LAB = { openai: "#fc6255", axiom: "#c58af9", psi: "#f4a261", anthropic: "#e8a0bf" };
+  var LAB = { openai: "#fc6255", axiom: "#c58af9", psi: "#f4a261", anthropic: "#e8a0bf", google: "#8ab4f8" };
   function labOf(i) { var m = meta[numOf[i]]; return m && m.lab ? m.lab : "openai"; }
   var KIND = ["Result", "Paper", "Cited work", "Author"];
   var N, kind, X, Y, nodes, subjects, subjColor = [], links, adj, wMaxCite, visible;
@@ -467,7 +467,7 @@
   function relHtml(i) {
     var out = rels.filter(function (r) { return r.a === i || r.b === i; }).map(function (r) {
       var other = r.a === i ? r.b : r.a;
-      var REV = { "implies": "implied by", "implies part of": "partly implied by", "relies on": "relied on by", "cites": "cited by", "builds on": "built on by" };
+      var REV = { "implies": "implied by", "implies part of": "partly implied by", "relies on": "relied on by", "cites": "cited by", "builds on": "built on by", "related": "related to" };
       var verb = r.a === i ? r.type : (REV[r.type] || r.type);
       var cites = (r.cites || []).map(function (u, k) { return '<a class="cx-ext" href="' + esc(u) + '" rel="noopener">source line' + (r.cites.length > 1 ? " " + (k + 1) : "") + "</a>"; }).join(" ");
       return "<li>" + esc(verb.charAt(0).toUpperCase() + verb.slice(1)) + " " + go(other, nodes[other][3]) +

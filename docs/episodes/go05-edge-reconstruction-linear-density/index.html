@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rebuild a graph from its cards? Google’s Cogentic claim on edge reconstruction, and its catch | AI Proved What?</title>
+<meta name="description" content="A paper attributed to Google’s Cogentic agent (Gemini 4) claims Harary’s edge reconstruction conjecture for every simple graph with at least 1000 times as many edges as vertices, replacing Müller’s n log n bound of 1977; by Müller’s bound and the paper’s own first step, it is new only for graphs with more than about 10^301 vertices. Lean claimed, not released; no human check named. Not built or run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/go05-edge-reconstruction-linear-density/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Rebuild a graph from its cards?">
+<meta property="og:description" content="A paper attributed to Google’s Cogentic agent (Gemini 4) claims Harary’s edge reconstruction conjecture for every simple graph with at least 1000 times as many edges as vertices, replacing Müller’s n log n bound of 1977; by Müller’s bound and the paper’s own first step, it is new only for graphs with more than about 10^301 vertices. Lean claimed, not released; no human check named. Not built or run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/go05-edge-reconstruction-linear-density/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/go05-edge-reconstruction-linear-density/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="GO05: Rebuild a graph from its cards? A claw and a triangle with a lone dot give the same three cards; our chart of edges per vertex needed: Müller’s log2 n rises to meet the new flat 1000 at 2^1000 vertices.">
+<meta name="twitter:image:alt" content="GO05: Rebuild a graph from its cards? A claw and a triangle with a lone dot give the same three cards; our chart of edges per vertex needed: Müller’s log2 n rises to meet the new flat 1000 at 2^1000 vertices.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">GO05 (Specials; Beyond OpenAI; the fifth of six Cogentic papers; see also <a href="../go01-integer-factorization-l-one-third/">GO01</a>, <a href="../go02-deterministic-subexponential-factoring/">GO02</a>, <a href="../go03-discrete-log-small-characteristic/">GO03</a> and <a href="../go04-log-rank-square-root-barrier/">GO04</a>), November 2026</p>
+<h1>Rebuild a graph from its cards?</h1>
+<p class="subtitle">A paper attributed to Google’s Cogentic agent claims Harary’s 1964 edge reconstruction conjecture for every graph with at least 1000 times as many edges as vertices, replacing Müller’s n log n bound from 1977. By Müller’s own bound, which the paper uses as its first step, the theorem is new only for graphs with more than about 10³⁰¹ vertices. Its Lean proof is claimed but not released, and no human check is named.</p>
+
+<div class="player" data-youtube="SvDBC6Yqyb8" data-title="GO05: Rebuild a graph from its cards?">
+  <a href="https://youtu.be/SvDBC6Yqyb8">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play GO05: Rebuild a graph from its cards? A claw and a triangle with a lone dot give the same three cards; our chart of edges per vertex needed: Müller’s log2 n rises to meet the new flat 1000 at 2^1000 vertices.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">9:11. English captions available. The video loads from YouTube when you press play.</p>
+
+<p><strong>Note.</strong> AI Proved What? is independent and not affiliated with Google. Everything here comes from public sources.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/SvDBC6Yqyb8?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/SvDBC6Yqyb8?t=179" data-t="179"><span class="t">2:59</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/SvDBC6Yqyb8?t=313" data-t="313"><span class="t">5:13</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/SvDBC6Yqyb8?t=476" data-t="476"><span class="t">7:56</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="question">
+<h2 id="question">The question</h2>
+<p>This is GO05, the fifth of our Specials on papers from Google’s Cogentic. On November 25, 2026, Google Research added six research papers to its public GitHub repository. Each README says that the paper and a Lean formalization were entirely obtained by Cogentic, an agent system built on Gemini 4, with no human interaction other than the initial prompt. The Lean files have not been released. Google is not affiliated with this series. This episode takes the fifth paper in our series, on a graph puzzle from 1964: can you rebuild a network from all its copies with one link missing? The paper claims yes, for every network with at least 1,000 times as many links as dots. So what is the question?</p>
+<p>A graph is a set of dots, called vertices, joined by lines, called edges. Delete one edge, then erase all the labels, so only the shape remains. That is a card. Do this once for every edge, and the pile of cards is the edge deck. Here is a triangle with a tail: 4 edges, so 4 cards. A triangle beside a lone dot, two paths of 3 edges, and a star with 3 arms. The question is whether the deck always determines the graph you started from. Not always. A star with 3 arms, and a triangle beside a lone dot, both give the same 3 cards: a path of 2 edges, plus a lone dot. Two separate edges, and a path of 2 edges beside a lone dot, also share a deck. In 1964, Harary conjectured that small cases like these are the only failures: every graph with at least 4 edges is determined by its edge deck. As an illustration, we checked all 1,253 graphs with up to 7 vertices. The only collisions are those two pairs, plus extra lone dots. By Brendan McKay’s account, a computer search has checked the edge version up to 12 vertices.</p>
+<p>There is an older sibling. Kelly and Ulam’s reconstruction conjecture deletes vertices instead of edges. It is still open, and has been checked by computer up to 13 vertices. By a 1971 result of Greenwell, a proof of the vertex version would settle the edge version too, while the reverse is not known, and this paper is only about edges. For dense graphs, there is a counting method. In 1972, Lovász proved the edge conjecture for graphs with more than half of all possible edges. In 1977, Müller sharpened the count: with n vertices and m edges, it holds whenever 2^(m−1) exceeds n!, roughly when there are more than log₂ n edges per vertex. Nash-Williams turned the idea into a general lemma. Later work covered special families: bidegreed graphs, claw-free graphs, large Hamiltonian graphs. As the paper tells it, Müller’s n log n stood for nearly five decades as the best density bound for all graphs.</p>
+</section>
+
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The claim. The paper has 47 pages and no author line; a footnote credits Cogentic. Its main theorem: every finite simple graph on at least 4 vertices, with at least 1,000 times as many edges as vertices, is determined by its edge deck. Simple means no loops and no repeated edges. A corollary: so is every graph in which each vertex has at least 2,000 neighbors. Unconditional, here, means that no extra structure is assumed: no connectivity, no Hamiltonian path, no gaps between degrees. Where Müller needs about log n edges per vertex, this needs a constant: 1,000. The paper notes that below 2,001 vertices the statement is empty, since no simple graph that small has that many edges. What is not claimed: Harary’s conjecture itself, which also covers sparse graphs, with fewer than 1,000 edges per vertex; the vertex version; or any algorithm. The paper even argues, in Remark 1.3, that counting with a spanning tree, as here, cannot reach below about 3.7 edges per vertex. The sparse case needs new ideas.</p>
+<p>In the paper’s words (Theorem 1.1 and Corollary 1.2, p. 2): every finite simple undirected graph G₀ on n₀ ≥ 4 vertices with m = |E(G₀)| ≥ 1000 n₀ edges is edge-reconstructible, that is, every simple graph H with the same number of vertices and the same edge deck D_E(H) = D_E(G₀) is isomorphic to G₀; and every finite simple graph with minimum degree δ(G₀) ≥ 2000 is edge-reconstructible. The paper notes that the theorem is vacuous for 4 ≤ n₀ ≤ 2000 and “takes effect for n₀ ≥ 2001”.</p>
+</section>
+
+<section aria-labelledby="new">
+<h2 id="new">How much does it add?</h2>
+<p>How much does it add? Put the two thresholds side by side, as edges per vertex. Müller’s grows with the logarithm of n: about 20 for a million vertices, 40 for a trillion, and about 266 for 10⁸⁰ vertices, roughly the number of atoms in the observable universe. The new threshold is flat, at 1,000. The two meet only when log₂ n reaches 1,000: at 2¹⁰⁰⁰, a number with 302 digits. Below that, any graph with 1,000 edges per vertex already has more than n log₂ n edges, so Müller’s theorem already covers it. The paper’s own proof makes this its first step: a counterexample would need log₂ n above 1,000. So the new theorem adds only graphs with more than about 10³⁰¹ vertices. That is a real change in the shape of the bound, from n log n to linear, and in this kind of mathematics the shape is the point. But no graph that could ever be stored is newly covered.</p>
+</section>
+
+<section aria-labelledby="how">
+<h2 id="how">How the proof goes</h2>
+<p>How the proof goes, by the paper’s overview. Suppose two different graphs had the same edge deck. Removing lone dots leaves two connected graphs that share their edge deck, their vertex deck and their degrees, with log₂ n above 1,000. The engine is the counting method of Lovász and Müller. If a graph is not reconstructible, inclusion and exclusion over the deck force many shufflings of its vertices that carry a chosen set of edges back onto edges: at least 2 to the number of other edges, divided by 2. Now fix a spanning tree, a skeleton that reaches every vertex. Counting the shufflings that keep the tree inside the graph gives an upper bound, roughly a product of degrees along the tree. If the lower bound beats the upper bound, that is a contradiction. With high-degree hubs, the product is too large, and the tree count falls back to n log n. The paper’s new tool is a single spanning tree, built greedily in order of degree, that works at every degree scale at once, the scales doubling from about 2^(average degree / 16). With it, the paper shows that a counterexample must carry more than 0.15 m bits of a certain information, in small pieces that hang off hubs and repeat relatively rarely.</p>
+<p>Three mechanisms then bound that information: one with polynomials, using classical tools such as Charlier polynomials and Bessel function estimates; one with symmetry groups on vertices that have identical neighbors; and one by random sampling. Together they allow less than 10⁻³⁰ × m bits, far below 0.15 m: a contradiction. We read the theorem, the overview, the preliminaries with Müller’s bound, the counterexample setup in Section 3 and the final proof, and redid the arithmetic in this episode. We did not check Sections 3 to 8 beyond that setup, where nearly all the new work is. One piece of context the paper does not cite: in 1996, Pyber showed that Nash-Williams’ condition alone cannot settle the conjecture, even for graphs with about the square root of log n edges per vertex. By its own description, the new proof also uses the vertex deck and more, so there is no contradiction, but a checker should know it. The README says a complete Lean formalization, from Mathlib alone, has been completed and will be released. Without it, there is nothing for us to read. The Cogentic paper on arXiv describes the system: an orchestrator assigns directions to parallel provers, adversarial verifiers check each draft, and checked lemmas go into a shared ledger. Its earlier results were verified by domain experts, by the authors’ account. For this paper, no human check is named.</p>
+<p>In more detail (the paper’s §1.3 and Lemma 2.2): if G is not edge-reconstructible, Möbius inversion over edge subsets gives, for every set E₀ of edges, at least 2^(|E(G) ∖ E₀| − 1)·|Aut G| permutations σ of the vertices with E₀ ⊆ σ⁻¹(E(G)). For a rooted spanning tree T₀, the permutations that carry E(T₀) into E(G) number at most n times a product of falling factorials of degrees, (d_G(τ(u)))_(c(u)), over the vertices u with c(u) children. The new argument uses one lexicographic degree-ordered Kruskal minimum spanning tree across all dyadic degree thresholds Δ_k = 2^k ⌈2^(d̄/16)⌉, shows that a counterexample of average degree d̄ ≥ 2000 concentrates more than 0.15 m bits of “component-multiplicity entropy” on low-multiplicity non-bridge components, and rules this out with three mechanisms (Sections 4–8); Section 9 ends with 0.15 m &lt; 10⁻³⁰ m. Pyber’s 1996 paper <a href="https://doi.org/10.1007/BF01271270">“Dense graphs and edge reconstruction”</a> (Combinatorica 16, 521–525), which the paper does not cite, shows by an example that Nash-Williams’ condition by itself cannot settle the conjecture, even for graphs with about n√(½ log n) edges (we follow the zbMATH review; we could not read the paper itself).</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Public</dt>
+    <dd>On GitHub, in <a href="https://github.com/google-research/google-research/tree/master/cogentic_research_papers/edge_reconstruction">google-research/google-research, cogentic_research_papers/edge_reconstruction</a>, added by <a href="https://github.com/google-research/google-research/commit/4a7bc8ab0bc7">commit 4a7bc8ab0bc7</a> (“Add six Cogentic research papers”, November 25, 2026, 10:11 UTC). Not on arXiv. The README ends “This is not an official Google product.” We found no announcement on Google’s research or DeepMind blogs.</dd>
+  </div>
+<!-- review-step:start -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>Not yet</dd>
+  </div>
+<!-- review-step:end -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Lean released</dt>
+    <dd>No. The <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/edge_reconstruction/README.md">README</a> says a complete, unconditional, Mathlib-only Lean 4 (v4.33.0) formalization of the entire proof “has also been completed and will be released in a companion submission”; the commit message says the same for all six papers. Nothing was public when we checked (16:40 UTC, November 25; no later commit to the folder).</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Checked by a human</dt>
+    <dd>None named. The README says the paper and its Lean “were entirely obtained by Cogentic”, using Gemini 4, with “no human interaction other than the initial prompt”. Cogentic’s <a href="https://arxiv.org/abs/2609.40324">arXiv paper</a> says its earlier results were “independently verified by domain experts”; no such check is claimed for this paper.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Expert reaction</dt>
+    <dd>None from a named expert found as of the morning of November 25, 2026 (Pacific); news write-ups and a <a href="https://news.ycombinator.com/item?id=50642086">Hacker News thread</a> only (one user’s summary lists the new and old thresholds).</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>New graphs of storable size</dt>
+    <dd>None. Müller’s bound (which the paper reproves as Lemma 2.2) shows that a counterexample has fewer than n log₂ n edges; with at least 1000 n edges that forces log₂ n &gt; 1000, as the paper’s own Lemma 3.3(1) says. So for every graph with at most 2¹⁰⁰⁰ vertices (a 302-digit number) Theorem 1.1 already follows from Müller’s theorem; it is new only beyond about 10³⁰¹ vertices (our arithmetic).</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked November 25, 2026, morning Pacific time. Not built or run by us.</p>
+<p>This is a Specials episode, the fifth of six on the papers Cogentic posted that day. GO01 to GO04 cover factoring, discrete logarithms and the log-rank conjecture, each in its own episode. If it holds, Harary’s edge conjecture is true for every graph with at least 1,000 edges per vertex: by the paper’s account, the first density bound for all graphs that is linear in the number of vertices, replacing Müller’s n log n from 1977. But only graphs far too large to store are newly covered, and the sparse graphs, and the vertex version of the puzzle, stay open. See <a href="../go01-integer-factorization-l-one-third/">GO01</a>, <a href="../go02-deterministic-subexponential-factoring/">GO02</a>, <a href="../go03-discrete-log-small-characteristic/">GO03</a> and <a href="../go04-log-rank-square-root-barrier/">GO04</a>.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: the triangle with a tail (the “paw”) has edge deck {triangle + dot, path of 3 edges, path of 3 edges, star with 3 arms}; the 4-cycle has four paths of 3 edges. The claw and the triangle plus a lone dot each have three cards “path of 2 edges plus a dot”; two separate edges and a path of 2 edges plus a dot each have two cards “one edge plus two dots”.</li>
+  <li>Ours: a brute-force check over networkx’s atlas of all 1,253 graphs with up to 7 vertices finds exactly 8 pairs of non-isomorphic graphs with the same edge deck: the two pairs above, padded with lone dots, all with 2 or 3 edges. Every graph there with at least 4 edges is determined by its deck (a known fact; per McKay, Stolee checked the edge version to 12 vertices).</li>
+  <li>Ours: edges per vertex that Müller needs, simple form log₂ n (exact form (log₂ n! + 1)/n): 19.93 (18.49) for n = 10⁶, 39.86 (38.42) for n = 10¹², 265.75 (264.31) for n = 10⁸⁰. Lovász’s threshold is (n − 1)/4 edges per vertex.</li>
+  <li>Ours: log₂ n reaches 1000 at n = 2¹⁰⁰⁰ ≈ 1.07 × 10³⁰¹ (302 digits). With Müller’s exact form 2^(m−1) &gt; n!, m = 1000 n is covered up to log₂ n ≈ 1001.44, n ≈ 10^301.46.</li>
+  <li>The paper’s Remark 1.3, recomputed by us: d̄/2 − 1 = log₂(d̄ − 1) has root d̄ ≈ 7.32 (m ≈ 3.66 n), and d̄/2 − 1 = log₂ d̄ has root d̄ = 8 (m = 4 n).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li>Cogentic (Google Research), <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/edge_reconstruction/paper.pdf">Unconditional Edge Reconstruction of Simple Graphs of Linear Density</a>, 47 pages, CC-BY-4.0; <a href="https://github.com/google-research/google-research/blob/master/cogentic_research_papers/edge_reconstruction/README.md">README</a>; <a href="https://github.com/google-research/google-research/commit/4a7bc8ab0bc7">commit 4a7bc8ab0bc7</a>.</li>
+  <li>Y. Cai, V. Gupta, Y. Jiang, C. Liaw, A. Mehta, G. Velegkas and D. Wang, <a href="https://arxiv.org/abs/2609.40324">Cogentic: Multi-Agent Orchestration for Automated Proof Discovery</a>, arXiv:2609.40324 (2026).</li>
+  <li>Earlier work the paper cites: F. Harary, On the reconstruction of a graph from a collection of subgraphs (1964); L. Lovász, A note on the line reconstruction problem, J. Combin. Theory Ser. B 13 (1972); V. Müller, <a href="https://doi.org/10.1016/0095-8956(77)90074-0">The edge reconstruction hypothesis is true for graphs with more than n·log₂ n edges</a>, J. Combin. Theory Ser. B 22 (1977); C. St. J. A. Nash-Williams, The reconstruction problem (1978); Y. Caro, I. Krasikov and Y. Roditty, Spanning trees and some edge-reconstructible graphs (1985).</li>
+  <li>Background not cited by the paper: L. Pyber, <a href="https://doi.org/10.1007/BF01271270">Dense graphs and edge reconstruction</a>, Combinatorica 16 (1996); B. D. McKay, <a href="https://arxiv.org/abs/2102.01942">Reconstruction of small graphs and digraphs</a>, arXiv:2102.01942 (vertex version checked to 13 vertices; edge version to 12, by Stolee).</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Google, OpenAI or Anthropic.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is GO05, the fifth of our Specials on papers from Google’s Cogentic. On November 25, 2026, Google Research added six research papers to its public GitHub repository. Each README says that the paper and a Lean formalization were entirely obtained by Cogentic, an agent system built on Gemini 4, with no human interaction other than the initial prompt. The Lean files have not been released. Google is not affiliated with this series. This episode takes the fifth paper in our series, on a graph puzzle from 1964: can you rebuild a network from all its copies with one link missing? The paper claims yes, for every network with at least 1,000 times as many links as dots. So what is the question? A graph is a set of dots, called vertices, joined by lines, called edges. Delete one edge, then erase all the labels, so only the shape remains. That is a card. Do this once for every edge, and the pile of cards is the edge deck. Here is a triangle with a tail: 4 edges, so 4 cards. A triangle beside a lone dot, two paths of 3 edges, and a star with 3 arms. The question is whether the deck always determines the graph you started from. Not always. A star with 3 arms, and a triangle beside a lone dot, both give the same 3 cards: a path of 2 edges, plus a lone dot. Two separate edges, and a path of 2 edges beside a lone dot, also share a deck. In 1964, Harary conjectured that small cases like these are the only failures: every graph with at least 4 edges is determined by its edge deck. As an illustration, we checked all 1,253 graphs with up to 7 vertices. The only collisions are those two pairs, plus extra lone dots. By Brendan McKay’s account, a computer search has checked the edge version up to 12 vertices. There is an older sibling. Kelly and Ulam’s reconstruction conjecture deletes vertices instead of edges. It is still open, and has been checked by computer up to 13 vertices. By a 1971 result of Greenwell, a proof of the vertex version would settle the edge version too, while the reverse is not known, and this paper is only about edges. For dense graphs, there is a counting method. In 1972, Lovász proved the edge conjecture for graphs with more than half of all possible edges. In 1977, Müller sharpened the count: with n vertices and m edges, it holds whenever 2^(m−1) exceeds n!, roughly when there are more than log₂ n edges per vertex. Nash-Williams turned the idea into a general lemma. Later work covered special families: bidegreed graphs, claw-free graphs, large Hamiltonian graphs. As the paper tells it, Müller’s n log n stood for nearly five decades as the best density bound for all graphs.</p>
+<h3><span class="t num">2:59</span>The claim</h3>
+<p>The claim. The paper has 47 pages and no author line; a footnote credits Cogentic. Its main theorem: every finite simple graph on at least 4 vertices, with at least 1,000 times as many edges as vertices, is determined by its edge deck. Simple means no loops and no repeated edges. A corollary: so is every graph in which each vertex has at least 2,000 neighbors. Unconditional, here, means that no extra structure is assumed: no connectivity, no Hamiltonian path, no gaps between degrees. Where Müller needs about log n edges per vertex, this needs a constant: 1,000. The paper notes that below 2,001 vertices the statement is empty, since no simple graph that small has that many edges. What is not claimed: Harary’s conjecture itself, which also covers sparse graphs, with fewer than 1,000 edges per vertex; the vertex version; or any algorithm. The paper even argues, in Remark 1.3, that counting with a spanning tree, as here, cannot reach below about 3.7 edges per vertex. The sparse case needs new ideas. How much does it add? Put the two thresholds side by side, as edges per vertex. Müller’s grows with the logarithm of n: about 20 for a million vertices, 40 for a trillion, and about 266 for 10⁸⁰ vertices, roughly the number of atoms in the observable universe. The new threshold is flat, at 1,000. The two meet only when log₂ n reaches 1,000: at 2¹⁰⁰⁰, a number with 302 digits. Below that, any graph with 1,000 edges per vertex already has more than n log₂ n edges, so Müller’s theorem already covers it. The paper’s own proof makes this its first step: a counterexample would need log₂ n above 1,000. So the new theorem adds only graphs with more than about 10³⁰¹ vertices. That is a real change in the shape of the bound, from n log n to linear, and in this kind of mathematics the shape is the point. But no graph that could ever be stored is newly covered.</p>
+<h3><span class="t num">5:13</span>How the proof goes</h3>
+<p>How the proof goes, by the paper’s overview. Suppose two different graphs had the same edge deck. Removing lone dots leaves two connected graphs that share their edge deck, their vertex deck and their degrees, with log₂ n above 1,000. The engine is the counting method of Lovász and Müller. If a graph is not reconstructible, inclusion and exclusion over the deck force many shufflings of its vertices that carry a chosen set of edges back onto edges: at least 2 to the number of other edges, divided by 2. Now fix a spanning tree, a skeleton that reaches every vertex. Counting the shufflings that keep the tree inside the graph gives an upper bound, roughly a product of degrees along the tree. If the lower bound beats the upper bound, that is a contradiction. With high-degree hubs, the product is too large, and the tree count falls back to n log n. The paper’s new tool is a single spanning tree, built greedily in order of degree, that works at every degree scale at once, the scales doubling from about 2^(average degree / 16). With it, the paper shows that a counterexample must carry more than 0.15 m bits of a certain information, in small pieces that hang off hubs and repeat relatively rarely. Three mechanisms then bound that information: one with polynomials, using classical tools such as Charlier polynomials and Bessel function estimates; one with symmetry groups on vertices that have identical neighbors; and one by random sampling. Together they allow less than 10⁻³⁰ × m bits, far below 0.15 m: a contradiction. We read the theorem, the overview, the preliminaries with Müller’s bound, the counterexample setup in Section 3 and the final proof, and redid the arithmetic in this episode. We did not check Sections 3 to 8 beyond that setup, where nearly all the new work is. One piece of context the paper does not cite: in 1996, Pyber showed that Nash-Williams’ condition alone cannot settle the conjecture, even for graphs with about the square root of log n edges per vertex. By its own description, the new proof also uses the vertex deck and more, so there is no contradiction, but a checker should know it. The README says a complete Lean formalization, from Mathlib alone, has been completed and will be released. Without it, there is nothing for us to read. The Cogentic paper on arXiv describes the system: an orchestrator assigns directions to parallel provers, adversarial verifiers check each draft, and checked lemmas go into a shared ledger. Its earlier results were verified by domain experts, by the authors’ account. For this paper, no human check is named.</p>
+<h3><span class="t num">7:56</span>Where it stands</h3>
+<p>Where it stands, on the morning of November 25, Pacific time. The paper is on GitHub, not on arXiv, and it is not peer reviewed. The Lean formalization is claimed, but not released. The README names no human who checked the proof. We found no announcement on Google’s blogs, only news write-ups and forum threads, and no named expert reaction yet. The graphs it newly covers have more than 10³⁰¹ vertices. Not built or run by us. This is a Specials episode, the fifth of six on the papers Cogentic posted that day. GO01 to GO04 cover factoring, discrete logarithms and the log-rank conjecture, each in its own episode. If it holds, Harary’s edge conjecture is true for every graph with at least 1,000 edges per vertex: by the paper’s account, the first density bound for all graphs that is linear in the number of vertices, replacing Müller’s n log n from 1977. But only graphs far too large to store are newly covered, and the sparse graphs, and the vertex version of the puzzle, stay open.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=GO05%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
