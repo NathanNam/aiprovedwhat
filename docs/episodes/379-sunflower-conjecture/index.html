@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The sunflower conjecture, proved? OpenAI’s claimed exponential bound for Erdős–Rado | AI Proved What?</title>
+<meta name="description" content="An OpenAI preprint, one of seven in result 379, claims the Erdős–Rado sunflower conjecture: families of sets of size at most k with no r-petal sunflower have at most B_r^k members, with log B_r = O((log r)^4 (log log 2r)^(5/2)). It rests on a new, unreviewed companion paper on Euclidean tensor prices. Its Lean proof covers the fixed-base statement only. Not built or run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/379-sunflower-conjecture/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="The sunflower conjecture, proved?">
+<meta property="og:description" content="An OpenAI preprint, one of seven in result 379, claims the Erdős–Rado sunflower conjecture: families of sets of size at most k with no r-petal sunflower have at most B_r^k members, with log B_r = O((log r)^4 (log log 2r)^(5/2)). It rests on a new, unreviewed companion paper on Euclidean tensor prices. Its Lean proof covers the fixed-base statement only. Not built or run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/379-sunflower-conjecture/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/379-sunflower-conjecture/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="379 (sunflowers): a three-petal sunflower, core a with petals b c, d e and f g (schematic, after the paper’s Figure 1), and the claimed bound: at most B_r to the k sets.">
+<meta name="twitter:image:alt" content="379 (sunflowers): a three-petal sunflower, core a with petals b c, d e and f g (schematic, after the paper’s Figure 1), and the claimed bound: at most B_r to the k sets.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../specials/">Beyond OpenAI</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Result 379, November 2026: a companion episode on one of the result’s seven papers (see also <a href="https://aiprovedwhat.com/379">result 379</a>)</p>
+<h1>The sunflower conjecture, proved?</h1>
+<p class="subtitle">An OpenAI preprint claims that families of sets of size at most k with no r-petal sunflower have at most B_r^k members, with B_r depending only on r. It rests on a new companion paper on Euclidean tensor prices. Its Lean proof covers the fixed-base statement only.</p>
+<!-- companion-of:start -->
+<p class="papers-note">A companion episode of result <a href="../379-separation-vp-vnp-every-field/">379</a> in OpenAI’s catalog, on one of its 7 papers: <a href="https://github.com/openai/math/blob/main/preprints/An-exponential-bound-for-sunflowers-November-24-2026/paper.pdf">An exponential bound for sunflowers</a>. Main episode: <a href="../379-separation-vp-vnp-every-field/">VP ≠ VNP and Valiant’s whole hierarchy?</a>. Other companion episode: <a href="../379-matrix-multiplication-nine-fourths/">Exactly two and a quarter?</a>. <a href="../../connections/#379">See the result’s connections</a>.</p>
+<!-- companion-of:end -->
+
+<div class="player" data-youtube="WpTzpG6T_bI" data-title="Episode 379: The sunflower conjecture, proved?">
+  <a href="https://youtu.be/WpTzpG6T_bI">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 379 (sunflowers): a three-petal sunflower, core a with petals b c, d e and f g (schematic, after the paper’s Figure 1), and the claimed bound: at most B_r to the k sets.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:13. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/WpTzpG6T_bI?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/WpTzpG6T_bI?t=136" data-t="136"><span class="t">2:16</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/WpTzpG6T_bI?t=223" data-t="223"><span class="t">3:43</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/WpTzpG6T_bI?t=432" data-t="432"><span class="t">7:12</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="question">
+<h2 id="question">The question</h2>
+<p>Take three sets: {a, b, c}, {a, d, e} and {a, f, g}. Every two of them meet in the same core, the letter a, and what is left of each set, its petal, overlaps no other. That is a sunflower with three petals. The core may even be empty, as it is for three disjoint sets. Now change f to d. The second and third sets share a and d, the other pairs share only a, and the sunflower is gone. In 1960, Paul Erdős and Richard Rado asked how many sets of k elements a family can hold with no sunflower of r petals, however large the pool of elements.</p>
+<p>Take three petals. With one element per set, two sets is the most: any three single elements are disjoint. With pairs, the family is a graph, and three edges at one point, or three disjoint edges, are sunflowers. Two separate triangles avoid both with 6 edges, and our script confirms that 6 is the most. For triples the answer is 20, a value Abbott and Gardner found in 1969; our script builds 20 triples from two copies of a 10-triple family on 6 points and checks every three of them. Taking one element from each of k blocks of r minus one gives (r − 1)^k sets with no sunflower. Erdős and Rado proved an upper bound of k! times (r − 1)^k, and the factorial eventually outgrows every exponential. The conjecture, which Erdős later stated explicitly: a base B_r, depending only on r, such that B_r^k always suffices.</p>
+<p>After improvements by Kostochka, in 2019 Alweiss, Lovett, Wu and Zhang brought the base down to a polylogarithmic function of k. Anup Rao, and then Bell, Chueluecha and Warnke, refined it to about a constant times (r log k)^k. That base still grows with k. A different version, posed by Erdős and Szemerédi, counts by the size of the pool. For three petals it was proved with the slice rank method, in a direct proof by Naslund and Sawin in 2017, and for every r in an October 2026 preprint by Bucić, He and Lee, as the paper cites.</p>
+</section>
+
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>Result 379, added on November 24, 2026, is a family of seven OpenAI papers on Euclidean tensor geometry. This episode covers one of them: An exponential bound for sunflowers, 36 pages. Its abstract opens: We prove the fixed-petal sunflower conjecture of Erdős and Rado. Its Theorem 1.1: for every r of at least three, there is a base B_r such that every family of distinct sets of size at most k with no r-petal sunflower has at most B_r^k members, for every k, whatever the pool. And the log of B_r is at most a constant times (log r)^4 · (log log 2r)^(5/2).</p>
+<p>In the paper’s words (Theorem 1.1): “For each integer r ≥ 3 there is a constant B_r such that every family of distinct sets of size at most k containing no r-sunflower has at most B_r^k members, for every integer k ≥ 1.” One may take B_r = 2^(C H⁴ L^(5/2)) with H = log₂(2r), L = log₂(2H) and C an absolute constant.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">What is new, and what it doesn’t claim</h2>
+<p>What is new is that the base depends on r alone; for general families, every earlier bound grows with k. Not claimed: a base of order r, the stronger hope that Erdős and Rado voiced in 1960; the paper says whether the best base is of order r remains open. No value is given for the constant. And the paper itself cites an earlier claimed proof, by Junichiro Fukuyama, together with a research note describing an obstruction to one of its steps. Most important, the proof rests on the family’s main paper, Euclidean geometry in the asymptotic spectrum of tensors, 86 pages, which is just as new and just as unreviewed.</p>
+</section>
+
+<section aria-labelledby="how">
+<h2 id="how">How the proof goes</h2>
+<p>How the proof goes, by the paper’s account. First, color the elements at random with k colors and keep the sets that get every color. Each kept set becomes a word, one letter per color, at a loss of at most e^k. Stack r words as rows. They form a sunflower when every column is either constant or all different. The enemy is a partial repetition, a letter repeated in a column but not all the way down. Over three letters and three petals, we note, sunflower-free word families are exactly cap sets: 2, 4 and 9 at lengths 1 to 3, by our script. The paper needs one bound for alphabets of every size. Now the counting trick. Give each of r groups of sites its own word, chosen independently. In every column, a tensor operation kills every partial repetition. In a sunflower-free family, only tuples where every group holds the same word survive. Independent labels have become one shared label.</p>
+<p>To charge for that, the paper uses a spectral point in Strassen’s sense: a number on tensors that multiplies under tensor products, adds under direct sums and cannot grow under local linear maps. Its logarithm is a price. The main paper’s theorem prices by geometry: place the sites in space, and a bit shared by two sites costs their distance; shared by more, it costs the mean width of their hull, in the plane half its perimeter. In our triangle with sides 3, 4 and 5, three separate wires cost 12, while one bit shared by all three corners costs 6. For a family of N words, sharing among all groups costs more than sharing within each group, by a surplus ρ·log N. If testing a column costs at most f, then ρ·log N is at most k·f, so N is at most exponential in k. The hard part, the paper says, is keeping f bounded for alphabets of any size.</p>
+<p>In its planar placement, two anchor groups sit on parallel unit segments, slightly more than one apart, and the other groups are single points near the first. Points have zero width, so only the anchors count separately, while the whole rectangle counts when all share. For three petals, the paper’s formulas give a surplus of 1/129, by our arithmetic. Each rule, such as: if two groups agree, a third must too, is checked at a cost that stays bounded however long the letters are, by copying or by an equality test. This gives a log of B_r at most of order r^5. To reach a power of log r, the paper tests whole columns at once, with shortened letters, masks and majority votes.</p>
+<p>Our note, not in the video: the older spectral points (Strassen’s support functionals, the quantum functionals of Christandl, Vrana and Zuiddam) price a bit shared on a set of sites by adding up site weights, which by our reading leaves the paper’s tests no slack. The new Euclidean prices are what this argument needs.</p>
+</section>
+
+<section aria-labelledby="lean">
+<h2 id="lean">The Lean proof</h2>
+<p>OpenAI’s Lean proof, not run by us, covers the existence statement: for each r of at least three, a whole number C_r such that more than C_r^k distinct k-element sets contain an r-petal sunflower. The comparator file states it from Mathlib alone; by our reading it matches Theorem 1.1 for sets of exactly k elements, and padding covers the rest. The quantitative base is not formalized. The proof follows the planar route, and its imports include the Euclidean prices: about 7,300 files, 885,000 lines. Our text search finds no sorry or axiom. The pull request says the Lean and LaTeX builds were not run, and no build log is published.</p>
+<p>The <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/Sunflower.lean">comparator statement</a>, which imports only Mathlib: <code>theorem erdosRadoSunflower (r : ℕ) (hr : 3 ≤ r) : ∃ C : ℕ, 1 ≤ C ∧ ∀ (k : ℕ) (α : Type u) (F : Finset (Finset α)), (∀ A ∈ F, A.card = k) → C ^ k &lt; F.card → ∃ G ⊆ F, G.card = r ∧ ∃ K : Finset α, ∀ A ∈ G, ∀ B ∈ G, A ≠ B → A ∩ B = K</code>. The solution module states the same theorem and proves it from a bound on word families built with the planar placement. Its configuration permits only the axioms propext, Quot.sound and Classical.choice and does not enable the nanoda kernel. We did not read the proof.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>OpenAI, 36 pages, in <a href="https://github.com/openai/math/tree/main/preprints/An-exponential-bound-for-sunflowers-November-24-2026">github.com/openai/math</a>: <a href="https://github.com/openai/math/commit/92b516ef8e2abf66c3db7aa31438d3010bc7956f">commit 92b516ef8</a>, merged November 24, 2026, 16:18 PT (<a href="https://github.com/openai/math/pull/6">pull request #6</a>), one of seven papers in result 379.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Key tool reviewed</dt>
+    <dd>No. The proof’s Theorem 2.2 comes from the family’s main paper, <a href="https://github.com/openai/math/blob/main/preprints/Euclidean-geometry-in-the-asymptotic-spectrum-of-tensors-November-24-2026/paper.pdf">Euclidean geometry in the asymptotic spectrum of tensors</a> (86 pages), added the same day.</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Formalized in Lean (partly)</dt>
+    <dd>For each r ≥ 3, some whole number C_r such that more than C_r^k distinct k-element sets contain an r-petal sunflower (<a href="https://github.com/openai/math/blob/main/lean/docs/379.md">scope note</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/Sunflower.lean">comparator</a>, <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/Sunflower/FixedBase.lean">solution</a>). Not the quantitative base. Not run by us. The pull request says: “Lean and LaTeX builds were not run for this PR.” No build log or comparator run is published.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Expert reaction</dt>
+    <dd>None found as of November 24, 2026, about 18:15 PT: nothing on this paper on Scott Aaronson’s, Gil Kalai’s or the Computational Complexity blog (their November 24 posts are about VP ≠ VNP), and Hacker News had threads on the release (one on the matrix multiplication paper) but none on this paper. We could not search the Lean Zulip. OSVerify has not reviewed it.</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked November 24, 2026, about 18:15 PT. The repository’s <a href="https://github.com/openai/math/blob/main/README.md">README</a> says its manuscripts were “produced by an unnamed internal OpenAI model” and are “best understood as a form of raw research data, rather than polished academic papers.” The same release claims, among other results, that the matrix multiplication exponent is 9/4. Not built or run by us.</p>
+<p>If it holds, the Erdős–Rado sunflower conjecture is settled: for every number of petals, families of k-element sets without a sunflower grow at most exponentially in k, with a base that depends only on the petals. Whether that base can be of order r is still open.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>The paper’s Figure 1 example: {a, b, c}, {a, d, e}, {a, f, g} is a sunflower with core {a}; changing f to d gives A₂ ∩ A₃ = {a, d}, so it is not.</li>
+  <li>Ours, three petals: the largest family of 1-element sets has 2 members (exhaustive on pools up to 6) and of 2-element sets 6 (exhaustive on pools up to 7; on any pool, because such a graph is a union of paths and cycles with at most 2 disjoint edges). Two disjoint copies of a 10-triple family on 6 points (each pair of points in exactly two triples) give 20 triples with no sunflower; all 1,140 triples of sets checked. That 20 is the maximum for triples is due to Abbott and Gardner (1969), as cited in arXiv:2609.06175.</li>
+  <li>Ours, r = 3: the block pattern (r − 1)^k gives 2, 4, 8 sets for k = 1, 2, 3 (checked sunflower-free); the Erdős–Rado bound k!(r − 1)^k gives 2, 8, 48.</li>
+  <li>Ours: over the alphabet {0, 1, 2}, three distinct words have every column constant or all different exactly when they sum to zero mod 3 in every position, so (for three petals) sunflower-free word families are cap sets; the largest have 2, 4 and 9 words at lengths 1, 2 and 3.</li>
+  <li>Ours: the random-colouring loss k^k/k! is 2 for k = 2 and 4.5 for k = 3, below e^k.</li>
+  <li>Ours: for the 3-4-5 triangle, three separate wires cost 3 + 4 + 5 = 12 and one bit shared by the three corners costs half the perimeter, 6 (Monte Carlo estimate of the normalized Gaussian mean width: 6.0).</li>
+  <li>Ours, from the paper’s Section 3 formulas t = 1/(2(r − 1)), η = t²/4, ρ = η/(2 + η): ρ = 1/129 for r = 3, 1/289 for r = 4, 1/513 for r = 5 (in general 1/(32(r − 1)² + 1)). The video draws r = 4 with the gap enlarged.</li>
+  <li>Ours, text only: the Lean import closure of the solution module has 7,272 OpenAI files and 885,263 lines (the sunflower folder 31 files, 3,675 lines; most of the rest is the Euclidean-price and circuit code); outside libraries Mathlib (commit d13f23b), Lemmata and FixedPointTheorems, not scanned; Lean v4.34.1; no sorry, axiom, native_decide or unsafe outside comments (‘admit’ appears only as a variable name).</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li>OpenAI, <a href="https://github.com/openai/math/blob/main/preprints/An-exponential-bound-for-sunflowers-November-24-2026/paper.pdf">An exponential bound for sunflowers</a> (PDF), 36 pages, November 24, 2026 edition (<a href="https://github.com/openai/math/tree/main/preprints/An-exponential-bound-for-sunflowers-November-24-2026">folder with LaTeX sources</a>).</li>
+  <li>OpenAI, <a href="https://github.com/openai/math/blob/main/preprints/Euclidean-geometry-in-the-asymptotic-spectrum-of-tensors-November-24-2026/paper.pdf">Euclidean geometry in the asymptotic spectrum of tensors</a> (PDF), 86 pages, the family’s main paper.</li>
+  <li>The Lean <a href="https://github.com/openai/math/blob/main/lean/docs/379.md">scope note</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/Sunflower.lean">comparator challenge</a> and <a href="https://github.com/openai/math/blob/main/lean/OAI/Combinatorics/Sunflower/FixedBase.lean">solution module</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is one of the papers of result 379; OpenAI’s <a href="https://github.com/openai/math/blob/main/history.md">release notes</a> (November 24, 2026).</li>
+  <li>Background the paper cites: P. Erdős and R. Rado, Intersection theorems for systems of sets (1960); R. Alweiss, S. Lovett, K. Wu and J. Zhang, Improved bounds for the sunflower lemma (Annals 2021); A. Rao, Coding for sunflowers (2020); T. Bell, S. Chueluecha and L. Warnke, Note on sunflowers (2021); E. Naslund and W. Sawin, Upper bounds for sunflower-free sets (2017); M. Bucić, F. He and H. Lee, Proof of the Erdős–Szemerédi sunflower conjecture (arXiv:2610.26686); V. Strassen, The asymptotic spectrum of tensors (1988).</li>
+  <li>Not cited by the paper: E. Axante, C. Budala, D. Chitic, B. Dumitru and M. Nacu, <a href="https://arxiv.org/abs/2609.06175">Sunflower-free uniform families</a> (arXiv:2609.06175), our source for f(3,3) = 20 (Abbott and Gardner, 1969).</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with OpenAI.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>Take three sets: {a, b, c}, {a, d, e} and {a, f, g}. Every two of them meet in the same core, the letter a, and what is left of each set, its petal, overlaps no other. That is a sunflower with three petals. The core may even be empty, as it is for three disjoint sets. Now change f to d. The second and third sets share a and d, the other pairs share only a, and the sunflower is gone. In 1960, Paul Erdős and Richard Rado asked how many sets of k elements a family can hold with no sunflower of r petals, however large the pool of elements. Take three petals. With one element per set, two sets is the most: any three single elements are disjoint. With pairs, the family is a graph, and three edges at one point, or three disjoint edges, are sunflowers. Two separate triangles avoid both with 6 edges, and our script confirms that 6 is the most. For triples the answer is 20, a value Abbott and Gardner found in 1969; our script builds 20 triples from two copies of a 10-triple family on 6 points and checks every three of them. Taking one element from each of k blocks of r minus one gives (r − 1)^k sets with no sunflower. Erdős and Rado proved an upper bound of k! times (r − 1)^k, and the factorial eventually outgrows every exponential. The conjecture, which Erdős later stated explicitly: a base B_r, depending only on r, such that B_r^k always suffices. After improvements by Kostochka, in 2019 Alweiss, Lovett, Wu and Zhang brought the base down to a polylogarithmic function of k. Anup Rao, and then Bell, Chueluecha and Warnke, refined it to about a constant times (r log k)^k. That base still grows with k. A different version, posed by Erdős and Szemerédi, counts by the size of the pool. For three petals it was proved with the slice rank method, in a direct proof by Naslund and Sawin in 2017, and for every r in an October 2026 preprint by Bucić, He and Lee, as the paper cites.</p>
+<h3><span class="t num">2:16</span>The claim</h3>
+<p>Result 379, added on November 24, 2026, is a family of seven OpenAI papers on Euclidean tensor geometry. This episode covers one of them: An exponential bound for sunflowers, 36 pages. Its abstract opens: We prove the fixed-petal sunflower conjecture of Erdős and Rado. Its Theorem 1.1: for every r of at least three, there is a base B_r such that every family of distinct sets of size at most k with no r-petal sunflower has at most B_r^k members, for every k, whatever the pool. And the log of B_r is at most a constant times (log r)^4 · (log log 2r)^(5/2). What is new is that the base depends on r alone; for general families, every earlier bound grows with k. Not claimed: a base of order r, the stronger hope that Erdős and Rado voiced in 1960; the paper says whether the best base is of order r remains open. No value is given for the constant. And the paper itself cites an earlier claimed proof, by Junichiro Fukuyama, together with a research note describing an obstruction to one of its steps. Most important, the proof rests on the family’s main paper, Euclidean geometry in the asymptotic spectrum of tensors, 86 pages, which is just as new and just as unreviewed.</p>
+<h3><span class="t num">3:43</span>How the proof goes</h3>
+<p>How the proof goes, by the paper’s account. First, color the elements at random with k colors and keep the sets that get every color. Each kept set becomes a word, one letter per color, at a loss of at most e^k. Stack r words as rows. They form a sunflower when every column is either constant or all different. The enemy is a partial repetition, a letter repeated in a column but not all the way down. Over three letters and three petals, we note, sunflower-free word families are exactly cap sets: 2, 4 and 9 at lengths 1 to 3, by our script. The paper needs one bound for alphabets of every size. Now the counting trick. Give each of r groups of sites its own word, chosen independently. In every column, a tensor operation kills every partial repetition. In a sunflower-free family, only tuples where every group holds the same word survive. Independent labels have become one shared label. To charge for that, the paper uses a spectral point in Strassen’s sense: a number on tensors that multiplies under tensor products, adds under direct sums and cannot grow under local linear maps. Its logarithm is a price. The main paper’s theorem prices by geometry: place the sites in space, and a bit shared by two sites costs their distance; shared by more, it costs the mean width of their hull, in the plane half its perimeter. In our triangle with sides 3, 4 and 5, three separate wires cost 12, while one bit shared by all three corners costs 6. For a family of N words, sharing among all groups costs more than sharing within each group, by a surplus ρ·log N. If testing a column costs at most f, then ρ·log N is at most k·f, so N is at most exponential in k. The hard part, the paper says, is keeping f bounded for alphabets of any size. In its planar placement, two anchor groups sit on parallel unit segments, slightly more than one apart, and the other groups are single points near the first. Points have zero width, so only the anchors count separately, while the whole rectangle counts when all share. For three petals, the paper’s formulas give a surplus of 1/129, by our arithmetic. Each rule, such as: if two groups agree, a third must too, is checked at a cost that stays bounded however long the letters are, by copying or by an equality test. This gives a log of B_r at most of order r^5. To reach a power of log r, the paper tests whole columns at once, with shortened letters, masks and majority votes. OpenAI’s Lean proof, not run by us, covers the existence statement: for each r of at least three, a whole number C_r such that more than C_r^k distinct k-element sets contain an r-petal sunflower. The comparator file states it from Mathlib alone; by our reading it matches Theorem 1.1 for sets of exactly k elements, and padding covers the rest. The quantitative base is not formalized. The proof follows the planar route, and its imports include the Euclidean prices: about 7,300 files, 885,000 lines. Our text search finds no sorry or axiom. The pull request says the Lean and LaTeX builds were not run, and no build log is published.</p>
+<h3><span class="t num">7:12</span>Where it stands</h3>
+<p>Where it stands, on the evening of November 24. The paper is a preprint in OpenAI’s repository, not peer reviewed, and the repository calls its manuscripts raw research data from an unnamed internal model. The same family claims other striking results, among them that the matrix multiplication exponent is 9/4. The release went up only an hour or two before we checked. We found no expert reaction yet: nothing on the blogs of Scott Aaronson, Gil Kalai or Lance Fortnow, nothing about this paper on Hacker News, and no OSVerify review. Not built or run by us. If it holds, the Erdős–Rado sunflower conjecture is settled: for every number of petals, families of k-element sets without a sunflower grow at most exponentially in k, with a base that depends only on the petals. Whether that base can be of order r is still open.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20379%20sunflowers%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
