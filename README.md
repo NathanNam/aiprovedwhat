@@ -7,10 +7,10 @@ one mathematical result that an AI system claims to have proved, and keeps a
 record of how far the proof has been checked. The videos live on the
 [AI Proved What? YouTube channel](https://www.youtube.com/@AIProvedWhat).
 
-It covers every result in OpenAI's math catalogue (373 results in 721 papers as of
-October 27, 2026; the site's `docs/data/results.json` has the current figures), and,
+It covers every result in OpenAI's math catalogue (375 results in 730 papers as of
+November 25, 2026; the site's `docs/data/results.json` has the current figures), and,
 under **Beyond OpenAI's catalogue**, one-off OpenAI announcements and results from
-other labs: Axiom Math, PSI and Anthropic.
+other labs: Axiom Math, PSI, Anthropic and Google.
 
 ## What it looks like
 

@@ -126,6 +126,71 @@ build output.
 If an episode is listed but has no hand-made page yet, the builder generates a
 result page that shows the video and prints a warning.
 
+## Companion episodes
+
+A companion episode is a sub-episode of a catalogue result, made about one of its papers (approved by
+Nathan, November 24, 2026; first ones: 379mm and 379sf, companions of 379). It is not a result: it never
+changes the counts ("375 results"), the episode ranking or the home hero. Companions go in their own list in
+`episodes.json`, next to `"episodes"` (so `pipeline/scripts/publish_episodes.py`, which keys entries by
+`num`, never touches them):
+
+```json
+"companions": [
+  {
+    "id": "379mm",
+    "companion_of": "379",
+    "paper": "The matrix multiplication exponent is nine fourths",
+    "slug": "379-matrix-multiplication-nine-fourths",
+    "title": "Exactly two and a quarter?",
+    "subtitle": "One-line description",
+    "video_id": "YouTubeID",
+    "length": "8:31",
+    "published": "2026-11"
+  }
+]
+```
+
+- `id`: the parent's number plus 1-4 lowercase letters; it is also the short link (`/379mm/`).
+- `companion_of`: the parent result (must be in the catalog). `paper`: optional, the exact title of the
+  paper it covers, as in `docs/data/results.json` (a mismatch warns).
+- `papers`: instead of `paper`, a list of exact titles when one companion covers two or more of the
+  result's papers (added November 25, 2026 for 379fm, on the Fourier and tape papers). Every listed paper
+  gets the "· episode:" marker on the parent's page, the parent's line reads "on papers of this result"
+  instead of "on single papers", and the companion's block says "on two of its 7 papers: A and B".
+  `docs/data/results.json` gets a `papers` list for such a companion only (single-paper ones are unchanged).
+- An entry with `companion_of` inside `"episodes"` is also accepted (and kept out of the results), but use
+  the `"companions"` list.
+- A companion is shown only when `video_id` is a real 11-character YouTube ID **and** its hand-made page
+  exists at `docs/episodes/<slug>/` (written by its `production/page.py --publish`). Otherwise it appears
+  nowhere: no listing, no short link (a stale `/<id>/` redirect folder is removed), no sitemap entry.
+  `publish_site.sh` stashes `docs/episodes/<slug>/` for any `episodes/NNN-*` folder without
+  `youtube/video_id.txt`, companions included.
+
+What the builder does for a live companion:
+
+- Parent's page: a "Companion episodes, on single papers of this result" line inside the parent's
+  papers-note block, and "· episode: <title>" after the covered paper in the papers list (hand-made or
+  generated page).
+- Companion's own page: a `<!-- companion-of:start/end -->` block after the subtitle (parent, the paper,
+  main episode, sibling companions, connections link), plus the usual nav, Last checked, ledger labels,
+  player length and share tags. Its ledger is left as written (no record rows from the parent).
+- `/379mm/` redirects to the page; `docs/data/results.json` lists `companions` on the parent; the results
+  page shows "+N companion episodes" (and searches their titles); the subject page adds one line under the
+  parent; the sitemap lists the page.
+- When it is published, add its two addresses (`/379mm/`, `/episodes/<slug>/`) to `REQUIRED` in
+  `check_links.py` if its YouTube description prints them.
+
+Testing before publication (never writes docs/):
+
+```
+python3 tools/site/build.py work/math --out /tmp/apw-test --episodes-json COPY.json \
+    --preview-episode 379mm=TEST379mm01 --preview-episode 379sf=TEST379sf01
+python3 tools/site/check_links.py /tmp/apw-test
+```
+
+`--episodes-json` reads a copy of `episodes.json` (preview builds only); `--preview-episode <id>=VIDEOID`
+with a companion id renders that companion's page from its `page.py` in a sandbox, using the slug from the copy.
+
 ## When OpenAI updates the catalog
 
 Pull the clone, re-run the builder, and read its warnings:
@@ -190,12 +255,12 @@ Hand-maintained inputs (all small JSON files here):
 | File | What it holds |
 | --- | --- |
 | `updates.json` | What's new, /updates/ and feed.xml entries, newest first, each with a source |
-| `specials.json` | Claims announced outside the catalogue (S01, S02), with record and sources |
+| `specials.json` | Claims announced outside the catalogue (S01, S02), with record and sources. A batch whose members share one page (PSI01–05) is that page; a batch whose members each have their own page (GO01–06) is a group heading on the Specials page. `record.lean_claimed: true` (with `lean: "none"`) shows `lean_text` in the Lean step, for a Lean proof claimed but not released (GO01–06) |
 | `specials/<id>_refs.json` | A Special's reference lists, read from its PDFs by `specials_refs.py` |
 | `revisions.json` | Revised / implied-by / record-updated banners per result |
 | `status_overrides.json` | Record steps the catalogue lacks: expert review (OSVerify's published reviews, kind "reviewed"; or a group OpenAI says is checking, kind "announced", quoted), preprint text |
-| `relations.json` | Our own links between results (implies, same equations), drawn on the map |
-| `sources.json` | The labs covered (OpenAI, Axiom Math, PSI, Anthropic): names, repos, ID prefixes, announcement pages |
+| `relations.json` | Our own links between results (implies, same equations; `related` = a topic link where neither cites the other), drawn on the map |
+| `sources.json` | The labs covered (OpenAI, Axiom Math, PSI, Anthropic, Google): names, repos, ID prefixes, announcement pages. `repo_paths` (read by the daily check, ignored by the builder) limits a repo watch to one folder, for Google's monorepo |
 | `version_notes.json` | Labels for episode versions the default names don't fit (e.g. a fix release) |
 | `connections.baseline.json` | The connections.json a revised result's references are compared against |
 

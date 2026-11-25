@@ -10,9 +10,11 @@ copy or redistribute them.
 Results beyond OpenAI's catalogue are explained from their labs' public
 repositories and preprints, each under its own license as stated there:
 Axiom Math (https://github.com/AxiomMath), PSI
-(https://github.com/physical-superintelligence/oqp-batch-2026) and Anthropic
+(https://github.com/physical-superintelligence/oqp-batch-2026), Anthropic
 (https://github.com/anthropics/fermats-last-theorem,
-https://github.com/anthropics/formal-math), plus the preprints on Hexagon and
+https://github.com/anthropics/formal-math) and Google
+(https://github.com/google-research/google-research/tree/master/cogentic_research_papers),
+plus the preprints on Hexagon and
 arXiv linked from each page. They belong to their authors and are linked, not
 copied.
 
