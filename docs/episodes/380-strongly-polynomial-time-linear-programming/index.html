@@ -3,22 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 380: Strongly polynomial-time linear programming | AI Proved What?</title>
-<meta name="description" content="Strongly polynomial-time linear programming. Result 380 in OpenAI&#x27;s math release (Theoretical computer science): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>Smale’s ninth problem answered? OpenAI’s strongly polynomial linear programming and polynomial Hirsch claims | AI Proved What?</title>
+<meta name="description" content="Two OpenAI preprints claim a strongly polynomial algorithm for linear programming with real coefficients (Smale’s ninth problem) and simple rational polytopes whose diameter beats every polynomial in the facet count (disproving the polynomial Hirsch conjecture). Lean covers rational LP and the polytope theorems. Not peer reviewed; not built or run by us.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/380-strongly-polynomial-time-linear-programming/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 380: Strongly polynomial-time linear programming | AI Proved What?">
-<meta property="og:description" content="Strongly polynomial-time linear programming. Result 380 in OpenAI&#x27;s math release (Theoretical computer science): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="Strongly polynomial linear programming?">
+<meta property="og:description" content="Two OpenAI preprints claim a strongly polynomial algorithm for linear programming with real coefficients (Smale’s ninth problem) and simple rational polytopes whose diameter beats every polynomial in the facet count (disproving the polynomial Hirsch conjecture). Lean covers rational LP and the polytope theorems. Not peer reviewed; not built or run by us.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/380-strongly-polynomial-time-linear-programming/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/share-card.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 375 math results, their 730 papers and the 11,380 earlier works they cite, with 23 results beyond OpenAI’s catalogue on their own arc.">
-<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 375 math results, their 730 papers and the 11,380 earlier works they cite, with 23 results beyond OpenAI’s catalogue on their own arc.">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/380-strongly-polynomial-time-linear-programming/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="380: strongly polynomial linear programming? A deformed cube with the simplex method’s seven-step path through all eight corners, beside the one edge from start to optimum.">
+<meta name="twitter:image:alt" content="380: strongly polynomial linear programming? A deformed cube with the simplex method’s seven-step path through all eight corners, beside the one edge from start to optimum.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
@@ -26,7 +25,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
 <link rel="stylesheet" href="../../assets/site.css">
-<link rel="alternate" type="application/rss+xml" title="AI Proved What? updates" href="https://aiprovedwhat.com/updates/feed.xml">
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body>
@@ -47,40 +45,125 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 380 · <a href="../../subjects/theoretical-computer-science/">Theoretical computer science</a></p>
-<h1 class="result-title">Strongly polynomial-time linear programming</h1>
+<p class="meta">Episode 380, November 2026 (see also <a href="../104-quasipolynomial-mean-payoff-games/">104</a>)</p>
+<h1>Strongly polynomial linear programming?</h1>
+<p class="subtitle">Two OpenAI preprints claim a strongly polynomial algorithm for linear programming with real coefficients, answering Smale’s ninth problem, and simple polytopes whose diameter grows faster than every polynomial in their facet count, disproving the polynomial Hirsch conjecture. Lean covers rational LP and the polytope theorems.</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 380 in OpenAI’s catalog: <a href="#papers-in-result">all 2 papers</a>. <a href="../../connections/#380">See its connections</a> to other results and the work it cites.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="NEtY8iy0xzU" data-title="Episode 380: Strongly polynomial linear programming?">
+  <a href="https://youtu.be/NEtY8iy0xzU">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 380: strongly polynomial linear programming? A deformed cube with the simplex method’s seven-step path through all eight corners, beside the one edge from start to optimum.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:03. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/NEtY8iy0xzU?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/NEtY8iy0xzU?t=101" data-t="101"><span class="t">1:41</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/NEtY8iy0xzU?t=267" data-t="267"><span class="t">4:27</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/NEtY8iy0xzU?t=422" data-t="422"><span class="t">7:02</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>A deterministic algorithm solves linear programs with arbitrary real coefficients in a number of steps polynomial in the numbers of variables and constraints, answering Smale’s ninth problem. Bounded simple rational polytopes can have graph diameter superpolynomial in their facet count, refuting the polynomial Hirsch conjecture. For any prescribed subpolynomial bound on face dimension, the examples can be chosen so that even moves across such faces require superpolynomially many steps.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="question">
+<h2 id="question">The question</h2>
+<p>A linear program asks for the largest value of a linear function, subject to linear inequalities. The inequalities cut out a polytope, and the best value is reached at a corner. Dantzig’s simplex method walks from corner to corner along edges, always improving. Our example is a three-variable Klee–Minty program, in its textbook form; its polytope is a deformed cube. From the starting corner, the optimum is a single edge away. Yet the simplex method with Dantzig’s classic pivot rule visits all 8 corners, 7 steps. With d variables it takes 2^d − 1 steps: over a million for 20. Some other rules escape this example; none is known to be polynomial on every program. That raises two questions. Is there a method whose step count stays polynomial? And how long must the shortest path along edges be?</p>
+<p>The ellipsoid method of Khachiyan, in 1979, and Karmarkar’s interior point method, in 1984, run in time polynomial in the input’s length in bits. Their step counts grow with the digits in the data, not only with the numbers of variables and constraints. An algorithm whose arithmetic step count is polynomial in the numbers of variables and constraints alone is called strongly polynomial. Éva Tardos found one in 1986 when the matrix entries have short encodings, such as zeros and plus or minus ones; later work covered matrices with at most two nonzeros in each row or column. In 1998 Steve Smale made the general question, over the real numbers, his ninth problem for this century, calling it the main unsolved problem of linear programming theory.</p>
+<p>Smale’s problem, in his words: “Is there a polynomial time algorithm over the real numbers which decides the feasibility of the linear system of inequalities Ax ≥ b?” (<a href="https://doi.org/10.1007/BF03025291">Mathematical problems for the next century</a>, 1998). The LP paper also credits Megiddo and Tarjan with raising the question.</p>
+</section>
+
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>Result 380, added to OpenAI’s repository on November 24, 2026, is two OpenAI papers, of 58 and 57 pages. The first claims a deterministic, strongly polynomial algorithm for linear programming with arbitrary real coefficients: its count of arithmetic operations, comparisons and control steps is polynomial in the numbers of variables and constraints. It always returns a certificate that can be checked: an optimal primal and dual pair, a feasible point with an improving ray, or a short proof of infeasibility. That would answer Smale’s ninth problem. The same method, the paper says, gives strongly polynomial convex quadratic programming, and, for turn-based mean-payoff games, simple stochastic games, which Condon placed in NP and coNP, and parity games, strongly polynomial time without chance moves, and polynomial time with binary rational ones.</p>
+<p>In the LP paper’s words (Theorem 1): “For arbitrary real A, b, c, a deterministic strongly polynomial algorithm returns one of the following certificates for max{cᵀx : Ax ≤ b}”: a strictly complementary primal–dual pair, a feasible point with an improving ray, or a vector y ≥ 0 with Aᵀy = 0, bᵀy &lt; 0 and at most 1 + rank A nonzero entries. Its model counts scalar operations and comparisons, and charges control work at bit cost. For games, the step bound is strongly polynomial when moves are deterministic and polynomial in the bit lengths of the transition probabilities otherwise.</p>
+<p>The second paper takes the other question. In 1957, Hirsch proposed that a d-dimensional polytope with n facets has diameter at most n minus d. Our deformed cube meets it exactly: 6 facets, 3 dimensions, diameter 3. Francisco Santos disproved that bound in 2010, with a polytope of dimension 43 and 86 facets, two of whose corners are at least 44 steps apart. A polynomial bound in n remained open. Kalai and Kleitman’s upper bound, n^(log d + 2), is quasipolynomial. The paper claims: for every large n, a bounded, simple polytope with rational data and exactly n facets, whose diameter grows faster than every fixed power of n, while its dimension grows slower than every power of n. That disproves the polynomial Hirsch conjecture, even if one step may cross a whole face of small dimension.</p>
+<p>In the polytope paper’s words (Theorem 1.1): “For each positive integer-valued s(n) = n^o(1) there is a family of bounded simple rational polytopes Pₙ, one for every sufficiently large n, with exactly n facets, dimension n^o(1), and s(n)-move diameter n^ω(1).” Theorem 1.2 prescribes the dimension d and the facet excess E separately and gives two corners at least c·E·min(E^a, d^b) apart.</p>
+</section>
+
+<section aria-labelledby="not">
+<h2 id="not">How they fit, and what is not claimed</h2>
+<p>How do the two fit? On these polytopes, any method that walks along edges, such as the simplex method with any pivot rule, needs superpolynomially many steps between distant corners; the paper builds packing problems where every edge path from the origin to the optimum is that long. The first paper does not walk: it recovers the optimum’s certificates directly. Not claimed: an explicit polytope or size where the long paths begin, since the thresholds and constants are not given; a practical algorithm, since there is no implementation; or anything about how the simplex method behaves on typical problems. And the paper itself asks whether a strongly polynomial algorithm can avoid comparisons of exponentially high degree, which this one uses in places.</p>
+<p>The papers are consistent with the known upper bounds as far as we can see: Larman’s bound n·2^O(d) means superpolynomial diameter needs dimension growing faster than log n, which the construction has (the paper notes this), and the Kalai–Kleitman bound n^(log d + 2) allows superpolynomial growth when d grows. The LP algorithm does not follow a central path, so known barriers for path-following interior point methods (which the paper cites) do not apply to it. None of this checks the proofs.</p>
+</section>
+
+<section aria-labelledby="how">
+<h2 id="how">How the proofs go</h2>
+<p>How the algorithm works, by the paper’s account. Feasibility comes down to two sides: a nonnegative vector in one subspace gives a feasible point, and one in the orthogonal subspace gives Farkas’s certificate of infeasibility. The trouble is scale. An entry that matters can be tiny next to the others. So the algorithm changes the unit of each coordinate, by a price, and asks a test which side each coordinate is on. The answers are reliable only where the rescaled entries are largest, and the algorithm cannot tell where that is. A learning search, with experts betting on hypotheses and gaining or losing wealth, combines the answers until every side is known. To keep each test cheap, the logarithms of the subdeterminants it needs get short substitutes, extending Frank and Tardos’s rounding with lattice reduction. Finally, coordinates are set to zero one at a time, and linear algebra recovers the exact certificate.</p>
+<p>The polytope paper uses one coordinate, x, as time. Constraints such as z at least the distance from x to a, in enough copies, force a path to bend at x equals a: no straight edge can cut the corner of that V. Many corners force many bends. To get more than polynomially many, the construction nests. Inside each of many time intervals, called episodes, a second time coordinate runs, and further copies of the test sit in the overlaps, recursively. Giving every copy its own inequalities would spend as many facets as it gains in distance, so the copies share common clock readings. A scheduler, itself a system of inequalities, makes the right slack variables available at the right times.</p>
+</section>
+
+<section aria-labelledby="lean">
+<h2 id="lean">The Lean proofs, and what we compared</h2>
+<p>OpenAI’s Lean proofs, not run by us, cover less than the linear programming paper. By the scope note, the Lean covers strongly polynomial feasibility and optimization for rational data only: one fixed program on a rational machine, with an instruction count polynomial in the numbers of constraints and variables. Real coefficients, the case Smale asked about, quadratic programming and the games are not formalized. For the polytopes, the comparator states the main theorem with the face moves and the objective gap, the bound for prescribed dimension, and the negation of the polynomial Hirsch conjecture. By our reading, these statements match the paper’s. Our text search finds no sorry or axiom in the proof files. The pull request says the Lean builds were not run there, and no build log or comparator run was published.</p>
+<p>Our reading of the comparator files (not a machine check). <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/LinearProgramming.lean">LinearProgramming.lean</a> imports Mathlib and defines a random-access machine with rational registers, address registers, the field operations, comparisons and jumps; it asks for one program and constants c, e such that for every rational instance with m ≥ 1 constraints and d ≥ 1 variables the run halts within c·(m + d + 1)^e instructions, every stored rational stays within a polynomial in the input’s bit length, and the output is a feasible point or a Farkas certificate with at most rank + 1 nonzeros (feasibility), or an infeasibility certificate, an optimal primal–dual pair of equal value, or a point with a ray of objective gain 1 (optimization). The paper’s strictly complementary pair is a stronger output than the formalized one. <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/Hirsch.lean">Hirsch.lean</a> defines faces, facets, simplicity, the graph whose moves cross faces of dimension at most s, and rational bounded polytopes, and states Theorem 1.1 (with the objective-gap clause), Theorem 1.2 and the negation of the polynomial Hirsch conjecture; we found no difference from the paper’s statements beyond the added (true) connectivity of the graph. Neither configuration enables the nanoda kernel. We did not read the proofs.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, two papers of 58 and 57 pages, in github.com/openai/math (<a href="https://github.com/openai/math/tree/main/preprints/Strongly-polynomial-linear-programming-November-24-2026">LP folder</a>, <a href="https://github.com/openai/math/tree/main/preprints/Superpolynomial-graph-diameter-of-simple-polytopes-November-24-2026">polytope folder</a>): <a href="https://github.com/openai/math/commit/92b516ef8e2abf66c3db7aa31438d3010bc7956f">commit 92b516e</a>, merged November 24, 2026, 16:18 PT (<a href="https://github.com/openai/math/pull/6">pull request #6</a>), together with family 379’s seven papers.</dd>
   </div>
+<!-- review-step:start -->
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
     <dd>Not yet</dd>
   </div>
+<!-- review-step:end -->
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
-    <dd>Not yet</dd>
+    <dd>No.</dd>
   </div>
   <div class="ledger-row is-partial">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/380.md">scope notes</a>)</dd>
+    <dd>Strongly polynomial feasibility and optimization for rational data, on one fixed program for a rational machine; and the polytope theorems, including the negation of the polynomial Hirsch conjecture (<a href="https://github.com/openai/math/blob/main/lean/docs/380.md">scope note</a>; comparators <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/LinearProgramming.lean">LinearProgramming.lean</a>, <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/Hirsch.lean">Hirsch.lean</a>). Not the real-number case Smale asked about, quadratic programming or the games. Not run by us.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Build log or comparator run published</dt>
+    <dd>No. The pull request says: “Lean and LaTeX builds were not run for this PR.” The repository has no automated Lean check.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Expert reaction</dt>
+    <dd>None found as of November 24, 2026, about 18:10 PT, a few hours after the release. We checked Scott Aaronson’s blog, Gil Kalai’s blog, the Computational Complexity blog (Fortnow and Gasarch), Emanuele Viola’s and Terence Tao’s blogs, Hacker News and a news search: nothing mentions either paper (the blogs’ latest posts are about VP ≠ VNP; the two Hacker News threads on the release discuss only matrix multiplication). The Lean Zulip’s public archive was not current enough to check. OSVerify has not reviewed them.</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked November 24, 2026.</p>
-<p><a href="../../connections/#380">See its connections</a> to other results and the work it cites.</p>
+<p class="ledger-note">Last checked November 24, 2026, about 18:10 PT. The repository’s <a href="https://github.com/openai/math/blob/main/README.md">README</a> says its manuscripts were “produced by an unnamed internal OpenAI model” and are “best understood as a form of raw research data, rather than polished academic papers.” Not built or run by us.</p>
+<p>Episode 104 covered OpenAI’s quasipolynomial algorithms for these games, which the paper cites. If both papers hold, linear programming is strongly polynomial, Smale’s ninth problem is answered, and no edge-walking method started at the origin can be polynomial on every program, while linear programs are still solved in polynomial time by another route. See <a href="../104-quasipolynomial-mean-payoff-games/">104</a>.</p>
 </section>
 
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours: Klee and Minty’s program in 3 variables, max 4x1 + 2x2 + x3 s.t. x1 &lt;= 5, 4x1 + x2 &lt;= 25, 8x1 + 4x2 + x3 &lt;= 125, x &gt;= 0, solved by a textbook simplex method with Dantzig’s largest-coefficient rule from the slack basis (exact fractions): 7 pivots through all 8 corners, objective values 0, 20, 30, 50, 75, 95, 105, 125; the optimum (0, 0, 125) is one edge from the start (0, 0, 0).</li>
+  <li>Ours: the same program in d variables takes 2^d − 1 pivots (simulated for d = 1 to 8); 2^20 − 1 = 1,048,575. Its polytope is combinatorially a d-cube: 2^d corners, 2d facets and graph diameter d (breadth-first search, d ≤ 6), exactly the Hirsch bound n − d.</li>
+  <li>Background, checked by us: Santos’s counterexample has n − d = 86 − 43 = 43 while two corners are at least 44 apart; the Kalai–Kleitman bound n^(log₂ d + 2) is about 2.3 × 10^14 at n = 86, d = 43.</li>
+  <li>Ours, our reading of the last step of the proof of Theorem 1.1 in the polytope paper: for each j the construction gives distance at least n^((1−1/j)(j+1)) = n^(j − 1/j) (1.5, 2.667, 3.75 for j = 2, 3, 4) with dimension at most n^(1/j), once n passes a threshold the paper does not make explicit.</li>
+  <li>The LP paper’s own examples, re-checked: with u = 1/1000, the circuits (−1, −u, 1, 0) and (−u, −1, 0, 1) lie in the kernel of A = [[1, 0, 1, u], [0, 1, u, 1]], with first-coordinate ratios 1000 and 1/1000, and no column scaling we tried brings both below 1000 (the paper proves this for every scaling).</li>
+  <li>Ours, text only: the import closure of the LP comparator’s solution module has 1,552 files and 163,418 lines, importing Mathlib, Batteries and leanprover’s hex-lll and hex-matrix packages; the polytope closure has 158 files and 19,754 lines and imports only Mathlib; Lean v4.34.1; no sorry, admit, axiom declaration, native_decide, implemented_by, extern or unsafe in either closure (comments stripped; the comparator challenge files have their sorry by design). The outside packages were not scanned.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li>OpenAI, <a href="https://github.com/openai/math/blob/main/preprints/Strongly-polynomial-linear-programming-November-24-2026/paper.pdf">Strongly polynomial linear programming</a> (PDF), 58 pages, November 24, 2026 edition (<a href="https://github.com/openai/math/tree/main/preprints/Strongly-polynomial-linear-programming-November-24-2026">folder with LaTeX sources</a>).</li>
+  <li>OpenAI, <a href="https://github.com/openai/math/blob/main/preprints/Superpolynomial-graph-diameter-of-simple-polytopes-November-24-2026/paper.pdf">Superpolynomial graph diameter of simple polytopes</a> (PDF), 57 pages, November 24, 2026 edition (<a href="https://github.com/openai/math/tree/main/preprints/Superpolynomial-graph-diameter-of-simple-polytopes-November-24-2026">folder with LaTeX sources</a>).</li>
+  <li>The Lean <a href="https://github.com/openai/math/blob/main/lean/docs/380.md">scope note</a>, comparators <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/LinearProgramming.lean">LinearProgramming.lean</a> and <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/Hirsch.lean">Hirsch.lean</a>, solution modules <a href="https://github.com/openai/math/blob/main/lean/OAI/Optimization/LinearProgramming/Optimization.lean">Optimization.lean</a> and <a href="https://github.com/openai/math/blob/main/lean/OAI/Geometry/Hirsch/Main.lean">Main.lean</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md">The collection’s catalog</a>, where this is result 380; OpenAI’s <a href="https://github.com/openai/math/blob/main/history.md">history file</a> (November 24, 2026).</li>
+  <li>Background: S. Smale, <a href="https://doi.org/10.1007/BF03025291">Mathematical problems for the next century</a>, Math. Intelligencer 20 (1998); É. Tardos, A strongly polynomial algorithm to solve combinatorial linear programs, Oper. Res. 34 (1986); V. Klee and G. J. Minty, How good is the simplex algorithm? (1972); G. Kalai and D. J. Kleitman, <a href="https://arxiv.org/abs/math/9204233">A quasi-polynomial bound for the diameter of graphs of polyhedra</a> (1992); F. Santos, <a href="https://arxiv.org/abs/1006.2814">A counterexample to the Hirsch conjecture</a>, Ann. of Math. 176 (2012).</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with OpenAI.</p>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 2 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -89,18 +172,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/Superpolynomial-graph-diameter-of-simple-polytopes-November-24-2026/paper.pdf">Superpolynomial graph diameter of simple polytopes</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>A linear program asks for the largest value of a linear function, subject to linear inequalities. The inequalities cut out a polytope, and the best value is reached at a corner. Dantzig’s simplex method walks from corner to corner along edges, always improving. Our example is a three-variable Klee–Minty program, in its textbook form; its polytope is a deformed cube. From the starting corner, the optimum is a single edge away. Yet the simplex method with Dantzig’s classic pivot rule visits all 8 corners, 7 steps. With d variables it takes 2^d − 1 steps: over a million for 20. Some other rules escape this example; none is known to be polynomial on every program. That raises two questions. Is there a method whose step count stays polynomial? And how long must the shortest path along edges be? The ellipsoid method of Khachiyan, in 1979, and Karmarkar’s interior point method, in 1984, run in time polynomial in the input’s length in bits. Their step counts grow with the digits in the data, not only with the numbers of variables and constraints. An algorithm whose arithmetic step count is polynomial in the numbers of variables and constraints alone is called strongly polynomial. Éva Tardos found one in 1986 when the matrix entries have short encodings, such as zeros and plus or minus ones; later work covered matrices with at most two nonzeros in each row or column. In 1998 Steve Smale made the general question, over the real numbers, his ninth problem for this century, calling it the main unsolved problem of linear programming theory.</p>
+<h3><span class="t num">1:41</span>The claim</h3>
+<p>Result 380, added to OpenAI’s repository on November 24, 2026, is two OpenAI papers, of 58 and 57 pages. The first claims a deterministic, strongly polynomial algorithm for linear programming with arbitrary real coefficients: its count of arithmetic operations, comparisons and control steps is polynomial in the numbers of variables and constraints. It always returns a certificate that can be checked: an optimal primal and dual pair, a feasible point with an improving ray, or a short proof of infeasibility. That would answer Smale’s ninth problem. The same method, the paper says, gives strongly polynomial convex quadratic programming, and, for turn-based mean-payoff games, simple stochastic games, which Condon placed in NP and coNP, and parity games, strongly polynomial time without chance moves, and polynomial time with binary rational ones. The second paper takes the other question. In 1957, Hirsch proposed that a d-dimensional polytope with n facets has diameter at most n minus d. Our deformed cube meets it exactly: 6 facets, 3 dimensions, diameter 3. Francisco Santos disproved that bound in 2010, with a polytope of dimension 43 and 86 facets, two of whose corners are at least 44 steps apart. A polynomial bound in n remained open. Kalai and Kleitman’s upper bound, n^(log d + 2), is quasipolynomial. The paper claims: for every large n, a bounded, simple polytope with rational data and exactly n facets, whose diameter grows faster than every fixed power of n, while its dimension grows slower than every power of n. That disproves the polynomial Hirsch conjecture, even if one step may cross a whole face of small dimension. How do the two fit? On these polytopes, any method that walks along edges, such as the simplex method with any pivot rule, needs superpolynomially many steps between distant corners; the paper builds packing problems where every edge path from the origin to the optimum is that long. The first paper does not walk: it recovers the optimum’s certificates directly. Not claimed: an explicit polytope or size where the long paths begin, since the thresholds and constants are not given; a practical algorithm, since there is no implementation; or anything about how the simplex method behaves on typical problems. And the paper itself asks whether a strongly polynomial algorithm can avoid comparisons of exponentially high degree, which this one uses in places.</p>
+<h3><span class="t num">4:27</span>How the proof goes</h3>
+<p>How the algorithm works, by the paper’s account. Feasibility comes down to two sides: a nonnegative vector in one subspace gives a feasible point, and one in the orthogonal subspace gives Farkas’s certificate of infeasibility. The trouble is scale. An entry that matters can be tiny next to the others. So the algorithm changes the unit of each coordinate, by a price, and asks a test which side each coordinate is on. The answers are reliable only where the rescaled entries are largest, and the algorithm cannot tell where that is. A learning search, with experts betting on hypotheses and gaining or losing wealth, combines the answers until every side is known. To keep each test cheap, the logarithms of the subdeterminants it needs get short substitutes, extending Frank and Tardos’s rounding with lattice reduction. Finally, coordinates are set to zero one at a time, and linear algebra recovers the exact certificate. The polytope paper uses one coordinate, x, as time. Constraints such as z at least the distance from x to a, in enough copies, force a path to bend at x equals a: no straight edge can cut the corner of that V. Many corners force many bends. To get more than polynomially many, the construction nests. Inside each of many time intervals, called episodes, a second time coordinate runs, and further copies of the test sit in the overlaps, recursively. Giving every copy its own inequalities would spend as many facets as it gains in distance, so the copies share common clock readings. A scheduler, itself a system of inequalities, makes the right slack variables available at the right times. OpenAI’s Lean proofs, not run by us, cover less than the linear programming paper. By the scope note, the Lean covers strongly polynomial feasibility and optimization for rational data only: one fixed program on a rational machine, with an instruction count polynomial in the numbers of constraints and variables. Real coefficients, the case Smale asked about, quadratic programming and the games are not formalized. For the polytopes, the comparator states the main theorem with the face moves and the objective gap, the bound for prescribed dimension, and the negation of the polynomial Hirsch conjecture. By our reading, these statements match the paper’s. Our text search finds no sorry or axiom in the proof files. The pull request says the Lean builds were not run there, and no build log or comparator run was published.</p>
+<h3><span class="t num">7:02</span>Where it stands</h3>
+<p>Where it stands, on the evening of November 24, a few hours after the release. Both papers are preprints in OpenAI’s repository, not peer reviewed. The repository says its manuscripts were produced by an unnamed internal model, and are best understood as raw research data. We checked the blogs of Scott Aaronson, Gil Kalai, Lance Fortnow and Emanuele Viola, Hacker News and the news: no reaction to either paper yet, and no OSVerify review. Not built or run by us. Episode 104 covered OpenAI’s quasipolynomial algorithms for these games, which the paper cites. If both papers hold, linear programming is strongly polynomial, Smale’s ninth problem is answered, and no edge-walking method started at the origin can be polynomial on every program, while linear programs are still solved in polynomial time by another route.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20380%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../379-separation-vp-vnp-every-field/"><span class="dir">Previous · 379</span><span class="pt">Euclidean tensor geometry and its applications to complexity and combinatorics</span></a>
-  <span class="next"></span>
-</nav>
-<p class="pager-sub"><a href="../../subjects/theoretical-computer-science/">More in theoretical computer science</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

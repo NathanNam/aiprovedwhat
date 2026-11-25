@@ -3,31 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Result 379: Euclidean tensor geometry and its applications to complexity and combinatorics | AI Proved What?</title>
-<meta name="description" content="Euclidean tensor geometry and its applications to complexity and combinatorics. Result 379 in OpenAI&#x27;s math release (Theoretical computer science): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<title>VP ≠ VNP and Valiant’s whole hierarchy? OpenAI’s seven-paper claim, and Anthropic’s | AI Proved What?</title>
+<meta name="description" content="OpenAI’s result 379, now seven papers, claims Euclidean prices for tensors, a strict Valiant hierarchy VF ⊊ VBP ⊊ VP ⊊ VNP over every field, and exp(c(log N)²/(log log N)²) circuit lower bounds for the Hamiltonian cycle polynomial and the permanent. Its Lean covers the headlines, not the rates. Compared with Anthropic’s AN08. Not P vs NP. Not built or run by us. Anthropic makes Claude, which helps make this series.">
 <link rel="canonical" href="https://aiprovedwhat.com/episodes/379-separation-vp-vnp-every-field/">
-<meta property="og:type" content="article">
+<meta property="og:type" content="video.other">
 <meta property="og:site_name" content="AI Proved What?">
-<meta property="og:title" content="Result 379: Euclidean tensor geometry and its applications to complexity and combinatorics | AI Proved What?">
-<meta property="og:description" content="Euclidean tensor geometry and its applications to complexity and combinatorics. Result 379 in OpenAI&#x27;s math release (Theoretical computer science): OpenAI&#x27;s summary, the papers, and how far the proof has been checked.">
+<meta property="og:title" content="VP ≠ VNP and Valiant’s whole hierarchy?">
+<meta property="og:description" content="OpenAI’s result 379, now seven papers, claims Euclidean prices for tensors, a strict Valiant hierarchy VF ⊊ VBP ⊊ VP ⊊ VNP over every field, and exp(c(log N)²/(log log N)²) circuit lower bounds for the Hamiltonian cycle polynomial and the permanent. Its Lean covers the headlines, not the rates. Compared with Anthropic’s AN08. Not P vs NP. Not built or run by us. Anthropic makes Claude, which helps make this series.">
 <meta property="og:url" content="https://aiprovedwhat.com/episodes/379-separation-vp-vnp-every-field/">
-<meta property="og:image" content="https://aiprovedwhat.com/assets/share-card.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 375 math results, their 730 papers and the 11,380 earlier works they cite, with 23 results beyond OpenAI’s catalogue on their own arc.">
-<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI, explained and checked: a map of OpenAI’s 375 math results, their 730 papers and the 11,380 earlier works they cite, with 23 results beyond OpenAI’s catalogue on their own arc.">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/379-separation-vp-vnp-every-field/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="379: Valiant’s whole hierarchy, every field? The chain VF, VBP, VP, VNP with strict inclusions and the claimed bound e to the c (log N) squared over (log log N) squared, over a schematic grid with coloured edge labels.">
+<meta name="twitter:image:alt" content="379: Valiant’s whole hierarchy, every field? The chain VF, VBP, VP, VNP with strict inclusions and the claimed bound e to the c (log N) squared over (log log N) squared, over a schematic grid with coloured edge labels.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
-<meta name="generator" content="tools/site/build.py">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
-<link rel="stylesheet" href="../../assets/katex/katex.min.css">
 <link rel="stylesheet" href="../../assets/site.css">
-<link rel="alternate" type="application/rss+xml" title="AI Proved What? updates" href="https://aiprovedwhat.com/updates/feed.xml">
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 <body>
@@ -48,40 +45,133 @@
   </nav>
 </header>
 <main id="main">
-<p class="meta">Result 379 · <a href="../../subjects/theoretical-computer-science/">Theoretical computer science</a></p>
-<h1 class="result-title">Euclidean tensor geometry and its applications to complexity and combinatorics</h1>
+<p class="meta">Episode 379, November 2026 (see also <a href="../an08-vp-vnp-lean/">AN08</a>, <a href="../108-permanent-determinant-cubic-lower-bound/">108</a>, <a href="../an03-eth-false-3sat/">AN03</a>, <a href="../378-exponential-time-hypothesis-false/">378</a>)</p>
+<h1>VP ≠ VNP and Valiant’s whole hierarchy?</h1>
+<p class="subtitle">OpenAI’s result 379, now seven papers, claims Euclidean prices for tensors, a strict hierarchy VF ⊊ VBP ⊊ VP ⊊ VNP over every field, and exp(c(log N)²/(log log N)²) circuit lower bounds for the Hamiltonian cycle polynomial and the permanent. Its Lean covers the headlines, not the rates.</p>
+<!-- papers-note:start -->
+<p class="papers-note">Covers result 379 in OpenAI’s catalog: <a href="#papers-in-result">all 7 papers</a>. <a href="../../connections/#379">See its connections</a> to other results and the work it cites.</p>
+<p class="papers-note">Related, beyond OpenAI’s catalogue: <a href="../../episodes/an03-eth-false-3sat/">AN03</a> (Anthropic), which this result cites. Anthropic makes Claude, which helps make this series.</p>
+<!-- papers-note:end -->
+
+<div class="player" data-youtube="vc9gp65Gxoc" data-title="Episode 379: VP ≠ VNP and Valiant’s whole hierarchy?">
+  <a href="https://youtu.be/vc9gp65Gxoc">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play Episode 379: Valiant’s whole hierarchy, every field? The chain VF, VBP, VP, VNP with strict inclusions and the claimed bound e to the c (log N) squared over (log log N) squared, over a schematic grid with coloured edge labels.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">8:15. English captions available. The video loads from YouTube when you press play.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/vc9gp65Gxoc?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/vc9gp65Gxoc?t=88" data-t="88"><span class="t">1:28</span><span>The claims</span></a></li>
+  <li><a href="https://youtu.be/vc9gp65Gxoc?t=289" data-t="289"><span class="t">4:49</span><span>How the proofs go</span></a></li>
+  <li><a href="https://youtu.be/vc9gp65Gxoc?t=435" data-t="435"><span class="t">7:15</span><span>Where it stands</span></a></li>
+</ol>
+</section>
 
 <div class="measure">
-<section aria-labelledby="summary">
-<h2 id="summary">OpenAI’s summary</h2>
-<div class="summary"><p>Euclidean tensor prices yield strict separations of the arithmetic hierarchy, circuit lower bounds for Hamiltonian cycle over every field and for the permanent outside characteristic two, and an exponential bound for sunflower-free families with a fixed number of petals. The square matrix multiplication exponent is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9</mn><mi mathvariant="normal">/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">9/4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">9/4</span></span></span></span> over every field. The logarithmic exponent of finite abelian Fourier transforms is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1/2</span></span></span></span>. Integer multiplication on tapes takes <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>log</mi><mo>⁡</mo><mi>n</mi><msup><mo stretchy="false">)</mo><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn><mo>+</mo><mi>o</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">n(1+\log n)^{1/2+o(1)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.888em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1/2</span><span class="mbin mtight">+</span><span class="mord mathnormal mtight">o</span><span class="mopen mtight">(</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span></span> time on one fixed machine, and variable-count Weak ETH gives the matching logarithmic exponent.</p></div>
-<p class="attribution">Summary and paper titles from <a href="https://github.com/openai/math/blob/main/CONTENTS.md">OpenAI’s catalog</a>, used under the Apache License&nbsp;2.0.</p>
+<section aria-labelledby="question">
+<h2 id="question">The question</h2>
+<p>An arithmetic circuit builds a polynomial from variables and constants by adding, subtracting and multiplying. A huge sum can have a short circuit. Pick x or y from each of 3 pairs and multiply: the 8 products add up to (x₁ + y₁)(x₂ + y₂)(x₃ + y₃): 5 gates. The determinant of an m by m matrix has m factorial terms, and it too has small circuits. The permanent has the same terms, all with plus signs, and no comparably small circuits are known. Leslie Valiant’s class VP holds families of polynomial degree with circuits of polynomial size. VNP also allows a sum over all zero-one settings of polynomially many extra inputs. The permanent is complete for VNP outside characteristic two, and the Hamiltonian cycle polynomial over every field. Do the classes differ? It is the algebraic cousin of P versus NP.</p>
+<p>OpenAI’s new witness lives on a grid. Label each edge of an n by n grid with one of n states. Give each vertex a table of variables, one for each way to label the edges that meet there. A labeling picks one entry at every vertex. Multiply them, then sum over all labelings: that is the grid’s state sum, and it is in VNP. For 3 by 3, with 3 states: 12 edges, over half a million labelings, 225 variables.</p>
+</section>
+
+<section aria-labelledby="claim">
+<h2 id="claim">The claims, in plain words</h2>
+<p>Result 379 has a new title: Euclidean tensor geometry and its applications to complexity and combinatorics. On November 24, OpenAI added seven papers to it, and said two of them subsume its November 23 paper, VP and VNP are different, which stays available, unchanged, but is no longer listed. The first paper, 86 pages, prices tensors whose indices sit at points in space, over every field. A bit shared by two sites costs their distance. A bit shared by more sites costs the mean width of their convex hull: for a triangle, half its perimeter. In our example, a triangle with sides of length 1: a bit shared by all three corners costs 1.5; three separate wires cost 3. Such prices give lower bounds.</p>
+<p>The second paper, 21 pages, claims that over every field, formulas, algebraic branching programs, circuits and VNP form a strict hierarchy: VF, VBP, VP, VNP, each strictly inside the next. The grid’s state sum needs circuits of size n^(c(log n)^(1/12)). On complete binary trees, the state sum needs branching programs of size n^(c√(log log n)). On paths, it needs formulas of size n^(c log log n), and so does the determinant. All three bounds allow limits, in border complexity.</p>
+<p>The third paper, 80 pages, is about the classic complete polynomials. Over every field, circuits for the directed Hamiltonian cycle polynomial of order N need at least exp(c(log N)²/(log log N)²) gates once N is large, for an absolute constant c. The same holds for the permanent outside characteristic two; in characteristic two, the permanent equals the determinant. It holds even for circuits that only approximate the degree N coefficients, and carries over to determinants that represent these polynomials. The family also claims a matrix multiplication exponent of exactly 9/4, results on Fourier transforms and integer multiplication, and the sunflower conjecture of Erdős and Rado; matrix multiplication and sunflowers get episodes of their own. Not claimed, by our reading: anything about Boolean circuits, so not P versus NP. And no constants are given.</p>
+<p>In the papers’ words. Euclidean prices (<a href="https://github.com/openai/math/blob/main/preprints/Euclidean-geometry-in-the-asymptotic-spectrum-of-tensors-November-24-2026/paper.pdf">86 pages</a>, abstract): “a bit shared by two sites costs exactly their distance”; “a bit shared among finitely many sites costs the mean width of their convex hull, normalized to give a segment its length. For a triangle this is half its perimeter.” Hierarchy (<a href="https://github.com/openai/math/blob/main/preprints/Paths-trees-and-grids-separate-Valiants-hierarchy-November-24-2026/paper.pdf">21 pages</a>, Theorem 1.1): over every field F, VF ⊊ VBP ⊊ VP ⊊ VNP, witnessed by state sums on an n × n grid (circuit size n^(Ω((log n)^(1/12)))), a complete binary tree (ABP size n^(Ω(√(log log n)))) and a path (formula size n^(Ω(log log n))), all in degree-component border complexity; the determinant also needs formulas of size n^(Ω(log log n)). Hamiltonian cycle and permanent (<a href="https://github.com/openai/math/blob/main/preprints/Circuit-lower-bounds-for-Hamiltonian-cycle-and-the-permanent-November-24-2026/paper.pdf">80 pages</a>, Theorem 1.1): for an absolute c &gt; 0 and a threshold depending only on the characteristic, the degree-component border size of the directed Hamiltonian cycle polynomial of order N is at least exp(c(log N)²/(log log N)²) over every field, and the same for the permanent outside characteristic two.</p>
+<p>The rest of the family, not covered in depth here: <a href="https://github.com/openai/math/blob/main/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf">the matrix multiplication exponent is nine fourths</a> (the matching upper bound is OpenAI’s earlier claim, our <a href="../107-matrix-multiplication-exponent-nine-fourths/">107</a>), <a href="https://github.com/openai/math/blob/main/preprints/The-logarithmic-exponent-of-finite-Fourier-transforms-November-24-2026/paper.pdf">finite Fourier transforms</a>, <a href="https://github.com/openai/math/blob/main/preprints/The-logarithmic-exponent-of-integer-multiplication-on-tapes-November-24-2026/paper.pdf">integer multiplication on tapes</a> and <a href="https://github.com/openai/math/blob/main/preprints/An-exponential-bound-for-sunflowers-November-24-2026/paper.pdf">an exponential bound for sunflowers</a>.</p>
+</section>
+
+<section aria-labelledby="an08">
+<h2 id="an08">How the bounds compare, and Anthropic’s AN08</h2>
+<p>By our arithmetic, write each bound as e to a power of log N. The grid’s power is (log n)^(13/12), below the 5/4 of the November 23 paper, but for a different polynomial. For Hamiltonian cycle and the permanent, the new power is (log N)²/(log log N)². That also beats Anthropic’s November 23 claim, our Specials episode AN08. Anthropic makes Claude, which helps make this series. Anthropic states 2^(c(log m)^(4/3)), for exact and approximating circuits, and its Lean proof covers that bound. On November 23, Anthropic’s rate was the larger; now OpenAI’s is, eventually, whatever the constants. With both constants set to one, and base-two logs, it pulls ahead only when N has about 300 digits.</p>
+<div class="compare"><div class="compare-scroll">
+<table>
+<thead><tr><th></th><th>379 (OpenAI, November 24)</th><th><a href="../an08-vp-vnp-lean/">AN08</a> (Anthropic)</th></tr></thead>
+<tbody>
+<tr><th>Posted</th><td>Seven papers, merged November 24, 16:18 PT; the November 23 paper (merged 17:30 PT) subsumed, per OpenAI</td><td>70 pages, author line Claude (Anthropic); merged November 23, 13:43 PT; also on Hexagon</td></tr>
+<tr><th>Hamiltonian cycle and permanent (char ≠ 2)</th><td>exp(c(log N)²/(log log N)²), circuits that approximate the degree-N coefficients</td><td>m^(c(log m)^(1/3)) = 2^(c(log m)^(4/3)), exact and approximating circuits</td></tr>
+<tr><th>VP ≠ VNP</th><td>Also via a grid state sum, n^(Ω((log n)^(1/12))); plus VF ⊊ VBP ⊊ VP</td><td>VP ⊊ VNP and VNP ⊄ border VP</td></tr>
+<tr><th>Lean</th><td>The hierarchy (exact classes) and superpolynomial bounds; not the rates; no published build or comparator log</td><td>The quantitative bound (constant not explicit) and the approximate version; Anthropic’s CI passed (two kernels)</td></tr>
+<tr><th>Cites</th><td>Anthropic’s 3-SAT paper (AN03), OpenAI’s 378, 108 and 107; not Anthropic’s VP ≠ VNP paper</td><td>OpenAI’s 108; not OpenAI’s VP ≠ VNP papers</td></tr>
+</tbody>
+</table>
+</div></div>
+<p>The comparison of exponents is our arithmetic, not either paper’s; the constants are unknown (OpenAI gives none; AN08’s proof gives c ≤ 1/1600²). Anthropic makes Claude, which helps make this series.</p>
+</section>
+
+<section aria-labelledby="how">
+<h2 id="how">How the proofs go</h2>
+<p>How the grid proof goes, by the paper’s account. Give each edge an axis of its own, its two ends two units apart. The grid’s coefficient table is then a set of independent wires, priced at their total length times log n. A small circuit writes that table as a limited number of terms, each of low rank across some balanced cut. For each term, move a supply point a little toward the wire ends on one side. In our picture, three wires from the center to the ends of three axes have total length 3; moving the hub to the center of the ends cuts it to about 2.45. The saving grows like the square root of the number of crossing edges, while low rank costs only a thin wire. So each term, and their sum, is cheaper than the grid: a contradiction, unless the circuit is large. Every balanced cut of an r by r grid crosses at least r/3 edges; with r near (log n)^(1/6), the square root gives the 1/12.</p>
+<p>The Hamiltonian cycle paper splits on a geometric question: are there bounded-degree graphs whose vertices, placed anywhere in these price spaces, stay about as close together as their edges are long? If not, one placement makes every low-rank term cheap at once, and an explicit tensor costs more than their sum. If so, the geometry compresses tensor networks, and a program that counts its own computation paths could simulate its count with a small circuit and add one: a contradiction. Either way, the bound holds. The paper builds on Strassen’s asymptotic spectrum and, among its precedents, cites Anthropic’s 3-SAT paper, our AN03, and OpenAI’s ETH paper, result 378.</p>
+</section>
+
+<section aria-labelledby="lean">
+<h2 id="lean">The Lean proof, and what we read</h2>
+<p>OpenAI’s Lean, not run by us, is narrower. By its scope note, it proves the whole hierarchy for exact circuits, stated in a comparator file that imports only Mathlib. For the grid it rules out polynomial-size border circuits, but not the 1/12 rate. For Hamiltonian cycle and the permanent it proves superpolynomial bounds for exact circuits, as on November 23, not the new rate. By our reading, the final theorem takes its VP versus VNP step from the November 23 proof. Our text search of over 21,000 files finds no sorry or axiom. The pull request says the Lean build was not run.</p>
+<p>Our reading (not a machine check): the <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/ArithmeticHierarchy.lean">hierarchy comparator</a> imports only Mathlib and states <code>VF F ⊂ VBP F ∧ VBP F ⊂ VP F ∧ VP F ⊂ VNP F</code> for every field F, with formulas as expression trees (size = number of +, −, × nodes), branching programs with affine-linear edge labels (size = vertices plus edges), circuits with free variables and constants, and VNP as Boolean sums of VP families. In <a href="https://github.com/openai/math/blob/main/lean/OAI/Hierarchy/Strict.lean">Strict.lean</a>, the VP ⊊ VNP part comes from <a href="https://github.com/openai/math/blob/main/lean/OAI/Hierarchy/ValiantSeparation.lean">vp_ssubset_vnp</a>, which calls the November 23 proof’s <code>vp_ne_vnp</code>; the grid route in <a href="https://github.com/openai/math/blob/main/lean/OAI/Hierarchy/SeparationFromFlats.lean">SeparationFromFlats.lean</a> is also proved, and both are in the import closure. The comparator configuration does not enable the nanoda kernel. We did not read the proofs.</p>
 </section>
 
 <section aria-labelledby="stands">
 <h2 id="stands">Where it stands</h2>
-<dl class="ledger ledger-auto">
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
   <div class="ledger-row is-done">
-    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
-    <dd>OpenAI, October 2026</dd>
-  </div>
-  <div class="ledger-row">
-    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
-    <dd>Not yet</dd>
+    <dt><span class="box" aria-hidden="true"></span>Posted as preprints</dt>
+    <dd>OpenAI, seven papers in <a href="https://github.com/openai/math/blob/main/CONTENTS.md#family-379">family 379</a> of github.com/openai/math, merged November 24, 2026, 16:18 PT (<a href="https://github.com/openai/math/pull/6">pull request #6</a>). OpenAI’s <a href="https://github.com/openai/math/blob/main/history.md">history file</a>: the hierarchy and circuit lower bound papers “subsume the results of <i>VP and VNP are different</i>, released November 23. The original manuscript remains available unchanged.”</dd>
   </div>
   <div class="ledger-row">
     <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
-    <dd>Not yet</dd>
+    <dd>No.</dd>
   </div>
   <div class="ledger-row is-partial">
     <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
-    <dd>OpenAI published a Lean proof of part of the claim (<a href="https://github.com/openai/math/blob/main/lean/docs/379.md">scope notes</a>)</dd>
+    <dd>By OpenAI’s <a href="https://github.com/openai/math/blob/main/lean/docs/379.md">scope note</a>: VF ⊊ VBP ⊊ VP ⊊ VNP over every field for the exact classes (<a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/ArithmeticHierarchy.lean">comparator</a>); the grid family not in degree-component border VP; superpolynomial exact circuit bounds for the Hamiltonian cycle polynomial and, outside characteristic two, the permanent; a 2^(c(log₂ n)^(5/4)) exact bound for a signed path-count family; the mean-width price on finite-dimensional charts. Not formalized: the n^(Ω((log n)^(1/12))) grid rate, the exp(c(log N)²/(log log N)²) bound and its approximate version, the infinite-dimensional Hilbert-space prices. Not run by us.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Build log or comparator run published</dt>
+    <dd>No. The pull request says: “Lean and LaTeX builds were not run for this PR.” The repository has no automated Lean check.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None found as of November 24, 2026, about 18:30 PT. <a href="https://gilkalai.wordpress.com/2026/11/24/algebraic-complexity-vp-%e2%89%a0-vnp-mobius-pseudorandomness-the-riemann-hypothesis-and-tyi-61/">Gil Kalai’s blog</a> reported the November 23 news (“Claude, and a few hours later ChatGPT, proved that VP ≠ VNP”); <a href="https://blog.computationalcomplexity.org/2026/11/vp-vnp.html">Lance Fortnow</a> and <a href="https://emanueleviola.wordpress.com/2026/11/23/vp-vnp-i-do-not-complain-the-antelope-falls-with-the-arrow/">Emanuele Viola</a> wrote about Anthropic’s paper. <a href="https://scottaaronson.blog/">Scott Aaronson</a> compared the two November 23 proofs. A <a href="https://news.ycombinator.com/item?id=50632756">Hacker News thread</a> on the November 23 paper argued about priority and commit timestamps; a short one on the matrix multiplication paper corrected its title. OSVerify has not reviewed these papers.</dd>
   </div>
 </dl>
-<p class="ledger-note">Last checked November 24, 2026.</p>
-<p><a href="../../connections/#379">See its connections</a> to other results and the work it cites.</p>
+<p class="ledger-note">Last checked November 24, 2026, about 18:30 PT. The repository’s <a href="https://github.com/openai/math/blob/main/README.md">README</a> says its manuscripts were “produced by an unnamed internal OpenAI model” and are “best understood as a form of raw research data, rather than polished academic papers.” The November 23 paper, <a href="https://github.com/openai/math/tree/main/preprints/VP-and-VNP-are-different-November-23-2026">“VP and VNP are different”</a>, remains in the repository but is no longer listed in the catalogue. Not built or run by us.</p>
+<p>By our reading, the new bound would also imply the cubic bound of episode 108 for all large matrices. If these papers hold, Valiant’s hierarchy is strict over every field, and the permanent needs circuits of size, by our arithmetic, within a log log factor, in the exponent, of N^(log N). P versus NP is still open. See <a href="../108-permanent-determinant-cubic-lower-bound/">108</a> and <a href="../an08-vp-vnp-lean/">AN08</a>.</p>
 </section>
 
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours (the hierarchy paper’s opening example, n = 3): choosing x or y from each of three pairs gives 8 products, which add up to (x₁ + y₁)(x₂ + y₂)(x₃ + y₃): 3 additions and 2 multiplications, 5 gates.</li>
+  <li>Ours: the 3 × 3 grid with 3 states has 12 edges, 3^12 = 531,441 labelings and 225 variables (corner tables 9 entries, side tables 27, centre 81); the state sum has degree 9. A brute-force check on the 2 × 2 grid with 2 states: 16 monomials, each with coefficient 1.</li>
+  <li>Ours: a triangle with sides of length 1 has perimeter 3; a bit shared by its three corners costs half the perimeter, 1.5 (the mean width, checked numerically: 1.501), while three separate wires cost 3, as in the Euclidean paper’s Figure 1.</li>
+  <li>Ours, the hub picture: three unit wires from the centre to the ends of three axes have total length 3; moving the hub to the centre of the ends, (1/3, 1/3, 1/3), gives 3·√(2/3) = √6 ≈ 2.449; the first-order rate is √3, the square root of the number of crossing edges.</li>
+  <li>Ours, by brute force over all splits: the smallest balanced cut (each side more than a third of the vertices, at most two thirds) of a 2 × 2, 3 × 3 and 4 × 4 grid crosses 2, 3 and 4 edges; the paper’s general bound ⌈r/3⌉ gives 1, 1 and 2. With log₂ n = 4096, r = (log n)^(1/6) = 4 and √r = 2.</li>
+  <li>Ours, comparing exponents (logs base 2, every constant set to 1, illustration only): the Hamiltonian-cycle bound’s log₂ is (log₂ N)²/(log₂ log₂ N)²; it passes the November 23 paper’s (log₂ N)^(5/4) at log₂ N = 256 (N has 78 digits) and AN08’s (log₂ N)^(4/3) at log₂ N ≈ 982 (N has 296 digits). The ratio to AN08’s exponent grows without bound, so with any constants it is eventually larger. The grid bound is n^(c(log n)^(1/12)) = 2^(c(log n)^(13/12)), for a different polynomial.</li>
+  <li>Ours, text only: the import closure of the hierarchy comparator’s solution module (OAI.Hierarchy.Strict) has 21,408 OpenAI files and 2,492,880 lines; outside libraries Mathlib, Batteries, complexitylib, cslib, lemmata and fixed-point-theorems; Lean v4.34.1; no sorry, admit tactic, axiom declaration or native_decide in those files (the comparator challenge has its sorry by design). The November 23 VPVNP closure is now 3,189 files, 472,948 lines.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li>OpenAI, <a href="https://github.com/openai/math/blob/main/preprints/Euclidean-geometry-in-the-asymptotic-spectrum-of-tensors-November-24-2026/paper.pdf">Euclidean geometry in the asymptotic spectrum of tensors</a> (86 pages), <a href="https://github.com/openai/math/blob/main/preprints/Paths-trees-and-grids-separate-Valiants-hierarchy-November-24-2026/paper.pdf">Paths, trees and grids separate Valiant’s hierarchy</a> (21 pages), <a href="https://github.com/openai/math/blob/main/preprints/Circuit-lower-bounds-for-Hamiltonian-cycle-and-the-permanent-November-24-2026/paper.pdf">Circuit lower bounds for Hamiltonian cycle and the permanent</a> (80 pages), November 24, 2026 editions; and the superseded <a href="https://github.com/openai/math/tree/main/preprints/VP-and-VNP-are-different-November-23-2026">VP and VNP are different</a> (November 23).</li>
+  <li>The Lean <a href="https://github.com/openai/math/blob/main/lean/docs/379.md">scope note</a>, the <a href="https://github.com/openai/math/blob/main/lean/ComparatorChallenges/ArithmeticHierarchy.lean">hierarchy comparator</a> and its <a href="https://github.com/openai/math/blob/main/lean/OAI/Hierarchy/Strict.lean">solution module</a>.</li>
+  <li><a href="https://github.com/openai/math/blob/main/CONTENTS.md#family-379">The catalogue entry</a> (result 379) and OpenAI’s <a href="https://github.com/openai/math/blob/main/history.md">history file</a> (November 24, 2026).</li>
+  <li>For comparison: Claude (Anthropic), <a href="https://github.com/anthropics/formal-math/tree/main/vp-vnp">VP ≠ VNP over every field</a> (our episode <a href="../an08-vp-vnp-lean/">AN08</a>).</li>
+  <li>Background the papers cite: L. G. Valiant, Completeness classes in algebra (STOC 1979); V. Strassen, The asymptotic spectrum of tensors (1988); L. G. Valiant, S. Skyum, S. Berkowitz and C. Rackoff, Fast parallel computation of polynomials using few processors (1983); M. Mendel and A. Naor, Nonlinear spectral calculus and super-expanders (2014).</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with OpenAI, or with Anthropic beyond using its product Claude.</p>
+</section>
+
+<!-- papers-list:start -->
 <section aria-labelledby="papers-in-result">
 <h2 id="papers-in-result">The 7 papers in this result</h2>
 <p class="papers-intro">OpenAI groups related papers, such as alternative proofs, supporting results and consequences, into one result; we label the first paper it lists the main paper and the others companions.</p>
@@ -95,18 +185,28 @@
   <li><a href="https://github.com/openai/math/blob/main/preprints/An-exponential-bound-for-sunflowers-November-24-2026/paper.pdf">An exponential bound for sunflowers</a> <span class="ptag">companion</span></li>
 </ul>
 </section>
+<!-- papers-list:end -->
 
-<section class="coming" aria-labelledby="coming">
-<h2 id="coming">Episode coming</h2>
-<p>There’s no episode about this result yet. <a href="https://www.youtube.com/@AIProvedWhat">Subscribe on YouTube</a> to see new episodes as they come out.</p>
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>An arithmetic circuit builds a polynomial from variables and constants by adding, subtracting and multiplying. A huge sum can have a short circuit. Pick x or y from each of 3 pairs and multiply: the 8 products add up to (x₁ + y₁)(x₂ + y₂)(x₃ + y₃): 5 gates. The determinant of an m by m matrix has m factorial terms, and it too has small circuits. The permanent has the same terms, all with plus signs, and no comparably small circuits are known. Leslie Valiant’s class VP holds families of polynomial degree with circuits of polynomial size. VNP also allows a sum over all zero-one settings of polynomially many extra inputs. The permanent is complete for VNP outside characteristic two, and the Hamiltonian cycle polynomial over every field. Do the classes differ? It is the algebraic cousin of P versus NP. OpenAI’s new witness lives on a grid. Label each edge of an n by n grid with one of n states. Give each vertex a table of variables, one for each way to label the edges that meet there. A labeling picks one entry at every vertex. Multiply them, then sum over all labelings: that is the grid’s state sum, and it is in VNP. For 3 by 3, with 3 states: 12 edges, over half a million labelings, 225 variables.</p>
+<h3><span class="t num">1:28</span>The claims</h3>
+<p>Result 379 has a new title: Euclidean tensor geometry and its applications to complexity and combinatorics. On November 24, OpenAI added seven papers to it, and said two of them subsume its November 23 paper, VP and VNP are different, which stays available, unchanged, but is no longer listed. The first paper, 86 pages, prices tensors whose indices sit at points in space, over every field. A bit shared by two sites costs their distance. A bit shared by more sites costs the mean width of their convex hull: for a triangle, half its perimeter. In our example, a triangle with sides of length 1: a bit shared by all three corners costs 1.5; three separate wires cost 3. Such prices give lower bounds. The second paper, 21 pages, claims that over every field, formulas, algebraic branching programs, circuits and VNP form a strict hierarchy: VF, VBP, VP, VNP, each strictly inside the next. The grid’s state sum needs circuits of size n^(c(log n)^(1/12)). On complete binary trees, the state sum needs branching programs of size n^(c√(log log n)). On paths, it needs formulas of size n^(c log log n), and so does the determinant. All three bounds allow limits, in border complexity. The third paper, 80 pages, is about the classic complete polynomials. Over every field, circuits for the directed Hamiltonian cycle polynomial of order N need at least exp(c(log N)²/(log log N)²) gates once N is large, for an absolute constant c. The same holds for the permanent outside characteristic two; in characteristic two, the permanent equals the determinant. It holds even for circuits that only approximate the degree N coefficients, and carries over to determinants that represent these polynomials. The family also claims a matrix multiplication exponent of exactly 9/4, results on Fourier transforms and integer multiplication, and the sunflower conjecture of Erdős and Rado; matrix multiplication and sunflowers get episodes of their own. Not claimed, by our reading: anything about Boolean circuits, so not P versus NP. And no constants are given. By our arithmetic, write each bound as e to a power of log N. The grid’s power is (log n)^(13/12), below the 5/4 of the November 23 paper, but for a different polynomial. For Hamiltonian cycle and the permanent, the new power is (log N)²/(log log N)². That also beats Anthropic’s November 23 claim, our Specials episode AN08. Anthropic makes Claude, which helps make this series. Anthropic states 2^(c(log m)^(4/3)), for exact and approximating circuits, and its Lean proof covers that bound. On November 23, Anthropic’s rate was the larger; now OpenAI’s is, eventually, whatever the constants. With both constants set to one, and base-two logs, it pulls ahead only when N has about 300 digits.</p>
+<h3><span class="t num">4:49</span>How the proofs go</h3>
+<p>How the grid proof goes, by the paper’s account. Give each edge an axis of its own, its two ends two units apart. The grid’s coefficient table is then a set of independent wires, priced at their total length times log n. A small circuit writes that table as a limited number of terms, each of low rank across some balanced cut. For each term, move a supply point a little toward the wire ends on one side. In our picture, three wires from the center to the ends of three axes have total length 3; moving the hub to the center of the ends cuts it to about 2.45. The saving grows like the square root of the number of crossing edges, while low rank costs only a thin wire. So each term, and their sum, is cheaper than the grid: a contradiction, unless the circuit is large. Every balanced cut of an r by r grid crosses at least r/3 edges; with r near (log n)^(1/6), the square root gives the 1/12. The Hamiltonian cycle paper splits on a geometric question: are there bounded-degree graphs whose vertices, placed anywhere in these price spaces, stay about as close together as their edges are long? If not, one placement makes every low-rank term cheap at once, and an explicit tensor costs more than their sum. If so, the geometry compresses tensor networks, and a program that counts its own computation paths could simulate its count with a small circuit and add one: a contradiction. Either way, the bound holds. The paper builds on Strassen’s asymptotic spectrum and, among its precedents, cites Anthropic’s 3-SAT paper, our AN03, and OpenAI’s ETH paper, result 378. OpenAI’s Lean, not run by us, is narrower. By its scope note, it proves the whole hierarchy for exact circuits, stated in a comparator file that imports only Mathlib. For the grid it rules out polynomial-size border circuits, but not the 1/12 rate. For Hamiltonian cycle and the permanent it proves superpolynomial bounds for exact circuits, as on November 23, not the new rate. By our reading, the final theorem takes its VP versus VNP step from the November 23 proof. Our text search of over 21,000 files finds no sorry or axiom. The pull request says the Lean build was not run.</p>
+<h3><span class="t num">7:15</span>Where it stands</h3>
+<p>Where it stands, on the evening of November 24. These are preprints, not peer reviewed, produced by an unnamed internal OpenAI model; the repository calls its manuscripts raw research data. Gil Kalai, Lance Fortnow, Emanuele Viola and Scott Aaronson wrote about the November 23 news, and a Hacker News thread argued about priority. We found no expert review of the new papers, only a short Hacker News thread on 9/4, and no OSVerify review. Not built or run by us. By our reading, the new bound would also imply the cubic bound of episode 108 for all large matrices. If these papers hold, Valiant’s hierarchy is strict over every field, and the permanent needs circuits of size, by our arithmetic, within a log log factor, in the exponent, of N^(log N). P versus NP is still open.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=Episode%20379%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
 </section>
 </div>
-
-<nav class="pager" aria-label="Other results">
-  <a class="prev" href="../378-exponential-time-hypothesis-false/"><span class="dir">Previous · 378</span><span class="pt">Disproof of the Exponential Time Hypothesis</span></a>
-  <a class="next" href="../380-strongly-polynomial-time-linear-programming/"><span class="dir">Next · 380</span><span class="pt">Strongly polynomial-time linear programming</span></a>
-</nav>
-<p class="pager-sub"><a href="../../subjects/theoretical-computer-science/">More in theoretical computer science</a> · <a href="../">All results</a></p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">
