@@ -7,7 +7,7 @@
   "lean.status": "main: a published Lean proof of the main theorem; partial: of part of the claim; none: no Lean proof published. By OpenAI unless lean.by names another lab (265: Axiom); lean.via names the result whose Lean proof covers it (074, 077, 078 through 079). Classified from OpenAI's scope notes, or the other lab's repository.",
   "peer_review": "Whether the claim has been peer reviewed.",
   "kind": "'catalogue' for a result in OpenAI's math catalogue. OpenAI's one-off claims outside it (an OpenAI announcement (S01), a researcher’s paper made with GPT-6 Astra (S02)) and results from other labs (Axiom Math, PSI (Physical Superintelligence), Anthropic, Google Research (Cogentic)) are listed separately under 'specials' with kind 'special', each with its source lab, and are not counted in 'count'.",
-  "record": "The four-step record. expert_review.kind is 'reviewed' when a named independent group has published its review (OSVerify, with verdict and case links) and 'announced' when a named group is said to be checking it (378). stage: 'preprint' (the paper is public) or 'announced' (announced, paper not public). preprint: who posted it and when. expert_review: null, or {kind, by, source, source_label} plus, for kind 'reviewed', verdict (major / minor issues), papers_reviewed, papers_total, cases (title, url, verdict per reviewed paper) and checked (the date we last checked the reviewer's site); for kind 'announced', quote (the announcing text, quoted exactly) and since. peer_review: 'not yet' until refereed. lean: as lean.status.",
+  "record": "The four-step record. expert_review.kind is 'reviewed' when a named outside person or group has published a review or an independent check (OSVerify, with verdict and case links; outside Lean checks of AN01, AN06, AN07) and 'announced' when a named group is said to be checking it (378). stage: 'preprint' (the paper is public) or 'announced' (announced, paper not public). preprint: who posted it and when. expert_review: null, or {kind, by, source, source_label} plus, for kind 'reviewed', verdict (major / minor issues), papers_reviewed, papers_total, cases (title, url, verdict per reviewed paper) and checked (the date we last checked the reviewer's site); for kind 'announced', quote (the announcing text, quoted exactly) and since. peer_review: 'not yet' until refereed. lean: as lean.status.",
   "revisions": "Changes OpenAI made after the episode was out, or notes about another result's change that affects this one: date, kind (extended, implied-by, lean-added, files-restored, follow-up), note, new_episode (a new episode is planned), by (the result that changed), sources.",
   "versions": "Videos of this episode, newest first: the current one (current: true, Public) and earlier ones (Unlisted on YouTube) with label, date (from our run log, null if not logged), unlisted (date it was unlisted) and url. Empty if the episode was never remade.",
   "episode": "null when the result has no episode yet (shown as 'Episode coming')."
@@ -25341,7 +25341,15 @@
    "record": {
     "stage": "announced",
     "preprint": "A four-page note and a Lean archive, November 20, 2026; no paper or human-readable proof",
-    "expert_review": null,
+    "expert_review": {
+     "by": "Andrew Sutherland (MIT; checks run with Claude Code), outside check of the Lean code",
+     "source": "https://math.mit.edu/~drew/grh/",
+     "source_label": "Andrew Sutherland’s check log",
+     "since": "2026-11-21",
+     "kind": "reviewed",
+     "verdict": "full build, standard axioms only, independent kernels accept it; no human review of the argument yet",
+     "short_by": "Andrew Sutherland’s outside check of the AN06/AN07 Lean archive"
+    },
     "peer_review": "not yet",
     "lean": "main",
     "lean_by": "Levent Alpöge (Anthropic, with Claude)"
@@ -25375,7 +25383,15 @@
    "record": {
     "stage": "announced",
     "preprint": "A four-page note and a Lean archive, November 20, 2026; no paper or human-readable proof",
-    "expert_review": null,
+    "expert_review": {
+     "by": "Andrew Sutherland (MIT; checks run with Claude Code), outside check of the Lean code",
+     "source": "https://math.mit.edu/~drew/grh/",
+     "source_label": "Andrew Sutherland’s verification files",
+     "since": "2026-11-21",
+     "kind": "reviewed",
+     "verdict": "full build, standard axioms only, independent kernels accept it; no human review of the argument yet",
+     "short_by": "Andrew Sutherland’s outside check of the AN06/AN07 Lean archive"
+    },
     "peer_review": "not yet",
     "lean": "main",
     "lean_by": "Levent Alpöge (Anthropic, with Claude)"

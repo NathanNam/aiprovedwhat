@@ -1184,6 +1184,24 @@ main li { overflow-wrap: anywhere; }
 .lab-table th[scope="row"], .lab-table thead th:first-child { text-align: left; position: sticky; left: 0; background: var(--raised); min-width: 8.5rem; }
 .lab-table th[scope="row"] { font-weight: 600; }
 .lab-table td { color: var(--paper); font-variant-numeric: tabular-nums; }
+.scroll-hint { display: none; }
+.lab-table .th-short { display: none; }
+@media (max-width: 820px) {
+  /* Scroll cue for the by-lab tables on narrow screens: a gold edge shadow on the side that still has columns, and a hint line. */
+  .lab-scroll {
+    background:
+      linear-gradient(to left, var(--raised) 40%, transparent) right center / 2rem 100% no-repeat local,
+      radial-gradient(farthest-side at 100% 50%, color-mix(in srgb, var(--gold) 55%, transparent), transparent) right center / 0.8rem 100% no-repeat scroll,
+      var(--raised);
+  }
+  .lab-table thead th { min-width: 0; white-space: nowrap; vertical-align: bottom; }
+  .lab-table thead th:not(:first-child) { position: relative; }
+  .lab-table thead th:first-child { z-index: 2; }
+  .lab-table td { white-space: nowrap; }
+  .lab-table .th-long { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .lab-table .th-short { display: inline; }
+  .scroll-hint { display: block; margin: 0.8rem 0 -0.6rem; color: var(--dim); font-size: 0.8rem; text-align: right; }
+}
 .lab-notes { max-width: var(--measure); color: var(--dim); font-size: 0.9rem; margin: 0 0 1rem; }
 .lab-links li { margin: 0.35rem 0; }
 .thumb-disc { display: block; margin: 0 0 0.35rem; color: var(--dim); font-size: 0.85rem; }
