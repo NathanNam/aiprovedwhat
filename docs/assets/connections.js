@@ -6,8 +6,11 @@
    Links are flat triples [a, b, type]: 0 result-paper, 1 paper-work,
    2 paper cites another OpenAI paper, 3 work-author, 4 our own relation
    between results (data.relations). data.meta[num] carries each result's
-   page, episode, record, revisions and earlier versions; Specials sit on
-   their own arc (subject index data.specials_subject). */
+   page, episode, record, revisions and earlier versions. Results outside
+   OpenAI's catalogue (subject index data.specials_subject) sit on one arc
+   per lab (data.arcs, named in data.groups); the Lab filter keeps one lab's
+   results bright with everything they link to, and "Colour by lab" swaps
+   subject colours for lab colours. */
 (function () {
   "use strict";
   var canvas = document.getElementById("cx-map");
@@ -19,13 +22,16 @@
   var hits = document.getElementById("cx-hits");
   var minIn = document.getElementById("cx-min"), minOut = document.getElementById("cx-min-out");
   var showW = document.getElementById("cx-l2"), showA = document.getElementById("cx-l3"), showE = document.getElementById("cx-le");
-  var showS = document.getElementById("cx-sp"), showSel = document.getElementById("cx-show");
+  var labSel = document.getElementById("cx-lab"), byLab = document.getElementById("cx-bylab"), showSel = document.getElementById("cx-show");
 
   var C = { paper: "#ece9e1", soft: "#cdcac2", dim: "#9aa0aa", blue: "#58c4dd", gold: "#ffd84d", red: "#fc6255", green: "#83c167", bg: "#0a0d12" };
-  var meta = {}, rels = [], spSubj = null, special, numOf, match = null, labs = {};
-  // Tints for results outside OpenAI's catalogue, by lab.
-  var LAB = { openai: "#fc6255", axiom: "#c58af9", psi: "#f4a261", anthropic: "#e8a0bf", google: "#8ab4f8" };
+  var meta = {}, rels = [], spSubj = null, special, numOf, match = null, labs = {}, groups = {}, arcs = [];
+  // Tints by lab: results outside OpenAI's catalogue always; the catalogue too with "Colour by lab".
+  var LAB = { catalogue: "#83c1a0", openai: "#fc6255", axiom: "#c58af9", psi: "#f4a261", anthropic: "#e8a0bf", google: "#8ab4f8" };
   function labOf(i) { var m = meta[numOf[i]]; return m && m.lab ? m.lab : "openai"; }
+  // A result's group: "catalogue", or the lab of an entry outside it ("openai" is OpenAI outside its catalogue).
+  function groupOf(i) { return special[i] ? labOf(i) : "catalogue"; }
+  function groupName(g) { return groups[g] || (g === "openai" ? "OpenAI, outside its catalogue" : labs[g] || g); }
   var KIND = ["Result", "Paper", "Cited work", "Author"];
   var N, kind, X, Y, nodes, subjects, subjColor = [], links, adj, wMaxCite, visible;
   var view = { s: 1, ox: 0, oy: 0 }, W = 0, H = 0, dpr = 1, fitS = 1;
@@ -52,7 +58,7 @@
 
   function init(data) {
     nodes = data.nodes; subjects = data.subjects; links = data.links;
-    meta = data.meta || {}; rels = data.relations || []; labs = data.labs || {};
+    meta = data.meta || {}; rels = data.relations || []; labs = data.labs || {}; groups = data.groups || {}; arcs = data.arcs || [];
     spSubj = data.specials_subject === undefined ? null : data.specials_subject;
     N = nodes.length;
     kind = new Uint8Array(N); X = new Float32Array(N); Y = new Float32Array(N);
@@ -86,7 +92,8 @@
     for (i = 0; i < N; i++) if (kind[i] === 0) { if (special[i]) nSp++; else counts[nodes[i][4]]++; }
     document.querySelector(".cx-stage").insertAdjacentHTML("afterend", '<ul class="cx-subjects" aria-label="Subject colours">' +
       subjects.map(function (s, k) { return '<li><span class="cx-sw" style="background:' + subjColor[k] + '"></span>' + esc(s) + " (" + counts[k] + ")</li>"; }).join("") +
-      "</ul>" + (nSp ? '<ul class="cx-labs" aria-label="Beyond OpenAI’s catalogue, by lab">' + spLegend() + "</ul>" : ""));
+      '</ul><ul class="cx-labs" aria-label="Lab colours"></ul>');
+    labLegend();
     document.querySelector(".cx-stage").insertAdjacentHTML("beforeend", '<button type="button" class="cx-reset">Reset view</button>');
     document.querySelector(".cx-reset").addEventListener("click", function () { clearSel(); tip.hidden = true; reset(); });
     if (coarse) document.querySelector(".cx-hint").textContent = "Pinch to zoom, drag to move, tap a dot to see its connections. Double-tap to reset.";
@@ -103,21 +110,27 @@
     window.addEventListener("hashchange", fromHash);
   }
 
-  function spLegend() {
-    var n = {};
-    for (var i = 0; i < N; i++) if (kind[i] === 0 && special[i]) { var l = labOf(i); n[l] = (n[l] || 0) + 1; }
-    return Object.keys(n).map(function (l) {
-      var name = l === "openai" ? "OpenAI, outside its catalogue" : (labs[l] || l);
-      return '<li><span class="cx-sw" style="background:' + (LAB[l] || C.red) + ';outline:1px dashed ' + C.red + ';outline-offset:2px"></span>Beyond OpenAI: ' + esc(name) + " (" + n[l] + ")</li>";
+  // Lab swatches with counts: the catalogue's only when colouring by lab (otherwise it is coloured by subject).
+  function labLegend() {
+    var n = {}, order = [];
+    for (var i = 0; i < N; i++) if (kind[i] === 0) { var g = groupOf(i); if (!n[g]) order.push(g); n[g] = (n[g] || 0) + 1; }
+    order.sort(function (a, b) { return a === "catalogue" ? -1 : b === "catalogue" ? 1 : 0; });
+    var ul = document.querySelector(".cx-labs"), subj = document.querySelector(".cx-subjects");
+    if (subj) subj.hidden = byLab.checked;
+    if (!ul) return;
+    ul.innerHTML = order.filter(function (g) { return g !== "catalogue" || byLab.checked; }).map(function (g) {
+      var dash = g === "catalogue" ? "" : ";outline:1px dashed " + (LAB[g] || C.red) + ";outline-offset:2px";
+      return '<li><span class="cx-sw" style="background:' + (LAB[g] || C.red) + dash + '"></span>' + esc(groupName(g)) + " (" + n[g] + ")</li>";
     }).join("");
   }
   function applyFilters() {
     minCite = +minIn.value; minOut.textContent = minCite;
     for (var i = 0; i < N; i++) {
       var k = kind[i];
-      visible[i] = k < 2 ? (special[i] && !showS.checked ? 0 : 1) : k === 2 ? (showW.checked && nodes[i][6] >= minCite ? 1 : 0) : (showA.checked && wMaxCite[i] >= minCite ? 1 : 0);
+      visible[i] = k < 2 ? 1 : k === 2 ? (showW.checked && nodes[i][6] >= minCite ? 1 : 0) : (showA.checked && wMaxCite[i] >= minCite ? 1 : 0);
     }
     recordFilter();
+    labLegend();
     draw();
   }
   // "Show": keep results matching a record filter bright, with their papers, the works
@@ -131,25 +144,31 @@
     if (f === "coming") return !m.ep;
     return true;
   }
+  // "Lab": that lab's results as above, plus every result they link to (our relations, and papers citing
+  // papers), with those results' papers.
   function recordFilter() {
-    if (!showSel.value) { match = null; return; }
+    if (!showSel.value && !labSel.value) { match = null; return; }
     match = new Uint8Array(N);
-    for (var i = 0; i < N; i++) if (kind[i] === 0 && wants(i)) {
+    var linked = [];
+    for (var i = 0; i < N; i++) if (kind[i] === 0 && wants(i) && (!labSel.value || groupOf(i) === labSel.value)) {
       match[i] = 1;
       nb(i, 0).forEach(function (p) {
         match[p[0]] = 1;
         nb(p[0], 1).forEach(function (w) { match[w[0]] = 1; nb(w[0], 3).forEach(function (a) { match[a[0]] = 1; }); });
+        if (labSel.value) nb(p[0], 2).forEach(function (q) { nb(q[0], 0).forEach(function (r) { linked.push(r[0]); }); });
       });
+      if (labSel.value) nb(i, 4).forEach(function (r) { linked.push(r[0]); });
     }
+    linked.forEach(function (r) { match[r] = 1; nb(r, 0).forEach(function (p) { match[p[0]] = 1; }); });
   }
-  [minIn, showW, showA, showE, showS, showSel].forEach(function (el) { el.addEventListener("input", applyFilters); el.addEventListener("change", applyFilters); });
+  [minIn, showW, showA, showE, labSel, byLab, showSel].forEach(function (el) { el.addEventListener("input", applyFilters); el.addEventListener("change", applyFilters); });
 
   function resize() {
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     W = canvas.clientWidth; H = canvas.clientHeight;
     canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
     narrow = W < 640;
-    fitS = narrow ? Math.min(W, H) * 0.47 : Math.min(W * 0.62, H * 0.86) / 2;
+    fitS = narrow ? Math.min(W, H) * 0.44 : Math.min(W * 0.62, H * 0.86) / 2;
     if (!view.set) reset(); else draw();
   }
   function reset() { view = { s: fitS, ox: W / 2, oy: H / 2, set: true }; draw(); }
@@ -169,6 +188,7 @@
   }
   function colour(i) {
     var k = kind[i];
+    if (k === 0 && byLab.checked) return LAB[groupOf(i)] || C.red;
     return k === 0 ? (special[i] ? (LAB[labOf(i)] || C.red) : subjColor[nodes[i][4]]) : k === 1 ? C.paper : k === 2 ? C.blue : C.red;
   }
 
@@ -248,25 +268,34 @@
     labels();
   }
 
-  // The Specials arc: a dashed red outline just outside the special results.
-  function specialsArc() {
-    if (spSubj === null || !showS.checked) return;
-    var a0 = null, a1 = null;
+  // Each lab's angular span, [lab, a0, a1] (unwrapped around the lab's first dot, so no arc breaks at ±π).
+  function labSpans() {
+    var sp = {}, order = [];
     for (var i = 0; i < N; i++) if (kind[i] === 0 && special[i]) {
-      var a = Math.atan2(Y[i], X[i]);
-      if (a0 === null || a < a0) a0 = a;
-      if (a1 === null || a > a1) a1 = a;
+      var l = labOf(i), a = Math.atan2(Y[i], X[i]);
+      if (!sp[l]) { sp[l] = { ref: a, a0: 0, a1: 0, n: 0 }; order.push(l); }
+      var d = a - sp[l].ref; d = Math.atan2(Math.sin(d), Math.cos(d));
+      if (d < sp[l].a0) sp[l].a0 = d;
+      if (d > sp[l].a1) sp[l].a1 = d;
+      sp[l].n++;
     }
-    if (a0 === null) return;
-    var pad = 0.06, r1 = 1.025 * view.s, r0 = 0.9 * view.s, b0 = a0 - pad, b1 = a1 + pad;
-    ctx.save();
-    ctx.setLineDash([4, 3]); ctx.strokeStyle = C.red; ctx.lineWidth = 1.5;
-    ctx.beginPath();
-    ctx.arc(view.ox, view.oy, r1, b0, b1);
-    ctx.lineTo(view.ox + Math.cos(b1) * r0, view.oy + Math.sin(b1) * r0);
-    ctx.arc(view.ox, view.oy, r0, b1, b0, true);
-    ctx.closePath(); ctx.stroke();
-    ctx.restore();
+    return order.map(function (l) { return [l, sp[l].ref + sp[l].a0, sp[l].ref + sp[l].a1, sp[l].n]; });
+  }
+  // The lab arcs: a dashed outline in each lab's colour just outside its results.
+  function specialsArc() {
+    if (spSubj === null) return;
+    labSpans().forEach(function (s) {
+      var pad = 0.025, r1 = 1.025 * view.s, r0 = 0.9 * view.s, b0 = s[1] - pad, b1 = s[2] + pad;
+      ctx.save();
+      ctx.setLineDash([4, 3]); ctx.strokeStyle = LAB[s[0]] || C.red; ctx.lineWidth = 1.5;
+      ctx.globalAlpha = labSel.value && labSel.value !== s[0] ? 0.35 : 1;
+      ctx.beginPath();
+      ctx.arc(view.ox, view.oy, r1, b0, b1);
+      ctx.lineTo(view.ox + Math.cos(b1) * r0, view.oy + Math.sin(b1) * r0);
+      ctx.arc(view.ox, view.oy, r0, b1, b0, true);
+      ctx.closePath(); ctx.stroke();
+      ctx.restore();
+    });
   }
 
   function labels() {
@@ -281,18 +310,37 @@
       m.x += X[i]; m.y += Y[i]; m.n++;
     }
     ctx.fillStyle = C.soft;
-    if (mids) Object.keys(mids).forEach(function (s) {
-      var m = mids[s], ang = Math.atan2(m.y / m.n, m.x / m.n), r = 1.05;
-      var x = Math.cos(ang) * r * view.s + view.ox, y = Math.sin(ang) * r * view.s + view.oy;
-      if (x < 0 || y < 0 || x > W || y > H) return;
-      ctx.fillStyle = subjColor[s];
-      ctx.textAlign = Math.cos(ang) > 0.25 ? "left" : Math.cos(ang) < -0.25 ? "right" : "center";
-      if (+s === spSubj) {
-        if (!showS.checked) return;
-        x = Math.cos(ang) * 1.13 * view.s + view.ox; y = Math.sin(ang) * 1.13 * view.s + view.oy;
-        ctx.fillText("Beyond OpenAI (" + m.n + ")", x, y); return;
+    // Each label is pushed outward until its box clears every label already drawn.
+    var placed = [];
+    function put(lines, ang, r) {
+      var align = Math.cos(ang) > 0.25 ? "left" : Math.cos(ang) < -0.25 ? "right" : "center";
+      var w = Math.max.apply(null, lines.map(function (t) { return ctx.measureText(t).width; })), h = 14 * lines.length;
+      for (var k = 0; k < 8; k++) {
+        var x = Math.cos(ang) * r * view.s + view.ox, y = Math.sin(ang) * r * view.s + view.oy;
+        var x0 = align === "left" ? x : align === "right" ? x - w : x - w / 2, y0 = y - h / 2;
+        var hit = placed.some(function (b) { return x0 < b[2] + 4 && x0 + w + 4 > b[0] && y0 < b[3] && y0 + h > b[1]; });
+        if (!hit || k === 7) {
+          if (x < 0 || y < 0 || x > W || y > H) return;
+          placed.push([x0, y0, x0 + w, y0 + h]);
+          ctx.textAlign = align;
+          lines.forEach(function (t, j) { ctx.fillText(t, x, y + (j - (lines.length - 1) / 2) * 14); });
+          return;
+        }
+        r += 14 / view.s;
       }
-      ctx.fillText(subjects[s] + " (" + m.n + ")", x, y);
+    }
+    if (mids) Object.keys(mids).forEach(function (s) {
+      if (+s === spSubj) return;   // the lab arcs are named one by one below
+      var m = mids[s], ang = Math.atan2(m.y / m.n, m.x / m.n);
+      ctx.fillStyle = subjColor[s];
+      put([subjects[s] + " (" + m.n + ")"], ang, 1.05);
+    });
+    if (mids) labSpans().forEach(function (sp) {
+      var ang = (sp[1] + sp[2]) / 2, text = groupName(sp[0]) + " (" + sp[3] + ")";
+      ctx.fillStyle = LAB[sp[0]] || C.red;
+      // A long name ("OpenAI, outside its catalogue") goes on two lines so it stays on the canvas.
+      var cut = text.length > 18 ? text.indexOf(" ", Math.floor(text.length / 2) - 4) : -1;
+      put(cut > 0 ? [text.slice(0, cut), text.slice(cut + 1)] : [text], ang, 1.08);
     });
     // result numbers once zoomed in, or for the highlighted results
     ctx.fillStyle = C.paper; ctx.textAlign = "center";
@@ -389,7 +437,7 @@
   function showTip(i, x, y, tapped) {
     var t = nodes[i][3];
     if (t.length > 150) t = t.slice(0, 147) + "…";
-    var extra = kind[i] === 2 ? (nodes[i][4] ? " (" + nodes[i][4] + ")" : "") + " · cited by " + nodes[i][6] + " paper" + (nodes[i][6] > 1 ? "s" : "") : kind[i] === 0 ? " · " + (special[i] ? "Beyond OpenAI: " + ((meta[numOf[i]] || {}).lab_label || "") : subjects[nodes[i][4]]) : "";
+    var extra = kind[i] === 2 ? (nodes[i][4] ? " (" + nodes[i][4] + ")" : "") + " · cited by " + nodes[i][6] + " paper" + (nodes[i][6] > 1 ? "s" : "") : kind[i] === 0 ? " · " + (special[i] ? ((meta[numOf[i]] || {}).lab_label || "") : subjects[nodes[i][4]]) : "";
     tip.textContent = KIND[kind[i]] + ": " + t + extra + (tapped ? " · details below the map" : "");
     tip.hidden = false;
     var left = Math.min(x + 14, W - tip.offsetWidth - 8), top = y + 14;
@@ -513,7 +561,7 @@
       var near = Array.from(share.entries()).filter(function (a) { return a[1] >= 2; }).sort(function (a, b) { return b[1] - a[1]; }).slice(0, 8);
       var m = meta[numOf[i]] || {};
       h += '<h2><a href="../' + esc(m.page || "episodes/" + n[5] + "/") + '">' + esc(n[3]) + "</a></h2>";
-      h += '<p class="meta"><span class="cx-sw" style="background:' + colour(i) + '"></span>' + esc(special[i] ? "Beyond OpenAI’s catalogue: " + (m.lab_label || "") + (m.draft ? " (draft, preview only)" : "") : subjects[n[4]]) + (c.P.length ? " · " + c.P.length + " paper" + (c.P.length > 1 ? "s" : "") : "") + (special[i] && !works.length ? "" : " · cites " + fmt(works.length) + " works by about " + fmt(authors.size) + " authors") + "</p>";
+      h += '<p class="meta"><span class="cx-sw" style="background:' + colour(i) + '"></span>' + esc(special[i] ? (m.lab_label || "") + (m.draft ? " (draft, preview only)" : "") : subjects[n[4]]) + (c.P.length ? " · " + c.P.length + " paper" + (c.P.length > 1 ? "s" : "") : "") + (special[i] && !works.length ? "" : " · cites " + fmt(works.length) + " works by about " + fmt(authors.size) + " authors") + "</p>";
       h += recordHtml(i, m);
       if (c.P.length) h += "<h3>Papers</h3><ul>" + c.P.map(function (p) { return "<li>" + go(p, nodes[p][3]) + "</li>"; }).join("") + "</ul>";
       if (special[i] && !works.length) {

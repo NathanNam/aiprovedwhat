@@ -1176,4 +1176,16 @@ main li { overflow-wrap: anywhere; }
 .ledger-row.is-partial .box { border-color: var(--gold); background: linear-gradient(135deg, var(--gold) 0 50%, transparent 50% 100%); }
 /* Long repository paths in record text (e.g. cogentic_research_papers/…) wrap instead of widening the page. */
 .ledger dd { overflow-wrap: anywhere; }
+/* Labs: progress by lab, one row per lab. The table scrolls inside its own box on narrow screens, lab names stay put. */
+.lab-scroll { overflow-x: auto; margin: 1rem 0 0.6rem; border: 1px solid var(--rule); border-radius: 6px; background: var(--raised); }
+.lab-table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+.lab-table th, .lab-table td { text-align: right; vertical-align: top; padding: 0.45rem 0.7rem; border-top: 1px solid var(--rule); }
+.lab-table thead th { border-top: 0; color: var(--soft); font-weight: 600; font-size: 0.85rem; line-height: 1.3; min-width: 5.5rem; vertical-align: bottom; }
+.lab-table th[scope="row"], .lab-table thead th:first-child { text-align: left; position: sticky; left: 0; background: var(--raised); min-width: 8.5rem; }
+.lab-table th[scope="row"] { font-weight: 600; }
+.lab-table td { color: var(--paper); font-variant-numeric: tabular-nums; }
+.lab-notes { max-width: var(--measure); color: var(--dim); font-size: 0.9rem; margin: 0 0 1rem; }
+.lab-links li { margin: 0.35rem 0; }
+.thumb-disc { display: block; margin: 0 0 0.35rem; color: var(--dim); font-size: 0.85rem; }
+.cx-subjects[hidden] { display: none; }
 /* --- site_next additions: end --- */
