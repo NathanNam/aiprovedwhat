@@ -14,8 +14,8 @@
 <meta property="og:image" content="https://aiprovedwhat.com/assets/share-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI labs, explained and checked: 407 claims, 5 labs, 755 papers. A map of OpenAI’s 375 math results, their 730 papers and the 11,380 earlier works they cite, and 32 results outside OpenAI’s catalogue, 30 of them on one arc per lab.">
-<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI labs, explained and checked: 407 claims, 5 labs, 755 papers. A map of OpenAI’s 375 math results, their 730 papers and the 11,380 earlier works they cite, and 32 results outside OpenAI’s catalogue, 30 of them on one arc per lab.">
+<meta property="og:image:alt" content="AI Proved What? New mathematics claimed by AI labs, explained and checked: 408 claims, 5 labs, 756 papers. A map of OpenAI’s 375 math results, their 730 papers and the 11,380 earlier works they cite, and 33 results outside OpenAI’s catalogue, 31 of them on one arc per lab.">
+<meta name="twitter:image:alt" content="AI Proved What? New mathematics claimed by AI labs, explained and checked: 408 claims, 5 labs, 756 papers. A map of OpenAI’s 375 math results, their 730 papers and the 11,380 earlier works they cite, and 33 results outside OpenAI’s catalogue, 31 of them on one arc per lab.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0e1117">
 <meta name="generator" content="tools/site/build.py">
@@ -48,7 +48,7 @@
 </header>
 <main id="main">
 <h1>Beyond OpenAI’s catalogue</h1>
-<p class="lede">Claims outside OpenAI’s math catalogue: an OpenAI announcement (S01), a researcher’s paper made with GPT-6 Astra (S02) and results from other labs (Axiom Math, PSI (Physical Superintelligence), Anthropic, Google Research (Cogentic)), with the same four-step record. They are kept out of the catalogue counts and added by hand from each lab’s announcements and repositories.</p>
+<p class="lede">Claims outside OpenAI’s math catalogue: an OpenAI announcement (S01), a researcher’s paper made with GPT-6 Astra (S02) and results from other labs (Axiom Math, PSI (Physical Superintelligence), Anthropic, Google), with the same four-step record. They are kept out of the catalogue counts and added by hand from each lab’s announcements and repositories.</p>
 <p>By lab: <a href="../labs/openai/">OpenAI</a> · <a href="../labs/axiom/">Axiom Math</a> · <a href="../labs/psi/">PSI</a> · <a href="../labs/anthropic/">Anthropic</a> · <a href="../labs/google/">Google</a>. <a href="../labs/">All labs</a>, with progress side by side.</p>
 <section class="compare" aria-labelledby="cmp-ax01-an01">
 <h2 id="cmp-ax01-an01">Axiom and Anthropic: two large Lean formalizations, side by side</h2>
@@ -1059,7 +1059,33 @@
 <p><a href="../episodes/go06-nash-equilibrium-one-fifth/">Watch the episode and read the record</a> · <a href="../connections/#GO06">See its connections</a></p>
 
 </section>
-<p class="attribution">Last checked November 26, 2026.</p>
+<section class="special" id="go07" aria-labelledby="go07-h">
+<p class="thumb-kicker">GO07 · Google · Signed arXiv paper (Google, Illinois); proof found with Gemini 4 Carbon · posted to arXiv November 24, 2026 · Convex and metric geometry</p>
+<h2 id="go07-h">Hadwiger’s Covering Conjecture in Three Dimensions</h2>
+<p>Three named authors, Dror Aiger (Google), Sariel Har-Peled (University of Illinois) and Goran Žužić (Google Research), claim that every convex body in three dimensions is covered by eight smaller copies of itself, Hadwiger’s covering conjecture in dimension three (previous bound 14, Prymak 2023). Per the paper, an experimental Google harness on Gemini 4 Carbon discovered the proof “with minimal human steering”, an agentic harness produced a Lean 4 formalization (released in the arXiv files: 34 files, 13,725 lines), and the authors verified the mathematics. Not peer reviewed; not one of Google’s Cogentic papers.</p>
+
+<dl class="ledger ledger-auto">
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Posted as a preprint</dt>
+    <dd>arXiv:2611.32334, v1 November 24, 2026; v2 November 25, 2026 (math.MG; cross-listed cs.CG)</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>None found as of November 27, 2026, about 16:05 UTC: no named expert on covering or illumination (Kalai’s and Tao’s blogs, Tao’s Mathstodon feed, Hacker News (no thread), Prymak, Bezdek); John D. Cook’s blog (November 25) called it “the first announcement of a major theorem proved with the assistance of a Google model that I’ve noticed”</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>Not yet</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Checked in Lean</dt>
+    <dd>Lean 4 (v4.33.1, Mathlib v4.33.1) in the arXiv ancillary files, produced per the paper by an agentic harness on Gemini 4 Carbon: 34 files, 13,725 lines (our count); the 18-line Challenge.lean states Theorem 1.1 (one-factor form) from Mathlib alone, matching the paper by our reading; sorry only in Challenge.lean, no axiom or native_decide (our text scan); ChallengeAudit contains a proof that the cube needs 8. Not built or run by us (<a href="https://arxiv.org/src/2611.32334v2/anc">repository</a>)</dd>
+  </div>
+</dl>
+<p><a href="../episodes/go07-hadwiger-covering-3d/">Watch the episode and read the record</a> · <a href="../connections/#GO07">See its connections</a></p>
+
+</section>
+<p class="attribution">Last checked November 27, 2026.</p>
 </main>
 <footer class="site-foot">
   <ul class="foot-links">

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hadwiger’s covering conjecture in 3D? A signed paper, a Gemini-found proof, and its Lean | AI Proved What?</title>
+<meta name="description" content="Three named authors at Google and the University of Illinois claim that every convex body in three dimensions is covered by eight smaller copies of itself, Hadwiger’s conjecture in 3D. Per the paper, the proof was discovered by a Google harness on Gemini 4 Carbon and formalized in Lean 4 (released). Not peer reviewed; the Lean was not built or run by us.">
+<link rel="canonical" href="https://aiprovedwhat.com/episodes/go07-hadwiger-covering-3d/">
+<meta property="og:type" content="video.other">
+<meta property="og:site_name" content="AI Proved What?">
+<meta property="og:title" content="Hadwiger’s covering conjecture in 3D?">
+<meta property="og:description" content="Three named authors at Google and the University of Illinois claim that every convex body in three dimensions is covered by eight smaller copies of itself, Hadwiger’s conjecture in 3D. Per the paper, the proof was discovered by a Google harness on Gemini 4 Carbon and formalized in Lean 4 (released). Not peer reviewed; the Lean was not built or run by us.">
+<meta property="og:url" content="https://aiprovedwhat.com/episodes/go07-hadwiger-covering-3d/">
+<meta property="og:image" content="https://aiprovedwhat.com/episodes/go07-hadwiger-covering-3d/thumbnail.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="GO07: Hadwiger’s covering conjecture in 3D? A cube drawn with its eight smaller copies at two thirds of its size, in different colours, below the bound “14 → 8”.">
+<meta name="twitter:image:alt" content="GO07: Hadwiger’s covering conjecture in 3D? A cube drawn with its eight smaller copies at two thirds of its size, in different colours, below the bound “14 → 8”.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0e1117">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&amp;display=swap">
+<link rel="stylesheet" href="../../assets/site.css">
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "169d54e4d5724e27a0a05413ba6369a2"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="site-head">
+  <a class="wordmark" href="../../"><svg class="mark" viewBox="194 92 413 639" aria-hidden="true" focusable="false"><path d="M 243.20 298.08 A 156.80 156.80 0 1 1 400.00 454.88 L 400.00 535.52" fill="none" stroke="currentColor" stroke-width="87.36" stroke-linecap="round"/><rect x="351.84" y="628.48" width="96.32" height="96.32" fill="var(--gold)"/></svg><span>AI Proved What?</span></a>
+  <nav class="site-nav" aria-label="Main">
+    <ul>
+      <li><a href="../../episodes/">Results</a></li>
+      <li><a href="../../subjects/">Subjects</a></li>
+      <li><a href="../../updates/">Updates</a></li>
+      <li><a href="../../labs/">Labs</a></li>
+      <li><a href="../../connections/">Connections</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<main id="main">
+<p class="meta">Special GO07 (outside OpenAI’s math catalogue; a signed arXiv paper by Google and University of Illinois researchers, not one of Google’s Cogentic papers), November 2026</p>
+<h1>Hadwiger’s covering conjecture in 3D?</h1>
+<p class="subtitle">Three named authors claim that every convex body in three dimensions can be covered by eight smaller copies of itself, Hadwiger’s conjecture in dimension three (previous bound 14). Per the paper, the proof was discovered by an experimental Google harness on Gemini 4 Carbon “with minimal human steering”, an agentic harness produced a Lean 4 formalization (released with the paper), and the three authors verified the mathematics. Not peer reviewed; the Lean was not built or run by us.</p>
+
+<div class="player" data-youtube="KpqzaMWbUYM" data-title="GO07: Hadwiger’s covering conjecture in 3D?">
+  <a href="https://youtu.be/KpqzaMWbUYM">
+    <img src="thumbnail.jpg" width="1280" height="720" alt="Play GO07: Hadwiger’s covering conjecture in 3D? A cube drawn with its eight smaller copies at two thirds of its size, in different colours, below the bound “14 → 8”.">
+    <span class="play" aria-hidden="true"></span>
+  </a>
+</div>
+<p class="player-caption">9:44. English captions available. The video loads from YouTube when you press play.</p>
+
+<p>AI Proved What? is independent and not affiliated with Google or the University of Illinois. Not to be confused with <a href="../157-hadwiger-counterexample/">episode 157</a>, about Hadwiger’s graph-colouring conjecture, a different problem by the same mathematician.</p>
+
+<section aria-labelledby="chapters">
+<h2 id="chapters">Chapters</h2>
+<ol class="chapters">
+  <li><a href="https://youtu.be/KpqzaMWbUYM?t=0" data-t="0"><span class="t">0:00</span><span>The question</span></a></li>
+  <li><a href="https://youtu.be/KpqzaMWbUYM?t=184" data-t="184"><span class="t">3:04</span><span>The claim</span></a></li>
+  <li><a href="https://youtu.be/KpqzaMWbUYM?t=280" data-t="280"><span class="t">4:40</span><span>How the proof goes</span></a></li>
+  <li><a href="https://youtu.be/KpqzaMWbUYM?t=485" data-t="485"><span class="t">8:05</span><span>Where it stands</span></a></li>
+</ol>
+</section>
+
+<div class="measure">
+<section aria-labelledby="question">
+<h2 id="question">The question</h2>
+<p>This is Special GO07, outside OpenAI’s math catalogue, and a different kind of Google item. Our episodes GO01 to GO06 covered six papers from Google’s Cogentic agent, posted to GitHub with no author line and no released Lean proof. This one is not from Cogentic. On November 24, 2026, three named people posted a paper to arXiv: Hadwiger’s Covering Conjecture in Three Dimensions, by Dror Aiger of Google, Sariel Har-Peled of the University of Illinois, and Goran Žužić of Google Research. The paper says an experimental harness at Google, on top of Gemini 4 Carbon, discovered the proof with minimal human steering from Aiger and Žužić; that an agentic harness on the same model produced the Lean 4 proof; and that the three authors verified the mathematics and prepared the presentation. And this time the Lean is public, in the paper’s arXiv files. AI Proved What? is independent, and not affiliated with Google or the University of Illinois. One more note: episode 157 was about Hadwiger’s conjecture on colouring graphs. Today’s is a different conjecture by the same mathematician, Hugo Hadwiger.</p>
+<p>The question. Take a solid convex shape, one with no dents or holes, like a ball, an egg, a pyramid or a brick. How many smaller copies of it, all shrunk by the same factor, moved but not turned, does it take to cover it completely? For a square, four. A smaller square is narrower in both directions, so it can hold at most one corner, and four copies of half the size, one at each corner, do the job. A triangle needs only three: copies shrunk to two thirds, one at each corner, cover it. A cube needs eight, by the same corner argument, and eight copies shrunk to two thirds, the paper’s choice, suffice. In 1955, Levi proved that four always suffice in the plane, with four needed only for parallelograms. Hadwiger in 1957, and independently Gohberg and Markus, conjectured that in d dimensions, 2^d copies always suffice: eight in three dimensions, the cube’s number.</p>
+<p>Boltyanski recast the question in terms of light. Shine lamps on the shape from far away, each from one fixed direction. A point on the surface counts as lit if the ray through it, continued, goes into the inside of the shape. The smallest number of lamps that light every point is the same as the number of copies. For a cube, each lamp lights at most one corner, so eight lamps are needed. For a ball, four lamps, pointing like the corners of a triangular pyramid, light everything, and Levi observed that smooth shapes never need more than one plus the dimension. The hard cases have corners and edges. In three dimensions and above, the paper says, the conjecture had stayed open for nearly seven decades.</p>
+</section>
+
+<section aria-labelledby="claim">
+<h2 id="claim">The claim, in plain words</h2>
+<p>The claim. The paper has 21 pages; version two was posted on November 25. Its Theorem 1.1: every compact convex set in three-dimensional space with nonempty interior can be covered by eight smaller copies of itself, all shrunk by one factor lambda between zero and one, and translated. So the covering number is at most eight, and the cube shows that the bound eight cannot be lowered. Before this, as the paper cites, Lassak proved eight in 1984 for shapes that are symmetric about a centre. For all shapes, Papadoperakis proved sixteen in 1999, and Prymak fourteen in 2023. The paper goes from fourteen to eight, the conjectured number, and calls its proof completely self-contained: it proves every geometric statement it uses from scratch, assuming only basic linear algebra, calculus and measure theory.</p>
+<p>In the paper’s words (Theorem 1.1): “Let K ⊂ ℝ³ be a compact convex set with nonempty interior. There exist scalars λ<sub>1</sub>, …, λ<sub>8</sub> ∈ (0, 1) and translation vectors v<sub>1</sub>, …, v<sub>8</sub> ∈ ℝ³ such that K ⊆ ⋃ (λ<sub>i</sub>K + v<sub>i</sub>). Equivalently, there exist a single scalar λ ∈ (0, 1) and translation vectors v<sub>1</sub>, …, v<sub>8</sub> ∈ ℝ³ such that K ⊆ ⋃ (λK + v<sub>i</sub>), so c(K) ≤ 8.”</p>
+<p>The AI disclosure (Section 1.3), in full: “An experimental harness at Google on top of Gemini 4 Carbon [Gem26] discovered the proof with minimal human steering from Dror Aiger and Goran Žužić, and an agentic harness on Gemini 4 Carbon produced the formal verification in Lean 4. Dror Aiger, Sariel Har-Peled, and Goran Žužić verified the mathematics and prepared the presentation of the paper.”</p>
+</section>
+
+<section aria-labelledby="new">
+<h2 id="new">What is not claimed</h2>
+<p>What is not claimed. Nothing about four or more dimensions, where the conjecture stays open. No value for the shrinking factor in general: boxes, slanted or not, get two thirds, and for every other shape the proof shows that a factor exists without computing it. And it is a preprint, not yet peer reviewed. Online, the proof is often called about six pages long, a phrase from Žužić’s post on X, as news reports quote it. The paper itself has 21 pages, and its proof, step by step, runs from page 4 to page 20, after a short overview. We cannot tell what the six refers to.</p>
+</section>
+
+<section aria-labelledby="how">
+<h2 id="how">How the proof goes</h2>
+<p>How the proof goes, following the paper’s overview. It works with lamps. Pick a direction w, and look at the shape’s shadow on a wall at right angles to it. The surface points that land on the rim of the shadow form its shadow boundary, a kind of waist; for almost every direction, it is a closed loop around the shape. Every other surface point, the paper shows, is lit by a lamp shining along w or by one shining the opposite way, even at sharp corners or on flat faces. So two lamps light everything except the waist, and six lamps remain for the waist. Cut it into six pieces. A piece that is short enough fits inside one smaller copy of the shape, and then one lamp lights the whole piece. To prove that, the paper uses Helly’s theorem: in three dimensions, if every four of a family of closed and bounded convex sets share a point, then all of them do. Short enough means a length under two, measured with a ruler made from the shape itself: half the set of differences of its points. Two plus six is eight.</p>
+<p>So it all comes down to one question: is there a direction whose waist is shorter than twelve, six pieces of length under two? First the paper stretches the shape, so that the largest ellipsoid inside its ruler shape is a round ball. That is John’s position. Then it averages over all directions, and proves that eight times the ruler shape’s average half-width is at most twelve, with equality only when the shape is a box, slanted or not. Our bars show that number for a few shapes in this position: a ball, eight; a cylinder, 10.3; a tetrahedron, 10.3; an octahedron, 11.5; a cube, exactly twelve. For a cube, a typical waist is six edges of length two: twelve, with no room to spare. That is why boxes are handled first, with copies shrunk to two thirds. For an octahedron, by our count, the waist is eight or twelve, depending on the direction. An average below twelve means that some direction does better. One more trap, which the paper points out: smooth shapes need only four copies, yet they can come as close as you like to a cube, which needs eight. So approximations alone can mislead. The paper uses approximating polytopes only to measure lengths, then passes to the limit with Fatou’s lemma, and finds the short waist on the shape itself.</p>
+<p>Prior work as the paper cites it: Levi (1955), Hadwiger (1957), Gohberg and Markus (1960), Boltyanski (1960), Lassak (1984, centrally symmetric bodies in three dimensions), Papadoperakis (1999, 16), <a href="https://arxiv.org/abs/2112.10698">Prymak</a> (2023, 14); Helly (1923), John (1948) and Ewald, Larman and Rogers (1970) are cited “for historical context”, with every statement re-proved in the paper.</p>
+</section>
+
+<section aria-labelledby="lean">
+<h2 id="lean">The Lean</h2>
+<p>Then the Lean. The paper’s arXiv files hold 34 Lean files, 13,725 lines, for Lean 4 and its library Mathlib, version 4.33.1. We read them as text, and our counts match. The statement file, Challenge.lean, has 18 lines. In plain words: take any set K in three-dimensional space that is compact, convex, and has nonempty interior. Then there is a number r, strictly between zero and one, and eight shift vectors, such that K lies inside the union of the eight copies of K scaled by r and shifted. That matches Theorem 1.1, in its one-factor form. The file ends with the word sorry, the placeholder a challenge statement uses; the solution files state the same theorem, with a proof the paper says checks. Our text search found sorry nowhere else, and no axiom declarations or native_decide. An audit file contains a proof that seven copies cannot cover a cube, even with different factors. We did not build or run the Lean proof.</p>
+</section>
+
+<section aria-labelledby="stands">
+<h2 id="stands">Where it stands</h2>
+<dl class="ledger">
+<!-- ledger-boxes: drawn by tools/site/build.py from the record -->
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Public</dt>
+    <dd><a href="https://arxiv.org/abs/2611.32334">arXiv:2611.32334</a> (math.MG; cross-listed cs.CG): v1 Tuesday, November 24, 2026, 10:20 UTC; v2 Wednesday, November 25, 11:45 UTC. By our comparison of the two PDFs, v2 updates the Lean from v4.27.0 (13,663 lines) to v4.33.1 (13,725 lines), packs the full source, which v1 already had as loose ancillary files, into one tarball with a README, and fixes typesetting. 21 pages, 11 references.</dd>
+  </div>
+<!-- review-step:start -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Under expert review</dt>
+    <dd>Not yet</dd>
+  </div>
+<!-- review-step:end -->
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Peer reviewed</dt>
+    <dd>No (no journal reference).</dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Lean proof</dt>
+    <dd>Public in the <a href="https://arxiv.org/src/2611.32334v2/anc">arXiv ancillary files</a>: 34 Lean files, 13,725 lines (our count matches the README), Lean 4 and Mathlib v4.33.1. We read the files as text. The 18-line Challenge.lean states Theorem 1.1 in its one-factor form, using only Mathlib’s IsCompact, Convex and interior on EuclideanSpace ℝ (Fin 3); Solution.lean states the same theorem, with a proof built from the Solution/ modules (which the paper and README say checks; not built by us). Our text scan (comments removed) found <code>sorry</code> only in Challenge.lean (the challenge placeholder) and no <code>axiom</code>, <code>admit</code> or <code>native_decide</code>. ChallengeAudit.lean contains proofs, among other things, that the unit cube cannot be covered by 7 smaller copies (even with different ratios) and is covered by 8 at ratio 2/3. The README says the proof uses only Lean’s standard axioms and gives build and comparator instructions; Appendix A also mentions a “20-theorem mutation suite”, which is not in the tarball. <b>We did not build or run the Lean proof.</b></dd>
+  </div>
+  <div class="ledger-row is-done">
+    <dt><span class="box" aria-hidden="true"></span>Human check</dt>
+    <dd>The authors’ own. Section 1.3: “Dror Aiger, Sariel Har-Peled, and Goran Žužić verified the mathematics and prepared the presentation of the paper.”</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Independent check</dt>
+    <dd>None found.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Expert reaction</dt>
+    <dd>No named expert on covering or illumination found as of November 27, 2026, about 16:05 UTC (Gil Kalai’s and Terence Tao’s blogs, Tao’s Mathstodon feed, Hacker News (no thread found), searches for Prymak and Bezdek; Bluesky and Mathstodon search could not be read without logging in). The applied mathematician John D. Cook <a href="https://www.johndcook.com/blog/2026/11/25/hadwiger-covering/">wrote</a> (November 25) that it was “the first announcement of a major theorem proved with the assistance of a Google model that I’ve noticed.” News write-ups: <a href="https://officechai.com/ai/google-researchers-use-gemini-4-solver-to-produce-6-page-proof-of-70-year-old-hadwiger-conjecture/">OfficeChai</a>, <a href="https://mlq.ai/news/google-team-says-gemini-4-proved-hadwigers-covering-conjecture-in-3d/">MLQ.ai</a>.</dd>
+  </div>
+  <div class="ledger-row">
+    <dt><span class="box" aria-hidden="true"></span>Google announcement</dt>
+    <dd>No Google or DeepMind blog post found. The paper is listed on <a href="https://research.google/research-areas/algorithms-and-theory/">Google Research’s publications page</a> (with the year shown as 2027). Goran Žužić’s post on X (“a ~6-page proof found with our Gemini 4 solver &amp; Lean verified!”) is quoted by OfficeChai and MLQ.ai; we could not open X to read it.</dd>
+  </div>
+</dl>
+<p class="ledger-note">Last checked November 27, 2026, about 16:05 UTC (08:05 PT); arXiv still at v2. Nothing was built or run by us; we did not check the proof.</p>
+<p class="ledger-note"><b>Online claims, checked against the paper.</b> News reports quote Goran Žužić calling it “a ~6-page proof”; the PDF has 21 pages, with an overview on pages 2–4 and the step-by-step proof on pages 4–20 (we cannot tell what the six pages count). OfficeChai says the proof was “checked line by line” by Lean; the Lean is public, but we have not built it, and a Lean check covers exactly the statement in Challenge.lean, which we compared with Theorem 1.1 by reading.</p>
+<p>This is a Specials episode. Episode 156 covered a claimed counterexample to Borsuk’s conjecture in dimension nine, a cousin problem about cutting shapes into pieces of smaller diameter, and episode 92 covered how densely translates of a convex shape must overlap to cover space. If this proof holds, every convex shape in three dimensions can be covered by eight smaller copies of itself: Hadwiger’s number, after nearly seven decades, with the proof found by an AI system with minimal human steering, a Lean proof released for anyone to build, and its mathematics checked by its three human authors. Whether it holds is now for other mathematicians to check. See <a href="../156-borsuk-dimension-nine/">156</a> and <a href="../092-optimal-order-convex-body-covering/">092</a>; for Google’s Cogentic papers of November 25, see <a href="../go06-nash-equilibrium-one-fifth/">GO06</a> and its siblings.</p>
+</section>
+
+<section aria-labelledby="numbers">
+<h2 id="numbers">The numbers in the video</h2>
+<ul class="sources">
+  <li>Ours (exact rational grid checks): a square is covered by 4 copies at ratio 1/2, a triangle by 3 copies at 2/3 (anchored at the corners), a cube by 8 copies at 2/3 (the paper’s Lemma 2.15 construction). A copy with ratio below 1 is narrower than the cube in every coordinate, so it holds at most one corner.</li>
+  <li>Ours: for the cube [−1, 1]³ a lamp direction lights a corner only if it points into the cube there, so each lamp lights at most one corner (checked on 200,000 random directions); for a ball, four lamps from the corners of a regular tetrahedron light every point (the four directions sum to zero; the worst point still has a lamp at cosine −1/3).</li>
+  <li>Ours: the paper’s quantity 8 ∫ h_S dσ̃ (8 times the average of the support function of S over the sphere, that is 8 times its average half-width; for polytopes it equals the average Euclidean length of the shadow boundary, so it bounds the average waist) in John’s position: ball 8.00, cylinder with height equal to its diameter 10.28 (= 2π + 4), regular tetrahedron 10.32 (S is a cuboctahedron), regular octahedron 11.52, cube 12.00; closed forms checked against a 400,000-point average. For these symmetric shapes the largest inscribed ellipsoid of S is its inscribed ball.</li>
+  <li>Ours: the waist (shadow boundary) measured with S: a cube’s is 12 for every direction we sampled (six edges of length 2); an octahedron’s is 8 (about 65% of directions) or 12 (about 35%); a tetrahedron’s 6 or 8; a ball’s 2π ≈ 6.28.</li>
+  <li>Not checked: the paper’s proofs (Sections 2–6). Nothing was built or run by us.</li>
+</ul>
+</section>
+
+<section aria-labelledby="source">
+<h2 id="source">Read the source</h2>
+<ul class="sources">
+  <li>D. Aiger, S. Har-Peled, G. Žužić, <a href="https://arxiv.org/abs/2611.32334">Hadwiger’s Covering Conjecture in Three Dimensions</a>, arXiv:2611.32334 (November 2026; <a href="https://arxiv.org/pdf/2611.32334v2">PDF</a>; <a href="https://arxiv.org/src/2611.32334v2/anc">Lean 4 ancillary files</a>), 21 pages.</li>
+  <li>A. Prymak, <a href="https://arxiv.org/abs/2112.10698">A new bound for Hadwiger’s covering problem in E³</a>, SIAM Journal on Discrete Mathematics 37 (2023), 17–24.</li>
+  <li>Cited by the paper: F. W. Levi (1955); H. Hadwiger, Ungelöste Probleme Nr. 20 (1957); I. Gohberg and A. Markus (1960); V. Boltyanski (1960); M. Lassak, J. London Math. Soc. (1984); I. Papadoperakis, Geometriae Dedicata (1999).</li>
+  <li>J. D. Cook, <a href="https://www.johndcook.com/blog/2026/11/25/hadwiger-covering/">Covering a body with eight smaller copies of itself</a> (blog, November 25, 2026).</li>
+</ul>
+<p>AI Proved What? is independent and not affiliated with Google or the University of Illinois.</p>
+</section>
+
+<section aria-labelledby="transcript-h">
+<h2 id="transcript-h">Transcript</h2>
+<details class="transcript">
+<summary>Read the full script</summary>
+<h3><span class="t num">0:00</span>The question</h3>
+<p>This is Special GO07, outside OpenAI’s math catalogue, and a different kind of Google item. Our episodes GO01 to GO06 covered six papers from Google’s Cogentic agent, posted to GitHub with no author line and no released Lean proof. This one is not from Cogentic. On November 24, 2026, three named people posted a paper to arXiv: Hadwiger’s Covering Conjecture in Three Dimensions, by Dror Aiger of Google, Sariel Har-Peled of the University of Illinois, and Goran Žužić of Google Research. The paper says an experimental harness at Google, on top of Gemini 4 Carbon, discovered the proof with minimal human steering from Aiger and Žužić; that an agentic harness on the same model produced the Lean 4 proof; and that the three authors verified the mathematics and prepared the presentation. And this time the Lean is public, in the paper’s arXiv files. AI Proved What? is independent, and not affiliated with Google or the University of Illinois. One more note: episode 157 was about Hadwiger’s conjecture on colouring graphs. Today’s is a different conjecture by the same mathematician, Hugo Hadwiger. The question. Take a solid convex shape, one with no dents or holes, like a ball, an egg, a pyramid or a brick. How many smaller copies of it, all shrunk by the same factor, moved but not turned, does it take to cover it completely? For a square, four. A smaller square is narrower in both directions, so it can hold at most one corner, and four copies of half the size, one at each corner, do the job. A triangle needs only three: copies shrunk to two thirds, one at each corner, cover it. A cube needs eight, by the same corner argument, and eight copies shrunk to two thirds, the paper’s choice, suffice. In 1955, Levi proved that four always suffice in the plane, with four needed only for parallelograms. Hadwiger in 1957, and independently Gohberg and Markus, conjectured that in d dimensions, 2^d copies always suffice: eight in three dimensions, the cube’s number. Boltyanski recast the question in terms of light. Shine lamps on the shape from far away, each from one fixed direction. A point on the surface counts as lit if the ray through it, continued, goes into the inside of the shape. The smallest number of lamps that light every point is the same as the number of copies. For a cube, each lamp lights at most one corner, so eight lamps are needed. For a ball, four lamps, pointing like the corners of a triangular pyramid, light everything, and Levi observed that smooth shapes never need more than one plus the dimension. The hard cases have corners and edges. In three dimensions and above, the paper says, the conjecture had stayed open for nearly seven decades.</p>
+<h3><span class="t num">3:04</span>The claim</h3>
+<p>The claim. The paper has 21 pages; version two was posted on November 25. Its Theorem 1.1: every compact convex set in three-dimensional space with nonempty interior can be covered by eight smaller copies of itself, all shrunk by one factor lambda between zero and one, and translated. So the covering number is at most eight, and the cube shows that the bound eight cannot be lowered. Before this, as the paper cites, Lassak proved eight in 1984 for shapes that are symmetric about a centre. For all shapes, Papadoperakis proved sixteen in 1999, and Prymak fourteen in 2023. The paper goes from fourteen to eight, the conjectured number, and calls its proof completely self-contained: it proves every geometric statement it uses from scratch, assuming only basic linear algebra, calculus and measure theory. What is not claimed. Nothing about four or more dimensions, where the conjecture stays open. No value for the shrinking factor in general: boxes, slanted or not, get two thirds, and for every other shape the proof shows that a factor exists without computing it. And it is a preprint, not yet peer reviewed. Online, the proof is often called about six pages long, a phrase from Žužić’s post on X, as news reports quote it. The paper itself has 21 pages, and its proof, step by step, runs from page 4 to page 20, after a short overview. We cannot tell what the six refers to.</p>
+<h3><span class="t num">4:40</span>How the proof goes</h3>
+<p>How the proof goes, following the paper’s overview. It works with lamps. Pick a direction w, and look at the shape’s shadow on a wall at right angles to it. The surface points that land on the rim of the shadow form its shadow boundary, a kind of waist; for almost every direction, it is a closed loop around the shape. Every other surface point, the paper shows, is lit by a lamp shining along w or by one shining the opposite way, even at sharp corners or on flat faces. So two lamps light everything except the waist, and six lamps remain for the waist. Cut it into six pieces. A piece that is short enough fits inside one smaller copy of the shape, and then one lamp lights the whole piece. To prove that, the paper uses Helly’s theorem: in three dimensions, if every four of a family of closed and bounded convex sets share a point, then all of them do. Short enough means a length under two, measured with a ruler made from the shape itself: half the set of differences of its points. Two plus six is eight. So it all comes down to one question: is there a direction whose waist is shorter than twelve, six pieces of length under two? First the paper stretches the shape, so that the largest ellipsoid inside its ruler shape is a round ball. That is John’s position. Then it averages over all directions, and proves that eight times the ruler shape’s average half-width is at most twelve, with equality only when the shape is a box, slanted or not. Our bars show that number for a few shapes in this position: a ball, eight; a cylinder, 10.3; a tetrahedron, 10.3; an octahedron, 11.5; a cube, exactly twelve. For a cube, a typical waist is six edges of length two: twelve, with no room to spare. That is why boxes are handled first, with copies shrunk to two thirds. For an octahedron, by our count, the waist is eight or twelve, depending on the direction. An average below twelve means that some direction does better. One more trap, which the paper points out: smooth shapes need only four copies, yet they can come as close as you like to a cube, which needs eight. So approximations alone can mislead. The paper uses approximating polytopes only to measure lengths, then passes to the limit with Fatou’s lemma, and finds the short waist on the shape itself. Then the Lean. The paper’s arXiv files hold 34 Lean files, 13,725 lines, for Lean 4 and its library Mathlib, version 4.33.1. We read them as text, and our counts match. The statement file, Challenge.lean, has 18 lines. In plain words: take any set K in three-dimensional space that is compact, convex, and has nonempty interior. Then there is a number r, strictly between zero and one, and eight shift vectors, such that K lies inside the union of the eight copies of K scaled by r and shifted. That matches Theorem 1.1, in its one-factor form. The file ends with the word sorry, the placeholder a challenge statement uses; the solution files state the same theorem, with a proof the paper says checks. Our text search found sorry nowhere else, and no axiom declarations or native_decide. An audit file contains a proof that seven copies cannot cover a cube, even with different factors. We did not build or run the Lean proof.</p>
+<h3><span class="t num">8:05</span>Where it stands</h3>
+<p>Where it stands, on November 26, 2026. The paper is public on arXiv: version one on November 24, version two the next day, which moved the Lean to a newer version and packed its source, already there in version one as loose files, into one archive. It is not peer reviewed. The Lean is public; we read its statement, and did not build or run it. The human check is the authors’ own: per the paper, the three of them verified the mathematics. We found no independent check, and no reaction yet from a named expert on covering or illumination. The applied mathematician John D. Cook wrote that it was the first announcement of a major theorem proved with the assistance of a Google model that he had noticed. We found no Google or DeepMind blog post; the paper is listed on Google Research’s publications page. This is a Specials episode. Episode 156 covered a claimed counterexample to Borsuk’s conjecture in dimension nine, a cousin problem about cutting shapes into pieces of smaller diameter, and episode 92 covered how densely translates of a convex shape must overlap to cover space. If this proof holds, every convex shape in three dimensions can be covered by eight smaller copies of itself: Hadwiger’s number, after nearly seven decades, with the proof found by an AI system with minimal human steering, a Lean proof released for anyone to build, and its mathematics checked by its three human authors. Whether it holds is now for other mathematicians to check.</p>
+</details>
+</section>
+
+<section aria-labelledby="fix">
+<h2 id="fix">Spot a mistake?</h2>
+<p>This episode simplifies on purpose, but it shouldn’t be wrong. If something is, <a href="https://github.com/NathanNam/aiprovedwhat/issues/new?title=GO07%3A%20">open an issue on GitHub</a> or leave a comment on YouTube. Corrections are noted here with a date.</p>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <ul class="foot-links">
+    <li><a href="../../about/">About</a></li>
+    <li><a href="https://www.youtube.com/@AIProvedWhat">YouTube</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat">Source on GitHub</a></li>
+    <li><a href="https://github.com/NathanNam/aiprovedwhat/issues">Report a mistake</a></li>
+  </ul>
+  <p>AI Proved What? is an independent project. It is not affiliated with, sponsored by, or endorsed by OpenAI or any other organization whose work it covers.</p>
+  <p>AI Proved What? is made with Claude, Anthropic’s AI. Anthropic’s own results (AN) are held to the same standards as every other lab’s, using only public sources.</p>
+  <p>Words and images are shared under <a href="https://creativecommons.org/licenses/by/4.0/">CC&nbsp;BY&nbsp;4.0</a> and the site code under the MIT License. Papers belong to their authors.</p>
+</footer>
+</div>
+<script src="../../assets/site.js" defer></script>
+</body>
+</html>
